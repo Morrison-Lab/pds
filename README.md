@@ -13,8 +13,8 @@ website, and course sites include it as a git submodule.
 
 ## Using these notes in another site
 
-Add this repository as a git submodule named `pds` at the host site’s
-root, and include fragments with paths that start with `pds/`:
+Add this repository as a git submodule named `pds` at the root of the
+host site, and include fragments with paths that start with `pds/`:
 
 ``` sh
 git submodule add https://github.com/Morrison-Lab/pds.git pds
