@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-25 19:34:03 (PDT)
+Last modified: 2026-09-25 19:43:01 (PDT)
 
 > Probability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.
 
@@ -295,6 +295,6 @@ The IID assumption is one of the most common assumptions in introductory statist
 
 # References
 
-Miller, Steven J. 2017. *The Probability Lifesaver: All the Tools You Need to Understand Chance*. A Princeton Lifesaver Study Guide. Princeton University Press. <https://press.princeton.edu/books/hardcover/9780691149547/the-probability-lifesaver>.
+Miller, Steven J. 2017. *The Probability Lifesaver: All the Tools You Need to Understand Chance*. A Princeton Lifesaver Study Guide. Princeton University Press. <https://doi.org/10.1515/9781400885381>.
 
 Back to top
