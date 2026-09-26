@@ -1,0 +1,55 @@
+:::{#def-variance}
+#### Variance
+
+The **variance** of a random variable $X$ is the expected squared
+deviation of $X$ from its own mean:
+
+$$\Var{X} \eqdef \E{(X - \E{X})^2}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-variance}
+#### Simplified expression for variance
+
+$$\Var{X}=\E{X^2} - \sqf{\E{X}}$$
+
+:::
+
+::: proof
+
+By linearity of expectation:
+
+$$
+\ba
+\Var{X}
+&\eqdef \E{(X-\E{X})^2} && \text{(definition of variance)} \\
+&=\E{X^2 - 2X\E{X} + \sqf{\E{X}}} && \text{(expand binomial square)} \\
+&=\E{X^2} - \E{2X\E{X}} + \E{\sqf{\E{X}}} && \text{(linearity of expectation)} \\
+&=\E{X^2} - 2\E{X}\E{X} + \sqf{\E{X}} && \text{(constants factor out of expectation)} \\
+&=\E{X^2} - \sqf{\E{X}} && \text{(algebraic simplification)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-sd}
+#### Standard deviation
+
+The **standard deviation** of a random variable $X$
+is the square root of the [variance](#def-variance) of $X$:
+
+$$\SD{X} \eqdef \sqrt{\Var{X}}$$
+
+:::
+
+::: notes
+
+The standard deviation is on the same scale as $X$ itself
+(unlike the variance, which is on the scale of $X$'s square),
+which is why it is often the preferred measure of spread when reporting results.
+
+:::

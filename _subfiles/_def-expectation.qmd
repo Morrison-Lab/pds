@@ -1,0 +1,50 @@
+:::{#def-expectation}
+#### Expectation, expected value, population mean
+
+The **expectation**, **expected value**, or **population mean** of a
+*continuous* random variable $X$, denoted $\E{X}$, $\mu(X)$, or $\mu_X$,
+is the weighted mean of $X$'s possible values,
+weighted by the [probability density function](#def-pdf) of those values:
+
+$$\E{X} \eqdef \int_{x\in \rangef{X}} x \cdot \p(X=x)\,dx$$
+
+The **expectation**, **expected value**, or **population mean** of a
+*discrete* random variable $X$, denoted $\E{X}$, $\mu(X)$, or $\mu_X$,
+is the mean of $X$'s possible values,
+weighted by the [probability mass function](#def-pmf) of those values:
+
+$$\E{X} \eqdef \sum_{x \in \rangef{X}} x \cdot \P(X=x)$$
+
+:::
+
+::: notes
+
+See also <https://en.wikipedia.org/wiki/Expected_value>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-bernoulli-mean}
+#### Expectation of a Bernoulli random variable
+
+Let $X \sim \Ber(\pi)$, so $\rangef{X} = \{0,1\}$ with
+$\P(X=1) = \pi$ and $\P(X=0) = 1-\pi$.
+By @def-expectation:
+
+$$
+\ba
+\E{X}
+&= \sum_{x\in \set{0,1}} x \cd \P(X=x)
+&& \text{(definition of expectation for discrete r.v.)}
+\\&= \paren{0 \cd \P(X=0)} + \paren{1 \cd \P(X=1)}
+&& \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
+\\&= \paren{0 \cd (1-\pi)} + \paren{1 \cd \pi}
+&& \text{(substitute Bernoulli PMF values)}
+\\&= 0 + \pi
+&& \text{(simplify each term)}
+\\&= \pi
+\ea
+$$
+
+:::

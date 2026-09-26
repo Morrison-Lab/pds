@@ -1,0 +1,29 @@
+:::{#thm-total-prob}
+
+#### Law of total probability
+
+If $B_1, B_2, \ldots$ is a countable partition of the sample space
+(countably many mutually exclusive events whose union is the entire sample space),
+then for any event $A$:
+
+$$\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cd \Pr(B_i)$$
+
+:::
+
+::: proof
+
+Since $B_1, B_2, \ldots$ partition the sample space,
+the events $A \cap B_1, A \cap B_2, \ldots$ are mutually exclusive and their
+union is $A$.
+By countable additivity (@def-probability),
+and then by @thm-law-conditional-prob:
+
+$$
+\ba
+\Pr(A)
+&= \sum_{i=1}^{\infty} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)}
+\\&= \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cd \Pr(B_i) && \text{(law of conditional probability)}
+\ea
+$$
+
+:::

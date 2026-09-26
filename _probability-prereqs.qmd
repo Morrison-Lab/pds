@@ -1,0 +1,98 @@
+> Probability theory is the branch of mathematics concerned with
+formalizing and quantifying uncertainty.
+It is the foundation on which statistical inference is built:
+before we can reason about what data tell us about the world,
+we need a precise language for describing random phenomena.
+
+These lecture notes use:
+
+- probability axioms and conditional probability
+- Bayes' theorem
+- random variables and their distributions (PMF, PDF, CDF)
+- expectation and the Law of the Unconscious Statistician (LOTUS)
+- variance and covariance
+- independence and IID random variables
+
+Some key results are listed here.
+Most of this material should be review from an introductory probability or
+mathematical statistics course
+(e.g., UC Davis's Epi 202, WWU's [previous course
+offerings](https://morrison-lab.github.io/mln/)).
+This page adapts its core results from the Morrison Lab's
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html),
+which also covers material outside this page's scope
+(see [Additional resources](#sec-additional-resources)).
+
+# Notation {#sec-notation}
+
+{{< include pds/_notation.qmd >}}
+
+# Probability axioms and conditional probability {#sec-prob-axioms}
+
+<!-- heading directly precedes the def-probability div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-probability.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-conditional-prob.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-law-conditional-prob.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-total-prob.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-bayes.qmd >}}
+
+# Random variables and distributions {#sec-random-variables}
+
+<!-- heading directly precedes the def-random-variable div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-random-variable.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
+
+# Expectation {#sec-expectation}
+
+<!-- heading directly precedes the def-expectation div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-lotus.qmd >}}
+
+# Variance and covariance {#sec-variance-covariance}
+
+<!-- heading directly precedes the def-variance div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-variance.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-covariance.qmd >}}
+
+# Independence {#sec-independence}
+
+<!-- heading directly precedes the def-indpt div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-independence.qmd >}}
+
+# Additional resources {#sec-additional-resources}
+
+- @problifesaver
+- Morrison Lab's [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html)
+  (fuller treatment: joint densities, conditional expectations, Fubini-Tonelli,
+  and a catalog of named distributions)
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

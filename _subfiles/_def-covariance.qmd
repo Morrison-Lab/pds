@@ -1,0 +1,104 @@
+:::{#def-cov}
+#### Covariance
+
+For any two random variables $X, Y$:
+
+$$\Cov{X,Y} \eqdef \E{(X - \E X)(Y - \E Y)}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-alt-cov}
+#### Alternative formula for covariance
+
+$$\Cov{X,Y}= \E{XY} - \E{X} \E{Y}$$
+
+:::
+
+::: proof
+
+By linearity of expectation, analogous to @thm-variance's proof:
+
+$$
+\ba
+\Cov{X,Y}
+&\eqdef \E{(X-\E{X})(Y-\E{Y})} && \text{(definition of covariance)} \\
+&= \E{XY - X\E{Y} - Y\E{X} + \E{X}\E{Y}} && \text{(expand the product)} \\
+&= \E{XY} - \E{X\E{Y}} - \E{Y\E{X}} + \E{\E{X}\E{Y}} && \text{(linearity of expectation)} \\
+&= \E{XY} - \E{X}\E{Y} - \E{Y}\E{X} + \E{X}\E{Y} && \text{(constants factor out of expectation)} \\
+&= \E{XY} - \E{X}\E{Y} && \text{(algebraic simplification)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#lem-cov-xx}
+#### The covariance of a variable with itself is its variance
+
+For any random variable $X$:
+
+$$\Cov{X,X} = \Var{X}$$
+
+:::
+
+::: proof
+
+By the [alternative formula for covariance](#thm-alt-cov):
+
+$$
+\ba
+\Cov{X,X}
+&= \E{XX} - \E{X}\E{X}
+\\&= \E{X^2} - \sqf{\E{X}}
+\ea
+$$
+
+which is exactly the [simplified expression for variance](#thm-variance).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-var-lincom2}
+#### Variance of a sum of two random variables
+
+For any two random variables $X$ and $Y$ and scalars $a$ and $b$:
+
+$$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\Var{aX+bY}
+&\eqdef \E{\paren{aX+bY - \E{aX+bY}}^2}
+&& \text{(definition of variance, @def-variance)} \\
+&= \E{\paren{a(X-\E{X}) + b(Y-\E{Y})}^2}
+&& \text{(linearity of expectation)} \\
+&= \E{a^2(X-\E{X})^2 + 2(a \cd b)(X-\E{X})(Y-\E{Y}) + b^2(Y-\E{Y})^2}
+&& \text{(expand the square)} \\
+&= a^2\E{(X-\E{X})^2} + 2(a \cd b)\E{(X-\E{X})(Y-\E{Y})} + b^2\E{(Y-\E{Y})^2}
+&& \text{(linearity of expectation)} \\
+&= a^2 \Var{X} + 2(a \cd b) \Cov{X,Y} + b^2 \Var{Y}
+&& \text{(definitions of variance, @def-variance, and covariance, @def-cov)}
+\ea
+$$
+
+:::
+
+::: notes
+
+This corollary is why two variables' covariance matters for combining them:
+if $X$ and $Y$ are [independent](#def-indpt), $\Cov{X,Y}=0$
+and the variance of their sum is just the sum of their variances.
+See rme's
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#thm-var-lincom)
+for the general $n$-variable version and the vector/matrix forms of
+variance and covariance.
+
+:::
