@@ -7,6 +7,8 @@ $$\Cov{X,Y} \eqdef \E{(X - \E X)(Y - \E Y)}$$
 
 :::
 
+{{< slidebreak >}}
+
 :::{#thm-alt-cov}
 #### Alternative formula for covariance
 
@@ -30,6 +32,8 @@ $$
 $$
 
 :::
+
+{{< slidebreak >}}
 
 :::{#lem-cov-xx}
 #### The covariance of a variable with itself is its variance
@@ -56,6 +60,8 @@ which is exactly the [simplified expression for variance](#thm-variance).
 
 :::
 
+{{< slidebreak >}}
+
 :::{#cor-var-lincom2}
 #### Variance of a sum of two random variables
 
@@ -65,12 +71,23 @@ $$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
 
 :::
 
-::: notes
+::: proof
 
-The proof is a direct expansion of @def-variance and @def-cov,
-analogous to the two-line proof of @lem-cov-xx above;
-we omit it here since this page's role is to state the result
-we later depend on, and leave its derivation as a review exercise.
+$$
+\ba
+\Var{aX+bY}
+&\eqdef \E{\paren{aX+bY - \E{aX+bY}}^2}
+&& \text{(definition of variance, @def-variance)} \\
+&= \E{\paren{a(X-\E{X}) + b(Y-\E{Y})}^2}
+&& \text{(linearity of expectation)} \\
+&= \E{a^2(X-\E{X})^2 + 2(a \cd b)(X-\E{X})(Y-\E{Y}) + b^2(Y-\E{Y})^2}
+&& \text{(expand the square)} \\
+&= a^2\E{(X-\E{X})^2} + 2(a \cd b)\E{(X-\E{X})(Y-\E{Y})} + b^2\E{(Y-\E{Y})^2}
+&& \text{(linearity of expectation)} \\
+&= a^2 \Var{X} + 2(a \cd b) \Cov{X,Y} + b^2 \Var{Y}
+&& \text{(definitions of variance, @def-variance, and covariance, @def-cov)}
+\ea
+$$
 
 :::
 

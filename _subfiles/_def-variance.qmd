@@ -8,6 +8,8 @@ $$\Var{X} \eqdef \E{(X - \E{X})^2}$$
 
 :::
 
+{{< slidebreak >}}
+
 :::{#thm-variance}
 #### Simplified expression for variance
 
@@ -31,6 +33,8 @@ $$
 $$
 
 :::
+
+{{< slidebreak >}}
 
 :::{#def-sd}
 #### Standard deviation

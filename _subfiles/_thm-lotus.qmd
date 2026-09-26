@@ -50,6 +50,8 @@ change-of-variables theorem beyond this page's scope.
 
 :::
 
+{{< slidebreak >}}
+
 :::{#exm-lotus}
 #### Expected value of $X^2$ for a Bernoulli variable
 
@@ -60,14 +62,20 @@ $$
 \ba
 \E{X^2}
 &= \sum_{x \in \set{0,1}} x^2 \cd \P(X=x)
-\\&= 0^2 \cd \P(X=0) + 1^2 \cd \P(X=1)
-\\&= 0^2 \cd (1-\pi) + 1^2 \cd \pi
-\\&= 0 + \pi
-\\&= \pi
+&& \text{(LOTUS, discrete case)} \\
+&= 0^2 \cd \P(X=0) + 1^2 \cd \P(X=1)
+&& \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)} \\
+&= 0^2 \cd (1-\pi) + 1^2 \cd \pi
+&& \text{(substitute Bernoulli PMF values)} \\
+&= 0 + \pi
+&& \text{(simplify each term)} \\
+&= \pi
 \ea
 $$
 
 :::
+
+{{< slidebreak >}}
 
 :::{#exm-lotus-continuous}
 #### Expected value of $X^2$ for a Uniform(0,1) variable

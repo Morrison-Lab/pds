@@ -10,20 +10,21 @@ $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}$$
 
 ::: proof
 
-Apply @def-conditional-prob to both $\Pr(A \mid B)$ and $\Pr(B \mid A)$:
-
 $$
 \ba
 \Pr(A \mid B)
 &= \frac{\Pr(A \cap B)}{\Pr(B)}
-\\&= \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}
+&& \text{(definition of conditional probability, @def-conditional-prob)} \\
+&= \frac{\Pr(B \cap A)}{\Pr(B)}
+&& \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\
+&= \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}
+&& \text{(@thm-law-conditional-prob applied to } \Pr(B \cap A) \text{)}
 \ea
 $$
 
-The second equality follows from @thm-law-conditional-prob applied to
-$\Pr(B \cap A) = \Pr(B \mid A) \cd \Pr(A)$.
-
 :::
+
+{{< slidebreak >}}
 
 :::{#exm-bayes}
 
@@ -41,17 +42,21 @@ Then:
   so the false positive rate is $\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01$
 - $\Pr(D) = 0.07$ (prevalence)
 
-By Bayes' theorem (@thm-bayes) and the law of total probability (@thm-total-prob):
-
 $$
 \ba
 \Pr(D \mid +)
 &= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+)}
-\\&= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+ \mid D) \cd \Pr(D) + \Pr(+ \mid \neg D) \cd \Pr(\neg D)}
-\\&= \frac{0.99 \cd 0.07}{0.99 \cd 0.07 + 0.01 \cd 0.93}
-\\&= \frac{0.0693}{0.0693 + 0.0093}
-\\&= \frac{0.0693}{0.0786}
-\\&\approx 0.88
+&& \text{(Bayes' theorem, @thm-bayes)} \\
+&= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+ \mid D) \cd \Pr(D) + \Pr(+ \mid \neg D) \cd \Pr(\neg D)}
+&& \text{(law of total probability, @thm-total-prob)} \\
+&= \frac{0.99 \cd 0.07}{0.99 \cd 0.07 + 0.01 \cd 0.93}
+&& \text{(substitute the given values)} \\
+&= \frac{0.0693}{0.0693 + 0.0093}
+&& \text{(multiply each term in the numerator and denominator)} \\
+&= \frac{0.0693}{0.0786}
+&& \text{(add the denominator's two terms)} \\
+&\approx 0.88
+&& \text{(divide)}
 \ea
 $$
 

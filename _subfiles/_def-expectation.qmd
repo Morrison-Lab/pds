@@ -23,6 +23,8 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 
 :::
 
+{{< slidebreak >}}
+
 :::{#exm-bernoulli-mean}
 #### Expectation of a Bernoulli random variable
 

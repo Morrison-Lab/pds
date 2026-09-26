@@ -29,6 +29,8 @@ which also covers material outside this page's scope
 
 # Probability axioms and conditional probability {#sec-prob-axioms}
 
+<!-- heading directly precedes the def-probability div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
 {{< include pds/_subfiles/_def-probability.qmd >}}
 
 {{< slidebreak >}}
@@ -49,6 +51,8 @@ which also covers material outside this page's scope
 
 # Random variables and distributions {#sec-random-variables}
 
+<!-- heading directly precedes the def-random-variable div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
 {{< include pds/_subfiles/_def-random-variable.qmd >}}
 
 {{< slidebreak >}}
@@ -56,6 +60,8 @@ which also covers material outside this page's scope
 {{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
 
 # Expectation {#sec-expectation}
+
+<!-- heading directly precedes the def-expectation div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
 
 {{< include pds/_subfiles/_def-expectation.qmd >}}
 
@@ -65,6 +71,8 @@ which also covers material outside this page's scope
 
 # Variance and covariance {#sec-variance-covariance}
 
+<!-- heading directly precedes the def-variance div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
 {{< slidebreak >}}
@@ -72,6 +80,8 @@ which also covers material outside this page's scope
 {{< include pds/_subfiles/_def-covariance.qmd >}}
 
 # Independence {#sec-independence}
+
+<!-- heading directly precedes the def-indpt div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
 
 {{< include pds/_subfiles/_def-independence.qmd >}}
 

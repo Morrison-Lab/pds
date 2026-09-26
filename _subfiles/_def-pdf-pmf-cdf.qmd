@@ -16,6 +16,8 @@ See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
 :::
 
+{{< slidebreak >}}
+
 :::{#def-pdf}
 #### Probability density function (PDF)
 
@@ -41,6 +43,8 @@ See also
 <https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
 
 :::
+
+{{< slidebreak >}}
 
 :::{#def-cdf}
 #### Cumulative distribution function (CDF)

@@ -19,6 +19,8 @@ So the symbol can remind you of its definition.
 
 :::
 
+{{< slidebreak >}}
+
 :::{#def-ident}
 
 #### Identically distributed
@@ -33,6 +35,8 @@ $$
 $$
 
 :::
+
+{{< slidebreak >}}
 
 :::{#def-iid}
 #### Independent and identically distributed

@@ -21,6 +21,8 @@ $$
 
 :::
 
+{{< slidebreak >}}
+
 :::{#exm-law-conditional-prob}
 
 #### Applying the law of conditional probability
@@ -35,8 +37,11 @@ regularly and has low blood pressure is:
 $$
 \ba
 \Pr(L \cap E) &= \Pr(L \mid E) \cd \Pr(E)
-\\&= 0.60 \cd 0.30
-\\&= 0.18
+&& \text{(law of conditional probability, @thm-law-conditional-prob)} \\
+&= 0.60 \cd 0.30
+&& \text{(substitute the given values)} \\
+&= 0.18
+&& \text{(multiply)}
 \ea
 $$
 
