@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-25 19:43:01 (PDT)
+Last modified: 2026-09-25 19:51:20 (PDT)
 
 > Probability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.
 
@@ -17,7 +17,7 @@ These lecture notes use:
 - variance and covariance
 - independence and IID random variables
 
-Some key results are listed here. Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202, WWU’s [previous course offerings](https://morrison-lab.github.io/mln/)). This page adapts its core results from the Morrison Lab’s [Probability chapter](https://morrison-lab.github.io/rme/probability.html), which also covers material outside this page’s scope (see [Additional resources](#sec-additional-resources)).
+Some key results are listed here. Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202, WWU’s [previous course offerings](https://morrison-lab.github.io/mln/)). This page adapts its core results from the Morrison Lab’s [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html), which also covers material outside this page’s scope (see [Additional resources](#sec-additional-resources)).
 
 # 1 Notation
 
@@ -40,7 +40,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 > 2.  The probability of the union of all outcomes (\\\Omega \stackrel{\text{def}}{=}\cup \mathscr{S}\\) is 1: \\\Pr(\Omega) = 1\\
 > 3.  For countably many mutually disjoint events \\A_1, A_2, \ldots\\ (where \\A_i \cap A_j = \emptyset\\ for all \\i \neq j\\), the probability of their union is the sum of their probabilities (*countable additivity*): \\\Pr\\\left(\bigcup\_{i=1}^{\infty} A_i\right) = \sum\_{i=1}^{\infty} \Pr(A_i)\\
 
-A full treatment of \\\sigma\\-algebras and measure-theoretic probability is beyond the scope of this prerequisites page; see rme’s [Probability chapter](https://morrison-lab.github.io/rme/probability.html) for the definitions this page’s results build on (conditional expectations against joint densities, Fubini-Tonelli, and so on).
+A full treatment of \\\sigma\\-algebras and measure-theoretic probability is beyond the scope of this prerequisites page; see rme’s [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html) for the definitions this page’s results build on (conditional expectations against joint densities, Fubini-Tonelli, and so on).
 
 > **NOTE:**
 >
@@ -182,7 +182,7 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 >
 > where the last equality follows by rearranging the double sum, grouping each term \\x\\ by its image \\y = g(x)\\.
 
-LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{}\\, we do not need to first find the distribution of \\g(X)\\; we can compute the expectation directly using the distribution of \\X\\. The continuous case is the density-weighted analogue of this argument; see rme’s [Probability chapter](https://morrison-lab.github.io/rme/probability.html#thm-lotus) for the fully rigorous continuous-case proof, which relies on a change-of-variables theorem beyond this page’s scope.
+LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{}\\, we do not need to first find the distribution of \\g(X)\\; we can compute the expectation directly using the distribution of \\X\\. The continuous case is the density-weighted analogue of this argument; see rme’s [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#thm-lotus) for the fully rigorous continuous-case proof, which relies on a change-of-variables theorem beyond this page’s scope.
 
 > **NOTE:**
 >
@@ -262,7 +262,7 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 >
 > *Proof*. \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(aX+bY - \operatorname{E}\mathopen{}\left\[aX+bY\right\]\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance, @def-variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(a(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}) + b(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right)\mathclose{}^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[a^2(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2 + 2(a \cdot b)(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) + b^2(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(expand the square)} \\ &= a^2\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{} + 2(a \cdot b)\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right\]\mathclose{} + b^2\operatorname{E}\mathopen{}\left\[(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + 2(a \cdot b) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(definitions of variance, @def-variance, and covariance, @def-cov)} \end{aligned} \\
 
-This corollary is why two variables’ covariance matters for combining them: if \\X\\ and \\Y\\ are [independent](#def-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\\ and the variance of their sum is just the sum of their variances. See rme’s [Probability chapter](https://morrison-lab.github.io/rme/probability.html#thm-var-lincom) for the general \\n\\-variable version and the vector/matrix forms of variance and covariance.
+This corollary is why two variables’ covariance matters for combining them: if \\X\\ and \\Y\\ are [independent](#def-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\\ and the variance of their sum is just the sum of their variances. See rme’s [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#thm-var-lincom) for the general \\n\\-variable version and the vector/matrix forms of variance and covariance.
 
 # 6 Independence
 
@@ -286,12 +286,12 @@ This corollary is why two variables’ covariance matters for combining them: if
 >
 > **Definition 13 (Independent and identically distributed)** A set of random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) if they are [statistically independent](#def-indpt) and [identically distributed](#def-ident).
 
-The IID assumption is one of the most common assumptions in introductory statistics: it says a sample \\X_1, \ldots, X_n\\ can be treated as \\n\\ independent draws from a single shared distribution. See rme’s [Probability chapter](https://morrison-lab.github.io/rme/probability.html#def-cind) for the conditional versions of these definitions (conditional independence, conditional identical distribution), which relax IID to hold only given a set of covariates — the assumption underlying most regression models.
+The IID assumption is one of the most common assumptions in introductory statistics: it says a sample \\X_1, \ldots, X_n\\ can be treated as \\n\\ independent draws from a single shared distribution. See rme’s [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#def-cind) for the conditional versions of these definitions (conditional independence, conditional identical distribution), which relax IID to hold only given a set of covariates — the assumption underlying most regression models.
 
 # 7 Additional resources
 
 - Miller ([2017](#ref-problifesaver))
-- Morrison Lab’s [Probability chapter](https://morrison-lab.github.io/rme/probability.html) (fuller treatment: joint densities, conditional expectations, Fubini-Tonelli, and a catalog of named distributions)
+- Morrison Lab’s [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html) (fuller treatment: joint densities, conditional expectations, Fubini-Tonelli, and a catalog of named distributions)
 
 # References
 
