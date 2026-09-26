@@ -1,0 +1,8 @@
+# Probability for Data Science
+
+> Probability prerequisites for data science courses
+
+## Pages
+
+- [Probability prerequisites](https://morrison-lab.github.io/pds/probability-prereqs.llms.md)
+- [Probability for Data Science](https://morrison-lab.github.io/pds/index.llms.md)
