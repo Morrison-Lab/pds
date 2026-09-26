@@ -2,9 +2,16 @@
 #### Variance
 
 The **variance** of a random variable $X$ is the expected squared
-deviation of $X$ from its own mean:
+deviation of $X$ from its own mean, where the deviation of $X$ from its
+mean is $\devn(X) \eqdef X - \E{X}$:
 
-$$\Var{X} \eqdef \E{(X - \E{X})^2}$$
+$$\Var{X} \eqdef \E{[\devn(X)]^2}$$
+
+::: {.callout-note}
+Expanding $\devn(X)$ gives the more commonly seen form
+$\Var{X} = \E{(X-\E{X})^2}$, which is the canonical starting point for
+variance in most treatments.
+:::
 
 :::
 
@@ -24,7 +31,8 @@ By linearity of expectation:
 $$
 \ba
 \Var{X}
-&\eqdef \E{(X-\E{X})^2} && \text{(definition of variance)} \\
+&\eqdef \E{[\devn(X)]^2} && \text{(definition of variance)} \\
+&= \E{(X-\E{X})^2} && \text{(definition of deviation from mean)} \\
 &=\E{X^2 - 2X\E{X} + \sqf{\E{X}}} && \text{(expand binomial square)} \\
 &=\E{X^2} - \E{2X\E{X}} + \E{\sqf{\E{X}}} && \text{(linearity of expectation)} \\
 &=\E{X^2} - 2\E{X}\E{X} + \sqf{\E{X}} && \text{(constants factor out of expectation)} \\
