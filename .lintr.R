@@ -26,5 +26,11 @@ rm(snake_case_ACROs1)
 exclusions <- list(
   `data-raw` = list(
     pipe_consistency_linter = Inf
-  )
+  ),
+  # `pds` is a self-referential symlink (`pds -> .`), so lintr::lint_dir()
+  # would otherwise recurse into it indefinitely, re-linting the whole repo
+  # (and the checked-out `.git/` internals) dozens of times over. Exclude it
+  # entirely; nothing under the symlink is content distinct from what's
+  # already linted at the repo root.
+  pds = Inf
 )

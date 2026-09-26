@@ -39,8 +39,9 @@ $$
 && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
 \\&= \paren{0 \cd (1-\pi)} + \paren{1 \cd \pi}
 && \text{(substitute Bernoulli PMF values)}
+\\&= 0 + \pi
+&& \text{(simplify each term)}
 \\&= \pi
-&& \text{(simplify)}
 \ea
 $$
 
