@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-25 19:51:20 (PDT)
+Last modified: 2026-09-26 15:16:07 (PDT)
 
 > Probability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.
 
@@ -200,9 +200,13 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Definition 8 (Variance)** The **variance** of a random variable \\X\\ is the expected squared deviation of \\X\\ from its own mean:
+> **Definition 8 (Variance)** The **variance** of a random variable \\X\\ is the expected squared deviation of \\X\\ from its own mean, where the deviation of \\X\\ from its mean is \\e(X) \stackrel{\text{def}}{=}X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\:
 >
-> \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{}\\
+> \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\[e(X)\]^2\right\]\mathclose{}\\
+>
+> > **NOTE:**
+> >
+> > Expanding \\e(X)\\ gives the more commonly seen form \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{}\\, which is the canonical starting point for variance in most treatments.
 
 > **NOTE:**
 >
@@ -212,7 +216,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > *Proof*. By linearity of expectation:
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of variance)} \\ &=\operatorname{E}\mathopen{}\left\[X^2 - 2X\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(expand binomial square)} \\ &=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[2X\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(linearity of expectation)} \\ &=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - 2\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(constants factor out of expectation)} \\ &=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(algebraic simplification)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\[e(X)\]^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of deviation from mean)} \\ &=\operatorname{E}\mathopen{}\left\[X^2 - 2X\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(expand binomial square)} \\ &=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[2X\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(linearity of expectation)} \\ &=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - 2\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(constants factor out of expectation)} \\ &=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(algebraic simplification)} \end{aligned} \\
 
 > **NOTE:**
 >
