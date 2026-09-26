@@ -1,13 +1,8 @@
-
----
-
 > Probability theory is the branch of mathematics concerned with
 formalizing and quantifying uncertainty.
 It is the foundation on which statistical inference is built:
 before we can reason about what data tell us about the world,
 we need a precise language for describing random phenomena.
-
----
 
 These lecture notes use:
 
@@ -26,7 +21,7 @@ offerings](https://morrison-lab.github.io/mln/)).
 This page adapts its core results from the Morrison Lab's
 [Probability chapter](https://morrison-lab.github.io/rme/probability.html),
 which also covers material outside this page's scope
-(see "Additional resources" below).
+(see [Additional resources](#sec-additional-resources)).
 
 # Notation {#sec-notation}
 
@@ -80,7 +75,7 @@ which also covers material outside this page's scope
 
 {{< include pds/_subfiles/_def-independence.qmd >}}
 
-# Additional resources
+# Additional resources {#sec-additional-resources}
 
 - @problifesaver
 - Morrison Lab's [Probability chapter](https://morrison-lab.github.io/rme/probability.html)

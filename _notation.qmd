@@ -1,3 +1,5 @@
+{{< include latex-macros/macros.qmd >}}
+
 This page follows the notation used throughout the [Morrison Lab's
 course materials](https://morrison-lab.github.io/rme/), summarized here.
 
