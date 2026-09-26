@@ -97,7 +97,7 @@ This corollary is why two variables' covariance matters for combining them:
 if $X$ and $Y$ are [independent](#def-indpt), $\Cov{X,Y}=0$
 and the variance of their sum is just the sum of their variances.
 See rme's
-[Probability chapter](https://morrison-lab.github.io/rme/probability.html#thm-var-lincom)
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#thm-var-lincom)
 for the general $n$-variable version and the vector/matrix forms of
 variance and covariance.
 

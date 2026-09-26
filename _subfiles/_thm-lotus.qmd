@@ -44,7 +44,7 @@ we do not need to first find the distribution of $g(X)$;
 we can compute the expectation directly using the distribution of $X$.
 The continuous case is the density-weighted analogue of this argument;
 see rme's
-[Probability chapter](https://morrison-lab.github.io/rme/probability.html#thm-lotus)
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#thm-lotus)
 for the fully rigorous continuous-case proof, which relies on a
 change-of-variables theorem beyond this page's scope.
 

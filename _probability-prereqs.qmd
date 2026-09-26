@@ -19,7 +19,7 @@ mathematical statistics course
 (e.g., UC Davis's Epi 202, WWU's [previous course
 offerings](https://morrison-lab.github.io/mln/)).
 This page adapts its core results from the Morrison Lab's
-[Probability chapter](https://morrison-lab.github.io/rme/probability.html),
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html),
 which also covers material outside this page's scope
 (see [Additional resources](#sec-additional-resources)).
 
@@ -88,7 +88,7 @@ which also covers material outside this page's scope
 # Additional resources {#sec-additional-resources}
 
 - @problifesaver
-- Morrison Lab's [Probability chapter](https://morrison-lab.github.io/rme/probability.html)
+- Morrison Lab's [Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html)
   (fuller treatment: joint densities, conditional expectations, Fubini-Tonelli,
   and a catalog of named distributions)
 

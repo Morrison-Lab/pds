@@ -54,7 +54,7 @@ The IID assumption is one of the most common assumptions in introductory
 statistics: it says a sample $X_1, \ldots, X_n$ can be treated as $n$
 independent draws from a single shared distribution.
 See rme's
-[Probability chapter](https://morrison-lab.github.io/rme/probability.html#def-cind)
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#def-cind)
 for the conditional versions of these definitions
 (conditional independence, conditional identical distribution),
 which relax IID to hold only given a set of covariates ---

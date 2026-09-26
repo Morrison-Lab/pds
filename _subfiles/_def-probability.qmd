@@ -23,7 +23,7 @@ and which satisfies:
 A full treatment of $\sigma$-algebras and measure-theoretic probability
 is beyond the scope of this prerequisites page;
 see rme's
-[Probability chapter](https://morrison-lab.github.io/rme/probability.html)
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html)
 for the definitions this page's results build on
 (conditional expectations against joint densities, Fubini-Tonelli, and so on).
 
