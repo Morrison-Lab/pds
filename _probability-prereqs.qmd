@@ -23,13 +23,10 @@ Most of this material should be review from an introductory probability or
 mathematical statistics course
 (e.g., UC Davis's Epi 202, WWU's [previous course
 offerings](https://morrison-lab.github.io/mln/)).
-For the deeper measure-theoretic development of probability
-(joint densities, conditional expectations against arbitrary joint
-distributions, Fubini–Tonelli) and for a catalog of named distributions
-used in epidemiology (Bernoulli, Poisson, Negative-Binomial, Weibull, ...),
-see the Morrison Lab's
+This page adapts its core results from the Morrison Lab's
 [Probability chapter](https://morrison-lab.github.io/rme/probability.html),
-which this page draws its core results from.
+which also covers material outside this page's scope
+(see "Additional resources" below).
 
 # Notation {#sec-notation}
 

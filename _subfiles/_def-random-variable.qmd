@@ -21,7 +21,7 @@ finite or countably infinite (e.g., a coin flip, a count),
 and **continuous** if its range is an interval of real numbers
 (e.g., a height, a waiting time).
 This distinction determines whether a
-[probability mass function](#def-pdf) (discrete) or
+[probability mass function](#def-pmf) (discrete) or
 [probability density function](#def-pdf) (continuous)
 describes $X$'s distribution.
 

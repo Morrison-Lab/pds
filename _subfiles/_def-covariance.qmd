@@ -49,7 +49,16 @@ $$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
 
 ::: notes
 
-This is why two variables' covariance matters for combining them:
+The proof is a direct expansion of @def-variance and @def-cov,
+analogous to the two-line proof of @lem-cov-xx above;
+we omit it here since this page's role is to state the result
+we later depend on, and leave its derivation as a review exercise.
+
+:::
+
+::: notes
+
+This corollary is why two variables' covariance matters for combining them:
 if $X$ and $Y$ are [independent](#def-indpt), $\Cov{X,Y}=0$
 and the variance of their sum is just the sum of their variances.
 See rme's
