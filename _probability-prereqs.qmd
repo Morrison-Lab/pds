@@ -79,7 +79,7 @@ which also covers material outside this page's scope
 
 - @problifesaver
 - Morrison Lab's [Probability chapter](https://morrison-lab.github.io/rme/probability.html)
-  (fuller treatment: joint densities, conditional expectations, Fubini–Tonelli,
+  (fuller treatment: joint densities, conditional expectations, Fubini-Tonelli,
   and a catalog of named distributions)
 
 # References {.unnumbered}

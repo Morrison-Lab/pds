@@ -23,7 +23,8 @@ $$
 \Cov{X,Y}
 &\eqdef \E{(X-\E{X})(Y-\E{Y})} && \text{(definition of covariance)} \\
 &= \E{XY - X\E{Y} - Y\E{X} + \E{X}\E{Y}} && \text{(expand the product)} \\
-&= \E{XY} - \E{X}\E{Y} - \E{Y}\E{X} + \E{X}\E{Y} && \text{(linearity of expectation)} \\
+&= \E{XY} - \E{X\E{Y}} - \E{Y\E{X}} + \E{\E{X}\E{Y}} && \text{(linearity of expectation)} \\
+&= \E{XY} - \E{X}\E{Y} - \E{Y}\E{X} + \E{X}\E{Y} && \text{(constants factor out of expectation)} \\
 &= \E{XY} - \E{X}\E{Y} && \text{(algebraic simplification)}
 \ea
 $$
@@ -41,16 +42,17 @@ $$\Cov{X,X} = \Var{X}$$
 
 ::: proof
 
+By the [alternative formula for covariance](#thm-alt-cov):
+
 $$
 \ba
 \Cov{X,X}
 &= \E{XX} - \E{X}\E{X}
-&& \text{(@thm-alt-cov)}
 \\&= \E{X^2} - \sqf{\E{X}}
-\\&= \Var{X}
-&& \text{(@thm-variance)}
 \ea
 $$
+
+which is exactly the [simplified expression for variance](#thm-variance).
 
 :::
 

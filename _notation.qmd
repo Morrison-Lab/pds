@@ -7,7 +7,7 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
   and their realized (observed) values with the matching lowercase letters
   ($x$, $y$, $z$).
   Some sources instead use uppercase/lowercase pairs from different
-  alphabets, or reserve uppercase entirely for matrices — always check a
+  alphabets, or reserve uppercase entirely for matrices --- always check a
   new source's own notation section before assuming ours.
 - **Probability** is denoted $\Pr()$ or $\P()$ for a discrete event or a
   probability mass function, and $\p()$ for a continuous density.
@@ -21,7 +21,7 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
   $\perp$) or state independence only in prose.
 - We write $\eqdef$ for an equality that holds **by definition**,
   to distinguish it from an equality that follows from other
-  facts — most sources do not make this distinction typographically and
+  facts --- most sources do not make this distinction typographically and
   use a bare $=$ for both.
 - The full macro list, with more notational variants, is in
   [`latex-macros`](https://github.com/d-morrison/macros).

@@ -25,6 +25,6 @@ is beyond the scope of this prerequisites page;
 see rme's
 [Probability chapter](https://morrison-lab.github.io/rme/probability.html)
 for the definitions this page's results build on
-(conditional expectations against joint densities, Fubini–Tonelli, and so on).
+(conditional expectations against joint densities, Fubini-Tonelli, and so on).
 
 :::

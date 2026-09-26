@@ -53,7 +53,7 @@ See rme's
 [Probability chapter](https://morrison-lab.github.io/rme/probability.html#def-cind)
 for the conditional versions of these definitions
 (conditional independence, conditional identical distribution),
-which relax IID to hold only given a set of covariates —
+which relax IID to hold only given a set of covariates ---
 the assumption underlying most regression models.
 
 :::
