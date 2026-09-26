@@ -1,0 +1,30 @@
+:::{#def-random-variable}
+#### Random variable
+
+A **random variable** is a variable whose value is a numerical outcome
+of a random phenomenon.
+Formally, it is a function from a sample space $\Omega$
+(the set of all possible outcomes of an experiment)
+to the real numbers $\mathbb{R}$.
+
+We use uppercase letters ($X$, $Y$, $Z$, ...) for random variables,
+and lowercase letters ($x$, $y$, $z$, ...) for their realized (observed) values.
+The **range** of a random variable $X$, denoted $\rangef{X}$,
+is the set of values $X$ can take.
+
+:::
+
+::: notes
+
+A random variable is **discrete** if its range $\rangef{X}$ is
+finite or countably infinite (e.g., a coin flip, a count),
+and **continuous** if its range is an interval of real numbers
+(e.g., a height, a waiting time).
+This distinction determines whether a
+[probability mass function](#def-pdf) (discrete) or
+[probability density function](#def-pdf) (continuous)
+describes $X$'s distribution.
+
+See also: <https://en.wikipedia.org/wiki/Random_variable>
+
+:::

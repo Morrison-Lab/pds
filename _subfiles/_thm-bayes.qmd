@@ -1,0 +1,62 @@
+:::{#thm-bayes}
+
+#### Bayes' theorem
+
+For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$:
+
+$$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}$$
+
+:::
+
+::: proof
+
+Apply @def-conditional-prob to both $\Pr(A \mid B)$ and $\Pr(B \mid A)$:
+
+$$
+\ba
+\Pr(A \mid B)
+&= \frac{\Pr(A \cap B)}{\Pr(B)}
+\\&= \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}
+\ea
+$$
+
+The second equality follows from @thm-law-conditional-prob applied to
+$\Pr(B \cap A) = \Pr(B \mid A) \cd \Pr(A)$.
+
+:::
+
+:::{#exm-bayes}
+
+#### Positive predictive value of a medical test
+
+Suppose a disease test has 99% sensitivity and 99% specificity,
+and the prevalence of the disease in the population is 7%.
+
+Let $D$ be the event "person has the disease"
+and $+$ be the event "test is positive".
+Then:
+
+- $\Pr(+ \mid D) = 0.99$ (sensitivity)
+- $\Pr(\neg + \mid \neg D) = 0.99$ (specificity),
+  so the false positive rate is $\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01$
+- $\Pr(D) = 0.07$ (prevalence)
+
+By Bayes' theorem (@thm-bayes) and the law of total probability (@thm-total-prob):
+
+$$
+\ba
+\Pr(D \mid +)
+&= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+)}
+\\&= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+ \mid D) \cd \Pr(D) + \Pr(+ \mid \neg D) \cd \Pr(\neg D)}
+\\&= \frac{0.99 \cd 0.07}{0.99 \cd 0.07 + 0.01 \cd 0.93}
+\\&= \frac{0.0693}{0.0693 + 0.0093}
+\\&= \frac{0.0693}{0.0786}
+\\&\approx 0.88
+\ea
+$$
+
+Even with a highly accurate test (99% sensitive and 99% specific),
+only about 88% of people who test positive actually have the disease,
+because the disease prevalence is relatively low (7%).
+
+:::

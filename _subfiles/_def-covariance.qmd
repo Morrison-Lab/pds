@@ -1,0 +1,60 @@
+:::{#def-cov}
+#### Covariance
+
+For any two random variables $X, Y$:
+
+$$\Cov{X,Y} \eqdef \E{(X - \E X)(Y - \E Y)}$$
+
+:::
+
+:::{#thm-alt-cov}
+#### Alternative formula for covariance
+
+$$\Cov{X,Y}= \E{XY} - \E{X} \E{Y}$$
+
+:::
+
+:::{#lem-cov-xx}
+#### The covariance of a variable with itself is its variance
+
+For any random variable $X$:
+
+$$\Cov{X,X} = \Var{X}$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\Cov{X,X}
+&= \E{XX} - \E{X}\E{X}
+&& \text{(@thm-alt-cov)}
+\\&= \E{X^2} - \sqf{\E{X}}
+\\&= \Var{X}
+&& \text{(@thm-variance)}
+\ea
+$$
+
+:::
+
+:::{#cor-var-lincom2}
+#### Variance of a sum of two random variables
+
+For any two random variables $X$ and $Y$ and scalars $a$ and $b$:
+
+$$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
+
+:::
+
+::: notes
+
+This is why two variables' covariance matters for combining them:
+if $X$ and $Y$ are [independent](#def-indpt), $\Cov{X,Y}=0$
+and the variance of their sum is just the sum of their variances.
+See rme's
+[Probability chapter](https://morrison-lab.github.io/rme/probability.html#thm-var-lincom)
+for the general $n$-variable version and the vector/matrix forms of
+variance and covariance.
+
+:::

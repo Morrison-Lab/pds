@@ -1,0 +1,30 @@
+:::{#def-probability}
+#### Probability measure
+
+A **probability measure**, often denoted $\Pr()$ or $\P()$,
+is a function whose domain is a
+[$\sigma$-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra)
+of possible outcomes, $\mathscr{S}$,
+and which satisfies:
+
+1. For any event $A \in \mathscr{S}$, $\Pr(A) \ge 0$.
+2. The probability of the union of all outcomes ($\Omega \eqdef \cup \mathscr{S}$) is 1:
+   $$\Pr(\Omega) = 1$$
+3. For countably many mutually disjoint events $A_1, A_2, \ldots$
+   (where $A_i \cap A_j = \emptyset$ for all $i \neq j$),
+   the probability of their union is the sum of their probabilities
+   (*countable additivity*):
+   $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \Pr(A_i)$$
+
+:::
+
+::: notes
+
+A full treatment of $\sigma$-algebras and measure-theoretic probability
+is beyond the scope of this prerequisites page;
+see rme's
+[Probability chapter](https://morrison-lab.github.io/rme/probability.html)
+for the definitions this page's results build on
+(conditional expectations against joint densities, Fubini–Tonelli, and so on).
+
+:::

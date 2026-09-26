@@ -1,0 +1,43 @@
+:::{#thm-law-conditional-prob}
+
+#### Law of conditional probability
+
+For any two events $A$ and $B$ with $\Pr(B) > 0$:
+
+$$\Pr(A \cap B) = \Pr(A \mid B) \cd \Pr(B)$$
+
+:::
+
+::: proof
+
+Rearranging @def-conditional-prob:
+
+$$
+\ba
+\Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)}
+\\ \Pr(A \cap B) &= \Pr(A \mid B) \cd \Pr(B) && \text{(multiply both sides by } \Pr(B) \text{)}
+\ea
+$$
+
+:::
+
+:::{#exm-law-conditional-prob}
+
+#### Applying the law of conditional probability
+
+Suppose 30% of adults exercise regularly ($\Pr(E) = 0.30$),
+and among adults who exercise regularly,
+60% have low blood pressure ($\Pr(L \mid E) = 0.60$).
+
+Then the probability that a randomly selected adult both exercises
+regularly and has low blood pressure is:
+
+$$
+\ba
+\Pr(L \cap E) &= \Pr(L \mid E) \cd \Pr(E)
+\\&= 0.60 \cd 0.30
+\\&= 0.18
+\ea
+$$
+
+:::

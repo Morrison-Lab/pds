@@ -1,0 +1,25 @@
+This page follows the notation used throughout the [Morrison Lab's
+course materials](https://morrison-lab.github.io/rme/), summarized here.
+
+- **Random variables** are denoted with uppercase letters ($X$, $Y$, $Z$),
+  and their realized (observed) values with the matching lowercase letters
+  ($x$, $y$, $z$).
+  Some sources instead use uppercase/lowercase pairs from different
+  alphabets, or reserve uppercase entirely for matrices — always check a
+  new source's own notation section before assuming ours.
+- **Probability** is denoted $\Pr()$ or $\P()$ for a discrete event or a
+  probability mass function, and $\p()$ for a continuous density.
+  Some sources use $P()$ (unstylized) throughout for both, or reserve $f()$
+  for densities and mass functions and use $P()$ only for event probabilities.
+- **Expectation** is denoted $\E{\cdot}$. Some sources write
+  $\operatorname{E}[\cdot]$ or $\mathbb{E}[\cdot]$ with square brackets
+  instead of our braces-with-shorthand notation; the meaning is the same.
+- **Independence** is denoted $\ind$ (read "$X \ind Y$" as "$X$ is
+  independent of $Y$"). Some sources instead write $X \perp Y$ (a single
+  $\perp$) or state independence only in prose.
+- We write $\eqdef$ for an equality that holds **by definition**,
+  to distinguish it from an equality that follows from other
+  facts — most sources do not make this distinction typographically and
+  use a bare $=$ for both.
+- The full macro list, with more notational variants, is in
+  [`latex-macros`](https://github.com/d-morrison/macros).

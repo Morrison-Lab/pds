@@ -1,0 +1,59 @@
+:::{#def-indpt}
+
+#### Statistical independence
+
+A set of random variables $\X1n$ are **statistically independent**
+if their joint [probability](#def-probability) is equal to the product
+of their marginal [probabilities](#def-probability):
+
+$$\Pr(\Xx1n) = \prodi1n{\Pr(X_i=x_i)}$$
+
+:::
+
+::: notes
+
+::::{.callout-tip}
+The symbol for independence, $\ind$, is essentially just $\prod$ upside-down.
+So the symbol can remind you of its definition.
+::::
+
+:::
+
+:::{#def-ident}
+
+#### Identically distributed
+
+A set of random variables $\X1n$ are **identically distributed**
+if they have the same range $\rangef{X}$ and if
+their marginal distributions $\P(X_1=x_1), ..., \P(X_n=x_n)$ are all
+equal to some shared distribution $\P(X=x)$:
+
+$$
+\forall i\in \set{1:n}, \forall x \in \rangef{X}: \P(X_i=x) = \P(X=x)
+$$
+
+:::
+
+:::{#def-iid}
+#### Independent and identically distributed
+
+A set of random variables $\dsn{X}$ are **independent and identically
+distributed** (shorthand: "$X_i\ \iid$") if they are
+[statistically independent](#def-indpt) and
+[identically distributed](#def-ident).
+
+:::
+
+::: notes
+
+The IID assumption is one of the most common assumptions in introductory
+statistics: it says a sample $X_1, \ldots, X_n$ can be treated as $n$
+independent draws from a single shared distribution.
+See rme's
+[Probability chapter](https://morrison-lab.github.io/rme/probability.html#def-cind)
+for the conditional versions of these definitions
+(conditional independence, conditional identical distribution),
+which relax IID to hold only given a set of covariates —
+the assumption underlying most regression models.
+
+:::

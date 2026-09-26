@@ -1,0 +1,91 @@
+:::{#thm-lotus}
+
+#### Law of the Unconscious Statistician (LOTUS)
+
+**Discrete case.**
+For any function $g$ of a *discrete* random variable $X$:
+
+$$\E{g(X)} = \sum_{x \in \rangef{X}} g(x) \cd \P(X=x)$$
+
+**Continuous case.**
+For any function $g$ of a *continuous* random variable $X$ with density $\p(X=x)$:
+
+$$\E{g(X)} = \int_{x \in \rangef{X}} g(x) \cd \p(X=x)\, dx$$
+
+:::
+
+::: proof
+
+We prove the discrete case.
+
+Let $Y = g(X)$.
+By @def-expectation applied to $Y$:
+
+$$
+\ba
+\E{g(X)}
+&= \E{Y} && \text{(substitution } Y = g(X) \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y) && \text{(definition of expectation for discrete r.v.)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(g(X)=y) && \text{(substitute } Y = g(X) \text{ in probability expression)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{\substack{x \in \rangef{X} \\ g(x) = y}} \P(X=x) && \text{(law of total probability over } \{x : g(x) = y\} \text{)}
+\\&= \sum_{x \in \rangef{X}} g(x) \cd \P(X=x) && \text{(rearrange double sum grouping by } g(x) \text{)}
+\ea
+$$
+
+where the last equality follows by rearranging the double sum,
+grouping each term $x$ by its image $y = g(x)$.
+
+:::
+
+::: notes
+
+LOTUS says that to compute $\E{g(X)}$,
+we do not need to first find the distribution of $g(X)$;
+we can compute the expectation directly using the distribution of $X$.
+The continuous case is the density-weighted analogue of this argument;
+see rme's
+[Probability chapter](https://morrison-lab.github.io/rme/probability.html#thm-lotus)
+for the fully rigorous continuous-case proof, which relies on a
+change-of-variables theorem beyond this page's scope.
+
+:::
+
+:::{#exm-lotus}
+#### Expected value of $X^2$ for a Bernoulli variable
+
+Let $X \sim \Ber(\pi)$.
+By LOTUS (@thm-lotus, discrete case):
+
+$$
+\ba
+\E{X^2}
+&= \sum_{x \in \set{0,1}} x^2 \cd \P(X=x)
+\\&= 0^2 \cd \P(X=0) + 1^2 \cd \P(X=1)
+\\&= 0^2 \cd (1-\pi) + 1^2 \cd \pi
+\\&= \pi
+\ea
+$$
+
+:::
+
+:::{#exm-lotus-continuous}
+#### Expected value of $X^2$ for a Uniform(0,1) variable
+
+Let $X \sim \text{Uniform}(0,1)$, so $\p(X=x) = 1$ for $x \in [0,1]$.
+By LOTUS (@thm-lotus, continuous case):
+
+$$
+\ba
+\E{X^2}
+&= \int_0^1 x^2 \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)}
+\\&= \int_0^1 x^2 \cd 1\,dx
+&& \text{(}\p(X=x) = 1\text{ on } [0,1]\text{)}
+\\&= \sb{\frac{x^3}{3}}_0^1
+&& \text{(antiderivative of } x^2\text{)}
+\\&= \frac{1}{3}.
+&& \text{(evaluate at the bounds)}
+\ea
+$$
+
+:::

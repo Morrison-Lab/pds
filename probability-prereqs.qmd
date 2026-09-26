@@ -1,0 +1,13 @@
+---
+title: "Probability prerequisites"
+format:
+  html: default
+  revealjs:
+    output-file: probability-prereqs-slides.html
+  pdf:
+    output-file: probability-prereqs-handout.pdf
+  docx:
+    output-file: probability-prereqs.docx
+---
+
+{{< include pds/_probability-prereqs.qmd >}}

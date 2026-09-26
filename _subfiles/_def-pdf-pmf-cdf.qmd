@@ -1,0 +1,65 @@
+:::{#def-pmf}
+#### Probability mass function (PMF)
+
+If $X$ is a discrete [random variable](#def-random-variable),
+the **probability mass function** of $X$ at value $x$,
+denoted $f(x)$, $f_X(x)$, $\P(x)$, $\P_X(x)$, or $\P(X=x)$,
+is the probability that $X$ takes exactly the value $x$:
+
+$$\P(X=x) \eqdef \Pr(\{X=x\})$$
+
+:::
+
+::: notes
+
+See also <https://en.wikipedia.org/wiki/Probability_mass_function>
+
+:::
+
+:::{#def-pdf}
+#### Probability density function (PDF)
+
+If $X$ is a continuous [random variable](#def-random-variable),
+the **probability density** of $X$ at value $x$,
+denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
+is the limit of the [probability](#def-probability) that $X$ falls in an
+interval around $x$, divided by the width of that interval,
+as that width shrinks to 0:
+
+$$
+\ba
+f(x) &\eqdef  \lim_{\Delta \rightarrow 0}
+   \frac{\P(X \in [x, x + \Delta])}{\Delta}
+\ea
+$$
+
+:::
+
+::: notes
+
+See also
+<https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
+
+:::
+
+:::{#def-cdf}
+#### Cumulative distribution function (CDF)
+
+For a random variable $X$ (discrete or continuous),
+its **cumulative distribution function** is:
+
+$$F(t) \eqdef \Pr(X\le t), \quad t\in\mathbb{R}.$$
+
+:::
+
+::: notes
+
+The CDF is always defined, whether $X$ is discrete or continuous,
+and it fully characterizes $X$'s distribution.
+For a continuous $X$ with density $f$,
+$F(t) = \int_{-\infty}^t f(x)\,dx$
+and, wherever $F$ is differentiable, $f(t) = \deriv{t}F(t)$.
+
+See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
+
+:::
