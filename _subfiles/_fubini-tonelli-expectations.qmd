@@ -165,6 +165,8 @@ simply does not apply.
 ```{r}
 #| code-fold: true
 #| message: false
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
 set.seed(204)
 n <- 400
 x_dep <- runif(n)
@@ -190,6 +192,17 @@ plotly::plot_ly() |>
     yaxis = list(title = "y", range = c(0, 1)),
     legend = list(orientation = "h", y = -0.2)
   )
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+
+cat(
+  "*(This scatter plot is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
 ```
 
 Samples from the joint distribution of $(X, X)$ (red, on the diagonal)
@@ -235,6 +248,8 @@ $$
 ```{r}
 #| code-fold: true
 #| message: false
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
 n_grid <- 51
 x_seq <- seq(0, 1, length.out = n_grid)
 y_seq <- seq(0, 1, length.out = n_grid)
@@ -253,6 +268,17 @@ plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
   ))
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+
+cat(
+  "*(This 3D surface is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
 ```
 
 Joint density $f_{X,Y}(x, y) = 2$ on the triangular support
