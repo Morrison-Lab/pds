@@ -67,3 +67,39 @@ and, wherever $F$ is differentiable, $f(t) = \deriv{t}F(t)$.
 See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 
 :::
+
+{{< slidebreak >}}
+
+:::{#def-quantile-function}
+#### Quantile function (population inverse CDF)
+
+For a random variable $X$
+with [cumulative distribution function (CDF)](#def-cdf) $F$,
+its population quantile function
+(generalized inverse of $F$)
+is:
+
+$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p\le 1.$$
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-density-vs-CDF}
+#### Density function is derivative of CDF
+
+The density function $f(t)$ or $\p(T=t)$ for a random variable $T$ at value $t$ is equal to the derivative of the cumulative probability function $F(t) \eqdef P(T\le t)$; that is:
+
+$$f(t) \eqdef \deriv{t} F(t)$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-density-sums-to-one}
+#### Density functions integrate to 1
+
+For any density function $f(x)$:
+
+$$\int_{x \in \rangef{X}} f(x)\, dx = 1$$
+:::
+

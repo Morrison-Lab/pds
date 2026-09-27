@@ -28,3 +28,68 @@ for the definitions this page's results build on
 (conditional expectations against joint densities, Fubini-Tonelli, and so on).
 
 :::
+
+{{< slidebreak >}}
+
+:::{#thm-prob-subset}
+#### Probability of a subset's intersection
+
+If $A$ and $B$ are statistical events and $A\subseteq B$, then $\Pr(A \cap B) = \Pr(A)$.
+
+:::
+
+::: proof
+Since $A \subseteq B$, $A \cap B = A$, so $\Pr(A \cap B) = \Pr(A)$.
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-total-prob-1}
+#### An event and its complement sum to 1
+
+$$\Pr(A) + \Pr(\neg A) = 1$$
+
+:::
+
+::: proof
+By properties 2 and 3 of @def-probability.
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-p-neg0}
+#### Complement rule
+
+$$\Pr(\neg A) = 1 - \Pr(A)$$
+
+:::
+
+::: proof
+By @thm-total-prob-1 and algebra.
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-p-neg}
+#### Complement rule in probability ($\pi$) notation
+
+If the probability of an outcome $A$ is $\Pr(A)=\pi$,
+then the probability that $A$ does not occur is:
+
+$$\Pr(\neg A)= 1 - \pi$$
+
+:::
+
+::: proof
+
+Using @cor-p-neg0:
+
+$$
+\ba
+\Pr(\neg A) &= 1 - \Pr(A)
+\\ &= 1 - \pi
+\ea
+$$
+
+:::
+

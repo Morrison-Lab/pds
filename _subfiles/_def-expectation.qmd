@@ -25,26 +25,121 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 
 {{< slidebreak >}}
 
-:::{#exm-bernoulli-mean}
-#### Expectation of a Bernoulli random variable
+:::{#thm-bernoulli-mean}
+#### Expectation of the Bernoulli distribution
 
-Let $X \sim \Ber(\pi)$, so $\rangef{X} = \{0,1\}$ with
-$\P(X=1) = \pi$ and $\P(X=0) = 1-\pi$.
-By @def-expectation:
+The expectation of a Bernoulli random variable with parameter $\pi$ is:
+
+$$\E{X} = \pi$$
+:::
+
+{{< slidebreak >}}
+
+::: proof
 
 $$
 \ba
 \E{X}
-&= \sum_{x\in \set{0,1}} x \cd \P(X=x)
-&& \text{(definition of expectation for discrete r.v.)}
-\\&= \paren{0 \cd \P(X=0)} + \paren{1 \cd \P(X=1)}
-&& \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
-\\&= \paren{0 \cd (1-\pi)} + \paren{1 \cd \pi}
-&& \text{(substitute Bernoulli PMF values)}
-\\&= 0 + \pi
-&& \text{(simplify each term)}
-\\&= \pi
+&= \sum_{x\in \rangef{X}} x \cd \P(X=x) && \text{(definition of expectation for discrete r.v.)}
+\\&= \sum_{x\in \set{0,1}} x \cd \P(X=x) && \text{(range of Bernoulli r.v. is } \{0, 1\} \text{)}
+\\&= \paren{0 \cd \P(X=0)} + \paren{1 \cd \P(X=1)} && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
+\\&= \paren{0 \cd (1-\pi)} + \paren{1 \cd \pi} && \text{(substitute Bernoulli PMF values)}
+\\&= 0 + \pi && \text{(multiplication by 0 and 1)}
+\\&= \pi && \text{(addition of 0)}
 \ea
 $$
 
 :::
+
+{{< slidebreak >}}
+
+:::{#thm-surv-mean}
+#### Expectation of time-to-event variables
+
+If $T$ is a non-negative random variable, then:
+
+$$\E{T} = \int_{t=0}^{\infty} \surv(t)\,dt$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+We prove the continuous case, in which $T$ has a density $\pdf$.
+The result follows from applying Tonelli's
+theorem to the function
+$g(t, u) = \pdf(u) \cdot \indicp{0 \le t \le u}$ on the product space
+$[0, \infty) \times [0, \infty)$: $g$ is nonnegative everywhere and
+vanishes outside the (unbounded) triangular region
+$D = \{(t, u) : 0 \le t \le u < \infty\}$, so the iterated integrals
+over $D$ are exchangeable.
+
+Since $\pdf(u) \ge 0$, Tonelli's theorem
+(the nonnegative case of Fubini–Tonelli) applies, and we may
+exchange the order of integration over $D$:
+
+$$
+\ba
+\E{T}
+&= \int_{u=0}^{\infty} u\,\pdf(u)\,du\\
+&= \int_{u=0}^{\infty}\paren{\int_{t=0}^{u} 1\,dt}\pdf(u)\,du\\
+&= \int_{u=0}^{\infty}\int_{t=0}^{u} \pdf(u)\,dt\,du\\
+&= \int_{t=0}^{\infty}\int_{u=t}^{\infty} \pdf(u)\,du\,dt\\
+&= \int_{t=0}^{\infty}\P(T>t)\,dt\\
+&= \int_{t=0}^{\infty}\surv(t)\,dt.
+\ea
+$$
+
+See [@statproofbook:mean-nnrvar] for an alternative presentation of this proof.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-fubini-survfn}
+
+#### Mean of an exponential random variable via survival function
+
+Let $T \sim \mathrm{Exponential}(\lambda)$, so $\surv(t) = \ef{-\lambda t}$
+for $t \ge 0$.
+By @thm-surv-mean:
+
+$$
+\ba
+\E{T}
+&= \int_0^\infty \surv(t)\,dt\\
+&= \int_0^\infty \ef{-\lambda t}\,dt\\
+&= \sb{-\frac{1}{\lambda}\ef{-\lambda t}}_0^\infty\\
+&= \frac{1}{\lambda},
+\ea
+$$
+
+confirming the standard result $\E{T} = 1/\lambda$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-expectation-matrix}
+
+#### Expectation of a random matrix
+
+For a random matrix $\matr{A}$ of size $m \times n$
+with $(i,j)$-th element $A_{ij}$,
+the **expectation** $\Expp\matr{A}$ is the $m \times n$ matrix
+whose $(i,j)$-th element is $\E{A_{ij}}$:
+
+$$
+\Expp\matr{A} \eqdef \pmat{
+  \E{A_{11}} & \E{A_{12}} & \cdots & \E{A_{1n}} \\
+  \E{A_{21}} & \E{A_{22}} & \cdots & \E{A_{2n}} \\
+  \vdots     & \vdots     & \ddots & \vdots     \\
+  \E{A_{m1}} & \E{A_{m2}} & \cdots & \E{A_{mn}}
+}
+$$
+
+In other words, expectation is applied **element-wise** to a random matrix.
+
+:::
+

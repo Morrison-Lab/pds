@@ -1,0 +1,258 @@
+## Fubini–Tonelli for expectations
+
+For expectations against probability measures we use the
+measure-theoretic form of Fubini–Tonelli,
+which holds on any σ-finite measure space.
+The σ-finiteness condition is automatic for probability measures
+(every probability measure is finite, hence σ-finite),
+yielding @cor-fubini-joint directly.
+
+{{< slidebreak >}}
+
+:::{#cor-fubini-joint}
+
+#### Joint-distribution form (without independence; corollary of Fubini–Tonelli)
+
+Let $(X, Y)$ be jointly distributed random variables
+whose joint distribution has a density $f_{X,Y}$
+with respect to a product of σ-finite reference measures
+$\mu_X \otimes \mu_Y$ on $\rangef{X} \times \rangef{Y}$,
+and let $h : \rangef{X} \times \rangef{Y} \to \mathbb{R}$ be measurable.
+If either
+
+(a) $h(X, Y) \ge 0$ almost surely, or
+
+(b) $\E{\abs{h(X, Y)}} < \infty$,
+
+then the expectation of $h(X, Y)$ can be written as an iterated integral
+against $f_{X,Y}$, with the order of integration exchangeable:
+
+$$
+\ba
+\E{h(X, Y)}
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} h(x, y)\,f_{X,Y}(x, y)\,d\mu_Y(y)}\,d\mu_X(x)
+\\&= \int_{\rangef{Y}}\paren{\int_{\rangef{X}} h(x, y)\,f_{X,Y}(x, y)\,d\mu_X(x)}\,d\mu_Y(y).
+\ea
+$$
+
+The choice of reference measures covers three cases:
+
+- **Both continuous:** $\mu_X = \mu_Y = \text{Lebesgue measure}$;
+  $f_{X,Y}$ is the joint probability density function (PDF),
+  and $\int g(x)\,d\mu_X(x) = \int g(x)\,dx$.
+- **Both discrete:** $\mu_X = \mu_Y = \text{counting measure}$;
+  $f_{X,Y}(x,y) = \P(X = x,\, Y = y)$ is the joint probability mass function (PMF),
+  and $\int g(x)\,d\mu_X(x) = \sum_{x \in \rangef{X}} g(x)$.
+- **Mixed** (one continuous, one discrete):
+  one reference measure is Lebesgue and the other is counting;
+  $f_{X,Y}(x,y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)$
+  (or $\P(X = x \mid Y = y)\,f_Y(y)$ if $X$ is discrete and $Y$ continuous),
+  and the iterated integrals combine an ordinary integral with a sum.
+  The conditional densities/PMFs here are defined the same way as in
+  @def-cond-mixed, just conditioning on $Y$ instead of $X$.
+
+:::
+
+::: proof
+Apply Fubini–Tonelli with
+$\mu_1 = \mu_X$ and $\mu_2 = \mu_Y$ to the integrand
+$h(x,y)\,f_{X,Y}(x,y)$ on $\rangef{X} \times \rangef{Y}$.
+Lebesgue measure and counting measure on a countable set are each
+σ-finite, so $\mu_X \otimes \mu_Y$ is σ-finite in all three cases.
+The relevant condition is (a) when $h \ge 0$ and
+(b) when $\E{\abs{h(X, Y)}} < \infty$.
+Independence is not required.
+When $X$ and $Y$ are independent,
+$f_{X,Y}(x,y) = f_X(x)\,f_Y(y)$
+(or $\P(X=x,Y=y) = \P(X=x)\,\P(Y=y)$ in the discrete case),
+and the iterated integrals factor into separate integrals over the marginals.
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-fubini-prob}
+
+#### Expectation of a product of independent variables
+
+Let $X \sim \mathrm{Uniform}(0, 1)$ and $Y \sim \mathrm{Uniform}(0, 2)$,
+independently distributed.
+Compute $\E{XY}$.
+
+We apply @cor-fubini-joint (both-continuous case) with $h(x, y) = xy$.
+Since $X$ and $Y$ are independent with densities $f_X(x) = 1$ on $[0,1]$
+and $f_Y(y) = \tfrac{1}{2}$ on $[0,2]$,
+the joint density factors as $f_{X,Y}(x,y) = f_X(x)\,f_Y(y) = \tfrac{1}{2}$,
+and $\mu_X = \mu_Y = \text{Lebesgue measure}$:
+
+$$
+\ba
+\E{XY}
+&= \int_0^1 \paren{\int_0^2 xy \cd \tfrac{1}{2}\,dy}\,dx
+\\&= \int_0^1 x\paren{\frac{1}{2}\int_0^2 y\,dy}\,dx
+\\&= \int_0^1 x \cd \frac{1}{2} \cd \sb{\frac{y^2}{2}}_0^2\,dx
+\\&= \int_0^1 x \cd \frac{1}{2} \cd 2\,dx
+\\&= \int_0^1 x\,dx
+\\&= \frac{1}{2}
+\ea
+$$
+
+As a check: $\E{X} = \tfrac{1}{2}$, $\E{Y} = 1$, and $\E{X}\E{Y} = \tfrac{1}{2}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-lie}
+
+#### Law of iterated expectations
+
+For any two random variables $X$ and $Y$:
+
+$$\E{Y} = \E{\E{Y \mid X}}$$
+
+::: notes
+
+Alternate names for this identity include:
+the **tower rule**,
+the **tower property**,
+the **law of total expectation**,
+and the **smoothing theorem**.
+
+:::
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+**Discrete case.**
+When $X$ and $Y$ are discrete,
+applying @def-expectation to $\E{\E{Y \mid X}}$
+and then the law of total probability (@thm-total-prob)
+applied to the countable partition $\{X = x : x \in \rangef{X}\}$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x} \cd \P(X=x) && \text{(definition of expectation of } \E{Y \mid X} \text{)}
+\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x)} \cd \P(X=x) && \text{(definition of conditional expectation } \E{Y \mid X=x} \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x) \cd \P(X=x) && \text{(exchange order of summation)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y) && \text{(law of total probability over } X \text{)}
+\\&= \E{Y} && \text{(definition of expectation of } Y \text{)}
+\ea
+$$
+
+**Continuous case.**
+When $X$ and $Y$ are continuous,
+applying @def-expectation to $\E{\E{Y \mid X}}$
+and then using @def-cond-expectation for $\E{Y \mid X=x}$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \int_{x \in \rangef{X}} \E{Y \mid X=x} \cd \p(X=x)\, dx
+\\&= \int_{x \in \rangef{X}} \paren{\int_{y \in \rangef{Y}} y \cd \p(Y=y \mid X=x)\, dy} \cd \p(X=x)\, dx
+\\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(Y=y \mid X=x) \cd \p(X=x)\, dx}\, dy
+\\&= \int_{y \in \rangef{Y}} y \cd \p(Y=y)\, dy
+\\&= \E{Y}
+\ea
+$$
+
+where the third equality exchanges the order of integration by
+condition (b) of
+Fubini–Tonelli (the absolute-integrability
+case, **Fubini's theorem**); this theorem requires $\E{\abs{Y}} < \infty$,
+which is implicit in $\E{Y}$ being defined,
+and the fourth equality uses
+$\int_{x} \p(Y=y \mid X=x) \cd \p(X=x)\, dx = \int_{x} \p(X=x, Y=y)\, dx = \p(Y=y)$
+(marginalization of the joint density).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-conditional-lie}
+#### Conditional law of iterated expectations
+
+For random variables $X$, $Y$, and $Z$:
+
+$$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$$
+
+::: notes
+
+This identity is the tower rule
+applied conditionally on $Z$.
+
+:::
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+For each fixed value $z$ with positive probability or density:
+
+**Discrete case.**
+Conditioning on $Z=z$,
+and applying the law of total probability
+to the partition $\{X=x : x \in \rangef{X}\}$
+under the conditional distribution given $Z=z$:
+
+$$
+\ba
+\E{\E{Y \mid X,Z} \mid Z=z}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \P(X=x \mid Z=z) && \text{(definition of expectation given } Z=z \text{)}
+\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x,Z=z)} \cd \P(X=x \mid Z=z) && \text{(definition of conditional expectation } \E{Y \mid X=x,Z=z} \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x,Z=z) \cd \P(X=x \mid Z=z) && \text{(exchange order of summation)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid Z=z) && \text{(law of total probability given } Z=z \text{)}
+\\&= \E{Y \mid Z=z} && \text{(definition of conditional expectation given } Z=z \text{)}
+\ea
+$$
+
+**Continuous case.**
+Conditioning on $Z=z$,
+and integrating over $X$
+under the conditional density $\p(X=x \mid Z=z)$:
+
+$$
+\ba
+\E{\E{Y \mid X,Z} \mid Z=z}
+&= \int_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
+\\&= \E{Y \mid Z=z}
+\ea
+$$
+
+Therefore,
+as random variables of $Z$,
+$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-lie}
+
+#### Marginal expectation from conditional expectations
+
+Suppose $X$ is a binary random variable indicating treatment assignment ($X=1$ treated, $X=0$ control),
+with $\P(X=1) = 0.5$,
+and suppose the outcome $Y$ has conditional expectations:
+
+$$\E{Y \mid X=1} = 10, \quad \E{Y \mid X=0} = 6$$
+
+By the law of iterated expectations (@thm-lie):
+
+$$
+\ba
+\E{Y}
+&= \E{\E{Y \mid X}}
+\\&= \E{Y \mid X=1} \cd \P(X=1) + \E{Y \mid X=0} \cd \P(X=0)
+\\&= 10 \cd 0.5 + 6 \cd 0.5
+\\&= 5 + 3
+\\&= 8
+\ea
+$$
+
+:::

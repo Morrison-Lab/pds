@@ -1,9 +1,7 @@
 :::{#def-variance}
 #### Variance
 
-The **variance** of a random variable $X$ is the expected squared
-deviation of $X$ from its own mean, where the deviation of $X$ from its
-mean is $\devn(X) \eqdef X - \E{X}$:
+The **variance** of a random variable $X$ is the [expectation](#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
 
 $$\Var{X} \eqdef \E{[\devn(X)]^2}$$
 
@@ -20,7 +18,8 @@ $$\Var{X} = \E{(X - \E{X})^2}$$
 
 ::: proof
 
-Substituting the definition of $\devn(X)$ from @def-variance:
+Substituting the definition of $\devn(X)$ from @def-deviation-pop-mean
+into @def-variance:
 
 $$
 \Var{X} \eqdef \E{[\devn(X)]^2} = \E{(X - \E{X})^2}.
@@ -34,7 +33,7 @@ This is the more commonly seen form of the variance definition, and
 the canonical starting point in most treatments; it's given here as a
 theorem rather than the primary definition to keep $\devn(X)$ as the
 definition's single building block, matching the [deviation from the
-mean](#def-variance) notation used above.
+mean](#def-deviation-pop-mean) notation used above.
 
 :::
 
@@ -63,6 +62,125 @@ $$
 \ea
 $$
 
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-total-variance}
+#### Law of total variance
+
+For random variables $X$ and $Y$:
+
+$$\Var{Y} = \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}$$
+
+where
+$\Var{Y \mid X} \eqdef \E{(Y-\E{Y \mid X})^2 \mid X}$.
+
+::: notes
+
+Alternate names include:
+the **conditional variance formula**,
+**Eve's law**,
+and the **variance decomposition formula**.
+
+:::
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+Write
+$Y-\E{Y} = \paren{Y-\E{Y \mid X}} + \paren{\E{Y \mid X}-\E{Y}}$.
+Then:
+
+$$
+\ba
+\sqf{Y-\E{Y}}
+&= \sqf{Y-\E{Y \mid X}}
+  + \sqf{\E{Y \mid X}-\E{Y}}
+  + 2\paren{Y-\E{Y \mid X}}\paren{\E{Y \mid X}-\E{Y}}
+\ea
+$$
+
+Taking expectation:
+
+$$
+\ba
+\Var{Y}
+&= \E{\sqf{Y-\E{Y \mid X}}}
+  + \E{\sqf{\E{Y \mid X}-\E{Y}}}
+\\&\quad
+  + 2\E{\paren{Y-\E{Y \mid X}}\paren{\E{Y \mid X}-\E{Y}}}
+\ea
+$$
+
+For the cross-term:
+
+**Discrete case.**
+
+$$
+\ba
+\E{\paren{Y-\E{Y \mid X}}\paren{\E{Y \mid X}-\E{Y}}}
+&= \sum_{x \in \rangef{X}}
+   \E{
+     \paren{Y-\E{Y \mid X}}
+     \paren{\E{Y \mid X}-\E{Y}}
+     \mid X=x
+   }
+   \cd \P(X=x)
+\\&= \sum_{x \in \rangef{X}}
+   \paren{\E{Y \mid X=x}-\E{Y}}
+   \cd \E{Y-\E{Y \mid X=x}\mid X=x}
+   \cd \P(X=x)
+\\&= 0
+\ea
+$$
+
+**Continuous case.**
+
+$$
+\ba
+\E{\paren{Y-\E{Y \mid X}}\paren{\E{Y \mid X}-\E{Y}}}
+&= \int_{x \in \rangef{X}}
+   \E{
+     \paren{Y-\E{Y \mid X}}
+     \paren{\E{Y \mid X}-\E{Y}}
+     \mid X=x
+   }
+   \cd \p(X=x)\, dx
+\\&= \int_{x \in \rangef{X}}
+   \paren{\E{Y \mid X=x}-\E{Y}}
+   \cd \E{Y-\E{Y \mid X=x}\mid X=x}
+   \cd \p(X=x)\, dx
+\\&= 0
+\ea
+$$
+
+Therefore:
+
+$$
+\ba
+\Var{Y}
+&= \E{\sqf{Y-\E{Y \mid X}}}
+  + \E{\sqf{\E{Y \mid X}-\E{Y}}}
+\\&= \E{\Var{Y \mid X}}
+  + \Var{\E{Y \mid X}}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+::: {#def-precision}
+#### Precision
+
+The **precision** of a random variable $X$, often denoted $\tau(X)$, $\tau_X$, or shorthanded as $\tau$, is
+the inverse of that random variable's [variance](#def-variance); that is:
+
+$$\tau(X) \eqdef \inv{\Var{X}}$$
 :::
 
 {{< slidebreak >}}
