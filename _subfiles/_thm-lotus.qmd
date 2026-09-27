@@ -42,11 +42,12 @@ grouping each term $x$ by its image $y = g(x)$.
 LOTUS says that to compute $\E{g(X)}$,
 we do not need to first find the distribution of $g(X)$;
 we can compute the expectation directly using the distribution of $X$.
-The continuous case is the density-weighted analogue of this argument;
-see rme's
-[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html#thm-lotus)
-for the fully rigorous continuous-case proof, which relies on a
-change-of-variables theorem beyond this page's scope.
+The continuous case is the density-weighted analogue of this argument,
+but a fully rigorous proof needs the general change-of-variables
+theorem for integrals against a pushforward measure --- approximating
+$g$ by simple functions and passing to the limit --- which is beyond
+this page's scope
+[@billingsley1995probability; @gut2013; @CaseBerg01; @wp:lotus].
 
 :::
 
