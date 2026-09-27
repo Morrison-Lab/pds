@@ -7,11 +7,34 @@ mean is $\devn(X) \eqdef X - \E{X}$:
 
 $$\Var{X} \eqdef \E{[\devn(X)]^2}$$
 
-::: {.callout-note}
-Expanding $\devn(X)$ gives the more commonly seen form
-$\Var{X} = \E{(X-\E{X})^2}$, which is the canonical starting point for
-variance in most treatments.
 :::
+
+{{< slidebreak >}}
+
+:::{#thm-variance-expanded}
+#### Variance as expected squared deviation from the mean
+
+$$\Var{X} = \E{(X - \E{X})^2}$$
+
+::: proof
+
+Substituting the definition of $\devn(X)$ from @def-variance:
+
+$$
+\Var{X} \eqdef \E{[\devn(X)]^2} = \E{(X - \E{X})^2}.
+$$
+
+:::
+
+:::
+
+::: notes
+
+This is the more commonly seen form of the variance definition, and
+the canonical starting point in most treatments; it's given here as a
+theorem rather than the primary definition to keep $\devn(X)$ as the
+single reusable building block (see the standard deviation and
+covariance definitions below).
 
 :::
 
