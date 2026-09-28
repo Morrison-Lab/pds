@@ -375,13 +375,11 @@ and $n$ to represent discrete-valued exposures.
 :::{#def-event-rate}
 #### Event rate
 
-For a count outcome $Y$ with exposure magnitude $t$,
-the **event rate** (denoted $\lambda$)
-is defined as the mean of $Y$ divided by the exposure magnitude:
+For a count $Y$ observed over a fixed, known [exposure magnitude](#def-exposure) $t > 0$,
+the **event rate**, denoted $\lambda$,
+is the mean of $Y$ divided by the exposure magnitude:
 
-$$\mu \eqdef \Expp[Y \mid T=t]$$
-
-$$\lambda \eqdef \frac{\mu}{t}$$ {#eq-def-event-rate}
+$$\lambda \eqdef \frac{\E{Y}}{t}$$ {#eq-def-event-rate}
 
 :::
 
@@ -390,8 +388,8 @@ Event rate is somewhat analogous to odds for a binary outcome:
 both are transformations of the mean.
 The event rate removes the exposure magnitude from the mean,
 so counts observed over different exposures can be compared on one scale.
-In count regression models, the transformation $\lambda = \mu/t$ is not part of the model's link function,
-and the exposure magnitude is handled differently from the other covariates
+Regression models for counts use the same decomposition,
+with the rate depending on covariates and the exposure magnitude known
 (see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 :::
 
@@ -400,7 +398,8 @@ and the exposure magnitude is handled differently from the other covariates
 :::{#thm-mean-vs-event-rate}
 #### Transformation function from event rate to mean
 
-For a count variable with mean $\mu$, event rate $\lambda$, and exposure magnitude $t > 0$:
+If a count $Y$ is observed over exposure magnitude $t > 0$ with event rate $\lambda$,
+then its mean $\mu \eqdef \E{Y}$ is:
 
 $$\mu = \lambda \cdot t$$ {#eq-lambda-to-mu}
 
@@ -411,8 +410,9 @@ By @def-event-rate:
 
 $$
 \ba
-\lambda &\eqdef \frac{\mu}{t} && (\text{definition of event rate}) \\
-\mu &= \lambda \cdot t && (\text{multiply both sides by } t > 0)
+\lambda &\eqdef \frac{\E{Y}}{t} && (\text{definition of event rate}) \\
+\E{Y} &= \lambda \cdot t && (\text{multiply both sides by } t > 0) \\
+\mu &= \lambda \cdot t && (\mu \eqdef \E{Y})
 \ea
 $$
 :::
@@ -446,19 +446,21 @@ $$
 :::{#thm-non-exposed}
 #### No exposure means no expected events
 
+For each exposure magnitude $t \ge 0$,
+let $Y_t$ be the count observed over exposure $t$.
 If the mean count is proportional to the exposure magnitude,
-$\E{Y \mid T=t} = \lambda \cdot t$ for all $t \ge 0$ with one finite rate $\lambda$,
+$\E{Y_t} = \lambda \cdot t$ for all $t \ge 0$ with one finite rate $\lambda$,
 then there are no expected events without exposure:
 
-$$\Expp[Y \mid T=0] = 0$$
+$$\E{Y_0} = 0$$
 
 :::
 
 ::: proof
 $$
 \ba
-\Expp[Y \mid T=0]
-&= \lambda \cdot 0 && (\text{evaluate } \E{Y \mid T = t} = \lambda t \text{ at } t = 0) \\
+\E{Y_0}
+&= \lambda \cdot 0 && (\text{evaluate } \E{Y_t} = \lambda t \text{ at } t = 0) \\
 &= 0 && (\text{multiplication by zero; } \lambda \text{ is finite})
 \ea
 $$
@@ -467,9 +469,9 @@ $$
 ::: notes
 
 The hypothesis carries the content here.
-@def-event-rate alone cannot give $\E{Y \mid T = 0} = 0$,
-since $\lambda = \mu / t$ is undefined at $t = 0$;
-the result holds for a model that assumes a rate $\lambda$
+@def-event-rate alone cannot give $\E{Y_0} = 0$,
+since $\lambda = \E{Y}/t$ is undefined at $t = 0$;
+the result holds for a model that assumes one rate $\lambda$
 shared across exposure magnitudes, including $t = 0$.
 
 :::
@@ -482,16 +484,20 @@ shared across exposure magnitudes, including $t = 0$.
 If a subject is observed for $t = 0$ person-years,
 no follow-up time has elapsed,
 so under a constant-rate model
-the expected number of incident events is $\Expp[Y \mid T=0] = 0$.
+the expected number of incident events is $\E{Y_0} = 0$.
 :::
 
 {{< slidebreak >}}
 
 :::{.callout-important}
 
-The exposure magnitude, $T$, is *similar* to a covariate in linear or logistic regression.
-However, there is an important difference: in count regression, **there is no intercept corresponding to $\Expp[Y|T=0]$**.
-In other words, this model assumes that if there is no exposure, there can't be any events.
+A mean proportional to exposure, $\E{Y_t} = \lambda t$,
+has no term that stays nonzero at $t = 0$:
+a model of this form says that with no exposure, no events are expected.
+A mean with an added constant, such as $\E{Y_t} = c + \lambda t$ with $c > 0$,
+would expect $c$ events even with no exposure.
+Regression models for counts keep the proportional form when they add covariates
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 :::
 
