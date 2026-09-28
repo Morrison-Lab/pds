@@ -274,7 +274,7 @@ $$
 $$
 
 **Variance.**
-The same steps, cancelling two factors instead of one, give $\E{X(X-1)}$:
+The same steps, canceling two factors instead of one, give $\E{X(X-1)}$:
 
 $$
 \ba
