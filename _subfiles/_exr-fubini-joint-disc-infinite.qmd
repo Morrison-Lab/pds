@@ -26,6 +26,10 @@ guarantees the order of this now-infinite double sum is exchangeable
 --- unlike the finite case, elementary algebra alone
 could not establish this.
 
+The derivation uses the standard geometric-series facts
+$\sum_{y=0}^{\infty} p^y = \frac{1}{1-p}$ and
+$\sum_{y=0}^{\infty} y\,p^y = \frac{p}{(1-p)^2}$
+(e.g. @CaseBerg01).
 By @cor-fubini-joint (both-discrete case), summing over $y$ first
 for each fixed $x$:
 
@@ -33,24 +37,29 @@ $$
 \ba
 \E{X + Y}
 &= \sum_{x=0}^{\infty} \sum_{y=0}^{\infty} (x + y)\,\P(X = x,\, Y = y)
+&& \text{(joint-distribution form of Fubini--Tonelli)}
 \\&= \sum_{x=0}^{\infty} \sum_{y=0}^{\infty} (x + y)(1-p)^2 p^{x+y}
+&& \text{(substitute the joint PMF)}
 \\&= \sum_{x=0}^{\infty} (1-p)^2 p^x \sum_{y=0}^{\infty} (x + y)\,p^y
+&& \text{(factor } (1-p)^2 p^x \text{ out of the inner sum)}
 \\&= \sum_{x=0}^{\infty} (1-p)^2 p^x
   \paren{x \sum_{y=0}^{\infty} p^y + \sum_{y=0}^{\infty} y\,p^y}
+&& \text{(split the inner sum; factor out } x \text{)}
 \\&= \sum_{x=0}^{\infty} (1-p)^2 p^x
   \paren{\frac{x}{1-p} + \frac{p}{(1-p)^2}}
+&& \text{(geometric-series facts)}
 \\&= \sum_{x=0}^{\infty} p^x \sb{x(1-p) + p}
+&& \text{(multiply } (1-p)^2 \text{ into the parentheses)}
 \\&= (1-p) \sum_{x=0}^{\infty} x\,p^x + p \sum_{x=0}^{\infty} p^x
+&& \text{(split the sum; factor out the constants)}
 \\&= (1-p) \cd \frac{p}{(1-p)^2} + p \cd \frac{1}{1-p}
+&& \text{(geometric-series facts)}
 \\&= \frac{p}{1-p} + \frac{p}{1-p}
+&& \text{(cancel } 1 - p \text{)}
 \\&= \frac{2p}{1-p}
+&& \text{(add)}
 \ea
 $$
-
-using the standard geometric-series facts
-$\sum_{y=0}^{\infty} p^y = \frac{1}{1-p}$ and
-$\sum_{y=0}^{\infty} y\,p^y = \frac{p}{(1-p)^2}$
-(e.g. @CaseBerg01).
 
 As a check, $\E{X} = \E{Y} = \frac{p}{1-p}$
 (the mean of this Geometric distribution; @CaseBerg01),

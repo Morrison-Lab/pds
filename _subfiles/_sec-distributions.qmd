@@ -710,10 +710,20 @@ using $\E{Y \mid \Lambda} = \Varr(Y \mid \Lambda) = \Lambda$
 
 $$
 \ba
-\Expp[Y] &= \E{\E{Y \mid \Lambda}} = \E{\Lambda} = \mu \\
-\Var{Y} &= \E{\Var{Y \mid \Lambda}} + \Var{\E{Y \mid \Lambda}}
-= \E{\Lambda} + \Var{\Lambda}
-= \mu + \frac{\mu^2}{\rho}
+\Expp[Y]
+&= \E{\E{Y \mid \Lambda}}
+&& (\text{law of iterated expectations}) \\
+&= \E{\Lambda}
+&& (\E{Y \mid \Lambda} = \Lambda) \\
+&= \mu
+&& (\text{mean of the gamma distribution}) \\
+\Var{Y}
+&= \E{\Var{Y \mid \Lambda}} + \Var{\E{Y \mid \Lambda}}
+&& (\text{law of total variance}) \\
+&= \E{\Lambda} + \Var{\Lambda}
+&& (\Var{Y \mid \Lambda} = \E{Y \mid \Lambda} = \Lambda) \\
+&= \mu + \frac{\mu^2}{\rho}
+&& (\text{mean and variance of the gamma distribution})
 \ea
 $$
 

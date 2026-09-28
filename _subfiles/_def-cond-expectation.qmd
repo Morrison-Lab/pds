@@ -148,9 +148,12 @@ $$
 \ba
 \p(X=`r x0`) &= \frac{1}{\sigma_X\sqrt{2\pi}}
   \e{-\frac{(`r x0`-\mu_X)^2}{2\sigma_X^2}}
+&& \text{(normal density at } x = `r x0` \text{)}
 \\&= \frac{1}{`r round(sigma_x, 4)`\sqrt{2\pi}}
   \e{-\frac{(`r x0`-`r round(mu_x, 4)`)^2}{2(`r round(sigma_x, 4)`)^2}}
+&& \text{(substitute } \mu_X \text{ and } \sigma_X \text{)}
 \\&\approx `r round(marg_dens_x0, 4)`
+&& \text{(evaluate)}
 \ea
 $$
 
@@ -165,35 +168,30 @@ and variance reduced by a factor of $1-\rho^2$:
 $$
 \ba
 \p(Y=y \mid X=`r x0`) &= \frac{\p(X=`r x0`,\,Y=y)}{\p(X=`r x0`)}
+&& \text{(definition of the conditional PDF)}
 \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
   \e{-\frac{1}{2(1-\rho^2)}\sb{\frac{(`r x0`-\mu_X)^2}{\sigma_X^2}
   - \frac{2\rho(`r x0`-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y}
   + \frac{(y-\mu_Y)^2}{\sigma_Y^2}} + \frac{(`r x0`-\mu_X)^2}{2\sigma_X^2}}
+&& \text{(substitute both densities; combine prefactors and exponents)}
 \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
   \e{-\frac{\rho^2(`r x0`-\mu_X)^2}{2\sigma_X^2(1-\rho^2)}
   + \frac{\rho(`r x0`-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)}
   - \frac{(y-\mu_Y)^2}{2\sigma_Y^2(1-\rho^2)}}
+&& \text{(combine the } (`r x0`-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)}
 \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
   \e{-\frac{1}{2\sigma_Y^2(1-\rho^2)}
   \sb{\rho^2\frac{\sigma_Y^2}{\sigma_X^2}(`r x0`-\mu_X)^2
   - 2\rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)(y-\mu_Y)
   + (y-\mu_Y)^2}}
+&& \text{(factor } -\tfrac{1}{2\sigma_Y^2(1-\rho^2)} \text{ out of the exponent)}
 \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
   \e{-\frac{\paren{y - \sb{\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)}}^2}{2\sigma_Y^2(1-\rho^2)}}
+&& \text{(the bracket is a perfect square in } y \text{)}
 \ea
 $$
 
-The first equality substitutes the joint and marginal densities
-and combines their prefactors and exponents;
-the second equality combines the two $(`r x0`-\mu_X)^2$ terms
-using $1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2}$;
-the third equality factors $-\tfrac{1}{2\sigma_Y^2(1-\rho^2)}$
-out of the bracket
-(multiplying through confirms it reproduces the previous line);
-and the fourth equality completes the square in $y$,
-since expanding
-$\paren{y - \sb{\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)}}^2$
-reproduces exactly the bracketed quadratic in the third equality.
+Multiplying out each of the last two exponents reproduces the one before it.
 
 So $Y \mid X = `r x0` \sim \ndist{`r round(cond_mean, 2)`,\, `r round(cond_sd, 2)`^2}$:
 the conditional mean, `r round(cond_mean, 2)` g,
@@ -281,7 +279,9 @@ $$
 \ba
 \E{Y \mid X = `r x0`}
 &= \int_{-\infty}^{\infty} y \cd \p(Y=y \mid X=`r x0`)\,dy
+&& \text{(definition of conditional expectation)}
 \\&= `r round(cond_mean, 2)` \text{ g}
+&& \text{(the mean of a normal distribution is its location parameter)}
 \ea
 $$
 
@@ -403,8 +403,11 @@ By @def-cond-mixed, since $Y \mid X=x$ is Bernoulli:
 $$
 \ba
 \E{Y \mid X = x} &= 0 \cd \P(Y=0 \mid X=x) + 1 \cd \P(Y=1 \mid X=x)
+&& \text{(definition of conditional expectation, mixed case)}
 \\&= \P(Y=1 \mid X=x)
+&& \text{(simplify)}
 \\&= \frac{1}{1 + \e{-(`r sprintf("%.4f", b0)` - `r sprintf("%.4f", abs(b1))`\, x)}}
+&& \text{(invert the logit)}
 \ea
 $$
 

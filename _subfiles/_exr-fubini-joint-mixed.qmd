@@ -29,11 +29,17 @@ By @cor-fubini-joint (mixed case):
 $$
 \ba
 \E{X}
-&= \sum_{y \in \{0,1\}} \int_0^{y+1} x\,f_{X,Y}(x,\, y)\,dx \\
+&= \sum_{y \in \{0,1\}} \int_0^{y+1} x\,f_{X,Y}(x,\, y)\,dx
+&& \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\
 &= \int_0^1 x \cdot 0.4\,dx
-   + \int_0^2 x \cdot 0.3\,dx \\
-&= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 \\
-&= 0.2 + 0.6 = 0.8
+   + \int_0^2 x \cdot 0.3\,dx
+&& \text{(expand the sum over } y \in \{0, 1\} \text{; substitute } f_{X,Y} \text{)} \\
+&= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2
+&& \text{(} \textstyle\int_0^b x\,dx = b^2/2 \text{)} \\
+&= 0.2 + 0.6
+&& \text{(multiply)} \\
+&= 0.8
+&& \text{(add)}
 \ea
 $$
 
