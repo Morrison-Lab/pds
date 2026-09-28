@@ -4,11 +4,9 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:23:33 (PDT)
+Last modified: 2026-09-28 01:38:07 (PDT)
 
-# 1 Core properties of probabilities
-
-## 1.1 Defining probabilities
+## 1 Defining probabilities
 
 > **NOTE:**
 >
@@ -102,7 +100,7 @@ for every finite collection of mutually disjoint events. Countable additivity im
 >
 > **Example 5 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi = 1/6\\, so by [Corollary 2](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
 
-## 1.2 Conditional probability
+## 2 Conditional probability
 
 > **NOTE:**
 >
@@ -176,6 +174,6 @@ for every finite collection of mutually disjoint events. Countable additivity im
 >
 > Even with a highly accurate test (99% sensitive and 99% specific), only about 88% of people who test positive actually have the disease, because the disease prevalence is relatively low (7%).
 
-# References
+## References
 
 Back to top

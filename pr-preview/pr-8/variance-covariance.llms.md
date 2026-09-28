@@ -4,11 +4,9 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:23:33 (PDT)
+Last modified: 2026-09-28 01:38:07 (PDT)
 
-# 1 Variance and covariance
-
-## 1.1 Deviation, error, and noise
+## 1 Deviation, error, and noise
 
 > **NOTE:**
 >
@@ -48,7 +46,7 @@ See:
 >
 > **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation \\e(5) = 5 - 3.5 = 1.5\\, and a roll of \\y = 2\\ has deviation \\e(2) = 2 - 3.5 = -1.5\\.
 
-## 1.2 Variance and related characteristics
+## 2 Variance and related characteristics
 
 > **NOTE:**
 >
@@ -180,7 +178,7 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 >
 > **Example 8 (Precision and standard deviation of a fair coin flip)** In [Example 3](#exm-variance-bernoulli), a fair coin flip has \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\\, so its precision is \\\tau(X) = 1 / (1/4) = 4\\ and its standard deviation is \\\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} = \sqrt{1/4} = 1/2\\.
 
-## 1.3 Covariance
+## 3 Covariance
 
 > **NOTE:**
 >
@@ -366,7 +364,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 This corollary is why two variables’ covariance matters for combining them: if \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), then \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\\ ([Theorem 5](#thm-indpt-uncorrelated)), and the variance of their sum is just the sum of their variances.
 
-# References
+## References
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 

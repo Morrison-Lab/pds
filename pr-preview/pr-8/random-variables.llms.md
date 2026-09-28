@@ -1,12 +1,12 @@
-# Random variables and distribution functions
+# Random variables
 
 Code
 
 Published
 
-Last modified: 2026-09-28 01:23:33 (PDT)
+Last modified: 2026-09-28 01:38:07 (PDT)
 
-# 1 Random variables
+## 1 Random variables
 
 > **NOTE:**
 >
@@ -58,7 +58,7 @@ Every continuous random variable in these notes also has a [probability density 
 >
 > **Example 4 (A uniformly distributed random variable)** Let \\X \sim \text{Uniform}(0, 1)\\ ([Definition 5](#def-uniform)), so \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. Taking \\a = b = x\\ gives \\\Pr(X = x) = x - x = 0\\ for every \\x \in \[0,1\]\\. Taking \\a = 0\\ and \\b = 1\\ gives \\\Pr(0 \le X \le 1) = 1\\, so by the [complement rule](probability-basics.llms.md#cor-p-neg0) \\X\\ falls outside \\\[0, 1\]\\ with probability 0, and \\\Pr(X = x) = 0\\ for every \\x\\ outside \\\[0, 1\]\\ as well. So \\X\\ is continuous. Its range, \\\[0, 1\]\\, is uncountable.
 
-# 2 Characteristics of probability distributions
+## 2 Characteristics of probability distributions
 
 > **NOTE:**
 >
@@ -355,7 +355,7 @@ Taking \\B = \mathbb{R}\\ gives \\\int\_{-\infty}^{\infty} \operatorname{p}(X = 
 >
 > \\\Pr(X = 1,\\ Y \le 1) = \int_0^1 \tfrac{1}{4}\\dy = \tfrac{1}{4}\\
 
-## 2.1 Survival, hazard, and cumulative hazard functions
+## 3 Survival, hazard, and cumulative hazard functions
 
 > **NOTE:**
 >
@@ -488,7 +488,7 @@ For a continuous random variable \\T \ge 0\\ whose density is continuous at all 
 
 \\ f(t) \xrightarrow\[\int\_{u=t}^\infty f(u)\\du\]{f(t)/{\lambda}(t)} \operatorname{S}(t) \xrightarrow\[-\operatorname{log}\mathopen{}\left\\\operatorname{S}(t)\right\\\mathclose{}\]{} {\Lambda}(t) \xrightarrow\[{\Lambda}'(t)\]{} {\lambda}(t) \xrightarrow\[\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\]{} \eta(t) \\
 
-# References
+## References
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 

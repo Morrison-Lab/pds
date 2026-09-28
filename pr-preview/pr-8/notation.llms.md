@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:23:33 (PDT)
+Last modified: 2026-09-28 01:38:07 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -16,17 +16,17 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 - We write \\\stackrel{\text{def}}{=}\\ for an equality that holds **by definition**, to distinguish it from an equality that follows from other facts — most sources do not make this distinction typographically and use a bare \\=\\ for both.
 - The full macro list, with more notational variants, is in [`latex-macros`](https://github.com/d-morrison/macros).
 
-# 1 Stochastic vs. probabilistic vs. random
+## 1 Stochastic vs. probabilistic vs. random
 
 The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions.
 
-## 1.1 Key distinction: modeling approach vs. phenomena
+### 1.1 Key distinction: modeling approach vs. phenomena
 
 As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
 
 > *Stochasticity* and *randomness* are technically distinct concepts: the former refers to a modeling approach, while the latter describes phenomena; in everyday conversation these terms are often used interchangeably.
 
-## 1.2 Definitions
+### 1.2 Definitions
 
 **Random** describes something that occurs by chance, without a deterministic pattern. It is the most general term, used to describe variables or occurrences whose outcome cannot be predicted precisely, only probabilistically. For example, we speak of “random variables” and “random events”.
 
@@ -38,7 +38,7 @@ As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
 
 **Probabilistic** refers to any model, reasoning, or method that explicitly involves probability theory. Probabilistic models assign probabilities to events or outcomes; they focus on quantifying and reasoning about uncertainty based on known or estimated distributions. While all stochastic models are probabilistic (since they use probabilities), not all probabilistic models need to describe processes evolving in time.
 
-## 1.3 Summary of usage
+### 1.3 Summary of usage
 
 | Term | What it describes | Typical use | Example |
 |----|----|----|----|
@@ -50,14 +50,14 @@ Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
 
 While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.
 
-## 1.4 Additional resources
+### 1.4 Additional resources
 
 - [Wikipedia: Stochastic](https://en.wikipedia.org/wiki/Stochastic)
 - [Wikipedia: Stochastic process](https://en.wikipedia.org/wiki/Stochastic_process)
 - [Mathematics Stack Exchange: What’s the difference between stochastic and random?](https://math.stackexchange.com/questions/114373/whats-the-difference-between-stochastic-and-random)
 - [Cross Validated: Probability model vs statistical model vs stochastic model](https://stats.stackexchange.com/questions/421462/probability-model-vs-statistical-model-vs-stochastic-model)
 
-# References
+## References
 
 Adler, Robert J., and Jonathan E. Taylor. 2009. *Random Fields and Geometry*. Springer. <https://doi.org/10.1007/978-0-387-48116-6>.
 

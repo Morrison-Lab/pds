@@ -1,4 +1,4 @@
-# Key distributions and the Central Limit Theorem
+# Key distributions
 
 Code
 
@@ -14,9 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:23:33 (PDT)
-
-# 1 Key probability distributions
+Last modified: 2026-09-28 01:38:07 (PDT)
 
 Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
 
@@ -44,13 +42,13 @@ Table 1: Distributions typically used for outcome models
 
 Table 2: Distributions typically used for test statistics
 
-## 1.1 The Bernoulli distribution
+## 1 The Bernoulli distribution
 
 > **NOTE:**
 >
 > **Example 1 (A coin flip)** The [Bernoulli distribution](random-variables.llms.md#def-bernoulli) describes a binary outcome. The indicator of heads on one flip of a fair coin is \\\operatorname{Ber}(1/2)\\. By the [expectation of the Bernoulli distribution](expectation.llms.md#thm-bernoulli-mean), \\X \sim \operatorname{Ber}(\pi)\\ has mean \\\pi\\, and by the [variance of a Bernoulli random variable](variance-covariance.llms.md#exm-variance-bernoulli), it has variance \\\pi(1 - \pi)\\.
 
-## 1.2 The Poisson distribution
+## 2 The Poisson distribution
 
 > **NOTE:**
 >
@@ -324,7 +322,7 @@ The offset needs no covariates: with a single exposure \\t\\ and an unknown rate
 >
 > \\ \begin{aligned} Z &\sim \operatorname{Pois}(\mu_X + \mu_Y) && (\text{sum of independent Poissons}) \\ &= \operatorname{Pois}(12 + 18) && (\text{substitute region means}) \\ &= \operatorname{Pois}(30) && (\text{evaluate sum}) \end{aligned} \\
 
-## 1.3 The Negative-Binomial distribution
+## 3 The Negative-Binomial distribution
 
 > **NOTE:**
 >
@@ -359,7 +357,7 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 >
 > **Example 9 (Overdispersion relative to the Poisson)** With \\\mu = 4\\ and \\\rho = 2\\, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 4 + 16/2 = 12\\, three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
 
-## 1.4 Weibull distribution
+## 4 Weibull distribution
 
 > **NOTE:**
 >
@@ -391,66 +389,7 @@ When \\\alpha=1\\, the Weibull distribution reduces to the exponential distribut
 >
 > **Example 10 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 8](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
 
-# 2 The Central Limit Theorem
-
-The sum of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. [Theorem 9](#thm-clt) makes this precise.
-
-> **NOTE:**
->
-> **Theorem 9 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
->
-> \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z) \\
->
-> where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the [standard normal distribution](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\.
-
-This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 27.1). Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.
-
-In practice, the theorem justifies approximating \\S_n\\ by a normal distribution with mean \\n\mu\\ and variance \\n\sigma^2\\, which by [linearity of expectation](expectation.llms.md#thm-linearity-expectation) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) (whose covariance terms are 0 for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated)) are exactly the mean and variance of \\S_n\\.
-
-> **NOTE:**
->
-> **Example 11 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\, which is flat, not bell-shaped ([Figure 3](#fig-clt-1d6)). Its mean is \\\mu = 3.5\\, and its variance is \\\sigma^2= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\\.
->
-> Code
->
-> ``` r
-> dice_sum_pmf <- function(n_dice) {
->   totals <- rowSums(expand.grid(rep(list(1:6), n_dice)))
->   probs <- prop.table(table(totals))
->   data.frame(total = as.numeric(names(probs)), p = as.vector(probs))
-> }
->
-> dice_plot <-
->   ggplot2::ggplot(mapping = ggplot2::aes(x = total, y = p)) +
->   ggplot2::xlab("sum of dice (x)") +
->   ggplot2::ylab("Probability of outcome, Pr(X=x)") +
->   ggplot2::expand_limits(y = 0)
->
-> dice_plot + ggplot2::geom_col(data = dice_sum_pmf(1))
-> ```
->
-> [![](distributions_files/figure-html/fig-clt-1d6-1.png)](distributions_files/figure-html/fig-clt-1d6-1.png "Figure 3: Distribution of the outcome of one die")
->
-> Figure 3: Distribution of the outcome of one die
->
-> The sum of five independent rolls, \\S_5\\, is already close to bell-shaped ([Figure 4](#fig-clt-5d6)).
->
-> Code
->
-> ``` r
-> pmf_five_dice <- dice_sum_pmf(5)
-> dice_plot + ggplot2::geom_col(data = pmf_five_dice)
-> ```
->
-> [![](distributions_files/figure-html/fig-clt-5d6-1.png)](distributions_files/figure-html/fig-clt-5d6-1.png "Figure 4: Distribution of the sum of five dice")
->
-> Figure 4: Distribution of the sum of five dice
->
-> For example, the exact probability that five dice total at most 15 is \\\Pr(S_5 \le 15) = 0.3052\\. The normal approximation that [Theorem 9](#thm-clt) suggests, with mean \\5 \cdot 3.5 = 17.5\\ and variance \\5 \cdot 35/12 \approx 14.58\\, evaluated at \\15.5\\ to account for \\S_5\\ taking only integer values, gives \\\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002\\.
-
-# References
-
-Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+## References
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 

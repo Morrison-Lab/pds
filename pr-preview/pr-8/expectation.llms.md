@@ -14,9 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:23:33 (PDT)
-
-# 1 Expectation
+Last modified: 2026-09-28 01:38:07 (PDT)
 
 > **NOTE:**
 >
@@ -160,7 +158,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[2X + 1\right\]\mathclose{} &= 2\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + 1 && \text{(expectation of a linear function)} \\ &= 2 \cdot\tfrac{1}{2} + 1 && \text{(substitute } \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2} \text{)} \\ &= 2 && \text{(evaluate)} \end{aligned} \\
 
-## 1.1 Conditional distributions and expectations
+## 1 Conditional distributions and expectations
 
 > **NOTE:**
 >
@@ -426,7 +424,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > when the sum or integral converges absolutely. Evaluating this function of \\x\\ at \\X\\ gives the random variable \\\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X\right\]\mathclose{}\\.
 
-With \\h(x, y) = y\\, this definition is [Definition 5](#def-cond-expectation). It is the conditional version of [LOTUS](#thm-lotus): for discrete \\X\\, it is LOTUS applied under the probability measure \\\Pr(\cdot \mid X = x)\\, so it agrees with [Definition 5](#def-cond-expectation) applied to the random variable \\W = h(X, Y)\\, and results about \\\operatorname{E}\mathopen{}\left\[W \mid X\right\]\mathclose{}\\ apply to it. \\Y\\ can also be a pair \\(Y, Z)\\, with the sum or integral taken over both.
+With \\h(x, y) = y\\, this definition is [Definition 5](#def-cond-expectation). This definition is the conditional version of [LOTUS](#thm-lotus): for discrete \\X\\, it is LOTUS applied under the probability measure \\\Pr(\cdot \mid X = x)\\, so it agrees with [Definition 5](#def-cond-expectation) applied to the random variable \\W = h(X, Y)\\, and results about \\\operatorname{E}\mathopen{}\left\[W \mid X\right\]\mathclose{}\\ apply to it. \\Y\\ can also be a pair \\(Y, Z)\\, with the sum or integral taken over both.
 
 > **NOTE:**
 >
@@ -533,7 +531,7 @@ Note that \\X\\ and \\Y\\ are **not** independent here: \\\operatorname{P}(X = 0
 
 There are only four \\(x,y)\\ pairs here, so summing them in any order — row by row, column by column, or any other listing — gives the same total by ordinary commutativity and associativity of addition; no result about interchanging summation order is needed. Once the support is countably infinite, exchanging the order of summation needs a justification, which the Fubini–Tonelli theorem provides.
 
-## 1.2 Fubini–Tonelli for expectations
+## 2 Fubini–Tonelli for expectations
 
 For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and counting measure on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
@@ -862,7 +860,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > With \\q = 0.5\\, the truncated sum-of-integrals matches the closed form \\\frac{1}{2(1-q)} = 1\\.
 
-# References
+## References
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
