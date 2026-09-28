@@ -1,11 +1,9 @@
 :::{#def-variance}
 #### Variance
 
-The variance of a random variable $X$ is the [expectation](#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
+The **variance** of a random variable $X$ is the [expectation](#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
 
-$$
-\Var{X} \eqdef \E{[\devn(X)]^2}
-$$
+$$\Var{X} \eqdef \E{[\devn(X)]^2}$$
 
 :::
 
@@ -16,14 +14,26 @@ $$
 
 $$\Var{X} = \E{(X - \E{X})^2}$$
 
-::::{.proof}
+:::
+
+::: proof
+
 Substituting the definition of $\devn(X)$ from @def-deviation-pop-mean
 into @def-variance:
 
 $$
 \Var{X} \eqdef \E{[\devn(X)]^2} = \E{(X - \E{X})^2}.
 $$
-::::
+
+:::
+
+::: notes
+
+This is the more commonly seen form of the variance definition, and
+the canonical starting point in most treatments; it's given here as a
+theorem rather than the primary definition to keep $\devn(X)$ as the
+definition's single building block, matching the [deviation from the
+mean](#def-deviation-pop-mean) notation used above.
 
 :::
 
@@ -34,11 +44,14 @@ $$
 
 $$\Var{X}=\E{X^2} - \sqf{\E{X}}$$
 
-::::{.proof}
-By linearity of expectation, we have:
+:::
+
+::: proof
+
+By linearity of expectation:
 
 $$
-\begin{aligned}
+\ba
 \Var{X}
 &\eqdef \E{[\devn(X)]^2} && \text{(definition of variance)} \\
 &= \E{(X-\E{X})^2} && \text{(definition of deviation from mean)} \\
@@ -46,9 +59,8 @@ $$
 &=\E{X^2} - \E{2X\E{X}} + \E{\sqf{\E{X}}} && \text{(linearity of expectation)} \\
 &=\E{X^2} - 2\E{X}\E{X} + \sqf{\E{X}} && \text{(constants factor out of expectation)} \\
 &=\E{X^2} - \sqf{\E{X}} && \text{(algebraic simplification)}
-\end{aligned}
+\ea
 $$
-::::
 
 :::
 
@@ -173,13 +185,20 @@ $$\tau(X) \eqdef \inv{\Var{X}}$$
 
 {{< slidebreak >}}
 
-::: {#def-sd}
-
+:::{#def-sd}
 #### Standard deviation
 
-The standard deviation of a random variable $X$ is the square-root of the [variance](#def-variance) of $X$:
+The **standard deviation** of a random variable $X$
+is the square root of the [variance](#def-variance) of $X$:
 
 $$\SD{X} \eqdef \sqrt{\Var{X}}$$
 
 :::
 
+::: notes
+
+The standard deviation is on the same scale as $X$ itself
+(unlike the variance, which is on the scale of $X$'s square),
+which is why it is often the preferred measure of spread when reporting results.
+
+:::
