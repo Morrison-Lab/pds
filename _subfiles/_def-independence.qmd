@@ -52,12 +52,23 @@ but $\P(X_1 = 0)\,\P(X_1 + X_2 = 2) = \tfrac{1}{2} \cd \tfrac{1}{4} = \tfrac{1}{
 #### Conditional independence
 
 Random variables $\dsn{Y}$ are **conditionally independent**
-given a random variable (or vector) $\vX$
-if, for every value $\vx$ of $\vX$ and all sets of real numbers $A_1, \ldots, A_n$,
+given a discrete random variable (or vector) $\vX$
+if, for every value $\vx$ with $\Pr(\vX = \vx) > 0$
+and all sets of real numbers $A_1, \ldots, A_n$,
 the conditional probability that every $Y_i$ falls in its set
 is the product of the individual conditional probabilities:
 
 $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodi1n{\Pr(Y_i \in A_i \mid \vX = \vx)}$$
+
+When $\vX$ is continuous, every event $\{\vX = \vx\}$ has probability 0,
+so the condition is stated with densities instead:
+for every $\vx$ with $\p(\vX = \vx) > 0$ and all $y_1, \ldots, y_n$,
+
+$$\frac{\p(\vX = \vx, Y_1 = y_1, \ldots, Y_n = y_n)}{\p(\vX = \vx)} = \prodi1n{\frac{\p(\vX = \vx, Y_i = y_i)}{\p(\vX = \vx)}}$$
+
+where each $\p(\cdot)$ is a [joint density](random-variables.qmd#def-joint-pdf)
+(with probability masses in place of densities for any discrete $Y_i$,
+as in a [joint density-mass function](random-variables.qmd#def-joint-density-mass)).
 
 :::
 
@@ -70,6 +81,12 @@ $\Pr(Y_i \in A_i \mid X_1 = x_1, \ldots, X_n = x_n) = \Pr(Y_i \in A_i \mid X_i =
 Together, the two assumptions give the factorization
 $\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid X_1 = x_1, \ldots, X_n = x_n) = \prodi1n{\Pr(Y_i \in A_i \mid X_i = x_i)}$.
 That second assumption is a separate one, not part of conditional independence.
+
+For continuous $\vX$,
+each ratio in the density form is the density of the $Y$'s
+under their conditional distribution given $\vX = \vx$,
+so both forms say the same thing:
+given $\vX = \vx$, the $Y_i$'s joint distribution factors.
 
 Conditional independence neither implies nor is implied by independence.
 
@@ -102,6 +119,51 @@ $$
 but $\Pr(Y_1 = 1) = (0.9)(0.1) + (0.1)(0.9) = 0.18$,
 so $\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09$:
 the tests are conditionally independent given $X$, but not independent.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-indpt-not-cind}
+#### Two coins, given their total
+
+Let $Y_1$ and $Y_2$ indicate heads on two fair coin flips,
+which are independent (@exm-indpt),
+and let $X = Y_1 + Y_2$ be the number of heads.
+Given $X = 1$, which has probability $1/2$,
+exactly one coin is heads, so:
+
+$$
+\ba
+\Pr(Y_1 = 1, Y_2 = 1 \mid X = 1)
+&= \frac{\Pr(Y_1 = 1, Y_2 = 1, X = 1)}{\Pr(X = 1)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{0}{1/2}
+&& \text{(two heads make } X = 2 \text{, not } 1 \text{)} \\
+&= 0
+&& \text{(divide)}
+\ea
+$$
+
+but
+
+$$
+\ba
+\Pr(Y_1 = 1 \mid X = 1)
+&= \frac{\Pr(Y_1 = 1, X = 1)}{\Pr(X = 1)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{\Pr(Y_1 = 1, Y_2 = 0)}{\Pr(X = 1)}
+&& \text{(} Y_1 = 1 \text{ and } X = 1 \text{ means } Y_2 = 0 \text{)} \\
+&= \frac{1/4}{1/2}
+&& \text{(substitute)} \\
+&= \tfrac{1}{2}
+&& \text{(divide)}
+\ea
+$$
+
+and likewise $\Pr(Y_2 = 1 \mid X = 1) = 1/2$,
+so the product of the conditional probabilities is $1/4 \ne 0$:
+$Y_1$ and $Y_2$ are independent, but not conditionally independent given $X$.
 
 :::
 
@@ -144,9 +206,16 @@ They are not independent: knowing one determines the other.
 
 Random variables $\dsn{Y}$ are **conditionally identically distributed**
 given random variables $\X1n$
-if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function of $y$ and $x$:
+if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function $G(y \mid x)$ of $y$ and $x$:
+for every $i \in \set{1, \ldots, n}$, every $y$,
+and every $x$ with $\Pr(X_i = x) > 0$,
 
-$$\forall i\in \set{1, \ldots, n}, \forall x, y: \Pr(Y_i \le y \mid X_i = x) = \Pr(Y_1 \le y \mid X_1 = x)$$
+$$\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)$$
+
+When $X_i$ is continuous, the condition applies at every $x$ with $\p(X_i = x) > 0$,
+with $\Pr(Y_i \le y \mid X_i = x)$ computed from densities:
+the integral of $\p(X_i = x, Y_i = u) / \p(X_i = x)$ over $u \le y$
+(a sum over values $u \le y$ when $Y_i$ is discrete).
 
 :::
 
@@ -158,7 +227,9 @@ $$\forall i\in \set{1, \ldots, n}, \forall x, y: \Pr(Y_i \le y \mid X_i = x) = \
 Suppose each $Y_i$ is binary,
 with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$
 (for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$).
-Then $\dsn{Y}$ are conditionally identically distributed given $\X1n$.
+Then $\dsn{Y}$ are conditionally identically distributed given $\X1n$,
+with $G(y \mid x) = 1 - \pi(x)$ for $0 \le y < 1$
+(and $0$ for $y < 0$, $1$ for $y \ge 1$).
 Their marginal distributions can still differ:
 if participant 1 always receives dose $0$ and participant 2 always receives dose $1$,
 then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
