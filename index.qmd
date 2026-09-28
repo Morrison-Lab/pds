@@ -10,7 +10,7 @@ format:
     output-file: index.docx
 ---
 
-# Welcome {.unnumbered}
+## Welcome {.unnumbered}
 
 Probability theory is the branch of mathematics concerned with
 formalizing and quantifying uncertainty.
@@ -47,7 +47,7 @@ These notes began as the probability chapter of the Morrison Lab's
 which applies them to regression and survival models
 (see [Additional resources](#sec-additional-resources)).
 
-## Using these notes in another site
+## Using these notes in another site {.unnumbered}
 
 Course sites include these notes as a git submodule named `pds`
 at the site's root,
@@ -60,13 +60,13 @@ Quarto resolves `@id` cross-references only within one rendered page,
 so a host site that links to a result here
 uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
 
-# Additional resources {#sec-additional-resources .unnumbered}
+## Additional resources {#sec-additional-resources .unnumbered}
 
 - @problifesaver
 - Morrison Lab's [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
   which applies this material to regression and survival analysis
 
-# References {.unnumbered}
+## References {.unnumbered}
 
 ::: {#refs}
 :::

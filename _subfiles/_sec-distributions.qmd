@@ -37,7 +37,7 @@ Distributions typically used for test statistics
 
 {{< slidebreak >}}
 
-## The Bernoulli distribution {#sec-bern-dist}
+### The Bernoulli distribution {#sec-bern-dist}
 
 :::{#exm-bernoulli}
 #### A coin flip
@@ -53,7 +53,7 @@ it has variance $\pi(1 - \pi)$.
 
 {{< slidebreak >}}
 
-## The Poisson distribution {#sec-poisson-dist}
+### The Poisson distribution {#sec-poisson-dist}
 
 :::{#def-poisson}
 #### Poisson distribution
@@ -634,7 +634,7 @@ $$
 
 {{< slidebreak >}}
 
-## The Negative-Binomial distribution {#sec-nb-dist}
+### The Negative-Binomial distribution {#sec-nb-dist}
 
 :::{#def-nb}
 #### Negative binomial distribution
@@ -744,7 +744,7 @@ three times the variance of a $\Pois(4)$ count with the same mean.
 
 {{< slidebreak >}}
 
-## Weibull distribution {#sec-weibull}
+### Weibull distribution {#sec-weibull}
 
 :::{#def-weibull}
 #### Weibull distribution

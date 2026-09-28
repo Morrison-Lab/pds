@@ -12,7 +12,7 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-# Variance and covariance {#sec-variance-covariance}
+[]{#sec-variance-covariance}
 
 ## Deviation, error, and noise {#sec-deviation}
 
@@ -32,7 +32,7 @@ format:
 
 {{< include pds/_subfiles/_def-covariance.qmd >}}
 
-# References {.unnumbered}
+## References {.unnumbered}
 
 ::: {#refs}
 :::

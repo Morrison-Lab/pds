@@ -12,7 +12,7 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-# Expectation {#sec-expectation}
+[]{#sec-expectation}
 
 <!-- No slidebreak here: the heading shares its slide with the def-expectation div. -->
 
@@ -36,7 +36,7 @@ format:
 
 {{< include pds/_subfiles/_fubini-tonelli-expectations.qmd >}}
 
-# References {.unnumbered}
+## References {.unnumbered}
 
 ::: {#refs}
 :::

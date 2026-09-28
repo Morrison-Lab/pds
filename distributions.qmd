@@ -12,15 +12,15 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-# Key probability distributions {#sec-distributions}
+## Key probability distributions {#sec-distributions}
 
 {{< include pds/_subfiles/_sec-distributions.qmd >}}
 
-# The Central Limit Theorem {#sec-clt}
+## The Central Limit Theorem {#sec-clt}
 
 {{< include pds/_subfiles/_sec-CLT.qmd >}}
 
-# References {.unnumbered}
+## References {.unnumbered}
 
 ::: {#refs}
 :::

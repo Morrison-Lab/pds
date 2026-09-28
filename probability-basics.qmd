@@ -12,7 +12,7 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-# Core properties of probabilities {#sec-prob-axioms}
+[]{#sec-prob-axioms}
 
 ## Defining probabilities
 
@@ -42,7 +42,7 @@ format:
 
 {{< include pds/_subfiles/_thm-bayes.qmd >}}
 
-# References {.unnumbered}
+## References {.unnumbered}
 
 ::: {#refs}
 :::

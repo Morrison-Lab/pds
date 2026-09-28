@@ -12,7 +12,7 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-# Independence {#sec-independence}
+[]{#sec-independence}
 
 <!-- No slidebreak here: the heading shares its slide with the def-indpt div. -->
 
