@@ -2,7 +2,7 @@
 
 #### Conditional probability mass function
 
-Let $X$ and $Y$ be jointly distributed discrete random variables.
+Let $X$ and $Y$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) discrete random variables.
 The **conditional probability mass function** of $Y$ given $X = x$
 (for values of $x$ with $\P(X = x) > 0$) is:
 
@@ -34,9 +34,10 @@ n_vaccine <- sum(vaccine_tab)
 n_placebo <- vaccine_tab["placebo", ]
 ```
 
-The joint PMF of $(X, Y)$ is the table of frequencies divided by the total
+The [joint PMF](random-variables.qmd#def-joint-pmf) of $(X, Y)$ is the table of frequencies divided by the total
 $n = `r n_vaccine`$ trial participants.
-The marginal probability $\P(X = \text{placebo})$ is:
+By the [marginal PMF theorem](random-variables.qmd#thm-marginal-pmf),
+the [marginal](random-variables.qmd#def-marginal) probability $\P(X = \text{placebo})$ is:
 
 $$
 \ba
@@ -44,7 +45,7 @@ $$
 &= \P(X = \text{placebo},\, Y = \text{small})
  + \P(X = \text{placebo},\, Y = \text{moderate})
  + \P(X = \text{placebo},\, Y = \text{large})
-&& \text{(countable additivity)}
+&& \text{(marginal PMF from the joint PMF)}
 \\&= \tfrac{`r n_placebo[["small"]]`}{`r n_vaccine`}
  + \tfrac{`r n_placebo[["moderate"]]`}{`r n_vaccine`}
  + \tfrac{`r n_placebo[["large"]]`}{`r n_vaccine`}
@@ -77,7 +78,8 @@ $$
 #### Conditional probability density function
 
 Let $X$ and $Y$ be jointly distributed continuous random variables
-with joint density $\p(X = x,\, Y = y)$ and marginal density $\p(X = x)$.
+with [joint density](random-variables.qmd#def-joint-pdf) $\p(X = x,\, Y = y)$
+and [marginal density](random-variables.qmd#thm-marginal-density) $\p(X = x)$.
 The **conditional probability density function** of $Y$ given $X = x$
 (for values of $x$ with $\p(X = x) > 0$) is:
 
@@ -295,15 +297,13 @@ as expected since the conditional mean of a bivariate normal
 
 #### Conditional expectation: mixed case
 
-Suppose exactly one of $X, Y$ is discrete and the other is continuous.
-Write $\p(X = x,\, Y = y)$ for their **joint density-mass function**:
-a probability density in the continuous variable
-and a probability mass in the discrete variable.
+Suppose exactly one of $X, Y$ is discrete and the other is continuous,
+with [joint density-mass function](random-variables.qmd#def-joint-density-mass) $\p(X = x,\, Y = y)$.
 
 **$X$ discrete, $Y$ continuous.**
 Here $\p(X=x,\,Y=y)$ is, for each fixed $x$,
 a probability density in $y$,
-scaled so that $\int_{y} \p(X=x,\,Y=y)\,dy = \P(X=x)$.
+with $\int_{y} \p(X=x,\,Y=y)\,dy = \P(X=x)$.
 The conditional PDF of $Y$ given $X = x$
 (for values of $x$ with $\P(X = x) > 0$) is:
 
@@ -316,7 +316,7 @@ $$\E{Y \mid X = x} \eqdef \int_{y \in \rangef{Y}} y \cd \p(Y = y \mid X = x)\, d
 **$X$ continuous, $Y$ discrete.**
 Here $\p(X=x,\,Y=y)$ is, for each fixed $y$,
 a probability density in $x$,
-scaled so that $\sum_{y} \p(X=x,\,Y=y) = \p(X=x)$.
+and $\sum_{y} \p(X=x,\,Y=y) = \p(X=x)$ is a density of $X$.
 The conditional PMF of $Y$ given $X = x$
 (for values of $x$ with $\p(X = x) > 0$) is:
 

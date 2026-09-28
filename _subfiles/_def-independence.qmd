@@ -18,9 +18,9 @@ The symbol $\ind$ is essentially $\prod$ upside-down,
 which can remind you of the definition.
 
 For discrete random variables,
-independence is equivalent to the joint PMF factoring,
+independence is equivalent to the [joint PMF](random-variables.qmd#def-joint-pmf) factoring,
 $\P(\Xx1n) = \prodi1n{\P(X_i=x_i)}$ for all $x_1, \ldots, x_n$.
-For continuous random variables with a joint density,
+For continuous random variables with a [joint density](random-variables.qmd#def-joint-pdf),
 it is equivalent to the joint density factoring the same way.
 The PMF form does not work as a definition for continuous random variables:
 there, both sides are $0$ at every point,

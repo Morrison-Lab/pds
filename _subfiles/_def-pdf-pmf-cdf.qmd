@@ -534,3 +534,298 @@ For $X$ uniform on $[0, 1]$ (@exm-pdf),
 $\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1$.
 
 :::
+
+{{< slidebreak >}}
+
+:::{#def-jointly-distributed}
+#### Jointly distributed random variables
+
+Random variables $\X1n$ are **jointly distributed**
+when they are defined on the same [sample space](probability-basics.qmd#def-sample-space) $\Omega$,
+so that an event about several of them at once,
+such as $\{X_1 \le x_1\} \cap \{X_2 \le x_2\}$,
+has a probability.
+
+:::
+
+::: notes
+
+We write $\Pr(X \in A, Y \in B)$ for $\Pr(\{X \in A\} \cap \{Y \in B\})$,
+and similarly for more variables.
+The collection of all such probabilities is the **joint distribution** of the variables.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-jointly-distributed}
+#### The first flip and the total
+
+In @exm-random-variable,
+let $X_1$ indicate heads on the first flip (as in @exm-bernoulli-pmf),
+and let $X$ be the total number of heads.
+Both are functions on the same sample space, $\set{HH, HT, TH, TT}$,
+so they are jointly distributed, and, for example:
+
+$$\Pr(X_1 = 1, X = 1) = \Pr(\set{HH, HT} \cap \set{HT, TH}) = \Pr(\set{HT}) = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-joint-pmf}
+#### Joint probability mass function
+
+For [jointly distributed](#def-jointly-distributed) discrete random variables $X$ and $Y$,
+the **joint probability mass function** (joint PMF) of $X$ and $Y$
+is the probability that $X$ takes the value $x$ and $Y$ takes the value $y$:
+
+$$\P(X = x,\, Y = y) \eqdef \Pr(\{X = x\} \cap \{Y = y\})$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-joint-pmf}
+#### Joint PMF of the first flip and the total
+
+Continuing @exm-jointly-distributed,
+each outcome of the two flips fixes both $X_1$ and $X$,
+so the joint PMF puts probability $1/4$ on each outcome's pair of values:
+
+| | $X = 0$ | $X = 1$ | $X = 2$ |
+|:---:|:---:|:---:|:---:|
+| $X_1 = 0$ | $1/4$ ($TT$) | $1/4$ ($TH$) | $0$ |
+| $X_1 = 1$ | $0$ | $1/4$ ($HT$) | $1/4$ ($HH$) |
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-marginal}
+#### Marginal distribution
+
+When a random variable $X$ is one of several
+[jointly distributed](#def-jointly-distributed) random variables,
+the distribution of $X$ by itself
+(its CDF, and its PMF or density)
+is called the **marginal distribution** of $X$.
+
+:::
+
+::: notes
+
+The word "marginal" only says that the other variables are being set aside;
+the marginal distribution of $X$ is the same object as the distribution of $X$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-marginal}
+#### Marginal distribution of the total
+
+In @exm-joint-pmf,
+the marginal distribution of the total $X$ is the PMF of @exm-pmf:
+$\P(X = 0) = 1/4$, $\P(X = 1) = 1/2$, $\P(X = 2) = 1/4$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-marginal-pmf}
+#### Marginal PMF from a joint PMF
+
+If $X$ and $Y$ are jointly distributed discrete random variables,
+then for every $x$:
+
+$$\P(X = x) = \sum_{y \in \rangef{Y}} \P(X = x,\, Y = y)$$
+
+:::
+
+::: proof
+
+The event $\{X = x\}$ is the disjoint union of the events $\{X = x\} \cap \{Y = y\}$
+over the countably many values $y \in \rangef{Y}$, so:
+
+$$
+\ba
+\P(X = x)
+&= \Pr\paren{\bigcup_{y \in \rangef{Y}} \paren{\{X = x\} \cap \{Y = y\}}}
+&& \text{(the events partition } \{X = x\} \text{)} \\
+&= \sum_{y \in \rangef{Y}} \Pr(\{X = x\} \cap \{Y = y\})
+&& \text{(countable additivity)} \\
+&= \sum_{y \in \rangef{Y}} \P(X = x,\, Y = y)
+&& \text{(definition of the joint PMF)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-marginal-pmf}
+#### Summing a row of the joint PMF
+
+In @exm-joint-pmf, summing the $X_1 = 1$ row:
+
+$$
+\ba
+\P(X_1 = 1)
+&= \P(X_1 = 1, X = 0) + \P(X_1 = 1, X = 1) + \P(X_1 = 1, X = 2)
+&& \text{(marginal PMF from the joint PMF)} \\
+&= 0 + \tfrac{1}{4} + \tfrac{1}{4}
+&& \text{(read the table)} \\
+&= \tfrac{1}{2}
+&& \text{(add)}
+\ea
+$$
+
+which matches $X_1 \sim \Ber(1/2)$ from @exm-bernoulli-pmf.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-joint-pdf}
+#### Joint probability density function
+
+For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$,
+a **joint probability density function** (joint density) of $X$ and $Y$,
+denoted $f_{X,Y}(x, y)$ or $\p(X = x,\, Y = y)$,
+is a function $f_{X,Y} \ge 0$ on $\mathbb{R}^2$
+whose integral over any region $A \subseteq \mathbb{R}^2$
+is the probability that the pair $(X, Y)$ falls in $A$:
+
+$$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
+
+:::
+
+::: notes
+
+As with [events](probability-basics.qmd#def-event), a fully rigorous version restricts $A$ to a designated collection of regions;
+every region that arises in these notes is in it.
+Not every pair of continuous random variables has a joint density:
+if $X$ is continuous, the pair $(X, X)$ falls on the line $y = x$,
+a region of area 0,
+so every candidate $f_{X,Y}$ would give that line probability 0 instead of 1.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-joint-pdf}
+#### A joint density on a triangle
+
+Let $f_{X,Y}(x, y) = 2$ for $0 \le x \le y \le 1$, and $0$ otherwise.
+The triangle $\{(x, y) : 0 \le x \le y \le 1\}$ has area $1/2$,
+so $f_{X,Y}$ gives the whole plane probability $2 \cd \tfrac{1}{2} = 1$,
+and it is the joint density of a pair $(X, Y)$ with $X \le Y$ always.
+For example, the probability that both are at most $1/2$
+is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
+
+$$\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cd \tfrac{1}{8} = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-marginal-density}
+#### Marginal density from a joint density
+
+If $X$ and $Y$ have joint density $f_{X,Y}$,
+then $X$ has the density:
+
+$$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy$$
+
+:::
+
+::: proof
+
+For $a \le b$, the event $\{a \le X \le b\}$ is the event that $(X, Y)$ falls in the strip $[a, b] \times \mathbb{R}$, so:
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \Pr((X, Y) \in [a, b] \times \mathbb{R})
+&& \text{(same event)} \\
+&= \iint_{[a, b] \times \mathbb{R}} f_{X,Y}(x, y)\,dx\,dy
+&& \text{(definition of a joint density)} \\
+&= \int_a^b \paren{\int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy}\,dx
+&& \text{(iterate the integral; Tonelli's theorem)} \\
+&= \int_a^b f_X(x)\,dx
+&& \text{(definition of } f_X \text{)}
+\ea
+$$
+
+Tonelli's theorem allows the iterated integral because $f_{X,Y} \ge 0$
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3).
+So $f_X$ satisfies @def-pdf.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-marginal-density}
+#### Marginal densities on the triangle
+
+For the joint density of @exm-joint-pdf and $x \in [0, 1]$,
+$f_{X,Y}(x, y) = 2$ exactly when $x \le y \le 1$, so:
+
+$$
+\ba
+f_X(x)
+&= \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy
+&& \text{(marginal density from a joint density)} \\
+&= \int_x^1 2\,dy
+&& \text{(} f_{X,Y}(x, y) = 2 \text{ for } x \le y \le 1 \text{, else } 0 \text{)} \\
+&= 2(1 - x)
+&& \text{(integrate)}
+\ea
+$$
+
+The same steps with the roles swapped give $f_Y(y) = \int_0^y 2\,dx = 2y$ for $y \in [0, 1]$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-joint-density-mass}
+#### Joint density-mass function
+
+Let $X$ be a discrete random variable and $Y$ a continuous random variable,
+[jointly distributed](#def-jointly-distributed).
+A **joint density-mass function** of $X$ and $Y$,
+denoted $\p(X = x,\, Y = y)$,
+is a function $\p(X = x,\, Y = y) \ge 0$
+that is a probability mass in $x$ and a probability density in $y$:
+for every $x$ and every set $B \subseteq \mathbb{R}$,
+
+$$\Pr(X = x,\, Y \in B) = \int_{B} \p(X = x,\, Y = y)\,dy$$
+
+:::
+
+::: notes
+
+Taking $B = \mathbb{R}$ gives $\int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy = \P(X = x)$.
+When $X$ is continuous and $Y$ is discrete, the roles swap:
+$\Pr(X \in B,\, Y = y) = \int_B \p(X = x,\, Y = y)\,dx$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-joint-density-mass}
+#### A coin flip and a waiting time
+
+Let $\p(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$,
+$\p(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$,
+and $0$ otherwise.
+Integrating over $y$ gives $\P(X = 0) = 1/2$ and $\P(X = 1) = 1/2$,
+which add to 1.
+For example, the probability that $X = 1$ and $Y \le 1$ is:
+
+$$\Pr(X = 1,\, Y \le 1) = \int_0^1 \tfrac{1}{4}\,dy = \tfrac{1}{4}$$
+
+:::

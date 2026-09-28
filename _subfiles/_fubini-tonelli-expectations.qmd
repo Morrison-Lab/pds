@@ -353,7 +353,7 @@ $$
 \\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(X=x, Y=y)\, dx}\, dy
 && \text{(Fubini's theorem, since } \E{\abs{Y}} < \infty \text{)}
 \\&= \int_{y \in \rangef{Y}} y \cd \p(Y=y)\, dy
-&& \text{(integrating the joint density over } x \text{ gives the marginal)}
+&& \text{(marginal density from a joint density)}
 \\&= \E{Y}
 && \text{(definition of expectation)}
 \ea
