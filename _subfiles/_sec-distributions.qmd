@@ -384,9 +384,8 @@ $$\lambda \eqdef \frac{\E{Y}}{t}$$ {#eq-def-event-rate}
 :::
 
 ::: notes
-Event rate is somewhat analogous to odds for a binary outcome:
-both are transformations of the mean.
-The event rate removes the exposure magnitude from the mean,
+The event rate is a transformation of the mean:
+it removes the exposure magnitude from the mean,
 so counts observed over different exposures can be compared on one scale.
 Regression models for counts use the same decomposition,
 with the rate depending on covariates and the exposure magnitude known
@@ -433,12 +432,6 @@ $$
 &= 5 \text{ cases} && (\text{evaluate expected count})
 \ea
 $$
-:::
-
-::: notes
-
-@eq-lambda-to-mu is analogous to the inverse-odds function for binary variables.
-
 :::
 
 {{< slidebreak >}}
