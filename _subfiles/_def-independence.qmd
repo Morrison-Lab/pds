@@ -1,71 +1,167 @@
 :::{#def-indpt}
-
 #### Statistical independence
 
-A set of random variables $\X1n$ are **statistically independent**
-if their joint [probability](probability-basics.qmd#def-probability) is equal to the product
-of their marginal [probabilities](probability-basics.qmd#def-probability):
+Random variables $\X1n$ are **statistically independent**
+if, for all sets of real numbers $A_1, \ldots, A_n$,
+the [probability](probability-basics.qmd#def-probability)
+that every $X_i$ falls in its set
+is the product of the individual probabilities:
 
-$$\Pr(\Xx1n) = \prodi1n{\Pr(X_i=x_i)}$$
+$$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prodi1n{\Pr(X_i \in A_i)}$$
 
 :::
 
 ::: notes
 
-::::{.callout-tip}
-The symbol for independence, $\ind$, is essentially just $\prod$ upside-down.
-So the symbol can remind you of its definition.
-::::
+We write $X \ind Y$ for "$X$ and $Y$ are independent".
+The symbol $\ind$ is essentially $\prod$ upside-down,
+which can remind you of the definition.
+
+For discrete random variables,
+independence is equivalent to the joint PMF factoring,
+$\P(\Xx1n) = \prodi1n{\P(X_i=x_i)}$ for all $x_1, \ldots, x_n$.
+For continuous random variables with a joint density,
+it is equivalent to the joint density factoring the same way.
+The PMF form does not work as a definition for continuous random variables:
+there, both sides are $0$ at every point,
+so it would call every pair of continuous random variables independent.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-indpt}
+#### Two fair coin flips
+
+Flip two fair coins, and let $X_1$ and $X_2$ indicate heads on the first and second flip.
+Each of the four outcomes has probability $1/4$, so for example:
+
+$$\P(X_1 = 1, X_2 = 1) = \tfrac{1}{4} = \tfrac{1}{2} \cd \tfrac{1}{2} = \P(X_1 = 1)\,\P(X_2 = 1)$$
+
+and the same factorization holds for the other three pairs of values,
+so $X_1 \ind X_2$.
+In contrast, $X_1$ and the total number of heads, $X_1 + X_2$, are not independent:
+$\P(X_1 = 0, X_1 + X_2 = 2) = 0$,
+but $\P(X_1 = 0)\,\P(X_1 + X_2 = 2) = \tfrac{1}{2} \cd \tfrac{1}{4} = \tfrac{1}{8}$.
 
 :::
 
 {{< slidebreak >}}
 
 :::{#def-cind}
-
 #### Conditional independence
 
-A set of random variables $\dsn{Y}$ are **conditionally statistically independent**
-given a set of covariates $\X1n$
-if the joint [probability](probability-basics.qmd#def-probability) of the $Y_i$s given the $X_i$s is equal to
-the product of their marginal [probabilities](probability-basics.qmd#def-probability):
+Random variables $\dsn{Y}$ are **conditionally independent**
+given a random variable (or vector) $\vX$
+if, for every value $\vx$ of $\vX$ and all sets of real numbers $A_1, \ldots, A_n$,
+the conditional probability that every $Y_i$ falls in its set
+is the product of the individual conditional probabilities:
 
-$$\Pr(\dsvn{Y}{y} \mid \dsvn{X}{x}) = \prodi1n{\Pr(Y_i=y_i \mid X_i=x_i)}$$
+$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodi1n{\Pr(Y_i \in A_i \mid \vX = \vx)}$$
+
+:::
+
+::: notes
+
+In regression, $\vX$ is usually the full set of covariates $(X_1, \ldots, X_n)$,
+and a model usually also assumes that each $Y_i$ depends on the covariates
+only through its own $X_i$:
+$\Pr(Y_i \in A_i \mid X_1 = x_1, \ldots, X_n = x_n) = \Pr(Y_i \in A_i \mid X_i = x_i)$.
+Together, the two assumptions give the factorization
+$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid X_1 = x_1, \ldots, X_n = x_n) = \prodi1n{\Pr(Y_i \in A_i \mid X_i = x_i)}$.
+That second assumption is a separate one, not part of conditional independence.
+
+Conditional independence neither implies nor is implied by independence.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cind}
+#### Two tests of the same patient
+
+Let $X$ indicate whether a patient has a disease,
+and let $Y_1$ and $Y_2$ indicate positive results on two tests
+whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$.
+Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$
+and with probability $0.1$ if $X = 0$.
+Then, by the [law of total probability](probability-basics.qmd#thm-total-prob):
+
+$$
+\ba
+\Pr(Y_1 = 1, Y_2 = 1)
+&= (0.9)(0.9)(0.1) + (0.1)(0.1)(0.9)
+&& \text{(condition on } X \text{; factor given } X \text{)} \\
+&= 0.081 + 0.009
+&& \text{(multiply)} \\
+&= 0.09
+&& \text{(add)}
+\ea
+$$
+
+but $\Pr(Y_1 = 1) = (0.9)(0.1) + (0.1)(0.9) = 0.18$,
+so $\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09$:
+the tests are conditionally independent given $X$, but not independent.
 
 :::
 
 {{< slidebreak >}}
 
 :::{#def-ident}
-
 #### Identically distributed
 
-A set of random variables $\X1n$ are **identically distributed**
-if they have the same range $\rangef{X}$ and if
-their marginal distributions $\P(X_1=x_1), ..., \P(X_n=x_n)$ are all
-equal to some shared distribution $\P(X=x)$:
+Random variables $\X1n$ are **identically distributed**
+if they all have the same [CDF](random-variables.qmd#def-cdf):
 
-$$
-\forall i\in \set{1:n}, \forall x \in \rangef{X}: \P(X_i=x) = \P(X=x)
-$$
+$$\forall i\in \set{1, \ldots, n}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)$$
+
+:::
+
+::: notes
+
+For discrete random variables, this is equivalent to all of them having the same PMF.
+As with independence, the PMF form would not work as a definition in general:
+every continuous random variable has $\Pr(X_i = x) = 0$ at every $x$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-ident}
+#### Identically distributed but not independent
+
+In @exm-indpt, $X_1$ and $1 - X_1$ (the indicator of tails on the first flip)
+both take the values $0$ and $1$ with probability $1/2$ each,
+so they are identically distributed.
+They are not independent: knowing one determines the other.
 
 :::
 
 {{< slidebreak >}}
 
 :::{#def-cident}
-
 #### Conditionally identically distributed
 
-A set of random variables $\dsn{Y}$ are **conditionally identically distributed**
-given a set of covariates $\X1n$
-if $\dsn{Y}$ have the same range $\rangef{X}$ and if
-the distributions $\P(Y_i=y_i \mid X_i=x_i)$ are all
-equal to the same distribution $\P(Y=y \mid X=x)$:
+Random variables $\dsn{Y}$ are **conditionally identically distributed**
+given random variables $\X1n$
+if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function of $y$ and $x$:
 
-$$
-\P(Y_i=y \mid X_i=x) = \P(Y=y \mid X=x)
-$$
+$$\forall i\in \set{1, \ldots, n}, \forall x, y: \Pr(Y_i \le y \mid X_i = x) = \Pr(Y_1 \le y \mid X_1 = x)$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cident}
+#### A shared regression model
+
+Suppose each $Y_i$ is binary,
+with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$
+(for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$).
+Then $\dsn{Y}$ are conditionally identically distributed given $\X1n$.
+Their marginal distributions can still differ:
+if participant 1 always receives dose $0$ and participant 2 always receives dose $1$,
+then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
 
 :::
 
@@ -74,7 +170,7 @@ $$
 :::{#def-iid}
 #### Independent and identically distributed
 
-A set of random variables $\dsn{X}$ are **independent and identically
+Random variables $\dsn{X}$ are **independent and identically
 distributed** (shorthand: "$X_i\ \iid$") if they are
 [statistically independent](#def-indpt) and
 [identically distributed](#def-ident).
@@ -91,12 +187,39 @@ independent draws from a single shared distribution.
 
 {{< slidebreak >}}
 
-:::{#def-ciid}
-#### Conditionally independent and identically distributed
+:::{#exm-iid}
+#### Repeated die rolls
 
-A set of random variables $\dsn{Y}$ are **conditionally independent and identically distributed** (shorthand: "$Y_i \mid X_i\ \ciid$" or just "$Y_i \mid X_i\ \iid$") given a set of covariates $\dsn{X}$
-if $\dsn{Y}$ are [conditionally independent](#def-cind) given $\dsn{X}$ and $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given
-$\dsn{X}$.
+The results of $n$ rolls of the same fair die are IID:
+the rolls are independent,
+and each is uniform on $\set{1, \ldots, 6}$.
 
 :::
 
+{{< slidebreak >}}
+
+:::{#def-ciid}
+#### Conditionally independent and identically distributed
+
+Random variables $\dsn{Y}$ are **conditionally independent and identically distributed**
+given $\dsn{X}$
+(shorthand: "$Y_i \mid X_i\ \ciid$" or just "$Y_i \mid X_i\ \iid$")
+if $\dsn{Y}$ are [conditionally independent](#def-cind) given $(\X1n)$,
+each $Y_i$ depends on $(\X1n)$ only through $X_i$,
+and $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given $\X1n$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-ciid}
+#### The usual regression assumption
+
+In @exm-cident, if the $Y_i$ are also conditionally independent given all the doses,
+and each $Y_i$ depends on the doses only through its own $X_i$,
+then $Y_i \mid X_i\ \ciid$,
+and the joint conditional PMF is
+$\prodi1n{\pi(x_i)^{y_i}\paren{1 - \pi(x_i)}^{1 - y_i}}$:
+one shared function evaluated at each $(x_i, y_i)$.
+
+:::
