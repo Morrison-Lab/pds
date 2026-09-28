@@ -1,0 +1,45 @@
+:::{#def-hazard}
+#### Hazard function
+
+The **hazard function** (also called the **hazard rate** or **hazard rate function**)
+of a continuous random variable $T$ at value $t$,
+typically denoted $\haz(t)$ or $\h(t)$,
+is the conditional [density](#def-pdf) of $T$ at $t$,
+given $T \ge t$:
+
+{{< include pds/_subfiles/_eq-def-hazard.qmd >}}
+
+:::
+
+::: notes
+
+Sources differ on the symbol:
+$\h(t)$ appears in
+@dobson4e, @vittinghoff2e, @klein2003survival, and @kleinbaum2012survival,
+while $\lambda(t)$ appears in
+@me4 and @kalbfleisch2011statistical.
+
+If $T$ is the time at which an event occurs,
+then $\haz(t)$ is a rate, not a probability:
+for a small interval width $\Delta > 0$,
+$\haz(t) \cd \Delta$ is approximately the probability
+that the event occurs in $[t, t + \Delta)$,
+given that it has not occurred before $t$.
+A hazard can exceed 1, just as a density can.
+For a discrete $T$, the same definition with a conditional probability
+in place of the conditional density gives a *discrete-time* hazard,
+$\Pr(T = t \mid T \ge t)$, which is a probability.
+
+The name "hazard" carries a connotation that the event is undesirable ---
+death, relapse, equipment failure, and so on.
+When the event in question is neutral or desirable
+(recovery, conception, graduation, response to treatment),
+the same quantity $\haz(t)$ is often called the
+**event incidence rate** instead.
+This terminology parallels the convention that conditional probabilities of
+undesirable events are called **risks**,
+while the same conditional probabilities for neutral or desirable events
+are simply called **probabilities**.
+The math is identical; only the name changes with the valence of the event.
+
+:::

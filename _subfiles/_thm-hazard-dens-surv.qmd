@@ -1,0 +1,63 @@
+:::{#thm-hazard-dens-surv}
+#### Hazard equals density over survival
+
+If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$
+and [survival function](#def-surv-fn) $\surv(t)$,
+then for every $t$ with $\surv(t) > 0$:
+
+$$\haz(t) = \frac{f(t)}{\surv(t)}$$
+
+:::
+
+::: proof
+
+The proof uses two facts.
+First, the event $\{T = t\}$ is a subset of the event $\{T \ge t\}$,
+so intersecting them leaves $\{T = t\}$
+(the [subset property](probability-basics.qmd#thm-prob-subset)).
+Second, $\Pr(T = t) = 0$ for a continuous $T$,
+so $\Pr(T \ge t) = \Pr(T > t) = \surv(t)$.
+
+$$
+\ba
+\haz(t)
+&\eqdef \p(T = t \mid T \ge t)
+&& \text{(definition of the hazard function)} \\
+&= \frac{\p(T = t,\, T \ge t)}{\Pr(T \ge t)}
+&& \text{(definition of a conditional density)} \\
+&= \frac{\p(T = t)}{\Pr(T \ge t)}
+&& \text{(} \{T = t\} \subseteq \{T \ge t\} \text{)} \\
+&= \frac{f(t)}{\Pr(T \ge t)}
+&& \text{(} f \text{ is the density of } T \text{)} \\
+&= \frac{f(t)}{\surv(t)}
+&& \text{(} \Pr(T = t) = 0 \text{ for continuous } T \text{)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exp-haz}
+#### Hazard function of an exponential distribution
+
+Continuing @exm-exp-survfn,
+for $t \ge 0$:
+
+$$
+\ba
+\haz(t)
+&= \frac{f(t)}{\surv(t)}
+&& \text{(@thm-hazard-dens-surv)} \\
+&= \frac{\lambda \ef{-\lambda t}}{\ef{-\lambda t}}
+&& \text{(substitute the exponential density and survival function)} \\
+&= \lambda
+&& \text{(cancel } \ef{-\lambda t} \text{)}
+\ea
+$$
+
+The exponential distribution has a constant hazard,
+equal to its rate parameter;
+for $t < 0$, $f(t) = 0$, so $\haz(t) = 0$.
+
+:::

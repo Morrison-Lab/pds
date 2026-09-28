@@ -24,6 +24,38 @@ format:
 
 {{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
 
+## Survival, hazard, and cumulative hazard functions {#sec-prob-haz}
+
+<!-- heading directly precedes the def-surv-fn div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-surv-fn.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-hazard.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-hazard-dens-surv.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-cuhaz.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sec-survival-dist-fns.qmd >}}
+
+{{< slidebreak >}}
+
+For a continuous random variable $T \ge 0$
+whose CDF is differentiable at all but finitely many points,
+@thm-survival-expressions-1, @thm-hazard-dens-surv, and @cor-surv-int-haz
+connect the functions in @tbl-prob-dist-fns;
+each arrow in the following diagram converts one function into the next:
+
+{{< include pds/_subfiles/_surv-diagram.qmd >}}
+
 # Key probability distributions {#sec-distributions}
 
 {{< include pds/_subfiles/_sec-distributions.qmd >}}

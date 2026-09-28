@@ -1,0 +1,1 @@
+$$\haz(t) \eqdef \p(T=t \mid T\ge t)$$

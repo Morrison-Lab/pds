@@ -1,0 +1,96 @@
+:::{#def-surv-fn}
+#### Survival function
+
+The **survival function** (or **survivor function**)
+of a random variable $T$,
+denoted $\surv(t)$,
+is the probability that $T$ exceeds $t$:
+
+$$\surv(t) \eqdef \Pr(T > t)$$
+
+:::
+
+::: notes
+
+The name comes from time-to-event analysis:
+if $T$ is the time at which a participant dies,
+then $\surv(t)$ is the probability that the participant is still alive at time $t$.
+The definition itself applies to any random variable.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-survival-expressions-1}
+#### Survival function and CDF
+
+For any random variable $T$ with [CDF](#def-cdf) $F(t)$:
+
+$$\surv(t) = 1 - F(t)$$
+
+If $T$ is continuous with [density](#def-pdf) $f(t)$, then also:
+
+$$\surv(t) = \int_{u=t}^{\infty} f(u)\,du$$
+
+:::
+
+::: proof
+
+The event $\{T > t\}$ is the complement of the event $\{T \le t\}$,
+so the [complement rule](probability-basics.qmd#cor-p-neg0) gives:
+
+$$
+\ba
+\surv(t)
+&\eqdef \Pr(T > t)
+&& \text{(definition of the survival function)} \\
+&= 1 - \Pr(T \le t)
+&& \text{(complement rule)} \\
+&= 1 - F(t)
+&& \text{(definition of the CDF)}
+\ea
+$$
+
+For continuous $T$, the density integrates to 1 over the real line
+(@thm-density-sums-to-one), so:
+
+$$
+\ba
+1 - F(t)
+&= \int_{u=-\infty}^{\infty} f(u)\,du - \int_{u=-\infty}^{t} f(u)\,du
+&& \text{(total integral is 1; } F \text{ is the integral of } f \text{)} \\
+&= \int_{u=t}^{\infty} f(u)\,du
+&& \text{(split the first integral at } t \text{ and cancel)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exp-survfn}
+#### Survival function of an exponential distribution
+
+Let $T$ have density $f(t) = \lambda \ef{-\lambda t}$ for $t \ge 0$
+(and $0$ for $t < 0$), for a fixed rate $\lambda > 0$;
+this is the **exponential distribution** with rate $\lambda$.
+For $t \ge 0$, by @thm-survival-expressions-1:
+
+$$
+\ba
+\surv(t)
+&= \int_{u=t}^{\infty} \lambda \ef{-\lambda u}\,du
+&& \text{(integral form of the survival function)} \\
+&= \sb{-\ef{-\lambda u}}_{u=t}^{\infty}
+&& \text{(antiderivative of } \lambda \ef{-\lambda u} \text{)} \\
+&= 0 - \paren{-\ef{-\lambda t}}
+&& \text{(evaluate at the bounds; } \ef{-\lambda u} \to 0 \text{ as } u \to \infty \text{)} \\
+&= \ef{-\lambda t}
+&& \text{(simplify)}
+\ea
+$$
+
+For $t < 0$, $\surv(t) = \Pr(T > t) = 1$, since $T \ge 0$.
+With $\lambda = 0.5$, for example, $\surv(2) = \ef{-1} \approx 0.368$.
+
+:::

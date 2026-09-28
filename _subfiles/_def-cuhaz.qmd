@@ -1,0 +1,132 @@
+:::{#def-cuhaz}
+#### Cumulative hazard function
+
+The **cumulative hazard function** of a continuous random variable $T$,
+often denoted $\cuhaz(t)$ or $\H(t)$,
+is the integral of its [hazard function](#def-hazard) up to $t$:
+
+$$\cuhaz(t) \eqdef \int_{u=-\infty}^{t} \haz(u)\,du$$
+
+:::
+
+::: notes
+
+For a non-negative $T$, such as a time to event,
+$\haz(u) = 0$ for $u < 0$,
+so the lower limit of the integral can be replaced by $0$:
+$\cuhaz(t) = \int_{u=0}^{t} \haz(u)\,du$.
+That is the form most survival-analysis texts use.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exp-cumhaz}
+#### Cumulative hazard function of an exponential distribution
+
+Continuing @exm-exp-haz,
+the hazard is $\haz(u) = \lambda$ for $u \ge 0$ and $0$ for $u < 0$,
+so for $t \ge 0$:
+
+$$
+\ba
+\cuhaz(t)
+&= \int_{u=-\infty}^{0} 0\,du + \int_{u=0}^{t} \lambda\,du
+&& \text{(split the integral at } 0 \text{)} \\
+&= 0 + \lambda t
+&& \text{(integrate each piece)} \\
+&= \lambda t
+&& \text{(simplify)}
+\ea
+$$
+
+and $\cuhaz(t) = 0$ for $t < 0$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-surv-int-haz}
+#### Survival function from the cumulative hazard
+
+If $T$ is a continuous random variable
+whose CDF $F$ is differentiable at all but finitely many points,
+then for every $t$ with $\surv(t) > 0$:
+
+$$\cuhaz(t) = -\logf{\surv(t)}$$
+
+and therefore:
+
+$$\surv(t) = \expf{-\cuhaz(t)}$$ {#eq-surv-int-haz}
+
+:::
+
+::: proof
+
+Since $\surv(t) = 1 - F(t)$ (@thm-survival-expressions-1)
+and $F$ has derivative $f$ wherever $F$ is differentiable (@thm-density-vs-CDF),
+$\surv$ has derivative $-f$ at those points.
+At each such $u$ with $\surv(u) > 0$:
+
+$$
+\ba
+\frac{d}{du}\paren{-\logf{\surv(u)}}
+&= -\frac{1}{\surv(u)} \cd \frac{d}{du}\surv(u)
+&& \text{(chain rule)} \\
+&= -\frac{1}{\surv(u)} \cd \paren{-f(u)}
+&& \text{(} \surv' = -f \text{)} \\
+&= \frac{f(u)}{\surv(u)}
+&& \text{(simplify)} \\
+&= \haz(u)
+&& \text{(@thm-hazard-dens-surv)}
+\ea
+$$
+
+The function $-\logf{\surv(u)}$ is continuous,
+because $\surv$ is continuous for a continuous $T$,
+and it has derivative $\haz(u)$ at all but finitely many points,
+so it is an antiderivative of $\haz$
+for the fundamental theorem of calculus.
+As $u \to -\infty$, $\surv(u) \to 1$, so $-\logf{\surv(u)} \to 0$.
+Therefore:
+
+$$
+\ba
+\cuhaz(t)
+&\eqdef \int_{u=-\infty}^{t} \haz(u)\,du
+&& \text{(@def-cuhaz)} \\
+&= \sb{-\logf{\surv(u)}}_{u=-\infty}^{t}
+&& \text{(} -\log \surv \text{ is an antiderivative of } \haz \text{)} \\
+&= -\logf{\surv(t)} - 0
+&& \text{(evaluate at the bounds)} \\
+&= -\logf{\surv(t)}
+&& \text{(simplify)}
+\ea
+$$
+
+Exponentiating both sides of $-\cuhaz(t) = \logf{\surv(t)}$
+gives @eq-surv-int-haz.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exp-surv-int-haz}
+#### Recovering the exponential survival function from its cumulative hazard
+
+Continuing @exm-exp-cumhaz, for $t \ge 0$:
+
+$$
+\ba
+\surv(t)
+&= \expf{-\cuhaz(t)}
+&& \text{(@eq-surv-int-haz)} \\
+&= \expf{-\lambda t}
+&& \text{(substitute } \cuhaz(t) = \lambda t \text{)}
+\ea
+$$
+
+which matches the survival function computed directly
+in @exm-exp-survfn.
+
+:::

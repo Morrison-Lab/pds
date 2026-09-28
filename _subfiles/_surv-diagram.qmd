@@ -1,0 +1,23 @@
+$$
+f(t)
+\xleftarrow[\surv(t)\haz(t)]{-\surv'(t)}
+\surv(t)
+\xleftarrow[]{\expf{-\cuhaz(t)}}
+\cuhaz(t)
+\xleftarrow[]{\int_{u=0}^t \haz(u)\,du}
+\haz(t)
+\xleftarrow[]{\expf{\loghaz(t)}}
+\loghaz(t)
+$$
+
+$$
+f(t)
+\xrightarrow[\int_{u=t}^\infty f(u)\,du]{f(t)/\haz(t)}
+\surv(t)
+\xrightarrow[-\logf{\surv(t)}]{}
+\cuhaz(t)
+\xrightarrow[\cuhaz'(t)]{}
+\haz(t)
+\xrightarrow[\logf{\haz(t)}]{}
+\loghaz(t)
+$$
