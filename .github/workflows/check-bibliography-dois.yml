@@ -21,3 +21,13 @@ jobs:
     permissions:
       contents: read
     uses: Morrison-Lab/gha/.github/workflows/check-bibliography-dois.yml@v2
+    with:
+      # Book entries copied from rme's references.bib without a DOI field
+      # (older or non-DOI'd books, and vittinghoff2e, whose DOI sits in its
+      # url field but has not been verified against CrossRef yet).
+      # Move a key out of this list when a DOI is found and verified
+      # against CrossRef.
+      exclude-keys: >-
+        billingsley1995probability CaseBerg01 kalbfleisch2011statistical
+        klein2003survival kleinbaum2012survival me4 rudin1976principles
+        Stirzaker2005probability vittinghoff2e
