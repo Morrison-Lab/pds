@@ -1,1 +1,1 @@
-$$\haz(t) \eqdef \p(T=t \mid T\ge t)$$
+$$\haz(t) \eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(t \le T < t + \Delta \mid T \ge t)}{\Delta}$$

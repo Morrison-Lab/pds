@@ -2,10 +2,12 @@
 #### Hazard function
 
 The **hazard function** (also called the **hazard rate** or **hazard rate function**)
-of a continuous random variable $T$ at value $t$,
+of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$,
 typically denoted $\haz(t)$ or $\h(t)$,
-is the conditional [density](#def-pdf) of $T$ at $t$,
-given $T \ge t$:
+is the limit of the [conditional probability](probability-basics.qmd#def-conditional-prob)
+that $T$ falls in an interval starting at $t$, given $T \ge t$,
+divided by the width of that interval,
+as that width shrinks to 0:
 
 {{< include pds/_subfiles/_eq-def-hazard.qmd >}}
 
@@ -26,9 +28,11 @@ $\haz(t) \cd \Delta$ is approximately the probability
 that the event occurs in $[t, t + \Delta)$,
 given that it has not occurred before $t$.
 A hazard can exceed 1, just as a density can.
-For a discrete $T$, the same definition with a conditional probability
-in place of the conditional density gives a *discrete-time* hazard,
-$\Pr(T = t \mid T \ge t)$, which is a probability.
+Many sources write the hazard as $\haz(t) = \p(T = t \mid T \ge t)$,
+reading it as the density of $T$ at $t$, conditional on the event $T \ge t$;
+that notation abbreviates the limit in @def-hazard.
+For a discrete $T$, the conditional probability $\Pr(T = t \mid T \ge t)$ itself
+is called the *discrete-time* hazard, and it is a probability.
 
 The name "hazard" carries a connotation that the event is undesirable ---
 death, relapse, equipment failure, and so on.
