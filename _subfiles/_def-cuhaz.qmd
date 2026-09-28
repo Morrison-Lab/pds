@@ -50,7 +50,7 @@ and $\cuhaz(t) = 0$ for $t < 0$.
 #### Survival function from the cumulative hazard
 
 If $T$ is a continuous random variable
-whose CDF $F$ is differentiable at all but finitely many points,
+whose density $f$ is continuous at all but finitely many points,
 then for every $t$ with $\surv(t) > 0$:
 
 $$\cuhaz(t) = -\logf{\surv(t)}$$
@@ -64,7 +64,7 @@ $$\surv(t) = \expf{-\cuhaz(t)}$$ {#eq-surv-int-haz}
 ::: proof
 
 Since $\surv(t) = 1 - F(t)$ (@thm-survival-expressions-1)
-and $F$ has derivative $f$ wherever $F$ is differentiable (@thm-density-vs-CDF),
+and $F$ has derivative $f$ wherever $f$ is continuous (@thm-density-vs-CDF),
 $\surv$ has derivative $-f$ at those points.
 At each such $u$ with $\surv(u) > 0$:
 

@@ -49,7 +49,7 @@ format:
 {{< slidebreak >}}
 
 For a continuous random variable $T \ge 0$
-whose CDF is differentiable at all but finitely many points,
+whose density is continuous at all but finitely many points,
 @thm-survival-expressions-1, @thm-hazard-dens-surv, and @cor-surv-int-haz
 connect the functions in @tbl-prob-dist-fns;
 each arrow in the following diagram converts one function into the next:

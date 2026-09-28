@@ -52,7 +52,8 @@ $$
 $$
 
 For continuous $T$, the density integrates to 1 over the real line
-(@thm-density-sums-to-one), so:
+(@thm-density-sums-to-one),
+and $F$ is the integral of the density up to $t$ (@thm-density-vs-CDF), so:
 
 $$
 \ba

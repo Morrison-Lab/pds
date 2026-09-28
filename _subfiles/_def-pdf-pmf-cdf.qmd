@@ -34,23 +34,25 @@ $$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \t
 #### Probability density function (PDF)
 
 If $X$ is a [continuous random variable](#def-continuous-rv),
-the **probability density** of $X$ at value $x$,
+a **probability density function** of $X$,
 denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
-is the limit of the [probability](probability-basics.qmd#def-probability) that $X$ falls in an
-interval starting at $x$, divided by the width of that interval,
-as that width shrinks to 0:
+is a function $f \ge 0$ whose integral over any interval
+is the [probability](probability-basics.qmd#def-probability) that $X$ falls in that interval:
 
-$$f(x) \eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(X \in [x, x + \Delta])}{\Delta}$$
+$$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
 
 :::
 
 ::: notes
 
 A density is not a probability: it can exceed 1.
-For small $\Delta > 0$, $f(x) \cd \Delta \approx \Pr(X \in [x, x + \Delta])$.
+A density is also not unique:
+changing $f$ at finitely many points changes none of its integrals,
+so the value of a density at a single point carries no probability by itself.
+These notes use the version that is continuous wherever possible.
+@thm-density-limit gives the value of $f$ at a point where it is continuous.
 
-See also @me4 (Chapter 22, p. 535)
-and
+See also
 <https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
 
 :::
@@ -60,13 +62,26 @@ and
 :::{#exm-pdf}
 #### Density of a uniform random variable
 
-For $X$ uniform on $[0, 1]$ (@exm-continuous-rv)
-and $x \in [0, 1)$,
-$\Pr(X \in [x, x + \Delta]) = \Delta$ once $\Delta \le 1 - x$, so:
+Let $X \sim \text{Uniform}(0, 1)$ (@exm-continuous-rv),
+and let $f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise.
+For $0 \le a \le b \le 1$:
 
-$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
+$$
+\ba
+\int_a^b f(x)\,dx
+&= \int_a^b 1\,dx
+&& \text{(} f = 1 \text{ on } [0, 1] \text{)} \\
+&= b - a
+&& \text{(integrate)} \\
+&= \Pr(a \le X \le b)
+&& \text{(definition of the uniform distribution)}
+\ea
+$$
 
-For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so $f(x) = 0$.
+An interval reaching outside $[0, 1]$ adds nothing to either side:
+$f = 0$ there,
+and $X$ falls outside $[0, 1]$ with probability 0 (@exm-continuous-rv).
+So $f$ is a density of $X$.
 
 :::
 
@@ -147,10 +162,14 @@ so the median of the number of heads is $Q(0.5) = 1$.
 {{< slidebreak >}}
 
 :::{#thm-density-vs-CDF}
-#### Density function is derivative of CDF
+#### A density integrates to the CDF, and is its derivative
 
 If $X$ is a continuous random variable with density $f$ and CDF $F$,
-then at every $t$ where $F$ is differentiable:
+then for every $t$:
+
+$$F(t) = \int_{-\infty}^{t} f(x)\,dx$$
+
+and at every $t$ where $f$ is continuous:
 
 $$f(t) = \deriv{t} F(t)$$
 
@@ -158,34 +177,36 @@ $$f(t) = \deriv{t} F(t)$$
 
 ::: proof
 
-For $\Delta > 0$,
-$\{X \le t + \Delta\}$ is the disjoint union of $\{X \le t\}$ and $\{t < X \le t + \Delta\}$,
-and $\Pr(X = t) = 0$ because $X$ is continuous.
+For any $a < t$,
+$\{X \le t\}$ is the disjoint union of $\{X \le a\}$ and $\{a < X \le t\}$,
+and $\Pr(X = a) = 0$ because $X$ is continuous.
 So:
 
 $$
 \ba
-f(t)
-&\eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(t \le X \le t + \Delta)}{\Delta}
-&& \text{(definition of the density)} \\
-&= \lim_{\Delta \downarrow 0} \frac{\Pr(t < X \le t + \Delta)}{\Delta}
-&& \text{(} \Pr(X = t) = 0 \text{)} \\
-&= \lim_{\Delta \downarrow 0} \frac{F(t + \Delta) - F(t)}{\Delta}
+F(t)
+&= \Pr(X \le a) + \Pr(a < X \le t)
 && \text{(additivity, and the definition of the CDF)} \\
-&= \deriv{t} F(t)
-&& \text{(} F \text{ is differentiable at } t \text{)}
+&= F(a) + \Pr(a \le X \le t)
+&& \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\
+&= F(a) + \int_a^t f(x)\,dx
+&& \text{(definition of the density)}
 \ea
 $$
+
+Letting $a \to -\infty$, $F(a) \to 0$ (@def-cdf),
+which gives $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
+The fundamental theorem of calculus then gives
+$\deriv{t} \int_{-\infty}^{t} f(x)\,dx = f(t)$
+at every $t$ where $f$ is continuous.
 
 :::
 
 ::: notes
 
 For the densities in these notes,
-$F$ is differentiable at all but finitely many points,
-so the fundamental theorem of calculus gives
-$F(b) - F(a) = \int_a^b f(x)\,dx$,
-and in particular $F(t) = \int_{-\infty}^t f(x)\,dx$.
+$f$ is continuous at all but finitely many points,
+so $F' = f$ at all but finitely many points.
 
 :::
 
@@ -194,9 +215,161 @@ and in particular $F(t) = \int_{-\infty}^t f(x)\,dx$.
 :::{#exm-density-vs-CDF}
 #### CDF and density of a uniform random variable
 
-For $X$ uniform on $[0, 1]$,
-$F(t) = \Pr(0 \le X \le t) = t$ for $t \in [0, 1]$.
-For $t \in (0, 1)$, $\deriv{t} F(t) = 1$, which matches @exm-pdf.
+For $X$ uniform on $[0, 1]$ with the density $f$ of @exm-pdf,
+and $t \in [0, 1]$:
+
+$$
+\ba
+F(t)
+&= \int_{-\infty}^{t} f(x)\,dx
+&& \text{(the CDF is the integral of the density)} \\
+&= \int_{-\infty}^{0} 0\,dx + \int_{0}^{t} 1\,dx
+&& \text{(split at 0, and substitute } f \text{)} \\
+&= t
+&& \text{(integrate)}
+\ea
+$$
+
+For $t \in (0, 1)$, where $f$ is continuous,
+$\deriv{t} F(t) = 1 = f(t)$.
+At $t = 1$, $f$ jumps from 1 to 0, and $F$ has no derivative:
+its slope is 1 on the left and 0 on the right.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cdf-derivative-density}
+#### A piecewise-smooth CDF has its derivative as a density
+
+If the CDF $F$ of a random variable $X$ is continuous everywhere,
+and has a continuous derivative at all but finitely many points,
+then $X$ is continuous,
+and $F'$ (given any values at the finitely many exceptional points)
+is a density of $X$.
+
+:::
+
+::: proof
+
+For events $A \subseteq B$,
+$B$ is the disjoint union of $A$ and $B \setminus A$,
+so additivity gives $\Pr(A) \le \Pr(B)$.
+For any $x$ and $\Delta > 0$,
+$\{X = x\} \subseteq \{x - \Delta < X \le x\}$, so:
+
+$$
+\ba
+0
+&\le \Pr(X = x)
+&& \text{(probabilities are non-negative)} \\
+&\le \Pr(x - \Delta < X \le x)
+&& \text{(} \{X = x\} \subseteq \{x - \Delta < X \le x\} \text{)} \\
+&= F(x) - F(x - \Delta)
+&& \text{(additivity, and the definition of the CDF)}
+\ea
+$$
+
+and $F(x) - F(x - \Delta) \to 0$ as $\Delta \downarrow 0$, because $F$ is continuous.
+So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous.
+Then, for $a \le b$:
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \Pr(a < X \le b)
+&& \text{(} \Pr(X = a) = 0 \text{)} \\
+&= F(b) - F(a)
+&& \text{(additivity, and the definition of the CDF)} \\
+&= \int_a^b F'(x)\,dx
+&& \text{(fundamental theorem of calculus)}
+\ea
+$$
+
+The last step applies the fundamental theorem of calculus
+on each piece of $[a, b]$ between exceptional points,
+where $F'$ is continuous,
+and joins the pieces using the continuity of $F$ at the exceptional points.
+Finally, $F' \ge 0$ wherever it exists, because $F$ is non-decreasing.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cdf-derivative-density}
+#### A density from a CDF with a corner
+
+Let $X$ have CDF $F(t) = 0$ for $t < 0$, $F(t) = t^2$ for $0 \le t \le 1$,
+and $F(t) = 1$ for $t > 1$.
+This $F$ is continuous everywhere,
+and has a continuous derivative everywhere except $t = 1$,
+where its slope drops from 2 to 0.
+By @thm-cdf-derivative-density, $X$ is continuous with density
+$f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise.
+As a check, $\int_0^1 2t\,dt = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-density-limit}
+#### A density as a limit of interval probabilities
+
+If $X$ is a continuous random variable with density $f$,
+and $f$ is continuous at $x$,
+then $f(x)$ is the limit of the probability that $X$ falls in an interval starting at $x$,
+divided by the width of that interval,
+as that width shrinks to 0:
+
+$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}$$
+
+:::
+
+::: proof
+
+For $\Delta > 0$:
+
+$$
+\ba
+\frac{\Pr(x \le X < x + \Delta)}{\Delta}
+&= \frac{\Pr(x < X \le x + \Delta)}{\Delta}
+&& \text{(} \Pr(X = x) = \Pr(X = x + \Delta) = 0 \text{)} \\
+&= \frac{F(x + \Delta) - F(x)}{\Delta}
+&& \text{(additivity, and the definition of the CDF)}
+\ea
+$$
+
+By @thm-density-vs-CDF, $F$ is differentiable at $x$ with $F'(x) = f(x)$,
+so this difference quotient converges to $f(x)$ as $\Delta \downarrow 0$.
+
+:::
+
+::: notes
+
+For small $\Delta > 0$, $f(x) \cd \Delta \approx \Pr(x \le X < x + \Delta)$.
+The limit is the right derivative of $F$ at $x$.
+At a point where $f$ is not continuous,
+the limit can differ from the chosen value $f(x)$:
+for $X \sim \text{Uniform}(0, 1)$,
+the limit at $x = 1$ is 0,
+although @exm-pdf sets $f(1) = 1$.
+
+See also @me4 (Chapter 22, p. 535).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-limit}
+#### The uniform density as a limit
+
+For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$,
+$\Pr(x \le X < x + \Delta) = \Delta$ once $\Delta \le 1 - x$, so:
+
+$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
+
+For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
+Both agree with the density of @exm-pdf.
 
 :::
 
@@ -216,12 +389,12 @@ $$\int_{-\infty}^{\infty} f(x)\, dx = 1$$
 $$
 \ba
 \int_{-\infty}^{\infty} f(x)\, dx
-&= \lim_{b \to \infty} F(b) - \lim_{a \to -\infty} F(a)
-&& \text{(} F(b) - F(a) = \textstyle\int_a^b f(x)\,dx \text{)} \\
-&= 1 - 0
-&& \text{(limits of a CDF)} \\
+&= \lim_{b \to \infty} \int_{-\infty}^{b} f(x)\, dx
+&& \text{(definition of an improper integral)} \\
+&= \lim_{b \to \infty} F(b)
+&& \text{(the CDF is the integral of the density)} \\
 &= 1
-&& \text{(simplify)}
+&& \text{(limit of a CDF)}
 \ea
 $$
 

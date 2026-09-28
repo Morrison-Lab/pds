@@ -1,6 +1,6 @@
 Name | Symbols | Definition
 :-------------- | ------ | ----------
-[Probability density function (PDF)](#def-pdf) | $f(t), \p(t)$ | $\p(T=t)$
+[Probability density function (PDF)](#def-pdf) | $f(t), \p(t)$ | $f \ge 0$ with $\int_a^b f(u)\,du = \Pr(a \le T \le b)$
 [Cumulative distribution function (CDF)](#def-cdf) | $F(t)$ | $\Pr(T\leq t)$
 [Survival function](#def-surv-fn) | $\surv(t), \bar{F}(t)$ | $\Pr(T > t)$
 [Hazard function](#def-hazard) | $\haz(t), \h(t)$ | $\p(T=t \mid T\ge t)$

@@ -776,10 +776,15 @@ $$
 
 ::: proof
 
-The density is $f(t) = -\surv'(t)$
-([CDF](random-variables.qmd#thm-density-vs-CDF) and
-[survival function](random-variables.qmd#thm-survival-expressions-1) results),
-and the hazard is $f(t)/\surv(t)$
+The CDF of $T$ is $F(t) = 1 - \surv(t)$
+([survival function and CDF](random-variables.qmd#thm-survival-expressions-1)),
+which is $0$ for $t < 0$ and $1 - \text{e}^{-\lambda t^\alpha}$ for $t \ge 0$.
+This $F$ is continuous everywhere,
+with a continuous derivative everywhere except possibly $t = 0$,
+so $f = F' = -\surv'$ is a density of $T$
+([a piecewise-smooth CDF has its derivative as a density](random-variables.qmd#thm-cdf-derivative-density)).
+This density is continuous at every $t > 0$,
+so there the hazard is $f(t)/\surv(t)$
 ([hazard equals density over survival](random-variables.qmd#thm-hazard-dens-surv)):
 
 $$
