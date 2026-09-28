@@ -105,14 +105,32 @@ and otherwise spreads over $(0, \infty)$, is one.
 
 {{< slidebreak >}}
 
+:::{#def-uniform}
+#### Uniform distribution
+
+A random variable $X$ has the **uniform distribution** on an interval $[\alpha, \beta]$,
+with $\alpha < \beta$,
+written $X \sim \text{Uniform}(\alpha, \beta)$,
+if the probability that $X$ falls in any subinterval of $[\alpha, \beta]$
+is proportional to that subinterval's length:
+
+$$\Pr(a \le X \le b) = \frac{b - a}{\beta - \alpha} \quad \text{for all } \alpha \le a \le b \le \beta$$
+
+:::
+
+{{< slidebreak >}}
+
 :::{#exm-continuous-rv}
 #### A uniformly distributed random variable
 
-Let $X$ satisfy $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$
-(the **uniform distribution** on $[0, 1]$).
-Taking $a = b = x$ gives $\Pr(X = x) = x - x = 0$ for every $x \in [0,1]$,
-and $\Pr(X = x) = 0$ outside $[0, 1]$ as well,
-so $X$ is continuous.
+Let $X \sim \text{Uniform}(0, 1)$ (@def-uniform),
+so $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
+Taking $a = b = x$ gives $\Pr(X = x) = x - x = 0$ for every $x \in [0,1]$.
+Taking $a = 0$ and $b = 1$ gives $\Pr(0 \le X \le 1) = 1$,
+so by the [complement rule](probability-basics.qmd#cor-p-neg0)
+$X$ falls outside $[0, 1]$ with probability 0,
+and $\Pr(X = x) = 0$ for every $x$ outside $[0, 1]$ as well.
+So $X$ is continuous.
 Its range, $[0, 1]$, is uncountable.
 
 :::
