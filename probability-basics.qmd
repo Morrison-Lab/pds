@@ -41,3 +41,15 @@ format:
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_thm-bayes.qmd >}}
+
+::: {.callout-tip title="Video lecture"}
+Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)
+covers conditional distributions, the law of total probability,
+the chain rule of probability, and Bayes' rule [@hutchinson_wwu_ml_videos].
+The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+:::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

@@ -24,6 +24,12 @@ format:
 
 {{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
 
+::: {.callout-tip title="Video lecture"}
+Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)
+covers probability mass functions and probability density functions [@hutchinson_wwu_ml_videos].
+The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+:::
+
 ## Survival, hazard, and cumulative hazard functions {#sec-prob-haz}
 
 <!-- No slidebreak here: the heading shares its slide with the def-surv-fn div. -->
