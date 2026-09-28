@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 16:06:27 (PDT)
+Last modified: 2026-09-28 16:16:09 (PDT)
 
 > **NOTE:**
 >
@@ -583,7 +583,7 @@ Last modified: 2026-09-28 16:06:27 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 8 (Fubini–Tonelli theorem, measure-theoretic form)** Let \\\mu_1\\ and \\\mu_2\\ be \\\sigma\\-finite [measures](probability-basics.llms.md#def-measure) on \\\sigma\\-algebras of subsets of sets \\S_1\\ and \\S_2\\, and let \\f\\ be a measurable function on \\S_1 \times S_2\\. If either
+> **Theorem 8 (Fubini–Tonelli theorem, measure-theoretic form)** Let \\\mu_1\\ and \\\mu_2\\ be \\\sigma\\-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure) on \\\sigma\\-algebras of subsets of sets \\S_1\\ and \\S_2\\, and let \\f\\ be a measurable function on \\S_1 \times S_2\\. If either
 >
 > 1.  \\f \ge 0\\ (Tonelli), or
 >
@@ -597,7 +597,7 @@ Last modified: 2026-09-28 16:06:27 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3). Lebesgue measure on the real line and [counting measure](probability-basics.llms.md#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
+> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3). Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
