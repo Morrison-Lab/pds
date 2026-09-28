@@ -9,7 +9,7 @@ provided the integrand is non-negative (Tonelli)
 or absolutely integrable (Fubini).
 Lebesgue measure on the real line and counting measure on a countable set
 are both $\sigma$-finite,
-which yields @cor-fubini-joint.
+which gives the theorem a form stated in terms of a joint distribution.
 
 {{< slidebreak >}}
 
@@ -118,8 +118,9 @@ As a check: $\E{X} = \tfrac{1}{2}$, $\E{Y} = 1$, and $\E{X}\E{Y} = \tfrac{1}{2}$
 #### When independence fails: a counterexample
 
 Correctly applying @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$
---- not the product of marginals $f_X(x)\,f_Y(y)$, which is valid only when $X$ and $Y$
-are independent. Using the wrong joint density gives the wrong answer.
+--- not the product of marginals $f_X(x)\,f_Y(y)$,
+which is valid only when $X$ and $Y$ are independent.
+Using the wrong joint density gives the wrong answer.
 
 Let $X \sim \mathrm{Uniform}(0, 1)$ and set $Y = X$
 (so $X$ and $Y$ are perfectly correlated and **not** independent).
@@ -154,14 +155,13 @@ respect to two-dimensional Lebesgue measure, so **no joint density
 $f_{X,Y}$ on $[0, 1]^2$ exists**, which is the reference density
 @cor-fubini-joint requires.
 
-The following calculation is what someone would *erroneously* write if
-they assumed independence and used $f_X(x)\,f_Y(y)$ as a "joint
-density" --- a function that does not in fact correspond to the joint
-distribution of $(X, X)$. The marginals
-$X \sim \mathrm{Uniform}(0,1)$ and $Y \sim \mathrm{Uniform}(0,1)$
-do have densities $f_X = f_Y = 1$, but the *product*
-$f_X(x)\,f_Y(y) = 1$ on $[0, 1]^2$ is the density of an *independent*
-pair, not of $(X, X)$:
+The following calculation is what someone would *erroneously* write
+if they assumed independence and used $f_X(x)\,f_Y(y)$ as a "joint density"
+--- a function that does not in fact correspond to the joint distribution of $(X, X)$.
+The marginals $X \sim \mathrm{Uniform}(0,1)$ and $Y \sim \mathrm{Uniform}(0,1)$
+do have densities $f_X = f_Y = 1$,
+but the *product* $f_X(x)\,f_Y(y) = 1$ on $[0, 1]^2$
+is the density of an *independent* pair, not of $(X, X)$:
 
 $$
 \ba
@@ -179,11 +179,11 @@ $$
 
 This calculation recovers $\E{XY}$ for *independent* uniforms ($\tfrac{1}{4}$),
 not $\E{XX}$ for the perfectly correlated pair ($\tfrac{1}{3}$).
-The lesson is that @cor-fubini-joint requires the *actual* joint density
-$f_{X,Y}$. For independent $(X, Y)$, this factors as $f_X(x)\,f_Y(y)$;
-for dependent $(X, Y)$, $f_{X,Y}$ need not factor --- and for $(X, X)$,
-no joint density on $\mathbb{R}^2$ exists at all, so @cor-fubini-joint
-simply does not apply.
+The lesson is that @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$.
+For independent $(X, Y)$, this density factors as $f_X(x)\,f_Y(y)$;
+for dependent $(X, Y)$, $f_{X,Y}$ need not factor
+--- and for $(X, X)$, no joint density on $\mathbb{R}^2$ exists at all,
+so @cor-fubini-joint simply does not apply.
 
 :::{#fig-fubini-prob-fail}
 
@@ -231,12 +231,13 @@ cat(
 ```
 
 Samples from the joint distribution of $(X, X)$ (red, on the diagonal)
-versus an independent pair $(X_1, X_2)$ with the same marginals (grey,
-scattered over $[0, 1]^2$). The actual joint mass for $(X, X)$ is
-concentrated on a 1-dimensional diagonal --- a set of Lebesgue measure
-zero in $\mathbb{R}^2$ --- so no joint density on $[0, 1]^2$ exists, and
-the "$f_X(x)\,f_Y(y) = 1$" calculation integrates against the wrong
-measure (the grey distribution).
+versus an independent pair $(X_1, X_2)$ with the same marginals
+(grey, scattered over $[0, 1]^2$).
+The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal
+--- a set of Lebesgue measure zero in $\mathbb{R}^2$ ---
+so no joint density on $[0, 1]^2$ exists,
+and the "$f_X(x)\,f_Y(y) = 1$" calculation integrates against the wrong measure
+(the grey distribution).
 
 :::
 
@@ -314,8 +315,8 @@ cat(
 ```
 
 Joint density $f_{X,Y}(x, y) = 2$ on the triangular support
-$\{(x, y) : 0 \le x \le y \le 1\}$, and zero elsewhere. The total
-"volume" under the density is $2 \cdot \tfrac{1}{2} = 1$, as required.
+$\{(x, y) : 0 \le x \le y \le 1\}$, and zero elsewhere.
+The total "volume" under the density is $2 \cdot \tfrac{1}{2} = 1$, as required.
 
 :::
 
