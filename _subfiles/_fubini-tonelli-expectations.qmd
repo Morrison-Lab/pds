@@ -49,6 +49,7 @@ The choice of reference measures covers three cases:
   and $\int g(x)\,d\mu_X(x) = \sum_{x \in \rangef{X}} g(x)$.
 - **Mixed** (one continuous, one discrete):
   one reference measure is Lebesgue and the other is counting;
+  $f_{X,Y}$ is the [joint density-mass function](random-variables.qmd#def-joint-density-mass),
   $f_{X,Y}(x,y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)$
   (or $\P(X = x \mid Y = y)\,f_Y(y)$ if $X$ is discrete and $Y$ continuous),
   and the iterated integrals combine an ordinary integral with a sum.
@@ -356,6 +357,53 @@ $$
 && \text{(marginal density from a joint density)}
 \\&= \E{Y}
 && \text{(definition of expectation)}
+\ea
+$$
+
+**Mixed case, $X$ discrete and $Y$ continuous.**
+With the [joint density-mass function](random-variables.qmd#def-joint-density-mass)
+$\p(X = x,\, Y = y)$,
+@cor-fubini-joint applies with $h(x, y) = y$,
+counting measure for $X$, and Lebesgue measure for $Y$;
+its condition (b) holds because $\E{\abs{Y}} < \infty$.
+The sum runs over the $x$ with $\P(X = x) > 0$,
+where @def-cond-mixed defines $\E{Y \mid X = x}$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \sum_{x} \E{Y \mid X=x} \cd \P(X=x)
+&& \text{(LOTUS, discrete case)}
+\\&= \sum_{x} \paren{\int_{y} y \cd \p(Y=y \mid X=x)\,dy} \cd \P(X=x)
+&& \text{(definition of conditional expectation, mixed case)}
+\\&= \sum_{x} \int_{y} y \cd \p(Y=y \mid X=x) \cd \P(X=x)\,dy
+&& \text{(move the constant } \P(X=x) \text{ inside the integral)}
+\\&= \sum_{x} \int_{y} y \cd \p(X=x,\, Y=y)\,dy
+&& \text{(definition of the conditional density, mixed case)}
+\\&= \E{Y}
+&& \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)}
+\ea
+$$
+
+**Mixed case, $X$ continuous and $Y$ discrete.**
+The same steps apply with the integral and the sum swapped,
+over the $x$ with $\p(X = x) > 0$;
+at any other $x$, $\p(X = x,\, Y = y) = 0$ for every $y$,
+because these non-negative terms sum to $\p(X = x)$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \int_{x} \E{Y \mid X=x} \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)}
+\\&= \int_{x} \paren{\sum_{y} y \cd \P(Y=y \mid X=x)} \cd \p(X=x)\,dx
+&& \text{(definition of conditional expectation, mixed case)}
+\\&= \int_{x} \sum_{y} y \cd \P(Y=y \mid X=x) \cd \p(X=x)\,dx
+&& \text{(move the constant } \p(X=x) \text{ inside the sum)}
+\\&= \int_{x} \sum_{y} y \cd \p(X=x,\, Y=y)\,dx
+&& \text{(definition of the conditional PMF, mixed case)}
+\\&= \E{Y}
+&& \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)}
 \ea
 $$
 
