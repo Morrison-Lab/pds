@@ -4,13 +4,13 @@ Code
 
 Published
 
-Last modified: 2026-09-28 16:30:06 (PDT)
+Last modified: 2026-09-28 16:41:13 (PDT)
 
 ## 1 Random variables
 
 > **NOTE:**
 >
-> **Definition 1 (Random variable)** A **random variable** is a function from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\: it assigns a number to each possible outcome of a random experiment.
+> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\: it assigns a number to each possible outcome of a random experiment.
 
 > **NOTE:**
 >
@@ -34,11 +34,15 @@ Last modified: 2026-09-28 16:30:06 (PDT)
 
 > **NOTE:**
 >
+> *Remark*. The range of \\X\\ is the [image](https://morrison-lab.github.io/mds/sets-functions.html#def-image) of \\X\\ as a function on \\\Omega\\. For a general function, these notes say “image”, because some sources use “range” for the codomain instead; for a random variable, “range” is the standard term.
+
+> **NOTE:**
+>
 > **Example 2 (Range of the number of heads)** In [Example 1](#exm-random-variable), \\\mathcal{R}(X) = \mathopen{}\left\\0, 1, 2\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 3 (Discrete random variable)** A random variable \\X\\ is **discrete** if its [range](#def-range) \\\mathcal{R}(X)\\ is finite or countably infinite.
+> **Definition 3 (Discrete random variable)** A random variable \\X\\ is **discrete** if its [range](#def-range) \\\mathcal{R}(X)\\ is [countable](https://morrison-lab.github.io/mds/sets-functions.html#def-countable-set).
 
 > **NOTE:**
 >
@@ -491,7 +495,7 @@ Last modified: 2026-09-28 16:30:06 (PDT)
 >
 > \\ \begin{aligned} 1 &= \Pr((X, X) \in L) && \text{(} \mathopen{}\left\\(X, X) \in L\right\\\mathclose{} = \Omega \text{, and } \Pr(\Omega) = 1 \text{)} \\ &= \iint_L f(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int\_{-\infty}^{\infty} \mathopen{}\left(\int\_{-\infty}^{\infty} \text{1}\_{y = x} f(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int\_{-\infty}^{\infty} 0\\dx && \text{(the inner integrand is 0 except at } y = x \text{)} \\ &= 0 && \text{(integrate)} \end{aligned} \\
 >
-> which is a contradiction. Tonelli’s theorem allows the iterated integral because \\f \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3).
+> which is a contradiction. Tonelli’s theorem allows the iterated integral because \\f \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3).
 
 > **NOTE:**
 >
@@ -505,7 +509,7 @@ Last modified: 2026-09-28 16:30:06 (PDT)
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr((X, Y) \in \[a, b\] \times \mathbb{R}) && \text{(same event)} \\ &= \iint\_{\[a, b\] \times \mathbb{R}} f\_{X,Y}(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int_a^b \mathopen{}\left(\int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int_a^b f_X(x)\\dx && \text{(definition of } f_X \text{)} \end{aligned} \\
 >
-> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3). So \\f_X\\ satisfies [Definition 8](#def-pdf).
+> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3). So \\f_X\\ satisfies [Definition 8](#def-pdf).
 
 > **NOTE:**
 >

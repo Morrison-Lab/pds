@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 16:30:06 (PDT)
+Last modified: 2026-09-28 16:41:13 (PDT)
 
 > **NOTE:**
 >
@@ -60,9 +60,7 @@ Last modified: 2026-09-28 16:30:06 (PDT)
 
 > **NOTE:**
 >
-> *Proof*.
->
-> We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3) lets us exchange the order of integration:
+> *Proof*. We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3) lets us exchange the order of integration:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int\_{u=0}^{\infty} u\\\operatorname{f}(u)\\du && \text{(definition of expectation; } T \ge 0 \text{)}\\ &= \int\_{u=0}^{\infty}\mathopen{}\left(\int\_{t=0}^{u} 1\\dt\right)\mathclose{}\operatorname{f}(u)\\du && \text{(} u = \textstyle\int_0^u 1\\dt \text{)}\\ &= \int\_{u=0}^{\infty}\int\_{t=0}^{u} \operatorname{f}(u)\\dt\\du && \text{(move } \operatorname{f}(u) \text{ inside the inner integral)}\\ &= \int\_{t=0}^{\infty}\int\_{u=t}^{\infty} \operatorname{f}(u)\\du\\dt && \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\ &= \int\_{t=0}^{\infty}\Pr(T\>t)\\dt && \text{(integrate the density over } (t, \infty) \text{)}\\ &= \int\_{t=0}^{\infty}\operatorname{S}(t)\\dt && \text{(definition of the survival function)} \end{aligned} \\
 >
@@ -585,7 +583,7 @@ Last modified: 2026-09-28 16:30:06 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 8 (Fubini–Tonelli theorem, measure-theoretic form)** Let \\\mu_1\\ and \\\mu_2\\ be \\\sigma\\-finite [measures](probability-basics.llms.md#def-measure) on \\\sigma\\-algebras of subsets of sets \\S_1\\ and \\S_2\\, and let \\f\\ be a measurable function on \\S_1 \times S_2\\. If either
+> **Theorem 8 (Fubini–Tonelli theorem, measure-theoretic form)** Let \\\mu_1\\ and \\\mu_2\\ be \\\sigma\\-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure) on \\\sigma\\-algebras of subsets of sets \\S_1\\ and \\S_2\\, and let \\f\\ be a measurable function on \\S_1 \times S_2\\. If either
 >
 > 1.  \\f \ge 0\\ (Tonelli), or
 >
@@ -599,7 +597,7 @@ Last modified: 2026-09-28 16:30:06 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3). Lebesgue measure on the real line and [counting measure](probability-basics.llms.md#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
+> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3). Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
