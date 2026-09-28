@@ -100,13 +100,15 @@ not every probabilistic model needs to describe a process evolving in time.
 #### A linear regression model
 
 A linear regression model with Gaussian errors,
-$Y = \beta_0 + \beta_1 x + \epsilon$ with $\epsilon \sim N(0, \sigma^2)$,
+$Y = \beta_0 + \beta_1 x + \epsilon$ with $\epsilon \sim \ndist{0, \ss}$,
 is probabilistic:
 for each value of the covariate $x$,
 it assigns a probability distribution to the outcome $Y$.
 It is not a stochastic process,
 because it describes the outcome at a given covariate value
 rather than a process evolving in time.
+
+:::
 
 ::: notes
 
@@ -116,8 +118,6 @@ The same model is probabilistic whether its parameters are estimated
 by maximum likelihood or by Bayesian inference.
 Bayesian inference additionally assigns a probability distribution to the parameters themselves,
 which makes the inference method probabilistic too.
-:::
-
 :::
 
 {{< slidebreak >}}
