@@ -97,11 +97,11 @@ not every probabilistic model needs to describe a process evolving in time.
 {{< slidebreak >}}
 
 :::{#exm-probabilistic}
-#### Bayesian inference
+#### A regression model fitted by Bayesian inference
 
-A Bayesian regression model is probabilistic:
-it assigns a probability distribution to its parameters and predictions,
-even though it describes a single fitted relationship rather than a process evolving in time.
+A linear regression model whose parameters are estimated by Bayesian inference is probabilistic:
+Bayesian inference assigns a probability distribution to the parameters and predictions,
+even though the model itself describes a single fitted relationship rather than a process evolving in time.
 
 :::
 
