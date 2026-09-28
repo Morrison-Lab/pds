@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 16:16:09 (PDT)
+Last modified: 2026-09-28 16:24:27 (PDT)
 
 ## 1 Defining probabilities
 
@@ -58,7 +58,7 @@ Last modified: 2026-09-28 16:16:09 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. For sets that are not events, the same property is usually called [pairwise disjoint](https://morrison-lab.github.io/mds/measures.html#def-pairwise-disjoint).
+> *Remark*. The math notes define the same property for sets in general, as [pairwise disjoint](https://morrison-lab.github.io/mds/measures.html#def-pairwise-disjoint).
 
 > **NOTE:**
 >
@@ -143,7 +143,7 @@ Last modified: 2026-09-28 16:16:09 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 7](#def-probability).
+> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets-functions.html#def-extended-nonneg-reals) \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 7](#def-probability).
 >
 > Conversely, suppose \\\Pr\\ satisfies the three axioms. By axiom 1, \\\Pr\\ takes values in \\\[0, \infty\]\\, so axiom 3 says \\\Pr\\ is countably additive in the sense of the [definition of countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity). Then, by [countable additivity and the empty set](https://morrison-lab.github.io/mds/measures.html#lem-countable-additivity-empty), \\\Pr(\emptyset)\\ is 0 or \\\infty\\; \\\Pr(\emptyset)\\ is a real number, so \\\Pr(\emptyset) = 0\\. So \\\Pr\\ satisfies both conditions of the [definition of a measure](https://morrison-lab.github.io/mds/measures.html#def-measure) (\\\Pr(\emptyset) = 0\\ and countable additivity) and is a measure on the events of \\\Omega\\. With axiom 2, \\\Pr\\ is a probability measure ([Definition 7](#def-probability)).
 
