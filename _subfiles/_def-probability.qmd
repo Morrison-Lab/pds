@@ -2,7 +2,8 @@
 #### Finite additivity
 
 Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
-A function $\mu : \mathscr{S} \to [0, \infty]$
+A [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function) $\mu : \mathscr{S} \to [0, \infty]$,
+with values in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets-functions.html#def-extended-nonneg-reals),
 is **finitely additive**
 if, for every finite collection of
 [pairwise disjoint](#def-mutually-exclusive) sets $A_1, \ldots, A_n$ in $\mathscr{S}$,

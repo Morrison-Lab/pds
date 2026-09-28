@@ -1069,7 +1069,7 @@ $$
 
 which is a contradiction.
 Tonelli's theorem allows the iterated integral because $f \ge 0$
-([Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli);
 @billingsley1995probability, Theorem 18.3).
 
 :::
@@ -1105,7 +1105,7 @@ $$
 $$
 
 Tonelli's theorem allows the iterated integral because $f_{X,Y} \ge 0$
-([Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli);
 @billingsley1995probability, Theorem 18.3).
 So $f_X$ satisfies @def-pdf.
 

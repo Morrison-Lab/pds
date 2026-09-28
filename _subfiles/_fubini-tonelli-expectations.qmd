@@ -1,5 +1,3 @@
-<!-- The Fubini-Tonelli link points at rme until mds's multi-page site is published; repoint it to mds's calculus page (calculus.html#thm-fubini-tonelli) then. -->
-
 :::{#thm-fubini-tonelli-measure}
 
 #### Fubini--Tonelli theorem, measure-theoretic form
@@ -32,7 +30,7 @@ except on a set of measure $0$, which does not affect the outer integral.
 ::: remark
 
 For expectations, we use this measure-theoretic form of the
-[Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli),
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli),
 which lets us exchange the order of integration (or summation)
 over a product of $\sigma$-finite measure spaces,
 provided the integrand is non-negative (Tonelli)
