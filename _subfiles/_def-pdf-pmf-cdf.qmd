@@ -1,7 +1,7 @@
 :::{#def-pmf}
 #### Probability mass function (PMF)
 
-If $X$ is a discrete [random variable](#def-random-variable),
+If $X$ is a [discrete random variable](#def-discrete-rv),
 the **probability mass function** of $X$ at value $x$,
 denoted $f(x)$, $f_X(x)$, $\P(x)$, $\P_X(x)$, or $\P(X=x)$,
 is the probability that $X$ takes exactly the value $x$:
@@ -18,30 +18,55 @@ See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
 {{< slidebreak >}}
 
+:::{#exm-pmf}
+#### PMF of the number of heads
+
+For the number of heads $X$ in two fair coin flips
+(@exm-random-variable):
+
+$$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-pdf}
 #### Probability density function (PDF)
 
-If $X$ is a continuous [random variable](#def-random-variable),
+If $X$ is a [continuous random variable](#def-continuous-rv),
 the **probability density** of $X$ at value $x$,
 denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
 is the limit of the [probability](probability-basics.qmd#def-probability) that $X$ falls in an
-interval around $x$, divided by the width of that interval,
+interval starting at $x$, divided by the width of that interval,
 as that width shrinks to 0:
 
-$$
-\ba
-f(x) &\eqdef  \lim_{\Delta \rightarrow 0}
-   \frac{\P(X \in [x, x + \Delta])}{\Delta}
-\ea
-$$
+$$f(x) \eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(X \in [x, x + \Delta])}{\Delta}$$
 
 :::
 
 ::: notes
 
+A density is not a probability: it can exceed 1.
+For small $\Delta > 0$, $f(x) \cd \Delta \approx \Pr(X \in [x, x + \Delta])$.
+
 See also @me4 (Chapter 22, p. 535)
 and
 <https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-pdf}
+#### Density of a uniform random variable
+
+For $X$ uniform on $[0, 1]$ (@exm-continuous-rv)
+and $x \in [0, 1)$,
+$\Pr(X \in [x, x + \Delta]) = \Delta$ once $\Delta \le 1 - x$, so:
+
+$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
+
+For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so $f(x) = 0$.
 
 :::
 
@@ -61,11 +86,28 @@ $$F(t) \eqdef \Pr(X\le t), \quad t\in\mathbb{R}.$$
 
 The CDF is always defined, whether $X$ is discrete or continuous,
 and it fully characterizes $X$'s distribution.
-For a continuous $X$ with density $f$,
-$F(t) = \int_{-\infty}^t f(x)\,dx$
-and, wherever $F$ is differentiable, $f(t) = \deriv{t}F(t)$.
+It is non-decreasing,
+with $F(t) \to 0$ as $t \to -\infty$ and $F(t) \to 1$ as $t \to \infty$.
 
 See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cdf}
+#### CDF of the number of heads
+
+Summing the PMF in @exm-pmf over values at or below $t$:
+
+$$
+F(t) = \begin{cases}
+0, & t < 0 \\
+\tfrac{1}{4}, & 0 \le t < 1 \\
+\tfrac{3}{4}, & 1 \le t < 2 \\
+1, & t \ge 2
+\end{cases}
+$$
 
 :::
 
@@ -76,11 +118,30 @@ See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 
 For a random variable $X$
 with [cumulative distribution function (CDF)](#def-cdf) $F$,
-its population quantile function
+its population **quantile function**
 (generalized inverse of $F$)
 is:
 
-$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p\le 1.$$
+$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p<1.$$
+
+:::
+
+::: notes
+
+The restriction to $0 < p < 1$ keeps $Q(p)$ finite:
+for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
+as for a normal distribution, and the infimum of the empty set is $+\infty$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-quantile-function}
+#### Median of the number of heads
+
+From @exm-cdf, $F(t) \ge 0.5$ first holds at $t = 1$,
+so the median of the number of heads is $Q(0.5) = 1$.
+
 :::
 
 {{< slidebreak >}}
@@ -88,9 +149,54 @@ $$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p\le 1.$$
 :::{#thm-density-vs-CDF}
 #### Density function is derivative of CDF
 
-The density function $f(t)$ or $\p(T=t)$ for a random variable $T$ at value $t$ is equal to the derivative of the cumulative probability function $F(t) \eqdef P(T\le t)$; that is:
+If $X$ is a continuous random variable with density $f$ and CDF $F$,
+then at every $t$ where $F$ is differentiable:
 
-$$f(t) \eqdef \deriv{t} F(t)$$
+$$f(t) = \deriv{t} F(t)$$
+
+:::
+
+::: proof
+
+For $\Delta > 0$,
+$\{X \le t + \Delta\}$ is the disjoint union of $\{X \le t\}$ and $\{t < X \le t + \Delta\}$,
+and $\Pr(X = t) = 0$ because $X$ is continuous.
+So:
+
+$$
+\ba
+f(t)
+&\eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(t \le X \le t + \Delta)}{\Delta}
+&& \text{(definition of the density)} \\
+&= \lim_{\Delta \downarrow 0} \frac{\Pr(t < X \le t + \Delta)}{\Delta}
+&& \text{(} \Pr(X = t) = 0 \text{)} \\
+&= \lim_{\Delta \downarrow 0} \frac{F(t + \Delta) - F(t)}{\Delta}
+&& \text{(additivity, and the definition of the CDF)} \\
+&= \deriv{t} F(t)
+&& \text{(} F \text{ is differentiable at } t \text{)}
+\ea
+$$
+
+:::
+
+::: notes
+
+For the densities in these notes,
+$F$ is differentiable at all but finitely many points,
+so the fundamental theorem of calculus gives
+$F(b) - F(a) = \int_a^b f(x)\,dx$,
+and in particular $F(t) = \int_{-\infty}^t f(x)\,dx$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-vs-CDF}
+#### CDF and density of a uniform random variable
+
+For $X$ uniform on $[0, 1]$,
+$F(t) = \Pr(0 \le X \le t) = t$ for $t \in [0, 1]$.
+For $t \in (0, 1)$, $\deriv{t} F(t) = 1$, which matches @exm-pdf.
 
 :::
 
@@ -99,8 +205,34 @@ $$f(t) \eqdef \deriv{t} F(t)$$
 :::{#thm-density-sums-to-one}
 #### Density functions integrate to 1
 
-For any density function $f(x)$:
+If $X$ is a continuous random variable with density $f$:
 
-$$\int_{x \in \rangef{X}} f(x)\, dx = 1$$
+$$\int_{-\infty}^{\infty} f(x)\, dx = 1$$
+
 :::
 
+::: proof
+
+$$
+\ba
+\int_{-\infty}^{\infty} f(x)\, dx
+&= \lim_{b \to \infty} F(b) - \lim_{a \to -\infty} F(a)
+&& \text{(} F(b) - F(a) = \textstyle\int_a^b f(x)\,dx \text{)} \\
+&= 1 - 0
+&& \text{(limits of a CDF)} \\
+&= 1
+&& \text{(simplify)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-sums-to-one}
+#### The uniform density integrates to 1
+
+For $X$ uniform on $[0, 1]$ (@exm-pdf),
+$\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1$.
+
+:::

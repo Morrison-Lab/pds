@@ -1,30 +1,118 @@
 :::{#def-random-variable}
 #### Random variable
 
-A **random variable** is a variable whose value is a numerical outcome
-of a random phenomenon.
-Formally, it is a function from a sample space $\Omega$
-(the set of all possible outcomes of an experiment)
-to the real numbers $\mathbb{R}$.
-
-We use uppercase letters ($X$, $Y$, $Z$, ...) for random variables,
-and lowercase letters ($x$, $y$, $z$, ...) for their realized (observed) values.
-The **range** of a random variable $X$, denoted $\rangef{X}$,
-is the set of values $X$ can take.
+A **random variable** is a function
+from a [sample space](probability-basics.qmd#def-sample-space) $\Omega$
+to the real numbers $\mathbb{R}$:
+it assigns a number to each possible outcome of a random experiment.
 
 :::
 
 ::: notes
 
-A random variable is **discrete** if its range $\rangef{X}$ is
-finite or countably infinite (e.g., a coin flip, a count),
-and **continuous** if its range is an interval of real numbers
-(e.g., a height, a waiting time).
-This distinction determines whether a
-[probability mass function](#def-pmf) (discrete) or
-[probability density function](#def-pdf) (continuous)
-describes $X$'s distribution.
+We use uppercase letters ($X$, $Y$, $Z$, ...) for random variables,
+and lowercase letters ($x$, $y$, $z$, ...) for their realized (observed) values.
+We write $\{X = x\}$ for the event $\{\omega \in \Omega : X(\omega) = x\}$,
+and similarly for $\{X \le x\}$ and other conditions on $X$.
+A fully rigorous definition also requires the function to be *measurable*,
+so that every such set is an event with a probability;
+that requirement never binds in these notes.
 
 See also: <https://en.wikipedia.org/wiki/Random_variable>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-random-variable}
+#### Number of heads in two coin flips
+
+Flip a fair coin twice.
+The sample space is $\Omega = \set{HH, HT, TH, TT}$,
+each outcome with probability $1/4$.
+Let $X$ be the number of heads:
+
+$$X(HH) = 2, \quad X(HT) = X(TH) = 1, \quad X(TT) = 0$$
+
+Then $\{X = 1\} = \set{HT, TH}$, so $\Pr(X = 1) = 1/4 + 1/4 = 1/2$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-range}
+#### Range of a random variable
+
+The **range** of a random variable $X$, denoted $\rangef{X}$,
+is the set of values $X$ can take:
+
+$$\rangef{X} \eqdef \set{X(\omega) : \omega \in \Omega}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-range}
+#### Range of the number of heads
+
+In @exm-random-variable, $\rangef{X} = \set{0, 1, 2}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-discrete-rv}
+#### Discrete random variable
+
+A random variable $X$ is **discrete**
+if its [range](#def-range) $\rangef{X}$ is finite or countably infinite.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-discrete-rv}
+#### Discrete random variables
+
+The number of heads in @exm-random-variable is discrete,
+with a finite range.
+A count with no upper bound, such as the number of emergency-department visits in a day,
+is discrete with a countably infinite range, $\set{0, 1, 2, \dots}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-continuous-rv}
+#### Continuous random variable
+
+A random variable $X$ is **continuous**
+if $\Pr(X = x) = 0$ for every $x \in \mathbb{R}$.
+
+:::
+
+::: notes
+
+Every continuous random variable in these notes also has a
+[probability density function](#def-pdf).
+Continuous random variables without a density exist,
+but they do not arise in applications.
+Some random variables are neither discrete nor continuous:
+a time to event that equals exactly $0$ with positive probability,
+and otherwise spreads over $(0, \infty)$, is one.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-continuous-rv}
+#### A uniformly distributed random variable
+
+Let $X$ satisfy $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$
+(the **uniform distribution** on $[0, 1]$).
+Taking $a = b = x$ gives $\Pr(X = x) = x - x = 0$ for every $x \in [0,1]$,
+and $\Pr(X = x) = 0$ outside $[0, 1]$ as well,
+so $X$ is continuous.
+Its range, $[0, 1]$, is uncountable.
 
 :::
