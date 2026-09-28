@@ -26,7 +26,9 @@ format:
 
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
-{{< slidebreak >}}
+## Covariance
+
+<!-- heading directly precedes the def-cov div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
 
 {{< include pds/_subfiles/_def-covariance.qmd >}}
 

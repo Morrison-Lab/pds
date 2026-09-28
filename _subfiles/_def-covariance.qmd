@@ -18,18 +18,66 @@ $$\Cov{X,Y}= \E{XY} - \E{X} \E{Y}$$
 
 ::: proof
 
-By linearity of expectation, analogous to @thm-variance's proof:
+By [linearity of expectation](expectation.qmd#thm-linearity-expectation),
+analogous to the proof of the [simplified expression for variance](#thm-variance):
 
 $$
 \ba
 \Cov{X,Y}
 &\eqdef \E{(X-\E{X})(Y-\E{Y})} && \text{(definition of covariance)} \\
 &= \E{XY - X\E{Y} - Y\E{X} + \E{X}\E{Y}} && \text{(expand the product)} \\
-&= \E{XY} - \E{X\E{Y}} - \E{Y\E{X}} + \E{\E{X}\E{Y}} && \text{(linearity of expectation)} \\
-&= \E{XY} - \E{X}\E{Y} - \E{Y}\E{X} + \E{X}\E{Y} && \text{(constants factor out of expectation)} \\
-&= \E{XY} - \E{X}\E{Y} && \text{(algebraic simplification)}
+&= \E{XY} - \E{X}\E{Y} - \E{Y}\E{X} + \E{X}\E{Y} && \text{(linearity of expectation; } \E{X}, \E{Y} \text{ are constants)} \\
+&= \E{XY} - \E{X}\E{Y} && \text{(combine like terms)}
 \ea
 $$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-alt-cov}
+#### Covariance of a binary exposure and outcome
+
+For the joint PMF in @exm-cond-variance,
+$\E{XY} = \P(X = 1, Y = 1) = 0.4$, $\E{X} = 0.5$, and $\E{Y} = 0.7$, so:
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= 0.4 - 0.5 \cd 0.7
+&& \text{(substitute)} \\
+&= 0.05
+&& \text{(evaluate)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-cond-cov}
+#### Conditional covariance
+
+The **conditional covariance** of $Y$ and $Z$ given $X = x$
+is their covariance under their conditional distribution given $X = x$:
+
+$$\Cov{Y,Z \mid X = x} \eqdef \E{\paren{Y-\E{Y \mid X = x}}\paren{Z-\E{Z \mid X = x}} \mid X = x}$$
+
+Evaluating this function of $x$ at $X$ gives the random variable $\Cov{Y,Z \mid X}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cond-cov}
+#### Conditional covariance of a variable with itself
+
+Taking $Z = Y$ in @def-cond-cov gives the
+[conditional variance](#def-cond-variance):
+$\Cov{Y,Y \mid X = x} = \Var{Y \mid X = x}$.
+In @exm-cond-variance, for example, $\Cov{Y,Y \mid X = 0} = 0.24$.
 
 :::
 
@@ -38,12 +86,72 @@ $$
 :::{#thm-total-cov}
 #### Law of total covariance
 
-For random variables $X$, $Y$, and $Z$:
+For random variables $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
 
 $$\Cov{Y,Z} = \E{\Cov{Y,Z \mid X}} + \Cov{\E{Y \mid X}, \E{Z \mid X}}$$
 
-where
-$\Cov{Y,Z \mid X} \eqdef \E{(Y-\E{Y \mid X})(Z-\E{Z \mid X}) \mid X}$.
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+The proof follows the proof of the [law of total variance](#thm-total-variance),
+which is the special case $Z = Y$.
+Write $m_Y(X) \eqdef \E{Y \mid X}$, $m_Z(X) \eqdef \E{Z \mid X}$,
+$\mu_Y \eqdef \E{Y}$, and $\mu_Z \eqdef \E{Z}$.
+Adding and subtracting $m_Y(X)$ and $m_Z(X)$ inside the deviations:
+
+$$
+\ba
+\Cov{Y,Z}
+&= \E{\paren{Y - \mu_Y}\paren{Z - \mu_Z}}
+&& \text{(definition of covariance)} \\
+&= \E{\paren{\sb{Y - m_Y(X)} + \sb{m_Y(X) - \mu_Y}}\paren{\sb{Z - m_Z(X)} + \sb{m_Z(X) - \mu_Z}}}
+&& \text{(add and subtract)} \\
+&= \E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
++ \E{\sb{Y - m_Y(X)}\sb{m_Z(X) - \mu_Z}}
+\\&\quad
++ \E{\sb{m_Y(X) - \mu_Y}\sb{Z - m_Z(X)}}
++ \E{\sb{m_Y(X) - \mu_Y}\sb{m_Z(X) - \mu_Z}}
+&& \text{(expand the product; linearity of expectation)}
+\ea
+$$
+
+The two middle terms are 0,
+by the same steps as the cross term in the proof of @thm-total-variance:
+condition on $X$, factor out the term that is constant given $X$,
+and use $\E{Y - m_Y(X) \mid X} = 0$ (or $\E{Z - m_Z(X) \mid X} = 0$).
+For the first term:
+
+$$
+\ba
+\E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
+&= \E{\E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\Cov{Y,Z \mid X}}
+&& \text{(definition of conditional covariance)}
+\ea
+$$
+
+For the last term, the law of iterated expectations gives
+$\E{m_Y(X)} = \mu_Y$ and $\E{m_Z(X)} = \mu_Z$, so:
+
+$$
+\ba
+\E{\sb{m_Y(X) - \mu_Y}\sb{m_Z(X) - \mu_Z}}
+&= \E{\sb{m_Y(X) - \E{m_Y(X)}}\sb{m_Z(X) - \E{m_Z(X)}}}
+&& \text{(substitute the means)} \\
+&= \Cov{m_Y(X), m_Z(X)}
+&& \text{(definition of covariance)} \\
+&= \Cov{\E{Y \mid X}, \E{Z \mid X}}
+&& \text{(definitions of } m_Y, m_Z \text{)}
+\ea
+$$
+
+Adding the four terms gives the result.
+
+:::
 
 ::: notes
 
@@ -51,106 +159,6 @@ Alternate names include:
 the **covariance decomposition formula**
 and the **conditional covariance formula**.
 
-:::
-
-:::
-
-{{< slidebreak >}}
-
-::: proof
-Write:
-
-$$
-\ba
-Y-\E{Y}
-&= \paren{Y-\E{Y \mid X}} + \paren{\E{Y \mid X}-\E{Y}}
-\\
-Z-\E{Z}
-&= \paren{Z-\E{Z \mid X}} + \paren{\E{Z \mid X}-\E{Z}}
-\ea
-$$
-
-Then:
-
-$$
-\ba
-\Cov{Y,Z}
-&= \E{\paren{Y-\E{Y}}\paren{Z-\E{Z}}}
-\\&= \E{\paren{Y-\E{Y \mid X}}\paren{Z-\E{Z \mid X}}}
-\\&\quad
-  + \E{\paren{Y-\E{Y \mid X}}\paren{\E{Z \mid X}-\E{Z}}}
-\\&\quad
-  + \E{\paren{\E{Y \mid X}-\E{Y}}\paren{Z-\E{Z \mid X}}}
-\\&\quad
-  + \E{\paren{\E{Y \mid X}-\E{Y}}\paren{\E{Z \mid X}-\E{Z}}}
-\ea
-$$
-
-For the two mixed terms:
-
-**Discrete case.**
-
-$$
-\ba
-\E{\paren{Y-\E{Y \mid X}}\paren{\E{Z \mid X}-\E{Z}}}
-&= \sum_{x \in \rangef{X}}
-   \E{
-     \paren{Y-\E{Y \mid X}}
-     \paren{\E{Z \mid X}-\E{Z}}
-     \mid X=x
-   }
-   \cd \P(X=x)
-\\&= \sum_{x \in \rangef{X}}
-   \paren{\E{Z \mid X=x}-\E{Z}}
-   \cd \E{Y-\E{Y \mid X=x} \mid X=x}
-   \cd \P(X=x)
-\\&= 0
-\ea
-$$
-
-and similarly:
-
-$$
-\E{\paren{\E{Y \mid X}-\E{Y}}\paren{Z-\E{Z \mid X}}}=0.
-$$
-
-**Continuous case.**
-
-$$
-\ba
-\E{\paren{Y-\E{Y \mid X}}\paren{\E{Z \mid X}-\E{Z}}}
-&= \int_{x \in \rangef{X}}
-   \E{
-     \paren{Y-\E{Y \mid X}}
-     \paren{\E{Z \mid X}-\E{Z}}
-     \mid X=x
-   }
-   \cd \p(X=x)\, dx
-\\&= \int_{x \in \rangef{X}}
-   \paren{\E{Z \mid X=x}-\E{Z}}
-   \cd \E{Y-\E{Y \mid X=x} \mid X=x}
-   \cd \p(X=x)\, dx
-\\&= 0
-\ea
-$$
-
-and similarly:
-
-$$
-\E{\paren{\E{Y \mid X}-\E{Y}}\paren{Z-\E{Z \mid X}}}=0.
-$$
-
-Hence:
-
-$$
-\ba
-\Cov{Y,Z}
-&= \E{\paren{Y-\E{Y \mid X}}\paren{Z-\E{Z \mid X}}}
-  + \E{\paren{\E{Y \mid X}-\E{Y}}\paren{\E{Z \mid X}-\E{Z}}}
-\\&= \E{\Cov{Y,Z \mid X}}
-  + \Cov{\E{Y \mid X}, \E{Z \mid X}}
-\ea
-$$
 :::
 
 {{< slidebreak >}}
@@ -297,6 +305,7 @@ $$
 {{< slidebreak >}}
 
 ::: proof
+
 $$
 \ba
 \Varf{\vX}
@@ -304,6 +313,7 @@ $$
     \paren{\vX - \Expp\vX}
     \tp{\paren{\vX - \Expp\vX}}
   }
+&& \text{(definition)}
 \\
 &= \Expf{
     \vX \tp{\vX}
@@ -311,16 +321,20 @@ $$
     - \paren{\Expp\vX} \tp{\vX}
     + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
   }
+&& \text{(expand the product)}
 \\
 &= \Expf{\vX \tp{\vX}}
   - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
   - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
   + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&& \text{(linearity, element-wise; } \Expp\vX \text{ is constant)}
 \\
 &= \Expf{\vX \tp{\vX}}
   - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&& \text{(combine like terms)}
 \ea
 $$
+
 :::
 
 {{< slidebreak >}}
@@ -338,6 +352,32 @@ $$
 &= \Var{\sumin a_i X_i}
 \\ &= \tp{\va} \Varf{\vX} \va
 \\ &= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
+\ea
+$$
+
+:::
+
+::: proof
+
+Treat $\va$ and $\vX$ as $n \times 1$ column vectors,
+so $\va \cdot \vX = \tp{\va}\vX = \sumin a_i X_i$, a scalar.
+By linearity of expectation, $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
+
+$$
+\ba
+\Var{\tp{\va}\vX}
+&= \E{\paren{\tp{\va}\vX - \tp{\va}\Expp\vX}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{\tp{\va}\paren{\vX - \Expp\vX}}^2}
+&& \text{(factor out } \tp{\va} \text{)} \\
+&= \E{\tp{\va}\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}\va}
+&& \text{(a scalar equals its transpose, so } s^2 = s\,\tp{s} \text{)} \\
+&= \tp{\va}\,\Expf{\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}}\,\va
+&& \text{(linearity of expectation, element-wise)} \\
+&= \tp{\va} \Varf{\vX} \va
+&& \text{(variance of a random vector)} \\
+&= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
+&& \text{(expand the quadratic form, using the elements of } \Varf{\vX} \text{)}
 \ea
 $$
 
@@ -371,7 +411,7 @@ $$
 \ba
 \Var{aX+bY}
 &\eqdef \E{\paren{aX+bY - \E{aX+bY}}^2}
-&& \text{(definition of variance, @def-variance)} \\
+&& \text{(definition of variance)} \\
 &= \E{\paren{a(X-\E{X}) + b(Y-\E{Y})}^2}
 && \text{(linearity of expectation)} \\
 &= \E{a^2(X-\E{X})^2 + 2(a \cd b)(X-\E{X})(Y-\E{Y}) + b^2(Y-\E{Y})^2}
@@ -379,7 +419,7 @@ $$
 &= a^2\E{(X-\E{X})^2} + 2(a \cd b)\E{(X-\E{X})(Y-\E{Y})} + b^2\E{(Y-\E{Y})^2}
 && \text{(linearity of expectation)} \\
 &= a^2 \Var{X} + 2(a \cd b) \Cov{X,Y} + b^2 \Var{Y}
-&& \text{(definitions of variance, @def-variance, and covariance, @def-cov)}
+&& \text{(definitions of variance and covariance)}
 \ea
 $$
 
@@ -390,5 +430,10 @@ $$
 This corollary is why two variables' covariance matters for combining them:
 if $X$ and $Y$ are [independent](independence.qmd#def-indpt), $\Cov{X,Y}=0$
 and the variance of their sum is just the sum of their variances.
+The first claim follows from the
+[joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint):
+for independent $X$ and $Y$ the joint density or PMF factors,
+so $\E{XY} = \E{X}\E{Y}$,
+and @thm-alt-cov gives $\Cov{X,Y} = 0$.
 
 :::
