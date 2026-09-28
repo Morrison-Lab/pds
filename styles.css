@@ -227,3 +227,40 @@ body.quarto-dark code:not(pre > code) {
 .equation-anchor:hover {
   opacity: 1;
 }
+
+/* Phone-width overflow (#9).
+ * A callout body is a flex item, and a flex item's default `min-width: auto`
+ * lets wide content (display math, code, a long URL) stretch the whole
+ * callout past the viewport, so the page scrolls sideways. `min-width: 0`
+ * keeps the callout at the column width; the rules below then contain what
+ * is still too wide. */
+.callout-body-container {
+  min-width: 0;
+}
+
+/* Scroll a too-wide equation inside its own box instead of widening the page.
+ * MathJax sets an inline `min-width` on a numbered equation, sized to fit the
+ * equation and its number side by side; `!important` is the only way to
+ * override an inline style from a stylesheet. */
+mjx-container[display="true"] {
+  max-width: 100%;
+  min-width: 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Let long unbroken link text (bare URLs) wrap. */
+main a {
+  overflow-wrap: break-word;
+}
+
+/* On a phone, scroll a too-wide table inside its own box. `display: block`
+ * would shrink a full-width table to its content on wider screens, so it
+ * applies only below Bootstrap's `sm` breakpoint. */
+@media (max-width: 575.98px) {
+  main table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
