@@ -260,11 +260,10 @@ $\sum_{k=0}^{\infty} \mu(\set{2k}) = 1 + 1 + \cdots = \infty$.
 
 A **probability measure** on a [sample space](#def-sample-space) $\Omega$,
 often denoted $\Pr()$ or $\P()$,
-is a function that assigns a number $\Pr(A)$ to each [event](#def-event) $A$
-and satisfies:
+is a [measure](#def-measure) on the [events](#def-event) of $\Omega$
+that gives the whole sample space probability 1:
 
-- $\Pr$ is a [measure](#def-measure) on the events of $\Omega$.
-- The whole sample space has probability 1: $\Pr(\Omega) = 1$.
+$$\Pr(\Omega) = 1$$
 
 :::
 
@@ -321,7 +320,7 @@ Suppose $\Pr$ is a probability measure.
 It is a [measure](#def-measure), so its values lie in $[0, \infty]$,
 which gives axiom 1,
 and it is countably additive, which is axiom 3.
-Axiom 2 is the second condition of @def-probability.
+Axiom 2 is the condition $\Pr(\Omega) = 1$ in @def-probability.
 
 Conversely, suppose $\Pr$ satisfies the three axioms.
 By axiom 3 and @lem-countable-additivity-empty,
@@ -331,7 +330,7 @@ By axiom 1, $\Pr$ takes values in $[0, \infty]$,
 so $\Pr$ satisfies both conditions of @def-measure
 ($\Pr(\emptyset) = 0$ and axiom 3)
 and is a measure on the events of $\Omega$.
-With axiom 2, $\Pr$ satisfies both conditions of @def-probability.
+With axiom 2, $\Pr$ is a probability measure (@def-probability).
 
 :::
 
