@@ -54,7 +54,8 @@ $\sum_{y=0}^{\infty} y\,p^y = \frac{p}{(1-p)^2}$
 
 As a check, $\E{X} = \E{Y} = \frac{p}{1-p}$
 (the mean of this Geometric distribution; @CaseBerg01),
-so $\E{X + Y} = \E{X} + \E{Y} = \frac{2p}{1-p}$ by linearity, matching.
+so $\E{X + Y} = \E{X} + \E{Y} = \frac{2p}{1-p}$
+by [linearity of expectation](#thm-linearity-expectation), matching.
 
 ```{r}
 #| code-fold: true

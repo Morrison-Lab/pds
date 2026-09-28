@@ -45,7 +45,7 @@ $$
 using the same geometric-series facts as @exr-fubini-joint-disc-infinite
 (e.g. @CaseBerg01).
 
-As a check using the law of total expectation:
+As a check using the law of iterated expectations (@thm-lie):
 $\E{X \mid Y=y} = \frac{y+1}{2}$ (the mean of $\mathrm{Uniform}(0,y+1)$)
 and $\E{Y} = \frac{q}{1-q}$ (the mean of this Geometric distribution;
 @CaseBerg01), so:
@@ -73,8 +73,8 @@ exact_ex <- 1 / (2 * (1 - q))
 n_trunc <- 2000
 y_vals <- 0:n_trunc
 py_vals <- (1 - q) * q^y_vals
-cond_mean <- (y_vals + 1) / 2
-trunc_ex <- sum(cond_mean * py_vals)
+cond_mean_x <- (y_vals + 1) / 2
+trunc_ex <- sum(cond_mean_x * py_vals)
 
 pander::pander(data.frame(
   quantity = c("exact (closed form)", "truncated sum-of-integrals"),

@@ -22,16 +22,17 @@ LOTUS (@thm-lotus) applied to $g(x, y) = x + y$ gives directly:
 $$
 \ba
 \E{X + Y}
-&= \sum_{x \in \{0,1\}} \sum_{y \in \{0,1\}} (x + y)\,\P(X = x,\, Y = y) \\
-&= (0{+}0)(0.2) + (0{+}1)(0.3) + (1{+}0)(0.1) + (1{+}1)(0.4) \\
-&= 0 + 0.3 + 0.1 + 0.8 \\
-&= 1.2
+&= \sum_{x \in \{0,1\}} \sum_{y \in \{0,1\}} (x + y)\,\P(X = x,\, Y = y) && \text{(LOTUS)} \\
+&= (0{+}0)(0.2) + (0{+}1)(0.3) + (1{+}0)(0.1) + (1{+}1)(0.4) && \text{(expand the four terms)} \\
+&= 0 + 0.3 + 0.1 + 0.8 && \text{(multiply)} \\
+&= 1.2 && \text{(add)}
 \ea
 $$
 
 As a check: $\E{X} = 0(0.5) + 1(0.5) = 0.5$ and
 $\E{Y} = 0(0.3) + 1(0.7) = 0.7$,
-so $\E{X + Y} = \E{X} + \E{Y} = 1.2$.
+so $\E{X + Y} = \E{X} + \E{Y} = 1.2$
+by [linearity of expectation](#thm-linearity-expectation).
 
 :::{#fig-fubini-joint-disc}
 
@@ -88,8 +89,8 @@ so summing them in any order --- row by row, column by column,
 or any other listing --- gives the same total
 by ordinary commutativity and associativity of addition;
 no result about interchanging summation order is needed.
-Fubini--Tonelli, covered next, is what's needed
-once the support is countably infinite instead ---
-see @exr-fubini-joint-disc-infinite.
+Once the support is countably infinite,
+exchanging the order of summation needs a justification,
+which the Fubini--Tonelli theorem provides.
 
 :::

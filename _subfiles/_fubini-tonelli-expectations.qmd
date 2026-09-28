@@ -1,9 +1,13 @@
-For expectations against probability measures we use the
-measure-theoretic form of Fubini--Tonelli,
-which holds on any $\sigma$-finite measure space.
-The $\sigma$-finiteness condition is automatic for probability measures
-(every probability measure is finite, hence $\sigma$-finite),
-yielding @cor-fubini-joint directly.
+For expectations, we use the measure-theoretic form of the
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli)
+[@billingsley1995probability, Theorem 18.3],
+which lets us exchange the order of integration (or summation)
+over a product of $\sigma$-finite measure spaces,
+provided the integrand is non-negative (Tonelli)
+or absolutely integrable (Fubini).
+Lebesgue measure on the real line and counting measure on a countable set
+are both $\sigma$-finite,
+which yields @cor-fubini-joint.
 
 {{< slidebreak >}}
 
@@ -86,11 +90,17 @@ $$
 \ba
 \E{XY}
 &= \int_0^1 \paren{\int_0^2 xy \cd \tfrac{1}{2}\,dy}\,dx
+&& \text{(joint-distribution form of Fubini--Tonelli)}
 \\&= \int_0^1 x\paren{\frac{1}{2}\int_0^2 y\,dy}\,dx
+&& \text{(factor constants out of the inner integral)}
 \\&= \int_0^1 x \cd \frac{1}{2} \cd \sb{\frac{y^2}{2}}_0^2\,dx
+&& \text{(antiderivative of } y \text{)}
 \\&= \int_0^1 x \cd \frac{1}{2} \cd 2\,dx
+&& \text{(evaluate at the bounds)}
 \\&= \int_0^1 x\,dx
+&& \text{(simplify)}
 \\&= \frac{1}{2}
+&& \text{(integrate)}
 \ea
 $$
 
@@ -232,12 +242,19 @@ $$
 \ba
 \E{X + Y}
 &= \int_0^1\!\int_0^y (x + y) \cd 2\,dx\,dy
+&& \text{(joint-distribution form of Fubini--Tonelli, over the support } 0 \le x \le y \le 1 \text{)}
 \\&= 2\int_0^1 \sb{\frac{x^2}{2} + xy}_{x=0}^{x=y}\,dy
+&& \text{(antiderivative in } x \text{)}
 \\&= 2\int_0^1 \paren{\frac{y^2}{2} + y^2}\,dy
+&& \text{(evaluate at the bounds)}
 \\&= 2\int_0^1 \frac{3y^2}{2}\,dy
+&& \text{(add)}
 \\&= 3\int_0^1 y^2\,dy
+&& \text{(simplify the constant)}
 \\&= 3 \cd \frac{1}{3}
+&& \text{(integrate)}
 \\&= 1
+&& \text{(multiply)}
 \ea
 $$
 
@@ -289,35 +306,12 @@ $\{(x, y) : 0 \le x \le y \le 1\}$, and zero elsewhere. The total
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_exr-fubini-joint-disc-infinite.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_exr-fubini-joint-mixed.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_exr-fubini-joint-mixed-infinite.qmd >}}
-
-{{< slidebreak >}}
-
 :::{#thm-lie}
-
 #### Law of iterated expectations
 
-For any two random variables $X$ and $Y$:
+For any two random variables $X$ and $Y$ with $\E{\abs{Y}} < \infty$:
 
 $$\E{Y} = \E{\E{Y \mid X}}$$
-
-::: notes
-
-Alternate names for this identity include:
-the **tower rule**,
-the **tower property**,
-the **law of total expectation**,
-and the **smoothing theorem**.
-
-:::
 
 :::
 
@@ -334,38 +328,44 @@ applied to the countable partition $\{X = x : x \in \rangef{X}\}$:
 $$
 \ba
 \E{\E{Y \mid X}}
-&= \sum_{x \in \rangef{X}} \E{Y \mid X=x} \cd \P(X=x) && \text{(definition of expectation of } \E{Y \mid X} \text{)}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x} \cd \P(X=x) && \text{(LOTUS for the function } x \mapsto \E{Y \mid X=x} \text{)}
 \\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x)} \cd \P(X=x) && \text{(definition of conditional expectation } \E{Y \mid X=x} \text{)}
-\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x) \cd \P(X=x) && \text{(exchange order of summation)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x) \cd \P(X=x) && \text{(exchange order of summation: Fubini, since } \E{\abs{Y}} < \infty \text{)}
 \\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y) && \text{(law of total probability over } X \text{)}
 \\&= \E{Y} && \text{(definition of expectation of } Y \text{)}
 \ea
 $$
 
 **Continuous case.**
-When $X$ and $Y$ are continuous,
-applying @def-expectation to $\E{\E{Y \mid X}}$
-and then using @def-cond-expectation for $\E{Y \mid X=x}$:
+When $X$ and $Y$ are continuous:
 
 $$
 \ba
 \E{\E{Y \mid X}}
 &= \int_{x \in \rangef{X}} \E{Y \mid X=x} \cd \p(X=x)\, dx
+&& \text{(LOTUS)}
 \\&= \int_{x \in \rangef{X}} \paren{\int_{y \in \rangef{Y}} y \cd \p(Y=y \mid X=x)\, dy} \cd \p(X=x)\, dx
-\\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(Y=y \mid X=x) \cd \p(X=x)\, dx}\, dy
+&& \text{(definition of conditional expectation)}
+\\&= \int_{x \in \rangef{X}} \int_{y \in \rangef{Y}} y \cd \p(X=x, Y=y)\, dy\, dx
+&& \text{(definition of conditional density: } \p(Y=y \mid X=x)\,\p(X=x) = \p(X=x, Y=y) \text{)}
+\\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(X=x, Y=y)\, dx}\, dy
+&& \text{(Fubini's theorem, since } \E{\abs{Y}} < \infty \text{)}
 \\&= \int_{y \in \rangef{Y}} y \cd \p(Y=y)\, dy
+&& \text{(integrating the joint density over } x \text{ gives the marginal)}
 \\&= \E{Y}
+&& \text{(definition of expectation)}
 \ea
 $$
 
-where the third equality exchanges the order of integration by
-condition (b) of
-Fubini--Tonelli (the absolute-integrability
-case, **Fubini's theorem**); this theorem requires $\E{\abs{Y}} < \infty$,
-which is implicit in $\E{Y}$ being defined,
-and the fourth equality uses
-$\int_{x} \p(Y=y \mid X=x) \cd \p(X=x)\, dx = \int_{x} \p(X=x, Y=y)\, dx = \p(Y=y)$
-(marginalization of the joint density).
+:::
+
+::: notes
+
+Alternate names for this identity include:
+the **tower rule**,
+the **tower property**,
+the **law of total expectation**,
+and the **smoothing theorem**.
 
 :::
 
@@ -374,16 +374,9 @@ $\int_{x} \p(Y=y \mid X=x) \cd \p(X=x)\, dx = \int_{x} \p(X=x, Y=y)\, dx = \p(Y=
 :::{#thm-conditional-lie}
 #### Conditional law of iterated expectations
 
-For random variables $X$, $Y$, and $Z$:
+For random variables $X$, $Y$, and $Z$ with $\E{\abs{Y}} < \infty$:
 
 $$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$$
-
-::: notes
-
-This identity is the tower rule
-applied conditionally on $Z$.
-
-:::
 
 :::
 
@@ -391,19 +384,17 @@ applied conditionally on $Z$.
 
 ::: proof
 
-For each fixed value $z$ with positive probability or density:
+Fix a value $z$ with positive probability (discrete case) or positive density (continuous case).
+Conditioning every probability on $Z = z$ gives a probability measure,
+and the proof of @thm-lie goes through under it, line by line.
 
 **Discrete case.**
-Conditioning on $Z=z$,
-and applying the law of total probability
-to the partition $\{X=x : x \in \rangef{X}\}$
-under the conditional distribution given $Z=z$:
 
 $$
 \ba
 \E{\E{Y \mid X,Z} \mid Z=z}
-&= \sum_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \P(X=x \mid Z=z) && \text{(definition of expectation given } Z=z \text{)}
-\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x,Z=z)} \cd \P(X=x \mid Z=z) && \text{(definition of conditional expectation } \E{Y \mid X=x,Z=z} \text{)}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \P(X=x \mid Z=z) && \text{(expectation given } Z=z \text{)}
+\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x,Z=z)} \cd \P(X=x \mid Z=z) && \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
 \\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x,Z=z) \cd \P(X=x \mid Z=z) && \text{(exchange order of summation)}
 \\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid Z=z) && \text{(law of total probability given } Z=z \text{)}
 \\&= \E{Y \mid Z=z} && \text{(definition of conditional expectation given } Z=z \text{)}
@@ -411,21 +402,35 @@ $$
 $$
 
 **Continuous case.**
-Conditioning on $Z=z$,
-and integrating over $X$
-under the conditional density $\p(X=x \mid Z=z)$:
 
 $$
 \ba
 \E{\E{Y \mid X,Z} \mid Z=z}
-&= \int_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
+&= \int_{x} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
+&& \text{(expectation given } Z=z \text{)}
+\\&= \int_{x} \paren{\int_{y} y \cd \p(Y=y \mid X=x,Z=z)\, dy} \cd \p(X=x \mid Z=z)\, dx
+&& \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
+\\&= \int_{x} \int_{y} y \cd \p(X=x, Y=y \mid Z=z)\, dy\, dx
+&& \text{(product of conditional densities is the joint conditional density)}
+\\&= \int_{y} y \cd \paren{\int_{x} \p(X=x, Y=y \mid Z=z)\, dx}\, dy
+&& \text{(Fubini's theorem)}
+\\&= \int_{y} y \cd \p(Y=y \mid Z=z)\, dy
+&& \text{(marginalize over } x \text{)}
 \\&= \E{Y \mid Z=z}
+&& \text{(definition of conditional expectation given } Z=z \text{)}
 \ea
 $$
 
-Therefore,
-as random variables of $Z$,
+Since the two sides agree at every such $z$,
+they agree as random variables (functions of $Z$):
 $\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$.
+
+:::
+
+::: notes
+
+This identity is the tower rule
+applied conditionally on $Z$.
 
 :::
 
@@ -447,11 +452,28 @@ $$
 \ba
 \E{Y}
 &= \E{\E{Y \mid X}}
+&& \text{(law of iterated expectations)}
 \\&= \E{Y \mid X=1} \cd \P(X=1) + \E{Y \mid X=0} \cd \P(X=0)
+&& \text{(LOTUS over the two values of } X \text{)}
 \\&= 10 \cd 0.5 + 6 \cd 0.5
+&& \text{(substitute)}
 \\&= 5 + 3
+&& \text{(multiply)}
 \\&= 8
+&& \text{(add)}
 \ea
 $$
 
 :::
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-disc-infinite.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-mixed.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-mixed-infinite.qmd >}}
