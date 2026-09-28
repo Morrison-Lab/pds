@@ -32,24 +32,24 @@ website:
   repo-actions: [edit, issue, source]
   navbar:
     left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Notes"
-        menu:
-          - text: "Notation"
-            href: notation.qmd
-          - text: "Probability Basics"
-            href: probability-basics.qmd
-          - text: "Random Variables and Distribution Functions"
-            href: random-variables.qmd
-          - text: "Independence"
-            href: independence.qmd
-          - text: "Expectation"
-            href: expectation.qmd
-          - text: "Variance and Covariance"
-            href: variance-covariance.qmd
-          - text: "Key Distributions and the CLT"
-            href: distributions.qmd
+      # One entry per page, in reading order. The navbar title already
+      # links to the home page, so there is no separate "Home" entry.
+      # Labels are shortened from the page titles so the bar fits on one
+      # line at desktop width; use a dropdown only if it stops fitting.
+      - text: "Notation"
+        href: notation.qmd
+      - text: "Probability Basics"
+        href: probability-basics.qmd
+      - text: "Random Variables"
+        href: random-variables.qmd
+      - text: "Independence"
+        href: independence.qmd
+      - text: "Expectation"
+        href: expectation.qmd
+      - text: "Variance & Covariance"
+        href: variance-covariance.qmd
+      - text: "Distributions & CLT"
+        href: distributions.qmd
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds
