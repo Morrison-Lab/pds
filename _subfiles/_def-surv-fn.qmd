@@ -10,7 +10,7 @@ $$\surv(t) \eqdef \Pr(T > t)$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The name comes from time-to-event analysis:
 if $T$ is the time at which a participant dies,

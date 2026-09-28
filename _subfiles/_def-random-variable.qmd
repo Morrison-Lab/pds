@@ -8,7 +8,7 @@ it assigns a number to each possible outcome of a random experiment.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 We use uppercase letters ($X$, $Y$, $Z$, ...) for random variables,
 and lowercase letters ($x$, $y$, $z$, ...) for their realized (observed) values.
@@ -91,20 +91,6 @@ if $\Pr(X = x) = 0$ for every $x \in \mathbb{R}$.
 
 :::
 
-::: notes
-
-Every continuous random variable in these notes also has a
-[probability density function](#def-pdf).
-Continuous random variables without a density exist,
-but they do not arise in applications.
-Some random variables are neither discrete nor continuous:
-a time to event that equals exactly $0$ with positive probability,
-and otherwise spreads over $(0, \infty)$, is one.
-
-:::
-
-{{< slidebreak >}}
-
 :::{#def-uniform}
 #### Uniform distribution
 
@@ -132,5 +118,59 @@ $X$ falls outside $[0, 1]$ with probability 0,
 and $\Pr(X = x) = 0$ for every $x$ outside $[0, 1]$ as well.
 So $X$ is continuous.
 Its range, $[0, 1]$, is uncountable.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mixed-rv}
+#### A random variable that is neither discrete nor continuous
+
+Some random variables are neither discrete nor continuous:
+a time to event that equals exactly $0$ with positive probability,
+and otherwise spreads over $(0, \infty)$, is one.
+For instance, let $U \sim \text{Uniform}(0, 1)$ (@def-uniform),
+and let $T = 1/(1 - U) - 2$ when $1/2 < U < 1$, and $T = 0$ otherwise.
+On $\set{1/2 < U < 1}$, $T$ is increasing in $U$ and takes values in $(0, \infty)$,
+and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$.
+So $\set{T > 0} = \set{1/2 < U < 1}$,
+and $\set{T = t} = \set{U = 1 - 1/(t + 2)}$ for each $t > 0$.
+Since $\Pr(U = 1/2) = \Pr(U = 1) = 0$ (@exm-continuous-rv):
+
+$$
+\ba
+\Pr(T > 0)
+&= \Pr(1/2 < U < 1)
+&& \text{(} \set{T > 0} = \set{1/2 < U < 1} \text{)} \\
+&= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1)
+&& \text{(additivity)} \\
+&= \tfrac{1}{2} - 0 - 0
+&& \text{(definition of the uniform distribution)} \\
+&= \tfrac{1}{2}
+&& \text{(simplify)}
+\ea
+$$
+
+$T$ is not continuous, because $\Pr(T = 0) = 1 - \Pr(T > 0) = 1/2$
+by the [complement rule](probability-basics.qmd#cor-p-neg0).
+
+$T$ is not discrete either.
+If it were, its range would be countable,
+so $\set{T > 0}$ would be the disjoint union of the countably many events $\set{T = t}$
+with $t \in \rangef{T}$ and $t > 0$, and:
+
+$$
+\ba
+\Pr(T > 0)
+&= \sum_{t \in \rangef{T},\, t > 0} \Pr(T = t)
+&& \text{(countable additivity)} \\
+&= \sum_{t \in \rangef{T},\, t > 0} \Pr\paren{U = 1 - \tfrac{1}{t + 2}}
+&& \text{(} \set{T = t} = \set{U = 1 - 1/(t + 2)} \text{)} \\
+&= 0
+&& \text{(} U \text{ is continuous)}
+\ea
+$$
+
+which contradicts $\Pr(T > 0) = 1/2$.
 
 :::

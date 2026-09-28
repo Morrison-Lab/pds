@@ -13,7 +13,7 @@ as that width shrinks to 0:
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 Sources differ on the symbol:
 $\h(t)$ appears in
@@ -27,7 +27,6 @@ for a small interval width $\Delta > 0$,
 $\haz(t) \cd \Delta$ is approximately the probability
 that the event occurs in $[t, t + \Delta)$,
 given that it has not occurred before $t$.
-A hazard can exceed 1, just as a density can.
 Many sources write the hazard as $\haz(t) = \p(T = t \mid T \ge t)$,
 reading it as the density of $T$ at $t$, conditional on the event $T \ge t$;
 that notation abbreviates the limit in @def-hazard.
@@ -50,6 +49,61 @@ The math is identical; only the name changes with the valence of the event.
 
 {{< slidebreak >}}
 
+:::{#exm-hazard-exceeds-one}
+#### A hazard greater than 1
+
+A hazard can exceed 1, just as a density can (@exm-normal).
+Let $T$ be [exponential](#def-exponential) with rate $\lambda = 2$,
+so $\surv(t) = \ef{-2t}$ for $t \ge 0$ (@exm-exp-survfn).
+Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$,
+so $\Pr(T \ge s) = \Pr(T > s) = \surv(s)$.
+For $t \ge 0$ and $\Delta > 0$,
+$\{T \ge t\}$ is the disjoint union of $\{t \le T < t + \Delta\}$ and $\{T \ge t + \Delta\}$,
+so:
+
+$$
+\ba
+\Pr(t \le T < t + \Delta \mid T \ge t)
+&= \frac{\Pr(\{t \le T < t + \Delta\} \cap \{T \ge t\})}{\Pr(T \ge t)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{\Pr(t \le T < t + \Delta)}{\Pr(T \ge t)}
+&& \text{(subset property)} \\
+&= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)}
+&& \text{(additivity)} \\
+&= \frac{\surv(t) - \surv(t + \Delta)}{\surv(t)}
+&& \text{(} \Pr(T \ge s) = \surv(s) \text{)} \\
+&= \frac{\ef{-2t} - \ef{-2(t + \Delta)}}{\ef{-2t}}
+&& \text{(exponential survival function)} \\
+&= 1 - \ef{-2\Delta}
+&& \text{(divide by } \ef{-2t} \text{)}
+\ea
+$$
+
+The [subset property](probability-basics.qmd#thm-prob-subset) applies
+because $\{t \le T < t + \Delta\} \subseteq \{T \ge t\}$.
+Then:
+
+$$
+\ba
+\haz(t)
+&= \lim_{\Delta \downarrow 0} \frac{1 - \ef{-2\Delta}}{\Delta}
+&& \text{(definition of the hazard function)} \\
+&= \deriv{\Delta} \paren{1 - \ef{-2\Delta}} \Big|_{\Delta = 0}
+&& \text{(definition of the derivative; } 1 - \ef{0} = 0 \text{)} \\
+&= 2\ef{0}
+&& \text{(chain rule)} \\
+&= 2
+&& \text{(} \ef{0} = 1 \text{)}
+\ea
+$$
+
+So $\haz(t) = 2 > 1$ at every $t \ge 0$:
+a hazard is a rate, not a probability.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-discrete-hazard}
 #### Discrete-time hazard
 
@@ -61,17 +115,6 @@ that $T$ equals $t$, given $T \ge t$:
 $$\Pr(T = t \mid T \ge t)$$
 
 :::
-
-::: notes
-
-Unlike the continuous-time [hazard function](#def-hazard),
-which is a rate and can exceed 1,
-the discrete-time hazard is a probability,
-so it lies in $[0, 1]$.
-
-:::
-
-{{< slidebreak >}}
 
 :::{#exm-discrete-hazard}
 #### Rolling until the first six
@@ -99,5 +142,46 @@ $$
 
 The discrete-time hazard is the same at every roll:
 having gone without a six so far does not change the chance of a six on the next roll.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-discrete-hazard-unit-interval}
+#### A discrete-time hazard lies in $[0, 1]$
+
+The [discrete-time hazard](#def-discrete-hazard) of a discrete random variable $T$
+at a value $t$ with $\Pr(T \ge t) > 0$ satisfies:
+
+$$0 \le \Pr(T = t \mid T \ge t) \le 1$$
+
+:::
+
+::: proof
+
+$\{T \ge t\}$ is the disjoint union of $\{T = t\}$ and $\{T > t\}$,
+so, by additivity, $\Pr(T \ge t) = \Pr(T = t) + \Pr(T > t) \ge \Pr(T = t)$.
+Since $\{T = t\} \subseteq \{T \ge t\}$:
+
+$$
+\ba
+\Pr(T = t \mid T \ge t)
+&= \frac{\Pr(\{T = t\} \cap \{T \ge t\})}{\Pr(T \ge t)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{\Pr(T = t)}{\Pr(T \ge t)}
+&& \text{(subset property)}
+\ea
+$$
+
+The numerator is non-negative and at most the positive denominator,
+so the ratio lies in $[0, 1]$.
+
+:::
+
+::: {.remark .notes}
+
+Unlike the continuous-time [hazard function](#def-hazard),
+which is a rate and can exceed 1 (@exm-hazard-exceeds-one),
+the discrete-time hazard is a probability.
 
 :::

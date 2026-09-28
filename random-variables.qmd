@@ -54,13 +54,22 @@ The login for the video site is posted [on Canvas](https://wwu.instructure.com/c
 
 {{< slidebreak >}}
 
+::: remark
+
 For a continuous random variable $T \ge 0$
 whose density is continuous at all but finitely many points,
-@thm-survival-expressions-1, @thm-hazard-dens-surv, and @cor-surv-int-haz
-connect the functions in @tbl-prob-dist-fns;
-each arrow in the following diagram converts one function into the next:
+the following results connect the functions in @tbl-prob-dist-fns:
+
+- @thm-survival-expressions-1
+- @thm-hazard-dens-surv
+- @cor-cuhaz-nonneg
+- @cor-surv-int-haz
+
+Each arrow in the following diagram converts one function into the next:
 
 {{< include pds/_subfiles/_surv-diagram.qmd >}}
+
+:::
 
 ## References {.unnumbered}
 
