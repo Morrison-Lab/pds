@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 02:31:34 (PDT)
+Last modified: 2026-09-28 02:39:16 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -52,7 +52,7 @@ The term “random” is sometimes used as shorthand for a uniform distribution 
 
 > **NOTE:**
 >
-> **Example 3 (Bayesian inference)** A Bayesian regression model is probabilistic: it assigns a probability distribution to its parameters and predictions, even though it describes a single fitted relationship rather than a process evolving in time.
+> **Example 3 (A regression model fitted by Bayesian inference)** A linear regression model whose parameters are estimated by Bayesian inference is probabilistic: Bayesian inference assigns a probability distribution to the parameters and predictions, even though the model itself describes a single fitted relationship rather than a process evolving in time.
 
 ### 1.2 Summary of usage
 
