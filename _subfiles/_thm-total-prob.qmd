@@ -14,7 +14,7 @@ $$\Pr(A) = \sum_{i} \Pr(A \mid B_i) \cd \Pr(B_i)$$
 Since $B_1, B_2, \ldots$ partition the sample space,
 the events $A \cap B_1, A \cap B_2, \ldots$ are mutually exclusive and their
 union is $A$.
-By countable additivity (@def-countable-additivity),
+By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity),
 and then by @thm-law-conditional-prob:
 
 $$
