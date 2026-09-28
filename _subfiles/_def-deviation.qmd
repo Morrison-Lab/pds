@@ -8,7 +8,7 @@ $$z - r$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 In probability and statistics,
 "deviation" usually means deviation from a [population mean](expectation.qmd#def-expectation).
@@ -44,7 +44,7 @@ $$\devn(y) \eqdef y - \E{Y}$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 Other sources often call this quantity an **error** or **noise term**.
 In regression settings,

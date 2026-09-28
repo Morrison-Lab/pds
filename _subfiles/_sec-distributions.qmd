@@ -1,4 +1,4 @@
-::: notes
+::: {.remark .notes}
 
 Some distributions are typically used for outcome models (@tbl-outcome-distns);
 other distributions are typically used for test statistics (@tbl-test-stat-distns).
@@ -65,7 +65,7 @@ $$\P(Y = y) \eqdef \frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \Nat = \set{0, 1, 2,
 
 :::
 
-::: notes
+::: {.remark .notes}
 (see @fig-pois-pmf)
 :::
 
@@ -128,7 +128,7 @@ $$
 $$
 :::
 
-::: notes
+::: {.remark .notes}
 (see @fig-pois-cdfs)
 :::
 
@@ -360,7 +360,7 @@ population size              | size of habitat
 
 :::
 
-:::: notes
+:::: {.remark .notes}
 Exposure units are similar to
 the number of trials in a binomial distribution,
 but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
@@ -383,7 +383,7 @@ $$\lambda \eqdef \frac{\E{Y}}{t}$$ {#eq-def-event-rate}
 
 :::
 
-::: notes
+::: {.remark .notes}
 The event rate is a transformation of the mean:
 it removes the exposure magnitude from the mean,
 so counts observed over different exposures can be compared on one scale.
@@ -459,7 +459,7 @@ $$
 $$
 :::
 
-::: notes
+::: {.remark .notes}
 
 The hypothesis carries the content here.
 @def-event-rate alone cannot give $\E{Y_0} = 0$,
@@ -551,7 +551,7 @@ with no unknown coefficient to estimate.
 
 :::
 
-::: notes
+::: {.remark .notes}
 The offset needs no covariates:
 with a single exposure $t$ and an unknown rate $\lambda$,
 $\log{t}$ is already an offset.
@@ -648,11 +648,78 @@ which satisfies $\Gamma(x) = (x-1)!$ for positive integers $x$.
 
 :::
 
-::: notes
-As $\rho \rightarrow \infty$,
-the second factor converges to 1
-and the third factor converges to $\expf{-\mu}$,
-which brings us back to the Poisson distribution.
+{{< slidebreak >}}
+
+:::{#thm-nb-poisson-limit}
+#### The negative binomial converges to the Poisson
+
+Fix $\mu > 0$, and let $Y_\rho \sim \NegBin(\mu, \rho)$.
+Then for each $y \in \set{0, 1, 2, \dots}$,
+as $\rho \rightarrow \infty$,
+the negative binomial PMF converges to the [Poisson](#def-poisson) PMF (@eq-pois-pmf):
+
+$$\lim_{\rho \rightarrow \infty} \P(Y_\rho = y) = \frac{\mu^{y} e^{-\mu}}{y!}$$
+
+:::
+
+::: proof
+
+Fix $y$.
+In @def-nb, the first factor $\mu^y / y!$ does not depend on $\rho$.
+For the second factor,
+$\Gamma(\rho + y) = \Gamma(\rho) \prod_{k=0}^{y-1} (\rho + k)$,
+by applying $\Gamma(x + 1) = x\,\Gamma(x)$ $y$ times
+(for $y = 0$, the product is empty and equals 1), so:
+
+$$
+\ba
+\frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y}
+&= \frac{\Gamma(\rho) \prod_{k=0}^{y-1} (\rho + k)}{\Gamma(\rho) \cdot (\rho + \mu)^y}
+&& (\Gamma(x + 1) = x\,\Gamma(x) \text{, applied } y \text{ times}) \\
+&= \prod_{k=0}^{y-1} \frac{\rho + k}{\rho + \mu}
+&& (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho + \mu \text{ per } k) \\
+&= \prod_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho}
+&& (\text{divide each numerator and denominator by } \rho) \\
+&\rightarrow \prod_{k=0}^{y-1} \frac{1 + 0}{1 + 0}
+&& (k/\rho \rightarrow 0 \text{ and } \mu/\rho \rightarrow 0 \text{; finitely many factors}) \\
+&= 1
+&& (\text{simplify})
+\ea
+$$
+
+For the third factor, write $x \eqdef \mu/\rho$,
+so $x \rightarrow 0$ as $\rho \rightarrow \infty$, and $\rho = \mu/x$:
+
+$$
+\ba
+\log\paren{\paren{1 + \frac{\mu}{\rho}}^{-\rho}}
+&= -\rho \log\paren{1 + \frac{\mu}{\rho}}
+&& (\text{log of a power}) \\
+&= -\mu \cdot \frac{\log(1 + x)}{x}
+&& (\text{substitute } \rho = \mu/x) \\
+&\rightarrow -\mu \cdot 1
+&& (\textstyle\lim_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\
+&= -\mu
+&& (\text{simplify})
+\ea
+$$
+
+so, since $\exp$ is continuous,
+$\paren{1 + \mu/\rho}^{-\rho} \rightarrow \expf{-\mu}$.
+Each of the three factors has a limit, so their product does too:
+
+$$
+\ba
+\lim_{\rho \rightarrow \infty} \P(Y_\rho = y)
+&= \frac{\mu^y}{y!} \cdot 1 \cdot \expf{-\mu}
+&& (\text{limit of a product of convergent factors}) \\
+&= \frac{\mu^{y} e^{-\mu}}{y!}
+&& (\text{rearrange})
+\ea
+$$
+
+which is the $\Pois(\mu)$ PMF.
+
 :::
 
 {{< slidebreak >}}
@@ -815,16 +882,90 @@ $$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The hazard is written $\h(t)$ here, rather than $\haz(t)$,
 because the Weibull rate parameter is also called $\lambda$.
 
-When $\alpha=1$, the Weibull distribution reduces to the exponential distribution.
-When $\alpha>1$ the hazard is
-increasing and when $\alpha < 1$ the hazard is decreasing.
-This property provides
-more flexibility than the exponential.
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-weibull-exponential}
+#### The Weibull with shape 1 is the exponential
+
+If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha = 1$ and rate $\lambda$,
+then $T$ has the [exponential distribution](random-variables.qmd#def-exponential) with rate $\lambda$.
+
+:::
+
+::: proof
+
+By @thm-weibull with $\alpha = 1$, for $t > 0$:
+
+$$
+\ba
+f(t)
+&= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}
+&& (\text{Weibull density}) \\
+&= 1 \cdot \lambda t^{0}\text{e}^{-\lambda t^1}
+&& (\text{substitute } \alpha = 1) \\
+&= \lambda \text{e}^{-\lambda t}
+&& (t^0 = 1 \text{ and } t^1 = t)
+\ea
+$$
+
+and $f(t) = 0$ for $t < 0$, since $T$ is non-negative.
+This density matches the exponential density at every $t \ne 0$.
+Changing a density at the single point $t = 0$
+does not change its integral over any set,
+so $T$ has the exponential distribution with rate $\lambda$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-weibull-hazard-monotone}
+#### The Weibull shape sets the direction of the hazard
+
+If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha$ and rate $\lambda$,
+then on $t > 0$ its hazard $\h(t)$ is:
+
+- strictly increasing if $\alpha > 1$
+- constant if $\alpha = 1$
+- strictly decreasing if $\alpha < 1$
+
+:::
+
+::: proof
+
+By @thm-weibull, $\h(t) = \alpha\lambda t^{\alpha-1}$ for $t > 0$, so:
+
+$$
+\ba
+\frac{d}{dt}\h(t)
+&= \frac{d}{dt} \alpha\lambda t^{\alpha-1}
+&& (\text{Weibull hazard}) \\
+&= \alpha(\alpha - 1)\lambda t^{\alpha-2}
+&& (\text{power rule})
+\ea
+$$
+
+For $t > 0$, the factors $\alpha$, $\lambda$, and $t^{\alpha-2}$ are all positive,
+so $\frac{d}{dt}\h(t)$ has the sign of $\alpha - 1$:
+positive for $\alpha > 1$, zero for $\alpha = 1$, and negative for $\alpha < 1$.
+A function with a positive (negative) derivative on an interval
+is strictly increasing (decreasing) there,
+and one with a zero derivative is constant.
+
+:::
+
+::: {.remark .notes}
+
+The exponential distribution's hazard is constant,
+so the Weibull's choice of an increasing, constant, or decreasing hazard
+(@cor-weibull-hazard-monotone)
+provides more flexibility than the exponential.
 
 :::
 

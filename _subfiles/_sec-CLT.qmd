@@ -1,8 +1,12 @@
+::: remark
+
 The sum of many independent random variables,
 none of which dominates the others,
 has a distribution that is approximately bell-shaped,
 whatever the distributions of the individual variables.
 @thm-clt makes this precise.
+
+:::
 
 {{< slidebreak >}}
 
@@ -23,7 +27,7 @@ is the CDF of the [standard normal distribution](random-variables.qmd#def-std-no
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 This version is the Lindeberg--L&eacute;vy CLT;
 its proof is beyond these notes' scope
@@ -31,12 +35,76 @@ its proof is beyond these notes' scope
 Other versions relax the IID assumption,
 which is why the informal statement asks only that no summand dominate.
 
-In practice, the theorem justifies approximating
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-sum-iid-moments}
+#### Mean and variance of a sum of IID random variables
+
+Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables,
+each discrete or continuous,
+with mean $\mu$ and finite variance $\ss$,
+and let $S_n \eqdef \sumin X_i$.
+Then:
+
+$$
+\ba
+\E{S_n} &= n\mu \\
+\Var{S_n} &= n\ss
+\ea
+$$
+
+:::
+
+::: proof
+
+For the mean, apply
+[linearity of expectation](expectation.qmd#thm-linearity-expectation)
+once per added summand:
+
+$$
+\ba
+\E{S_n}
+&= \sumin \E{X_i}
+&& \text{(linearity of expectation, applied } n - 1 \text{ times)} \\
+&= n\mu
+&& \text{(each } X_i \text{ has mean } \mu \text{)}
+\ea
+$$
+
+For the variance, apply the
+[variance of a linear combination](variance-covariance.qmd#thm-var-lincom)
+with every $a_i = 1$.
+For $i \ne j$, $X_i$ and $X_j$ are independent
+(take $A_k = \mathbb{R}$ for every other $k$ in the
+[definition of independence](independence.qmd#def-indpt)),
+so $\Cov{X_i, X_j} = 0$ for
+[independent summands](variance-covariance.qmd#thm-indpt-uncorrelated);
+and $\Cov{X_i, X_i} = \Var{X_i}$
+([covariance of a variable with itself](variance-covariance.qmd#lem-cov-xx)):
+
+$$
+\ba
+\Var{S_n}
+&= \sumin \sumn{j} \Cov{X_i, X_j}
+&& \text{(variance of a linear combination, all } a_i = 1 \text{)} \\
+&= \sumin \Cov{X_i, X_i} + \sum_{i \ne j} \Cov{X_i, X_j}
+&& \text{(split off the terms with } i = j \text{)} \\
+&= \sumin \Var{X_i} + 0
+&& \text{(covariance with itself; independent summands)} \\
+&= n\ss
+&& \text{(each } X_i \text{ has variance } \ss \text{)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+In practice, @thm-clt justifies approximating
 $S_n$ by a normal distribution with mean $n\mu$ and variance $n\ss$,
-which by [linearity of expectation](expectation.qmd#thm-linearity-expectation)
-and the [variance of a linear combination](variance-covariance.qmd#thm-var-lincom)
-(whose covariance terms are 0 for
-[independent summands](variance-covariance.qmd#thm-indpt-uncorrelated))
+which by @cor-sum-iid-moments
 are exactly the mean and variance of $S_n$.
 
 :::

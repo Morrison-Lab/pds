@@ -1,11 +1,17 @@
 
+::: remark
+
 The terms "stochastic", "probabilistic", and "random" are frequently used in statistics and probability theory,
 often interchangeably in everyday conversation,
 but they carry nuanced technical distinctions.
 
+:::
+
 {{< slidebreak >}}
 
 ### Key distinction: modeling approach vs. phenomena
+
+::: remark
 
 As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
 
@@ -13,6 +19,8 @@ As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
 > the former refers to a modeling approach,
 > while the latter describes phenomena;
 > in everyday conversation these terms are often used interchangeably.
+
+:::
 
 []{#definitions}
 
@@ -30,7 +38,7 @@ used to describe variables or occurrences rather than whole processes or modelin
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The term "random" is sometimes used as shorthand for a uniform distribution
 (especially the discrete uniform distribution),
@@ -110,7 +118,7 @@ rather than a process evolving in time.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The model is probabilistic because of its error distribution,
 not because of the method used to fit it.
@@ -118,6 +126,7 @@ The same model is probabilistic whether its parameters are estimated
 by maximum likelihood or by Bayesian inference.
 Bayesian inference additionally assigns a probability distribution to the parameters themselves,
 which makes the inference method probabilistic too.
+
 :::
 
 {{< slidebreak >}}
@@ -132,16 +141,24 @@ which makes the inference method probabilistic too.
 
 : Comparison of "random", "stochastic", and "probabilistic" {#tbl-random-stochastic-probabilistic}
 
+::: remark
+
 While some sources treat "stochastic" and "random" as practically synonymous,
 a common convention is to use "random" for variables and events,
 and "stochastic" for processes,
 especially to highlight temporal or spatial structure in the modeling.
 
+:::
+
 {{< slidebreak >}}
 
 ### Additional resources
+
+::: remark
 
 - [Wikipedia: Stochastic](https://en.wikipedia.org/wiki/Stochastic)
 - [Wikipedia: Stochastic process](https://en.wikipedia.org/wiki/Stochastic_process)
 - [Mathematics Stack Exchange: What's the difference between stochastic and random?](https://math.stackexchange.com/questions/114373/whats-the-difference-between-stochastic-and-random)
 - [Cross Validated: Probability model vs statistical model vs stochastic model](https://stats.stackexchange.com/questions/421462/probability-model-vs-statistical-model-vs-stochastic-model)
+
+:::
