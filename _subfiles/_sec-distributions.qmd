@@ -402,9 +402,13 @@ $$\lambda \eqdef \frac{\mu}{t}$$ {#eq-def-event-rate}
 :::
 
 ::: notes
-Event rate is somewhat analogous to odds in binary outcome models;
-it typically serves as an intermediate transformation between the mean of the outcome and the linear component of the model.
-However, in contrast with the odds function, the transformation $\lambda = \mu/t$ is *not* considered part of the Poisson model's link function, and it treats the exposure magnitude covariate differently from the other covariates.
+Event rate is somewhat analogous to odds for a binary outcome:
+both are transformations of the mean.
+The event rate removes the exposure magnitude from the mean,
+so counts observed over different exposures can be compared on one scale.
+In count regression models, the transformation $\lambda = \mu/t$ is not part of the model's link function,
+and the exposure magnitude is handled differently from the other covariates
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 :::
 
 {{< slidebreak >}}
@@ -552,9 +556,40 @@ Exponentiating yields $\mu = \exp(-0.511) \approx 0.60$ expected events.
 :::{#def-offset}
 #### Offset
 
-When the linear component of a model involves a term without an unknown coefficient, 
-that term is called an **offset**.
+For a count outcome with exposure magnitude $t$,
+the known term $\log{t}$ in the log-scale decomposition of the mean
+([@thm-exposure-log-scale]),
 
+$$\log{\mu} = \log{\lambda} + \log{t},$$
+
+is called the **offset**:
+it shifts $\log{\mu}$ by a known amount,
+with no unknown coefficient to estimate.
+
+:::
+
+::: notes
+The offset needs no covariates:
+with a single exposure $t$ and an unknown rate $\lambda$,
+$\log{t}$ is already an offset.
+Regression models for counts keep the same term
+and add covariate terms beside it
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-offset}
+#### The offset for a clinic's event count
+
+In @exm-exposure-log-scale,
+the clinic was observed for $t = 30$ days,
+so the offset is $\log{30} \approx 3.401$.
+Only $\log{\lambda}$ is unknown before the data are seen;
+the offset is fixed by the length of observation.
+A clinic observed for $t = 60$ days has offset $\log{60} \approx 4.094$,
+which raises $\log{\mu}$ by $\log{2} \approx 0.693$ at the same event rate.
 :::
 
 {{< slidebreak >}}
