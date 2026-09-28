@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:48:19 (PDT)
+Last modified: 2026-09-28 01:51:32 (PDT)
 
 Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
 
@@ -230,7 +230,7 @@ We can use \\t\\ to represent continuous-valued exposures/observation durations,
 >
 > \\\lambda \stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{3}\\
 
-Event rate is somewhat analogous to odds for a binary outcome: both are transformations of the mean. The event rate removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
@@ -249,8 +249,6 @@ Event rate is somewhat analogous to odds for a binary outcome: both are transfor
 > **Example 4 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\\lambda = 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 3](#thm-mean-vs-event-rate):
 >
 > \\ \begin{aligned} \mu &= \lambda \cdot t && (\text{transformation from event rate to mean}) \\ &= 0.05 \times 100 && (\text{substitute } \lambda = 0.05 \text{ and } t = 100) \\ &= 5 \text{ cases} && (\text{evaluate expected count}) \end{aligned} \\
-
-[Equation 4](#eq-lambda-to-mu) is analogous to the inverse-odds function for binary variables.
 
 > **NOTE:**
 >
