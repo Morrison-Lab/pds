@@ -7,7 +7,8 @@ which lets us exchange the order of integration (or summation)
 over a product of $\sigma$-finite measure spaces,
 provided the integrand is non-negative (Tonelli)
 or absolutely integrable (Fubini).
-Lebesgue measure on the real line and counting measure on a countable set
+Lebesgue measure on the real line and
+[counting measure](probability-basics.qmd#def-counting-measure) on a countable set
 are both $\sigma$-finite,
 which gives the theorem a form stated in terms of a joint distribution.
 

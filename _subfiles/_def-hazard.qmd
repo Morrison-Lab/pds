@@ -31,8 +31,8 @@ A hazard can exceed 1, just as a density can.
 Many sources write the hazard as $\haz(t) = \p(T = t \mid T \ge t)$,
 reading it as the density of $T$ at $t$, conditional on the event $T \ge t$;
 that notation abbreviates the limit in @def-hazard.
-For a discrete $T$, the conditional probability $\Pr(T = t \mid T \ge t)$ itself
-is called the *discrete-time* hazard, and it is a probability.
+For a discrete $T$, the analogous quantity is the
+[discrete-time hazard](#def-discrete-hazard).
 
 The name "hazard" carries a connotation that the event is undesirable ---
 death, relapse, equipment failure, and so on.
@@ -45,5 +45,59 @@ undesirable events are called **risks**,
 while the same conditional probabilities for neutral or desirable events
 are simply called **probabilities**.
 The math is identical; only the name changes with the valence of the event.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-discrete-hazard}
+#### Discrete-time hazard
+
+The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable $T$
+at a value $t$ with $\Pr(T \ge t) > 0$
+is the [conditional probability](probability-basics.qmd#def-conditional-prob)
+that $T$ equals $t$, given $T \ge t$:
+
+$$\Pr(T = t \mid T \ge t)$$
+
+:::
+
+::: notes
+
+Unlike the continuous-time [hazard function](#def-hazard),
+which is a rate and can exceed 1,
+the discrete-time hazard is a probability,
+so it lies in $[0, 1]$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-discrete-hazard}
+#### Rolling until the first six
+
+Roll a fair die repeatedly,
+and let $T$ be the number of the roll that first shows a six.
+Then $T \ge t$ exactly when the first $t - 1$ rolls are not sixes,
+which has probability $(5/6)^{t-1}$,
+and $T = t$ when, in addition, roll $t$ is a six.
+So, for each $t = 1, 2, \ldots$:
+
+$$
+\ba
+\Pr(T = t \mid T \ge t)
+&= \frac{\Pr(T = t,\, T \ge t)}{\Pr(T \ge t)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{\Pr(T = t)}{\Pr(T \ge t)}
+&& \text{(} T = t \text{ implies } T \ge t \text{)} \\
+&= \frac{(5/6)^{t-1} \cd (1/6)}{(5/6)^{t-1}}
+&& \text{(rolls are independent)} \\
+&= \frac{1}{6}
+&& \text{(cancel)}
+\ea
+$$
+
+The discrete-time hazard is the same at every roll:
+having gone without a six so far does not change the chance of a six on the next roll.
 
 :::

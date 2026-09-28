@@ -70,10 +70,12 @@ so $X_1 \sim \Ber(1/2)$.
 If $X$ is a [continuous random variable](#def-continuous-rv),
 a **probability density function** of $X$,
 denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
-is a function $f \ge 0$ whose integral over any interval
-is the [probability](probability-basics.qmd#def-probability) that $X$ falls in that interval:
+is a function $f$ that satisfies:
 
-$$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
+- $f(x) \ge 0$ for every $x$.
+- The integral of $f$ over any interval
+  is the [probability](probability-basics.qmd#def-probability) that $X$ falls in that interval:
+  $$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
 
 :::
 
@@ -752,11 +754,12 @@ which matches $X_1 \sim \Ber(1/2)$ from @exm-bernoulli-pmf.
 For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$,
 a **joint probability density function** (joint density) of $X$ and $Y$,
 denoted $f_{X,Y}(x, y)$ or $\p(X = x,\, Y = y)$,
-is a function $f_{X,Y} \ge 0$ on $\mathbb{R}^2$
-whose integral over any region $A \subseteq \mathbb{R}^2$
-is the probability that the pair $(X, Y)$ falls in $A$:
+is a function $f_{X,Y}$ on $\mathbb{R}^2$ that satisfies:
 
-$$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
+- $f_{X,Y}(x, y) \ge 0$ for every $(x, y)$.
+- The integral of $f_{X,Y}$ over any region $A \subseteq \mathbb{R}^2$
+  is the probability that the pair $(X, Y)$ falls in $A$:
+  $$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
 
 :::
 
