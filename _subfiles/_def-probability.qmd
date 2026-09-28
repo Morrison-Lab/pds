@@ -90,11 +90,11 @@ $$
 \ba
 \Pr(A) + \Pr(\neg A)
 &= \Pr(A \cup \neg A)
-&& \text{(additivity: property 3 of @def-probability)} \\
+&& \text{(additivity of probability for disjoint events)} \\
 &= \Pr(\Omega)
 && \text{(} A \cup \neg A = \Omega \text{)} \\
 &= 1
-&& \text{(property 2 of @def-probability)}
+&& \text{(probability of the sample space is 1)}
 \ea
 $$
 
@@ -132,7 +132,7 @@ $$\Pr(\neg A)= 1 - \pi$$
 $$
 \ba
 \Pr(\neg A) &= 1 - \Pr(A)
-&& \text{(@cor-p-neg0)} \\
+&& \text{(complement rule)} \\
 &= 1 - \pi
 && \text{(substitute } \Pr(A) = \pi \text{)}
 \ea

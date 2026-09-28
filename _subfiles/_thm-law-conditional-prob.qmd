@@ -1,5 +1,4 @@
 :::{#thm-law-conditional-prob}
-
 #### Law of conditional probability
 
 For any two events $A$ and $B$ with $\Pr(B) > 0$:
@@ -24,20 +23,20 @@ $$
 {{< slidebreak >}}
 
 :::{#exm-law-conditional-prob}
-
 #### Applying the law of conditional probability
 
 Suppose 30% of adults exercise regularly ($\Pr(E) = 0.30$),
 and among adults who exercise regularly,
 60% have low blood pressure ($\Pr(L \mid E) = 0.60$).
 
-Then the probability that a randomly selected adult both exercises
+Then, by @thm-law-conditional-prob,
+the probability that a randomly selected adult both exercises
 regularly and has low blood pressure is:
 
 $$
 \ba
 \Pr(L \cap E) &= \Pr(L \mid E) \cd \Pr(E)
-&& \text{(law of conditional probability, @thm-law-conditional-prob)} \\
+&& \text{(law of conditional probability)} \\
 &= 0.60 \cd 0.30
 && \text{(substitute the given values)} \\
 &= 0.18

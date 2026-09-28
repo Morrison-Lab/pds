@@ -1,5 +1,4 @@
 :::{#thm-bayes}
-
 #### Bayes' theorem
 
 For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$:
@@ -10,15 +9,17 @@ $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}$$
 
 ::: proof
 
+By @def-conditional-prob and @thm-law-conditional-prob:
+
 $$
 \ba
 \Pr(A \mid B)
 &= \frac{\Pr(A \cap B)}{\Pr(B)}
-&& \text{(definition of conditional probability, @def-conditional-prob)} \\
+&& \text{(definition of conditional probability)} \\
 &= \frac{\Pr(B \cap A)}{\Pr(B)}
 && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\
 &= \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}
-&& \text{(@thm-law-conditional-prob applied to } \Pr(B \cap A) \text{)}
+&& \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)}
 \ea
 $$
 
@@ -27,7 +28,6 @@ $$
 {{< slidebreak >}}
 
 :::{#exm-bayes}
-
 #### Positive predictive value of a medical test
 
 Suppose a disease test has 99% sensitivity and 99% specificity,
@@ -42,13 +42,16 @@ Then:
   so the false positive rate is $\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01$
 - $\Pr(D) = 0.07$ (prevalence)
 
+By @thm-bayes, with the denominator expanded by the
+[law of total probability](#thm-total-prob) over the partition $\{D, \neg D\}$:
+
 $$
 \ba
 \Pr(D \mid +)
 &= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+)}
-&& \text{(Bayes' theorem, @thm-bayes)} \\
+&& \text{(Bayes' theorem)} \\
 &= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+ \mid D) \cd \Pr(D) + \Pr(+ \mid \neg D) \cd \Pr(\neg D)}
-&& \text{(law of total probability, @thm-total-prob)} \\
+&& \text{(law of total probability)} \\
 &= \frac{0.99 \cd 0.07}{0.99 \cd 0.07 + 0.01 \cd 0.93}
 && \text{(substitute the given values)} \\
 &= \frac{0.0693}{0.0693 + 0.0093}

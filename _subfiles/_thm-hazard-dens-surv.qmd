@@ -48,7 +48,7 @@ $$
 \ba
 \haz(t)
 &= \frac{f(t)}{\surv(t)}
-&& \text{(@thm-hazard-dens-surv)} \\
+&& \text{(hazard equals density over survival)} \\
 &= \frac{\lambda \ef{-\lambda t}}{\ef{-\lambda t}}
 && \text{(substitute the exponential density and survival function)} \\
 &= \lambda

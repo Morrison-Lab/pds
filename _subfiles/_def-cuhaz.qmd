@@ -78,7 +78,7 @@ $$
 &= \frac{f(u)}{\surv(u)}
 && \text{(simplify)} \\
 &= \haz(u)
-&& \text{(@thm-hazard-dens-surv)}
+&& \text{(hazard equals density over survival)}
 \ea
 $$
 
@@ -94,7 +94,7 @@ $$
 \ba
 \cuhaz(t)
 &\eqdef \int_{u=-\infty}^{t} \haz(u)\,du
-&& \text{(@def-cuhaz)} \\
+&& \text{(definition of the cumulative hazard)} \\
 &= \sb{-\logf{\surv(u)}}_{u=-\infty}^{t}
 && \text{(} -\log \surv \text{ is an antiderivative of } \haz \text{)} \\
 &= -\logf{\surv(t)} - 0
@@ -120,7 +120,7 @@ $$
 \ba
 \surv(t)
 &= \expf{-\cuhaz(t)}
-&& \text{(@eq-surv-int-haz)} \\
+&& \text{(survival function from the cumulative hazard)} \\
 &= \expf{-\lambda t}
 && \text{(substitute } \cuhaz(t) = \lambda t \text{)}
 \ea

@@ -22,7 +22,7 @@ $$
 \ba
 \Pr(A \mid B)
 &= \frac{\Pr(A \cap B)}{\Pr(B)}
-&& \text{(@def-conditional-prob)} \\
+&& \text{(definition of conditional probability)} \\
 &= \frac{1/6}{3/6}
 && \text{(substitute the probabilities)} \\
 &= \frac{1}{3}
