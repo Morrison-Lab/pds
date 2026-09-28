@@ -40,14 +40,16 @@ website:
             href: notation.qmd
           - text: "Probability Basics"
             href: probability-basics.qmd
-          - text: "Random Variables and Distributions"
+          - text: "Random Variables and Distribution Functions"
             href: random-variables.qmd
+          - text: "Independence"
+            href: independence.qmd
           - text: "Expectation"
             href: expectation.qmd
           - text: "Variance and Covariance"
             href: variance-covariance.qmd
-          - text: "Independence and the CLT"
-            href: independence.qmd
+          - text: "Key Distributions and the CLT"
+            href: distributions.qmd
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds

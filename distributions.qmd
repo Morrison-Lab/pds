@@ -1,0 +1,26 @@
+---
+title: "Key distributions and the Central Limit Theorem"
+format:
+  html: default
+  revealjs:
+    output-file: distributions-slides.html
+  pdf:
+    output-file: distributions-handout.pdf
+  docx:
+    output-file: distributions.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+# Key probability distributions {#sec-distributions}
+
+{{< include pds/_subfiles/_sec-distributions.qmd >}}
+
+# The Central Limit Theorem {#sec-clt}
+
+{{< include pds/_subfiles/_sec-CLT.qmd >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

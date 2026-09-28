@@ -1,5 +1,5 @@
 ---
-title: "Random variables and distributions"
+title: "Random variables and distribution functions"
 format:
   html: default
   revealjs:
@@ -55,10 +55,6 @@ connect the functions in @tbl-prob-dist-fns;
 each arrow in the following diagram converts one function into the next:
 
 {{< include pds/_subfiles/_surv-diagram.qmd >}}
-
-# Key probability distributions {#sec-distributions}
-
-{{< include pds/_subfiles/_sec-distributions.qmd >}}
 
 # References {.unnumbered}
 
