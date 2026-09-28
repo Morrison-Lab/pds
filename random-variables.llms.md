@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 14:24:58 (PDT)
+Last modified: 2026-09-28 15:15:49 (PDT)
 
 ## 1 Random variables
 
@@ -379,6 +379,10 @@ Taking \\B = \mathbb{R}\\ gives \\\int\_{-\infty}^{\infty} \operatorname{p}(X = 
 >
 > \\\Pr(X = 1,\\ Y \le 1) = \int_0^1 \tfrac{1}{4}\\dy = \tfrac{1}{4}\\
 
+> **TIP:**
+>
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+
 ## 3 Survival, hazard, and cumulative hazard functions
 
 > **NOTE:**
@@ -535,6 +539,8 @@ Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in P
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 
 Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized Linear Models*. 4th ed. CRC press. <https://doi.org/10.1201/9781315182780>.
+
+Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
 
 Kalbfleisch, John D, and Ross L Prentice. 2011. *The Statistical Analysis of Failure Time Data*. John Wiley & Sons.
 

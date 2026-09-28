@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 14:24:58 (PDT)
+Last modified: 2026-09-28 15:15:49 (PDT)
 
 > **NOTE:**
 >
@@ -110,5 +110,13 @@ The IID assumption is one of the most common assumptions in introductory statist
 > **NOTE:**
 >
 > **Example 7 (The usual regression assumption)** In [Example 5](#exm-cident), if the \\Y_i\\ are also conditionally independent given all the doses, and each \\Y_i\\ depends on the doses only through its own \\X_i\\, then \\Y_i \mid X_i\\ \operatorname{ciid}\\, and the joint conditional PMF is \\\prod\_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\\: one shared function evaluated at each \\(x_i, y_i)\\.
+
+> **TIP:**
+>
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers independence ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+
+## References
+
+Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
 
 Back to top
