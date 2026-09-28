@@ -142,6 +142,16 @@ cookieconsent.run({
 </script> 
   
 <style>
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-solution.callout {
   border-left-color: #4E342E;
 }
@@ -151,16 +161,6 @@ div.callout-solution.callout-style-default .callout-header {
 div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-prp.callout {
   border-left-color: #827717;
@@ -172,35 +172,25 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-lem.callout {
-  border-left-color: #1565C0;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exr.callout {
-  border-left-color: #FFA500;
+div.callout-cor.callout {
+  border-left-color: #00838F;
 }
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
 }
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-cnj.callout {
   border-left-color: #558B2F;
@@ -212,25 +202,15 @@ div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
+div.callout-lem.callout {
+  border-left-color: #1565C0;
 }
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
 }
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-def.callout {
-  border-left-color: #1B5E20;
-}
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
-}
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-proof.callout {
   border-left-color: #37474F;
@@ -241,6 +221,26 @@ div.callout-proof.callout-style-default .callout-header {
 div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
+}
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
+}
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -545,7 +545,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-09-28 01:11:10 (PDT)</p>
+      <p class="date">Last modified: 2026-09-28 01:15:08 (PDT)</p>
     </div>
   </div>
   
@@ -575,7 +575,7 @@ window.Quarto = {
 </div>
 <div class="notes">
 <p>We write <span class="math inline">\(X \perp\!\!\!\perp Y\)</span> for “<span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent”. The symbol <span class="math inline">\(\perp\!\!\!\perp\)</span> is essentially <span class="math inline">\(\prod\)</span> upside-down, which can remind you of the definition.</p>
-<p>For discrete random variables, independence is equivalent to the joint PMF factoring, <span class="math inline">\(\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod_{i=1}^n{\operatorname{P}(X_i=x_i)}\)</span> for all <span class="math inline">\(x_1, \ldots, x_n\)</span>. For continuous random variables with a joint density, it is equivalent to the joint density factoring the same way. The PMF form does not work as a definition for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent.</p>
+<p>For discrete random variables, independence is equivalent to the <a href="./random-variables.html#def-joint-pmf">joint PMF</a> factoring, <span class="math inline">\(\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod_{i=1}^n{\operatorname{P}(X_i=x_i)}\)</span> for all <span class="math inline">\(x_1, \ldots, x_n\)</span>. For continuous random variables with a <a href="./random-variables.html#def-joint-pdf">joint density</a>, it is equivalent to the joint density factoring the same way. The PMF form does not work as a definition for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent.</p>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -598,14 +598,18 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-cind" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> given a random variable (or vector) <span class="math inline">\(\tilde{X}\)</span> if, for every value <span class="math inline">\(\tilde{x}\)</span> of <span class="math inline">\(\tilde{X}\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
+<p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> given a discrete random variable (or vector) <span class="math inline">\(\tilde{X}\)</span> if, for every value <span class="math inline">\(\tilde{x}\)</span> with <span class="math inline">\(\Pr(\tilde{X}= \tilde{x}) &gt; 0\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
 <p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \tilde{X}= \tilde{x}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \tilde{X}= \tilde{x})}\]</span></p>
+<p>When <span class="math inline">\(\tilde{X}\)</span> is continuous, every event <span class="math inline">\(\{\tilde{X}= \tilde{x}\}\)</span> has probability 0, so the condition is stated with densities instead: for every <span class="math inline">\(\tilde{x}\)</span> with <span class="math inline">\(\operatorname{p}(\tilde{X}= \tilde{x}) &gt; 0\)</span> and all <span class="math inline">\(y_1, \ldots, y_n\)</span>,</p>
+<p><span class="math display">\[\frac{\operatorname{p}(\tilde{X}= \tilde{x}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\tilde{X}= \tilde{x})} = \prod_{i=1}^n{\frac{\operatorname{p}(\tilde{X}= \tilde{x}, Y_i = y_i)}{\operatorname{p}(\tilde{X}= \tilde{x})}}\]</span></p>
+<p>where each <span class="math inline">\(\operatorname{p}(\cdot)\)</span> is a <a href="./random-variables.html#def-joint-pdf">joint density</a> (with probability masses in place of densities for any discrete <span class="math inline">\(Y_i\)</span>, as in a <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a>).</p>
 </div>
 </div>
 </div>
 </div>
 <div class="notes">
 <p>In regression, <span class="math inline">\(\tilde{X}\)</span> is usually the full set of covariates <span class="math inline">\((X_1, \ldots, X_n)\)</span>, and a model usually also assumes that each <span class="math inline">\(Y_i\)</span> depends on the covariates only through its own <span class="math inline">\(X_i\)</span>: <span class="math inline">\(\Pr(Y_i \in A_i \mid X_1 = x_1, \ldots, X_n = x_n) = \Pr(Y_i \in A_i \mid X_i = x_i)\)</span>. Together, the two assumptions give the factorization <span class="math inline">\(\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid X_1 = x_1, \ldots, X_n = x_n) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}\)</span>. That second assumption is a separate one, not part of conditional independence.</p>
+<p>For continuous <span class="math inline">\(\tilde{X}\)</span>, each ratio in the density form is the density of the <span class="math inline">\(Y\)</span>’s under their conditional distribution given <span class="math inline">\(\tilde{X}= \tilde{x}\)</span>, so both forms say the same thing: given <span class="math inline">\(\tilde{X}= \tilde{x}\)</span>, the <span class="math inline">\(Y_i\)</span>’s joint distribution factors.</p>
 <p>Conditional independence neither implies nor is implied by independence.</p>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
@@ -628,6 +632,44 @@ window.Quarto = {
 \end{aligned}
 \]</span></p>
 <p>but <span class="math inline">\(\Pr(Y_1 = 1) = (0.9)(0.1) + (0.1)(0.9) = 0.18\)</span>, so <span class="math inline">\(\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09\)</span>: the tests are conditionally independent given <span class="math inline">\(X\)</span>, but not independent.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-exm no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-indpt-not-cind" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (Two coins, given their total)</strong></span> Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate heads on two fair coin flips, which are independent (<a href="#exm-indpt" class="quarto-xref">Example&nbsp;1</a>), and let <span class="math inline">\(X = Y_1 + Y_2\)</span> be the number of heads. Given <span class="math inline">\(X = 1\)</span>, which has probability <span class="math inline">\(1/2\)</span>, exactly one coin is heads, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1, Y_2 = 1 \mid X = 1)
+&amp;= \frac{\Pr(Y_1 = 1, Y_2 = 1, X = 1)}{\Pr(X = 1)}
+&amp;&amp; \text{(definition of conditional probability)} \\
+&amp;= \frac{0}{1/2}
+&amp;&amp; \text{(two heads make } X = 2 \text{, not } 1 \text{)} \\
+&amp;= 0
+&amp;&amp; \text{(divide)}
+\end{aligned}
+\]</span></p>
+<p>but</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1 \mid X = 1)
+&amp;= \frac{\Pr(Y_1 = 1, X = 1)}{\Pr(X = 1)}
+&amp;&amp; \text{(definition of conditional probability)} \\
+&amp;= \frac{\Pr(Y_1 = 1, Y_2 = 0)}{\Pr(X = 1)}
+&amp;&amp; \text{(} Y_1 = 1 \text{ and } X = 1 \text{ means } Y_2 = 0 \text{)} \\
+&amp;= \frac{1/4}{1/2}
+&amp;&amp; \text{(substitute)} \\
+&amp;= \tfrac{1}{2}
+&amp;&amp; \text{(divide)}
+\end{aligned}
+\]</span></p>
+<p>and likewise <span class="math inline">\(\Pr(Y_2 = 1 \mid X = 1) = 1/2\)</span>, so the product of the conditional probabilities is <span class="math inline">\(1/4 \ne 0\)</span>: <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent, but not conditionally independent given <span class="math inline">\(X\)</span>.</p>
 </div>
 </div>
 </div>
@@ -655,7 +697,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-ident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (Identically distributed but not independent)</strong></span> In <a href="#exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed. They are not independent: knowing one determines the other.</p>
+<p><span class="theorem-title"><strong>Example 4 (Identically distributed but not independent)</strong></span> In <a href="#exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed. They are not independent: knowing one determines the other.</p>
 </div>
 </div>
 </div>
@@ -667,8 +709,9 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-cident" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>:</p>
-<p><span class="math display">\[\forall i\in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}, \forall x, y: \Pr(Y_i \le y \mid X_i = x) = \Pr(Y_1 \le y \mid X_1 = x)\]</span></p>
+<p><span class="theorem-title"><strong>Definition 4 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function <span class="math inline">\(G(y \mid x)\)</span> of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>: for every <span class="math inline">\(i \in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}\)</span>, every <span class="math inline">\(y\)</span>, and every <span class="math inline">\(x\)</span> with <span class="math inline">\(\Pr(X_i = x) &gt; 0\)</span>,</p>
+<p><span class="math display">\[\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)\]</span></p>
+<p>When <span class="math inline">\(X_i\)</span> is continuous, the condition applies at every <span class="math inline">\(x\)</span> with <span class="math inline">\(\operatorname{p}(X_i = x) &gt; 0\)</span>, with <span class="math inline">\(\Pr(Y_i \le y \mid X_i = x)\)</span> computed from densities: the integral of <span class="math inline">\(\operatorname{p}(X_i = x, Y_i = u) / \operatorname{p}(X_i = x)\)</span> over <span class="math inline">\(u \le y\)</span> (a sum over values <span class="math inline">\(u \le y\)</span> when <span class="math inline">\(Y_i\)</span> is discrete).</p>
 </div>
 </div>
 </div>
@@ -680,7 +723,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-cident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>. Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 5 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>, with <span class="math inline">\(G(y \mid x) = 1 - \pi(x)\)</span> for <span class="math inline">\(0 \le y &lt; 1\)</span> (and <span class="math inline">\(0\)</span> for <span class="math inline">\(y &lt; 0\)</span>, <span class="math inline">\(1\)</span> for <span class="math inline">\(y \ge 1\)</span>). Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
 </div>
 </div>
 </div>
@@ -707,7 +750,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-iid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 6 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -731,7 +774,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-ciid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (The usual regression assumption)</strong></span> In <a href="#exm-cident" class="quarto-xref">Example&nbsp;4</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 7 (The usual regression assumption)</strong></span> In <a href="#exm-cident" class="quarto-xref">Example&nbsp;5</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
 </div>
 </div>
 </div>

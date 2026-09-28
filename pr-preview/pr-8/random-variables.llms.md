@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:11:10 (PDT)
+Last modified: 2026-09-28 01:15:08 (PDT)
 
 # 1 Random variables
 
@@ -248,11 +248,118 @@ See also Rothman et al. ([2021](#ref-me4)) (Chapter 22, p. 535).
 >
 > **Example 15 (The uniform density integrates to 1)** For \\X\\ uniform on \\\[0, 1\]\\ ([Example 7](#exm-pdf)), \\\int\_{-\infty}^{\infty} f(x)\\dx = \int_0^1 1\\dx = 1\\.
 
+> **NOTE:**
+>
+> **Definition 13 (Jointly distributed random variables)** Random variables \\X_1, \ldots, X_n\\ are **jointly distributed** when they are defined on the same [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\, so that an event about several of them at once, such as \\\\X_1 \le x_1\\ \cap \\X_2 \le x_2\\\\, has a probability.
+
+We write \\\Pr(X \in A, Y \in B)\\ for \\\Pr(\\X \in A\\ \cap \\Y \in B\\)\\, and similarly for more variables. The collection of all such probabilities is the **joint distribution** of the variables.
+
+> **NOTE:**
+>
+> **Example 16 (The first flip and the total)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip (as in [Example 6](#exm-bernoulli-pmf)), and let \\X\\ be the total number of heads. Both are functions on the same sample space, \\\mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}\\, so they are jointly distributed, and, for example:
+>
+> \\\Pr(X_1 = 1, X = 1) = \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{} \cap \mathopen{}\left\\HT, TH\right\\\mathclose{}) = \Pr(\mathopen{}\left\\HT\right\\\mathclose{}) = \tfrac{1}{4}\\
+
+> **NOTE:**
+>
+> **Definition 14 (Joint probability mass function)** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (joint PMF) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
+>
+> \\\operatorname{P}(X = x,\\ Y = y) \stackrel{\text{def}}{=}\Pr(\\X = x\\ \cap \\Y = y\\)\\
+
+> **NOTE:**
+>
+> **Example 17 (Joint PMF of the first flip and the total)** Continuing [Example 16](#exm-jointly-distributed), each outcome of the two flips fixes both \\X_1\\ and \\X\\, so the joint PMF puts probability \\1/4\\ on each outcome’s pair of values:
+>
+> |             |    \\X = 0\\     |    \\X = 1\\     |    \\X = 2\\     |
+> |:-----------:|:----------------:|:----------------:|:----------------:|
+> | \\X_1 = 0\\ | \\1/4\\ (\\TT\\) | \\1/4\\ (\\TH\\) |      \\0\\       |
+> | \\X_1 = 1\\ |      \\0\\       | \\1/4\\ (\\HT\\) | \\1/4\\ (\\HH\\) |
+
+> **NOTE:**
+>
+> **Definition 15 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\.
+
+The word “marginal” only says that the other variables are being set aside; the marginal distribution of \\X\\ is the same object as the distribution of \\X\\.
+
+> **NOTE:**
+>
+> **Example 18 (Marginal distribution of the total)** In [Example 17](#exm-joint-pmf), the marginal distribution of the total \\X\\ is the PMF of [Example 5](#exm-pmf): \\\operatorname{P}(X = 0) = 1/4\\, \\\operatorname{P}(X = 1) = 1/2\\, \\\operatorname{P}(X = 2) = 1/4\\.
+
+> **NOTE:**
+>
+> **Theorem 5 (Marginal PMF from a joint PMF)** If \\X\\ and \\Y\\ are jointly distributed discrete random variables, then for every \\x\\:
+>
+> \\\operatorname{P}(X = x) = \sum\_{y \in \mathcal{R}(Y)} \operatorname{P}(X = x,\\ Y = y)\\
+
+> **NOTE:**
+>
+> *Proof*. The event \\\\X = x\\\\ is the disjoint union of the events \\\\X = x\\ \cap \\Y = y\\\\ over the countably many values \\y \in \mathcal{R}(Y)\\, so:
+>
+> \\ \begin{aligned} \operatorname{P}(X = x) &= \Pr\mathopen{}\left(\bigcup\_{y \in \mathcal{R}(Y)} \mathopen{}\left(\\X = x\\ \cap \\Y = y\\\right)\mathclose{}\right)\mathclose{} && \text{(the events partition } \\X = x\\ \text{)} \\ &= \sum\_{y \in \mathcal{R}(Y)} \Pr(\\X = x\\ \cap \\Y = y\\) && \text{(countable additivity)} \\ &= \sum\_{y \in \mathcal{R}(Y)} \operatorname{P}(X = x,\\ Y = y) && \text{(definition of the joint PMF)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 19 (Summing a row of the joint PMF)** In [Example 17](#exm-joint-pmf), summing the \\X_1 = 1\\ row:
+>
+> \\ \begin{aligned} \operatorname{P}(X_1 = 1) &= \operatorname{P}(X_1 = 1, X = 0) + \operatorname{P}(X_1 = 1, X = 1) + \operatorname{P}(X_1 = 1, X = 2) && \text{(marginal PMF from the joint PMF)} \\ &= 0 + \tfrac{1}{4} + \tfrac{1}{4} && \text{(read the table)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
+>
+> which matches \\X_1 \sim \operatorname{Ber}(1/2)\\ from [Example 6](#exm-bernoulli-pmf).
+
+> **NOTE:**
+>
+> **Definition 16 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y} \ge 0\\ on \\\mathbb{R}^2\\ whose integral over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\:
+>
+> \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
+
+As with [events](probability-basics.llms.md#def-event), a fully rigorous version restricts \\A\\ to a designated collection of regions; every region that arises in these notes is in it. Not every pair of continuous random variables has a joint density: if \\X\\ is continuous, the pair \\(X, X)\\ falls on the line \\y = x\\, a region of area 0, so every candidate \\f\_{X,Y}\\ would give that line probability 0 instead of 1.
+
+> **NOTE:**
+>
+> **Example 20 (A joint density on a triangle)** Let \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\, and \\0\\ otherwise. The triangle \\\\(x, y) : 0 \le x \le y \le 1\\\\ has area \\1/2\\, so \\f\_{X,Y}\\ gives the whole plane probability \\2 \cdot\tfrac{1}{2} = 1\\, and it is the joint density of a pair \\(X, Y)\\ with \\X \le Y\\ always. For example, the probability that both are at most \\1/2\\ is \\2\\ times the area of the smaller triangle \\\\0 \le x \le y \le 1/2\\\\:
+>
+> \\\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cdot\tfrac{1}{8} = \tfrac{1}{4}\\
+
+> **NOTE:**
+>
+> **Theorem 6 (Marginal density from a joint density)** If \\X\\ and \\Y\\ have joint density \\f\_{X,Y}\\, then \\X\\ has the density:
+>
+> \\f_X(x) = \int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\\
+
+> **NOTE:**
+>
+> *Proof*. For \\a \le b\\, the event \\\\a \le X \le b\\\\ is the event that \\(X, Y)\\ falls in the strip \\\[a, b\] \times \mathbb{R}\\, so:
+>
+> \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr((X, Y) \in \[a, b\] \times \mathbb{R}) && \text{(same event)} \\ &= \iint\_{\[a, b\] \times \mathbb{R}} f\_{X,Y}(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int_a^b \mathopen{}\left(\int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int_a^b f_X(x)\\dx && \text{(definition of } f_X \text{)} \end{aligned} \\
+>
+> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3). So \\f_X\\ satisfies [Definition 8](#def-pdf).
+
+> **NOTE:**
+>
+> **Example 21 (Marginal densities on the triangle)** For the joint density of [Example 20](#exm-joint-pdf) and \\x \in \[0, 1\]\\, \\f\_{X,Y}(x, y) = 2\\ exactly when \\x \le y \le 1\\, so:
+>
+> \\ \begin{aligned} f_X(x) &= \int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy && \text{(marginal density from a joint density)} \\ &= \int_x^1 2\\dy && \text{(} f\_{X,Y}(x, y) = 2 \text{ for } x \le y \le 1 \text{, else } 0 \text{)} \\ &= 2(1 - x) && \text{(integrate)} \end{aligned} \\
+>
+> The same steps with the roles swapped give \\f_Y(y) = \int_0^y 2\\dx = 2y\\ for \\y \in \[0, 1\]\\.
+
+> **NOTE:**
+>
+> **Definition 17 (Joint density-mass function)** Let \\X\\ be a discrete random variable and \\Y\\ a continuous random variable, [jointly distributed](#def-jointly-distributed). A **joint density-mass function** of \\X\\ and \\Y\\, denoted \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\\operatorname{p}(X = x,\\ Y = y) \ge 0\\ that is a probability mass in \\x\\ and a probability density in \\y\\: for every \\x\\ and every set \\B \subseteq \mathbb{R}\\,
+>
+> \\\Pr(X = x,\\ Y \in B) = \int\_{B} \operatorname{p}(X = x,\\ Y = y)\\dy\\
+
+Taking \\B = \mathbb{R}\\ gives \\\int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy = \operatorname{P}(X = x)\\. When \\X\\ is continuous and \\Y\\ is discrete, the roles swap: \\\Pr(X \in B,\\ Y = y) = \int_B \operatorname{p}(X = x,\\ Y = y)\\dx\\.
+
+> **NOTE:**
+>
+> **Example 22 (A coin flip and a waiting time)** Let \\\operatorname{p}(X = 0,\\ Y = y) = 1/2\\ for \\y \in \[0, 1\]\\, \\\operatorname{p}(X = 1,\\ Y = y) = 1/4\\ for \\y \in \[0, 2\]\\, and \\0\\ otherwise. Integrating over \\y\\ gives \\\operatorname{P}(X = 0) = 1/2\\ and \\\operatorname{P}(X = 1) = 1/2\\, which add to 1. For example, the probability that \\X = 1\\ and \\Y \le 1\\ is:
+>
+> \\\Pr(X = 1,\\ Y \le 1) = \int_0^1 \tfrac{1}{4}\\dy = \tfrac{1}{4}\\
+
 ## 2.1 Survival, hazard, and cumulative hazard functions
 
 > **NOTE:**
 >
-> **Definition 13 (Survival function)** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
+> **Definition 18 (Survival function)** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -260,7 +367,7 @@ The name comes from time-to-event analysis: if \\T\\ is the time at which a part
 
 > **NOTE:**
 >
-> **Theorem 5 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
+> **Theorem 7 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
 >
 > \\\operatorname{S}(t) = 1 - F(t)\\
 >
@@ -280,7 +387,7 @@ The name comes from time-to-event analysis: if \\T\\ is the time at which a part
 
 > **NOTE:**
 >
-> **Example 16 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\\lambda \> 0\\ ([Definition 10](#def-exponential)), so \\T\\ has density \\f(t) = \lambda \text{e}^{-\lambda t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 5](#thm-survival-expressions-1):
+> **Example 23 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\\lambda \> 0\\ ([Definition 10](#def-exponential)), so \\T\\ has density \\f(t) = \lambda \text{e}^{-\lambda t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 7](#thm-survival-expressions-1):
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} \lambda \text{e}^{-\lambda u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-\lambda u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } \lambda \text{e}^{-\lambda u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-\lambda t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-\lambda u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-\lambda t} && \text{(simplify)} \end{aligned} \\
 >
@@ -288,19 +395,19 @@ The name comes from time-to-event analysis: if \\T\\ is the time at which a part
 
 > **NOTE:**
 >
-> **Definition 14 (Hazard function)** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
+> **Definition 19 (Hazard function)** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta \downarrow 0} \frac{\Pr(t \le T \< t + \Delta \mid T \ge t)}{\Delta}\\
 
 Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett ([2018](#ref-dobson4e)), Vittinghoff et al. ([2012](#ref-vittinghoff2e)), Klein and Moeschberger ([2003](#ref-klein2003survival)), and Kleinbaum and Klein ([2012](#ref-kleinbaum2012survival)), while \\\lambda(t)\\ appears in Rothman et al. ([2021](#ref-me4)) and Kalbfleisch and Prentice ([2011](#ref-kalbfleisch2011statistical)).
 
-If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta \> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. A hazard can exceed 1, just as a density can. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 14](#def-hazard). For a discrete \\T\\, the conditional probability \\\Pr(T = t \mid T \ge t)\\ itself is called the *discrete-time* hazard, and it is a probability.
+If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta \> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. A hazard can exceed 1, just as a density can. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 19](#def-hazard). For a discrete \\T\\, the conditional probability \\\Pr(T = t \mid T \ge t)\\ itself is called the *discrete-time* hazard, and it is a probability.
 
 The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity \\{\lambda}(t)\\ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
 
 > **NOTE:**
 >
-> **Theorem 6 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
+> **Theorem 8 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
 >
 > \\{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\\
 
@@ -312,15 +419,15 @@ The name “hazard” carries a connotation that the event is undesirable — de
 
 > **NOTE:**
 >
-> **Example 17 (Hazard function of an exponential distribution)** Continuing [Example 16](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
+> **Example 24 (Hazard function of an exponential distribution)** Continuing [Example 23](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
 >
 > \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{\lambda \text{e}^{-\lambda t}}{\text{e}^{-\lambda t}} && \text{(substitute the exponential density and survival function)} \\ &= \lambda && \text{(cancel } \text{e}^{-\lambda t} \text{)} \end{aligned} \\
 >
-> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\\lambda\\, [Definition 14](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta \mid T \ge 0) / \Delta = \mathopen{}\left(1 - \text{e}^{-\lambda \Delta}\right)\mathclose{} / \Delta \to \lambda\\ as \\\Delta \downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
+> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\\lambda\\, [Definition 19](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta \mid T \ge 0) / \Delta = \mathopen{}\left(1 - \text{e}^{-\lambda \Delta}\right)\mathclose{} / \Delta \to \lambda\\ as \\\Delta \downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
 
 > **NOTE:**
 >
-> **Definition 15 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
+> **Definition 20 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
 >
 > \\{\Lambda}(t) \stackrel{\text{def}}{=}\int\_{u=-\infty}^{t} {\lambda}(u)\\du\\
 
@@ -328,7 +435,7 @@ For a non-negative \\T\\, such as a time to event, \\{\lambda}(u) = 0\\ for \\u 
 
 > **NOTE:**
 >
-> **Example 18 (Cumulative hazard function of an exponential distribution)** Continuing [Example 17](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
+> **Example 25 (Cumulative hazard function of an exponential distribution)** Continuing [Example 24](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
 >
 > \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} \lambda\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + \lambda t && \text{(integrate each piece)} \\ &= \lambda t && \text{(simplify)} \end{aligned} \\
 >
@@ -346,7 +453,7 @@ For a non-negative \\T\\, such as a time to event, \\{\lambda}(u) = 0\\ for \\u 
 
 > **NOTE:**
 >
-> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 5](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 1](#thm-density-vs-CDF)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
+> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 7](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 1](#thm-density-vs-CDF)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
 >
 > \\ \begin{aligned} \frac{d}{du}\mathopen{}\left(-\operatorname{log}\mathopen{}\left\\\operatorname{S}(u)\right\\\mathclose{}\right)\mathclose{} &= -\frac{1}{\operatorname{S}(u)} \cdot\frac{d}{du}\operatorname{S}(u) && \text{(chain rule)} \\ &= -\frac{1}{\operatorname{S}(u)} \cdot\mathopen{}\left(-f(u)\right)\mathclose{} && \text{(} \operatorname{S}' = -f \text{)} \\ &= \frac{f(u)}{\operatorname{S}(u)} && \text{(simplify)} \\ &= {\lambda}(u) && \text{(hazard equals density over survival)} \end{aligned} \\
 >
@@ -358,11 +465,11 @@ For a non-negative \\T\\, such as a time to event, \\{\lambda}(u) = 0\\ for \\u 
 
 > **NOTE:**
 >
-> **Example 19 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 18](#exm-exp-cumhaz), for \\t \ge 0\\:
+> **Example 26 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 25](#exm-exp-cumhaz), for \\t \ge 0\\:
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{} && \text{(survival function from the cumulative hazard)} \\ &= \operatorname{exp}\mathopen{}\left\\-\lambda t\right\\\mathclose{} && \text{(substitute } {\Lambda}(t) = \lambda t \text{)} \end{aligned} \\
 >
-> which matches the survival function computed directly in [Example 16](#exm-exp-survfn).
+> which matches the survival function computed directly in [Example 23](#exm-exp-survfn).
 
 | Name | Symbols | Definition |
 |:---|----|----|
@@ -375,13 +482,15 @@ For a non-negative \\T\\, such as a time to event, \\{\lambda}(u) = 0\\ for \\u 
 
 Table 1: Probability distribution functions of a continuous random variable \\T\\
 
-For a continuous random variable \\T \ge 0\\ whose density is continuous at all but finitely many points, [Theorem 5](#thm-survival-expressions-1), [Theorem 6](#thm-hazard-dens-surv), and [Corollary 1](#cor-surv-int-haz) connect the functions in [Table 1](#tbl-prob-dist-fns); each arrow in the following diagram converts one function into the next:
+For a continuous random variable \\T \ge 0\\ whose density is continuous at all but finitely many points, [Theorem 7](#thm-survival-expressions-1), [Theorem 8](#thm-hazard-dens-surv), and [Corollary 1](#cor-surv-int-haz) connect the functions in [Table 1](#tbl-prob-dist-fns); each arrow in the following diagram converts one function into the next:
 
 \\ f(t) \xleftarrow\[\operatorname{S}(t){\lambda}(t)\]{-\operatorname{S}'(t)} \operatorname{S}(t) \xleftarrow\[\]{\operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{}} {\Lambda}(t) \xleftarrow\[\]{\int\_{u=0}^t {\lambda}(u)\\du} {\lambda}(t) \xleftarrow\[\]{\operatorname{exp}\mathopen{}\left\\\eta(t)\right\\\mathclose{}} \eta(t) \\
 
 \\ f(t) \xrightarrow\[\int\_{u=t}^\infty f(u)\\du\]{f(t)/{\lambda}(t)} \operatorname{S}(t) \xrightarrow\[-\operatorname{log}\mathopen{}\left\\\operatorname{S}(t)\right\\\mathclose{}\]{} {\Lambda}(t) \xrightarrow\[{\Lambda}'(t)\]{} {\lambda}(t) \xrightarrow\[\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\]{} \eta(t) \\
 
 # References
+
+Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 

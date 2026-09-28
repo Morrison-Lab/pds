@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:11:10 (PDT)
+Last modified: 2026-09-28 01:15:08 (PDT)
 
 # 1 Expectation
 
@@ -162,7 +162,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Definition 3 (Conditional probability mass function)** Let \\X\\ and \\Y\\ be jointly distributed discrete random variables. The **conditional probability mass function** of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{P}(X = x) \> 0\\) is:
+> **Definition 3 (Conditional probability mass function)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) discrete random variables. The **conditional probability mass function** of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{P}(X = x) \> 0\\) is:
 >
 > \\\operatorname{P}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{P}(X = x,\\ Y = y)}{\operatorname{P}(X = x)}\\
 
@@ -193,9 +193,9 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 > n_placebo <- vaccine_tab["placebo", ]
 > ```
 >
-> The joint PMF of \\(X, Y)\\ is the table of frequencies divided by the total \\n = 73\\ trial participants. The marginal probability \\\operatorname{P}(X = \text{placebo})\\ is:
+> The [joint PMF](random-variables.llms.md#def-joint-pmf) of \\(X, Y)\\ is the table of frequencies divided by the total \\n = 73\\ trial participants. By the [marginal PMF theorem](random-variables.llms.md#thm-marginal-pmf), the [marginal](random-variables.llms.md#def-marginal) probability \\\operatorname{P}(X = \text{placebo})\\ is:
 >
-> \\ \begin{aligned} \operatorname{P}(X = \text{placebo}) &= \operatorname{P}(X = \text{placebo},\\ Y = \text{small}) + \operatorname{P}(X = \text{placebo},\\ Y = \text{moderate}) + \operatorname{P}(X = \text{placebo},\\ Y = \text{large}) && \text{(countable additivity)} \\&= \tfrac{25}{73} + \tfrac{8}{73} + \tfrac{5}{73} && \text{(read the table)} \\&= \tfrac{38}{73} && \text{(add)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{P}(X = \text{placebo}) &= \operatorname{P}(X = \text{placebo},\\ Y = \text{small}) + \operatorname{P}(X = \text{placebo},\\ Y = \text{moderate}) + \operatorname{P}(X = \text{placebo},\\ Y = \text{large}) && \text{(marginal PMF from the joint PMF)} \\&= \tfrac{25}{73} + \tfrac{8}{73} + \tfrac{5}{73} && \text{(read the table)} \\&= \tfrac{38}{73} && \text{(add)} \end{aligned} \\
 >
 > By [Definition 3](#def-cond-pmf), the conditional PMF of \\Y\\ given \\X = \text{placebo}\\ is:
 >
@@ -203,7 +203,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Definition 4 (Conditional probability density function)** Let \\X\\ and \\Y\\ be jointly distributed continuous random variables with joint density \\\operatorname{p}(X = x,\\ Y = y)\\ and marginal density \\\operatorname{p}(X = x)\\. The **conditional probability density function** of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{p}(X = x) \> 0\\) is:
+> **Definition 4 (Conditional probability density function)** Let \\X\\ and \\Y\\ be jointly distributed continuous random variables with [joint density](random-variables.llms.md#def-joint-pdf) \\\operatorname{p}(X = x,\\ Y = y)\\ and [marginal density](random-variables.llms.md#thm-marginal-density) \\\operatorname{p}(X = x)\\. The **conditional probability density function** of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{p}(X = x) \> 0\\) is:
 >
 > \\\operatorname{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\\ Y = y)}{\operatorname{p}(X = x)}\\
 
@@ -299,9 +299,9 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Definition 6 (Conditional expectation: mixed case)** Suppose exactly one of \\X, Y\\ is discrete and the other is continuous. Write \\\operatorname{p}(X = x,\\ Y = y)\\ for their **joint density-mass function**: a probability density in the continuous variable and a probability mass in the discrete variable.
+> **Definition 6 (Conditional expectation: mixed case)** Suppose exactly one of \\X, Y\\ is discrete and the other is continuous, with [joint density-mass function](random-variables.llms.md#def-joint-density-mass) \\\operatorname{p}(X = x,\\ Y = y)\\.
 >
-> **\\X\\ discrete, \\Y\\ continuous.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\x\\, a probability density in \\y\\, scaled so that \\\int\_{y} \operatorname{p}(X=x,\\Y=y)\\dy = \operatorname{P}(X=x)\\. The conditional PDF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{P}(X = x) \> 0\\) is:
+> **\\X\\ discrete, \\Y\\ continuous.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\x\\, a probability density in \\y\\, with \\\int\_{y} \operatorname{p}(X=x,\\Y=y)\\dy = \operatorname{P}(X=x)\\. The conditional PDF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{P}(X = x) \> 0\\) is:
 >
 > \\\operatorname{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\\ Y = y)}{\operatorname{P}(X = x)}\\
 >
@@ -309,7 +309,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{} \stackrel{\text{def}}{=}\int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y = y \mid X = x)\\ dy\\
 >
-> **\\X\\ continuous, \\Y\\ discrete.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\y\\, a probability density in \\x\\, scaled so that \\\sum\_{y} \operatorname{p}(X=x,\\Y=y) = \operatorname{p}(X=x)\\. The conditional PMF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{p}(X = x) \> 0\\) is:
+> **\\X\\ continuous, \\Y\\ discrete.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\y\\, a probability density in \\x\\, and \\\sum\_{y} \operatorname{p}(X=x,\\Y=y) = \operatorname{p}(X=x)\\ is a density of \\X\\. The conditional PMF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{p}(X = x) \> 0\\) is:
 >
 > \\\operatorname{P}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\\ Y = y)}{\operatorname{p}(X = x)}\\
 >
@@ -414,6 +414,80 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
+> **Definition 8 (Conditional expectation of a function of \\X\\ and \\Y\\)** Let \\X\\ and \\Y\\ be jointly distributed random variables, \\h\\ a function of two arguments, and \\x\\ a value at which the conditional PMF or PDF of \\Y\\ given \\X = x\\ is defined ([Definition 3](#def-cond-pmf), [Definition 4](#def-cond-pdf), or [Definition 6](#def-cond-mixed)). The **conditional expectation** of \\h(X, Y)\\ given \\X = x\\ is, for discrete \\Y\\:
+>
+> \\\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{} \stackrel{\text{def}}{=}\sum\_{y \in \mathcal{R}(Y)} h(x, y) \cdot\operatorname{P}(Y = y \mid X = x)\\
+>
+> and for continuous \\Y\\:
+>
+> \\\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{} \stackrel{\text{def}}{=}\int\_{y \in \mathcal{R}(Y)} h(x, y) \cdot\operatorname{p}(Y = y \mid X = x)\\dy\\
+>
+> when the sum or integral converges absolutely. Evaluating this function of \\x\\ at \\X\\ gives the random variable \\\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X\right\]\mathclose{}\\.
+
+With \\h(x, y) = y\\, this definition is [Definition 5](#def-cond-expectation). It is the conditional version of [LOTUS](#thm-lotus): for discrete \\X\\, it is LOTUS applied under the probability measure \\\Pr(\cdot \mid X = x)\\, so it agrees with [Definition 5](#def-cond-expectation) applied to the random variable \\W = h(X, Y)\\, and results about \\\operatorname{E}\mathopen{}\left\[W \mid X\right\]\mathclose{}\\ apply to it. \\Y\\ can also be a pair \\(Y, Z)\\, with the sum or integral taken over both.
+
+> **NOTE:**
+>
+> **Example 12 (The second flip, given the first)** In the [joint PMF of two coin flips](random-variables.llms.md#exm-joint-pmf), write \\X\\ for the first flip and \\Y\\ for the total number of heads. Given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with conditional probability \\1/2\\ each, and \\Y - X\\ is the second flip. With \\h(x, y) = (y - x)^2\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[(Y - X)^2 \mid X = 1\right\]\mathclose{} &= (1 - 1)^2 \cdot\tfrac{1}{2} + (2 - 1)^2 \cdot\tfrac{1}{2} && \text{(definition, with } x = 1 \text{)} \\ &= 0 + \tfrac{1}{2} && \text{(evaluate each term)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Theorem 5 (Linearity of conditional expectation)** For jointly distributed \\X\\ and \\Y\\, functions \\h_1\\ and \\h_2\\ whose conditional expectations given \\X = x\\ are defined, and constants \\a\\ and \\b\\:
+>
+> \\\operatorname{E}\mathopen{}\left\[a h_1(X, Y) + b h_2(X, Y) \mid X = x\right\]\mathclose{} = a\operatorname{E}\mathopen{}\left\[h_1(X, Y) \mid X = x\right\]\mathclose{} + b\operatorname{E}\mathopen{}\left\[h_2(X, Y) \mid X = x\right\]\mathclose{}\\
+>
+> Evaluating both sides at \\X\\ gives \\\operatorname{E}\mathopen{}\left\[a h_1(X, Y) + b h_2(X, Y) \mid X\right\]\mathclose{} = a\operatorname{E}\mathopen{}\left\[h_1(X, Y) \mid X\right\]\mathclose{} + b\operatorname{E}\mathopen{}\left\[h_2(X, Y) \mid X\right\]\mathclose{}\\.
+
+> **NOTE:**
+>
+> *Proof*. For discrete \\Y\\:
+>
+> \\ \begin{aligned} &\operatorname{E}\mathopen{}\left\[a h_1(X, Y) + b h_2(X, Y) \mid X = x\right\]\mathclose{} \\&= \sum\_{y} \mathopen{}\left(a h_1(x, y) + b h_2(x, y)\right)\mathclose{} \cdot\operatorname{P}(Y = y \mid X = x) && \text{(definition of conditional expectation)} \\ &= a \sum\_{y} h_1(x, y) \cdot\operatorname{P}(Y = y \mid X = x) + b \sum\_{y} h_2(x, y) \cdot\operatorname{P}(Y = y \mid X = x) && \text{(split the sum; factor out the constants)} \\ &= a\operatorname{E}\mathopen{}\left\[h_1(X, Y) \mid X = x\right\]\mathclose{} + b\operatorname{E}\mathopen{}\left\[h_2(X, Y) \mid X = x\right\]\mathclose{} && \text{(definition of conditional expectation)} \end{aligned} \\
+>
+> Splitting the sum is valid because both sums converge absolutely. For continuous \\Y\\, the same steps hold with integrals over \\y\\ in place of the sums, by linearity of the integral: unlike [Theorem 4](#thm-linearity-expectation), only one variable, \\y\\, is integrated, against one conditional density.
+
+> **NOTE:**
+>
+> **Example 13 (Linearity, given the first flip)** Continuing [Example 12](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 3/2\\ and \\\operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{} = (1 + 4)/2 = 5/2\\. By [Theorem 5](#thm-cond-linearity) with \\a = b = 1\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y + Y^2 \mid X = 1\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \tfrac{3}{2} + \tfrac{5}{2} && \text{(substitute)} \\ &= 4 && \text{(add)} \end{aligned} \\
+>
+> As a check, directly: \\(1 + 1) \cdot\tfrac{1}{2} + (2 + 4) \cdot\tfrac{1}{2} = 1 + 3 = 4\\.
+
+> **NOTE:**
+>
+> **Theorem 6 (A function of \\X\\ factors out of a conditional expectation given \\X\\)** For jointly distributed \\X\\ and \\Y\\, a function \\g\\ of one argument, and a function \\h\\ of two arguments whose conditional expectation given \\X = x\\ is defined:
+>
+> \\\operatorname{E}\mathopen{}\left\[g(X)\\h(X, Y) \mid X = x\right\]\mathclose{} = g(x) \cdot\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{}\\
+>
+> Evaluating both sides at \\X\\ gives \\\operatorname{E}\mathopen{}\left\[g(X)\\h(X, Y) \mid X\right\]\mathclose{} = g(X) \cdot\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X\right\]\mathclose{}\\. In particular, taking \\h = 1\\ gives \\\operatorname{E}\mathopen{}\left\[g(X) \mid X\right\]\mathclose{} = g(X)\\.
+
+> **NOTE:**
+>
+> *Proof*. For discrete \\Y\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[g(X)\\h(X, Y) \mid X = x\right\]\mathclose{} &= \sum\_{y} g(x)\\h(x, y) \cdot\operatorname{P}(Y = y \mid X = x) && \text{(definition of conditional expectation)} \\ &= g(x) \sum\_{y} h(x, y) \cdot\operatorname{P}(Y = y \mid X = x) && \text{(} g(x) \text{ does not depend on } y \text{)} \\ &= g(x) \cdot\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{} && \text{(definition of conditional expectation)} \end{aligned} \\
+>
+> For \\h = 1\\, the remaining sum is \\\sum\_{y} \operatorname{P}(Y = y \mid X = x) = 1\\:
+>
+> \\ \begin{aligned} \sum\_{y} \operatorname{P}(Y = y \mid X = x) &= \sum\_{y} \frac{\operatorname{P}(X = x,\\ Y = y)}{\operatorname{P}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x)} && \text{(marginal PMF from a joint PMF)} \\ &= 1 && \text{(divide)} \end{aligned} \\
+>
+> For continuous \\Y\\, the same steps hold with integrals over \\y\\ in place of the sums; the conditional density integrates to 1 by [the marginal density theorem](random-variables.llms.md#thm-marginal-density) (or, in the mixed case, by [the joint density-mass function’s](random-variables.llms.md#def-joint-density-mass) marginal identity).
+
+This result is often summarized as “taking out what is known”: given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
+
+> **NOTE:**
+>
+> **Example 14 (Taking out the first flip)** Continuing [Example 13](#exm-cond-linearity), with \\g(x) = x\\ and \\h(x, y) = y\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY \mid X = 1\right\]\mathclose{} &= 1 \cdot\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \tfrac{3}{2} && \text{(substitute } \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = \tfrac{3}{2} \text{)} \end{aligned} \\
+>
+> and \\\operatorname{E}\mathopen{}\left\[XY \mid X = 0\right\]\mathclose{} = 0 \cdot\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0\\. As a check, given \\X = 1\\ the product \\XY\\ equals \\Y\\, which is \\1\\ or \\2\\ with probability \\1/2\\ each.
+
+> **NOTE:**
+>
 > **Exercise 1 (Expectation of a sum, given a joint PMF)** Let \\(X, Y)\\ be discrete with joint probability mass function:
 >
 > |           | \\Y = 0\\ | \\Y = 1\\ |
@@ -477,7 +551,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 >
 > - **Both continuous:** \\\mu_X = \mu_Y = \text{Lebesgue measure}\\; \\f\_{X,Y}\\ is the joint probability density function (PDF), and \\\int g(x)\\d\mu_X(x) = \int g(x)\\dx\\.
 > - **Both discrete:** \\\mu_X = \mu_Y = \text{counting measure}\\; \\f\_{X,Y}(x,y) = \operatorname{P}(X = x,\\ Y = y)\\ is the joint probability mass function (PMF), and \\\int g(x)\\d\mu_X(x) = \sum\_{x \in \mathcal{R}(X)} g(x)\\.
-> - **Mixed** (one continuous, one discrete): one reference measure is Lebesgue and the other is counting; \\f\_{X,Y}(x,y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ (or \\\operatorname{P}(X = x \mid Y = y)\\f_Y(y)\\ if \\X\\ is discrete and \\Y\\ continuous), and the iterated integrals combine an ordinary integral with a sum. The conditional densities/PMFs here are defined the same way as in [Definition 6](#def-cond-mixed), just conditioning on \\Y\\ instead of \\X\\.
+> - **Mixed** (one continuous, one discrete): one reference measure is Lebesgue and the other is counting; \\f\_{X,Y}\\ is the [joint density-mass function](random-variables.llms.md#def-joint-density-mass), \\f\_{X,Y}(x,y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ (or \\\operatorname{P}(X = x \mid Y = y)\\f_Y(y)\\ if \\X\\ is discrete and \\Y\\ continuous), and the iterated integrals combine an ordinary integral with a sum. The conditional densities/PMFs here are defined the same way as in [Definition 6](#def-cond-mixed), just conditioning on \\Y\\ instead of \\X\\.
 
 > **NOTE:**
 >
@@ -485,7 +559,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Example 12 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\.
+> **Example 15 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\.
 >
 > We apply [Corollary 2](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as \\f\_{X,Y}(x,y) = f_X(x)\\f_Y(y) = \tfrac{1}{2}\\, and \\\mu_X = \mu_Y = \text{Lebesgue measure}\\:
 >
@@ -495,7 +569,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Example 13 (When independence fails: a counterexample)** Correctly applying [Corollary 2](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
+> **Example 16 (When independence fails: a counterexample)** Correctly applying [Corollary 2](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
 >
 > Let \\X \sim \mathrm{Uniform}(0, 1)\\ and set \\Y = X\\ (so \\X\\ and \\Y\\ are perfectly correlated and **not** independent).
 >
@@ -547,7 +621,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Example 14 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\.
+> **Example 17 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\.
 >
 > By [Corollary 2](#cor-fubini-joint):
 >
@@ -580,7 +654,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Theorem 5 (Law of iterated expectations)** For any two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
+> **Theorem 7 (Law of iterated expectations)** For any two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{}\\
 
@@ -592,19 +666,27 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 >
 > **Continuous case.** When \\X\\ and \\Y\\ are continuous:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} &= \int\_{x \in \mathcal{R}(X)} \operatorname{E}\mathopen{}\left\[Y \mid X=x\right\]\mathclose{} \cdot\operatorname{p}(X=x)\\ dx && \text{(LOTUS)} \\&= \int\_{x \in \mathcal{R}(X)} \mathopen{}\left(\int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x)\\ dy\right)\mathclose{} \cdot\operatorname{p}(X=x)\\ dx && \text{(definition of conditional expectation)} \\&= \int\_{x \in \mathcal{R}(X)} \int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(X=x, Y=y)\\ dy\\ dx && \text{(definition of conditional density: } \operatorname{p}(Y=y \mid X=x)\\\operatorname{p}(X=x) = \operatorname{p}(X=x, Y=y) \text{)} \\&= \int\_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x, Y=y)\\ dx\right)\mathclose{}\\ dy && \text{(Fubini's theorem, since } \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty \text{)} \\&= \int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y)\\ dy && \text{(integrating the joint density over } x \text{ gives the marginal)} \\&= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(definition of expectation)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} &= \int\_{x \in \mathcal{R}(X)} \operatorname{E}\mathopen{}\left\[Y \mid X=x\right\]\mathclose{} \cdot\operatorname{p}(X=x)\\ dx && \text{(LOTUS)} \\&= \int\_{x \in \mathcal{R}(X)} \mathopen{}\left(\int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x)\\ dy\right)\mathclose{} \cdot\operatorname{p}(X=x)\\ dx && \text{(definition of conditional expectation)} \\&= \int\_{x \in \mathcal{R}(X)} \int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(X=x, Y=y)\\ dy\\ dx && \text{(definition of conditional density: } \operatorname{p}(Y=y \mid X=x)\\\operatorname{p}(X=x) = \operatorname{p}(X=x, Y=y) \text{)} \\&= \int\_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x, Y=y)\\ dx\right)\mathclose{}\\ dy && \text{(Fubini's theorem, since } \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty \text{)} \\&= \int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y)\\ dy && \text{(marginal density from a joint density)} \\&= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(definition of expectation)} \end{aligned} \\
+>
+> **Mixed case, \\X\\ discrete and \\Y\\ continuous.** With the [joint density-mass function](random-variables.llms.md#def-joint-density-mass) \\\operatorname{p}(X = x,\\ Y = y)\\, [Corollary 2](#cor-fubini-joint) applies with \\h(x, y) = y\\, counting measure for \\X\\, and Lebesgue measure for \\Y\\; its condition (b) holds because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\. The sum runs over the \\x\\ with \\\operatorname{P}(X = x) \> 0\\, where [Definition 6](#def-cond-mixed) defines \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} &= \sum\_{x} \operatorname{E}\mathopen{}\left\[Y \mid X=x\right\]\mathclose{} \cdot\operatorname{P}(X=x) && \text{(LOTUS, discrete case)} \\&= \sum\_{x} \mathopen{}\left(\int\_{y} y \cdot\operatorname{p}(Y=y \mid X=x)\\dy\right)\mathclose{} \cdot\operatorname{P}(X=x) && \text{(definition of conditional expectation, mixed case)} \\&= \sum\_{x} \int\_{y} y \cdot\operatorname{p}(Y=y \mid X=x) \cdot\operatorname{P}(X=x)\\dy && \text{(move the constant } \operatorname{P}(X=x) \text{ inside the integral)} \\&= \sum\_{x} \int\_{y} y \cdot\operatorname{p}(X=x,\\ Y=y)\\dy && \text{(definition of the conditional density, mixed case)} \\&= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)} \end{aligned} \\
+>
+> **Mixed case, \\X\\ continuous and \\Y\\ discrete.** The same steps apply with the integral and the sum swapped, over the \\x\\ with \\\operatorname{p}(X = x) \> 0\\; at any other \\x\\, \\\operatorname{p}(X = x,\\ Y = y) = 0\\ for every \\y\\, because these non-negative terms sum to \\\operatorname{p}(X = x)\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} &= \int\_{x} \operatorname{E}\mathopen{}\left\[Y \mid X=x\right\]\mathclose{} \cdot\operatorname{p}(X=x)\\dx && \text{(LOTUS, continuous case)} \\&= \int\_{x} \mathopen{}\left(\sum\_{y} y \cdot\operatorname{P}(Y=y \mid X=x)\right)\mathclose{} \cdot\operatorname{p}(X=x)\\dx && \text{(definition of conditional expectation, mixed case)} \\&= \int\_{x} \sum\_{y} y \cdot\operatorname{P}(Y=y \mid X=x) \cdot\operatorname{p}(X=x)\\dx && \text{(move the constant } \operatorname{p}(X=x) \text{ inside the sum)} \\&= \int\_{x} \sum\_{y} y \cdot\operatorname{p}(X=x,\\ Y=y)\\dx && \text{(definition of the conditional PMF, mixed case)} \\&= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)} \end{aligned} \\
 
 Alternate names for this identity include: the **tower rule**, the **tower property**, the **law of total expectation**, and the **smoothing theorem**.
 
 > **NOTE:**
 >
-> **Theorem 6 (Conditional law of iterated expectations)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
+> **Theorem 8 (Conditional law of iterated expectations)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid Z\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X,Z\right\]\mathclose{} \mid Z\right\]\mathclose{}\\
 
 > **NOTE:**
 >
-> *Proof*. Fix a value \\z\\ with positive probability (discrete case) or positive density (continuous case). Conditioning every probability on \\Z = z\\ gives a probability measure, and the proof of [Theorem 5](#thm-lie) goes through under it, line by line.
+> *Proof*. Fix a value \\z\\ with positive probability (discrete case) or positive density (continuous case). Conditioning every probability on \\Z = z\\ gives a probability measure, and the proof of [Theorem 7](#thm-lie) goes through under it, line by line.
 >
 > **Discrete case.**
 >
@@ -620,11 +702,11 @@ This identity is the tower rule applied conditionally on \\Z\\.
 
 > **NOTE:**
 >
-> **Example 15 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
+> **Example 18 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{} = 10, \quad \operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{} = 6\\
 >
-> By the law of iterated expectations ([Theorem 5](#thm-lie)):
+> By the law of iterated expectations ([Theorem 7](#thm-lie)):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\&= \operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{} \cdot\operatorname{P}(X=1) + \operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{} \cdot\operatorname{P}(X=0) && \text{(LOTUS over the two values of } X \text{)} \\&= 10 \cdot 0.5 + 6 \cdot 0.5 && \text{(substitute)} \\&= 5 + 3 && \text{(multiply)} \\&= 8 && \text{(add)} \end{aligned} \\
 
@@ -698,7 +780,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\ y)\\dx \\ &= \int_0^1 x \cdot 0.4\\dx + \int_0^2 x \cdot 0.3\\dx \\ &= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 \\ &= 0.2 + 0.6 = 0.8 \end{aligned} \\
 >
-> As a check using the law of iterated expectations ([Theorem 5](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2}(0.4) + 1(0.6) = 0.2 + 0.6 = 0.8\\.
+> As a check using the law of iterated expectations ([Theorem 7](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2}(0.4) + 1(0.6) = 0.2 + 0.6 = 0.8\\.
 >
 > Code
 >
@@ -749,7 +831,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > using the same geometric-series facts as [Exercise 2](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
 >
-> As a check using the law of iterated expectations ([Theorem 5](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
+> As a check using the law of iterated expectations ([Theorem 7](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[X \mid Y\right\]\mathclose{}\right\]\mathclose{} \\&= \operatorname{E}\mathopen{}\left\[\frac{Y+1}{2}\right\]\mathclose{} \\&= \frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} + 1}{2} \\&= \frac{1}{2}\mathopen{}\left(\frac{q}{1-q} + 1\right)\mathclose{} \\&= \frac{1}{2} \cdot\frac{q + (1-q)}{1-q} \\&= \frac{1}{2(1-q)} \end{aligned} \\
 >
