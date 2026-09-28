@@ -42,12 +42,11 @@ website:
     # Pages in reading order, each group depending only on earlier ones:
     # the moments use independence and the joint distributions defined
     # under Foundations, and the distributions and the CLT use the moments.
-    # Entries without `text` show the page's own title.
+    # Entries show each page's own title. There is no Home entry: the
+    # navbar title already links to the home page.
     style: docked
     search: false
     contents:
-      - text: "Home"
-        href: index.qmd
       - section: "Foundations"
         contents:
           - notation.qmd
