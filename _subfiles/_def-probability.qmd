@@ -1,10 +1,55 @@
+:::{#def-sigma-algebra}
+#### $\sigma$-algebra
+
+A **$\sigma$-algebra** on a set $S$
+is a collection $\mathscr{S}$ of subsets of $S$
+that contains $S$ itself,
+contains the complement $S \setminus A$ of each of its sets $A$,
+and contains the union of each sequence $A_1, A_2, \ldots$ of its sets.
+
+:::
+
+::: notes
+
+Other sources call it a **$\sigma$-field**.
+The [events](#def-event) of a sample space $\Omega$ form a $\sigma$-algebra on $\Omega$.
+A $\sigma$-algebra also contains $\emptyset = S \setminus S$,
+every finite union of its sets
+(pad the sequence with copies of $\emptyset$),
+and every countable intersection of its sets
+(take complements, apply the union rule, and take the complement again).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-sigma-algebra}
+#### $\sigma$-algebras for a die roll
+
+For the die roll in @exm-sample-space,
+the collection of all subsets of $\Omega = \set{1, 2, 3, 4, 5, 6}$ is a $\sigma$-algebra on $\Omega$,
+since complements and unions of subsets of $\Omega$ are again subsets of $\Omega$.
+So is the smaller collection
+
+$$\set{\emptyset, \set{2, 4, 6}, \set{1, 3, 5}, \Omega}$$
+
+which contains $\Omega$,
+the complement of each of its sets,
+and every union of its sets:
+for example, $\set{2, 4, 6} \cup \set{1, 3, 5} = \Omega$.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-finite-additivity}
 #### Finite additivity
 
-A function $\mu$ that assigns a real number $\mu(A)$ to each [event](#def-event) $A$
+Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
+A function $\mu$ that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
 is **finitely additive**
 if, for every finite collection of
-[mutually exclusive](#def-mutually-exclusive) events $A_1, \ldots, A_n$,
+[pairwise disjoint](#def-mutually-exclusive) sets $A_1, \ldots, A_n$ in $\mathscr{S}$,
 the value of their union is the sum of their values:
 
 $$\mu(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \mu(A_i)$$
@@ -17,7 +62,9 @@ $$\mu(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \mu(A_i)$$
 #### Counting outcomes is finitely additive
 
 For the die roll in @exm-sample-space,
-let $\mu(A) \eqdef \abs{A}$, the number of outcomes in $A$.
+let $\mu(A) \eqdef \abs{A}$, the number of outcomes in $A$,
+for each set $A$ in the $\sigma$-algebra of all subsets of $\Omega$
+(@exm-sigma-algebra).
 The events $\set{1, 2}$ and $\set{5, 6}$ are mutually exclusive
 (@exm-mutually-exclusive), and:
 
@@ -46,11 +93,12 @@ so $\mu$ is finitely additive.
 :::{#def-countable-additivity}
 #### Countable additivity
 
-A function $\mu$ that assigns a real number $\mu(A)$ to each [event](#def-event) $A$
+Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
+A function $\mu$ that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
 is **countably additive**
 (also called **$\sigma$-additive**)
 if, for every sequence of
-[mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
+[pairwise disjoint](#def-mutually-exclusive) sets $A_1, A_2, \ldots$ in $\mathscr{S}$,
 the value of their union is the sum of their values:
 
 $$\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)$$
@@ -59,14 +107,17 @@ $$\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)$$
 
 ::: notes
 
-Countable additivity implies [finite additivity](#def-finite-additivity).
-Applying countable additivity to $\emptyset, \emptyset, \ldots$,
-which are mutually exclusive with union $\emptyset$,
-gives $\mu(\emptyset) = \sum_{i=1}^{\infty} \mu(\emptyset)$,
-a sum of identical terms that is finite only if $\mu(\emptyset) = 0$.
-Then, for mutually exclusive $A_1, \ldots, A_n$,
+A sum of values in $[0, \infty]$ is either a finite number or $\infty$,
+so the right-hand side always has a value.
+If $\mu(\emptyset) = 0$,
+countable additivity implies [finite additivity](#def-finite-additivity):
+for pairwise disjoint $A_1, \ldots, A_n$,
 set $A_{n+1} = A_{n+2} = \cdots = \emptyset$
 and apply countable additivity to the whole sequence.
+Countable additivity alone does not force $\mu(\emptyset) = 0$:
+applying it to $\emptyset, \emptyset, \ldots$
+gives $\mu(\emptyset) = \sum_{i=1}^{\infty} \mu(\emptyset)$,
+which holds for $\mu(\emptyset) = 0$ and for $\mu(\emptyset) = \infty$.
 The converse fails:
 there exist set functions that satisfy finite additivity
 but fail countable additivity
@@ -80,7 +131,7 @@ but fail countable additivity
 #### Counting outcomes is countably additive
 
 For the counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
-take any sequence of mutually exclusive events $A_1, A_2, \ldots$.
+take any sequence of pairwise disjoint events $A_1, A_2, \ldots$.
 No two of them share an outcome, and $\Omega$ has only six outcomes,
 so at most six of the $A_i$ contain any outcomes;
 the rest are $\emptyset$, with $\mu(\emptyset) = 0$.
@@ -93,13 +144,100 @@ So $\mu$ is countably additive.
 
 {{< slidebreak >}}
 
+:::{#def-measure}
+#### Measure
+
+A **measure** on a set $S$ with a [$\sigma$-algebra](#def-sigma-algebra) $\mathscr{S}$
+is a [countably additive](#def-countable-additivity) function $\mu$
+that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$,
+with
+
+$$\mu(\emptyset) = 0$$
+
+:::
+
+::: notes
+
+A measure is also [finitely additive](#def-finite-additivity),
+by the notes after @def-countable-additivity.
+A measure generalizes size:
+it can measure how many elements a set has,
+as in @def-counting-measure,
+or how long a set of real numbers is,
+as [Lebesgue measure](https://en.wikipedia.org/wiki/Lebesgue_measure) does,
+assigning each interval $[a, b]$ its length $b - a$.
+Both appear as reference measures in the
+[joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-measure}
+#### Counting outcomes is a measure
+
+The counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
+defined on the $\sigma$-algebra of all subsets of the die's sample space
+(@exm-sigma-algebra),
+takes values in $[0, \infty]$,
+is countably additive (@exm-countable-additivity),
+and gives $\mu(\emptyset) = 0$,
+so it is a measure.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-counting-measure}
+#### Counting measure
+
+The **counting measure** on a set $S$
+is the [measure](#def-measure) on the $\sigma$-algebra of all subsets of $S$
+that assigns each finite set its number of elements,
+and each infinite set the value $\infty$:
+
+$$
+\mu(A) \eqdef \begin{cases}
+\abs{A} & \text{if } A \text{ is finite} \\
+\infty & \text{if } A \text{ is infinite}
+\end{cases}
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-counting-measure}
+#### Counting measure on the non-negative integers
+
+For the counting measure $\mu$ on $\set{0, 1, 2, \ldots}$,
+$\mu(\set{0, 1, 2}) = 3$,
+and the set of even numbers has $\mu(\set{0, 2, 4, \ldots}) = \infty$.
+The even numbers are the union of the pairwise disjoint sets
+$\set{0}, \set{2}, \set{4}, \ldots$,
+and countable additivity agrees:
+$\sum_{k=0}^{\infty} \mu(\set{2k}) = 1 + 1 + \cdots = \infty$.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-probability}
 #### Probability measure
 
 A **probability measure** on a [sample space](#def-sample-space) $\Omega$,
 often denoted $\Pr()$ or $\P()$,
-is a function that assigns a number $\Pr(A)$ to each [event](#def-event) $A$
-and satisfies:
+is a [measure](#def-measure) on the [events](#def-event) of $\Omega$
+that gives the whole sample space value 1:
+
+$$\Pr(\Omega) = 1$$
+
+:::
+
+::: notes
+
+Many sources state this definition as three axioms instead
+(the Kolmogorov axioms):
 
 1. For any event $A$, $\Pr(A) \ge 0$.
 2. The probability of the whole sample space is 1:
@@ -108,11 +246,12 @@ and satisfies:
    for any [mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
    $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \Pr(A_i)$$
 
-:::
-
-::: notes
-
-Property 3 implies that $\Pr$ is also [finitely additive](#def-finite-additivity).
+The two forms are equivalent.
+The axioms do not list $\Pr(\emptyset) = 0$, but they imply it:
+applying property 3 to $\Omega, \emptyset, \emptyset, \ldots$
+gives $1 = 1 + \sum_{i=2}^{\infty} \Pr(\emptyset)$,
+so $\Pr(\emptyset) = 0$.
+A probability measure is also [finitely additive](#def-finite-additivity).
 Requiring countable additivity, not just finite additivity,
 enables results such as
 the continuity of probability
@@ -130,9 +269,9 @@ and it is what makes sums over countably infinite [partitions](#def-partition) v
 For the die roll in @exm-sample-space,
 define $\Pr(A) \eqdef \abs{A} / 6$,
 where $\abs{A}$ is the number of outcomes in $A$.
-This function is non-negative, gives $\Pr(\Omega) = 6/6 = 1$,
-and is [countably additive](#def-countable-additivity),
-because it is $1/6$ times the counting function of @exm-countable-additivity.
+This function is $1/6$ times the measure of @exm-measure,
+so it is a [measure](#def-measure) on the events of $\Omega$,
+and it gives $\Pr(\Omega) = 6/6 = 1$.
 The event "the roll is even" from @exm-event has probability
 $\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
 
