@@ -163,6 +163,36 @@ cookieconsent.run({
 </script> 
   
 <style>
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-remark.callout {
   border-left-color: #AD1457;
 }
@@ -183,15 +213,15 @@ div.callout-proof .callout-toggle::before {  background-image: url('data:image/s
 div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cor.callout {
-  border-left-color: #00838F;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-lem.callout {
   border-left-color: #1565C0;
@@ -203,16 +233,6 @@ div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-prp.callout {
   border-left-color: #827717;
 }
@@ -223,15 +243,15 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
@@ -242,26 +262,6 @@ div.callout-exm.callout-style-default .callout-header {
 div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
-}
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
-}
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -681,7 +681,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-09-28 <mark class="preview-text-changed">10:56:17</mark> (PDT)</p>
+      <p class="date">Last modified: 2026-09-28 <mark class="preview-text-changed">11:25:51</mark> (PDT)</p>
     </div>
   </div>
   
@@ -936,7 +936,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="notes">
-<p>The distribution <span class="math inline">\(\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\)</span> is called the <strong>standard normal distribution</strong>. This density integrates to 1, and a normal random variable has mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, which is where the parameters’ names come from <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>)</span>.</p>
+<p>This density integrates to 1, and a normal random variable has mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, which is where the parameters’ names come from <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>)</span>.</p>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -968,8 +968,32 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
+<div id="def-std-normal" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 10 (Standard normal distribution)</strong></span> The <strong>standard normal distribution</strong> is the <a href="#def-normal">normal distribution</a> with mean parameter 0 and variance parameter 1, <span class="math inline">\(\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-exm no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-std-normal" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 (Half of a standard normal lies below 0)</strong></span> If <span class="math inline">\(Z\)</span> has the standard normal distribution, its density <span class="math inline">\(\operatorname{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}\)</span> takes the same value at <span class="math inline">\(z\)</span> and <span class="math inline">\(-z\)</span>, so <span class="math inline">\(\Pr(Z \le 0) = \Pr(Z \ge 0)\)</span>. Those two probabilities sum to 1, because <span class="math inline">\(\Pr(Z = 0) = 0\)</span> for a continuous <span class="math inline">\(Z\)</span>, so each is <span class="math inline">\(\tfrac{1}{2}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-def no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div id="def-exponential" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (Exponential distribution)</strong></span> A random variable <span class="math inline">\(T\)</span> has the <strong>exponential distribution</strong> with rate <span class="math inline">\(\lambda &gt; 0\)</span> if <span class="math inline">\(T\)</span> is continuous with <a href="#def-pdf">density</a>:</p>
+<p><span class="theorem-title"><strong>Definition 11 (Exponential distribution)</strong></span> A random variable <span class="math inline">\(T\)</span> has the <strong>exponential distribution</strong> with rate <span class="math inline">\(\lambda &gt; 0\)</span> if <span class="math inline">\(T\)</span> is continuous with <a href="#def-pdf">density</a>:</p>
 <p><span class="math display">\[
 f(t) \stackrel{\text{def}}{=}\begin{cases}
 \lambda \text{e}^{-\lambda t}, &amp; t \ge 0 \\
@@ -987,7 +1011,7 @@ f(t) \stackrel{\text{def}}{=}\begin{cases}
 </div>
 <div class="callout-body-container">
 <div id="exm-exponential" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (Probability of an event within one time unit)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\(\lambda\)</span>. The probability that <span class="math inline">\(T\)</span> falls in <span class="math inline">\([0, 1]\)</span> is:</p>
+<p><span class="theorem-title"><strong>Example 10 (Probability of an event within one time unit)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\(\lambda\)</span>. The probability that <span class="math inline">\(T\)</span> falls in <span class="math inline">\([0, 1]\)</span> is:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(0 \le T \le 1)
@@ -1011,7 +1035,7 @@ f(t) \stackrel{\text{def}}{=}\begin{cases}
 </div>
 <div class="callout-body-container">
 <div id="def-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11 (Cumulative distribution function (CDF))</strong></span> For a random variable <span class="math inline">\(X\)</span> (discrete or continuous), its <strong>cumulative distribution function</strong> is:</p>
+<p><span class="theorem-title"><strong>Definition 12 (Cumulative distribution function (CDF))</strong></span> For a random variable <span class="math inline">\(X\)</span> (discrete or continuous), its <strong>cumulative distribution function</strong> is:</p>
 <p><span class="math display">\[F(t) \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\]</span></p>
 </div>
 </div>
@@ -1028,7 +1052,7 @@ f(t) \stackrel{\text{def}}{=}\begin{cases}
 </div>
 <div class="callout-body-container">
 <div id="exm-cdf" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (CDF of the number of heads)</strong></span> Summing the PMF in <a href="#exm-pmf" class="quarto-xref">Example&nbsp;5</a> over values at or below <span class="math inline">\(t\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 11 (CDF of the number of heads)</strong></span> Summing the PMF in <a href="#exm-pmf" class="quarto-xref">Example&nbsp;5</a> over values at or below <span class="math inline">\(t\)</span>:</p>
 <p><span class="math display">\[
 F(t) = \begin{cases}
 0, &amp; t &lt; 0 \\
@@ -1048,7 +1072,7 @@ F(t) = \begin{cases}
 </div>
 <div class="callout-body-container">
 <div id="def-quantile-function" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 12 (Quantile function (population inverse CDF))</strong></span> For a random variable <span class="math inline">\(X\)</span> with <a href="#def-cdf">cumulative distribution function (CDF)</a> <span class="math inline">\(F\)</span>, its population <strong>quantile function</strong> (generalized inverse of <span class="math inline">\(F\)</span>) is:</p>
+<p><span class="theorem-title"><strong>Definition 13 (Quantile function (population inverse CDF))</strong></span> For a random variable <span class="math inline">\(X\)</span> with <a href="#def-cdf">cumulative distribution function (CDF)</a> <span class="math inline">\(F\)</span>, its population <strong>quantile function</strong> (generalized inverse of <span class="math inline">\(F\)</span>) is:</p>
 <p><span class="math display">\[Q(p) \stackrel{\text{def}}{=}\inf\{t:F(t)\ge p\}, \quad 0&lt;p&lt;1.\]</span></p>
 </div>
 </div>
@@ -1064,7 +1088,7 @@ F(t) = \begin{cases}
 </div>
 <div class="callout-body-container">
 <div id="exm-quantile-function" class="theorem example">
-<p><span class="theorem-title"><strong>Example 11 (Median of the number of heads)</strong></span> From <a href="#exm-cdf" class="quarto-xref">Example&nbsp;10</a>, <span class="math inline">\(F(t) \ge 0.5\)</span> first holds at <span class="math inline">\(t = 1\)</span>, so the median of the number of heads is <span class="math inline">\(Q(0.5) = 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 12 (Median of the number of heads)</strong></span> From <a href="#exm-cdf" class="quarto-xref">Example&nbsp;11</a>, <span class="math inline">\(F(t) \ge 0.5\)</span> first holds at <span class="math inline">\(t = 1\)</span>, so the median of the number of heads is <span class="math inline">\(Q(0.5) = 1\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1109,7 +1133,7 @@ F(t)
 &amp;&amp; \text{(definition of the density)}
 \end{aligned}
 \]</span></p>
-<p>Letting <span class="math inline">\(a \to -\infty\)</span>, <span class="math inline">\(F(a) \to 0\)</span> (<a href="#def-cdf" class="quarto-xref">Definition&nbsp;11</a>), which gives <span class="math inline">\(F(t) = \int_{-\infty}^{t} f(x)\,dx\)</span>. The fundamental theorem of calculus then gives <span class="math inline">\(\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)\)</span> at every <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous.</p>
+<p>Letting <span class="math inline">\(a \to -\infty\)</span>, <span class="math inline">\(F(a) \to 0\)</span> (<a href="#def-cdf" class="quarto-xref">Definition&nbsp;12</a>), which gives <span class="math inline">\(F(t) = \int_{-\infty}^{t} f(x)\,dx\)</span>. The fundamental theorem of calculus then gives <span class="math inline">\(\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)\)</span> at every <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous.</p>
 </div>
 </div>
 </div>
@@ -1124,7 +1148,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-density-vs-CDF" class="theorem example">
-<p><span class="theorem-title"><strong>Example 12 (CDF and density of a uniform random variable)</strong></span> For <span class="math inline">\(X\)</span> uniform on <span class="math inline">\([0, 1]\)</span> with the density <span class="math inline">\(f\)</span> of <a href="#exm-pdf" class="quarto-xref">Example&nbsp;7</a>, and <span class="math inline">\(t \in [0, 1]\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 13 (CDF and density of a uniform random variable)</strong></span> For <span class="math inline">\(X\)</span> uniform on <span class="math inline">\([0, 1]\)</span> with the density <span class="math inline">\(f\)</span> of <a href="#exm-pdf" class="quarto-xref">Example&nbsp;7</a>, and <span class="math inline">\(t \in [0, 1]\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 F(t)
@@ -1202,7 +1226,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-cdf-derivative-density" class="theorem example">
-<p><span class="theorem-title"><strong>Example 13 (A density from a CDF with a corner)</strong></span> Let <span class="math inline">\(X\)</span> have CDF <span class="math inline">\(F(t) = 0\)</span> for <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(F(t) = t^2\)</span> for <span class="math inline">\(0 \le t \le 1\)</span>, and <span class="math inline">\(F(t) = 1\)</span> for <span class="math inline">\(t &gt; 1\)</span>. This <span class="math inline">\(F\)</span> is continuous everywhere, and has a continuous derivative everywhere except <span class="math inline">\(t = 1\)</span>, where its slope drops from 2 to 0. By <a href="#thm-cdf-derivative-density" class="quarto-xref">Theorem&nbsp;2</a>, <span class="math inline">\(X\)</span> is continuous with density <span class="math inline">\(f(t) = 2t\)</span> for <span class="math inline">\(0 \le t &lt; 1\)</span> and <span class="math inline">\(f(t) = 0\)</span> otherwise. As a check, <span class="math inline">\(\int_0^1 2t\,dt = 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 14 (A density from a CDF with a corner)</strong></span> Let <span class="math inline">\(X\)</span> have CDF <span class="math inline">\(F(t) = 0\)</span> for <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(F(t) = t^2\)</span> for <span class="math inline">\(0 \le t \le 1\)</span>, and <span class="math inline">\(F(t) = 1\)</span> for <span class="math inline">\(t &gt; 1\)</span>. This <span class="math inline">\(F\)</span> is continuous everywhere, and has a continuous derivative everywhere except <span class="math inline">\(t = 1\)</span>, where its slope drops from 2 to 0. By <a href="#thm-cdf-derivative-density" class="quarto-xref">Theorem&nbsp;2</a>, <span class="math inline">\(X\)</span> is continuous with density <span class="math inline">\(f(t) = 2t\)</span> for <span class="math inline">\(0 \le t &lt; 1\)</span> and <span class="math inline">\(f(t) = 0\)</span> otherwise. As a check, <span class="math inline">\(\int_0^1 2t\,dt = 1\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1259,7 +1283,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-density-limit" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14 (The uniform density as a limit)</strong></span> For <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> and <span class="math inline">\(x \in [0, 1)\)</span>, <span class="math inline">\(\Pr(x \le X &lt; x + \Delta) = \Delta\)</span> once <span class="math inline">\(\Delta \le 1 - x\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 15 (The uniform density as a limit)</strong></span> For <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> and <span class="math inline">\(x \in [0, 1)\)</span>, <span class="math inline">\(\Pr(x \le X &lt; x + \Delta) = \Delta\)</span> once <span class="math inline">\(\Delta \le 1 - x\)</span>, so:</p>
 <p><span class="math display">\[f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1\]</span></p>
 <p>For <span class="math inline">\(x &lt; 0\)</span> or <span class="math inline">\(x &gt; 1\)</span>, the interval eventually misses <span class="math inline">\([0, 1]\)</span>, so the limit is <span class="math inline">\(0\)</span>. Both agree with the density of <a href="#exm-pdf" class="quarto-xref">Example&nbsp;7</a>.</p>
 </div>
@@ -1314,7 +1338,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-density-sums-to-one" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15 (The uniform density integrates to 1)</strong></span> For <span class="math inline">\(X\)</span> uniform on <span class="math inline">\([0, 1]\)</span> (<a href="#exm-pdf" class="quarto-xref">Example&nbsp;7</a>), <span class="math inline">\(\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 16 (The uniform density integrates to 1)</strong></span> For <span class="math inline">\(X\)</span> uniform on <span class="math inline">\([0, 1]\)</span> (<a href="#exm-pdf" class="quarto-xref">Example&nbsp;7</a>), <span class="math inline">\(\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1326,13 +1350,13 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="def-jointly-distributed" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (Jointly distributed random variables)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>jointly distributed</strong> when they are defined on the same <a href="./probability-basics.html#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, so that an event about several of them at once, such as <span class="math inline">\(\{X_1 \le x_1\} \cap \{X_2 \le x_2\}\)</span>, has a probability.</p>
+<p><span class="theorem-title"><strong>Definition 14 (Jointly distributed random variables)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>jointly distributed</strong> when they are defined on the same <a href="./probability-basics.html#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, so that an event about several of them at once, such as <span class="math inline">\(\{X_1 \le x_1\} \cap \{X_2 \le x_2\}\)</span>, has a probability.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="notes">
-<p>We write <span class="math inline">\(\Pr(X \in A, Y \in B)\)</span> for <span class="math inline">\(\Pr(\{X \in A\} \cap \{Y \in B\})\)</span>, and similarly for more variables. The collection of all such probabilities is the <strong>joint distribution</strong> of the variables.</p>
+<p>We write <span class="math inline">\(\Pr(X \in A, Y \in B)\)</span> for <span class="math inline">\(\Pr(\{X \in A\} \cap \{Y \in B\})\)</span>, and similarly for more variables.</p>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -1341,7 +1365,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-jointly-distributed" class="theorem example">
-<p><span class="theorem-title"><strong>Example 16 (The first flip and the total)</strong></span> In <a href="#exm-random-variable" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(X_1\)</span> indicate heads on the first flip (as in <a href="#exm-bernoulli-pmf" class="quarto-xref">Example&nbsp;6</a>), and let <span class="math inline">\(X\)</span> be the total number of heads. Both are functions on the same sample space, <span class="math inline">\(\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}\)</span>, so they are jointly distributed, and, for example:</p>
+<p><span class="theorem-title"><strong>Example 17 (The first flip and the total)</strong></span> In <a href="#exm-random-variable" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(X_1\)</span> indicate heads on the first flip (as in <a href="#exm-bernoulli-pmf" class="quarto-xref">Example&nbsp;6</a>), and let <span class="math inline">\(X\)</span> be the total number of heads. Both are functions on the same sample space, <span class="math inline">\(\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}\)</span>, so they are jointly distributed, and, for example:</p>
 <p><span class="math display">\[\Pr(X_1 = 1, X = 1) = \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{} \cap \mathopen{}\left\{HT, TH\right\}\mathclose{}) = \Pr(\mathopen{}\left\{HT\right\}\mathclose{}) = \tfrac{1}{4}\]</span></p>
 </div>
 </div>
@@ -1353,8 +1377,37 @@ F(t)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
+<div id="def-joint-distribution" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 15 (Joint distribution)</strong></span> The <strong>joint distribution</strong> of <a href="#def-jointly-distributed">jointly distributed</a> random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> is the function that assigns to each set <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> for which <span class="math inline">\(\{(X_1, \ldots, X_n) \in A\}\)</span> is an <a href="./probability-basics.html#def-event">event</a> the probability <span class="math inline">\(\Pr((X_1, \ldots, X_n) \in A)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>The joint distribution is determined by the probabilities <span class="math inline">\(\Pr(X_1 \in A_1, \ldots, X_n \in A_n)\)</span> for sets <span class="math inline">\(A_1, \ldots, A_n\)</span> of real numbers.</p>
+</div>
+<div class="callout callout-style-simple callout-exm no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-joint-distribution" class="theorem example">
+<p><span class="theorem-title"><strong>Example 18 (Joint distribution of the first flip and the total)</strong></span> In <a href="#exm-jointly-distributed" class="quarto-xref">Example&nbsp;17</a>, the joint distribution of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X\)</span> assigns to the set <span class="math inline">\(A = \mathopen{}\left\{(x_1, x) : x_1 = 1,\, x \ge 1\right\}\mathclose{}\)</span> the probability</p>
+<p><span class="math display">\[\Pr((X_1, X) \in A) = \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{}) = \tfrac{1}{2}\]</span></p>
+<p>since the first flip is heads exactly on <span class="math inline">\(HH\)</span> and <span class="math inline">\(HT\)</span>, and each of those outcomes has at least one head.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-def no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div id="def-joint-pmf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14 (Joint probability mass function)</strong></span> For <a href="#def-jointly-distributed">jointly distributed</a> discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the <strong>joint probability mass function</strong> (joint PMF) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is the probability that <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span> takes the value <span class="math inline">\(y\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 16 (Joint probability mass function)</strong></span> For <a href="#def-jointly-distributed">jointly distributed</a> discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the <strong>joint probability mass function</strong> (joint PMF) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is the probability that <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span> takes the value <span class="math inline">\(y\)</span>:</p>
 <p><span class="math display">\[\operatorname{P}(X = x,\, Y = y) \stackrel{\text{def}}{=}\Pr(\{X = x\} \cap \{Y = y\})\]</span></p>
 </div>
 </div>
@@ -1367,7 +1420,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-joint-pmf" class="theorem example">
-<p><span class="theorem-title"><strong>Example 17 (Joint PMF of the first flip and the total)</strong></span> Continuing <a href="#exm-jointly-distributed" class="quarto-xref">Example&nbsp;16</a>, each outcome of the two flips fixes both <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X\)</span>, so the joint PMF puts probability <span class="math inline">\(1/4\)</span> on each outcome’s pair of values:</p>
+<p><span class="theorem-title"><strong>Example 19 (Joint PMF of the first flip and the total)</strong></span> Continuing <a href="#exm-jointly-distributed" class="quarto-xref">Example&nbsp;17</a>, each outcome of the two flips fixes both <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X\)</span>, so the joint PMF puts probability <span class="math inline">\(1/4\)</span> on each outcome’s pair of values:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1403,7 +1456,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="def-marginal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 15 (Marginal distribution)</strong></span> When a random variable <span class="math inline">\(X\)</span> is one of several <a href="#def-jointly-distributed">jointly distributed</a> random variables, the distribution of <span class="math inline">\(X\)</span> by itself (its CDF, and its PMF or density) is called the <strong>marginal distribution</strong> of <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 17 (Marginal distribution)</strong></span> When a random variable <span class="math inline">\(X\)</span> is one of several <a href="#def-jointly-distributed">jointly distributed</a> random variables, the distribution of <span class="math inline">\(X\)</span> by itself (its CDF, and its PMF or density) is called the <strong>marginal distribution</strong> of <span class="math inline">\(X\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1418,7 +1471,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-marginal" class="theorem example">
-<p><span class="theorem-title"><strong>Example 18 (Marginal distribution of the total)</strong></span> In <a href="#exm-joint-pmf" class="quarto-xref">Example&nbsp;17</a>, the marginal distribution of the total <span class="math inline">\(X\)</span> is the PMF of <a href="#exm-pmf" class="quarto-xref">Example&nbsp;5</a>: <span class="math inline">\(\operatorname{P}(X = 0) = 1/4\)</span>, <span class="math inline">\(\operatorname{P}(X = 1) = 1/2\)</span>, <span class="math inline">\(\operatorname{P}(X = 2) = 1/4\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 20 (Marginal distribution of the total)</strong></span> In <a href="#exm-joint-pmf" class="quarto-xref">Example&nbsp;19</a>, the marginal distribution of the total <span class="math inline">\(X\)</span> is the PMF of <a href="#exm-pmf" class="quarto-xref">Example&nbsp;5</a>: <span class="math inline">\(\operatorname{P}(X = 0) = 1/4\)</span>, <span class="math inline">\(\operatorname{P}(X = 1) = 1/2\)</span>, <span class="math inline">\(\operatorname{P}(X = 2) = 1/4\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1472,7 +1525,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-marginal-pmf" class="theorem example">
-<p><span class="theorem-title"><strong>Example 19 (Summing a row of the joint PMF)</strong></span> In <a href="#exm-joint-pmf" class="quarto-xref">Example&nbsp;17</a>, summing the <span class="math inline">\(X_1 = 1\)</span> row:</p>
+<p><span class="theorem-title"><strong>Example 21 (Summing a row of the joint PMF)</strong></span> In <a href="#exm-joint-pmf" class="quarto-xref">Example&nbsp;19</a>, summing the <span class="math inline">\(X_1 = 1\)</span> row:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(X_1 = 1)
@@ -1496,7 +1549,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="def-joint-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 16 (Joint probability density function)</strong></span> For <a href="#def-jointly-distributed">jointly distributed</a> continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, a <strong>joint probability density function</strong> (joint density) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(f_{X,Y}(x, y)\)</span> or <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(f_{X,Y} \ge 0\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^2\)</span> is the probability that the pair <span class="math inline">\((X, Y)\)</span> falls in <span class="math inline">\(A\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 18 (Joint probability density function)</strong></span> For <a href="#def-jointly-distributed">jointly distributed</a> continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, a <strong>joint probability density function</strong> (joint density) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(f_{X,Y}(x, y)\)</span> or <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(f_{X,Y} \ge 0\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^2\)</span> is the probability that the pair <span class="math inline">\((X, Y)\)</span> falls in <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy\]</span></p>
 </div>
 </div>
@@ -1512,7 +1565,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-joint-pdf" class="theorem example">
-<p><span class="theorem-title"><strong>Example 20 (A joint density on a triangle)</strong></span> Let <span class="math inline">\(f_{X,Y}(x, y) = 2\)</span> for <span class="math inline">\(0 \le x \le y \le 1\)</span>, and <span class="math inline">\(0\)</span> otherwise. The triangle <span class="math inline">\(\{(x, y) : 0 \le x \le y \le 1\}\)</span> has area <span class="math inline">\(1/2\)</span>, so <span class="math inline">\(f_{X,Y}\)</span> gives the whole plane probability <span class="math inline">\(2 \cdot\tfrac{1}{2} = 1\)</span>, and it is the joint density of a pair <span class="math inline">\((X, Y)\)</span> with <span class="math inline">\(X \le Y\)</span> always. For example, the probability that both are at most <span class="math inline">\(1/2\)</span> is <span class="math inline">\(2\)</span> times the area of the smaller triangle <span class="math inline">\(\{0 \le x \le y \le 1/2\}\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 22 (A joint density on a triangle)</strong></span> Let <span class="math inline">\(f_{X,Y}(x, y) = 2\)</span> for <span class="math inline">\(0 \le x \le y \le 1\)</span>, and <span class="math inline">\(0\)</span> otherwise. The triangle <span class="math inline">\(\{(x, y) : 0 \le x \le y \le 1\}\)</span> has area <span class="math inline">\(1/2\)</span>, so <span class="math inline">\(f_{X,Y}\)</span> gives the whole plane probability <span class="math inline">\(2 \cdot\tfrac{1}{2} = 1\)</span>, and it is the joint density of a pair <span class="math inline">\((X, Y)\)</span> with <span class="math inline">\(X \le Y\)</span> always. For example, the probability that both are at most <span class="math inline">\(1/2\)</span> is <span class="math inline">\(2\)</span> times the area of the smaller triangle <span class="math inline">\(\{0 \le x \le y \le 1/2\}\)</span>:</p>
 <p><span class="math display">\[\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cdot\tfrac{1}{8} = \tfrac{1}{4}\]</span></p>
 </div>
 </div>
@@ -1570,7 +1623,7 @@ F(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-marginal-density" class="theorem example">
-<p><span class="theorem-title"><strong>Example 21 (Marginal densities on the triangle)</strong></span> For the joint density of <a href="#exm-joint-pdf" class="quarto-xref">Example&nbsp;20</a> and <span class="math inline">\(x \in [0, 1]\)</span>, <span class="math inline">\(f_{X,Y}(x, y) = 2\)</span> exactly when <span class="math inline">\(x \le y \le 1\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 23 (Marginal densities on the triangle)</strong></span> For the joint density of <a href="#exm-joint-pdf" class="quarto-xref">Example&nbsp;22</a> and <span class="math inline">\(x \in [0, 1]\)</span>, <span class="math inline">\(f_{X,Y}(x, y) = 2\)</span> exactly when <span class="math inline">\(x \le y \le 1\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 f_X(x)
@@ -1594,7 +1647,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="def-joint-density-mass" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 17 (Joint density-mass function)</strong></span> Let <span class="math inline">\(X\)</span> be a discrete random variable and <span class="math inline">\(Y\)</span> a continuous random variable, <a href="#def-jointly-distributed">jointly distributed</a>. A <strong>joint density-mass function</strong> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(\operatorname{p}(X = x,\, Y = y) \ge 0\)</span> that is a probability mass in <span class="math inline">\(x\)</span> and a probability density in <span class="math inline">\(y\)</span>: for every <span class="math inline">\(x\)</span> and every set <span class="math inline">\(B \subseteq \mathbb{R}\)</span>,</p>
+<p><span class="theorem-title"><strong>Definition 19 (Joint density-mass function)</strong></span> Let <span class="math inline">\(X\)</span> be a discrete random variable and <span class="math inline">\(Y\)</span> a continuous random variable, <a href="#def-jointly-distributed">jointly distributed</a>. A <strong>joint density-mass function</strong> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(\operatorname{p}(X = x,\, Y = y) \ge 0\)</span> that is a probability mass in <span class="math inline">\(x\)</span> and a probability density in <span class="math inline">\(y\)</span>: for every <span class="math inline">\(x\)</span> and every set <span class="math inline">\(B \subseteq \mathbb{R}\)</span>,</p>
 <p><span class="math display">\[\Pr(X = x,\, Y \in B) = \int_{B} \operatorname{p}(X = x,\, Y = y)\,dy\]</span></p>
 </div>
 </div>
@@ -1610,7 +1663,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="exm-joint-density-mass" class="theorem example">
-<p><span class="theorem-title"><strong>Example 22 (A coin flip and a waiting time)</strong></span> Let <span class="math inline">\(\operatorname{p}(X = 0,\, Y = y) = 1/2\)</span> for <span class="math inline">\(y \in [0, 1]\)</span>, <span class="math inline">\(\operatorname{p}(X = 1,\, Y = y) = 1/4\)</span> for <span class="math inline">\(y \in [0, 2]\)</span>, and <span class="math inline">\(0\)</span> otherwise. Integrating over <span class="math inline">\(y\)</span> gives <span class="math inline">\(\operatorname{P}(X = 0) = 1/2\)</span> and <span class="math inline">\(\operatorname{P}(X = 1) = 1/2\)</span>, which add to 1. For example, the probability that <span class="math inline">\(X = 1\)</span> and <span class="math inline">\(Y \le 1\)</span> is:</p>
+<p><span class="theorem-title"><strong>Example 24 (A coin flip and a waiting time)</strong></span> Let <span class="math inline">\(\operatorname{p}(X = 0,\, Y = y) = 1/2\)</span> for <span class="math inline">\(y \in [0, 1]\)</span>, <span class="math inline">\(\operatorname{p}(X = 1,\, Y = y) = 1/4\)</span> for <span class="math inline">\(y \in [0, 2]\)</span>, and <span class="math inline">\(0\)</span> otherwise. Integrating over <span class="math inline">\(y\)</span> gives <span class="math inline">\(\operatorname{P}(X = 0) = 1/2\)</span> and <span class="math inline">\(\operatorname{P}(X = 1) = 1/2\)</span>, which add to 1. For example, the probability that <span class="math inline">\(X = 1\)</span> and <span class="math inline">\(Y \le 1\)</span> is:</p>
 <p><span class="math display">\[\Pr(X = 1,\, Y \le 1) = \int_0^1 \tfrac{1}{4}\,dy = \tfrac{1}{4}\]</span></p>
 </div>
 </div>
@@ -1627,7 +1680,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="def-surv-fn" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 18 (Survival function)</strong></span> The <strong>survival function</strong> (or <strong>survivor function</strong>) of a random variable <span class="math inline">\(T\)</span>, denoted <span class="math inline">\(\operatorname{S}(t)\)</span>, is the probability that <span class="math inline">\(T\)</span> exceeds <span class="math inline">\(t\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 20 (Survival function)</strong></span> The <strong>survival function</strong> (or <strong>survivor function</strong>) of a random variable <span class="math inline">\(T\)</span>, denoted <span class="math inline">\(\operatorname{S}(t)\)</span>, is the probability that <span class="math inline">\(T\)</span> exceeds <span class="math inline">\(t\)</span>:</p>
 <p><span class="math display">\[\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T &gt; t)\]</span></p>
 </div>
 </div>
@@ -1697,7 +1750,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="exm-exp-survfn" class="theorem example">
-<p><span class="theorem-title"><strong>Example 23 (Survival function of an exponential distribution)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\(\lambda &gt; 0\)</span> (<a href="#def-exponential" class="quarto-xref">Definition&nbsp;10</a>), so <span class="math inline">\(T\)</span> has density <span class="math inline">\(f(t) = \lambda \text{e}^{-\lambda t}\)</span> for <span class="math inline">\(t \ge 0\)</span>. For <span class="math inline">\(t \ge 0\)</span>, by <a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;7</a>:</p>
+<p><span class="theorem-title"><strong>Example 25 (Survival function of an exponential distribution)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\(\lambda &gt; 0\)</span> (<a href="#def-exponential" class="quarto-xref">Definition&nbsp;11</a>), so <span class="math inline">\(T\)</span> has density <span class="math inline">\(f(t) = \lambda \text{e}^{-\lambda t}\)</span> for <span class="math inline">\(t \ge 0\)</span>. For <span class="math inline">\(t \ge 0\)</span>, by <a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;7</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{S}(t)
@@ -1723,7 +1776,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="def-hazard" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 19 (Hazard function)</strong></span> The <strong>hazard function</strong> (also called the <strong>hazard rate</strong> or <strong>hazard rate function</strong>) of a continuous random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span>, typically denoted <span class="math inline">\({\lambda}(t)\)</span> or <span class="math inline">\(\operatorname{h}(t)\)</span>, is the limit of the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> falls in an interval starting at <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>, divided by the width of that interval, as that width shrinks to 0:</p>
+<p><span class="theorem-title"><strong>Definition 21 (Hazard function)</strong></span> The <strong>hazard function</strong> (also called the <strong>hazard rate</strong> or <strong>hazard rate function</strong>) of a continuous random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span>, typically denoted <span class="math inline">\({\lambda}(t)\)</span> or <span class="math inline">\(\operatorname{h}(t)\)</span>, is the limit of the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> falls in an interval starting at <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>, divided by the width of that interval, as that width shrinks to 0:</p>
 <p><span class="math display">\[{\lambda}(t) \stackrel{\text{def}}{=}\lim_{\Delta \downarrow 0} \frac{\Pr(t \le T &lt; t + \Delta \mid T \ge t)}{\Delta}\]</span></p>
 </div>
 </div>
@@ -1731,7 +1784,7 @@ f_X(x)
 </div>
 <div class="notes">
 <p>Sources differ on the symbol: <span class="math inline">\(\operatorname{h}(t)\)</span> appears in <span class="citation" data-cites="dobson4e">Dobson and Barnett (<a href="#ref-dobson4e" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="vittinghoff2e">Vittinghoff et al. (<a href="#ref-vittinghoff2e" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="klein2003survival">Klein and Moeschberger (<a href="#ref-klein2003survival" role="doc-biblioref">2003</a>)</span>, and <span class="citation" data-cites="kleinbaum2012survival">Kleinbaum and Klein (<a href="#ref-kleinbaum2012survival" role="doc-biblioref">2012</a>)</span>, while <span class="math inline">\(\lambda(t)\)</span> appears in <span class="citation" data-cites="me4">Rothman et al. (<a href="#ref-me4" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="kalbfleisch2011statistical">Kalbfleisch and Prentice (<a href="#ref-kalbfleisch2011statistical" role="doc-biblioref">2011</a>)</span>.</p>
-<p>If <span class="math inline">\(T\)</span> is the time at which an event occurs, then <span class="math inline">\({\lambda}(t)\)</span> is a rate, not a probability: for a small interval width <span class="math inline">\(\Delta &gt; 0\)</span>, <span class="math inline">\({\lambda}(t) \cdot\Delta\)</span> is approximately the probability that the event occurs in <span class="math inline">\([t, t + \Delta)\)</span>, given that it has not occurred before <span class="math inline">\(t\)</span>. A hazard can exceed 1, just as a density can. Many sources write the hazard as <span class="math inline">\({\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\)</span>, reading it as the density of <span class="math inline">\(T\)</span> at <span class="math inline">\(t\)</span>, conditional on the event <span class="math inline">\(T \ge t\)</span>; that notation abbreviates the limit in <a href="#def-hazard" class="quarto-xref">Definition&nbsp;19</a>. For a discrete <span class="math inline">\(T\)</span>, the conditional probability <span class="math inline">\(\Pr(T = t \mid T \ge t)\)</span> itself is called the <em>discrete-time</em> hazard, and it is a probability.</p>
+<p>If <span class="math inline">\(T\)</span> is the time at which an event occurs, then <span class="math inline">\({\lambda}(t)\)</span> is a rate, not a probability: for a small interval width <span class="math inline">\(\Delta &gt; 0\)</span>, <span class="math inline">\({\lambda}(t) \cdot\Delta\)</span> is approximately the probability that the event occurs in <span class="math inline">\([t, t + \Delta)\)</span>, given that it has not occurred before <span class="math inline">\(t\)</span>. A hazard can exceed 1, just as a density can. Many sources write the hazard as <span class="math inline">\({\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\)</span>, reading it as the density of <span class="math inline">\(T\)</span> at <span class="math inline">\(t\)</span>, conditional on the event <span class="math inline">\(T \ge t\)</span>; that notation abbreviates the limit in <a href="#def-hazard" class="quarto-xref">Definition&nbsp;21</a>. For a discrete <span class="math inline">\(T\)</span>, the conditional probability <span class="math inline">\(\Pr(T = t \mid T \ge t)\)</span> itself is called the <em>discrete-time</em> hazard, and it is a probability.</p>
 <p>The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity <span class="math inline">\({\lambda}(t)\)</span> is often called the <strong>event incidence rate</strong> instead. This terminology parallels the convention that conditional probabilities of undesirable events are called <strong>risks</strong>, while the same conditional probabilities for neutral or desirable events are simply called <strong>probabilities</strong>. The math is identical; only the name changes with the valence of the event.</p>
 </div>
 <div class="callout callout-style-simple callout-lem no-icon">
@@ -1789,7 +1842,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="exm-exp-haz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 24 (Hazard function of an exponential distribution)</strong></span> Continuing <a href="#exm-exp-survfn" class="quarto-xref">Example&nbsp;23</a>, for <span class="math inline">\(t &gt; 0\)</span>, where <span class="math inline">\(f\)</span> is continuous:</p>
+<p><span class="theorem-title"><strong>Example 26 (Hazard function of an exponential distribution)</strong></span> Continuing <a href="#exm-exp-survfn" class="quarto-xref">Example&nbsp;25</a>, for <span class="math inline">\(t &gt; 0\)</span>, where <span class="math inline">\(f\)</span> is continuous:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\lambda}(t)
@@ -1801,7 +1854,7 @@ f_X(x)
 &amp;&amp; \text{(cancel } \text{e}^{-\lambda t} \text{)}
 \end{aligned}
 \]</span></p>
-<p>At <span class="math inline">\(t = 0\)</span>, where <span class="math inline">\(f\)</span> jumps from <span class="math inline">\(0\)</span> to <span class="math inline">\(\lambda\)</span>, <a href="#def-hazard" class="quarto-xref">Definition&nbsp;19</a> gives the same value directly: <span class="math inline">\(\Pr(0 \le T &lt; \Delta \mid T \ge 0) / \Delta = \mathopen{}\left(1 - \text{e}^{-\lambda \Delta}\right)\mathclose{} / \Delta \to \lambda\)</span> as <span class="math inline">\(\Delta \downarrow 0\)</span>. So the exponential distribution has a constant hazard for <span class="math inline">\(t \ge 0\)</span>, equal to its rate parameter; for <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(f(t) = 0\)</span>, so <span class="math inline">\({\lambda}(t) = 0\)</span>.</p>
+<p>At <span class="math inline">\(t = 0\)</span>, where <span class="math inline">\(f\)</span> jumps from <span class="math inline">\(0\)</span> to <span class="math inline">\(\lambda\)</span>, <a href="#def-hazard" class="quarto-xref">Definition&nbsp;21</a> gives the same value directly: <span class="math inline">\(\Pr(0 \le T &lt; \Delta \mid T \ge 0) / \Delta = \mathopen{}\left(1 - \text{e}^{-\lambda \Delta}\right)\mathclose{} / \Delta \to \lambda\)</span> as <span class="math inline">\(\Delta \downarrow 0\)</span>. So the exponential distribution has a constant hazard for <span class="math inline">\(t \ge 0\)</span>, equal to its rate parameter; for <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(f(t) = 0\)</span>, so <span class="math inline">\({\lambda}(t) = 0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1813,7 +1866,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="def-cuhaz" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 20 (Cumulative hazard function)</strong></span> The <strong>cumulative hazard function</strong> of a continuous random variable <span class="math inline">\(T\)</span>, often denoted <span class="math inline">\({\Lambda}(t)\)</span> or <span class="math inline">\(\operatorname{H}(t)\)</span>, is the integral of its <a href="#def-hazard">hazard function</a> up to <span class="math inline">\(t\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 22 (Cumulative hazard function)</strong></span> The <strong>cumulative hazard function</strong> of a continuous random variable <span class="math inline">\(T\)</span>, often denoted <span class="math inline">\({\Lambda}(t)\)</span> or <span class="math inline">\(\operatorname{H}(t)\)</span>, is the integral of its <a href="#def-hazard">hazard function</a> up to <span class="math inline">\(t\)</span>:</p>
 <p><span class="math display">\[{\Lambda}(t) \stackrel{\text{def}}{=}\int_{u=-\infty}^{t} {\lambda}(u)\,du\]</span></p>
 </div>
 </div>
@@ -1829,7 +1882,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="exm-exp-cumhaz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 25 (Cumulative hazard function of an exponential distribution)</strong></span> Continuing <a href="#exm-exp-haz" class="quarto-xref">Example&nbsp;24</a>, the hazard is <span class="math inline">\({\lambda}(u) = \lambda\)</span> for <span class="math inline">\(u \ge 0\)</span> and <span class="math inline">\(0\)</span> for <span class="math inline">\(u &lt; 0\)</span>, so for <span class="math inline">\(t \ge 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 27 (Cumulative hazard function of an exponential distribution)</strong></span> Continuing <a href="#exm-exp-haz" class="quarto-xref">Example&nbsp;26</a>, the hazard is <span class="math inline">\({\lambda}(u) = \lambda\)</span> for <span class="math inline">\(u \ge 0\)</span> and <span class="math inline">\(0\)</span> for <span class="math inline">\(u &lt; 0\)</span>, so for <span class="math inline">\(t \ge 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\Lambda}(t)
@@ -1914,7 +1967,7 @@ f_X(x)
 </div>
 <div class="callout-body-container">
 <div id="exm-exp-surv-int-haz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 26 (Recovering the exponential survival function from its cumulative hazard)</strong></span> Continuing <a href="#exm-exp-cumhaz" class="quarto-xref">Example&nbsp;25</a>, for <span class="math inline">\(t \ge 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 28 (Recovering the exponential survival function from its cumulative hazard)</strong></span> Continuing <a href="#exm-exp-cumhaz" class="quarto-xref">Example&nbsp;27</a>, for <span class="math inline">\(t \ge 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{S}(t)
@@ -1924,7 +1977,7 @@ f_X(x)
 &amp;&amp; \text{(substitute } {\Lambda}(t) = \lambda t \text{)}
 \end{aligned}
 \]</span></p>
-<p>which matches the survival function computed directly in <a href="#exm-exp-survfn" class="quarto-xref">Example&nbsp;23</a>.</p>
+<p>which matches the survival function computed directly in <a href="#exm-exp-survfn" class="quarto-xref">Example&nbsp;25</a>.</p>
 </div>
 </div>
 </div>

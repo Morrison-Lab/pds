@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 10:56:17 (PDT)
+Last modified: 2026-09-28 11:25:51 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -246,7 +246,7 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 >
 > \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\\
 
-Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and the correlation always lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)). Random variables with zero covariance, and hence zero correlation, are called **uncorrelated**; [Theorem 5](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 11](#exm-uncorrelated-not-indpt) shows the converse fails. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.
+Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and the correlation always lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)). This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.
 
 > **NOTE:**
 >
@@ -256,7 +256,19 @@ Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and th
 
 > **NOTE:**
 >
-> **Definition 11 (Conditional covariance)** The **conditional covariance** of \\Y\\ and \\Z\\ given \\X = x\\ is their covariance under their conditional distribution given \\X = x\\:
+> **Definition 11 (Uncorrelated random variables)** Random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ are **uncorrelated** when their [covariance](#def-cov) is 0:
+>
+> \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\
+
+When \\X\\ and \\Y\\ also have positive variances, being uncorrelated is the same as having [correlation](#def-correlation) 0. [Theorem 5](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 11](#exm-uncorrelated-not-indpt) shows the converse fails.
+
+> **NOTE:**
+>
+> **Example 13 (Correlated and uncorrelated pairs)** In [Example 11](#exm-uncorrelated-not-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, so \\X\\ and \\Y = X^2\\ are uncorrelated. In [Example 9](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\\, so the binary exposure and outcome are not uncorrelated.
+
+> **NOTE:**
+>
+> **Definition 12 (Conditional covariance)** The **conditional covariance** of \\Y\\ and \\Z\\ given \\X = x\\ is their covariance under their conditional distribution given \\X = x\\:
 >
 > \\\operatorname{Cov}\mathopen{}\left(Y,Z \mid X = x\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y-\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\right)\mathclose{}\mathopen{}\left(Z-\operatorname{E}\mathopen{}\left\[Z \mid X = x\right\]\mathclose{}\right)\mathclose{} \mid X = x\right\]\mathclose{}\\
 >
@@ -264,7 +276,7 @@ Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and th
 
 > **NOTE:**
 >
-> **Example 13 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 11](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\\. In [Example 4](#exm-cond-variance), for example, \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\\.
+> **Example 14 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 12](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\\. In [Example 4](#exm-cond-variance), for example, \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\\.
 
 > **NOTE:**
 >
@@ -304,7 +316,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> **Definition 12 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
+> **Definition 13 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\tilde{X}\right)\mathclose{} \\ &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\right\]\mathclose{} \end{aligned} \\
 
@@ -316,7 +328,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 12](#def-cov-vec-x):
+> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 13](#def-cov-vec-x):
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} \begin{pmatrix}X_1 - \mu_1 & \cdots & X_p - \mu_p\end{pmatrix} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix} (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\ \vdots & \ddots & \vdots \\ (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p) \end{pmatrix} \right\]\mathclose{} \\ &= \begin{pmatrix} \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_p - \mu_p)\right\]\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_p - \mu_p)\right\]\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_p, X_p\right)\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \end{aligned} \\
 >
