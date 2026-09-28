@@ -1,5 +1,3 @@
-
-
 :::{#def-probability}
 #### Probability measure
 
@@ -163,7 +161,7 @@ is a [probability measure](#def-probability) if and only if it satisfies:
 ::: proof
 
 Suppose $\Pr$ is a probability measure.
-It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in $[0, \infty]$,
+It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets-functions.html#def-extended-nonneg-reals) $[0, \infty]$,
 which gives axiom 1,
 and it is countably additive, which is axiom 3.
 Axiom 2 is the condition $\Pr(\Omega) = 1$ in @def-probability.

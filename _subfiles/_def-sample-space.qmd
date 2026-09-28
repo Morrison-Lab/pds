@@ -119,8 +119,8 @@ $$A_i \cap A_j = \emptyset \quad \text{for all } i \neq j$$
 
 ::: {.remark .notes}
 
-For sets that are not events, the same property is usually called
-[pairwise disjoint](https://morrison-lab.github.io/mds/measures.html#def-pairwise-disjoint).
+The math notes define the same property for sets in general,
+as [pairwise disjoint](https://morrison-lab.github.io/mds/measures.html#def-pairwise-disjoint).
 
 :::
 
