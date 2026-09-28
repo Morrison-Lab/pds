@@ -10,9 +10,9 @@ format:
     output-file: random-variables.docx
 ---
 
-{{< include latex-macros/macros.qmd >}}
-
 ## Random variables {#sec-random-variables}
+
+{{< include latex-macros/macros.qmd >}}
 
 <!-- No slidebreak here: the heading shares its slide with the def-random-variable div. -->
 

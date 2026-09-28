@@ -10,11 +10,11 @@ format:
     output-file: probability-basics.docx
 ---
 
+## Defining probabilities
+
 {{< include latex-macros/macros.qmd >}}
 
 []{#sec-prob-axioms}
-
-## Defining probabilities
 
 <!-- No slidebreak here: the heading shares its slide with the def-sample-space div. -->
 
@@ -41,8 +41,3 @@ format:
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_thm-bayes.qmd >}}
-
-## References {.unnumbered}
-
-::: {#refs}
-:::

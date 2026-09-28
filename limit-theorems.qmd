@@ -10,9 +10,9 @@ format:
     output-file: limit-theorems.docx
 ---
 
-{{< include latex-macros/macros.qmd >}}
-
 ## The Central Limit Theorem {#sec-clt}
+
+{{< include latex-macros/macros.qmd >}}
 
 {{< include pds/_subfiles/_sec-CLT.qmd >}}
 

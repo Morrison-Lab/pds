@@ -10,11 +10,11 @@ format:
     output-file: variance-covariance.docx
 ---
 
+## Deviation, error, and noise {#sec-deviation}
+
 {{< include latex-macros/macros.qmd >}}
 
 []{#sec-variance-covariance}
-
-## Deviation, error, and noise {#sec-deviation}
 
 <!-- No slidebreak here: the heading shares its slide with the def-deviation div. -->
 
