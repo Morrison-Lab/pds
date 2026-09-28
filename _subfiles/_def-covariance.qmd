@@ -77,7 +77,8 @@ If also $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then $\Cov{X,Y} = 0$.
 Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$,
 with reference measures $\mu_X$ and $\mu_Y$ as in
 the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
-(counting measure for a discrete variable, Lebesgue measure for a continuous one).
+([counting measure](probability-basics.qmd#def-counting-measure) for a discrete variable,
+Lebesgue measure for a continuous one).
 Because $X$ and $Y$ are independent,
 $f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their joint PMF, density, or density-mass function
 (the factorization in the notes to the [definition of independence](independence.qmd#def-indpt)).
