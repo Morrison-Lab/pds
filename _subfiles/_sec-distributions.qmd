@@ -204,9 +204,9 @@ Let $X \sim \Pois(\mu = `r mu`)$.
 
 Compute:
 
-- $\P(X = 4 | \mu = `r mu`)$
-- $\P(X \le 7 | \mu = `r mu`)$
-- $\P(X > 5 | \mu = `r mu`)$
+- $\P(X = 4)$
+- $\P(X \le 7)$
+- $\P(X > 5)$
 
 :::
 

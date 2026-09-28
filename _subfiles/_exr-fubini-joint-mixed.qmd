@@ -99,7 +99,7 @@ is just linearity of the integral applied to a two-term sum
 --- $\int g + \int k = \int (g + k)$ ---
 not a genuine interchange of summation and integration order.
 If $Y$ had a countably infinite range instead,
-the sum of integrals would be genuinely infinite,
+the sum of integrals would be an infinite series,
 and @cor-fubini-joint's guarantee would be load-bearing.
 
 :::
