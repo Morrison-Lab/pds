@@ -109,6 +109,7 @@ because it describes the outcome at a given covariate value
 rather than a process evolving in time.
 
 ::: notes
+
 The model is probabilistic because of its error distribution,
 not because of the method used to fit it.
 The same model is probabilistic whether its parameters are estimated
