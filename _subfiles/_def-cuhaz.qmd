@@ -9,18 +9,6 @@ $$\cuhaz(t) \eqdef \int_{u=-\infty}^{t} \haz(u)\,du$$
 
 :::
 
-::: notes
-
-For a non-negative $T$, such as a time to event,
-$\haz(u) = 0$ for $u < 0$,
-so the lower limit of the integral can be replaced by $0$:
-$\cuhaz(t) = \int_{u=0}^{t} \haz(u)\,du$.
-That is the form most survival-analysis texts use.
-
-:::
-
-{{< slidebreak >}}
-
 :::{#exm-exp-cumhaz}
 #### Cumulative hazard function of an exponential distribution
 
@@ -41,6 +29,68 @@ $$
 $$
 
 and $\cuhaz(t) = 0$ for $t < 0$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-cuhaz-nonneg}
+#### Cumulative hazard of a non-negative random variable
+
+If $T$ is a continuous random variable with $T \ge 0$, such as a time to event,
+then $\haz(u) = 0$ for every $u < 0$,
+and for every $t \ge 0$:
+
+$$\cuhaz(t) = \int_{u=0}^{t} \haz(u)\,du$$
+
+:::
+
+::: proof
+
+Let $u < 0$.
+Every outcome has $T(\omega) \ge 0 > u$, so $\{T \ge u\} = \Omega$,
+which has probability $1 > 0$, and $\haz(u)$ is defined.
+For $0 < \Delta \le -u$, the event $\{u \le T < u + \Delta\}$ is empty,
+because $u + \Delta \le 0$, so:
+
+$$
+\ba
+\haz(u)
+&= \lim_{\Delta \downarrow 0} \frac{\Pr(u \le T < u + \Delta \mid T \ge u)}{\Delta}
+&& \text{(definition of the hazard function)} \\
+&= \lim_{\Delta \downarrow 0} \frac{\Pr(\{u \le T < u + \Delta\} \cap \{T \ge u\})}{\Delta \cd \Pr(T \ge u)}
+&& \text{(definition of conditional probability)} \\
+&= \lim_{\Delta \downarrow 0} \frac{\Pr(\emptyset \cap \Omega)}{\Delta \cd \Pr(\Omega)}
+&& \text{(the two events found above)} \\
+&= \lim_{\Delta \downarrow 0} \frac{0}{\Delta \cd 1}
+&& \text{(} \emptyset \cap \Omega = \emptyset \text{; } \Pr(\emptyset) = 0 \text{; } \Pr(\Omega) = 1 \text{)} \\
+&= 0
+&& \text{(simplify)}
+\ea
+$$
+
+Then, for $t \ge 0$:
+
+$$
+\ba
+\cuhaz(t)
+&= \int_{u=-\infty}^{t} \haz(u)\,du
+&& \text{(definition of the cumulative hazard)} \\
+&= \int_{u=-\infty}^{0} \haz(u)\,du + \int_{u=0}^{t} \haz(u)\,du
+&& \text{(split the integral at } 0 \text{)} \\
+&= \int_{u=-\infty}^{0} 0\,du + \int_{u=0}^{t} \haz(u)\,du
+&& \text{(} \haz(u) = 0 \text{ for } u < 0 \text{)} \\
+&= \int_{u=0}^{t} \haz(u)\,du
+&& \text{(integrate)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+The form in @cor-cuhaz-nonneg, with lower limit $0$,
+is the form most survival-analysis texts use.
 
 :::
 

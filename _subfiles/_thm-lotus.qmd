@@ -38,7 +38,7 @@ which is valid because $\E{g(X)}$ is defined only when the sum converges absolut
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 LOTUS says that to compute $\E{g(X)}$,
 we do not need to first find the distribution of $g(X)$;

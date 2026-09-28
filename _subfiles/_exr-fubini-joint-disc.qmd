@@ -77,7 +77,7 @@ $\P(Y = 0) = 0.3$, $\P(Y = 1) = 0.7$.
 
 ::::
 
-::: notes
+::: {.remark .notes}
 
 Note that $X$ and $Y$ are **not** independent here:
 $\P(X = 0, Y = 0) = 0.2 \neq 0.15 = \P(X = 0)\,\P(Y = 0)$.

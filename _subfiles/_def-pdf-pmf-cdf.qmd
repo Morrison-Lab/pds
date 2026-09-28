@@ -10,7 +10,7 @@ $$\P(X=x) \eqdef \Pr(\{X=x\})$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
@@ -79,14 +79,7 @@ is a function $f$ that satisfies:
 
 :::
 
-::: notes
-
-A density is not a probability: it can exceed 1.
-A density is also not unique:
-changing $f$ at finitely many points changes none of its integrals,
-so the value of a density at a single point carries no probability by itself.
-These notes use the version that is continuous wherever possible.
-@thm-density-limit gives the value of $f$ at a point where it is continuous.
+::: {.remark .notes}
 
 See also
 <https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
@@ -123,6 +116,71 @@ So $f$ is a density of $X$.
 
 {{< slidebreak >}}
 
+:::{#thm-density-not-unique}
+#### A density is not unique
+
+If $f$ is a [density](#def-pdf) of a continuous random variable $X$,
+and $g \ge 0$ differs from $f$ at only finitely many points,
+then $g$ is also a density of $X$.
+
+:::
+
+::: proof
+
+For $a \le b$,
+the difference $g - f$ is $0$ at all but finitely many points, so:
+
+$$
+\ba
+\int_a^b g(x)\,dx
+&= \int_a^b f(x)\,dx + \int_a^b \paren{g(x) - f(x)}\,dx
+&& \text{(linearity of the integral)} \\
+&= \int_a^b f(x)\,dx + 0
+&& \text{(a function that is 0 at all but finitely many points integrates to 0)} \\
+&= \Pr(a \le X \le b)
+&& \text{(} f \text{ is a density of } X \text{)}
+\ea
+$$
+
+Together with $g \ge 0$, this is @def-pdf for $g$.
+
+:::
+
+::: {.remark .notes}
+
+So the value of a density at a single point carries no probability by itself.
+These notes use the version that is continuous wherever possible.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-continuous-no-density}
+#### Some continuous random variables have no density
+
+There exist continuous random variables
+that have no [probability density function](#def-pdf).
+
+:::
+
+::: {.remark .notes}
+
+The proof needs measure theory beyond these notes.
+The standard example is the
+[Cantor distribution](https://en.wikipedia.org/wiki/Cantor_distribution),
+which puts no probability on any single point,
+but puts all of its probability on a set of total length 0,
+so any candidate density would integrate to 0 over a set of probability 1.
+
+Every continuous random variable in these notes also has a
+[probability density function](#def-pdf).
+Continuous random variables without a density
+do not arise in applications.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-normal}
 #### Normal distribution
 
@@ -135,17 +193,6 @@ if $X$ is continuous with [density](#def-pdf):
 $$\p(X=x) \eqdef \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}, \quad x \in \mathbb{R}$$
 
 :::
-
-::: notes
-
-This density integrates to 1,
-and a normal random variable has mean $\mu$ and variance $\ss$,
-which is where the parameters' names come from
-[@CaseBerg01].
-
-:::
-
-{{< slidebreak >}}
 
 :::{#exm-normal}
 #### Normal densities at their centers
@@ -167,6 +214,36 @@ $$
 For $X \sim \ndist{0, 0.1^2}$, the same steps give
 $\p(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99$,
 a density greater than 1.
+
+:::
+
+::: {.remark .notes}
+
+A density is not a probability: it can exceed 1,
+as the second density in @exm-normal does.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-normal-density}
+#### The normal density integrates to 1, with mean $\mu$ and variance $\ss$
+
+If $X \sim \ndist{\mu, \ss}$ (@def-normal), then:
+
+$$\int_{-\infty}^{\infty} \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}\,dx = 1$$
+
+and $X$ has [mean](expectation.qmd#def-expectation) $\E{X} = \mu$
+and [variance](variance-covariance.qmd#def-variance) $\Var{X} = \ss$.
+
+:::
+
+::: {.remark .notes}
+
+The proof evaluates three integrals by calculus,
+one of them the Gaussian integral;
+it is omitted here [@CaseBerg01].
+These facts are where the parameters' names come from.
 
 :::
 
@@ -247,12 +324,9 @@ $$F(t) \eqdef \Pr(X\le t), \quad t\in\mathbb{R}.$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
-The CDF is always defined, whether $X$ is discrete or continuous,
-and it fully characterizes $X$'s distribution.
-It is non-decreasing,
-with $F(t) \to 0$ as $t \to -\infty$ and $F(t) \to 1$ as $t \to \infty$.
+The CDF is always defined, whether $X$ is discrete or continuous.
 
 See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 
@@ -278,6 +352,88 @@ $$
 
 {{< slidebreak >}}
 
+:::{#thm-cdf-properties}
+#### Properties of a CDF
+
+The [CDF](#def-cdf) $F$ of any random variable $X$ is non-decreasing,
+and:
+
+$$\lim_{t \to -\infty} F(t) = 0, \qquad \lim_{t \to \infty} F(t) = 1$$
+
+:::
+
+::: proof
+
+*Non-decreasing.*
+For $s < t$, $\{X \le t\}$ is the disjoint union of $\{X \le s\}$ and $\{s < X \le t\}$,
+so [finite additivity](probability-basics.qmd#cor-probability-finitely-additive) gives:
+
+$$
+\ba
+F(t)
+&= \Pr(X \le s) + \Pr(s < X \le t)
+&& \text{(additivity, and the definition of the CDF)} \\
+&\ge \Pr(X \le s)
+&& \text{(probabilities are non-negative)} \\
+&= F(s)
+&& \text{(definition of the CDF)}
+\ea
+$$
+
+*Limit at $-\infty$.*
+The events $A_n = \{X \le -n\}$, $n = 1, 2, \ldots$, are decreasing,
+and their intersection is empty,
+because every outcome $\omega$ has $X(\omega) > -n$ once $n > -X(\omega)$.
+By [continuity of probability](probability-basics.qmd#thm-continuity-probability),
+$F(-n) = \Pr(A_n) \to 0$.
+For $t \le -n$, $0 \le F(t) \le F(-n)$, because $F$ is non-decreasing,
+so $F(t) \to 0$ as $t \to -\infty$.
+
+*Limit at $\infty$.*
+The events $B_n = \{X > n\}$ are decreasing,
+and their intersection is empty,
+because every outcome $\omega$ has $X(\omega) \le n$ once $n \ge X(\omega)$.
+By continuity of probability, $\Pr(B_n) \to 0$,
+so, by the [complement rule](probability-basics.qmd#cor-p-neg0):
+
+$$
+\ba
+F(n)
+&= 1 - \Pr(X > n)
+&& \text{(complement rule)} \\
+&\to 1 - 0
+&& \text{(} \Pr(B_n) \to 0 \text{)}
+\ea
+$$
+
+For $t \ge n$, $F(n) \le F(t) \le 1$, because $F$ is non-decreasing,
+so $F(t) \to 1$ as $t \to \infty$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cdf-characterizes}
+#### The CDF determines the distribution
+
+If random variables $X$ and $Y$ have the same [CDF](#def-cdf),
+then $\Pr(X \in B) = \Pr(Y \in B)$
+for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) $B \subseteq \mathbb{R}$,
+which includes every interval,
+and every set built from intervals by countably many unions, intersections, and complements.
+
+:::
+
+::: {.remark .notes}
+
+The proof needs measure theory beyond these notes
+[@billingsley1995probability];
+see also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-quantile-function}
 #### Quantile function (population inverse CDF)
 
@@ -291,7 +447,7 @@ $$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p<1.$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The restriction to $0 < p < 1$ keeps $Q(p)$ finite:
 for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
@@ -344,7 +500,7 @@ F(t)
 \ea
 $$
 
-Letting $a \to -\infty$, $F(a) \to 0$ (@def-cdf),
+Letting $a \to -\infty$, $F(a) \to 0$ (@thm-cdf-properties),
 which gives $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
 The fundamental theorem of calculus then gives
 $\deriv{t} \int_{-\infty}^{t} f(x)\,dx = f(t)$
@@ -352,11 +508,28 @@ at every $t$ where $f$ is continuous.
 
 :::
 
-::: notes
+:::{#cor-cdf-derivative-density-ae}
+#### A CDF has its density as derivative at all but finitely many points
 
-For the densities in these notes,
-$f$ is continuous at all but finitely many points,
-so $F' = f$ at all but finitely many points.
+If $X$ is a continuous random variable with CDF $F$
+and a density $f$ that is continuous at all but finitely many points,
+then $F$ is differentiable with $F' = f$
+at all but finitely many points.
+
+:::
+
+::: proof
+
+At every point $t$ where $f$ is continuous,
+@thm-density-vs-CDF gives $F'(t) = f(t)$,
+and by assumption those are all but finitely many points.
+
+:::
+
+::: {.remark .notes}
+
+Every density in these notes is continuous at all but finitely many points,
+so @cor-cdf-derivative-density-ae applies to each of them.
 
 :::
 
@@ -440,7 +613,7 @@ The last step applies the fundamental theorem of calculus
 on each piece of $[a, b]$ between exceptional points,
 where $F'$ is continuous,
 and joins the pieces using the continuity of $F$ at the exceptional points.
-Finally, $F' \ge 0$ wherever it exists, because $F$ is non-decreasing.
+Finally, $F' \ge 0$ wherever it exists, because $F$ is non-decreasing (@thm-cdf-properties).
 
 :::
 
@@ -494,15 +667,11 @@ so this difference quotient converges to $f(x)$ as $\Delta \downarrow 0$.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 For small $\Delta > 0$, $f(x) \cd \Delta \approx \Pr(x \le X < x + \Delta)$.
-The limit is the right derivative of $F$ at $x$.
-At a point where $f$ is not continuous,
-the limit can differ from the chosen value $f(x)$:
-for $X \sim \text{Uniform}(0, 1)$,
-the limit at $x = 1$ is 0,
-although @exm-pdf sets $f(1) = 1$.
+Although a density is not unique (@thm-density-not-unique),
+this limit pins down its value at every point where it is continuous.
 
 See also @me4 (Chapter 22, p. 535).
 
@@ -520,6 +689,63 @@ $$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
 
 For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
 Both agree with the density of @exm-pdf.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#prp-density-limit-right-derivative}
+#### The density limit is the right derivative of the CDF
+
+If $X$ is a continuous random variable with CDF $F$,
+then for every $x$:
+
+$$\lim_{\Delta \downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}
+= \lim_{\Delta \downarrow 0} \frac{F(x + \Delta) - F(x)}{\Delta}$$
+
+whenever either limit exists;
+the right-hand side is the right derivative of $F$ at $x$.
+
+:::
+
+::: proof
+
+The first two lines of the proof of @thm-density-limit
+use only that $X$ is continuous,
+so for every $\Delta > 0$ the two quotients are equal.
+Equal functions of $\Delta$ have the same limit as $\Delta \downarrow 0$,
+or both have none.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-limit-jump}
+#### The density limit at a jump
+
+At a point where $f$ is not continuous,
+the limit can differ from the chosen value $f(x)$.
+For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @exm-pdf,
+which sets $f(1) = 1$ and $f(x) = 0$ for $x > 1$,
+and for $\Delta > 0$:
+
+$$
+\ba
+\Pr(1 \le X < 1 + \Delta)
+&= \Pr(1 \le X \le 1 + \Delta)
+&& \text{(} \Pr(X = 1 + \Delta) = 0 \text{)} \\
+&= \int_1^{1 + \Delta} f(x)\,dx
+&& \text{(definition of the density)} \\
+&= 0
+&& \text{(} f = 0 \text{ on } (1, 1 + \Delta] \text{; one point does not change an integral)}
+\ea
+$$
+
+So the limit of $\Pr(1 \le X < 1 + \Delta) / \Delta$ at $x = 1$ is 0,
+although $f(1) = 1$.
+By @prp-density-limit-right-derivative,
+0 is also the right derivative of $F$ at 1,
+matching the slope of 0 on the right in @exm-density-vs-CDF.
 
 :::
 
@@ -548,6 +774,8 @@ $$
 \ea
 $$
 
+The last step is @thm-cdf-properties.
+
 :::
 
 {{< slidebreak >}}
@@ -573,7 +801,7 @@ has a probability.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 We write $\Pr(X \in A, Y \in B)$ for $\Pr(\{X \in A\} \cap \{Y \in B\})$,
 and similarly for more variables.
@@ -608,16 +836,6 @@ the probability $\Pr((\X1n) \in A)$.
 
 :::
 
-::: notes
-
-The joint distribution is determined by the probabilities
-$\Pr(X_1 \in A_1, \ldots, X_n \in A_n)$
-for sets $A_1, \ldots, A_n$ of real numbers.
-
-:::
-
-{{< slidebreak >}}
-
 :::{#exm-joint-distribution}
 #### Joint distribution of the first flip and the total
 
@@ -629,6 +847,33 @@ $$\Pr((X_1, X) \in A) = \Pr(\set{HH, HT}) = \tfrac{1}{2}$$
 
 since the first flip is heads exactly on $HH$ and $HT$,
 and each of those outcomes has at least one head.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-joint-distribution-rectangles}
+#### A joint distribution is determined by its rectangle probabilities
+
+If [jointly distributed](#def-jointly-distributed) random variables $\X1n$,
+and jointly distributed random variables $Y_1, \ldots, Y_n$,
+satisfy
+
+$$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n)$$
+
+for all sets $A_1, \ldots, A_n$ of real numbers for which these are events,
+then $(\X1n)$ and $(Y_1, \ldots, Y_n)$ have the same [joint distribution](#def-joint-distribution).
+
+:::
+
+::: {.remark .notes}
+
+The proof needs measure theory beyond these notes:
+the sets $A_1 \times \cdots \times A_n$ form a
+[$\pi$-system](https://en.wikipedia.org/wiki/Pi-system),
+and two probability measures that agree on a $\pi$-system
+agree on the $\sigma$-algebra it generates
+[@billingsley1995probability].
 
 :::
 
@@ -674,7 +919,7 @@ is called the **marginal distribution** of $X$.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The word "marginal" only says that the other variables are being set aside;
 the marginal distribution of $X$ is the same object as the distribution of $X$.
@@ -763,14 +1008,10 @@ is a function $f_{X,Y}$ on $\mathbb{R}^2$ that satisfies:
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 As with [events](probability-basics.qmd#def-event), a fully rigorous version restricts $A$ to a designated collection of regions;
 every region that arises in these notes is in it.
-Not every pair of continuous random variables has a joint density:
-if $X$ is continuous, the pair $(X, X)$ falls on the line $y = x$,
-a region of area 0,
-so every candidate $f_{X,Y}$ would give that line probability 0 instead of 1.
 
 :::
 
@@ -787,6 +1028,49 @@ For example, the probability that both are at most $1/2$
 is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
 
 $$\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cd \tfrac{1}{8} = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-no-joint-density-diagonal}
+#### Not every pair of continuous random variables has a joint density
+
+If $X$ is a continuous random variable,
+then the pair $(X, X)$ has no [joint density](#def-joint-pdf).
+
+:::
+
+::: proof
+
+Suppose $f$ were a joint density of $(X, X)$,
+and let $L = \set{(x, y) : y = x}$ be the diagonal line.
+Every outcome $\omega$ has $X(\omega) = X(\omega)$,
+so $\set{(X, X) \in L} = \Omega$.
+For each $x$, the function $y \mapsto \1{y = x} f(x, y)$ is $0$ except at the single point $y = x$,
+so its integral over $y$ is $0$.
+Then:
+
+$$
+\ba
+1
+&= \Pr((X, X) \in L)
+&& \text{(} \set{(X, X) \in L} = \Omega \text{, and } \Pr(\Omega) = 1 \text{)} \\
+&= \iint_L f(x, y)\,dx\,dy
+&& \text{(definition of a joint density)} \\
+&= \int_{-\infty}^{\infty} \paren{\int_{-\infty}^{\infty} \1{y = x} f(x, y)\,dy}\,dx
+&& \text{(iterate the integral; Tonelli's theorem)} \\
+&= \int_{-\infty}^{\infty} 0\,dx
+&& \text{(the inner integrand is 0 except at } y = x \text{)} \\
+&= 0
+&& \text{(integrate)}
+\ea
+$$
+
+which is a contradiction.
+Tonelli's theorem allows the iterated integral because $f \ge 0$
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3).
 
 :::
 
@@ -868,11 +1152,41 @@ $$\Pr(X = x,\, Y \in B) = \int_{B} \p(X = x,\, Y = y)\,dy$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
-Taking $B = \mathbb{R}$ gives $\int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy = \P(X = x)$.
 When $X$ is continuous and $Y$ is discrete, the roles swap:
 $\Pr(X \in B,\, Y = y) = \int_B \p(X = x,\, Y = y)\,dx$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-joint-density-mass-marginal}
+#### Marginal PMF from a joint density-mass function
+
+If $X$ and $Y$ have joint density-mass function $\p(X = x,\, Y = y)$,
+then for every $x$:
+
+$$\P(X = x) = \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy$$
+
+:::
+
+::: proof
+
+Every outcome has $Y(\omega) \in \mathbb{R}$,
+so $\set{Y \in \mathbb{R}} = \Omega$, and:
+
+$$
+\ba
+\P(X = x)
+&= \Pr(\set{X = x} \cap \Omega)
+&& \text{(} \set{X = x} \subseteq \Omega \text{)} \\
+&= \Pr(X = x,\, Y \in \mathbb{R})
+&& \text{(} \set{Y \in \mathbb{R}} = \Omega \text{)} \\
+&= \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy
+&& \text{(definition of a joint density-mass function, with } B = \mathbb{R} \text{)}
+\ea
+$$
 
 :::
 

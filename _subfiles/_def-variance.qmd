@@ -27,7 +27,7 @@ $$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 This is the more commonly seen form of the variance definition, and
 the canonical starting point in most treatments; it's given here as a
@@ -287,7 +287,7 @@ $$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 Alternate names include:
 the **conditional variance formula**,
@@ -349,7 +349,7 @@ $$\SD{X} \eqdef \sqrt{\Var{X}}$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The standard deviation is on the same scale as $X$ itself
 (unlike the variance, which is on the scale of $X$'s square),

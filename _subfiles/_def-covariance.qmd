@@ -203,10 +203,9 @@ $$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
-Dividing by the standard deviations removes the units of $X$ and $Y$,
-and the correlation always lies in $[-1, 1]$ [@CaseBerg01].
+Dividing by the standard deviations removes the units of $X$ and $Y$.
 This population correlation is a property of a joint distribution;
 the sample (Pearson) correlation coefficient computed from data estimates it.
 
@@ -250,10 +249,8 @@ $$\Cov{X,Y} = 0$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
-When $X$ and $Y$ also have positive variances,
-being uncorrelated is the same as having [correlation](#def-correlation) 0.
 @thm-indpt-uncorrelated says independent random variables are uncorrelated,
 and @exm-uncorrelated-not-indpt shows the converse fails.
 
@@ -268,6 +265,26 @@ In @exm-uncorrelated-not-indpt, $\Cov{X,Y} = 0$,
 so $X$ and $Y = X^2$ are uncorrelated.
 In @exm-alt-cov, $\Cov{X,Y} = 0.05 \neq 0$,
 so the binary exposure and outcome are not uncorrelated.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-uncorrelated-cor-zero}
+#### Uncorrelated means zero correlation
+
+If $X$ and $Y$ have finite, positive [variances](#def-variance),
+then $X$ and $Y$ are [uncorrelated](#def-uncorrelated)
+if and only if $\Cor{X,Y} = 0$.
+
+:::
+
+::: proof
+
+By @def-correlation, $\Cor{X,Y} = \Cov{X,Y} / \paren{\SD{X}\,\SD{Y}}$,
+and $\SD{X}\,\SD{Y} > 0$ because both variances are positive,
+so $\Cor{X,Y} = 0$ if and only if $\Cov{X,Y} = 0$,
+which is @def-uncorrelated.
 
 :::
 
@@ -371,7 +388,7 @@ Adding the four terms gives the result.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 Alternate names include:
 the **covariance decomposition formula**
@@ -645,11 +662,83 @@ $$
 
 :::
 
-::: notes
+{{< slidebreak >}}
 
-This corollary is why two variables' covariance matters for combining them:
-if $X$ and $Y$ are [independent](independence.qmd#def-indpt),
-then $\Cov{X,Y}=0$ (@thm-indpt-uncorrelated),
-and the variance of their sum is just the sum of their variances.
+:::{#cor-var-sum-indpt}
+#### Variance of a sum of independent random variables
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+each discrete or continuous,
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then:
+
+$$\Var{X + Y} = \Var{X} + \Var{Y}$$
+
+:::
+
+::: proof
+
+By @thm-indpt-uncorrelated, $\Cov{X,Y} = 0$.
+Applying @cor-var-lincom2 with $a = b = 1$:
+
+$$
+\ba
+\Var{X + Y}
+&= 1^2 \Var{X} + 1^2 \Var{Y} + 2(1 \cd 1) \Cov{X,Y}
+&& \text{(variance of a sum of two random variables)} \\
+&= \Var{X} + \Var{Y} + 2 \Cov{X,Y}
+&& \text{(simplify)} \\
+&= \Var{X} + \Var{Y}
+&& \text{(} \Cov{X,Y} = 0 \text{)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+@cor-var-lincom2 is why two variables' covariance matters for combining them:
+the covariance term is what separates the variance of their sum
+from the sum of their variances,
+and @cor-var-sum-indpt is the case where that term is 0.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cor-bounds}
+#### Correlation lies between $-1$ and $1$
+
+If $X$ and $Y$ have finite, positive [variances](#def-variance),
+then their [correlation](#def-correlation) lies in $[-1, 1]$ [@CaseBerg01]:
+
+$$-1 \le \Cor{X,Y} \le 1$$
+
+:::
+
+::: proof
+
+Write $\sigma_X \eqdef \SD{X} > 0$ and $\sigma_Y \eqdef \SD{Y} > 0$,
+and take either sign $\pm$ throughout.
+A variance is the expectation of a squared deviation,
+a non-negative random variable,
+so it is non-negative.
+Applying @cor-var-lincom2 with $a = 1/\sigma_X$ and $b = \pm 1/\sigma_Y$:
+
+$$
+\ba
+0
+&\le \Var{\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}}
+&& \text{(a variance is non-negative)} \\
+&= \frac{\Var{X}}{\sigma_X^2} + \frac{\Var{Y}}{\sigma_Y^2} \pm \frac{2 \Cov{X,Y}}{\sigma_X \sigma_Y}
+&& \text{(variance of a sum of two random variables)} \\
+&= 1 + 1 \pm \frac{2 \Cov{X,Y}}{\sigma_X \sigma_Y}
+&& \text{(definition of standard deviation: } \sigma_X^2 = \Var{X} \text{, } \sigma_Y^2 = \Var{Y} \text{)} \\
+&= 2 \pm 2 \Cor{X,Y}
+&& \text{(definition of correlation)}
+\ea
+$$
+
+With the $+$ sign, $0 \le 2 + 2 \Cor{X,Y}$ gives $\Cor{X,Y} \ge -1$.
+With the $-$ sign, $0 \le 2 - 2 \Cor{X,Y}$ gives $\Cor{X,Y} \le 1$.
 
 :::

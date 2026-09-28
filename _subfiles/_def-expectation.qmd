@@ -20,14 +20,53 @@ that is, when it is finite with $\abs{x}$ in place of $x$.
 
 :::
 
-::: notes
-
-A random variable whose expectation is not defined is not exotic:
-a random variable with density $\p(X=x) = \frac{1}{\pi(1 + x^2)}$
-(the standard Cauchy distribution) has none,
-because $\int_{-\infty}^{\infty} \abs{x} \cd \frac{1}{\pi(1 + x^2)}\,dx$ diverges.
+::: {.remark .notes}
 
 See also <https://en.wikipedia.org/wiki/Expected_value>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cauchy-no-mean}
+#### The standard Cauchy distribution has no expectation
+
+A random variable whose expectation is not defined is not exotic.
+Let $X$ have the standard Cauchy distribution,
+with density $\p(X=x) = \frac{1}{\pi(1 + x^2)}$ for every real $x$.
+For $x \ge 0$, $\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of
+$\abs{x} \cd \frac{1}{\pi(1 + x^2)} = \frac{x}{\pi(1 + x^2)}$,
+and for $x \le 0$, $-\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of
+$\abs{x} \cd \frac{1}{\pi(1 + x^2)} = \frac{-x}{\pi(1 + x^2)}$.
+So, integrating over each half-line:
+
+$$
+\ba
+\int_{0}^{\infty} \abs{x} \cd \frac{1}{\pi(1 + x^2)}\,dx
+&= \lim_{b \to \infty} \sb{\frac{1}{2\pi}\log(1 + x^2)}_{0}^{b}
+&& \text{(antiderivative on } [0, \infty) \text{)} \\
+&= \lim_{b \to \infty} \frac{1}{2\pi}\log(1 + b^2)
+&& \text{(evaluate at the bounds; } \log 1 = 0 \text{)} \\
+&= \infty
+&& \text{(} \log(1 + b^2) \to \infty \text{ as } b \to \infty \text{)}
+\ea
+$$
+
+$$
+\ba
+\int_{-\infty}^{0} \abs{x} \cd \frac{1}{\pi(1 + x^2)}\,dx
+&= \lim_{a \to -\infty} \sb{-\frac{1}{2\pi}\log(1 + x^2)}_{a}^{0}
+&& \text{(antiderivative on } (-\infty, 0] \text{)} \\
+&= \lim_{a \to -\infty} \frac{1}{2\pi}\log(1 + a^2)
+&& \text{(evaluate at the bounds; } \log 1 = 0 \text{)} \\
+&= \infty
+&& \text{(} \log(1 + a^2) \to \infty \text{ as } a \to -\infty \text{)}
+\ea
+$$
+
+Both halves diverge,
+so $\int_{-\infty}^{\infty} \abs{x} \cd \frac{1}{\pi(1 + x^2)}\,dx$ diverges,
+and by @def-expectation, $X$ has no expectation.
 
 :::
 
@@ -165,7 +204,7 @@ $$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 In other words, expectation is applied **element-wise** to a random matrix.
 

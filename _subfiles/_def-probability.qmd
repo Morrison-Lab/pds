@@ -2,7 +2,7 @@
 #### Finite additivity
 
 Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
-A function $\mu$ that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
+A function $\mu : \mathscr{S} \to [0, \infty]$
 is **finitely additive**
 if, for every finite collection of
 [pairwise disjoint](#def-mutually-exclusive) sets $A_1, \ldots, A_n$ in $\mathscr{S}$,
@@ -50,7 +50,7 @@ so $\mu$ is finitely additive.
 #### Countable additivity
 
 Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
-A function $\mu$ that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
+A function $\mu : \mathscr{S} \to [0, \infty]$
 is **countably additive**
 (also called **$\sigma$-additive**)
 if, for every sequence of
@@ -58,13 +58,6 @@ if, for every sequence of
 the value of their union is the sum of their values:
 
 $$\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)$$
-
-:::
-
-::: notes
-
-A sum of values in $[0, \infty]$ is either a finite number or $\infty$,
-so the right-hand side always has a value.
 
 :::
 
@@ -82,6 +75,59 @@ The infinite sum therefore has at most six nonzero terms,
 and finite additivity (@exm-finite-additivity) shows that those terms
 add up to $\mu$ of the union.
 So $\mu$ is countably additive.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#lem-nonneg-series}
+#### Sums of non-negative terms
+
+Let $a_1, a_2, \ldots$ be values in $[0, \infty]$,
+with partial sums $s_n \eqdef \sum_{i=1}^{n} a_i$,
+where $x + \infty = \infty$ for every $x$ in $[0, \infty]$.
+Then the partial sums are non-decreasing,
+$s_1 \le s_2 \le \cdots$,
+so their limit,
+the sum $\sum_{i=1}^{\infty} a_i = \lim_{n \to \infty} s_n$,
+always exists,
+and it is either a finite number or $\infty$.
+
+:::
+
+::: proof
+
+For each $n$:
+
+$$
+\ba
+s_{n+1}
+&= s_n + a_{n+1}
+&& \text{(definition of } s_{n+1} \text{)} \\
+&\ge s_n
+&& \text{(} a_{n+1} \ge 0 \text{)}
+\ea
+$$
+
+If some partial sum $s_N$ is $\infty$,
+then $s_n = \infty$ for every $n \ge N$,
+so the limit is $\infty$.
+Otherwise, the partial sums form a non-decreasing sequence of real numbers.
+If that sequence is bounded above,
+it converges to a finite number
+(see [Wikipedia: Monotone convergence theorem](https://en.wikipedia.org/wiki/Monotone_convergence_theorem)).
+If it is not bounded above,
+then for every number $M$ some $s_N$ exceeds $M$,
+and so does every later $s_n \ge s_N$;
+the limit is $\infty$.
+
+:::
+
+::: {.remark .notes}
+
+By @lem-nonneg-series,
+the right-hand side of the equation in @def-countable-additivity
+always has a value.
 
 :::
 
@@ -119,12 +165,70 @@ So $\mu(\emptyset)$ is 0 or $\infty$.
 
 :::
 
-::: notes
+{{< slidebreak >}}
 
-Both values occur.
-The counting function of @exm-countable-additivity has $\mu(\emptyset) = 0$,
-while the function with $\mu(A) = \infty$ for every $A$, including $\emptyset$,
-is countably additive, since both sides of the defining equation are $\infty$.
+:::{#exm-empty-set-zero}
+#### A countably additive function with $\mu(\emptyset) = 0$
+
+The counting function $\mu(A) \eqdef \abs{A}$ of @exm-countable-additivity
+is countably additive, and:
+
+$$
+\ba
+\mu(\emptyset)
+&= \abs{\emptyset}
+&& \text{(definition of } \mu \text{)} \\
+&= 0
+&& \text{(} \emptyset \text{ has no outcomes)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-empty-set-infinity}
+#### A countably additive function with $\mu(\emptyset) = \infty$
+
+For the die roll in @exm-sample-space,
+let $\mu(A) \eqdef \infty$
+for every set $A$ in the $\sigma$-algebra of all subsets of $\Omega$
+(@exm-sigma-algebra),
+including $A = \emptyset$.
+For any sequence of pairwise disjoint events $A_1, A_2, \ldots$,
+the left-hand side of the countable additivity equation is:
+
+$$
+\ba
+\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right)
+&= \infty
+&& \text{(definition of } \mu \text{)}
+\ea
+$$
+
+and the right-hand side,
+the limit of its partial sums (@lem-nonneg-series), is:
+
+$$
+\ba
+\sum_{i=1}^{\infty} \mu(A_i)
+&= \infty + \infty + \cdots
+&& \text{(definition of } \mu \text{)} \\
+&= \infty
+&& \text{(every partial sum is } \infty \text{)}
+\ea
+$$
+
+The two sides agree,
+so $\mu$ is countably additive,
+and $\mu(\emptyset) = \infty$.
+
+:::
+
+::: {.remark .notes}
+
+@exm-empty-set-zero and @exm-empty-set-infinity show that
+both values allowed by @lem-countable-additivity-empty occur.
 So $\mu(\emptyset) = 0$ is an extra requirement, not a consequence of countable additivity.
 
 :::
@@ -165,11 +269,88 @@ $$
 
 :::
 
-::: notes
+{{< slidebreak >}}
 
-The converse fails:
-there exist set functions that satisfy finite additivity
-but fail countable additivity
+:::{#exm-finite-not-countable}
+#### Finitely additive but not countably additive
+
+Let $S = \set{0, 1, 2, \ldots}$,
+with the $\sigma$-algebra of all subsets of $S$
+(@thm-power-set-sigma-algebra),
+and define:
+
+$$
+\mu(A) \eqdef \begin{cases}
+0 & \text{if } A \text{ is finite} \\
+\infty & \text{if } A \text{ is infinite}
+\end{cases}
+$$
+
+*$\mu$ is finitely additive.*
+Let $A_1, \ldots, A_n$ be pairwise disjoint subsets of $S$.
+If every $A_i$ is finite, then so is their union, and:
+
+$$
+\ba
+\mu(A_1 \cup \cdots \cup A_n)
+&= 0
+&& \text{(a finite union of finite sets is finite)} \\
+&= \sum_{i=1}^{n} 0
+&& \text{(a sum of zeros is 0)} \\
+&= \sum_{i=1}^{n} \mu(A_i)
+&& \text{(each } A_i \text{ is finite)}
+\ea
+$$
+
+If some $A_k$ is infinite,
+then the union, which contains $A_k$, is infinite too, and:
+
+$$
+\ba
+\mu(A_1 \cup \cdots \cup A_n)
+&= \infty
+&& \text{(the union is infinite)} \\
+&= \mu(A_k) + \sum_{i \neq k} \mu(A_i)
+&& \text{(} \mu(A_k) = \infty \text{, and } \infty + x = \infty \text{)} \\
+&= \sum_{i=1}^{n} \mu(A_i)
+&& \text{(regroup the terms)}
+\ea
+$$
+
+*$\mu$ is not countably additive.*
+The single-element sets $\set{0}, \set{1}, \set{2}, \ldots$
+are pairwise disjoint, and their union is $S$, which is infinite.
+So:
+
+$$
+\ba
+\mu\!\left(\bigcup_{k=0}^{\infty} \set{k}\right)
+&= \mu(S)
+&& \text{(the union is } S \text{)} \\
+&= \infty
+&& \text{(} S \text{ is infinite)}
+\ea
+$$
+
+but:
+
+$$
+\ba
+\sum_{k=0}^{\infty} \mu(\set{k})
+&= 0 + 0 + \cdots
+&& \text{(each } \set{k} \text{ is finite)} \\
+&= 0
+&& \text{(every partial sum is 0)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+@exm-finite-not-countable shows that the converse of @thm-countable-implies-finite fails,
+even when $\mu(\emptyset) = 0$:
+a finitely additive function need not be countably additive
 (see [Wikipedia: Sigma-additive set function --- An additive function which is not $\sigma$-additive](https://en.wikipedia.org/wiki/Sigma-additive_set_function#An_additive_function_which_is_not_%CF%83-additive)).
 
 :::
@@ -180,27 +361,11 @@ but fail countable additivity
 #### Measure
 
 A **measure** on a set $S$ with a [$\sigma$-algebra](#def-sigma-algebra) $\mathscr{S}$
-is a function $\mu$
-that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
-and satisfies:
+is a function $\mu : \mathscr{S} \to [0, \infty]$
+that satisfies:
 
 - $\mu(\emptyset) = 0$.
 - $\mu$ is [countably additive](#def-countable-additivity).
-
-:::
-
-::: notes
-
-A measure is also [finitely additive](#def-finite-additivity),
-by @thm-countable-implies-finite.
-A measure generalizes size:
-it can measure how many elements a set has,
-as in @def-counting-measure,
-or how long a set of real numbers is,
-as [Lebesgue measure](https://en.wikipedia.org/wiki/Lebesgue_measure) does,
-assigning each interval $[a, b]$ its length $b - a$.
-Both appear as reference measures in the
-[joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint).
 
 :::
 
@@ -221,11 +386,28 @@ so it is a measure.
 
 {{< slidebreak >}}
 
+:::{#cor-measure-finitely-additive}
+#### Measures are finitely additive
+
+Every [measure](#def-measure) is [finitely additive](#def-finite-additivity).
+
+:::
+
+::: proof
+
+A measure $\mu$ is countably additive and has $\mu(\emptyset) = 0$ (@def-measure),
+so @thm-countable-implies-finite applies to it.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-counting-measure}
 #### Counting measure
 
 The **counting measure** on a set $S$
-is the [measure](#def-measure) on the $\sigma$-algebra of all subsets of $S$
+is the [measure](#def-measure) on the
+[$\sigma$-algebra of all subsets of $S$](#thm-power-set-sigma-algebra)
 that assigns each finite set its number of elements,
 and each infinite set the value $\infty$:
 
@@ -253,6 +435,19 @@ $\sum_{k=0}^{\infty} \mu(\set{2k}) = 1 + 1 + \cdots = \infty$.
 
 :::
 
+::: {.remark .notes}
+
+A [measure](#def-measure) generalizes size:
+it can measure how many elements a set has,
+as in @def-counting-measure,
+or how long a set of real numbers is,
+as [Lebesgue measure](https://en.wikipedia.org/wiki/Lebesgue_measure) does,
+assigning each interval $[a, b]$ its length $b - a$.
+Both appear as reference measures in the
+[joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint).
+
+:::
+
 {{< slidebreak >}}
 
 :::{#def-probability}
@@ -264,19 +459,6 @@ is a [measure](#def-measure) on the [events](#def-event) of $\Omega$
 that gives the whole sample space probability 1:
 
 $$\Pr(\Omega) = 1$$
-
-:::
-
-::: notes
-
-A probability measure is also [finitely additive](#def-finite-additivity),
-by @thm-countable-implies-finite.
-Requiring countable additivity, not just finite additivity,
-enables results such as
-the continuity of probability
-(if $A_1 \supseteq A_2 \supseteq \cdots$ with $\bigcap_i A_i = \emptyset$,
-then $\Pr(A_i) \to 0$),
-and it is what makes sums over countably infinite [partitions](#def-partition) valid.
 
 :::
 
@@ -293,6 +475,119 @@ so it is a [measure](#def-measure) on the events of $\Omega$,
 and it gives $\Pr(\Omega) = 6/6 = 1$.
 The event "the roll is even" from @exm-event has probability
 $\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-probability-finitely-additive}
+#### Probability measures are finitely additive
+
+Every [probability measure](#def-probability) is [finitely additive](#def-finite-additivity):
+for any [mutually exclusive](#def-mutually-exclusive) events $A_1, \ldots, A_n$,
+
+$$\Pr(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \Pr(A_i)$$
+
+:::
+
+::: proof
+
+A probability measure is a measure (@def-probability),
+so @cor-measure-finitely-additive applies to it.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-continuity-probability}
+#### Continuity of probability
+
+If $A_1 \supseteq A_2 \supseteq \cdots$ are events
+with $\bigcap_{i=1}^{\infty} A_i = \emptyset$,
+then:
+
+$$\lim_{n \to \infty} \Pr(A_n) = 0$$
+
+:::
+
+::: proof
+
+For each $i$, let $B_i \eqdef A_i \setminus A_{i+1}$,
+the outcomes in $A_i$ but not in $A_{i+1}$.
+Each $B_i = A_i \cap (\Omega \setminus A_{i+1})$ is an event,
+by @thm-sigma-algebra-closure.
+
+*The $B_i$ are pairwise disjoint.*
+For $i < j$,
+$B_j \subseteq A_j \subseteq A_{i+1}$,
+while $B_i$ has no outcomes in $A_{i+1}$,
+so $B_i \cap B_j = \emptyset$.
+
+*$A_n = \bigcup_{i=n}^{\infty} B_i$ for each $n$.*
+For $i \ge n$, $B_i \subseteq A_i \subseteq A_n$,
+so the union is contained in $A_n$.
+Conversely, let $\omega \in A_n$.
+Since $\bigcap_{i} A_i = \emptyset$,
+$\omega$ is not in every $A_i$;
+since the $A_i$ are nested,
+the indices $i$ with $\omega \in A_i$ are $1, \ldots, m$ for some $m \ge n$.
+Then $\omega \in A_m$ and $\omega \notin A_{m+1}$,
+so $\omega \in B_m$.
+
+*$\Pr(A_1)$ is finite.*
+The events $A_1$ and $\Omega \setminus A_1$ are disjoint with union $\Omega$,
+so @cor-probability-finitely-additive applies to them:
+
+$$
+\ba
+\Pr(A_1)
+&\le \Pr(A_1) + \Pr(\Omega \setminus A_1)
+&& \text{(} \Pr(\Omega \setminus A_1) \ge 0 \text{)} \\
+&= \Pr(\Omega)
+&& \text{(finite additivity of } \Pr \text{)} \\
+&= 1
+&& \text{(definition of a probability measure)}
+\ea
+$$
+
+*The limit.*
+For each $n$:
+
+$$
+\ba
+\Pr(A_n)
+&= \Pr\!\left(\bigcup_{i=n}^{\infty} B_i\right)
+&& \text{(} A_n = \bigcup_{i=n}^{\infty} B_i \text{)} \\
+&= \sum_{i=n}^{\infty} \Pr(B_i)
+&& \text{(countable additivity; the } B_i \text{ are pairwise disjoint)}
+\ea
+$$
+
+With $n = 1$, this says the series $\sum_{i=1}^{\infty} \Pr(B_i)$
+has the finite total $\Pr(A_1)$.
+So, for $n \ge 2$:
+
+$$
+\ba
+\Pr(A_n)
+&= \sum_{i=1}^{\infty} \Pr(B_i) - \sum_{i=1}^{n-1} \Pr(B_i)
+&& \text{(split off the first } n - 1 \text{ terms; the total is finite)} \\
+&= \Pr(A_1) - \sum_{i=1}^{n-1} \Pr(B_i)
+&& \text{(the case } n = 1 \text{)}
+\ea
+$$
+
+As $n \to \infty$,
+the partial sums $\sum_{i=1}^{n-1} \Pr(B_i)$ converge to the total $\Pr(A_1)$,
+so $\Pr(A_n) \to \Pr(A_1) - \Pr(A_1) = 0$.
+
+:::
+
+::: {.remark .notes}
+
+Requiring countable additivity, not just finite additivity,
+enables results such as @thm-continuity-probability,
+and it is what makes sums over countably infinite [partitions](#def-partition) valid.
 
 :::
 
@@ -335,7 +630,7 @@ With axiom 2, $\Pr$ is a probability measure (@def-probability).
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 Many sources define a probability measure by these three axioms instead;
 the theorem shows that the two definitions agree.
