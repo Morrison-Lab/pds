@@ -11,3 +11,12 @@ format:
 ---
 
 {{< include pds/_notation.qmd >}}
+
+# Stochastic vs. probabilistic vs. random {#sec-stochastic-probabilistic-random}
+
+{{< include pds/_subfiles/_sec-stochastic-probabilistic-random.qmd >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::
