@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 00:54:47 (PDT)
+Last modified: 2026-09-28 00:57:21 (PDT)
 
 # 1 Key probability distributions
 
@@ -238,7 +238,7 @@ We can use \\t\\ to represent continuous-valued exposures/observation durations,
 >
 > \\\lambda \stackrel{\text{def}}{=}\frac{\mu}{t} \tag{3}\\
 
-Event rate is somewhat analogous to odds in binary outcome models; it typically serves as an intermediate transformation between the mean of the outcome and the linear component of the model. However, in contrast with the odds function, the transformation \\\lambda = \mu/t\\ is *not* considered part of the Poisson model’s link function, and it treats the exposure magnitude covariate differently from the other covariates.
+Event rate is somewhat analogous to odds for a binary outcome: both are transformations of the mean. The event rate removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. In count regression models, the transformation \\\lambda = \mu/t\\ is not part of the model’s link function, and the exposure magnitude is handled differently from the other covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
@@ -300,7 +300,17 @@ The hypothesis carries the content here. [Definition 4](#def-event-rate) alone 
 
 > **NOTE:**
 >
-> **Definition 5 (Offset)** When the linear component of a model involves a term without an unknown coefficient, that term is called an **offset**.
+> **Definition 5 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 5](#thm-exposure-log-scale)),
+>
+> \\\log{\mu} = \log{\lambda} + \log{t},\\
+>
+> is called the **offset**: it shifts \\\log{\mu}\\ by a known amount, with no unknown coefficient to estimate.
+
+The offset needs no covariates: with a single exposure \\t\\ and an unknown rate \\\lambda\\, \\\log{t}\\ is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+
+> **NOTE:**
+>
+> **Example 7 (The offset for a clinic’s event count)** In [Example 6](#exm-exposure-log-scale), the clinic was observed for \\t = 30\\ days, so the offset is \\\log{30} \approx 3.401\\. Only \\\log{\lambda}\\ is unknown before the data are seen; the offset is fixed by the length of observation. A clinic observed for \\t = 60\\ days has offset \\\log{60} \approx 4.094\\, which raises \\\log{\mu}\\ by \\\log{2} \approx 0.693\\ at the same event rate.
 
 > **NOTE:**
 >
@@ -316,7 +326,7 @@ The hypothesis carries the content here. [Definition 4](#def-event-rate) alone 
 
 > **NOTE:**
 >
-> **Example 7 (Aggregating independent region counts)** Suppose Region A records \\X \sim \operatorname{Pois}(\mu_X = 12)\\ cases and Region B records \\Y \sim \operatorname{Pois}(\mu_Y = 18)\\ cases independently. By [Theorem 6](#thm-sum-pois), the combined total count \\Z = X + Y\\ follows a Poisson distribution:
+> **Example 8 (Aggregating independent region counts)** Suppose Region A records \\X \sim \operatorname{Pois}(\mu_X = 12)\\ cases and Region B records \\Y \sim \operatorname{Pois}(\mu_Y = 18)\\ cases independently. By [Theorem 6](#thm-sum-pois), the combined total count \\Z = X + Y\\ follows a Poisson distribution:
 >
 > \\ \begin{aligned} Z &\sim \operatorname{Pois}(\mu_X + \mu_Y) && (\text{sum of independent Poissons}) \\ &= \operatorname{Pois}(12 + 18) && (\text{substitute region means}) \\ &= \operatorname{Pois}(30) && (\text{evaluate sum}) \end{aligned} \\
 
@@ -353,7 +363,7 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 
 > **NOTE:**
 >
-> **Example 8 (Overdispersion relative to the Poisson)** With \\\mu = 4\\ and \\\rho = 2\\, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 4 + 16/2 = 12\\, three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
+> **Example 9 (Overdispersion relative to the Poisson)** With \\\mu = 4\\ and \\\rho = 2\\, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 4 + 16/2 = 12\\, three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
 
 ## 1.4 Weibull distribution
 
@@ -385,7 +395,7 @@ When \\\alpha=1\\, the Weibull distribution reduces to the exponential distribut
 
 > **NOTE:**
 >
-> **Example 9 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 8](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
+> **Example 10 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 8](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
 
 # 2 The Central Limit Theorem
 
@@ -405,7 +415,7 @@ In practice, the theorem justifies approximating \\S_n\\ by a normal distributio
 
 > **NOTE:**
 >
-> **Example 10 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\, which is flat, not bell-shaped ([Figure 3](#fig-clt-1d6)). Its mean is \\\mu = 3.5\\, and its variance is \\\sigma^2= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\\.
+> **Example 11 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\, which is flat, not bell-shaped ([Figure 3](#fig-clt-1d6)). Its mean is \\\mu = 3.5\\, and its variance is \\\sigma^2= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\\.
 >
 > Code
 >
