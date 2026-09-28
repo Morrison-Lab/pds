@@ -2,7 +2,7 @@
 #### Finite additivity
 
 Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
-A function $\mu$ that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
+A function $\mu : \mathscr{S} \to [0, \infty]$
 is **finitely additive**
 if, for every finite collection of
 [pairwise disjoint](#def-mutually-exclusive) sets $A_1, \ldots, A_n$ in $\mathscr{S}$,
@@ -50,7 +50,7 @@ so $\mu$ is finitely additive.
 #### Countable additivity
 
 Let $\mathscr{S}$ be a [$\sigma$-algebra](#def-sigma-algebra) on a set $S$.
-A function $\mu$ that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
+A function $\mu : \mathscr{S} \to [0, \infty]$
 is **countably additive**
 (also called **$\sigma$-additive**)
 if, for every sequence of
@@ -58,6 +58,23 @@ if, for every sequence of
 the value of their union is the sum of their values:
 
 $$\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-countable-additivity}
+#### Counting outcomes is countably additive
+
+For the counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
+take any sequence of pairwise disjoint events $A_1, A_2, \ldots$.
+No two of them share an outcome, and $\Omega$ has only six outcomes,
+so at most six of the $A_i$ contain any outcomes;
+the rest are $\emptyset$, with $\mu(\emptyset) = 0$.
+The infinite sum therefore has at most six nonzero terms,
+and finite additivity (@exm-finite-additivity) shows that those terms
+add up to $\mu$ of the union.
+So $\mu$ is countably additive.
 
 :::
 
@@ -111,23 +128,6 @@ the limit is $\infty$.
 By @lem-nonneg-series,
 the right-hand side of the equation in @def-countable-additivity
 always has a value.
-
-:::
-
-{{< slidebreak >}}
-
-:::{#exm-countable-additivity}
-#### Counting outcomes is countably additive
-
-For the counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
-take any sequence of pairwise disjoint events $A_1, A_2, \ldots$.
-No two of them share an outcome, and $\Omega$ has only six outcomes,
-so at most six of the $A_i$ contain any outcomes;
-the rest are $\emptyset$, with $\mu(\emptyset) = 0$.
-The infinite sum therefore has at most six nonzero terms,
-and finite additivity (@exm-finite-additivity) shows that those terms
-add up to $\mu$ of the union.
-So $\mu$ is countably additive.
 
 :::
 
@@ -361,12 +361,26 @@ a finitely additive function need not be countably additive
 #### Measure
 
 A **measure** on a set $S$ with a [$\sigma$-algebra](#def-sigma-algebra) $\mathscr{S}$
-is a function $\mu$
-that assigns a value $\mu(A) \in [0, \infty]$ to each set $A$ in $\mathscr{S}$
-and satisfies:
+is a function $\mu : \mathscr{S} \to [0, \infty]$
+that satisfies:
 
 - $\mu(\emptyset) = 0$.
 - $\mu$ is [countably additive](#def-countable-additivity).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-measure}
+#### Counting outcomes is a measure
+
+The counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
+defined on the $\sigma$-algebra of all subsets of the die's sample space
+(@exm-sigma-algebra),
+takes values in $[0, \infty]$,
+is countably additive (@exm-countable-additivity),
+and gives $\mu(\emptyset) = 0$,
+so it is a measure.
 
 :::
 
@@ -383,21 +397,6 @@ Every [measure](#def-measure) is [finitely additive](#def-finite-additivity).
 
 A measure $\mu$ is countably additive and has $\mu(\emptyset) = 0$ (@def-measure),
 so @thm-countable-implies-finite applies to it.
-
-:::
-
-{{< slidebreak >}}
-
-:::{#exm-measure}
-#### Counting outcomes is a measure
-
-The counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
-defined on the $\sigma$-algebra of all subsets of the die's sample space
-(@exm-sigma-algebra),
-takes values in $[0, \infty]$,
-is countably additive (@exm-countable-additivity),
-and gives $\mu(\emptyset) = 0$,
-so it is a measure.
 
 :::
 
