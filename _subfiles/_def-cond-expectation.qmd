@@ -470,3 +470,218 @@ As a check, evaluating at $x = `r x0`$ recovers @exm-cond-expectation's result:
 $$g(`r x0`) = `r round(intercept, 4)` + `r round(beta, 4)` \times `r x0` = `r round(intercept + beta*x0, 2)` \text{ g}$$
 
 :::
+
+{{< slidebreak >}}
+
+:::{#def-cond-expectation-general}
+
+#### Conditional expectation of a function of $X$ and $Y$
+
+Let $X$ and $Y$ be jointly distributed random variables,
+$h$ a function of two arguments,
+and $x$ a value at which the conditional PMF or PDF of $Y$ given $X = x$ is defined
+(@def-cond-pmf, @def-cond-pdf, or @def-cond-mixed).
+The **conditional expectation** of $h(X, Y)$ given $X = x$ is,
+for discrete $Y$:
+
+$$\E{h(X, Y) \mid X = x} \eqdef \sum_{y \in \rangef{Y}} h(x, y) \cd \P(Y = y \mid X = x)$$
+
+and for continuous $Y$:
+
+$$\E{h(X, Y) \mid X = x} \eqdef \int_{y \in \rangef{Y}} h(x, y) \cd \p(Y = y \mid X = x)\,dy$$
+
+when the sum or integral converges absolutely.
+Evaluating this function of $x$ at $X$ gives the random variable $\E{h(X, Y) \mid X}$.
+
+:::
+
+::: notes
+
+With $h(x, y) = y$, this definition is @def-cond-expectation.
+It is the conditional version of [LOTUS](#thm-lotus):
+for discrete $X$, it is LOTUS applied under the probability measure $\Pr(\cdot \mid X = x)$,
+so it agrees with @def-cond-expectation applied to the random variable $W = h(X, Y)$,
+and results about $\E{W \mid X}$ apply to it.
+$Y$ can also be a pair $(Y, Z)$, with the sum or integral taken over both.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cond-expectation-general}
+
+#### The second flip, given the first
+
+In the [joint PMF of two coin flips](random-variables.qmd#exm-joint-pmf),
+write $X$ for the first flip and $Y$ for the total number of heads.
+Given $X = 1$, $Y$ is $1$ or $2$ with conditional probability $1/2$ each,
+and $Y - X$ is the second flip.
+With $h(x, y) = (y - x)^2$:
+
+$$
+\ba
+\E{(Y - X)^2 \mid X = 1}
+&= (1 - 1)^2 \cd \tfrac{1}{2} + (2 - 1)^2 \cd \tfrac{1}{2}
+&& \text{(definition, with } x = 1 \text{)} \\
+&= 0 + \tfrac{1}{2}
+&& \text{(evaluate each term)} \\
+&= \tfrac{1}{2}
+&& \text{(add)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cond-linearity}
+
+#### Linearity of conditional expectation
+
+For jointly distributed $X$ and $Y$,
+functions $h_1$ and $h_2$ whose conditional expectations given $X = x$ are defined,
+and constants $a$ and $b$:
+
+$$\E{a h_1(X, Y) + b h_2(X, Y) \mid X = x} = a\E{h_1(X, Y) \mid X = x} + b\E{h_2(X, Y) \mid X = x}$$
+
+Evaluating both sides at $X$ gives
+$\E{a h_1(X, Y) + b h_2(X, Y) \mid X} = a\E{h_1(X, Y) \mid X} + b\E{h_2(X, Y) \mid X}$.
+
+:::
+
+::: proof
+
+For discrete $Y$:
+
+$$
+\ba
+&\E{a h_1(X, Y) + b h_2(X, Y) \mid X = x}
+\\&= \sum_{y} \paren{a h_1(x, y) + b h_2(x, y)} \cd \P(Y = y \mid X = x)
+&& \text{(definition of conditional expectation)} \\
+&= a \sum_{y} h_1(x, y) \cd \P(Y = y \mid X = x) + b \sum_{y} h_2(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(split the sum; factor out the constants)} \\
+&= a\E{h_1(X, Y) \mid X = x} + b\E{h_2(X, Y) \mid X = x}
+&& \text{(definition of conditional expectation)}
+\ea
+$$
+
+Splitting the sum is valid because both sums converge absolutely.
+For continuous $Y$, the same steps hold with integrals over $y$ in place of the sums,
+by linearity of the integral:
+unlike @thm-linearity-expectation, only one variable, $y$, is integrated,
+against one conditional density.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cond-linearity}
+
+#### Linearity, given the first flip
+
+Continuing @exm-cond-expectation-general,
+given $X = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each,
+so $\E{Y \mid X = 1} = 3/2$ and $\E{Y^2 \mid X = 1} = (1 + 4)/2 = 5/2$.
+By @thm-cond-linearity with $a = b = 1$:
+
+$$
+\ba
+\E{Y + Y^2 \mid X = 1}
+&= \E{Y \mid X = 1} + \E{Y^2 \mid X = 1}
+&& \text{(linearity of conditional expectation)} \\
+&= \tfrac{3}{2} + \tfrac{5}{2}
+&& \text{(substitute)} \\
+&= 4
+&& \text{(add)}
+\ea
+$$
+
+As a check, directly: $(1 + 1) \cd \tfrac{1}{2} + (2 + 4) \cd \tfrac{1}{2} = 1 + 3 = 4$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cond-pull-out}
+
+#### A function of $X$ factors out of a conditional expectation given $X$
+
+For jointly distributed $X$ and $Y$,
+a function $g$ of one argument,
+and a function $h$ of two arguments
+whose conditional expectation given $X = x$ is defined:
+
+$$\E{g(X)\,h(X, Y) \mid X = x} = g(x) \cd \E{h(X, Y) \mid X = x}$$
+
+Evaluating both sides at $X$ gives
+$\E{g(X)\,h(X, Y) \mid X} = g(X) \cd \E{h(X, Y) \mid X}$.
+In particular, taking $h = 1$ gives $\E{g(X) \mid X} = g(X)$.
+
+:::
+
+::: proof
+
+For discrete $Y$:
+
+$$
+\ba
+\E{g(X)\,h(X, Y) \mid X = x}
+&= \sum_{y} g(x)\,h(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(definition of conditional expectation)} \\
+&= g(x) \sum_{y} h(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(} g(x) \text{ does not depend on } y \text{)} \\
+&= g(x) \cd \E{h(X, Y) \mid X = x}
+&& \text{(definition of conditional expectation)}
+\ea
+$$
+
+For $h = 1$, the remaining sum is $\sum_{y} \P(Y = y \mid X = x) = 1$:
+
+$$
+\ba
+\sum_{y} \P(Y = y \mid X = x)
+&= \sum_{y} \frac{\P(X = x,\, Y = y)}{\P(X = x)}
+&& \text{(definition of the conditional PMF)} \\
+&= \frac{\P(X = x)}{\P(X = x)}
+&& \text{(marginal PMF from a joint PMF)} \\
+&= 1
+&& \text{(divide)}
+\ea
+$$
+
+For continuous $Y$, the same steps hold with integrals over $y$ in place of the sums;
+the conditional density integrates to 1 by
+[the marginal density theorem](random-variables.qmd#thm-marginal-density)
+(or, in the mixed case, by [the joint density-mass function's](random-variables.qmd#def-joint-density-mass) marginal identity).
+
+:::
+
+::: notes
+
+This result is often summarized as "taking out what is known":
+given $X = x$, any function of $X$ is the known constant $g(x)$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cond-pull-out}
+
+#### Taking out the first flip
+
+Continuing @exm-cond-linearity, with $g(x) = x$ and $h(x, y) = y$:
+
+$$
+\ba
+\E{XY \mid X = 1}
+&= 1 \cd \E{Y \mid X = 1}
+&& \text{(a function of } X \text{ factors out)} \\
+&= \tfrac{3}{2}
+&& \text{(substitute } \E{Y \mid X = 1} = \tfrac{3}{2} \text{)}
+\ea
+$$
+
+and $\E{XY \mid X = 0} = 0 \cd \E{Y \mid X = 0} = 0$.
+As a check, given $X = 1$ the product $XY$ equals $Y$, which is $1$ or $2$ with probability $1/2$ each.
+
+:::

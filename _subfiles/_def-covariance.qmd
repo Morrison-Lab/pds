@@ -120,8 +120,10 @@ $$
 
 The two middle terms are 0,
 by the same steps as the cross term in the proof of @thm-total-variance:
-condition on $X$, factor out the term that is constant given $X$,
-and use $\E{Y - m_Y(X) \mid X} = 0$ (or $\E{Z - m_Z(X) \mid X} = 0$).
+condition on $X$ by the [law of iterated expectations](expectation.qmd#thm-lie),
+factor out the function of $X$ ([pull-out property](expectation.qmd#thm-cond-pull-out)),
+and use $\E{Y - m_Y(X) \mid X} = 0$ (or $\E{Z - m_Z(X) \mid X} = 0$),
+which follows from [linearity of conditional expectation](expectation.qmd#thm-cond-linearity).
 For the first term:
 
 $$
