@@ -80,11 +80,15 @@ pander::pander(data.frame(
 ))
 ```
 
-With $p = `r p`$, summing $y$ first then $x$,
-and summing $x$ first then $y$,
-agree with each other and with the closed form
-$\frac{2p}{1-p} = `r round(exact_sum, 4)`$ up to truncation error
---- exactly Tonelli's guarantee.
+With $p = `r p`$, the truncated sums
+agree with the closed form
+$\frac{2p}{1-p} = `r round(exact_sum, 4)`$ up to truncation error,
+which confirms the closed form.
+They cannot illustrate Tonelli's guarantee, though:
+each truncation is a finite sum,
+and a finite sum gives the same total in either order,
+whether or not the infinite sums would agree.
+That the infinite sums agree is what Tonelli's theorem supplies.
 
 ::::
 
