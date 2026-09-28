@@ -22,7 +22,6 @@ Rolling a six-sided die once has sample space $\Omega = \set{1, 2, 3, 4, 5, 6}$.
 
 An **event** is a subset of the [sample space](#def-sample-space) $\Omega$:
 a set of outcomes.
-An event $A$ **occurs** when the experiment's outcome is in $A$.
 
 :::
 
@@ -49,11 +48,34 @@ the event "the roll is even" is $A = \set{2, 4, 6}$.
 
 {{< slidebreak >}}
 
+:::{#def-occurs}
+#### Occurrence of an event
+
+An [event](#def-event) $A$ **occurs**
+when the outcome of the experiment is in $A$,
+and does not occur when the outcome is not in $A$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-occurs}
+#### Rolling a 4
+
+In @exm-event, if the die shows 4,
+the event "the roll is even", $\set{2, 4, 6}$, occurs,
+because $4 \in \set{2, 4, 6}$,
+and the event "the roll is at most 2", $\set{1, 2}$, does not occur.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-complement}
 #### Complement of an event
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
-is the event that $A$ does not occur:
+is the event that $A$ does not [occur](#def-occurs):
 the set of outcomes in the sample space $\Omega$ that are not in $A$.
 
 $$\neg A \eqdef \Omega \setminus A$$
