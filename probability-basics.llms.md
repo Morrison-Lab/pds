@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 15:15:49 (PDT)
+Last modified: 2026-09-28 15:22:34 (PDT)
 
 ## 1 Defining probabilities
 
@@ -166,18 +166,11 @@ A measure is also [finitely additive](#def-finite-additivity), by [Theorem 1](#
 
 > **NOTE:**
 >
-> **Definition 12 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a function that assigns a number \\\Pr(A)\\ to each [event](#def-event) \\A\\ and satisfies:
+> **Definition 12 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1:
 >
-> - \\\Pr\\ is a [measure](#def-measure) on the events of \\\Omega\\.
-> - The whole sample space has probability 1: \\\Pr(\Omega) = 1\\.
+> \\\Pr(\Omega) = 1\\
 
-Many sources state this definition as three axioms instead (the Kolmogorov axioms):
-
-1.  For any event \\A\\, \\\Pr(A) \ge 0\\.
-2.  The probability of the whole sample space is 1: \\\Pr(\Omega) = 1\\
-3.  \\\Pr\\ is [countably additive](#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\\Pr\\\left(\bigcup\_{i=1}^{\infty} A_i\right) = \sum\_{i=1}^{\infty} \Pr(A_i)\\
-
-The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but they imply it: applying property 3 to \\\Omega, \emptyset, \emptyset, \ldots\\ gives \\1 = 1 + \sum\_{i=2}^{\infty} \Pr(\emptyset)\\, so \\\Pr(\emptyset) = 0\\. A probability measure is also [finitely additive](#def-finite-additivity), by [Theorem 1](#thm-countable-implies-finite). Requiring countable additivity, not just finite additivity, enables results such as the continuity of probability (if \\A_1 \supseteq A_2 \supseteq \cdots\\ with \\\bigcap_i A_i = \emptyset\\, then \\\Pr(A_i) \to 0\\), and it is what makes sums over countably infinite [partitions](#def-partition) valid.
+A probability measure is also [finitely additive](#def-finite-additivity), by [Theorem 1](#thm-countable-implies-finite). Requiring countable additivity, not just finite additivity, enables results such as the continuity of probability (if \\A_1 \supseteq A_2 \supseteq \cdots\\ with \\\bigcap_i A_i = \emptyset\\, then \\\Pr(A_i) \to 0\\), and it is what makes sums over countably infinite [partitions](#def-partition) valid.
 
 > **NOTE:**
 >
@@ -185,7 +178,23 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Theorem 2 (Probability of a subset’s intersection)** If \\A\\ and \\B\\ are events and \\A\subseteq B\\, then \\\Pr(A \cap B) = \Pr(A)\\.
+> **Theorem 2 (Kolmogorov axioms)** A function \\\Pr\\ that assigns a real number \\\Pr(A)\\ to each [event](#def-event) \\A\\ of a sample space \\\Omega\\ is a [probability measure](#def-probability) if and only if it satisfies:
+>
+> 1.  For any event \\A\\, \\\Pr(A) \ge 0\\.
+> 2.  The probability of the whole sample space is 1: \\\Pr(\Omega) = 1\\
+> 3.  \\\Pr\\ is [countably additive](#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\\Pr\\\left(\bigcup\_{i=1}^{\infty} A_i\right) = \sum\_{i=1}^{\infty} \Pr(A_i)\\
+
+> **NOTE:**
+>
+> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](#def-measure), so its values lie in \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 12](#def-probability).
+>
+> Conversely, suppose \\\Pr\\ satisfies the three axioms. By axiom 1, \\\Pr\\ takes values in \\\[0, \infty\]\\, so axiom 3 says \\\Pr\\ is countably additive in the sense of [Definition 9](#def-countable-additivity). Then, by [Lemma 1](#lem-countable-additivity-empty), \\\Pr(\emptyset)\\ is 0 or \\\infty\\; \\\Pr(\emptyset)\\ is a real number, so \\\Pr(\emptyset) = 0\\. So \\\Pr\\ satisfies both conditions of [Definition 10](#def-measure) (\\\Pr(\emptyset) = 0\\ and countable additivity) and is a measure on the events of \\\Omega\\. With axiom 2, \\\Pr\\ is a probability measure ([Definition 12](#def-probability)).
+
+Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 (see [Wikipedia: Probability axioms](https://en.wikipedia.org/wiki/Probability_axioms)). The axiom form does not list \\\Pr(\emptyset) = 0\\; the proof above derives it.
+
+> **NOTE:**
+>
+> **Theorem 3 (Probability of a subset’s intersection)** If \\A\\ and \\B\\ are events and \\A\subseteq B\\, then \\\Pr(A \cap B) = \Pr(A)\\.
 
 > **NOTE:**
 >
@@ -193,7 +202,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Theorem 3 (An event and its complement sum to 1)** For any event \\A\\ and its [complement](#def-complement) \\\neg A\\:
+> **Theorem 4 (An event and its complement sum to 1)** For any event \\A\\ and its [complement](#def-complement) \\\neg A\\:
 >
 > \\\Pr(A) + \Pr(\neg A) = 1\\
 
@@ -211,7 +220,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> *Proof*. Subtract \\\Pr(A)\\ from both sides of [Theorem 3](#thm-total-prob-1).
+> *Proof*. Subtract \\\Pr(A)\\ from both sides of [Theorem 4](#thm-total-prob-1).
 
 > **NOTE:**
 >
@@ -243,7 +252,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Theorem 4 (Law of conditional probability)** For any two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\:
+> **Theorem 5 (Law of conditional probability)** For any two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\:
 >
 > \\\Pr(A \cap B) = \Pr(A \mid B) \cdot\Pr(B)\\
 
@@ -257,31 +266,31 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 >
 > **Example 15 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
-> Then, by [Theorem 4](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
+> Then, by [Theorem 5](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
 > \\ \begin{aligned} \Pr(L \cap E) &= \Pr(L \mid E) \cdot\Pr(E) && \text{(law of conditional probability)} \\ &= 0.60 \cdot 0.30 && \text{(substitute the given values)} \\ &= 0.18 && \text{(multiply)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 5 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\:
+> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\:
 >
 > \\\Pr(A) = \sum\_{i} \Pr(A \mid B_i) \cdot\Pr(B_i)\\
 
 > **NOTE:**
 >
-> *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By countable additivity ([Definition 9](#def-countable-additivity)), and then by [Theorem 4](#thm-law-conditional-prob):
+> *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By countable additivity ([Definition 9](#def-countable-additivity)), and then by [Theorem 5](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A) &= \sum\_{i} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)} \\&= \sum\_{i} \Pr(A \mid B_i) \cdot\Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) \> 0 \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 6 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\:
+> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\:
 >
 > \\\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\\
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 13](#def-conditional-prob) and [Theorem 4](#thm-law-conditional-prob):
+> *Proof*. By [Definition 13](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(B \cap A)}{\Pr(B)} && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\ &= \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} && \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)} \end{aligned} \\
 
@@ -295,7 +304,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 > - \\\Pr(\neg + \mid \neg D) = 0.99\\ (specificity), so the false positive rate is \\\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01\\
 > - \\\Pr(D) = 0.07\\ (prevalence)
 >
-> By [Theorem 6](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition \\\\D, \neg D\\\\:
+> By [Theorem 7](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition \\\\D, \neg D\\\\:
 >
 > \\ \begin{aligned} \Pr(D \mid +) &= \frac{\Pr(+ \mid D) \cdot\Pr(D)}{\Pr(+)} && \text{(Bayes' theorem)} \\ &= \frac{\Pr(+ \mid D) \cdot\Pr(D)}{\Pr(+ \mid D) \cdot\Pr(D) + \Pr(+ \mid \neg D) \cdot\Pr(\neg D)} && \text{(law of total probability)} \\ &= \frac{0.99 \cdot 0.07}{0.99 \cdot 0.07 + 0.01 \cdot 0.93} && \text{(substitute the given values)} \\ &= \frac{0.0693}{0.0693 + 0.0093} && \text{(multiply each term in the numerator and denominator)} \\ &= \frac{0.0693}{0.0786} && \text{(add the denominator's two terms)} \\ &\approx 0.88 && \text{(divide)} \end{aligned} \\
 >
