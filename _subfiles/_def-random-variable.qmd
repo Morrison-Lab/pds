@@ -112,7 +112,7 @@ A random variable $X$ has the **uniform distribution** on an interval $[\alpha, 
 with $\alpha < \beta$,
 written $X \sim \text{Uniform}(\alpha, \beta)$,
 if the probability that $X$ falls in any subinterval of $[\alpha, \beta]$
-is proportional to that subinterval's length:
+is proportional to the length of that subinterval:
 
 $$\Pr(a \le X \le b) = \frac{b - a}{\beta - \alpha} \quad \text{for all } \alpha \le a \le b \le \beta$$
 
