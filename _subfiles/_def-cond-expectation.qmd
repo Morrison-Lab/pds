@@ -1,5 +1,3 @@
-## Conditional distributions and expectations
-
 :::{#def-cond-pmf}
 
 #### Conditional probability mass function

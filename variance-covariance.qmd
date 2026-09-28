@@ -1,0 +1,36 @@
+---
+title: "Variance and covariance"
+format:
+  html: default
+  revealjs:
+    output-file: variance-covariance-slides.html
+  pdf:
+    output-file: variance-covariance-handout.pdf
+  docx:
+    output-file: variance-covariance.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+# Variance and covariance {#sec-variance-covariance}
+
+## Deviation, error, and noise {#sec-deviation}
+
+<!-- heading directly precedes the def-deviation div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-deviation.qmd >}}
+
+## Variance and related characteristics
+
+<!-- heading directly precedes the def-variance div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-variance.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-covariance.qmd >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

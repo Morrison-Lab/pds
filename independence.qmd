@@ -1,0 +1,23 @@
+---
+title: "Independence and the Central Limit Theorem"
+format:
+  html: default
+  revealjs:
+    output-file: independence-slides.html
+  pdf:
+    output-file: independence-handout.pdf
+  docx:
+    output-file: independence.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+# Independence {#sec-independence}
+
+<!-- heading directly precedes the def-indpt div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-independence.qmd >}}
+
+# The Central Limit Theorem
+
+{{< include pds/_subfiles/_sec-CLT.qmd >}}

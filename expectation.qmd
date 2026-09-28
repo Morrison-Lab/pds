@@ -1,0 +1,42 @@
+---
+title: "Expectation"
+format:
+  html: default
+  revealjs:
+    output-file: expectation-slides.html
+  pdf:
+    output-file: expectation-handout.pdf
+  docx:
+    output-file: expectation.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+# Expectation {#sec-expectation}
+
+<!-- heading directly precedes the def-expectation div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-lotus.qmd >}}
+
+## Conditional distributions and expectations
+
+<!-- heading directly precedes the def-cond-pmf div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-cond-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-disc.qmd >}}
+
+## Fubini--Tonelli for expectations
+
+{{< include pds/_subfiles/_fubini-tonelli-expectations.qmd >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

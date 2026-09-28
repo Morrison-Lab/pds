@@ -1,0 +1,13 @@
+---
+title: "Notation"
+format:
+  html: default
+  revealjs:
+    output-file: notation-slides.html
+  pdf:
+    output-file: notation-handout.pdf
+  docx:
+    output-file: notation.docx
+---
+
+{{< include pds/_notation.qmd >}}

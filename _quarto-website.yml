@@ -34,8 +34,20 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Probability prerequisites"
-        href: probability-prereqs.qmd
+      - text: "Notes"
+        menu:
+          - text: "Notation"
+            href: notation.qmd
+          - text: "Probability Basics"
+            href: probability-basics.qmd
+          - text: "Random Variables and Distributions"
+            href: random-variables.qmd
+          - text: "Expectation"
+            href: expectation.qmd
+          - text: "Variance and Covariance"
+            href: variance-covariance.qmd
+          - text: "Independence and the CLT"
+            href: independence.qmd
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds

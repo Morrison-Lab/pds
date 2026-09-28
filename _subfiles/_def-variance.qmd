@@ -1,7 +1,7 @@
 :::{#def-variance}
 #### Variance
 
-The **variance** of a random variable $X$ is the [expectation](#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
+The **variance** of a random variable $X$ is the [expectation](expectation.qmd#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
 
 $$\Var{X} \eqdef \E{[\devn(X)]^2}$$
 

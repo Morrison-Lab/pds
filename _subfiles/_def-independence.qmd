@@ -3,8 +3,8 @@
 #### Statistical independence
 
 A set of random variables $\X1n$ are **statistically independent**
-if their joint [probability](#def-probability) is equal to the product
-of their marginal [probabilities](#def-probability):
+if their joint [probability](probability-basics.qmd#def-probability) is equal to the product
+of their marginal [probabilities](probability-basics.qmd#def-probability):
 
 $$\Pr(\Xx1n) = \prodi1n{\Pr(X_i=x_i)}$$
 
@@ -27,8 +27,8 @@ So the symbol can remind you of its definition.
 
 A set of random variables $\dsn{Y}$ are **conditionally statistically independent**
 given a set of covariates $\X1n$
-if the joint [probability](#def-probability) of the $Y_i$s given the $X_i$s is equal to
-the product of their marginal [probabilities](#def-probability):
+if the joint [probability](probability-basics.qmd#def-probability) of the $Y_i$s given the $X_i$s is equal to
+the product of their marginal [probabilities](probability-basics.qmd#def-probability):
 
 $$\Pr(\dsvn{Y}{y} \mid \dsvn{X}{x}) = \prodi1n{\Pr(Y_i=y_i \mid X_i=x_i)}$$
 

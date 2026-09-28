@@ -1,0 +1,34 @@
+---
+title: "Random variables and distributions"
+format:
+  html: default
+  revealjs:
+    output-file: random-variables-slides.html
+  pdf:
+    output-file: random-variables-handout.pdf
+  docx:
+    output-file: random-variables.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+# Random variables {#sec-random-variables}
+
+<!-- heading directly precedes the def-random-variable div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-random-variable.qmd >}}
+
+# Characteristics of probability distributions
+
+<!-- heading directly precedes the def-pmf div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
+
+# Key probability distributions {#sec-distributions}
+
+{{< include pds/_subfiles/_sec-distributions.qmd >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

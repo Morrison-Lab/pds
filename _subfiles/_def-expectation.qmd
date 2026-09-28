@@ -4,14 +4,14 @@
 The **expectation**, **expected value**, or **population mean** of a
 *continuous* random variable $X$, denoted $\E{X}$, $\mu(X)$, or $\mu_X$,
 is the weighted mean of $X$'s possible values,
-weighted by the [probability density function](#def-pdf) of those values:
+weighted by the [probability density function](random-variables.qmd#def-pdf) of those values:
 
 $$\E{X} \eqdef \int_{x\in \rangef{X}} x \cdot \p(X=x)\,dx$$
 
 The **expectation**, **expected value**, or **population mean** of a
 *discrete* random variable $X$, denoted $\E{X}$, $\mu(X)$, or $\mu_X$,
 is the mean of $X$'s possible values,
-weighted by the [probability mass function](#def-pmf) of those values:
+weighted by the [probability mass function](random-variables.qmd#def-pmf) of those values:
 
 $$\E{X} \eqdef \sum_{x \in \rangef{X}} x \cdot \P(X=x)$$
 
