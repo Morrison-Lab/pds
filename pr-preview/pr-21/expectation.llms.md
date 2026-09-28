@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 14:21:13 (PDT)
+Last modified: 2026-09-28 15:13:06 (PDT)
 
 > **NOTE:**
 >
@@ -533,7 +533,7 @@ There are only four \\(x,y)\\ pairs here, so summing them in any order — row b
 
 ## 2 Fubini–Tonelli for expectations
 
-For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and counting measure on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
+For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and [counting measure](probability-basics.llms.md#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
