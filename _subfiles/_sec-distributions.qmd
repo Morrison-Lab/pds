@@ -548,7 +548,7 @@ $$
 \ea
 $$
 
-Exponentiating yields $\mu = \exp(-0.511) \approx 0.60$ expected events.
+Exponentiating yields $\mu = \expf{-0.511} \approx 0.60$ expected events.
 :::
 
 {{< slidebreak >}}
@@ -668,7 +668,7 @@ which satisfies $\Gamma(x) = (x-1)!$ for positive integers $x$.
 ::: notes
 As $\rho \rightarrow \infty$,
 the second factor converges to 1
-and the third factor converges to $\exp(-\mu)$,
+and the third factor converges to $\expf{-\mu}$,
 which brings us back to the Poisson distribution.
 :::
 
