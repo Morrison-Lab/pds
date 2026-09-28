@@ -4,7 +4,7 @@ Project guidance for Claude Code (CLI, IDE, and the GitHub Action). The same con
 
 ## Project context
 
-`pds` holds the probability prerequisites for the Morrison-Lab data science courses, as [Quarto](https://quarto.org/) fragments. It renders on its own as a website, and course sites (such as `mlds`) include it as a git submodule, so a fragment's path and its `#id` anchors are an interface: renaming either breaks every host site. The scaffolding came from the UCD-SERG `qwt` template.
+`pds` holds the probability prerequisites for the Morrison-Lab data science courses, as [Quarto](https://quarto.org/) fragments. It renders on its own as a website, and course sites such as `mlds` link to its pages by URL, so a page's path and its `#id` anchors are an interface: renaming either breaks those links. The scaffolding came from the UCD-SERG `qwt` template.
 
 Authoritative style guide: [UCD-SERG Lab Manual](https://ucd-serg.github.io/lab-manual/) (source: <https://github.com/UCD-SERG/lab-manual>).
 
@@ -22,8 +22,7 @@ Authoritative style guide: [UCD-SERG Lab Manual](https://ucd-serg.github.io/lab-
 
   The navbar's `left` menus mirror the sidebar's `contents` one-for-one, so
   a page added, renamed, or moved must be edited in both.
-- `_notation.qmd`, `_subfiles/` --- the fragments the topic pages include,
-  and that host sites include through the `pds/` submodule path
+- `_notation.qmd`, `_subfiles/` --- the fragments the topic pages include
 - `references.qmd` --- standalone reference page; excluded from the default website
   render (`!references.qmd` in `_quarto-website.yml`), so it isn't part of the
   normal site build
@@ -110,6 +109,5 @@ rme will drop those appendices and point readers here
 
 ## Things to avoid
 
-- Adding new top-level dependencies (R packages, Quarto extensions) without a clear reason; every host site that includes this repository as a submodule has to install it.
 - Reformatting unrelated files.
 - Inventing URLs or citations --- only use sources actually present in `references.bib` or explicitly provided.
