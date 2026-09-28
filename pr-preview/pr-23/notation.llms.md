@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 15:27:12 (PDT)
+Last modified: 2026-09-28 15:43:12 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -18,19 +18,25 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 ## 1 Stochastic vs. probabilistic vs. random
 
-The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions.
+> **NOTE:**
+>
+> *Remark*. The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions.
 
 ### 1.1 Key distinction: modeling approach vs. phenomena
 
-As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
-
-> *Stochasticity* and *randomness* are technically distinct concepts: the former refers to a modeling approach, while the latter describes phenomena; in everyday conversation these terms are often used interchangeably.
+> **NOTE:**
+>
+> *Remark*. As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
+>
+> > *Stochasticity* and *randomness* are technically distinct concepts: the former refers to a modeling approach, while the latter describes phenomena; in everyday conversation these terms are often used interchangeably.
 
 > **NOTE:**
 >
 > **Definition 1 (Random)** Something is **random** when it occurs by chance, without a deterministic pattern: its outcome cannot be predicted precisely, only probabilistically. It is the most general of the three terms, used to describe variables or occurrences rather than whole processes or modeling approaches.
 
-The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.
+> **NOTE:**
+>
+> *Remark*. The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.
 
 > **NOTE:**
 >
@@ -54,7 +60,9 @@ The term “random” is sometimes used as shorthand for a uniform distribution 
 >
 > **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, \\Y = \beta_0 + \beta_1 x + \epsilon\\ with \\\epsilon \sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\\, is probabilistic: for each value of the covariate \\x\\, it assigns a probability distribution to the outcome \\Y\\. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
 
-The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.
+> **NOTE:**
+>
+> *Remark*. The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.
 
 ### 1.2 Summary of usage
 
@@ -66,14 +74,20 @@ The model is probabilistic because of its error distribution, not because of the
 
 Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
 
-While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.
+> **NOTE:**
+>
+> *Remark*. While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.
 
 ### 1.3 Additional resources
 
-- [Wikipedia: Stochastic](https://en.wikipedia.org/wiki/Stochastic)
-- [Wikipedia: Stochastic process](https://en.wikipedia.org/wiki/Stochastic_process)
-- [Mathematics Stack Exchange: What’s the difference between stochastic and random?](https://math.stackexchange.com/questions/114373/whats-the-difference-between-stochastic-and-random)
-- [Cross Validated: Probability model vs statistical model vs stochastic model](https://stats.stackexchange.com/questions/421462/probability-model-vs-statistical-model-vs-stochastic-model)
+> **NOTE:**
+>
+> *Remark*.
+>
+> - [Wikipedia: Stochastic](https://en.wikipedia.org/wiki/Stochastic)
+> - [Wikipedia: Stochastic process](https://en.wikipedia.org/wiki/Stochastic_process)
+> - [Mathematics Stack Exchange: What’s the difference between stochastic and random?](https://math.stackexchange.com/questions/114373/whats-the-difference-between-stochastic-and-random)
+> - [Cross Validated: Probability model vs statistical model vs stochastic model](https://stats.stackexchange.com/questions/421462/probability-model-vs-statistical-model-vs-stochastic-model)
 
 ## References
 

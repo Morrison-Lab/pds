@@ -168,6 +168,16 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-cor.callout {
   border-left-color: #00838F;
 }
@@ -198,15 +208,35 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-remark.callout {
+  border-left-color: #AD1457;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-cnj.callout {
   border-left-color: #558B2F;
@@ -228,45 +258,15 @@ div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -672,6 +672,17 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~17% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
+
 
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./distributions.html">Distributions</a></li><li class="breadcrumb-item"><a href="./distributions.html">Key distributions</a></li></ol></nav>
@@ -687,7 +698,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-09-28 <mark class="preview-text-changed">15:27:12</mark> (PDT)</p>
+      <p class="date">Last modified: 2026-09-28 <mark class="preview-text-changed">15:43:12</mark> (PDT)</p>
     </div>
   </div>
   
@@ -700,8 +711,23 @@ window.Quarto = {
 
 
 <p><span id="sec-distributions"></span></p>
-<div class="notes">
-<p>Some distributions are typically used for outcome models (<a href="#tbl-outcome-distns" class="quarto-xref">Table&nbsp;1</a>); other distributions are typically used for test statistics (<a href="#tbl-test-stat-distns" class="quarto-xref">Table&nbsp;2</a>).</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>Some distributions are typically used for outcome models (<a href="#tbl-outcome-distns" class="quarto-xref">Table&nbsp;1</a>); other distributions are typically used for test statistics (<a href="#tbl-test-stat-distns" class="quarto-xref">Table&nbsp;2</a>).</p>
+</div>
+</div>
+</div>
 </div>
 <div id="tbl-outcome-distns" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -831,8 +857,23 @@ Table&nbsp;2: Distributions typically used for test statistics
 </div>
 </div>
 </div>
-<div class="notes">
-<p>(see <a href="#fig-pois-pmf" class="quarto-xref">Figure&nbsp;1</a>)</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>(see <a href="#fig-pois-pmf" class="quarto-xref">Figure&nbsp;1</a>)</p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-exr no-icon">
 <div class="callout-body d-flex">
@@ -847,7 +888,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 </div>
 </div>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -856,7 +897,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="sol-range-poisson" class="proof solution">
 <p><span class="proof-title"><em>Solution 1</em>. </span><span class="math display">\[\mathcal{R}(Y) = \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} = \mathbb{N}\]</span></p>
@@ -878,7 +919,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -887,7 +928,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For <span class="math inline">\(y &lt; 0\)</span>, both sides are <span class="math inline">\(0\)</span> (the sum is empty). For any <span class="math inline">\(y \ge 0\)</span>, the event <span class="math inline">\(\{Y \le y\}\)</span> is the disjoint union of events <span class="math inline">\(\{Y = j\}\)</span> for all non-negative integers <span class="math inline">\(j \le \mathopen{}\left\lfloor y\right\rfloor\mathclose{}\)</span>. Applying the Poisson PMF (<a href="#eq-pois-pmf" class="quarto-xref">Equation&nbsp;1</a>) and factoring out the common term <span class="math inline">\(e^{-\mu}\)</span>:</p>
@@ -924,8 +965,23 @@ Table&nbsp;2: Distributions typically used for test statistics
 </div>
 </div>
 </div>
-<div class="notes">
-<p>(see <a href="#fig-pois-cdfs" class="quarto-xref">Figure&nbsp;2</a>)</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>(see <a href="#fig-pois-cdfs" class="quarto-xref">Figure&nbsp;2</a>)</p>
+</div>
+</div>
+</div>
 </div>
 <div class="cell">
 <details class="code-fold">
@@ -1019,7 +1075,7 @@ Figure&nbsp;2: Poisson CDFs
 </div>
 </div>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1028,7 +1084,7 @@ Figure&nbsp;2: Poisson CDFs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
@@ -1063,7 +1119,7 @@ Figure&nbsp;2: Poisson CDFs
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1072,7 +1128,7 @@ Figure&nbsp;2: Poisson CDFs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><strong>Mean.</strong></p>
@@ -1161,7 +1217,7 @@ Figure&nbsp;2: Poisson CDFs
 </div>
 </div>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1170,7 +1226,7 @@ Figure&nbsp;2: Poisson CDFs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="smaller proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
@@ -1217,9 +1273,24 @@ Table&nbsp;3: Examples of exposure units
 </div>
 </div>
 </div>
-<div class="notes">
-<p>Exposure units are similar to the number of trials in a binomial distribution, but <strong>in non-binomial count outcomes, there can be more than one event per unit of exposure</strong>.</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>Exposure units are similar to the number of trials in a binomial distribution, but <strong>in non-binomial count outcomes, there can be more than one event per unit of exposure</strong>.</p>
 <p>We can use <span class="math inline">\(t\)</span> to represent continuous-valued exposures/observation durations, and <span class="math inline">\(n\)</span> to represent discrete-valued exposures.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-def no-icon">
 <div class="callout-body d-flex">
@@ -1234,8 +1305,23 @@ Table&nbsp;3: Examples of exposure units
 </div>
 </div>
 </div>
-<div class="notes">
-<p>The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-lem no-icon">
 <div class="callout-body d-flex">
@@ -1251,7 +1337,7 @@ Table&nbsp;3: Examples of exposure units
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1260,7 +1346,7 @@ Table&nbsp;3: Examples of exposure units
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#def-event-rate" class="quarto-xref">Definition&nbsp;3</a>:</p>
@@ -1308,7 +1394,7 @@ Table&nbsp;3: Examples of exposure units
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1317,7 +1403,7 @@ Table&nbsp;3: Examples of exposure units
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
@@ -1331,8 +1417,23 @@ Table&nbsp;3: Examples of exposure units
 </div>
 </div>
 </div>
-<div class="notes">
-<p>The hypothesis carries the content here. <a href="#def-event-rate" class="quarto-xref">Definition&nbsp;3</a> alone cannot give <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\)</span>, since <span class="math inline">\(\lambda = \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\(\lambda\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>The hypothesis carries the content here. <a href="#def-event-rate" class="quarto-xref">Definition&nbsp;3</a> alone cannot give <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\)</span>, since <span class="math inline">\(\lambda = \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\(\lambda\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -1373,7 +1474,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1382,7 +1483,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
@@ -1431,8 +1532,23 @@ Important
 </div>
 </div>
 </div>
-<div class="notes">
-<p>The offset needs no covariates: with a single exposure <span class="math inline">\(t\)</span> and an unknown rate <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\log{t}\)</span> is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>The offset needs no covariates: with a single exposure <span class="math inline">\(t\)</span> and an unknown rate <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\log{t}\)</span> is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -1459,7 +1575,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1468,7 +1584,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The event <span class="math inline">\(\{Z = z\}\)</span> is the disjoint union of the events <span class="math inline">\(\{X = k, Y = z - k\}\)</span> for <span class="math inline">\(k = 0, 1, \ldots, z\)</span> (since <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are non-negative integers), so:</p>
@@ -1529,8 +1645,76 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 </div>
 </div>
 </div>
-<div class="notes">
-<p>As <span class="math inline">\(\rho \rightarrow \infty\)</span>, the second factor converges to 1 and the third factor converges to <span class="math inline">\(\operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}\)</span>, which brings us back to the Poisson distribution.</p>
+<div class="callout callout-style-simple callout-lem no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-nb-poisson-limit" class="theorem">
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Theorem 7 (The negative binomial converges to the Poisson)</strong></span> Fix <span class="math inline">\(\mu &gt; 0\)</span>, and let <span class="math inline">\(Y_\rho \sim \operatorname{NegBin}(\mu, \rho)\)</span>. Then for each <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>, as <span class="math inline">\(\rho \rightarrow \infty\)</span>, the negative binomial PMF converges to the <a href="#def-poisson">Poisson</a> PMF (<a href="#eq-pois-pmf" class="quarto-xref">Equation&nbsp;1</a>):</mark></p>
+<p><mark class="preview-element-added"><span class="math display">\[\lim_{\rho \rightarrow \infty} \operatorname{P}(Y_\rho = y) = \frac{\mu^{y} e^{-\mu}}{y!}\]</span></mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><mark class="preview-element-added"><span class="proof-title"><em>Proof</em>. </span>Fix <span class="math inline">\(y\)</span>. In <a href="#def-nb" class="quarto-xref">Definition&nbsp;5</a>, the first factor <span class="math inline">\(\mu^y / y!\)</span> does not depend on <span class="math inline">\(\rho\)</span>. For the second factor, <span class="math inline">\(\Gamma(\rho + y) = \Gamma(\rho) \prod_{k=0}^{y-1} (\rho + k)\)</span>, by applying <span class="math inline">\(\Gamma(x + 1) = x\,\Gamma(x)\)</span> <span class="math inline">\(y\)</span> times (for <span class="math inline">\(y = 0\)</span>, the product is empty and equals 1), so:</mark></p>
+<p><mark class="preview-element-added"><span class="math display">\[
+\begin{aligned}
+\frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y}
+&amp;= \frac{\Gamma(\rho) \prod_{k=0}^{y-1} (\rho + k)}{\Gamma(\rho) \cdot (\rho + \mu)^y}
+&amp;&amp; (\Gamma(x + 1) = x\,\Gamma(x) \text{, applied } y \text{ times}) \\
+&amp;= \prod_{k=0}^{y-1} \frac{\rho + k}{\rho + \mu}
+&amp;&amp; (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho + \mu \text{ per } k) \\
+&amp;= \prod_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho}
+&amp;&amp; (\text{divide each numerator and denominator by } \rho) \\
+&amp;\rightarrow \prod_{k=0}^{y-1} \frac{1 + 0}{1 + 0}
+&amp;&amp; (k/\rho \rightarrow 0 \text{ and } \mu/\rho \rightarrow 0 \text{; finitely many factors}) \\
+&amp;= 1
+&amp;&amp; (\text{simplify})
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-element-added">For the third factor, write <span class="math inline">\(x \stackrel{\text{def}}{=}\mu/\rho\)</span>, so <span class="math inline">\(x \rightarrow 0\)</span> as <span class="math inline">\(\rho \rightarrow \infty\)</span>, and <span class="math inline">\(\rho = \mu/x\)</span>:</mark></p>
+<p><mark class="preview-element-added"><span class="math display">\[
+\begin{aligned}
+\log\mathopen{}\left(\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho}\right)\mathclose{}
+&amp;= -\rho \log\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}
+&amp;&amp; (\text{log of a power}) \\
+&amp;= -\mu \cdot \frac{\log(1 + x)}{x}
+&amp;&amp; (\text{substitute } \rho = \mu/x) \\
+&amp;\rightarrow -\mu \cdot 1
+&amp;&amp; (\textstyle\lim_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\
+&amp;= -\mu
+&amp;&amp; (\text{simplify})
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-element-added">so, since <span class="math inline">\(\exp\)</span> is continuous, <span class="math inline">\(\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow \operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}\)</span>. Each of the three factors has a limit, so their product does too:</mark></p>
+<p><mark class="preview-element-added"><span class="math display">\[
+\begin{aligned}
+\lim_{\rho \rightarrow \infty} \operatorname{P}(Y_\rho = y)
+&amp;= \frac{\mu^y}{y!} \cdot 1 \cdot \operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}
+&amp;&amp; (\text{limit of a product of convergent factors}) \\
+&amp;= \frac{\mu^{y} e^{-\mu}}{y!}
+&amp;&amp; (\text{rearrange})
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-text-changed">which</mark> <mark class="preview-text-changed">is</mark> <mark class="preview-text-changed">the </mark><span class="math inline"><mark class="preview-text-changed">\(\operatorname{Pois}(\mu)\)</mark></span><mark class="preview-text-changed"> PMF.</mark></p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-lem no-icon">
 <div class="callout-body d-flex">
@@ -1539,7 +1723,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 </div>
 <div class="callout-body-container">
 <div id="thm-nb" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (Mean and variance of the negative binomial distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, then:</p>
+<p><span class="theorem-title"><strong>Theorem 8 (Mean and variance of the negative binomial distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, then:</p>
 <ul>
 <li><span class="math inline">\(\operatorname{E}[Y] = \mu\)</span></li>
 <li><span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu + \frac{\mu^2}{\rho} &gt; \mu\)</span></li>
@@ -1549,7 +1733,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1558,7 +1742,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The negative binomial distribution is a gamma mixture of Poisson distributions: if <span class="math inline">\(\Lambda\)</span> has the gamma density <span class="math inline">\(g(\lambda) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} \lambda^{\rho - 1} e^{-\rho\lambda/\mu}\)</span> for <span class="math inline">\(\lambda &gt; 0\)</span>, which has mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\mu^2/\rho\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>)</span>, and <span class="math inline">\(Y \mid \Lambda = \lambda \sim \operatorname{Pois}(\lambda)\)</span>, then <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>. To check this, integrate the joint density over <span class="math inline">\(\lambda\)</span>:</p>
@@ -1638,7 +1822,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 </div>
 <div class="callout-body-container">
 <div id="thm-weibull" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8 (Weibull density, hazard, and mean)</strong></span> If <span class="math inline">\(T\)</span> has the Weibull distribution with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\(\lambda\)</span>, then for <span class="math inline">\(t &gt; 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 9 (Weibull density, hazard, and mean)</strong></span> If <span class="math inline">\(T\)</span> has the Weibull distribution with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\(\lambda\)</span>, then for <span class="math inline">\(t &gt; 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 f(t) &amp;= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}\\
@@ -1651,7 +1835,7 @@ f(t) &amp;= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}\\
 </div>
 </div>
 <div class="callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1660,7 +1844,7 @@ f(t) &amp;= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}\\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The CDF of <span class="math inline">\(T\)</span> is <span class="math inline">\(F(t) = 1 - \operatorname{S}(t)\)</span> (<a href="./random-variables.html#thm-survival-expressions-1">survival function and CDF</a>), which is <span class="math inline">\(0\)</span> for <span class="math inline">\(t &lt; 0\)</span> and <span class="math inline">\(1 - \text{e}^{-\lambda t^\alpha}\)</span> for <span class="math inline">\(t \ge 0\)</span>. This <span class="math inline">\(F\)</span> is continuous everywhere, with a continuous derivative everywhere except possibly <span class="math inline">\(t = 0\)</span>, so <span class="math inline">\(f = F' = -\operatorname{S}'\)</span> is a density of <span class="math inline">\(T\)</span> (<a href="./random-variables.html#thm-cdf-derivative-density">a piecewise-smooth CDF has its derivative as a density</a>). This density is continuous at every <span class="math inline">\(t &gt; 0\)</span>, so there the hazard is <span class="math inline">\(f(t)/\operatorname{S}(t)\)</span> (<a href="./random-variables.html#thm-hazard-dens-surv">hazard equals density over survival</a>):</p>
@@ -1696,9 +1880,128 @@ f(t)
 </div>
 </div>
 </div>
-<div class="notes">
-<p>The hazard is written <span class="math inline">\(\operatorname{h}(t)\)</span> here, rather than <span class="math inline">\({\lambda}(t)\)</span>, because the Weibull rate parameter is also called <span class="math inline">\(\lambda\)</span>.</p>
-<p>When <span class="math inline">\(\alpha=1\)</span>, the Weibull distribution reduces to the exponential distribution. When <span class="math inline">\(\alpha&gt;1\)</span> the hazard is increasing and when <span class="math inline">\(\alpha &lt; 1\)</span> the hazard is decreasing. This property provides more flexibility than the exponential.</p>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-added">Remark</mark></em><mark class="preview-text-added">. </mark></span>The hazard is written <span class="math inline">\(\operatorname{h}(t)\)</span> here, rather than <span class="math inline">\({\lambda}(t)\)</span>, because the Weibull rate parameter is also called <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-cor no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-weibull-exponential" class="theorem corollary">
+<p><span class="theorem-title"><strong><mark class="preview-text-changed">Corollary</mark> <mark class="preview-text-changed">1</mark> <mark class="preview-text-changed">(The</mark> <mark class="preview-text-changed">Weibull</mark> <mark class="preview-text-changed">with</mark> <mark class="preview-text-changed">shape</mark> <mark class="preview-text-changed">1 is the exponential)</mark></strong></span> If <span class="math inline">\(T\)</span> has the <a href="#def-weibull">Weibull distribution</a> with shape <span class="math inline"><mark class="preview-text-changed">\(\alpha = 1\)</mark></span> and rate <span class="math inline">\(\lambda\)</span>, then <span class="math inline"><mark class="preview-text-changed">\(T\)</mark></span> <mark class="preview-text-changed">has</mark> <mark class="preview-text-changed">the</mark> <a href="./random-variables.html#def-exponential"><mark class="preview-text-changed">exponential distribution</mark></a><mark class="preview-text-changed"> with rate </mark><span class="math inline"><mark class="preview-text-changed">\(\lambda\)</mark></span><mark class="preview-text-changed">.</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><mark class="preview-element-added"><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-weibull" class="quarto-xref">Theorem&nbsp;9</a> with <span class="math inline">\(\alpha = 1\)</span>, for <span class="math inline">\(t &gt; 0\)</span>:</mark></p>
+<p><mark class="preview-element-added"><span class="math display">\[
+\begin{aligned}
+f(t)
+&amp;= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}
+&amp;&amp; (\text{Weibull density}) \\
+&amp;= 1 \cdot \lambda t^{0}\text{e}^{-\lambda t^1}
+&amp;&amp; (\text{substitute } \alpha = 1) \\
+&amp;= \lambda \text{e}^{-\lambda t}
+&amp;&amp; (t^0 = 1 \text{ and } t^1 = t)
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-element-added">and <span class="math inline">\(f(t) = 0\)</span> for <span class="math inline">\(t &lt; 0\)</span>, since <span class="math inline">\(T\)</span> is non-negative. This density matches the exponential density at every <span class="math inline">\(t \ne 0\)</span>. Changing a density at the single point <span class="math inline">\(t = 0\)</span> does not change its integral over any set, so <span class="math inline">\(T\)</span> has the exponential distribution with rate <span class="math inline">\(\lambda\)</span>.</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-cor no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-weibull-hazard-monotone" class="theorem corollary">
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Corollary 2 (The Weibull shape sets the direction of the hazard)</strong></span> If <span class="math inline">\(T\)</span> has the <a href="#def-weibull">Weibull distribution</a> with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\(\lambda\)</span>, then on <span class="math inline">\(t &gt; 0\)</span> its hazard <span class="math inline">\(\operatorname{h}(t)\)</span> is:</mark></p>
+<ul>
+<li><mark class="preview-element-added">strictly increasing if <span class="math inline">\(\alpha &gt; 1\)</span></mark></li>
+<li><mark class="preview-element-added">constant if <span class="math inline">\(\alpha = 1\)</span></mark></li>
+<li><mark class="preview-element-added">strictly decreasing if <span class="math inline">\(\alpha &lt; 1\)</span></mark></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em><mark class="preview-text-changed">Proof</mark></em><mark class="preview-text-changed">.</mark> </span><mark class="preview-text-changed">By</mark> <a href="#thm-weibull" class="quarto-xref"><mark class="preview-text-changed">Theorem&nb</mark>s<mark class="preview-text-changed">p;9</mark></a><mark class="preview-text-changed">, </mark><span class="math inline"><mark class="preview-text-changed">\(\operatorname{</mark>h<mark class="preview-text-changed">}</mark>(<mark class="preview-text-changed">t) = \alpha\l</mark>a<mark class="preview-text-changed">mbda t^{\alpha-1}\)</mark></span><mark class="preview-text-changed"> for </mark><span class="math inline"><mark class="preview-text-changed">\(t &gt; </mark>0\)</span>, so:</p>
+<p><mark class="preview-element-added"><span class="math display">\[
+\begin{aligned}
+\frac{d}{dt}\operatorname{h}(t)
+&amp;= \frac{d}{dt} \alpha\lambda t^{\alpha-1}
+&amp;&amp; (\text{Weibull hazard}) \\
+&amp;= \alpha(\alpha - 1)\lambda t^{\alpha-2}
+&amp;&amp; (\text{power rule})
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-element-added">For <span class="math inline">\(t &gt; 0\)</span>, the factors <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\lambda\)</span>, and <span class="math inline">\(t^{\alpha-2}\)</span> are all positive, so <span class="math inline">\(\frac{d}{dt}\operatorname{h}(t)\)</span> has the sign of <span class="math inline">\(\alpha - 1\)</span>: positive for <span class="math inline">\(\alpha &gt; 1\)</span>, zero for <span class="math inline">\(\alpha = 1\)</span>, and negative for <span class="math inline">\(\alpha &lt; 1\)</span>. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em><mark class="preview-text-changed">Remark</mark></em><mark class="preview-text-changed">.</mark> </span><mark class="preview-text-changed">The</mark> exponential <mark class="preview-text-changed">distribution’s</mark> hazard is <mark class="preview-text-changed">constant,</mark> <mark class="preview-text-changed">so</mark> the <mark class="preview-text-added">Weibull’s choice of an increasing, constant, or decreasing </mark>hazard <mark class="preview-text-changed">(</mark><a href="#cor-weibull-hazard-monotone" class="quarto-xref"><mark class="preview-text-changed">Corollary&nb</mark>sp;2</a>) provides more flexibility than the exponential.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -1707,7 +2010,7 @@ f(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-weibull" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (Exponential as a special case)</strong></span> With <span class="math inline">\(\alpha = 1\)</span>, <a href="#thm-weibull" class="quarto-xref">Theorem&nbsp;8</a> gives <span class="math inline">\(\operatorname{h}(t) = \lambda\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[T\right]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\)</span>, matching the exponential distribution’s constant hazard and mean. With <span class="math inline">\(\alpha = 2\)</span> and <span class="math inline">\(\lambda = 1\)</span>, <span class="math inline">\(\operatorname{h}(t) = 2t\)</span> increases with <span class="math inline">\(t\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[T\right]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 10 (Exponential as a special case)</strong></span> With <span class="math inline">\(\alpha = 1\)</span>, <a href="#thm-weibull" class="quarto-xref">Theorem&nbsp;9</a> gives <span class="math inline">\(\operatorname{h}(t) = \lambda\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[T\right]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\)</span>, matching the exponential distribution’s constant hazard and mean. With <span class="math inline">\(\alpha = 2\)</span> and <span class="math inline">\(\lambda = 1\)</span>, <span class="math inline">\(\operatorname{h}(t) = 2t\)</span> increases with <span class="math inline">\(t\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[T\right]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\)</span>.</p>
 </div>
 </div>
 </div>

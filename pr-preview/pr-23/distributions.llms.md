@@ -14,9 +14,11 @@ Code
 
 Published
 
-Last modified: 2026-09-28 15:27:12 (PDT)
+Last modified: 2026-09-28 15:43:12 (PDT)
 
-Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
+> **NOTE:**
+>
+> *Remark*. Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
 
 | Distribution | Uses |
 |----|----|
@@ -56,7 +58,9 @@ Table 2: Distributions typically used for test statistics
 >
 > \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \tag{1}\\
 
-(see [Figure 1](#fig-pois-pmf))
+> **NOTE:**
+>
+> *Remark*. (see [Figure 1](#fig-pois-pmf))
 
 > **NOTE:**
 >
@@ -84,7 +88,9 @@ Table 2: Distributions typically used for test statistics
 >
 > \\ \begin{aligned} \operatorname{P}(X \le 2) &= e^{-2} \sum\_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu = 2, y = 2) \\ &= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} && (\text{expand terms for } j = 0, 1, 2) \\ &= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} && (\text{simplify factorials and powers}) \\ &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value}) \end{aligned} \\
 
-(see [Figure 2](#fig-pois-cdfs))
+> **NOTE:**
+>
+> *Remark*. (see [Figure 2](#fig-pois-cdfs))
 
 Code
 
@@ -220,9 +226,11 @@ Figure 2: Poisson CDFs
 >
 > Table 3: Examples of exposure units
 
-Exposure units are similar to the number of trials in a binomial distribution, but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
-
-We can use \\t\\ to represent continuous-valued exposures/observation durations, and \\n\\ to represent discrete-valued exposures.
+> **NOTE:**
+>
+> *Remark*. Exposure units are similar to the number of trials in a binomial distribution, but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
+>
+> We can use \\t\\ to represent continuous-valued exposures/observation durations, and \\n\\ to represent discrete-valued exposures.
 
 > **NOTE:**
 >
@@ -230,7 +238,9 @@ We can use \\t\\ to represent continuous-valued exposures/observation durations,
 >
 > \\\lambda \stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{3}\\
 
-The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+> **NOTE:**
+>
+> *Remark*. The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
@@ -260,7 +270,9 @@ The event rate is a transformation of the mean: it removes the exposure magnitud
 >
 > *Proof*. \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} &= \lambda \cdot 0 && (\text{evaluate } \operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } \lambda \text{ is finite}) \end{aligned} \\
 
-The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\\lambda = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
+> **NOTE:**
+>
+> *Remark*. The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\\lambda = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
 
 > **NOTE:**
 >
@@ -296,7 +308,9 @@ The hypothesis carries the content here. [Definition 3](#def-event-rate) alone 
 >
 > is called the **offset**: it shifts \\\log{\mu}\\ by a known amount, with no unknown coefficient to estimate.
 
-The offset needs no covariates: with a single exposure \\t\\ and an unknown rate \\\lambda\\, \\\log{t}\\ is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+> **NOTE:**
+>
+> *Remark*. The offset needs no covariates: with a single exposure \\t\\ and an unknown rate \\\lambda\\, \\\log{t}\\ is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
@@ -330,11 +344,31 @@ The offset needs no covariates: with a single exposure \\t\\ and an unknown rate
 >
 > where \\\Gamma\\ is the gamma function, which satisfies \\\Gamma(x) = (x-1)!\\ for positive integers \\x\\.
 
-As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third factor converges to \\\operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}\\, which brings us back to the Poisson distribution.
+> **NOTE:**
+>
+> **Theorem 7 (The negative binomial converges to the Poisson)** Fix \\\mu \> 0\\, and let \\Y\_\rho \sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho \rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 1](#eq-pois-pmf)):
+>
+> \\\lim\_{\rho \rightarrow \infty} \operatorname{P}(Y\_\rho = y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
 
 > **NOTE:**
 >
-> **Theorem 7 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
+> *Proof*. Fix \\y\\. In [Definition 5](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho + y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho + k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
+>
+> \\ \begin{aligned} \frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y} &= \frac{\Gamma(\rho) \prod\_{k=0}^{y-1} (\rho + k)}{\Gamma(\rho) \cdot (\rho + \mu)^y} && (\Gamma(x + 1) = x\\\Gamma(x) \text{, applied } y \text{ times}) \\ &= \prod\_{k=0}^{y-1} \frac{\rho + k}{\rho + \mu} && (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho + \mu \text{ per } k) \\ &= \prod\_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho} && (\text{divide each numerator and denominator by } \rho) \\ &\rightarrow \prod\_{k=0}^{y-1} \frac{1 + 0}{1 + 0} && (k/\rho \rightarrow 0 \text{ and } \mu/\rho \rightarrow 0 \text{; finitely many factors}) \\ &= 1 && (\text{simplify}) \end{aligned} \\
+>
+> For the third factor, write \\x \stackrel{\text{def}}{=}\mu/\rho\\, so \\x \rightarrow 0\\ as \\\rho \rightarrow \infty\\, and \\\rho = \mu/x\\:
+>
+> \\ \begin{aligned} \log\mathopen{}\left(\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho}\right)\mathclose{} &= -\rho \log\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{} && (\text{log of a power}) \\ &= -\mu \cdot \frac{\log(1 + x)}{x} && (\text{substitute } \rho = \mu/x) \\ &\rightarrow -\mu \cdot 1 && (\textstyle\lim\_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\ &= -\mu && (\text{simplify}) \end{aligned} \\
+>
+> so, since \\\exp\\ is continuous, \\\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow \operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}\\. Each of the three factors has a limit, so their product does too:
+>
+> \\ \begin{aligned} \lim\_{\rho \rightarrow \infty} \operatorname{P}(Y\_\rho = y) &= \frac{\mu^y}{y!} \cdot 1 \cdot \operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{} && (\text{limit of a product of convergent factors}) \\ &= \frac{\mu^{y} e^{-\mu}}{y!} && (\text{rearrange}) \end{aligned} \\
+>
+> which is the \\\operatorname{Pois}(\mu)\\ PMF.
+
+> **NOTE:**
+>
+> **Theorem 8 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
 >
 > - \\\operatorname{E}\[Y\] = \mu\\
 > - \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu + \frac{\mu^2}{\rho} \> \mu\\
@@ -365,7 +399,7 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 
 > **NOTE:**
 >
-> **Theorem 8 (Weibull density, hazard, and mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\\lambda\\, then for \\t \> 0\\:
+> **Theorem 9 (Weibull density, hazard, and mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\\lambda\\, then for \\t \> 0\\:
 >
 > \\ \begin{aligned} f(t) &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}\\ \operatorname{h}(t) &= \alpha\lambda t^{\alpha-1}\\ \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(1+1/\alpha)\cdot \lambda^{-1/\alpha} \end{aligned} \\
 
@@ -379,13 +413,45 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \text{e}^{-\lambda t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}\lambda^{-1/\alpha} \int_0^\infty u^{1/\alpha - 1} \text{e}^{-u}\\du && (\text{substitute } u = \lambda t^\alpha) \\ &= \frac{1}{\alpha}\lambda^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\\lambda^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
 
-The hazard is written \\\operatorname{h}(t)\\ here, rather than \\{\lambda}(t)\\, because the Weibull rate parameter is also called \\\lambda\\.
-
-When \\\alpha=1\\, the Weibull distribution reduces to the exponential distribution. When \\\alpha\>1\\ the hazard is increasing and when \\\alpha \< 1\\ the hazard is decreasing. This property provides more flexibility than the exponential.
+> **NOTE:**
+>
+> *Remark*. The hazard is written \\\operatorname{h}(t)\\ here, rather than \\{\lambda}(t)\\, because the Weibull rate parameter is also called \\\lambda\\.
 
 > **NOTE:**
 >
-> **Example 10 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 8](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
+> **Corollary 1 (The Weibull with shape 1 is the exponential)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha = 1\\ and rate \\\lambda\\, then \\T\\ has the [exponential distribution](random-variables.llms.md#def-exponential) with rate \\\lambda\\.
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 9](#thm-weibull) with \\\alpha = 1\\, for \\t \> 0\\:
+>
+> \\ \begin{aligned} f(t) &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha} && (\text{Weibull density}) \\ &= 1 \cdot \lambda t^{0}\text{e}^{-\lambda t^1} && (\text{substitute } \alpha = 1) \\ &= \lambda \text{e}^{-\lambda t} && (t^0 = 1 \text{ and } t^1 = t) \end{aligned} \\
+>
+> and \\f(t) = 0\\ for \\t \< 0\\, since \\T\\ is non-negative. This density matches the exponential density at every \\t \ne 0\\. Changing a density at the single point \\t = 0\\ does not change its integral over any set, so \\T\\ has the exponential distribution with rate \\\lambda\\.
+
+> **NOTE:**
+>
+> **Corollary 2 (The Weibull shape sets the direction of the hazard)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha\\ and rate \\\lambda\\, then on \\t \> 0\\ its hazard \\\operatorname{h}(t)\\ is:
+>
+> - strictly increasing if \\\alpha \> 1\\
+> - constant if \\\alpha = 1\\
+> - strictly decreasing if \\\alpha \< 1\\
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 9](#thm-weibull), \\\operatorname{h}(t) = \alpha\lambda t^{\alpha-1}\\ for \\t \> 0\\, so:
+>
+> \\ \begin{aligned} \frac{d}{dt}\operatorname{h}(t) &= \frac{d}{dt} \alpha\lambda t^{\alpha-1} && (\text{Weibull hazard}) \\ &= \alpha(\alpha - 1)\lambda t^{\alpha-2} && (\text{power rule}) \end{aligned} \\
+>
+> For \\t \> 0\\, the factors \\\alpha\\, \\\lambda\\, and \\t^{\alpha-2}\\ are all positive, so \\\frac{d}{dt}\operatorname{h}(t)\\ has the sign of \\\alpha - 1\\: positive for \\\alpha \> 1\\, zero for \\\alpha = 1\\, and negative for \\\alpha \< 1\\. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.
+
+> **NOTE:**
+>
+> *Remark*. The exponential distribution’s hazard is constant, so the Weibull’s choice of an increasing, constant, or decreasing hazard ([Corollary 2](#cor-weibull-hazard-monotone)) provides more flexibility than the exponential.
+
+> **NOTE:**
+>
+> **Example 10 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 9](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
 
 ## References
 
