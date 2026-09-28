@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 11:43:19 (PDT)
+Last modified: 2026-09-28 11:50:39 (PDT)
 
 ## 1 Defining probabilities
 
@@ -18,25 +18,43 @@ Last modified: 2026-09-28 11:43:19 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\: a set of outcomes.
+> **Definition 2 (\\\sigma\\-algebra)** A **\\\sigma\\-algebra** on a set \\S\\ is a collection \\\mathscr{S}\\ of subsets of \\S\\ that satisfies:
+>
+> - \\\mathscr{S}\\ contains \\S\\ itself.
+> - For each set \\A\\ in \\\mathscr{S}\\, \\\mathscr{S}\\ contains its complement \\S \setminus A\\.
+> - For each sequence \\A_1, A_2, \ldots\\ of sets in \\\mathscr{S}\\, \\\mathscr{S}\\ contains their union \\\bigcup\_{i=1}^{\infty} A_i\\.
 
-When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated collection \\\mathscr{S}\\ (a [\\\sigma\\-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra): a collection that contains \\\Omega\\ and is closed under complements and countable unions) count as events; every set that arises in these notes is in \\\mathscr{S}\\.
+Other sources call it a **\\\sigma\\-field** (see [Wikipedia: \\\sigma\\-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra)). A \\\sigma\\-algebra also contains \\\emptyset = S \setminus S\\, every finite union of its sets (pad the sequence with copies of \\\emptyset\\), and every countable intersection of its sets (take complements, apply the union rule, and take the complement again).
 
 > **NOTE:**
 >
-> **Example 2 (Rolling an even number)** In [Example 1](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\.
+> **Example 2 (\\\sigma\\-algebras for a die roll)** For the die roll in [Example 1](#exm-sample-space), the collection of all subsets of \\\Omega = \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\ is a \\\sigma\\-algebra on \\\Omega\\, since complements and unions of subsets of \\\Omega\\ are again subsets of \\\Omega\\. So is the smaller collection
+>
+> \\\mathopen{}\left\\\emptyset, \mathopen{}\left\\2, 4, 6\right\\\mathclose{}, \mathopen{}\left\\1, 3, 5\right\\\mathclose{}, \Omega\right\\\mathclose{}\\
+>
+> which contains \\\Omega\\, the complement of each of its sets, and every union of its sets: for example, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{} \cup \mathopen{}\left\\1, 3, 5\right\\\mathclose{} = \Omega\\.
 
 > **NOTE:**
 >
-> **Definition 3 (Occurrence of an event)** An [event](#def-event) \\A\\ **occurs** when the outcome of the experiment is in \\A\\, and does not occur when the outcome is not in \\A\\.
+> **Definition 3 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\: a set of outcomes.
+
+When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](#def-sigma-algebra) \\\mathscr{S}\\ on \\\Omega\\ count as events; every set that arises in these notes is in \\\mathscr{S}\\. When \\\Omega\\ is finite or countably infinite, every subset of \\\Omega\\ can be an event, as in [Example 2](#exm-sigma-algebra).
 
 > **NOTE:**
 >
-> **Example 3 (Rolling a 4)** In [Example 2](#exm-event), if the die shows 4, the event “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, occurs, because \\4 \in \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and the event “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, does not occur.
+> **Example 3 (Rolling an even number)** In [Example 1](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 4 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
+> **Definition 4 (Occurrence of an event)** An [event](#def-event) \\A\\ **occurs** when the outcome of the experiment is in \\A\\, and does not occur when the outcome is not in \\A\\.
+
+> **NOTE:**
+>
+> **Example 4 (Rolling a 4)** In [Example 3](#exm-event), if the die shows 4, the event “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, occurs, because \\4 \in \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and the event “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, does not occur.
+
+> **NOTE:**
+>
+> **Definition 5 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
 >
 > \\\neg A \stackrel{\text{def}}{=}\Omega \setminus A\\
 
@@ -44,21 +62,21 @@ Other sources write \\A^c\\ or \\\bar{A}\\.
 
 > **NOTE:**
 >
-> **Example 4 (Rolling an odd number)** In [Example 2](#exm-event), the complement of the event “the roll is even”, \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, is the event “the roll is odd”, \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
+> **Example 5 (Rolling an odd number)** In [Example 3](#exm-event), the complement of the event “the roll is even”, \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, is the event “the roll is odd”, \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 5 (Mutually exclusive events)** Finitely or countably many sets \\A_1, A_2, \ldots\\, such as [events](#def-event), are **mutually exclusive** (also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**) when no two of them share an element:
+> **Definition 6 (Mutually exclusive events)** Finitely or countably many sets \\A_1, A_2, \ldots\\, such as [events](#def-event), are **mutually exclusive** (also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**) when no two of them share an element:
 >
 > \\A_i \cap A_j = \emptyset \quad \text{for all } i \neq j\\
 
 > **NOTE:**
 >
-> **Example 5 (Low and high rolls)** In [Example 1](#exm-sample-space), the events “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, and “the roll is at least 5”, \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, are not mutually exclusive: a roll of 2 is in both.
+> **Example 6 (Low and high rolls)** In [Example 1](#exm-sample-space), the events “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, and “the roll is at least 5”, \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, are not mutually exclusive: a roll of 2 is in both.
 
 > **NOTE:**
 >
-> **Definition 6 (Partition of an event)** A **partition** of an [event](#def-event) \\A\\ is a finite or countably infinite collection of events \\A_1, A_2, \ldots\\ that satisfies:
+> **Definition 7 (Partition of an event)** A **partition** of an [event](#def-event) \\A\\ is a finite or countably infinite collection of events \\A_1, A_2, \ldots\\ that satisfies:
 >
 > - The events \\A_1, A_2, \ldots\\ are [mutually exclusive](#def-mutually-exclusive).
 > - Their union is \\A\\: \\\bigcup\_{i} A_i = A\\.
@@ -69,25 +87,7 @@ Some sources also require each piece \\A_i\\ to contain at least one outcome.
 
 > **NOTE:**
 >
-> **Example 6 (Partitioning the die roll)** In [Example 1](#exm-sample-space), the events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is odd”, \\\mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\\mathopen{}\left\\1\right\\\mathclose{}, \mathopen{}\left\\2\right\\\mathclose{}, \ldots, \mathopen{}\left\\6\right\\\mathclose{}\\. The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ from [Example 5](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
-
-> **NOTE:**
->
-> **Definition 7 (\\\sigma\\-algebra)** A **\\\sigma\\-algebra** on a set \\S\\ is a collection \\\mathscr{S}\\ of subsets of \\S\\ that satisfies:
->
-> - \\\mathscr{S}\\ contains \\S\\ itself.
-> - For each set \\A\\ in \\\mathscr{S}\\, \\\mathscr{S}\\ contains its complement \\S \setminus A\\.
-> - For each sequence \\A_1, A_2, \ldots\\ of sets in \\\mathscr{S}\\, \\\mathscr{S}\\ contains their union \\\bigcup\_{i=1}^{\infty} A_i\\.
-
-Other sources call it a **\\\sigma\\-field**. The [events](#def-event) of a sample space \\\Omega\\ form a \\\sigma\\-algebra on \\\Omega\\. A \\\sigma\\-algebra also contains \\\emptyset = S \setminus S\\, every finite union of its sets (pad the sequence with copies of \\\emptyset\\), and every countable intersection of its sets (take complements, apply the union rule, and take the complement again).
-
-> **NOTE:**
->
-> **Example 7 (\\\sigma\\-algebras for a die roll)** For the die roll in [Example 1](#exm-sample-space), the collection of all subsets of \\\Omega = \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\ is a \\\sigma\\-algebra on \\\Omega\\, since complements and unions of subsets of \\\Omega\\ are again subsets of \\\Omega\\. So is the smaller collection
->
-> \\\mathopen{}\left\\\emptyset, \mathopen{}\left\\2, 4, 6\right\\\mathclose{}, \mathopen{}\left\\1, 3, 5\right\\\mathclose{}, \Omega\right\\\mathclose{}\\
->
-> which contains \\\Omega\\, the complement of each of its sets, and every union of its sets: for example, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{} \cup \mathopen{}\left\\1, 3, 5\right\\\mathclose{} = \Omega\\.
+> **Example 7 (Partitioning the die roll)** In [Example 1](#exm-sample-space), the events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is odd”, \\\mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\\mathopen{}\left\\1\right\\\mathclose{}, \mathopen{}\left\\2\right\\\mathclose{}, \ldots, \mathopen{}\left\\6\right\\\mathclose{}\\. The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ from [Example 6](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
 
 > **NOTE:**
 >
@@ -97,7 +97,7 @@ Other sources call it a **\\\sigma\\-field**. The [events](#def-event) of a samp
 
 > **NOTE:**
 >
-> **Example 8 (Counting outcomes is finitely additive)** For the die roll in [Example 1](#exm-sample-space), let \\\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{}\\, the number of outcomes in \\A\\, for each set \\A\\ in the \\\sigma\\-algebra of all subsets of \\\Omega\\ ([Example 7](#exm-sigma-algebra)). The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ are mutually exclusive ([Example 5](#exm-mutually-exclusive)), and:
+> **Example 8 (Counting outcomes is finitely additive)** For the die roll in [Example 1](#exm-sample-space), let \\\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{}\\, the number of outcomes in \\A\\, for each set \\A\\ in the \\\sigma\\-algebra of all subsets of \\\Omega\\ ([Example 2](#exm-sigma-algebra)). The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ are mutually exclusive ([Example 6](#exm-mutually-exclusive)), and:
 >
 > \\ \begin{aligned} \mu(\mathopen{}\left\\1, 2\right\\\mathclose{} \cup \mathopen{}\left\\5, 6\right\\\mathclose{}) &= \mu(\mathopen{}\left\\1, 2, 5, 6\right\\\mathclose{}) && \text{(take the union)} \\ &= 4 && \text{(count the outcomes)} \\ &= 2 + 2 && \text{(write 4 as a sum)} \\ &= \mu(\mathopen{}\left\\1, 2\right\\\mathclose{}) + \mu(\mathopen{}\left\\5, 6\right\\\mathclose{}) && \text{(count each event's outcomes)} \end{aligned} \\
 >
@@ -152,7 +152,7 @@ A measure is also [finitely additive](#def-finite-additivity), by [Theorem 1](#
 
 > **NOTE:**
 >
-> **Example 10 (Counting outcomes is a measure)** The counting function \\\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{}\\ of [Example 8](#exm-finite-additivity), defined on the \\\sigma\\-algebra of all subsets of the die’s sample space ([Example 7](#exm-sigma-algebra)), takes values in \\\[0, \infty\]\\, is countably additive ([Example 9](#exm-countable-additivity)), and gives \\\mu(\emptyset) = 0\\, so it is a measure.
+> **Example 10 (Counting outcomes is a measure)** The counting function \\\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{}\\ of [Example 8](#exm-finite-additivity), defined on the \\\sigma\\-algebra of all subsets of the die’s sample space ([Example 2](#exm-sigma-algebra)), takes values in \\\[0, \infty\]\\, is countably additive ([Example 9](#exm-countable-additivity)), and gives \\\mu(\emptyset) = 0\\, so it is a measure.
 
 > **NOTE:**
 >
@@ -181,7 +181,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Example 12 (Probability measure for a fair die)** For the die roll in [Example 1](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the measure of [Example 10](#exm-measure), so it is a [measure](#def-measure) on the events of \\\Omega\\, and it gives \\\Pr(\Omega) = 6/6 = 1\\. The event “the roll is even” from [Example 2](#exm-event) has probability \\\Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) = 3/6 = 1/2\\.
+> **Example 12 (Probability measure for a fair die)** For the die roll in [Example 1](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the measure of [Example 10](#exm-measure), so it is a [measure](#def-measure) on the events of \\\Omega\\, and it gives \\\Pr(\Omega) = 6/6 = 1\\. The event “the roll is even” from [Example 3](#exm-event) has probability \\\Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) = 3/6 = 1/2\\.
 
 > **NOTE:**
 >

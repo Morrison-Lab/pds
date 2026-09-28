@@ -144,6 +144,16 @@ cookieconsent.run({
 </script> 
   
 <style>
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-lem.callout {
   border-left-color: #1565C0;
 }
@@ -153,36 +163,6 @@ div.callout-lem.callout-style-default .callout-header {
 div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
-}
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
-}
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-solution.callout {
   border-left-color: #4E342E;
@@ -194,15 +174,15 @@ div.callout-solution .callout-toggle::before {  background-image: url('data:imag
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-exr.callout {
+  border-left-color: #FFA500;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-remark.callout {
   border-left-color: #AD1457;
@@ -214,25 +194,15 @@ div.callout-remark .callout-toggle::before {  background-image: url('data:image/
 div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-prp.callout {
-  border-left-color: #827717;
-}
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
-}
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
@@ -243,6 +213,36 @@ div.callout-exm.callout-style-default .callout-header {
 div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
+}
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
+}
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-prp.callout {
+  border-left-color: #827717;
+}
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
+}
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -647,7 +647,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~32% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~34% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -671,7 +671,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-09-28 <mark class="preview-text-changed">11:43:19</mark> (PDT)</p>
+      <p class="date">Last modified: 2026-09-28 <mark class="preview-text-changed">11:50:39</mark> (PDT)</p>
     </div>
   </div>
   
@@ -717,14 +717,48 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-event" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Event)</strong></span> An <strong>event</strong> is a subset of the <a href="#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>: a set of outcomes.</p>
+<div id="def-sigma-algebra" class="theorem definition">
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Definition 2 (<span class="math inline">\(\sigma\)</span>-algebra)</strong></span> A <strong><span class="math inline">\(\sigma\)</span>-algebra</strong> on a set <span class="math inline">\(S\)</span> is a collection <span class="math inline">\(\mathscr{S}\)</span> of subsets of <span class="math inline">\(S\)</span> that satisfies:</mark></p>
+<ul>
+<li><mark class="preview-element-added"><span class="math inline">\(\mathscr{S}\)</span> contains <span class="math inline">\(S\)</span> itself.</mark></li>
+<li><mark class="preview-element-added">For each set <span class="math inline">\(A\)</span> in <span class="math inline">\(\mathscr{S}\)</span>, <span class="math inline">\(\mathscr{S}\)</span> contains its complement <span class="math inline">\(S \setminus A\)</span>.</mark></li>
+<li><mark class="preview-element-added">For each sequence <span class="math inline">\(A_1, A_2, \ldots\)</span> of sets in <span class="math inline">\(\mathscr{S}\)</span>, <span class="math inline">\(\mathscr{S}\)</span> contains their union <span class="math inline">\(\bigcup_{i=1}^{\infty} A_i\)</span>.</mark></li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="notes">
-<p>When <span class="math inline">\(\Omega\)</span> is uncountable, such as an interval of real numbers, only the subsets in a designated collection <span class="math inline">\(\mathscr{S}\)</span> (a <a href="https://en.wikipedia.org/wiki/%CE%A3-algebra"><span class="math inline">\(\sigma\)</span>-algebra</a>: a collection that contains <span class="math inline">\(\Omega\)</span> and is closed under complements and countable unions) count as events; every set that arises in these notes is in <span class="math inline">\(\mathscr{S}\)</span>.</p>
+<p><mark class="preview-element-added">Other sources call it a <strong><span class="math inline">\(\sigma\)</span>-field</strong> (see <a href="https://en.wikipedia.org/wiki/%CE%A3-algebra">Wikipedia: <span class="math inline">\(\sigma\)</span>-algebra</a>). A <span class="math inline">\(\sigma\)</span>-algebra also contains <span class="math inline">\(\emptyset = S \setminus S\)</span>, every finite union of its sets (pad the sequence with copies of <span class="math inline">\(\emptyset\)</span>), and every countable intersection of its sets (take complements, apply the union rule, and take the complement again).</mark></p>
+</div>
+<div class="callout callout-style-simple callout-exm no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-sigma-algebra" class="theorem example">
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Example 2 (<span class="math inline">\(\sigma\)</span>-algebras for a die roll)</strong></span> For the die roll in <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the collection of all subsets of <span class="math inline">\(\Omega = \mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(\Omega\)</span>, since complements and unions of subsets of <span class="math inline">\(\Omega\)</span> are again subsets of <span class="math inline">\(\Omega\)</span>. So is the smaller collection</mark></p>
+<p><span class="math display"><mark class="preview-text-changed">\[\mathopen{}\left\{\emptyset,</mark> \mathopen{}\left\{2, 4, <mark class="preview-text-changed">6\right\}\mathclose{},</mark> <mark class="preview-text-changed">\mathopen{}\left\{1,</mark> <mark class="preview-text-changed">3,</mark> <mark class="preview-text-changed">5\right\}\mathclose{},</mark> <mark class="preview-text-changed">\Omega\right\}\mathclose{}\]</mark></span></p>
+<p><mark class="preview-element-added">which contains <span class="math inline">\(\Omega\)</span>, the complement of each of its sets, and every union of its sets: for example, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{} \cup \mathopen{}\left\{1, 3, 5\right\}\mathclose{} = \Omega\)</span>.</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-def no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-event" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition <mark class="preview-text-changed">3</mark> (Event)</strong></span> An <strong>event</strong> is a subset of the <a href="#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>: a set of outcomes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>When <span class="math inline">\(\Omega\)</span> is uncountable, such as an interval of real numbers, only the subsets in a designated <a href="#def-sigma-algebra"><span class="math inline"><mark class="preview-text-changed">\(\sigma\)</mark></span><mark class="preview-text-changed">-algebra</mark></a> <span class="math inline">\(\mathscr{S}\)</span> <mark class="preview-text-changed">on</mark> <span class="math inline">\(\Omega\)</span> count as events; every set that arises in these notes is in <span class="math inline">\(\mathscr{S}\)</span>.<mark class="preview-text-added"> When </mark><span class="math inline"><mark class="preview-text-added">\(\Omega\)</mark></span><mark class="preview-text-added"> is finite or countably infinite, every subset of </mark><span class="math inline"><mark class="preview-text-added">\(\Omega\)</mark></span><mark class="preview-text-added"> can be an event, as in </mark><a href="#exm-sigma-algebra" class="quarto-xref"><mark class="preview-text-added">Example&nb</mark>sp;2</a>.</p>
 </div>
 <div class="callout callout-style-simple callout-exm no-icon">
 <div class="callout-body d-flex">
@@ -733,7 +767,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-event" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (Rolling an even number)</strong></span> In <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the event “the roll is even” is <span class="math inline">\(A = \mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 3 (Rolling an even number)</strong></span> In <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the event “the roll is even” is <span class="math inline">\(A = \mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -745,7 +779,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-occurs" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 <mark class="preview-text-changed">(Occurrence</mark> of an event)</strong></span> <mark class="preview-text-changed">An</mark> <a href="#def-event"><mark class="preview-text-changed">event</mark></a> <span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span> <strong><mark class="preview-text-changed">occurs</mark></strong><mark class="preview-text-changed"> when the outcome</mark> of <mark class="preview-text-changed">the</mark> <mark class="preview-text-changed">experiment is in</mark> <span class="math inline">\(A\)</span>, <mark class="preview-text-changed">and</mark> does not <mark class="preview-text-changed">occur when</mark> the <mark class="preview-text-changed">outcome</mark> <mark class="preview-text-changed">is</mark> not in <span class="math inline">\(A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition <mark class="preview-text-changed">4</mark> <mark class="preview-text-changed">(Occurrence</mark> of an event)</strong></span> <mark class="preview-text-changed">An</mark> <a href="#def-event"><mark class="preview-text-changed">event</mark></a> <span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span> <strong><mark class="preview-text-changed">occurs</mark></strong><mark class="preview-text-changed"> when the outcome</mark> of <mark class="preview-text-changed">the</mark> <mark class="preview-text-changed">experiment is in</mark> <span class="math inline">\(A\)</span>, <mark class="preview-text-changed">and</mark> does not <mark class="preview-text-changed">occur when</mark> the <mark class="preview-text-changed">outcome</mark> <mark class="preview-text-changed">is</mark> not in <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 </div>
@@ -757,7 +791,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-occurs" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (Rolling <mark class="preview-text-changed">a</mark> <mark class="preview-text-changed">4)</mark></strong></span> In <a href="#exm-event" class="quarto-xref">Example&nbs<mark class="preview-text-added">p;2</mark></a>, if<mark class="preview-text-changed"> th</mark>e<mark class="preview-text-changed"> die sho</mark>ws 4, the event “the roll is ev<mark class="preview-text-changed">en”, </mark><span class="math inline"><mark class="preview-text-changed">\(\mathopen{}\lef</mark>t<mark class="preview-text-changed">\{2, 4, 6\right\}\mathclose{}\)</mark></span><mark class="preview-text-changed">, occurs, because </mark><span class="math inline"><mark class="preview-text-changed">\(</mark>4 \in \mathopen{}\left\{2, 4, 6\right\}\mathclose{<mark class="preview-text-changed">}\)</mark></span>, and the event “the rol<mark class="preview-text-changed">l </mark>i<mark class="preview-text-changed">s at</mark> <mark class="preview-text-changed">mos</mark>t<mark class="preview-text-changed"> 2”, </mark><span class="math inline"><mark class="preview-text-changed">\(\mathopen{}\lef</mark>t<mark class="preview-text-changed">\{1, 2\right\}\mathclose</mark>{<mark class="preview-text-changed">}\)</mark></span><mark class="preview-text-changed">,</mark> <mark class="preview-text-changed">does not o</mark>ccur.</p>
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Example 4 (Rolling a 4)</strong></span> In <a href="#exm-event" class="quarto-xref">Example&nbsp;3</a>, if the die shows 4, the event “the roll is even”, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, occurs, because <span class="math inline">\(4 \in \mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, and the event “the roll is at most 2”, <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span>, does not occur.</mark></p>
 </div>
 </div>
 </div>
@@ -769,7 +803,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-complement" class="theorem definition">
-<p><mark class="preview-element-added"><span class="theorem-title"><strong>Definition 4 (Complement of an event)</strong></span> The <strong>complement</strong> of an <a href="#def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#def-occurs">occur</a>: the set of outcomes in the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>.</mark></p>
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Definition 5 (Complement of an event)</strong></span> The <strong>complement</strong> of an <a href="#def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#def-occurs">occur</a>: the set of outcomes in the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>.</mark></p>
 <p><span class="math display">\[\neg A \stackrel{\text{def}}{=}\Omega \setminus A\]</span></p>
 </div>
 </div>
@@ -785,7 +819,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-complement" class="theorem example">
-<p><span class="theorem-title"><strong>Example <mark class="preview-text-changed">4</mark> (Rolling an <mark class="preview-text-changed">odd</mark> number)</strong></span> In <a href="#exm-event" class="quarto-xref">Example&<mark class="preview-text-changed">nbsp;2</mark></a><mark class="preview-text-changed">, the compleme</mark>nt of the event “the rol<mark class="preview-text-changed">l is e</mark>ven”, <span class="math inline">\(A = \mathopen{}\left\{2<mark class="preview-text-changed">, 4, 6\right\}\mathclose{}\)</mark></span><mark class="preview-text-changed">, is the event “the roll is odd”, </mark><span class="math inline"><mark class="preview-text-changed">\(\neg A = \mathopen{}\left\{1, 3, 5\right\}\mathclose</mark>{}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 5 (Rolling an odd number)</strong></span> In <a href="#exm-event" class="quarto-xref">Example&nbsp;3</a>, the complement of the event “the roll is even”, <span class="math inline">\(A = \mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, is the event “the roll is odd”, <span class="math inline">\(\neg A = \mathopen{}\left\{1, 3, 5\right\}\mathclose{}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -797,7 +831,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-mutually-exclusive" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition <mark class="preview-text-changed">5</mark> (Mutually exclusive events)</strong></span> Finitely or countably many <mark class="preview-text-changed">sets</mark> <span class="math inline">\(A_1, A_2, <mark class="preview-text-changed">\ldots\)</mark></span><mark class="preview-text-changed">, such as </mark><a href="#def-event"><mark class="preview-text-changed">events</mark></a><mark class="preview-text-changed">,</mark> are <strong>mutually exclusive</strong> (also called <strong>disjoint</strong>, <strong>pairwise disjoint</strong>, or <strong>mutually disjoint</strong>) when no two of them share an <mark class="preview-text-changed">element:</mark></p>
+<p><span class="theorem-title"><strong>Definition <mark class="preview-text-changed">6</mark> (Mutually exclusive events)</strong></span> Finitely or countably many <mark class="preview-text-changed">sets</mark> <span class="math inline">\(A_1, A_2, <mark class="preview-text-changed">\ldots\)</mark></span><mark class="preview-text-changed">, such as </mark><a href="#def-event"><mark class="preview-text-changed">events</mark></a><mark class="preview-text-changed">,</mark> are <strong>mutually exclusive</strong> (also called <strong>disjoint</strong>, <strong>pairwise disjoint</strong>, or <strong>mutually disjoint</strong>) when no two of them share an <mark class="preview-text-changed">element:</mark></p>
 <p><span class="math display">\[A_i \cap A_j = \emptyset \quad \text{for all } i \neq j\]</span></p>
 </div>
 </div>
@@ -810,7 +844,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-mutually-exclusive" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (Low and high rolls)</strong></span> In <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the events “the roll is at most 2”, <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span>, and “the roll is at least 5”, <span class="math inline">\(\mathopen{}\left\{5, 6\right\}\mathclose{}\)</span>, are mutually exclusive: no roll is in both. The events “the roll is even”, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, and “the roll is at most 2”, <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span>, are not mutually exclusive: a roll of 2 is in both.</p>
+<p><span class="theorem-title"><strong>Example 6 (Low and high rolls)</strong></span> In <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the events “the roll is at most 2”, <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span>, and “the roll is at least 5”, <span class="math inline">\(\mathopen{}\left\{5, 6\right\}\mathclose{}\)</span>, are mutually exclusive: no roll is in both. The events “the roll is even”, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, and “the roll is at most 2”, <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span>, are not mutually exclusive: a roll of 2 is in both.</p>
 </div>
 </div>
 </div>
@@ -822,7 +856,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-partition" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition <mark class="preview-text-changed">6</mark> (Partition of an event)</strong></span> A <strong>partition</strong> of an <a href="#def-event">event</a> <span class="math inline">\(A\)</span> is a finite or countably infinite collection of events <span class="math inline">\(A_1, A_2, \ldots\)</span> <mark class="preview-text-changed">that</mark> <mark class="preview-text-changed">satisfies:</mark></p>
+<p><span class="theorem-title"><strong>Definition <mark class="preview-text-changed">7</mark> (Partition of an event)</strong></span> A <strong>partition</strong> of an <a href="#def-event">event</a> <span class="math inline">\(A\)</span> is a finite or countably infinite collection of events <span class="math inline">\(A_1, A_2, \ldots\)</span> <mark class="preview-text-changed">that</mark> <mark class="preview-text-changed">satisfies:</mark></p>
 <ul>
 <li><mark class="preview-element-added">The events <span class="math inline">\(A_1, A_2, \ldots\)</span> are <a href="#def-mutually-exclusive">mutually exclusive</a>.</mark></li>
 <li><mark class="preview-text-changed">Their union is </mark><span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span><mark class="preview-text-changed">: </mark><span class="math inline"><mark class="preview-text-changed">\(\bigcup_{i}</mark> A_i = <mark class="preview-text-changed">A\)</mark></span><mark class="preview-text-changed">.</mark></li>
@@ -842,41 +876,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-partition" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (Partitioning the die roll)</strong></span> In <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the events “the roll is even”, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, and “the roll is odd”, <span class="math inline">\(\mathopen{}\left\{1, 3, 5\right\}\mathclose{}\)</span>, are mutually exclusive, and their union is <span class="math inline">\(\Omega\)</span>, so they partition the sample space. So do the six single-outcome events <span class="math inline">\(\mathopen{}\left\{1\right\}\mathclose{}, \mathopen{}\left\{2\right\}\mathclose{}, \ldots, \mathopen{}\left\{6\right\}\mathclose{}\)</span>. The events <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{5, 6\right\}\mathclose{}\)</span> from <a href="#exm-mutually-exclusive" class="quarto-xref">Example&nbsp;5</a> do not partition <span class="math inline">\(\Omega\)</span>: their union leaves out 3 and 4.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-def no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-sigma-algebra" class="theorem definition">
-<p><mark class="preview-element-added"><span class="theorem-title"><strong>Definition 7 (<span class="math inline">\(\sigma\)</span>-algebra)</strong></span> A <strong><span class="math inline">\(\sigma\)</span>-algebra</strong> on a set <span class="math inline">\(S\)</span> is a collection <span class="math inline">\(\mathscr{S}\)</span> of subsets of <span class="math inline">\(S\)</span> that satisfies:</mark></p>
-<ul>
-<li><mark class="preview-element-added"><span class="math inline">\(\mathscr{S}\)</span> contains <span class="math inline">\(S\)</span> itself.</mark></li>
-<li><mark class="preview-element-added">For each set <span class="math inline">\(A\)</span> in <span class="math inline">\(\mathscr{S}\)</span>, <span class="math inline">\(\mathscr{S}\)</span> contains its complement <span class="math inline">\(S \setminus A\)</span>.</mark></li>
-<li><mark class="preview-element-added">For each sequence <span class="math inline">\(A_1, A_2, \ldots\)</span> of sets in <span class="math inline">\(\mathscr{S}\)</span>, <span class="math inline">\(\mathscr{S}\)</span> contains their union <span class="math inline">\(\bigcup_{i=1}^{\infty} A_i\)</span>.</mark></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="notes">
-<p><mark class="preview-element-added">Other sources call it a <strong><span class="math inline">\(\sigma\)</span>-field</strong>. The <a href="#def-event">events</a> of a sample space <span class="math inline">\(\Omega\)</span> form a <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(\Omega\)</span>. A <span class="math inline">\(\sigma\)</span>-algebra also contains <span class="math inline">\(\emptyset = S \setminus S\)</span>, every finite union of its sets (pad the sequence with copies of <span class="math inline">\(\emptyset\)</span>), and every countable intersection of its sets (take complements, apply the union rule, and take the complement again).</mark></p>
-</div>
-<div class="callout callout-style-simple callout-exm no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exm-sigma-algebra" class="theorem example">
-<p><mark class="preview-element-added"><span class="theorem-title"><strong>Example 7 (<span class="math inline">\(\sigma\)</span>-algebras for a die roll)</strong></span> For the die roll in <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the collection of all subsets of <span class="math inline">\(\Omega = \mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(\Omega\)</span>, since complements and unions of subsets of <span class="math inline">\(\Omega\)</span> are again subsets of <span class="math inline">\(\Omega\)</span>. So is the smaller collection</mark></p>
-<p><span class="math display"><mark class="preview-text-changed">\[\mathopen{}\left\{\emptyset,</mark> \mathopen{}\left\{2, 4, <mark class="preview-text-changed">6\right\}\mathclose{},</mark> <mark class="preview-text-changed">\mathopen{}\left\{1,</mark> <mark class="preview-text-changed">3,</mark> <mark class="preview-text-changed">5\right\}\mathclose{},</mark> <mark class="preview-text-changed">\Omega\right\}\mathclose{}\]</mark></span></p>
-<p><mark class="preview-element-added">which contains <span class="math inline">\(\Omega\)</span>, the complement of each of its sets, and every union of its sets: for example, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{} \cup \mathopen{}\left\{1, 3, 5\right\}\mathclose{} = \Omega\)</span>.</mark></p>
+<p><span class="theorem-title"><strong>Example 7 (Partitioning the die roll)</strong></span> In <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, the events “the roll is even”, <span class="math inline">\(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}\)</span>, and “the roll is odd”, <span class="math inline">\(\mathopen{}\left\{1, 3, 5\right\}\mathclose{}\)</span>, are mutually exclusive, and their union is <span class="math inline">\(\Omega\)</span>, so they partition the sample space. So do the six single-outcome events <span class="math inline">\(\mathopen{}\left\{1\right\}\mathclose{}, \mathopen{}\left\{2\right\}\mathclose{}, \ldots, \mathopen{}\left\{6\right\}\mathclose{}\)</span>. The events <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{5, 6\right\}\mathclose{}\)</span> from <a href="#exm-mutually-exclusive" class="quarto-xref">Example&nbsp;6</a> do not partition <span class="math inline">\(\Omega\)</span>: their union leaves out 3 and 4.</p>
 </div>
 </div>
 </div>
@@ -901,7 +901,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-finite-additivity" class="theorem example">
-<p><span class="theorem-title"><strong>Example <mark class="preview-text-changed">8</mark> (Counting outcomes is finitely additive)</strong></span> For the die roll in <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{}\)</span>, the number of outcome<mark class="preview-text-changed">s in </mark><span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span><mark class="preview-text-changed">, for each set </mark><span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span><mark class="preview-text-changed"> in the </mark><span class="math inline"><mark class="preview-text-changed">\(\sigma\)</mark></span><mark class="preview-text-changed">-algebra of all subsets of </mark><span class="math inline"><mark class="preview-text-changed">\(\Omega\)</mark></span><mark class="preview-text-changed"> (</mark><a href="#exm-sigma-algebra" class="quarto-xref"><mark class="preview-text-changed">Exampl</mark>e&nbsp;7</a>). The events <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{5, 6\right\}\mathclose{}\)</span> are mutually exclusive<mark class="preview-text-changed"> (</mark><a href="#exm-mutually-exclusive" class="quarto-xref"><mark class="preview-text-changed">E</mark>xample&nbsp;5</a>), and:</p>
+<p><span class="theorem-title"><strong>Example <mark class="preview-text-changed">8</mark> (Counting outcomes is finitely additive)</strong></span> For the die roll in <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{}\)</span>, the number of outcome<mark class="preview-text-changed">s in </mark><span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span><mark class="preview-text-changed">, for each set </mark><span class="math inline"><mark class="preview-text-changed">\(A\)</mark></span><mark class="preview-text-changed"> in the </mark><span class="math inline"><mark class="preview-text-changed">\(\sigma\)</mark></span><mark class="preview-text-changed">-algebra of all subsets of </mark><span class="math inline"><mark class="preview-text-changed">\(\Omega\)</mark></span><mark class="preview-text-changed"> (</mark><a href="#exm-sigma-algebra" class="quarto-xref"><mark class="preview-text-changed">Exampl</mark>e&nbsp;2</a>). The events <span class="math inline">\(\mathopen{}\left\{1, 2\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{5, 6\right\}\mathclose{}\)</span> are mutually exclusive<mark class="preview-text-changed"> (</mark><a href="#exm-mutually-exclusive" class="quarto-xref"><mark class="preview-text-changed">E</mark>xample&nbsp;6</a>), and:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mu(\mathopen{}\left\{1, 2\right\}\mathclose{} \cup \mathopen{}\left\{5, 6\right\}\mathclose{})
@@ -1063,7 +1063,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-measure" class="theorem example">
-<p><mark class="preview-element-added"><span class="theorem-title"><strong>Example 10 (Counting outcomes is a measure)</strong></span> The counting function <span class="math inline">\(\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{}\)</span> of <a href="#exm-finite-additivity" class="quarto-xref">Example&nbsp;8</a>, defined on the <span class="math inline">\(\sigma\)</span>-algebra of all subsets of the die’s sample space (<a href="#exm-sigma-algebra" class="quarto-xref">Example&nbsp;7</a>), takes values in <span class="math inline">\([0, \infty]\)</span>, is countably additive (<a href="#exm-countable-additivity" class="quarto-xref">Example&nbsp;9</a>), and gives <span class="math inline">\(\mu(\emptyset) = 0\)</span>, so it is a measure.</mark></p>
+<p><mark class="preview-element-added"><span class="theorem-title"><strong>Example 10 (Counting outcomes is a measure)</strong></span> The counting function <span class="math inline">\(\mu(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{}\)</span> of <a href="#exm-finite-additivity" class="quarto-xref">Example&nbsp;8</a>, defined on the <span class="math inline">\(\sigma\)</span>-algebra of all subsets of the die’s sample space (<a href="#exm-sigma-algebra" class="quarto-xref">Example&nbsp;2</a>), takes values in <span class="math inline">\([0, \infty]\)</span>, is countably additive (<a href="#exm-countable-additivity" class="quarto-xref">Example&nbsp;9</a>), and gives <span class="math inline">\(\mu(\emptyset) = 0\)</span>, so it is a measure.</mark></p>
 </div>
 </div>
 </div>
@@ -1130,7 +1130,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-probability" class="theorem example">
-<p><span class="theorem-title"><strong>Example <mark class="preview-text-changed">12</mark> (Probability measure for a fair die)</strong></span> For the die roll in <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, define <span class="math inline">\(\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{} / 6\)</span>, where <span class="math inline">\(\mathopen{}\left|A\right|\mathclose{}\)</span> is the number of outcomes in <span class="math inline">\(A\)</span>. This functio<mark class="preview-text-changed">n is </mark><span class="math inline"><mark class="preview-text-changed">\(1/6\)</mark></span><mark class="preview-text-changed"> times the measure of </mark><a href="#exm-measure" class="quarto-xref"><mark class="preview-text-changed">Example&nbsp;10</mark></a><mark class="preview-text-changed">, so it is a </mark><a href="#def-measure"><mark class="preview-text-changed">measure</mark></a><mark class="preview-text-changed"> on the events of </mark><span class="math inline"><mark class="preview-text-changed">\(\Omega</mark>\)</span>, and it gives <span class="math inline">\(\Pr(\Omega<mark class="preview-text-changed">) = </mark>6/6 = 1\)</span>. The event “the roll is even” from <a href="#exm-event" class="quarto-xref">Example&nbsp;2</a> has probability <span class="math inline">\(\Pr(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}) = 3/6 = 1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Example <mark class="preview-text-changed">12</mark> (Probability measure for a fair die)</strong></span> For the die roll in <a href="#exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, define <span class="math inline">\(\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{} / 6\)</span>, where <span class="math inline">\(\mathopen{}\left|A\right|\mathclose{}\)</span> is the number of outcomes in <span class="math inline">\(A\)</span>. This functio<mark class="preview-text-changed">n is </mark><span class="math inline"><mark class="preview-text-changed">\(1/6\)</mark></span><mark class="preview-text-changed"> times the measure of </mark><a href="#exm-measure" class="quarto-xref"><mark class="preview-text-changed">Example&nbsp;10</mark></a><mark class="preview-text-changed">, so it is a </mark><a href="#def-measure"><mark class="preview-text-changed">measure</mark></a><mark class="preview-text-changed"> on the events of </mark><span class="math inline"><mark class="preview-text-changed">\(\Omega</mark>\)</span>, and it gives <span class="math inline">\(\Pr(\Omega<mark class="preview-text-changed">) = </mark>6/6 = 1\)</span>. The event “the roll is even” fro<mark class="preview-text-changed">m</mark> <a href="#exm-event" class="quarto-xref">Example&nbsp;3</a> has probability <span class="math inline">\(\Pr(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}) = 3/6 = 1/2\)</span>.</p>
 </div>
 </div>
 </div>
