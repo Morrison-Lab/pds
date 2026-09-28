@@ -38,19 +38,19 @@ website:
       # line at desktop width; use a dropdown only if it stops fitting.
       - text: "Notation"
         href: notation.qmd
-      - text: "Probability Basics"
+      - text: "Probability"
         href: probability-basics.qmd
-      - text: "Random Variables"
+      - text: "Variables"
         href: random-variables.qmd
       - text: "Independence"
         href: independence.qmd
       - text: "Expectation"
         href: expectation.qmd
-      - text: "Variance & Covariance"
+      - text: "Variance"
         href: variance-covariance.qmd
       - text: "Distributions"
         href: distributions.qmd
-      - text: "Limit Theorems"
+      - text: "Limits"
         href: limit-theorems.qmd
     right:
       - icon: github
