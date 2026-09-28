@@ -17,6 +17,7 @@ Suggests:
     dobson,
     ggplot2,
     knitr,
+    latex2exp,
     pander,
     plotly,
     rmarkdown,

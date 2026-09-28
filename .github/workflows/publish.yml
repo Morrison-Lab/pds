@@ -38,6 +38,7 @@ jobs:
             any::dobson
             any::dplyr
             any::ggplot2
+            any::latex2exp
             any::pander
             any::plotly
 

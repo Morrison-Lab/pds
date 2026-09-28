@@ -39,7 +39,8 @@ $$
 
 ::: notes
 
-See also
+See also @me4 (Chapter 22, p. 535)
+and
 <https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
 
 :::

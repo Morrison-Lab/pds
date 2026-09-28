@@ -291,6 +291,18 @@ $\{(x, y) : 0 \le x \le y \le 1\}$, and zero elsewhere. The total
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exr-fubini-joint-disc-infinite.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-mixed.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-mixed-infinite.qmd >}}
+
+{{< slidebreak >}}
+
 :::{#thm-lie}
 
 #### Law of iterated expectations

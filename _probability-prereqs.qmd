@@ -80,6 +80,10 @@ which also covers material outside this page's scope
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exr-fubini-joint-disc.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_fubini-tonelli-expectations.qmd >}}
 
 # Variance and covariance {#sec-variance-covariance}
@@ -99,6 +103,10 @@ which also covers material outside this page's scope
 <!-- heading directly precedes the def-indpt div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
 
 {{< include pds/_subfiles/_def-independence.qmd >}}
+
+## The Central Limit Theorem
+
+{{< include pds/_subfiles/_sec-CLT.qmd >}}
 
 # Additional resources {#sec-additional-resources}
 

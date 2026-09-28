@@ -67,6 +67,22 @@ $$\P(Y = y) \eqdef \frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \Nat = \set{0, 1, 2,
 
 :::
 
+::: notes
+(see @fig-pois-pmf)
+:::
+
+{{< slidebreak >}}
+
+:::{#exr-range-poisson}
+What is the range of possible values for a Poisson distribution?
+:::
+
+{{< slidebreak >}}
+
+:::{#sol-range-poisson}
+$$\rangef{Y} \eqdef \set{0, 1, 2, \dots} = \Nat$$
+:::
+
 {{< slidebreak >}}
 
 :::{#thm-cdf-pois}
@@ -109,6 +125,103 @@ $$
 &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value})
 \ea
 $$
+:::
+
+::: notes
+(see @fig-pois-cdfs)
+:::
+
+{{< slidebreak >}}
+
+```{r}
+#| label: fig-pois-pmf
+#| fig-cap: "Poisson PMFs, by mean parameter $\\mu$"
+
+library(dplyr)
+pois_dists <- tibble(
+  mu = c(0.5, 1, 2, 5, 10, 20)
+) |>
+  reframe(
+    .by = mu,
+    x = 0:30
+  ) |>
+  mutate(
+    `P(X = x)` = dpois(x, lambda = mu),
+    `P(X <= x)` = ppois(x, lambda = mu),
+    mu = factor(mu)
+  )
+
+library(ggplot2)
+library(latex2exp)
+
+plot0 <- pois_dists |>
+  ggplot(
+    aes(
+      x = x,
+      y = `P(X = x)`,
+      fill = mu,
+      col = mu
+    )
+  ) +
+  theme(legend.position = "bottom") +
+  labs(
+    fill = latex2exp::TeX("$\\mu$"),
+    col = latex2exp::TeX("$\\mu$"),
+    y = latex2exp::TeX("$\\Pr_{\\mu}(X = x)$")
+  )
+
+plot1 <- plot0 +
+  geom_segment(yend = 0) +
+  facet_wrap(~mu)
+
+print(plot1)
+```
+
+{{< slidebreak >}}
+
+```{r}
+#| label: fig-pois-cdfs
+#| fig-cap: "Poisson CDFs"
+library(ggplot2)
+
+plot2 <-
+  plot0 +
+  geom_step(alpha = 0.75) +
+  aes(y = `P(X <= x)`) +
+  labs(y = latex2exp::TeX("$\\Pr_{\\mu}(X \\leq x)$"))
+
+print(plot2)
+```
+
+{{< slidebreak >}}
+
+:::{#exr-pois-dist-funs}
+#### Poisson distribution functions
+
+```{r}
+#| label: def-mu-exr-pois
+#| include: false
+mu <- 3.75
+```
+
+Let $X \sim \Pois(\mu = `r mu`)$.
+
+Compute:
+
+- $\P(X = 4 | \mu = `r mu`)$
+- $\P(X \le 7 | \mu = `r mu`)$
+- $\P(X > 5 | \mu = `r mu`)$
+
+:::
+
+{{< slidebreak >}}
+
+::: solution
+
+- $\P(X=4) = `r dpois(x = 4, lambda = mu)`$
+- $\P(X\le 7) = `r ppois(q = 7, lambda = mu)`$
+- $\P(X > 5) = `r ppois(q = 5, lambda = mu, lower.tail = FALSE)`$
+
 :::
 
 {{< slidebreak >}}
@@ -164,6 +277,37 @@ which multiplicatively rescales
 the expected (mean) count.
 
 :::
+
+{{< slidebreak >}}
+
+:::{#exr-exposure-magnitude}
+What are some examples of exposure magnitudes?
+:::
+
+{{< slidebreak >}}
+
+::: {.solution .smaller}
+
+outcome                      | exposure units
+-----------------------------| -------------
+disease incidence            | number of individuals exposed; time at risk
+car accidents                | miles driven
+worksite accidents           | person-hours worked
+population size              | size of habitat
+
+: Examples of exposure units {#tbl-exposure-units}
+
+:::
+
+:::: notes
+Exposure units are similar to
+the number of trials in a binomial distribution,
+but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
+
+We can use $t$ to represent continuous-valued exposures/observation durations,
+and $n$ to represent discrete-valued exposures.
+
+::::
 
 {{< slidebreak >}}
 
@@ -226,6 +370,10 @@ $$
 
 {{< slidebreak >}}
 
+@eq-lambda-to-mu is analogous to the inverse-odds function for binary variables.
+
+{{< slidebreak >}}
+
 :::{#thm-non-exposed}
 #### No exposure means no expected events
 
@@ -253,6 +401,16 @@ $$
 If a subject is observed for $t = 0$ person-years,
 no follow-up time has elapsed,
 so the expected number of incident events is $\Expp[Y \mid T=0] = 0$.
+:::
+
+{{< slidebreak >}}
+
+:::{.callout-important}
+
+The exposure magnitude, $T$, is *similar* to a covariate in linear or logistic regression.
+However, there is an important difference: in count regression, **there is no intercept corresponding to $\Expp[Y|T=0]$**.
+In other words, this model assumes that if there is no exposure, there can't be any events.
+
 :::
 
 {{< slidebreak >}}

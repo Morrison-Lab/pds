@@ -44,10 +44,12 @@ we prefer "deviation"
 for this mean-deviation quantity.
 The terms "error" and "noise" are common aliases.
 We use "residual"
+(defined in the [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted))
 for deviations from fitted values.
 For notation in this course,
 we use $\devn(\cdot)$ for these model/data deviations,
-and reserve $\erf{\cdot}$ for estimator-to-estimand deviations.
+and reserve $\erf{\cdot}$ for estimator-to-estimand deviations
+(see [Estimation](https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error)).
 
 See:
 

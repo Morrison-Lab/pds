@@ -20,12 +20,24 @@ and which satisfies:
 
 ::: notes
 
-A full treatment of $\sigma$-algebras and measure-theoretic probability
-is beyond the scope of this prerequisites page;
-see rme's
-[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html)
-for the definitions this page's results build on
-(conditional expectations against joint densities, Fubini-Tonelli, and so on).
+Property 3 (*countable additivity*) is stronger than *finite additivity*,
+which only requires
+
+$$\Pr(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \Pr(A_i)$$
+
+for every finite collection of mutually disjoint events.
+Countable additivity implies finite additivity
+(set $A_{n+1} = A_{n+2} = \cdots = \emptyset$ in property 3,
+using $\Pr(\emptyset) = 0$),
+but not vice versa:
+there exist set functions that satisfy finite additivity
+but fail countable additivity
+(see [Wikipedia: Sigma-additive set function --- An additive function which is not $\sigma$-additive](https://en.wikipedia.org/wiki/Sigma-additive_set_function#An_additive_function_which_is_not_%CF%83-additive)).
+Requiring countable additivity enables results such as
+the continuity of probability
+(if $A_1 \supseteq A_2 \supseteq \cdots$ with $\bigcap_i A_i = \emptyset$,
+then $\Pr(A_i) \to 0$)
+and underpins the @thm-total-prob for countable partitions.
 
 :::
 

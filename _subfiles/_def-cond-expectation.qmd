@@ -149,6 +149,7 @@ $$
 
 By @def-cond-pdf, dividing the joint density by this marginal density
 and simplifying the exponent
+(completing the square in $y$; @CaseBerg01)
 gives the conditional PDF of $Y$ given $X = `r x0`$,
 which is itself normal
 with mean shifted along the regression line
@@ -174,6 +175,18 @@ $$
   \e{-\frac{\paren{y - \sb{\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)}}^2}{2\sigma_Y^2(1-\rho^2)}}
 \ea
 $$
+
+The first equality substitutes the joint and marginal densities
+and combines their prefactors and exponents;
+the second equality combines the two $(`r x0`-\mu_X)^2$ terms
+using $1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2}$;
+the third equality factors $-\tfrac{1}{2\sigma_Y^2(1-\rho^2)}$
+out of the bracket
+(multiplying through confirms it reproduces the previous line);
+and the fourth equality completes the square in $y$,
+since expanding
+$\paren{y - \sb{\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)}}^2$
+reproduces exactly the bracketed quadratic in the third equality.
 
 So $Y \mid X = `r x0` \sim \ndist{`r round(cond_mean, 2)`,\, `r round(cond_sd, 2)`^2}$:
 the conditional mean, `r round(cond_mean, 2)` g,
@@ -261,7 +274,9 @@ $$
 \ea
 $$
 
-matching the fitted regression line's prediction at $x=`r x0`$ weeks exactly.
+matching the fitted regression line's prediction at $x=`r x0`$ weeks exactly,
+as expected since the conditional mean of a bivariate normal
+*is* the linear regression of $Y$ on $X$.
 
 :::
 
@@ -428,7 +443,10 @@ g(x) &= \mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X)
 \ea
 $$
 
-which is exactly the fitted regression line.
+which is exactly the fitted regression line
+(the general algebraic identity
+$\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \paren{\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X} + \rho\frac{\sigma_Y}{\sigma_X}x$
+is what makes the bivariate-normal conditional mean linear in $x$).
 As a check, evaluating at $x = `r x0`$ recovers @exm-cond-expectation's result:
 
 $$g(`r x0`) = `r round(intercept, 4)` + `r round(beta, 4)` \times `r x0` = `r round(intercept + beta*x0, 2)` \text{ g}$$
