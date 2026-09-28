@@ -1,7 +1,8 @@
 :::{#def-cov}
 #### Covariance
 
-For any two random variables $X, Y$:
+The **covariance** of two random variables $X$ and $Y$
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$ is:
 
 $$\Cov{X,Y} \eqdef \E{(X - \E X)(Y - \E Y)}$$
 
@@ -52,6 +53,138 @@ $$
 && \text{(evaluate)}
 \ea
 $$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-indpt-uncorrelated}
+#### Independent random variables have zero covariance
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+each discrete or continuous,
+with defined expectations,
+then:
+
+$$\E{XY} = \E{X}\E{Y}$$
+
+If also $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then $\Cov{X,Y} = 0$.
+
+:::
+
+::: proof
+
+Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$,
+with reference measures $\mu_X$ and $\mu_Y$ as in
+the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
+(counting measure for a discrete variable, Lebesgue measure for a continuous one).
+Because $X$ and $Y$ are independent,
+$f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their joint PMF, density, or density-mass function
+(the factorization in the notes to the [definition of independence](independence.qmd#def-indpt)).
+First, with $h(x, y) = \abs{x}\abs{y} \ge 0$ (condition (a)):
+
+$$
+\ba
+\E{\abs{XY}}
+&= \int\paren{\int \abs{x}\abs{y}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\
+&= \int \abs{x}\,f_X(x)\paren{\int \abs{y}\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(} \abs{x}\,f_X(x) \text{ does not depend on } y \text{)} \\
+&= \int \abs{x}\,f_X(x) \cd \E{\abs{Y}}\,d\mu_X(x)
+&& \text{(LOTUS for } \abs{Y} \text{)} \\
+&= \E{\abs{X}} \cd \E{\abs{Y}}
+&& \text{(LOTUS for } \abs{X} \text{)}
+\ea
+$$
+
+which is finite, because $X$ and $Y$ have defined expectations.
+So condition (b) holds for $h(x, y) = xy$,
+and the same steps without the absolute values give:
+
+$$
+\ba
+\E{XY}
+&= \int\paren{\int xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(joint-distribution form of Fubini--Tonelli, condition (b))} \\
+&= \int x\,f_X(x)\paren{\int y\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(} x\,f_X(x) \text{ does not depend on } y \text{)} \\
+&= \int x\,f_X(x) \cd \E{Y}\,d\mu_X(x)
+&& \text{(definition of expectation)} \\
+&= \E{X} \cd \E{Y}
+&& \text{(definition of expectation)}
+\ea
+$$
+
+Finally, by the [alternative formula for covariance](#thm-alt-cov):
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= \E{X}\E{Y} - \E{X}\E{Y}
+&& \text{(} \E{XY} = \E{X}\E{Y} \text{)} \\
+&= 0
+&& \text{(subtract)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-indpt-uncorrelated}
+#### Two independent coin flips
+
+For the independent coin flips $X_1$ and $X_2$ of
+[the independence page's example](independence.qmd#exm-indpt),
+$X_1 X_2 = 1$ only when both flips are heads, so:
+
+$$
+\ba
+\E{X_1 X_2}
+&= \P(X_1 = 1, X_2 = 1)
+&& \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\
+&= \tfrac{1}{4}
+&& \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\
+&= \tfrac{1}{2} \cd \tfrac{1}{2}
+&& \text{(factor)} \\
+&= \E{X_1}\E{X_2}
+&& \text{(each flip is } \Ber(1/2) \text{)}
+\ea
+$$
+
+so $\Cov{X_1, X_2} = 0$, as @thm-indpt-uncorrelated requires.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-uncorrelated-not-indpt}
+#### Zero covariance without independence
+
+The converse of @thm-indpt-uncorrelated is false.
+Let $X$ take the values $-1$, $0$, and $1$ with probability $1/3$ each,
+and let $Y = X^2$.
+Then $\E{X} = (-1 + 0 + 1)/3 = 0$, and $XY = X^3 = X$, so:
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= \E{X} - \E{X}\E{Y}
+&& \text{(} XY = X^3 = X \text{ on } \set{-1, 0, 1} \text{)} \\
+&= 0 - 0 \cd \E{Y}
+&& \text{(} \E{X} = 0 \text{)} \\
+&= 0
+&& \text{(multiply)}
+\ea
+$$
+
+But $X$ and $Y$ are not independent: $Y$ is a function of $X$, and
+$\P(X = 0, Y = 0) = \P(X = 0) = \tfrac{1}{3}$,
+while $\P(X = 0)\,\P(Y = 0) = \tfrac{1}{3} \cd \tfrac{1}{3} = \tfrac{1}{9}$.
 
 :::
 
@@ -168,7 +301,7 @@ and the **conditional covariance formula**.
 :::{#lem-cov-xx}
 #### The covariance of a variable with itself is its variance
 
-For any random variable $X$:
+For any random variable $X$ with $\E{X^2} < \infty$:
 
 $$\Cov{X,X} = \Var{X}$$
 
@@ -182,11 +315,13 @@ $$
 \ba
 \Cov{X,X}
 &= \E{XX} - \E{X}\E{X}
+&& \text{(alternative formula for covariance, with } Y = X \text{)}
 \\&= \E{X^2} - \sqf{\E{X}}
+&& \text{(} XX = X^2 \text{)}
+\\&= \Var{X}
+&& \text{(simplified expression for variance)}
 \ea
 $$
-
-which is exactly the [simplified expression for variance](#thm-variance).
 
 :::
 
@@ -430,12 +565,8 @@ $$
 ::: notes
 
 This corollary is why two variables' covariance matters for combining them:
-if $X$ and $Y$ are [independent](independence.qmd#def-indpt), $\Cov{X,Y}=0$
+if $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+then $\Cov{X,Y}=0$ (@thm-indpt-uncorrelated),
 and the variance of their sum is just the sum of their variances.
-The first claim follows from the
-[joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint):
-for independent $X$ and $Y$ the joint density or PMF factors,
-so $\E{XY} = \E{X}\E{Y}$,
-and @thm-alt-cov gives $\Cov{X,Y} = 0$.
 
 :::

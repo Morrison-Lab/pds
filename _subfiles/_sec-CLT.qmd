@@ -35,7 +35,8 @@ In practice, the theorem justifies approximating
 $S_n$ by a normal distribution with mean $n\mu$ and variance $n\ss$,
 which by [linearity of expectation](expectation.qmd#thm-linearity-expectation)
 and the [variance of a linear combination](variance-covariance.qmd#thm-var-lincom)
-(whose covariance terms are 0 for independent summands)
+(whose covariance terms are 0 for
+[independent summands](variance-covariance.qmd#thm-indpt-uncorrelated))
 are exactly the mean and variance of $S_n$.
 
 :::
