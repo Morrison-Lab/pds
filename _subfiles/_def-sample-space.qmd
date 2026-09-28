@@ -17,6 +17,39 @@ Rolling a six-sided die once has sample space $\Omega = \set{1, 2, 3, 4, 5, 6}$.
 
 {{< slidebreak >}}
 
+:::{#def-empty-set}
+#### Empty set
+
+The **empty set**, denoted $\emptyset$,
+is the set that has no elements.
+
+:::
+
+::: notes
+
+Other sources write $\set{}$
+(see [Wikipedia: Empty set](https://en.wikipedia.org/wiki/Empty_set)).
+Some sources call it the null set,
+but in measure theory a "null set" usually means a set of measure zero,
+which need not be empty.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-empty-set}
+#### Impossible die rolls
+
+For the die roll in @exm-sample-space,
+no outcome in $\Omega = \set{1, 2, 3, 4, 5, 6}$ is greater than 6,
+so the set of outcomes greater than 6 is $\emptyset$.
+Likewise, no roll is both even and odd,
+so $\set{2, 4, 6} \cap \set{1, 3, 5} = \emptyset$.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-sigma-algebra}
 #### $\sigma$-algebra
 
@@ -36,7 +69,7 @@ that satisfies:
 
 Other sources call it a **$\sigma$-field**
 (see [Wikipedia: $\sigma$-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra)).
-A $\sigma$-algebra also contains $\emptyset = S \setminus S$,
+A $\sigma$-algebra also contains the [empty set](#def-empty-set) $\emptyset = S \setminus S$,
 every finite union of its sets
 (pad the sequence with copies of $\emptyset$),
 and every countable intersection of its sets
