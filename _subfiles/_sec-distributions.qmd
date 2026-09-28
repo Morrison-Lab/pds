@@ -86,6 +86,8 @@ $$\rangef{Y} = \set{0, 1, 2, \dots} = \Nat$$
 :::{#thm-cdf-pois}
 #### CDF of Poisson distribution
 
+If $Y \sim \Pois(\mu)$, then for every real number $y$:
+
 $$\P(Y \le y) = e^{-\mu} \sum_{j=0}^{\floor{y}}\frac{\mu^j}{j!}$$ {#eq-pois-cdf}
 
 :::

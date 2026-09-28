@@ -66,7 +66,8 @@ $$
 #### Expectation of time-to-event variables
 
 If $T$ is a non-negative random variable
-with [survival function](random-variables.qmd#def-surv-fn) $\surv(t)$, then:
+with [survival function](random-variables.qmd#def-surv-fn) $\surv(t)$
+and a defined expectation, then:
 
 $$\E{T} = \int_{t=0}^{\infty} \surv(t)\,dt$$
 
@@ -104,6 +105,10 @@ $$
 && \text{(definition of the survival function)}
 \ea
 $$
+
+Every step also holds when $\int_{u=0}^{\infty} u\,\pdf(u)\,du$ is infinite,
+because Tonelli's theorem needs only a non-negative integrand;
+so $\int_{t=0}^{\infty} \surv(t)\,dt$ is finite exactly when $\E{T}$ is defined.
 
 See [@statproofbook:mean-nnrvar] for an alternative presentation of this proof.
 
