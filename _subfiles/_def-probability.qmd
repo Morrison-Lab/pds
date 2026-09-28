@@ -1,0 +1,95 @@
+:::{#def-probability}
+#### Probability measure
+
+A **probability measure**, often denoted $\Pr()$ or $\P()$,
+is a function whose domain is a
+[$\sigma$-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra)
+of possible outcomes, $\mathscr{S}$,
+and which satisfies:
+
+1. For any event $A \in \mathscr{S}$, $\Pr(A) \ge 0$.
+2. The probability of the union of all outcomes ($\Omega \eqdef \cup \mathscr{S}$) is 1:
+   $$\Pr(\Omega) = 1$$
+3. For countably many mutually disjoint events $A_1, A_2, \ldots$
+   (where $A_i \cap A_j = \emptyset$ for all $i \neq j$),
+   the probability of their union is the sum of their probabilities
+   (*countable additivity*):
+   $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \Pr(A_i)$$
+
+:::
+
+::: notes
+
+A full treatment of $\sigma$-algebras and measure-theoretic probability
+is beyond the scope of this prerequisites page;
+see rme's
+[Probability chapter](https://morrison-lab.github.io/rme/chapters/probability.html)
+for the definitions this page's results build on
+(conditional expectations against joint densities, Fubini-Tonelli, and so on).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-prob-subset}
+#### Probability of a subset's intersection
+
+If $A$ and $B$ are statistical events and $A\subseteq B$, then $\Pr(A \cap B) = \Pr(A)$.
+
+:::
+
+::: proof
+Since $A \subseteq B$, $A \cap B = A$, so $\Pr(A \cap B) = \Pr(A)$.
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-total-prob-1}
+#### An event and its complement sum to 1
+
+$$\Pr(A) + \Pr(\neg A) = 1$$
+
+:::
+
+::: proof
+By properties 2 and 3 of @def-probability.
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-p-neg0}
+#### Complement rule
+
+$$\Pr(\neg A) = 1 - \Pr(A)$$
+
+:::
+
+::: proof
+By @thm-total-prob-1 and algebra.
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-p-neg}
+#### Complement rule in probability ($\pi$) notation
+
+If the probability of an outcome $A$ is $\Pr(A)=\pi$,
+then the probability that $A$ does not occur is:
+
+$$\Pr(\neg A)= 1 - \pi$$
+
+:::
+
+::: proof
+
+Using @cor-p-neg0:
+
+$$
+\ba
+\Pr(\neg A) &= 1 - \Pr(A)
+\\ &= 1 - \pi
+\ea
+$$
+
+:::
+

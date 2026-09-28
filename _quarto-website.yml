@@ -12,6 +12,7 @@ project:
     # directly: macros-table.qmd uses DT::datatable() (an HTML widget) that
     # errors when the project also renders to PDF.
     - "!latex-macros/"
+    - "!pds/"
 
 website:
   google-analytics: "G-VLDZY2T3JF"
@@ -33,6 +34,8 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Probability prerequisites"
+        href: probability-prereqs.qmd
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds

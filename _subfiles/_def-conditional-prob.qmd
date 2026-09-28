@@ -1,0 +1,11 @@
+:::{#def-conditional-prob}
+
+#### Conditional probability
+
+For two events $A$ and $B$ with $\Pr(B) > 0$,
+the **conditional probability** of $A$ given $B$,
+denoted $\Pr(A \mid B)$, is:
+
+$$\Pr(A \mid B) \eqdef \frac{\Pr(A \cap B)}{\Pr(B)}$$
+
+:::
