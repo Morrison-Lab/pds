@@ -1,5 +1,5 @@
 ---
-title: "Random variables and distribution functions"
+title: "Random variables"
 format:
   html: default
   revealjs:

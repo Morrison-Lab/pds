@@ -1,0 +1,22 @@
+---
+title: "Limit theorems"
+format:
+  html: default
+  revealjs:
+    output-file: limit-theorems-slides.html
+  pdf:
+    output-file: limit-theorems-handout.pdf
+  docx:
+    output-file: limit-theorems.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+## The Central Limit Theorem {#sec-clt}
+
+{{< include pds/_subfiles/_sec-CLT.qmd >}}
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

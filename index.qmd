@@ -25,7 +25,7 @@ Some key results are listed here, organized by topic:
 - [Probability basics](probability-basics.qmd):
   sample spaces and events, probability axioms, conditional probability,
   and Bayes' theorem
-- [Random variables and distribution functions](random-variables.qmd):
+- [Random variables](random-variables.qmd):
   PMF, PDF, CDF, quantile function,
   and survival, hazard, and cumulative hazard functions
 - [Independence](independence.qmd):
@@ -35,9 +35,10 @@ Some key results are listed here, organized by topic:
   and the law of iterated expectations
 - [Variance and covariance](variance-covariance.qmd):
   deviation, variance, conditional variance, homoskedasticity, and covariance
-- [Key distributions and the Central Limit Theorem](distributions.qmd):
-  Bernoulli, Poisson, negative binomial, and Weibull distributions,
-  and the CLT
+- [Key distributions](distributions.qmd):
+  Bernoulli, Poisson, negative binomial, and Weibull distributions
+- [Limit theorems](limit-theorems.qmd):
+  the Central Limit Theorem
 
 Most of this material should be review from an introductory probability or
 mathematical statistics course

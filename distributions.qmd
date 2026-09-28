@@ -1,5 +1,5 @@
 ---
-title: "Key distributions and the Central Limit Theorem"
+title: "Key distributions"
 format:
   html: default
   revealjs:
@@ -12,13 +12,9 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-## Key probability distributions {#sec-distributions}
+[]{#sec-distributions}
 
 {{< include pds/_subfiles/_sec-distributions.qmd >}}
-
-## The Central Limit Theorem {#sec-clt}
-
-{{< include pds/_subfiles/_sec-CLT.qmd >}}
 
 ## References {.unnumbered}
 

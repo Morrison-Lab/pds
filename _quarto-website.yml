@@ -48,8 +48,10 @@ website:
         href: expectation.qmd
       - text: "Variance & Covariance"
         href: variance-covariance.qmd
-      - text: "Distributions & CLT"
+      - text: "Distributions"
         href: distributions.qmd
+      - text: "Limit Theorems"
+        href: limit-theorems.qmd
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds
