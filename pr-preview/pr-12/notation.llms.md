@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 02:39:16 (PDT)
+Last modified: 2026-09-28 02:47:45 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -52,7 +52,9 @@ The term “random” is sometimes used as shorthand for a uniform distribution 
 
 > **NOTE:**
 >
-> **Example 3 (A regression model fitted by Bayesian inference)** A linear regression model whose parameters are estimated by Bayesian inference is probabilistic: Bayesian inference assigns a probability distribution to the parameters and predictions, even though the model itself describes a single fitted relationship rather than a process evolving in time.
+> **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, \\Y = \beta_0 + \beta_1 x + \epsilon\\ with \\\epsilon \sim N(0, \sigma^2)\\, is probabilistic: for each value of the covariate \\x\\, it assigns a probability distribution to the outcome \\Y\\. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
+>
+> The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.
 
 ### 1.2 Summary of usage
 
@@ -60,7 +62,7 @@ The term “random” is sometimes used as shorthand for a uniform distribution 
 |----|----|----|----|
 | Random | Single variable or event | Random variable, random outcome | Coin toss, die roll |
 | Stochastic | System or process in time/space | Stochastic process | Stock price evolution, Markov chain |
-| Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Bayesian inference, regression |
+| Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Regression model, Bayesian inference |
 
 Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
 
