@@ -34,7 +34,8 @@ that satisfies:
 
 ::: notes
 
-Other sources call it a **$\sigma$-field**.
+Other sources call it a **$\sigma$-field**
+(see [Wikipedia: $\sigma$-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra)).
 A $\sigma$-algebra also contains $\emptyset = S \setminus S$,
 every finite union of its sets
 (pad the sequence with copies of $\emptyset$),
