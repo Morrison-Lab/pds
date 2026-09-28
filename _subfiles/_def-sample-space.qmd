@@ -25,7 +25,7 @@ is the set that has no elements.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 Other sources write $\set{}$
 (see [Wikipedia: Empty set](https://en.wikipedia.org/wiki/Empty_set)).
