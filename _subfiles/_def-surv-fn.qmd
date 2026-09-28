@@ -72,9 +72,8 @@ $$
 :::{#exm-exp-survfn}
 #### Survival function of an exponential distribution
 
-Let $T$ have density $f(t) = \lambda \ef{-\lambda t}$ for $t \ge 0$
-(and $0$ for $t < 0$), for a fixed rate $\lambda > 0$;
-this is the **exponential distribution** with rate $\lambda$.
+Let $T$ be exponential with rate $\lambda > 0$ (@def-exponential),
+so $T$ has density $f(t) = \lambda \ef{-\lambda t}$ for $t \ge 0$.
 For $t \ge 0$, by @thm-survival-expressions-1:
 
 $$

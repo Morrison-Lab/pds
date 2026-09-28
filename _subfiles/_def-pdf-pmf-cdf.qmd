@@ -121,6 +121,97 @@ So $f$ is a density of $X$.
 
 {{< slidebreak >}}
 
+:::{#def-normal}
+#### Normal distribution
+
+A random variable $X$ has the **normal distribution**
+(or **Gaussian distribution**)
+with mean parameter $\mu \in \mathbb{R}$ and variance parameter $\ss > 0$,
+written $X \sim \ndist{\mu, \ss}$,
+if $X$ is continuous with [density](#def-pdf):
+
+$$\p(X=x) \eqdef \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}, \quad x \in \mathbb{R}$$
+
+:::
+
+::: notes
+
+The distribution $\ndist{0, 1}$ is called the **standard normal distribution**.
+This density integrates to 1,
+and a normal random variable has mean $\mu$ and variance $\ss$,
+which is where the parameters' names come from
+[@CaseBerg01].
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-normal}
+#### Normal densities at their centers
+
+For $X \sim \ndist{0, 1}$, the density at $x = 0$ is:
+
+$$
+\ba
+\p(X=0)
+&= \frac{1}{1 \cd \sqrt{2\pi}} \ef{-\frac{(0-0)^2}{2 \cd 1}}
+&& \text{(normal density with } \mu = 0, \ss = 1 \text{)} \\
+&= \frac{1}{\sqrt{2\pi}}
+&& \text{(} \text{e}^0 = 1 \text{)} \\
+&\approx 0.399
+&& \text{(evaluate)}
+\ea
+$$
+
+For $X \sim \ndist{0, 0.1^2}$, the same steps give
+$\p(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99$,
+a density greater than 1.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-exponential}
+#### Exponential distribution
+
+A random variable $T$ has the **exponential distribution** with rate $\lambda > 0$
+if $T$ is continuous with [density](#def-pdf):
+
+$$
+f(t) \eqdef \begin{cases}
+\lambda \ef{-\lambda t}, & t \ge 0 \\
+0, & t < 0
+\end{cases}
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exponential}
+#### Probability of an event within one time unit
+
+Let $T$ be exponential with rate $\lambda$.
+The probability that $T$ falls in $[0, 1]$ is:
+
+$$
+\ba
+\Pr(0 \le T \le 1)
+&= \int_0^1 \lambda \ef{-\lambda t}\,dt
+&& \text{(definition of a density)} \\
+&= \sb{-\ef{-\lambda t}}_{t=0}^{1}
+&& \text{(antiderivative of } \lambda \ef{-\lambda t} \text{)} \\
+&= 1 - \ef{-\lambda}
+&& \text{(evaluate at the bounds)}
+\ea
+$$
+
+With $\lambda = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.393$.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-cdf}
 #### Cumulative distribution function (CDF)
 
@@ -179,7 +270,7 @@ $$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p<1.$$
 
 The restriction to $0 < p < 1$ keeps $Q(p)$ finite:
 for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
-as for a normal distribution, and the infimum of the empty set is $+\infty$.
+as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
 
 :::
 

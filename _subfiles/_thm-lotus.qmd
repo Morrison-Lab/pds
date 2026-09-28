@@ -83,7 +83,8 @@ $$
 :::{#exm-lotus-continuous}
 #### Expected value of $X^2$ for a Uniform(0,1) variable
 
-Let $X \sim \text{Uniform}(0,1)$, so $\p(X=x) = 1$ for $x \in [0,1]$.
+Let $X \sim \text{Uniform}(0,1)$ ([uniform distribution](random-variables.qmd#def-uniform)),
+so $\p(X=x) = 1$ for $x \in [0,1]$ ([uniform density](random-variables.qmd#exm-pdf)).
 By LOTUS (@thm-lotus, continuous case):
 
 $$

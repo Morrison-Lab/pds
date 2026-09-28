@@ -138,7 +138,7 @@ $$
 
 A further standard fact about the bivariate normal (@CaseBerg01)
 is that the marginal distribution of $X$ is
-$X \sim \ndist{\mu_X, \sigma_X^2}$.
+[normal](random-variables.qmd#def-normal), $X \sim \ndist{\mu_X, \sigma_X^2}$.
 At $x = `r x0`$ weeks (a full-term pregnancy),
 $\mu_X = `r round(mu_x, 4)`$ and $\sigma_X = `r round(sigma_x, 4)`$, so:
 

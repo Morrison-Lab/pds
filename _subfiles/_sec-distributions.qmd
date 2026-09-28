@@ -8,13 +8,13 @@ other distributions are typically used for test statistics (@tbl-test-stat-distn
 :::{#tbl-outcome-distns}
 Distribution | Uses
 ------------ | ---
-Bernoulli | Binary outcomes
+[Bernoulli](random-variables.qmd#def-bernoulli) | Binary outcomes
 Binomial | Sums of Bernoulli outcomes
 Poisson | Unbounded count outcomes
 Geometric | Counts of non-events before an event occurs
 Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs
-Normal (Gaussian) | Continuous outcomes without a more specific distribution
-Exponential | Time to event outcomes
+[Normal (Gaussian)](random-variables.qmd#def-normal) | Continuous outcomes without a more specific distribution
+[Exponential](random-variables.qmd#def-exponential) | Time to event outcomes
 Gamma | Time to event outcomes
 Weibull | Time to event outcomes
 Log-normal | Time to event outcomes

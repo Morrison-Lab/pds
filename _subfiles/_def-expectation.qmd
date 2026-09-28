@@ -115,7 +115,7 @@ See [@statproofbook:mean-nnrvar] for an alternative presentation of this proof.
 
 #### Mean of an exponential random variable via survival function
 
-Let $T$ be exponential with rate $\lambda > 0$, so $\surv(t) = \ef{-\lambda t}$
+Let $T$ be [exponential](random-variables.qmd#def-exponential) with rate $\lambda > 0$, so $\surv(t) = \ef{-\lambda t}$
 for $t \ge 0$,
 as computed on the [random variables page](random-variables.qmd#exm-exp-survfn).
 By @thm-surv-mean:
