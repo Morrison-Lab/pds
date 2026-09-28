@@ -10,10 +10,18 @@ Authoritative style guide: [UCD-SERG Lab Manual](https://ucd-serg.github.io/lab-
 
 ## Repository layout
 
-- `index.qmd`, `appendix-*.qmd`, and the top-level topic pages
-  (`notation.qmd`, `probability-basics.qmd`, `random-variables.qmd`,
-  `expectation.qmd`, `variance-covariance.qmd`, `independence.qmd`) ---
-  Quarto source pages, listed in the navbar's "Notes" menu
+- `index.qmd`, `appendix-*.qmd`, and the top-level topic pages --- Quarto
+  source pages. The topic pages are listed in reading order in
+  `_quarto-website.yml`, in a docked sidebar and in matching navbar
+  dropdowns:
+
+  - Foundations: `notation.qmd`, `probability-basics.qmd`,
+    `random-variables.qmd`, `independence.qmd`
+  - Moments: `expectation.qmd`, `variance-covariance.qmd`
+  - Distributions: `distributions.qmd`, `limit-theorems.qmd`
+
+  The navbar's `left` menus mirror the sidebar's `contents` one-for-one, so
+  a page added, renamed, or moved must be edited in both.
 - `_notation.qmd`, `_subfiles/` --- the fragments the topic pages include,
   and that host sites include through the `pds/` submodule path
 - `references.qmd` --- standalone reference page; excluded from the default website
