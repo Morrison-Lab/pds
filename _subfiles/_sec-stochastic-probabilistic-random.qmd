@@ -32,7 +32,8 @@ but it can refer to any probability distribution.
 meaning "aim" or "guess"
 (see [etymology](https://www.etymonline.com/search?q=stochastic)).
 In mathematics,
-a **stochastic process** is formally defined as a collection of random variables indexed by time or space.
+a **stochastic process** is formally defined as a collection of random variables indexed by a set,
+most often a set of times or locations.
 The term is almost always used in the context of processes or systems evolving in time or space under uncertain rules.
 Note that in probability theory,
 "stochastic process" and "random process" are synonyms
@@ -57,7 +58,7 @@ not all probabilistic models need to describe processes evolving in time.
 : Comparison of "random", "stochastic", and "probabilistic" {#tbl-random-stochastic-probabilistic}
 
 While some sources treat "stochastic" and "random" as practically synonymous,
-the academic preference is to use "random" for variables and events,
+a common convention is to use "random" for variables and events,
 and "stochastic" for processes,
 especially to highlight temporal or spatial structure in the modeling.
 
