@@ -111,7 +111,7 @@ is not automatically valid --- @cor-fubini-joint's condition (b),
 $\E{\abs{h(X,Y)}} < \infty$, is what licenses it in that case.
 Without either condition, the two orders can genuinely disagree.
 A standard example (a signed array, not a probability distribution;
-see e.g. @rudin1976principles for the general theory
+see e.g. [@rudin1976principles, Theorem 3.54, p. 76] for the general theory
 of rearranging series):
 let $a_{m,n} = 1$ if $m = n$,
 $a_{m,n} = -1$ if $m = n+1$, and $a_{m,n} = 0$ otherwise,
