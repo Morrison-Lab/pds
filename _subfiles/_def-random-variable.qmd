@@ -1,7 +1,7 @@
 :::{#def-random-variable}
 #### Random variable
 
-A **random variable** is a function
+A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function)
 from a [sample space](probability-basics.qmd#def-sample-space) $\Omega$
 to the real numbers $\mathbb{R}$:
 it assigns a number to each possible outcome of a random experiment.
@@ -50,6 +50,15 @@ $$\rangef{X} \eqdef \set{X(\omega) : \omega \in \Omega}$$
 
 :::
 
+::: {.remark .notes}
+
+The range of $X$ is the [image](https://morrison-lab.github.io/mds/sets-functions.html#def-image) of $X$ as a function on $\Omega$.
+For a general function, these notes say "image",
+because some sources use "range" for the codomain instead;
+for a random variable, "range" is the standard term.
+
+:::
+
 {{< slidebreak >}}
 
 :::{#exm-range}
@@ -65,7 +74,7 @@ In @exm-random-variable, $\rangef{X} = \set{0, 1, 2}$.
 #### Discrete random variable
 
 A random variable $X$ is **discrete**
-if its [range](#def-range) $\rangef{X}$ is finite or countably infinite.
+if its [range](#def-range) $\rangef{X}$ is [countable](https://morrison-lab.github.io/mds/sets-functions.html#def-countable-set).
 
 :::
 
