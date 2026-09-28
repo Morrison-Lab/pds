@@ -1,3 +1,98 @@
+:::{#def-finite-additivity}
+#### Finite additivity
+
+A function $\mu$ that assigns a real number $\mu(A)$ to each [event](#def-event) $A$
+is **finitely additive**
+if, for every finite collection of
+[mutually exclusive](#def-mutually-exclusive) events $A_1, \ldots, A_n$,
+the value of their union is the sum of their values:
+
+$$\mu(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \mu(A_i)$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-finite-additivity}
+#### Counting outcomes is finitely additive
+
+For the die roll in @exm-sample-space,
+let $\mu(A) \eqdef \abs{A}$, the number of outcomes in $A$.
+The events $\set{1, 2}$ and $\set{5, 6}$ are mutually exclusive
+(@exm-mutually-exclusive), and:
+
+$$
+\ba
+\mu(\set{1, 2} \cup \set{5, 6})
+&= \mu(\set{1, 2, 5, 6})
+&& \text{(take the union)} \\
+&= 4
+&& \text{(count the outcomes)} \\
+&= 2 + 2
+&& \text{(write 4 as a sum)} \\
+&= \mu(\set{1, 2}) + \mu(\set{5, 6})
+&& \text{(count each event's outcomes)}
+\ea
+$$
+
+The same holds for any mutually exclusive events,
+because the sizes of disjoint sets add,
+so $\mu$ is finitely additive.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-countable-additivity}
+#### Countable additivity
+
+A function $\mu$ that assigns a real number $\mu(A)$ to each [event](#def-event) $A$
+is **countably additive**
+(also called **$\sigma$-additive**)
+if, for every sequence of
+[mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
+the value of their union is the sum of their values:
+
+$$\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)$$
+
+:::
+
+::: notes
+
+Countable additivity implies [finite additivity](#def-finite-additivity).
+Applying countable additivity to $\emptyset, \emptyset, \ldots$,
+which are mutually exclusive with union $\emptyset$,
+gives $\mu(\emptyset) = \sum_{i=1}^{\infty} \mu(\emptyset)$,
+a sum of identical terms that is finite only if $\mu(\emptyset) = 0$.
+Then, for mutually exclusive $A_1, \ldots, A_n$,
+set $A_{n+1} = A_{n+2} = \cdots = \emptyset$
+and apply countable additivity to the whole sequence.
+The converse fails:
+there exist set functions that satisfy finite additivity
+but fail countable additivity
+(see [Wikipedia: Sigma-additive set function --- An additive function which is not $\sigma$-additive](https://en.wikipedia.org/wiki/Sigma-additive_set_function#An_additive_function_which_is_not_%CF%83-additive)).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-countable-additivity}
+#### Counting outcomes is countably additive
+
+For the counting function $\mu(A) \eqdef \abs{A}$ of @exm-finite-additivity,
+take any sequence of mutually exclusive events $A_1, A_2, \ldots$.
+No two of them share an outcome, and $\Omega$ has only six outcomes,
+so at most six of the $A_i$ contain any outcomes;
+the rest are $\emptyset$, with $\mu(\emptyset) = 0$.
+The infinite sum therefore has at most six nonzero terms,
+and finite additivity (@exm-finite-additivity) shows that those terms
+add up to $\mu$ of the union.
+So $\mu$ is countably additive.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-probability}
 #### Probability measure
 
@@ -9,35 +104,21 @@ and satisfies:
 1. For any event $A$, $\Pr(A) \ge 0$.
 2. The probability of the whole sample space is 1:
    $$\Pr(\Omega) = 1$$
-3. For countably many mutually disjoint events $A_1, A_2, \ldots$
-   (where $A_i \cap A_j = \emptyset$ for all $i \neq j$),
-   the probability of their union is the sum of their probabilities
-   (*countable additivity*):
+3. $\Pr$ is [countably additive](#def-countable-additivity):
+   for any [mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
    $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \Pr(A_i)$$
 
 :::
 
 ::: notes
 
-Property 3 (*countable additivity*) is stronger than *finite additivity*,
-which only requires
-
-$$\Pr(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \Pr(A_i)$$
-
-for every finite collection of mutually disjoint events.
-Countable additivity implies finite additivity
-(set $A_{n+1} = A_{n+2} = \cdots = \emptyset$ in property 3,
-using $\Pr(\emptyset) = 0$,
-which itself follows from property 3 applied to $\Omega, \emptyset, \emptyset, \ldots$),
-but not vice versa:
-there exist set functions that satisfy finite additivity
-but fail countable additivity
-(see [Wikipedia: Sigma-additive set function --- An additive function which is not $\sigma$-additive](https://en.wikipedia.org/wiki/Sigma-additive_set_function#An_additive_function_which_is_not_%CF%83-additive)).
-Requiring countable additivity enables results such as
+Property 3 implies that $\Pr$ is also [finitely additive](#def-finite-additivity).
+Requiring countable additivity, not just finite additivity,
+enables results such as
 the continuity of probability
 (if $A_1 \supseteq A_2 \supseteq \cdots$ with $\bigcap_i A_i = \emptyset$,
 then $\Pr(A_i) \to 0$),
-and it is what makes sums over countably infinite partitions valid.
+and it is what makes sums over countably infinite [partitions](#def-partition) valid.
 
 :::
 
@@ -50,8 +131,8 @@ For the die roll in @exm-sample-space,
 define $\Pr(A) \eqdef \abs{A} / 6$,
 where $\abs{A}$ is the number of outcomes in $A$.
 This function is non-negative, gives $\Pr(\Omega) = 6/6 = 1$,
-and is additive over disjoint events,
-because the sizes of disjoint sets add.
+and is [countably additive](#def-countable-additivity),
+because it is $1/6$ times the counting function of @exm-countable-additivity.
 The event "the roll is even" from @exm-event has probability
 $\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
 
