@@ -290,7 +290,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 02:25:27 (PDT)</p>
+  <p class="date">Last modified: 2026-09-28 03:06:27 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -316,26 +316,70 @@
 <blockquote>
 <p><em>Stochasticity</em> and <em>randomness</em> are technically distinct concepts: the former refers to a modeling approach, while the latter describes phenomena; in everyday conversation these terms are often used interchangeably.</p>
 </blockquote>
+<p><span id="definitions"></span></p>
 </section>
 <section class="slide level2">
 
-<h3 id="definitions">Definitions</h3>
-<p><strong>Random</strong> describes something that occurs by chance, without a deterministic pattern. It is the most general term, used to describe variables or occurrences whose outcome cannot be predicted precisely, only probabilistically. For example, we speak of “random variables” and “random events”.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="def-random" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Random)</strong></span> Something is <strong>random</strong> when it occurs by chance, without a deterministic pattern: its outcome cannot be predicted precisely, only probabilistically. It is the most general of the three terms, used to describe variables or occurrences rather than whole processes or modeling approaches.</p>
 </div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
+<aside class="notes">
 <p>The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-random" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (A random variable)</strong></span> The result of a single die roll is random: it cannot be predicted with certainty, only described by the probability <span class="math inline">\(1/6\)</span> for each face. We speak of a “random variable” and a “random event” for exactly this kind of single outcome.</p>
 </div>
+</section>
+<section class="slide level2">
+
+<div id="def-stochastic-process" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Stochastic process)</strong></span> A <strong>stochastic process</strong> is a collection of random variables indexed by a set, most often a set of times or locations.</p>
+<p>The word “stochastic” comes from the Greek <span class="math inline">\(\sigma\tau\acute{o}\chi o\varsigma\)</span> (<em>stókhos</em>), meaning “aim” or “guess” (see <a href="https://www.etymonline.com/search?q=stochastic">etymology</a>). The term is almost always used for processes or systems evolving in time or space under uncertain rules, rather than for a single variable or event. In probability theory, “stochastic process” and “random process” are synonyms <span class="citation" data-cites="Adler2009random Stirzaker2005probability Kallenberg2002foundations">(<a href="#/references" role="doc-biblioref" onclick="">Adler and Taylor 2009</a>; <a href="#/references" role="doc-biblioref" onclick="">Stirzaker 2005</a>; <a href="#/references" role="doc-biblioref" onclick="">Kallenberg 2002</a>)</span>.</p>
 </div>
+</section>
+<section class="slide level2">
+
+<div id="exm-stochastic-process" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (Stock price evolution)</strong></span> The sequence of a stock’s daily closing prices is a stochastic process: a random variable (the price) indexed by a set (the trading days).</p>
 </div>
-<p><strong>Stochastic</strong> comes from the Greek <span class="math inline">\(\sigma\tau\acute{o}\chi o\varsigma\)</span> (<em>stókhos</em>), meaning “aim” or “guess” (see <a href="https://www.etymonline.com/search?q=stochastic">etymology</a>). In mathematics, a <strong>stochastic process</strong> is formally defined as a collection of random variables indexed by a set, most often a set of times or locations. The term is almost always used in the context of processes or systems evolving in time or space under uncertain rules. Note that in probability theory, “stochastic process” and “random process” are synonyms <span class="citation" data-cites="Adler2009random Stirzaker2005probability Kallenberg2002foundations">(<a href="#/references" role="doc-biblioref" onclick="">Adler and Taylor 2009</a>; <a href="#/references" role="doc-biblioref" onclick="">Stirzaker 2005</a>; <a href="#/references" role="doc-biblioref" onclick="">Kallenberg 2002</a>)</span>.</p>
-<p><strong>Probabilistic</strong> refers to any model, reasoning, or method that explicitly involves probability theory. Probabilistic models assign probabilities to events or outcomes; they focus on quantifying and reasoning about uncertainty based on known or estimated distributions. While all stochastic models are probabilistic (since they use probabilities), not all probabilistic models need to describe processes evolving in time.</p>
+</section>
+<section class="slide level2">
+
+<div id="def-probabilistic" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Probabilistic)</strong></span> A model, method, or line of reasoning is <strong>probabilistic</strong> when it explicitly involves probability theory: it assigns probabilities to events or outcomes, and focuses on quantifying and reasoning about uncertainty based on known or estimated distributions. While every stochastic model is probabilistic (since it uses probabilities), not every probabilistic model needs to describe a process evolving in time.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-probabilistic" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (A linear regression model)</strong></span> A linear regression model with Gaussian errors, <span class="math inline">\(Y = \beta_0 + \beta_1 x + \epsilon\)</span> with <span class="math inline">\(\epsilon \sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\)</span>, is probabilistic: for each value of the covariate <span class="math inline">\(x\)</span>, it assigns a probability distribution to the outcome <span class="math inline">\(Y\)</span>. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.</p>
+</div>
+<aside class="notes">
+<p>The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -378,7 +422,7 @@ Table&nbsp;1: Comparison of “random”, “stochastic”, and “probabilistic
 <td>Probabilistic</td>
 <td>Approach/model using probability</td>
 <td>Probabilistic model/reasoning</td>
-<td>Bayesian inference, regression</td>
+<td>Regression model, Bayesian inference</td>
 </tr>
 </tbody>
 </table>

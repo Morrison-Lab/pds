@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 02:25:27 (PDT)
+Last modified: 2026-09-28 03:06:27 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -26,31 +26,49 @@ As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
 
 > *Stochasticity* and *randomness* are technically distinct concepts: the former refers to a modeling approach, while the latter describes phenomena; in everyday conversation these terms are often used interchangeably.
 
-### 1.2 Definitions
+> **NOTE:**
+>
+> **Definition 1 (Random)** Something is **random** when it occurs by chance, without a deterministic pattern: its outcome cannot be predicted precisely, only probabilistically. It is the most general of the three terms, used to describe variables or occurrences rather than whole processes or modeling approaches.
 
-**Random** describes something that occurs by chance, without a deterministic pattern. It is the most general term, used to describe variables or occurrences whose outcome cannot be predicted precisely, only probabilistically. For example, we speak of “random variables” and “random events”.
+The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.
 
 > **NOTE:**
 >
-> The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.
+> **Example 1 (A random variable)** The result of a single die roll is random: it cannot be predicted with certainty, only described by the probability \\1/6\\ for each face. We speak of a “random variable” and a “random event” for exactly this kind of single outcome.
 
-**Stochastic** comes from the Greek \\\sigma\tau\acute{o}\chi o\varsigma\\ (*stókhos*), meaning “aim” or “guess” (see [etymology](https://www.etymonline.com/search?q=stochastic)). In mathematics, a **stochastic process** is formally defined as a collection of random variables indexed by a set, most often a set of times or locations. The term is almost always used in the context of processes or systems evolving in time or space under uncertain rules. Note that in probability theory, “stochastic process” and “random process” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
+> **NOTE:**
+>
+> **Definition 2 (Stochastic process)** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations.
+>
+> The word “stochastic” comes from the Greek \\\sigma\tau\acute{o}\chi o\varsigma\\ (*stókhos*), meaning “aim” or “guess” (see [etymology](https://www.etymonline.com/search?q=stochastic)). The term is almost always used for processes or systems evolving in time or space under uncertain rules, rather than for a single variable or event. In probability theory, “stochastic process” and “random process” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
 
-**Probabilistic** refers to any model, reasoning, or method that explicitly involves probability theory. Probabilistic models assign probabilities to events or outcomes; they focus on quantifying and reasoning about uncertainty based on known or estimated distributions. While all stochastic models are probabilistic (since they use probabilities), not all probabilistic models need to describe processes evolving in time.
+> **NOTE:**
+>
+> **Example 2 (Stock price evolution)** The sequence of a stock’s daily closing prices is a stochastic process: a random variable (the price) indexed by a set (the trading days).
 
-### 1.3 Summary of usage
+> **NOTE:**
+>
+> **Definition 3 (Probabilistic)** A model, method, or line of reasoning is **probabilistic** when it explicitly involves probability theory: it assigns probabilities to events or outcomes, and focuses on quantifying and reasoning about uncertainty based on known or estimated distributions. While every stochastic model is probabilistic (since it uses probabilities), not every probabilistic model needs to describe a process evolving in time.
+
+> **NOTE:**
+>
+> **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, \\Y = \beta_0 + \beta_1 x + \epsilon\\ with \\\epsilon \sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\\, is probabilistic: for each value of the covariate \\x\\, it assigns a probability distribution to the outcome \\Y\\. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
+
+The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.
+
+### 1.2 Summary of usage
 
 | Term | What it describes | Typical use | Example |
 |----|----|----|----|
 | Random | Single variable or event | Random variable, random outcome | Coin toss, die roll |
 | Stochastic | System or process in time/space | Stochastic process | Stock price evolution, Markov chain |
-| Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Bayesian inference, regression |
+| Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Regression model, Bayesian inference |
 
 Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
 
 While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.
 
-### 1.4 Additional resources
+### 1.3 Additional resources
 
 - [Wikipedia: Stochastic](https://en.wikipedia.org/wiki/Stochastic)
 - [Wikipedia: Stochastic process](https://en.wikipedia.org/wiki/Stochastic_process)
