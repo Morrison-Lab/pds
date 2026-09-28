@@ -14,42 +14,96 @@ As noted in [Wikipedia](https://en.wikipedia.org/wiki/Stochastic):
 > while the latter describes phenomena;
 > in everyday conversation these terms are often used interchangeably.
 
+[]{#definitions}
+
 {{< slidebreak >}}
 
-### Definitions
+:::{#def-random}
+#### Random
 
-**Random** describes something that occurs by chance,
-without a deterministic pattern.
-It is the most general term,
-used to describe variables or occurrences whose outcome cannot be predicted precisely,
+Something is **random** when it occurs by chance,
+without a deterministic pattern:
+its outcome cannot be predicted precisely,
 only probabilistically.
-For example,
-we speak of "random variables" and "random events".
+It is the most general of the three terms,
+used to describe variables or occurrences rather than whole processes or modeling approaches.
 
-::: {.callout-note}
+:::
+
+::: notes
+
 The term "random" is sometimes used as shorthand for a uniform distribution
 (especially the discrete uniform distribution),
 but it can refer to any probability distribution.
+
 :::
 
-**Stochastic** comes from the Greek $\sigma\tau\acute{o}\chi o\varsigma$ (_st&oacute;khos_),
+{{< slidebreak >}}
+
+:::{#exm-random}
+#### A random variable
+
+The result of a single die roll is random:
+it cannot be predicted with certainty,
+only described by the probability $1/6$ for each face.
+We speak of a "random variable" and a "random event" for exactly this kind of single outcome.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-stochastic-process}
+#### Stochastic process
+
+A **stochastic process** is a collection of random variables indexed by a set,
+most often a set of times or locations.
+
+The word "stochastic" comes from the Greek $\sigma\tau\acute{o}\chi o\varsigma$ (_st&oacute;khos_),
 meaning "aim" or "guess"
 (see [etymology](https://www.etymonline.com/search?q=stochastic)).
-In mathematics,
-a **stochastic process** is formally defined as a collection of random variables indexed by a set,
-most often a set of times or locations.
-The term is almost always used in the context of processes or systems evolving in time or space under uncertain rules.
-Note that in probability theory,
+The term is almost always used for processes or systems evolving in time or space under uncertain rules,
+rather than for a single variable or event.
+In probability theory,
 "stochastic process" and "random process" are synonyms
 [@Adler2009random; @Stirzaker2005probability; @Kallenberg2002foundations].
 
-**Probabilistic** refers to any model,
-reasoning,
-or method that explicitly involves probability theory.
-Probabilistic models assign probabilities to events or outcomes;
-they focus on quantifying and reasoning about uncertainty based on known or estimated distributions.
-While all stochastic models are probabilistic (since they use probabilities),
-not all probabilistic models need to describe processes evolving in time.
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-stochastic-process}
+#### Stock price evolution
+
+The sequence of a stock's daily closing prices is a stochastic process:
+a random variable (the price) indexed by a set (the trading days).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-probabilistic}
+#### Probabilistic
+
+A model, method, or line of reasoning is **probabilistic**
+when it explicitly involves probability theory:
+it assigns probabilities to events or outcomes,
+and focuses on quantifying and reasoning about uncertainty
+based on known or estimated distributions.
+While every stochastic model is probabilistic (since it uses probabilities),
+not every probabilistic model needs to describe a process evolving in time.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-probabilistic}
+#### Bayesian inference
+
+A Bayesian regression model is probabilistic:
+it assigns a probability distribution to its parameters and predictions,
+even though it describes a single fitted relationship rather than a process evolving in time.
+
+:::
 
 {{< slidebreak >}}
 
