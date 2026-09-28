@@ -9,16 +9,18 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
   Some sources instead use uppercase/lowercase pairs from different
   alphabets, or reserve uppercase entirely for matrices --- always check a
   new source's own notation section before assuming ours.
-- **Probability** is denoted $\Pr()$ or $\P()$ for a discrete event or a
-  probability mass function, and $\p()$ for a continuous density.
+- **Probability** is denoted $\Pr()$ or $\P()$ for the probability of an event,
+  or for a probability mass function (PMF),
+  and $\p()$ for a density.
   Some sources use $P()$ (unstylized) throughout for both, or reserve $f()$
   for densities and mass functions and use $P()$ only for event probabilities.
 - **Expectation** is denoted $\E{\cdot}$, with square brackets.
   Some sources write $\mathbb{E}[\cdot]$ (blackboard bold),
   or use parentheses, $E(\cdot)$; the meaning is the same.
-- **Independence** is denoted $\ind$ (read "$X \ind Y$" as "$X$ is
-  independent of $Y$"). Some sources instead write $X \perp Y$ (a single
-  $\perp$) or state independence only in prose.
+- **Independence** is denoted $\ind$
+  (read "$X \ind Y$" as "$X$ is independent of $Y$").
+  Some sources instead write $X \perp Y$ (a single $\perp$)
+  or state independence only in prose.
 - **Complements** of events are denoted $\neg A$ ("not $A$").
   Some sources write $A^c$ or $\bar{A}$.
 - We write $\eqdef$ for an equality that holds **by definition**,
