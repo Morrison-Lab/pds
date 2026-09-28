@@ -323,12 +323,13 @@ and it is countably additive, which is axiom 3.
 Axiom 2 is the condition $\Pr(\Omega) = 1$ in @def-probability.
 
 Conversely, suppose $\Pr$ satisfies the three axioms.
-By axiom 3 and @lem-countable-additivity-empty,
+By axiom 1, $\Pr$ takes values in $[0, \infty]$,
+so axiom 3 says $\Pr$ is countably additive in the sense of @def-countable-additivity.
+Then, by @lem-countable-additivity-empty,
 $\Pr(\emptyset)$ is 0 or $\infty$;
 $\Pr(\emptyset)$ is a real number, so $\Pr(\emptyset) = 0$.
-By axiom 1, $\Pr$ takes values in $[0, \infty]$,
-so $\Pr$ satisfies both conditions of @def-measure
-($\Pr(\emptyset) = 0$ and axiom 3)
+So $\Pr$ satisfies both conditions of @def-measure
+($\Pr(\emptyset) = 0$ and countable additivity)
 and is a measure on the events of $\Omega$.
 With axiom 2, $\Pr$ is a probability measure (@def-probability).
 
