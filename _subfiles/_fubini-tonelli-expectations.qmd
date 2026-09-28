@@ -2,7 +2,7 @@
 
 #### Fubini--Tonelli theorem, measure-theoretic form
 
-Let $\mu_1$ and $\mu_2$ be $\sigma$-finite [measures](probability-basics.qmd#def-measure)
+Let $\mu_1$ and $\mu_2$ be $\sigma$-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure)
 on $\sigma$-algebras of subsets of sets $S_1$ and $S_2$,
 and let $f$ be a measurable function on $S_1 \times S_2$.
 If either
@@ -38,7 +38,7 @@ or absolutely integrable (Fubini).
 Its proof is beyond these notes' scope
 [@billingsley1995probability, Theorem 18.3].
 Lebesgue measure on the real line and
-[counting measure](probability-basics.qmd#def-counting-measure) on a countable set
+[counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set
 are both $\sigma$-finite,
 which gives the theorem a form stated in terms of a joint distribution.
 
