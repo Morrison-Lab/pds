@@ -190,6 +190,58 @@ while $\P(X = 0)\,\P(Y = 0) = \tfrac{1}{3} \cd \tfrac{1}{3} = \tfrac{1}{9}$.
 
 {{< slidebreak >}}
 
+:::{#def-correlation}
+#### Correlation
+
+The **correlation** of two random variables $X$ and $Y$
+with finite, positive [variances](#def-variance)
+is their [covariance](#def-cov)
+divided by the product of their [standard deviations](#def-sd):
+
+$$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
+
+:::
+
+::: notes
+
+Dividing by the standard deviations removes the units of $X$ and $Y$,
+and the correlation always lies in $[-1, 1]$ [@CaseBerg01].
+Random variables with zero covariance, and hence zero correlation,
+are called **uncorrelated**;
+@thm-indpt-uncorrelated says independent random variables are uncorrelated,
+and @exm-uncorrelated-not-indpt shows the converse fails.
+This population correlation is a property of a joint distribution;
+the sample (Pearson) correlation coefficient computed from data estimates it.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-correlation}
+#### Correlation of a binary exposure and outcome
+
+In @exm-alt-cov, $\Cov{X,Y} = 0.05$,
+where $X \sim \Ber(0.5)$ has $\Var{X} = 0.25$ (@exm-variance-bernoulli)
+and $Y$ has $\Var{Y} = 0.21$ (@exm-total-variance), so:
+
+$$
+\ba
+\Cor{X,Y}
+&= \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}
+&& \text{(definition of correlation)} \\
+&= \frac{0.05}{\sqrt{0.25} \cd \sqrt{0.21}}
+&& \text{(substitute; } \SD{\cdot} = \sqrt{\Var{\cdot}} \text{)} \\
+&\approx \frac{0.05}{0.5 \cd 0.458}
+&& \text{(evaluate the square roots)} \\
+&\approx 0.218
+&& \text{(divide)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-cond-cov}
 #### Conditional covariance
 
