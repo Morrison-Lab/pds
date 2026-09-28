@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:15:08 (PDT)
+Last modified: 2026-09-28 01:23:33 (PDT)
 
 # 1 Independence
 
@@ -16,7 +16,7 @@ Last modified: 2026-09-28 01:15:08 (PDT)
 
 We write \\X \perp\\\\\\\perp Y\\ for “\\X\\ and \\Y\\ are independent”. The symbol \\\perp\\\\\\\perp\\ is essentially \\\prod\\ upside-down, which can remind you of the definition.
 
-For discrete random variables, independence is equivalent to the [joint PMF](random-variables.llms.md#def-joint-pmf) factoring, \\\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod\_{i=1}^n{\operatorname{P}(X_i=x_i)}\\ for all \\x_1, \ldots, x_n\\. For continuous random variables with a [joint density](random-variables.llms.md#def-joint-pdf), it is equivalent to the joint density factoring the same way. The PMF form does not work as a definition for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent.
+For discrete random variables, independence is equivalent to the [joint PMF](random-variables.llms.md#def-joint-pmf) factoring, \\\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod\_{i=1}^n{\operatorname{P}(X_i=x_i)}\\ for all \\x_1, \ldots, x_n\\. For continuous random variables with a [joint density](random-variables.llms.md#def-joint-pdf), it is equivalent to the joint density factoring the same way, and likewise for a [joint density-mass function](random-variables.llms.md#def-joint-density-mass) when one variable is discrete and the other continuous. The PMF form does not work as a definition for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent.
 
 > **NOTE:**
 >

@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:15:08 (PDT)
+Last modified: 2026-09-28 01:23:33 (PDT)
 
 # 1 Variance and covariance
 
@@ -52,7 +52,7 @@ See:
 
 > **NOTE:**
 >
-> **Definition 3 (Variance)** The **variance** of a random variable \\X\\ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
+> **Definition 3 (Variance)** The **variance** of a random variable \\X\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
 >
 > \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\[e(X)\]^2\right\]\mathclose{}\\
 
@@ -184,7 +184,7 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 
 > **NOTE:**
 >
-> **Definition 9 (Covariance)** For any two random variables \\X, Y\\:
+> **Definition 9 (Covariance)** The **covariance** of two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ is:
 >
 > \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right\]\mathclose{}\\
 
@@ -206,7 +206,59 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 
 > **NOTE:**
 >
-> **Definition 10 (Conditional covariance)** The **conditional covariance** of \\Y\\ and \\Z\\ given \\X = x\\ is their covariance under their conditional distribution given \\X = x\\:
+> **Theorem 5 (Independent random variables have zero covariance)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), each discrete or continuous, with defined expectations, then:
+>
+> \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\
+>
+> If also \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\, then \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\.
+
+> **NOTE:**
+>
+> *Proof*. Write \\f_X\\ and \\f_Y\\ for the PMFs or densities of \\X\\ and \\Y\\, with reference measures \\\mu_X\\ and \\\mu_Y\\ as in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) (counting measure for a discrete variable, Lebesgue measure for a continuous one). Because \\X\\ and \\Y\\ are independent, \\f\_{X,Y}(x, y) = f_X(x)\\f_Y(y)\\ is their joint PMF, density, or density-mass function (the factorization in the notes to the [definition of independence](independence.llms.md#def-indpt)). First, with \\h(x, y) = \mathopen{}\left\|x\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{} \ge 0\\ (condition (a)):
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|XY\right\|\mathclose{}\right\]\mathclose{} &= \int\mathopen{}\left(\int \mathopen{}\left\|x\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{}\\f_X(x)\\f_Y(y)\\d\mu_Y(y)\right)\mathclose{}\\d\mu_X(x) && \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\ &= \int \mathopen{}\left\|x\right\|\mathclose{}\\f_X(x)\mathopen{}\left(\int \mathopen{}\left\|y\right\|\mathclose{}\\f_Y(y)\\d\mu_Y(y)\right)\mathclose{}\\d\mu_X(x) && \text{(} \mathopen{}\left\|x\right\|\mathclose{}\\f_X(x) \text{ does not depend on } y \text{)} \\ &= \int \mathopen{}\left\|x\right\|\mathclose{}\\f_X(x) \cdot\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{}\\d\mu_X(x) && \text{(LOTUS for } \mathopen{}\left\|Y\right\|\mathclose{} \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|X\right\|\mathclose{}\right\]\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} && \text{(LOTUS for } \mathopen{}\left\|X\right\|\mathclose{} \text{)} \end{aligned} \\
+>
+> which is finite, because \\X\\ and \\Y\\ have defined expectations. So condition (b) holds for \\h(x, y) = xy\\, and the same steps without the absolute values give:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} &= \int\mathopen{}\left(\int xy\\f_X(x)\\f_Y(y)\\d\mu_Y(y)\right)\mathclose{}\\d\mu_X(x) && \text{(joint-distribution form of Fubini--Tonelli, condition (b))} \\ &= \int x\\f_X(x)\mathopen{}\left(\int y\\f_Y(y)\\d\mu_Y(y)\right)\mathclose{}\\d\mu_X(x) && \text{(} x\\f_X(x) \text{ does not depend on } y \text{)} \\ &= \int x\\f_X(x) \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\d\mu_X(x) && \text{(definition of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(definition of expectation)} \end{aligned} \\
+>
+> Finally, by the [alternative formula for covariance](#thm-alt-cov):
+>
+> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \text{)} \\ &= 0 && \text{(subtract)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 10 (Two independent coin flips)** For the independent coin flips \\X_1\\ and \\X_2\\ of [the independence page’s example](independence.llms.md#exm-indpt), \\X_1 X_2 = 1\\ only when both flips are heads, so:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \operatorname{P}(X_1 = 1, X_2 = 1) && \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\ &= \tfrac{1}{4} && \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} && \text{(factor)} \\ &= \operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} && \text{(each flip is } \operatorname{Ber}(1/2) \text{)} \end{aligned} \\
+>
+> so \\\operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} = 0\\, as [Theorem 5](#thm-indpt-uncorrelated) requires.
+
+> **NOTE:**
+>
+> **Example 11 (Zero covariance without independence)** The converse of [Theorem 5](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = (-1 + 0 + 1)/3 = 0\\, and \\XY = X^3 = X\\, so:
+>
+> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} XY = X^3 = X \text{ on } \mathopen{}\left\\-1, 0, 1\right\\\mathclose{} \text{)} \\ &= 0 - 0 \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(multiply)} \end{aligned} \\
+>
+> But \\X\\ and \\Y\\ are not independent: \\Y\\ is a function of \\X\\, and \\\operatorname{P}(X = 0, Y = 0) = \operatorname{P}(X = 0) = \tfrac{1}{3}\\, while \\\operatorname{P}(X = 0)\\\operatorname{P}(Y = 0) = \tfrac{1}{3} \cdot\tfrac{1}{3} = \tfrac{1}{9}\\.
+
+> **NOTE:**
+>
+> **Definition 10 (Correlation)** The **correlation** of two random variables \\X\\ and \\Y\\ with finite, positive [variances](#def-variance) is their [covariance](#def-cov) divided by the product of their [standard deviations](#def-sd):
+>
+> \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\\
+
+Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and the correlation always lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)). Random variables with zero covariance, and hence zero correlation, are called **uncorrelated**; [Theorem 5](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 11](#exm-uncorrelated-not-indpt) shows the converse fails. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.
+
+> **NOTE:**
+>
+> **Example 12 (Correlation of a binary exposure and outcome)** In [Example 9](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05\\, where \\X \sim \operatorname{Ber}(0.5)\\ has \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 0.25\\ ([Example 3](#exm-variance-bernoulli)) and \\Y\\ has \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.21\\ ([Example 7](#exm-total-variance)), so:
+>
+> \\ \begin{aligned} \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} &= \frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} && \text{(definition of correlation)} \\ &= \frac{0.05}{\sqrt{0.25} \cdot\sqrt{0.21}} && \text{(substitute; } \operatorname{SD}\mathopen{}\left(\cdot\right)\mathclose{} = \sqrt{\operatorname{Var}\mathopen{}\left(\cdot\right)\mathclose{}} \text{)} \\ &\approx \frac{0.05}{0.5 \cdot 0.458} && \text{(evaluate the square roots)} \\ &\approx 0.218 && \text{(divide)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Definition 11 (Conditional covariance)** The **conditional covariance** of \\Y\\ and \\Z\\ given \\X = x\\ is their covariance under their conditional distribution given \\X = x\\:
 >
 > \\\operatorname{Cov}\mathopen{}\left(Y,Z \mid X = x\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y-\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\right)\mathclose{}\mathopen{}\left(Z-\operatorname{E}\mathopen{}\left\[Z \mid X = x\right\]\mathclose{}\right)\mathclose{} \mid X = x\right\]\mathclose{}\\
 >
@@ -214,11 +266,11 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 
 > **NOTE:**
 >
-> **Example 10 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 10](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\\. In [Example 4](#exm-cond-variance), for example, \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\\.
+> **Example 13 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 11](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\\. In [Example 4](#exm-cond-variance), for example, \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\\.
 
 > **NOTE:**
 >
-> **Theorem 5 (Law of total covariance)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Z^2\right\]\mathclose{} \< \infty\\:
+> **Theorem 6 (Law of total covariance)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Z^2\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{Cov}\mathopen{}\left(Y,Z\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}\right\]\mathclose{} + \operatorname{Cov}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}, \operatorname{E}\mathopen{}\left\[Z \mid X\right\]\mathclose{}\right)\mathclose{}\\
 
@@ -242,7 +294,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> **Lemma 1 (The covariance of a variable with itself is its variance)** For any random variable \\X\\:
+> **Lemma 1 (The covariance of a variable with itself is its variance)** For any random variable \\X\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{}\\
 
@@ -250,25 +302,23 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 >
 > *Proof*. By the [alternative formula for covariance](#thm-alt-cov):
 >
-> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \\&= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} \end{aligned} \\
->
-> which is exactly the [simplified expression for variance](#thm-variance).
+> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} && \text{(alternative formula for covariance, with } Y = X \text{)} \\&= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(} XX = X^2 \text{)} \\&= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} && \text{(simplified expression for variance)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Definition 11 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
+> **Definition 12 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\tilde{X}\right)\mathclose{} \\ &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\right\]\mathclose{} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 6 (Elements of the variance-covariance matrix are pairwise covariances)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\, the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\:
+> **Theorem 7 (Elements of the variance-covariance matrix are pairwise covariances)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\, the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\:
 >
 > \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \operatorname{Cov}\mathopen{}\left(X_2, X_1\right)\mathclose{} & \operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_2, X_p\right)\mathclose{} \\ \vdots & \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_p, X_2\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \\
 
 > **NOTE:**
 >
-> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 11](#def-cov-vec-x):
+> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 12](#def-cov-vec-x):
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} \begin{pmatrix}X_1 - \mu_1 & \cdots & X_p - \mu_p\end{pmatrix} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix} (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\ \vdots & \ddots & \vdots \\ (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p) \end{pmatrix} \right\]\mathclose{} \\ &= \begin{pmatrix} \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_p - \mu_p)\right\]\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_p - \mu_p)\right\]\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_p, X_p\right)\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \end{aligned} \\
 >
@@ -280,7 +330,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> **Theorem 7 (Alternate expression for variance of a random vector)** \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \end{aligned} \\
+> **Theorem 8 (Alternate expression for variance of a random vector)** \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -288,7 +338,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> **Theorem 8 (Variance of a linear combination)** For any vector of random variables \\\tilde{X}= (X_1, \ldots, X_n)\\ and corresponding vector of constants \\\tilde{a}= (a_1, \ldots, a_n)\\, the variance of their linear combination is:
+> **Theorem 9 (Variance of a linear combination)** For any vector of random variables \\\tilde{X}= (X_1, \ldots, X_n)\\ and corresponding vector of constants \\\tilde{a}= (a_1, \ldots, a_n)\\, the variance of their linear combination is:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{a}\cdot \tilde{X}\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(\sum\_{i=1}^na_i X_i\right)\mathclose{} \\ &= {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} \end{aligned} \\
 
@@ -306,7 +356,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> *Proof*. Apply [Theorem 8](#thm-var-lincom) with \\n=2\\, \\X_1 = X\\, and \\X_2 = Y\\:
+> *Proof*. Apply [Theorem 9](#thm-var-lincom) with \\n=2\\, \\X_1 = X\\, and \\X_2 = Y\\:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{} &= a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2ab \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} \end{aligned} \\
 >
@@ -314,8 +364,10 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(aX+bY - \operatorname{E}\mathopen{}\left\[aX+bY\right\]\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(a(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}) + b(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right)\mathclose{}^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[a^2(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2 + 2(a \cdot b)(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) + b^2(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(expand the square)} \\ &= a^2\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{} + 2(a \cdot b)\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right\]\mathclose{} + b^2\operatorname{E}\mathopen{}\left\[(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + 2(a \cdot b) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(definitions of variance and covariance)} \end{aligned} \\
 
-This corollary is why two variables’ covariance matters for combining them: if \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\\ and the variance of their sum is just the sum of their variances. The first claim follows from the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint): for independent \\X\\ and \\Y\\ the joint density or PMF factors, so \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\, and [Theorem 4](#thm-alt-cov) gives \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\.
+This corollary is why two variables’ covariance matters for combining them: if \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), then \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\\ ([Theorem 5](#thm-indpt-uncorrelated)), and the variance of their sum is just the sum of their variances.
 
 # References
+
+Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 
 Back to top

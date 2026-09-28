@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:15:08 (PDT)
+Last modified: 2026-09-28 01:23:33 (PDT)
 
 # 1 Key probability distributions
 
@@ -70,7 +70,9 @@ Table 2: Distributions typically used for test statistics
 
 > **NOTE:**
 >
-> **Theorem 1 (CDF of Poisson distribution)** \\\operatorname{P}(Y \le y) = e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{2}\\
+> **Theorem 1 (CDF of Poisson distribution)** If \\Y \sim \operatorname{Pois}(\mu)\\, then for every real number \\y\\:
+>
+> \\\operatorname{P}(Y \le y) = e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{2}\\
 
 > **NOTE:**
 >
@@ -149,9 +151,9 @@ Figure 2: Poisson CDFs
 >
 > Compute:
 >
-> - \\\operatorname{P}(X = 4 \| \mu = 3.75)\\
-> - \\\operatorname{P}(X \le 7 \| \mu = 3.75)\\
-> - \\\operatorname{P}(X \> 5 \| \mu = 3.75)\\
+> - \\\operatorname{P}(X = 4)\\
+> - \\\operatorname{P}(X \le 7)\\
+> - \\\operatorname{P}(X \> 5)\\
 
 > **NOTE:**
 >
@@ -226,17 +228,15 @@ We can use \\t\\ to represent continuous-valued exposures/observation durations,
 
 > **NOTE:**
 >
-> **Definition 3 (Event rate)** For a count outcome \\Y\\ with exposure magnitude \\t\\, the **event rate** (denoted \\\lambda\\) is defined as the mean of \\Y\\ divided by the exposure magnitude:
+> **Definition 3 (Event rate)** For a count \\Y\\ observed over a fixed, known [exposure magnitude](#def-exposure) \\t \> 0\\, the **event rate**, denoted \\\lambda\\, is the mean of \\Y\\ divided by the exposure magnitude:
 >
-> \\\mu \stackrel{\text{def}}{=}\operatorname{E}\[Y \mid T=t\]\\
->
-> \\\lambda \stackrel{\text{def}}{=}\frac{\mu}{t} \tag{3}\\
+> \\\lambda \stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{3}\\
 
-Event rate is somewhat analogous to odds for a binary outcome: both are transformations of the mean. The event rate removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. In count regression models, the transformation \\\lambda = \mu/t\\ is not part of the model’s link function, and the exposure magnitude is handled differently from the other covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+Event rate is somewhat analogous to odds for a binary outcome: both are transformations of the mean. The event rate removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
-> **Theorem 3 (Transformation function from event rate to mean)** For a count variable with mean \\\mu\\, event rate \\\lambda\\, and exposure magnitude \\t \> 0\\:
+> **Theorem 3 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\\lambda\\, then its mean \\\mu \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
 >
 > \\\mu = \lambda \cdot t \tag{4}\\
 
@@ -244,7 +244,7 @@ Event rate is somewhat analogous to odds for a binary outcome: both are transfor
 >
 > *Proof*. By [Definition 3](#def-event-rate):
 >
-> \\ \begin{aligned} \lambda &\stackrel{\text{def}}{=}\frac{\mu}{t} && (\text{definition of event rate}) \\ \mu &= \lambda \cdot t && (\text{multiply both sides by } t \> 0) \end{aligned} \\
+> \\ \begin{aligned} \lambda &\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} && (\text{definition of event rate}) \\ \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \lambda \cdot t && (\text{multiply both sides by } t \> 0) \\ \mu &= \lambda \cdot t && (\mu \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) \end{aligned} \\
 
 > **NOTE:**
 >
@@ -256,23 +256,23 @@ Event rate is somewhat analogous to odds for a binary outcome: both are transfor
 
 > **NOTE:**
 >
-> **Theorem 4 (No exposure means no expected events)** If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y \mid T=t\right\]\mathclose{} = \lambda \cdot t\\ for all \\t \ge 0\\ with one finite rate \\\lambda\\, then there are no expected events without exposure:
+> **Theorem 4 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda \cdot t\\ for all \\t \ge 0\\ with one finite rate \\\lambda\\, then there are no expected events without exposure:
 >
-> \\\operatorname{E}\[Y \mid T=0\] = 0\\
+> \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \operatorname{E}\[Y \mid T=0\] &= \lambda \cdot 0 && (\text{evaluate } \operatorname{E}\mathopen{}\left\[Y \mid T = t\right\]\mathclose{} = \lambda t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } \lambda \text{ is finite}) \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} &= \lambda \cdot 0 && (\text{evaluate } \operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } \lambda \text{ is finite}) \end{aligned} \\
 
-The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y \mid T = 0\right\]\mathclose{} = 0\\, since \\\lambda = \mu / t\\ is undefined at \\t = 0\\; the result holds for a model that assumes a rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
+The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\\lambda = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
 
 > **NOTE:**
 >
-> **Example 5 (Zero exposure time)** If a subject is observed for \\t = 0\\ person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is \\\operatorname{E}\[Y \mid T=0\] = 0\\.
+> **Example 5 (Zero exposure time)** If a subject is observed for \\t = 0\\ person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\.
 
 > **IMPORTANT:**
 >
-> The exposure magnitude, \\T\\, is *similar* to a covariate in linear or logistic regression. However, there is an important difference: in count regression, **there is no intercept corresponding to \\\operatorname{E}\[Y\|T=0\]\\**. In other words, this model assumes that if there is no exposure, there can’t be any events.
+> A mean proportional to exposure, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda t\\, has no term that stays nonzero at \\t = 0\\: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = c + \lambda t\\ with \\c \> 0\\, would expect \\c\\ events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
@@ -351,7 +351,7 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 >
 > Then, by the [law of iterated expectations](expectation.llms.md#thm-lie) and the [law of total variance](variance-covariance.llms.md#thm-total-variance), using \\\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \operatorname{Var}(Y \mid \Lambda) = \Lambda\\ ([Theorem 2](#thm-poisson-properties)):
 >
-> \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} = \mu \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} = \mu + \frac{\mu^2}{\rho} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu + \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
 >
 > and \\\mu^2/\rho \> 0\\ gives \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \> \mu\\.
 
@@ -405,7 +405,7 @@ The sum of many independent random variables, none of which dominates the others
 
 This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 27.1). Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.
 
-In practice, the theorem justifies approximating \\S_n\\ by a normal distribution with mean \\n\mu\\ and variance \\n\sigma^2\\, which by [linearity of expectation](expectation.llms.md#thm-linearity-expectation) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) (whose covariance terms are 0 for independent summands) are exactly the mean and variance of \\S_n\\.
+In practice, the theorem justifies approximating \\S_n\\ by a normal distribution with mean \\n\mu\\ and variance \\n\sigma^2\\, which by [linearity of expectation](expectation.llms.md#thm-linearity-expectation) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) (whose covariance terms are 0 for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated)) are exactly the mean and variance of \\S_n\\.
 
 > **NOTE:**
 >

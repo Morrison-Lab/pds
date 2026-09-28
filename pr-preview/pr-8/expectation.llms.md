@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:15:08 (PDT)
+Last modified: 2026-09-28 01:23:33 (PDT)
 
 # 1 Expectation
 
@@ -46,7 +46,7 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 
 > **NOTE:**
 >
-> **Theorem 2 (Expectation of time-to-event variables)** If \\T\\ is a non-negative random variable with [survival function](random-variables.llms.md#def-surv-fn) \\\operatorname{S}(t)\\, then:
+> **Theorem 2 (Expectation of time-to-event variables)** If \\T\\ is a non-negative random variable with [survival function](random-variables.llms.md#def-surv-fn) \\\operatorname{S}(t)\\ and a defined expectation, then:
 >
 > \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \int\_{t=0}^{\infty} \operatorname{S}(t)\\dt\\
 
@@ -57,6 +57,8 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 > We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3) lets us exchange the order of integration:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int\_{u=0}^{\infty} u\\\operatorname{f}(u)\\du && \text{(definition of expectation; } T \ge 0 \text{)}\\ &= \int\_{u=0}^{\infty}\mathopen{}\left(\int\_{t=0}^{u} 1\\dt\right)\mathclose{}\operatorname{f}(u)\\du && \text{(} u = \textstyle\int_0^u 1\\dt \text{)}\\ &= \int\_{u=0}^{\infty}\int\_{t=0}^{u} \operatorname{f}(u)\\dt\\du && \text{(move } \operatorname{f}(u) \text{ inside the inner integral)}\\ &= \int\_{t=0}^{\infty}\int\_{u=t}^{\infty} \operatorname{f}(u)\\du\\dt && \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\ &= \int\_{t=0}^{\infty}\Pr(T\>t)\\dt && \text{(integrate the density over } (t, \infty) \text{)}\\ &= \int\_{t=0}^{\infty}\operatorname{S}(t)\\dt && \text{(definition of the survival function)} \end{aligned} \\
+>
+> Every step also holds when \\\int\_{u=0}^{\infty} u\\\operatorname{f}(u)\\du\\ is infinite, because Tonelli’s theorem needs only a non-negative integrand; so \\\int\_{t=0}^{\infty} \operatorname{S}(t)\\dt\\ is finite exactly when \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{}\\ is defined.
 >
 > See ([Soch 2020](#ref-statproofbook:mean-nnrvar)) for an alternative presentation of this proof.
 
@@ -251,13 +253,13 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > A further standard fact about the bivariate normal (Casella and Berger ([2002](#ref-CaseBerg01))) is that the marginal distribution of \\X\\ is [normal](random-variables.llms.md#def-normal), \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma_X^2\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
 >
-> \\ \begin{aligned} \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}} \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma_X^2}} \\&= \frac{1}{1.8173\sqrt{2\pi}} \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}} \\&\approx 0.1591 \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}} \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma_X^2}} && \text{(normal density at } x = 40 \text{)} \\&= \frac{1}{1.8173\sqrt{2\pi}} \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}} && \text{(substitute } \mu_X \text{ and } \sigma_X \text{)} \\&\approx 0.1591 && \text{(evaluate)} \end{aligned} \\
 >
 > By [Definition 4](#def-cond-pdf), dividing the joint density by this marginal density and simplifying the exponent (completing the square in \\y\\; Casella and Berger ([2002](#ref-CaseBerg01))) gives the conditional PDF of \\Y\\ given \\X = 40\\, which is itself normal with mean shifted along the regression line and variance reduced by a factor of \\1-\rho^2\\:
 >
-> \\ \begin{aligned} \operatorname{p}(Y=y \mid X=40) &= \frac{\operatorname{p}(X=40,\\Y=y)}{\operatorname{p}(X=40)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left\[\frac{(40-\mu_X)^2}{\sigma_X^2} - \frac{2\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma_Y^2}\right\]\mathclose{} + \frac{(40-\mu_X)^2}{2\sigma_X^2}} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\rho^2(40-\mu_X)^2}{2\sigma_X^2(1-\rho^2)} + \frac{\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)} - \frac{(y-\mu_Y)^2}{2\sigma_Y^2(1-\rho^2)}} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2\sigma_Y^2(1-\rho^2)} \mathopen{}\left\[\rho^2\frac{\sigma_Y^2}{\sigma_X^2}(40-\mu_X)^2 - 2\rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)(y-\mu_Y) + (y-\mu_Y)^2\right\]\mathclose{}} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\mathopen{}\left(y - \mathopen{}\left\[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right\]\mathclose{}\right)\mathclose{}^2}{2\sigma_Y^2(1-\rho^2)}} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(Y=y \mid X=40) &= \frac{\operatorname{p}(X=40,\\Y=y)}{\operatorname{p}(X=40)} && \text{(definition of the conditional PDF)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left\[\frac{(40-\mu_X)^2}{\sigma_X^2} - \frac{2\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma_Y^2}\right\]\mathclose{} + \frac{(40-\mu_X)^2}{2\sigma_X^2}} && \text{(substitute both densities; combine prefactors and exponents)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\rho^2(40-\mu_X)^2}{2\sigma_X^2(1-\rho^2)} + \frac{\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)} - \frac{(y-\mu_Y)^2}{2\sigma_Y^2(1-\rho^2)}} && \text{(combine the } (40-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2\sigma_Y^2(1-\rho^2)} \mathopen{}\left\[\rho^2\frac{\sigma_Y^2}{\sigma_X^2}(40-\mu_X)^2 - 2\rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)(y-\mu_Y) + (y-\mu_Y)^2\right\]\mathclose{}} && \text{(factor } -\tfrac{1}{2\sigma_Y^2(1-\rho^2)} \text{ out of the exponent)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\mathopen{}\left(y - \mathopen{}\left\[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right\]\mathclose{}\right)\mathclose{}^2}{2\sigma_Y^2(1-\rho^2)}} && \text{(the bracket is a perfect square in } y \text{)} \end{aligned} \\
 >
-> The first equality substitutes the joint and marginal densities and combines their prefactors and exponents; the second equality combines the two \\(40-\mu_X)^2\\ terms using \\1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2}\\; the third equality factors \\-\tfrac{1}{2\sigma_Y^2(1-\rho^2)}\\ out of the bracket (multiplying through confirms it reproduces the previous line); and the fourth equality completes the square in \\y\\, since expanding \\\mathopen{}\left(y - \mathopen{}\left\[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right\]\mathclose{}\right)\mathclose{}^2\\ reproduces exactly the bracketed quadratic in the third equality.
+> Multiplying out each of the last two exponents reproduces the one before it.
 >
 > So \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\: the conditional mean, 3136.15 g, is exactly the fitted regression line’s prediction at \\x=40\\ (\\-1484.9846 + 115.5283 \times 40 = 3136.15\\), matching `R`’s `lm(wt ~ ga)` fit directly:
 >
@@ -293,7 +295,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > **Continuous case.** Continuing [Example 8](#exm-cond-pdf), \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\. The mean of a normal distribution is its location parameter (Casella and Berger ([2002](#ref-CaseBerg01))), so integrating \\y\\ against this conditional density gives:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 40\right\]\mathclose{} &= \int\_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\\dy \\&= 3136.15 \text{ g} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 40\right\]\mathclose{} &= \int\_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\\dy && \text{(definition of conditional expectation)} \\&= 3136.15 \text{ g} && \text{(the mean of a normal distribution is its location parameter)} \end{aligned} \\
 >
 > matching the fitted regression line’s prediction at \\x=40\\ weeks exactly, as expected since the conditional mean of a bivariate normal *is* the linear regression of \\Y\\ on \\X\\.
 
@@ -379,7 +381,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > By [Definition 6](#def-cond-mixed), since \\Y \mid X=x\\ is Bernoulli:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{} &= 0 \cdot\operatorname{P}(Y=0 \mid X=x) + 1 \cdot\operatorname{P}(Y=1 \mid X=x) \\&= \operatorname{P}(Y=1 \mid X=x) \\&= \frac{1}{1 + \text{e}^{-(2.4040 - 0.3235\\ x)}} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{} &= 0 \cdot\operatorname{P}(Y=0 \mid X=x) + 1 \cdot\operatorname{P}(Y=1 \mid X=x) && \text{(definition of conditional expectation, mixed case)} \\&= \operatorname{P}(Y=1 \mid X=x) && \text{(simplify)} \\&= \frac{1}{1 + \text{e}^{-(2.4040 - 0.3235\\ x)}} && \text{(invert the logit)} \end{aligned} \\
 >
 > Code
 >
@@ -533,7 +535,7 @@ There are only four \\(x,y)\\ pairs here, so summing them in any order — row b
 
 ## 1.2 Fubini–Tonelli for expectations
 
-For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and counting measure on a countable set are both \\\sigma\\-finite, which yields [Corollary 2](#cor-fubini-joint).
+For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and counting measure on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
@@ -575,7 +577,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 >
 > **True expectation:**
 >
-> \\ \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X \cdot X\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} = \int_0^1 x^2\\dx = \frac{1}{3} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X \cdot X\right\]\mathclose{} && \text{(} Y = X \text{)} \\&= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} && \text{(} X \cdot X = X^2 \text{)} \\&= \int_0^1 x^2\\dx && \text{(LOTUS, with the uniform density } 1 \text{ on } \[0, 1\] \text{)} \\&= \frac{1}{3} && \text{(integrate)} \end{aligned} \\
 >
 > **Erroneously applying the product-measure formula:**
 >
@@ -583,9 +585,9 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 >
 > The following calculation is what someone would *erroneously* write if they assumed independence and used \\f_X(x)\\f_Y(y)\\ as a “joint density” — a function that does not in fact correspond to the joint distribution of \\(X, X)\\. The marginals \\X \sim \mathrm{Uniform}(0,1)\\ and \\Y \sim \mathrm{Uniform}(0,1)\\ do have densities \\f_X = f_Y = 1\\, but the *product* \\f_X(x)\\f_Y(y) = 1\\ on \\\[0, 1\]^2\\ is the density of an *independent* pair, not of \\(X, X)\\:
 >
-> \\ \begin{aligned} \int_0^1\\\int_0^1 xy \cdot f_X(x) \cdot f_Y(y)\\dy\\dx &= \int_0^1\\\int_0^1 xy\\dy\\dx \\&= \int_0^1 x\mathopen{}\left(\int_0^1 y\\dy\right)\mathclose{}\\dx \\&= \int_0^1 x \cdot\frac{1}{2}\\dx \\&= \frac{1}{4} \end{aligned} \\
+> \\ \begin{aligned} \int_0^1\\\int_0^1 xy \cdot f_X(x) \cdot f_Y(y)\\dy\\dx &= \int_0^1\\\int_0^1 xy\\dy\\dx && \text{(} f_X(x)\\f_Y(y) = 1 \text{ on } \[0, 1\]^2 \text{)} \\&= \int_0^1 x\mathopen{}\left(\int_0^1 y\\dy\right)\mathclose{}\\dx && \text{(factor } x \text{ out of the inner integral)} \\&= \int_0^1 x \cdot\frac{1}{2}\\dx && \text{(} \textstyle\int_0^1 y\\dy = \tfrac{1}{2} \text{)} \\&= \frac{1}{4} && \text{(} \textstyle\int_0^1 \tfrac{x}{2}\\dx = \tfrac{1}{4} \text{)} \end{aligned} \\
 >
-> This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 2](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 2](#cor-fubini-joint) simply does not apply.
+> This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 2](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this density factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 2](#cor-fubini-joint) simply does not apply.
 >
 > Code
 >
@@ -720,11 +722,9 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\ using [Corollary 2](#cor-fubini-joint) with \\\mu_X = \mu_Y = \text{counting measure}\\ and \\h(x, y) = x + y\\. Since \\h(x,y) = x + y \ge 0\\ for every \\(x,y)\\ in this support, condition (a) holds, so [Corollary 2](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the order of this now-infinite double sum is exchangeable — unlike the finite case, elementary algebra alone could not establish this.
 >
-> By [Corollary 2](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
+> The derivation uses the standard geometric-series facts \\\sum\_{y=0}^{\infty} p^y = \frac{1}{1-p}\\ and \\\sum\_{y=0}^{\infty} y\\p^y = \frac{p}{(1-p)^2}\\ (e.g. Casella and Berger ([2002](#ref-CaseBerg01))). By [Corollary 2](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)\\\operatorname{P}(X = x,\\ Y = y) \\&= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)(1-p)^2 p^{x+y} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \sum\_{y=0}^{\infty} (x + y)\\p^y \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(x \sum\_{y=0}^{\infty} p^y + \sum\_{y=0}^{\infty} y\\p^y\right)\mathclose{} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(\frac{x}{1-p} + \frac{p}{(1-p)^2}\right)\mathclose{} \\&= \sum\_{x=0}^{\infty} p^x \mathopen{}\left\[x(1-p) + p\right\]\mathclose{} \\&= (1-p) \sum\_{x=0}^{\infty} x\\p^x + p \sum\_{x=0}^{\infty} p^x \\&= (1-p) \cdot\frac{p}{(1-p)^2} + p \cdot\frac{1}{1-p} \\&= \frac{p}{1-p} + \frac{p}{1-p} \\&= \frac{2p}{1-p} \end{aligned} \\
->
-> using the standard geometric-series facts \\\sum\_{y=0}^{\infty} p^y = \frac{1}{1-p}\\ and \\\sum\_{y=0}^{\infty} y\\p^y = \frac{p}{(1-p)^2}\\ (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)\\\operatorname{P}(X = x,\\ Y = y) && \text{(joint-distribution form of Fubini--Tonelli)} \\&= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)(1-p)^2 p^{x+y} && \text{(substitute the joint PMF)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \sum\_{y=0}^{\infty} (x + y)\\p^y && \text{(factor } (1-p)^2 p^x \text{ out of the inner sum)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(x \sum\_{y=0}^{\infty} p^y + \sum\_{y=0}^{\infty} y\\p^y\right)\mathclose{} && \text{(split the inner sum; factor out } x \text{)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(\frac{x}{1-p} + \frac{p}{(1-p)^2}\right)\mathclose{} && \text{(geometric-series facts)} \\&= \sum\_{x=0}^{\infty} p^x \mathopen{}\left\[x(1-p) + p\right\]\mathclose{} && \text{(multiply } (1-p)^2 \text{ into the parentheses)} \\&= (1-p) \sum\_{x=0}^{\infty} x\\p^x + p \sum\_{x=0}^{\infty} p^x && \text{(split the sum; factor out the constants)} \\&= (1-p) \cdot\frac{p}{(1-p)^2} + p \cdot\frac{1}{1-p} && \text{(geometric-series facts)} \\&= \frac{p}{1-p} + \frac{p}{1-p} && \text{(cancel } 1 - p \text{)} \\&= \frac{2p}{1-p} && \text{(add)} \end{aligned} \\
 >
 > As a check, \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{p}{1-p}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{2p}{1-p}\\ by [linearity of expectation](#thm-linearity-expectation), matching.
 >
@@ -756,7 +756,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 > | sum over y first, then x | 1.333 |
 > | sum over x first, then y | 1.333 |
 >
-> With \\p = 0.4\\, summing \\y\\ first then \\x\\, and summing \\x\\ first then \\y\\, agree with each other and with the closed form \\\frac{2p}{1-p} = 1.3333\\ up to truncation error — exactly Tonelli’s guarantee.
+> With \\p = 0.4\\, the truncated sums agree with the closed form \\\frac{2p}{1-p} = 1.3333\\ up to truncation error, which confirms the closed form. They cannot illustrate Tonelli’s guarantee, though: each truncation is a finite sum, and a finite sum gives the same total in either order, whether or not the infinite sums would agree. That the infinite sums agree is what Tonelli’s theorem supplies.
 
 > **NOTE:**
 >
@@ -778,7 +778,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > By [Corollary 2](#cor-fubini-joint) (mixed case):
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\ y)\\dx \\ &= \int_0^1 x \cdot 0.4\\dx + \int_0^2 x \cdot 0.3\\dx \\ &= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 \\ &= 0.2 + 0.6 = 0.8 \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\ y)\\dx && \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\ &= \int_0^1 x \cdot 0.4\\dx + \int_0^2 x \cdot 0.3\\dx && \text{(expand the sum over } y \in \\0, 1\\ \text{; substitute } f\_{X,Y} \text{)} \\ &= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 && \text{(} \textstyle\int_0^b x\\dx = b^2/2 \text{)} \\ &= 0.2 + 0.6 && \text{(multiply)} \\ &= 0.8 && \text{(add)} \end{aligned} \\
 >
 > As a check using the law of iterated expectations ([Theorem 7](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2}(0.4) + 1(0.6) = 0.2 + 0.6 = 0.8\\.
 >
@@ -809,7 +809,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > Figure 4: Joint density \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ for each value of the discrete variable \\Y\\. The area under each component integrates to \\\operatorname{P}(Y = y)\\: \\0.4 \cdot 1 = 0.4\\ (blue) and \\0.3 \cdot 2 = 0.6\\ (red), summing to 1.
 
-\\Y\\ takes only finitely many values here (two), so \\\sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx\\ is just linearity of the integral applied to a two-term sum — \\\int g + \int k = \int (g + k)\\ — not a genuine interchange of summation and integration order. If \\Y\\ had a countably infinite range instead, the sum of integrals would be genuinely infinite, and [Corollary 2](#cor-fubini-joint)’s guarantee would be load-bearing.
+\\Y\\ takes only finitely many values here (two), so \\\sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx\\ is just linearity of the integral applied to a two-term sum — \\\int g + \int k = \int (g + k)\\ — not a genuine interchange of summation and integration order. If \\Y\\ had a countably infinite range instead, the sum of integrals would be an infinite series, and [Corollary 2](#cor-fubini-joint)’s guarantee would be load-bearing.
 
 > **NOTE:**
 >
@@ -827,13 +827,13 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > By [Corollary 2](#cor-fubini-joint) (mixed case):
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y=0}^{\infty} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \int_0^{y+1} x\\dx \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \cdot\frac{(y+1)^2}{2} \\&= \frac{1-q}{2} \sum\_{y=0}^{\infty} (y+1)\\q^y \\&= \frac{1-q}{2} \mathopen{}\left(\sum\_{y=0}^{\infty} y\\q^y + \sum\_{y=0}^{\infty} q^y\right)\mathclose{} \\&= \frac{1-q}{2} \mathopen{}\left(\frac{q}{(1-q)^2} + \frac{1}{1-q}\right)\mathclose{} \\&= \frac{1-q}{2} \cdot\frac{q + (1-q)}{(1-q)^2} \\&= \frac{1-q}{2} \cdot\frac{1}{(1-q)^2} \\&= \frac{1}{2(1-q)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y=0}^{\infty} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx && \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \int_0^{y+1} x\\dx && \text{(} f\_{X,Y}(x, y) \text{ is constant in } x \text{ on } \[0, y+1\] \text{)} \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \cdot\frac{(y+1)^2}{2} && \text{(integrate)} \\&= \frac{1-q}{2} \sum\_{y=0}^{\infty} (y+1)\\q^y && \text{(cancel } y + 1 \text{; factor out } \tfrac{1-q}{2} \text{)} \\&= \frac{1-q}{2} \mathopen{}\left(\sum\_{y=0}^{\infty} y\\q^y + \sum\_{y=0}^{\infty} q^y\right)\mathclose{} && \text{(split the sum)} \\&= \frac{1-q}{2} \mathopen{}\left(\frac{q}{(1-q)^2} + \frac{1}{1-q}\right)\mathclose{} && \text{(geometric-series facts)} \\&= \frac{1-q}{2} \cdot\frac{q + (1-q)}{(1-q)^2} && \text{(common denominator)} \\&= \frac{1-q}{2} \cdot\frac{1}{(1-q)^2} && \text{(simplify the numerator)} \\&= \frac{1}{2(1-q)} && \text{(cancel } 1 - q \text{)} \end{aligned} \\
 >
 > using the same geometric-series facts as [Exercise 2](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
 >
-> As a check using the law of iterated expectations ([Theorem 7](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
+> As a check using the law of iterated expectations ([Theorem 7](#thm-lie)) and the expectation of a linear function ([Corollary 1](#cor-linearity-affine)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[X \mid Y\right\]\mathclose{}\right\]\mathclose{} \\&= \operatorname{E}\mathopen{}\left\[\frac{Y+1}{2}\right\]\mathclose{} \\&= \frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} + 1}{2} \\&= \frac{1}{2}\mathopen{}\left(\frac{q}{1-q} + 1\right)\mathclose{} \\&= \frac{1}{2} \cdot\frac{q + (1-q)}{1-q} \\&= \frac{1}{2(1-q)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[X \mid Y\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\&= \operatorname{E}\mathopen{}\left\[\frac{Y+1}{2}\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X \mid Y = y\right\]\mathclose{} = \tfrac{y+1}{2} \text{)} \\&= \frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} + 1}{2} && \text{(expectation of a linear function of one random variable)} \\&= \frac{1}{2}\mathopen{}\left(\frac{q}{1-q} + 1\right)\mathclose{} && \text{(substitute } \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \text{)} \\&= \frac{1}{2} \cdot\frac{q + (1-q)}{1-q} && \text{(common denominator)} \\&= \frac{1}{2(1-q)} && \text{(simplify the numerator)} \end{aligned} \\
 >
 > matching.
 >

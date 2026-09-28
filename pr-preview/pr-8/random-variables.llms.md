@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 01:15:08 (PDT)
+Last modified: 2026-09-28 01:23:33 (PDT)
 
 # 1 Random variables
 
@@ -50,7 +50,7 @@ Every continuous random variable in these notes also has a [probability density 
 
 > **NOTE:**
 >
-> **Definition 5 (Uniform distribution)** A random variable \\X\\ has the **uniform distribution** on an interval \\\[\alpha, \beta\]\\, with \\\alpha \< \beta\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, if the probability that \\X\\ falls in any subinterval of \\\[\alpha, \beta\]\\ is proportional to that subinterval’s length:
+> **Definition 5 (Uniform distribution)** A random variable \\X\\ has the **uniform distribution** on an interval \\\[\alpha, \beta\]\\, with \\\alpha \< \beta\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, if the probability that \\X\\ falls in any subinterval of \\\[\alpha, \beta\]\\ is proportional to the length of that subinterval:
 >
 > \\\Pr(a \le X \le b) = \frac{b - a}{\beta - \alpha} \quad \text{for all } \alpha \le a \le b \le \beta\\
 
