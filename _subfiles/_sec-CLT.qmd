@@ -19,7 +19,7 @@ $$
 $$
 
 where $\Phi(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
-is the CDF of the [standard normal distribution](random-variables.qmd#def-normal) $\ndist{0, 1}$.
+is the CDF of the [standard normal distribution](random-variables.qmd#def-std-normal) $\ndist{0, 1}$.
 
 :::
 

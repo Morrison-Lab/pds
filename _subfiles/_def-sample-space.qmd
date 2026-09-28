@@ -76,3 +76,70 @@ the complement of the event "the roll is even", $A = \set{2, 4, 6}$,
 is the event "the roll is odd", $\neg A = \set{1, 3, 5}$.
 
 :::
+
+{{< slidebreak >}}
+
+:::{#def-mutually-exclusive}
+#### Mutually exclusive events
+
+Finitely or countably many [events](#def-event) $A_1, A_2, \ldots$
+are **mutually exclusive**
+(also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**)
+when no two of them share an outcome:
+
+$$A_i \cap A_j = \emptyset \quad \text{for all } i \neq j$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mutually-exclusive}
+#### Low and high rolls
+
+In @exm-sample-space,
+the events "the roll is at most 2", $\set{1, 2}$,
+and "the roll is at least 5", $\set{5, 6}$,
+are mutually exclusive: no roll is in both.
+The events "the roll is even", $\set{2, 4, 6}$,
+and "the roll is at most 2", $\set{1, 2}$,
+are not mutually exclusive: a roll of 2 is in both.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-partition}
+#### Partition of an event
+
+A **partition** of an [event](#def-event) $A$
+is a finite or countably infinite collection of
+[mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$
+whose union is $A$:
+
+$$\bigcup_{i} A_i = A$$
+
+A partition of the [sample space](#def-sample-space) is the case $A = \Omega$.
+
+:::
+
+::: notes
+
+Some sources also require each piece $A_i$ to contain at least one outcome.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-partition}
+#### Partitioning the die roll
+
+In @exm-sample-space,
+the events "the roll is even", $\set{2, 4, 6}$,
+and "the roll is odd", $\set{1, 3, 5}$,
+are mutually exclusive, and their union is $\Omega$,
+so they partition the sample space.
+So do the six single-outcome events $\set{1}, \set{2}, \ldots, \set{6}$.
+The events $\set{1, 2}$ and $\set{5, 6}$ from @exm-mutually-exclusive
+do not partition $\Omega$: their union leaves out 3 and 4.
+
+:::
