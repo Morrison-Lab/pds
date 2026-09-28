@@ -16,7 +16,11 @@ format:
 
 ## Defining probabilities
 
-<!-- heading directly precedes the def-probability div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- heading directly precedes the def-sample-space div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+
+{{< include pds/_subfiles/_def-sample-space.qmd >}}
+
+{{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-probability.qmd >}}
 

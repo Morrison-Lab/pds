@@ -1,5 +1,4 @@
 :::{#def-conditional-prob}
-
 #### Conditional probability
 
 For two events $A$ and $B$ with $\Pr(B) > 0$,
@@ -7,5 +6,28 @@ the **conditional probability** of $A$ given $B$,
 denoted $\Pr(A \mid B)$, is:
 
 $$\Pr(A \mid B) \eqdef \frac{\Pr(A \cap B)}{\Pr(B)}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-conditional-prob}
+#### Rolling a six, given an even roll
+
+For a fair die (@exm-probability),
+let $A = \set{6}$ and $B = \set{2, 4, 6}$.
+Then $A \cap B = \set{6}$, so:
+
+$$
+\ba
+\Pr(A \mid B)
+&= \frac{\Pr(A \cap B)}{\Pr(B)}
+&& \text{(@def-conditional-prob)} \\
+&= \frac{1/6}{3/6}
+&& \text{(substitute the probabilities)} \\
+&= \frac{1}{3}
+&& \text{(simplify)}
+\ea
+$$
 
 :::
