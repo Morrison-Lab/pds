@@ -244,9 +244,10 @@ then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
 #### Independent and identically distributed
 
 Random variables $\dsn{X}$ are **independent and identically
-distributed** (shorthand: "$X_i\ \iid$") if they are
-[statistically independent](#def-indpt) and
-[identically distributed](#def-ident).
+distributed** (shorthand: "$X_i\ \iid$") if they are:
+
+- [statistically independent](#def-indpt), and
+- [identically distributed](#def-ident).
 
 :::
 
@@ -277,9 +278,11 @@ and each is uniform on $\set{1, \ldots, 6}$.
 Random variables $\dsn{Y}$ are **conditionally independent and identically distributed**
 given $\dsn{X}$
 (shorthand: "$Y_i \mid X_i\ \ciid$" or just "$Y_i \mid X_i\ \iid$")
-if $\dsn{Y}$ are [conditionally independent](#def-cind) given $(\X1n)$,
-each $Y_i$ depends on $(\X1n)$ only through $X_i$,
-and $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given $\X1n$.
+if:
+
+- $\dsn{Y}$ are [conditionally independent](#def-cind) given $(\X1n)$,
+- each $Y_i$ depends on $(\X1n)$ only through $X_i$, and
+- $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given $\X1n$.
 
 :::
 

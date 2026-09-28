@@ -135,11 +135,11 @@ are not mutually exclusive: a roll of 2 is in both.
 #### Partition of an event
 
 A **partition** of an [event](#def-event) $A$
-is a finite or countably infinite collection of
-[mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$
-whose union is $A$:
+is a finite or countably infinite collection of events $A_1, A_2, \ldots$
+that satisfies:
 
-$$\bigcup_{i} A_i = A$$
+- The events $A_1, A_2, \ldots$ are [mutually exclusive](#def-mutually-exclusive).
+- Their union is $A$: $\bigcup_{i} A_i = A$.
 
 A partition of the [sample space](#def-sample-space) is the case $A = \Omega$.
 
