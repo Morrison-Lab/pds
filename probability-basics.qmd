@@ -16,7 +16,7 @@ format:
 
 ## Defining probabilities
 
-<!-- heading directly precedes the def-sample-space div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-sample-space div. -->
 
 {{< include pds/_subfiles/_def-sample-space.qmd >}}
 
@@ -26,7 +26,7 @@ format:
 
 ## Conditional probability
 
-<!-- heading directly precedes the def-conditional-prob div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-conditional-prob div. -->
 
 {{< include pds/_subfiles/_def-conditional-prob.qmd >}}
 

@@ -14,7 +14,7 @@ format:
 
 # Expectation {#sec-expectation}
 
-<!-- heading directly precedes the def-expectation div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-expectation div. -->
 
 {{< include pds/_subfiles/_def-expectation.qmd >}}
 
@@ -24,7 +24,7 @@ format:
 
 ## Conditional distributions and expectations
 
-<!-- heading directly precedes the def-cond-pmf div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-cond-pmf div. -->
 
 {{< include pds/_subfiles/_def-cond-expectation.qmd >}}
 

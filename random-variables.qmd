@@ -14,19 +14,19 @@ format:
 
 # Random variables {#sec-random-variables}
 
-<!-- heading directly precedes the def-random-variable div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-random-variable div. -->
 
 {{< include pds/_subfiles/_def-random-variable.qmd >}}
 
 # Characteristics of probability distributions
 
-<!-- heading directly precedes the def-pmf div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-pmf div. -->
 
 {{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
 
 ## Survival, hazard, and cumulative hazard functions {#sec-prob-haz}
 
-<!-- heading directly precedes the def-surv-fn div; slidebreak omitted so the heading shares its slide with it -- do not re-flag -->
+<!-- No slidebreak here: the heading shares its slide with the def-surv-fn div. -->
 
 {{< include pds/_subfiles/_def-surv-fn.qmd >}}
 
