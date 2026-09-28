@@ -53,6 +53,6 @@ See:
 
 - [Wikipedia: Errors and residuals](https://en.wikipedia.org/wiki/Errors_and_residuals)
 - [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
-- [Wikipedia: Linear regression — Notation and terminology](https://en.wikipedia.org/wiki/Linear_regression#Notation_and_terminology)
+- [Wikipedia: Linear regression --- Notation and terminology](https://en.wikipedia.org/wiki/Linear_regression#Notation_and_terminology)
 
 :::

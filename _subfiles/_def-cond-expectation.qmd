@@ -390,7 +390,7 @@ senility_p15 <- predict(senility_fit,
 ```
 
 At $x = 10$: $\E{Y \mid X=10} = `r round(senility_p10, 2)`$.
-At $x = 15$: $\E{Y \mid X=15} = `r round(senility_p15, 2)`$ —
+At $x = 15$: $\E{Y \mid X=15} = `r round(senility_p15, 2)`$ ---
 a lower WAIS score is associated with higher predicted probability
 of senility symptoms.
 

@@ -76,7 +76,7 @@ $D = \{(t, u) : 0 \le t \le u < \infty\}$, so the iterated integrals
 over $D$ are exchangeable.
 
 Since $\pdf(u) \ge 0$, Tonelli's theorem
-(the nonnegative case of Fubini–Tonelli) applies, and we may
+(the nonnegative case of Fubini--Tonelli) applies, and we may
 exchange the order of integration over $D$:
 
 $$
