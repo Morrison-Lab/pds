@@ -147,7 +147,15 @@ $$
 Splitting and exchanging the sums is valid because the sums converge absolutely,
 since $\abs{ax + by + c} \le \abs{a}\abs{x} + \abs{b}\abs{y} + \abs{c}$
 and $\E{X}$ and $\E{Y}$ are defined.
-The continuous case replaces sums with integrals.
+
+Beyond the discrete case, this proof does not carry over by replacing sums with integrals.
+That replacement would need a joint density for $(X, Y)$,
+and some pairs have none:
+if $X$ is continuous, the pair $(X, X)$ has no joint density.
+In general, expectation is an integral against the probability measure,
+and the theorem is the linearity of that (Lebesgue) integral
+[@billingsley1995probability],
+which is beyond these notes' scope.
 
 :::
 
@@ -172,5 +180,68 @@ $$
 $$
 
 This calculation does not need the rolls to be independent.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-linearity-affine}
+#### Expectation of a linear function of one random variable
+
+For a random variable $X$ with a defined expectation,
+and constants $a$ and $c$:
+
+$$\E{aX + c} = a\E{X} + c$$
+
+:::
+
+::: proof
+
+For discrete $X$, this identity is @thm-linearity-expectation with $b = 0$.
+For continuous $X$ with density $\p(X=x)$,
+apply @thm-lotus with $g(x) = ax + c$:
+
+$$
+\ba
+\E{aX + c}
+&= \int_{x \in \rangef{X}} (ax + c) \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)} \\
+&= a\int_{x \in \rangef{X}} x \cd \p(X=x)\,dx
+ + c\int_{x \in \rangef{X}} \p(X=x)\,dx
+&& \text{(linearity of the integral)} \\
+&= a\E{X} + c\int_{x \in \rangef{X}} \p(X=x)\,dx
+&& \text{(definition of expectation)} \\
+&= a\E{X} + c \cd 1
+&& \text{(a density integrates to 1)} \\
+&= a\E{X} + c
+&& \text{(simplify)}
+\ea
+$$
+
+Splitting the integral is valid because both pieces converge absolutely:
+the first because $\E{X}$ is defined,
+and the second because its integrand is a non-negative density.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-linearity-affine}
+#### Expectation of a rescaled uniform variable
+
+Let $X \sim \text{Uniform}(0,1)$, so $\E{X} = \int_0^1 x\,dx = \tfrac{1}{2}$.
+By @cor-linearity-affine with $a = 2$ and $c = 1$:
+
+$$
+\ba
+\E{2X + 1}
+&= 2\E{X} + 1
+&& \text{(expectation of a linear function)} \\
+&= 2 \cd \tfrac{1}{2} + 1
+&& \text{(substitute } \E{X} = \tfrac{1}{2} \text{)} \\
+&= 2
+&& \text{(evaluate)}
+\ea
+$$
 
 :::
