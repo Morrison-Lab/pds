@@ -30,6 +30,40 @@ $$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \t
 
 {{< slidebreak >}}
 
+:::{#def-bernoulli}
+#### Bernoulli distribution
+
+A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi \in [0, 1]$,
+written $X \sim \Ber(\pi)$, if:
+
+$$
+\ba
+\Pr(X=x) &\eqdef \1{x\in \set{0,1}}\pi^x(1-\pi)^{1-x}\\
+&= \begin{cases}
+\pi, & x=1\\
+1-\pi, & x=0
+\end{cases}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-bernoulli-pmf}
+#### The first of two coin flips
+
+In @exm-random-variable,
+let $X_1$ indicate heads on the first flip,
+so $X_1(HH) = X_1(HT) = 1$ and $X_1(TH) = X_1(TT) = 0$.
+Then $\P(X_1 = 1) = \Pr(\set{HH, HT}) = 1/2$
+and $\P(X_1 = 0) = \Pr(\set{TH, TT}) = 1/2$,
+so $X_1 \sim \Ber(1/2)$.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-pdf}
 #### Probability density function (PDF)
 

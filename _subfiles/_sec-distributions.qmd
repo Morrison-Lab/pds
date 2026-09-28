@@ -39,33 +39,15 @@ Distributions typically used for test statistics
 
 ## The Bernoulli distribution {#sec-bern-dist}
 
-:::{#def-bernoulli}
-#### Bernoulli distribution
-
-A random variable $X$ has the **Bernoulli distribution** with parameter $\pi \in [0, 1]$,
-written $X \sim \Ber(\pi)$, if:
-
-$$
-\ba
-\Pr(X=x) &\eqdef \1{x\in \set{0,1}}\pi^x(1-\pi)^{1-x}\\
-&= \begin{cases}
-\pi, & x=1\\
-1-\pi, & x=0
-\end{cases}
-\ea
-$$
-
-:::
-
-{{< slidebreak >}}
-
 :::{#exm-bernoulli}
 #### A coin flip
 
+The [Bernoulli distribution](random-variables.qmd#def-bernoulli) describes a binary outcome.
 The indicator of heads on one flip of a fair coin is $\Ber(1/2)$.
-By [earlier results](expectation.qmd#thm-bernoulli-mean),
-$X \sim \Ber(\pi)$ has mean $\pi$
-and [variance](variance-covariance.qmd#exm-variance-bernoulli) $\pi(1 - \pi)$.
+By the [expectation of the Bernoulli distribution](expectation.qmd#thm-bernoulli-mean),
+$X \sim \Ber(\pi)$ has mean $\pi$,
+and by the [variance of a Bernoulli random variable](variance-covariance.qmd#exm-variance-bernoulli),
+it has variance $\pi(1 - \pi)$.
 
 :::
 

@@ -36,7 +36,8 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 :::{#thm-bernoulli-mean}
 #### Expectation of the Bernoulli distribution
 
-If $X \sim \Ber(\pi)$, that is, $\P(X = 1) = \pi$ and $\P(X = 0) = 1 - \pi$, then:
+If $X \sim \Ber(\pi)$ ([Bernoulli distribution](random-variables.qmd#def-bernoulli)),
+that is, $\P(X = 1) = \pi$ and $\P(X = 0) = 1 - \pi$, then:
 
 $$\E{X} = \pi$$
 :::
