@@ -1,63 +1,103 @@
-The sum of many independent or nearly-independent random variables with
-small variances (relative to the number of RVs being summed) 
-produces bell-shaped distributions.
+The sum of many independent random variables,
+none of which dominates the others,
+has a distribution that is approximately bell-shaped,
+whatever the distributions of the individual variables.
+@thm-clt makes this precise.
 
-For example, consider the sum of five dice (@fig-clt-5d6).
+{{< slidebreak >}}
 
-```{r}
-#| label: fig-clt-5d6
-#| fig-cap: "Distribution of the sum of five dice"
-library(dplyr)
-dist = 
-  expand.grid(1:6, 1:6, 1:6, 1:6, 1:6) |> 
-  rowwise() |>
-  mutate(total = sum(c_across(everything()))) |> 
-  ungroup() |> 
-  count(total) |> 
-  mutate(`p(X=x)` = n/sum(n))
+:::{#thm-clt}
+#### Central Limit Theorem
 
-library(ggplot2)
+Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
+with mean $\mu$ and finite variance $\ss > 0$,
+and let $S_n \eqdef \sumin X_i$.
+Then for every real number $z$:
 
-dist |> 
-  ggplot() +
-  aes(x = total, y = `p(X=x)`) +
-  geom_col() +
-  xlab("sum of dice (x)") +
-  ylab("Probability of outcome, Pr(X=x)") +
-  expand_limits(y = 0)
+$$
+\lim_{n \to \infty} \Pr\paren{\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z} = \Phi(z)
+$$
 
-  
-  
-```
+where $\Phi(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
+is the CDF of the standard normal distribution.
 
-In comparison, the outcome of just one die is not bell-shaped (@fig-clt-1d6).
+:::
+
+::: notes
+
+This version is the Lindeberg--L&eacute;vy CLT;
+its proof is beyond these notes' scope
+[@billingsley1995probability, Theorem 27.1].
+Other versions relax the IID assumption,
+which is why the informal statement asks only that no summand dominate.
+
+In practice, the theorem justifies approximating
+$S_n$ by a normal distribution with mean $n\mu$ and variance $n\ss$,
+which by [linearity of expectation](expectation.qmd#thm-linearity-expectation)
+and the [variance of a linear combination](variance-covariance.qmd#thm-var-lincom)
+(whose covariance terms are 0 for independent summands)
+are exactly the mean and variance of $S_n$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-clt-5d6}
+#### The sum of five dice
+
+A single fair die roll has the discrete uniform distribution on $\set{1, \ldots, 6}$,
+which is flat, not bell-shaped (@fig-clt-1d6).
+Its mean is $\mu = 3.5$,
+and its variance is $\ss = \sum_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12$.
 
 ```{r}
 #| label: fig-clt-1d6
 #| fig-cap: "Distribution of the outcome of one die"
-library(dplyr)
-dist = 
-  expand.grid(1:6) |> 
-  rowwise() |>
-  mutate(total = sum(c_across(everything()))) |> 
-  ungroup() |> 
-  count(total) |> 
-  mutate(`p(X=x)` = n/sum(n))
+#| code-fold: true
+dice_sum_pmf <- function(n_dice) {
+  rep(list(1:6), n_dice) |>
+    expand.grid() |>
+    rowSums() |>
+    table() |>
+    prop.table() |>
+    as.data.frame(responseName = "p") |>
+    dplyr::mutate(total = as.numeric(as.character(Var1)))
+}
 
-library(ggplot2)
+plot_dice_sum <- function(pmf) {
+  pmf |>
+    ggplot2::ggplot(ggplot2::aes(x = total, y = p)) +
+    ggplot2::geom_col() +
+    ggplot2::xlab("sum of dice (x)") +
+    ggplot2::ylab("Probability of outcome, Pr(X=x)") +
+    ggplot2::expand_limits(y = 0)
+}
 
-dist |> 
-  ggplot() +
-  aes(x = total, y = `p(X=x)`) +
-  geom_col() +
-  xlab("sum of dice (x)") +
-  ylab("Probability of outcome, Pr(X=x)") +
-  expand_limits(y = 0)
-
-  
-  
+dice_sum_pmf(1) |> plot_dice_sum()
 ```
 
-What distribution does a single die have?
+The sum of five independent rolls, $S_5$, is already close to bell-shaped
+(@fig-clt-5d6).
 
-Answer: discrete uniform on 1:6.
+```{r}
+#| label: fig-clt-5d6
+#| fig-cap: "Distribution of the sum of five dice"
+#| code-fold: true
+pmf_5d6 <- dice_sum_pmf(5)
+plot_dice_sum(pmf_5d6)
+```
+
+```{r}
+#| include: false
+p_exact <- sum(pmf_5d6$p[pmf_5d6$total <= 15])
+p_normal <- pnorm(15.5, mean = 5 * 3.5, sd = sqrt(5 * 35 / 12))
+```
+
+For example, the exact probability that five dice total at most 15 is
+$\Pr(S_5 \le 15) = `r round(p_exact, 4)`$.
+The normal approximation that @thm-clt suggests,
+with mean $5 \cd 3.5 = 17.5$ and variance $5 \cd 35/12 \approx 14.58$,
+evaluated at $15.5$ to account for $S_5$ taking only integer values,
+gives $\Phi\paren{(15.5 - 17.5)/\sqrt{14.58}} \approx `r round(p_normal, 4)`$.
+
+:::
