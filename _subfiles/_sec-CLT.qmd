@@ -55,25 +55,18 @@ and its variance is $\ss = \sum_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12$.
 #| fig-cap: "Distribution of the outcome of one die"
 #| code-fold: true
 dice_sum_pmf <- function(n_dice) {
-  rep(list(1:6), n_dice) |>
-    expand.grid() |>
-    rowSums() |>
-    table() |>
-    prop.table() |>
-    as.data.frame(responseName = "p") |>
-    dplyr::mutate(total = as.numeric(as.character(Var1)))
+  totals <- rowSums(expand.grid(rep(list(1:6), n_dice)))
+  probs <- prop.table(table(totals))
+  data.frame(total = as.numeric(names(probs)), p = as.vector(probs))
 }
 
-plot_dice_sum <- function(pmf) {
-  pmf |>
-    ggplot2::ggplot(ggplot2::aes(x = total, y = p)) +
-    ggplot2::geom_col() +
-    ggplot2::xlab("sum of dice (x)") +
-    ggplot2::ylab("Probability of outcome, Pr(X=x)") +
-    ggplot2::expand_limits(y = 0)
-}
+dice_plot <-
+  ggplot2::ggplot(mapping = ggplot2::aes(x = total, y = p)) +
+  ggplot2::xlab("sum of dice (x)") +
+  ggplot2::ylab("Probability of outcome, Pr(X=x)") +
+  ggplot2::expand_limits(y = 0)
 
-dice_sum_pmf(1) |> plot_dice_sum()
+dice_plot + ggplot2::geom_col(data = dice_sum_pmf(1))
 ```
 
 The sum of five independent rolls, $S_5$, is already close to bell-shaped
@@ -83,13 +76,13 @@ The sum of five independent rolls, $S_5$, is already close to bell-shaped
 #| label: fig-clt-5d6
 #| fig-cap: "Distribution of the sum of five dice"
 #| code-fold: true
-pmf_5d6 <- dice_sum_pmf(5)
-plot_dice_sum(pmf_5d6)
+pmf_five_dice <- dice_sum_pmf(5)
+dice_plot + ggplot2::geom_col(data = pmf_five_dice)
 ```
 
 ```{r}
 #| include: false
-p_exact <- sum(pmf_5d6$p[pmf_5d6$total <= 15])
+p_exact <- sum(pmf_five_dice$p[pmf_five_dice$total <= 15])
 p_normal <- pnorm(15.5, mean = 5 * 3.5, sd = sqrt(5 * 35 / 12))
 ```
 

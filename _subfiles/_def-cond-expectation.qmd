@@ -354,16 +354,14 @@ plasma_summary <-
     sd = sd(phosphate)
   )
 group_stat <- function(group, stat) {
-  plasma_summary |>
-    dplyr::filter(Group == group) |>
-    dplyr::pull({{ stat }})
+  plasma_summary[[stat]][plasma_summary[["Group"]] == group]
 }
-n_ho <- group_stat("H-O", n)
-n_c <- group_stat("C", n)
-mean_ho <- group_stat("H-O", mean)
-sd_ho <- group_stat("H-O", sd)
-mean_c <- group_stat("C", mean)
-sd_c <- group_stat("C", sd)
+n_ho <- group_stat("H-O", "n")
+n_c <- group_stat("C", "n")
+mean_ho <- group_stat("H-O", "mean")
+sd_ho <- group_stat("H-O", "sd")
+mean_c <- group_stat("C", "mean")
+sd_c <- group_stat("C", "sd")
 pander::pander(plasma_summary)
 ```
 
