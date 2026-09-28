@@ -28,9 +28,6 @@ An event $A$ **occurs** when the experiment's outcome is in $A$.
 
 ::: notes
 
-We write $\neg A$ for the **complement** of $A$,
-the event that $A$ does not occur: $\neg A \eqdef \Omega \setminus A$.
-Other sources write $A^c$ or $\bar{A}$.
 When $\Omega$ is uncountable, such as an interval of real numbers,
 only the subsets in a designated collection $\mathscr{S}$
 (a [$\sigma$-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra):
@@ -46,7 +43,36 @@ every set that arises in these notes is in $\mathscr{S}$.
 #### Rolling an even number
 
 In @exm-sample-space,
-the event "the roll is even" is $A = \set{2, 4, 6}$,
-and its complement is $\neg A = \set{1, 3, 5}$.
+the event "the roll is even" is $A = \set{2, 4, 6}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-complement}
+#### Complement of an event
+
+The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
+is the event that $A$ does not occur:
+the set of outcomes in the sample space $\Omega$ that are not in $A$.
+
+$$\neg A \eqdef \Omega \setminus A$$
+
+:::
+
+::: notes
+
+Other sources write $A^c$ or $\bar{A}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-complement}
+#### Rolling an odd number
+
+In @exm-event,
+the complement of the event "the roll is even", $A = \set{2, 4, 6}$,
+is the event "the roll is odd", $\neg A = \set{1, 3, 5}$.
 
 :::

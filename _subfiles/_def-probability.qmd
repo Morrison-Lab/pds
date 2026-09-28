@@ -76,7 +76,7 @@ and therefore $\Pr(A \cap B) = \Pr(A)$.
 :::{#thm-total-prob-1}
 #### An event and its complement sum to 1
 
-For any event $A$:
+For any event $A$ and its [complement](#def-complement) $\neg A$:
 
 $$\Pr(A) + \Pr(\neg A) = 1$$
 
