@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 00:57:21 (PDT)
+Last modified: 2026-09-28 01:11:10 (PDT)
 
 # 1 Expectation
 
@@ -36,7 +36,7 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 
 > **NOTE:**
 >
-> **Theorem 1 (Expectation of the Bernoulli distribution)** If \\X \sim \operatorname{Ber}(\pi)\\, that is, \\\operatorname{P}(X = 1) = \pi\\ and \\\operatorname{P}(X = 0) = 1 - \pi\\, then:
+> **Theorem 1 (Expectation of the Bernoulli distribution)** If \\X \sim \operatorname{Ber}(\pi)\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)), that is, \\\operatorname{P}(X = 1) = \pi\\ and \\\operatorname{P}(X = 0) = 1 - \pi\\, then:
 >
 > \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \pi\\
 
@@ -52,7 +52,9 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 
 > **NOTE:**
 >
-> *Proof*. We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3) lets us exchange the order of integration:
+> *Proof*.
+>
+> We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3) lets us exchange the order of integration:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int\_{u=0}^{\infty} u\\\operatorname{f}(u)\\du && \text{(definition of expectation; } T \ge 0 \text{)}\\ &= \int\_{u=0}^{\infty}\mathopen{}\left(\int\_{t=0}^{u} 1\\dt\right)\mathclose{}\operatorname{f}(u)\\du && \text{(} u = \textstyle\int_0^u 1\\dt \text{)}\\ &= \int\_{u=0}^{\infty}\int\_{t=0}^{u} \operatorname{f}(u)\\dt\\du && \text{(move } \operatorname{f}(u) \text{ inside the inner integral)}\\ &= \int\_{t=0}^{\infty}\int\_{u=t}^{\infty} \operatorname{f}(u)\\du\\dt && \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\ &= \int\_{t=0}^{\infty}\Pr(T\>t)\\dt && \text{(integrate the density over } (t, \infty) \text{)}\\ &= \int\_{t=0}^{\infty}\operatorname{S}(t)\\dt && \text{(definition of the survival function)} \end{aligned} \\
 >
@@ -60,7 +62,7 @@ See also <https://en.wikipedia.org/wiki/Expected_value>
 
 > **NOTE:**
 >
-> **Example 1 (Mean of an exponential random variable via survival function)** Let \\T\\ be exponential with rate \\\lambda \> 0\\, so \\\operatorname{S}(t) = \text{e}^{-\lambda t}\\ for \\t \ge 0\\, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
+> **Example 1 (Mean of an exponential random variable via survival function)** Let \\T\\ be [exponential](random-variables.llms.md#def-exponential) with rate \\\lambda \> 0\\, so \\\operatorname{S}(t) = \text{e}^{-\lambda t}\\ for \\t \ge 0\\, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \operatorname{S}(t)\\dt && \text{(expectation via the survival function)}\\ &= \int_0^\infty \text{e}^{-\lambda t}\\dt && \text{(substitute the survival function)}\\ &= \mathopen{}\left\[-\frac{1}{\lambda}\text{e}^{-\lambda t}\right\]\mathclose{}\_0^\infty && \text{(antiderivative)}\\ &= 0 - \mathopen{}\left(-\frac{1}{\lambda}\right)\mathclose{} && \text{(evaluate at the bounds)}\\ &= \frac{1}{\lambda} && \text{(simplify)} \end{aligned} \\
 
@@ -108,7 +110,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Example 4 (Expected value of \\X^2\\ for a Uniform(0,1) variable)** Let \\X \sim \text{Uniform}(0,1)\\, so \\\operatorname{p}(X=x) = 1\\ for \\x \in \[0,1\]\\. By LOTUS ([Theorem 3](#thm-lotus), continuous case):
+> **Example 4 (Expected value of \\X^2\\ for a Uniform(0,1) variable)** Let \\X \sim \text{Uniform}(0,1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), so \\\operatorname{p}(X=x) = 1\\ for \\x \in \[0,1\]\\ ([uniform density](random-variables.llms.md#exm-pdf)). By LOTUS ([Theorem 3](#thm-lotus), continuous case):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} &= \int_0^1 x^2 \cdot\operatorname{p}(X=x)\\dx && \text{(LOTUS, continuous case)} \\&= \int_0^1 x^2 \cdot 1\\dx && \text{(}\operatorname{p}(X=x) = 1\text{ on } \[0,1\]\text{)} \\&= \mathopen{}\left\[\frac{x^3}{3}\right\]\mathclose{}\_0^1 && \text{(antiderivative of } x^2\text{)} \\&= \frac{1}{3}. && \text{(evaluate at the bounds)} \end{aligned} \\
 
@@ -124,7 +126,9 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[aX + bY + c\right\]\mathclose{} &= \sum\_{x}\sum\_{y} (ax + by + c) \cdot\operatorname{P}(X=x, Y=y) && \text{(LOTUS for the pair } (X, Y) \text{)}\\ &= a\sum\_{x}\sum\_{y} x \cdot\operatorname{P}(X=x, Y=y) + b\sum\_{x}\sum\_{y} y \cdot\operatorname{P}(X=x, Y=y) + c\sum\_{x}\sum\_{y} \operatorname{P}(X=x, Y=y) && \text{(split the sum; constants factor out)}\\ &= a\sum\_{x}\sum\_{y} x \cdot\operatorname{P}(X=x, Y=y) + b\sum\_{y}\sum\_{x} y \cdot\operatorname{P}(X=x, Y=y) + c\sum\_{x}\sum\_{y} \operatorname{P}(X=x, Y=y) && \text{(exchange the order of summation in the second term)}\\ &= a\sum\_{x} x \sum\_{y} \operatorname{P}(X=x, Y=y) + b\sum\_{y} y \sum\_{x} \operatorname{P}(X=x, Y=y) + c \cdot 1 && \text{(factor } x \text{ and } y \text{ out of the inner sums; total probability is 1)}\\ &= a\sum\_{x} x \cdot\operatorname{P}(X=x) + b\sum\_{y} y \cdot\operatorname{P}(Y=y) + c && \text{(marginalize: countable additivity)}\\ &= a\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + b\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} + c && \text{(definition of expectation)} \end{aligned} \\
 >
-> Splitting and exchanging the sums is valid because the sums converge absolutely, since \\\mathopen{}\left\|ax + by + c\right\|\mathclose{} \le \mathopen{}\left\|a\right\|\mathclose{}\mathopen{}\left\|x\right\|\mathclose{} + \mathopen{}\left\|b\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{} + \mathopen{}\left\|c\right\|\mathclose{}\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ are defined. The continuous case replaces sums with integrals.
+> Splitting and exchanging the sums is valid because the sums converge absolutely, since \\\mathopen{}\left\|ax + by + c\right\|\mathclose{} \le \mathopen{}\left\|a\right\|\mathclose{}\mathopen{}\left\|x\right\|\mathclose{} + \mathopen{}\left\|b\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{} + \mathopen{}\left\|c\right\|\mathclose{}\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ are defined.
+>
+> Beyond the discrete case, this proof does not carry over by replacing sums with integrals. That replacement would need a joint density for \\(X, Y)\\, and some pairs have none: if \\X\\ is continuous, the pair \\(X, X)\\ has no joint density. In general, expectation is an integral against the probability measure, and the theorem is the linearity of that (Lebesgue) integral ([Billingsley 1995](#ref-billingsley1995probability)), which is beyond these notes’ scope.
 
 > **NOTE:**
 >
@@ -133,6 +137,26 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(linearity of expectation with } a = b = 1, c = 0 \text{)}\\ &= 3.5 + 3.5 && \text{(substitute)}\\ &= 7 && \text{(add)} \end{aligned} \\
 >
 > This calculation does not need the rolls to be independent.
+
+> **NOTE:**
+>
+> **Corollary 1 (Expectation of a linear function of one random variable)** For a random variable \\X\\ with a defined expectation, and constants \\a\\ and \\c\\:
+>
+> \\\operatorname{E}\mathopen{}\left\[aX + c\right\]\mathclose{} = a\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + c\\
+
+> **NOTE:**
+>
+> *Proof*. For discrete \\X\\, this identity is [Theorem 4](#thm-linearity-expectation) with \\b = 0\\. For continuous \\X\\ with density \\\operatorname{p}(X=x)\\, apply [Theorem 3](#thm-lotus) with \\g(x) = ax + c\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[aX + c\right\]\mathclose{} &= \int\_{x \in \mathcal{R}(X)} (ax + c) \cdot\operatorname{p}(X=x)\\dx && \text{(LOTUS, continuous case)} \\ &= a\int\_{x \in \mathcal{R}(X)} x \cdot\operatorname{p}(X=x)\\dx + c\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x)\\dx && \text{(linearity of the integral)} \\ &= a\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + c\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x)\\dx && \text{(definition of expectation)} \\ &= a\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + c \cdot 1 && \text{(a density integrates to 1)} \\ &= a\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + c && \text{(simplify)} \end{aligned} \\
+>
+> Splitting the integral is valid because both pieces converge absolutely: the first because \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ is defined, and the second because its integrand is a non-negative density.
+
+> **NOTE:**
+>
+> **Example 6 (Expectation of a rescaled uniform variable)** Let \\X \sim \text{Uniform}(0,1)\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \int_0^1 x\\dx = \tfrac{1}{2}\\. By [Corollary 1](#cor-linearity-affine) with \\a = 2\\ and \\c = 1\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[2X + 1\right\]\mathclose{} &= 2\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + 1 && \text{(expectation of a linear function)} \\ &= 2 \cdot\tfrac{1}{2} + 1 && \text{(substitute } \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2} \text{)} \\ &= 2 && \text{(evaluate)} \end{aligned} \\
 
 ## 1.1 Conditional distributions and expectations
 
@@ -144,7 +168,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Example 6 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
+> **Example 7 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
 >
 > Code
 >
@@ -185,7 +209,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Example 7 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
+> **Example 8 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
 >
 > Code
 >
@@ -225,7 +249,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > \\ \operatorname{p}(X=x,\\Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \text{e}^{-\frac{1}{2(1-\rho^2)} \mathopen{}\left\[\frac{(x-\mu_X)^2}{\sigma_X^2} - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma_Y^2}\right\]\mathclose{}} \\
 >
-> A further standard fact about the bivariate normal (Casella and Berger ([2002](#ref-CaseBerg01))) is that the marginal distribution of \\X\\ is \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma_X^2\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
+> A further standard fact about the bivariate normal (Casella and Berger ([2002](#ref-CaseBerg01))) is that the marginal distribution of \\X\\ is [normal](random-variables.llms.md#def-normal), \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma_X^2\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
 >
 > \\ \begin{aligned} \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}} \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma_X^2}} \\&= \frac{1}{1.8173\sqrt{2\pi}} \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}} \\&\approx 0.1591 \end{aligned} \\
 >
@@ -259,7 +283,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Example 8 (Conditional expectation from real trial and birthweight data)** **Discrete case.** Continuing [Example 6](#exm-cond-pmf), score the vaccine trial’s response levels \\\text{small} = 1\\, \\\text{moderate} = 2\\, \\\text{large} = 3\\. The conditional PMF of \\Y\\ given \\X = \text{placebo}\\ (from [Example 6](#exm-cond-pmf)) is:
+> **Example 9 (Conditional expectation from real trial and birthweight data)** **Discrete case.** Continuing [Example 7](#exm-cond-pmf), score the vaccine trial’s response levels \\\text{small} = 1\\, \\\text{moderate} = 2\\, \\\text{large} = 3\\. The conditional PMF of \\Y\\ given \\X = \text{placebo}\\ (from [Example 7](#exm-cond-pmf)) is:
 >
 > \\ \begin{aligned} \operatorname{P}(Y = \text{small} \mid X = \text{placebo}) &= \tfrac{25}{38} \\ \operatorname{P}(Y = \text{moderate} \mid X = \text{placebo}) &= \tfrac{8}{38} \\ \operatorname{P}(Y = \text{large} \mid X = \text{placebo}) &= \tfrac{5}{38} \end{aligned} \\
 >
@@ -267,7 +291,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = \text{placebo}\right\]\mathclose{} &= 1 \cdot\tfrac{25}{38} + 2 \cdot\tfrac{8}{38} + 3 \cdot\tfrac{5}{38} && \text{(definition of conditional expectation)} \\&= \frac{56}{38} && \text{(common denominator)} \\&\approx 1.47 && \text{(divide)} \end{aligned} \\
 >
-> **Continuous case.** Continuing [Example 7](#exm-cond-pdf), \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\. The mean of a normal distribution is its location parameter (Casella and Berger ([2002](#ref-CaseBerg01))), so integrating \\y\\ against this conditional density gives:
+> **Continuous case.** Continuing [Example 8](#exm-cond-pdf), \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\. The mean of a normal distribution is its location parameter (Casella and Berger ([2002](#ref-CaseBerg01))), so integrating \\y\\ against this conditional density gives:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 40\right\]\mathclose{} &= \int\_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\\dy \\&= 3136.15 \text{ g} \end{aligned} \\
 >
@@ -295,7 +319,7 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Example 9 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
+> **Example 10 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
 >
 > Code
 >
@@ -380,11 +404,11 @@ LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\math
 
 > **NOTE:**
 >
-> **Example 10 (The conditional expectation function of the birthweight model)** Continuing [Example 7](#exm-cond-pdf) and [Example 8](#exm-cond-expectation), \\(X, Y)\\ (gestational age, birthweight) is modeled as bivariate normal. The general form of the conditional mean derived in [Example 7](#exm-cond-pdf), evaluated at an arbitrary \\x\\ instead of just \\x=40\\, gives the conditional expectation function directly:
+> **Example 11 (The conditional expectation function of the birthweight model)** Continuing [Example 8](#exm-cond-pdf) and [Example 9](#exm-cond-expectation), \\(X, Y)\\ (gestational age, birthweight) is modeled as bivariate normal. The general form of the conditional mean derived in [Example 8](#exm-cond-pdf), evaluated at an arbitrary \\x\\ instead of just \\x=40\\, gives the conditional expectation function directly:
 >
 > \\ \begin{aligned} g(x) &= \mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) \\&= -1484.9846 + 115.5283\\ x \end{aligned} \\
 >
-> which is exactly the fitted regression line (the general algebraic identity \\\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \mathopen{}\left(\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X\right)\mathclose{} + \rho\frac{\sigma_Y}{\sigma_X}x\\ is what makes the bivariate-normal conditional mean linear in \\x\\). As a check, evaluating at \\x = 40\\ recovers [Example 8](#exm-cond-expectation)’s result:
+> which is exactly the fitted regression line (the general algebraic identity \\\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \mathopen{}\left(\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X\right)\mathclose{} + \rho\frac{\sigma_Y}{\sigma_X}x\\ is what makes the bivariate-normal conditional mean linear in \\x\\). As a check, evaluating at \\x = 40\\ recovers [Example 9](#exm-cond-expectation)’s result:
 >
 > \\g(40) = -1484.9846 + 115.5283 \times 40 = 3136.15 \text{ g}\\
 
@@ -435,11 +459,11 @@ There are only four \\(x,y)\\ pairs here, so summing them in any order — row b
 
 ## 1.2 Fubini–Tonelli for expectations
 
-For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and counting measure on a countable set are both \\\sigma\\-finite, which yields [Corollary 1](#cor-fubini-joint).
+For expectations, we use the measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli) ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Lebesgue measure on the real line and counting measure on a countable set are both \\\sigma\\-finite, which yields [Corollary 2](#cor-fubini-joint).
 
 > **NOTE:**
 >
-> **Corollary 1 (Joint-distribution form (without independence; corollary of Fubini–Tonelli))** Let \\(X, Y)\\ be jointly distributed random variables whose joint distribution has a density \\f\_{X,Y}\\ with respect to a product of \\\sigma\\-finite reference measures \\\mu_X \otimes \mu_Y\\ on \\\mathcal{R}(X) \times \mathcal{R}(Y)\\, and let \\h : \mathcal{R}(X) \times \mathcal{R}(Y) \to \mathbb{R}\\ be measurable. If either
+> **Corollary 2 (Joint-distribution form (without independence; corollary of Fubini–Tonelli))** Let \\(X, Y)\\ be jointly distributed random variables whose joint distribution has a density \\f\_{X,Y}\\ with respect to a product of \\\sigma\\-finite reference measures \\\mu_X \otimes \mu_Y\\ on \\\mathcal{R}(X) \times \mathcal{R}(Y)\\, and let \\h : \mathcal{R}(X) \times \mathcal{R}(Y) \to \mathbb{R}\\ be measurable. If either
 >
 > 1.  \\h(X, Y) \ge 0\\ almost surely, or
 >
@@ -461,9 +485,9 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Example 11 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\.
+> **Example 12 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\.
 >
-> We apply [Corollary 1](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as \\f\_{X,Y}(x,y) = f_X(x)\\f_Y(y) = \tfrac{1}{2}\\, and \\\mu_X = \mu_Y = \text{Lebesgue measure}\\:
+> We apply [Corollary 2](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as \\f\_{X,Y}(x,y) = f_X(x)\\f_Y(y) = \tfrac{1}{2}\\, and \\\mu_X = \mu_Y = \text{Lebesgue measure}\\:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} &= \int_0^1 \mathopen{}\left(\int_0^2 xy \cdot\tfrac{1}{2}\\dy\right)\mathclose{}\\dx && \text{(joint-distribution form of Fubini--Tonelli)} \\&= \int_0^1 x\mathopen{}\left(\frac{1}{2}\int_0^2 y\\dy\right)\mathclose{}\\dx && \text{(factor constants out of the inner integral)} \\&= \int_0^1 x \cdot\frac{1}{2} \cdot\mathopen{}\left\[\frac{y^2}{2}\right\]\mathclose{}\_0^2\\dx && \text{(antiderivative of } y \text{)} \\&= \int_0^1 x \cdot\frac{1}{2} \cdot 2\\dx && \text{(evaluate at the bounds)} \\&= \int_0^1 x\\dx && \text{(simplify)} \\&= \frac{1}{2} && \text{(integrate)} \end{aligned} \\
 >
@@ -471,7 +495,7 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Example 12 (When independence fails: a counterexample)** Correctly applying [Corollary 1](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
+> **Example 13 (When independence fails: a counterexample)** Correctly applying [Corollary 2](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
 >
 > Let \\X \sim \mathrm{Uniform}(0, 1)\\ and set \\Y = X\\ (so \\X\\ and \\Y\\ are perfectly correlated and **not** independent).
 >
@@ -481,13 +505,13 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 >
 > **Erroneously applying the product-measure formula:**
 >
-> Note that Fubini–Tonelli’s own conditions still hold here (\\h(x,y) = xy\\ is nonnegative and integrable), so the error is not a failure of Fubini–Tonelli itself. Rather, the error is using the *wrong measure*: the joint distribution of \\(X, X)\\ is concentrated on the diagonal \\\\(x, x) : x \in \[0, 1\]\\ \subset \[0, 1\]^2\\, which has Lebesgue measure zero in \\\mathbb{R}^2\\. The joint distribution is therefore **not** absolutely continuous with respect to two-dimensional Lebesgue measure, so **no joint density \\f\_{X,Y}\\ on \\\[0, 1\]^2\\ exists**, which is the reference density [Corollary 1](#cor-fubini-joint) requires.
+> Note that Fubini–Tonelli’s own conditions still hold here (\\h(x,y) = xy\\ is nonnegative and integrable), so the error is not a failure of Fubini–Tonelli itself. Rather, the error is using the *wrong measure*: the joint distribution of \\(X, X)\\ is concentrated on the diagonal \\\\(x, x) : x \in \[0, 1\]\\ \subset \[0, 1\]^2\\, which has Lebesgue measure zero in \\\mathbb{R}^2\\. The joint distribution is therefore **not** absolutely continuous with respect to two-dimensional Lebesgue measure, so **no joint density \\f\_{X,Y}\\ on \\\[0, 1\]^2\\ exists**, which is the reference density [Corollary 2](#cor-fubini-joint) requires.
 >
 > The following calculation is what someone would *erroneously* write if they assumed independence and used \\f_X(x)\\f_Y(y)\\ as a “joint density” — a function that does not in fact correspond to the joint distribution of \\(X, X)\\. The marginals \\X \sim \mathrm{Uniform}(0,1)\\ and \\Y \sim \mathrm{Uniform}(0,1)\\ do have densities \\f_X = f_Y = 1\\, but the *product* \\f_X(x)\\f_Y(y) = 1\\ on \\\[0, 1\]^2\\ is the density of an *independent* pair, not of \\(X, X)\\:
 >
 > \\ \begin{aligned} \int_0^1\\\int_0^1 xy \cdot f_X(x) \cdot f_Y(y)\\dy\\dx &= \int_0^1\\\int_0^1 xy\\dy\\dx \\&= \int_0^1 x\mathopen{}\left(\int_0^1 y\\dy\right)\mathclose{}\\dx \\&= \int_0^1 x \cdot\frac{1}{2}\\dx \\&= \frac{1}{4} \end{aligned} \\
 >
-> This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 1](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 1](#cor-fubini-joint) simply does not apply.
+> This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 2](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 2](#cor-fubini-joint) simply does not apply.
 >
 > Code
 >
@@ -523,9 +547,9 @@ For expectations, we use the measure-theoretic form of the [Fubini–Tonelli the
 
 > **NOTE:**
 >
-> **Example 13 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\.
+> **Example 14 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\.
 >
-> By [Corollary 1](#cor-fubini-joint):
+> By [Corollary 2](#cor-fubini-joint):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \int_0^1\\\int_0^y (x + y) \cdot 2\\dx\\dy && \text{(joint-distribution form of Fubini--Tonelli, over the support } 0 \le x \le y \le 1 \text{)} \\&= 2\int_0^1 \mathopen{}\left\[\frac{x^2}{2} + xy\right\]\mathclose{}\_{x=0}^{x=y}\\dy && \text{(antiderivative in } x \text{)} \\&= 2\int_0^1 \mathopen{}\left(\frac{y^2}{2} + y^2\right)\mathclose{}\\dy && \text{(evaluate at the bounds)} \\&= 2\int_0^1 \frac{3y^2}{2}\\dy && \text{(add)} \\&= 3\int_0^1 y^2\\dy && \text{(simplify the constant)} \\&= 3 \cdot\frac{1}{3} && \text{(integrate)} \\&= 1 && \text{(multiply)} \end{aligned} \\
 >
@@ -596,7 +620,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 
 > **NOTE:**
 >
-> **Example 14 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
+> **Example 15 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{} = 10, \quad \operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{} = 6\\
 >
@@ -612,9 +636,9 @@ This identity is the tower rule applied conditionally on \\Z\\.
 
 > **NOTE:**
 >
-> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\ using [Corollary 1](#cor-fubini-joint) with \\\mu_X = \mu_Y = \text{counting measure}\\ and \\h(x, y) = x + y\\. Since \\h(x,y) = x + y \ge 0\\ for every \\(x,y)\\ in this support, condition (a) holds, so [Corollary 1](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the order of this now-infinite double sum is exchangeable — unlike the finite case, elementary algebra alone could not establish this.
+> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\ using [Corollary 2](#cor-fubini-joint) with \\\mu_X = \mu_Y = \text{counting measure}\\ and \\h(x, y) = x + y\\. Since \\h(x,y) = x + y \ge 0\\ for every \\(x,y)\\ in this support, condition (a) holds, so [Corollary 2](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the order of this now-infinite double sum is exchangeable — unlike the finite case, elementary algebra alone could not establish this.
 >
-> By [Corollary 1](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
+> By [Corollary 2](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)\\\operatorname{P}(X = x,\\ Y = y) \\&= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)(1-p)^2 p^{x+y} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \sum\_{y=0}^{\infty} (x + y)\\p^y \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(x \sum\_{y=0}^{\infty} p^y + \sum\_{y=0}^{\infty} y\\p^y\right)\mathclose{} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(\frac{x}{1-p} + \frac{p}{(1-p)^2}\right)\mathclose{} \\&= \sum\_{x=0}^{\infty} p^x \mathopen{}\left\[x(1-p) + p\right\]\mathclose{} \\&= (1-p) \sum\_{x=0}^{\infty} x\\p^x + p \sum\_{x=0}^{\infty} p^x \\&= (1-p) \cdot\frac{p}{(1-p)^2} + p \cdot\frac{1}{1-p} \\&= \frac{p}{1-p} + \frac{p}{1-p} \\&= \frac{2p}{1-p} \end{aligned} \\
 >
@@ -654,7 +678,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 
 > **NOTE:**
 >
-> The calculation in [Exercise 2](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 1](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. Rudin ([1976](#ref-rudin1976principles)) for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
+> The calculation in [Exercise 2](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 2](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. Rudin ([1976](#ref-rudin1976principles)) for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
 
 > **NOTE:**
 >
@@ -664,13 +688,13 @@ This identity is the tower rule applied conditionally on \\Z\\.
 
 > **NOTE:**
 >
-> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ using [Corollary 1](#cor-fubini-joint) with \\\mu_X = \text{Lebesgue measure}\\, \\\mu_Y = \text{counting measure}\\, and \\h(x, y) = x\\.
+> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ using [Corollary 2](#cor-fubini-joint) with \\\mu_X = \text{Lebesgue measure}\\, \\\mu_Y = \text{counting measure}\\, and \\h(x, y) = x\\.
 >
 > The joint density w.r.t. Lebesgue \\\times\\ counting measure is \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\:
 >
 > \\ \begin{aligned} f\_{X,Y}(x,\\ 0) &= 1 \cdot 0.4 = 0.4 &&\text{ for } x \in \[0,1\];\\ f\_{X,Y}(x,\\ 1) &= \tfrac{1}{2} \cdot 0.6 = 0.3 &&\text{ for } x \in \[0,2\]. \end{aligned} \\
 >
-> By [Corollary 1](#cor-fubini-joint) (mixed case):
+> By [Corollary 2](#cor-fubini-joint) (mixed case):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\ y)\\dx \\ &= \int_0^1 x \cdot 0.4\\dx + \int_0^2 x \cdot 0.3\\dx \\ &= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 \\ &= 0.2 + 0.6 = 0.8 \end{aligned} \\
 >
@@ -703,7 +727,7 @@ This identity is the tower rule applied conditionally on \\Z\\.
 >
 > Figure 4: Joint density \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ for each value of the discrete variable \\Y\\. The area under each component integrates to \\\operatorname{P}(Y = y)\\: \\0.4 \cdot 1 = 0.4\\ (blue) and \\0.3 \cdot 2 = 0.6\\ (red), summing to 1.
 
-\\Y\\ takes only finitely many values here (two), so \\\sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx\\ is just linearity of the integral applied to a two-term sum — \\\int g + \int k = \int (g + k)\\ — not a genuine interchange of summation and integration order. If \\Y\\ had a countably infinite range instead, the sum of integrals would be genuinely infinite, and [Corollary 1](#cor-fubini-joint)’s guarantee would be load-bearing.
+\\Y\\ takes only finitely many values here (two), so \\\sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx\\ is just linearity of the integral applied to a two-term sum — \\\int g + \int k = \int (g + k)\\ — not a genuine interchange of summation and integration order. If \\Y\\ had a countably infinite range instead, the sum of integrals would be genuinely infinite, and [Corollary 2](#cor-fubini-joint)’s guarantee would be load-bearing.
 
 > **NOTE:**
 >
@@ -713,13 +737,13 @@ This identity is the tower rule applied conditionally on \\Z\\.
 
 > **NOTE:**
 >
-> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ using [Corollary 1](#cor-fubini-joint) with \\\mu_X = \text{Lebesgue measure}\\, \\\mu_Y = \text{counting measure}\\, and \\h(x, y) = x\\.
+> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ using [Corollary 2](#cor-fubini-joint) with \\\mu_X = \text{Lebesgue measure}\\, \\\mu_Y = \text{counting measure}\\, and \\h(x, y) = x\\.
 >
 > The joint density w.r.t. Lebesgue \\\times\\ counting measure is \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y) = \frac{(1-q)\\q^y}{y+1}\\ for \\x \in \[0, y+1\]\\.
 >
-> Since \\h(x, y) = x \ge 0\\ on this support, condition (a) holds, so [Corollary 1](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the now-infinite sum-of-integrals expression is valid — unlike in [Exercise 3](#exr-fubini-joint-mixed), this Fubini–Tonelli justification is required because the sum is infinite rather than finite.
+> Since \\h(x, y) = x \ge 0\\ on this support, condition (a) holds, so [Corollary 2](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the now-infinite sum-of-integrals expression is valid — unlike in [Exercise 3](#exr-fubini-joint-mixed), this Fubini–Tonelli justification is required because the sum is infinite rather than finite.
 >
-> By [Corollary 1](#cor-fubini-joint) (mixed case):
+> By [Corollary 2](#cor-fubini-joint) (mixed case):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y=0}^{\infty} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \int_0^{y+1} x\\dx \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \cdot\frac{(y+1)^2}{2} \\&= \frac{1-q}{2} \sum\_{y=0}^{\infty} (y+1)\\q^y \\&= \frac{1-q}{2} \mathopen{}\left(\sum\_{y=0}^{\infty} y\\q^y + \sum\_{y=0}^{\infty} q^y\right)\mathclose{} \\&= \frac{1-q}{2} \mathopen{}\left(\frac{q}{(1-q)^2} + \frac{1}{1-q}\right)\mathclose{} \\&= \frac{1-q}{2} \cdot\frac{q + (1-q)}{(1-q)^2} \\&= \frac{1-q}{2} \cdot\frac{1}{(1-q)^2} \\&= \frac{1}{2(1-q)} \end{aligned} \\
 >

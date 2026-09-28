@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 00:57:21 (PDT)
+Last modified: 2026-09-28 01:11:10 (PDT)
 
 # 1 Core properties of probabilities
 
@@ -22,15 +22,27 @@ Last modified: 2026-09-28 00:57:21 (PDT)
 >
 > **Definition 2 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\: a set of outcomes. An event \\A\\ **occurs** when the experiment’s outcome is in \\A\\.
 
-We write \\\neg A\\ for the **complement** of \\A\\, the event that \\A\\ does not occur: \\\neg A \stackrel{\text{def}}{=}\Omega \setminus A\\. Other sources write \\A^c\\ or \\\bar{A}\\. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated collection \\\mathscr{S}\\ (a [\\\sigma\\-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra): a collection that contains \\\Omega\\ and is closed under complements and countable unions) count as events; every set that arises in these notes is in \\\mathscr{S}\\.
+When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated collection \\\mathscr{S}\\ (a [\\\sigma\\-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra): a collection that contains \\\Omega\\ and is closed under complements and countable unions) count as events; every set that arises in these notes is in \\\mathscr{S}\\.
 
 > **NOTE:**
 >
-> **Example 2 (Rolling an even number)** In [Example 1](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and its complement is \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
+> **Example 2 (Rolling an even number)** In [Example 1](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 3 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a function that assigns a number \\\Pr(A)\\ to each [event](#def-event) \\A\\ and satisfies:
+> **Definition 3 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not occur: the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
+>
+> \\\neg A \stackrel{\text{def}}{=}\Omega \setminus A\\
+
+Other sources write \\A^c\\ or \\\bar{A}\\.
+
+> **NOTE:**
+>
+> **Example 3 (Rolling an odd number)** In [Example 2](#exm-event), the complement of the event “the roll is even”, \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, is the event “the roll is odd”, \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
+
+> **NOTE:**
+>
+> **Definition 4 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a function that assigns a number \\\Pr(A)\\ to each [event](#def-event) \\A\\ and satisfies:
 >
 > 1.  For any event \\A\\, \\\Pr(A) \ge 0\\.
 > 2.  The probability of the whole sample space is 1: \\\Pr(\Omega) = 1\\
@@ -44,7 +56,7 @@ for every finite collection of mutually disjoint events. Countable additivity im
 
 > **NOTE:**
 >
-> **Example 3 (Probability measure for a fair die)** For the die roll in [Example 1](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is non-negative, gives \\\Pr(\Omega) = 6/6 = 1\\, and is additive over disjoint events, because the sizes of disjoint sets add. The event “the roll is even” from [Example 2](#exm-event) has probability \\\Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) = 3/6 = 1/2\\.
+> **Example 4 (Probability measure for a fair die)** For the die roll in [Example 1](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is non-negative, gives \\\Pr(\Omega) = 6/6 = 1\\, and is additive over disjoint events, because the sizes of disjoint sets add. The event “the roll is even” from [Example 2](#exm-event) has probability \\\Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) = 3/6 = 1/2\\.
 
 > **NOTE:**
 >
@@ -56,7 +68,7 @@ for every finite collection of mutually disjoint events. Countable additivity im
 
 > **NOTE:**
 >
-> **Theorem 2 (An event and its complement sum to 1)** For any event \\A\\:
+> **Theorem 2 (An event and its complement sum to 1)** For any event \\A\\ and its [complement](#def-complement) \\\neg A\\:
 >
 > \\\Pr(A) + \Pr(\neg A) = 1\\
 
@@ -88,19 +100,19 @@ for every finite collection of mutually disjoint events. Countable additivity im
 
 > **NOTE:**
 >
-> **Example 4 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi = 1/6\\, so by [Corollary 2](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
+> **Example 5 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi = 1/6\\, so by [Corollary 2](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
 
 ## 1.2 Conditional probability
 
 > **NOTE:**
 >
-> **Definition 4 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
+> **Definition 5 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
 
 > **NOTE:**
 >
-> **Example 5 (Rolling a six, given an even roll)** For a fair die ([Example 3](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
+> **Example 6 (Rolling a six, given an even roll)** For a fair die ([Example 4](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{1/6}{3/6} && \text{(substitute the probabilities)} \\ &= \frac{1}{3} && \text{(simplify)} \end{aligned} \\
 
@@ -112,13 +124,13 @@ for every finite collection of mutually disjoint events. Countable additivity im
 
 > **NOTE:**
 >
-> *Proof*. Rearranging [Definition 4](#def-conditional-prob):
+> *Proof*. Rearranging [Definition 5](#def-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ \Pr(A \cap B) &= \Pr(A \mid B) \cdot\Pr(B) && \text{(multiply both sides by } \Pr(B) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 6 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
+> **Example 7 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
 > Then, by [Theorem 3](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
@@ -132,7 +144,7 @@ for every finite collection of mutually disjoint events. Countable additivity im
 
 > **NOTE:**
 >
-> *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By countable additivity ([Definition 3](#def-probability)), and then by [Theorem 3](#thm-law-conditional-prob):
+> *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By countable additivity ([Definition 4](#def-probability)), and then by [Theorem 3](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A) &= \sum\_{i} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)} \\&= \sum\_{i} \Pr(A \mid B_i) \cdot\Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) \> 0 \text{)} \end{aligned} \\
 
@@ -144,13 +156,13 @@ for every finite collection of mutually disjoint events. Countable additivity im
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 4](#def-conditional-prob) and [Theorem 3](#thm-law-conditional-prob):
+> *Proof*. By [Definition 5](#def-conditional-prob) and [Theorem 3](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(B \cap A)}{\Pr(B)} && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\ &= \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} && \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 7 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 8 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let \\D\\ be the event “person has the disease” and \\+\\ be the event “test is positive”. Then:
 >

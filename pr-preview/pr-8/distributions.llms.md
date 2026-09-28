@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 00:57:21 (PDT)
+Last modified: 2026-09-28 01:11:10 (PDT)
 
 # 1 Key probability distributions
 
@@ -22,13 +22,13 @@ Some distributions are typically used for outcome models ([Table 1](#tbl-outcom
 
 | Distribution | Uses |
 |----|----|
-| Bernoulli | Binary outcomes |
+| [Bernoulli](random-variables.llms.md#def-bernoulli) | Binary outcomes |
 | Binomial | Sums of Bernoulli outcomes |
 | Poisson | Unbounded count outcomes |
 | Geometric | Counts of non-events before an event occurs |
 | Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs |
-| Normal (Gaussian) | Continuous outcomes without a more specific distribution |
-| Exponential | Time to event outcomes |
+| [Normal (Gaussian)](random-variables.llms.md#def-normal) | Continuous outcomes without a more specific distribution |
+| [Exponential](random-variables.llms.md#def-exponential) | Time to event outcomes |
 | Gamma | Time to event outcomes |
 | Weibull | Time to event outcomes |
 | Log-normal | Time to event outcomes |
@@ -48,19 +48,13 @@ Table 2: Distributions typically used for test statistics
 
 > **NOTE:**
 >
-> **Definition 1 (Bernoulli distribution)** A random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi \in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\, if:
->
-> \\ \begin{aligned} \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}}\pi^x(1-\pi)^{1-x}\\ &= \begin{cases} \pi, & x=1\\ 1-\pi, & x=0 \end{cases} \end{aligned} \\
-
-> **NOTE:**
->
-> **Example 1 (A coin flip)** The indicator of heads on one flip of a fair coin is \\\operatorname{Ber}(1/2)\\. By [earlier results](expectation.llms.md#thm-bernoulli-mean), \\X \sim \operatorname{Ber}(\pi)\\ has mean \\\pi\\ and [variance](variance-covariance.llms.md#exm-variance-bernoulli) \\\pi(1 - \pi)\\.
+> **Example 1 (A coin flip)** The [Bernoulli distribution](random-variables.llms.md#def-bernoulli) describes a binary outcome. The indicator of heads on one flip of a fair coin is \\\operatorname{Ber}(1/2)\\. By the [expectation of the Bernoulli distribution](expectation.llms.md#thm-bernoulli-mean), \\X \sim \operatorname{Ber}(\pi)\\ has mean \\\pi\\, and by the [variance of a Bernoulli random variable](variance-covariance.llms.md#exm-variance-bernoulli), it has variance \\\pi(1 - \pi)\\.
 
 ## 1.2 The Poisson distribution
 
 > **NOTE:**
 >
-> **Definition 2 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu \> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
+> **Definition 1 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu \> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
 >
 > \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \tag{1}\\
 
@@ -207,7 +201,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 3 (Exposure magnitude)** For many count outcomes, there is some sense of an **exposure magnitude**, such as **population size** or **duration of observation**, which multiplicatively rescales the expected (mean) count.
+> **Definition 2 (Exposure magnitude)** For many count outcomes, there is some sense of an **exposure magnitude**, such as **population size** or **duration of observation**, which multiplicatively rescales the expected (mean) count.
 
 > **NOTE:**
 >
@@ -232,7 +226,7 @@ We can use \\t\\ to represent continuous-valued exposures/observation durations,
 
 > **NOTE:**
 >
-> **Definition 4 (Event rate)** For a count outcome \\Y\\ with exposure magnitude \\t\\, the **event rate** (denoted \\\lambda\\) is defined as the mean of \\Y\\ divided by the exposure magnitude:
+> **Definition 3 (Event rate)** For a count outcome \\Y\\ with exposure magnitude \\t\\, the **event rate** (denoted \\\lambda\\) is defined as the mean of \\Y\\ divided by the exposure magnitude:
 >
 > \\\mu \stackrel{\text{def}}{=}\operatorname{E}\[Y \mid T=t\]\\
 >
@@ -248,7 +242,7 @@ Event rate is somewhat analogous to odds for a binary outcome: both are transfor
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 4](#def-event-rate):
+> *Proof*. By [Definition 3](#def-event-rate):
 >
 > \\ \begin{aligned} \lambda &\stackrel{\text{def}}{=}\frac{\mu}{t} && (\text{definition of event rate}) \\ \mu &= \lambda \cdot t && (\text{multiply both sides by } t \> 0) \end{aligned} \\
 
@@ -270,7 +264,7 @@ Event rate is somewhat analogous to odds for a binary outcome: both are transfor
 >
 > *Proof*. \\ \begin{aligned} \operatorname{E}\[Y \mid T=0\] &= \lambda \cdot 0 && (\text{evaluate } \operatorname{E}\mathopen{}\left\[Y \mid T = t\right\]\mathclose{} = \lambda t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } \lambda \text{ is finite}) \end{aligned} \\
 
-The hypothesis carries the content here. [Definition 4](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y \mid T = 0\right\]\mathclose{} = 0\\, since \\\lambda = \mu / t\\ is undefined at \\t = 0\\; the result holds for a model that assumes a rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
+The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y \mid T = 0\right\]\mathclose{} = 0\\, since \\\lambda = \mu / t\\ is undefined at \\t = 0\\; the result holds for a model that assumes a rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
 
 > **NOTE:**
 >
@@ -296,11 +290,11 @@ The hypothesis carries the content here. [Definition 4](#def-event-rate) alone 
 >
 > \\ \begin{aligned} \log{\mu} &= \log(0.02) + \log(30) && (\text{apply log-scale formula}) \\ &= -3.912 + 3.401 && (\text{evaluate natural logarithms}) \\ &= -0.511 && (\text{sum terms}) \end{aligned} \\
 >
-> Exponentiating yields \\\mu = \operatorname{exp}\mathopen{}\left\\(\right\\\mathclose{}-0.511) \approx 0.60\\ expected events.
+> Exponentiating yields \\\mu = \operatorname{exp}\mathopen{}\left\\-0.511\right\\\mathclose{} \approx 0.60\\ expected events.
 
 > **NOTE:**
 >
-> **Definition 5 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 5](#thm-exposure-log-scale)),
+> **Definition 4 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 5](#thm-exposure-log-scale)),
 >
 > \\\log{\mu} = \log{\lambda} + \log{t},\\
 >
@@ -334,13 +328,13 @@ The offset needs no covariates: with a single exposure \\t\\ and an unknown rate
 
 > **NOTE:**
 >
-> **Definition 6 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu \> 0\\ and overdispersion parameter \\\rho \> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
+> **Definition 5 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu \> 0\\ and overdispersion parameter \\\rho \> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
 >
 > \\ \operatorname{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y} \cdot \left(1+\frac{\mu}{\rho}\right)^{-\rho} \\
 >
 > where \\\Gamma\\ is the gamma function, which satisfies \\\Gamma(x) = (x-1)!\\ for positive integers \\x\\.
 
-As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third factor converges to \\\operatorname{exp}\mathopen{}\left\\(\right\\\mathclose{}-\mu)\\, which brings us back to the Poisson distribution.
+As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third factor converges to \\\operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}\\, which brings us back to the Poisson distribution.
 
 > **NOTE:**
 >
@@ -369,7 +363,7 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 
 > **NOTE:**
 >
-> **Definition 7 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha \> 0\\ and rate \\\lambda \> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
+> **Definition 6 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha \> 0\\ and rate \\\lambda \> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-\lambda t^\alpha}, \quad t \ge 0\\
 
@@ -381,7 +375,7 @@ As \\\rho \rightarrow \infty\\, the second factor converges to 1 and the third f
 
 > **NOTE:**
 >
-> *Proof*. The density is \\f(t) = -\operatorname{S}'(t)\\ ([CDF](random-variables.llms.md#thm-density-vs-CDF) and [survival function](random-variables.llms.md#thm-survival-expressions-1) results), and the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
+> *Proof*. The CDF of \\T\\ is \\F(t) = 1 - \operatorname{S}(t)\\ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is \\0\\ for \\t \< 0\\ and \\1 - \text{e}^{-\lambda t^\alpha}\\ for \\t \ge 0\\. This \\F\\ is continuous everywhere, with a continuous derivative everywhere except possibly \\t = 0\\, so \\f = F' = -\operatorname{S}'\\ is a density of \\T\\ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every \\t \> 0\\, so there the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
 >
 > \\ \begin{aligned} f(t) &= -\frac{d}{dt}\text{e}^{-\lambda t^\alpha} && (f = -\operatorname{S}') \\ &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha} && (\text{chain rule}) \\ \operatorname{h}(t) &= \frac{\alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}}{\text{e}^{-\lambda t^\alpha}} && (\text{hazard is density over survival}) \\ &= \alpha\lambda t^{\alpha-1} && (\text{cancel}) \end{aligned} \\
 >
@@ -407,7 +401,7 @@ The sum of many independent random variables, none of which dominates the others
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z) \\
 >
-> where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the standard normal distribution.
+> where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the [standard normal distribution](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\.
 
 This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 27.1). Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.
 
