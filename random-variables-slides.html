@@ -290,7 +290,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 11:43:57 (PDT)</p>
+  <p class="date">Last modified: 2026-09-28 14:24:58 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
@@ -430,8 +430,11 @@
 <section class="slide level2">
 
 <div id="def-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Probability density function (PDF))</strong></span> If <span class="math inline">\(X\)</span> is a <a href="#/def-continuous-rv">continuous random variable</a>, a <strong>probability density function</strong> of <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(\operatorname{p}(x)\)</span>, <span class="math inline">\(\operatorname{p}_X(x)\)</span>, or <span class="math inline">\(\operatorname{p}(X=x)\)</span>, is a function <span class="math inline">\(f \ge 0\)</span> whose integral over any interval is the <a href="./probability-basics.html#def-probability">probability</a> that <span class="math inline">\(X\)</span> falls in that interval:</p>
-<p><span class="math display">\[\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b\]</span></p>
+<p><span class="theorem-title"><strong>Definition 8 (Probability density function (PDF))</strong></span> If <span class="math inline">\(X\)</span> is a <a href="#/def-continuous-rv">continuous random variable</a>, a <strong>probability density function</strong> of <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(\operatorname{p}(x)\)</span>, <span class="math inline">\(\operatorname{p}_X(x)\)</span>, or <span class="math inline">\(\operatorname{p}(X=x)\)</span>, is a function <span class="math inline">\(f\)</span> that satisfies:</p>
+<ul>
+<li><span class="math inline">\(f(x) \ge 0\)</span> for every <span class="math inline">\(x\)</span>.</li>
+<li>The integral of <span class="math inline">\(f\)</span> over any interval is the <a href="./probability-basics.html#def-probability">probability</a> that <span class="math inline">\(X\)</span> falls in that interval: <span class="math display">\[\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b\]</span></li>
+</ul>
 </div>
 <aside class="notes">
 <p>A density is not a probability: it can exceed 1. A density is also not unique: changing <span class="math inline">\(f\)</span> at finitely many points changes none of its integrals, so the value of a density at a single point carries no probability by itself. These notes use the version that is continuous wherever possible. <a href="#/thm-density-limit" class="quarto-xref">Theorem&nbsp;3</a> gives the value of <span class="math inline">\(f\)</span> at a point where it is continuous.</p>
@@ -926,8 +929,11 @@ F(t)
 <section class="slide level2">
 
 <div id="def-joint-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 18 (Joint probability density function)</strong></span> For <a href="#/def-jointly-distributed">jointly distributed</a> continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, a <strong>joint probability density function</strong> (joint density) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(f_{X,Y}(x, y)\)</span> or <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(f_{X,Y} \ge 0\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^2\)</span> is the probability that the pair <span class="math inline">\((X, Y)\)</span> falls in <span class="math inline">\(A\)</span>:</p>
-<p><span class="math display">\[\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy\]</span></p>
+<p><span class="theorem-title"><strong>Definition 18 (Joint probability density function)</strong></span> For <a href="#/def-jointly-distributed">jointly distributed</a> continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, a <strong>joint probability density function</strong> (joint density) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(f_{X,Y}(x, y)\)</span> or <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(f_{X,Y}\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span> that satisfies:</p>
+<ul>
+<li><span class="math inline">\(f_{X,Y}(x, y) \ge 0\)</span> for every <span class="math inline">\((x, y)\)</span>.</li>
+<li>The integral of <span class="math inline">\(f_{X,Y}\)</span> over any region <span class="math inline">\(A \subseteq \mathbb{R}^2\)</span> is the probability that the pair <span class="math inline">\((X, Y)\)</span> falls in <span class="math inline">\(A\)</span>: <span class="math display">\[\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy\]</span></li>
+</ul>
 </div>
 <aside class="notes">
 <p>As with <a href="./probability-basics.html#def-event">events</a>, a fully rigorous version restricts <span class="math inline">\(A\)</span> to a designated collection of regions; every region that arises in these notes is in it. Not every pair of continuous random variables has a joint density: if <span class="math inline">\(X\)</span> is continuous, the pair <span class="math inline">\((X, X)\)</span> falls on the line <span class="math inline">\(y = x\)</span>, a region of area 0, so every candidate <span class="math inline">\(f_{X,Y}\)</span> would give that line probability 0 instead of 1.</p>
@@ -1101,7 +1107,7 @@ f_X(x)
 </div>
 <aside class="notes">
 <p>Sources differ on the symbol: <span class="math inline">\(\operatorname{h}(t)\)</span> appears in <span class="citation" data-cites="dobson4e">Dobson and Barnett (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>, <span class="citation" data-cites="vittinghoff2e">Vittinghoff et al. (<a href="#/references" role="doc-biblioref" onclick="">2012</a>)</span>, <span class="citation" data-cites="klein2003survival">Klein and Moeschberger (<a href="#/references" role="doc-biblioref" onclick="">2003</a>)</span>, and <span class="citation" data-cites="kleinbaum2012survival">Kleinbaum and Klein (<a href="#/references" role="doc-biblioref" onclick="">2012</a>)</span>, while <span class="math inline">\(\lambda(t)\)</span> appears in <span class="citation" data-cites="me4">Rothman et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> and <span class="citation" data-cites="kalbfleisch2011statistical">Kalbfleisch and Prentice (<a href="#/references" role="doc-biblioref" onclick="">2011</a>)</span>.</p>
-<p>If <span class="math inline">\(T\)</span> is the time at which an event occurs, then <span class="math inline">\({\lambda}(t)\)</span> is a rate, not a probability: for a small interval width <span class="math inline">\(\Delta &gt; 0\)</span>, <span class="math inline">\({\lambda}(t) \cdot\Delta\)</span> is approximately the probability that the event occurs in <span class="math inline">\([t, t + \Delta)\)</span>, given that it has not occurred before <span class="math inline">\(t\)</span>. A hazard can exceed 1, just as a density can. Many sources write the hazard as <span class="math inline">\({\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\)</span>, reading it as the density of <span class="math inline">\(T\)</span> at <span class="math inline">\(t\)</span>, conditional on the event <span class="math inline">\(T \ge t\)</span>; that notation abbreviates the limit in <a href="#/def-hazard" class="quarto-xref">Definition&nbsp;21</a>. For a discrete <span class="math inline">\(T\)</span>, the conditional probability <span class="math inline">\(\Pr(T = t \mid T \ge t)\)</span> itself is called the <em>discrete-time</em> hazard, and it is a probability.</p>
+<p>If <span class="math inline">\(T\)</span> is the time at which an event occurs, then <span class="math inline">\({\lambda}(t)\)</span> is a rate, not a probability: for a small interval width <span class="math inline">\(\Delta &gt; 0\)</span>, <span class="math inline">\({\lambda}(t) \cdot\Delta\)</span> is approximately the probability that the event occurs in <span class="math inline">\([t, t + \Delta)\)</span>, given that it has not occurred before <span class="math inline">\(t\)</span>. A hazard can exceed 1, just as a density can. Many sources write the hazard as <span class="math inline">\({\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\)</span>, reading it as the density of <span class="math inline">\(T\)</span> at <span class="math inline">\(t\)</span>, conditional on the event <span class="math inline">\(T \ge t\)</span>; that notation abbreviates the limit in <a href="#/def-hazard" class="quarto-xref">Definition&nbsp;21</a>. For a discrete <span class="math inline">\(T\)</span>, the analogous quantity is the <a href="#/def-discrete-hazard">discrete-time hazard</a>.</p>
 <p>The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity <span class="math inline">\({\lambda}(t)\)</span> is often called the <strong>event incidence rate</strong> instead. This terminology parallels the convention that conditional probabilities of undesirable events are called <strong>risks</strong>, while the same conditional probabilities for neutral or desirable events are simply called <strong>probabilities</strong>. The math is identical; only the name changes with the valence of the event.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1114,6 +1120,46 @@ f_X(x)
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="def-discrete-hazard" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 22 (Discrete-time hazard)</strong></span> The <strong>discrete-time hazard</strong> of a <a href="#/def-discrete-rv">discrete</a> random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span> is the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> equals <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>:</p>
+<p><span class="math display">\[\Pr(T = t \mid T \ge t)\]</span></p>
+</div>
+<aside class="notes">
+<p>Unlike the continuous-time <a href="#/def-hazard">hazard function</a>, which is a rate and can exceed 1, the discrete-time hazard is a probability, so it lies in <span class="math inline">\([0, 1]\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-discrete-hazard" class="theorem example">
+<p><span class="theorem-title"><strong>Example 26 (Rolling until the first six)</strong></span> Roll a fair die repeatedly, and let <span class="math inline">\(T\)</span> be the number of the roll that first shows a six. Then <span class="math inline">\(T \ge t\)</span> exactly when the first <span class="math inline">\(t - 1\)</span> rolls are not sixes, which has probability <span class="math inline">\((5/6)^{t-1}\)</span>, and <span class="math inline">\(T = t\)</span> when, in addition, roll <span class="math inline">\(t\)</span> is a six. So, for each <span class="math inline">\(t = 1, 2, \ldots\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(T = t \mid T \ge t)
+&amp;= \frac{\Pr(T = t,\, T \ge t)}{\Pr(T \ge t)}
+&amp;&amp; \text{(definition of conditional probability)} \\
+&amp;= \frac{\Pr(T = t)}{\Pr(T \ge t)}
+&amp;&amp; \text{(} T = t \text{ implies } T \ge t \text{)} \\
+&amp;= \frac{(5/6)^{t-1} \cdot(1/6)}{(5/6)^{t-1}}
+&amp;&amp; \text{(rolls are independent)} \\
+&amp;= \frac{1}{6}
+&amp;&amp; \text{(cancel)}
+\end{aligned}
+\]</span></p>
+<p>The discrete-time hazard is the same at every roll: having gone without a six so far does not change the chance of a six on the next roll.</p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -1145,7 +1191,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-exp-haz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 26 (Hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;25</a>, for <span class="math inline">\(t &gt; 0\)</span>, where <span class="math inline">\(f\)</span> is continuous:</p>
+<p><span class="theorem-title"><strong>Example 27 (Hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;25</a>, for <span class="math inline">\(t &gt; 0\)</span>, where <span class="math inline">\(f\)</span> is continuous:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\lambda}(t)
@@ -1163,7 +1209,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="def-cuhaz" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 22 (Cumulative hazard function)</strong></span> The <strong>cumulative hazard function</strong> of a continuous random variable <span class="math inline">\(T\)</span>, often denoted <span class="math inline">\({\Lambda}(t)\)</span> or <span class="math inline">\(\operatorname{H}(t)\)</span>, is the integral of its <a href="#/def-hazard">hazard function</a> up to <span class="math inline">\(t\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 23 (Cumulative hazard function)</strong></span> The <strong>cumulative hazard function</strong> of a continuous random variable <span class="math inline">\(T\)</span>, often denoted <span class="math inline">\({\Lambda}(t)\)</span> or <span class="math inline">\(\operatorname{H}(t)\)</span>, is the integral of its <a href="#/def-hazard">hazard function</a> up to <span class="math inline">\(t\)</span>:</p>
 <p><span class="math display">\[{\Lambda}(t) \stackrel{\text{def}}{=}\int_{u=-\infty}^{t} {\lambda}(u)\,du\]</span></p>
 </div>
 <aside class="notes">
@@ -1183,7 +1229,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-exp-cumhaz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 27 (Cumulative hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-haz" class="quarto-xref">Example&nbsp;26</a>, the hazard is <span class="math inline">\({\lambda}(u) = \lambda\)</span> for <span class="math inline">\(u \ge 0\)</span> and <span class="math inline">\(0\)</span> for <span class="math inline">\(u &lt; 0\)</span>, so for <span class="math inline">\(t \ge 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 28 (Cumulative hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-haz" class="quarto-xref">Example&nbsp;27</a>, the hazard is <span class="math inline">\({\lambda}(u) = \lambda\)</span> for <span class="math inline">\(u \ge 0\)</span> and <span class="math inline">\(0\)</span> for <span class="math inline">\(u &lt; 0\)</span>, so for <span class="math inline">\(t \ge 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\Lambda}(t)
@@ -1241,7 +1287,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-exp-surv-int-haz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 28 (Recovering the exponential survival function from its cumulative hazard)</strong></span> Continuing <a href="#/exm-exp-cumhaz" class="quarto-xref">Example&nbsp;27</a>, for <span class="math inline">\(t \ge 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 29 (Recovering the exponential survival function from its cumulative hazard)</strong></span> Continuing <a href="#/exm-exp-cumhaz" class="quarto-xref">Example&nbsp;28</a>, for <span class="math inline">\(t \ge 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{S}(t)

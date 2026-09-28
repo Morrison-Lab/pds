@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 11:43:57 (PDT)
+Last modified: 2026-09-28 14:24:58 (PDT)
 
 Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
 
@@ -201,7 +201,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 2 (Exposure magnitude)** For many count outcomes, there is some sense of an **exposure magnitude**, such as **population size** or **duration of observation**, which multiplicatively rescales the expected (mean) count.
+> **Definition 2 (Exposure magnitude)** For many count outcomes, there is some sense of an **exposure magnitude**, such as population size or duration of observation, which multiplicatively rescales the expected (mean) count.
 
 > **NOTE:**
 >

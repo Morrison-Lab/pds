@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 11:43:57 (PDT)
+Last modified: 2026-09-28 14:24:58 (PDT)
 
 ## 1 Random variables
 
@@ -86,9 +86,10 @@ See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
 > **NOTE:**
 >
-> **Definition 8 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f \ge 0\\ whose integral over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval:
+> **Definition 8 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies:
 >
-> \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
+> - \\f(x) \ge 0\\ for every \\x\\.
+> - The integral of \\f\\ over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval: \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
 
 A density is not a probability: it can exceed 1. A density is also not unique: changing \\f\\ at finitely many points changes none of its integrals, so the value of a density at a single point carries no probability by itself. These notes use the version that is continuous wherever possible. [Theorem 3](#thm-density-limit) gives the value of \\f\\ at a point where it is continuous.
 
@@ -329,9 +330,10 @@ The word “marginal” only says that the other variables are being set aside; 
 
 > **NOTE:**
 >
-> **Definition 18 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y} \ge 0\\ on \\\mathbb{R}^2\\ whose integral over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\:
+> **Definition 18 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
 >
-> \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
+> - \\f\_{X,Y}(x, y) \ge 0\\ for every \\(x, y)\\.
+> - The integral of \\f\_{X,Y}\\ over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\: \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
 
 As with [events](probability-basics.llms.md#def-event), a fully rigorous version restricts \\A\\ to a designated collection of regions; every region that arises in these notes is in it. Not every pair of continuous random variables has a joint density: if \\X\\ is continuous, the pair \\(X, X)\\ falls on the line \\y = x\\, a region of area 0, so every candidate \\f\_{X,Y}\\ would give that line probability 0 instead of 1.
 
@@ -423,9 +425,25 @@ The name comes from time-to-event analysis: if \\T\\ is the time at which a part
 
 Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett ([2018](#ref-dobson4e)), Vittinghoff et al. ([2012](#ref-vittinghoff2e)), Klein and Moeschberger ([2003](#ref-klein2003survival)), and Kleinbaum and Klein ([2012](#ref-kleinbaum2012survival)), while \\\lambda(t)\\ appears in Rothman et al. ([2021](#ref-me4)) and Kalbfleisch and Prentice ([2011](#ref-kalbfleisch2011statistical)).
 
-If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta \> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. A hazard can exceed 1, just as a density can. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 21](#def-hazard). For a discrete \\T\\, the conditional probability \\\Pr(T = t \mid T \ge t)\\ itself is called the *discrete-time* hazard, and it is a probability.
+If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta \> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. A hazard can exceed 1, just as a density can. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 21](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 
 The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity \\{\lambda}(t)\\ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
+
+> **NOTE:**
+>
+> **Definition 22 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ equals \\t\\, given \\T \ge t\\:
+>
+> \\\Pr(T = t \mid T \ge t)\\
+
+Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1, the discrete-time hazard is a probability, so it lies in \\\[0, 1\]\\.
+
+> **NOTE:**
+>
+> **Example 26 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
+>
+> \\ \begin{aligned} \Pr(T = t \mid T \ge t) &= \frac{\Pr(T = t,\\ T \ge t)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(T = t)}{\Pr(T \ge t)} && \text{(} T = t \text{ implies } T \ge t \text{)} \\ &= \frac{(5/6)^{t-1} \cdot(1/6)}{(5/6)^{t-1}} && \text{(rolls are independent)} \\ &= \frac{1}{6} && \text{(cancel)} \end{aligned} \\
+>
+> The discrete-time hazard is the same at every roll: having gone without a six so far does not change the chance of a six on the next roll.
 
 > **NOTE:**
 >
@@ -441,7 +459,7 @@ The name “hazard” carries a connotation that the event is undesirable — de
 
 > **NOTE:**
 >
-> **Example 26 (Hazard function of an exponential distribution)** Continuing [Example 25](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
+> **Example 27 (Hazard function of an exponential distribution)** Continuing [Example 25](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
 >
 > \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{\lambda \text{e}^{-\lambda t}}{\text{e}^{-\lambda t}} && \text{(substitute the exponential density and survival function)} \\ &= \lambda && \text{(cancel } \text{e}^{-\lambda t} \text{)} \end{aligned} \\
 >
@@ -449,7 +467,7 @@ The name “hazard” carries a connotation that the event is undesirable — de
 
 > **NOTE:**
 >
-> **Definition 22 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
+> **Definition 23 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
 >
 > \\{\Lambda}(t) \stackrel{\text{def}}{=}\int\_{u=-\infty}^{t} {\lambda}(u)\\du\\
 
@@ -457,7 +475,7 @@ For a non-negative \\T\\, such as a time to event, \\{\lambda}(u) = 0\\ for \\u 
 
 > **NOTE:**
 >
-> **Example 27 (Cumulative hazard function of an exponential distribution)** Continuing [Example 26](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
+> **Example 28 (Cumulative hazard function of an exponential distribution)** Continuing [Example 27](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
 >
 > \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} \lambda\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + \lambda t && \text{(integrate each piece)} \\ &= \lambda t && \text{(simplify)} \end{aligned} \\
 >
@@ -487,7 +505,7 @@ For a non-negative \\T\\, such as a time to event, \\{\lambda}(u) = 0\\ for \\u 
 
 > **NOTE:**
 >
-> **Example 28 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 27](#exm-exp-cumhaz), for \\t \ge 0\\:
+> **Example 29 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 28](#exm-exp-cumhaz), for \\t \ge 0\\:
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{} && \text{(survival function from the cumulative hazard)} \\ &= \operatorname{exp}\mathopen{}\left\\-\lambda t\right\\\mathclose{} && \text{(substitute } {\Lambda}(t) = \lambda t \text{)} \end{aligned} \\
 >
