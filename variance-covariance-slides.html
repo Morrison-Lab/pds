@@ -290,7 +290,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 03:31:52 (PDT)</p>
+  <p class="date">Last modified: 2026-09-28 11:09:35 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -760,7 +760,7 @@
 <p><span class="math display">\[\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\,\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\]</span></p>
 </div>
 <aside class="notes">
-<p>Dividing by the standard deviations removes the units of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, and the correlation always lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>)</span>. Random variables with zero covariance, and hence zero correlation, are called <strong>uncorrelated</strong>; <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a> says independent random variables are uncorrelated, and <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;11</a> shows the converse fails. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.</p>
+<p>Dividing by the standard deviations removes the units of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, and the correlation always lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>)</span>. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -794,8 +794,34 @@
 </section>
 <section class="slide level2">
 
+<div id="def-uncorrelated" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11 (Uncorrelated random variables)</strong></span> Random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span> are <strong>uncorrelated</strong> when their <a href="#/def-cov">covariance</a> is 0:</p>
+<p><span class="math display">\[\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\]</span></p>
+</div>
+<aside class="notes">
+<p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> also have positive variances, being uncorrelated is the same as having <a href="#/def-correlation">correlation</a> 0. <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a> says independent random variables are uncorrelated, and <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;11</a> shows the converse fails.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-uncorrelated" class="theorem example">
+<p><span class="theorem-title"><strong>Example 13 (Correlated and uncorrelated pairs)</strong></span> In <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;11</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>, so <span class="math inline">\(X\)</span> and <span class="math inline">\(Y = X^2\)</span> are uncorrelated. In <a href="#/exm-alt-cov" class="quarto-xref">Example&nbsp;9</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\)</span>, so the binary exposure and outcome are not uncorrelated.</p>
+</div>
+</section>
+<section class="slide level2">
+
 <div id="def-cond-cov" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11 (Conditional covariance)</strong></span> The <strong>conditional covariance</strong> of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> given <span class="math inline">\(X = x\)</span> is their covariance under their conditional distribution given <span class="math inline">\(X = x\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 12 (Conditional covariance)</strong></span> The <strong>conditional covariance</strong> of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> given <span class="math inline">\(X = x\)</span> is their covariance under their conditional distribution given <span class="math inline">\(X = x\)</span>:</p>
 <p><span class="math display">\[\operatorname{Cov}\mathopen{}\left(Y,Z \mid X = x\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[\mathopen{}\left(Y-\operatorname{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}\right)\mathclose{}\mathopen{}\left(Z-\operatorname{E}\mathopen{}\left[Z \mid X = x\right]\mathclose{}\right)\mathclose{} \mid X = x\right]\mathclose{}\]</span></p>
 <p>Evaluating this function of <span class="math inline">\(x\)</span> at <span class="math inline">\(X\)</span> gives the random variable <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}\)</span>.</p>
 </div>
@@ -803,7 +829,7 @@
 <section class="slide level2">
 
 <div id="exm-cond-cov" class="theorem example">
-<p><span class="theorem-title"><strong>Example 13 (Conditional covariance of a variable with itself)</strong></span> Taking <span class="math inline">\(Z = Y\)</span> in <a href="#/def-cond-cov" class="quarto-xref">Definition&nbsp;11</a> gives the <a href="#/def-cond-variance">conditional variance</a>: <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\)</span>. In <a href="#/exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, for example, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 14 (Conditional covariance of a variable with itself)</strong></span> Taking <span class="math inline">\(Z = Y\)</span> in <a href="#/def-cond-cov" class="quarto-xref">Definition&nbsp;12</a> gives the <a href="#/def-cond-variance">conditional variance</a>: <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\)</span>. In <a href="#/exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, for example, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -894,7 +920,7 @@
 <section class="slide level2">
 
 <div id="def-cov-vec-x" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 12 (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)</strong></span> For a <span class="math inline">\(p \times 1\)</span> dimensional random vector <span class="math inline">\(\tilde{X}\)</span>,</p>
+<p><span class="theorem-title"><strong>Definition 13 (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)</strong></span> For a <span class="math inline">\(p \times 1\)</span> dimensional random vector <span class="math inline">\(\tilde{X}\)</span>,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}
@@ -923,7 +949,7 @@
 <section class="slide level2">
 
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span> for <span class="math inline">\(i = 1, \ldots, p\)</span>, so <span class="math inline">\(\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\)</span>. By <a href="#/def-cov-vec-x" class="quarto-xref">Definition&nbsp;12</a>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span> for <span class="math inline">\(i = 1, \ldots, p\)</span>, so <span class="math inline">\(\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\)</span>. By <a href="#/def-cov-vec-x" class="quarto-xref">Definition&nbsp;13</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}

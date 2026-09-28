@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 03:31:52 (PDT)
+Last modified: 2026-09-28 11:09:35 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -26,7 +26,7 @@ The sum of many independent random variables, none of which dominates the others
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z) \\
 >
-> where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the [standard normal distribution](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\.
+> where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the [standard normal distribution](random-variables.llms.md#def-std-normal) \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\.
 
 This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 27.1). Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.
 
