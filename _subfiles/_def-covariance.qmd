@@ -206,10 +206,6 @@ $$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
 
 Dividing by the standard deviations removes the units of $X$ and $Y$,
 and the correlation always lies in $[-1, 1]$ [@CaseBerg01].
-Random variables with zero covariance, and hence zero correlation,
-are called **uncorrelated**;
-@thm-indpt-uncorrelated says independent random variables are uncorrelated,
-and @exm-uncorrelated-not-indpt shows the converse fails.
 This population correlation is a property of a joint distribution;
 the sample (Pearson) correlation coefficient computed from data estimates it.
 
@@ -237,6 +233,40 @@ $$
 && \text{(divide)}
 \ea
 $$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-uncorrelated}
+#### Uncorrelated random variables
+
+Random variables $X$ and $Y$
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
+are **uncorrelated** when their [covariance](#def-cov) is 0:
+
+$$\Cov{X,Y} = 0$$
+
+:::
+
+::: notes
+
+When $X$ and $Y$ also have positive variances,
+being uncorrelated is the same as having [correlation](#def-correlation) 0.
+@thm-indpt-uncorrelated says independent random variables are uncorrelated,
+and @exm-uncorrelated-not-indpt shows the converse fails.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-uncorrelated}
+#### Correlated and uncorrelated pairs
+
+In @exm-uncorrelated-not-indpt, $\Cov{X,Y} = 0$,
+so $X$ and $Y = X^2$ are uncorrelated.
+In @exm-alt-cov, $\Cov{X,Y} = 0.05 \neq 0$,
+so the binary exposure and outcome are not uncorrelated.
 
 :::
 
