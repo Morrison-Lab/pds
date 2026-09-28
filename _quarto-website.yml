@@ -31,14 +31,34 @@ website:
   repo-url: https://github.com/Morrison-Lab/pds
   repo-actions: [edit, issue, source]
   navbar:
-    # The navbar carries only the site title (which links home), search,
-    # and the GitHub link; the pages are listed in the sidebar.
+    # The left-hand menus below mirror the sidebar's `contents` one-for-one
+    # (same groups, same names, same order, same pages): edit the two
+    # together. The site title (which links home), search, and the GitHub
+    # link round out the navbar.
     search: true
+    left:
+      - text: "Foundations"
+        menu:
+          - notation.qmd
+          - probability-basics.qmd
+          - random-variables.qmd
+          - independence.qmd
+      - text: "Moments"
+        menu:
+          - expectation.qmd
+          - variance-covariance.qmd
+      - text: "Distributions"
+        menu:
+          - distributions.qmd
+          - limit-theorems.qmd
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds
         aria-label: GitHub
   sidebar:
+    # This mirrors the navbar's `left` menus above one-for-one (same groups,
+    # same names, same order, same pages): edit the two together.
+    #
     # Pages in reading order, each group depending only on earlier ones:
     # the moments use independence and the joint distributions defined
     # under Foundations, and the distributions and the CLT use the moments.
