@@ -10,16 +10,64 @@ format:
     output-file: index.docx
 ---
 
-# Welcome {.unnumbered}
+## Welcome {.unnumbered}
+
+Probability theory is the branch of mathematics concerned with
+formalizing and quantifying uncertainty.
+It is the foundation on which statistical inference is built:
+before we can reason about what data tell us about the world,
+we need a precise language for describing random phenomena.
 
 These notes collect the probability that data science courses assume.
+Some key results are listed here, organized by topic:
 
-## Using these notes in another site
+- [Notation](notation.qmd)
+- [Probability basics](probability-basics.qmd):
+  sample spaces and events, probability axioms, conditional probability,
+  and Bayes' theorem
+- [Random variables](random-variables.qmd):
+  PMF, PDF, CDF, quantile function,
+  and survival, hazard, and cumulative hazard functions
+- [Independence](independence.qmd):
+  independence, conditional independence, and (conditionally) IID random variables
+- [Expectation](expectation.qmd):
+  expectation, LOTUS, conditional expectation, Fubini-Tonelli,
+  and the law of iterated expectations
+- [Variance and covariance](variance-covariance.qmd):
+  deviation, variance, conditional variance, homoskedasticity, and covariance
+- [Key distributions](distributions.qmd):
+  Bernoulli, Poisson, negative binomial, and Weibull distributions
+- [Limit theorems](limit-theorems.qmd):
+  the Central Limit Theorem
+
+Most of this material should be review from an introductory probability or
+mathematical statistics course
+(e.g., UC Davis's Epi 202).
+These notes began as the probability chapter of the Morrison Lab's
+[*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
+which applies them to regression and survival models
+(see [Additional resources](#sec-additional-resources)).
+
+## Using these notes in another site {.unnumbered}
 
 Course sites include these notes as a git submodule named `pds`
 at the site's root,
-and include fragments with paths that start with `pds/`.
+and include fragments with paths that start with `pds/`,
+for example `{{</* include pds/_subfiles/_thm-bayes.qmd */>}}`.
+This site includes its own fragments the same way,
+through a `pds` symlink that points at the repository root.
 
 Quarto resolves `@id` cross-references only within one rendered page,
 so a host site that links to a result here
-uses an explicit link to the page and anchor.
+uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
+
+## Additional resources {#sec-additional-resources .unnumbered}
+
+- @problifesaver
+- Morrison Lab's [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
+  which applies this material to regression and survival analysis
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

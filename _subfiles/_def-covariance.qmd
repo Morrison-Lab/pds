@@ -1,0 +1,624 @@
+:::{#def-cov}
+#### Covariance
+
+The **covariance** of two random variables $X$ and $Y$
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$ is:
+
+$$\Cov{X,Y} \eqdef \E{(X - \E X)(Y - \E Y)}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-alt-cov}
+#### Alternative formula for covariance
+
+$$\Cov{X,Y}= \E{XY} - \E{X} \E{Y}$$
+
+:::
+
+::: proof
+
+By [linearity of expectation](expectation.qmd#thm-linearity-expectation),
+analogous to the proof of the [simplified expression for variance](#thm-variance):
+
+$$
+\ba
+\Cov{X,Y}
+&\eqdef \E{(X-\E{X})(Y-\E{Y})} && \text{(definition of covariance)} \\
+&= \E{XY - X\E{Y} - Y\E{X} + \E{X}\E{Y}} && \text{(expand the product)} \\
+&= \E{XY} - \E{X}\E{Y} - \E{Y}\E{X} + \E{X}\E{Y} && \text{(linearity of expectation; } \E{X}, \E{Y} \text{ are constants)} \\
+&= \E{XY} - \E{X}\E{Y} && \text{(combine like terms)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-alt-cov}
+#### Covariance of a binary exposure and outcome
+
+For the joint PMF in @exm-cond-variance,
+$\E{XY} = \P(X = 1, Y = 1) = 0.4$, $\E{X} = 0.5$, and $\E{Y} = 0.7$, so:
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= 0.4 - 0.5 \cd 0.7
+&& \text{(substitute)} \\
+&= 0.05
+&& \text{(evaluate)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-indpt-uncorrelated}
+#### Independent random variables have zero covariance
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+each discrete or continuous,
+with defined expectations,
+then:
+
+$$\E{XY} = \E{X}\E{Y}$$
+
+If also $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then $\Cov{X,Y} = 0$.
+
+:::
+
+::: proof
+
+Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$,
+with reference measures $\mu_X$ and $\mu_Y$ as in
+the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
+(counting measure for a discrete variable, Lebesgue measure for a continuous one).
+Because $X$ and $Y$ are independent,
+$f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their joint PMF, density, or density-mass function
+(the factorization in the notes to the [definition of independence](independence.qmd#def-indpt)).
+First, with $h(x, y) = \abs{x}\abs{y} \ge 0$ (condition (a)):
+
+$$
+\ba
+\E{\abs{XY}}
+&= \int\paren{\int \abs{x}\abs{y}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\
+&= \int \abs{x}\,f_X(x)\paren{\int \abs{y}\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(} \abs{x}\,f_X(x) \text{ does not depend on } y \text{)} \\
+&= \int \abs{x}\,f_X(x) \cd \E{\abs{Y}}\,d\mu_X(x)
+&& \text{(LOTUS for } \abs{Y} \text{)} \\
+&= \E{\abs{X}} \cd \E{\abs{Y}}
+&& \text{(LOTUS for } \abs{X} \text{)}
+\ea
+$$
+
+which is finite, because $X$ and $Y$ have defined expectations.
+So condition (b) holds for $h(x, y) = xy$,
+and the same steps without the absolute values give:
+
+$$
+\ba
+\E{XY}
+&= \int\paren{\int xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(joint-distribution form of Fubini--Tonelli, condition (b))} \\
+&= \int x\,f_X(x)\paren{\int y\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&& \text{(} x\,f_X(x) \text{ does not depend on } y \text{)} \\
+&= \int x\,f_X(x) \cd \E{Y}\,d\mu_X(x)
+&& \text{(definition of expectation)} \\
+&= \E{X} \cd \E{Y}
+&& \text{(definition of expectation)}
+\ea
+$$
+
+Finally, by the [alternative formula for covariance](#thm-alt-cov):
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= \E{X}\E{Y} - \E{X}\E{Y}
+&& \text{(} \E{XY} = \E{X}\E{Y} \text{)} \\
+&= 0
+&& \text{(subtract)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-indpt-uncorrelated}
+#### Two independent coin flips
+
+For the independent coin flips $X_1$ and $X_2$ of
+[the independence page's example](independence.qmd#exm-indpt),
+$X_1 X_2 = 1$ only when both flips are heads, so:
+
+$$
+\ba
+\E{X_1 X_2}
+&= \P(X_1 = 1, X_2 = 1)
+&& \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\
+&= \tfrac{1}{4}
+&& \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\
+&= \tfrac{1}{2} \cd \tfrac{1}{2}
+&& \text{(factor)} \\
+&= \E{X_1}\E{X_2}
+&& \text{(each flip is } \Ber(1/2) \text{)}
+\ea
+$$
+
+so $\Cov{X_1, X_2} = 0$, as @thm-indpt-uncorrelated requires.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-uncorrelated-not-indpt}
+#### Zero covariance without independence
+
+The converse of @thm-indpt-uncorrelated is false.
+Let $X$ take the values $-1$, $0$, and $1$ with probability $1/3$ each,
+and let $Y = X^2$.
+Then $\E{X} = (-1 + 0 + 1)/3 = 0$, and $XY = X^3 = X$, so:
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= \E{X} - \E{X}\E{Y}
+&& \text{(} XY = X^3 = X \text{ on } \set{-1, 0, 1} \text{)} \\
+&= 0 - 0 \cd \E{Y}
+&& \text{(} \E{X} = 0 \text{)} \\
+&= 0
+&& \text{(multiply)}
+\ea
+$$
+
+But $X$ and $Y$ are not independent: $Y$ is a function of $X$, and
+$\P(X = 0, Y = 0) = \P(X = 0) = \tfrac{1}{3}$,
+while $\P(X = 0)\,\P(Y = 0) = \tfrac{1}{3} \cd \tfrac{1}{3} = \tfrac{1}{9}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-correlation}
+#### Correlation
+
+The **correlation** of two random variables $X$ and $Y$
+with finite, positive [variances](#def-variance)
+is their [covariance](#def-cov)
+divided by the product of their [standard deviations](#def-sd):
+
+$$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
+
+:::
+
+::: notes
+
+Dividing by the standard deviations removes the units of $X$ and $Y$,
+and the correlation always lies in $[-1, 1]$ [@CaseBerg01].
+Random variables with zero covariance, and hence zero correlation,
+are called **uncorrelated**;
+@thm-indpt-uncorrelated says independent random variables are uncorrelated,
+and @exm-uncorrelated-not-indpt shows the converse fails.
+This population correlation is a property of a joint distribution;
+the sample (Pearson) correlation coefficient computed from data estimates it.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-correlation}
+#### Correlation of a binary exposure and outcome
+
+In @exm-alt-cov, $\Cov{X,Y} = 0.05$,
+where $X \sim \Ber(0.5)$ has $\Var{X} = 0.25$ (@exm-variance-bernoulli)
+and $Y$ has $\Var{Y} = 0.21$ (@exm-total-variance), so:
+
+$$
+\ba
+\Cor{X,Y}
+&= \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}
+&& \text{(definition of correlation)} \\
+&= \frac{0.05}{\sqrt{0.25} \cd \sqrt{0.21}}
+&& \text{(substitute; } \SD{\cdot} = \sqrt{\Var{\cdot}} \text{)} \\
+&\approx \frac{0.05}{0.5 \cd 0.458}
+&& \text{(evaluate the square roots)} \\
+&\approx 0.218
+&& \text{(divide)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-cond-cov}
+#### Conditional covariance
+
+The **conditional covariance** of $Y$ and $Z$ given $X = x$
+is their covariance under their conditional distribution given $X = x$:
+
+$$\Cov{Y,Z \mid X = x} \eqdef \E{\paren{Y-\E{Y \mid X = x}}\paren{Z-\E{Z \mid X = x}} \mid X = x}$$
+
+Evaluating this function of $x$ at $X$ gives the random variable $\Cov{Y,Z \mid X}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cond-cov}
+#### Conditional covariance of a variable with itself
+
+Taking $Z = Y$ in @def-cond-cov gives the
+[conditional variance](#def-cond-variance):
+$\Cov{Y,Y \mid X = x} = \Var{Y \mid X = x}$.
+In @exm-cond-variance, for example, $\Cov{Y,Y \mid X = 0} = 0.24$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-total-cov}
+#### Law of total covariance
+
+For random variables $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
+
+$$\Cov{Y,Z} = \E{\Cov{Y,Z \mid X}} + \Cov{\E{Y \mid X}, \E{Z \mid X}}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+The proof follows the proof of the [law of total variance](#thm-total-variance),
+which is the special case $Z = Y$.
+Write $m_Y(X) \eqdef \E{Y \mid X}$, $m_Z(X) \eqdef \E{Z \mid X}$,
+$\mu_Y \eqdef \E{Y}$, and $\mu_Z \eqdef \E{Z}$.
+Adding and subtracting $m_Y(X)$ and $m_Z(X)$ inside the deviations:
+
+$$
+\ba
+\Cov{Y,Z}
+&= \E{\paren{Y - \mu_Y}\paren{Z - \mu_Z}}
+&& \text{(definition of covariance)} \\
+&= \E{\paren{\sb{Y - m_Y(X)} + \sb{m_Y(X) - \mu_Y}}\paren{\sb{Z - m_Z(X)} + \sb{m_Z(X) - \mu_Z}}}
+&& \text{(add and subtract)} \\
+&= \E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
++ \E{\sb{Y - m_Y(X)}\sb{m_Z(X) - \mu_Z}}
+\\&\quad
++ \E{\sb{m_Y(X) - \mu_Y}\sb{Z - m_Z(X)}}
++ \E{\sb{m_Y(X) - \mu_Y}\sb{m_Z(X) - \mu_Z}}
+&& \text{(expand the product; linearity of expectation)}
+\ea
+$$
+
+The two middle terms are 0,
+by the same steps as the cross term in the proof of @thm-total-variance:
+condition on $X$ by the [law of iterated expectations](expectation.qmd#thm-lie),
+factor out the function of $X$ ([pull-out property](expectation.qmd#thm-cond-pull-out)),
+and use $\E{Y - m_Y(X) \mid X} = 0$ (or $\E{Z - m_Z(X) \mid X} = 0$),
+which follows from [linearity of conditional expectation](expectation.qmd#thm-cond-linearity).
+For the first term:
+
+$$
+\ba
+\E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
+&= \E{\E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\Cov{Y,Z \mid X}}
+&& \text{(definition of conditional covariance)}
+\ea
+$$
+
+For the last term, the law of iterated expectations gives
+$\E{m_Y(X)} = \mu_Y$ and $\E{m_Z(X)} = \mu_Z$, so:
+
+$$
+\ba
+\E{\sb{m_Y(X) - \mu_Y}\sb{m_Z(X) - \mu_Z}}
+&= \E{\sb{m_Y(X) - \E{m_Y(X)}}\sb{m_Z(X) - \E{m_Z(X)}}}
+&& \text{(substitute the means)} \\
+&= \Cov{m_Y(X), m_Z(X)}
+&& \text{(definition of covariance)} \\
+&= \Cov{\E{Y \mid X}, \E{Z \mid X}}
+&& \text{(definitions of } m_Y, m_Z \text{)}
+\ea
+$$
+
+Adding the four terms gives the result.
+
+:::
+
+::: notes
+
+Alternate names include:
+the **covariance decomposition formula**
+and the **conditional covariance formula**.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#lem-cov-xx}
+#### The covariance of a variable with itself is its variance
+
+For any random variable $X$ with $\E{X^2} < \infty$:
+
+$$\Cov{X,X} = \Var{X}$$
+
+:::
+
+::: proof
+
+By the [alternative formula for covariance](#thm-alt-cov):
+
+$$
+\ba
+\Cov{X,X}
+&= \E{XX} - \E{X}\E{X}
+&& \text{(alternative formula for covariance, with } Y = X \text{)}
+\\&= \E{X^2} - \sqf{\E{X}}
+&& \text{(} XX = X^2 \text{)}
+\\&= \Var{X}
+&& \text{(simplified expression for variance)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-cov-vec-x}
+
+#### Variance/covariance of a $p \times 1$ random vector
+
+For a $p \times 1$ dimensional random vector $\vX$,
+
+$$
+\ba
+\Varf{\vX}
+&\eqdef \Covf{\vX}
+\\
+&\eqdef \Expf{\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-vcov-elements}
+
+#### Elements of the variance-covariance matrix are pairwise covariances
+
+For a $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$,
+the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$:
+
+$$
+\Varf{\vX}=
+\pmat{
+\Varf{X_1}      & \Covs{X_1}{X_2} & \cdots & \Covs{X_1}{X_p} \\
+\Covs{X_2}{X_1} & \Varf{X_2}      & \cdots & \Covs{X_2}{X_p} \\
+\vdots          & \vdots          & \ddots & \vdots           \\
+\Covs{X_p}{X_1} & \Covs{X_p}{X_2} & \cdots & \Varf{X_p}
+}
+$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+Let $\mu_i = \E{X_i}$ for $i = 1, \ldots, p$,
+so $\Expp\vX = \tp{(\mu_1, \ldots, \mu_p)}$.
+By @def-cov-vec-x:
+
+$$
+\ba
+\Varf{\vX}
+&= \Expf{
+  \paren{\vX - \Expp\vX}
+  \tp{\paren{\vX - \Expp\vX}}
+}
+\\
+&= \Expf{
+  \pmat{X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p}
+  \pmat{X_1 - \mu_1 & \cdots & X_p - \mu_p}
+}
+\\
+&= \Expf{
+  \pmat{
+    (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\
+    \vdots                      & \ddots & \vdots                      \\
+    (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p)
+  }
+}
+\\
+&=
+  \pmat{
+    \Expf{(X_1 - \mu_1)(X_1 - \mu_1)} & \cdots & \Expf{(X_1 - \mu_1)(X_p - \mu_p)} \\
+    \vdots                             & \ddots & \vdots                             \\
+    \Expf{(X_p - \mu_p)(X_1 - \mu_1)} & \cdots & \Expf{(X_p - \mu_p)(X_p - \mu_p)}
+  }
+\\
+&=
+  \pmat{
+    \Covs{X_1}{X_1} & \cdots & \Covs{X_1}{X_p} \\
+    \vdots          & \ddots & \vdots           \\
+    \Covs{X_p}{X_1} & \cdots & \Covs{X_p}{X_p}
+  }
+\\
+&=
+  \pmat{
+    \Varf{X_1}      & \cdots & \Covs{X_1}{X_p} \\
+    \vdots          & \ddots & \vdots           \\
+    \Covs{X_p}{X_1} & \cdots & \Varf{X_p}
+  }
+\ea
+$$
+
+where:
+
+- the step from the third to fourth line uses the [expectation of a random matrix](expectation.qmd#def-expectation-matrix),
+- the step from the fourth to fifth line uses @def-cov, and
+- the last step uses @lem-cov-xx.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-vcov-vec}
+
+#### Alternate expression for variance of a random vector
+
+$$
+\ba
+\Varf{\vX}
+&= \Expf{\vX \tp{\vX}} - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+$$
+\ba
+\Varf{\vX}
+&= \Expf{
+    \paren{\vX - \Expp\vX}
+    \tp{\paren{\vX - \Expp\vX}}
+  }
+&& \text{(definition)}
+\\
+&= \Expf{
+    \vX \tp{\vX}
+    - \vX \tp{\paren{\Expp\vX}}
+    - \paren{\Expp\vX} \tp{\vX}
+    + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+  }
+&& \text{(expand the product)}
+\\
+&= \Expf{\vX \tp{\vX}}
+  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+  + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&& \text{(linearity, element-wise; } \Expp\vX \text{ is constant)}
+\\
+&= \Expf{\vX \tp{\vX}}
+  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&& \text{(combine like terms)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-var-lincom}
+#### Variance of a linear combination
+
+For any vector of random variables $\vX = (X_1, \ldots, X_n)$
+and corresponding vector of constants $\va = (a_1, \ldots, a_n)$,
+the variance of their linear combination is:
+
+$$
+\ba
+\Var{\va \cdot \vX}
+&= \Var{\sumin a_i X_i}
+\\ &= \tp{\va} \Varf{\vX} \va
+\\ &= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
+\ea
+$$
+
+:::
+
+::: proof
+
+Treat $\va$ and $\vX$ as $n \times 1$ column vectors,
+so $\va \cdot \vX = \tp{\va}\vX = \sumin a_i X_i$, a scalar.
+By linearity of expectation, $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
+
+$$
+\ba
+\Var{\tp{\va}\vX}
+&= \E{\paren{\tp{\va}\vX - \tp{\va}\Expp\vX}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{\tp{\va}\paren{\vX - \Expp\vX}}^2}
+&& \text{(factor out } \tp{\va} \text{)} \\
+&= \E{\tp{\va}\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}\va}
+&& \text{(a scalar equals its transpose, so } s^2 = s\,\tp{s} \text{)} \\
+&= \tp{\va}\,\Expf{\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}}\,\va
+&& \text{(linearity of expectation, element-wise)} \\
+&= \tp{\va} \Varf{\vX} \va
+&& \text{(variance of a random vector)} \\
+&= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
+&& \text{(expand the quadratic form, using the elements of } \Varf{\vX} \text{)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-var-lincom2}
+#### Variance of a sum of two random variables
+
+For any two random variables $X$ and $Y$ and scalars $a$ and $b$:
+
+$$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
+
+:::
+
+::: proof
+
+Apply @thm-var-lincom with $n=2$, $X_1 = X$, and $X_2 = Y$:
+
+$$
+\ba
+\Var{aX+bY}
+&= a^2 \Var{X} + b^2 \Var{Y} + 2ab \Cov{X,Y}
+\ea
+$$
+
+Alternatively, by linearity of expectation:
+
+$$
+\ba
+\Var{aX+bY}
+&\eqdef \E{\paren{aX+bY - \E{aX+bY}}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{a(X-\E{X}) + b(Y-\E{Y})}^2}
+&& \text{(linearity of expectation)} \\
+&= \E{a^2(X-\E{X})^2 + 2(a \cd b)(X-\E{X})(Y-\E{Y}) + b^2(Y-\E{Y})^2}
+&& \text{(expand the square)} \\
+&= a^2\E{(X-\E{X})^2} + 2(a \cd b)\E{(X-\E{X})(Y-\E{Y})} + b^2\E{(Y-\E{Y})^2}
+&& \text{(linearity of expectation)} \\
+&= a^2 \Var{X} + 2(a \cd b) \Cov{X,Y} + b^2 \Var{Y}
+&& \text{(definitions of variance and covariance)}
+\ea
+$$
+
+:::
+
+::: notes
+
+This corollary is why two variables' covariance matters for combining them:
+if $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+then $\Cov{X,Y}=0$ (@thm-indpt-uncorrelated),
+and the variance of their sum is just the sum of their variances.
+
+:::

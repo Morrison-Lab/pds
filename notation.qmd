@@ -1,0 +1,22 @@
+---
+title: "Notation"
+format:
+  html: default
+  revealjs:
+    output-file: notation-slides.html
+  pdf:
+    output-file: notation-handout.pdf
+  docx:
+    output-file: notation.docx
+---
+
+{{< include pds/_notation.qmd >}}
+
+## Stochastic vs. probabilistic vs. random {#sec-stochastic-probabilistic-random}
+
+{{< include pds/_subfiles/_sec-stochastic-probabilistic-random.qmd >}}
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

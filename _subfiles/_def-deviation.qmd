@@ -1,0 +1,82 @@
+:::{#def-deviation}
+#### Deviation
+
+A **deviation** is the difference between a value and a reference value.
+For any quantity $z$ and reference value $r$, the deviation of $z$ from $r$ is:
+
+$$z - r$$
+
+:::
+
+::: notes
+
+In probability and statistics,
+"deviation" usually means deviation from a [population mean](expectation.qmd#def-expectation).
+
+See: [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-deviation}
+#### Deviation from a reference weight
+
+A newborn weighing 3,200 g deviates from a reference weight of 3,500 g
+by $3200 - 3500 = -300$ g.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-deviation-pop-mean}
+#### Deviation from a population or subpopulation mean
+
+The **deviation from the mean** of a random variable $Y$
+is its [deviation](#def-deviation)
+from its [expectation](expectation.qmd#def-expectation):
+
+$$\devn(Y) \eqdef Y - \E{Y}$$
+
+For a realized observation $y$:
+
+$$\devn(y) \eqdef y - \E{Y}$$
+
+:::
+
+::: notes
+
+Other sources often call this quantity an **error** or **noise term**.
+In regression settings,
+the reference mean is often conditional on covariates:
+$\devn(y_i) \eqdef y_i - \E{Y_i \mid X_i = x_i}$.
+
+These notes prefer "deviation"
+for this mean-deviation quantity;
+"error" and "noise" are common aliases.
+The Morrison Lab's regression notes use "residual"
+(defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted))
+for deviations from fitted values,
+write $\devn(\cdot)$ for these model/data deviations,
+and reserve $\erf{\cdot}$ for estimator-to-estimand deviations
+(see [Estimation](https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error)).
+
+See:
+
+- [Wikipedia: Errors and residuals](https://en.wikipedia.org/wiki/Errors_and_residuals)
+- [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
+- [Wikipedia: Linear regression --- Notation and terminology](https://en.wikipedia.org/wiki/Linear_regression#Notation_and_terminology)
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-deviation-pop-mean}
+#### Deviation of a die roll from its mean
+
+A fair die roll $Y$ has $\E{Y} = 3.5$
+(computed on the [expectation page](expectation.qmd#exm-linearity-expectation)),
+so a roll of $y = 5$ has deviation $\devn(5) = 5 - 3.5 = 1.5$,
+and a roll of $y = 2$ has deviation $\devn(2) = 2 - 3.5 = -1.5$.
+
+:::

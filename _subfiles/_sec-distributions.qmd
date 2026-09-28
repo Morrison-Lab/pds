@@ -1,0 +1,844 @@
+::: notes
+
+Some distributions are typically used for outcome models (@tbl-outcome-distns);
+other distributions are typically used for test statistics (@tbl-test-stat-distns).
+
+:::
+
+:::{#tbl-outcome-distns}
+Distribution | Uses
+------------ | ---
+[Bernoulli](random-variables.qmd#def-bernoulli) | Binary outcomes
+Binomial | Sums of Bernoulli outcomes
+Poisson | Unbounded count outcomes
+Geometric | Counts of non-events before an event occurs
+Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs
+[Normal (Gaussian)](random-variables.qmd#def-normal) | Continuous outcomes without a more specific distribution
+[Exponential](random-variables.qmd#def-exponential) | Time to event outcomes
+Gamma | Time to event outcomes
+Weibull | Time to event outcomes
+Log-normal | Time to event outcomes
+
+Distributions typically used for outcome models
+:::
+
+{{< slidebreak >}}
+
+:::{#tbl-test-stat-distns}
+Distribution | Uses
+------------ | ----
+$\chi^2$ | Regression comparisons (asymptotic), contingency table independence tests, goodness-of-fit tests
+$F$ | Gaussian model comparisons (exact)
+$Z$ (standard normal) | Proportions, means, regression coefficients (asymptotic)
+$t$ (Student's) | Means, regression coefficients in Gaussian outcome models (exact)
+
+Distributions typically used for test statistics
+:::
+
+{{< slidebreak >}}
+
+## The Bernoulli distribution {#sec-bern-dist}
+
+:::{#exm-bernoulli}
+#### A coin flip
+
+The [Bernoulli distribution](random-variables.qmd#def-bernoulli) describes a binary outcome.
+The indicator of heads on one flip of a fair coin is $\Ber(1/2)$.
+By the [expectation of the Bernoulli distribution](expectation.qmd#thm-bernoulli-mean),
+$X \sim \Ber(\pi)$ has mean $\pi$,
+and by the [variance of a Bernoulli random variable](variance-covariance.qmd#exm-variance-bernoulli),
+it has variance $\pi(1 - \pi)$.
+
+:::
+
+{{< slidebreak >}}
+
+## The Poisson distribution {#sec-poisson-dist}
+
+:::{#def-poisson}
+#### Poisson distribution
+
+A random variable $Y$ has the **Poisson distribution** with mean parameter $\mu > 0$,
+written $Y \sim \Pois(\mu)$, if:
+
+$$\P(Y = y) \eqdef \frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \Nat = \set{0, 1, 2, \dots}$$ {#eq-pois-pmf}
+
+:::
+
+::: notes
+(see @fig-pois-pmf)
+:::
+
+{{< slidebreak >}}
+
+:::{#exr-range-poisson}
+What is the range of possible values for a Poisson distribution?
+:::
+
+{{< slidebreak >}}
+
+:::{#sol-range-poisson}
+$$\rangef{Y} = \set{0, 1, 2, \dots} = \Nat$$
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cdf-pois}
+#### CDF of Poisson distribution
+
+If $Y \sim \Pois(\mu)$, then for every real number $y$:
+
+$$\P(Y \le y) = e^{-\mu} \sum_{j=0}^{\floor{y}}\frac{\mu^j}{j!}$$ {#eq-pois-cdf}
+
+:::
+
+::: proof
+For $y < 0$, both sides are $0$ (the sum is empty).
+For any $y \ge 0$,
+the event $\{Y \le y\}$ is the disjoint union of events $\{Y = j\}$
+for all non-negative integers $j \le \floor{y}$.
+Applying the Poisson PMF (@eq-pois-pmf) and factoring out the common term $e^{-\mu}$:
+
+$$
+\ba
+\P(Y \le y)
+&= \sum_{j=0}^{\floor{y}} \P(Y = j) && (\text{disjoint union of events } Y = j) \\
+&= \sum_{j=0}^{\floor{y}} \frac{\mu^j e^{-\mu}}{j!} && (\text{definition of Poisson PMF}) \\
+&= e^{-\mu} \sum_{j=0}^{\floor{y}} \frac{\mu^j}{j!} && (\text{factoring out } e^{-\mu} \text{ constant wrt } j)
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cdf-pois}
+#### Computing Poisson cumulative probabilities
+
+For a Poisson random variable $X \sim \Pois(\mu = 2)$,
+the probability of observing at most 2 events is computed as:
+
+$$
+\ba
+\P(X \le 2)
+&= e^{-2} \sum_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu = 2, y = 2) \\
+&= e^{-2} \paren{\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}} && (\text{expand terms for } j = 0, 1, 2) \\
+&= e^{-2} \paren{1 + 2 + 2} && (\text{simplify factorials and powers}) \\
+&= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value})
+\ea
+$$
+:::
+
+::: notes
+(see @fig-pois-cdfs)
+:::
+
+{{< slidebreak >}}
+
+```{r}
+#| label: fig-pois-pmf
+#| fig-cap: "Poisson PMFs, by mean parameter $\\mu$"
+#| code-fold: true
+
+pois_dists <-
+  dplyr::tibble(mu = c(0.5, 1, 2, 5, 10, 20)) |>
+  dplyr::reframe(.by = mu, x = 0:30) |>
+  dplyr::mutate(
+    `P(X = x)` = dpois(x, lambda = mu),
+    `P(X <= x)` = ppois(x, lambda = mu),
+    mu = factor(mu)
+  )
+
+plot0 <-
+  pois_dists |>
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = x,
+      y = `P(X = x)`,
+      fill = mu,
+      col = mu
+    )
+  ) +
+  ggplot2::theme(legend.position = "bottom") +
+  ggplot2::labs(
+    fill = latex2exp::TeX("$\\mu$"),
+    col = latex2exp::TeX("$\\mu$"),
+    y = latex2exp::TeX("$\\Pr_{\\mu}(X = x)$")
+  )
+
+plot1 <-
+  plot0 +
+  ggplot2::geom_segment(yend = 0) +
+  ggplot2::facet_wrap(~mu)
+
+print(plot1)
+```
+
+{{< slidebreak >}}
+
+```{r}
+#| label: fig-pois-cdfs
+#| fig-cap: "Poisson CDFs"
+#| code-fold: true
+
+plot2 <-
+  plot0 +
+  ggplot2::geom_step(alpha = 0.75) +
+  ggplot2::aes(y = `P(X <= x)`) +
+  ggplot2::labs(y = latex2exp::TeX("$\\Pr_{\\mu}(X \\leq x)$"))
+
+print(plot2)
+```
+
+{{< slidebreak >}}
+
+:::{#exr-pois-dist-funs}
+#### Poisson distribution functions
+
+```{r}
+#| label: def-mu-exr-pois
+#| include: false
+mu <- 3.75
+```
+
+Let $X \sim \Pois(\mu = `r mu`)$.
+
+Compute:
+
+- $\P(X = 4)$
+- $\P(X \le 7)$
+- $\P(X > 5)$
+
+:::
+
+{{< slidebreak >}}
+
+::: solution
+
+- $\P(X=4) = `r dpois(x = 4, lambda = mu)`$
+- $\P(X\le 7) = `r ppois(q = 7, lambda = mu)`$
+- $\P(X > 5) = `r ppois(q = 5, lambda = mu, lower.tail = FALSE)`$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-poisson-properties}
+#### Properties of the Poisson distribution
+
+If $X \sim \Pois(\mu)$, then:
+
+* $\Expp[X] = \mu$
+* $\Varr(X) = \mu$
+* $\P(X=x) = \frac{\mu}{x} \P(X = x-1)$ for $x \in \set{1, 2, \dots}$
+* For $x \in \set{1, 2, \dots}$ with $x < \mu$, $\P(X=x) > \P(X = x-1)$
+* For $x = \mu$ (possible only when $\mu$ is an integer), $\P(X=x) = \P(X = x-1)$
+* For $x \in \set{1, 2, \dots}$ with $x > \mu$, $\P(X=x) < \P(X = x-1)$
+* If $\mu$ is not an integer, $\arg \max_{x} \P(X=x) = \floor{\mu}$;
+  if $\mu$ is an integer, the maximum is attained at both $x = \mu - 1$ and $x = \mu$
+
+:::
+
+::: proof
+
+**Mean.**
+
+$$
+\ba
+\Expp[X]
+&= \sum_{x=0}^\infty x \cdot \P(X=x) && (\text{definition of expected value}) \\
+&= 0 \cdot \P(X=0) + \sum_{x=1}^\infty x \cdot \P(X=x) && (\text{separate } x=0 \text{ term}) \\
+&= \sum_{x=1}^\infty x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\
+&= \sum_{x=1}^\infty x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\
+&= \sum_{x=1}^\infty \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\
+&= \mu \cdot \sum_{x=1}^\infty \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\
+&= \mu \cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \eqdef x-1) \\
+&= \mu \cdot 1 && (\text{PMF sums to 1 over state space}) \\
+&= \mu && (\text{simplify})
+\ea
+$$
+
+**Variance.**
+The same steps, canceling two factors instead of one, give $\E{X(X-1)}$:
+
+$$
+\ba
+\E{X(X-1)}
+&= \sum_{x=2}^\infty x(x-1) \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\
+&= \sum_{x=2}^\infty \frac{\mu^x e^{-\mu}}{(x-2)!} && (\text{cancel } x(x-1) \text{ against } x!) \\
+&= \mu^2 \cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{factor out } \mu^2 \text{; } y \eqdef x - 2) \\
+&= \mu^2 && (\text{PMF sums to 1})
+\ea
+$$
+
+Then, by the [simplified expression for variance](variance-covariance.qmd#thm-variance)
+and [linearity of expectation](expectation.qmd#thm-linearity-expectation):
+
+$$
+\ba
+\Varr(X)
+&= \E{X^2} - \sqf{\E{X}} && (\text{simplified expression for variance}) \\
+&= \E{X(X-1)} + \E{X} - \sqf{\E{X}} && (X^2 = X(X-1) + X \text{; linearity}) \\
+&= \mu^2 + \mu - \mu^2 && (\text{substitute}) \\
+&= \mu && (\text{simplify})
+\ea
+$$
+
+**Ratio of consecutive probabilities.**
+For $x \in \set{1, 2, \dots}$:
+
+$$
+\ba
+\frac{\P(X = x)}{\P(X = x - 1)}
+&= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} && (\text{substitute Poisson PMF}) \\
+&= \frac{\mu}{x} && (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!)
+\ea
+$$
+
+This ratio is greater than, equal to, or less than 1
+as $x$ is less than, equal to, or greater than $\mu$,
+which gives the three comparisons.
+So $\P(X = x)$ increases while $x < \mu$ and decreases once $x > \mu$.
+If $\mu$ is not an integer, the last increase is at $x = \floor{\mu}$,
+which is therefore the unique mode.
+If $\mu$ is an integer, $\P(X = \mu) = \P(X = \mu - 1)$,
+and both are modes.
+
+See also <https://statproofbook.github.io/P/poiss-mean>
+and <https://statproofbook.github.io/P/poiss-var>.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-poisson-properties}
+#### Mode of a Poisson distribution
+
+For $X \sim \Pois(2.5)$,
+$\P(X = 2) = \frac{2.5}{2}\P(X = 1) > \P(X = 1)$
+and $\P(X = 3) = \frac{2.5}{3}\P(X = 2) < \P(X = 2)$,
+so the mode is $\floor{2.5} = 2$.
+For $X \sim \Pois(2)$, $\P(X = 2) = \frac{2}{2}\P(X = 1)$,
+so $1$ and $2$ are both modes,
+each with probability $2 e^{-2} \approx 0.271$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-exposure}
+#### Exposure magnitude
+
+For many count outcomes,
+there is some sense of
+an **exposure magnitude**,
+such as
+**population size** or
+**duration of observation**,
+which multiplicatively rescales
+the expected (mean) count.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exr-exposure-magnitude}
+What are some examples of exposure magnitudes?
+:::
+
+{{< slidebreak >}}
+
+::: {.solution .smaller}
+
+outcome                      | exposure units
+-----------------------------| -------------
+disease incidence            | number of individuals exposed; time at risk
+car accidents                | miles driven
+worksite accidents           | person-hours worked
+population size              | size of habitat
+
+: Examples of exposure units {#tbl-exposure-units}
+
+:::
+
+:::: notes
+Exposure units are similar to
+the number of trials in a binomial distribution,
+but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
+
+We can use $t$ to represent continuous-valued exposures/observation durations,
+and $n$ to represent discrete-valued exposures.
+
+::::
+
+{{< slidebreak >}}
+
+:::{#def-event-rate}
+#### Event rate
+
+For a count $Y$ observed over a fixed, known [exposure magnitude](#def-exposure) $t > 0$,
+the **event rate**, denoted $\lambda$,
+is the mean of $Y$ divided by the exposure magnitude:
+
+$$\lambda \eqdef \frac{\E{Y}}{t}$$ {#eq-def-event-rate}
+
+:::
+
+::: notes
+The event rate is a transformation of the mean:
+it removes the exposure magnitude from the mean,
+so counts observed over different exposures can be compared on one scale.
+Regression models for counts use the same decomposition,
+with the rate depending on covariates and the exposure magnitude known
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mean-vs-event-rate}
+#### Transformation function from event rate to mean
+
+If a count $Y$ is observed over exposure magnitude $t > 0$ with event rate $\lambda$,
+then its mean $\mu \eqdef \E{Y}$ is:
+
+$$\mu = \lambda \cdot t$$ {#eq-lambda-to-mu}
+
+:::
+
+::: proof
+By @def-event-rate:
+
+$$
+\ba
+\lambda &\eqdef \frac{\E{Y}}{t} && (\text{definition of event rate}) \\
+\E{Y} &= \lambda \cdot t && (\text{multiply both sides by } t > 0) \\
+\mu &= \lambda \cdot t && (\mu \eqdef \E{Y})
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mean-vs-event-rate}
+#### Calculating expected counts from event rates
+
+Suppose a city records a disease event rate of $\lambda = 0.05$ cases per person-year.
+For a subpopulation with an exposure magnitude of $t = 100$ person-years,
+the expected count of cases is, by @thm-mean-vs-event-rate:
+
+$$
+\ba
+\mu &= \lambda \cdot t && (\text{transformation from event rate to mean}) \\
+&= 0.05 \times 100 && (\text{substitute } \lambda = 0.05 \text{ and } t = 100) \\
+&= 5 \text{ cases} && (\text{evaluate expected count})
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-non-exposed}
+#### No exposure means no expected events
+
+For each exposure magnitude $t \ge 0$,
+let $Y_t$ be the count observed over exposure $t$.
+If the mean count is proportional to the exposure magnitude,
+$\E{Y_t} = \lambda \cdot t$ for all $t \ge 0$ with one finite rate $\lambda$,
+then there are no expected events without exposure:
+
+$$\E{Y_0} = 0$$
+
+:::
+
+::: proof
+$$
+\ba
+\E{Y_0}
+&= \lambda \cdot 0 && (\text{evaluate } \E{Y_t} = \lambda t \text{ at } t = 0) \\
+&= 0 && (\text{multiplication by zero; } \lambda \text{ is finite})
+\ea
+$$
+:::
+
+::: notes
+
+The hypothesis carries the content here.
+@def-event-rate alone cannot give $\E{Y_0} = 0$,
+since $\lambda = \E{Y}/t$ is undefined at $t = 0$;
+the result holds for a model that assumes one rate $\lambda$
+shared across exposure magnitudes, including $t = 0$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-non-exposed}
+#### Zero exposure time
+
+If a subject is observed for $t = 0$ person-years,
+no follow-up time has elapsed,
+so under a constant-rate model
+the expected number of incident events is $\E{Y_0} = 0$.
+:::
+
+{{< slidebreak >}}
+
+:::{.callout-important}
+
+A mean proportional to exposure, $\E{Y_t} = \lambda t$,
+has no term that stays nonzero at $t = 0$:
+a model of this form says that with no exposure, no events are expected.
+A mean with an added constant, such as $\E{Y_t} = c + \lambda t$ with $c > 0$,
+would expect $c$ events even with no exposure.
+Regression models for counts keep the proportional form when they add covariates
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-exposure-log-scale}
+#### Exposure is additive on the log scale
+
+If $\mu = \lambda\cdot t$ with $\lambda > 0$ and $t > 0$, then:
+
+$$\log{\mu} = \log{\lambda} + \log{t}$$
+
+:::
+
+::: proof
+$$
+\ba
+\log{\mu}
+&= \log(\lambda \cdot t) && (\text{substitute } \mu = \lambda \cdot t) \\
+&= \log{\lambda} + \log{t} && (\text{logarithm product rule})
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exposure-log-scale}
+#### Log-linear representation of expected counts
+
+If a clinic sees an event rate of $\lambda = 0.02$ events/day and $t = 30$ days of observation:
+
+$$
+\ba
+\log{\mu}
+&= \log(0.02) + \log(30) && (\text{apply log-scale formula}) \\
+&= -3.912 + 3.401 && (\text{evaluate natural logarithms}) \\
+&= -0.511 && (\text{sum terms})
+\ea
+$$
+
+Exponentiating yields $\mu = \expf{-0.511} \approx 0.60$ expected events.
+:::
+
+{{< slidebreak >}}
+
+:::{#def-offset}
+#### Offset
+
+For a count outcome with exposure magnitude $t$,
+the known term $\log{t}$ in the log-scale decomposition of the mean
+([@thm-exposure-log-scale]),
+
+$$\log{\mu} = \log{\lambda} + \log{t},$$
+
+is called the **offset**:
+it shifts $\log{\mu}$ by a known amount,
+with no unknown coefficient to estimate.
+
+:::
+
+::: notes
+The offset needs no covariates:
+with a single exposure $t$ and an unknown rate $\lambda$,
+$\log{t}$ is already an offset.
+Regression models for counts keep the same term
+and add covariate terms beside it
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-offset}
+#### The offset for a clinic's event count
+
+In @exm-exposure-log-scale,
+the clinic was observed for $t = 30$ days,
+so the offset is $\log{30} \approx 3.401$.
+Only $\log{\lambda}$ is unknown before the data are seen;
+the offset is fixed by the length of observation.
+A clinic observed for $t = 60$ days has offset $\log{60} \approx 4.094$,
+which raises $\log{\mu}$ by $\log{2} \approx 0.693$ at the same event rate.
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-sum-pois}
+#### Sum of independent Poisson random variables
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt) Poisson random variables with means
+$\mu_X$ and $\mu_Y$, their sum, $Z=X+Y$, is also a Poisson random variable, with mean 
+$\mu_Z = \mu_X + \mu_Y$.
+
+:::
+
+::: proof
+The event $\{Z = z\}$ is the disjoint union of the events $\{X = k, Y = z - k\}$
+for $k = 0, 1, \ldots, z$
+(since $X$ and $Y$ are non-negative integers), so:
+
+$$
+\ba
+\P(Z = z)
+&= \sum_{k=0}^z \P(X = k,\, Y = z - k) && (\text{countable additivity}) \\
+&= \sum_{k=0}^z \P(X = k) \P(Y = z - k) && (\text{independence}) \\
+&= \sum_{k=0}^z \frac{\mu_X^k e^{-\mu_X}}{k!} \frac{\mu_Y^{z-k} e^{-\mu_Y}}{(z-k)!} && (\text{substitute Poisson PMFs}) \\
+&= e^{-(\mu_X + \mu_Y)} \sum_{k=0}^z \frac{\mu_X^k \mu_Y^{z-k}}{k!(z-k)!} && (\text{factor out } e^{-\mu_X} e^{-\mu_Y}) \\
+&= \frac{e^{-(\mu_X + \mu_Y)}}{z!} \sum_{k=0}^z \frac{z!}{k!(z-k)!} \mu_X^k \mu_Y^{z-k} && (\text{multiply and divide by } z!) \\
+&= \frac{e^{-(\mu_X + \mu_Y)}}{z!} (\mu_X + \mu_Y)^z && (\text{binomial theorem})
+\ea
+$$
+
+This probability expression matches the PMF of a $\Pois(\mu_X + \mu_Y)$ random variable
+(see also <https://web.stanford.edu/class/archive/cs/cs109/cs109.1206/lectureNotes/LN12_independent_rvs.pdf>, Example 3).
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-sum-pois}
+#### Aggregating independent region counts
+
+Suppose Region A records $X \sim \Pois(\mu_X = 12)$ cases
+and Region B records $Y \sim \Pois(\mu_Y = 18)$ cases independently.
+By @thm-sum-pois, the combined total count $Z = X + Y$ follows a Poisson distribution:
+
+$$
+\ba
+Z &\sim \Pois(\mu_X + \mu_Y) && (\text{sum of independent Poissons}) \\
+&= \Pois(12 + 18) && (\text{substitute region means}) \\
+&= \Pois(30) && (\text{evaluate sum})
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+## The Negative-Binomial distribution {#sec-nb-dist}
+
+:::{#def-nb}
+#### Negative binomial distribution
+
+A random variable $Y$ has the **negative binomial distribution**
+with mean $\mu > 0$ and overdispersion parameter $\rho > 0$,
+written $Y \sim \NegBin(\mu, \rho)$, if, for $y \in \set{0, 1, 2, \dots}$:
+
+$$
+\P(Y=y)
+\eqdef \frac{\mu^y}{y!}
+\cdot \frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y}
+\cdot \left(1+\frac{\mu}{\rho}\right)^{-\rho}
+$$
+
+where $\Gamma$ is the gamma function,
+which satisfies $\Gamma(x) = (x-1)!$ for positive integers $x$.
+
+:::
+
+::: notes
+As $\rho \rightarrow \infty$,
+the second factor converges to 1
+and the third factor converges to $\expf{-\mu}$,
+which brings us back to the Poisson distribution.
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-nb}
+#### Mean and variance of the negative binomial distribution
+
+If $Y \sim \NegBin(\mu, \rho)$, then:
+
+- $\Expp[Y] = \mu$
+- $\Var{Y} = \mu + \frac{\mu^2}{\rho} > \mu$
+
+:::
+
+::: proof
+
+The negative binomial distribution is a gamma mixture of Poisson distributions:
+if $\Lambda$ has the gamma density
+$g(\lambda) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} \lambda^{\rho - 1} e^{-\rho\lambda/\mu}$
+for $\lambda > 0$,
+which has mean $\mu$ and variance $\mu^2/\rho$ [@CaseBerg01],
+and $Y \mid \Lambda = \lambda \sim \Pois(\lambda)$,
+then $Y \sim \NegBin(\mu, \rho)$.
+To check this, integrate the joint density over $\lambda$:
+
+$$
+\ba
+\P(Y = y)
+&= \int_0^\infty \frac{\lambda^y e^{-\lambda}}{y!} \cd \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} \lambda^{\rho - 1} e^{-\rho\lambda/\mu}\,d\lambda
+&& (\text{marginalize over } \Lambda) \\
+&= \frac{(\rho/\mu)^\rho}{y!\,\Gamma(\rho)} \int_0^\infty \lambda^{y + \rho - 1} e^{-\lambda(1 + \rho/\mu)}\,d\lambda
+&& (\text{collect powers of } \lambda \text{ and exponents}) \\
+&= \frac{(\rho/\mu)^\rho}{y!\,\Gamma(\rho)} \cd \frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}}
+&& (\textstyle\int_0^\infty \lambda^{a-1} e^{-b\lambda}\,d\lambda = \Gamma(a)/b^a) \\
+&= \frac{\Gamma(y + \rho)}{y!\,\Gamma(\rho)} \paren{\frac{\rho}{\mu}}^\rho \paren{\frac{\mu}{\mu + \rho}}^{y + \rho}
+&& (1 + \rho/\mu = (\mu + \rho)/\mu) \\
+&= \frac{\Gamma(y + \rho)}{y!\,\Gamma(\rho)} \paren{\frac{\rho}{\mu + \rho}}^{\rho} \paren{\frac{\mu}{\mu + \rho}}^{y}
+&& (\text{combine the } \mu^\rho \text{ factors}) \\
+&= \frac{\mu^y}{y!} \cd \frac{\Gamma(\rho + y)}{\Gamma(\rho)\,(\rho + \mu)^y} \cd \paren{1 + \frac{\mu}{\rho}}^{-\rho}
+&& (\text{rearrange into the form of the definition})
+\ea
+$$
+
+Then, by the [law of iterated expectations](expectation.qmd#thm-lie)
+and the [law of total variance](variance-covariance.qmd#thm-total-variance),
+using $\E{Y \mid \Lambda} = \Varr(Y \mid \Lambda) = \Lambda$
+(@thm-poisson-properties):
+
+$$
+\ba
+\Expp[Y]
+&= \E{\E{Y \mid \Lambda}}
+&& (\text{law of iterated expectations}) \\
+&= \E{\Lambda}
+&& (\E{Y \mid \Lambda} = \Lambda) \\
+&= \mu
+&& (\text{mean of the gamma distribution}) \\
+\Var{Y}
+&= \E{\Var{Y \mid \Lambda}} + \Var{\E{Y \mid \Lambda}}
+&& (\text{law of total variance}) \\
+&= \E{\Lambda} + \Var{\Lambda}
+&& (\Var{Y \mid \Lambda} = \E{Y \mid \Lambda} = \Lambda) \\
+&= \mu + \frac{\mu^2}{\rho}
+&& (\text{mean and variance of the gamma distribution})
+\ea
+$$
+
+and $\mu^2/\rho > 0$ gives $\Var{Y} > \mu$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-nb}
+#### Overdispersion relative to the Poisson
+
+With $\mu = 4$ and $\rho = 2$,
+$\Var{Y} = 4 + 16/2 = 12$,
+three times the variance of a $\Pois(4)$ count with the same mean.
+
+:::
+
+{{< slidebreak >}}
+
+## Weibull distribution {#sec-weibull}
+
+:::{#def-weibull}
+#### Weibull distribution
+
+A non-negative random variable $T$ has the **Weibull distribution**
+with shape $\alpha > 0$ and rate $\lambda > 0$ if its
+[survival function](random-variables.qmd#def-surv-fn) is:
+
+$$\surv(t) \eqdef \text{e}^{-\lambda t^\alpha}, \quad t \ge 0$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-weibull}
+#### Weibull density, hazard, and mean
+
+If $T$ has the Weibull distribution with shape $\alpha$ and rate $\lambda$, then for $t > 0$:
+
+$$
+\begin{aligned}
+f(t) &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}\\
+\h(t) &= \alpha\lambda t^{\alpha-1}\\
+\E{T} &= \Gamma(1+1/\alpha)\cdot \lambda^{-1/\alpha}
+\end{aligned}
+$$
+
+:::
+
+::: proof
+
+The CDF of $T$ is $F(t) = 1 - \surv(t)$
+([survival function and CDF](random-variables.qmd#thm-survival-expressions-1)),
+which is $0$ for $t < 0$ and $1 - \text{e}^{-\lambda t^\alpha}$ for $t \ge 0$.
+This $F$ is continuous everywhere,
+with a continuous derivative everywhere except possibly $t = 0$,
+so $f = F' = -\surv'$ is a density of $T$
+([a piecewise-smooth CDF has its derivative as a density](random-variables.qmd#thm-cdf-derivative-density)).
+This density is continuous at every $t > 0$,
+so there the hazard is $f(t)/\surv(t)$
+([hazard equals density over survival](random-variables.qmd#thm-hazard-dens-surv)):
+
+$$
+\ba
+f(t)
+&= -\frac{d}{dt}\text{e}^{-\lambda t^\alpha}
+&& (f = -\surv') \\
+&= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}
+&& (\text{chain rule}) \\
+\h(t)
+&= \frac{\alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}}{\text{e}^{-\lambda t^\alpha}}
+&& (\text{hazard is density over survival}) \\
+&= \alpha\lambda t^{\alpha-1}
+&& (\text{cancel})
+\ea
+$$
+
+For the mean, use the [survival-function formula for the mean](expectation.qmd#thm-surv-mean)
+and substitute $u = \lambda t^\alpha$,
+so that $t = (u/\lambda)^{1/\alpha}$ and $dt = \frac{1}{\alpha}\lambda^{-1/\alpha} u^{1/\alpha - 1}\,du$:
+
+$$
+\ba
+\E{T}
+&= \int_0^\infty \text{e}^{-\lambda t^\alpha}\,dt
+&& (\text{expectation via the survival function}) \\
+&= \frac{1}{\alpha}\lambda^{-1/\alpha} \int_0^\infty u^{1/\alpha - 1} \text{e}^{-u}\,du
+&& (\text{substitute } u = \lambda t^\alpha) \\
+&= \frac{1}{\alpha}\lambda^{-1/\alpha}\,\Gamma(1/\alpha)
+&& (\text{definition of the gamma function}) \\
+&= \Gamma(1 + 1/\alpha)\,\lambda^{-1/\alpha}
+&& (\Gamma(1 + a) = a\,\Gamma(a))
+\ea
+$$
+
+:::
+
+::: notes
+
+The hazard is written $\h(t)$ here, rather than $\haz(t)$,
+because the Weibull rate parameter is also called $\lambda$.
+
+When $\alpha=1$, the Weibull distribution reduces to the exponential distribution.
+When $\alpha>1$ the hazard is
+increasing and when $\alpha < 1$ the hazard is decreasing.
+This property provides
+more flexibility than the exponential.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-weibull}
+#### Exponential as a special case
+
+With $\alpha = 1$, @thm-weibull gives $\h(t) = \lambda$ and
+$\E{T} = \Gamma(2)\lambda^{-1} = 1/\lambda$,
+matching the exponential distribution's constant hazard
+and mean.
+With $\alpha = 2$ and $\lambda = 1$,
+$\h(t) = 2t$ increases with $t$,
+and $\E{T} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886$.
+
+:::

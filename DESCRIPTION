@@ -14,7 +14,12 @@ BugReports: https://github.com/Morrison-Lab/pds/issues
 Depends: 
     R (>= 4.1.0)
 Suggests:
+    dobson,
+    ggplot2,
     knitr,
+    latex2exp,
+    pander,
+    plotly,
     rmarkdown,
     spelling,
     usethis,

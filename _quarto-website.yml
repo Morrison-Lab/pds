@@ -12,6 +12,7 @@ project:
     # directly: macros-table.qmd uses DT::datatable() (an HTML widget) that
     # errors when the project also renders to PDF.
     - "!latex-macros/"
+    - "!pds/"
 
 website:
   google-analytics: "G-VLDZY2T3JF"
@@ -30,13 +31,36 @@ website:
   repo-url: https://github.com/Morrison-Lab/pds
   repo-actions: [edit, issue, source]
   navbar:
-    left:
-      - text: "Home"
-        href: index.qmd
+    # The navbar carries only the site title (which links home), search,
+    # and the GitHub link; the pages are listed in the sidebar.
+    search: true
     right:
       - icon: github
         href: https://github.com/Morrison-Lab/pds
         aria-label: GitHub
+  sidebar:
+    # Pages in reading order, each group depending only on earlier ones:
+    # the moments use independence and the joint distributions defined
+    # under Foundations, and the distributions and the CLT use the moments.
+    # Entries show each page's own title. There is no Home entry: the
+    # navbar title already links to the home page.
+    style: docked
+    search: false
+    contents:
+      - section: "Foundations"
+        contents:
+          - notation.qmd
+          - probability-basics.qmd
+          - random-variables.qmd
+          - independence.qmd
+      - section: "Moments"
+        contents:
+          - expectation.qmd
+          - variance-covariance.qmd
+      - section: "Distributions"
+        contents:
+          - distributions.qmd
+          - limit-theorems.qmd
 
 callouty-theorem:
   thm:

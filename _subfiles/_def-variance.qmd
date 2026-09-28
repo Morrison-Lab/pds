@@ -1,0 +1,369 @@
+:::{#def-variance}
+#### Variance
+
+The **variance** of a random variable $X$ with $\E{X^2} < \infty$ is the [expectation](expectation.qmd#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean); that is:
+
+$$\Var{X} \eqdef \E{[\devn(X)]^2}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-variance-expanded}
+#### Variance as expected squared deviation from the mean
+
+$$\Var{X} = \E{(X - \E{X})^2}$$
+
+:::
+
+::: proof
+
+Substituting the definition of $\devn(X)$ from @def-deviation-pop-mean
+into @def-variance:
+
+$$
+\Var{X} \eqdef \E{[\devn(X)]^2} = \E{(X - \E{X})^2}.
+$$
+
+:::
+
+::: notes
+
+This is the more commonly seen form of the variance definition, and
+the canonical starting point in most treatments; it's given here as a
+theorem rather than the primary definition to keep $\devn(X)$ as the
+definition's single building block, matching the notation of @def-deviation-pop-mean.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-variance}
+#### Simplified expression for variance
+
+$$\Var{X}=\E{X^2} - \sqf{\E{X}}$$
+
+:::
+
+::: proof
+
+By [linearity of expectation](expectation.qmd#thm-linearity-expectation),
+with $\E{X}$ treated as a constant:
+
+$$
+\ba
+\Var{X}
+&\eqdef \E{[\devn(X)]^2} && \text{(definition of variance)} \\
+&= \E{(X-\E{X})^2} && \text{(definition of deviation from mean)} \\
+&=\E{X^2 - 2X\E{X} + \sqf{\E{X}}} && \text{(expand binomial square)} \\
+&=\E{X^2} - 2\E{X}\E{X} + \sqf{\E{X}} && \text{(linearity of expectation; } \E{X} \text{ is a constant)} \\
+&=\E{X^2} - \sqf{\E{X}} && \text{(combine like terms)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-variance-bernoulli}
+#### Variance of a Bernoulli random variable
+
+Let $X \sim \Ber(\pi)$.
+Then $\E{X} = \pi$ and $\E{X^2} = \pi$
+(both computed on the [expectation page](expectation.qmd#exm-lotus)), so:
+
+$$
+\ba
+\Var{X}
+&= \E{X^2} - \sqf{\E{X}}
+&& \text{(simplified expression for variance)} \\
+&= \pi - \pi^2
+&& \text{(substitute)} \\
+&= \pi(1 - \pi)
+&& \text{(factor)}
+\ea
+$$
+
+For a fair coin ($\pi = 1/2$), $\Var{X} = 1/4$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-cond-variance}
+#### Conditional variance
+
+The **conditional variance** of $Y$ given $X = x$
+is the variance of $Y$ under its conditional distribution given $X = x$:
+
+$$\Var{Y \mid X = x} \eqdef \E{\paren{Y - \E{Y \mid X = x}}^2 \mid X = x}$$
+
+Evaluating this function of $x$ at $X$ gives the random variable $\Var{Y \mid X}$,
+just as the [conditional expectation function](expectation.qmd#def-cond-expectation-function)
+$\E{Y \mid X}$ comes from $\E{Y \mid X = x}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cond-variance}
+#### Conditional variance of a binary outcome
+
+Let $(X, Y)$ have the joint PMF
+$\P(X=0, Y=0) = 0.2$, $\P(X=0, Y=1) = 0.3$,
+$\P(X=1, Y=0) = 0.1$, $\P(X=1, Y=1) = 0.4$
+(the table in the [expectation page's exercise](expectation.qmd#exr-fubini-joint-disc)).
+Given $X = 0$, $Y$ is binary with $\P(Y = 1 \mid X = 0) = 0.3/0.5 = 0.6$,
+so $\E{Y \mid X = 0} = 0.6$, and by @def-cond-variance:
+
+$$
+\ba
+\Var{Y \mid X = 0}
+&= (0 - 0.6)^2 \cd 0.4 + (1 - 0.6)^2 \cd 0.6
+&& \text{(definition of conditional variance)} \\
+&= 0.144 + 0.096
+&& \text{(multiply)} \\
+&= 0.24
+&& \text{(add)}
+\ea
+$$
+
+The same steps with $\P(Y = 1 \mid X = 1) = 0.4/0.5 = 0.8$
+give $\Var{Y \mid X = 1} = (0.2)^2 \cd 0.8 + (0.8)^2 \cd 0.2 = 0.16$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-homosked}
+#### Homoskedasticity
+
+A random variable $Y$ is **homoskedastic**
+with respect to a random variable (or vector) $X$
+if the [conditional variance](#def-cond-variance) of $Y$ given $X = x$
+is the same for every $x$:
+
+$$\Var{Y \mid X = x} = \ss \quad \text{for all } x$$
+
+for some constant $\ss$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-homosked}
+#### A homoskedastic total
+
+Flip two fair coins, let $X_1$ indicate heads on the first,
+and let $Y$ be the total number of heads.
+Given $X_1 = 0$, $Y$ is $0$ or $1$ with probability $1/2$ each;
+given $X_1 = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each.
+Either way, $Y$ is $1/2$ away from its conditional mean with probability 1,
+so $\Var{Y \mid X_1 = 0} = \Var{Y \mid X_1 = 1} = 1/4$,
+and $Y$ is homoskedastic with respect to $X_1$, with $\ss = 1/4$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-heterosked}
+#### Heteroskedasticity
+
+A random variable $Y$ is **heteroskedastic** with respect to $X$
+if it is not [homoskedastic](#def-homosked) with respect to $X$:
+that is, if $\Var{Y \mid X = x}$ differs between some values of $x$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-heterosked}
+#### A heteroskedastic binary outcome
+
+In @exm-cond-variance, $\Var{Y \mid X = 0} = 0.24 \ne 0.16 = \Var{Y \mid X = 1}$,
+so $Y$ is heteroskedastic with respect to $X$.
+More generally, a binary outcome with $\P(Y = 1 \mid X = x) = \pi(x)$
+has conditional variance $\pi(x)(1 - \pi(x))$,
+so it is homoskedastic only if $\pi(x)$ takes at most two values, $\pi$ and $1 - \pi$, for some $\pi$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-total-variance}
+#### Law of total variance
+
+For random variables $X$ and $Y$ with $\E{Y^2} < \infty$:
+
+$$\Var{Y} = \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+Write $\mu \eqdef \E{Y}$ and $m(X) \eqdef \E{Y \mid X}$.
+Adding and subtracting $m(X)$ inside the deviation and expanding the square:
+
+$$
+\ba
+\Var{Y}
+&= \E{\paren{Y - \mu}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{\sb{Y - m(X)} + \sb{m(X) - \mu}}^2}
+&& \text{(add and subtract } m(X) \text{)} \\
+&= \E{\sqf{Y - m(X)}} + \E{\sqf{m(X) - \mu}}
+  + 2\E{\sb{Y - m(X)}\sb{m(X) - \mu}}
+&& \text{(expand the square; linearity of expectation)}
+\ea
+$$
+
+The three terms are handled separately,
+each using the [law of iterated expectations](expectation.qmd#thm-lie),
+applied to a function of $X$ and $Y$
+([conditional expectation of a function](expectation.qmd#def-cond-expectation-general)).
+The third term also uses two facts about conditional expectations:
+a [function of $X$ factors out of a conditional expectation given $X$](expectation.qmd#thm-cond-pull-out),
+and [conditional expectation is linear](expectation.qmd#thm-cond-linearity).
+
+First term:
+
+$$
+\ba
+\E{\sqf{Y - m(X)}}
+&= \E{\E{\sqf{Y - m(X)} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\Var{Y \mid X}}
+&& \text{(definition of conditional variance)}
+\ea
+$$
+
+Second term: by the law of iterated expectations, $\E{m(X)} = \E{\E{Y \mid X}} = \mu$, so:
+
+$$
+\ba
+\E{\sqf{m(X) - \mu}}
+&= \E{\sqf{m(X) - \E{m(X)}}}
+&& \text{(} \mu = \E{m(X)} \text{)} \\
+&= \Var{m(X)}
+&& \text{(definition of variance)} \\
+&= \Var{\E{Y \mid X}}
+&& \text{(definition of } m(X) \text{)}
+\ea
+$$
+
+Third term:
+
+$$
+\ba
+\E{\sb{Y - m(X)}\sb{m(X) - \mu}}
+&= \E{\E{\sb{Y - m(X)}\sb{m(X) - \mu} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\sb{m(X) - \mu} \cd \E{Y - m(X) \mid X}}
+&& \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mu \text{)} \\
+&= \E{\sb{m(X) - \mu} \cd \sb{\E{Y \mid X} - \E{m(X) \mid X}}}
+&& \text{(linearity of conditional expectation)} \\
+&= \E{\sb{m(X) - \mu} \cd \sb{\E{Y \mid X} - m(X)}}
+&& \text{(} \E{g(X) \mid X} = g(X) \text{, with } g = m \text{)} \\
+&= \E{\sb{m(X) - \mu} \cd 0}
+&& \text{(} \E{Y \mid X} = m(X) \text{)} \\
+&= 0
+&& \text{(expectation of a constant)}
+\ea
+$$
+
+Substituting the three terms:
+
+$$
+\ba
+\Var{Y}
+&= \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}} + 2 \cd 0
+&& \text{(substitute the three terms)} \\
+&= \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}
+&& \text{(simplify)}
+\ea
+$$
+
+:::
+
+::: notes
+
+Alternate names include:
+the **conditional variance formula**,
+**Eve's law**,
+and the **variance decomposition formula**.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-total-variance}
+#### Decomposing the variance of a binary outcome
+
+Continuing @exm-cond-variance,
+$\P(X = 0) = \P(X = 1) = 0.5$,
+$\E{Y \mid X = 0} = 0.6$, and $\E{Y \mid X = 1} = 0.8$,
+so $\E{\E{Y \mid X}} = 0.7$, and by @thm-total-variance:
+
+$$
+\ba
+\E{\Var{Y \mid X}}
+&= 0.5 \cd 0.24 + 0.5 \cd 0.16 = 0.20
+&& \text{(average the conditional variances)} \\
+\Var{\E{Y \mid X}}
+&= 0.5 \cd (0.6 - 0.7)^2 + 0.5 \cd (0.8 - 0.7)^2 = 0.01
+&& \text{(variance of the conditional means)} \\
+\Var{Y}
+&= 0.20 + 0.01 = 0.21
+&& \text{(law of total variance)}
+\ea
+$$
+
+As a check, $Y$ is Bernoulli with $\P(Y = 1) = 0.3 + 0.4 = 0.7$,
+so by @exm-variance-bernoulli, $\Var{Y} = 0.7 \cd 0.3 = 0.21$.
+
+:::
+
+{{< slidebreak >}}
+
+::: {#def-precision}
+#### Precision
+
+The **precision** of a random variable $X$, often denoted $\tau(X)$, $\tau_X$, or shorthanded as $\tau$, is
+the inverse of that random variable's [variance](#def-variance)
+(for $\Var{X} > 0$); that is:
+
+$$\tau(X) \eqdef \inv{\Var{X}}$$
+:::
+
+{{< slidebreak >}}
+
+:::{#def-sd}
+#### Standard deviation
+
+The **standard deviation** of a random variable $X$
+is the square root of the [variance](#def-variance) of $X$:
+
+$$\SD{X} \eqdef \sqrt{\Var{X}}$$
+
+:::
+
+::: notes
+
+The standard deviation is on the same scale as $X$ itself
+(unlike the variance, which is on the scale of $X$'s square),
+which is why it is often the preferred measure of spread when reporting results.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-sd}
+#### Precision and standard deviation of a fair coin flip
+
+In @exm-variance-bernoulli, a fair coin flip has $\Var{X} = 1/4$,
+so its precision is $\tau(X) = 1 / (1/4) = 4$
+and its standard deviation is $\SD{X} = \sqrt{1/4} = 1/2$.
+
+:::

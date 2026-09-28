@@ -1,0 +1,544 @@
+<!-- The Fubini-Tonelli link points at rme until mds's multi-page site is published; repoint it to mds's calculus page (calculus.html#thm-fubini-tonelli) then. -->
+
+For expectations, we use the measure-theoretic form of the
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli)
+[@billingsley1995probability, Theorem 18.3],
+which lets us exchange the order of integration (or summation)
+over a product of $\sigma$-finite measure spaces,
+provided the integrand is non-negative (Tonelli)
+or absolutely integrable (Fubini).
+Lebesgue measure on the real line and counting measure on a countable set
+are both $\sigma$-finite,
+which gives the theorem a form stated in terms of a joint distribution.
+
+{{< slidebreak >}}
+
+:::{#cor-fubini-joint}
+
+#### Joint-distribution form (without independence; corollary of Fubini--Tonelli)
+
+Let $(X, Y)$ be jointly distributed random variables
+whose joint distribution has a density $f_{X,Y}$
+with respect to a product of $\sigma$-finite reference measures
+$\mu_X \otimes \mu_Y$ on $\rangef{X} \times \rangef{Y}$,
+and let $h : \rangef{X} \times \rangef{Y} \to \mathbb{R}$ be measurable.
+If either
+
+(a) $h(X, Y) \ge 0$ almost surely, or
+
+(b) $\E{\abs{h(X, Y)}} < \infty$,
+
+then the expectation of $h(X, Y)$ can be written as an iterated integral
+against $f_{X,Y}$, with the order of integration exchangeable:
+
+$$
+\ba
+\E{h(X, Y)}
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} h(x, y)\,f_{X,Y}(x, y)\,d\mu_Y(y)}\,d\mu_X(x)
+\\&= \int_{\rangef{Y}}\paren{\int_{\rangef{X}} h(x, y)\,f_{X,Y}(x, y)\,d\mu_X(x)}\,d\mu_Y(y).
+\ea
+$$
+
+The choice of reference measures covers three cases:
+
+- **Both continuous:** $\mu_X = \mu_Y = \text{Lebesgue measure}$;
+  $f_{X,Y}$ is the joint probability density function (PDF),
+  and $\int g(x)\,d\mu_X(x) = \int g(x)\,dx$.
+- **Both discrete:** $\mu_X = \mu_Y = \text{counting measure}$;
+  $f_{X,Y}(x,y) = \P(X = x,\, Y = y)$ is the joint probability mass function (PMF),
+  and $\int g(x)\,d\mu_X(x) = \sum_{x \in \rangef{X}} g(x)$.
+- **Mixed** (one continuous, one discrete):
+  one reference measure is Lebesgue and the other is counting;
+  $f_{X,Y}$ is the [joint density-mass function](random-variables.qmd#def-joint-density-mass),
+  $f_{X,Y}(x,y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)$
+  (or $\P(X = x \mid Y = y)\,f_Y(y)$ if $X$ is discrete and $Y$ continuous),
+  and the iterated integrals combine an ordinary integral with a sum.
+  The conditional densities/PMFs here are defined the same way as in
+  @def-cond-mixed, just conditioning on $Y$ instead of $X$.
+
+:::
+
+::: proof
+Apply Fubini--Tonelli with
+$\mu_1 = \mu_X$ and $\mu_2 = \mu_Y$ to the integrand
+$h(x,y)\,f_{X,Y}(x,y)$ on $\rangef{X} \times \rangef{Y}$.
+Lebesgue measure and counting measure on a countable set are each
+$\sigma$-finite, so $\mu_X \otimes \mu_Y$ is $\sigma$-finite in all three cases.
+The relevant condition is (a) when $h \ge 0$ and
+(b) when $\E{\abs{h(X, Y)}} < \infty$.
+Independence is not required.
+When $X$ and $Y$ are independent,
+$f_{X,Y}(x,y) = f_X(x)\,f_Y(y)$
+(or $\P(X=x,Y=y) = \P(X=x)\,\P(Y=y)$ in the discrete case),
+and the iterated integrals factor into separate integrals over the marginals.
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-fubini-prob}
+
+#### Expectation of a product of independent variables
+
+Let $X \sim \mathrm{Uniform}(0, 1)$ and $Y \sim \mathrm{Uniform}(0, 2)$,
+independently distributed.
+Compute $\E{XY}$.
+
+We apply @cor-fubini-joint (both-continuous case) with $h(x, y) = xy$.
+Since $X$ and $Y$ are independent with densities $f_X(x) = 1$ on $[0,1]$
+and $f_Y(y) = \tfrac{1}{2}$ on $[0,2]$,
+the joint density factors as $f_{X,Y}(x,y) = f_X(x)\,f_Y(y) = \tfrac{1}{2}$,
+and $\mu_X = \mu_Y = \text{Lebesgue measure}$:
+
+$$
+\ba
+\E{XY}
+&= \int_0^1 \paren{\int_0^2 xy \cd \tfrac{1}{2}\,dy}\,dx
+&& \text{(joint-distribution form of Fubini--Tonelli)}
+\\&= \int_0^1 x\paren{\frac{1}{2}\int_0^2 y\,dy}\,dx
+&& \text{(factor constants out of the inner integral)}
+\\&= \int_0^1 x \cd \frac{1}{2} \cd \sb{\frac{y^2}{2}}_0^2\,dx
+&& \text{(antiderivative of } y \text{)}
+\\&= \int_0^1 x \cd \frac{1}{2} \cd 2\,dx
+&& \text{(evaluate at the bounds)}
+\\&= \int_0^1 x\,dx
+&& \text{(simplify)}
+\\&= \frac{1}{2}
+&& \text{(integrate)}
+\ea
+$$
+
+As a check: $\E{X} = \tfrac{1}{2}$, $\E{Y} = 1$, and $\E{X}\E{Y} = \tfrac{1}{2}$.
+
+:::
+
+{{< slidebreak >}}
+
+::::{#exm-fubini-prob-fail}
+
+#### When independence fails: a counterexample
+
+Correctly applying @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$
+--- not the product of marginals $f_X(x)\,f_Y(y)$,
+which is valid only when $X$ and $Y$ are independent.
+Using the wrong joint density gives the wrong answer.
+
+Let $X \sim \mathrm{Uniform}(0, 1)$ and set $Y = X$
+(so $X$ and $Y$ are perfectly correlated and **not** independent).
+
+**True expectation:**
+
+$$
+\ba
+\E{XY}
+&= \E{X \cd X}
+&& \text{(} Y = X \text{)}
+\\&= \E{X^2}
+&& \text{(} X \cd X = X^2 \text{)}
+\\&= \int_0^1 x^2\,dx
+&& \text{(LOTUS, with the uniform density } 1 \text{ on } [0, 1] \text{)}
+\\&= \frac{1}{3}
+&& \text{(integrate)}
+\ea
+$$
+
+**Erroneously applying the product-measure formula:**
+
+Note that Fubini--Tonelli's own conditions still hold here ($h(x,y) = xy$
+is nonnegative and integrable), so the error is not a failure of
+Fubini--Tonelli itself.
+Rather, the error is using the *wrong measure*: the joint distribution
+of $(X, X)$ is concentrated on the diagonal
+$\{(x, x) : x \in [0, 1]\} \subset [0, 1]^2$,
+which has Lebesgue measure zero in $\mathbb{R}^2$.
+The joint distribution is therefore **not** absolutely continuous with
+respect to two-dimensional Lebesgue measure, so **no joint density
+$f_{X,Y}$ on $[0, 1]^2$ exists**, which is the reference density
+@cor-fubini-joint requires.
+
+The following calculation is what someone would *erroneously* write
+if they assumed independence and used $f_X(x)\,f_Y(y)$ as a "joint density"
+--- a function that does not in fact correspond to the joint distribution of $(X, X)$.
+The marginals $X \sim \mathrm{Uniform}(0,1)$ and $Y \sim \mathrm{Uniform}(0,1)$
+do have densities $f_X = f_Y = 1$,
+but the *product* $f_X(x)\,f_Y(y) = 1$ on $[0, 1]^2$
+is the density of an *independent* pair, not of $(X, X)$:
+
+$$
+\ba
+\int_0^1\!\int_0^1 xy \cd f_X(x) \cd f_Y(y)\,dy\,dx
+&= \int_0^1\!\int_0^1 xy\,dy\,dx
+&& \text{(} f_X(x)\,f_Y(y) = 1 \text{ on } [0, 1]^2 \text{)}
+\\&= \int_0^1 x\paren{\int_0^1 y\,dy}\,dx
+&& \text{(factor } x \text{ out of the inner integral)}
+\\&= \int_0^1 x \cd \frac{1}{2}\,dx
+&& \text{(} \textstyle\int_0^1 y\,dy = \tfrac{1}{2} \text{)}
+\\&= \frac{1}{4}
+&& \text{(} \textstyle\int_0^1 \tfrac{x}{2}\,dx = \tfrac{1}{4} \text{)}
+\ea
+$$
+
+This calculation recovers $\E{XY}$ for *independent* uniforms ($\tfrac{1}{4}$),
+not $\E{XX}$ for the perfectly correlated pair ($\tfrac{1}{3}$).
+The lesson is that @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$.
+For independent $(X, Y)$, this density factors as $f_X(x)\,f_Y(y)$;
+for dependent $(X, Y)$, $f_{X,Y}$ need not factor
+--- and for $(X, X)$, no joint density on $\mathbb{R}^2$ exists at all,
+so @cor-fubini-joint simply does not apply.
+
+:::{#fig-fubini-prob-fail}
+
+```{r}
+#| code-fold: true
+#| message: false
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
+set.seed(204)
+n <- 400
+x_dep <- runif(n)
+y_dep <- x_dep
+x_ind <- runif(n)
+y_ind <- runif(n)
+
+plotly::plot_ly() |>
+  plotly::add_trace(
+    type = "scatter", mode = "markers",
+    x = x_ind, y = y_ind,
+    name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
+    marker = list(size = 5, color = "#999999", opacity = 0.5)
+  ) |>
+  plotly::add_trace(
+    type = "scatter", mode = "markers",
+    x = x_dep, y = y_dep,
+    name = "Actual (X, X) on diagonal",
+    marker = list(size = 6, color = "#b40426")
+  ) |>
+  plotly::layout(
+    xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
+    yaxis = list(title = "y", range = c(0, 1)),
+    legend = list(orientation = "h", y = -0.2)
+  )
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+
+cat(
+  "*(This scatter plot is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
+```
+
+Samples from the joint distribution of $(X, X)$ (red, on the diagonal)
+versus an independent pair $(X_1, X_2)$ with the same marginals
+(grey, scattered over $[0, 1]^2$).
+The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal
+--- a set of Lebesgue measure zero in $\mathbb{R}^2$ ---
+so no joint density on $[0, 1]^2$ exists,
+and the "$f_X(x)\,f_Y(y) = 1$" calculation integrates against the wrong measure
+(the grey distribution).
+
+:::
+
+::::
+
+{{< slidebreak >}}
+
+::::{#exm-fubini-joint}
+
+#### Both-continuous case: joint PDF on a non-rectangular support
+
+Let $(X, Y)$ have joint density
+$f_{X,Y}(x, y) = 2$ for $0 \le x \le y \le 1$
+(and $0$ otherwise).
+Compute $\E{X + Y}$.
+
+By @cor-fubini-joint:
+
+$$
+\ba
+\E{X + Y}
+&= \int_0^1\!\int_0^y (x + y) \cd 2\,dx\,dy
+&& \text{(joint-distribution form of Fubini--Tonelli, over the support } 0 \le x \le y \le 1 \text{)}
+\\&= 2\int_0^1 \sb{\frac{x^2}{2} + xy}_{x=0}^{x=y}\,dy
+&& \text{(antiderivative in } x \text{)}
+\\&= 2\int_0^1 \paren{\frac{y^2}{2} + y^2}\,dy
+&& \text{(evaluate at the bounds)}
+\\&= 2\int_0^1 \frac{3y^2}{2}\,dy
+&& \text{(add)}
+\\&= 3\int_0^1 y^2\,dy
+&& \text{(simplify the constant)}
+\\&= 3 \cd \frac{1}{3}
+&& \text{(integrate)}
+\\&= 1
+&& \text{(multiply)}
+\ea
+$$
+
+:::{#fig-fubini-joint}
+
+```{r}
+#| code-fold: true
+#| message: false
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
+n_grid <- 51
+x_seq <- seq(0, 1, length.out = n_grid)
+y_seq <- seq(0, 1, length.out = n_grid)
+
+z_mat <- outer(x_seq, y_seq, function(x, y) {
+  z <- rep(2, length(x))
+  z[x > y] <- NA
+  z
+})
+
+plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
+  plotly::add_surface(showscale = FALSE) |>
+  plotly::layout(scene = list(
+    xaxis = list(title = "x"),
+    yaxis = list(title = "y"),
+    zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
+    camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
+  ))
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+
+cat(
+  "*(This 3D surface is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
+```
+
+Joint density $f_{X,Y}(x, y) = 2$ on the triangular support
+$\{(x, y) : 0 \le x \le y \le 1\}$, and zero elsewhere.
+The total "volume" under the density is $2 \cdot \tfrac{1}{2} = 1$, as required.
+
+:::
+
+::::
+
+{{< slidebreak >}}
+
+:::{#thm-lie}
+#### Law of iterated expectations
+
+For any two random variables $X$ and $Y$ with $\E{\abs{Y}} < \infty$:
+
+$$\E{Y} = \E{\E{Y \mid X}}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+**Discrete case.**
+When $X$ and $Y$ are discrete,
+applying @def-expectation to $\E{\E{Y \mid X}}$
+and then the [law of total probability](probability-basics.qmd#thm-total-prob)
+applied to the countable partition $\{X = x : x \in \rangef{X}\}$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x} \cd \P(X=x) && \text{(LOTUS for the function } x \mapsto \E{Y \mid X=x} \text{)}
+\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x)} \cd \P(X=x) && \text{(definition of conditional expectation } \E{Y \mid X=x} \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x) \cd \P(X=x) && \text{(exchange order of summation: Fubini, since } \E{\abs{Y}} < \infty \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y) && \text{(law of total probability over } X \text{)}
+\\&= \E{Y} && \text{(definition of expectation of } Y \text{)}
+\ea
+$$
+
+**Continuous case.**
+When $X$ and $Y$ are continuous:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \int_{x \in \rangef{X}} \E{Y \mid X=x} \cd \p(X=x)\, dx
+&& \text{(LOTUS)}
+\\&= \int_{x \in \rangef{X}} \paren{\int_{y \in \rangef{Y}} y \cd \p(Y=y \mid X=x)\, dy} \cd \p(X=x)\, dx
+&& \text{(definition of conditional expectation)}
+\\&= \int_{x \in \rangef{X}} \int_{y \in \rangef{Y}} y \cd \p(X=x, Y=y)\, dy\, dx
+&& \text{(definition of conditional density: } \p(Y=y \mid X=x)\,\p(X=x) = \p(X=x, Y=y) \text{)}
+\\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(X=x, Y=y)\, dx}\, dy
+&& \text{(Fubini's theorem, since } \E{\abs{Y}} < \infty \text{)}
+\\&= \int_{y \in \rangef{Y}} y \cd \p(Y=y)\, dy
+&& \text{(marginal density from a joint density)}
+\\&= \E{Y}
+&& \text{(definition of expectation)}
+\ea
+$$
+
+**Mixed case, $X$ discrete and $Y$ continuous.**
+With the [joint density-mass function](random-variables.qmd#def-joint-density-mass)
+$\p(X = x,\, Y = y)$,
+@cor-fubini-joint applies with $h(x, y) = y$,
+counting measure for $X$, and Lebesgue measure for $Y$;
+its condition (b) holds because $\E{\abs{Y}} < \infty$.
+The sum runs over the $x$ with $\P(X = x) > 0$,
+where @def-cond-mixed defines $\E{Y \mid X = x}$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \sum_{x} \E{Y \mid X=x} \cd \P(X=x)
+&& \text{(LOTUS, discrete case)}
+\\&= \sum_{x} \paren{\int_{y} y \cd \p(Y=y \mid X=x)\,dy} \cd \P(X=x)
+&& \text{(definition of conditional expectation, mixed case)}
+\\&= \sum_{x} \int_{y} y \cd \p(Y=y \mid X=x) \cd \P(X=x)\,dy
+&& \text{(move the constant } \P(X=x) \text{ inside the integral)}
+\\&= \sum_{x} \int_{y} y \cd \p(X=x,\, Y=y)\,dy
+&& \text{(definition of the conditional density, mixed case)}
+\\&= \E{Y}
+&& \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)}
+\ea
+$$
+
+**Mixed case, $X$ continuous and $Y$ discrete.**
+The same steps apply with the integral and the sum swapped,
+over the $x$ with $\p(X = x) > 0$;
+at any other $x$, $\p(X = x,\, Y = y) = 0$ for every $y$,
+because these non-negative terms sum to $\p(X = x)$:
+
+$$
+\ba
+\E{\E{Y \mid X}}
+&= \int_{x} \E{Y \mid X=x} \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)}
+\\&= \int_{x} \paren{\sum_{y} y \cd \P(Y=y \mid X=x)} \cd \p(X=x)\,dx
+&& \text{(definition of conditional expectation, mixed case)}
+\\&= \int_{x} \sum_{y} y \cd \P(Y=y \mid X=x) \cd \p(X=x)\,dx
+&& \text{(move the constant } \p(X=x) \text{ inside the sum)}
+\\&= \int_{x} \sum_{y} y \cd \p(X=x,\, Y=y)\,dx
+&& \text{(definition of the conditional PMF, mixed case)}
+\\&= \E{Y}
+&& \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)}
+\ea
+$$
+
+:::
+
+::: notes
+
+Alternate names for this identity include:
+the **tower rule**,
+the **tower property**,
+the **law of total expectation**,
+and the **smoothing theorem**.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-conditional-lie}
+#### Conditional law of iterated expectations
+
+For random variables $X$, $Y$, and $Z$ with $\E{\abs{Y}} < \infty$:
+
+$$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+Fix a value $z$ with positive probability (discrete case) or positive density (continuous case).
+Conditioning every probability on $Z = z$ gives a probability measure,
+and the proof of @thm-lie goes through under it, line by line.
+
+**Discrete case.**
+
+$$
+\ba
+\E{\E{Y \mid X,Z} \mid Z=z}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \P(X=x \mid Z=z) && \text{(expectation given } Z=z \text{)}
+\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x,Z=z)} \cd \P(X=x \mid Z=z) && \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x,Z=z) \cd \P(X=x \mid Z=z) && \text{(exchange order of summation)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid Z=z) && \text{(law of total probability given } Z=z \text{)}
+\\&= \E{Y \mid Z=z} && \text{(definition of conditional expectation given } Z=z \text{)}
+\ea
+$$
+
+**Continuous case.**
+
+$$
+\ba
+\E{\E{Y \mid X,Z} \mid Z=z}
+&= \int_{x} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
+&& \text{(expectation given } Z=z \text{)}
+\\&= \int_{x} \paren{\int_{y} y \cd \p(Y=y \mid X=x,Z=z)\, dy} \cd \p(X=x \mid Z=z)\, dx
+&& \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
+\\&= \int_{x} \int_{y} y \cd \p(X=x, Y=y \mid Z=z)\, dy\, dx
+&& \text{(product of conditional densities is the joint conditional density)}
+\\&= \int_{y} y \cd \paren{\int_{x} \p(X=x, Y=y \mid Z=z)\, dx}\, dy
+&& \text{(Fubini's theorem)}
+\\&= \int_{y} y \cd \p(Y=y \mid Z=z)\, dy
+&& \text{(marginalize over } x \text{)}
+\\&= \E{Y \mid Z=z}
+&& \text{(definition of conditional expectation given } Z=z \text{)}
+\ea
+$$
+
+Since the two sides agree at every such $z$,
+they agree as random variables (functions of $Z$):
+$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$.
+
+:::
+
+::: notes
+
+This identity is the tower rule
+applied conditionally on $Z$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-lie}
+
+#### Marginal expectation from conditional expectations
+
+Suppose $X$ is a binary random variable indicating treatment assignment ($X=1$ treated, $X=0$ control),
+with $\P(X=1) = 0.5$,
+and suppose the outcome $Y$ has conditional expectations:
+
+$$\E{Y \mid X=1} = 10, \quad \E{Y \mid X=0} = 6$$
+
+By the law of iterated expectations (@thm-lie):
+
+$$
+\ba
+\E{Y}
+&= \E{\E{Y \mid X}}
+&& \text{(law of iterated expectations)}
+\\&= \E{Y \mid X=1} \cd \P(X=1) + \E{Y \mid X=0} \cd \P(X=0)
+&& \text{(LOTUS over the two values of } X \text{)}
+\\&= 10 \cd 0.5 + 6 \cd 0.5
+&& \text{(substitute)}
+\\&= 5 + 3
+&& \text{(multiply)}
+\\&= 8
+&& \text{(add)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-disc-infinite.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-mixed.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-fubini-joint-mixed-infinite.qmd >}}

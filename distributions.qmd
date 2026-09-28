@@ -1,0 +1,22 @@
+---
+title: "Key distributions"
+format:
+  html: default
+  revealjs:
+    output-file: distributions-slides.html
+  pdf:
+    output-file: distributions-handout.pdf
+  docx:
+    output-file: distributions.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+[]{#sec-distributions}
+
+{{< include pds/_subfiles/_sec-distributions.qmd >}}
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

@@ -1,0 +1,104 @@
+:::{#exr-fubini-joint-mixed-infinite}
+
+#### Mixed case, infinite discrete support
+
+Let $Y$ be Geometric on $\{0, 1, 2, \dots\}$
+with $\P(Y = y) = (1-q)\,q^y$ for a fixed $q \in (0, 1)$ and,
+given $Y = y$, let $X \mid Y = y \sim \mathrm{Uniform}(0,\, y+1)$.
+Unlike @exr-fubini-joint-mixed, $Y$'s range here is countably infinite.
+
+Compute $\E{X}$.
+
+:::
+
+::: {.solution}
+
+Compute $\E{X}$ using @cor-fubini-joint with $\mu_X = \text{Lebesgue measure}$,
+$\mu_Y = \text{counting measure}$, and $h(x, y) = x$.
+
+The joint density w.r.t. Lebesgue $\times$ counting measure is
+$f_{X,Y}(x, y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)
+= \frac{(1-q)\,q^y}{y+1}$ for $x \in [0, y+1]$.
+
+Since $h(x, y) = x \ge 0$ on this support, condition (a) holds,
+so @cor-fubini-joint (via Tonelli's theorem) guarantees the now-infinite
+sum-of-integrals expression is valid --- unlike in @exr-fubini-joint-mixed,
+this Fubini--Tonelli justification is required because the sum is infinite rather than finite.
+
+By @cor-fubini-joint (mixed case):
+
+$$
+\ba
+\E{X}
+&= \sum_{y=0}^{\infty} \int_0^{y+1} x\,f_{X,Y}(x,\,y)\,dx
+&& \text{(joint-distribution form of Fubini--Tonelli, mixed case)}
+\\&= \sum_{y=0}^{\infty} \frac{(1-q)\,q^y}{y+1} \int_0^{y+1} x\,dx
+&& \text{(} f_{X,Y}(x, y) \text{ is constant in } x \text{ on } [0, y+1] \text{)}
+\\&= \sum_{y=0}^{\infty} \frac{(1-q)\,q^y}{y+1} \cd \frac{(y+1)^2}{2}
+&& \text{(integrate)}
+\\&= \frac{1-q}{2} \sum_{y=0}^{\infty} (y+1)\,q^y
+&& \text{(cancel } y + 1 \text{; factor out } \tfrac{1-q}{2} \text{)}
+\\&= \frac{1-q}{2} \paren{\sum_{y=0}^{\infty} y\,q^y + \sum_{y=0}^{\infty} q^y}
+&& \text{(split the sum)}
+\\&= \frac{1-q}{2} \paren{\frac{q}{(1-q)^2} + \frac{1}{1-q}}
+&& \text{(geometric-series facts)}
+\\&= \frac{1-q}{2} \cd \frac{q + (1-q)}{(1-q)^2}
+&& \text{(common denominator)}
+\\&= \frac{1-q}{2} \cd \frac{1}{(1-q)^2}
+&& \text{(simplify the numerator)}
+\\&= \frac{1}{2(1-q)}
+&& \text{(cancel } 1 - q \text{)}
+\ea
+$$
+
+using the same geometric-series facts as @exr-fubini-joint-disc-infinite
+(e.g. @CaseBerg01).
+
+As a check using the law of iterated expectations (@thm-lie)
+and the expectation of a linear function (@cor-linearity-affine):
+$\E{X \mid Y=y} = \frac{y+1}{2}$ (the mean of $\mathrm{Uniform}(0,y+1)$)
+and $\E{Y} = \frac{q}{1-q}$ (the mean of this Geometric distribution;
+@CaseBerg01), so:
+
+$$
+\ba
+\E{X} &= \E{\E{X \mid Y}}
+&& \text{(law of iterated expectations)}
+\\&= \E{\frac{Y+1}{2}}
+&& \text{(} \E{X \mid Y = y} = \tfrac{y+1}{2} \text{)}
+\\&= \frac{\E{Y} + 1}{2}
+&& \text{(expectation of a linear function of one random variable)}
+\\&= \frac{1}{2}\paren{\frac{q}{1-q} + 1}
+&& \text{(substitute } \E{Y} \text{)}
+\\&= \frac{1}{2} \cd \frac{q + (1-q)}{1-q}
+&& \text{(common denominator)}
+\\&= \frac{1}{2(1-q)}
+&& \text{(simplify the numerator)}
+\ea
+$$
+
+matching.
+
+```{r}
+#| code-fold: true
+#| message: false
+
+q <- 0.5
+exact_ex <- 1 / (2 * (1 - q))
+
+n_trunc <- 2000
+y_vals <- 0:n_trunc
+py_vals <- (1 - q) * q^y_vals
+cond_mean_x <- (y_vals + 1) / 2
+trunc_ex <- sum(cond_mean_x * py_vals)
+
+pander::pander(data.frame(
+  quantity = c("exact (closed form)", "truncated sum-of-integrals"),
+  value = round(c(exact_ex, trunc_ex), 6)
+))
+```
+
+With $q = `r q`$, the truncated sum-of-integrals matches the closed form
+$\frac{1}{2(1-q)} = `r round(exact_ex, 4)`$.
+
+:::

@@ -1,0 +1,19 @@
+---
+title: "Independence"
+format:
+  html: default
+  revealjs:
+    output-file: independence-slides.html
+  pdf:
+    output-file: independence-handout.pdf
+  docx:
+    output-file: independence.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+[]{#sec-independence}
+
+<!-- No slidebreak here: the heading shares its slide with the def-indpt div. -->
+
+{{< include pds/_subfiles/_def-independence.qmd >}}

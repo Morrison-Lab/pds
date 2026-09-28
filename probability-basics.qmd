@@ -1,0 +1,43 @@
+---
+title: "Probability basics"
+format:
+  html: default
+  revealjs:
+    output-file: probability-basics-slides.html
+  pdf:
+    output-file: probability-basics-handout.pdf
+  docx:
+    output-file: probability-basics.docx
+---
+
+## Defining probabilities
+
+{{< include latex-macros/macros.qmd >}}
+
+[]{#sec-prob-axioms}
+
+<!-- No slidebreak here: the heading shares its slide with the def-sample-space div. -->
+
+{{< include pds/_subfiles/_def-sample-space.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-probability.qmd >}}
+
+## Conditional probability
+
+<!-- No slidebreak here: the heading shares its slide with the def-conditional-prob div. -->
+
+{{< include pds/_subfiles/_def-conditional-prob.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-law-conditional-prob.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-total-prob.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-bayes.qmd >}}

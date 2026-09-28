@@ -1,0 +1,62 @@
+---
+title: "Random variables"
+format:
+  html: default
+  revealjs:
+    output-file: random-variables-slides.html
+  pdf:
+    output-file: random-variables-handout.pdf
+  docx:
+    output-file: random-variables.docx
+---
+
+## Random variables {#sec-random-variables}
+
+{{< include latex-macros/macros.qmd >}}
+
+<!-- No slidebreak here: the heading shares its slide with the def-random-variable div. -->
+
+{{< include pds/_subfiles/_def-random-variable.qmd >}}
+
+## Characteristics of probability distributions
+
+<!-- No slidebreak here: the heading shares its slide with the def-pmf div. -->
+
+{{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
+
+## Survival, hazard, and cumulative hazard functions {#sec-prob-haz}
+
+<!-- No slidebreak here: the heading shares its slide with the def-surv-fn div. -->
+
+{{< include pds/_subfiles/_def-surv-fn.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-hazard.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-hazard-dens-surv.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-cuhaz.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sec-survival-dist-fns.qmd >}}
+
+{{< slidebreak >}}
+
+For a continuous random variable $T \ge 0$
+whose density is continuous at all but finitely many points,
+@thm-survival-expressions-1, @thm-hazard-dens-surv, and @cor-surv-int-haz
+connect the functions in @tbl-prob-dist-fns;
+each arrow in the following diagram converts one function into the next:
+
+{{< include pds/_subfiles/_surv-diagram.qmd >}}
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

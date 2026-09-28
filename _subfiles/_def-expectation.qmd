@@ -1,0 +1,186 @@
+:::{#def-expectation}
+#### Expectation, expected value, population mean
+
+The **expectation**, **expected value**, or **population mean** of a
+*discrete* random variable $X$, denoted $\E{X}$, $\mu(X)$, or $\mu_X$,
+is the mean of $X$'s possible values,
+weighted by the [probability mass function](random-variables.qmd#def-pmf) of those values:
+
+$$\E{X} \eqdef \sum_{x \in \rangef{X}} x \cdot \P(X=x)$$
+
+The **expectation** of a *continuous* random variable $X$
+with [probability density function](random-variables.qmd#def-pdf) $\p(X=x)$
+is the mean of $X$'s possible values, weighted by that density:
+
+$$\E{X} \eqdef \int_{x\in \rangef{X}} x \cdot \p(X=x)\,dx$$
+
+In both cases, the expectation is defined
+only when the sum or integral converges absolutely,
+that is, when it is finite with $\abs{x}$ in place of $x$.
+
+:::
+
+::: notes
+
+A random variable whose expectation is not defined is not exotic:
+a random variable with density $\p(X=x) = \frac{1}{\pi(1 + x^2)}$
+(the standard Cauchy distribution) has none,
+because $\int_{-\infty}^{\infty} \abs{x} \cd \frac{1}{\pi(1 + x^2)}\,dx$ diverges.
+
+See also <https://en.wikipedia.org/wiki/Expected_value>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-bernoulli-mean}
+#### Expectation of the Bernoulli distribution
+
+If $X \sim \Ber(\pi)$ ([Bernoulli distribution](random-variables.qmd#def-bernoulli)),
+that is, $\P(X = 1) = \pi$ and $\P(X = 0) = 1 - \pi$, then:
+
+$$\E{X} = \pi$$
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+$$
+\ba
+\E{X}
+&= \sum_{x\in \rangef{X}} x \cd \P(X=x) && \text{(definition of expectation for discrete r.v.)}
+\\&= \sum_{x\in \set{0,1}} x \cd \P(X=x) && \text{(range of Bernoulli r.v. is } \{0, 1\} \text{)}
+\\&= \paren{0 \cd \P(X=0)} + \paren{1 \cd \P(X=1)} && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
+\\&= \paren{0 \cd (1-\pi)} + \paren{1 \cd \pi} && \text{(substitute Bernoulli PMF values)}
+\\&= 0 + \pi && \text{(multiplication by 0 and 1)}
+\\&= \pi && \text{(addition of 0)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-surv-mean}
+#### Expectation of time-to-event variables
+
+If $T$ is a non-negative random variable
+with [survival function](random-variables.qmd#def-surv-fn) $\surv(t)$
+and a defined expectation, then:
+
+$$\E{T} = \int_{t=0}^{\infty} \surv(t)\,dt$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+<!-- The Fubini-Tonelli link points at rme until mds's multi-page site is published; repoint it to mds's calculus page (calculus.html#thm-fubini-tonelli) then. -->
+
+We prove the continuous case, in which $T$ has a density $\pdf$.
+The integrand $\pdf(u) \cd \indicp{0 \le t \le u}$ is non-negative
+on $[0, \infty) \times [0, \infty)$,
+so Tonelli's theorem
+(the non-negative case of the
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3)
+lets us exchange the order of integration:
+
+$$
+\ba
+\E{T}
+&= \int_{u=0}^{\infty} u\,\pdf(u)\,du
+&& \text{(definition of expectation; } T \ge 0 \text{)}\\
+&= \int_{u=0}^{\infty}\paren{\int_{t=0}^{u} 1\,dt}\pdf(u)\,du
+&& \text{(} u = \textstyle\int_0^u 1\,dt \text{)}\\
+&= \int_{u=0}^{\infty}\int_{t=0}^{u} \pdf(u)\,dt\,du
+&& \text{(move } \pdf(u) \text{ inside the inner integral)}\\
+&= \int_{t=0}^{\infty}\int_{u=t}^{\infty} \pdf(u)\,du\,dt
+&& \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\
+&= \int_{t=0}^{\infty}\Pr(T>t)\,dt
+&& \text{(integrate the density over } (t, \infty) \text{)}\\
+&= \int_{t=0}^{\infty}\surv(t)\,dt
+&& \text{(definition of the survival function)}
+\ea
+$$
+
+Every step also holds when $\int_{u=0}^{\infty} u\,\pdf(u)\,du$ is infinite,
+because Tonelli's theorem needs only a non-negative integrand;
+so $\int_{t=0}^{\infty} \surv(t)\,dt$ is finite exactly when $\E{T}$ is defined.
+
+See [@statproofbook:mean-nnrvar] for an alternative presentation of this proof.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-fubini-survfn}
+
+#### Mean of an exponential random variable via survival function
+
+Let $T$ be [exponential](random-variables.qmd#def-exponential) with rate $\lambda > 0$, so $\surv(t) = \ef{-\lambda t}$
+for $t \ge 0$,
+as computed on the [random variables page](random-variables.qmd#exm-exp-survfn).
+By @thm-surv-mean:
+
+$$
+\ba
+\E{T}
+&= \int_0^\infty \surv(t)\,dt
+&& \text{(expectation via the survival function)}\\
+&= \int_0^\infty \ef{-\lambda t}\,dt
+&& \text{(substitute the survival function)}\\
+&= \sb{-\frac{1}{\lambda}\ef{-\lambda t}}_0^\infty
+&& \text{(antiderivative)}\\
+&= 0 - \paren{-\frac{1}{\lambda}}
+&& \text{(evaluate at the bounds)}\\
+&= \frac{1}{\lambda}
+&& \text{(simplify)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-expectation-matrix}
+
+#### Expectation of a random matrix
+
+For a random matrix $\matr{A}$ of size $m \times n$
+with $(i,j)$-th element $A_{ij}$,
+the **expectation** $\Expp\matr{A}$ is the $m \times n$ matrix
+whose $(i,j)$-th element is $\E{A_{ij}}$:
+
+$$
+\Expp\matr{A} \eqdef \pmat{
+  \E{A_{11}} & \E{A_{12}} & \cdots & \E{A_{1n}} \\
+  \E{A_{21}} & \E{A_{22}} & \cdots & \E{A_{2n}} \\
+  \vdots     & \vdots     & \ddots & \vdots     \\
+  \E{A_{m1}} & \E{A_{m2}} & \cdots & \E{A_{mn}}
+}
+$$
+
+:::
+
+::: notes
+
+In other words, expectation is applied **element-wise** to a random matrix.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-expectation-matrix}
+#### Expectation of a random vector of coin flips
+
+For the two fair coin flips in [the independence page's example](independence.qmd#exm-indpt),
+the random vector $\vX = \tp{(X_1, X_2)}$ is a $2 \times 1$ random matrix, and:
+
+$$\Expp\vX = \pmat{\E{X_1} \\ \E{X_2}} = \pmat{1/2 \\ 1/2}$$
+
+since each $X_i$ is Bernoulli with $\pi = 1/2$ (@thm-bernoulli-mean).
+
+:::

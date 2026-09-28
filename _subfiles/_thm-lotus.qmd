@@ -1,0 +1,248 @@
+:::{#thm-lotus}
+#### Law of the Unconscious Statistician (LOTUS)
+
+**Discrete case.**
+For any function $g$ of a *discrete* random variable $X$:
+
+$$\E{g(X)} = \sum_{x \in \rangef{X}} g(x) \cd \P(X=x)$$
+
+**Continuous case.**
+For any function $g$ of a *continuous* random variable $X$ with density $\p(X=x)$:
+
+$$\E{g(X)} = \int_{x \in \rangef{X}} g(x) \cd \p(X=x)\, dx$$
+
+:::
+
+::: proof
+
+We prove the discrete case.
+Let $Y = g(X)$.
+For each $y \in \rangef{Y}$, the event $\{Y = y\}$ is the disjoint union
+of the events $\{X = x\}$ over the values $x$ with $g(x) = y$,
+and each $x \in \rangef{X}$ belongs to exactly one such group.
+
+$$
+\ba
+\E{g(X)}
+&= \E{Y} && \text{(substitution } Y = g(X) \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y) && \text{(definition of expectation for discrete r.v.)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{\substack{x \in \rangef{X} \\ g(x) = y}} \P(X=x) && \text{(countable additivity over the disjoint events } \{X = x\} \text{)}
+\\&= \sum_{y \in \rangef{Y}} \sum_{\substack{x \in \rangef{X} \\ g(x) = y}} y \cd \P(X=x) && \text{(distribute } y \text{ into the inner sum)}
+\\&= \sum_{y \in \rangef{Y}} \sum_{\substack{x \in \rangef{X} \\ g(x) = y}} g(x) \cd \P(X=x) && \text{(} y = g(x) \text{ for every term of the inner sum)}
+\\&= \sum_{x \in \rangef{X}} g(x) \cd \P(X=x) && \text{(the groups partition } \rangef{X} \text{)}
+\ea
+$$
+
+The last step regroups a possibly infinite sum,
+which is valid because $\E{g(X)}$ is defined only when the sum converges absolutely.
+
+:::
+
+::: notes
+
+LOTUS says that to compute $\E{g(X)}$,
+we do not need to first find the distribution of $g(X)$;
+we can compute the expectation directly using the distribution of $X$.
+The continuous case is the density-weighted analogue of this argument,
+but a fully rigorous proof needs the general change-of-variables
+theorem for integrals against a pushforward measure --- approximating
+$g$ by simple functions and passing to the limit --- which is beyond
+this page's scope
+[@billingsley1995probability; @gut2013; @CaseBerg01; @wp:lotus].
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-lotus}
+#### Expected value of $X^2$ for a Bernoulli variable
+
+Let $X \sim \Ber(\pi)$.
+By LOTUS (@thm-lotus, discrete case):
+
+$$
+\ba
+\E{X^2}
+&= \sum_{x \in \set{0,1}} x^2 \cd \P(X=x)
+&& \text{(LOTUS, discrete case)} \\
+&= 0^2 \cd \P(X=0) + 1^2 \cd \P(X=1)
+&& \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)} \\
+&= 0^2 \cd (1-\pi) + 1^2 \cd \pi
+&& \text{(substitute Bernoulli PMF values)} \\
+&= 0 + \pi
+&& \text{(simplify each term)} \\
+&= \pi
+&& \text{(add)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-lotus-continuous}
+#### Expected value of $X^2$ for a Uniform(0,1) variable
+
+Let $X \sim \text{Uniform}(0,1)$ ([uniform distribution](random-variables.qmd#def-uniform)),
+so $\p(X=x) = 1$ for $x \in [0,1]$ ([uniform density](random-variables.qmd#exm-pdf)).
+By LOTUS (@thm-lotus, continuous case):
+
+$$
+\ba
+\E{X^2}
+&= \int_0^1 x^2 \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)}
+\\&= \int_0^1 x^2 \cd 1\,dx
+&& \text{(}\p(X=x) = 1\text{ on } [0,1]\text{)}
+\\&= \sb{\frac{x^3}{3}}_0^1
+&& \text{(antiderivative of } x^2\text{)}
+\\&= \frac{1}{3}.
+&& \text{(evaluate at the bounds)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-linearity-expectation}
+#### Linearity of expectation
+
+For random variables $X$ and $Y$ with defined expectations,
+and constants $a$, $b$, and $c$:
+
+$$\E{aX + bY + c} = a\E{X} + b\E{Y} + c$$
+
+:::
+
+::: proof
+
+We prove the discrete case, applying @thm-lotus to the pair $(X, Y)$,
+which is a single discrete random object with values $(x, y)$,
+and $g(x, y) = ax + by + c$:
+
+$$
+\ba
+\E{aX + bY + c}
+&= \sum_{x}\sum_{y} (ax + by + c) \cd \P(X=x, Y=y)
+&& \text{(LOTUS for the pair } (X, Y) \text{)}\\
+&= a\sum_{x}\sum_{y} x \cd \P(X=x, Y=y)
+ + b\sum_{x}\sum_{y} y \cd \P(X=x, Y=y)
+ + c\sum_{x}\sum_{y} \P(X=x, Y=y)
+&& \text{(split the sum; constants factor out)}\\
+&= a\sum_{x}\sum_{y} x \cd \P(X=x, Y=y)
+ + b\sum_{y}\sum_{x} y \cd \P(X=x, Y=y)
+ + c\sum_{x}\sum_{y} \P(X=x, Y=y)
+&& \text{(exchange the order of summation in the second term)}\\
+&= a\sum_{x} x \sum_{y} \P(X=x, Y=y)
+ + b\sum_{y} y \sum_{x} \P(X=x, Y=y)
+ + c \cd 1
+&& \text{(factor } x \text{ and } y \text{ out of the inner sums; total probability is 1)}\\
+&= a\sum_{x} x \cd \P(X=x) + b\sum_{y} y \cd \P(Y=y) + c
+&& \text{(marginalize: countable additivity)}\\
+&= a\E{X} + b\E{Y} + c
+&& \text{(definition of expectation)}
+\ea
+$$
+
+Splitting and exchanging the sums is valid because the sums converge absolutely,
+since $\abs{ax + by + c} \le \abs{a}\abs{x} + \abs{b}\abs{y} + \abs{c}$
+and $\E{X}$ and $\E{Y}$ are defined.
+
+Beyond the discrete case, this proof does not carry over by replacing sums with integrals.
+That replacement would need a joint density for $(X, Y)$,
+and some pairs have none:
+if $X$ is continuous, the pair $(X, X)$ has no joint density.
+In general, expectation is an integral against the probability measure,
+and the theorem is the linearity of that (Lebesgue) integral
+[@billingsley1995probability],
+which is beyond these notes' scope.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-linearity-expectation}
+#### Expected total of two dice
+
+Let $X$ and $Y$ be the results of two six-sided die rolls.
+Each has expectation $\sum_{x=1}^{6} x \cd \tfrac{1}{6} = \tfrac{21}{6} = 3.5$, so:
+
+$$
+\ba
+\E{X + Y}
+&= \E{X} + \E{Y}
+&& \text{(linearity of expectation with } a = b = 1, c = 0 \text{)}\\
+&= 3.5 + 3.5
+&& \text{(substitute)}\\
+&= 7
+&& \text{(add)}
+\ea
+$$
+
+This calculation does not need the rolls to be independent.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-linearity-affine}
+#### Expectation of a linear function of one random variable
+
+For a random variable $X$ with a defined expectation,
+and constants $a$ and $c$:
+
+$$\E{aX + c} = a\E{X} + c$$
+
+:::
+
+::: proof
+
+For discrete $X$, this identity is @thm-linearity-expectation with $b = 0$.
+For continuous $X$ with density $\p(X=x)$,
+apply @thm-lotus with $g(x) = ax + c$:
+
+$$
+\ba
+\E{aX + c}
+&= \int_{x \in \rangef{X}} (ax + c) \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)} \\
+&= a\int_{x \in \rangef{X}} x \cd \p(X=x)\,dx
+ + c\int_{x \in \rangef{X}} \p(X=x)\,dx
+&& \text{(linearity of the integral)} \\
+&= a\E{X} + c\int_{x \in \rangef{X}} \p(X=x)\,dx
+&& \text{(definition of expectation)} \\
+&= a\E{X} + c \cd 1
+&& \text{(a density integrates to 1)} \\
+&= a\E{X} + c
+&& \text{(simplify)}
+\ea
+$$
+
+Splitting the integral is valid because both pieces converge absolutely:
+the first because $\E{X}$ is defined,
+and the second because its integrand is a non-negative density.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-linearity-affine}
+#### Expectation of a rescaled uniform variable
+
+Let $X \sim \text{Uniform}(0,1)$, so $\E{X} = \int_0^1 x\,dx = \tfrac{1}{2}$.
+By @cor-linearity-affine with $a = 2$ and $c = 1$:
+
+$$
+\ba
+\E{2X + 1}
+&= 2\E{X} + 1
+&& \text{(expectation of a linear function)} \\
+&= 2 \cd \tfrac{1}{2} + 1
+&& \text{(substitute } \E{X} = \tfrac{1}{2} \text{)} \\
+&= 2
+&& \text{(evaluate)}
+\ea
+$$
+
+:::

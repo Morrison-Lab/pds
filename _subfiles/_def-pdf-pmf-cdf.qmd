@@ -1,0 +1,831 @@
+:::{#def-pmf}
+#### Probability mass function (PMF)
+
+If $X$ is a [discrete random variable](#def-discrete-rv),
+the **probability mass function** of $X$ at value $x$,
+denoted $f(x)$, $f_X(x)$, $\P(x)$, $\P_X(x)$, or $\P(X=x)$,
+is the probability that $X$ takes exactly the value $x$:
+
+$$\P(X=x) \eqdef \Pr(\{X=x\})$$
+
+:::
+
+::: notes
+
+See also <https://en.wikipedia.org/wiki/Probability_mass_function>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-pmf}
+#### PMF of the number of heads
+
+For the number of heads $X$ in two fair coin flips
+(@exm-random-variable):
+
+$$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-bernoulli}
+#### Bernoulli distribution
+
+A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi \in [0, 1]$,
+written $X \sim \Ber(\pi)$, if:
+
+$$
+\ba
+\Pr(X=x) &\eqdef \1{x\in \set{0,1}}\pi^x(1-\pi)^{1-x}\\
+&= \begin{cases}
+\pi, & x=1\\
+1-\pi, & x=0
+\end{cases}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-bernoulli-pmf}
+#### The first of two coin flips
+
+In @exm-random-variable,
+let $X_1$ indicate heads on the first flip,
+so $X_1(HH) = X_1(HT) = 1$ and $X_1(TH) = X_1(TT) = 0$.
+Then $\P(X_1 = 1) = \Pr(\set{HH, HT}) = 1/2$
+and $\P(X_1 = 0) = \Pr(\set{TH, TT}) = 1/2$,
+so $X_1 \sim \Ber(1/2)$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-pdf}
+#### Probability density function (PDF)
+
+If $X$ is a [continuous random variable](#def-continuous-rv),
+a **probability density function** of $X$,
+denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
+is a function $f \ge 0$ whose integral over any interval
+is the [probability](probability-basics.qmd#def-probability) that $X$ falls in that interval:
+
+$$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
+
+:::
+
+::: notes
+
+A density is not a probability: it can exceed 1.
+A density is also not unique:
+changing $f$ at finitely many points changes none of its integrals,
+so the value of a density at a single point carries no probability by itself.
+These notes use the version that is continuous wherever possible.
+@thm-density-limit gives the value of $f$ at a point where it is continuous.
+
+See also
+<https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-pdf}
+#### Density of a uniform random variable
+
+Let $X \sim \text{Uniform}(0, 1)$ (@exm-continuous-rv),
+and let $f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise.
+For $0 \le a \le b \le 1$:
+
+$$
+\ba
+\int_a^b f(x)\,dx
+&= \int_a^b 1\,dx
+&& \text{(} f = 1 \text{ on } [0, 1] \text{)} \\
+&= b - a
+&& \text{(integrate)} \\
+&= \Pr(a \le X \le b)
+&& \text{(definition of the uniform distribution)}
+\ea
+$$
+
+An interval reaching outside $[0, 1]$ adds nothing to either side:
+$f = 0$ there,
+and $X$ falls outside $[0, 1]$ with probability 0 (@exm-continuous-rv).
+So $f$ is a density of $X$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-normal}
+#### Normal distribution
+
+A random variable $X$ has the **normal distribution**
+(or **Gaussian distribution**)
+with mean parameter $\mu \in \mathbb{R}$ and variance parameter $\ss > 0$,
+written $X \sim \ndist{\mu, \ss}$,
+if $X$ is continuous with [density](#def-pdf):
+
+$$\p(X=x) \eqdef \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}, \quad x \in \mathbb{R}$$
+
+:::
+
+::: notes
+
+The distribution $\ndist{0, 1}$ is called the **standard normal distribution**.
+This density integrates to 1,
+and a normal random variable has mean $\mu$ and variance $\ss$,
+which is where the parameters' names come from
+[@CaseBerg01].
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-normal}
+#### Normal densities at their centers
+
+For $X \sim \ndist{0, 1}$, the density at $x = 0$ is:
+
+$$
+\ba
+\p(X=0)
+&= \frac{1}{1 \cd \sqrt{2\pi}} \ef{-\frac{(0-0)^2}{2 \cd 1}}
+&& \text{(normal density with } \mu = 0, \ss = 1 \text{)} \\
+&= \frac{1}{\sqrt{2\pi}}
+&& \text{(} \text{e}^0 = 1 \text{)} \\
+&\approx 0.399
+&& \text{(evaluate)}
+\ea
+$$
+
+For $X \sim \ndist{0, 0.1^2}$, the same steps give
+$\p(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99$,
+a density greater than 1.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-exponential}
+#### Exponential distribution
+
+A random variable $T$ has the **exponential distribution** with rate $\lambda > 0$
+if $T$ is continuous with [density](#def-pdf):
+
+$$
+f(t) \eqdef \begin{cases}
+\lambda \ef{-\lambda t}, & t \ge 0 \\
+0, & t < 0
+\end{cases}
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-exponential}
+#### Probability of an event within one time unit
+
+Let $T$ be exponential with rate $\lambda$.
+The probability that $T$ falls in $[0, 1]$ is:
+
+$$
+\ba
+\Pr(0 \le T \le 1)
+&= \int_0^1 \lambda \ef{-\lambda t}\,dt
+&& \text{(definition of a density)} \\
+&= \sb{-\ef{-\lambda t}}_{t=0}^{1}
+&& \text{(antiderivative of } \lambda \ef{-\lambda t} \text{)} \\
+&= 1 - \ef{-\lambda}
+&& \text{(evaluate at the bounds)}
+\ea
+$$
+
+With $\lambda = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.393$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-cdf}
+#### Cumulative distribution function (CDF)
+
+For a random variable $X$ (discrete or continuous),
+its **cumulative distribution function** is:
+
+$$F(t) \eqdef \Pr(X\le t), \quad t\in\mathbb{R}.$$
+
+:::
+
+::: notes
+
+The CDF is always defined, whether $X$ is discrete or continuous,
+and it fully characterizes $X$'s distribution.
+It is non-decreasing,
+with $F(t) \to 0$ as $t \to -\infty$ and $F(t) \to 1$ as $t \to \infty$.
+
+See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cdf}
+#### CDF of the number of heads
+
+Summing the PMF in @exm-pmf over values at or below $t$:
+
+$$
+F(t) = \begin{cases}
+0, & t < 0 \\
+\tfrac{1}{4}, & 0 \le t < 1 \\
+\tfrac{3}{4}, & 1 \le t < 2 \\
+1, & t \ge 2
+\end{cases}
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-quantile-function}
+#### Quantile function (population inverse CDF)
+
+For a random variable $X$
+with [cumulative distribution function (CDF)](#def-cdf) $F$,
+its population **quantile function**
+(generalized inverse of $F$)
+is:
+
+$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p<1.$$
+
+:::
+
+::: notes
+
+The restriction to $0 < p < 1$ keeps $Q(p)$ finite:
+for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
+as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-quantile-function}
+#### Median of the number of heads
+
+From @exm-cdf, $F(t) \ge 0.5$ first holds at $t = 1$,
+so the median of the number of heads is $Q(0.5) = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-density-vs-CDF}
+#### A density integrates to the CDF, and is its derivative
+
+If $X$ is a continuous random variable with density $f$ and CDF $F$,
+then for every $t$:
+
+$$F(t) = \int_{-\infty}^{t} f(x)\,dx$$
+
+and at every $t$ where $f$ is continuous:
+
+$$f(t) = \deriv{t} F(t)$$
+
+:::
+
+::: proof
+
+For any $a < t$,
+$\{X \le t\}$ is the disjoint union of $\{X \le a\}$ and $\{a < X \le t\}$,
+and $\Pr(X = a) = 0$ because $X$ is continuous.
+So:
+
+$$
+\ba
+F(t)
+&= \Pr(X \le a) + \Pr(a < X \le t)
+&& \text{(additivity, and the definition of the CDF)} \\
+&= F(a) + \Pr(a \le X \le t)
+&& \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\
+&= F(a) + \int_a^t f(x)\,dx
+&& \text{(definition of the density)}
+\ea
+$$
+
+Letting $a \to -\infty$, $F(a) \to 0$ (@def-cdf),
+which gives $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
+The fundamental theorem of calculus then gives
+$\deriv{t} \int_{-\infty}^{t} f(x)\,dx = f(t)$
+at every $t$ where $f$ is continuous.
+
+:::
+
+::: notes
+
+For the densities in these notes,
+$f$ is continuous at all but finitely many points,
+so $F' = f$ at all but finitely many points.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-vs-CDF}
+#### CDF and density of a uniform random variable
+
+For $X$ uniform on $[0, 1]$ with the density $f$ of @exm-pdf,
+and $t \in [0, 1]$:
+
+$$
+\ba
+F(t)
+&= \int_{-\infty}^{t} f(x)\,dx
+&& \text{(the CDF is the integral of the density)} \\
+&= \int_{-\infty}^{0} 0\,dx + \int_{0}^{t} 1\,dx
+&& \text{(split at 0, and substitute } f \text{)} \\
+&= t
+&& \text{(integrate)}
+\ea
+$$
+
+For $t \in (0, 1)$, where $f$ is continuous,
+$\deriv{t} F(t) = 1 = f(t)$.
+At $t = 1$, $f$ jumps from 1 to 0, and $F$ has no derivative:
+its slope is 1 on the left and 0 on the right.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cdf-derivative-density}
+#### A piecewise-smooth CDF has its derivative as a density
+
+If the CDF $F$ of a random variable $X$ is continuous everywhere,
+and has a continuous derivative at all but finitely many points,
+then $X$ is continuous,
+and $F'$ (given any values at the finitely many exceptional points)
+is a density of $X$.
+
+:::
+
+::: proof
+
+For events $A \subseteq B$,
+$B$ is the disjoint union of $A$ and $B \setminus A$,
+so additivity gives $\Pr(A) \le \Pr(B)$.
+For any $x$ and $\Delta > 0$,
+$\{X = x\} \subseteq \{x - \Delta < X \le x\}$, so:
+
+$$
+\ba
+0
+&\le \Pr(X = x)
+&& \text{(probabilities are non-negative)} \\
+&\le \Pr(x - \Delta < X \le x)
+&& \text{(} \{X = x\} \subseteq \{x - \Delta < X \le x\} \text{)} \\
+&= F(x) - F(x - \Delta)
+&& \text{(additivity, and the definition of the CDF)}
+\ea
+$$
+
+and $F(x) - F(x - \Delta) \to 0$ as $\Delta \downarrow 0$, because $F$ is continuous.
+So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous.
+Then, for $a \le b$:
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \Pr(a < X \le b)
+&& \text{(} \Pr(X = a) = 0 \text{)} \\
+&= F(b) - F(a)
+&& \text{(additivity, and the definition of the CDF)} \\
+&= \int_a^b F'(x)\,dx
+&& \text{(fundamental theorem of calculus)}
+\ea
+$$
+
+The last step applies the fundamental theorem of calculus
+on each piece of $[a, b]$ between exceptional points,
+where $F'$ is continuous,
+and joins the pieces using the continuity of $F$ at the exceptional points.
+Finally, $F' \ge 0$ wherever it exists, because $F$ is non-decreasing.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cdf-derivative-density}
+#### A density from a CDF with a corner
+
+Let $X$ have CDF $F(t) = 0$ for $t < 0$, $F(t) = t^2$ for $0 \le t \le 1$,
+and $F(t) = 1$ for $t > 1$.
+This $F$ is continuous everywhere,
+and has a continuous derivative everywhere except $t = 1$,
+where its slope drops from 2 to 0.
+By @thm-cdf-derivative-density, $X$ is continuous with density
+$f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise.
+As a check, $\int_0^1 2t\,dt = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-density-limit}
+#### A density as a limit of interval probabilities
+
+If $X$ is a continuous random variable with density $f$,
+and $f$ is continuous at $x$,
+then $f(x)$ is the limit of the probability that $X$ falls in an interval starting at $x$,
+divided by the width of that interval,
+as that width shrinks to 0:
+
+$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}$$
+
+:::
+
+::: proof
+
+For $\Delta > 0$:
+
+$$
+\ba
+\frac{\Pr(x \le X < x + \Delta)}{\Delta}
+&= \frac{\Pr(x < X \le x + \Delta)}{\Delta}
+&& \text{(} \Pr(X = x) = \Pr(X = x + \Delta) = 0 \text{)} \\
+&= \frac{F(x + \Delta) - F(x)}{\Delta}
+&& \text{(additivity, and the definition of the CDF)}
+\ea
+$$
+
+By @thm-density-vs-CDF, $F$ is differentiable at $x$ with $F'(x) = f(x)$,
+so this difference quotient converges to $f(x)$ as $\Delta \downarrow 0$.
+
+:::
+
+::: notes
+
+For small $\Delta > 0$, $f(x) \cd \Delta \approx \Pr(x \le X < x + \Delta)$.
+The limit is the right derivative of $F$ at $x$.
+At a point where $f$ is not continuous,
+the limit can differ from the chosen value $f(x)$:
+for $X \sim \text{Uniform}(0, 1)$,
+the limit at $x = 1$ is 0,
+although @exm-pdf sets $f(1) = 1$.
+
+See also @me4 (Chapter 22, p. 535).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-limit}
+#### The uniform density as a limit
+
+For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$,
+$\Pr(x \le X < x + \Delta) = \Delta$ once $\Delta \le 1 - x$, so:
+
+$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
+
+For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
+Both agree with the density of @exm-pdf.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-density-sums-to-one}
+#### Density functions integrate to 1
+
+If $X$ is a continuous random variable with density $f$:
+
+$$\int_{-\infty}^{\infty} f(x)\, dx = 1$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\int_{-\infty}^{\infty} f(x)\, dx
+&= \lim_{b \to \infty} \int_{-\infty}^{b} f(x)\, dx
+&& \text{(definition of an improper integral)} \\
+&= \lim_{b \to \infty} F(b)
+&& \text{(the CDF is the integral of the density)} \\
+&= 1
+&& \text{(limit of a CDF)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-density-sums-to-one}
+#### The uniform density integrates to 1
+
+For $X$ uniform on $[0, 1]$ (@exm-pdf),
+$\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-jointly-distributed}
+#### Jointly distributed random variables
+
+Random variables $\X1n$ are **jointly distributed**
+when they are defined on the same [sample space](probability-basics.qmd#def-sample-space) $\Omega$,
+so that an event about several of them at once,
+such as $\{X_1 \le x_1\} \cap \{X_2 \le x_2\}$,
+has a probability.
+
+:::
+
+::: notes
+
+We write $\Pr(X \in A, Y \in B)$ for $\Pr(\{X \in A\} \cap \{Y \in B\})$,
+and similarly for more variables.
+The collection of all such probabilities is the **joint distribution** of the variables.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-jointly-distributed}
+#### The first flip and the total
+
+In @exm-random-variable,
+let $X_1$ indicate heads on the first flip (as in @exm-bernoulli-pmf),
+and let $X$ be the total number of heads.
+Both are functions on the same sample space, $\set{HH, HT, TH, TT}$,
+so they are jointly distributed, and, for example:
+
+$$\Pr(X_1 = 1, X = 1) = \Pr(\set{HH, HT} \cap \set{HT, TH}) = \Pr(\set{HT}) = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-joint-pmf}
+#### Joint probability mass function
+
+For [jointly distributed](#def-jointly-distributed) discrete random variables $X$ and $Y$,
+the **joint probability mass function** (joint PMF) of $X$ and $Y$
+is the probability that $X$ takes the value $x$ and $Y$ takes the value $y$:
+
+$$\P(X = x,\, Y = y) \eqdef \Pr(\{X = x\} \cap \{Y = y\})$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-joint-pmf}
+#### Joint PMF of the first flip and the total
+
+Continuing @exm-jointly-distributed,
+each outcome of the two flips fixes both $X_1$ and $X$,
+so the joint PMF puts probability $1/4$ on each outcome's pair of values:
+
+| | $X = 0$ | $X = 1$ | $X = 2$ |
+|:---:|:---:|:---:|:---:|
+| $X_1 = 0$ | $1/4$ ($TT$) | $1/4$ ($TH$) | $0$ |
+| $X_1 = 1$ | $0$ | $1/4$ ($HT$) | $1/4$ ($HH$) |
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-marginal}
+#### Marginal distribution
+
+When a random variable $X$ is one of several
+[jointly distributed](#def-jointly-distributed) random variables,
+the distribution of $X$ by itself
+(its CDF, and its PMF or density)
+is called the **marginal distribution** of $X$.
+
+:::
+
+::: notes
+
+The word "marginal" only says that the other variables are being set aside;
+the marginal distribution of $X$ is the same object as the distribution of $X$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-marginal}
+#### Marginal distribution of the total
+
+In @exm-joint-pmf,
+the marginal distribution of the total $X$ is the PMF of @exm-pmf:
+$\P(X = 0) = 1/4$, $\P(X = 1) = 1/2$, $\P(X = 2) = 1/4$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-marginal-pmf}
+#### Marginal PMF from a joint PMF
+
+If $X$ and $Y$ are jointly distributed discrete random variables,
+then for every $x$:
+
+$$\P(X = x) = \sum_{y \in \rangef{Y}} \P(X = x,\, Y = y)$$
+
+:::
+
+::: proof
+
+The event $\{X = x\}$ is the disjoint union of the events $\{X = x\} \cap \{Y = y\}$
+over the countably many values $y \in \rangef{Y}$, so:
+
+$$
+\ba
+\P(X = x)
+&= \Pr\paren{\bigcup_{y \in \rangef{Y}} \paren{\{X = x\} \cap \{Y = y\}}}
+&& \text{(the events partition } \{X = x\} \text{)} \\
+&= \sum_{y \in \rangef{Y}} \Pr(\{X = x\} \cap \{Y = y\})
+&& \text{(countable additivity)} \\
+&= \sum_{y \in \rangef{Y}} \P(X = x,\, Y = y)
+&& \text{(definition of the joint PMF)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-marginal-pmf}
+#### Summing a row of the joint PMF
+
+In @exm-joint-pmf, summing the $X_1 = 1$ row:
+
+$$
+\ba
+\P(X_1 = 1)
+&= \P(X_1 = 1, X = 0) + \P(X_1 = 1, X = 1) + \P(X_1 = 1, X = 2)
+&& \text{(marginal PMF from the joint PMF)} \\
+&= 0 + \tfrac{1}{4} + \tfrac{1}{4}
+&& \text{(read the table)} \\
+&= \tfrac{1}{2}
+&& \text{(add)}
+\ea
+$$
+
+which matches $X_1 \sim \Ber(1/2)$ from @exm-bernoulli-pmf.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-joint-pdf}
+#### Joint probability density function
+
+For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$,
+a **joint probability density function** (joint density) of $X$ and $Y$,
+denoted $f_{X,Y}(x, y)$ or $\p(X = x,\, Y = y)$,
+is a function $f_{X,Y} \ge 0$ on $\mathbb{R}^2$
+whose integral over any region $A \subseteq \mathbb{R}^2$
+is the probability that the pair $(X, Y)$ falls in $A$:
+
+$$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
+
+:::
+
+::: notes
+
+As with [events](probability-basics.qmd#def-event), a fully rigorous version restricts $A$ to a designated collection of regions;
+every region that arises in these notes is in it.
+Not every pair of continuous random variables has a joint density:
+if $X$ is continuous, the pair $(X, X)$ falls on the line $y = x$,
+a region of area 0,
+so every candidate $f_{X,Y}$ would give that line probability 0 instead of 1.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-joint-pdf}
+#### A joint density on a triangle
+
+Let $f_{X,Y}(x, y) = 2$ for $0 \le x \le y \le 1$, and $0$ otherwise.
+The triangle $\{(x, y) : 0 \le x \le y \le 1\}$ has area $1/2$,
+so $f_{X,Y}$ gives the whole plane probability $2 \cd \tfrac{1}{2} = 1$,
+and it is the joint density of a pair $(X, Y)$ with $X \le Y$ always.
+For example, the probability that both are at most $1/2$
+is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
+
+$$\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cd \tfrac{1}{8} = \tfrac{1}{4}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-marginal-density}
+#### Marginal density from a joint density
+
+If $X$ and $Y$ have joint density $f_{X,Y}$,
+then $X$ has the density:
+
+$$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy$$
+
+:::
+
+::: proof
+
+For $a \le b$, the event $\{a \le X \le b\}$ is the event that $(X, Y)$ falls in the strip $[a, b] \times \mathbb{R}$, so:
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \Pr((X, Y) \in [a, b] \times \mathbb{R})
+&& \text{(same event)} \\
+&= \iint_{[a, b] \times \mathbb{R}} f_{X,Y}(x, y)\,dx\,dy
+&& \text{(definition of a joint density)} \\
+&= \int_a^b \paren{\int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy}\,dx
+&& \text{(iterate the integral; Tonelli's theorem)} \\
+&= \int_a^b f_X(x)\,dx
+&& \text{(definition of } f_X \text{)}
+\ea
+$$
+
+Tonelli's theorem allows the iterated integral because $f_{X,Y} \ge 0$
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3).
+So $f_X$ satisfies @def-pdf.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-marginal-density}
+#### Marginal densities on the triangle
+
+For the joint density of @exm-joint-pdf and $x \in [0, 1]$,
+$f_{X,Y}(x, y) = 2$ exactly when $x \le y \le 1$, so:
+
+$$
+\ba
+f_X(x)
+&= \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy
+&& \text{(marginal density from a joint density)} \\
+&= \int_x^1 2\,dy
+&& \text{(} f_{X,Y}(x, y) = 2 \text{ for } x \le y \le 1 \text{, else } 0 \text{)} \\
+&= 2(1 - x)
+&& \text{(integrate)}
+\ea
+$$
+
+The same steps with the roles swapped give $f_Y(y) = \int_0^y 2\,dx = 2y$ for $y \in [0, 1]$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-joint-density-mass}
+#### Joint density-mass function
+
+Let $X$ be a discrete random variable and $Y$ a continuous random variable,
+[jointly distributed](#def-jointly-distributed).
+A **joint density-mass function** of $X$ and $Y$,
+denoted $\p(X = x,\, Y = y)$,
+is a function $\p(X = x,\, Y = y) \ge 0$
+that is a probability mass in $x$ and a probability density in $y$:
+for every $x$ and every set $B \subseteq \mathbb{R}$,
+
+$$\Pr(X = x,\, Y \in B) = \int_{B} \p(X = x,\, Y = y)\,dy$$
+
+:::
+
+::: notes
+
+Taking $B = \mathbb{R}$ gives $\int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy = \P(X = x)$.
+When $X$ is continuous and $Y$ is discrete, the roles swap:
+$\Pr(X \in B,\, Y = y) = \int_B \p(X = x,\, Y = y)\,dx$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-joint-density-mass}
+#### A coin flip and a waiting time
+
+Let $\p(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$,
+$\p(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$,
+and $0$ otherwise.
+Integrating over $y$ gives $\P(X = 0) = 1/2$ and $\P(X = 1) = 1/2$,
+which add to 1.
+For example, the probability that $X = 1$ and $Y \le 1$ is:
+
+$$\Pr(X = 1,\, Y \le 1) = \int_0^1 \tfrac{1}{4}\,dy = \tfrac{1}{4}$$
+
+:::
