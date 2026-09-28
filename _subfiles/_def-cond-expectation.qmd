@@ -501,7 +501,7 @@ Evaluating this function of $x$ at $X$ gives the random variable $\E{h(X, Y) \mi
 ::: notes
 
 With $h(x, y) = y$, this definition is @def-cond-expectation.
-It is the conditional version of [LOTUS](#thm-lotus):
+This definition is the conditional version of [LOTUS](#thm-lotus):
 for discrete $X$, it is LOTUS applied under the probability measure $\Pr(\cdot \mid X = x)$,
 so it agrees with @def-cond-expectation applied to the random variable $W = h(X, Y)$,
 and results about $\E{W \mid X}$ apply to it.
