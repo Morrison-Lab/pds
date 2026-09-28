@@ -27,4 +27,13 @@ exclude = [
   "https://127.0.0.1.*",
   # quarto.org is a trusted site but may be unreachable from CI runners
   "https://quarto.org/.*",
+  # StackExchange sites answer automated clients such as CI link checkers
+  # with 403 Forbidden; the links work in a browser.
+  "https://math.stackexchange.com/.*",
+  "https://stats.stackexchange.com/.*",
 ]
+
+# `pds` is a symlink to the repository root, so include paths read
+# `pds/...` both here and when pds is a submodule of another site.
+# Without this exclusion lychee follows it recursively (pds/pds/pds/...).
+exclude_path = ["^(\\./)?pds/"]

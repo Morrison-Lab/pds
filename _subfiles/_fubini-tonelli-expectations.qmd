@@ -1,5 +1,7 @@
+<!-- The Fubini-Tonelli link points at rme until mds's multi-page site is published; repoint it to mds's calculus page (calculus.html#thm-fubini-tonelli) then. -->
+
 For expectations, we use the measure-theoretic form of the
-[Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli)
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli)
 [@billingsley1995probability, Theorem 18.3],
 which lets us exchange the order of integration (or summation)
 over a product of $\sigma$-finite measure spaces,

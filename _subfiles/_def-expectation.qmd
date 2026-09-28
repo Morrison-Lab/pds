@@ -75,12 +75,14 @@ $$\E{T} = \int_{t=0}^{\infty} \surv(t)\,dt$$
 
 ::: proof
 
+<!-- The Fubini-Tonelli link points at rme until mds's multi-page site is published; repoint it to mds's calculus page (calculus.html#thm-fubini-tonelli) then. -->
+
 We prove the continuous case, in which $T$ has a density $\pdf$.
 The integrand $\pdf(u) \cd \indicp{0 \le t \le u}$ is non-negative
 on $[0, \infty) \times [0, \infty)$,
 so Tonelli's theorem
 (the non-negative case of the
-[Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli);
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/rme/chapters/math-prereqs.html#thm-fubini-tonelli);
 @billingsley1995probability, Theorem 18.3)
 lets us exchange the order of integration:
 
