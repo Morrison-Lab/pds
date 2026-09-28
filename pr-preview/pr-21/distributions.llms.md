@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 14:12:28 (PDT)
+Last modified: 2026-09-28 14:21:13 (PDT)
 
 Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
 
