@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 11:18:58 (PDT)
+Last modified: 2026-09-28 11:43:19 (PDT)
 
 ## 1 Defining probabilities
 
@@ -58,9 +58,10 @@ Other sources write \\A^c\\ or \\\bar{A}\\.
 
 > **NOTE:**
 >
-> **Definition 6 (Partition of an event)** A **partition** of an [event](#def-event) \\A\\ is a finite or countably infinite collection of [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\ whose union is \\A\\:
+> **Definition 6 (Partition of an event)** A **partition** of an [event](#def-event) \\A\\ is a finite or countably infinite collection of events \\A_1, A_2, \ldots\\ that satisfies:
 >
-> \\\bigcup\_{i} A_i = A\\
+> - The events \\A_1, A_2, \ldots\\ are [mutually exclusive](#def-mutually-exclusive).
+> - Their union is \\A\\: \\\bigcup\_{i} A_i = A\\.
 >
 > A partition of the [sample space](#def-sample-space) is the case \\A = \Omega\\.
 
@@ -72,7 +73,11 @@ Some sources also require each piece \\A_i\\ to contain at least one outcome.
 
 > **NOTE:**
 >
-> **Definition 7 (\\\sigma\\-algebra)** A **\\\sigma\\-algebra** on a set \\S\\ is a collection \\\mathscr{S}\\ of subsets of \\S\\ that contains \\S\\ itself, contains the complement \\S \setminus A\\ of each of its sets \\A\\, and contains the union of each sequence \\A_1, A_2, \ldots\\ of its sets.
+> **Definition 7 (\\\sigma\\-algebra)** A **\\\sigma\\-algebra** on a set \\S\\ is a collection \\\mathscr{S}\\ of subsets of \\S\\ that satisfies:
+>
+> - \\\mathscr{S}\\ contains \\S\\ itself.
+> - For each set \\A\\ in \\\mathscr{S}\\, \\\mathscr{S}\\ contains its complement \\S \setminus A\\.
+> - For each sequence \\A_1, A_2, \ldots\\ of sets in \\\mathscr{S}\\, \\\mathscr{S}\\ contains their union \\\bigcup\_{i=1}^{\infty} A_i\\.
 
 Other sources call it a **\\\sigma\\-field**. The [events](#def-event) of a sample space \\\Omega\\ form a \\\sigma\\-algebra on \\\Omega\\. A \\\sigma\\-algebra also contains \\\emptyset = S \setminus S\\, every finite union of its sets (pad the sequence with copies of \\\emptyset\\), and every countable intersection of its sets (take complements, apply the union rule, and take the complement again).
 
@@ -104,7 +109,7 @@ Other sources call it a **\\\sigma\\-field**. The [events](#def-event) of a samp
 >
 > \\\mu\\\left(\bigcup\_{i=1}^{\infty} A_i\right) = \sum\_{i=1}^{\infty} \mu(A_i)\\
 
-A sum of values in \\\[0, \infty\]\\ is either a finite number or \\\infty\\, so the right-hand side always has a value. If \\\mu(\emptyset) = 0\\, countable additivity implies [finite additivity](#def-finite-additivity): for pairwise disjoint \\A_1, \ldots, A_n\\, set \\A\_{n+1} = A\_{n+2} = \cdots = \emptyset\\ and apply countable additivity to the whole sequence. Countable additivity alone does not force \\\mu(\emptyset) = 0\\: applying it to \\\emptyset, \emptyset, \ldots\\ gives \\\mu(\emptyset) = \sum\_{i=1}^{\infty} \mu(\emptyset)\\, which holds for \\\mu(\emptyset) = 0\\ and for \\\mu(\emptyset) = \infty\\. The converse fails: there exist set functions that satisfy finite additivity but fail countable additivity (see [Wikipedia: Sigma-additive set function — An additive function which is not \\\sigma\\-additive](https://en.wikipedia.org/wiki/Sigma-additive_set_function#An_additive_function_which_is_not_%CF%83-additive)).
+A sum of values in \\\[0, \infty\]\\ is either a finite number or \\\infty\\, so the right-hand side always has a value.
 
 > **NOTE:**
 >
@@ -112,11 +117,38 @@ A sum of values in \\\[0, \infty\]\\ is either a finite number or \\\infty\\, so
 
 > **NOTE:**
 >
-> **Definition 10 (Measure)** A **measure** on a set \\S\\ with a [\\\sigma\\-algebra](#def-sigma-algebra) \\\mathscr{S}\\ is a [countably additive](#def-countable-additivity) function \\\mu\\ that assigns a value \\\mu(A) \in \[0, \infty\]\\ to each set \\A\\ in \\\mathscr{S}\\, with
->
-> \\\mu(\emptyset) = 0\\
+> **Lemma 1 (Countable additivity and the empty set)** If \\\mu\\ is a [countably additive](#def-countable-additivity) function on a [\\\sigma\\-algebra](#def-sigma-algebra) \\\mathscr{S}\\, then \\\mu(\emptyset) = 0\\ or \\\mu(\emptyset) = \infty\\.
 
-A measure is also [finitely additive](#def-finite-additivity), by the notes after [Definition 9](#def-countable-additivity). A measure generalizes size: it can measure how many elements a set has, as in [Definition 11](#def-counting-measure), or how long a set of real numbers is, as [Lebesgue measure](https://en.wikipedia.org/wiki/Lebesgue_measure) does, assigning each interval \\\[a, b\]\\ its length \\b - a\\. Both appear as reference measures in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint).
+> **NOTE:**
+>
+> *Proof*. The set \\\emptyset = S \setminus S\\ is in \\\mathscr{S}\\, as the complement of \\S\\, and the sequence \\\emptyset, \emptyset, \ldots\\ is pairwise disjoint with union \\\emptyset\\, so:
+>
+> \\ \begin{aligned} \mu(\emptyset) &= \mu\\\left(\bigcup\_{i=1}^{\infty} \emptyset\right) && \text{(the union of copies of } \emptyset \text{ is } \emptyset \text{)} \\ &= \sum\_{i=1}^{\infty} \mu(\emptyset) && \text{(countable additivity)} \end{aligned} \\
+>
+> If \\\mu(\emptyset) = c\\ for a finite \\c \> 0\\, the right-hand side is \\c + c + \cdots = \infty \neq c\\, a contradiction. So \\\mu(\emptyset)\\ is 0 or \\\infty\\.
+
+Both values occur. The counting function of [Example 9](#exm-countable-additivity) has \\\mu(\emptyset) = 0\\, while the function with \\\mu(A) = \infty\\ for every \\A\\, including \\\emptyset\\, is countably additive, since both sides of the defining equation are \\\infty\\. So \\\mu(\emptyset) = 0\\ is an extra requirement, not a consequence of countable additivity.
+
+> **NOTE:**
+>
+> **Theorem 1 (Countable additivity implies finite additivity)** If \\\mu\\ is a [countably additive](#def-countable-additivity) function on a [\\\sigma\\-algebra](#def-sigma-algebra) \\\mathscr{S}\\, and \\\mu(\emptyset) = 0\\, then \\\mu\\ is [finitely additive](#def-finite-additivity).
+
+> **NOTE:**
+>
+> *Proof*. Let \\A_1, \ldots, A_n\\ be pairwise disjoint sets in \\\mathscr{S}\\, and extend them to a sequence by setting \\A\_{n+1} = A\_{n+2} = \cdots = \emptyset\\. The extended sequence is still pairwise disjoint, since \\\emptyset\\ shares no element with any set, and its union is \\A_1 \cup \cdots \cup A_n\\. So:
+>
+> \\ \begin{aligned} \mu(A_1 \cup \cdots \cup A_n) &= \mu\\\left(\bigcup\_{i=1}^{\infty} A_i\right) && \text{(} A_i = \emptyset \text{ for } i \> n \text{)} \\ &= \sum\_{i=1}^{\infty} \mu(A_i) && \text{(countable additivity)} \\ &= \sum\_{i=1}^{n} \mu(A_i) + \sum\_{i=n+1}^{\infty} \mu(\emptyset) && \text{(} A_i = \emptyset \text{ for } i \> n \text{)} \\ &= \sum\_{i=1}^{n} \mu(A_i) && \text{(} \mu(\emptyset) = 0 \text{)} \end{aligned} \\
+
+The converse fails: there exist set functions that satisfy finite additivity but fail countable additivity (see [Wikipedia: Sigma-additive set function — An additive function which is not \\\sigma\\-additive](https://en.wikipedia.org/wiki/Sigma-additive_set_function#An_additive_function_which_is_not_%CF%83-additive)).
+
+> **NOTE:**
+>
+> **Definition 10 (Measure)** A **measure** on a set \\S\\ with a [\\\sigma\\-algebra](#def-sigma-algebra) \\\mathscr{S}\\ is a function \\\mu\\ that assigns a value \\\mu(A) \in \[0, \infty\]\\ to each set \\A\\ in \\\mathscr{S}\\ and satisfies:
+>
+> - \\\mu(\emptyset) = 0\\.
+> - \\\mu\\ is [countably additive](#def-countable-additivity).
+
+A measure is also [finitely additive](#def-finite-additivity), by [Theorem 1](#thm-countable-implies-finite). A measure generalizes size: it can measure how many elements a set has, as in [Definition 11](#def-counting-measure), or how long a set of real numbers is, as [Lebesgue measure](https://en.wikipedia.org/wiki/Lebesgue_measure) does, assigning each interval \\\[a, b\]\\ its length \\b - a\\. Both appear as reference measures in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint).
 
 > **NOTE:**
 >
@@ -134,9 +166,10 @@ A measure is also [finitely additive](#def-finite-additivity), by the notes afte
 
 > **NOTE:**
 >
-> **Definition 12 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space value 1:
+> **Definition 12 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a function that assigns a number \\\Pr(A)\\ to each [event](#def-event) \\A\\ and satisfies:
 >
-> \\\Pr(\Omega) = 1\\
+> - \\\Pr\\ is a [measure](#def-measure) on the events of \\\Omega\\.
+> - The whole sample space has probability 1: \\\Pr(\Omega) = 1\\.
 
 Many sources state this definition as three axioms instead (the Kolmogorov axioms):
 
@@ -144,7 +177,7 @@ Many sources state this definition as three axioms instead (the Kolmogorov axiom
 2.  The probability of the whole sample space is 1: \\\Pr(\Omega) = 1\\
 3.  \\\Pr\\ is [countably additive](#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\\Pr\\\left(\bigcup\_{i=1}^{\infty} A_i\right) = \sum\_{i=1}^{\infty} \Pr(A_i)\\
 
-The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but they imply it: applying property 3 to \\\Omega, \emptyset, \emptyset, \ldots\\ gives \\1 = 1 + \sum\_{i=2}^{\infty} \Pr(\emptyset)\\, so \\\Pr(\emptyset) = 0\\. A probability measure is also [finitely additive](#def-finite-additivity). Requiring countable additivity, not just finite additivity, enables results such as the continuity of probability (if \\A_1 \supseteq A_2 \supseteq \cdots\\ with \\\bigcap_i A_i = \emptyset\\, then \\\Pr(A_i) \to 0\\), and it is what makes sums over countably infinite [partitions](#def-partition) valid.
+The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but they imply it: applying property 3 to \\\Omega, \emptyset, \emptyset, \ldots\\ gives \\1 = 1 + \sum\_{i=2}^{\infty} \Pr(\emptyset)\\, so \\\Pr(\emptyset) = 0\\. A probability measure is also [finitely additive](#def-finite-additivity), by [Theorem 1](#thm-countable-implies-finite). Requiring countable additivity, not just finite additivity, enables results such as the continuity of probability (if \\A_1 \supseteq A_2 \supseteq \cdots\\ with \\\bigcap_i A_i = \emptyset\\, then \\\Pr(A_i) \to 0\\), and it is what makes sums over countably infinite [partitions](#def-partition) valid.
 
 > **NOTE:**
 >
@@ -152,7 +185,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Theorem 1 (Probability of a subset’s intersection)** If \\A\\ and \\B\\ are events and \\A\subseteq B\\, then \\\Pr(A \cap B) = \Pr(A)\\.
+> **Theorem 2 (Probability of a subset’s intersection)** If \\A\\ and \\B\\ are events and \\A\subseteq B\\, then \\\Pr(A \cap B) = \Pr(A)\\.
 
 > **NOTE:**
 >
@@ -160,7 +193,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Theorem 2 (An event and its complement sum to 1)** For any event \\A\\ and its [complement](#def-complement) \\\neg A\\:
+> **Theorem 3 (An event and its complement sum to 1)** For any event \\A\\ and its [complement](#def-complement) \\\neg A\\:
 >
 > \\\Pr(A) + \Pr(\neg A) = 1\\
 
@@ -178,7 +211,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> *Proof*. Subtract \\\Pr(A)\\ from both sides of [Theorem 2](#thm-total-prob-1).
+> *Proof*. Subtract \\\Pr(A)\\ from both sides of [Theorem 3](#thm-total-prob-1).
 
 > **NOTE:**
 >
@@ -210,7 +243,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 
 > **NOTE:**
 >
-> **Theorem 3 (Law of conditional probability)** For any two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\:
+> **Theorem 4 (Law of conditional probability)** For any two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\:
 >
 > \\\Pr(A \cap B) = \Pr(A \mid B) \cdot\Pr(B)\\
 
@@ -224,31 +257,31 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 >
 > **Example 15 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
-> Then, by [Theorem 3](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
+> Then, by [Theorem 4](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
 > \\ \begin{aligned} \Pr(L \cap E) &= \Pr(L \mid E) \cdot\Pr(E) && \text{(law of conditional probability)} \\ &= 0.60 \cdot 0.30 && \text{(substitute the given values)} \\ &= 0.18 && \text{(multiply)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 4 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\:
+> **Theorem 5 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\:
 >
 > \\\Pr(A) = \sum\_{i} \Pr(A \mid B_i) \cdot\Pr(B_i)\\
 
 > **NOTE:**
 >
-> *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By countable additivity ([Definition 9](#def-countable-additivity)), and then by [Theorem 3](#thm-law-conditional-prob):
+> *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By countable additivity ([Definition 9](#def-countable-additivity)), and then by [Theorem 4](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A) &= \sum\_{i} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)} \\&= \sum\_{i} \Pr(A \mid B_i) \cdot\Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) \> 0 \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 5 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\:
+> **Theorem 6 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\:
 >
 > \\\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\\
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 13](#def-conditional-prob) and [Theorem 3](#thm-law-conditional-prob):
+> *Proof*. By [Definition 13](#def-conditional-prob) and [Theorem 4](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(B \cap A)}{\Pr(B)} && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\ &= \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} && \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)} \end{aligned} \\
 
@@ -262,7 +295,7 @@ The two forms are equivalent. The axioms do not list \\\Pr(\emptyset) = 0\\, but
 > - \\\Pr(\neg + \mid \neg D) = 0.99\\ (specificity), so the false positive rate is \\\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01\\
 > - \\\Pr(D) = 0.07\\ (prevalence)
 >
-> By [Theorem 5](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition \\\\D, \neg D\\\\:
+> By [Theorem 6](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition \\\\D, \neg D\\\\:
 >
 > \\ \begin{aligned} \Pr(D \mid +) &= \frac{\Pr(+ \mid D) \cdot\Pr(D)}{\Pr(+)} && \text{(Bayes' theorem)} \\ &= \frac{\Pr(+ \mid D) \cdot\Pr(D)}{\Pr(+ \mid D) \cdot\Pr(D) + \Pr(+ \mid \neg D) \cdot\Pr(\neg D)} && \text{(law of total probability)} \\ &= \frac{0.99 \cdot 0.07}{0.99 \cdot 0.07 + 0.01 \cdot 0.93} && \text{(substitute the given values)} \\ &= \frac{0.0693}{0.0693 + 0.0093} && \text{(multiply each term in the numerator and denominator)} \\ &= \frac{0.0693}{0.0786} && \text{(add the denominator's two terms)} \\ &\approx 0.88 && \text{(divide)} \end{aligned} \\
 >

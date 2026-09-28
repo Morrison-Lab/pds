@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 11:18:58 (PDT)
+Last modified: 2026-09-28 11:43:19 (PDT)
 
 ## 1 Random variables
 
@@ -86,9 +86,10 @@ See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
 > **NOTE:**
 >
-> **Definition 8 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f \ge 0\\ whose integral over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval:
+> **Definition 8 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies:
 >
-> \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
+> - \\f(x) \ge 0\\ for every \\x\\.
+> - The integral of \\f\\ over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval: \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
 
 A density is not a probability: it can exceed 1. A density is also not unique: changing \\f\\ at finitely many points changes none of its integrals, so the value of a density at a single point carries no probability by itself. These notes use the version that is continuous wherever possible. [Theorem 3](#thm-density-limit) gives the value of \\f\\ at a point where it is continuous.
 
@@ -329,9 +330,10 @@ The word “marginal” only says that the other variables are being set aside; 
 
 > **NOTE:**
 >
-> **Definition 18 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y} \ge 0\\ on \\\mathbb{R}^2\\ whose integral over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\:
+> **Definition 18 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
 >
-> \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
+> - \\f\_{X,Y}(x, y) \ge 0\\ for every \\(x, y)\\.
+> - The integral of \\f\_{X,Y}\\ over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\: \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
 
 As with [events](probability-basics.llms.md#def-event), a fully rigorous version restricts \\A\\ to a designated collection of regions; every region that arises in these notes is in it. Not every pair of continuous random variables has a joint density: if \\X\\ is continuous, the pair \\(X, X)\\ falls on the line \\y = x\\, a region of area 0, so every candidate \\f\_{X,Y}\\ would give that line probability 0 instead of 1.
 

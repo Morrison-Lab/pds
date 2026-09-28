@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 11:18:58 (PDT)
+Last modified: 2026-09-28 11:43:19 (PDT)
 
 > **NOTE:**
 >
@@ -88,7 +88,10 @@ For discrete random variables, this is equivalent to all of them having the same
 
 > **NOTE:**
 >
-> **Definition 5 (Independent and identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) if they are [statistically independent](#def-indpt) and [identically distributed](#def-ident).
+> **Definition 5 (Independent and identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) if they are:
+>
+> - [statistically independent](#def-indpt), and
+> - [identically distributed](#def-ident).
 
 The IID assumption is one of the most common assumptions in introductory statistics: it says a sample \\X_1, \ldots, X_n\\ can be treated as \\n\\ independent draws from a single shared distribution.
 
@@ -98,7 +101,11 @@ The IID assumption is one of the most common assumptions in introductory statist
 
 > **NOTE:**
 >
-> **Definition 6 (Conditionally independent and identically distributed)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent and identically distributed** given \\X_1, \ldots, X_n\\ (shorthand: “\\Y_i \mid X_i\\ \operatorname{ciid}\\” or just “\\Y_i \mid X_i\\ \operatorname{iid}\\”) if \\Y_1, \ldots, Y_n\\ are [conditionally independent](#def-cind) given \\(X_1, \ldots, X_n)\\, each \\Y_i\\ depends on \\(X_1, \ldots, X_n)\\ only through \\X_i\\, and \\Y_1, \ldots, Y_n\\ are [conditionally identically distributed](#def-cident) given \\X_1, \ldots, X_n\\.
+> **Definition 6 (Conditionally independent and identically distributed)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent and identically distributed** given \\X_1, \ldots, X_n\\ (shorthand: “\\Y_i \mid X_i\\ \operatorname{ciid}\\” or just “\\Y_i \mid X_i\\ \operatorname{iid}\\”) if:
+>
+> - \\Y_1, \ldots, Y_n\\ are [conditionally independent](#def-cind) given \\(X_1, \ldots, X_n)\\,
+> - each \\Y_i\\ depends on \\(X_1, \ldots, X_n)\\ only through \\X_i\\, and
+> - \\Y_1, \ldots, Y_n\\ are [conditionally identically distributed](#def-cident) given \\X_1, \ldots, X_n\\.
 
 > **NOTE:**
 >
