@@ -148,7 +148,7 @@ having gone without a six so far does not change the chance of a six on the next
 {{< slidebreak >}}
 
 :::{#cor-discrete-hazard-unit-interval}
-#### A discrete-time hazard lies in $[0, 1]$
+#### A discrete-time hazard lies in ${[0, 1]}$
 
 The [discrete-time hazard](#def-discrete-hazard) of a discrete random variable $T$
 at a value $t$ with $\Pr(T \ge t) > 0$ satisfies:
