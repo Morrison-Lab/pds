@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ucd-serg.github.io/qwt/index.html</loc>
-    <lastmod>2026-04-22T20:08:07.774Z</lastmod>
+    <loc>https://morrison-lab.github.io/pds/variance-covariance.html</loc>
+    <lastmod>2026-09-29T00:06:41.891Z</lastmod>
   </url>
   <url>
-    <loc>https://ucd-serg.github.io/qwt/index-slides.html</loc>
-    <lastmod>2026-04-22T20:08:07.774Z</lastmod>
+    <loc>https://morrison-lab.github.io/pds/probability-basics.html</loc>
+    <lastmod>2026-09-29T00:06:41.890Z</lastmod>
   </url>
   <url>
-    <loc>https://ucd-serg.github.io/qwt/chapters/chapter1.html</loc>
-    <lastmod>2026-04-22T20:08:07.773Z</lastmod>
+    <loc>https://morrison-lab.github.io/pds/limit-theorems.html</loc>
+    <lastmod>2026-09-29T00:06:41.890Z</lastmod>
   </url>
   <url>
-    <loc>https://ucd-serg.github.io/qwt/chapters/chapter1-slides.html</loc>
-    <lastmod>2026-04-22T20:08:07.773Z</lastmod>
+    <loc>https://morrison-lab.github.io/pds/independence.html</loc>
+    <lastmod>2026-09-29T00:06:41.890Z</lastmod>
   </url>
   <url>
-    <loc>https://ucd-serg.github.io/qwt/chapters/chapter2-slides.html</loc>
-    <lastmod>2026-04-22T20:08:07.774Z</lastmod>
+    <loc>https://morrison-lab.github.io/pds/distributions.html</loc>
+    <lastmod>2026-09-29T00:06:41.890Z</lastmod>
   </url>
   <url>
-    <loc>https://ucd-serg.github.io/qwt/chapters/chapter2.html</loc>
-    <lastmod>2026-04-22T20:08:07.774Z</lastmod>
+    <loc>https://morrison-lab.github.io/pds/expectation.html</loc>
+    <lastmod>2026-09-29T00:06:41.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://morrison-lab.github.io/pds/index.html</loc>
+    <lastmod>2026-09-29T00:04:28.348Z</lastmod>
+  </url>
+  <url>
+    <loc>https://morrison-lab.github.io/pds/notation.html</loc>
+    <lastmod>2026-09-29T00:06:41.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://morrison-lab.github.io/pds/random-variables.html</loc>
+    <lastmod>2026-09-29T00:06:41.890Z</lastmod>
   </url>
 </urlset>
