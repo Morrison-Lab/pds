@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 22:56:18 (PDT)
+Last modified: 2026-09-28 22:57:02 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -58,7 +58,7 @@ Last modified: 2026-09-28 22:56:18 (PDT)
 >
 > **Example 1 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\, which is flat, not bell-shaped ([Figure 1](#fig-clt-1d6)). Its mean is \\\mu = 3.5\\, and its variance is \\\sigma^2= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\\.
 >
-> Code
+> Show R code
 >
 > ``` r
 > dice_sum_pmf <- function(n_dice) {
@@ -82,7 +82,7 @@ Last modified: 2026-09-28 22:56:18 (PDT)
 >
 > The sum of five independent rolls, \\S_5\\, is already close to bell-shaped ([Figure 2](#fig-clt-5d6)).
 >
-> Code
+> Show R code
 >
 > ``` r
 > pmf_five_dice <- dice_sum_pmf(5)
