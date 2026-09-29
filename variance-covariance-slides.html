@@ -8,7 +8,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/code-language-labels-1.0.0/code-language-labels.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <title>Probability for Data Science – Variance and covariance</title>
@@ -290,7 +291,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 15:22:34 (PDT)</p>
+  <p class="date">Last modified: 2026-09-28 22:56:18 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -300,8 +301,8 @@
 <p><span class="theorem-title"><strong>Definition 1 (Deviation)</strong></span> A <strong>deviation</strong> is the difference between a value and a reference value. For any quantity <span class="math inline">\(z\)</span> and reference value <span class="math inline">\(r\)</span>, the deviation of <span class="math inline">\(z\)</span> from <span class="math inline">\(r\)</span> is:</p>
 <p><span class="math display">\[z - r\]</span></p>
 </div>
-<aside class="notes">
-<p>In probability and statistics, “deviation” usually means deviation from a <a href="./expectation.html#def-expectation">population mean</a>.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>In probability and statistics, “deviation” usually means deviation from a <a href="./expectation.html#def-expectation">population mean</a>.</p>
 <p>See: <a href="https://en.wikipedia.org/wiki/Deviation_(statistics)">Wikipedia: Deviation (statistics)</a></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -329,8 +330,8 @@
 <p>For a realized observation <span class="math inline">\(y\)</span>:</p>
 <p><span class="math display">\[e(y) \stackrel{\text{def}}{=}y - \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\]</span></p>
 </div>
-<aside class="notes">
-<p>Other sources often call this quantity an <strong>error</strong> or <strong>noise term</strong>. In regression settings, the reference mean is often conditional on covariates: <span class="math inline">\(e(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left[Y_i \mid X_i = x_i\right]\mathclose{}\)</span>.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Other sources often call this quantity an <strong>error</strong> or <strong>noise term</strong>. In regression settings, the reference mean is often conditional on covariates: <span class="math inline">\(e(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left[Y_i \mid X_i = x_i\right]\mathclose{}\)</span>.</p>
 <p>These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their <a href="https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted">Linear regression chapter</a>) for deviations from fitted values, write <span class="math inline">\(e(\cdot)\)</span> for these model/data deviations, and reserve <span class="math inline">\(\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\)</span> for estimator-to-estimand deviations (see <a href="https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error">Estimation</a>).</p>
 <p>See:</p>
 <ul>
@@ -375,8 +376,8 @@
 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[[e(X)]^2\right]\mathclose{} = \operatorname{E}\mathopen{}\left[(X - \operatorname{E}\mathopen{}\left[X\right]\mathclose{})^2\right]\mathclose{}.
 \]</span></p>
 </div>
-<aside class="notes">
-<p>This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep <span class="math inline">\(e(X)\)</span> as the definition’s single building block, matching the notation of <a href="#/def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a>.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep <span class="math inline">\(e(X)\)</span> as the definition’s single building block, matching the notation of <a href="#/def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -553,8 +554,8 @@
 \end{aligned}
 \]</span></p>
 </div>
-<aside class="notes">
-<p>Alternate names include: the <strong>conditional variance formula</strong>, <strong>Eve’s law</strong>, and the <strong>variance decomposition formula</strong>.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Alternate names include: the <strong>conditional variance formula</strong>, <strong>Eve’s law</strong>, and the <strong>variance decomposition formula</strong>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -600,8 +601,8 @@
 <p><span class="theorem-title"><strong>Definition 8 (Standard deviation)</strong></span> The <strong>standard deviation</strong> of a random variable <span class="math inline">\(X\)</span> is the square root of the <a href="#/def-variance">variance</a> of <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\sqrt{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\]</span></p>
 </div>
-<aside class="notes">
-<p>The standard deviation is on the same scale as <span class="math inline">\(X\)</span> itself (unlike the variance, which is on the scale of <span class="math inline">\(X\)</span>’s square), which is why it is often the preferred measure of spread when reporting results.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The standard deviation is on the same scale as <span class="math inline">\(X\)</span> itself (unlike the variance, which is on the scale of <span class="math inline">\(X\)</span>’s square), which is why it is often the preferred measure of spread when reporting results.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -671,7 +672,7 @@
 <p>If also <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span>, then <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(f_X\)</span> and <span class="math inline">\(f_Y\)</span> for the PMFs or densities of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, with reference measures <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> as in the <a href="./expectation.html#cor-fubini-joint">joint-distribution form of Fubini–Tonelli</a> (<a href="./probability-basics.html#def-counting-measure">counting measure</a> for a discrete variable, Lebesgue measure for a continuous one). Because <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, <span class="math inline">\(f_{X,Y}(x, y) = f_X(x)\,f_Y(y)\)</span> is their joint PMF, density, or density-mass function (the factorization in the notes to the <a href="./independence.html#def-indpt">definition of independence</a>). First, with <span class="math inline">\(h(x, y) = \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{} \ge 0\)</span> (condition (a)):</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(f_X\)</span> and <span class="math inline">\(f_Y\)</span> for the PMFs or densities of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, with reference measures <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> as in the <a href="./expectation.html#cor-fubini-joint">joint-distribution form of Fubini–Tonelli</a> (<a href="https://morrison-lab.github.io/mds/measures.html#def-counting-measure">counting measure</a> for a discrete variable, Lebesgue measure for a continuous one). Because <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, <span class="math inline">\(f_{X,Y}(x, y) = f_X(x)\,f_Y(y)\)</span> is their joint PMF, density, or density-mass function (the factorization in the notes to the <a href="./independence.html#def-indpt">definition of independence</a>). First, with <span class="math inline">\(h(x, y) = \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{} \ge 0\)</span> (condition (a)):</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\mathopen{}\left|XY\right|\mathclose{}\right]\mathclose{}
@@ -759,8 +760,8 @@
 <p><span class="theorem-title"><strong>Definition 10 (Correlation)</strong></span> The <strong>correlation</strong> of two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with finite, positive <a href="#/def-variance">variances</a> is their <a href="#/def-cov">covariance</a> divided by the product of their <a href="#/def-sd">standard deviations</a>:</p>
 <p><span class="math display">\[\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\,\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\]</span></p>
 </div>
-<aside class="notes">
-<p>Dividing by the standard deviations removes the units of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, and the correlation always lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>)</span>. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Dividing by the standard deviations removes the units of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -798,8 +799,8 @@
 <p><span class="theorem-title"><strong>Definition 11 (Uncorrelated random variables)</strong></span> Random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span> are <strong>uncorrelated</strong> when their <a href="#/def-cov">covariance</a> is 0:</p>
 <p><span class="math display">\[\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\]</span></p>
 </div>
-<aside class="notes">
-<p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> also have positive variances, being uncorrelated is the same as having <a href="#/def-correlation">correlation</a> 0. <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a> says independent random variables are uncorrelated, and <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;11</a> shows the converse fails.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a> says independent random variables are uncorrelated, and <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;11</a> shows the converse fails.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -816,6 +817,15 @@
 
 <div id="exm-uncorrelated" class="theorem example">
 <p><span class="theorem-title"><strong>Example 13 (Correlated and uncorrelated pairs)</strong></span> In <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;11</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>, so <span class="math inline">\(X\)</span> and <span class="math inline">\(Y = X^2\)</span> are uncorrelated. In <a href="#/exm-alt-cov" class="quarto-xref">Example&nbsp;9</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\)</span>, so the binary exposure and outcome are not uncorrelated.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="cor-uncorrelated-cor-zero" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (Uncorrelated means zero correlation)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#/def-variance">variances</a>, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="#/def-uncorrelated">uncorrelated</a> if and only if <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/def-correlation" class="quarto-xref">Definition&nbsp;10</a>, <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} / \mathopen{}\left(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\,\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}\right)\mathclose{}\)</span>, and <span class="math inline">\(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\,\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} &gt; 0\)</span> because both variances are positive, so <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span> if and only if <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>, which is <a href="#/def-uncorrelated" class="quarto-xref">Definition&nbsp;11</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -882,8 +892,8 @@
 \]</span></p>
 <p>Adding the four terms gives the result.</p>
 </div>
-<aside class="notes">
-<p>Alternate names include: the <strong>covariance decomposition formula</strong> and the <strong>conditional covariance formula</strong>.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Alternate names include: the <strong>covariance decomposition formula</strong> and the <strong>conditional covariance formula</strong>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1082,7 +1092,7 @@
 <section class="slide level2">
 
 <div id="cor-var-lincom2" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 1 (Variance of a sum of two random variables)</strong></span> For any two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and scalars <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
+<p><span class="theorem-title"><strong>Corollary 2 (Variance of a sum of two random variables)</strong></span> For any two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and scalars <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
 <p><span class="math display">\[\operatorname{Var}\mathopen{}\left(aX + bY\right)\mathclose{} = a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2(a \cdot b) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}\]</span></p>
 </div>
 <div class="proof">
@@ -1110,8 +1120,29 @@
 \end{aligned}
 \]</span></p>
 </div>
-<aside class="notes">
-<p>This corollary is why two variables’ covariance matters for combining them: if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, then <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\)</span> (<a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a>), and the variance of their sum is just the sum of their variances.</p>
+</section>
+<section class="slide level2">
+
+<div id="cor-var-sum-indpt" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 3 (Variance of a sum of independent random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, each discrete or continuous, with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span>, then:</p>
+<p><span class="math display">\[\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>. Applying <a href="#/cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> with <span class="math inline">\(a = b = 1\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{}
+&amp;= 1^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + 1^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2(1 \cdot 1) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}
+&amp;&amp; \text{(variance of a sum of two random variables)} \\
+&amp;= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}
+&amp;&amp; \text{(simplify)} \\
+&amp;= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
+&amp;&amp; \text{(} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0 \text{)}
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> is why two variables’ covariance matters for combining them: the covariance term is what separates the variance of their sum from the sum of their variances, and <a href="#/cor-var-sum-indpt" class="quarto-xref">Corollary&nbsp;3</a> is the case where that term is 0.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1124,9 +1155,140 @@
           display:block!important;
       }</style></aside>
 </section>
+<section class="slide level2">
+
+<div id="thm-vcov-psd" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 10 (A variance matrix is symmetric and positive semidefinite)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-symmetric-matrix">symmetric</a> and <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-semidefinite">positive semidefinite</a>: for every <span class="math inline">\(p \times 1\)</span> vector of constants <span class="math inline">\(\tilde{a}\)</span>,</p>
+<p><span class="math display">\[{\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a}\ge 0\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;7</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>, and by <a href="#/def-cov" class="quarto-xref">Definition&nbsp;9</a>, with <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[(X_i - \mu_i)(X_j - \mu_j)\right]\mathclose{}
+&amp;&amp; \text{(definition of covariance)} \\
+&amp;= \operatorname{E}\mathopen{}\left[(X_j - \mu_j)(X_i - \mu_i)\right]\mathclose{}
+&amp;&amp; \text{(multiplication of numbers is commutative)} \\
+&amp;= \operatorname{Cov}\mathopen{}\left(X_j, X_i\right)\mathclose{}
+&amp;&amp; \text{(definition of covariance)}
+\end{aligned}
+\]</span></p>
+<p>so the <span class="math inline">\((i,j)\)</span>-th and <span class="math inline">\((j,i)\)</span>-th elements are equal, and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is symmetric.</p>
+<p>For positive semidefiniteness, let <span class="math inline">\(Y = {\tilde{a}}^{\top}\tilde{X}\)</span>. Then:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a}
+&amp;= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
+&amp;&amp; \text{(variance of a linear combination)} \\
+&amp;= \operatorname{E}\mathopen{}\left[(Y - \operatorname{E}\mathopen{}\left[Y\right]\mathclose{})^2\right]\mathclose{}
+&amp;&amp; \text{(definition of variance)} \\
+&amp;\ge 0
+&amp;&amp; \text{(} (Y - \operatorname{E}\mathopen{}\left[Y\right]\mathclose{})^2 \ge 0 \text{)}
+\end{aligned}
+\]</span></p>
+<p>The first step is <a href="#/thm-var-lincom" class="quarto-xref">Theorem&nbsp;9</a>. The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the <a href="./expectation.html#def-expectation">definition of expectation</a>, every term of the sum, or the integrand, is non-negative (for the general case, see <span class="citation" data-cites="billingsley1995probability">Billingsley (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>).</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-vcov-psd" class="theorem example">
+<p><span class="theorem-title"><strong>Example 15 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\tilde{X}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
+<p><span class="math display">\[D_1 = \mathopen{}\left\{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)\right\}\mathclose{},\]</span></p>
+<p>and let <span class="math inline">\(\tilde{X}'\)</span> be equally likely to be each of the four points</p>
+<p><span class="math display">\[D_2 = \mathopen{}\left\{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)\right\}\mathclose{}.\]</span></p>
+<p>Both sets have first coordinates <span class="math inline">\(\mathopen{}\left\{-5, 0, 0, 5\right\}\mathclose{}\)</span> and second coordinates <span class="math inline">\(\mathopen{}\left\{1, -1, 1, -1\right\}\mathclose{}\)</span>, so <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_1\right]\mathclose{} = \operatorname{E}\mathopen{}\left[X_2\right]\mathclose{} = 0\)</span>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_1^2\right]\mathclose{} = (25 + 0 + 0 + 25)/4 = 12.5\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_2^2\right]\mathclose{} = (1 + 1 + 1 + 1)/4 = 1\)</span>, and likewise for <span class="math inline">\(\tilde{X}'\)</span>. They differ in the products of the coordinates:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X_1 X_2\right]\mathclose{} &amp;= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} = -2.5, \\
+\operatorname{E}\mathopen{}\left[X_1' X_2'\right]\mathclose{} &amp;= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} = 2.5.
+\end{aligned}
+\]</span></p>
+<p>Since the means are 0, <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;7</a> and <a href="#/thm-alt-cov" class="quarto-xref">Theorem&nbsp;4</a> give:</p>
+<p><span class="math display">\[
+\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \begin{pmatrix}12.5 &amp; -2.5 \\ -2.5 &amp; 1\end{pmatrix},
+\qquad
+\operatorname{Var}\mathopen{}\left(\tilde{X}'\right)\mathclose{} = \begin{pmatrix}12.5 &amp; 2.5 \\ 2.5 &amp; 1\end{pmatrix}.
+\]</span></p>
+<p>Both are symmetric. <a href="#/thm-var-lincom" class="quarto-xref">Theorem&nbsp;9</a> with <span class="math inline">\(\tilde{a}= {(1, 1)}^{\top}\)</span> and <span class="math inline">\(\tilde{a}= {(1, -1)}^{\top}\)</span> gives:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &amp;= 12.5 + 1 + 2(-2.5) = 8.5, &amp;
+\operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &amp;= 12.5 + 1 - 2(-2.5) = 18.5, \\
+\operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &amp;= 12.5 + 1 + 2(2.5) = 18.5, &amp;
+\operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &amp;= 12.5 + 1 - 2(2.5) = 8.5.
+\end{aligned}
+\]</span></p>
+<p>As a check, <span class="math inline">\(X_1 + X_2\)</span> takes the values <span class="math inline">\(-4, -1, 1, 4\)</span>, each with probability <span class="math inline">\(1/4\)</span>, so its mean is 0 and its variance is <span class="math inline">\((16 + 1 + 1 + 16)/4 = 8.5\)</span>.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, <span class="math inline">\({(1, 1)}^{\top}\)</span> or <span class="math inline">\({(1, -1)}^{\top}\)</span>, has the larger spread.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-vcov-singular" class="theorem example">
+<p><span class="theorem-title"><strong>Example 16 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\tilde{X}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\)</span> (<a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>), so:</p>
+<p><span class="math display">\[
+\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
+\]</span></p>
+<p>With <span class="math inline">\(\tilde{a}= {(1, -1)}^{\top}\)</span>, <span class="math inline">\({\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} = 0\)</span>, so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\tilde{X}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="cor-vcov-indpt-diagonal" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 4 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each discrete or continuous, with:</p>
+<ul>
+<li><span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, and</li>
+<li><span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> <a href="./independence.html#def-indpt">independent</a> for every <span class="math inline">\(i \neq j\)</span>.</li>
+</ul>
+<p>Then <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix">diagonal</a>, with diagonal elements <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}, \ldots, \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;7</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;5</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-cor-bounds" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 11 (Correlation lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#/def-variance">variances</a>, then their <a href="#/def-correlation">correlation</a> lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>)</span>:</p>
+<p><span class="math display">\[-1 \le \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\sigma_X \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} &gt; 0\)</span> and <span class="math inline">\(\sigma_Y \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} &gt; 0\)</span>, and take either sign <span class="math inline">\(\pm\)</span> throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying <a href="#/cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> with <span class="math inline">\(a = 1/\sigma_X\)</span> and <span class="math inline">\(b = \pm 1/\sigma_Y\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+0
+&amp;\le \operatorname{Var}\mathopen{}\left(\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}\right)\mathclose{}
+&amp;&amp; \text{(a variance is non-negative)} \\
+&amp;= \frac{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}{\sigma_X^2} + \frac{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}{\sigma_Y^2} \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y}
+&amp;&amp; \text{(variance of a sum of two random variables)} \\
+&amp;= 1 + 1 \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y}
+&amp;&amp; \text{(definition of standard deviation: } \sigma_X^2 = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma_Y^2 = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\
+&amp;= 2 \pm 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}
+&amp;&amp; \text{(definition of correlation)}
+\end{aligned}
+\]</span></p>
+<p>With the <span class="math inline">\(+\)</span> sign, <span class="math inline">\(0 \le 2 + 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\)</span> gives <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \ge -1\)</span>. With the <span class="math inline">\(-\)</span> sign, <span class="math inline">\(0 \le 2 - 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\)</span> gives <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\)</span>.</p>
+</div>
+</section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-billingsley1995probability" class="csl-entry" role="listitem">
+Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+</div>
 <div id="ref-CaseBerg01" class="csl-entry" role="listitem">
 Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
 </div>

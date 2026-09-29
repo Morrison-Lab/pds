@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 15:22:34 (PDT)
+Last modified: 2026-09-28 22:56:18 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -14,9 +14,11 @@ Last modified: 2026-09-28 15:22:34 (PDT)
 >
 > \\z - r\\
 
-In probability and statistics, “deviation” usually means deviation from a [population mean](expectation.llms.md#def-expectation).
-
-See: [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
+> **NOTE:**
+>
+> *Remark*. In probability and statistics, “deviation” usually means deviation from a [population mean](expectation.llms.md#def-expectation).
+>
+> See: [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
 
 > **NOTE:**
 >
@@ -32,15 +34,17 @@ See: [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation
 >
 > \\e(y) \stackrel{\text{def}}{=}y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\
 
-Other sources often call this quantity an **error** or **noise term**. In regression settings, the reference mean is often conditional on covariates: \\e(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}\\.
-
-These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\e(\cdot)\\ for these model/data deviations, and reserve \\\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error)).
-
-See:
-
-- [Wikipedia: Errors and residuals](https://en.wikipedia.org/wiki/Errors_and_residuals)
-- [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
-- [Wikipedia: Linear regression — Notation and terminology](https://en.wikipedia.org/wiki/Linear_regression#Notation_and_terminology)
+> **NOTE:**
+>
+> *Remark*. Other sources often call this quantity an **error** or **noise term**. In regression settings, the reference mean is often conditional on covariates: \\e(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}\\.
+>
+> These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\e(\cdot)\\ for these model/data deviations, and reserve \\\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error)).
+>
+> See:
+>
+> - [Wikipedia: Errors and residuals](https://en.wikipedia.org/wiki/Errors_and_residuals)
+> - [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
+> - [Wikipedia: Linear regression — Notation and terminology](https://en.wikipedia.org/wiki/Linear_regression#Notation_and_terminology)
 
 > **NOTE:**
 >
@@ -64,7 +68,9 @@ See:
 >
 > \\ \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\[e(X)\]^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{}. \\
 
-This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep \\e(X)\\ as the definition’s single building block, matching the notation of [Definition 2](#def-deviation-pop-mean).
+> **NOTE:**
+>
+> *Remark*. This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep \\e(X)\\ as the definition’s single building block, matching the notation of [Definition 2](#def-deviation-pop-mean).
 
 > **NOTE:**
 >
@@ -150,7 +156,9 @@ This is the more commonly seen form of the variance definition, and the canonica
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} + 2 \cdot 0 && \text{(substitute the three terms)} \\ &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(simplify)} \end{aligned} \\
 
-Alternate names include: the **conditional variance formula**, **Eve’s law**, and the **variance decomposition formula**.
+> **NOTE:**
+>
+> *Remark*. Alternate names include: the **conditional variance formula**, **Eve’s law**, and the **variance decomposition formula**.
 
 > **NOTE:**
 >
@@ -172,7 +180,9 @@ Alternate names include: the **conditional variance formula**, **Eve’s law**, 
 >
 > \\\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\sqrt{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\\
 
-The standard deviation is on the same scale as \\X\\ itself (unlike the variance, which is on the scale of \\X\\’s square), which is why it is often the preferred measure of spread when reporting results.
+> **NOTE:**
+>
+> *Remark*. The standard deviation is on the same scale as \\X\\ itself (unlike the variance, which is on the scale of \\X\\’s square), which is why it is often the preferred measure of spread when reporting results.
 
 > **NOTE:**
 >
@@ -212,7 +222,7 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 
 > **NOTE:**
 >
-> *Proof*. Write \\f_X\\ and \\f_Y\\ for the PMFs or densities of \\X\\ and \\Y\\, with reference measures \\\mu_X\\ and \\\mu_Y\\ as in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) ([counting measure](probability-basics.llms.md#def-counting-measure) for a discrete variable, Lebesgue measure for a continuous one). Because \\X\\ and \\Y\\ are independent, \\f\_{X,Y}(x, y) = f_X(x)\\f_Y(y)\\ is their joint PMF, density, or density-mass function (the factorization in the notes to the [definition of independence](independence.llms.md#def-indpt)). First, with \\h(x, y) = \mathopen{}\left\|x\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{} \ge 0\\ (condition (a)):
+> *Proof*. Write \\f_X\\ and \\f_Y\\ for the PMFs or densities of \\X\\ and \\Y\\, with reference measures \\\mu_X\\ and \\\mu_Y\\ as in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) ([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a discrete variable, Lebesgue measure for a continuous one). Because \\X\\ and \\Y\\ are independent, \\f\_{X,Y}(x, y) = f_X(x)\\f_Y(y)\\ is their joint PMF, density, or density-mass function (the factorization in the notes to the [definition of independence](independence.llms.md#def-indpt)). First, with \\h(x, y) = \mathopen{}\left\|x\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{} \ge 0\\ (condition (a)):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|XY\right\|\mathclose{}\right\]\mathclose{} &= \int\mathopen{}\left(\int \mathopen{}\left\|x\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{}\\f_X(x)\\f_Y(y)\\d\mu_Y(y)\right)\mathclose{}\\d\mu_X(x) && \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\ &= \int \mathopen{}\left\|x\right\|\mathclose{}\\f_X(x)\mathopen{}\left(\int \mathopen{}\left\|y\right\|\mathclose{}\\f_Y(y)\\d\mu_Y(y)\right)\mathclose{}\\d\mu_X(x) && \text{(} \mathopen{}\left\|x\right\|\mathclose{}\\f_X(x) \text{ does not depend on } y \text{)} \\ &= \int \mathopen{}\left\|x\right\|\mathclose{}\\f_X(x) \cdot\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{}\\d\mu_X(x) && \text{(LOTUS for } \mathopen{}\left\|Y\right\|\mathclose{} \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|X\right\|\mathclose{}\right\]\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} && \text{(LOTUS for } \mathopen{}\left\|X\right\|\mathclose{} \text{)} \end{aligned} \\
 >
@@ -246,7 +256,9 @@ The standard deviation is on the same scale as \\X\\ itself (unlike the variance
 >
 > \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\\
 
-Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and the correlation always lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)). This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.
+> **NOTE:**
+>
+> *Remark*. Dividing by the standard deviations removes the units of \\X\\ and \\Y\\. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.
 
 > **NOTE:**
 >
@@ -260,11 +272,21 @@ Dividing by the standard deviations removes the units of \\X\\ and \\Y\\, and th
 >
 > \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\
 
-When \\X\\ and \\Y\\ also have positive variances, being uncorrelated is the same as having [correlation](#def-correlation) 0. [Theorem 5](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 11](#exm-uncorrelated-not-indpt) shows the converse fails.
+> **NOTE:**
+>
+> *Remark*. [Theorem 5](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 11](#exm-uncorrelated-not-indpt) shows the converse fails.
 
 > **NOTE:**
 >
 > **Example 13 (Correlated and uncorrelated pairs)** In [Example 11](#exm-uncorrelated-not-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, so \\X\\ and \\Y = X^2\\ are uncorrelated. In [Example 9](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\\, so the binary exposure and outcome are not uncorrelated.
+
+> **NOTE:**
+>
+> **Corollary 1 (Uncorrelated means zero correlation)** If \\X\\ and \\Y\\ have finite, positive [variances](#def-variance), then \\X\\ and \\Y\\ are [uncorrelated](#def-uncorrelated) if and only if \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\.
+
+> **NOTE:**
+>
+> *Proof*. By [Definition 10](#def-correlation), \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} / \mathopen{}\left(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}\right)\mathclose{}\\, and \\\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} \> 0\\ because both variances are positive, so \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\ if and only if \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, which is [Definition 11](#def-uncorrelated).
 
 > **NOTE:**
 >
@@ -300,7 +322,9 @@ When \\X\\ and \\Y\\ also have positive variances, being uncorrelated is the sam
 >
 > Adding the four terms gives the result.
 
-Alternate names include: the **covariance decomposition formula** and the **conditional covariance formula**.
+> **NOTE:**
+>
+> *Remark*. Alternate names include: the **covariance decomposition formula** and the **conditional covariance formula**.
 
 > **NOTE:**
 >
@@ -360,7 +384,7 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 
 > **NOTE:**
 >
-> **Corollary 1 (Variance of a sum of two random variables)** For any two random variables \\X\\ and \\Y\\ and scalars \\a\\ and \\b\\:
+> **Corollary 2 (Variance of a sum of two random variables)** For any two random variables \\X\\ and \\Y\\ and scalars \\a\\ and \\b\\:
 >
 > \\\operatorname{Var}\mathopen{}\left(aX + bY\right)\mathclose{} = a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2(a \cdot b) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}\\
 
@@ -374,9 +398,108 @@ Alternate names include: the **covariance decomposition formula** and the **cond
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(aX+bY - \operatorname{E}\mathopen{}\left\[aX+bY\right\]\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(a(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}) + b(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right)\mathclose{}^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[a^2(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2 + 2(a \cdot b)(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) + b^2(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(expand the square)} \\ &= a^2\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{} + 2(a \cdot b)\operatorname{E}\mathopen{}\left\[(X-\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right\]\mathclose{} + b^2\operatorname{E}\mathopen{}\left\[(Y-\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + 2(a \cdot b) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(definitions of variance and covariance)} \end{aligned} \\
 
-This corollary is why two variables’ covariance matters for combining them: if \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), then \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}=0\\ ([Theorem 5](#thm-indpt-uncorrelated)), and the variance of their sum is just the sum of their variances.
+> **NOTE:**
+>
+> **Corollary 3 (Variance of a sum of independent random variables)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), each discrete or continuous, with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\, then:
+>
+> \\\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}\\
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 5](#thm-indpt-uncorrelated), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\. Applying [Corollary 2](#cor-var-lincom2) with \\a = b = 1\\:
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{} &= 1^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + 1^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2(1 \cdot 1) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(variance of a sum of two random variables)} \\ &= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(simplify)} \\ &= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0 \text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> *Remark*. [Corollary 2](#cor-var-lincom2) is why two variables’ covariance matters for combining them: the covariance term is what separates the variance of their sum from the sum of their variances, and [Corollary 3](#cor-var-sum-indpt) is the case where that term is 0.
+
+> **NOTE:**
+>
+> **Theorem 10 (A variance matrix is symmetric and positive semidefinite)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ with \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is [symmetric](https://morrison-lab.github.io/mds/linear-algebra.html#def-symmetric-matrix) and [positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-semidefinite): for every \\p \times 1\\ vector of constants \\\tilde{a}\\,
+>
+> \\{\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a}\ge 0\\
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 7](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 9](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
+>
+> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[(X_i - \mu_i)(X_j - \mu_j)\right\]\mathclose{} && \text{(definition of covariance)} \\ &= \operatorname{E}\mathopen{}\left\[(X_j - \mu_j)(X_i - \mu_i)\right\]\mathclose{} && \text{(multiplication of numbers is commutative)} \\ &= \operatorname{Cov}\mathopen{}\left(X_j, X_i\right)\mathclose{} && \text{(definition of covariance)} \end{aligned} \\
+>
+> so the \\(i,j)\\-th and \\(j,i)\\-th elements are equal, and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is symmetric.
+>
+> For positive semidefiniteness, let \\Y = {\tilde{a}}^{\top}\tilde{X}\\. Then:
+>
+> \\ \begin{aligned} {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} &= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(variance of a linear combination)} \\ &= \operatorname{E}\mathopen{}\left\[(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of variance)} \\ &\ge 0 && \text{(} (Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2 \ge 0 \text{)} \end{aligned} \\
+>
+> The first step is [Theorem 9](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley ([1995](#ref-billingsley1995probability))).
+
+> **NOTE:**
+>
+> **Example 15 (Two variance matrices that differ only in sign)** Let \\\tilde{X}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
+>
+> \\D_1 = \mathopen{}\left\\(-5, 1),\\ (0, -1),\\ (0, 1),\\ (5, -1)\right\\\mathclose{},\\
+>
+> and let \\\tilde{X}'\\ be equally likely to be each of the four points
+>
+> \\D_2 = \mathopen{}\left\\(5, 1),\\ (0, -1),\\ (0, 1),\\ (-5, -1)\right\\\mathclose{}.\\
+>
+> Both sets have first coordinates \\\mathopen{}\left\\-5, 0, 0, 5\right\\\mathclose{}\\ and second coordinates \\\mathopen{}\left\\1, -1, 1, -1\right\\\mathclose{}\\, so \\\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} = 0\\, \\\operatorname{E}\mathopen{}\left\[X_1^2\right\]\mathclose{} = (25 + 0 + 0 + 25)/4 = 12.5\\, and \\\operatorname{E}\mathopen{}\left\[X_2^2\right\]\mathclose{} = (1 + 1 + 1 + 1)/4 = 1\\, and likewise for \\\tilde{X}'\\. They differ in the products of the coordinates:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} = -2.5, \\ \operatorname{E}\mathopen{}\left\[X_1' X_2'\right\]\mathclose{} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} = 2.5. \end{aligned} \\
+>
+> Since the means are 0, [Theorem 7](#thm-vcov-elements) and [Theorem 4](#thm-alt-cov) give:
+>
+> \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \begin{pmatrix}12.5 & -2.5 \\ -2.5 & 1\end{pmatrix}, \qquad \operatorname{Var}\mathopen{}\left(\tilde{X}'\right)\mathclose{} = \begin{pmatrix}12.5 & 2.5 \\ 2.5 & 1\end{pmatrix}. \\
+>
+> Both are symmetric. [Theorem 9](#thm-var-lincom) with \\\tilde{a}= {(1, 1)}^{\top}\\ and \\\tilde{a}= {(1, -1)}^{\top}\\ gives:
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &= 12.5 + 1 + 2(-2.5) = 8.5, & \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &= 12.5 + 1 - 2(-2.5) = 18.5, \\ \operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &= 12.5 + 1 + 2(2.5) = 18.5, & \operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &= 12.5 + 1 - 2(2.5) = 8.5. \end{aligned} \\
+>
+> As a check, \\X_1 + X_2\\ takes the values \\-4, -1, 1, 4\\, each with probability \\1/4\\, so its mean is 0 and its variance is \\(16 + 1 + 1 + 16)/4 = 8.5\\.
+
+> **NOTE:**
+>
+> *Remark*. The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, \\{(1, 1)}^{\top}\\ or \\{(1, -1)}^{\top}\\, has the larger spread.
+
+> **NOTE:**
+>
+> **Example 16 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\tilde{X}= {(X_1, X_2)}^{\top}\\ is \\\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\\ ([Lemma 1](#lem-cov-xx)), so:
+>
+> \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}. \\
+>
+> With \\\tilde{a}= {(1, -1)}^{\top}\\, \\{\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} = 0\\, so \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite)). If \\X_1\\ is continuous, \\\tilde{X}\\ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
+
+> **NOTE:**
+>
+> **Corollary 4 (Independent components give a diagonal variance matrix)** Let \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ be a random vector whose components are each discrete or continuous, with:
+>
+> - \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, and
+> - \\X_i\\ and \\X_j\\ [independent](independence.llms.md#def-indpt) for every \\i \neq j\\.
+>
+> Then \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix), with diagonal elements \\\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}, \ldots, \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}\\.
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 7](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ by [Theorem 5](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\\ by [Lemma 1](#lem-cov-xx).
+
+> **NOTE:**
+>
+> **Theorem 11 (Correlation lies between \\-1\\ and \\1\\)** If \\X\\ and \\Y\\ have finite, positive [variances](#def-variance), then their [correlation](#def-correlation) lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)):
+>
+> \\-1 \le \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\\
+
+> **NOTE:**
+>
+> *Proof*. Write \\\sigma_X \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} \> 0\\ and \\\sigma_Y \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} \> 0\\, and take either sign \\\pm\\ throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying [Corollary 2](#cor-var-lincom2) with \\a = 1/\sigma_X\\ and \\b = \pm 1/\sigma_Y\\:
+>
+> \\ \begin{aligned} 0 &\le \operatorname{Var}\mathopen{}\left(\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}\right)\mathclose{} && \text{(a variance is non-negative)} \\ &= \frac{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}{\sigma_X^2} + \frac{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}{\sigma_Y^2} \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(variance of a sum of two random variables)} \\ &= 1 + 1 \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(definition of standard deviation: } \sigma_X^2 = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma_Y^2 = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\ &= 2 \pm 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(definition of correlation)} \end{aligned} \\
+>
+> With the \\+\\ sign, \\0 \le 2 + 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\ gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \ge -1\\. With the \\-\\ sign, \\0 \le 2 - 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\ gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\\.
 
 ## References
+
+Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 

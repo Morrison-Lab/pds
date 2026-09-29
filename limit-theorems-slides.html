@@ -9,6 +9,7 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/code-language-labels-1.0.0/code-language-labels.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
@@ -361,11 +362,13 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 15:22:34 (PDT)</p>
+  <p class="date">Last modified: 2026-09-28 22:56:18 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
-<p>The sum of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a> makes this precise.</p>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The sum of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a> makes this precise.</p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -376,9 +379,59 @@
 \]</span></p>
 <p>where <span class="math inline">\(\Phi(z) \stackrel{\text{def}}{=}\int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du\)</span> is the CDF of the <a href="./random-variables.html#def-std-normal">standard normal distribution</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\)</span>.</p>
 </div>
-<aside class="notes">
-<p>This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope <span class="citation" data-cites="billingsley1995probability">(<a href="#/references" role="doc-biblioref" onclick="">Billingsley 1995</a>, Theorem 27.1)</span>. Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.</p>
-<p>In practice, the theorem justifies approximating <span class="math inline">\(S_n\)</span> by a normal distribution with mean <span class="math inline">\(n\mu\)</span> and variance <span class="math inline">\(n\sigma^2\)</span>, which by <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a> and the <a href="./variance-covariance.html#thm-var-lincom">variance of a linear combination</a> (whose covariance terms are 0 for <a href="./variance-covariance.html#thm-indpt-uncorrelated">independent summands</a>) are exactly the mean and variance of <span class="math inline">\(S_n\)</span>.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope <span class="citation" data-cites="billingsley1995probability">(<a href="#/references" role="doc-biblioref" onclick="">Billingsley 1995</a>, Theorem 27.1)</span>. Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="cor-sum-iid-moments" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (Mean and variance of a sum of IID random variables)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables, each discrete or continuous, with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>. Then:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{} &amp;= n\mu \\
+\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} &amp;= n\sigma^2
+\end{aligned}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>For the mean, apply <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a> once per added summand:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}
+&amp;= \sum_{i=1}^n\operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}
+&amp;&amp; \text{(linearity of expectation, applied } n - 1 \text{ times)} \\
+&amp;= n\mu
+&amp;&amp; \text{(each } X_i \text{ has mean } \mu \text{)}
+\end{aligned}
+\]</span></p>
+<p>For the variance, apply the <a href="./variance-covariance.html#thm-var-lincom">variance of a linear combination</a> with every <span class="math inline">\(a_i = 1\)</span>. For <span class="math inline">\(i \ne j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent (take <span class="math inline">\(A_k = \mathbb{R}\)</span> for every other <span class="math inline">\(k\)</span> in the <a href="./independence.html#def-indpt">definition of independence</a>), so <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> for <a href="./variance-covariance.html#thm-indpt-uncorrelated">independent summands</a>; and <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span> (<a href="./variance-covariance.html#lem-cov-xx">covariance of a variable with itself</a>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}
+&amp;= \sum_{i=1}^n\sum_{j=1}^n \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
+&amp;&amp; \text{(variance of a linear combination, all } a_i = 1 \text{)} \\
+&amp;= \sum_{i=1}^n\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} + \sum_{i \ne j} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
+&amp;&amp; \text{(split off the terms with } i = j \text{)} \\
+&amp;= \sum_{i=1}^n\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{} + 0
+&amp;&amp; \text{(covariance with itself; independent summands)} \\
+&amp;= n\sigma^2
+&amp;&amp; \text{(each } X_i \text{ has variance } \sigma^2\text{)}
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>In practice, <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a> justifies approximating <span class="math inline">\(S_n\)</span> by a normal distribution with mean <span class="math inline">\(n\mu\)</span> and variance <span class="math inline">\(n\sigma^2\)</span>, which by <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;1</a> are exactly the mean and variance of <span class="math inline">\(S_n\)</span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

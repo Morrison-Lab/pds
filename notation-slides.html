@@ -8,7 +8,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/code-language-labels-1.0.0/code-language-labels.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <title>Probability for Data Science – Notation</title>
@@ -290,7 +291,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 15:22:34 (PDT)</p>
+  <p class="date">Last modified: 2026-09-28 22:56:18 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -307,15 +308,19 @@
 </section>
 <section id="sec-stochastic-probabilistic-random" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Stochastic vs.&nbsp;probabilistic vs.&nbsp;random</h2>
-<p>The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions.</p>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions.</p>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="key-distinction-modeling-approach-vs.-phenomena">Key distinction: modeling approach vs.&nbsp;phenomena</h3>
-<p>As noted in <a href="https://en.wikipedia.org/wiki/Stochastic">Wikipedia</a>:</p>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>As noted in <a href="https://en.wikipedia.org/wiki/Stochastic">Wikipedia</a>:</p>
 <blockquote>
 <p><em>Stochasticity</em> and <em>randomness</em> are technically distinct concepts: the former refers to a modeling approach, while the latter describes phenomena; in everyday conversation these terms are often used interchangeably.</p>
 </blockquote>
+</div>
 <p><span id="definitions"></span></p>
 </section>
 <section class="slide level2">
@@ -323,8 +328,8 @@
 <div id="def-random" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1 (Random)</strong></span> Something is <strong>random</strong> when it occurs by chance, without a deterministic pattern: its outcome cannot be predicted precisely, only probabilistically. It is the most general of the three terms, used to describe variables or occurrences rather than whole processes or modeling approaches.</p>
 </div>
-<aside class="notes">
-<p>The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The term “random” is sometimes used as shorthand for a uniform distribution (especially the discrete uniform distribution), but it can refer to any probability distribution.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -367,8 +372,8 @@
 <div id="exm-probabilistic" class="theorem example">
 <p><span class="theorem-title"><strong>Example 3 (A linear regression model)</strong></span> A linear regression model with Gaussian errors, <span class="math inline">\(Y = \beta_0 + \beta_1 x + \epsilon\)</span> with <span class="math inline">\(\epsilon \sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\)</span>, is probabilistic: for each value of the covariate <span class="math inline">\(x\)</span>, it assigns a probability distribution to the outcome <span class="math inline">\(Y\)</span>. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.</p>
 </div>
-<aside class="notes">
-<p>The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.</p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -429,17 +434,22 @@ Table&nbsp;1: Comparison of “random”, “stochastic”, and “probabilistic
 </div>
 </figure>
 </div>
-<p>While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.</p>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.</p>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="additional-resources">Additional resources</h3>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span></p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Stochastic">Wikipedia: Stochastic</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Stochastic_process">Wikipedia: Stochastic process</a></li>
 <li><a href="https://math.stackexchange.com/questions/114373/whats-the-difference-between-stochastic-and-random">Mathematics Stack Exchange: What’s the difference between stochastic and random?</a></li>
 <li><a href="https://stats.stackexchange.com/questions/421462/probability-model-vs-statistical-model-vs-stochastic-model">Cross Validated: Probability model vs statistical model vs stochastic model</a></li>
 </ul>
+</div>
 </section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
