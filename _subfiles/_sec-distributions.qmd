@@ -14,6 +14,8 @@ Poisson | Unbounded count outcomes
 Geometric | Counts of non-events before an event occurs
 Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs
 [Normal (Gaussian)](random-variables.qmd#def-normal) | Continuous outcomes without a more specific distribution
+[Multivariate normal](#sec-mvn) | Vectors of continuous outcomes
+[Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations
 [Exponential](random-variables.qmd#def-exponential) | Time to event outcomes
 Gamma | Time to event outcomes
 Weibull | Time to event outcomes
@@ -981,5 +983,623 @@ and mean.
 With $\alpha = 2$ and $\lambda = 1$,
 $\h(t) = 2t$ increases with $t$,
 and $\E{T} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886$.
+
+:::
+
+{{< slidebreak >}}
+
+## The multivariate normal distribution {#sec-mvn}
+
+:::{#def-mvn}
+#### Multivariate normal distribution
+
+A $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$
+has the **multivariate normal distribution**
+(or **multivariate Gaussian distribution**)
+with mean parameter $\vecf{\mu} \in \mathbb{R}^p$
+and variance parameter $\matr{\Sigma}$,
+a $p \times p$
+[positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite)
+matrix,
+written $\vX \sim \Normal_p\paren{\vecf{\mu}, \matr{\Sigma}}$,
+if $\vX$ has joint density:
+
+$$
+\p(\vX = \vx) \eqdef
+\frac{1}{(2\pi)^{p/2} \det(\matr{\Sigma})^{1/2}}
+\ef{-\frac{1}{2} \tp{(\vx - \vecf{\mu})} \matr{\Sigma}^{-1} (\vx - \vecf{\mu})},
+\quad \vx \in \mathbb{R}^p
+$$
+
+where $\det(\matr{\Sigma})$ is the
+[determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant)
+of $\matr{\Sigma}$
+and $\matr{\Sigma}^{-1}$ is its
+[inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse).
+
+:::
+
+::: {.remark .notes}
+
+A joint density of $p$ random variables is the $p$-variable analogue of a
+[joint density](random-variables.qmd#def-joint-pdf) of two:
+a non-negative function on $\mathbb{R}^p$
+whose integral over any region $A \subseteq \mathbb{R}^p$
+is $\Pr(\vX \in A)$.
+
+The density is well defined because $\matr{\Sigma}$ is positive definite:
+
+- $\matr{\Sigma}^{-1}$ exists
+  ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse)), and
+- $\det(\matr{\Sigma}) > 0$
+  ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra.html#cor-det-pd)),
+  so its square root is a positive number.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mvn-moments}
+#### The multivariate normal density integrates to 1, with mean $\vecf{\mu}$ and variance $\matr{\Sigma}$
+
+If $\vX \sim \Normal_p\paren{\vecf{\mu}, \matr{\Sigma}}$ (@def-mvn),
+then the density in @def-mvn integrates to 1 over $\mathbb{R}^p$,
+$\Expp\vX = \vecf{\mu}$
+(the [expectation of a random vector](expectation.qmd#def-expectation-matrix)),
+and $\Varf{\vX} = \matr{\Sigma}$
+(the [variance of a random vector](variance-covariance.qmd#def-cov-vec-x)).
+
+:::
+
+::: {.remark .notes}
+
+The proof changes variables in a $p$-dimensional integral,
+which these notes do not develop;
+see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>.
+As with the univariate [normal distribution](random-variables.qmd#thm-normal-density),
+these facts are where the parameters' names come from.
+They also show why $\matr{\Sigma}$ must at least be
+[positive semidefinite](variance-covariance.qmd#thm-vcov-psd);
+requiring it to be positive definite rules out cases like
+[a variance matrix that is not positive definite](variance-covariance.qmd#exm-vcov-singular),
+which has no joint density.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mvn-univariate}
+#### The univariate normal is the case $p = 1$
+
+With $p = 1$, $\vecf{\mu} = (\mu)$, and $\matr{\Sigma} = (\ss)$ for $\ss > 0$,
+$\det(\matr{\Sigma}) = \ss$
+([determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant), $p = 1$)
+and $\matr{\Sigma}^{-1} = (1/\ss)$, so:
+
+$$
+\ba
+\p(\vX = \vx)
+&= \frac{1}{(2\pi)^{1/2} (\ss)^{1/2}}
+\ef{-\frac{1}{2} (x - \mu) \frac{1}{\ss} (x - \mu)}
+&& \text{(substitute into the multivariate normal density)} \\
+&= \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x - \mu)^2}{2\ss}}
+&& \text{(simplify)}
+\ea
+$$
+
+which is the [normal density](random-variables.qmd#def-normal) $\ndist{\mu, \ss}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#lem-mahalanobis-nonneg}
+#### The quadratic form in the multivariate normal density is non-negative
+
+If $\matr{\Sigma}$ is a $p \times p$ positive definite matrix
+and $\vx, \vecf{\mu} \in \mathbb{R}^p$, then
+
+$$\tp{(\vx - \vecf{\mu})} \matr{\Sigma}^{-1} (\vx - \vecf{\mu}) \ge 0,$$
+
+with equality if and only if $\vx = \vecf{\mu}$.
+
+:::
+
+::: proof
+
+$\matr{\Sigma}^{-1}$ is positive definite
+([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse)).
+If $\vx \neq \vecf{\mu}$, then $\vx - \vecf{\mu} \neq \vzero$,
+so the quadratic form is positive by the
+[definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite).
+If $\vx = \vecf{\mu}$, then $\vx - \vecf{\mu} = \vzero$,
+and the quadratic form is $0$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-mahalanobis}
+#### Mahalanobis distance
+
+For a $p \times p$ positive definite matrix $\matr{\Sigma}$
+and $\vx, \vecf{\mu} \in \mathbb{R}^p$,
+the **Mahalanobis distance** from $\vx$ to $\vecf{\mu}$ with respect to $\matr{\Sigma}$ is:
+
+$$
+\Delta(\vx) \eqdef \sqrt{\tp{(\vx - \vecf{\mu})} \matr{\Sigma}^{-1} (\vx - \vecf{\mu})}
+$$
+
+:::
+
+::: {.remark .notes}
+
+The square root is defined by @lem-mahalanobis-nonneg.
+See also <https://en.wikipedia.org/wiki/Mahalanobis_distance>.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-mvn-mahalanobis}
+#### The multivariate normal density decreases with Mahalanobis distance
+
+If $\vX \sim \Normal_p\paren{\vecf{\mu}, \matr{\Sigma}}$, then:
+
+$$
+\p(\vX = \vx) = \frac{1}{(2\pi)^{p/2} \det(\matr{\Sigma})^{1/2}} \ef{-\frac{\Delta(\vx)^2}{2}}
+$$
+
+where $\Delta$ is the Mahalanobis distance to $\vecf{\mu}$ with respect to $\matr{\Sigma}$ (@def-mahalanobis).
+So the density is highest at $\vx = \vecf{\mu}$,
+decreases as $\Delta(\vx)$ increases,
+and is the same at every $\vx$ with the same $\Delta(\vx)$.
+
+:::
+
+::: proof
+
+Substitute @def-mahalanobis into @def-mvn.
+The function $\delta \mapsto \ef{-\delta^2/2}$ decreases on $\delta \ge 0$,
+and by @lem-mahalanobis-nonneg, $\Delta(\vx) = 0$ only at $\vx = \vecf{\mu}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mahalanobis-special}
+#### Mahalanobis distance for diagonal variance matrices
+
+If $\matr{\Sigma}$ is
+[diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix)
+with diagonal elements $\sigma_1^2, \ldots, \sigma_p^2$, all positive,
+then $\matr{\Sigma}^{-1}$ is diagonal with diagonal elements
+$1/\sigma_1^2, \ldots, 1/\sigma_p^2$
+(multiplying the two gives $\matr{I}_p$;
+[matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
+
+$$
+\Delta(\vx)^2 = \sum_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2}
+$$
+
+Two special cases:
+
+- If $\matr{\Sigma} = \matr{I}_p$,
+  then $\Delta(\vx)^2 = \sum_{i=1}^p (x_i - \mu_i)^2$,
+  so the Mahalanobis distance is the ordinary (Euclidean) distance.
+- If $\matr{\Sigma} = \ss \matr{I}_p$,
+  then $\Delta(\vx)$ is the Euclidean distance divided by $\sigma$.
+
+In general, each coordinate's difference is measured
+in units of that coordinate's standard deviation.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mvn-diagonal-indpt}
+#### A multivariate normal vector with diagonal variance has independent normal components
+
+If $\vX \sim \Normal_p\paren{\vecf{\mu}, \matr{\Sigma}}$
+and $\matr{\Sigma}$ is diagonal with diagonal elements $\sigma_1^2, \ldots, \sigma_p^2$,
+then:
+
+- the joint density of $\vX$ is the product of the
+  [normal densities](random-variables.qmd#def-normal)
+  $\ndist{\mu_i, \sigma_i^2}$, $i = 1, \ldots, p$,
+- each $X_i \sim \ndist{\mu_i, \sigma_i^2}$, and
+- $X_1, \ldots, X_p$ are [independent](independence.qmd#def-indpt).
+
+:::
+
+::: proof
+
+By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal),
+$\det(\matr{\Sigma}) = \prod_{i=1}^p \sigma_i^2$,
+so $\det(\matr{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i$.
+Using @exm-mahalanobis-special for the quadratic form:
+
+$$
+\ba
+\p(\vX = \vx)
+&= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sigma_i}
+\ef{-\frac{1}{2} \sum_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2}}
+&& \text{(substitute)} \\
+&= \prod_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}}
+\ef{-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}}
+&& \text{(} \ef{a + b} = \ef{a}\ef{b} \text{)}
+\ea
+$$
+
+which is the product of the $\ndist{\mu_i, \sigma_i^2}$ densities.
+Integrating out every coordinate except $x_i$,
+each other factor integrates to 1
+([the normal density integrates to 1](random-variables.qmd#thm-normal-density)),
+leaving the $\ndist{\mu_i, \sigma_i^2}$ density as the density of $X_i$
+([marginal density from a joint density](random-variables.qmd#thm-marginal-density),
+with $p$ variables).
+So the joint density is the product of the marginal densities,
+and the components are independent by
+[the factorization theorem for densities](independence.qmd#thm-indpt-density),
+extended to $p$ variables as its remark describes.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-mvn-uncorrelated-indpt}
+#### For a multivariate normal vector, uncorrelated components are independent
+
+If $\vX \sim \Normal_p\paren{\vecf{\mu}, \matr{\Sigma}}$,
+then $X_1, \ldots, X_p$ are independent
+if and only if $\matr{\Sigma}$ is diagonal,
+that is, if and only if $\Covs{X_i}{X_j} = 0$ for every $i \neq j$.
+
+:::
+
+::: proof
+
+By @thm-mvn-moments, $\Varf{\vX} = \matr{\Sigma}$,
+whose $(i,j)$-th element is $\Covs{X_i}{X_j}$
+([elements of the variance matrix](variance-covariance.qmd#thm-vcov-elements)).
+If $\matr{\Sigma}$ is diagonal,
+the components are independent by @thm-mvn-diagonal-indpt.
+If the components are independent, then:
+
+- each pair $X_i, X_j$ with $i \neq j$ is independent,
+- each $X_i$ is continuous, with the density left
+  after integrating out the other coordinates of the joint density
+  ([marginal density from a joint density](random-variables.qmd#thm-marginal-density),
+  with $p$ variables), and
+- $\E{X_i^2} < \infty$,
+  because $\Var{X_i}$, the $(i,i)$-th element of $\matr{\Sigma}$, is defined,
+  and a [variance](variance-covariance.qmd#def-variance) is defined
+  only when $\E{X_i^2} < \infty$.
+
+So $\matr{\Sigma}$ is diagonal by
+[independent components give a diagonal variance matrix](variance-covariance.qmd#cor-vcov-indpt-diagonal).
+
+:::
+
+::: {.remark .notes}
+
+In general, uncorrelated random variables need not be independent
+([an example](variance-covariance.qmd#exm-uncorrelated-not-indpt)).
+@cor-mvn-uncorrelated-indpt needs the whole vector to be multivariate normal:
+two random variables that are each normal and uncorrelated
+can still be dependent
+(<https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent>).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mahalanobis-eigen}
+#### Mahalanobis distance in eigenvector coordinates
+
+Let $\matr{\Sigma}$ be positive definite, with
+[eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra.html#def-eigendecomposition)
+$\matr{\Sigma} = \matr{Q}\matr{\Lambda}\tp{\matr{Q}}$,
+where $\matr{Q}$ has columns $\vecf{q}_1, \ldots, \vecf{q}_p$
+and $\matr{\Lambda}$ has diagonal elements $\lambda_1, \ldots, \lambda_p$.
+Then:
+
+$$
+\Delta(\vx)^2 = \sum_{i=1}^p \frac{\paren{\tp{\vecf{q}_i}(\vx - \vecf{\mu})}^2}{\lambda_i}
+$$
+
+:::
+
+::: proof
+
+Let $\vecf{y} = \tp{\matr{Q}}(\vx - \vecf{\mu})$,
+whose $i$-th element is $y_i = \tp{\vecf{q}_i}(\vx - \vecf{\mu})$.
+By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse),
+$\matr{\Sigma}^{-1} = \matr{Q}\matr{\Lambda}^{-1}\tp{\matr{Q}}$,
+with every $\lambda_i > 0$. So:
+
+$$
+\ba
+\Delta(\vx)^2
+&= \tp{(\vx - \vecf{\mu})} \matr{Q}\matr{\Lambda}^{-1}\tp{\matr{Q}} (\vx - \vecf{\mu})
+&& \text{(definition; substitute } \matr{\Sigma}^{-1} \text{)} \\
+&= \tp{\vecf{y}} \matr{\Lambda}^{-1} \vecf{y}
+&& \text{(} \tp{(\vx - \vecf{\mu})}\matr{Q} = \tp{\vecf{y}} \text{)} \\
+&= \sum_{i=1}^p \frac{y_i^2}{\lambda_i}
+&& \text{(} \matr{\Lambda}^{-1} \text{ is diagonal)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+$y_i$ is the coordinate of $\vx - \vecf{\mu}$ along the eigenvector $\vecf{q}_i$.
+So the set of points at Mahalanobis distance $\delta$ from $\vecf{\mu}$,
+where the multivariate normal density is constant (@cor-mvn-mahalanobis),
+is an ellipse ($p = 2$) or ellipsoid
+centered at $\vecf{\mu}$,
+with axes along the eigenvectors of $\matr{\Sigma}$
+and half-length $\delta\sqrt{\lambda_i}$ along $\vecf{q}_i$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mahalanobis-eigen}
+#### Elliptical contours of a bivariate normal density
+
+Let $\vecf{\mu} = \vzero$ and
+$\matr{\Sigma} = \pmat{2 & 1 \\ 1 & 2}$,
+which has eigenvalues $3$ and $1$,
+with eigenvectors $\vecf{q}_1 = \frac{1}{\sqrt{2}}\tp{(1, 1)}$
+and $\vecf{q}_2 = \frac{1}{\sqrt{2}}\tp{(1, -1)}$
+([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral)).
+By @thm-mahalanobis-eigen:
+
+$$
+\Delta(\vx)^2 = \frac{(x_1 + x_2)^2}{2 \cd 3} + \frac{(x_1 - x_2)^2}{2 \cd 1}
+$$
+
+The point $\vx = \sqrt{3}\,\vecf{q}_1 = \sqrt{3/2}\,\tp{(1, 1)}$
+has $x_1 + x_2 = \sqrt{6}$ and $x_1 - x_2 = 0$, so $\Delta(\vx)^2 = 6/6 = 1$;
+the point $\vx = \vecf{q}_2$
+has $x_1 + x_2 = 0$ and $x_1 - x_2 = \sqrt{2}$, so $\Delta(\vx)^2 = 2/2 = 1$.
+So the contour $\Delta(\vx) = 1$ of the $\Normal_2\paren{\vzero, \matr{\Sigma}}$ density
+is an ellipse stretched along $\tp{(1, 1)}$, with half-length $\sqrt{3}$,
+and squeezed along $\tp{(1, -1)}$, with half-length $1$:
+$X_1$ and $X_2$ are positively correlated.
+
+:::
+
+{{< slidebreak >}}
+
+## Mixture distributions {#sec-mixture}
+
+:::{#def-mixture}
+#### Mixture density
+
+Let ${\p_1}, \ldots, {\p_K}$ be densities on $\mathbb{R}$,
+and let $w_1, \ldots, w_K$ be numbers with:
+
+- $w_c \ge 0$ for every $c$, and
+- $\sum_{c=1}^K w_c = 1$.
+
+The **mixture** of ${\p_1}, \ldots, {\p_K}$
+with **mixing weights** $w_1, \ldots, w_K$ is the function:
+
+$$
+{\p_{\text{mix}}}(x) \eqdef \sum_{c=1}^K w_c \, {\p_c}(x), \quad x \in \mathbb{R}
+$$
+
+The densities ${\p_1}, \ldots, {\p_K}$ are the mixture's **components**.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mixture-two-stage}
+#### A mixture is the density of a two-stage random variable
+
+Let $C$ be a discrete random variable
+and $X$ a continuous random variable
+with [joint density-mass function](random-variables.qmd#def-joint-density-mass)
+
+$$\p(C = c,\, X = x) = w_c \, {\p_c}(x), \quad c \in \set{1, \ldots, K},$$
+
+with ${\p_c}$ and $w_c$ as in @def-mixture.
+Then:
+
+- $\P(C = c) = w_c$,
+- for each $c$ with $w_c > 0$,
+  the [conditional density](expectation.qmd#def-cond-mixed) of $X$ given $C = c$ is ${\p_c}$, and
+- the mixture ${\p_{\text{mix}}}$ is a density of $X$.
+
+:::
+
+::: proof
+
+By the [marginal PMF from a joint density-mass function](random-variables.qmd#cor-joint-density-mass-marginal),
+$\P(C = c) = \int_{-\infty}^{\infty} w_c \, {\p_c}(x)\,dx = w_c$,
+because ${\p_c}$ is a density and so integrates to 1.
+Then, by the [definition of the conditional density](expectation.qmd#def-cond-mixed),
+$\p(X = x \mid C = c) = w_c \, {\p_c}(x) / w_c = {\p_c}(x)$.
+
+For the last claim, the events $\set{C = 1}, \ldots, \set{C = K}$
+are mutually exclusive, and their union is the whole sample space.
+So for any interval $B$:
+
+$$
+\ba
+\Pr(X \in B)
+&= \sum_{c=1}^K \Pr(C = c,\, X \in B)
+&& \text{(additivity over the events } \set{C = c} \text{)} \\
+&= \sum_{c=1}^K \int_B w_c \, {\p_c}(x)\,dx
+&& \text{(definition of a joint density-mass function)} \\
+&= \int_B \sum_{c=1}^K w_c \, {\p_c}(x)\,dx
+&& \text{(a finite sum of integrals is the integral of the sum)} \\
+&= \int_B {\p_{\text{mix}}}(x)\,dx
+&& \text{(definition of a mixture)}
+\ea
+$$
+
+And ${\p_{\text{mix}}} \ge 0$, as a sum of non-negative terms,
+so ${\p_{\text{mix}}}$ is a [density](random-variables.qmd#def-pdf) of $X$.
+
+:::
+
+::: {.remark .notes}
+
+@thm-mixture-two-stage describes how to generate a draw from a mixture:
+first draw a component label $C$ with $\P(C = c) = w_c$,
+then draw $X$ from the component density ${\p_C}$.
+In applications, $C$ is often an unobserved subpopulation,
+such as a disease subtype.
+Mixtures of multivariate densities,
+such as mixtures of [multivariate normal densities](#def-mvn)
+(Gaussian mixture models),
+work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mixture-mean}
+#### The mean of a mixture is the weighted mean of the component means
+
+If $X$ has density ${\p_{\text{mix}}}$ (@def-mixture),
+and each component ${\p_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx$,
+then:
+
+$$\E{X} = \sum_{c=1}^K w_c \, \mu_c$$
+
+:::
+
+::: proof
+
+The integral defining $\E{X}$ converges absolutely,
+because $\int \abs{x} \, {\p_{\text{mix}}}(x)\,dx = \sum_c w_c \int \abs{x} \, {\p_c}(x)\,dx$,
+a finite sum of finite numbers. Then:
+
+$$
+\ba
+\E{X}
+&= \int_{-\infty}^{\infty} x \, {\p_{\text{mix}}}(x)\,dx
+&& \text{(definition of expectation)} \\
+&= \int_{-\infty}^{\infty} x \sum_{c=1}^K w_c \, {\p_c}(x)\,dx
+&& \text{(definition of a mixture)} \\
+&= \sum_{c=1}^K w_c \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx
+&& \text{(a finite sum of integrals is the integral of the sum)} \\
+&= \sum_{c=1}^K w_c \, \mu_c
+&& \text{(definition of } \mu_c \text{)}
+\ea
+$$
+
+The first step is the [definition of expectation](expectation.qmd#def-expectation).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mixture-posterior}
+#### Which component did an observation come from?
+
+Under the conditions of @thm-mixture-two-stage,
+for each $x$ with ${\p_{\text{mix}}}(x) > 0$:
+
+$$
+\P(C = c \mid X = x) = \frac{w_c \, {\p_c}(x)}{\sum_{k=1}^K w_k \, {\p_k}(x)}
+$$
+
+:::
+
+::: proof
+
+By @thm-mixture-two-stage, ${\p_{\text{mix}}}$ is a density of $X$.
+By the [definition of the conditional PMF](expectation.qmd#def-cond-mixed)
+(the case $X$ continuous, $C$ discrete):
+
+$$
+\ba
+\P(C = c \mid X = x)
+&= \frac{\p(C = c,\, X = x)}{\p(X = x)}
+&& \text{(definition of the conditional PMF)} \\
+&= \frac{w_c \, {\p_c}(x)}{\sum_{k=1}^K w_k \, {\p_k}(x)}
+&& \text{(substitute the joint density-mass function and } {\p_{\text{mix}}} \text{)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+@thm-mixture-posterior has the form of [Bayes' theorem](probability-basics.qmd#thm-bayes),
+with densities in place of some probabilities:
+the prior probability $w_c$ of component $c$
+is multiplied by the component density ${\p_c}(x)$ at the observation
+and divided by the overall density ${\p_{\text{mix}}}(x)$,
+which plays the role of the [law of total probability](probability-basics.qmd#thm-total-prob).
+In machine learning,
+$\P(C = c \mid X = x)$ is called the **responsibility** of component $c$ for $x$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-mixture-gaussian}
+#### A two-component normal mixture
+
+Let ${\p_1}$ be the $\ndist{0, 1}$ density and ${\p_2}$ the $\ndist{6, 1}$ density,
+with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$,
+and let $X$ have density ${\p_{\text{mix}}} = 0.3\,{\p_1} + 0.7\,{\p_2}$.
+
+- **Mean.**
+  By @thm-mixture-mean and the [normal means](random-variables.qmd#thm-normal-density),
+  $\E{X} = 0.3 \cd 0 + 0.7 \cd 6 = 4.2$.
+- **Density.**
+  ${\p_{\text{mix}}}$ has peaks near the two component means,
+  ${\p_{\text{mix}}}(0) \approx 0.120$ and ${\p_{\text{mix}}}(6) \approx 0.279$,
+  with a trough between them, ${\p_{\text{mix}}}(3) \approx 0.004$.
+  The density at the mean, ${\p_{\text{mix}}}(4.2) \approx 0.055$,
+  is less than half its value at either peak.
+- **Responsibilities.**
+  By @thm-mixture-posterior,
+  at $x = 3$, halfway between the component means,
+  ${\p_1}(3) = {\p_2}(3)$ by the symmetry of the normal density, so:
+
+  $$
+  \P(C = 2 \mid X = 3)
+  = \frac{0.7\,{\p_2}(3)}{0.3\,{\p_1}(3) + 0.7\,{\p_2}(3)}
+  = \frac{0.7}{0.3 + 0.7}
+  = 0.7,
+  $$
+
+  the prior weight: an observation equally far from both components
+  carries no information about which component it came from.
+  At $x = 4.2$, the same formula gives $\P(C = 2 \mid X = 4.2) \approx 0.9997$.
+
+:::
+
+::: {.remark .notes}
+
+@exm-mixture-gaussian shows that the mean of a mixture
+can fall where observations are rare,
+so a single normal distribution fitted to such data
+would describe them poorly.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-nb-mixture}
+#### The negative binomial as a continuous mixture
+
+The [negative binomial distribution](#def-nb)
+is a mixture of Poisson distributions
+with a continuum of components, one for each mean $\lambda > 0$:
+its PMF is $\P(Y = y) = \int_0^\infty g(\lambda)\,\frac{\lambda^y e^{-\lambda}}{y!}\,d\lambda$,
+where the gamma density $g$ plays the role of the mixing weights
+and the integral replaces the sum in @def-mixture
+(see the proof of @thm-nb).
 
 :::

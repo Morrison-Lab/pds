@@ -705,6 +705,180 @@ and @cor-var-sum-indpt is the case where that term is 0.
 
 {{< slidebreak >}}
 
+:::{#thm-vcov-psd}
+#### A variance matrix is symmetric and positive semidefinite
+
+For a $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$
+with $\E{X_i^2} < \infty$ for every $i$,
+$\Varf{\vX}$ is
+[symmetric](https://morrison-lab.github.io/mds/linear-algebra.html#def-symmetric-matrix)
+and
+[positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-semidefinite):
+for every $p \times 1$ vector of constants $\va$,
+
+$$\tp{\va} \Varf{\vX} \va \ge 0$$
+
+:::
+
+::: proof
+
+By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$,
+and by @def-cov, with $\mu_i = \E{X_i}$:
+
+$$
+\ba
+\Covs{X_i}{X_j}
+&= \E{(X_i - \mu_i)(X_j - \mu_j)}
+&& \text{(definition of covariance)} \\
+&= \E{(X_j - \mu_j)(X_i - \mu_i)}
+&& \text{(multiplication of numbers is commutative)} \\
+&= \Covs{X_j}{X_i}
+&& \text{(definition of covariance)}
+\ea
+$$
+
+so the $(i,j)$-th and $(j,i)$-th elements are equal,
+and $\Varf{\vX}$ is symmetric.
+
+For positive semidefiniteness, let $Y = \tp{\va}\vX$. Then:
+
+$$
+\ba
+\tp{\va} \Varf{\vX} \va
+&= \Var{Y}
+&& \text{(variance of a linear combination)} \\
+&= \E{(Y - \E{Y})^2}
+&& \text{(definition of variance)} \\
+&\ge 0
+&& \text{(} (Y - \E{Y})^2 \ge 0 \text{)}
+\ea
+$$
+
+The first step is @thm-var-lincom.
+The last step holds because a random variable that is never negative
+has a non-negative expectation:
+in the discrete and continuous cases of the
+[definition of expectation](expectation.qmd#def-expectation),
+every term of the sum, or the integrand, is non-negative
+(for the general case, see @billingsley1995probability).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-vcov-psd}
+#### Two variance matrices that differ only in sign
+
+Let $\vX = \tp{(X_1, X_2)}$ be equally likely to be each of the four points
+
+$$D_1 = \set{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)},$$
+
+and let $\vX'$ be equally likely to be each of the four points
+
+$$D_2 = \set{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)}.$$
+
+Both sets have first coordinates $\set{-5, 0, 0, 5}$
+and second coordinates $\set{1, -1, 1, -1}$,
+so $\E{X_1} = \E{X_2} = 0$,
+$\E{X_1^2} = (25 + 0 + 0 + 25)/4 = 12.5$,
+and $\E{X_2^2} = (1 + 1 + 1 + 1)/4 = 1$,
+and likewise for $\vX'$.
+They differ in the products of the coordinates:
+
+$$
+\ba
+\E{X_1 X_2} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} = -2.5, \\
+\E{X_1' X_2'} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} = 2.5.
+\ea
+$$
+
+Since the means are 0, @thm-vcov-elements and @thm-alt-cov give:
+
+$$
+\Varf{\vX} = \pmat{12.5 & -2.5 \\ -2.5 & 1},
+\qquad
+\Varf{\vX'} = \pmat{12.5 & 2.5 \\ 2.5 & 1}.
+$$
+
+Both are symmetric.
+@thm-var-lincom with $\va = \tp{(1, 1)}$ and $\va = \tp{(1, -1)}$ gives:
+
+$$
+\ba
+\Var{X_1 + X_2} &= 12.5 + 1 + 2(-2.5) = 8.5, &
+\Var{X_1 - X_2} &= 12.5 + 1 - 2(-2.5) = 18.5, \\
+\Var{X_1' + X_2'} &= 12.5 + 1 + 2(2.5) = 18.5, &
+\Var{X_1' - X_2'} &= 12.5 + 1 - 2(2.5) = 8.5.
+\ea
+$$
+
+As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$,
+each with probability $1/4$,
+so its mean is 0 and its variance is $(16 + 1 + 1 + 16)/4 = 8.5$.
+
+:::
+
+::: {.remark .notes}
+
+The two sets of points have the same spread along each coordinate axis,
+so the diagonals of their variance matrices agree.
+The sign of the covariance says which diagonal direction,
+$\tp{(1, 1)}$ or $\tp{(1, -1)}$,
+has the larger spread.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-vcov-singular}
+#### A variance matrix that is not positive definite
+
+Let $X_1$ have variance $\ss > 0$, and let $X_2 = X_1$.
+Every covariance in $\vX = \tp{(X_1, X_2)}$ is $\Covs{X_1}{X_1} = \ss$ (@lem-cov-xx), so:
+
+$$
+\Varf{\vX} = \ss \pmat{1 & 1 \\ 1 & 1}.
+$$
+
+With $\va = \tp{(1, -1)}$,
+$\tp{\va}\Varf{\vX}\va = \Var{X_1 - X_2} = \Var{0} = 0$,
+so $\Varf{\vX}$ is positive semidefinite
+but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite)
+(compare [this example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite)).
+If $X_1$ is continuous,
+$\vX$ has no [joint density](random-variables.qmd#thm-no-joint-density-diagonal).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-vcov-indpt-diagonal}
+#### Independent components give a diagonal variance matrix
+
+Let $\vX = \tp{(X_1, \ldots, X_p)}$ be a random vector
+whose components are each discrete or continuous,
+with:
+
+- $\E{X_i^2} < \infty$ for every $i$, and
+- $X_i$ and $X_j$ [independent](independence.qmd#def-indpt) for every $i \neq j$.
+
+Then $\Varf{\vX}$ is
+[diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix),
+with diagonal elements $\Var{X_1}, \ldots, \Var{X_p}$.
+
+:::
+
+::: proof
+
+By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$.
+For $i \neq j$, $X_i$ and $X_j$ are independent,
+so $\Covs{X_i}{X_j} = 0$ by @thm-indpt-uncorrelated.
+The $(i,i)$-th element is $\Covs{X_i}{X_i} = \Var{X_i}$ by @lem-cov-xx.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#thm-cor-bounds}
 #### Correlation lies between $-1$ and $1$
 
