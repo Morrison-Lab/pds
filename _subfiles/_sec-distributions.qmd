@@ -704,7 +704,7 @@ $$
 \ea
 $$
 
-so, since $\exp$ is continuous,
+so, since the exponential function is continuous,
 $\paren{1 + \mu/\rho}^{-\rho} \rightarrow \expf{-\mu}$.
 Each of the three factors has a limit, so their product does too:
 
