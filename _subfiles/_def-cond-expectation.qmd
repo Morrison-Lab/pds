@@ -527,7 +527,7 @@ $$
 {{< slidebreak >}}
 
 :::{#cor-cond-expectation-general-y}
-#### With $h(x, y) = y$, the general definition gives $\E{Y \mid X = x}$
+#### With $h(x, y) = y$, the general definition gives ${\E{Y \mid X = x}}$
 
 For jointly distributed $X$ and $Y$ and $h(x, y) = y$,
 @def-cond-expectation-general gives the conditional expectation of $Y$ given $X = x$
