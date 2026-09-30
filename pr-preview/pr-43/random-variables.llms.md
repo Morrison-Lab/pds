@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-29 17:49:42 (PDT)
+Last modified: 2026-09-29 17:57:14 (PDT)
 
 ## 1 Random variables
 
@@ -549,53 +549,53 @@ Last modified: 2026-09-29 17:49:42 (PDT)
 
 ### 2.1 Joint distributions and marginalization
 
-For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\p(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
+For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\\operatorname{P}(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
 
-\\\sum\_{x \in \mathbb{X}} p(x) = 1\\
+\\\sum\_{x \in \mathbb{X}} \operatorname{P}(x) = 1\\
 
-The **support** of the distribution is the subset of values where the probability is strictly positive: \\\\x \in \mathbb{X} : p(x) \> 0\\\\. When \\\mathbb{X}\\ is finite, \\p(x)\\ can be written as a probability vector.
+The **support** of the distribution is the subset of values where the probability is strictly positive: \\\\x \in \mathbb{X} : \operatorname{P}(x) \> 0\\\\. When \\\mathbb{X}\\ is finite, \\\operatorname{P}(x)\\ can be written as a probability vector.
 
-For two discrete variables \\X \in \mathbb{X}\\ and \\Y \in \mathbb{Y}\\, their **joint probability distribution** \\p(x, y) : \mathbb{X} \times \mathbb{Y} \to \[0, 1\]\\ satisfies:
+For two discrete variables \\X \in \mathbb{X}\\ and \\Y \in \mathbb{Y}\\, their **joint probability distribution** \\\operatorname{P}(x, y) : \mathbb{X} \times \mathbb{Y} \to \[0, 1\]\\ satisfies:
 
-\\\sum\_{x \in \mathbb{X}} \sum\_{y \in \mathbb{Y}} p(x, y) = 1\\
+\\\sum\_{x \in \mathbb{X}} \sum\_{y \in \mathbb{Y}} \operatorname{P}(x, y) = 1\\
 
 For two variables, the joint probabilities can be laid out in a matrix or table. Summing across a row or column collapses that variable away, a process called **marginalization**:
 
-\\p(x) = \sum\_{y \in \mathbb{Y}} p(x, y), \qquad p(y) = \sum\_{x \in \mathbb{X}} p(x, y)\\
+\\\operatorname{P}(x) = \sum\_{y \in \mathbb{Y}} \operatorname{P}(x, y), \qquad \operatorname{P}(y) = \sum\_{x \in \mathbb{X}} \operatorname{P}(x, y)\\
 
-The resulting distributions \\p(x)\\ and \\p(y)\\ are the **marginal distributions** of \\X\\ and \\Y\\.
+The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ are the **marginal distributions** of \\X\\ and \\Y\\.
 
 > **NOTE:**
 >
-> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes ([Hutchinson 2024](#ref-hutchinson2024data471)). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\p(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\p(m=1) = 10^{-6}\\):
+> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes ([Hutchinson 2024](#ref-hutchinson2024data471)). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
 >
-> |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\p(m)\\ |
+> |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\\operatorname{P}(m)\\ |
 > |:---|---:|---:|---:|
 > | \\m=0\\ (no meteorite) | \\0.09999902\\ | \\0.89999998\\ | \\0.999999\\ |
 > | \\m=1\\ (meteorite hit) | \\0.00000098\\ | \\0.00000002\\ | \\0.000001\\ |
-> | **Marginal \\p(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
+> | **Marginal \\\operatorname{P}(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
 >
 > Table 1: Joint distribution of a meteorite strike (\\m\\) and day quality (\\d\\), with marginals.
 >
 > Summing each row yields the marginal distribution of \\m\\; summing each column yields the marginal distribution of \\d\\. Conditioning inverts the perspective:
 >
-> \\p(d=0 \mid m=1) = \frac{p(m=1, d=0)}{p(m=1)} = \frac{0.00000098}{0.000001} = 0.98\\
+> \\\operatorname{P}(d=0 \mid m=1) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} = \frac{0.00000098}{0.000001} = 0.98\\
 >
 > Given that a meteorite struck your house, you have a 98% chance of having a bad day. In reverse:
 >
-> \\p(m=1 \mid d=0) = \frac{p(m=1, d=0)}{p(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\\
+> \\\operatorname{P}(m=1 \mid d=0) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\\
 >
-> Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\p(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
+> Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\\operatorname{P}(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
 
 ### 2.2 Continuous distributions and densities
 
-When a random variable \\X\\ takes values in a continuous space \\\mathbb{X} \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\p(x) : \mathbb{X} \to \mathbb{R}\_+\\ satisfying:
+When a random variable \\X\\ takes values in a continuous space \\\mathbb{X} \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\\operatorname{p}(x) : \mathbb{X} \to \mathbb{R}\_+\\ satisfying:
 
-\\\int\_{\mathbb{X}} p(x)\\\mathrm{d}x = 1\\
+\\\int\_{\mathbb{X}} \operatorname{p}(x)\\\mathrm{d}x = 1\\
 
 Probabilities are assigned to subsets \\\mathbb{A} \subseteq \mathbb{X}\\ by integrating the density over that set:
 
-\\\Pr(X \in \mathbb{A}) = \int\_{\mathbb{A}} p(x)\\\mathrm{d}x\\
+\\\Pr(X \in \mathbb{A}) = \int\_{\mathbb{A}} \operatorname{p}(x)\\\mathrm{d}x\\
 
 > **NOTE:**
 >
@@ -607,11 +607,11 @@ Why? As Brian Hutchinson notes ([Hutchinson 2024](#ref-hutchinson2024data471)), 
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
-\\\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} p(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
+\\\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} \operatorname{p}(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
 
-Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum_x\\ with integrals \\\int \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\p(x, y)\\ to find the marginal density \\p(y)\\ becomes:
+Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum_x\\ with integrals \\\int \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\\operatorname{p}(x, y)\\ to find the marginal density \\\operatorname{p}(y)\\ becomes:
 
-\\p(y) = \int\_{\mathbb{X}} p(x, y)\\\mathrm{d}x\\
+\\\operatorname{p}(y) = \int\_{\mathbb{X}} \operatorname{p}(x, y)\\\mathrm{d}x\\
 
 > **TIP:**
 >
