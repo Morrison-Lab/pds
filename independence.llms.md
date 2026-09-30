@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 23:45:35 (PDT)
+Last modified: 2026-09-29 21:32:40 (PDT)
 
 > **NOTE:**
 >
@@ -102,6 +102,17 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
+> **Example 5 (Wet roads, umbrellas, and rain)** Consider Brian Hutchinson’s intuitive illustration of conditional independence ([Hutchinson 2024](#ref-hutchinson2024data471)):
+>
+> Let \\w\\ denote wet roads, \\u\\ denote people carrying umbrellas, and \\r\\ denote rain.
+>
+> - **Marginally, wet roads and umbrellas are not independent (\\w \not\perp u\\).** If you look out a window and see people holding open umbrellas, that increases the probability that the pavement outside is wet.
+> - **Conditionally on rain, they are independent (\\w \perp u \mid r\\).** Once you know with certainty whether it is currently raining, learning whether pedestrians are carrying umbrellas tells you nothing more about the state of the roads:
+>
+> \\\Pr(w, u \mid r) = \Pr(w \mid r)\\\Pr(u \mid r), \qquad \Pr(w \mid u, r) = \Pr(w \mid r)\\
+
+> **NOTE:**
+>
 > **Proposition 2 (Conditional independence when each \\Y_i\\ depends only on its own \\X_i\\)** Let \\\tilde{X}= (X_1, \ldots, X_n)\\ be a discrete random vector, and let \\Y_1, \ldots, Y_n\\ be [conditionally independent](#def-cind) given \\\tilde{X}\\. Suppose also that each \\Y_i\\ depends on \\\tilde{X}\\ only through \\X_i\\: for every \\\tilde{x}= (x_1, \ldots, x_n)\\ with \\\Pr(\tilde{X}= \tilde{x}) \> 0\\ and every set of real numbers \\A_i\\,
 >
 > \\\Pr(Y_i \in A_i \mid \tilde{X}= \tilde{x}) = \Pr(Y_i \in A_i \mid X_i = x_i)\\
@@ -154,7 +165,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 5 (Identically distributed but not independent)** In [Example 1](#exm-indpt), \\X_1\\ and \\1 - X_1\\ (the indicator of tails on the first flip) both take the values \\0\\ and \\1\\ with probability \\1/2\\ each, so they are identically distributed ([Theorem 3](#thm-ident-pmf)). They are not independent: knowing one determines the other.
+> **Example 6 (Identically distributed but not independent)** In [Example 1](#exm-indpt), \\X_1\\ and \\1 - X_1\\ (the indicator of tails on the first flip) both take the values \\0\\ and \\1\\ with probability \\1/2\\ each, so they are identically distributed ([Theorem 3](#thm-ident-pmf)). They are not independent: knowing one determines the other.
 
 > **NOTE:**
 >
@@ -166,7 +177,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 6 (A shared regression model)** Suppose each \\Y_i\\ is binary, with \\\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\\ for one function \\\pi\\ shared by every \\i\\ (for instance, \\\pi(x) = x / (1 + x)\\ for a dose \\x \ge 0\\). Then \\Y_1, \ldots, Y_n\\ are conditionally identically distributed given \\X_1, \ldots, X_n\\, with \\G(y \mid x) = 1 - \pi(x)\\ for \\0 \le y \< 1\\ (and \\0\\ for \\y \< 0\\, \\1\\ for \\y \ge 1\\). Their marginal distributions can still differ: if participant 1 always receives dose \\0\\ and participant 2 always receives dose \\1\\, then \\\Pr(Y_1 = 1) = 0\\ but \\\Pr(Y_2 = 1) = 1/2\\.
+> **Example 7 (A shared regression model)** Suppose each \\Y_i\\ is binary, with \\\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\\ for one function \\\pi\\ shared by every \\i\\ (for instance, \\\pi(x) = x / (1 + x)\\ for a dose \\x \ge 0\\). Then \\Y_1, \ldots, Y_n\\ are conditionally identically distributed given \\X_1, \ldots, X_n\\, with \\G(y \mid x) = 1 - \pi(x)\\ for \\0 \le y \< 1\\ (and \\0\\ for \\y \< 0\\, \\1\\ for \\y \ge 1\\). Their marginal distributions can still differ: if participant 1 always receives dose \\0\\ and participant 2 always receives dose \\1\\, then \\\Pr(Y_1 = 1) = 0\\ but \\\Pr(Y_2 = 1) = 1/2\\.
 
 > **NOTE:**
 >
@@ -181,7 +192,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (Repeated die rolls)** The results of \\n\\ rolls of the same fair die are IID: the rolls are independent, and each is uniform on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\.
+> **Example 8 (Repeated die rolls)** The results of \\n\\ rolls of the same fair die are IID: the rolls are independent, and each is uniform on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
@@ -193,7 +204,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (The usual regression assumption)** In [Example 6](#exm-cident), if the \\Y_i\\ are also conditionally independent given all the doses, and each \\Y_i\\ depends on the doses only through its own \\X_i\\, then \\Y_i \mid X_i\\ \operatorname{ciid}\\, and the joint conditional PMF is \\\prod\_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\\: one shared function evaluated at each \\(x_i, y_i)\\.
+> **Example 9 (The usual regression assumption)** In [Example 7](#exm-cident), if the \\Y_i\\ are also conditionally independent given all the doses, and each \\Y_i\\ depends on the doses only through its own \\X_i\\, then \\Y_i \mid X_i\\ \operatorname{ciid}\\, and the joint conditional PMF is \\\prod\_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\\: one shared function evaluated at each \\(x_i, y_i)\\.
 
 > **TIP:**
 >
@@ -204,6 +215,8 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+
+Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
 
 Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
 

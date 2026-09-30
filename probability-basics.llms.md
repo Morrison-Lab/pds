@@ -2,9 +2,19 @@
 
 Code
 
+- [Show All Code](javascript:void(0))
+
+- [Hide All Code](javascript:void(0))
+
+- 
+
+  ------------------------------------------------------------------------
+
+- [View Source](javascript:void(0))
+
 Published
 
-Last modified: 2026-09-28 23:45:35 (PDT)
+Last modified: 2026-09-29 21:32:40 (PDT)
 
 ## 1 Defining probabilities
 
@@ -269,11 +279,140 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 >
 > Even with a highly accurate test (99% sensitive and 99% specific), only about 88% of people who test positive actually have the disease, because the disease prevalence is relatively low (7%).
 
+> **NOTE:**
+>
+> **Exercise 1 (Turn a conditional around)** [Definition 8](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
+>
+> Your result should express \\\Pr(A \mid B)\\ using \\\Pr(B \mid A)\\, \\\Pr(A)\\ and \\\Pr(B)\\, and none of them jointly.
+
+> **NOTE:**
+>
+> *Solution 1*. Multiplying [Definition 8](#def-conditional-prob) through by its denominator, in each direction,
+>
+> \\\Pr(A \cap B) = \Pr(A \mid B)\\\Pr(B), \qquad \Pr(A \cap B) = \Pr(B \mid A)\\\Pr(A)\\
+>
+> The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by \\\Pr(B)\\ gives **Bayes’ rule** ([Theorem 7](#thm-bayes)):
+>
+> \\\Pr(A \mid B) = \frac{\Pr(B \mid A)\\\Pr(A)}{\Pr(B)} \tag{1}\\
+>
+> Nothing was assumed beyond \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\, which the two conditionals need in order to be defined at all.
+>
+> As Hutchinson emphasizes ([Hutchinson 2024](#ref-hutchinson2024data471)), each component carries standard Bayesian terminology:
+>
+> - \\\Pr(A \mid B)\\ is the **posterior probability** of \\A\\ given the observed evidence \\B\\.
+> - \\\Pr(B \mid A)\\ is the **likelihood** of the evidence \\B\\ given \\A\\.
+> - \\\Pr(A)\\ is the **prior probability** of \\A\\ before seeing \\B\\.
+> - \\\Pr(B)\\ is the marginal probability of the **evidence**.
+>
+> From this formula, the direction of effects is transparent: increasing the prior \\\Pr(A)\\ or the likelihood \\\Pr(B \mid A)\\ increases the posterior \\\Pr(A \mid B)\\, while increasing the probability of the evidence \\\Pr(B)\\ decreases it.
+
+> **NOTE:**
+>
+> **Exercise 2 (A test that is right 99% of the time)** A screening test for a disease is positive for \\99\\\\ of people who have it and negative for \\99\\\\ of people who do not. One person in a thousand has the disease.
+>
+> A randomly screened person tests positive. What is the probability that they have the disease? Guess first, then compute it with [Equation 1](#eq-bayes).
+
+> **NOTE:**
+>
+> *Solution 2*. Write \\S\\ for having the disease and \\+\\ for a positive test. The three given numbers are
+>
+> \\\Pr(+ \mid S) = 0.99, \qquad \Pr(+ \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001\\
+>
+> [Equation 1](#eq-bayes) needs \\\Pr(+)\\, the overall chance of a positive result. Assemble it with [Theorem 6](#thm-total-prob), splitting on whether the person is sick:
+>
+> \\\begin{aligned} \Pr(+) &= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\ &= (0.99)(0.001) + (0.01)(0.999) \\ &= 0.00099 + 0.00999 = 0.01098 \end{aligned}\\
+>
+> Then
+>
+> \\\Pr(S \mid +) = \frac{\Pr(+ \mid S)\\\Pr(S)}{\Pr(+)} = \frac{0.00099}{0.01098} \approx 0.0902\\
+>
+> About **9%**, not the \\99\\\\ most people guess.
+>
+> The reason is the **base rate**. Out of \\100{,}000\\ people screened, about \\100\\ have the disease and \\99\\ of them test positive, while \\99{,}900\\ do not have it and about \\999\\ of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.
+>
+> The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.
+
+Show R code
+
+``` js
+brPost = (prev) => brSens * prev / (brSens * prev + (1 - brSpec) * (1 - prev))
+// The same people as counts, out of 100,000 screened.
+brN = 100000
+brSick = brN * brPrev
+brTP = brSick * brSens
+brFP = (brN - brSick) * (1 - brSpec)
+```
+
+Show R code
+
+``` js
+viewof brSens = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(+ | S), sensitivity"})
+viewof brSpec = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(\u2212 | not S), specificity"})
+viewof brPrev = Inputs.range([0.0001, 0.5], {value: 0.001, transform: Math.log, format: d3.format(".4~f"), label: "P(S), prevalence"})
+```
+
+Show R code
+
+``` js
+{
+  const n = (v) => Math.round(v).toLocaleString("en-US");
+  return md`Out of ${n(brN)} people screened, ${n(brSick)} have the disease and ${n(brTP)} of them test positive;
+of the ${n(brN - brSick)} who do not, ${n(brFP)} test positive anyway.
+So of the ${n(brTP + brFP)} positives, ${n(brTP)} are sick:
+P(S | +) = **${(100 * brPost(brPrev)).toFixed(1)}%**.`;
+}
+```
+
+Show R code
+
+``` js
+Plot.plot({
+  ariaLabel: 'Of 100,000 people screened, ' +
+    'the ones who test positive, ' +
+    'as one bar split into the sick, ' +
+    'in orange, ' +
+    'and the healthy, ' +
+    'in blue.',
+  width: 380, height: 120, marginLeft: 10, marginRight: 20,
+  x: {label: "people who test positive, out of 100,000 screened"},
+  color: {domain: ["sick", "not sick"], range: ["#ff7f0e", "#1f77b4"], legend: true},
+  marks: [
+    Plot.barX([{who: "sick", n: brTP}, {who: "not sick", n: brFP}],
+              {x: "n", fill: "who", insetTop: 10, insetBottom: 10}),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+Show R code
+
+``` js
+Plot.plot({
+  ariaLabel: 'The chance of disease after a positive test, ' +
+    'plotted against the prevalence on a log scale, ' +
+    'for the chosen sensitivity and specificity, ' +
+    'with the chosen prevalence marked.',
+  width: 380, height: 230, grid: true,
+  x: {type: "log", domain: [0.0001, 0.5], label: "P(S), prevalence (log scale)",
+      ticks: [0.0001, 0.001, 0.01, 0.1, 0.5], tickFormat: d3.format(".2~%")},
+  y: {domain: [0, 1], label: "P(S | +)"},
+  marks: [
+    Plot.line(d3.range(-4, Math.log10(0.5) + 0.001, 0.02).map((e) => 10 ** e),
+              {x: (p) => p, y: brPost, stroke: "#555"}),
+    Plot.dot([brPrev], {x: (p) => p, y: brPost, r: 5, fill: "#ff7f0e"})
+  ]
+})
+```
+
+Figure 1: The chance of disease after a positive test, as counts out of 100,000 people screened and as a function of the prevalence.
+
 > **TIP:**
 >
 > Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 ## References
+
+Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
 
 Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
 

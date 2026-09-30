@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 23:45:35 (PDT)
+Last modified: 2026-09-29 21:32:40 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -49,6 +49,30 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 > **NOTE:**
 >
 > **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation \\e(5) = 5 - 3.5 = 1.5\\, and a roll of \\y = 2\\ has deviation \\e(2) = 2 - 3.5 = -1.5\\.
+
+### 1.1 Mean-zero noise model
+
+Measurement noise is almost always modeled as a random variable \\\varepsilon\\ with **mean zero** and variance \\\sigma^2\\.
+
+Mean zero is a modeling choice rather than a fact about the world, and it costs nothing: any systematic offset in the noise can be absorbed into the model’s own intercept, leaving what remains centered at zero by construction.
+
+That choice buys one identity, used repeatedly across statistical modeling and machine learning.
+
+> **NOTE:**
+>
+> **Exercise 1 (The average squared error of pure noise)** Let \\\varepsilon\\ be a random variable with \\\mathbb{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}(\varepsilon) = \sigma^2\\.
+>
+> Show that \\\mathbb{E}\[\varepsilon^2\] = \sigma^2\\, and say which earlier result you used.
+
+> **NOTE:**
+>
+> *Solution 1*. [Theorem 2](#thm-variance) says \\\operatorname{Var}(X) = \mathbb{E}\[X^2\] - (\mathbb{E}\[X\])^2\\ for any \\X\\. Taking \\X = \varepsilon\\ and substituting \\\mathbb{E}\[\varepsilon\] = 0\\,
+>
+> \\\mathbb{E}\[\varepsilon^2\] = \operatorname{Var}(\varepsilon) + 0^2 = \sigma^2 \tag{1}\\
+>
+> so for mean-zero noise the average squared value *is* the variance.
+>
+> The identity looks slight and does a lot of work. [Equation 1](#eq-noise-second-moment) is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the *spread* of the noise, which is what a model of the world gives you, into a statement about *squared error*, which is what the fitting objective measures.
 
 ## 2 Variance and related characteristics
 

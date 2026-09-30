@@ -291,7 +291,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 23:45:35 (PDT)</p>
+  <p class="date">Last modified: 2026-09-29 21:32:40 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -387,6 +387,7 @@
 </section>
 <section class="slide level2">
 
+<p><span id="sec-conditional-independence"></span></p>
 <div id="def-cind" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> given a discrete random variable (or vector) <span class="math inline">\(\tilde{X}\)</span> if, for every value <span class="math inline">\(\tilde{x}\)</span> with <span class="math inline">\(\Pr(\tilde{X}= \tilde{x}) &gt; 0\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
 <p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \tilde{X}= \tilde{x}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \tilde{X}= \tilde{x})}\]</span></p>
@@ -465,6 +466,18 @@
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><a href="#/exm-cind" class="quarto-xref">Example&nbsp;3</a> gives the first case, and <a href="#/exm-indpt-not-cind" class="quarto-xref">Example&nbsp;4</a> gives the second.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-umbrellas-rain" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 (Wet roads, umbrellas, and rain)</strong></span> Consider Brian Hutchinson’s intuitive illustration of conditional independence <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>:</p>
+<p>Let <span class="math inline">\(w\)</span> denote wet roads, <span class="math inline">\(u\)</span> denote people carrying umbrellas, and <span class="math inline">\(r\)</span> denote rain.</p>
+<ul>
+<li><strong>Marginally, wet roads and umbrellas are not independent (<span class="math inline">\(w \not\perp u\)</span>).</strong> If you look out a window and see people holding open umbrellas, that increases the probability that the pavement outside is wet.</li>
+<li><strong>Conditionally on rain, they are independent (<span class="math inline">\(w \perp u \mid r\)</span>).</strong> Once you know with certainty whether it is currently raining, learning whether pedestrians are carrying umbrellas tells you nothing more about the state of the roads:</li>
+</ul>
+<p><span class="math display">\[\Pr(w, u \mid r) = \Pr(w \mid r)\,\Pr(u \mid r), \qquad \Pr(w \mid u, r) = \Pr(w \mid r)\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -580,7 +593,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-ident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (Identically distributed but not independent)</strong></span> In <a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed (<a href="#/thm-ident-pmf" class="quarto-xref">Theorem&nbsp;3</a>). They are not independent: knowing one determines the other.</p>
+<p><span class="theorem-title"><strong>Example 6 (Identically distributed but not independent)</strong></span> In <a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed (<a href="#/thm-ident-pmf" class="quarto-xref">Theorem&nbsp;3</a>). They are not independent: knowing one determines the other.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -594,7 +607,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-cident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>, with <span class="math inline">\(G(y \mid x) = 1 - \pi(x)\)</span> for <span class="math inline">\(0 \le y &lt; 1\)</span> (and <span class="math inline">\(0\)</span> for <span class="math inline">\(y &lt; 0\)</span>, <span class="math inline">\(1\)</span> for <span class="math inline">\(y \ge 1\)</span>). Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 7 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>, with <span class="math inline">\(G(y \mid x) = 1 - \pi(x)\)</span> for <span class="math inline">\(0 \le y &lt; 1\)</span> (and <span class="math inline">\(0\)</span> for <span class="math inline">\(y &lt; 0\)</span>, <span class="math inline">\(1\)</span> for <span class="math inline">\(y \ge 1\)</span>). Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -623,7 +636,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-iid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 8 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -640,7 +653,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-ciid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (The usual regression assumption)</strong></span> In <a href="#/exm-cident" class="quarto-xref">Example&nbsp;6</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 9 (The usual regression assumption)</strong></span> In <a href="#/exm-cident" class="quarto-xref">Example&nbsp;7</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
 </div>
 <div title="Video lecture">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -666,6 +679,9 @@ Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Seri
 </div>
 <div id="ref-CaseBerg01" class="csl-entry" role="listitem">
 Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
+</div>
+<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
+Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. Western Washington University.
 </div>
 <div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
 Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.

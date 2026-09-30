@@ -291,7 +291,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 23:45:35 (PDT)</p>
+  <p class="date">Last modified: 2026-09-29 21:32:40 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -355,6 +355,29 @@
 
 <div id="exm-deviation-pop-mean" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2 (Deviation of a die roll from its mean)</strong></span> A fair die roll <span class="math inline">\(Y\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = 3.5\)</span> (computed on the <a href="./expectation.html#exm-linearity-expectation">expectation page</a>), so a roll of <span class="math inline">\(y = 5\)</span> has deviation <span class="math inline">\(e(5) = 5 - 3.5 = 1.5\)</span>, and a roll of <span class="math inline">\(y = 2\)</span> has deviation <span class="math inline">\(e(2) = 2 - 3.5 = -1.5\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="sec-noise-model">Mean-zero noise model</h3>
+<p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\varepsilon\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Mean zero is a modeling choice rather than a fact about the world, and it costs nothing: any systematic offset in the noise can be absorbed into the model’s own intercept, leaving what remains centered at zero by construction.</p>
+<p>That choice buys one identity, used repeatedly across statistical modeling and machine learning.</p>
+</section>
+<section class="slide level2">
+
+<div id="exr-noise-second-moment" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}(\varepsilon) = \sigma^2\)</span>.</p>
+<p>Show that <span class="math inline">\(\mathbb{E}[\varepsilon^2] = \sigma^2\)</span>, and say which earlier result you used.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="sol-noise-second-moment" class="proof solution">
+<p><span class="proof-title"><em>Solution 1</em>. </span><a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;2</a> says <span class="math inline">\(\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \varepsilon\)</span> and substituting <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span>,</p>
+<p><span id="eq-noise-second-moment"><span class="math display">\[\mathbb{E}[\varepsilon^2] = \operatorname{Var}(\varepsilon) + 0^2 = \sigma^2 \tag{1}\]</span></span></p>
+<p>so for mean-zero noise the average squared value <em>is</em> the variance.</p>
+<p>The identity looks slight and does a lot of work. <a href="#/eq-noise-second-moment" class="quarto-xref">Equation&nbsp;1</a> is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the <em>spread</em> of the noise, which is what a model of the world gives you, into a statement about <em>squared error</em>, which is what the fitting objective measures.</p>
 </div>
 </section>
 <section id="variance-and-related-characteristics" class="slide level2" data-number="2">

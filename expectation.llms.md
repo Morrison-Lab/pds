@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 23:45:35 (PDT)
+Last modified: 2026-09-29 21:32:40 (PDT)
 
 > **NOTE:**
 >
@@ -169,6 +169,22 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 > **Example 7 (Expectation of a rescaled uniform variable)** Let \\X \sim \text{Uniform}(0,1)\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \int_0^1 x\\dx = \tfrac{1}{2}\\. By [Corollary 1](#cor-linearity-affine) with \\a = 2\\ and \\c = 1\\:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[2X + 1\right\]\mathclose{} &= 2\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + 1 && \text{(expectation of a linear function)} \\ &= 2 \cdot\tfrac{1}{2} + 1 && \text{(substitute } \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2} \text{)} \\ &= 2 && \text{(evaluate)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Exercise 1 (Why the average of a sample is a random variable)** Let \\X_1, \dots, X_n\\ be independent draws from the same distribution, each with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^{n} X_i\\ be their average.
+>
+> Use [Theorem 4](#thm-linearity-expectation) to show that \\\mathbb{E}\[\bar X\] = \mu\\, and say in one sentence what that does *not* tell us.
+
+> **NOTE:**
+>
+> *Solution 1*. Pull the constant \\1/n\\ out and split the sum, both by [Theorem 4](#thm-linearity-expectation):
+>
+> \\\mathbb{E}\[\bar X\] = \mathbb{E}\\\left\[\frac{1}{n}\sum\_{i=1}^{n} X_i\right\] = \frac{1}{n}\sum\_{i=1}^{n} \mathbb{E}\[X_i\] = \frac{1}{n}\\(n\mu) = \mu\\
+>
+> So the sample average is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
+>
+> What it does not tell us is how far any *particular* sample average falls from \\\mu\\ — that is a statement about variance, not expectation, and it is where independence does the work. The distinction matters because an estimator or fitted model is a function of one particular sample. Knowing that the procedure is right on average says nothing about the estimate actually in front of you, and separating those two statements is foundational to understanding bias and variance.
 
 ## 1 Conditional distributions and expectations
 
@@ -534,7 +550,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Expectation of a sum, given a joint PMF)** Let \\(X, Y)\\ be discrete with joint probability mass function:
+> **Exercise 2 (Expectation of a sum, given a joint PMF)** Let \\(X, Y)\\ be discrete with joint probability mass function:
 >
 > |           | \\Y = 0\\ | \\Y = 1\\ |
 > |:---------:|:---------:|:---------:|
@@ -780,7 +796,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 2 (Both-discrete case, infinite support: joint PMF)** Let \\X\\ and \\Y\\ be independent, each Geometric on \\\mathcal{R}(X) = \mathcal{R}(Y) = \\0, 1, 2, \dots\\\\ with \\\operatorname{P}(X = x) = (1-p)\\p^x\\ for a fixed \\p \in (0, 1)\\ (\\X\\ counts the number of failures before the first success in a sequence of independent trials with success probability \\1-p\\; likewise for \\Y\\). Unlike [Exercise 1](#exr-fubini-joint-disc), the support here is countably infinite. The joint PMF is \\\operatorname{P}(X = x,\\ Y = y) = (1-p)^2\\p^{x+y}\\.
+> **Exercise 3 (Both-discrete case, infinite support: joint PMF)** Let \\X\\ and \\Y\\ be independent, each Geometric on \\\mathcal{R}(X) = \mathcal{R}(Y) = \\0, 1, 2, \dots\\\\ with \\\operatorname{P}(X = x) = (1-p)\\p^x\\ for a fixed \\p \in (0, 1)\\ (\\X\\ counts the number of failures before the first success in a sequence of independent trials with success probability \\1-p\\; likewise for \\Y\\). Unlike [Exercise 2](#exr-fubini-joint-disc), the support here is countably infinite. The joint PMF is \\\operatorname{P}(X = x,\\ Y = y) = (1-p)^2\\p^{x+y}\\.
 >
 > Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\.
 
@@ -826,11 +842,11 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> The calculation in [Exercise 2](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 3](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. ([Rudin 1976](#ref-rudin1976principles), Theorem 3.54, p. 76) for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
+> The calculation in [Exercise 3](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 3](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. ([Rudin 1976](#ref-rudin1976principles), Theorem 3.54, p. 76) for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
 
 > **NOTE:**
 >
-> **Exercise 3 (Mixed case: one continuous variable, one discrete variable)** Let \\Y \sim \mathrm{Bernoulli}(0.6)\\ and, given \\Y = y\\, let \\X \mid Y = y \sim \mathrm{Uniform}(0,\\ y + 1)\\.
+> **Exercise 4 (Mixed case: one continuous variable, one discrete variable)** Let \\Y \sim \mathrm{Bernoulli}(0.6)\\ and, given \\Y = y\\, let \\X \mid Y = y \sim \mathrm{Uniform}(0,\\ y + 1)\\.
 >
 > Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\.
 
@@ -881,7 +897,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 4 (Mixed case, infinite discrete support)** Let \\Y\\ be Geometric on \\\\0, 1, 2, \dots\\\\ with \\\operatorname{P}(Y = y) = (1-q)\\q^y\\ for a fixed \\q \in (0, 1)\\ and, given \\Y = y\\, let \\X \mid Y = y \sim \mathrm{Uniform}(0,\\ y+1)\\. Unlike [Exercise 3](#exr-fubini-joint-mixed), \\Y\\’s range here is countably infinite.
+> **Exercise 5 (Mixed case, infinite discrete support)** Let \\Y\\ be Geometric on \\\\0, 1, 2, \dots\\\\ with \\\operatorname{P}(Y = y) = (1-q)\\q^y\\ for a fixed \\q \in (0, 1)\\ and, given \\Y = y\\, let \\X \mid Y = y \sim \mathrm{Uniform}(0,\\ y+1)\\. Unlike [Exercise 4](#exr-fubini-joint-mixed), \\Y\\’s range here is countably infinite.
 >
 > Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\.
 
@@ -891,13 +907,13 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 >
 > The joint density w.r.t. Lebesgue \\\times\\ counting measure is \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y) = \frac{(1-q)\\q^y}{y+1}\\ for \\x \in \[0, y+1\]\\.
 >
-> Since \\h(x, y) = x \ge 0\\ on this support, condition (a) holds, so [Corollary 3](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the now-infinite sum-of-integrals expression is valid — unlike in [Exercise 3](#exr-fubini-joint-mixed), this Fubini–Tonelli justification is required because the sum is infinite rather than finite.
+> Since \\h(x, y) = x \ge 0\\ on this support, condition (a) holds, so [Corollary 3](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the now-infinite sum-of-integrals expression is valid — unlike in [Exercise 4](#exr-fubini-joint-mixed), this Fubini–Tonelli justification is required because the sum is infinite rather than finite.
 >
 > By [Corollary 3](#cor-fubini-joint) (mixed case):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y=0}^{\infty} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx && \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \int_0^{y+1} x\\dx && \text{(} f\_{X,Y}(x, y) \text{ is constant in } x \text{ on } \[0, y+1\] \text{)} \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \cdot\frac{(y+1)^2}{2} && \text{(integrate)} \\&= \frac{1-q}{2} \sum\_{y=0}^{\infty} (y+1)\\q^y && \text{(cancel } y + 1 \text{; factor out } \tfrac{1-q}{2} \text{)} \\&= \frac{1-q}{2} \mathopen{}\left(\sum\_{y=0}^{\infty} y\\q^y + \sum\_{y=0}^{\infty} q^y\right)\mathclose{} && \text{(split the sum)} \\&= \frac{1-q}{2} \mathopen{}\left(\frac{q}{(1-q)^2} + \frac{1}{1-q}\right)\mathclose{} && \text{(geometric-series facts)} \\&= \frac{1-q}{2} \cdot\frac{q + (1-q)}{(1-q)^2} && \text{(common denominator)} \\&= \frac{1-q}{2} \cdot\frac{1}{(1-q)^2} && \text{(simplify the numerator)} \\&= \frac{1}{2(1-q)} && \text{(cancel } 1 - q \text{)} \end{aligned} \\
 >
-> using the same geometric-series facts as [Exercise 2](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
+> using the same geometric-series facts as [Exercise 3](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
 >
 > As a check using the law of iterated expectations ([Theorem 9](#thm-lie)) and the expectation of a linear function ([Corollary 1](#cor-linearity-affine)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
 >

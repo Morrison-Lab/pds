@@ -291,7 +291,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 23:45:35 (PDT)</p>
+  <p class="date">Last modified: 2026-09-29 21:32:40 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
@@ -1266,6 +1266,100 @@ f_X(x)
 <p><span class="theorem-title"><strong>Example 26 (A coin flip and a waiting time)</strong></span> Let <span class="math inline">\(\operatorname{p}(X = 0,\, Y = y) = 1/2\)</span> for <span class="math inline">\(y \in [0, 1]\)</span>, <span class="math inline">\(\operatorname{p}(X = 1,\, Y = y) = 1/4\)</span> for <span class="math inline">\(y \in [0, 2]\)</span>, and <span class="math inline">\(0\)</span> otherwise. Integrating over <span class="math inline">\(y\)</span> gives <span class="math inline">\(\operatorname{P}(X = 0) = 1/2\)</span> and <span class="math inline">\(\operatorname{P}(X = 1) = 1/2\)</span>, which add to 1. For example, the probability that <span class="math inline">\(X = 1\)</span> and <span class="math inline">\(Y \le 1\)</span> is:</p>
 <p><span class="math display">\[\Pr(X = 1,\, Y \le 1) = \int_0^1 \tfrac{1}{4}\,dy = \tfrac{1}{4}\]</span></p>
 </div>
+</section>
+<section class="slide level2">
+
+<h3 id="sec-joint-marginal">Joint distributions and marginalization</h3>
+<p>For a discrete random variable <span class="math inline">\(X\)</span> taking values in <span class="math inline">\(\mathbb{X}\)</span>, a <strong>probability mass function</strong> (PMF) <span class="math inline">\(\operatorname{P}(x) : \mathbb{X} \to [0, 1]\)</span> gives the probability that <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[\sum_{x \in \mathbb{X}} \operatorname{P}(x) = 1\]</span></p>
+<p>The <strong>support</strong> of the distribution is the subset of values where the probability is strictly positive: <span class="math inline">\(\{x \in \mathbb{X} : \operatorname{P}(x) &gt; 0\}\)</span>. When <span class="math inline">\(\mathbb{X}\)</span> is finite, <span class="math inline">\(\operatorname{P}(x)\)</span> can be written as a probability vector.</p>
+</section>
+<section class="slide level2">
+
+<p>For two discrete variables <span class="math inline">\(X \in \mathbb{X}\)</span> and <span class="math inline">\(Y \in \mathbb{Y}\)</span>, their <strong>joint probability distribution</strong> <span class="math inline">\(\operatorname{P}(x, y) : \mathbb{X} \times \mathbb{Y} \to [0, 1]\)</span> satisfies:</p>
+<p><span class="math display">\[\sum_{x \in \mathbb{X}} \sum_{y \in \mathbb{Y}} \operatorname{P}(x, y) = 1\]</span></p>
+<p>For two variables, the joint probabilities can be laid out in a matrix or table. Summing across a row or column collapses that variable away, a process called <strong>marginalization</strong>:</p>
+<p><span class="math display">\[\operatorname{P}(x) = \sum_{y \in \mathbb{Y}} \operatorname{P}(x, y), \qquad \operatorname{P}(y) = \sum_{x \in \mathbb{X}} \operatorname{P}(x, y)\]</span></p>
+<p>The resulting distributions <span class="math inline">\(\operatorname{P}(x)\)</span> and <span class="math inline">\(\operatorname{P}(y)\)</span> are the <strong>marginal distributions</strong> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<div id="exm-meteorite" class="theorem example">
+<p><span class="theorem-title"><strong>Example 27 (Joint probabilities and marginalization)</strong></span> Consider an example adapted from Brian Hutchinson’s notes <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>. Let <span class="math inline">\(m \in \{0, 1\}\)</span> indicate whether a meteorite hits your house on a given day (<span class="math inline">\(m = 1\)</span>), and let <span class="math inline">\(d \in \{0, 1\}\)</span> indicate whether you have a good day (<span class="math inline">\(d = 1\)</span>). In this distribution, 9 out of 10 days are good days (<span class="math inline">\(\operatorname{P}(d=1) = 0.9\)</span>), and the probability of a meteorite strike is 1 in a million (<span class="math inline">\(\operatorname{P}(m=1) = 10^{-6}\)</span>):</p>
+<div id="tbl-meteorite" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-meteorite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline">\(m\)</span>) and day quality (<span class="math inline">\(d\)</span>), with marginals.
+</figcaption>
+<div aria-describedby="tbl-meteorite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(d=0\)</span> (bad day)</th>
+<th style="text-align: right;"><span class="math inline">\(d=1\)</span> (good day)</th>
+<th style="text-align: right;">Marginal <span class="math inline">\(\operatorname{P}(m)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(m=0\)</span> (no meteorite)</td>
+<td style="text-align: right;"><span class="math inline">\(0.09999902\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.89999998\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.999999\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(m=1\)</span> (meteorite hit)</td>
+<td style="text-align: right;"><span class="math inline">\(0.00000098\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.00000002\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.000001\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Marginal <span class="math inline">\(\operatorname{P}(d)\)</span></strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(0.10000000\)</span></strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(0.90000000\)</span></strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(1.000000\)</span></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Summing each row yields the marginal distribution of <span class="math inline">\(m\)</span>; summing each column yields the marginal distribution of <span class="math inline">\(d\)</span>. Conditioning inverts the perspective:</p>
+<p><span class="math display">\[\operatorname{P}(d=0 \mid m=1) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} = \frac{0.00000098}{0.000001} = 0.98\]</span></p>
+<p>Given that a meteorite struck your house, you have a 98% chance of having a bad day. In reverse:</p>
+<p><span class="math display">\[\operatorname{P}(m=1 \mid d=0) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\]</span></p>
+<p>Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (<span class="math inline">\(\operatorname{P}(d=0) = 0.1\)</span>), so having one is very weak evidence that an astronomical rarity occurred.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="sec-continuous-distributions">Continuous distributions and densities</h3>
+<p>When a random variable <span class="math inline">\(X\)</span> takes values in a continuous space <span class="math inline">\(\mathbb{X} \subseteq \mathbb{R}\)</span>, its behavior is described by a <strong>probability density function</strong> (PDF) <span class="math inline">\(\operatorname{p}(x) : \mathbb{X} \to \mathbb{R}_+\)</span> satisfying:</p>
+<p><span class="math display">\[\int_{\mathbb{X}} \operatorname{p}(x)\,\mathrm{d}x = 1\]</span></p>
+<p>Probabilities are assigned to subsets <span class="math inline">\(\mathbb{A} \subseteq \mathbb{X}\)</span> by integrating the density over that set:</p>
+<p><span class="math display">\[\Pr(X \in \mathbb{A}) = \int_{\mathbb{A}} \operatorname{p}(x)\,\mathrm{d}x\]</span></p>
+</section>
+<section class="slide level2">
+
+<div id="thm-zero-point-prob" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 14 (Points have zero probability in continuous distributions)</strong></span> For any continuous random variable and any specific value <span class="math inline">\(a \in \mathbb{R}\)</span>:</p>
+<p><span class="math display">\[\Pr(X = a) = 0\]</span></p>
+</div>
+<p>Why? As Brian Hutchinson notes <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>, what is the probability that someone’s height is <em>exactly</em> <span class="math inline">\(6.0000000000\dots\)</span> feet? Zero. A single real point has width zero, so the integral over a single point is zero.</p>
+<p>Non-zero probabilities attach to intervals or regions of non-zero width:</p>
+<p><span class="math display">\[\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int_{6-\epsilon}^{6+\epsilon} \operatorname{p}(x)\,\mathrm{d}x &gt; 0 \qquad (\text{for } \epsilon &gt; 0)\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Every rule developed for discrete variables carries over to continuous variables by replacing sums <span class="math inline">\(\sum_x\)</span> with integrals <span class="math inline">\(\int \mathrm{d}x\)</span>. For example, marginalizing out <span class="math inline">\(X\)</span> from a joint density <span class="math inline">\(\operatorname{p}(x, y)\)</span> to find the marginal density <span class="math inline">\(\operatorname{p}(y)\)</span> becomes:</p>
+<p><span class="math display">\[\operatorname{p}(y) = \int_{\mathbb{X}} \operatorname{p}(x, y)\,\mathrm{d}x\]</span></p>
 <div title="Video lecture">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1306,7 +1400,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="thm-survival-expressions-1" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 14 (Survival function and CDF)</strong></span> For any random variable <span class="math inline">\(T\)</span> with <a href="#/def-cdf">CDF</a> <span class="math inline">\(F(t)\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 15 (Survival function and CDF)</strong></span> For any random variable <span class="math inline">\(T\)</span> with <a href="#/def-cdf">CDF</a> <span class="math inline">\(F(t)\)</span>:</p>
 <p><span class="math display">\[\operatorname{S}(t) = 1 - F(t)\]</span></p>
 <p>If <span class="math inline">\(T\)</span> is continuous with <a href="#/def-pdf">density</a> <span class="math inline">\(f(t)\)</span>, then also:</p>
 <p><span class="math display">\[\operatorname{S}(t) = \int_{u=t}^{\infty} f(u)\,du\]</span></p>
@@ -1339,7 +1433,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-exp-survfn" class="theorem example">
-<p><span class="theorem-title"><strong>Example 27 (Survival function of an exponential distribution)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\(\lambda &gt; 0\)</span> (<a href="#/def-exponential" class="quarto-xref">Definition&nbsp;11</a>), so <span class="math inline">\(T\)</span> has density <span class="math inline">\(f(t) = \lambda \text{e}^{-\lambda t}\)</span> for <span class="math inline">\(t \ge 0\)</span>. For <span class="math inline">\(t \ge 0\)</span>, by <a href="#/thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;14</a>:</p>
+<p><span class="theorem-title"><strong>Example 28 (Survival function of an exponential distribution)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\(\lambda &gt; 0\)</span> (<a href="#/def-exponential" class="quarto-xref">Definition&nbsp;11</a>), so <span class="math inline">\(T\)</span> has density <span class="math inline">\(f(t) = \lambda \text{e}^{-\lambda t}\)</span> for <span class="math inline">\(t \ge 0\)</span>. For <span class="math inline">\(t \ge 0\)</span>, by <a href="#/thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{S}(t)
@@ -1381,7 +1475,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-hazard-exceeds-one" class="theorem example">
-<p><span class="theorem-title"><strong>Example 28 (A hazard greater than 1)</strong></span> A hazard can exceed 1, just as a density can (<a href="#/exm-normal" class="quarto-xref">Example&nbsp;9</a>). Let <span class="math inline">\(T\)</span> be <a href="#/def-exponential">exponential</a> with rate <span class="math inline">\(\lambda = 2\)</span>, so <span class="math inline">\(\operatorname{S}(t) = \text{e}^{-2t}\)</span> for <span class="math inline">\(t \ge 0\)</span> (<a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;27</a>). Since <span class="math inline">\(T\)</span> is continuous, <span class="math inline">\(\Pr(T = s) = 0\)</span> for every <span class="math inline">\(s\)</span>, so <span class="math inline">\(\Pr(T \ge s) = \Pr(T &gt; s) = \operatorname{S}(s)\)</span>. For <span class="math inline">\(t \ge 0\)</span> and <span class="math inline">\(\Delta &gt; 0\)</span>, <span class="math inline">\(\{T \ge t\}\)</span> is the disjoint union of <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> and <span class="math inline">\(\{T \ge t + \Delta\}\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 29 (A hazard greater than 1)</strong></span> A hazard can exceed 1, just as a density can (<a href="#/exm-normal" class="quarto-xref">Example&nbsp;9</a>). Let <span class="math inline">\(T\)</span> be <a href="#/def-exponential">exponential</a> with rate <span class="math inline">\(\lambda = 2\)</span>, so <span class="math inline">\(\operatorname{S}(t) = \text{e}^{-2t}\)</span> for <span class="math inline">\(t \ge 0\)</span> (<a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;28</a>). Since <span class="math inline">\(T\)</span> is continuous, <span class="math inline">\(\Pr(T = s) = 0\)</span> for every <span class="math inline">\(s\)</span>, so <span class="math inline">\(\Pr(T \ge s) = \Pr(T &gt; s) = \operatorname{S}(s)\)</span>. For <span class="math inline">\(t \ge 0\)</span> and <span class="math inline">\(\Delta &gt; 0\)</span>, <span class="math inline">\(\{T \ge t\}\)</span> is the disjoint union of <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> and <span class="math inline">\(\{T \ge t + \Delta\}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(t \le T &lt; t + \Delta \mid T \ge t)
@@ -1423,7 +1517,7 @@ f_X(x)
 <p><span class="math display">\[\Pr(T = t \mid T \ge t)\]</span></p>
 </div>
 <div id="exm-discrete-hazard" class="theorem example">
-<p><span class="theorem-title"><strong>Example 29 (Rolling until the first six)</strong></span> Roll a fair die repeatedly, and let <span class="math inline">\(T\)</span> be the number of the roll that first shows a six. Then <span class="math inline">\(T \ge t\)</span> exactly when the first <span class="math inline">\(t - 1\)</span> rolls are not sixes, which has probability <span class="math inline">\((5/6)^{t-1}\)</span>, and <span class="math inline">\(T = t\)</span> when, in addition, roll <span class="math inline">\(t\)</span> is a six. So, for each <span class="math inline">\(t = 1, 2, \ldots\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 30 (Rolling until the first six)</strong></span> Roll a fair die repeatedly, and let <span class="math inline">\(T\)</span> be the number of the roll that first shows a six. Then <span class="math inline">\(T \ge t\)</span> exactly when the first <span class="math inline">\(t - 1\)</span> rolls are not sixes, which has probability <span class="math inline">\((5/6)^{t-1}\)</span>, and <span class="math inline">\(T = t\)</span> when, in addition, roll <span class="math inline">\(t\)</span> is a six. So, for each <span class="math inline">\(t = 1, 2, \ldots\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(T = t \mid T \ge t)
@@ -1460,7 +1554,7 @@ f_X(x)
 <p>The numerator is non-negative and at most the positive denominator, so the ratio lies in <span class="math inline">\([0, 1]\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Unlike the continuous-time <a href="#/def-hazard">hazard function</a>, which is a rate and can exceed 1 (<a href="#/exm-hazard-exceeds-one" class="quarto-xref">Example&nbsp;28</a>), the discrete-time hazard is a probability.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Unlike the continuous-time <a href="#/def-hazard">hazard function</a>, which is a rate and can exceed 1 (<a href="#/exm-hazard-exceeds-one" class="quarto-xref">Example&nbsp;29</a>), the discrete-time hazard is a probability.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1476,7 +1570,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="thm-hazard-dens-surv" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 15 (Hazard equals density over survival)</strong></span> If <span class="math inline">\(T\)</span> is a continuous random variable with <a href="#/def-pdf">density</a> <span class="math inline">\(f(t)\)</span> and <a href="#/def-surv-fn">survival function</a> <span class="math inline">\(\operatorname{S}(t)\)</span>, then for every <span class="math inline">\(t\)</span> with <span class="math inline">\(\operatorname{S}(t) &gt; 0\)</span> at which <span class="math inline">\(f\)</span> is continuous:</p>
+<p><span class="theorem-title"><strong>Theorem 16 (Hazard equals density over survival)</strong></span> If <span class="math inline">\(T\)</span> is a continuous random variable with <a href="#/def-pdf">density</a> <span class="math inline">\(f(t)\)</span> and <a href="#/def-surv-fn">survival function</a> <span class="math inline">\(\operatorname{S}(t)\)</span>, then for every <span class="math inline">\(t\)</span> with <span class="math inline">\(\operatorname{S}(t) &gt; 0\)</span> at which <span class="math inline">\(f\)</span> is continuous:</p>
 <p><span class="math display">\[{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\]</span></p>
 </div>
 <div class="proof">
@@ -1503,7 +1597,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-exp-haz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 30 (Hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;27</a>, for <span class="math inline">\(t &gt; 0\)</span>, where <span class="math inline">\(f\)</span> is continuous:</p>
+<p><span class="theorem-title"><strong>Example 31 (Hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;28</a>, for <span class="math inline">\(t &gt; 0\)</span>, where <span class="math inline">\(f\)</span> is continuous:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\lambda}(t)
@@ -1525,7 +1619,7 @@ f_X(x)
 <p><span class="math display">\[{\Lambda}(t) \stackrel{\text{def}}{=}\int_{u=-\infty}^{t} {\lambda}(u)\,du\]</span></p>
 </div>
 <div id="exm-exp-cumhaz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 31 (Cumulative hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-haz" class="quarto-xref">Example&nbsp;30</a>, the hazard is <span class="math inline">\({\lambda}(u) = \lambda\)</span> for <span class="math inline">\(u \ge 0\)</span> and <span class="math inline">\(0\)</span> for <span class="math inline">\(u &lt; 0\)</span>, so for <span class="math inline">\(t \ge 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 32 (Cumulative hazard function of an exponential distribution)</strong></span> Continuing <a href="#/exm-exp-haz" class="quarto-xref">Example&nbsp;31</a>, the hazard is <span class="math inline">\({\lambda}(u) = \lambda\)</span> for <span class="math inline">\(u \ge 0\)</span> and <span class="math inline">\(0\)</span> for <span class="math inline">\(u &lt; 0\)</span>, so for <span class="math inline">\(t \ge 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\Lambda}(t)
@@ -1601,7 +1695,7 @@ f_X(x)
 <p><span id="eq-surv-int-haz"><span class="math display">\[\operatorname{S}(t) = \operatorname{exp}\mathopen{}\left\{-{\Lambda}(t)\right\}\mathclose{} \tag{1}\]</span></span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Since <span class="math inline">\(\operatorname{S}(t) = 1 - F(t)\)</span> (<a href="#/thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;14</a>) and <span class="math inline">\(F\)</span> has derivative <span class="math inline">\(f\)</span> wherever <span class="math inline">\(f\)</span> is continuous (<a href="#/thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a>), <span class="math inline">\(\operatorname{S}\)</span> has derivative <span class="math inline">\(-f\)</span> at those points. At each such <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{S}(u) &gt; 0\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Since <span class="math inline">\(\operatorname{S}(t) = 1 - F(t)\)</span> (<a href="#/thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a>) and <span class="math inline">\(F\)</span> has derivative <span class="math inline">\(f\)</span> wherever <span class="math inline">\(f\)</span> is continuous (<a href="#/thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a>), <span class="math inline">\(\operatorname{S}\)</span> has derivative <span class="math inline">\(-f\)</span> at those points. At each such <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{S}(u) &gt; 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{d}{du}\mathopen{}\left(-\operatorname{log}\mathopen{}\left\{\operatorname{S}(u)\right\}\mathclose{}\right)\mathclose{}
@@ -1635,7 +1729,7 @@ f_X(x)
 <section class="slide level2">
 
 <div id="exm-exp-surv-int-haz" class="theorem example">
-<p><span class="theorem-title"><strong>Example 32 (Recovering the exponential survival function from its cumulative hazard)</strong></span> Continuing <a href="#/exm-exp-cumhaz" class="quarto-xref">Example&nbsp;31</a>, for <span class="math inline">\(t \ge 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Example 33 (Recovering the exponential survival function from its cumulative hazard)</strong></span> Continuing <a href="#/exm-exp-cumhaz" class="quarto-xref">Example&nbsp;32</a>, for <span class="math inline">\(t \ge 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{S}(t)
@@ -1645,7 +1739,7 @@ f_X(x)
 &amp;&amp; \text{(substitute } {\Lambda}(t) = \lambda t \text{)}
 \end{aligned}
 \]</span></p>
-<p>which matches the survival function computed directly in <a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;27</a>.</p>
+<p>which matches the survival function computed directly in <a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;28</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1653,7 +1747,7 @@ f_X(x)
 <div id="tbl-prob-dist-fns" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prob-dist-fns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Probability distribution functions of a continuous random variable <span class="math inline">\(T\)</span>
+Table&nbsp;2: Probability distribution functions of a continuous random variable <span class="math inline">\(T\)</span>
 </figcaption>
 <div aria-describedby="tbl-prob-dist-fns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top">
@@ -1704,10 +1798,10 @@ Table&nbsp;1: Probability distribution functions of a continuous random variable
 <section class="slide level2">
 
 <div class="proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>For a continuous random variable <span class="math inline">\(T \ge 0\)</span> whose density is continuous at all but finitely many points, the following results connect the functions in <a href="#/tbl-prob-dist-fns" class="quarto-xref">Table&nbsp;1</a>:</p>
+<p><span class="proof-title"><em>Remark</em>. </span>For a continuous random variable <span class="math inline">\(T \ge 0\)</span> whose density is continuous at all but finitely many points, the following results connect the functions in <a href="#/tbl-prob-dist-fns" class="quarto-xref">Table&nbsp;2</a>:</p>
 <ul>
-<li><a href="#/thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;14</a></li>
-<li><a href="#/thm-hazard-dens-surv" class="quarto-xref">Theorem&nbsp;15</a></li>
+<li><a href="#/thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a></li>
+<li><a href="#/thm-hazard-dens-surv" class="quarto-xref">Theorem&nbsp;16</a></li>
 <li><a href="#/cor-cuhaz-nonneg" class="quarto-xref">Corollary&nbsp;4</a></li>
 <li><a href="#/cor-surv-int-haz" class="quarto-xref">Corollary&nbsp;5</a></li>
 </ul>
@@ -1747,6 +1841,9 @@ Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed.
 </div>
 <div id="ref-dobson4e" class="csl-entry" role="listitem">
 Dobson, Annette J, and Adrian G Barnett. 2018. <em>An Introduction to Generalized Linear Models</em>. 4th ed. CRC press. <a href="https://doi.org/10.1201/9781315182780">https://doi.org/10.1201/9781315182780</a>.
+</div>
+<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
+Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. Western Washington University.
 </div>
 <div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
 Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.

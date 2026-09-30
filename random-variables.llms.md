@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-28 23:45:35 (PDT)
+Last modified: 2026-09-29 21:32:40 (PDT)
 
 ## 1 Random variables
 
@@ -547,6 +547,72 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 >
 > \\\Pr(X = 1,\\ Y \le 1) = \int_0^1 \tfrac{1}{4}\\dy = \tfrac{1}{4}\\
 
+### 2.1 Joint distributions and marginalization
+
+For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\\operatorname{P}(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
+
+\\\sum\_{x \in \mathbb{X}} \operatorname{P}(x) = 1\\
+
+The **support** of the distribution is the subset of values where the probability is strictly positive: \\\\x \in \mathbb{X} : \operatorname{P}(x) \> 0\\\\. When \\\mathbb{X}\\ is finite, \\\operatorname{P}(x)\\ can be written as a probability vector.
+
+For two discrete variables \\X \in \mathbb{X}\\ and \\Y \in \mathbb{Y}\\, their **joint probability distribution** \\\operatorname{P}(x, y) : \mathbb{X} \times \mathbb{Y} \to \[0, 1\]\\ satisfies:
+
+\\\sum\_{x \in \mathbb{X}} \sum\_{y \in \mathbb{Y}} \operatorname{P}(x, y) = 1\\
+
+For two variables, the joint probabilities can be laid out in a matrix or table. Summing across a row or column collapses that variable away, a process called **marginalization**:
+
+\\\operatorname{P}(x) = \sum\_{y \in \mathbb{Y}} \operatorname{P}(x, y), \qquad \operatorname{P}(y) = \sum\_{x \in \mathbb{X}} \operatorname{P}(x, y)\\
+
+The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ are the **marginal distributions** of \\X\\ and \\Y\\.
+
+> **NOTE:**
+>
+> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes ([Hutchinson 2024](#ref-hutchinson2024data471)). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
+>
+> |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\\operatorname{P}(m)\\ |
+> |:---|---:|---:|---:|
+> | \\m=0\\ (no meteorite) | \\0.09999902\\ | \\0.89999998\\ | \\0.999999\\ |
+> | \\m=1\\ (meteorite hit) | \\0.00000098\\ | \\0.00000002\\ | \\0.000001\\ |
+> | **Marginal \\\operatorname{P}(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
+>
+> Table 1: Joint distribution of a meteorite strike (\\m\\) and day quality (\\d\\), with marginals.
+>
+> Summing each row yields the marginal distribution of \\m\\; summing each column yields the marginal distribution of \\d\\. Conditioning inverts the perspective:
+>
+> \\\operatorname{P}(d=0 \mid m=1) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} = \frac{0.00000098}{0.000001} = 0.98\\
+>
+> Given that a meteorite struck your house, you have a 98% chance of having a bad day. In reverse:
+>
+> \\\operatorname{P}(m=1 \mid d=0) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\\
+>
+> Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\\operatorname{P}(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
+
+### 2.2 Continuous distributions and densities
+
+When a random variable \\X\\ takes values in a continuous space \\\mathbb{X} \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\\operatorname{p}(x) : \mathbb{X} \to \mathbb{R}\_+\\ satisfying:
+
+\\\int\_{\mathbb{X}} \operatorname{p}(x)\\\mathrm{d}x = 1\\
+
+Probabilities are assigned to subsets \\\mathbb{A} \subseteq \mathbb{X}\\ by integrating the density over that set:
+
+\\\Pr(X \in \mathbb{A}) = \int\_{\mathbb{A}} \operatorname{p}(x)\\\mathrm{d}x\\
+
+> **NOTE:**
+>
+> **Theorem 14 (Points have zero probability in continuous distributions)** For any continuous random variable and any specific value \\a \in \mathbb{R}\\:
+>
+> \\\Pr(X = a) = 0\\
+
+Why? As Brian Hutchinson notes ([Hutchinson 2024](#ref-hutchinson2024data471)), what is the probability that someone’s height is *exactly* \\6.0000000000\dots\\ feet? Zero. A single real point has width zero, so the integral over a single point is zero.
+
+Non-zero probabilities attach to intervals or regions of non-zero width:
+
+\\\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} \operatorname{p}(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
+
+Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum_x\\ with integrals \\\int \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\\operatorname{p}(x, y)\\ to find the marginal density \\\operatorname{p}(y)\\ becomes:
+
+\\\operatorname{p}(y) = \int\_{\mathbb{X}} \operatorname{p}(x, y)\\\mathrm{d}x\\
+
 > **TIP:**
 >
 > Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
@@ -565,7 +631,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 14 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
+> **Theorem 15 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
 >
 > \\\operatorname{S}(t) = 1 - F(t)\\
 >
@@ -585,7 +651,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 27 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\\lambda \> 0\\ ([Definition 11](#def-exponential)), so \\T\\ has density \\f(t) = \lambda \text{e}^{-\lambda t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 14](#thm-survival-expressions-1):
+> **Example 28 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\\lambda \> 0\\ ([Definition 11](#def-exponential)), so \\T\\ has density \\f(t) = \lambda \text{e}^{-\lambda t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 15](#thm-survival-expressions-1):
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} \lambda \text{e}^{-\lambda u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-\lambda u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } \lambda \text{e}^{-\lambda u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-\lambda t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-\lambda u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-\lambda t} && \text{(simplify)} \end{aligned} \\
 >
@@ -607,7 +673,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 28 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\\lambda = 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 27](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so \\\Pr(T \ge s) = \Pr(T \> s) = \operatorname{S}(s)\\. For \\t \ge 0\\ and \\\Delta \> 0\\, \\\\T \ge t\\\\ is the disjoint union of \\\\t \le T \< t + \Delta\\\\ and \\\\T \ge t + \Delta\\\\, so:
+> **Example 29 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\\lambda = 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 28](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so \\\Pr(T \ge s) = \Pr(T \> s) = \operatorname{S}(s)\\. For \\t \ge 0\\ and \\\Delta \> 0\\, \\\\T \ge t\\\\ is the disjoint union of \\\\t \le T \< t + \Delta\\\\ and \\\\T \ge t + \Delta\\\\, so:
 >
 > \\ \begin{aligned} \Pr(t \le T \< t + \Delta \mid T \ge t) &= \frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)} && \text{(additivity)} \\ &= \frac{\operatorname{S}(t) - \operatorname{S}(t + \Delta)}{\operatorname{S}(t)} && \text{(} \Pr(T \ge s) = \operatorname{S}(s) \text{)} \\ &= \frac{\text{e}^{-2t} - \text{e}^{-2(t + \Delta)}}{\text{e}^{-2t}} && \text{(exponential survival function)} \\ &= 1 - \text{e}^{-2\Delta} && \text{(divide by } \text{e}^{-2t} \text{)} \end{aligned} \\
 >
@@ -625,7 +691,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 29 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
+> **Example 30 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
 >
 > \\ \begin{aligned} \Pr(T = t \mid T \ge t) &= \frac{\Pr(T = t,\\ T \ge t)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(T = t)}{\Pr(T \ge t)} && \text{(} T = t \text{ implies } T \ge t \text{)} \\ &= \frac{(5/6)^{t-1} \cdot(1/6)}{(5/6)^{t-1}} && \text{(rolls are independent)} \\ &= \frac{1}{6} && \text{(cancel)} \end{aligned} \\
 >
@@ -647,11 +713,11 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 28](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
+> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 29](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
 
 > **NOTE:**
 >
-> **Theorem 15 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
+> **Theorem 16 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
 >
 > \\{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\\
 
@@ -663,7 +729,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 30 (Hazard function of an exponential distribution)** Continuing [Example 27](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
+> **Example 31 (Hazard function of an exponential distribution)** Continuing [Example 28](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
 >
 > \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{\lambda \text{e}^{-\lambda t}}{\text{e}^{-\lambda t}} && \text{(substitute the exponential density and survival function)} \\ &= \lambda && \text{(cancel } \text{e}^{-\lambda t} \text{)} \end{aligned} \\
 >
@@ -677,7 +743,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 31 (Cumulative hazard function of an exponential distribution)** Continuing [Example 30](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
+> **Example 32 (Cumulative hazard function of an exponential distribution)** Continuing [Example 31](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
 >
 > \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} \lambda\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + \lambda t && \text{(integrate each piece)} \\ &= \lambda t && \text{(simplify)} \end{aligned} \\
 >
@@ -715,7 +781,7 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 14](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 6](#thm-density-vs-CDF)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
+> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 15](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 6](#thm-density-vs-CDF)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
 >
 > \\ \begin{aligned} \frac{d}{du}\mathopen{}\left(-\operatorname{log}\mathopen{}\left\\\operatorname{S}(u)\right\\\mathclose{}\right)\mathclose{} &= -\frac{1}{\operatorname{S}(u)} \cdot\frac{d}{du}\operatorname{S}(u) && \text{(chain rule)} \\ &= -\frac{1}{\operatorname{S}(u)} \cdot\mathopen{}\left(-f(u)\right)\mathclose{} && \text{(} \operatorname{S}' = -f \text{)} \\ &= \frac{f(u)}{\operatorname{S}(u)} && \text{(simplify)} \\ &= {\lambda}(u) && \text{(hazard equals density over survival)} \end{aligned} \\
 >
@@ -727,11 +793,11 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 
 > **NOTE:**
 >
-> **Example 32 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 31](#exm-exp-cumhaz), for \\t \ge 0\\:
+> **Example 33 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 32](#exm-exp-cumhaz), for \\t \ge 0\\:
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{} && \text{(survival function from the cumulative hazard)} \\ &= \operatorname{exp}\mathopen{}\left\\-\lambda t\right\\\mathclose{} && \text{(substitute } {\Lambda}(t) = \lambda t \text{)} \end{aligned} \\
 >
-> which matches the survival function computed directly in [Example 27](#exm-exp-survfn).
+> which matches the survival function computed directly in [Example 28](#exm-exp-survfn).
 
 | Name | Symbols | Definition |
 |:---|----|----|
@@ -742,14 +808,14 @@ Last modified: 2026-09-28 23:45:35 (PDT)
 | [Cumulative hazard function](#def-cuhaz) | \\{\Lambda}(t), \operatorname{H}(t)\\ | \\\int\_{u=-\infty}^t {\lambda}(u)\\du\\ |
 | Log-hazard function | \\\eta(t)\\ | \\\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\\ |
 
-Table 1: Probability distribution functions of a continuous random variable \\T\\
+Table 2: Probability distribution functions of a continuous random variable \\T\\
 
 > **NOTE:**
 >
-> *Remark*. For a continuous random variable \\T \ge 0\\ whose density is continuous at all but finitely many points, the following results connect the functions in [Table 1](#tbl-prob-dist-fns):
+> *Remark*. For a continuous random variable \\T \ge 0\\ whose density is continuous at all but finitely many points, the following results connect the functions in [Table 2](#tbl-prob-dist-fns):
 >
-> - [Theorem 14](#thm-survival-expressions-1)
-> - [Theorem 15](#thm-hazard-dens-surv)
+> - [Theorem 15](#thm-survival-expressions-1)
+> - [Theorem 16](#thm-hazard-dens-surv)
 > - [Corollary 4](#cor-cuhaz-nonneg)
 > - [Corollary 5](#cor-surv-int-haz)
 >
@@ -766,6 +832,8 @@ Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in P
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 
 Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized Linear Models*. 4th ed. CRC press. <https://doi.org/10.1201/9781315182780>.
+
+Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
 
 Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
 

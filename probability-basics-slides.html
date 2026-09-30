@@ -36,6 +36,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -280,6 +346,8 @@
     }
   })();
   </script>
+  <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -291,7 +359,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-09-28 23:45:35 (PDT)</p>
+  <p class="date">Last modified: 2026-09-29 21:32:40 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -724,6 +792,218 @@
 \]</span></p>
 <p>Even with a highly accurate test (99% sensitive and 99% specific), only about 88% of people who test positive actually have the disease, because the disease prevalence is relatively low (7%).</p>
 </div>
+</section>
+<section class="slide level2">
+
+<div id="exr-bayes" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1 (Turn a conditional around)</strong></span> <a href="#/def-conditional-prob" class="quarto-xref">Definition&nbsp;8</a> defines <span class="math inline">\(\Pr(A \mid B)\)</span> in terms of <span class="math inline">\(\Pr(A \cap B)\)</span>. Write the same definition with <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> swapped, then eliminate <span class="math inline">\(\Pr(A \cap B)\)</span> between the two.</p>
+<p>Your result should express <span class="math inline">\(\Pr(A \mid B)\)</span> using <span class="math inline">\(\Pr(B \mid A)\)</span>, <span class="math inline">\(\Pr(A)\)</span> and <span class="math inline">\(\Pr(B)\)</span>, and none of them jointly.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="sol-bayes" class="proof solution">
+<p><span class="proof-title"><em>Solution 1</em>. </span>Multiplying <a href="#/def-conditional-prob" class="quarto-xref">Definition&nbsp;8</a> through by its denominator, in each direction,</p>
+<p><span class="math display">\[\Pr(A \cap B) = \Pr(A \mid B)\,\Pr(B),
+\qquad
+\Pr(A \cap B) = \Pr(B \mid A)\,\Pr(A)\]</span></p>
+<p>The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by <span class="math inline">\(\Pr(B)\)</span> gives <strong>Bayes’ rule</strong> (<a href="#/thm-bayes" class="quarto-xref">Theorem&nbsp;7</a>):</p>
+<p><span id="eq-bayes"><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)} \tag{1}\]</span></span></p>
+<p>Nothing was assumed beyond <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span>, which the two conditionals need in order to be defined at all.</p>
+<p>As Hutchinson emphasizes <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>, each component carries standard Bayesian terminology:</p>
+<ul>
+<li><span class="math inline">\(\Pr(A \mid B)\)</span> is the <strong>posterior probability</strong> of <span class="math inline">\(A\)</span> given the observed evidence <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\(\Pr(B \mid A)\)</span> is the <strong>likelihood</strong> of the evidence <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span>.</li>
+<li><span class="math inline">\(\Pr(A)\)</span> is the <strong>prior probability</strong> of <span class="math inline">\(A\)</span> before seeing <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\(\Pr(B)\)</span> is the marginal probability of the <strong>evidence</strong>.</li>
+</ul>
+<p>From this formula, the direction of effects is transparent: increasing the prior <span class="math inline">\(\Pr(A)\)</span> or the likelihood <span class="math inline">\(\Pr(B \mid A)\)</span> increases the posterior <span class="math inline">\(\Pr(A \mid B)\)</span>, while increasing the probability of the evidence <span class="math inline">\(\Pr(B)\)</span> decreases it.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exr-base-rate" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2 (A test that is right 99% of the time)</strong></span> A screening test for a disease is positive for <span class="math inline">\(99\%\)</span> of people who have it and negative for <span class="math inline">\(99\%\)</span> of people who do not. One person in a thousand has the disease.</p>
+<p>A randomly screened person tests positive. What is the probability that they have the disease? Guess first, then compute it with <a href="#/eq-bayes" class="quarto-xref">Equation&nbsp;1</a>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="sol-base-rate" class="proof solution">
+<p><span class="proof-title"><em>Solution 2</em>. </span>Write <span class="math inline">\(S\)</span> for having the disease and <span class="math inline">\(+\)</span> for a positive test. The three given numbers are</p>
+<p><span class="math display">\[\Pr(+ \mid S) = 0.99, \qquad \Pr(+ \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001\]</span></p>
+<p><a href="#/eq-bayes" class="quarto-xref">Equation&nbsp;1</a> needs <span class="math inline">\(\Pr(+)\)</span>, the overall chance of a positive result. Assemble it with <a href="#/thm-total-prob" class="quarto-xref">Theorem&nbsp;6</a>, splitting on whether the person is sick:</p>
+<p><span class="math display">\[\begin{aligned}
+\Pr(+) &amp;= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\
+&amp;= (0.99)(0.001) + (0.01)(0.999) \\
+&amp;= 0.00099 + 0.00999 = 0.01098
+\end{aligned}\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[\Pr(S \mid +) = \frac{\Pr(+ \mid S)\,\Pr(S)}{\Pr(+)}
+= \frac{0.00099}{0.01098} \approx 0.0902\]</span></p>
+<p>About <strong>9%</strong>, not the <span class="math inline">\(99\%\)</span> most people guess.</p>
+<p>The reason is the <strong>base rate</strong>. Out of <span class="math inline">\(100{,}000\)</span> people screened, about <span class="math inline">\(100\)</span> have the disease and <span class="math inline">\(99\)</span> of them test positive, while <span class="math inline">\(99{,}900\)</span> do not have it and about <span class="math inline">\(999\)</span> of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.</p>
+<p>The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell hidden">
+<details class="code-fold">
+<summary>[R code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="2" data-source-offset="-83"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb1-2"><a aria-label="2"></a>brPost <span class="op">=</span> (prev) <span class="kw">=&gt;</span> brSens <span class="op">*</span> prev <span class="op">/</span> (brSens <span class="op">*</span> prev <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> brSpec) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prev))</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="co">// The same people as counts, out of 100,000 screened.</span></span>
+<span id="cb1-4"><a aria-label="4"></a>brN <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb1-5"><a aria-label="5"></a>brSick <span class="op">=</span> brN <span class="op">*</span> brPrev</span>
+<span id="cb1-6"><a aria-label="6"></a>brTP <span class="op">=</span> brSick <span class="op">*</span> brSens</span>
+<span id="cb1-7"><a aria-label="7"></a>brFP <span class="op">=</span> (brN <span class="op">-</span> brSick) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> brSpec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<details class="code-fold">
+<summary>[R code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb2-0"><a aria-label="0"></a>viewof brSens <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(+ | S), sensitivity"</span>})</span>
+<span id="cb2-1"><a aria-label="1"></a>viewof brSpec <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(</span><span class="sc">\u2212</span><span class="st"> | not S), specificity"</span>})</span>
+<span id="cb2-2"><a aria-label="2"></a>viewof brPrev <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".4~f"</span>)<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<details class="code-fold">
+<summary>[R code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb3--1"><a aria-label="-1"></a>{</span>
+<span id="cb3-0"><a aria-label="0"></a>  <span class="kw">const</span> n <span class="op">=</span> (v) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(v)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"en-US"</span>)<span class="op">;</span></span>
+<span id="cb3-1"><a aria-label="1"></a>  <span class="cf">return</span> <span class="fu">md</span><span class="vs">`Out of </span><span class="sc">${</span><span class="fu">n</span>(brN)<span class="sc">}</span><span class="vs"> people screened, </span><span class="sc">${</span><span class="fu">n</span>(brSick)<span class="sc">}</span><span class="vs"> have the disease and </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> of them test positive;</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="vs">of the </span><span class="sc">${</span><span class="fu">n</span>(brN <span class="op">-</span> brSick)<span class="sc">}</span><span class="vs"> who do not, </span><span class="sc">${</span><span class="fu">n</span>(brFP)<span class="sc">}</span><span class="vs"> test positive anyway.</span></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="vs">So of the </span><span class="sc">${</span><span class="fu">n</span>(brTP <span class="op">+</span> brFP)<span class="sc">}</span><span class="vs"> positives, </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> are sick:</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="vs">P(S | +) = **</span><span class="sc">${</span>(<span class="dv">100</span> <span class="op">*</span> <span class="fu">brPost</span>(brPrev))<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%**.`</span><span class="op">;</span></span>
+<span id="cb3-5"><a aria-label="5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<details class="code-fold">
+<summary>[R code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb4--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb4-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'Of 100,000 people screened, '</span> <span class="op">+</span></span>
+<span id="cb4-1"><a aria-label="1"></a>    <span class="st">'the ones who test positive, '</span> <span class="op">+</span></span>
+<span id="cb4-2"><a aria-label="2"></a>    <span class="st">'as one bar split into the sick, '</span> <span class="op">+</span></span>
+<span id="cb4-3"><a aria-label="3"></a>    <span class="st">'in orange, '</span> <span class="op">+</span></span>
+<span id="cb4-4"><a aria-label="4"></a>    <span class="st">'and the healthy, '</span> <span class="op">+</span></span>
+<span id="cb4-5"><a aria-label="5"></a>    <span class="st">'in blue.'</span><span class="op">,</span></span>
+<span id="cb4-6"><a aria-label="6"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb4-7"><a aria-label="7"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"people who test positive, out of 100,000 screened"</span>}<span class="op">,</span></span>
+<span id="cb4-8"><a aria-label="8"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="st">"sick"</span><span class="op">,</span> <span class="st">"not sick"</span>]<span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="st">"#ff7f0e"</span><span class="op">,</span> <span class="st">"#1f77b4"</span>]<span class="op">,</span> <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb4-9"><a aria-label="9"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb4-10"><a aria-label="10"></a>    Plot<span class="op">.</span><span class="fu">barX</span>([{<span class="dt">who</span><span class="op">:</span> <span class="st">"sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brTP}<span class="op">,</span> {<span class="dt">who</span><span class="op">:</span> <span class="st">"not sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brFP}]<span class="op">,</span></span>
+<span id="cb4-11"><a aria-label="11"></a>              {<span class="dt">x</span><span class="op">:</span> <span class="st">"n"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"who"</span><span class="op">,</span> <span class="dt">insetTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">insetBottom</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">,</span></span>
+<span id="cb4-12"><a aria-label="12"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb4-13"><a aria-label="13"></a>  ]</span>
+<span id="cb4-14"><a aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<details class="code-fold">
+<summary>[R code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb5--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'The chance of disease after a positive test, '</span> <span class="op">+</span></span>
+<span id="cb5-1"><a aria-label="1"></a>    <span class="st">'plotted against the prevalence on a log scale, '</span> <span class="op">+</span></span>
+<span id="cb5-2"><a aria-label="2"></a>    <span class="st">'for the chosen sensitivity and specificity, '</span> <span class="op">+</span></span>
+<span id="cb5-3"><a aria-label="3"></a>    <span class="st">'with the chosen prevalence marked.'</span><span class="op">,</span></span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">230</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb5-5"><a aria-label="5"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">type</span><span class="op">:</span> <span class="st">"log"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence (log scale)"</span><span class="op">,</span></span>
+<span id="cb5-6"><a aria-label="6"></a>      <span class="dt">ticks</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".2~%"</span>)}<span class="op">,</span></span>
+<span id="cb5-7"><a aria-label="7"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S | +)"</span>}<span class="op">,</span></span>
+<span id="cb5-8"><a aria-label="8"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-9"><a aria-label="9"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log10</span>(<span class="fl">0.5</span>) <span class="op">+</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.02</span>)<span class="op">.</span><span class="fu">map</span>((e) <span class="kw">=&gt;</span> <span class="dv">10</span> <span class="op">**</span> e)<span class="op">,</span></span>
+<span id="cb5-10"><a aria-label="10"></a>              {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#555"</span>})<span class="op">,</span></span>
+<span id="cb5-11"><a aria-label="11"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([brPrev]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ff7f0e"</span>})</span>
+<span id="cb5-12"><a aria-label="12"></a>  ]</span>
+<span id="cb5-13"><a aria-label="13"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="fig-base-rate" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-base-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100,000 people screened and as a function of the prevalence.
+</figcaption>
+<div aria-describedby="fig-base-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="columns widget-panel" style="display:flex; gap:1rem; align-items:flex-start; background-color:#fbfbfb; color:#222; color-scheme:light; padding:0.5rem; border-radius:6px; font-size:min(1em, 18px)">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</figure>
+</div>
 <div title="Video lecture">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -743,6 +1023,9 @@
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
+Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. Western Washington University.
+</div>
 <div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
 Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.
 </div>
@@ -1154,6 +1437,17 @@ window.addEventListener("load", alignEquationAnchorsWithDefault);
           RevealZoom
         ]
       });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIFBvc3RlcmlvciBQKFMgfCArKSBieSBCYXllcycgcnVsZSwgd2l0aCBQKCspIGZyb20gdGhlIGxhdyBvZiB0b3RhbCBwcm9iYWJpbGl0eS5cbmJyUG9zdCA9IChwcmV2KSA9PiBiclNlbnMgKiBwcmV2IC8gKGJyU2VucyAqIHByZXYgKyAoMSAtIGJyU3BlYykgKiAoMSAtIHByZXYpKVxuLy8gVGhlIHNhbWUgcGVvcGxlIGFzIGNvdW50cywgb3V0IG9mIDEwMCwwMDAgc2NyZWVuZWQuXG5ick4gPSAxMDAwMDBcbmJyU2ljayA9IGJyTiAqIGJyUHJldlxuYnJUUCA9IGJyU2ljayAqIGJyU2Vuc1xuYnJGUCA9IChick4gLSBiclNpY2spICogKDEgLSBiclNwZWMpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYnJTZW5zID0gSW5wdXRzLnJhbmdlKFswLjUsIDFdLCB7dmFsdWU6IDAuOTksIHN0ZXA6IDAuMDAxLCBsYWJlbDogXCJQKCsgfCBTKSwgc2Vuc2l0aXZpdHlcIn0pXG52aWV3b2YgYnJTcGVjID0gSW5wdXRzLnJhbmdlKFswLjUsIDFdLCB7dmFsdWU6IDAuOTksIHN0ZXA6IDAuMDAxLCBsYWJlbDogXCJQKFxcdTIyMTIgfCBub3QgUyksIHNwZWNpZmljaXR5XCJ9KVxudmlld29mIGJyUHJldiA9IElucHV0cy5yYW5nZShbMC4wMDAxLCAwLjVdLCB7dmFsdWU6IDAuMDAxLCB0cmFuc2Zvcm06IE1hdGgubG9nLCBmb3JtYXQ6IGQzLmZvcm1hdChcIi40fmZcIiksIGxhYmVsOiBcIlAoUyksIHByZXZhbGVuY2VcIn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IG4gPSAodikgPT4gTWF0aC5yb3VuZCh2KS50b0xvY2FsZVN0cmluZyhcImVuLVVTXCIpO1xuICByZXR1cm4gbWRgT3V0IG9mICR7bihick4pfSBwZW9wbGUgc2NyZWVuZWQsICR7bihiclNpY2spfSBoYXZlIHRoZSBkaXNlYXNlIGFuZCAke24oYnJUUCl9IG9mIHRoZW0gdGVzdCBwb3NpdGl2ZTtcbm9mIHRoZSAke24oYnJOIC0gYnJTaWNrKX0gd2hvIGRvIG5vdCwgJHtuKGJyRlApfSB0ZXN0IHBvc2l0aXZlIGFueXdheS5cblNvIG9mIHRoZSAke24oYnJUUCArIGJyRlApfSBwb3NpdGl2ZXMsICR7bihiclRQKX0gYXJlIHNpY2s6XG5QKFMgfCArKSA9ICoqJHsoMTAwICogYnJQb3N0KGJyUHJldikpLnRvRml4ZWQoMSl9JSoqLmA7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICBhcmlhTGFiZWw6ICdPZiAxMDAsMDAwIHBlb3BsZSBzY3JlZW5lZCwgJyArXG4gICAgJ3RoZSBvbmVzIHdobyB0ZXN0IHBvc2l0aXZlLCAnICtcbiAgICAnYXMgb25lIGJhciBzcGxpdCBpbnRvIHRoZSBzaWNrLCAnICtcbiAgICAnaW4gb3JhbmdlLCAnICtcbiAgICAnYW5kIHRoZSBoZWFsdGh5LCAnICtcbiAgICAnaW4gYmx1ZS4nLFxuICB3aWR0aDogMzgwLCBoZWlnaHQ6IDEyMCwgbWFyZ2luTGVmdDogMTAsIG1hcmdpblJpZ2h0OiAyMCxcbiAgeDoge2xhYmVsOiBcInBlb3BsZSB3aG8gdGVzdCBwb3NpdGl2ZSwgb3V0IG9mIDEwMCwwMDAgc2NyZWVuZWRcIn0sXG4gIGNvbG9yOiB7ZG9tYWluOiBbXCJzaWNrXCIsIFwibm90IHNpY2tcIl0sIHJhbmdlOiBbXCIjZmY3ZjBlXCIsIFwiIzFmNzdiNFwiXSwgbGVnZW5kOiB0cnVlfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmJhclgoW3t3aG86IFwic2lja1wiLCBuOiBiclRQfSwge3dobzogXCJub3Qgc2lja1wiLCBuOiBickZQfV0sXG4gICAgICAgICAgICAgIHt4OiBcIm5cIiwgZmlsbDogXCJ3aG9cIiwgaW5zZXRUb3A6IDEwLCBpbnNldEJvdHRvbTogMTB9KSxcbiAgICBQbG90LnJ1bGVYKFswXSlcbiAgXVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIGFyaWFMYWJlbDogJ1RoZSBjaGFuY2Ugb2YgZGlzZWFzZSBhZnRlciBhIHBvc2l0aXZlIHRlc3QsICcgK1xuICAgICdwbG90dGVkIGFnYWluc3QgdGhlIHByZXZhbGVuY2Ugb24gYSBsb2cgc2NhbGUsICcgK1xuICAgICdmb3IgdGhlIGNob3NlbiBzZW5zaXRpdml0eSBhbmQgc3BlY2lmaWNpdHksICcgK1xuICAgICd3aXRoIHRoZSBjaG9zZW4gcHJldmFsZW5jZSBtYXJrZWQuJyxcbiAgd2lkdGg6IDM4MCwgaGVpZ2h0OiAyMzAsIGdyaWQ6IHRydWUsXG4gIHg6IHt0eXBlOiBcImxvZ1wiLCBkb21haW46IFswLjAwMDEsIDAuNV0sIGxhYmVsOiBcIlAoUyksIHByZXZhbGVuY2UgKGxvZyBzY2FsZSlcIixcbiAgICAgIHRpY2tzOiBbMC4wMDAxLCAwLjAwMSwgMC4wMSwgMC4xLCAwLjVdLCB0aWNrRm9ybWF0OiBkMy5mb3JtYXQoXCIuMn4lXCIpfSxcbiAgeToge2RvbWFpbjogWzAsIDFdLCBsYWJlbDogXCJQKFMgfCArKVwifSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmxpbmUoZDMucmFuZ2UoLTQsIE1hdGgubG9nMTAoMC41KSArIDAuMDAxLCAwLjAyKS5tYXAoKGUpID0+IDEwICoqIGUpLFxuICAgICAgICAgICAgICB7eDogKHApID0+IHAsIHk6IGJyUG9zdCwgc3Ryb2tlOiBcIiM1NTVcIn0pLFxuICAgIFBsb3QuZG90KFticlByZXZdLCB7eDogKHApID0+IHAsIHk6IGJyUG9zdCwgcjogNSwgZmlsbDogXCIjZmY3ZjBlXCJ9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdiclNlbnMnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYnJTcGVjJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2JyUHJldicpIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../..";
+    window._ojs.paths.runtimeToRoot = "../..";
+    window._ojs.paths.docToRoot = "";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
