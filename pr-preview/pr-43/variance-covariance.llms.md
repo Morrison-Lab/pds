@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-29 17:32:01 (PDT)
+Last modified: 2026-09-29 17:49:42 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -49,6 +49,8 @@ Last modified: 2026-09-29 17:32:01 (PDT)
 > **NOTE:**
 >
 > **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation \\e(5) = 5 - 3.5 = 1.5\\, and a roll of \\y = 2\\ has deviation \\e(2) = 2 - 3.5 = -1.5\\.
+
+### 1.1 Mean-zero noise model
 
 Measurement noise is almost always modeled as a random variable \\\varepsilon\\ with **mean zero** and variance \\\sigma^2\\.
 

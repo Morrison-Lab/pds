@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-29 17:32:01 (PDT)
+Last modified: 2026-09-29 17:49:42 (PDT)
 
 ## 1 Random variables
 
@@ -547,6 +547,8 @@ Last modified: 2026-09-29 17:32:01 (PDT)
 >
 > \\\Pr(X = 1,\\ Y \le 1) = \int_0^1 \tfrac{1}{4}\\dy = \tfrac{1}{4}\\
 
+### 2.1 Joint distributions and marginalization
+
 For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\p(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
 
 \\\sum\_{x \in \mathbb{X}} p(x) = 1\\
@@ -584,6 +586,8 @@ The resulting distributions \\p(x)\\ and \\p(y)\\ are the **marginal distributio
 > \\p(m=1 \mid d=0) = \frac{p(m=1, d=0)}{p(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\\
 >
 > Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\p(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
+
+### 2.2 Continuous distributions and densities
 
 When a random variable \\X\\ takes values in a continuous space \\\mathbb{X} \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\p(x) : \mathbb{X} \to \mathbb{R}\_+\\ satisfying:
 
