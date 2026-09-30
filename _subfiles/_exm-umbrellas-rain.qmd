@@ -13,6 +13,6 @@ Let $w$ denote wet roads, $u$ denote people carrying umbrellas, and $r$ denote r
     Once you know with certainty whether it is currently raining,
     learning whether pedestrians are carrying umbrellas tells you nothing more about the state of the roads:
 
-$$P(w, u \mid r) = P(w \mid r)\,P(u \mid r), \qquad P(w \mid u, r) = P(w \mid r)$$
+$$\Pr(w, u \mid r) = \Pr(w \mid r)\,\Pr(u \mid r), \qquad \Pr(w \mid u, r) = \Pr(w \mid r)$$
 
 :::
