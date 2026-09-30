@@ -58,9 +58,13 @@ jobs:
           # all.files = TRUE so changed dotfiles (e.g. .lintr.R) appear here and
           # get excluded too, rather than being linted on every PR.
           all_files <- list.files(recursive = TRUE, all.files = TRUE)
+          # Read configured exclusions from .lintr.R if present
+          cfg_env <- new.env()
+          if (file.exists(".lintr.R")) sys.source(".lintr.R", envir = cfg_env)
+          cfg_exclusions <- names(cfg_env$exclusions)
           # lint_dir() lints everything except the exclusions, so exclude every
-          # file that this PR did NOT change.
-          exclusions_list <- as.list(setdiff(all_files, changed_files))
+          # file that this PR did NOT change, plus configured exclusions.
+          exclusions_list <- as.list(union(setdiff(all_files, changed_files), cfg_exclusions))
           lintr::lint_dir(exclusions = exclusions_list)
         shell: Rscript {0}
         env:
