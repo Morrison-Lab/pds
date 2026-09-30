@@ -1,3 +1,5 @@
+### Joint distributions and marginalization {#sec-joint-marginal}
+
 For a discrete random variable $X$ taking values in $\mathbb{X}$,
 a **probability mass function** (PMF) $p(x) : \mathbb{X} \to [0, 1]$ gives the probability that $X$ takes the value $x$:
 

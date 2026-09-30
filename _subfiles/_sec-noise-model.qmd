@@ -1,3 +1,5 @@
+### Mean-zero noise model {#sec-noise-model}
+
 Measurement noise is almost always modeled as a random variable
 $\varepsilon$ with **mean zero** and variance $\sigma^2$.
 

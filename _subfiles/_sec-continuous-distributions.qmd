@@ -1,3 +1,5 @@
+### Continuous distributions and densities {#sec-continuous-distributions}
+
 When a random variable $X$ takes values in a continuous space $\mathbb{X} \subseteq \mathbb{R}$,
 its behavior is described by a **probability density function** (PDF) $p(x) : \mathbb{X} \to \mathbb{R}_+$
 satisfying:
