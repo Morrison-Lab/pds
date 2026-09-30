@@ -1,0 +1,11 @@
+::: {#exr-noise-second-moment}
+
+#### The average squared error of pure noise
+
+Let $\varepsilon$ be a random variable with $\mathbb{E}[\varepsilon] = 0$ and
+$\operatorname{Var}(\varepsilon) = \sigma^2$.
+
+Show that $\mathbb{E}[\varepsilon^2] = \sigma^2$,
+and say which earlier result you used.
+
+:::

@@ -1,0 +1,98 @@
+::: {.content-visible when-format="html"}
+
+```{ojs}
+//| output: false
+// Posterior P(S | +) by Bayes' rule, with P(+) from the law of total probability.
+brPost = (prev) => brSens * prev / (brSens * prev + (1 - brSpec) * (1 - prev))
+// The same people as counts, out of 100,000 screened.
+brN = 100000
+brSick = brN * brPrev
+brTP = brSick * brSens
+brFP = (brN - brSick) * (1 - brSpec)
+```
+
+::: {#fig-base-rate}
+
+::: {.columns .widget-panel style="display:flex;
+gap:1rem;
+align-items:flex-start;
+background-color:#fbfbfb;
+color:#222;
+color-scheme:light;
+padding:0.5rem;
+border-radius:6px;
+font-size:min(1em, 18px)"}
+
+::: {.column width="40%"}
+
+```{ojs}
+viewof brSens = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(+ | S), sensitivity"})
+viewof brSpec = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(\u2212 | not S), specificity"})
+viewof brPrev = Inputs.range([0.0001, 0.5], {value: 0.001, transform: Math.log, format: d3.format(".4~f"), label: "P(S), prevalence"})
+```
+
+```{ojs}
+{
+  const n = (v) => Math.round(v).toLocaleString("en-US");
+  return md`Out of ${n(brN)} people screened, ${n(brSick)} have the disease and ${n(brTP)} of them test positive;
+of the ${n(brN - brSick)} who do not, ${n(brFP)} test positive anyway.
+So of the ${n(brTP + brFP)} positives, ${n(brTP)} are sick:
+P(S | +) = **${(100 * brPost(brPrev)).toFixed(1)}%**.`;
+}
+```
+
+:::
+
+::: {.column width="60%"}
+
+```{ojs}
+Plot.plot({
+  ariaLabel: 'Of 100,000 people screened, ' +
+    'the ones who test positive, ' +
+    'as one bar split into the sick, ' +
+    'in orange, ' +
+    'and the healthy, ' +
+    'in blue.',
+  width: 380, height: 120, marginLeft: 10, marginRight: 20,
+  x: {label: "people who test positive, out of 100,000 screened"},
+  color: {domain: ["sick", "not sick"], range: ["#ff7f0e", "#1f77b4"], legend: true},
+  marks: [
+    Plot.barX([{who: "sick", n: brTP}, {who: "not sick", n: brFP}],
+              {x: "n", fill: "who", insetTop: 10, insetBottom: 10}),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+```{ojs}
+Plot.plot({
+  ariaLabel: 'The chance of disease after a positive test, ' +
+    'plotted against the prevalence on a log scale, ' +
+    'for the chosen sensitivity and specificity, ' +
+    'with the chosen prevalence marked.',
+  width: 380, height: 230, grid: true,
+  x: {type: "log", domain: [0.0001, 0.5], label: "P(S), prevalence (log scale)",
+      ticks: [0.0001, 0.001, 0.01, 0.1, 0.5], tickFormat: d3.format(".2~%")},
+  y: {domain: [0, 1], label: "P(S | +)"},
+  marks: [
+    Plot.line(d3.range(-4, Math.log10(0.5) + 0.001, 0.02).map((e) => 10 ** e),
+              {x: (p) => p, y: brPost, stroke: "#555"}),
+    Plot.dot([brPrev], {x: (p) => p, y: brPost, r: 5, fill: "#ff7f0e"})
+  ]
+})
+```
+
+:::
+
+:::
+
+The chance of disease after a positive test,
+as counts out of 100,000 people screened and as a function of the prevalence.
+
+:::
+
+:::
+
+::: {.content-visible when-format="pdf"}
+The course website's version of this page has an interactive plot here.
+:::

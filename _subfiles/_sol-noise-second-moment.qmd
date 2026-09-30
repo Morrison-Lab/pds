@@ -1,0 +1,18 @@
+::: {#sol-noise-second-moment}
+
+@thm-variance says
+$\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$.
+Taking $X = \varepsilon$ and substituting $\mathbb{E}[\varepsilon] = 0$,
+
+$$\mathbb{E}[\varepsilon^2] = \operatorname{Var}(\varepsilon) + 0^2 = \sigma^2$$ {#eq-noise-second-moment}
+
+so for mean-zero noise the average squared value *is* the variance.
+
+The identity looks slight and does a lot of work.
+@eq-noise-second-moment is the step that produces the irreducible error term
+in regression and statistical modeling:
+it converts a statement about the *spread* of the noise, which is what a
+model of the world gives you, into a statement about *squared error*, which
+is what the fitting objective measures.
+
+:::

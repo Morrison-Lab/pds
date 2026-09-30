@@ -26,7 +26,10 @@ rm(snake_case_ACROs1)
 exclusions <- list(
   `data-raw` = list(
     pipe_consistency_linter = Inf
-  )
+  ),
+  # Interactive OJS widget files containing no R code
+  `_subfiles/_fig-base-rate.qmd` = Inf
+
   # NOTE: `pds` (the self-referential `pds -> .` symlink -- see CLAUDE.md) is
   # NOT excluded here on purpose. lintr::lint_dir()/lint_package() resolve
   # every exclusion path through normalize_path() (lintr:::normalize_exclusions()),

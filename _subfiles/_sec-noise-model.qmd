@@ -1,0 +1,12 @@
+### Mean-zero noise model {#sec-noise-model}
+
+Measurement noise is almost always modeled as a random variable
+$\varepsilon$ with **mean zero** and variance $\sigma^2$.
+
+Mean zero is a modeling choice rather than a fact about the world,
+and it costs nothing:
+any systematic offset in the noise can be absorbed into the model's own
+intercept, leaving what remains centered at zero by construction.
+
+That choice buys one identity, used repeatedly across statistical modeling
+and machine learning.

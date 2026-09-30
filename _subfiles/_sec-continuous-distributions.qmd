@@ -1,0 +1,39 @@
+### Continuous distributions and densities {#sec-continuous-distributions}
+
+When a random variable $X$ takes values in a continuous space $\mathbb{X} \subseteq \mathbb{R}$,
+its behavior is described by a **probability density function** (PDF) $\p(x) : \mathbb{X} \to \mathbb{R}_+$
+satisfying:
+
+$$\int_{\mathbb{X}} \p(x)\,\mathrm{d}x = 1$$
+
+Probabilities are assigned to subsets $\mathbb{A} \subseteq \mathbb{X}$ by integrating the density over that set:
+
+$$\Pr(X \in \mathbb{A}) = \int_{\mathbb{A}} \p(x)\,\mathrm{d}x$$
+
+{{< slidebreak >}}
+
+::: {#thm-zero-point-prob}
+
+#### Points have zero probability in continuous distributions
+
+For any continuous random variable and any specific value $a \in \mathbb{R}$:
+
+$$\Pr(X = a) = 0$$
+
+:::
+
+Why?
+As Brian Hutchinson notes [@hutchinson2024data471], what is the probability that someone's height is *exactly* $6.0000000000\dots$ feet?
+Zero.
+A single real point has width zero, so the integral over a single point is zero.
+
+Non-zero probabilities attach to intervals or regions of non-zero width:
+
+$$\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int_{6-\epsilon}^{6+\epsilon} \p(x)\,\mathrm{d}x > 0 \qquad (\text{for } \epsilon > 0)$$
+
+{{< slidebreak >}}
+
+Every rule developed for discrete variables carries over to continuous variables by replacing sums $\sum_x$ with integrals $\int \mathrm{d}x$.
+For example, marginalizing out $X$ from a joint density $\p(x, y)$ to find the marginal density $\p(y)$ becomes:
+
+$$\p(y) = \int_{\mathbb{X}} \p(x, y)\,\mathrm{d}x$$

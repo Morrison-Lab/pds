@@ -159,6 +159,8 @@ while $\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) = \tfrac{1}{2}
 
 {{< slidebreak >}}
 
+[]{#sec-conditional-independence}
+
 :::{#def-cind}
 #### Conditional independence
 
@@ -290,6 +292,11 @@ and @exm-indpt-not-cind gives the second.
 :::
 
 {{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-umbrellas-rain.qmd >}}
+
+{{< slidebreak >}}
+
 
 :::{#prp-cind-own-covariate}
 #### Conditional independence when each $Y_i$ depends only on its own $X_i$
