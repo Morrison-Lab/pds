@@ -1,5 +1,3 @@
-[]{#sec-conditional-independence}
-
 ::: {#exm-umbrellas-rain}
 
 #### Wet roads, umbrellas, and rain

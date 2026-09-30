@@ -159,6 +159,8 @@ while $\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) = \tfrac{1}{2}
 
 {{< slidebreak >}}
 
+[]{#sec-conditional-independence}
+
 :::{#def-cind}
 #### Conditional independence
 
