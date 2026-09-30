@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-29 17:15:50 (PDT)
+Last modified: 2026-09-29 17:32:01 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -50,11 +50,11 @@ Last modified: 2026-09-29 17:15:50 (PDT)
 >
 > **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation \\e(5) = 5 - 3.5 = 1.5\\, and a roll of \\y = 2\\ has deviation \\e(2) = 2 - 3.5 = -1.5\\.
 
-Measurement noise is almost always modelled as a random variable \\\varepsilon\\ with **mean zero** and variance \\\sigma^2\\.
+Measurement noise is almost always modeled as a random variable \\\varepsilon\\ with **mean zero** and variance \\\sigma^2\\.
 
-Mean zero is a modelling choice rather than a fact about the world, and it costs nothing: any systematic offset in the noise can be absorbed into the model’s own intercept, leaving what remains centred at zero by construction.
+Mean zero is a modeling choice rather than a fact about the world, and it costs nothing: any systematic offset in the noise can be absorbed into the model’s own intercept, leaving what remains centered at zero by construction.
 
-That choice buys one identity, used repeatedly across statistical modelling and machine learning.
+That choice buys one identity, used repeatedly across statistical modeling and machine learning.
 
 > **NOTE:**
 >

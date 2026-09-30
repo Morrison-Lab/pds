@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-29 17:15:50 (PDT)
+Last modified: 2026-09-29 17:32:01 (PDT)
 
 ## 1 Random variables
 
@@ -591,19 +591,19 @@ When a random variable \\X\\ takes values in a continuous space \\\mathbb{X} \su
 
 Probabilities are assigned to subsets \\\mathbb{A} \subseteq \mathbb{X}\\ by integrating the density over that set:
 
-\\P(X \in \mathbb{A}) = \int\_{\mathbb{A}} p(x)\\\mathrm{d}x\\
+\\\Pr(X \in \mathbb{A}) = \int\_{\mathbb{A}} p(x)\\\mathrm{d}x\\
 
 > **NOTE:**
 >
 > **Theorem 14 (Points have zero probability in continuous distributions)** For any continuous random variable and any specific value \\a \in \mathbb{R}\\:
 >
-> \\P(X = a) = 0\\
+> \\\Pr(X = a) = 0\\
 
 Why? As Brian Hutchinson notes ([Hutchinson 2024](#ref-hutchinson2024data471)), what is the probability that someone’s height is *exactly* \\6.0000000000\dots\\ feet? Zero. A single real point has width zero, so the integral over a single point is zero.
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
-\\P(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} p(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
+\\\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} p(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
 
 Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum_x\\ with integrals \\\int \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\p(x, y)\\ to find the marginal density \\p(y)\\ becomes:
 

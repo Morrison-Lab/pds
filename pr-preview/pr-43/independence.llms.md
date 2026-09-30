@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-09-29 17:15:50 (PDT)
+Last modified: 2026-09-29 17:32:01 (PDT)
 
 > **NOTE:**
 >
@@ -109,7 +109,7 @@ Last modified: 2026-09-29 17:15:50 (PDT)
 > - **Marginally, wet roads and umbrellas are not independent (\\w \not\perp u\\).** If you look out a window and see people holding open umbrellas, that increases the probability that the pavement outside is wet.
 > - **Conditionally on rain, they are independent (\\w \perp u \mid r\\).** Once you know with certainty whether it is currently raining, learning whether pedestrians are carrying umbrellas tells you nothing more about the state of the roads:
 >
-> \\P(w, u \mid r) = P(w \mid r)\\P(u \mid r), \qquad P(w \mid u, r) = P(w \mid r)\\
+> \\\Pr(w, u \mid r) = \Pr(w \mid r)\\\Pr(u \mid r), \qquad \Pr(w \mid u, r) = \Pr(w \mid r)\\
 
 > **NOTE:**
 >
