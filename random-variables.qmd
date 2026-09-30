@@ -24,6 +24,15 @@ format:
 
 {{< include pds/_subfiles/_def-pdf-pmf-cdf.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sec-joint-marginal.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sec-continuous-distributions.qmd >}}
+
+
 ::: {.callout-tip title="Video lecture"}
 Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)
 covers probability mass functions and probability density functions [@hutchinson_wwu_ml_videos].

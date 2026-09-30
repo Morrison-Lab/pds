@@ -1,0 +1,13 @@
+::: {#exr-base-rate}
+
+#### A test that is right 99% of the time
+
+A screening test for a disease is positive for $99\%$ of people who have it
+and negative for $99\%$ of people who do not.
+One person in a thousand has the disease.
+
+A randomly screened person tests positive.
+What is the probability that they have the disease?
+Guess first, then compute it with @eq-bayes.
+
+:::

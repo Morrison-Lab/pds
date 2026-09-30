@@ -1,0 +1,18 @@
+::: {#exm-umbrellas-rain}
+
+#### Wet roads, umbrellas, and rain
+
+Consider Brian Hutchinson's intuitive illustration of conditional independence [@hutchinson2024data471]:
+
+Let $w$ denote wet roads, $u$ denote people carrying umbrellas, and $r$ denote rain.
+
+-   **Marginally, wet roads and umbrellas are not independent ($w \not\perp u$).**
+    If you look out a window and see people holding open umbrellas,
+    that increases the probability that the pavement outside is wet.
+-   **Conditionally on rain, they are independent ($w \perp u \mid r$).**
+    Once you know with certainty whether it is currently raining,
+    learning whether pedestrians are carrying umbrellas tells you nothing more about the state of the roads:
+
+$$P(w, u \mid r) = P(w \mid r)\,P(u \mid r), \qquad P(w \mid u, r) = P(w \mid r)$$
+
+:::

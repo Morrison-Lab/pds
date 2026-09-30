@@ -1,0 +1,12 @@
+::: {#exr-bayes}
+
+#### Turn a conditional around
+
+@def-conditional-prob defines $\Pr(A \mid B)$ in terms of $\Pr(A \cap B)$.
+Write the same definition with $A$ and $B$ swapped,
+then eliminate $\Pr(A \cap B)$ between the two.
+
+Your result should express $\Pr(A \mid B)$ using $\Pr(B \mid A)$, $\Pr(A)$ and
+$\Pr(B)$, and none of them jointly.
+
+:::

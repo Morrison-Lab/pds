@@ -1,0 +1,35 @@
+::: {#sol-base-rate}
+
+Write $S$ for having the disease and $+$ for a positive test.
+The three given numbers are
+
+$$\Pr(+ \mid S) = 0.99, \qquad \Pr(+ \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001$$
+
+@eq-bayes needs $\Pr(+)$, the overall chance of a positive result.
+Assemble it with @thm-total-prob, splitting on whether the person is
+sick:
+
+$$\begin{aligned}
+\Pr(+) &= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\
+&= (0.99)(0.001) + (0.01)(0.999) \\
+&= 0.00099 + 0.00999 = 0.01098
+\end{aligned}$$
+
+Then
+
+$$\Pr(S \mid +) = \frac{\Pr(+ \mid S)\,\Pr(S)}{\Pr(+)}
+= \frac{0.00099}{0.01098} \approx 0.0902$$
+
+About **9%**, not the $99\%$ most people guess.
+
+The reason is the **base rate**.
+Out of $100{,}000$ people screened, about $100$ have the disease and $99$ of
+them test positive, while $99{,}900$ do not have it and about $999$ of them
+test positive anyway.
+The false positives outnumber the true positives ten to one,
+because there are a thousand times more people available to produce them.
+
+The base rate is fundamental to evaluating screening tests and binary classifiers,
+and it illustrates why raw accuracy can be misleading on rare events.
+
+:::

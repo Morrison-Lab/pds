@@ -22,6 +22,15 @@ format:
 
 {{< include pds/_subfiles/_thm-lotus.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-linearity-use.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-linearity-use.qmd >}}
+
+
 ## Conditional distributions and expectations
 
 <!-- No slidebreak here: the heading shares its slide with the def-cond-pmf div. -->

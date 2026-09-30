@@ -291,6 +291,11 @@ and @exm-indpt-not-cind gives the second.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-umbrellas-rain.qmd >}}
+
+{{< slidebreak >}}
+
+
 :::{#prp-cind-own-covariate}
 #### Conditional independence when each $Y_i$ depends only on its own $X_i$
 

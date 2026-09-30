@@ -42,6 +42,27 @@ format:
 
 {{< include pds/_subfiles/_thm-bayes.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-bayes.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-bayes.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-base-rate.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-base-rate.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_fig-base-rate.qmd >}}
+
+
 ::: {.callout-tip title="Video lecture"}
 Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)
 covers conditional distributions, the law of total probability,

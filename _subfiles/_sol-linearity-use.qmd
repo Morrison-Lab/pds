@@ -1,0 +1,23 @@
+::: {#sol-linearity-use}
+
+Pull the constant $1/n$ out and split the sum, both by @thm-linearity-expectation:
+
+$$\mathbb{E}[\bar X]
+= \mathbb{E}\!\left[\frac{1}{n}\sum_{i=1}^{n} X_i\right]
+= \frac{1}{n}\sum_{i=1}^{n} \mathbb{E}[X_i]
+= \frac{1}{n}\,(n\mu) = \mu$$
+
+So the sample average is right *on average*.
+Independence was never used: @thm-linearity-expectation holds regardless,
+so this much would be true even for draws that influence one another.
+
+What it does not tell us is how far any *particular* sample average falls
+from $\mu$ --- that is a statement about variance, not expectation,
+and it is where independence does the work.
+The distinction matters because an estimator or fitted model is a function of one
+particular sample.
+Knowing that the procedure is right on average says nothing about
+the estimate actually in front of you,
+and separating those two statements is foundational to understanding bias and variance.
+
+:::

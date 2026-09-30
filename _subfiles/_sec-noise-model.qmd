@@ -1,0 +1,10 @@
+Measurement noise is almost always modelled as a random variable
+$\varepsilon$ with **mean zero** and variance $\sigma^2$.
+
+Mean zero is a modelling choice rather than a fact about the world,
+and it costs nothing:
+any systematic offset in the noise can be absorbed into the model's own
+intercept, leaving what remains centred at zero by construction.
+
+That choice buys one identity, used repeatedly across statistical modelling
+and machine learning.

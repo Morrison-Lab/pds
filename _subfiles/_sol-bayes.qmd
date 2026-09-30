@@ -1,0 +1,28 @@
+::: {#sol-bayes}
+
+Multiplying @def-conditional-prob through by its denominator, in each direction,
+
+$$\Pr(A \cap B) = \Pr(A \mid B)\,\Pr(B),
+\qquad
+\Pr(A \cap B) = \Pr(B \mid A)\,\Pr(A)$$
+
+The left-hand sides are the same quantity, so the right-hand sides are equal.
+Dividing by $\Pr(B)$ gives **Bayes' rule** (@thm-bayes):
+
+$$\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)}$$ {#eq-bayes}
+
+Nothing was assumed beyond $\Pr(A) > 0$ and $\Pr(B) > 0$,
+which the two conditionals need in order to be defined at all.
+
+As Hutchinson emphasizes [@hutchinson2024data471], each component carries standard Bayesian terminology:
+
+-   $\Pr(A \mid B)$ is the **posterior probability** of $A$ given the observed evidence $B$.
+-   $\Pr(B \mid A)$ is the **likelihood** of the evidence $B$ given $A$.
+-   $\Pr(A)$ is the **prior probability** of $A$ before seeing $B$.
+-   $\Pr(B)$ is the marginal probability of the **evidence**.
+
+From this formula, the direction of effects is transparent:
+increasing the prior $\Pr(A)$ or the likelihood $\Pr(B \mid A)$ increases the posterior $\Pr(A \mid B)$,
+while increasing the probability of the evidence $\Pr(B)$ decreases it.
+
+:::
