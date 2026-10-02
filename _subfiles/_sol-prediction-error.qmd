@@ -1,6 +1,6 @@
 :::{#sol-prediction-error}
 
-1. The three sources add (@thm-prediction-error):
+1. The expected squared error is the sum of the three sources:
    $1 + 2 + 3 = 6$.
 
 2. $0 + 0 + 3 = 3$.
