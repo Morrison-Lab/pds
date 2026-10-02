@@ -10,7 +10,7 @@ the cost of predicting $\hat{y}$ when the true value is $y$.
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 The squared error loss is:
 $$L(y, \hat{y}) = \sqf{y - \hat{y}}$$

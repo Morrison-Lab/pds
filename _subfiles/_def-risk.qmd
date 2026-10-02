@@ -15,7 +15,7 @@ $$R \eqdef \E{L(Y, \hat{y})}$$
 
 :::
 
-::: notes
+::: {.remark .notes}
 
 In @exr-loss (parts 2 and 3),
 the risk of the prediction $c = 1$ is $5$ for squared error loss and $2$ for absolute error loss.
