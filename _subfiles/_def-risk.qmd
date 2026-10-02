@@ -1,0 +1,37 @@
+<!-- Source: Hastie, Tibshirani and Friedman (2009), section 2.4, eq. 2.9, p. 18,
+     and p. 20 for the conditional-median remark (eq. 2.18).
+     The name "risk" is standard terminology and is not used on pp. 18-20. -->
+
+:::{#def-risk}
+#### Risk (expected loss)
+
+For a random variable $Y$
+and a prediction $\hat{y}$
+(a constant, or a function $f(X)$ of a random input $X$),
+the **risk** is the expectation of the
+[loss](#def-loss-function):
+
+$$R \eqdef \E{L(Y, \hat{y})}$$
+
+:::
+
+::: {.remark .notes}
+
+In @exr-loss (parts 2 and 3),
+the risk of the prediction $c = 1$ is $5$ for squared error loss and $2$ for absolute error loss.
+The risk of the prediction $c = 2$ is $4$ for squared error loss and $2$ for absolute error loss.
+
+For squared error loss and a prediction $f(X)$,
+the risk is $\E{\sqf{Y - f(X)}}$.
+@hastie2009elements [p. 18] call it the expected prediction error.
+
+The prediction with the smallest risk depends on the loss.
+In @exr-loss, every constant $c$ from $0$ to $4$ has absolute error risk $2$,
+because $\E{\abs{Y - c}} = 0.5\,c + 0.5\,(4 - c) = 2$.
+Only $c = 2$ has the smallest squared error risk.
+@hastie2009elements [p. 20] state that, for absolute error loss,
+the best prediction function is the conditional median
+instead of the conditional mean.
+This statement is given here without proof.
+
+:::
