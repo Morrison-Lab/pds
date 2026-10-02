@@ -55,7 +55,7 @@ Adding the three terms gives the claim.
 ::: notes
 In @exr-prediction-error,
 $1 + 2 + 3 = 6$.
-The term $\sigma^2$ does not depend on $\hat f$:
-it is the irreducible error,
-which no choice of prediction can remove.
+The term $\sigma^2$ does not depend on $\hat f$.
+It is called the irreducible error.
+No choice of prediction can remove it.
 :::

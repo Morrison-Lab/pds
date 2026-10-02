@@ -11,9 +11,10 @@ with a fixed estimand in place of f(x_0).
 :::{#def-prediction-bias}
 #### Bias of a prediction
 
-Let $\hat f(x_0)$ be a prediction (a random variable,
-because it depends on the random training data)
-of the value $f(x_0)$ of a fixed function $f$ at a point $x_0$.
+Let $f$ be a fixed function, and let $x_0$ be a point.
+Let $\hat f(x_0)$ be a prediction of the value $f(x_0)$.
+The prediction $\hat f(x_0)$ is a random variable,
+because it depends on the random training data.
 The **bias** of $\hat f(x_0)$ is
 
 $$\bias{\hat f(x_0)} \eqdef \E{\hat f(x_0)} - f(x_0)$$
