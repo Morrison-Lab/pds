@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-02 01:57:01 (PDT)
+Last modified: 2026-10-02 02:18:37 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -234,7 +234,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Definition 9 (Bias of a prediction)** Let \\\hat f(x_0)\\ be a prediction (a random variable, because it depends on the random training data) of the value \\f(x_0)\\ of a fixed function \\f\\ at a point \\x_0\\. The **bias** of \\\hat f(x_0)\\ is
+> **Definition 9 (Bias of a prediction)** Let \\f\\ be a fixed function, and let \\x_0\\ be a point. Let \\\hat f(x_0)\\ be a prediction of the value \\f(x_0)\\. The prediction \\\hat f(x_0)\\ is a random variable, because it depends on the random training data. The **bias** of \\\hat f(x_0)\\ is
 >
 > \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\hat f(x_0)\right\]\mathclose{} - f(x_0)\\
 
@@ -258,7 +258,7 @@ If \\f(x_0) = 10\\ and the predictions, over repeated training sets, average \\1
 >
 > Adding the three terms gives the claim.
 
-In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\\ does not depend on \\\hat f\\: it is the irreducible error, which no choice of prediction can remove.
+In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\\ does not depend on \\\hat f\\. It is called the irreducible error. No choice of prediction can remove it.
 
 ## 4 Covariance
 
