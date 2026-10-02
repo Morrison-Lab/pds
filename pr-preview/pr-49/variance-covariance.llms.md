@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-02 02:18:37 (PDT)
+Last modified: 2026-10-02 05:27:07 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -226,7 +226,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > *Solution 2*.
 >
-> 1.  The three sources add ([Theorem 4](#thm-prediction-error)): \\1 + 2 + 3 = 6\\.
+> 1.  The expected squared error is the sum of the three sources: \\1 + 2 + 3 = 6\\.
 >
 > 2.  \\0 + 0 + 3 = 3\\. The noise variance \\\sigma^2 = 3\\ remains, so \\3\\ is the smallest expected squared error any prediction can have here.
 >
