@@ -1,8 +1,10 @@
 <!--
 Source: James, Witten, Hastie and Tibshirani (2021), An Introduction to
-Statistical Learning with Applications in R, 2nd ed., section 2.2.2, p. 34
-(the Bias term of eq. 2.7).
-The estimator-bias definition of the sds estimation page
+Statistical Learning with Applications in R, 2nd ed., section 2.2.2:
+eq. 2.7 (p. 34) uses Bias(fhat(x_0)); the book defines bias verbally
+(the error from approximating a real-life problem by a simpler model).
+The formula E[fhat(x_0)] - f(x_0) is the standard definition, not one
+the book states. The estimator-bias definition of the sds estimation page
 (Morrison-Lab/sds, _subfiles/estimation/_def-bias.qmd) is the same idea
 with a fixed estimand in place of f(x_0).
 -->
