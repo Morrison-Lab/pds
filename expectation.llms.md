@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-02 01:19:44 (PDT)
+Last modified: 2026-10-02 09:59:42 (PDT)
 
 > **NOTE:**
 >
@@ -946,6 +946,60 @@ Last modified: 2026-10-02 01:19:44 (PDT)
 >
 > With \\q = 0.5\\, the truncated sum-of-integrals matches the closed form \\\frac{1}{2(1-q)} = 1\\.
 
+## 3 Loss and risk
+
+> **NOTE:**
+>
+> **Exercise 6 (Squared and absolute loss)**  
+>
+> 1.  For a true value \\y = 3\\ and a prediction \\\hat{y} = 5\\, compute the squared error loss \\\mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\ and the absolute error loss \\\mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\.
+>
+> 2.  A random variable \\Y\\ has \\\operatorname{P}(Y = 0) = 0.5\\ and \\\operatorname{P}(Y = 4) = 0.5\\. For the constant prediction \\c = 1\\, compute the expected squared error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{}\\ and the expected absolute error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{}\\.
+>
+> 3.  Repeat part 2 for \\c = 2\\.
+>
+> 4.  Which of \\c = 1\\ and \\c = 2\\ gives the smaller expected loss under each loss?
+
+> **NOTE:**
+>
+> *Solution 2*.
+>
+> 1.  For squared error loss: \\\mathopen{}\left(3 - 5\right)^2\mathclose{} = 4\\ For absolute error loss: \\\mathopen{}\left\|3 - 5\right\|\mathclose{} = 2\\
+>
+> 2.  For \\c = 1\\: The expected squared error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left(0 - 1\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 1\right)^2\mathclose{} = 0.5 \cdot 1 + 0.5 \cdot 9 = 5\\ The expected absolute error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 1\right\|\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left\|0 - 1\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 1\right\|\mathclose{} = 0.5 \cdot 1 + 0.5 \cdot 3 = 2\\
+>
+> 3.  For \\c = 2\\: The expected squared error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 2\right)^2\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left(0 - 2\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 2\right)^2\mathclose{} = 0.5 \cdot 4 + 0.5 \cdot 4 = 4\\ The expected absolute error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 2\right\|\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left\|0 - 2\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 2\right\|\mathclose{} = 0.5 \cdot 2 + 0.5 \cdot 2 = 2\\
+>
+> 4.  The prediction \\c = 2\\ has the smaller expected squared error loss (\\4\\ versus \\5\\). The two predictions have the same expected absolute error loss (\\2\\), so under absolute error loss this exercise does not choose one of them. The prediction \\c = 2\\ equals the expectation: \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0.5 \cdot 0 + 0.5 \cdot 4 = 2\\
+
+> **NOTE:**
+>
+> **Definition 9 (Loss function)** A **loss function** \\L(y, \hat{y})\\ is a rule that gives a number that is 0 or larger: the cost of predicting \\\hat{y}\\ when the true value is \\y\\.
+
+> **NOTE:**
+>
+> *Remark*. The squared error loss is: \\L(y, \hat{y}) = \mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\
+>
+> The absolute error loss is: \\L(y, \hat{y}) = \mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\
+>
+> Hastie et al. ([2009, 18](#ref-hastie2009elements)) call squared error loss “by far the most common and convenient” choice.
+>
+> For the values \\y = 3\\ and \\\hat{y} = 5\\ from [Exercise 6](#exr-loss) (part 1), the squared error loss is \\4\\, and the absolute error loss is \\2\\.
+
+> **NOTE:**
+>
+> **Definition 10 (Risk (expected loss))** For a random variable \\Y\\ and a prediction \\\hat{y}\\ (a constant, or a function \\f(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function):
+>
+> \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat{y})\right\]\mathclose{}\\
+
+> **NOTE:**
+>
+> *Remark*. In [Exercise 6](#exr-loss) (parts 2 and 3), the risk of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
+>
+> For squared error loss and a prediction \\f(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - f(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
+>
+> The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} = 0.5\\c + 0.5\\(4 - c) = 2\\. Only \\c = 2\\ has the smallest squared error risk. Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+
 ## References
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
@@ -955,6 +1009,8 @@ Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengag
 Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized Linear Models*. 4th ed. CRC press. <https://doi.org/10.1201/9781315182780>.
 
 Gut, Allan. 2013. *Probability: A Graduate Course*. 2nd ed. Springer Texts in Statistics. Springer. <https://doi.org/10.1007/978-1-4614-4708-5>.
+
+Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
 
 Rudin, Walter. 1976. *Principles of Mathematical Analysis*. 3rd ed. International Series in Pure and Applied Mathematics. McGraw-Hill.
 
