@@ -28,7 +28,7 @@ Authoritative style guide: [UCD-SERG Lab Manual](https://ucd-serg.github.io/lab-
   normal site build
 - `_quarto.yml`, `_quarto-website.yml` --- Quarto project + website config
 - `pds` --- a self-referential symlink (`pds -> .`), so include paths written
-  as `pds/...` (matching how a host site addresses this repo as a submodule)
+  as `pds/...` (the paths a host site that keeps a copy of this repo at its root would use)
   also resolve when this repo renders standalone. This creates an unbounded
   `pds/pds/pds/...` path loop; `_quarto-website.yml`'s `!pds/` render
   exclusion keeps Quarto's own render-list glob from walking into it, but the
