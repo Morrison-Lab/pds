@@ -52,10 +52,16 @@ Adding the three terms gives the claim.
 
 :::
 
-::: notes
-In @exr-prediction-error,
-$1 + 2 + 3 = 6$.
-The term $\sigma^2$ does not depend on $\hat f$.
-It is called the irreducible error.
-No choice of prediction can remove it.
+{{< slidebreak >}}
+
+:::{#def-irreducible-error}
+#### Irreducible error
+
+In @thm-prediction-error,
+the term $\sigma^2 = \Var{\varepsilon}$ is the **irreducible error**.
+It does not depend on the prediction $\hat f$,
+so no choice of prediction can remove it.
+For example, in @exr-prediction-error, $\sigma^2 = 3$,
+so every prediction there has expected squared error at least $3$.
+
 :::

@@ -21,9 +21,17 @@ $$\bias{\hat f(x_0)} \eqdef \E{\hat f(x_0)} - f(x_0)$$
 
 :::
 
-::: notes
-If $f(x_0) = 10$ and the predictions,
+{{< slidebreak >}}
+
+:::{#exm-prediction-bias}
+#### Computing the bias of a prediction
+
+Suppose $f(x_0) = 10$,
+and the predictions $\hat f(x_0)$,
 over repeated training sets,
-average $11$, then $\bias{\hat f(x_0)} = 11 - 10 = 1$,
-the squared bias in @exr-prediction-error.
+average $11$.
+Then $\bias{\hat f(x_0)} = 11 - 10 = 1$.
+The squared bias is $1^2 = 1$,
+the value in @exr-prediction-error.
+
 :::
