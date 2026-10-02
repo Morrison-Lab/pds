@@ -1,0 +1,12 @@
+:::{#sol-prediction-error}
+
+1. They are $1$, $2$, and $3$, as given.
+
+2. The three sources add (@thm-prediction-error):
+   $1 + 2 + 3 = 6$.
+
+3. $0 + 0 + 3 = 3$.
+   The noise variance $\sigma^2 = 3$ remains,
+   so $3$ is the smallest expected squared error any predictor can have here.
+
+:::

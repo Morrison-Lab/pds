@@ -1,0 +1,17 @@
+:::{#exr-prediction-error}
+#### Expected squared error from three sources
+
+A prediction $\hat f(x_0)$ at a new point $x_0$ has
+squared bias $[\bias{\hat f(x_0)}]^2 = 1$
+and variance $\Var{\hat f(x_0)} = 2$.
+The new response is $Y_0 = f(x_0) + \varepsilon$,
+where $\varepsilon$ has mean $0$ and variance $\sigma^2 = 3$
+and is independent of $\hat f(x_0)$.
+
+1. State the three quantities that contribute to the expected squared error:
+   the squared bias, $\Var{\hat f(x_0)}$, and $\Var{\varepsilon}$.
+2. What is the expected squared prediction error $\E{(Y_0 - \hat f(x_0))^2}$?
+3. If we could remove all bias and all variance of $\hat f(x_0)$,
+   what would the expected squared prediction error be?
+
+:::

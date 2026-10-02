@@ -1,0 +1,60 @@
+<!--
+Source: James, Witten, Hastie and Tibshirani (2021), An Introduction to
+Statistical Learning with Applications in R, 2nd ed., section 2.2.2, p. 34,
+eq. 2.7. The independence of the noise from the prediction is an assumption
+this page states explicitly: the book's setting (a new test observation
+at x_0, independent of the training set) implies it.
+Proof: the same expansion as the mean squared error identity of the sds
+estimation page (Morrison-Lab/sds), with the noise term added.
+-->
+:::{#thm-prediction-error}
+#### Expected squared prediction error
+
+Let $Y_0 = f(x_0) + \varepsilon$,
+where $f$ is a fixed function,
+$\varepsilon$ has $\E{\varepsilon} = 0$ and $\Var{\varepsilon} = \sigma^2$,
+and $\varepsilon$ is independent of the prediction $\hat f(x_0)$.
+Then
+
+$$\E{\paren{Y_0 - \hat f(x_0)}^2} = \sqf{\bias{\hat f(x_0)}} + \Var{\hat f(x_0)} + \sigma^2$$
+
+:::
+
+::: proof
+
+Write $Y_0 - \hat f(x_0) = \varepsilon + D$,
+where $D \eqdef f(x_0) - \hat f(x_0)$.
+Expanding the square and using linearity of expectation,
+
+$$
+\ba
+\E{\paren{Y_0 - \hat f(x_0)}^2}
+&= \E{\varepsilon^2} + 2\E{\varepsilon D} + \E{D^2}
+&& \text{(expand the square)}
+\ea
+$$
+
+- $\E{\varepsilon^2} = \sigma^2$,
+  by @sol-noise-second-moment.
+- $\E{\varepsilon D} = \E{\varepsilon}\E{D} = 0$,
+  because $\varepsilon$ is independent of $\hat f(x_0)$,
+  hence of $D$,
+  and $\E{\varepsilon} = 0$.
+- By @thm-variance,
+  $\E{D^2} = \Var{D} + \sqf{\E{D}}$.
+  Here $\Var{D} = \Var{\hat f(x_0)}$,
+  because $f(x_0)$ is a constant,
+  and $\E{D} = f(x_0) - \E{\hat f(x_0)} = -\bias{\hat f(x_0)}$,
+  so $\sqf{\E{D}} = \sqf{\bias{\hat f(x_0)}}$.
+
+Adding the three terms gives the claim.
+
+:::
+
+::: notes
+In @exr-prediction-error,
+$1 + 2 + 3 = 6$.
+The term $\sigma^2$ does not depend on $\hat f$:
+it is the **irreducible error**,
+which no choice of prediction can remove.
+:::

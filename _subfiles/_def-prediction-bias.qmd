@@ -1,0 +1,26 @@
+<!--
+Source: James, Witten, Hastie and Tibshirani (2021), An Introduction to
+Statistical Learning with Applications in R, 2nd ed., section 2.2.2, p. 34
+(the Bias term of eq. 2.7).
+The estimator-bias definition of the sds estimation page
+(Morrison-Lab/sds, _subfiles/estimation/_def-bias.qmd) is the same idea
+with a fixed estimand in place of f(x_0).
+-->
+:::{#def-prediction-bias}
+#### Bias of a prediction
+
+Let $\hat f(x_0)$ be a prediction (a random variable,
+because it depends on the random training data)
+of the value $f(x_0)$ of a fixed function $f$ at a point $x_0$.
+The **bias** of $\hat f(x_0)$ is
+
+$$\bias{\hat f(x_0)} \eqdef \E{\hat f(x_0)} - f(x_0)$$
+
+:::
+
+::: notes
+If $f(x_0) = 10$ and the predictions,
+over repeated training sets,
+average $11$, then $\bias{\hat f(x_0)} = 11 - 10 = 1$,
+the squared bias in @exr-prediction-error.
+:::
