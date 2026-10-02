@@ -5,8 +5,8 @@
 :::{#def-loss-function}
 #### Loss function
 
-A **loss function** $L(y, \hat{y})$ is a function that gives a non-negative number,
-the penalty for predicting $\hat{y}$ when the true value is $y$.
+A **loss function** $L(y, \hat{y})$ is a rule that gives a number that is 0 or larger:
+the cost of predicting $\hat{y}$ when the true value is $y$.
 
 :::
 

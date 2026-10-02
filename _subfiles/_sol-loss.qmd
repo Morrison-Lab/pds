@@ -17,8 +17,10 @@ $$\E{\sqf{Y - 2}} = 0.5 \cd \sqf{0 - 2} + 0.5 \cd \sqf{4 - 2} = 0.5 \cd 4 + 0.5 
 The expected absolute error loss is:
 $$\E{\abs{Y - 2}} = 0.5 \cd \abs{0 - 2} + 0.5 \cd \abs{4 - 2} = 0.5 \cd 2 + 0.5 \cd 2 = 2$$
 
-4. The prediction $c = 2$ has the smaller expected squared loss ($4$ versus $5$).
-The two predictions have the same expected absolute loss ($2$).
-The prediction $c = 2$ is the expectation $\E{Y} = 2$.
+4. The prediction $c = 2$ has the smaller expected squared error loss ($4$ versus $5$).
+The two predictions have the same expected absolute error loss ($2$),
+so under absolute error loss this exercise does not choose one of them.
+The prediction $c = 2$ equals the expectation:
+$$\E{Y} = 0.5 \cd 0 + 0.5 \cd 4 = 2$$
 
 :::
