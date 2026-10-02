@@ -1,0 +1,15 @@
+:::{#sol-prediction-error}
+
+1. The expected squared error is the sum of the three sources:
+   $1 + 2 + 3 = 6$.
+
+2. $0 + 0 + 3 = 3$.
+   The noise variance $\sigma^2 = 3$ remains,
+   so $3$ is the smallest expected squared error any prediction can have here.
+
+3. A better method can reduce the squared bias and the variance of $\hat f(x_0)$,
+   because both depend on how $\hat f$ is built.
+   It cannot reduce $\sigma^2$,
+   which is the variance of the noise $\varepsilon$ in the new response.
+
+:::
