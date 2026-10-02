@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-02 09:25:28 (PDT)
+Last modified: 2026-10-02 09:44:29 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -238,7 +238,9 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\hat f(x_0)\right\]\mathclose{} - f(x_0)\\
 
-If \\f(x_0) = 10\\ and the predictions, over repeated training sets, average \\11\\, then \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 11 - 10 = 1\\, the squared bias in [Exercise 2](#exr-prediction-error).
+> **NOTE:**
+>
+> **Example 9 (Computing the bias of a prediction)** Suppose \\f(x_0) = 10\\, and the predictions \\\hat f(x_0)\\, over repeated training sets, average \\11\\. Then \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 11 - 10 = 1\\. The squared bias is \\1^2 = 1\\, the value in [Exercise 2](#exr-prediction-error).
 
 > **NOTE:**
 >
@@ -258,13 +260,15 @@ If \\f(x_0) = 10\\ and the predictions, over repeated training sets, average \\1
 >
 > Adding the three terms gives the claim.
 
-In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\\ does not depend on \\\hat f\\. It is called the irreducible error. No choice of prediction can remove it.
+> **NOTE:**
+>
+> **Definition 10 (Irreducible error)** In [Theorem 4](#thm-prediction-error), the term \\\sigma^2 = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\\ is the **irreducible error**. It does not depend on the prediction \\\hat f\\, so no choice of prediction can remove it. For example, in [Exercise 2](#exr-prediction-error), \\\sigma^2 = 3\\, so every prediction there has expected squared error at least \\3\\.
 
 ## 4 Covariance
 
 > **NOTE:**
 >
-> **Definition 10 (Covariance)** The **covariance** of two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ is:
+> **Definition 11 (Covariance)** The **covariance** of two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ is:
 >
 > \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right\]\mathclose{}\\
 
@@ -280,7 +284,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 9 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance), \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{P}(X = 1, Y = 1) = 0.4\\, \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0.5\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0.7\\, so:
+> **Example 10 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance), \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{P}(X = 1, Y = 1) = 0.4\\, \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0.5\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0.7\\, so:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= 0.4 - 0.5 \cdot 0.7 && \text{(substitute)} \\ &= 0.05 && \text{(evaluate)} \end{aligned} \\
 
@@ -308,7 +312,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 10 (Two independent coin flips)** For the independent coin flips \\X_1\\ and \\X_2\\ of [the independence page’s example](independence.llms.md#exm-indpt), \\X_1 X_2 = 1\\ only when both flips are heads, so:
+> **Example 11 (Two independent coin flips)** For the independent coin flips \\X_1\\ and \\X_2\\ of [the independence page’s example](independence.llms.md#exm-indpt), \\X_1 X_2 = 1\\ only when both flips are heads, so:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \operatorname{P}(X_1 = 1, X_2 = 1) && \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\ &= \tfrac{1}{4} && \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} && \text{(factor)} \\ &= \operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} && \text{(each flip is } \operatorname{Ber}(1/2) \text{)} \end{aligned} \\
 >
@@ -316,7 +320,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 11 (Zero covariance without independence)** The converse of [Theorem 6](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = (-1 + 0 + 1)/3 = 0\\, and \\XY = X^3 = X\\, so:
+> **Example 12 (Zero covariance without independence)** The converse of [Theorem 6](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = (-1 + 0 + 1)/3 = 0\\, and \\XY = X^3 = X\\, so:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} XY = X^3 = X \text{ on } \mathopen{}\left\\-1, 0, 1\right\\\mathclose{} \text{)} \\ &= 0 - 0 \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(multiply)} \end{aligned} \\
 >
@@ -324,7 +328,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Definition 11 (Correlation)** The **correlation** of two random variables \\X\\ and \\Y\\ with finite, positive [variances](#def-variance) is their [covariance](#def-cov) divided by the product of their [standard deviations](#def-sd):
+> **Definition 12 (Correlation)** The **correlation** of two random variables \\X\\ and \\Y\\ with finite, positive [variances](#def-variance) is their [covariance](#def-cov) divided by the product of their [standard deviations](#def-sd):
 >
 > \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\\
 
@@ -334,23 +338,23 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 12 (Correlation of a binary exposure and outcome)** In [Example 9](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05\\, where \\X \sim \operatorname{Ber}(0.5)\\ has \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 0.25\\ ([Example 3](#exm-variance-bernoulli)) and \\Y\\ has \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.21\\ ([Example 7](#exm-total-variance)), so:
+> **Example 13 (Correlation of a binary exposure and outcome)** In [Example 10](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05\\, where \\X \sim \operatorname{Ber}(0.5)\\ has \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 0.25\\ ([Example 3](#exm-variance-bernoulli)) and \\Y\\ has \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.21\\ ([Example 7](#exm-total-variance)), so:
 >
 > \\ \begin{aligned} \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} &= \frac{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} && \text{(definition of correlation)} \\ &= \frac{0.05}{\sqrt{0.25} \cdot\sqrt{0.21}} && \text{(substitute; } \operatorname{SD}\mathopen{}\left(\cdot\right)\mathclose{} = \sqrt{\operatorname{Var}\mathopen{}\left(\cdot\right)\mathclose{}} \text{)} \\ &\approx \frac{0.05}{0.5 \cdot 0.458} && \text{(evaluate the square roots)} \\ &\approx 0.218 && \text{(divide)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Definition 12 (Uncorrelated random variables)** Random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ are **uncorrelated** when their [covariance](#def-cov) is 0:
+> **Definition 13 (Uncorrelated random variables)** Random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ are **uncorrelated** when their [covariance](#def-cov) is 0:
 >
 > \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 6](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 11](#exm-uncorrelated-not-indpt) shows the converse fails.
+> *Remark*. [Theorem 6](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 12](#exm-uncorrelated-not-indpt) shows the converse fails.
 
 > **NOTE:**
 >
-> **Example 13 (Correlated and uncorrelated pairs)** In [Example 11](#exm-uncorrelated-not-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, so \\X\\ and \\Y = X^2\\ are uncorrelated. In [Example 9](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\\, so the binary exposure and outcome are not uncorrelated.
+> **Example 14 (Correlated and uncorrelated pairs)** In [Example 12](#exm-uncorrelated-not-indpt), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, so \\X\\ and \\Y = X^2\\ are uncorrelated. In [Example 10](#exm-alt-cov), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\\, so the binary exposure and outcome are not uncorrelated.
 
 > **NOTE:**
 >
@@ -358,11 +362,11 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 11](#def-correlation), \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} / \mathopen{}\left(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}\right)\mathclose{}\\, and \\\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} \> 0\\ because both variances are positive, so \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\ if and only if \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, which is [Definition 12](#def-uncorrelated).
+> *Proof*. By [Definition 12](#def-correlation), \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} / \mathopen{}\left(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}\right)\mathclose{}\\, and \\\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\\\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} \> 0\\ because both variances are positive, so \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\ if and only if \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\, which is [Definition 13](#def-uncorrelated).
 
 > **NOTE:**
 >
-> **Definition 13 (Conditional covariance)** The **conditional covariance** of \\Y\\ and \\Z\\ given \\X = x\\ is their covariance under their conditional distribution given \\X = x\\:
+> **Definition 14 (Conditional covariance)** The **conditional covariance** of \\Y\\ and \\Z\\ given \\X = x\\ is their covariance under their conditional distribution given \\X = x\\:
 >
 > \\\operatorname{Cov}\mathopen{}\left(Y,Z \mid X = x\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y-\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\right)\mathclose{}\mathopen{}\left(Z-\operatorname{E}\mathopen{}\left\[Z \mid X = x\right\]\mathclose{}\right)\mathclose{} \mid X = x\right\]\mathclose{}\\
 >
@@ -370,7 +374,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 14 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 13](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\\. In [Example 4](#exm-cond-variance), for example, \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\\.
+> **Example 15 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 14](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\\. In [Example 4](#exm-cond-variance), for example, \\\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\\.
 
 > **NOTE:**
 >
@@ -412,7 +416,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Definition 14 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
+> **Definition 15 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\tilde{X}\right)\mathclose{} \\ &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\right\]\mathclose{} \end{aligned} \\
 
@@ -424,14 +428,14 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 14](#def-cov-vec-x):
+> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 15](#def-cov-vec-x):
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} \begin{pmatrix}X_1 - \mu_1 & \cdots & X_p - \mu_p\end{pmatrix} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix} (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\ \vdots & \ddots & \vdots \\ (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p) \end{pmatrix} \right\]\mathclose{} \\ &= \begin{pmatrix} \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_p - \mu_p)\right\]\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_p - \mu_p)\right\]\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_p, X_p\right)\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \end{aligned} \\
 >
 > where:
 >
 > - the step from the third to fourth line uses the [expectation of a random matrix](expectation.llms.md#def-expectation-matrix),
-> - the step from the fourth to fifth line uses [Definition 10](#def-cov), and
+> - the step from the fourth to fifth line uses [Definition 11](#def-cov), and
 > - the last step uses [Lemma 1](#lem-cov-xx).
 
 > **NOTE:**
@@ -494,7 +498,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 8](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 10](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
+> *Proof*. By [Theorem 8](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 11](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[(X_i - \mu_i)(X_j - \mu_j)\right\]\mathclose{} && \text{(definition of covariance)} \\ &= \operatorname{E}\mathopen{}\left\[(X_j - \mu_j)(X_i - \mu_i)\right\]\mathclose{} && \text{(multiplication of numbers is commutative)} \\ &= \operatorname{Cov}\mathopen{}\left(X_j, X_i\right)\mathclose{} && \text{(definition of covariance)} \end{aligned} \\
 >
@@ -508,7 +512,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 15 (Two variance matrices that differ only in sign)** Let \\\tilde{X}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
+> **Example 16 (Two variance matrices that differ only in sign)** Let \\\tilde{X}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
 >
 > \\D_1 = \mathopen{}\left\\(-5, 1),\\ (0, -1),\\ (0, 1),\\ (5, -1)\right\\\mathclose{},\\
 >
@@ -536,7 +540,7 @@ In [Exercise 2](#exr-prediction-error), \\1 + 2 + 3 = 6\\. The term \\\sigma^2\
 
 > **NOTE:**
 >
-> **Example 16 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\tilde{X}= {(X_1, X_2)}^{\top}\\ is \\\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\\ ([Lemma 1](#lem-cov-xx)), so:
+> **Example 17 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\tilde{X}= {(X_1, X_2)}^{\top}\\ is \\\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\\ ([Lemma 1](#lem-cov-xx)), so:
 >
 > \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}. \\
 >
