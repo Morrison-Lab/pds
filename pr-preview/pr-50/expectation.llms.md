@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-02 03:36:58 (PDT)
+Last modified: 2026-10-02 05:25:54 (PDT)
 
 > **NOTE:**
 >
@@ -976,13 +976,15 @@ Last modified: 2026-10-02 03:36:58 (PDT)
 >
 > **Definition 9 (Loss function)** A **loss function** \\L(y, \hat{y})\\ is a rule that gives a number that is 0 or larger: the cost of predicting \\\hat{y}\\ when the true value is \\y\\.
 
-The squared error loss is: \\L(y, \hat{y}) = \mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\
-
-The absolute error loss is: \\L(y, \hat{y}) = \mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\
-
-Hastie et al. ([2009, 18](#ref-hastie2009elements)) call squared error loss “by far the most common and convenient” choice.
-
-For the values \\y = 3\\ and \\\hat{y} = 5\\ from [Exercise 6](#exr-loss) (part 1), the squared error loss is \\4\\, and the absolute error loss is \\2\\.
+> **NOTE:**
+>
+> *Remark*. The squared error loss is: \\L(y, \hat{y}) = \mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\
+>
+> The absolute error loss is: \\L(y, \hat{y}) = \mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\
+>
+> Hastie et al. ([2009, 18](#ref-hastie2009elements)) call squared error loss “by far the most common and convenient” choice.
+>
+> For the values \\y = 3\\ and \\\hat{y} = 5\\ from [Exercise 6](#exr-loss) (part 1), the squared error loss is \\4\\, and the absolute error loss is \\2\\.
 
 > **NOTE:**
 >
@@ -990,11 +992,13 @@ For the values \\y = 3\\ and \\\hat{y} = 5\\ from [Exercise 6](#exr-loss) (part
 >
 > \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat{y})\right\]\mathclose{}\\
 
-In [Exercise 6](#exr-loss) (parts 2 and 3), the risk of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
-
-For squared error loss and a prediction \\f(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - f(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
-
-The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} = 0.5\\c + 0.5\\(4 - c) = 2\\. Only \\c = 2\\ has the smallest squared error risk. Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> **NOTE:**
+>
+> *Remark*. In [Exercise 6](#exr-loss) (parts 2 and 3), the risk of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
+>
+> For squared error loss and a prediction \\f(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - f(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
+>
+> The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} = 0.5\\c + 0.5\\(4 - c) = 2\\. Only \\c = 2\\ has the smallest squared error risk. Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
 
 ## References
 
