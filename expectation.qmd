@@ -45,6 +45,22 @@ format:
 
 {{< include pds/_subfiles/_fubini-tonelli-expectations.qmd >}}
 
+## Loss and risk {#sec-loss-risk}
+
+{{< include pds/_subfiles/_exr-loss.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-loss.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-loss-function.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-risk.qmd >}}
+
 ## References {.unnumbered}
 
 ::: {#refs}

@@ -1,0 +1,33 @@
+<!-- Source: Hastie, Tibshirani and Friedman (2009), section 2.4, eq. 2.9, p. 18,
+     and p. 19 for the median remark.
+     The name "risk" is standard terminology and is not used on those pages. -->
+
+:::{#def-risk}
+#### Risk (expected loss)
+
+For a random variable $Y$
+and a prediction $\hat{y}$
+(a constant, or a function $f(X)$ of a random input $X$),
+the **risk** is the expectation of the loss:
+
+$$R \eqdef \E{L(Y, \hat{y})}$$
+
+For squared error loss and a prediction $f(X)$,
+the risk is called the **expected prediction error**:
+
+$$\operatorname{EPE}(f) \eqdef \E{\sqf{Y - f(X)}}$$
+
+:::
+
+::: notes
+
+In @exr-loss (parts 2 and 3),
+the expected squared error loss is $5$ for the prediction $c = 1$,
+and $4$ for the prediction $c = 2$.
+
+Replacing squared error loss by absolute error loss
+changes the best prediction from the conditional mean to the conditional median.
+This statement is from @hastie2009elements [p. 19],
+without proof here.
+
+:::

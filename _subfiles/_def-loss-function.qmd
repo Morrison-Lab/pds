@@ -1,0 +1,28 @@
+<!-- Source: Hastie, Tibshirani and Friedman (2009), section 2.4, p. 18.
+     The non-negativity requirement is stated here for these two examples
+     and is not stated on that page. -->
+
+:::{#def-loss-function}
+#### Loss function
+
+A **loss function** $L(y, \hat{y})$ is a function that gives a non-negative number,
+the penalty for predicting $\hat{y}$ when the true value is $y$.
+
+:::
+
+::: notes
+
+The squared error loss is:
+$$L(y, \hat{y}) = \sqf{y - \hat{y}}$$
+
+The absolute error loss is:
+$$L(y, \hat{y}) = \abs{y - \hat{y}}$$
+
+By far the most common and convenient is squared error loss
+[@hastie2009elements, p. 18].
+
+For the values $y = 3$ and $\hat{y} = 5$ from @exr-loss (part 1),
+the squared error loss is $4$,
+and the absolute error loss is $2$.
+
+:::
