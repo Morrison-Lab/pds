@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-05 00:37:24 (PDT)
+Last modified: 2026-10-05 00:35:48 (PDT)
 
 ## Welcome
 
@@ -25,7 +25,7 @@ Most of this material should be review from an introductory probability or mathe
 
 ## Using these notes in another site
 
-Course sites link to these pages by URL; they do not include this repository as a git submodule. A host site that keeps a copy of this repository at its root, named `pds`, can still include fragments with paths that start with `pds/`, for example `{{< include pds/_subfiles/_thm-bayes.qmd >}}`. This site includes its own fragments the same way, through a `pds` symlink that points at the repository root.
+Course sites include these notes as a git submodule named `pds` at the site’s root, and include fragments with paths that start with `pds/`, for example `{{< include pds/_subfiles/_thm-bayes.qmd >}}`. This site includes its own fragments the same way, through a `pds` symlink that points at the repository root.
 
 Quarto resolves `@id` cross-references only within one rendered page, so a host site that links to a result here uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
 
