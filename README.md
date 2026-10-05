@@ -9,16 +9,13 @@
 
 `pds` collects the probability that data science courses assume, as
 [Quarto](https://quarto.org/) fragments. It renders on its own as a
-website, and course sites include it as a git submodule.
+website, and course sites link to its pages by URL.
 
 ## Using these notes in another site
 
-Add this repository as a git submodule named `pds` at the root of the
-host site, and include fragments with paths that start with `pds/`:
-
-``` sh
-git submodule add https://github.com/Morrison-Lab/pds.git pds
-```
+Link to the pages by URL. A host site that keeps a copy of this
+repository at its root, named `pds`, can also include fragments with
+paths that start with `pds/`.
 
 Quarto resolves `@id` cross-references only within one rendered page, so
 a host site that links to a result here uses an explicit link to the

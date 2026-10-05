@@ -37,6 +37,6 @@ exclude = [
 ]
 
 # `pds` is a symlink to the repository root, so include paths read
-# `pds/...` both here and when pds is a submodule of another site.
+# `pds/...` both here and in a host site that keeps a copy at its root.
 # Without this exclusion lychee follows it recursively (pds/pds/pds/...).
 exclude_path = ["^(\\./)?pds/"]
