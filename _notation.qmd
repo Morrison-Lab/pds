@@ -28,4 +28,4 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
   facts --- most sources do not make this distinction typographically and
   use a bare $=$ for both.
 - The full macro list, with more notational variants, is in
-  [`latex-macros`](https://github.com/d-morrison/macros).
+  [`latex-macros`](https://github.com/Morrison-Lab/macros).
