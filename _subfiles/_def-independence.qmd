@@ -131,7 +131,7 @@ there, both sides are $0$ at every point,
 so it would call every pair of continuous random variables independent.
 For instance,
 let $X \sim \text{Uniform}(0, 1)$ ([uniform distribution](random-variables.qmd#def-uniform)),
-whose [density](random-variables.qmd#exm-pdf) is $1$ on $[0, 1]$,
+whose density is $1$ on $[0, 1]$,
 and let $Y = X$.
 For all real numbers $x$ and $y$,
 the event $\set{X = x,\, Y = y}$ is $\set{X = x}$ if $y = x$ and empty otherwise,

@@ -88,29 +88,50 @@ See also
 
 {{< slidebreak >}}
 
-:::{#exm-pdf}
-#### Density of a uniform random variable
+:::{#def-uniform}
+#### Uniform distribution
 
-Let $X \sim \text{Uniform}(0, 1)$ (@exm-continuous-rv),
-and let $f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise.
-For $0 \le a \le b \le 1$:
+A random variable $X$ has the **uniform distribution** on an interval $[\alpha, \beta]$,
+with $\alpha < \beta$,
+written $X \sim \text{Uniform}(\alpha, \beta)$,
+if $X$ is continuous with [density](#def-pdf):
+
+$$
+f(x) \eqdef \begin{cases}
+\frac{1}{\beta - \alpha}, & \alpha \le x \le \beta \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-pdf}
+#### Subinterval probabilities of a uniform random variable
+
+For $X \sim \text{Uniform}(\alpha, \beta)$ (@def-uniform)
+and any subinterval $[a, b] \subseteq [\alpha, \beta]$ (so $\alpha \le a \le b \le \beta$):
 
 $$
 \ba
-\int_a^b f(x)\,dx
-&= \int_a^b 1\,dx
-&& \text{(} f = 1 \text{ on } [0, 1] \text{)} \\
-&= b - a
-&& \text{(integrate)} \\
-&= \Pr(a \le X \le b)
-&& \text{(definition of the uniform distribution)}
+\Pr(a \le X \le b)
+&= \int_a^b f(x)\,dx
+&& \text{(definition of a probability density function)} \\
+&= \int_a^b \frac{1}{\beta - \alpha}\,dx
+&& \text{(} f(x) = \tfrac{1}{\beta - \alpha} \text{ on } [\alpha, \beta] \text{)} \\
+&= \frac{b - a}{\beta - \alpha}
+&& \text{(integrate)}
 \ea
 $$
 
-An interval reaching outside $[0, 1]$ adds nothing to either side:
-$f = 0$ there,
-and $X$ falls outside $[0, 1]$ with probability 0 (@exm-continuous-rv).
-So $f$ is a density of $X$.
+In particular, the probability that $X$ falls in any subinterval
+is proportional to that subinterval's length.
+For the standard uniform distribution on $[0, 1]$,
+$f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise,
+giving $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
+An interval reaching outside $[\alpha, \beta]$ adds nothing to the probability,
+because $f = 0$ there.
 
 :::
 
@@ -538,7 +559,7 @@ so @cor-cdf-derivative-density-ae applies to each of them.
 :::{#exm-density-vs-CDF}
 #### CDF and density of a uniform random variable
 
-For $X$ uniform on $[0, 1]$ with the density $f$ of @exm-pdf,
+For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @def-uniform,
 and $t \in [0, 1]$:
 
 $$
@@ -688,7 +709,7 @@ $\Pr(x \le X < x + \Delta) = \Delta$ once $\Delta \le 1 - x$, so:
 $$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
 
 For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
-Both agree with the density of @exm-pdf.
+Both agree with the density of @def-uniform.
 
 :::
 
@@ -725,7 +746,7 @@ or both have none.
 
 At a point where $f$ is not continuous,
 the limit can differ from the chosen value $f(x)$.
-For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @exm-pdf,
+For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @def-uniform,
 which sets $f(1) = 1$ and $f(x) = 0$ for $x > 1$,
 and for $\Delta > 0$:
 
@@ -783,7 +804,7 @@ The last step is @thm-cdf-properties.
 :::{#exm-density-sums-to-one}
 #### The uniform density integrates to 1
 
-For $X$ uniform on $[0, 1]$ (@exm-pdf),
+For $X \sim \text{Uniform}(0, 1)$ (@def-uniform),
 $\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1$.
 
 :::

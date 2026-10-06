@@ -100,26 +100,21 @@ if $\Pr(X = x) = 0$ for every $x \in \mathbb{R}$.
 
 :::
 
-:::{#def-uniform}
-#### Uniform distribution
+::: {.remark .notes}
 
-A random variable $X$ has the **uniform distribution** on an interval $[\alpha, \beta]$,
-with $\alpha < \beta$,
-written $X \sim \text{Uniform}(\alpha, \beta)$,
-if the probability that $X$ falls in any subinterval of $[\alpha, \beta]$
-is proportional to the length of that subinterval:
-
-$$\Pr(a \le X \le b) = \frac{b - a}{\beta - \alpha} \quad \text{for all } \alpha \le a \le b \le \beta$$
+Every continuous random variable in these notes also has a
+[probability density function](#def-pdf).
+Continuous random variables without a density exist,
+but they do not arise in applications.
 
 :::
 
 {{< slidebreak >}}
 
 :::{#exm-continuous-rv}
-#### A uniformly distributed random variable
+#### A continuous random variable
 
-Let $X \sim \text{Uniform}(0, 1)$ (@def-uniform),
-so $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
+Let $X$ satisfy $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
 Taking $a = b = x$ gives $\Pr(X = x) = x - x = 0$ for every $x \in [0,1]$.
 Taking $a = 0$ and $b = 1$ gives $\Pr(0 \le X \le 1) = 1$,
 so by the [complement rule](probability-basics.qmd#cor-p-neg0)
@@ -138,7 +133,7 @@ Its range, $[0, 1]$, is uncountable.
 Some random variables are neither discrete nor continuous:
 a time to event that equals exactly $0$ with positive probability,
 and otherwise spreads over $(0, \infty)$, is one.
-For instance, let $U \sim \text{Uniform}(0, 1)$ (@def-uniform),
+For instance, let $U$ be the continuous random variable of @exm-continuous-rv,
 and let $T = 1/(1 - U) - 2$ when $1/2 < U < 1$, and $T = 0$ otherwise.
 On $\set{1/2 < U < 1}$, $T$ is increasing in $U$ and takes values in $(0, \infty)$,
 and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$.
@@ -154,7 +149,7 @@ $$
 &= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1)
 && \text{(additivity)} \\
 &= \tfrac{1}{2} - 0 - 0
-&& \text{(definition of the uniform distribution)} \\
+&& \text{(} \Pr(a \le U \le b) = b - a \text{)} \\
 &= \tfrac{1}{2}
 && \text{(simplify)}
 \ea
