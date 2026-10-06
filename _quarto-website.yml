@@ -191,7 +191,7 @@ format:
     code-fold: true
     code-tools: true
     code-link: true
-    code-summary: "Show R code"
+    code-summary: "Show code"
     highlight-style: arrow
     lightbox: true
     link-external-icon: true
@@ -231,7 +231,7 @@ format:
     margin: 0.0
     code-fold: true
     code-link: true
-    code-summary: "[R code]"
+    code-summary: "[Code]"
     auto-stretch: true
     fig-height: 5
     fig-width: 7
