@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 14:53:51 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 15:10:50 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -670,20 +670,23 @@
 </section>
 <section class="slide level2">
 
-<!--
-Source: James, Witten, Hastie and Tibshirani (2021), An Introduction to
-Statistical Learning with Applications in R, 2nd ed., section 2.2.2:
-eq. 2.7 (p. 34) uses Bias(fhat(x_0)); the book defines bias verbally
-(the error from approximating a real-life problem by a simpler model).
-The formula E[fhat(x_0)] - f(x_0) is the standard definition, not one
-the book states. The estimator-bias definition of the sds estimation page
-(Morrison-Lab/sds, _subfiles/estimation/_def-bias.qmd) is the same idea
-with a fixed estimand in place of f(x_0).
--->
 <div id="def-prediction-bias" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9 (Bias of a prediction)</strong></span> Let <span class="math inline">\(f\)</span> be a fixed function, and let <span class="math inline">\(x_0\)</span> be a point. Let <span class="math inline">\(\hat f(x_0)\)</span> be a <a href="./expectation.html#def-prediction">prediction</a> of the value <span class="math inline">\(f(x_0)\)</span>. The prediction <span class="math inline">\(\hat f(x_0)\)</span> is a random variable, because it depends on the random training data. The <strong>bias</strong> of <span class="math inline">\(\hat f(x_0)\)</span> is</p>
 <p><span class="math display">\[\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[\hat f(x_0)\right]\mathclose{} - f(x_0)\]</span></p>
 </div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>In expected prediction error decompositions <span class="citation" data-cites="james2021islr2e">(<a href="#/references" role="doc-biblioref" onclick="">James et al. 2021, sec. 2.2.2</a>)</span>, the bias reflects the error introduced by approximating a real-world relationship by a model.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -693,15 +696,6 @@ with a fixed estimand in place of f(x_0).
 </section>
 <section class="slide level2">
 
-<!--
-Source: James, Witten, Hastie and Tibshirani (2021), An Introduction to
-Statistical Learning with Applications in R, 2nd ed., section 2.2.2, p. 34,
-eq. 2.7. The independence of the noise from the prediction is an assumption
-this page states explicitly: the book's setting (a new test observation
-at x_0, independent of the training set) implies it.
-Proof: the same expansion as the mean squared error identity of the sds
-estimation page (Morrison-Lab/sds), with the noise term added.
--->
 <div id="thm-prediction-error" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 4 (Expected squared prediction error)</strong></span> Let <span class="math inline">\(Y_0 = f(x_0) + \varepsilon\)</span>, where <span class="math inline">\(f\)</span> is a fixed function, <span class="math inline">\(\varepsilon\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>, and <span class="math inline">\(\varepsilon\)</span> is independent of the prediction <span class="math inline">\(\hat f(x_0)\)</span>, which has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\hat f(x_0)^2\right]\mathclose{} &lt; \infty\)</span>. Then</p>
 <p><span class="math display">\[\operatorname{E}\mathopen{}\left[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right]\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{} + \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} + \sigma^2\]</span></p>
@@ -728,6 +722,19 @@ estimation page (Morrison-Lab/sds), with the noise term added.
 <div id="def-irreducible-error" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 10 (Irreducible error)</strong></span> In <a href="#/thm-prediction-error" class="quarto-xref">Theorem&nbsp;4</a>, the term <span class="math inline">\(\sigma^2 = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\)</span> is the <strong>irreducible error</strong>. It does not depend on the prediction <span class="math inline">\(\hat f\)</span>, so no choice of prediction can remove it. For example, in <a href="#/exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>, <span class="math inline">\(\sigma^2 = 3\)</span>, so every prediction there has expected squared error at least <span class="math inline">\(3\)</span>.</p>
 </div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>This expected prediction error decomposition into squared bias, variance, and irreducible error follows <span class="citation" data-cites="james2021islr2e">James et al. (<a href="#/references" role="doc-biblioref" onclick="">2021, sec. 2.2.2</a>)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="covariance" class="slide level2" data-number="4">
 <h2><span class="header-section-number">4</span> Covariance</h2>
@@ -1399,6 +1406,9 @@ Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Seri
 </div>
 <div id="ref-CaseBerg01" class="csl-entry" role="listitem">
 Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
+</div>
+<div id="ref-james2021islr2e" class="csl-entry" role="listitem">
+James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. <em>An Introduction to Statistical Learning: With Applications in <span>R</span></em>. 2nd ed. Springer. <a href="https://doi.org/10.1007/978-1-0716-1418-1">https://doi.org/10.1007/978-1-0716-1418-1</a>.
 </div>
 </div>
 

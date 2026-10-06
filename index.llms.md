@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 14:53:51 (PDT)
+Last modified: 2026-10-06 15:10:50 (PDT)
 
 ## Welcome
 
@@ -47,6 +47,8 @@ Several universities offer open-access courses with comparable or complementary 
 
 - Miller ([2017](#ref-problifesaver))
 - Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction))
+- Hastie et al. ([2009](#ref-hastie2009elements))
+- James et al. ([2021](#ref-james2021islr2e))
 - Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross ([2021](#ref-dembo-notes)), Stanford MATH 136 / STAT 219)
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
 
@@ -55,6 +57,10 @@ Several universities offer open-access courses with comparable or complementary 
 Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
 
 Dembo, Amir, and Kevin Ross. 2021. *Stochastic Processes*. Stanford University. <https://adembo.su.domains/math-136/nnotes.pdf>.
+
+Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
+
+James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. *An Introduction to Statistical Learning: With Applications in R*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-0716-1418-1>.
 
 Miller, Steven J. 2017. *The Probability Lifesaver: All the Tools You Need to Understand Chance*. A Princeton Lifesaver Study Guide. Princeton University Press. <https://doi.org/10.1515/9781400885381>.
 

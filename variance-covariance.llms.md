@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 14:53:51 (PDT)
+Last modified: 2026-10-06 15:10:50 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -240,6 +240,10 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
+> *Remark*. In expected prediction error decompositions ([James et al. 2021, sec. 2.2.2](#ref-james2021islr2e)), the bias reflects the error introduced by approximating a real-world relationship by a model.
+
+> **NOTE:**
+>
 > **Example 9 (Computing the bias of a prediction)** Suppose \\f(x_0) = 10\\, and the predictions \\\hat f(x_0)\\, over repeated training sets, average \\11\\. Then \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 11 - 10 = 1\\. The squared bias is \\1^2 = 1\\, the value in [Exercise 2](#exr-prediction-error).
 
 > **NOTE:**
@@ -263,6 +267,10 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 > **NOTE:**
 >
 > **Definition 10 (Irreducible error)** In [Theorem 4](#thm-prediction-error), the term \\\sigma^2 = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\\ is the **irreducible error**. It does not depend on the prediction \\\hat f\\, so no choice of prediction can remove it. For example, in [Exercise 2](#exr-prediction-error), \\\sigma^2 = 3\\, so every prediction there has expected squared error at least \\3\\.
+
+> **NOTE:**
+>
+> *Remark*. This expected prediction error decomposition into squared bias, variance, and irreducible error follows James et al. ([2021, sec. 2.2.2](#ref-james2021islr2e)).
 
 ## 4 Covariance
 
@@ -578,5 +586,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+
+James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. *An Introduction to Statistical Learning: With Applications in R*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-0716-1418-1>.
 
 Back to top

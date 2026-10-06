@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 14:53:51 (PDT)
+Last modified: 2026-10-06 15:10:50 (PDT)
 
 > **NOTE:**
 >
@@ -1088,7 +1088,7 @@ Last modified: 2026-10-06 14:53:51 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The risk identity in [Theorem 11](#thm-best-predictor)
+> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. ([2009, sec. 2.4](#ref-hastie2009elements), eq. 2.11). The risk identity in [Theorem 11](#thm-best-predictor)
 >
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
 >
