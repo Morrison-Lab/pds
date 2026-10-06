@@ -5,7 +5,7 @@
 # line, and already skips drafts, Dependabot bumps, fork PRs, and PRs that
 # edit this workflow file itself (the action can't review its own diff --
 # see gha's own comments on the App-token validation 401). This caller only
-# supplies qwt's Quarto/R-specific review guidance on top.
+# supplies pds's Quarto/R-specific review guidance on top.
 # See https://github.com/Morrison-Lab/gha for inputs and versioning.
 #
 # Secrets are passed explicitly rather than via `secrets: inherit`: GitHub
@@ -43,7 +43,7 @@ jobs:
       issues: write
       id-token: write        # required by claude-code-action for the App-token exchange
       actions: read          # lets the reviewer read CI status
-    uses: Morrison-Lab/gha/.github/workflows/claude-code-review.yml@v2
+    uses: Morrison-Lab/gha/.github/workflows/claude-code-review.yml@v3
     secrets:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}   # Max-plan OAuth; empty when using API key
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}               # direct API key; empty when using OAuth
