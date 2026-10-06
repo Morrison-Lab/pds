@@ -80,6 +80,8 @@ Several universities offer open-access courses with comparable or complementary 
 
 - @problifesaver
 - @blitzstein2019introduction
+- @hastie2009elements
+- @james2021islr2e
 - Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (@dembo-notes, Stanford MATH 136 / STAT 219)
 - Morrison Lab's [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
   which applies this material to regression and survival analysis

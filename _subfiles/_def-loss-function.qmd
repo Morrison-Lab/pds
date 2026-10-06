@@ -1,7 +1,3 @@
-<!-- Source: Hastie, Tibshirani and Friedman (2009), section 2.4, p. 18.
-     The non-negativity requirement is stated here for these two examples
-     and is not stated on that page. -->
-
 :::{#def-loss-function}
 #### Loss function
 
