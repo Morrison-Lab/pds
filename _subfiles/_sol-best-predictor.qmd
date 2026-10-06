@@ -1,0 +1,38 @@
+:::{#sol-best-predictor}
+
+1. For each value of $X$, compute the conditional expectation:
+   $$\E{Y \mid X = 0} = 0 \cd 0.5 + 2 \cd 0.5 = 1$$
+   $$\E{Y \mid X = 1} = 4 \cd 0.5 + 6 \cd 0.5 = 5$$
+   By the law of iterated expectations (@thm-lie), the marginal mean is:
+   $$\E{Y} = \E{\E{Y \mid X}} = 1 \cd 0.5 + 5 \cd 0.5 = 3$$
+   The conditional expectation function is $g^*(0) = 1$ and $g^*(1) = 5$,
+   which can also be written $g^*(X) = 1 + 4X$.
+
+2. For the constant prediction $g_1(X) = 3$:
+   Given $X = 0$:
+   $$\E{\sqf{Y - 3} \mid X = 0} = \sqf{0 - 3} \cd 0.5 + \sqf{2 - 3} \cd 0.5 = 9 \cd 0.5 + 1 \cd 0.5 = 5$$
+   Given $X = 1$:
+   $$\E{\sqf{Y - 3} \mid X = 1} = \sqf{4 - 3} \cd 0.5 + \sqf{6 - 3} \cd 0.5 = 1 \cd 0.5 + 9 \cd 0.5 = 5$$
+   By the law of iterated expectations (@thm-lie):
+   $$\E{\sqf{Y - g_1(X)}} = \E{\E{\sqf{Y - 3} \mid X}} = 5 \cd 0.5 + 5 \cd 0.5 = 5$$
+
+3. For the prediction $g_2(X) = 4X$:
+   Here $g_2(0) = 0$ and $g_2(1) = 4$.
+   Given $X = 0$:
+   $$\E{\sqf{Y - 0} \mid X = 0} = \sqf{0 - 0} \cd 0.5 + \sqf{2 - 0} \cd 0.5 = 0 \cd 0.5 + 4 \cd 0.5 = 2$$
+   Given $X = 1$:
+   $$\E{\sqf{Y - 4} \mid X = 1} = \sqf{4 - 4} \cd 0.5 + \sqf{6 - 4} \cd 0.5 = 0 \cd 0.5 + 4 \cd 0.5 = 2$$
+   By @thm-lie:
+   $$\E{\sqf{Y - g_2(X)}} = 2 \cd 0.5 + 2 \cd 0.5 = 2$$
+
+4. For the conditional mean predictor $g^*(X) = \E{Y \mid X}$:
+   Given $X = 0$, $g^*(0) = 1$:
+   $$\E{\sqf{Y - 1} \mid X = 0} = \sqf{0 - 1} \cd 0.5 + \sqf{2 - 1} \cd 0.5 = 1 \cd 0.5 + 1 \cd 0.5 = 1$$
+   Given $X = 1$, $g^*(1) = 5$:
+   $$\E{\sqf{Y - 5} \mid X = 1} = \sqf{4 - 5} \cd 0.5 + \sqf{6 - 5} \cd 0.5 = 1 \cd 0.5 + 1 \cd 0.5 = 1$$
+   By @thm-lie:
+   $$\E{\sqf{Y - g^*(X)}} = 1 \cd 0.5 + 1 \cd 0.5 = 1$$
+   The conditional mean predictor $g^*$ achieves the lowest risk ($1$),
+   strictly outperforming $g_2$ ($2$) and the constant prediction $g_1$ ($5$).
+
+:::

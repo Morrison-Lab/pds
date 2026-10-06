@@ -6,8 +6,8 @@
 #### Risk (expected loss)
 
 For a random variable $Y$
-and a prediction $\hat{y}$
-(a constant, or a function $f(X)$ of a random input $X$),
+and a [prediction](#def-prediction) $\hat{y}$
+(a constant, or a function $g(X)$ of a random input $X$),
 the **risk** is the expectation of the
 [loss](#def-loss-function):
 
@@ -21,14 +21,16 @@ In @exr-loss (parts 2 and 3),
 the risk of the prediction $c = 1$ is $5$ for squared error loss and $2$ for absolute error loss.
 The risk of the prediction $c = 2$ is $4$ for squared error loss and $2$ for absolute error loss.
 
-For squared error loss and a prediction $f(X)$,
-the risk is $\E{\sqf{Y - f(X)}}$.
+For squared error loss and a prediction $g(X)$,
+the risk is $\E{\sqf{Y - g(X)}}$.
 @hastie2009elements [p. 18] call it the expected prediction error.
 
 The prediction with the smallest risk depends on the loss.
 In @exr-loss, every constant $c$ from $0$ to $4$ has absolute error risk $2$,
 because $\E{\abs{Y - c}} = 0.5\,c + 0.5\,(4 - c) = 2$.
 Only $c = 2$ has the smallest squared error risk.
+Under squared error loss, the prediction function that minimizes risk
+is the conditional mean $\E{Y \mid X}$, proved below (@thm-best-predictor).
 @hastie2009elements [p. 20] state that, for absolute error loss,
 the best prediction function is the conditional median
 instead of the conditional mean.

@@ -6,7 +6,7 @@
 #### Loss function
 
 A **loss function** $L(y, \hat{y})$ is a rule that gives a number that is 0 or larger:
-the cost of predicting $\hat{y}$ when the true value is $y$.
+the cost of [predicting](#def-prediction) $\hat{y}$ when the true value is $y$.
 
 :::
 

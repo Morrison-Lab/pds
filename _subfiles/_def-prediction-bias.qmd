@@ -12,7 +12,7 @@ with a fixed estimand in place of f(x_0).
 #### Bias of a prediction
 
 Let $f$ be a fixed function, and let $x_0$ be a point.
-Let $\hat f(x_0)$ be a prediction of the value $f(x_0)$.
+Let $\hat f(x_0)$ be a [prediction](expectation.qmd#def-prediction) of the value $f(x_0)$.
 The prediction $\hat f(x_0)$ is a random variable,
 because it depends on the random training data.
 The **bias** of $\hat f(x_0)$ is
