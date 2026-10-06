@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 11:43:10 (PDT)
+Last modified: 2026-10-06 14:53:51 (PDT)
 
 ## Welcome
 
@@ -41,18 +41,23 @@ Several universities offer open-access courses with comparable or complementary 
 - **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction)), online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
 - **MIT 18.05**: [*Introduction to Probability and Statistics*](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/) (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.
 - **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
-- **Cal Poly / Kevin Ross**: [*Probability and Simulation with Applications in R*](https://bookdown.org/kevin_davisross/probsim-book/) (Kevin Ross) emphasizes simulation, conditioning, joint distributions, and expectation using R.
+- **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (Ross ([2022](#ref-ross-probsim))) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.
 
 ### Textbooks and companion notes
 
 - Miller ([2017](#ref-problifesaver))
 - Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction))
+- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross ([2021](#ref-dembo-notes)), Stanford MATH 136 / STAT 219)
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
 
 ## References
 
 Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
 
+Dembo, Amir, and Kevin Ross. 2021. *Stochastic Processes*. Stanford University. <https://adembo.su.domains/math-136/nnotes.pdf>.
+
 Miller, Steven J. 2017. *The Probability Lifesaver: All the Tools You Need to Understand Chance*. A Princeton Lifesaver Study Guide. Princeton University Press. <https://doi.org/10.1515/9781400885381>.
+
+Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
 
 Back to top

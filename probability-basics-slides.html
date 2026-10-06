@@ -361,7 +361,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 11:43:10 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 14:53:51 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -675,6 +675,19 @@
 <p><span class="theorem-title"><strong>Definition 8 (Conditional probability)</strong></span> For two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(B) &gt; 0\)</span>, the <strong>conditional probability</strong> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(\Pr(A \mid B)\)</span>, is:</p>
 <p><span class="math display">\[\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\]</span></p>
 </div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Geometrically and computationally, conditioning on an event <span class="math inline">\(B\)</span> can be viewed as <em>slicing</em> the sample space to retain only the outcomes compatible with <span class="math inline">\(B\)</span>, and then <em>renormalizing</em> the remaining probabilities (dividing by <span class="math inline">\(\Pr(B)\)</span>) so that they sum to 1 <span class="citation" data-cites="ross-probsim">(<a href="#/references" role="doc-biblioref" onclick="">Ross 2022, sec. 2.7.4</a>)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -1030,6 +1043,9 @@ Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. W
 </div>
 <div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
 Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.
+</div>
+<div id="ref-ross-probsim" class="csl-entry" role="listitem">
+Ross, Kevin. 2022. <em>An Introduction to Probability and Simulation</em>. Bookdown. <a href="https://bookdown.org/kevin_davisross/probsim-book/">https://bookdown.org/kevin_davisross/probsim-book/</a>.
 </div>
 </div>
 

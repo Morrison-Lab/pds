@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 11:43:10 (PDT)
+Last modified: 2026-10-06 14:53:51 (PDT)
 
 ## 1 Defining probabilities
 
@@ -212,6 +212,10 @@ Last modified: 2026-10-06 11:43:10 (PDT)
 > **Definition 8 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
+
+> **NOTE:**
+>
+> *Remark*. Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 ([Ross 2022, sec. 2.7.4](#ref-ross-probsim)).
 
 > **NOTE:**
 >
@@ -415,5 +419,7 @@ Figure 1: The chance of disease after a positive test, as counts out of 100,000
 Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
 
 Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
+
+Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
 
 Back to top

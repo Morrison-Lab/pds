@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 11:43:10 (PDT)
+Last modified: 2026-10-06 14:53:51 (PDT)
 
 > **NOTE:**
 >
@@ -538,7 +538,7 @@ Last modified: 2026-10-06 11:43:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This result is often summarized as “taking out what is known”: given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
+> *Remark*. This result is often summarized as “taking out what is known” (e.g., Ross ([2022](#ref-ross-probsim)), Section 5.6.4): given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
 
 > **NOTE:**
 >
@@ -1105,6 +1105,8 @@ Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized L
 Gut, Allan. 2013. *Probability: A Graduate Course*. 2nd ed. Springer Texts in Statistics. Springer. <https://doi.org/10.1007/978-1-4614-4708-5>.
 
 Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
+
+Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
 
 Rudin, Walter. 1976. *Principles of Mathematical Analysis*. 3rd ed. International Series in Pure and Applied Mathematics. McGraw-Hill.
 
