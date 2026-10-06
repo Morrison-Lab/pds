@@ -11,8 +11,6 @@ $$\Pr(A \mid B) \eqdef \frac{\Pr(A \cap B)}{\Pr(B)}$$
 
 ::: {.remark .notes}
 
-#### Conditioning as slicing and renormalizing
-
 Geometrically and computationally, conditioning on an event $B$ can be viewed
 as *slicing* the sample space to retain only the outcomes compatible with $B$,
 and then *renormalizing* the remaining probabilities (dividing by $\Pr(B)$)
