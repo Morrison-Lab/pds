@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:26:45 (PDT)
+Last modified: 2026-10-06 10:41:36 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -234,7 +234,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Definition 9 (Bias of a prediction)** Let \\f\\ be a fixed function, and let \\x_0\\ be a point. Let \\\hat f(x_0)\\ be a prediction of the value \\f(x_0)\\. The prediction \\\hat f(x_0)\\ is a random variable, because it depends on the random training data. The **bias** of \\\hat f(x_0)\\ is
+> **Definition 9 (Bias of a prediction)** Let \\f\\ be a fixed function, and let \\x_0\\ be a point. Let \\\hat f(x_0)\\ be a [prediction](expectation.llms.md#def-prediction) of the value \\f(x_0)\\. The prediction \\\hat f(x_0)\\ is a random variable, because it depends on the random training data. The **bias** of \\\hat f(x_0)\\ is
 >
 > \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\hat f(x_0)\right\]\mathclose{} - f(x_0)\\
 

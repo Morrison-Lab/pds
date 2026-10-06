@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:26:45 (PDT)
+Last modified: 2026-10-06 10:41:36 (PDT)
 
 > **NOTE:**
 >
@@ -950,6 +950,16 @@ Last modified: 2026-10-06 01:26:45 (PDT)
 
 > **NOTE:**
 >
+> **Definition 9 (Prediction)** A **prediction** of a random variable \\Y\\ is a constant \\\hat{y}\\, or a function \\\hat{Y} \stackrel{\text{def}}{=}g(X)\\ of another observable random variable \\X\\, used as a guess for the value \\Y\\ takes:
+>
+> \\\hat{y} \quad \text{or} \quad \hat{Y} \stackrel{\text{def}}{=}g(X)\\
+
+> **NOTE:**
+>
+> *Remark*. When no covariate or feature is available, a prediction is a single number \\\hat{y}\\ (such as a constant \\c\\). When an informative random variable \\X\\ is observed, a prediction is a function \\g(X)\\, which is itself a random variable because \\X\\ is random. The quality of a prediction is evaluated using a [loss function](#def-loss-function) and its expected value, the [risk](#def-risk).
+
+> **NOTE:**
+>
 > **Exercise 6 (Squared and absolute loss)**  
 >
 > 1.  For a true value \\y = 3\\ and a prediction \\\hat{y} = 5\\, compute the squared error loss \\\mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\ and the absolute error loss \\\mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\.
@@ -974,7 +984,7 @@ Last modified: 2026-10-06 01:26:45 (PDT)
 
 > **NOTE:**
 >
-> **Definition 9 (Loss function)** A **loss function** \\L(y, \hat{y})\\ is a rule that gives a number that is 0 or larger: the cost of predicting \\\hat{y}\\ when the true value is \\y\\.
+> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat{y})\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat{y}\\ when the true value is \\y\\.
 
 > **NOTE:**
 >
@@ -988,7 +998,7 @@ Last modified: 2026-10-06 01:26:45 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Risk (expected loss))** For a random variable \\Y\\ and a prediction \\\hat{y}\\ (a constant, or a function \\f(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function):
+> **Definition 11 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat{y}\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function):
 >
 > \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat{y})\right\]\mathclose{}\\
 
@@ -996,9 +1006,93 @@ Last modified: 2026-10-06 01:26:45 (PDT)
 >
 > *Remark*. In [Exercise 6](#exr-loss) (parts 2 and 3), the risk of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
 >
-> For squared error loss and a prediction \\f(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - f(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
+> For squared error loss and a prediction \\g(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
 >
-> The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} = 0.5\\c + 0.5\\(4 - c) = 2\\. Only \\c = 2\\ has the smallest squared error risk. Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} = 0.5\\c + 0.5\\(4 - c) = 2\\. Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 11](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+
+> **NOTE:**
+>
+> **Exercise 7 (Comparing prediction functions under squared-error loss)** Let \\(X, Y)\\ be jointly distributed discrete random variables. \\X\\ takes values in \\\\0, 1\\\\ with \\\operatorname{P}(X = 0) = 0.5\\ and \\\operatorname{P}(X = 1) = 0.5\\. Given \\X = 0\\, \\Y\\ takes values in \\\\0, 2\\\\ with conditional probabilities \\\operatorname{P}(Y = 0 \mid X = 0) = 0.5\\ and \\\operatorname{P}(Y = 2 \mid X = 0) = 0.5\\. Given \\X = 1\\, \\Y\\ takes values in \\\\4, 6\\\\ with conditional probabilities \\\operatorname{P}(Y = 4 \mid X = 1) = 0.5\\ and \\\operatorname{P}(Y = 6 \mid X = 1) = 0.5\\.
+>
+> 1.  Compute the marginal mean \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and the conditional expectation function \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\.
+>
+> 2.  Consider the constant prediction \\g_1(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3\\, which ignores \\X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_1(X)\right)^2\mathclose{}\right\]\mathclose{}\\.
+>
+> 3.  Consider the alternate prediction \\g_2(X) \stackrel{\text{def}}{=}4X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_2(X)\right)^2\mathclose{}\right\]\mathclose{}\\.
+>
+> 4.  Compute the squared-error risk \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{}\\ of the conditional mean predictor \\g^\*(X)\\. Which of \\g_1\\, \\g_2\\, and \\g^\*\\ achieves the lowest risk?
+
+> **NOTE:**
+>
+> *Solution 3*.
+>
+> 1.  For each value of \\X\\, compute the conditional expectation: \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0 \cdot 0.5 + 2 \cdot 0.5 = 1\\ \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 4 \cdot 0.5 + 6 \cdot 0.5 = 5\\ By the law of iterated expectations ([Theorem 9](#thm-lie)), the marginal mean is: \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 1 \cdot 0.5 + 5 \cdot 0.5 = 3\\ The conditional expectation function is \\g^\*(0) = 1\\ and \\g^\*(1) = 5\\, which can also be written \\g^\*(X) = 1 + 4X\\.
+>
+> 2.  For the constant prediction \\g_1(X) = 3\\: Given \\X = 0\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} = \mathopen{}\left(0 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 3\right)^2\mathclose{} \cdot 0.5 = 9 \cdot 0.5 + 1 \cdot 0.5 = 5\\ Given \\X = 1\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} = \mathopen{}\left(4 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 3\right)^2\mathclose{} \cdot 0.5 = 1 \cdot 0.5 + 9 \cdot 0.5 = 5\\ By the law of iterated expectations ([Theorem 9](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_1(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} = 5 \cdot 0.5 + 5 \cdot 0.5 = 5\\
+>
+> 3.  For the prediction \\g_2(X) = 4X\\: Here \\g_2(0) = 0\\ and \\g_2(1) = 4\\. Given \\X = 0\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 0\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} = \mathopen{}\left(0 - 0\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 0\right)^2\mathclose{} \cdot 0.5 = 0 \cdot 0.5 + 4 \cdot 0.5 = 2\\ Given \\X = 1\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 4\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} = \mathopen{}\left(4 - 4\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 4\right)^2\mathclose{} \cdot 0.5 = 0 \cdot 0.5 + 4 \cdot 0.5 = 2\\ By [Theorem 9](#thm-lie): \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_2(X)\right)^2\mathclose{}\right\]\mathclose{} = 2 \cdot 0.5 + 2 \cdot 0.5 = 2\\
+>
+> 4.  For the conditional mean predictor \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\: Given \\X = 0\\, \\g^\*(0) = 1\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} = \mathopen{}\left(0 - 1\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 1\right)^2\mathclose{} \cdot 0.5 = 1 \cdot 0.5 + 1 \cdot 0.5 = 1\\ Given \\X = 1\\, \\g^\*(1) = 5\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 5\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} = \mathopen{}\left(4 - 5\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 5\right)^2\mathclose{} \cdot 0.5 = 1 \cdot 0.5 + 1 \cdot 0.5 = 1\\ By [Theorem 9](#thm-lie): \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{} = 1 \cdot 0.5 + 1 \cdot 0.5 = 1\\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
+
+> **NOTE:**
+>
+> **Theorem 11 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\:
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+>
+> with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. That is, the conditional expectation function \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ minimizes the squared-error risk among all prediction functions of \\X\\.
+
+> **NOTE:**
+>
+> *Proof*. Write \\Y - g(X) = \mathopen{}\left(Y - g^\*(X)\right)\mathclose{} + \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\\. Squaring both sides gives:
+>
+> \\\mathopen{}\left(Y - g(X)\right)^2\mathclose{} = \mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{} + 2\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} + \mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{}\\
+>
+> We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g^\*(X) - g(X)\\ is a function of \\X\\, by [Theorem 7](#thm-cond-pull-out) it factors out of the conditional expectation:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - g^\*(X) \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(definition of } g^\*(X) \text{ and } \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} = g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
+>
+> By the law of iterated expectations ([Theorem 9](#thm-lie)), the unconditional expectation of the cross-product is:
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} = 0\\
+>
+> Taking expectations on both sides of the squared expansion, by linearity of expectation ([Theorem 4](#thm-linearity-expectation)):
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+>
+> Since \\\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{} \ge 0\\, its expectation is non-negative:
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
+>
+> with equality if and only if \\\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{} = 0\\ with probability \\1\\, meaning \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. Therefore:
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+>
+> with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
+
+> **NOTE:**
+>
+> **Definition 12 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the minimum risk
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
+>
+> is the **irreducible risk**. It depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\g\\, so no choice of \\g\\ can achieve a smaller risk. For example, in [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
+
+> **NOTE:**
+>
+> **Definition 13 (Reducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
+>
+> is the **reducible risk**. It is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\. For example, in [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
+
+> **NOTE:**
+>
+> *Remark*. The risk identity in [Theorem 11](#thm-best-predictor)
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+>
+> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
 
 ## References
 
