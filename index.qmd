@@ -74,12 +74,13 @@ Several universities offer open-access courses with comparable or complementary 
 - **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook @blitzstein2019introduction, online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
 - **MIT 18.05**: [*Introduction to Probability and Statistics*](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/) (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.
 - **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
-- **Cal Poly / Kevin Ross**: [*Probability and Simulation with Applications in R*](https://bookdown.org/kevin_davisross/probsim-book/) (Kevin Ross) emphasizes simulation, conditioning, joint distributions, and expectation using R.
+- **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (@ross-probsim) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as "slicing and renormalizing" and "taking out what is known" in conditional expectation.
 
 ### Textbooks and companion notes {.unnumbered}
 
 - @problifesaver
 - @blitzstein2019introduction
+- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (@dembo-notes, Stanford MATH 136 / STAT 219)
 - Morrison Lab's [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
   which applies this material to regression and survival analysis
 
