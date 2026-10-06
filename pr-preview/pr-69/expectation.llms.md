@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 14:33:45 (PDT)
+Last modified: 2026-10-06 14:48:32 (PDT)
 
 > **NOTE:**
 >
@@ -613,7 +613,7 @@ Last modified: 2026-10-06 14:33:45 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3; see also [Dembo 2021, sec. 1.3](#ref-dembo-notes)). Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
+> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3). Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
@@ -1099,8 +1099,6 @@ Last modified: 2026-10-06 14:33:45 (PDT)
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
-
-Dembo, Amir. 2021. *Probability Theory*. Stanford University. <https://adembo.su.domains/math-136/nnotes.pdf>.
 
 Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized Linear Models*. 4th ed. CRC press. <https://doi.org/10.1201/9781315182780>.
 

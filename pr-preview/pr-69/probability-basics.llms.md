@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 14:33:45 (PDT)
+Last modified: 2026-10-06 14:48:32 (PDT)
 
 ## 1 Defining probabilities
 
@@ -215,7 +215,7 @@ Last modified: 2026-10-06 14:33:45 (PDT)
 
 > **NOTE:**
 >
-> *Remark* (Conditioning as slicing and renormalizing). Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 ([Ross 2022, sec. 2.7.4](#ref-ross-probsim)).
+> *Remark*. Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 ([Ross 2022, sec. 2.7.4](#ref-ross-probsim)).
 
 > **NOTE:**
 >
