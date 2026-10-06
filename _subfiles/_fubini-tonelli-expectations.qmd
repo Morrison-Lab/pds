@@ -504,15 +504,15 @@ $$
 $$
 \ba
 \E{\E{Y \mid X,Z} \mid Z=z}
-&= \int_{x} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
+&= \int_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
 && \text{(expectation given } Z=z \text{)}
-\\&= \int_{x} \paren{\int_{y} y \cd \p(Y=y \mid X=x,Z=z)\, dy} \cd \p(X=x \mid Z=z)\, dx
+\\&= \int_{x \in \rangef{X}} \paren{\int_{y \in \rangef{Y}} y \cd \p(Y=y \mid X=x,Z=z)\, dy} \cd \p(X=x \mid Z=z)\, dx
 && \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
-\\&= \int_{x} \int_{y} y \cd \p(X=x, Y=y \mid Z=z)\, dy\, dx
+\\&= \int_{x \in \rangef{X}} \int_{y \in \rangef{Y}} y \cd \p(X=x, Y=y \mid Z=z)\, dy\, dx
 && \text{(product of conditional densities is the joint conditional density)}
-\\&= \int_{y} y \cd \paren{\int_{x} \p(X=x, Y=y \mid Z=z)\, dx}\, dy
+\\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(X=x, Y=y \mid Z=z)\, dx}\, dy
 && \text{(Fubini's theorem)}
-\\&= \int_{y} y \cd \p(Y=y \mid Z=z)\, dy
+\\&= \int_{y \in \rangef{Y}} y \cd \p(Y=y \mid Z=z)\, dy
 && \text{(marginalize over } x \text{)}
 \\&= \E{Y \mid Z=z}
 && \text{(definition of conditional expectation given } Z=z \text{)}

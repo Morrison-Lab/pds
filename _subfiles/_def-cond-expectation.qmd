@@ -303,7 +303,7 @@ with [joint density-mass function](random-variables.qmd#def-joint-density-mass) 
 **$X$ discrete, $Y$ continuous.**
 Here $\p(X=x,\,Y=y)$ is, for each fixed $x$,
 a probability density in $y$,
-with $\int_{y} \p(X=x,\,Y=y)\,dy = \P(X=x)$.
+with $\int_{y \in \rangef{Y}} \p(X=x,\,Y=y)\,dy = \P(X=x)$.
 The conditional PDF of $Y$ given $X = x$
 (for values of $x$ with $\P(X = x) > 0$) is:
 
@@ -316,7 +316,7 @@ $$\E{Y \mid X = x} \eqdef \int_{y \in \rangef{Y}} y \cd \p(Y = y \mid X = x)\, d
 **$X$ continuous, $Y$ discrete.**
 Here $\p(X=x,\,Y=y)$ is, for each fixed $y$,
 a probability density in $x$,
-and $\sum_{y} \p(X=x,\,Y=y) = \p(X=x)$ is a density of $X$.
+and $\sum_{y \in \rangef{Y}} \p(X=x,\,Y=y) = \p(X=x)$ is a density of $X$.
 The conditional PMF of $Y$ given $X = x$
 (for values of $x$ with $\p(X = x) > 0$) is:
 
