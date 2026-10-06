@@ -767,7 +767,8 @@ the conditional density integrates to 1 by
 
 ::: {.remark .notes}
 
-This result is often summarized as "taking out what is known":
+This result is often summarized as "taking out what is known"
+(e.g., @ross-probsim, Section 5.6.4):
 given $X = x$, any function of $X$ is the known constant $g(x)$.
 
 :::
