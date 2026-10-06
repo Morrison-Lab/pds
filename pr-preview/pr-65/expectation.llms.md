@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 10:54:48 (PDT)
+Last modified: 2026-10-06 11:05:30 (PDT)
 
 > **NOTE:**
 >
@@ -329,7 +329,7 @@ Last modified: 2026-10-06 10:54:48 (PDT)
 >
 > **Definition 6 (Conditional expectation: mixed case)** Suppose exactly one of \\X, Y\\ is discrete and the other is continuous, with [joint density-mass function](random-variables.llms.md#def-joint-density-mass) \\\operatorname{p}(X = x,\\ Y = y)\\.
 >
-> **\\X\\ discrete, \\Y\\ continuous.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\x\\, a probability density in \\y\\, with \\\int\_{y} \operatorname{p}(X=x,\\Y=y)\\dy = \operatorname{P}(X=x)\\. The conditional PDF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{P}(X = x) \> 0\\) is:
+> **\\X\\ discrete, \\Y\\ continuous.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\x\\, a probability density in \\y\\, with \\\int\_{y \in \mathcal{R}(Y)} \operatorname{p}(X=x,\\Y=y)\\dy = \operatorname{P}(X=x)\\. The conditional PDF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{P}(X = x) \> 0\\) is:
 >
 > \\\operatorname{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\\ Y = y)}{\operatorname{P}(X = x)}\\
 >
@@ -337,7 +337,7 @@ Last modified: 2026-10-06 10:54:48 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{} \stackrel{\text{def}}{=}\int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y = y \mid X = x)\\ dy\\
 >
-> **\\X\\ continuous, \\Y\\ discrete.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\y\\, a probability density in \\x\\, and \\\sum\_{y} \operatorname{p}(X=x,\\Y=y) = \operatorname{p}(X=x)\\ is a density of \\X\\. The conditional PMF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{p}(X = x) \> 0\\) is:
+> **\\X\\ continuous, \\Y\\ discrete.** Here \\\operatorname{p}(X=x,\\Y=y)\\ is, for each fixed \\y\\, a probability density in \\x\\, and \\\sum\_{y \in \mathcal{R}(Y)} \operatorname{p}(X=x,\\Y=y) = \operatorname{p}(X=x)\\ is a density of \\X\\. The conditional PMF of \\Y\\ given \\X = x\\ (for values of \\x\\ with \\\operatorname{p}(X = x) \> 0\\) is:
 >
 > \\\operatorname{P}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\\ Y = y)}{\operatorname{p}(X = x)}\\
 >
@@ -776,7 +776,7 @@ Last modified: 2026-10-06 10:54:48 (PDT)
 >
 > **Continuous case.**
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X,Z\right\]\mathclose{} \mid Z=z\right\]\mathclose{} &= \int\_{x} \operatorname{E}\mathopen{}\left\[Y \mid X=x,Z=z\right\]\mathclose{} \cdot\operatorname{p}(X=x \mid Z=z)\\ dx && \text{(expectation given } Z=z \text{)} \\&= \int\_{x} \mathopen{}\left(\int\_{y} y \cdot\operatorname{p}(Y=y \mid X=x,Z=z)\\ dy\right)\mathclose{} \cdot\operatorname{p}(X=x \mid Z=z)\\ dx && \text{(definition of } \operatorname{E}\mathopen{}\left\[Y \mid X=x,Z=z\right\]\mathclose{} \text{)} \\&= \int\_{x} \int\_{y} y \cdot\operatorname{p}(X=x, Y=y \mid Z=z)\\ dy\\ dx && \text{(product of conditional densities is the joint conditional density)} \\&= \int\_{y} y \cdot\mathopen{}\left(\int\_{x} \operatorname{p}(X=x, Y=y \mid Z=z)\\ dx\right)\mathclose{}\\ dy && \text{(Fubini's theorem)} \\&= \int\_{y} y \cdot\operatorname{p}(Y=y \mid Z=z)\\ dy && \text{(marginalize over } x \text{)} \\&= \operatorname{E}\mathopen{}\left\[Y \mid Z=z\right\]\mathclose{} && \text{(definition of conditional expectation given } Z=z \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X,Z\right\]\mathclose{} \mid Z=z\right\]\mathclose{} &= \int\_{x \in \mathcal{R}(X)} \operatorname{E}\mathopen{}\left\[Y \mid X=x,Z=z\right\]\mathclose{} \cdot\operatorname{p}(X=x \mid Z=z)\\ dx && \text{(expectation given } Z=z \text{)} \\&= \int\_{x \in \mathcal{R}(X)} \mathopen{}\left(\int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x,Z=z)\\ dy\right)\mathclose{} \cdot\operatorname{p}(X=x \mid Z=z)\\ dx && \text{(definition of } \operatorname{E}\mathopen{}\left\[Y \mid X=x,Z=z\right\]\mathclose{} \text{)} \\&= \int\_{x \in \mathcal{R}(X)} \int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(X=x, Y=y \mid Z=z)\\ dy\\ dx && \text{(product of conditional densities is the joint conditional density)} \\&= \int\_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x, Y=y \mid Z=z)\\ dx\right)\mathclose{}\\ dy && \text{(Fubini's theorem)} \\&= \int\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid Z=z)\\ dy && \text{(marginalize over } x \text{)} \\&= \operatorname{E}\mathopen{}\left\[Y \mid Z=z\right\]\mathclose{} && \text{(definition of conditional expectation given } Z=z \text{)} \end{aligned} \\
 >
 > Since the two sides agree at every such \\z\\, they agree as random variables (functions of \\Z\\): \\\operatorname{E}\mathopen{}\left\[Y \mid Z\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X,Z\right\]\mathclose{} \mid Z\right\]\mathclose{}\\.
 

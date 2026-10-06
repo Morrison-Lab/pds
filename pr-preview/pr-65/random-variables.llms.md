@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 10:54:48 (PDT)
+Last modified: 2026-10-06 11:05:30 (PDT)
 
 ## 1 Random variables
 
@@ -593,13 +593,13 @@ The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ 
 
 ### 2.2 Continuous distributions and densities
 
-When a random variable \\X\\ takes values in a continuous space \\\mathbb{X} \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\\operatorname{p}(x) : \mathbb{X} \to \mathbb{R}\_+\\ satisfying:
+When a random variable \\X\\ takes values in a continuous space \\\mathcal{R}(X) \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\\operatorname{p}(x) : \mathcal{R}(X) \to \mathbb{R}\_+\\ satisfying:
 
-\\\int\_{\mathbb{X}} \operatorname{p}(x)\\\mathrm{d}x = 1\\
+\\\int\_{\mathcal{R}(X)} \operatorname{p}(x)\\\mathrm{d}x = 1\\
 
-Probabilities are assigned to subsets \\\mathbb{A} \subseteq \mathbb{X}\\ by integrating the density over that set:
+Probabilities are assigned to subsets \\A \subseteq \mathcal{R}(X)\\ by integrating the density over that set:
 
-\\\Pr(X \in \mathbb{A}) = \int\_{\mathbb{A}} \operatorname{p}(x)\\\mathrm{d}x\\
+\\\Pr(X \in A) = \int\_{A} \operatorname{p}(x)\\\mathrm{d}x\\
 
 > **NOTE:**
 >
