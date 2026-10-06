@@ -35,6 +35,8 @@ exclude = [
   "https://math.stackexchange.com/.*",
   "https://stats.stackexchange.com/.*",
   "https://www.etymonline.com/.*",
+  # Stanford su.domains server periodically throttles or times out under CI requests
+  "https://adembo.su.domains/.*",
 ]
 
 # `pds` is a symlink to the repository root, so include paths read

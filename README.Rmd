@@ -37,4 +37,4 @@ quarto preview
 ## Provenance
 
 The site scaffolding comes from the
-[qwt](https://github.com/UCD-SERG/qwt) Quarto website template.
+[qwt](https://github.com/Morrison-Lab/qwt) Quarto website template.
