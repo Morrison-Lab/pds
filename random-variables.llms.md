@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:06:46 (PDT)
+Last modified: 2026-10-06 01:26:45 (PDT)
 
 ## 1 Random variables
 
@@ -54,19 +54,17 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Uniform distribution)** A random variable \\X\\ has the **uniform distribution** on an interval \\\[\alpha, \beta\]\\, with \\\alpha \< \beta\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, if the probability that \\X\\ falls in any subinterval of \\\[\alpha, \beta\]\\ is proportional to the length of that subinterval:
->
-> \\\Pr(a \le X \le b) = \frac{b - a}{\beta - \alpha} \quad \text{for all } \alpha \le a \le b \le \beta\\
+> *Remark*. Every continuous random variable in these notes also has a [probability density function](#def-pdf). Continuous random variables without a density exist, but they do not arise in applications.
 
 > **NOTE:**
 >
-> **Example 4 (A uniformly distributed random variable)** Let \\X \sim \text{Uniform}(0, 1)\\ ([Definition 5](#def-uniform)), so \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. Taking \\a = b = x\\ gives \\\Pr(X = x) = x - x = 0\\ for every \\x \in \[0,1\]\\. Taking \\a = 0\\ and \\b = 1\\ gives \\\Pr(0 \le X \le 1) = 1\\, so by the [complement rule](probability-basics.llms.md#cor-p-neg0) \\X\\ falls outside \\\[0, 1\]\\ with probability 0, and \\\Pr(X = x) = 0\\ for every \\x\\ outside \\\[0, 1\]\\ as well. So \\X\\ is continuous. Its range, \\\[0, 1\]\\, is uncountable.
+> **Example 4 (A continuous random variable)** Let \\X\\ satisfy \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. Taking \\a = b = x\\ gives \\\Pr(X = x) = x - x = 0\\ for every \\x \in \[0,1\]\\. Taking \\a = 0\\ and \\b = 1\\ gives \\\Pr(0 \le X \le 1) = 1\\, so by the [complement rule](probability-basics.llms.md#cor-p-neg0) \\X\\ falls outside \\\[0, 1\]\\ with probability 0, and \\\Pr(X = x) = 0\\ for every \\x\\ outside \\\[0, 1\]\\ as well. So \\X\\ is continuous. Its range, \\\[0, 1\]\\, is uncountable.
 
 > **NOTE:**
 >
-> **Example 5 (A random variable that is neither discrete nor continuous)** Some random variables are neither discrete nor continuous: a time to event that equals exactly \\0\\ with positive probability, and otherwise spreads over \\(0, \infty)\\, is one. For instance, let \\U \sim \text{Uniform}(0, 1)\\ ([Definition 5](#def-uniform)), and let \\T = 1/(1 - U) - 2\\ when \\1/2 \< U \< 1\\, and \\T = 0\\ otherwise. On \\\mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, \\T\\ is increasing in \\U\\ and takes values in \\(0, \infty)\\, and solving \\t = 1/(1 - u) - 2\\ for \\u\\ gives \\u = 1 - 1/(t + 2)\\. So \\\mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, and \\\mathopen{}\left\\T = t\right\\\mathclose{} = \mathopen{}\left\\U = 1 - 1/(t + 2)\right\\\mathclose{}\\ for each \\t \> 0\\. Since \\\Pr(U = 1/2) = \Pr(U = 1) = 0\\ ([Example 4](#exm-continuous-rv)):
+> **Example 5 (A random variable that is neither discrete nor continuous)** Some random variables are neither discrete nor continuous: a time to event that equals exactly \\0\\ with positive probability, and otherwise spreads over \\(0, \infty)\\, is one. For instance, let \\U\\ be the continuous random variable of [Example 4](#exm-continuous-rv), and let \\T = 1/(1 - U) - 2\\ when \\1/2 \< U \< 1\\, and \\T = 0\\ otherwise. On \\\mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, \\T\\ is increasing in \\U\\ and takes values in \\(0, \infty)\\, and solving \\t = 1/(1 - u) - 2\\ for \\u\\ gives \\u = 1 - 1/(t + 2)\\. So \\\mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, and \\\mathopen{}\left\\T = t\right\\\mathclose{} = \mathopen{}\left\\U = 1 - 1/(t + 2)\right\\\mathclose{}\\ for each \\t \> 0\\. Since \\\Pr(U = 1/2) = \Pr(U = 1) = 0\\ ([Example 4](#exm-continuous-rv)):
 >
-> \\ \begin{aligned} \Pr(T \> 0) &= \Pr(1/2 \< U \< 1) && \text{(} \mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{} \text{)} \\ &= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1) && \text{(additivity)} \\ &= \tfrac{1}{2} - 0 - 0 && \text{(definition of the uniform distribution)} \\ &= \tfrac{1}{2} && \text{(simplify)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(T \> 0) &= \Pr(1/2 \< U \< 1) && \text{(} \mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{} \text{)} \\ &= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1) && \text{(additivity)} \\ &= \tfrac{1}{2} - 0 - 0 && \text{(} \Pr(a \le U \le b) = b - a \text{)} \\ &= \tfrac{1}{2} && \text{(simplify)} \end{aligned} \\
 >
 > \\T\\ is not continuous, because \\\Pr(T = 0) = 1 - \Pr(T \> 0) = 1/2\\ by the [complement rule](probability-basics.llms.md#cor-p-neg0).
 >
@@ -80,7 +78,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Definition 6 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\:
+> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\:
 >
 > \\\operatorname{P}(X=x) \stackrel{\text{def}}{=}\Pr(\\X=x\\)\\
 
@@ -96,7 +94,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Definition 7 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi \in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\, if:
+> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi \in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\, if:
 >
 > \\ \begin{aligned} \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}}\pi^x(1-\pi)^{1-x}\\ &= \begin{cases} \pi, & x=1\\ 1-\pi, & x=0 \end{cases} \end{aligned} \\
 
@@ -106,7 +104,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Definition 8 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies:
+> **Definition 7 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies:
 >
 > - \\f(x) \ge 0\\ for every \\x\\.
 > - The integral of \\f\\ over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval: \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
@@ -117,11 +115,17 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Density of a uniform random variable)** Let \\X \sim \text{Uniform}(0, 1)\\ ([Example 4](#exm-continuous-rv)), and let \\f(x) = 1\\ for \\x \in \[0, 1\]\\ and \\f(x) = 0\\ otherwise. For \\0 \le a \le b \le 1\\:
+> **Definition 8 (Uniform distribution)** A random variable \\X\\ has the **uniform distribution** on an interval \\\[\alpha, \beta\]\\, with \\\alpha \< \beta\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, if \\X\\ is continuous with [density](#def-pdf):
 >
-> \\ \begin{aligned} \int_a^b f(x)\\dx &= \int_a^b 1\\dx && \text{(} f = 1 \text{ on } \[0, 1\] \text{)} \\ &= b - a && \text{(integrate)} \\ &= \Pr(a \le X \le b) && \text{(definition of the uniform distribution)} \end{aligned} \\
+> \\ f(x) \stackrel{\text{def}}{=}\begin{cases} \frac{1}{\beta - \alpha}, & \alpha \le x \le \beta \\ 0, & \text{otherwise} \end{cases} \\
+
+> **NOTE:**
 >
-> An interval reaching outside \\\[0, 1\]\\ adds nothing to either side: \\f = 0\\ there, and \\X\\ falls outside \\\[0, 1\]\\ with probability 0 ([Example 4](#exm-continuous-rv)). So \\f\\ is a density of \\X\\.
+> **Example 8 (Subinterval probabilities of a uniform random variable)** For \\X \sim \text{Uniform}(\alpha, \beta)\\ ([Definition 8](#def-uniform)) and any subinterval \\\[a, b\] \subseteq \[\alpha, \beta\]\\ (so \\\alpha \le a \le b \le \beta\\):
+>
+> \\ \begin{aligned} \Pr(a \le X \le b) &= \int_a^b f(x)\\dx && \text{(definition of a probability density function)} \\ &= \int_a^b \frac{1}{\beta - \alpha}\\dx && \text{(} f(x) = \tfrac{1}{\beta - \alpha} \text{ on } \[\alpha, \beta\] \text{)} \\ &= \frac{b - a}{\beta - \alpha} && \text{(integrate)} \end{aligned} \\
+>
+> In particular, the probability that \\X\\ falls in any subinterval is proportional to that subinterval’s length. For the standard uniform distribution on \\\[0, 1\]\\, \\f(x) = 1\\ for \\x \in \[0, 1\]\\ and \\f(x) = 0\\ otherwise, giving \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. An interval reaching outside \\\[\alpha, \beta\]\\ adds nothing to the probability, because \\f = 0\\ there.
 
 > **NOTE:**
 >
@@ -133,7 +137,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 >
 > \\ \begin{aligned} \int_a^b g(x)\\dx &= \int_a^b f(x)\\dx + \int_a^b \mathopen{}\left(g(x) - f(x)\right)\mathclose{}\\dx && \text{(linearity of the integral)} \\ &= \int_a^b f(x)\\dx + 0 && \text{(a function that is 0 at all but finitely many points integrates to 0)} \\ &= \Pr(a \le X \le b) && \text{(} f \text{ is a density of } X \text{)} \end{aligned} \\
 >
-> Together with \\g \ge 0\\, this is [Definition 8](#def-pdf) for \\g\\.
+> Together with \\g \ge 0\\, this is [Definition 7](#def-pdf) for \\g\\.
 
 > **NOTE:**
 >
@@ -293,7 +297,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Example 14 (CDF and density of a uniform random variable)** For \\X\\ uniform on \\\[0, 1\]\\ with the density \\f\\ of [Example 8](#exm-pdf), and \\t \in \[0, 1\]\\:
+> **Example 14 (CDF and density of a uniform random variable)** For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 8](#def-uniform), and \\t \in \[0, 1\]\\:
 >
 > \\ \begin{aligned} F(t) &= \int\_{-\infty}^{t} f(x)\\dx && \text{(the CDF is the integral of the density)} \\ &= \int\_{-\infty}^{0} 0\\dx + \int\_{0}^{t} 1\\dx && \text{(split at 0, and substitute } f \text{)} \\ &= t && \text{(integrate)} \end{aligned} \\
 >
@@ -345,7 +349,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 >
 > \\f(x) = \lim\_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1\\
 >
-> For \\x \< 0\\ or \\x \> 1\\, the interval eventually misses \\\[0, 1\]\\, so the limit is \\0\\. Both agree with the density of [Example 8](#exm-pdf).
+> For \\x \< 0\\ or \\x \> 1\\, the interval eventually misses \\\[0, 1\]\\, so the limit is \\0\\. Both agree with the density of [Definition 8](#def-uniform).
 
 > **NOTE:**
 >
@@ -361,7 +365,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Example 17 (The density limit at a jump)** At a point where \\f\\ is not continuous, the limit can differ from the chosen value \\f(x)\\. For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Example 8](#exm-pdf), which sets \\f(1) = 1\\ and \\f(x) = 0\\ for \\x \> 1\\, and for \\\Delta \> 0\\:
+> **Example 17 (The density limit at a jump)** At a point where \\f\\ is not continuous, the limit can differ from the chosen value \\f(x)\\. For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 8](#def-uniform), which sets \\f(1) = 1\\ and \\f(x) = 0\\ for \\x \> 1\\, and for \\\Delta \> 0\\:
 >
 > \\ \begin{aligned} \Pr(1 \le X \< 1 + \Delta) &= \Pr(1 \le X \le 1 + \Delta) && \text{(} \Pr(X = 1 + \Delta) = 0 \text{)} \\ &= \int_1^{1 + \Delta} f(x)\\dx && \text{(definition of the density)} \\ &= 0 && \text{(} f = 0 \text{ on } (1, 1 + \Delta\] \text{; one point does not change an integral)} \end{aligned} \\
 >
@@ -381,7 +385,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (The uniform density integrates to 1)** For \\X\\ uniform on \\\[0, 1\]\\ ([Example 8](#exm-pdf)), \\\int\_{-\infty}^{\infty} f(x)\\dx = \int_0^1 1\\dx = 1\\.
+> **Example 18 (The uniform density integrates to 1)** For \\X \sim \text{Uniform}(0, 1)\\ ([Definition 8](#def-uniform)), \\\int\_{-\infty}^{\infty} f(x)\\dx = \int_0^1 1\\dx = 1\\.
 
 > **NOTE:**
 >
@@ -509,7 +513,7 @@ Last modified: 2026-10-06 01:06:46 (PDT)
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr((X, Y) \in \[a, b\] \times \mathbb{R}) && \text{(same event)} \\ &= \iint\_{\[a, b\] \times \mathbb{R}} f\_{X,Y}(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int_a^b \mathopen{}\left(\int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int_a^b f_X(x)\\dx && \text{(definition of } f_X \text{)} \end{aligned} \\
 >
-> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3). So \\f_X\\ satisfies [Definition 8](#def-pdf).
+> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3). So \\f_X\\ satisfies [Definition 7](#def-pdf).
 
 > **NOTE:**
 >
