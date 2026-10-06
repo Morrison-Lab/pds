@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:44:35 (PDT)
+Last modified: 2026-10-06 01:59:29 (PDT)
 
 > **NOTE:**
 >
@@ -1050,7 +1050,7 @@ Last modified: 2026-10-06 01:44:35 (PDT)
 >
 > We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g^\*(X) - g(X)\\ is a function of \\X\\, by [Theorem 7](#thm-cond-pull-out) it factors out of the conditional expectation:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - g^\*(X) \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\&= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\&= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(definition of } g^\*(X) \text{ and } \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} = g^\*(X) \text{)} \\&= 0 && \text{(evaluate)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - g^\*(X) \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(definition of } g^\*(X) \text{ and } \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} = g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
 >
 > By the law of iterated expectations ([Theorem 9](#thm-lie)), the unconditional expectation of the cross-product is:
 >
@@ -1076,10 +1076,23 @@ Last modified: 2026-10-06 01:44:35 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
 >
-> decomposes the risk into two parts:
+> decomposes the risk into irreducible risk ([Definition 12](#def-irreducible-risk)) and reducible risk ([Definition 13](#def-reducible-risk)).
+
+> **NOTE:**
 >
-> 1.  \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\, the expected conditional variance, which is the **irreducible risk**; no choice of prediction function \\g(X)\\ can reduce this below \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\.
-> 2.  \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\, the **reducible risk** incurred whenever \\g(X)\\ differs from the conditional mean.
+> **Definition 12 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the minimum risk
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
+>
+> is the **irreducible risk**. It depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\g\\, so no choice of \\g\\ can achieve a smaller risk. For example, in [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
+
+> **NOTE:**
+>
+> **Definition 13 (Reducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
+>
+> is the **reducible risk**. It is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\. For example, in [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 ## References
 
