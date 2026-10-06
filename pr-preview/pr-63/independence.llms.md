@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:12:19 (PDT)
+Last modified: 2026-10-06 01:21:59 (PDT)
 
 > **NOTE:**
 >
@@ -50,7 +50,7 @@ Last modified: 2026-10-06 01:12:19 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent. For instance, let \\X \sim \text{Uniform}(0, 1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), whose [density](random-variables.llms.md#exm-pdf) is \\1\\ on \\\[0, 1\]\\, and let \\Y = X\\. For all real numbers \\x\\ and \\y\\, the event \\\mathopen{}\left\\X = x,\\ Y = y\right\\\mathclose{}\\ is \\\mathopen{}\left\\X = x\right\\\mathclose{}\\ if \\y = x\\ and empty otherwise, so it has probability \\0\\, because \\\Pr(X = x) = 0\\ for the [continuous](random-variables.llms.md#def-continuous-rv) \\X\\. Likewise \\\Pr(X = x)\\\Pr(Y = y) = 0 \cdot 0 = 0\\, so the PMF form holds. But \\X\\ and \\Y\\ are not independent:
+> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent. For instance, let \\X \sim \text{Uniform}(0, 1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is \\1\\ on \\\[0, 1\]\\, and let \\Y = X\\. For all real numbers \\x\\ and \\y\\, the event \\\mathopen{}\left\\X = x,\\ Y = y\right\\\mathclose{}\\ is \\\mathopen{}\left\\X = x\right\\\mathclose{}\\ if \\y = x\\ and empty otherwise, so it has probability \\0\\, because \\\Pr(X = x) = 0\\ for the [continuous](random-variables.llms.md#def-continuous-rv) \\X\\. Likewise \\\Pr(X = x)\\\Pr(Y = y) = 0 \cdot 0 = 0\\, so the PMF form holds. But \\X\\ and \\Y\\ are not independent:
 >
 > \\ \begin{aligned} \Pr(X \in \[0, \tfrac{1}{2}\],\\ Y \in \[0, \tfrac{1}{2}\]) &= \Pr(X \in \[0, \tfrac{1}{2}\]) && \text{(} Y = X \text{)} \\ &= \int_0^{1/2} 1\\dx && \text{(the density of } X \text{ is } 1 \text{ on } \[0, 1\] \text{)} \\ &= \tfrac{1}{2} && \text{(integrate)} \end{aligned} \\
 >

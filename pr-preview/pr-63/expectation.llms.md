@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:12:19 (PDT)
+Last modified: 2026-10-06 01:21:59 (PDT)
 
 > **NOTE:**
 >
@@ -122,7 +122,7 @@ Last modified: 2026-10-06 01:12:19 (PDT)
 
 > **NOTE:**
 >
-> **Example 5 (Expected value of \\X^2\\ for a Uniform(0,1) variable)** Let \\X \sim \text{Uniform}(0,1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), so \\\operatorname{p}(X=x) = 1\\ for \\x \in \[0,1\]\\ ([uniform density](random-variables.llms.md#exm-pdf)). By LOTUS ([Theorem 3](#thm-lotus), continuous case):
+> **Example 5 (Expected value of \\X^2\\ for a Uniform(0,1) variable)** Let \\X \sim \text{Uniform}(0,1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), so \\\operatorname{p}(X=x) = 1\\ for \\x \in \[0,1\]\\. By LOTUS ([Theorem 3](#thm-lotus), continuous case):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} &= \int_0^1 x^2 \cdot\operatorname{p}(X=x)\\dx && \text{(LOTUS, continuous case)} \\&= \int_0^1 x^2 \cdot 1\\dx && \text{(}\operatorname{p}(X=x) = 1\text{ on } \[0,1\]\text{)} \\&= \mathopen{}\left\[\frac{x^3}{3}\right\]\mathclose{}\_0^1 && \text{(antiderivative of } x^2\text{)} \\&= \frac{1}{3}. && \text{(evaluate at the bounds)} \end{aligned} \\
 
