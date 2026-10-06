@@ -665,9 +665,9 @@ For discrete $Y$:
 $$
 \ba
 &\E{a h_1(X, Y) + b h_2(X, Y) \mid X = x}
-\\&= \sum_{y} \paren{a h_1(x, y) + b h_2(x, y)} \cd \P(Y = y \mid X = x)
+\\&= \sum_{y \in \rangef{Y}} \paren{a h_1(x, y) + b h_2(x, y)} \cd \P(Y = y \mid X = x)
 && \text{(definition of conditional expectation)} \\
-&= a \sum_{y} h_1(x, y) \cd \P(Y = y \mid X = x) + b \sum_{y} h_2(x, y) \cd \P(Y = y \mid X = x)
+&= a \sum_{y \in \rangef{Y}} h_1(x, y) \cd \P(Y = y \mid X = x) + b \sum_{y \in \rangef{Y}} h_2(x, y) \cd \P(Y = y \mid X = x)
 && \text{(split the sum; factor out the constants)} \\
 &= a\E{h_1(X, Y) \mid X = x} + b\E{h_2(X, Y) \mid X = x}
 && \text{(definition of conditional expectation)}
@@ -735,21 +735,21 @@ For discrete $Y$:
 $$
 \ba
 \E{g(X)\,h(X, Y) \mid X = x}
-&= \sum_{y} g(x)\,h(x, y) \cd \P(Y = y \mid X = x)
+&= \sum_{y \in \rangef{Y}} g(x)\,h(x, y) \cd \P(Y = y \mid X = x)
 && \text{(definition of conditional expectation)} \\
-&= g(x) \sum_{y} h(x, y) \cd \P(Y = y \mid X = x)
+&= g(x) \sum_{y \in \rangef{Y}} h(x, y) \cd \P(Y = y \mid X = x)
 && \text{(} g(x) \text{ does not depend on } y \text{)} \\
 &= g(x) \cd \E{h(X, Y) \mid X = x}
 && \text{(definition of conditional expectation)}
 \ea
 $$
 
-For $h = 1$, the remaining sum is $\sum_{y} \P(Y = y \mid X = x) = 1$:
+For $h = 1$, the remaining sum is $\sum_{y \in \rangef{Y}} \P(Y = y \mid X = x) = 1$:
 
 $$
 \ba
-\sum_{y} \P(Y = y \mid X = x)
-&= \sum_{y} \frac{\P(X = x,\, Y = y)}{\P(X = x)}
+\sum_{y \in \rangef{Y}} \P(Y = y \mid X = x)
+&= \sum_{y \in \rangef{Y}} \frac{\P(X = x,\, Y = y)}{\P(X = x)}
 && \text{(definition of the conditional PMF)} \\
 &= \frac{\P(X = x)}{\P(X = x)}
 && \text{(marginal PMF from a joint PMF)} \\

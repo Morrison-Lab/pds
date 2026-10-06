@@ -1478,7 +1478,7 @@ $$\E{X} = \sum_{c=1}^K w_c \, \mu_c$$
 ::: proof
 
 The integral defining $\E{X}$ converges absolutely,
-because $\int \abs{x} \, {\p_{\text{mix}}}(x)\,dx = \sum_c w_c \int \abs{x} \, {\p_c}(x)\,dx$,
+because $\int_{-\infty}^\infty \abs{x} \, {\p_{\text{mix}}}(x)\,dx = \sum_{c=1}^K w_c \int_{-\infty}^\infty \abs{x} \, {\p_c}(x)\,dx$,
 a finite sum of finite numbers. Then:
 
 $$

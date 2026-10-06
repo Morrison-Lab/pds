@@ -87,11 +87,11 @@ First, with $h(x, y) = \abs{x}\abs{y} \ge 0$ (condition (a)):
 $$
 \ba
 \E{\abs{XY}}
-&= \int\paren{\int \abs{x}\abs{y}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} \abs{x}\abs{y}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
 && \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\
-&= \int \abs{x}\,f_X(x)\paren{\int \abs{y}\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}} \abs{x}\,f_X(x)\paren{\int_{\rangef{Y}} \abs{y}\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
 && \text{(} \abs{x}\,f_X(x) \text{ does not depend on } y \text{)} \\
-&= \int \abs{x}\,f_X(x) \cd \E{\abs{Y}}\,d\mu_X(x)
+&= \int_{\rangef{X}} \abs{x}\,f_X(x) \cd \E{\abs{Y}}\,d\mu_X(x)
 && \text{(LOTUS for } \abs{Y} \text{)} \\
 &= \E{\abs{X}} \cd \E{\abs{Y}}
 && \text{(LOTUS for } \abs{X} \text{)}
@@ -105,11 +105,11 @@ and the same steps without the absolute values give:
 $$
 \ba
 \E{XY}
-&= \int\paren{\int xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
 && \text{(joint-distribution form of Fubini--Tonelli, condition (b))} \\
-&= \int x\,f_X(x)\paren{\int y\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}} x\,f_X(x)\paren{\int_{\rangef{Y}} y\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
 && \text{(} x\,f_X(x) \text{ does not depend on } y \text{)} \\
-&= \int x\,f_X(x) \cd \E{Y}\,d\mu_X(x)
+&= \int_{\rangef{X}} x\,f_X(x) \cd \E{Y}\,d\mu_X(x)
 && \text{(definition of expectation)} \\
 &= \E{X} \cd \E{Y}
 && \text{(definition of expectation)}
