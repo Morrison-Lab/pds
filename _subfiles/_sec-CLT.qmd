@@ -89,7 +89,7 @@ $$
 \Var{S_n}
 &= \sumin \sumn{j} \Cov{X_i, X_j}
 && \text{(variance of a linear combination, all } a_i = 1 \text{)} \\
-&= \sumin \Cov{X_i, X_i} + \sum_{i \ne j} \Cov{X_i, X_j}
+&= \sumin \Cov{X_i, X_i} + \sum_{\substack{i, j = 1 \\ i \ne j}}^n \Cov{X_i, X_j}
 && \text{(split off the terms with } i = j \text{)} \\
 &= \sumin \Var{X_i} + 0
 && \text{(covariance with itself; independent summands)} \\

@@ -1,14 +1,14 @@
 ### Continuous distributions and densities {#sec-continuous-distributions}
 
-When a random variable $X$ takes values in a continuous space $\mathbb{X} \subseteq \mathbb{R}$,
-its behavior is described by a **probability density function** (PDF) $\p(x) : \mathbb{X} \to \mathbb{R}_+$
+When a random variable $X$ takes values in a continuous space $\rangef{X} \subseteq \mathbb{R}$,
+its behavior is described by a **probability density function** (PDF) $\p(x) : \rangef{X} \to \mathbb{R}_+$
 satisfying:
 
-$$\int_{\mathbb{X}} \p(x)\,\mathrm{d}x = 1$$
+$$\int_{\rangef{X}} \p(x)\,\mathrm{d}x = 1$$
 
-Probabilities are assigned to subsets $\mathbb{A} \subseteq \mathbb{X}$ by integrating the density over that set:
+Probabilities are assigned to subsets $A \subseteq \rangef{X}$ by integrating the density over that set:
 
-$$\Pr(X \in \mathbb{A}) = \int_{\mathbb{A}} \p(x)\,\mathrm{d}x$$
+$$\Pr(X \in A) = \int_{A} \p(x)\,\mathrm{d}x$$
 
 {{< slidebreak >}}
 
@@ -33,7 +33,7 @@ $$\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int_{6-\epsilon}^{6+\epsilon} \p(x
 
 {{< slidebreak >}}
 
-Every rule developed for discrete variables carries over to continuous variables by replacing sums $\sum_x$ with integrals $\int \mathrm{d}x$.
+Every rule developed for discrete variables carries over to continuous variables by replacing sums $\sum_{x \in \rangef{X}}$ with integrals $\int_{\rangef{X}} \mathrm{d}x$.
 For example, marginalizing out $X$ from a joint density $\p(x, y)$ to find the marginal density $\p(y)$ becomes:
 
-$$\p(y) = \int_{\mathbb{X}} \p(x, y)\,\mathrm{d}x$$
+$$\p(y) = \int_{\rangef{X}} \p(x, y)\,\mathrm{d}x$$
