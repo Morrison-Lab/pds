@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 10:41:36 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 11:12:46 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -784,11 +784,11 @@ estimation page (Morrison-Lab/sds), with the noise term added.
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\mathopen{}\left|XY\right|\mathclose{}\right]\mathclose{}
-&amp;= \int\mathopen{}\left(\int \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
+&amp;= \int_{\mathcal{R}(X)}\mathopen{}\left(\int_{\mathcal{R}(Y)} \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
 &amp;&amp; \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\
-&amp;= \int \mathopen{}\left|x\right|\mathclose{}\,f_X(x)\mathopen{}\left(\int \mathopen{}\left|y\right|\mathclose{}\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
+&amp;= \int_{\mathcal{R}(X)} \mathopen{}\left|x\right|\mathclose{}\,f_X(x)\mathopen{}\left(\int_{\mathcal{R}(Y)} \mathopen{}\left|y\right|\mathclose{}\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
 &amp;&amp; \text{(} \mathopen{}\left|x\right|\mathclose{}\,f_X(x) \text{ does not depend on } y \text{)} \\
-&amp;= \int \mathopen{}\left|x\right|\mathclose{}\,f_X(x) \cdot\operatorname{E}\mathopen{}\left[\mathopen{}\left|Y\right|\mathclose{}\right]\mathclose{}\,d\mu_X(x)
+&amp;= \int_{\mathcal{R}(X)} \mathopen{}\left|x\right|\mathclose{}\,f_X(x) \cdot\operatorname{E}\mathopen{}\left[\mathopen{}\left|Y\right|\mathclose{}\right]\mathclose{}\,d\mu_X(x)
 &amp;&amp; \text{(LOTUS for } \mathopen{}\left|Y\right|\mathclose{} \text{)} \\
 &amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}\right]\mathclose{} \cdot\operatorname{E}\mathopen{}\left[\mathopen{}\left|Y\right|\mathclose{}\right]\mathclose{}
 &amp;&amp; \text{(LOTUS for } \mathopen{}\left|X\right|\mathclose{} \text{)}
@@ -798,11 +798,11 @@ estimation page (Morrison-Lab/sds), with the noise term added.
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[XY\right]\mathclose{}
-&amp;= \int\mathopen{}\left(\int xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
+&amp;= \int_{\mathcal{R}(X)}\mathopen{}\left(\int_{\mathcal{R}(Y)} xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
 &amp;&amp; \text{(joint-distribution form of Fubini--Tonelli, condition (b))} \\
-&amp;= \int x\,f_X(x)\mathopen{}\left(\int y\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
+&amp;= \int_{\mathcal{R}(X)} x\,f_X(x)\mathopen{}\left(\int_{\mathcal{R}(Y)} y\,f_Y(y)\,d\mu_Y(y)\right)\mathclose{}\,d\mu_X(x)
 &amp;&amp; \text{(} x\,f_X(x) \text{ does not depend on } y \text{)} \\
-&amp;= \int x\,f_X(x) \cdot\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\,d\mu_X(x)
+&amp;= \int_{\mathcal{R}(X)} x\,f_X(x) \cdot\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\,d\mu_X(x)
 &amp;&amp; \text{(definition of expectation)} \\
 &amp;= \operatorname{E}\mathopen{}\left[X\right]\mathclose{} \cdot\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}
 &amp;&amp; \text{(definition of expectation)}

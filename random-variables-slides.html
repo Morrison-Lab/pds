@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 10:41:36 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 11:12:46 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
@@ -1364,10 +1364,10 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <section class="slide level2">
 
 <h3 id="sec-continuous-distributions">Continuous distributions and densities</h3>
-<p>When a random variable <span class="math inline">\(X\)</span> takes values in a continuous space <span class="math inline">\(\mathbb{X} \subseteq \mathbb{R}\)</span>, its behavior is described by a <strong>probability density function</strong> (PDF) <span class="math inline">\(\operatorname{p}(x) : \mathbb{X} \to \mathbb{R}_+\)</span> satisfying:</p>
-<p><span class="math display">\[\int_{\mathbb{X}} \operatorname{p}(x)\,\mathrm{d}x = 1\]</span></p>
-<p>Probabilities are assigned to subsets <span class="math inline">\(\mathbb{A} \subseteq \mathbb{X}\)</span> by integrating the density over that set:</p>
-<p><span class="math display">\[\Pr(X \in \mathbb{A}) = \int_{\mathbb{A}} \operatorname{p}(x)\,\mathrm{d}x\]</span></p>
+<p>When a random variable <span class="math inline">\(X\)</span> takes values in a continuous space <span class="math inline">\(\mathcal{R}(X) \subseteq \mathbb{R}\)</span>, its behavior is described by a <strong>probability density function</strong> (PDF) <span class="math inline">\(\operatorname{p}(x) : \mathcal{R}(X) \to \mathbb{R}_+\)</span> satisfying:</p>
+<p><span class="math display">\[\int_{\mathcal{R}(X)} \operatorname{p}(x)\,\mathrm{d}x = 1\]</span></p>
+<p>Probabilities are assigned to subsets <span class="math inline">\(A \subseteq \mathcal{R}(X)\)</span> by integrating the density over that set:</p>
+<p><span class="math display">\[\Pr(X \in A) = \int_{A} \operatorname{p}(x)\,\mathrm{d}x\]</span></p>
 </section>
 <section class="slide level2">
 
@@ -1381,8 +1381,8 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </section>
 <section class="slide level2">
 
-<p>Every rule developed for discrete variables carries over to continuous variables by replacing sums <span class="math inline">\(\sum_x\)</span> with integrals <span class="math inline">\(\int \mathrm{d}x\)</span>. For example, marginalizing out <span class="math inline">\(X\)</span> from a joint density <span class="math inline">\(\operatorname{p}(x, y)\)</span> to find the marginal density <span class="math inline">\(\operatorname{p}(y)\)</span> becomes:</p>
-<p><span class="math display">\[\operatorname{p}(y) = \int_{\mathbb{X}} \operatorname{p}(x, y)\,\mathrm{d}x\]</span></p>
+<p>Every rule developed for discrete variables carries over to continuous variables by replacing sums <span class="math inline">\(\sum_{x \in \mathcal{R}(X)}\)</span> with integrals <span class="math inline">\(\int_{\mathcal{R}(X)} \mathrm{d}x\)</span>. For example, marginalizing out <span class="math inline">\(X\)</span> from a joint density <span class="math inline">\(\operatorname{p}(x, y)\)</span> to find the marginal density <span class="math inline">\(\operatorname{p}(y)\)</span> becomes:</p>
+<p><span class="math display">\[\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}x\]</span></p>
 <div title="Video lecture">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">

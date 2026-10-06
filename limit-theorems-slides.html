@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 10:41:36 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 11:12:46 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -423,7 +423,7 @@
 \operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}
 &amp;= \sum_{i=1}^n\sum_{j=1}^n \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
 &amp;&amp; \text{(variance of a linear combination, all } a_i = 1 \text{)} \\
-&amp;= \sum_{i=1}^n\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} + \sum_{i \ne j} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
+&amp;= \sum_{i=1}^n\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} + \sum_{\substack{i, j = 1 \\ i \ne j}}^n \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
 &amp;&amp; \text{(split off the terms with } i = j \text{)} \\
 &amp;= \sum_{i=1}^n\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{} + 0
 &amp;&amp; \text{(covariance with itself; independent summands)} \\
