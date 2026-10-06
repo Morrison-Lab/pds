@@ -1,0 +1,81 @@
+<!-- Source: Hastie, Tibshirani and Friedman (2009), section 2.4, eq. 2.11, p. 19. -->
+
+:::{#thm-best-predictor}
+#### Conditional mean minimizes squared-error risk
+
+Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
+Let $g^*(X) \eqdef \E{Y \mid X}$.
+Then for any prediction function $g(X)$ with $\E{g(X)^2} < \infty$:
+
+$$\E{\sqf{Y - g(X)}} \ge \E{\sqf{Y - g^*(X)}}$$
+
+with equality if and only if $\P(g(X) = g^*(X)) = 1$.
+That is, the conditional expectation function $\E{Y \mid X}$
+minimizes the squared-error risk among all prediction functions of $X$.
+
+:::
+
+::: proof
+
+Write $Y - g(X) = \paren{Y - g^*(X)} + \paren{g^*(X) - g(X)}$.
+Squaring both sides gives:
+
+$$\sqf{Y - g(X)} = \sqf{Y - g^*(X)} + 2\paren{Y - g^*(X)}\paren{g^*(X) - g(X)} + \sqf{g^*(X) - g(X)}$$
+
+We compute the expectation of the cross-product term by conditioning on $X$.
+Because $g^*(X) - g(X)$ is a function of $X$,
+by @thm-cond-pull-out it factors out of the conditional expectation:
+
+$$
+\ba
+\E{\paren{Y - g^*(X)}\paren{g^*(X) - g(X)} \mid X}
+&= \paren{g^*(X) - g(X)} \cd \E{Y - g^*(X) \mid X}
+&& \text{(a function of } X \text{ factors out)}
+\\&= \paren{g^*(X) - g(X)} \cd \paren{\E{Y \mid X} - \E{g^*(X) \mid X}}
+&& \text{(linearity of conditional expectation)}
+\\&= \paren{g^*(X) - g(X)} \cd \paren{g^*(X) - g^*(X)}
+&& \text{(definition of } g^*(X) \text{ and } \E{g^*(X) \mid X} = g^*(X) \text{)}
+\\&= 0
+&& \text{(evaluate)}
+\ea
+$$
+
+By the law of iterated expectations (@thm-lie),
+the unconditional expectation of the cross-product is:
+
+$$\E{\paren{Y - g^*(X)}\paren{g^*(X) - g(X)}} = \E{\E{\paren{Y - g^*(X)}\paren{g^*(X) - g(X)} \mid X}} = \E{0} = 0$$
+
+Taking expectations on both sides of the squared expansion,
+by linearity of expectation (@thm-linearity-expectation):
+
+$$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - g^*(X)}} + \E{\sqf{g^*(X) - g(X)}}$$
+
+Since $\sqf{g^*(X) - g(X)} \ge 0$, its expectation is non-negative:
+
+$$\E{\sqf{g^*(X) - g(X)}} \ge 0$$
+
+with equality if and only if $\sqf{g^*(X) - g(X)} = 0$ with probability $1$,
+meaning $\P(g(X) = g^*(X)) = 1$.
+Therefore:
+
+$$\E{\sqf{Y - g(X)}} \ge \E{\sqf{Y - g^*(X)}}$$
+
+with equality if and only if $\P(g(X) = g^*(X)) = 1$.
+
+:::
+
+::: {.remark .notes}
+
+The identity
+
+$$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - \E{Y \mid X}}} + \E{\sqf{\E{Y \mid X} - g(X)}}$$
+
+decomposes the risk into two parts:
+
+1. $\E{\sqf{Y - \E{Y \mid X}}} = \E{\Var{Y \mid X}}$,
+   the expected conditional variance, which is the **irreducible risk**;
+   no choice of prediction function $g(X)$ can reduce this below $\E{\Var{Y \mid X}}$.
+2. $\E{\sqf{\E{Y \mid X} - g(X)}} \ge 0$,
+   the **reducible risk** incurred whenever $g(X)$ differs from the conditional mean.
+
+:::

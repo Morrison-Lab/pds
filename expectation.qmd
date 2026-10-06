@@ -47,6 +47,12 @@ format:
 
 ## Loss and risk {#sec-loss-risk}
 
+<!-- No slidebreak here: the heading shares its slide with the def-prediction div. -->
+
+{{< include pds/_subfiles/_def-prediction.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exr-loss.qmd >}}
 
 {{< slidebreak >}}
@@ -60,6 +66,18 @@ format:
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-risk.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-best-predictor.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-best-predictor.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-best-predictor.qmd >}}
 
 ## References {.unnumbered}
 

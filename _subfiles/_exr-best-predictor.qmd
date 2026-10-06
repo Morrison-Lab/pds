@@ -1,0 +1,23 @@
+:::{#exr-best-predictor}
+
+#### Comparing prediction functions under squared-error loss
+
+Let $(X, Y)$ be jointly distributed discrete random variables.
+$X$ takes values in $\{0, 1\}$ with $\P(X = 0) = 0.5$ and $\P(X = 1) = 0.5$.
+Given $X = 0$, $Y$ takes values in $\{0, 2\}$ with conditional probabilities
+$\P(Y = 0 \mid X = 0) = 0.5$ and $\P(Y = 2 \mid X = 0) = 0.5$.
+Given $X = 1$, $Y$ takes values in $\{4, 6\}$ with conditional probabilities
+$\P(Y = 4 \mid X = 1) = 0.5$ and $\P(Y = 6 \mid X = 1) = 0.5$.
+
+1. Compute the marginal mean $\E{Y}$ and the conditional expectation function $g^*(X) \eqdef \E{Y \mid X}$.
+
+2. Consider the constant prediction $g_1(X) \eqdef \E{Y} = 3$, which ignores $X$.
+   Compute its squared-error risk $\E{\sqf{Y - g_1(X)}}$.
+
+3. Consider the alternate prediction $g_2(X) \eqdef 4X$.
+   Compute its squared-error risk $\E{\sqf{Y - g_2(X)}}$.
+
+4. Compute the squared-error risk $\E{\sqf{Y - g^*(X)}}$ of the conditional mean predictor $g^*(X)$.
+   Which of $g_1$, $g_2$, and $g^*$ achieves the lowest risk?
+
+:::

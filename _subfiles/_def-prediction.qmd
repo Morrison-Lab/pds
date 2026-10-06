@@ -1,0 +1,22 @@
+:::{#def-prediction}
+#### Prediction
+
+A **prediction** of a random variable $Y$ is a constant $\hat{y}$,
+or a function $\hat{Y} \eqdef g(X)$ of another observable random variable $X$,
+used as a guess for the value $Y$ takes:
+
+$$\hat{y} \quad \text{or} \quad \hat{Y} \eqdef g(X)$$
+
+:::
+
+::: {.remark .notes}
+
+When no covariate or feature is available,
+a prediction is a single number $\hat{y}$ (such as a constant $c$).
+When an informative random variable $X$ is observed,
+a prediction is a function $g(X)$,
+which is itself a random variable because $X$ is random.
+The quality of a prediction is evaluated using a [loss function](#def-loss-function)
+and its expected value, the [risk](#def-risk).
+
+:::
