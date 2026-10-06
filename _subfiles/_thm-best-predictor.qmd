@@ -64,17 +64,6 @@ with equality if and only if $\P(g(X) = g^*(X)) = 1$.
 
 :::
 
-::: {.remark .notes}
-
-The identity
-
-$$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - \E{Y \mid X}}} + \E{\sqf{\E{Y \mid X} - g(X)}}$$
-
-decomposes the risk into irreducible risk (@def-irreducible-risk)
-and reducible risk (@def-reducible-risk).
-
-:::
-
 {{< slidebreak >}}
 
 :::{#def-irreducible-risk}
@@ -110,5 +99,17 @@ It is zero if and only if $\P(g(X) = \E{Y \mid X}) = 1$.
 For example, in @exr-best-predictor,
 the constant prediction $g_1(X) = 3$ has reducible risk $5 - 1 = 4$,
 and the prediction $g_2(X) = 4X$ has reducible risk $2 - 1 = 1$.
+
+:::
+
+::: {.remark .notes}
+
+The risk identity in @thm-best-predictor
+
+$$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - \E{Y \mid X}}} + \E{\sqf{\E{Y \mid X} - g(X)}}$$
+
+shows that the total squared-error risk is the sum of the
+irreducible risk (@def-irreducible-risk)
+and the reducible risk (@def-reducible-risk).
 
 :::
