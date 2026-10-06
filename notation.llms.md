@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 15:10:50 (PDT)
+Last modified: 2026-10-06 15:24:05 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -14,7 +14,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 - **Independence** is denoted \\\perp\\\\\\\perp\\ (read “\\X \perp\\\\\\\perp Y\\” as “\\X\\ is independent of \\Y\\”). Some sources instead write \\X \perp Y\\ (a single \\\perp\\) or state independence only in prose.
 - **Complements** of events are denoted \\\neg A\\ (“not \\A\\”). Some sources write \\A^c\\ or \\\bar{A}\\.
 - We write \\\stackrel{\text{def}}{=}\\ for an equality that holds **by definition**, to distinguish it from an equality that follows from other facts — most sources do not make this distinction typographically and use a bare \\=\\ for both.
-- The full macro list, with more notational variants, is in [`latex-macros`](https://github.com/d-morrison/macros).
+- The full macro list, with more notational variants, is in [`latex-macros`](https://github.com/Morrison-Lab/macros).
 
 ## 1 Stochastic vs. probabilistic vs. random
 
