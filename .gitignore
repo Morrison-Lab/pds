@@ -77,3 +77,6 @@ renv/staging/
 # Lychee link checker
 .lycheecache/
 lychee-output/
+
+# pak lockfile
+.github/pkg.lock
