@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 10:46:32 (PDT)
+Last modified: 2026-10-06 10:54:48 (PDT)
 
 ## 1 Random variables
 
@@ -613,9 +613,9 @@ Non-zero probabilities attach to intervals or regions of non-zero width:
 
 \\\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} \operatorname{p}(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
 
-Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum_x\\ with integrals \\\int \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\\operatorname{p}(x, y)\\ to find the marginal density \\\operatorname{p}(y)\\ becomes:
+Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum\_{x \in \mathcal{R}(X)}\\ with integrals \\\int\_{\mathcal{R}(X)} \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\\operatorname{p}(x, y)\\ to find the marginal density \\\operatorname{p}(y)\\ becomes:
 
-\\\operatorname{p}(y) = \int\_{\mathbb{X}} \operatorname{p}(x, y)\\\mathrm{d}x\\
+\\\operatorname{p}(y) = \int\_{\mathcal{R}(X)} \operatorname{p}(x, y)\\\mathrm{d}x\\
 
 > **TIP:**
 >

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 10:46:32 (PDT)
+Last modified: 2026-10-06 10:54:48 (PDT)
 
 > **NOTE:**
 >
@@ -644,7 +644,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. The integral defining \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ converges absolutely, because \\\int \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx = \sum_c w_c \int \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_c}(x)\\dx\\, a finite sum of finite numbers. Then:
+> *Proof*. The integral defining \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ converges absolutely, because \\\int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx = \sum\_{c=1}^K w_c \int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_c}(x)\\dx\\, a finite sum of finite numbers. Then:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of expectation)} \\ &= \int\_{-\infty}^{\infty} x \sum\_{c=1}^K w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a mixture)} \\ &= \sum\_{c=1}^K w_c \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \sum\_{c=1}^K w_c \\ \mu_c && \text{(definition of } \mu_c \text{)} \end{aligned} \\
 >
