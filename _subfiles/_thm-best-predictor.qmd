@@ -30,12 +30,12 @@ $$
 \ba
 \E{\paren{Y - g^*(X)}\paren{g^*(X) - g(X)} \mid X}
 &= \paren{g^*(X) - g(X)} \cd \E{Y - g^*(X) \mid X}
-&& \text{(a function of } X \text{ factors out)}
-\\&= \paren{g^*(X) - g(X)} \cd \paren{\E{Y \mid X} - \E{g^*(X) \mid X}}
-&& \text{(linearity of conditional expectation)}
-\\&= \paren{g^*(X) - g(X)} \cd \paren{g^*(X) - g^*(X)}
-&& \text{(definition of } g^*(X) \text{ and } \E{g^*(X) \mid X} = g^*(X) \text{)}
-\\&= 0
+&& \text{(a function of } X \text{ factors out)} \\
+&= \paren{g^*(X) - g(X)} \cd \paren{\E{Y \mid X} - \E{g^*(X) \mid X}}
+&& \text{(linearity of conditional expectation)} \\
+&= \paren{g^*(X) - g(X)} \cd \paren{g^*(X) - g^*(X)}
+&& \text{(definition of } g^*(X) \text{ and } \E{g^*(X) \mid X} = g^*(X) \text{)} \\
+&= 0
 && \text{(evaluate)}
 \ea
 $$
@@ -70,12 +70,45 @@ The identity
 
 $$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - \E{Y \mid X}}} + \E{\sqf{\E{Y \mid X} - g(X)}}$$
 
-decomposes the risk into two parts:
+decomposes the risk into irreducible risk (@def-irreducible-risk)
+and reducible risk (@def-reducible-risk).
 
-1. $\E{\sqf{Y - \E{Y \mid X}}} = \E{\Var{Y \mid X}}$,
-   the expected conditional variance, which is the **irreducible risk**;
-   no choice of prediction function $g(X)$ can reduce this below $\E{\Var{Y \mid X}}$.
-2. $\E{\sqf{\E{Y \mid X} - g(X)}} \ge 0$,
-   the **reducible risk** incurred whenever $g(X)$ differs from the conditional mean.
+:::
+
+{{< slidebreak >}}
+
+:::{#def-irreducible-risk}
+#### Irreducible risk
+
+In the squared-error risk decomposition of @thm-best-predictor,
+the minimum risk
+
+$$\E{\sqf{Y - \E{Y \mid X}}} = \E{\Var{Y \mid X}}$$
+
+is the **irreducible risk**.
+It depends only on the joint distribution of $(X, Y)$
+and not on the prediction function $g$,
+so no choice of $g$ can achieve a smaller risk.
+For example, in @exr-best-predictor,
+$\Var{Y \mid X = 0} = 1$ and $\Var{Y \mid X = 1} = 1$,
+so the irreducible risk is $\E{\Var{Y \mid X}} = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-reducible-risk}
+#### Reducible risk
+
+In the squared-error risk decomposition of @thm-best-predictor,
+the excess risk from choosing the prediction function $g$ instead of the conditional mean,
+
+$$\E{\sqf{\E{Y \mid X} - g(X)}} \ge 0$$
+
+is the **reducible risk**.
+It is zero if and only if $\P(g(X) = \E{Y \mid X}) = 1$.
+For example, in @exr-best-predictor,
+the constant prediction $g_1(X) = 3$ has reducible risk $5 - 1 = 4$,
+and the prediction $g_2(X) = 4X$ has reducible risk $2 - 1 = 1$.
 
 :::
