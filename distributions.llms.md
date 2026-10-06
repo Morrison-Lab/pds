@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 11:33:20 (PDT)
+Last modified: 2026-10-06 11:43:10 (PDT)
 
 > **NOTE:**
 >
@@ -94,7 +94,7 @@ Table 2: Distributions typically used for test statistics
 >
 > *Remark*. (see [Figure 2](#fig-pois-cdfs))
 
-Show R code
+Show code
 
 ``` r
 pois_dists <-
@@ -135,7 +135,7 @@ print(plot1)
 
 Figure 1: Poisson PMFs, by mean parameter \\\mu\\
 
-Show R code
+Show code
 
 ``` r
 plot2 <-

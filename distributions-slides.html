@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 11:33:20 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 11:43:10 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -580,7 +580,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 
 <div class="cell">
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>pois_dists <span class="ot">&lt;-</span></span>
 <span id="cb1-2"><a aria-label="2"></a>  dplyr<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a aria-label="3"></a>  dplyr<span class="sc">::</span><span class="fu">reframe</span>(<span class="at">.by =</span> mu, <span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">30</span>) <span class="sc">|&gt;</span></span>
@@ -632,7 +632,7 @@ Figure&nbsp;1: Poisson PMFs, by mean parameter <span class="math inline">\(\mu\)
 
 <div class="cell">
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>plot2 <span class="ot">&lt;-</span></span>
 <span id="cb2-2"><a aria-label="2"></a>  plot0 <span class="sc">+</span></span>
 <span id="cb2-3"><a aria-label="3"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_step</span>(<span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>

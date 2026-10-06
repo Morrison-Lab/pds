@@ -361,7 +361,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 11:33:20 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 11:43:10 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -852,7 +852,7 @@
 
 <div class="cell hidden">
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="2" data-source-offset="-83"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb1-2"><a aria-label="2"></a>brPost <span class="op">=</span> (prev) <span class="kw">=&gt;</span> brSens <span class="op">*</span> prev <span class="op">/</span> (brSens <span class="op">*</span> prev <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> brSpec) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prev))</span>
 <span id="cb1-3"><a aria-label="3"></a><span class="co">// The same people as counts, out of 100,000 screened.</span></span>
 <span id="cb1-4"><a aria-label="4"></a>brN <span class="op">=</span> <span class="dv">100000</span></span>
@@ -897,13 +897,13 @@
 </div>
 </div>
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb2-0"><a aria-label="0"></a>viewof brSens <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(+ | S), sensitivity"</span>})</span>
 <span id="cb2-1"><a aria-label="1"></a>viewof brSpec <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(</span><span class="sc">\u2212</span><span class="st"> | not S), specificity"</span>})</span>
 <span id="cb2-2"><a aria-label="2"></a>viewof brPrev <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".4~f"</span>)<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb3--1"><a aria-label="-1"></a>{</span>
 <span id="cb3-0"><a aria-label="0"></a>  <span class="kw">const</span> n <span class="op">=</span> (v) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(v)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"en-US"</span>)<span class="op">;</span></span>
 <span id="cb3-1"><a aria-label="1"></a>  <span class="cf">return</span> <span class="fu">md</span><span class="vs">`Out of </span><span class="sc">${</span><span class="fu">n</span>(brN)<span class="sc">}</span><span class="vs"> people screened, </span><span class="sc">${</span><span class="fu">n</span>(brSick)<span class="sc">}</span><span class="vs"> have the disease and </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> of them test positive;</span></span>
@@ -913,7 +913,7 @@
 <span id="cb3-5"><a aria-label="5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb4--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
 <span id="cb4-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'Of 100,000 people screened, '</span> <span class="op">+</span></span>
 <span id="cb4-1"><a aria-label="1"></a>    <span class="st">'the ones who test positive, '</span> <span class="op">+</span></span>
@@ -932,7 +932,7 @@
 <span id="cb4-14"><a aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb5--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
 <span id="cb5-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'The chance of disease after a positive test, '</span> <span class="op">+</span></span>
 <span id="cb5-1"><a aria-label="1"></a>    <span class="st">'plotted against the prevalence on a log scale, '</span> <span class="op">+</span></span>

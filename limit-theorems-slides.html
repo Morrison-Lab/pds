@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-06 11:33:20 (PDT)</p>
+  <p class="date">Last modified: 2026-10-06 11:43:10 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -452,7 +452,7 @@
 <p><span class="theorem-title"><strong>Example 1 (The sum of five dice)</strong></span> A single fair die roll has the discrete uniform distribution on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>, which is flat, not bell-shaped (<a href="#/fig-clt-1d6" class="quarto-xref">Figure&nbsp;1</a>). Its mean is <span class="math inline">\(\mu = 3.5\)</span>, and its variance is <span class="math inline">\(\sigma^2= \sum_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>dice_sum_pmf <span class="ot">&lt;-</span> <span class="cf">function</span>(n_dice) {</span>
 <span id="cb1-2"><a aria-label="2"></a>  totals <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(<span class="fu">expand.grid</span>(<span class="fu">rep</span>(<span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), n_dice)))</span>
 <span id="cb1-3"><a aria-label="3"></a>  probs <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(totals))</span>
@@ -483,7 +483,7 @@ Figure&nbsp;1: Distribution of the outcome of one die
 <p>The sum of five independent rolls, <span class="math inline">\(S_5\)</span>, is already close to bell-shaped (<a href="#/fig-clt-5d6" class="quarto-xref">Figure&nbsp;2</a>).</p>
 <div class="cell">
 <details class="code-fold">
-<summary>[R code]</summary>
+<summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>pmf_five_dice <span class="ot">&lt;-</span> <span class="fu">dice_sum_pmf</span>(<span class="dv">5</span>)</span>
 <span id="cb2-2"><a aria-label="2"></a>dice_plot <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_col</span>(<span class="at">data =</span> pmf_five_dice)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>

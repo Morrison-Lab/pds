@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 11:33:20 (PDT)
+Last modified: 2026-10-06 11:43:10 (PDT)
 
 ## 1 Defining probabilities
 
@@ -332,7 +332,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.
 
-Show R code
+Show code
 
 ``` js
 brPost = (prev) => brSens * prev / (brSens * prev + (1 - brSpec) * (1 - prev))
@@ -343,7 +343,7 @@ brTP = brSick * brSens
 brFP = (brN - brSick) * (1 - brSpec)
 ```
 
-Show R code
+Show code
 
 ``` js
 viewof brSens = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(+ | S), sensitivity"})
@@ -351,7 +351,7 @@ viewof brSpec = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(\u22
 viewof brPrev = Inputs.range([0.0001, 0.5], {value: 0.001, transform: Math.log, format: d3.format(".4~f"), label: "P(S), prevalence"})
 ```
 
-Show R code
+Show code
 
 ``` js
 {
@@ -363,7 +363,7 @@ P(S | +) = **${(100 * brPost(brPrev)).toFixed(1)}%**.`;
 }
 ```
 
-Show R code
+Show code
 
 ``` js
 Plot.plot({
@@ -384,7 +384,7 @@ Plot.plot({
 })
 ```
 
-Show R code
+Show code
 
 ``` js
 Plot.plot({

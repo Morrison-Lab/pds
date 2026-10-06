@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 11:33:20 (PDT)
+Last modified: 2026-10-06 11:43:10 (PDT)
 
 > **NOTE:**
 >
@@ -198,7 +198,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > **Example 8 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
 >
-> Show R code
+> Show code
 >
 > ``` r
 > response_levels <- c("small", "moderate", "large")
@@ -214,7 +214,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 > | **placebo** |  25   |    8     |   5   |
 > | **vaccine** |   6   |    18    |  11   |
 >
-> Show R code
+> Show code
 >
 > ``` r
 > n_vaccine <- sum(vaccine_tab)
@@ -239,7 +239,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > **Example 9 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > birthweight <- dobson::birthweight
@@ -289,7 +289,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > So \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\: the conditional mean, 3136.15 g, is exactly the fitted regression line’s prediction at \\x=40\\ (\\-1484.9846 + 115.5283 \times 40 = 3136.15\\), matching `R`’s `lm(wt ~ ga)` fit directly:
 >
-> Show R code
+> Show code
 >
 > ``` r
 > pander::pander(coef(lm(wt ~ ga)))
@@ -349,7 +349,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > **Example 11 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > plasma_summary <-
@@ -388,7 +388,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > **\\X\\ continuous, \\Y\\ discrete.** The `senility` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 7.8) records, for 54 elderly people, a WAIS (Wechsler Adult Intelligence Scale) score and whether symptoms of senility were present. Let \\X\\ be WAIS score and \\Y\\ indicate senility symptoms.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > senility_fit <- glm(s ~ x, data = dobson::senility, family = binomial)
@@ -409,7 +409,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{} &= 0 \cdot\operatorname{P}(Y=0 \mid X=x) + 1 \cdot\operatorname{P}(Y=1 \mid X=x) && \text{(definition of conditional expectation, mixed case)} \\&= \operatorname{P}(Y=1 \mid X=x) && \text{(simplify)} \\&= \frac{1}{1 + \text{e}^{-(2.4040 - 0.3235\\ x)}} && \text{(invert the logit)} \end{aligned} \\
 >
-> Show R code
+> Show code
 >
 > ``` r
 > senility_p10 <- predict(
@@ -567,7 +567,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > As a check: \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0(0.5) + 1(0.5) = 0.5\\ and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0(0.3) + 1(0.7) = 0.7\\, so \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 1.2\\ by [linearity of expectation](#thm-linearity-expectation).
 >
-> Show R code
+> Show code
 >
 > ``` r
 > x_labs <- c("X=0", "X=0", "X=1", "X=1")
@@ -667,7 +667,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this density factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 3](#cor-fubini-joint) simply does not apply.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > set.seed(204)
@@ -707,7 +707,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \int_0^1\\\int_0^y (x + y) \cdot 2\\dx\\dy && \text{(joint-distribution form of Fubini--Tonelli, over the support } 0 \le x \le y \le 1 \text{)} \\&= 2\int_0^1 \mathopen{}\left\[\frac{x^2}{2} + xy\right\]\mathclose{}\_{x=0}^{x=y}\\dy && \text{(antiderivative in } x \text{)} \\&= 2\int_0^1 \mathopen{}\left(\frac{y^2}{2} + y^2\right)\mathclose{}\\dy && \text{(evaluate at the bounds)} \\&= 2\int_0^1 \frac{3y^2}{2}\\dy && \text{(add)} \\&= 3\int_0^1 y^2\\dy && \text{(simplify the constant)} \\&= 3 \cdot\frac{1}{3} && \text{(integrate)} \\&= 1 && \text{(multiply)} \end{aligned} \\
 >
-> Show R code
+> Show code
 >
 > ``` r
 > n_grid <- 51
@@ -810,7 +810,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > As a check, \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{p}{1-p}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{2p}{1-p}\\ by [linearity of expectation](#thm-linearity-expectation), matching.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > p <- 0.4
@@ -864,7 +864,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > As a check using the law of iterated expectations ([Theorem 9](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2}(0.4) + 1(0.6) = 0.2 + 0.6 = 0.8\\.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > x_fine <- seq(0, 2, by = 0.005)
@@ -921,7 +921,7 @@ Last modified: 2026-10-06 11:33:20 (PDT)
 >
 > matching.
 >
-> Show R code
+> Show code
 >
 > ``` r
 > q <- 0.5
