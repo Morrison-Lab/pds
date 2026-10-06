@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-06 01:59:29 (PDT)
+Last modified: 2026-10-06 02:10:24 (PDT)
 
 > **NOTE:**
 >
@@ -1072,14 +1072,6 @@ Last modified: 2026-10-06 01:59:29 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The identity
->
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
->
-> decomposes the risk into irreducible risk ([Definition 12](#def-irreducible-risk)) and reducible risk ([Definition 13](#def-reducible-risk)).
-
-> **NOTE:**
->
 > **Definition 12 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the minimum risk
 >
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
@@ -1093,6 +1085,14 @@ Last modified: 2026-10-06 01:59:29 (PDT)
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
 >
 > is the **reducible risk**. It is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\. For example, in [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
+
+> **NOTE:**
+>
+> *Remark*. The risk identity in [Theorem 11](#thm-best-predictor)
+>
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+>
+> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
 
 ## References
 
