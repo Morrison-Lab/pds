@@ -248,11 +248,11 @@ $$
 \ba
 \Expp[X]
 &= \sum_{x=0}^\infty x \cdot \P(X=x) && (\text{definition of expected value}) \\
-&= 0 \cdot \P(X=0) + \sum_{x=1}^\infty x \cdot \P(X=x) && (\text{separate } x=0 \text{ term}) \\
-&= \sum_{x=1}^\infty x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\
-&= \sum_{x=1}^\infty x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\
-&= \sum_{x=1}^\infty \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\
-&= \mu \cdot \sum_{x=1}^\infty \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\
+&= 0 \cdot \P(X=0) + \sumto{x}{\infty} x \cdot \P(X=x) && (\text{separate } x=0 \text{ term}) \\
+&= \sumto{x}{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\
+&= \sumto{x}{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\
+&= \sumto{x}{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\
+&= \mu \cdot \sumto{x}{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\
 &= \mu \cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \eqdef x-1) \\
 &= \mu \cdot 1 && (\text{PMF sums to 1 over state space}) \\
 &= \mu && (\text{simplify})
@@ -1197,13 +1197,13 @@ $1/\sigma_1^2, \ldots, 1/\sigma_p^2$
 [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
 
 $$
-\Delta(\vx)^2 = \sum_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2}
+\Delta(\vx)^2 = \sumip \frac{(x_i - \mu_i)^2}{\sigma_i^2}
 $$
 
 Two special cases:
 
 - If $\matr{\Sigma} = \matr{I}_p$,
-  then $\Delta(\vx)^2 = \sum_{i=1}^p (x_i - \mu_i)^2$,
+  then $\Delta(\vx)^2 = \sumip (x_i - \mu_i)^2$,
   so the Mahalanobis distance is the ordinary (Euclidean) distance.
 - If $\matr{\Sigma} = \ss \matr{I}_p$,
   then $\Delta(\vx)$ is the Euclidean distance divided by $\sigma$.
@@ -1241,7 +1241,7 @@ $$
 \ba
 \p(\vX = \vx)
 &= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sigma_i}
-\ef{-\frac{1}{2} \sum_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2}}
+\ef{-\frac{1}{2} \sumip \frac{(x_i - \mu_i)^2}{\sigma_i^2}}
 && \text{(substitute)} \\
 &= \prod_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}}
 \ef{-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}}
@@ -1323,7 +1323,7 @@ and $\matr{\Lambda}$ has diagonal elements $\lambda_1, \ldots, \lambda_p$.
 Then:
 
 $$
-\Delta(\vx)^2 = \sum_{i=1}^p \frac{\paren{\tp{\vecf{q}_i}(\vx - \vecf{\mu})}^2}{\lambda_i}
+\Delta(\vx)^2 = \sumip \frac{\paren{\tp{\vecf{q}_i}(\vx - \vecf{\mu})}^2}{\lambda_i}
 $$
 
 :::
@@ -1343,7 +1343,7 @@ $$
 && \text{(definition; substitute } \matr{\Sigma}^{-1} \text{)} \\
 &= \tp{\vecf{y}} \matr{\Lambda}^{-1} \vecf{y}
 && \text{(} \tp{(\vx - \vecf{\mu})}\matr{Q} = \tp{\vecf{y}} \text{)} \\
-&= \sum_{i=1}^p \frac{y_i^2}{\lambda_i}
+&= \sumip \frac{y_i^2}{\lambda_i}
 && \text{(} \matr{\Lambda}^{-1} \text{ is diagonal)}
 \ea
 $$
@@ -1401,13 +1401,13 @@ Let ${\p_1}, \ldots, {\p_K}$ be densities on $\reals$,
 and let $w_1, \ldots, w_K$ be numbers with:
 
 - $w_c \ge 0$ for every $c$, and
-- $\sum_{c=1}^K w_c = 1$.
+- $\sumto{c}{K} w_c = 1$.
 
 The **mixture** of ${\p_1}, \ldots, {\p_K}$
 with **mixing weights** $w_1, \ldots, w_K$ is the function:
 
 $$
-{\p_{\text{mix}}}(x) \eqdef \sum_{c=1}^K w_c \, {\p_c}(x), \quad x \in \reals
+{\p_{\text{mix}}}(x) \eqdef \sumto{c}{K} w_c \, {\p_c}(x), \quad x \in \reals
 $$
 
 The densities ${\p_1}, \ldots, {\p_K}$ are the mixture's **components**.
@@ -1450,11 +1450,11 @@ So for any interval $B$:
 $$
 \ba
 \Pr(X \in B)
-&= \sum_{c=1}^K \Pr(C = c,\, X \in B)
+&= \sumto{c}{K} \Pr(C = c,\, X \in B)
 && \text{(additivity over the events } \set{C = c} \text{)} \\
-&= \sum_{c=1}^K \int_B w_c \, {\p_c}(x)\,dx
+&= \sumto{c}{K} \int_B w_c \, {\p_c}(x)\,dx
 && \text{(definition of a joint density-mass function)} \\
-&= \int_B \sum_{c=1}^K w_c \, {\p_c}(x)\,dx
+&= \int_B \sumto{c}{K} w_c \, {\p_c}(x)\,dx
 && \text{(a finite sum of integrals is the integral of the sum)} \\
 &= \int_B {\p_{\text{mix}}}(x)\,dx
 && \text{(definition of a mixture)}
@@ -1489,14 +1489,14 @@ If $X$ has density ${\p_{\text{mix}}}$ (@def-mixture),
 and each component ${\p_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx$,
 then:
 
-$$\E{X} = \sum_{c=1}^K w_c \, \mu_c$$
+$$\E{X} = \sumto{c}{K} w_c \, \mu_c$$
 
 :::
 
 ::: proof
 
 The integral defining $\E{X}$ converges absolutely,
-because $\int_{-\infty}^\infty \abs{x} \, {\p_{\text{mix}}}(x)\,dx = \sum_{c=1}^K w_c \int_{-\infty}^\infty \abs{x} \, {\p_c}(x)\,dx$,
+because $\int_{-\infty}^\infty \abs{x} \, {\p_{\text{mix}}}(x)\,dx = \sumto{c}{K} w_c \int_{-\infty}^\infty \abs{x} \, {\p_c}(x)\,dx$,
 a finite sum of finite numbers. Then:
 
 $$
@@ -1504,11 +1504,11 @@ $$
 \E{X}
 &= \int_{-\infty}^{\infty} x \, {\p_{\text{mix}}}(x)\,dx
 && \text{(definition of expectation)} \\
-&= \int_{-\infty}^{\infty} x \sum_{c=1}^K w_c \, {\p_c}(x)\,dx
+&= \int_{-\infty}^{\infty} x \sumto{c}{K} w_c \, {\p_c}(x)\,dx
 && \text{(definition of a mixture)} \\
-&= \sum_{c=1}^K w_c \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx
+&= \sumto{c}{K} w_c \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx
 && \text{(a finite sum of integrals is the integral of the sum)} \\
-&= \sum_{c=1}^K w_c \, \mu_c
+&= \sumto{c}{K} w_c \, \mu_c
 && \text{(definition of } \mu_c \text{)}
 \ea
 $$
@@ -1526,7 +1526,7 @@ Under the conditions of @thm-mixture-two-stage,
 for each $x$ with ${\p_{\text{mix}}}(x) > 0$:
 
 $$
-\P(C = c \mid X = x) = \frac{w_c \, {\p_c}(x)}{\sum_{k=1}^K w_k \, {\p_k}(x)}
+\P(C = c \mid X = x) = \frac{w_c \, {\p_c}(x)}{\sumto{k}{K} w_k \, {\p_k}(x)}
 $$
 
 :::
@@ -1542,7 +1542,7 @@ $$
 \P(C = c \mid X = x)
 &= \frac{\p(C = c,\, X = x)}{\p(X = x)}
 && \text{(definition of the conditional PMF)} \\
-&= \frac{w_c \, {\p_c}(x)}{\sum_{k=1}^K w_k \, {\p_k}(x)}
+&= \frac{w_c \, {\p_c}(x)}{\sumto{k}{K} w_k \, {\p_k}(x)}
 && \text{(substitute the joint density-mass function and } {\p_{\text{mix}}} \text{)}
 \ea
 $$
