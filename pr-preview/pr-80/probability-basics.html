@@ -229,35 +229,15 @@ cookieconsent.run({
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <style>
-div.callout-prp.callout {
-  border-left-color: #827717;
+div.callout-proof.callout {
+  border-left-color: #37474F;
 }
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
 }
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
@@ -269,35 +249,15 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
+div.callout-cor.callout {
+  border-left-color: #00838F;
 }
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
 }
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
-}
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
-}
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-solution.callout {
   border-left-color: #4E342E;
@@ -309,16 +269,6 @@ div.callout-solution .callout-toggle::before {  background-image: url('data:imag
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-def.callout {
   border-left-color: #1B5E20;
 }
@@ -328,6 +278,56 @@ div.callout-def.callout-style-default .callout-header {
 div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
+}
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
+}
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-prp.callout {
+  border-left-color: #827717;
+}
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
+}
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -746,7 +746,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-08 <mark class="preview-text-changed">11:07:05</mark> (PDT)</p>
+      <p class="date">Last modified: 2026-10-08 <mark class="preview-text-changed">11:18:58</mark> (PDT)</p>
     </div>
   </div>
   
@@ -1617,12 +1617,12 @@ window.Quarto = {
 <div class="cell hidden">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="2" data-source-offset="-83"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb1-2"><a href="#cb1-2" aria-label="2"></a>brPost <span class="op">=</span> (prev) <span class="kw">=&gt;</span> brSens <span class="op">*</span> prev <span class="op">/</span> (brSens <span class="op">*</span> prev <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> brSpec) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prev))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-label="3"></a><span class="co">// The same people as counts, out of 100,000 screened.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-label="4"></a>brN <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-label="5"></a>brSick <span class="op">=</span> brN <span class="op">*</span> brPrev</span>
-<span id="cb1-6"><a href="#cb1-6" aria-label="6"></a>brTP <span class="op">=</span> brSick <span class="op">*</span> brSens</span>
-<span id="cb1-7"><a href="#cb1-7" aria-label="7"></a>brFP <span class="op">=</span> (brN <span class="op">-</span> brSick) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> brSpec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="2" data-source-offset="-83"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>brPost <span class="op">=</span> (prev) <span class="kw">=&gt;</span> brSens <span class="op">*</span> prev <span class="op">/</span> (brSens <span class="op">*</span> prev <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> brSpec) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prev))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">// The same people as counts, out of 100,000 screened.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>brN <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>brSick <span class="op">=</span> brN <span class="op">*</span> brPrev</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>brTP <span class="op">=</span> brSick <span class="op">*</span> brSens</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>brFP <span class="op">=</span> (brN <span class="op">-</span> brSick) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> brSpec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div>
@@ -1662,56 +1662,56 @@ window.Quarto = {
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb2-0"><a href="#cb2-0" aria-label="0"></a>viewof brSens <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(+ | S), sensitivity"</span>})</span>
-<span id="cb2-1"><a href="#cb2-1" aria-label="1"></a>viewof brSpec <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(</span><span class="sc">\u2212</span><span class="st"> | not S), specificity"</span>})</span>
-<span id="cb2-2"><a href="#cb2-2" aria-label="2"></a>viewof brPrev <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".4~f"</span>)<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb2-0"><a href="#cb2-0" aria-hidden="true" tabindex="-1"></a>viewof brSens <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(+ | S), sensitivity"</span>})</span>
+<span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>viewof brSpec <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(</span><span class="sc">\u2212</span><span class="st"> | not S), specificity"</span>})</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>viewof brPrev <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".4~f"</span>)<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb3--1"><a href="#cb3--1" aria-label="-1"></a>{</span>
-<span id="cb3-0"><a href="#cb3-0" aria-label="0"></a>  <span class="kw">const</span> n <span class="op">=</span> (v) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(v)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"en-US"</span>)<span class="op">;</span></span>
-<span id="cb3-1"><a href="#cb3-1" aria-label="1"></a>  <span class="cf">return</span> <span class="fu">md</span><span class="vs">`Out of </span><span class="sc">${</span><span class="fu">n</span>(brN)<span class="sc">}</span><span class="vs"> people screened, </span><span class="sc">${</span><span class="fu">n</span>(brSick)<span class="sc">}</span><span class="vs"> have the disease and </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> of them test positive;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-label="2"></a><span class="vs">of the </span><span class="sc">${</span><span class="fu">n</span>(brN <span class="op">-</span> brSick)<span class="sc">}</span><span class="vs"> who do not, </span><span class="sc">${</span><span class="fu">n</span>(brFP)<span class="sc">}</span><span class="vs"> test positive anyway.</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-label="3"></a><span class="vs">So of the </span><span class="sc">${</span><span class="fu">n</span>(brTP <span class="op">+</span> brFP)<span class="sc">}</span><span class="vs"> positives, </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> are sick:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-label="4"></a><span class="vs">P(S | +) = **</span><span class="sc">${</span>(<span class="dv">100</span> <span class="op">*</span> <span class="fu">brPost</span>(brPrev))<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%**.`</span><span class="op">;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-label="5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb3--1"><a href="#cb3--1" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-0"><a href="#cb3-0" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> n <span class="op">=</span> (v) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(v)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"en-US"</span>)<span class="op">;</span></span>
+<span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fu">md</span><span class="vs">`Out of </span><span class="sc">${</span><span class="fu">n</span>(brN)<span class="sc">}</span><span class="vs"> people screened, </span><span class="sc">${</span><span class="fu">n</span>(brSick)<span class="sc">}</span><span class="vs"> have the disease and </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> of them test positive;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="vs">of the </span><span class="sc">${</span><span class="fu">n</span>(brN <span class="op">-</span> brSick)<span class="sc">}</span><span class="vs"> who do not, </span><span class="sc">${</span><span class="fu">n</span>(brFP)<span class="sc">}</span><span class="vs"> test positive anyway.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="vs">So of the </span><span class="sc">${</span><span class="fu">n</span>(brTP <span class="op">+</span> brFP)<span class="sc">}</span><span class="vs"> positives, </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> are sick:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="vs">P(S | +) = **</span><span class="sc">${</span>(<span class="dv">100</span> <span class="op">*</span> <span class="fu">brPost</span>(brPrev))<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%**.`</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb4--1"><a href="#cb4--1" aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb4-0"><a href="#cb4-0" aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'Of 100,000 people screened, '</span> <span class="op">+</span></span>
-<span id="cb4-1"><a href="#cb4-1" aria-label="1"></a>    <span class="st">'the ones who test positive, '</span> <span class="op">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-label="2"></a>    <span class="st">'as one bar split into the sick, '</span> <span class="op">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-label="3"></a>    <span class="st">'in orange, '</span> <span class="op">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-label="4"></a>    <span class="st">'and the healthy, '</span> <span class="op">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-label="5"></a>    <span class="st">'in blue.'</span><span class="op">,</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-label="6"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-label="7"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"people who test positive, out of 100,000 screened"</span>}<span class="op">,</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-label="8"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="st">"sick"</span><span class="op">,</span> <span class="st">"not sick"</span>]<span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="st">"#ff7f0e"</span><span class="op">,</span> <span class="st">"#1f77b4"</span>]<span class="op">,</span> <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-label="9"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb4-10"><a href="#cb4-10" aria-label="10"></a>    Plot<span class="op">.</span><span class="fu">barX</span>([{<span class="dt">who</span><span class="op">:</span> <span class="st">"sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brTP}<span class="op">,</span> {<span class="dt">who</span><span class="op">:</span> <span class="st">"not sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brFP}]<span class="op">,</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-label="11"></a>              {<span class="dt">x</span><span class="op">:</span> <span class="st">"n"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"who"</span><span class="op">,</span> <span class="dt">insetTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">insetBottom</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">,</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-label="12"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
-<span id="cb4-13"><a href="#cb4-13" aria-label="13"></a>  ]</span>
-<span id="cb4-14"><a href="#cb4-14" aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb4--1"><a href="#cb4--1" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb4-0"><a href="#cb4-0" aria-hidden="true" tabindex="-1"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'Of 100,000 people screened, '</span> <span class="op">+</span></span>
+<span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">'the ones who test positive, '</span> <span class="op">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'as one bar split into the sick, '</span> <span class="op">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'in orange, '</span> <span class="op">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'and the healthy, '</span> <span class="op">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'in blue.'</span><span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"people who test positive, out of 100,000 screened"</span>}<span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="st">"sick"</span><span class="op">,</span> <span class="st">"not sick"</span>]<span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="st">"#ff7f0e"</span><span class="op">,</span> <span class="st">"#1f77b4"</span>]<span class="op">,</span> <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>([{<span class="dt">who</span><span class="op">:</span> <span class="st">"sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brTP}<span class="op">,</span> {<span class="dt">who</span><span class="op">:</span> <span class="st">"not sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brFP}]<span class="op">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>              {<span class="dt">x</span><span class="op">:</span> <span class="st">"n"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"who"</span><span class="op">,</span> <span class="dt">insetTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">insetBottom</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">,</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb5--1"><a href="#cb5--1" aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb5-0"><a href="#cb5-0" aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'The chance of disease after a positive test, '</span> <span class="op">+</span></span>
-<span id="cb5-1"><a href="#cb5-1" aria-label="1"></a>    <span class="st">'plotted against the prevalence on a log scale, '</span> <span class="op">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-label="2"></a>    <span class="st">'for the chosen sensitivity and specificity, '</span> <span class="op">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-label="3"></a>    <span class="st">'with the chosen prevalence marked.'</span><span class="op">,</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-label="4"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">230</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-label="5"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">type</span><span class="op">:</span> <span class="st">"log"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence (log scale)"</span><span class="op">,</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-label="6"></a>      <span class="dt">ticks</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".2~%"</span>)}<span class="op">,</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-label="7"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S | +)"</span>}<span class="op">,</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-label="8"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb5-9"><a href="#cb5-9" aria-label="9"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log10</span>(<span class="fl">0.5</span>) <span class="op">+</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.02</span>)<span class="op">.</span><span class="fu">map</span>((e) <span class="kw">=&gt;</span> <span class="dv">10</span> <span class="op">**</span> e)<span class="op">,</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-label="10"></a>              {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#555"</span>})<span class="op">,</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-label="11"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([brPrev]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ff7f0e"</span>})</span>
-<span id="cb5-12"><a href="#cb5-12" aria-label="12"></a>  ]</span>
-<span id="cb5-13"><a href="#cb5-13" aria-label="13"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb5--1"><a href="#cb5--1" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-0"><a href="#cb5-0" aria-hidden="true" tabindex="-1"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'The chance of disease after a positive test, '</span> <span class="op">+</span></span>
+<span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">'plotted against the prevalence on a log scale, '</span> <span class="op">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'for the chosen sensitivity and specificity, '</span> <span class="op">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'with the chosen prevalence marked.'</span><span class="op">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">230</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">type</span><span class="op">:</span> <span class="st">"log"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence (log scale)"</span><span class="op">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ticks</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".2~%"</span>)}<span class="op">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S | +)"</span>}<span class="op">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log10</span>(<span class="fl">0.5</span>) <span class="op">+</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.02</span>)<span class="op">.</span><span class="fu">map</span>((e) <span class="kw">=&gt;</span> <span class="dv">10</span> <span class="op">**</span> e)<span class="op">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>              {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#555"</span>})<span class="op">,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([brPrev]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ff7f0e"</span>})</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="fig-base-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2546,82 +2546,82 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-label="1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-label="2"></a><span class="an">title:</span><span class="co"> "Probability basics"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-label="3"></a><span class="an">format:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-label="4"></a><span class="co">  html: default</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-label="5"></a><span class="co">  revealjs:</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-label="6"></a><span class="co">    output-file: probability-basics-slides.html</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-label="7"></a><span class="co">  pdf:</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-label="8"></a><span class="co">    output-file: probability-basics-handout.pdf</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-label="9"></a><span class="co">  docx:</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-label="10"></a><span class="co">    output-file: probability-basics.docx</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-label="11"></a><span class="an">preview-changed:</span><span class="co"> true</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-label="12"></a><span class="co">---</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-label="13"></a><span class="fu">## Defining probabilities</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-label="14"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-label="15"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
-<span id="cb6-16"><a href="#cb6-16" aria-label="16"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-label="17"></a>[]{#sec-prob-axioms}</span>
-<span id="cb6-18"><a href="#cb6-18" aria-label="18"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-label="19"></a><span class="co">&lt;!-- No slidebreak here: the heading shares its slide with the def-sample-space div. --&gt;</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-label="20"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-label="21"></a>{{&lt; include pds/_subfiles/_def-sample-space.qmd &gt;}}</span>
-<span id="cb6-22"><a href="#cb6-22" aria-label="22"></a></span>
-<span id="cb6-23"><a href="#cb6-23" aria-label="23"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-24"><a href="#cb6-24" aria-label="24"></a></span>
-<span id="cb6-25"><a href="#cb6-25" aria-label="25"></a>{{&lt; include pds/_subfiles/_def-probability.qmd &gt;}}</span>
-<span id="cb6-26"><a href="#cb6-26" aria-label="26"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-label="27"></a><span class="fu">## Conditional probability</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-label="28"></a></span>
-<span id="cb6-29"><a href="#cb6-29" aria-label="29"></a><span class="co">&lt;!-- No slidebreak here: the heading shares its slide with the def-conditional-prob div. --&gt;</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-label="30"></a></span>
-<span id="cb6-31"><a href="#cb6-31" aria-label="31"></a>{{&lt; include pds/_subfiles/_def-conditional-prob.qmd &gt;}}</span>
-<span id="cb6-32"><a href="#cb6-32" aria-label="32"></a></span>
-<span id="cb6-33"><a href="#cb6-33" aria-label="33"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-34"><a href="#cb6-34" aria-label="34"></a></span>
-<span id="cb6-35"><a href="#cb6-35" aria-label="35"></a>{{&lt; include pds/_subfiles/_thm-law-conditional-prob.qmd &gt;}}</span>
-<span id="cb6-36"><a href="#cb6-36" aria-label="36"></a></span>
-<span id="cb6-37"><a href="#cb6-37" aria-label="37"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-38"><a href="#cb6-38" aria-label="38"></a></span>
-<span id="cb6-39"><a href="#cb6-39" aria-label="39"></a>{{&lt; include pds/_subfiles/_thm-total-prob.qmd &gt;}}</span>
-<span id="cb6-40"><a href="#cb6-40" aria-label="40"></a></span>
-<span id="cb6-41"><a href="#cb6-41" aria-label="41"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-42"><a href="#cb6-42" aria-label="42"></a></span>
-<span id="cb6-43"><a href="#cb6-43" aria-label="43"></a>{{&lt; include pds/_subfiles/_thm-bayes.qmd &gt;}}</span>
-<span id="cb6-44"><a href="#cb6-44" aria-label="44"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-label="45"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-46"><a href="#cb6-46" aria-label="46"></a></span>
-<span id="cb6-47"><a href="#cb6-47" aria-label="47"></a>{{&lt; include pds/_subfiles/_exr-bayes.qmd &gt;}}</span>
-<span id="cb6-48"><a href="#cb6-48" aria-label="48"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-label="49"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-50"><a href="#cb6-50" aria-label="50"></a></span>
-<span id="cb6-51"><a href="#cb6-51" aria-label="51"></a>{{&lt; include pds/_subfiles/_sol-bayes.qmd &gt;}}</span>
-<span id="cb6-52"><a href="#cb6-52" aria-label="52"></a></span>
-<span id="cb6-53"><a href="#cb6-53" aria-label="53"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-54"><a href="#cb6-54" aria-label="54"></a></span>
-<span id="cb6-55"><a href="#cb6-55" aria-label="55"></a>{{&lt; include pds/_subfiles/_exr-base-rate.qmd &gt;}}</span>
-<span id="cb6-56"><a href="#cb6-56" aria-label="56"></a></span>
-<span id="cb6-57"><a href="#cb6-57" aria-label="57"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-58"><a href="#cb6-58" aria-label="58"></a></span>
-<span id="cb6-59"><a href="#cb6-59" aria-label="59"></a>{{&lt; include pds/_subfiles/_sol-base-rate.qmd &gt;}}</span>
-<span id="cb6-60"><a href="#cb6-60" aria-label="60"></a></span>
-<span id="cb6-61"><a href="#cb6-61" aria-label="61"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb6-62"><a href="#cb6-62" aria-label="62"></a></span>
-<span id="cb6-63"><a href="#cb6-63" aria-label="63"></a>{{&lt; include pds/_subfiles/_fig-base-rate.qmd &gt;}}</span>
-<span id="cb6-64"><a href="#cb6-64" aria-label="64"></a></span>
-<span id="cb6-65"><a href="#cb6-65" aria-label="65"></a></span>
-<span id="cb6-66"><a href="#cb6-66" aria-label="66"></a>::: {.callout-tip title="Video lecture"}</span>
-<span id="cb6-67"><a href="#cb6-67" aria-label="67"></a>Hutchinson's <span class="co">[</span><span class="ot">Probability Refresher</span><span class="co">](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher)</span> (27 min)</span>
-<span id="cb6-68"><a href="#cb6-68" aria-label="68"></a>covers conditional distributions, the law of total probability,</span>
-<span id="cb6-69"><a href="#cb6-69" aria-label="69"></a>the chain rule of probability, and Bayes' rule <span class="co">[</span><span class="ot">@hutchinson_wwu_ml_videos</span><span class="co">]</span>.</span>
-<span id="cb6-70"><a href="#cb6-70" aria-label="70"></a>The login for the video site is posted <span class="co">[</span><span class="ot">on Canvas</span><span class="co">](https://wwu.instructure.com/courses/1906010/modules#module_3922392)</span>.</span>
-<span id="cb6-71"><a href="#cb6-71" aria-label="71"></a>:::</span>
-<span id="cb6-72"><a href="#cb6-72" aria-label="72"></a></span>
-<span id="cb6-73"><a href="#cb6-73" aria-label="73"></a><span class="fu">## References {.unnumbered}</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-label="74"></a></span>
-<span id="cb6-75"><a href="#cb6-75" aria-label="75"></a>::: {#refs}</span>
-<span id="cb6-76"><a href="#cb6-76" aria-label="76"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Probability basics"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: probability-basics-slides.html</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: probability-basics-handout.pdf</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">  docx:</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: probability-basics.docx</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="an">preview-changed:</span><span class="co"> true</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Defining probabilities</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>[]{#sec-prob-axioms}</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- No slidebreak here: the heading shares its slide with the def-sample-space div. --&gt;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_def-sample-space.qmd &gt;}}</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_def-probability.qmd &gt;}}</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conditional probability</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- No slidebreak here: the heading shares its slide with the def-conditional-prob div. --&gt;</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_def-conditional-prob.qmd &gt;}}</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-law-conditional-prob.qmd &gt;}}</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-total-prob.qmd &gt;}}</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-bayes.qmd &gt;}}</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exr-bayes.qmd &gt;}}</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sol-bayes.qmd &gt;}}</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exr-base-rate.qmd &gt;}}</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sol-base-rate.qmd &gt;}}</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_fig-base-rate.qmd &gt;}}</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="Video lecture"}</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>Hutchinson's <span class="co">[</span><span class="ot">Probability Refresher</span><span class="co">](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher)</span> (27 min)</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>covers conditional distributions, the law of total probability,</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>the chain rule of probability, and Bayes' rule <span class="co">[</span><span class="ot">@hutchinson_wwu_ml_videos</span><span class="co">]</span>.</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>The login for the video site is posted <span class="co">[</span><span class="ot">on Canvas</span><span class="co">](https://wwu.instructure.com/courses/1906010/modules#module_3922392)</span>.</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

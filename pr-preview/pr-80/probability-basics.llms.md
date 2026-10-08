@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 11:07:05 (PDT)
+Last modified: 2026-10-08 11:18:58 (PDT)
 
 ## 1 Defining probabilities
 
@@ -338,7 +338,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 
 Show code
 
-``` numberSource
+``` js
 brPost = (prev) => brSens * prev / (brSens * prev + (1 - brSpec) * (1 - prev))
 // The same people as counts, out of 100,000 screened.
 brN = 100000
@@ -349,7 +349,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 Show code
 
-``` numberSource
+``` js
 viewof brSens = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(+ | S), sensitivity"})
 viewof brSpec = Inputs.range([0.5, 1], {value: 0.99, step: 0.001, label: "P(\u2212 | not S), specificity"})
 viewof brPrev = Inputs.range([0.0001, 0.5], {value: 0.001, transform: Math.log, format: d3.format(".4~f"), label: "P(S), prevalence"})
@@ -357,7 +357,7 @@ viewof brPrev = Inputs.range([0.0001, 0.5], {value: 0.001, transform: Math.log, 
 
 Show code
 
-``` numberSource
+``` js
 {
   const n = (v) => Math.round(v).toLocaleString("en-US");
   return md`Out of ${n(brN)} people screened, ${n(brSick)} have the disease and ${n(brTP)} of them test positive;
@@ -369,7 +369,7 @@ P(S | +) = **${(100 * brPost(brPrev)).toFixed(1)}%**.`;
 
 Show code
 
-``` numberSource
+``` js
 Plot.plot({
   ariaLabel: 'Of 100,000 people screened, ' +
     'the ones who test positive, ' +
@@ -390,7 +390,7 @@ Plot.plot({
 
 Show code
 
-``` numberSource
+``` js
 Plot.plot({
   ariaLabel: 'The chance of disease after a positive test, ' +
     'plotted against the prevalence on a log scale, ' +

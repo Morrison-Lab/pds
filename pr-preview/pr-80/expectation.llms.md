@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 11:07:05 (PDT)
+Last modified: 2026-10-08 11:18:58 (PDT)
 
 > **NOTE:**
 >
@@ -200,7 +200,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > response_levels <- c("small", "moderate", "large")
 > vaccine_tab <-
 >   dobson::vaccine |>
@@ -216,7 +216,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > n_vaccine <- sum(vaccine_tab)
 > n_placebo <- vaccine_tab["placebo", ]
 > ```
@@ -241,7 +241,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > birthweight <- dobson::birthweight
 > ga <- c(
 >   birthweight[["boys gestational age"]],
@@ -291,7 +291,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > pander::pander(coef(lm(wt ~ ga)))
 > ```
 >
@@ -351,7 +351,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > plasma_summary <-
 >   dobson::plasma |>
 >   dplyr::filter(Group %in% c("H-O", "C")) |>
@@ -390,7 +390,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > senility_fit <- glm(s ~ x, data = dobson::senility, family = binomial)
 > b0 <- coef(senility_fit)[["(Intercept)"]]
 > b1 <- coef(senility_fit)[["x"]]
@@ -411,7 +411,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > senility_p10 <- predict(
 >   senility_fit,
 >   newdata = data.frame(x = 10),
@@ -569,7 +569,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > x_labs <- c("X=0", "X=0", "X=1", "X=1")
 > y_labs <- c("Y=0", "Y=1", "Y=0", "Y=1")
 > probs <- c(0.2, 0.3, 0.1, 0.4)
@@ -669,7 +669,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > set.seed(204)
 > n <- 400
 > x_dep <- runif(n)
@@ -709,7 +709,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > n_grid <- 51
 > x_seq <- seq(0, 1, length.out = n_grid)
 > y_seq <- seq(0, 1, length.out = n_grid)
@@ -812,7 +812,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > p <- 0.4
 > exact_sum <- 2 * p / (1 - p)
 >
@@ -866,7 +866,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > x_fine <- seq(0, 2, by = 0.005)
 > df <- data.frame(
 >   x = c(x_fine[x_fine <= 1], x_fine),
@@ -923,7 +923,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > q <- 0.5
 > exact_ex <- 1 / (2 * (1 - q))
 >

@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 11:07:05 (PDT)
+Last modified: 2026-10-08 11:18:58 (PDT)
 
 ## 1 Random variables
 

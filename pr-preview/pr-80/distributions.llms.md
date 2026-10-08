@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 11:07:05 (PDT)
+Last modified: 2026-10-08 11:18:58 (PDT)
 
 > **NOTE:**
 >
@@ -96,7 +96,7 @@ Table 2: Distributions typically used for test statistics
 
 Show code
 
-``` numberSource
+``` r
 pois_dists <-
   dplyr::tibble(mu = c(0.5, 1, 2, 5, 10, 20)) |>
   dplyr::reframe(.by = mu, x = 0:30) |>
@@ -137,7 +137,7 @@ Figure 1: Poisson PMFs, by mean parameter \\\mu\\
 
 Show code
 
-``` numberSource
+``` r
 plot2 <-
   plot0 +
   ggplot2::geom_step(alpha = 0.75) +
@@ -407,7 +407,7 @@ Figure 2: Poisson CDFs
 >
 > **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu = 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is \\\mathopen{}\left\|5 - 3\right\|\mathclose{} = 2 = b\\, so the density is \\\frac{1}{2b}\text{e}^{-1}\\. Here are both values:
 >
-> ``` numberSource
+> ``` r
 > b <- 2
 > c(
 >   at_mu = 1 / (2 * b),
@@ -442,7 +442,7 @@ Figure 2: Poisson CDFs
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > b <- 1 / sqrt(2)
 > grid <- seq(-4, 4, length.out = 801)
 > dlaplace <- function(y, mu = 0, b = 1) exp(-abs(y - mu) / b) / (2 * b)
@@ -463,7 +463,7 @@ Figure 2: Poisson CDFs
 >
 > The probability of landing more than \\3\\ standard deviations from the mean shows the difference in the tails. For the Laplace distribution, \\\operatorname{P}(\mathopen{}\left\|Y\right\|\mathclose{} \> t) = \text{e}^{-t/b}\\, because each tail has probability \\\frac{1}{2}\text{e}^{-t/b}\\ by integrating [Equation 5](#eq-laplace-pdf).
 >
-> ``` numberSource
+> ``` r
 > t <- 3
 > c(
 >   Laplace = exp(-t / b),

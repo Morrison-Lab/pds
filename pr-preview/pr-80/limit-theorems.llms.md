@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 11:07:05 (PDT)
+Last modified: 2026-10-08 11:18:58 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -60,7 +60,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > dice_sum_pmf <- function(n_dice) {
 >   totals <- rowSums(expand.grid(rep(list(1:6), n_dice)))
 >   probs <- prop.table(table(totals))
@@ -84,7 +84,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > pmf_five_dice <- dice_sum_pmf(5)
 > dice_plot + ggplot2::geom_col(data = pmf_five_dice)
 > ```
@@ -103,7 +103,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > ## Python
 >
-> ``` numberSource
+> ``` python
 > import numpy as np
 > import pandas as pd
 >
@@ -131,7 +131,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > ## R
 >
-> ``` numberSource
+> ``` r
 > hp <- read.csv("data/auto.csv")$horsepower
 > mu <- mean(hp)
 > sigma <- sqrt(mean((hp - mu)^2))
@@ -156,7 +156,7 @@ Last modified: 2026-10-08 11:07:05 (PDT)
 >
 > Show code
 >
-> ``` numberSource
+> ``` r
 > op <- par(mfrow = c(1, 3), mar = c(4, 4, 2, 1))
 > for (k in seq_along(sizes)) {
 >   hist(sample_means[[k]], breaks = 40, freq = FALSE,
