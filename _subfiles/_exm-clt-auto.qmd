@@ -103,8 +103,17 @@ with the normal density $\ndist{\mu, \sigma^2/n}$ from @thm-clt drawn over it.
 
 ```{r}
 #| label: fig-clt-auto
-#| fig-cap: "Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n."
-#| fig-alt: "Three histograms side by side. The first, for one car, is skewed to the right with a long tail. The second, for five cars, is less skewed. The third, for thirty cars, is symmetric and bell-shaped. A normal curve drawn over each fits the third closely and the first poorly."
+#| fig-cap: >-
+#|   Histograms of 10,000 sample means of horsepower, for samples of
+#|   n = 1, 5 and 30 cars drawn with replacement from the Auto data.
+#|   The curve is the normal density with mean mu and standard
+#|   deviation sigma over the square root of n.
+#| fig-alt: >-
+#|   Three histograms side by side. The first, for one car, is skewed
+#|   to the right with a long tail. The second, for five cars, is
+#|   less skewed. The third, for thirty cars, is symmetric and
+#|   bell-shaped. A normal curve drawn over each fits the third
+#|   closely and the first poorly.
 #| fig-height: 3
 #| fig-width: 8
 #| code-fold: true
