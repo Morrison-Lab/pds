@@ -14,6 +14,5 @@ $$\p(Y=y) \eqdef \frac{1}{2b} \ef{-\frac{\abs{y - \mu}}{b}}, \quad y \in \mathbb
 The [normal density](random-variables.qmd#def-normal) has the squared distance $(y - \mu)^2$ in its exponent.
 The Laplace density has the absolute distance $\abs{y - \mu}$ instead.
 Both densities are symmetric about $\mu$,
-but the Laplace density has a sharp peak at $\mu$ and decays more slowly in the tails
-(see @fig-laplace-vs-normal).
+but the Laplace density has a sharp peak at $\mu$ and decays more slowly in the tails.
 :::
