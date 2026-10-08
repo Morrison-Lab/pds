@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 09:21:46 (PDT)
+Last modified: 2026-10-08 09:59:08 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -94,6 +94,83 @@ Last modified: 2026-10-08 09:21:46 (PDT)
 > Figure 2: Distribution of the sum of five dice
 >
 > For example, the exact probability that five dice total at most 15 is \\\Pr(S_5 \le 15) = 0.3052\\. The normal approximation that [Theorem 1](#thm-clt) suggests, with mean \\5 \cdot 3.5 = 17.5\\ and variance \\5 \cdot 35/12 \approx 14.58\\, evaluated at \\15.5\\ to account for \\S_5\\ taking only integer values, gives \\\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002\\.
+
+> **NOTE:**
+>
+> **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+>
+> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the mean and variance of the 392 horsepower values. The sum \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 1](#cor-sum-iid-moments), so the sample mean \\S_n/n\\ has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\. The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s mean.
+>
+> ## Python
+>
+> ``` python
+> import numpy as np
+> import pandas as pd
+>
+> hp = pd.read_csv("data/auto.csv")["horsepower"].to_numpy(dtype=float)
+> mu, sigma = hp.mean(), hp.std(ddof=0)
+>
+> rng = np.random.default_rng(571)
+> sizes = [1, 5, 30]
+> sample_means = {n: rng.choice(hp, size=(10_000, n)).mean(axis=1) for n in sizes}
+>
+> def skewness(x):
+>     return np.mean(((x - x.mean()) / x.std()) ** 3)
+>
+> pd.DataFrame({
+>     "n": sizes,
+>     "sd of sample means": [sample_means[n].std(ddof=1) for n in sizes],
+>     "sigma / sqrt(n)": [sigma / np.sqrt(n) for n in sizes],
+>     "skewness of sample means": [skewness(sample_means[n]) for n in sizes],
+> })
+> #>     n  sd of sample means  sigma / sqrt(n)  skewness of sample means
+> #> 0   1           38.691521        38.442033                  1.080767
+> #> 1   5           17.265666        17.191800                  0.522243
+> #> 2  30            6.971269         7.018523                  0.164940
+> ```
+>
+> ## R
+>
+> ``` r
+> hp <- read.csv("data/auto.csv")$horsepower
+> mu <- mean(hp)
+> sigma <- sqrt(mean((hp - mu)^2))
+>
+> set.seed(571)
+> sizes <- c(1, 5, 30)
+> sample_means <- lapply(sizes, function(n) {
+>   replicate(10000, mean(sample(hp, n, replace = TRUE)))
+> })
+>
+> skewness <- function(x) mean(((x - mean(x)) / sqrt(mean((x - mean(x))^2)))^3)
+>
+> data.frame(
+>   n = sizes,
+>   sd_of_sample_means = sapply(sample_means, sd),
+>   sigma_over_root_n = sigma / sqrt(sizes),
+>   skewness_of_sample_means = sapply(sample_means, skewness)
+> )
+> ```
+>
+> [Figure 3](#fig-clt-auto) shows a histogram of the 10,000 sample means for each \\n\\, with the normal density \\\operatorname{N}\mathopen{}\left(\mu, \sigma^2/n\right)\mathclose{}\\ from [Theorem 1](#thm-clt) drawn over it.
+>
+> Show code
+>
+> ``` r
+> op <- par(mfrow = c(1, 3), mar = c(4, 4, 2, 1))
+> for (k in seq_along(sizes)) {
+>   hist(sample_means[[k]], breaks = 40, freq = FALSE,
+>        main = paste("n =", sizes[k]), xlab = "sample mean of horsepower")
+>   curve(dnorm(x, mu, sigma / sqrt(sizes[k])), add = TRUE, lwd = 2)
+> }
+> par(op)
+> ```
+>
+> [![Three histograms side by side. The first, for one car, is skewed to the right with a long tail. The second, for five cars, is less skewed. The third, for thirty cars, is symmetric and bell-shaped. A normal curve drawn over each fits the third closely and the first poorly.](limit-theorems_files/figure-html/fig-clt-auto-1.png)](limit-theorems_files/figure-html/fig-clt-auto-1.png "Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.")
+>
+> Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.
+>
+> The sample means for \\n = 1\\ are just single cars, so they are skewed. By \\n = 30\\ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of \\\sigma/\sqrt{n}\\ at every \\n\\, as [Corollary 1](#cor-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at \\n = 1\\ to 0.48 at \\n = 5\\ and 0.2 at \\n = 30\\.
 
 ## References
 
