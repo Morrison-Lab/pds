@@ -877,13 +877,13 @@ and each of those outcomes has at least one head.
 #### A joint distribution is determined by its rectangle probabilities
 
 If [jointly distributed](#def-jointly-distributed) random variables $\X1n$,
-and jointly distributed random variables $Y_1, \ldots, Y_n$,
+and jointly distributed random variables $\dsn{Y}$,
 satisfy
 
 $$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n)$$
 
-for all sets $A_1, \ldots, A_n$ of real numbers for which these are events,
-then $(\X1n)$ and $(Y_1, \ldots, Y_n)$ have the same [joint distribution](#def-joint-distribution).
+for all sets $\dsn{A}$ of real numbers for which these are events,
+then $(\X1n)$ and $(\dsn{Y})$ have the same [joint distribution](#def-joint-distribution).
 
 :::
 

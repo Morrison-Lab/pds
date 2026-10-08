@@ -42,7 +42,7 @@ which is why the informal statement asks only that no summand dominate.
 :::{#cor-sum-iid-moments}
 #### Mean and variance of a sum of IID random variables
 
-Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables,
+Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
 each discrete or continuous,
 with mean $\mu$ and finite variance $\ss$,
 and let $S_n \eqdef \sumin X_i$.
@@ -117,7 +117,7 @@ are exactly the mean and variance of $S_n$.
 A single fair die roll has the discrete uniform distribution on $\set{1, \ldots, 6}$,
 which is flat, not bell-shaped (@fig-clt-1d6).
 Its mean is $\mu = 3.5$,
-and its variance is $\ss = \sum_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12$.
+and its variance is $\ss = \sumto{x}{6} (x - 3.5)^2 / 6 = 35/12$.
 
 ```{r}
 #| label: fig-clt-1d6

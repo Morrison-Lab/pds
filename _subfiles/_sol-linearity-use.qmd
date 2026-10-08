@@ -3,8 +3,8 @@
 Pull the constant $1/n$ out and split the sum, both by @thm-linearity-expectation:
 
 $$\mathbb{E}[\bar X]
-= \mathbb{E}\!\left[\frac{1}{n}\sumin X_i\right]
-= \frac{1}{n}\sumin \mathbb{E}[X_i]
+= \mathbb{E}\!\left[\avgin X_i\right]
+= \avgin \mathbb{E}[X_i]
 = \frac{1}{n}\,(n\mu) = \mu$$
 
 So the sample average is right *on average*.
