@@ -1,0 +1,38 @@
+:::{#thm-laplace-moments}
+#### Mean and variance of the Laplace distribution
+
+If $Y \sim \dLaplacef{\mu, b}$ (@def-laplace), then
+
+$$\E{Y} = \mu \quad \text{and} \quad \Var{Y} = 2b^2.$$ {#eq-laplace-moments}
+
+:::
+
+::: proof
+Write $U = Y - \mu$.
+By @eq-laplace-pdf, $U$ has density $\frac{1}{2b}\ef{-\abs{u}/b}$,
+which is symmetric about $0$.
+
+For the mean, the integrand $u \cdot \frac{1}{2b}\ef{-\abs{u}/b}$ is an odd function,
+so its integral over $\mathbb{R}$ is $0$.
+Therefore $\E{U} = 0$, and $\E{Y} = \mu + \E{U} = \mu$.
+
+For the variance, $\Var{Y} = \Var{U} = \E{U^2}$ because $\E{U} = 0$.
+The integrand $u^2 \cdot \frac{1}{2b}\ef{-\abs{u}/b}$ is even,
+so
+
+$$
+\ba
+\E{U^2}
+&= 2 \int_0^\infty u^2 \frac{1}{2b} \ef{-u/b} \, du
+&& \text{(even integrand)} \\
+&= \frac{1}{b} \int_0^\infty u^2 \ef{-u/b} \, du
+&& \text{(multiplying the constants)} \\
+&= \frac{1}{b} \paren{2b \int_0^\infty u \ef{-u/b} \, du}
+&& \text{(integration by parts; the boundary terms are $0$)} \\
+&= \frac{1}{b} \paren{2b \cdot b^2}
+&& \text{(integration by parts again; the boundary terms are $0$)} \\
+&= 2b^2.
+&& \text{(multiplying the constants)}
+\ea
+$$
+:::

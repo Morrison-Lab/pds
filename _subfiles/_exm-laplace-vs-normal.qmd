@@ -1,0 +1,50 @@
+:::{#exm-laplace-vs-normal}
+#### Laplace and normal tails with the same mean and variance
+
+A Laplace variable $Y \sim \dLaplacef{0, b}$ has variance $2b^2$ (@thm-laplace-moments).
+Choosing $b = 1/\sqrt{2}$ gives variance $1$,
+the same mean and variance as a standard normal.
+@fig-laplace-vs-normal compares the two densities.
+The Laplace density is higher at the center and in the far tails,
+and lower in between.
+
+```{r}
+#| label: fig-laplace-vs-normal
+#| fig-cap: "Laplace and standard normal densities with the same mean (0) and variance (1)"
+#| fig-alt: >-
+#|   Two symmetric curves over y from minus 4 to 4. The standard normal is a
+#|   smooth bell. The Laplace curve with the same variance peaks higher at 0
+#|   with a sharp point, falls below the normal curve at moderate distances,
+#|   and stays above it in the far tails.
+#| code-fold: true
+b <- 1 / sqrt(2)
+grid <- seq(-4, 4, length.out = 801)
+dlaplace <- function(y, mu = 0, b = 1) exp(-abs(y - mu) / b) / (2 * b)
+densities <- tibble::tibble(
+  y = rep(grid, times = 2),
+  distribution = rep(c("Laplace", "Normal"), each = length(grid)),
+  density = c(dlaplace(grid, b = b), dnorm(grid))
+)
+ggplot2::ggplot(densities) +
+  ggplot2::aes(x = y, y = density, colour = distribution) +
+  ggplot2::geom_line() +
+  ggplot2::labs(colour = NULL)
+```
+
+The probability of landing more than $3$ standard deviations from the mean shows the difference in the tails.
+For the Laplace distribution,
+$\P(\abs{Y} > t) = \ef{-t/b}$,
+because each tail has probability $\frac{1}{2}\ef{-t/b}$ by integrating @eq-laplace-pdf.
+
+```{r}
+#| label: laplace-vs-normal-tails
+#| code-fold: false
+t <- 3
+c(
+  Laplace = exp(-t / b),
+  Normal = 2 * pnorm(-t)
+)
+```
+
+The Laplace distribution puts about `r round(exp(-3 / b) / (2 * pnorm(-3)), 1)` times as much probability beyond $3$ standard deviations as the normal distribution does.
+:::
