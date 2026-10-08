@@ -1,0 +1,81 @@
+:::{#def-cross-entropy}
+#### Cross-entropy
+
+Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf)
+on the same finite set of outcomes $\set{1, \ldots, K}$,
+with $p_k$ and $q_k$ the probabilities of outcome $k$.
+The **cross-entropy** of $q$ relative to $p$ is
+
+$$H(p, q) \eqdef -\sum_{k=1}^{K} p_k \log q_k.$$
+
+It is the [expectation](#def-expectation) of $-\log q(X)$
+when $X$ has probability mass function $p$.
+When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
+
+:::
+
+::: {#rem-cross-entropy-entropy}
+#### Entropy is the cross-entropy of a distribution with itself
+
+Setting $q = p$ gives $H(p, p) = -\sum_k p_k \log p_k$,
+which is the [entropy](#def-entropy) of a random variable with mass function $p$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-kl-divergence}
+#### Kullback--Leibler divergence
+
+For $p$ and $q$ as in @def-cross-entropy,
+the **Kullback--Leibler divergence** (KL divergence, or relative entropy)
+of $q$ from $p$ is
+
+$$D_{\mathrm{KL}}(p \,\|\, q) \eqdef \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).$$
+
+:::
+
+::: {#rem-kl-asymmetric}
+#### The divergence is not symmetric
+
+In general, $D_{\mathrm{KL}}(p \,\|\, q) \ne D_{\mathrm{KL}}(q \,\|\, p)$,
+so it is not a distance between $p$ and $q$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cross-entropy}
+#### Cross-entropy and divergence for two coins
+
+Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin
+and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome.
+Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$
+and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
+
+$$
+\ba
+H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4}
+= 1 + \tfrac{1}{2} \paren{2 - \log_2 3}
+= 2 - \tfrac{1}{2} \log_2 3 \approx 1.208, \\
+H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = 1, \\
+D_{\mathrm{KL}}(p \,\|\, q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
+\ea
+$$
+
+Here the cross-entropy is larger than the entropy of $p$,
+and the divergence is the difference.
+
+:::
+
+::: {#rem-cross-entropy-source}
+#### Where the definitions come from
+
+@murphy2012mlpp [section 2.8.2, pp. 57--58] defines the KL divergence
+and the cross-entropy as above,
+and gives the coding interpretation:
+the cross-entropy is the average number of bits needed
+to encode data from a source with distribution $p$
+using a code designed for $q$.
+
+:::

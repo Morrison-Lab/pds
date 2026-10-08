@@ -1,0 +1,56 @@
+:::{#def-entropy}
+#### Entropy
+
+The **entropy** of a *discrete* random variable $X$ with
+[probability mass function](random-variables.qmd#def-pmf) $\p(X=x)$
+is the [expectation](#def-expectation) of $-\log \p(X)$:
+
+$$H(X) \eqdef \E{-\log \p(X)} = -\sum_{x \in \rangef{X}} \p(X=x) \log \p(X=x)$$
+
+A term with $\p(X=x) = 0$ is taken to be $0$,
+because $p \log p \to 0$ as $p \to 0$.
+
+:::
+
+::: {#rem-entropy-units}
+#### The base of the logarithm is a unit
+
+With the natural logarithm, entropy is measured in *nats*.
+With base 2, it is measured in *bits*.
+Changing the base multiplies every entropy by the same positive constant.
+It does not change which distribution has the larger entropy.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-entropy-coin}
+#### Entropy of a coin flip
+
+Let $X$ be the result of one flip of a coin
+with $\P(X=1) = \pi$ and $\P(X=0) = 1 - \pi$
+([Bernoulli distribution](random-variables.qmd#def-bernoulli)).
+Using logarithms to base 2,
+
+$$H(X) = -\pi \log_2 \pi - (1 - \pi) \log_2 (1 - \pi).$$
+
+For a fair coin, $\pi = 1/2$, and
+
+$$H(X) = -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = \tfrac{1}{2} + \tfrac{1}{2} = 1 \text{ bit}.$$
+
+For a coin that always lands heads, $\pi = 1$, and $H(X) = -1 \cdot \log_2 1 - 0 = 0$.
+The outcome is known in advance, so there is no uncertainty to measure.
+An entropy of $0$ means that all of the probability is on one outcome.
+
+:::
+
+{{< slidebreak >}}
+
+::: {#rem-entropy-source}
+#### Where the definition comes from
+
+@murphy2012mlpp [section 2.8.1, p. 56] defines entropy this way,
+and notes that among distributions on $K$ outcomes
+it is largest, $\log K$, for the uniform distribution.
+
+:::

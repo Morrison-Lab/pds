@@ -79,6 +79,16 @@ format:
 
 {{< include pds/_subfiles/_thm-best-predictor.qmd >}}
 
+## Entropy and cross-entropy {#sec-entropy}
+
+<!-- No slidebreak here: the heading shares its slide with the def-entropy div. -->
+
+{{< include pds/_subfiles/_def-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-cross-entropy.qmd >}}
+
 ## References {.unnumbered}
 
 ::: {#refs}
