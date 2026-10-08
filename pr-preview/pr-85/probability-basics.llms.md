@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 16:00:21 (PDT)
+Last modified: 2026-10-08 23:10:33 (UTC)
 
 ## 1 Defining probabilities
 

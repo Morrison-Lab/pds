@@ -66,6 +66,41 @@
     ]
   },
   {
+    "objectID": "variance-covariance-slides.html#sec-deviation",
+    "href": "variance-covariance-slides.html#sec-deviation",
+    "title": "Variance and covariance",
+    "section": "1 Deviation, error, and noise",
+    "text": "1 Deviation, error, and noise\n\n\n\nDefinition 1 (Deviation) A deviation is the difference between a value and a reference value. For any quantity \\(z\\) and reference value \\(r\\), the deviation of \\(z\\) from \\(r\\) is:\n\\[z - r\\]\n\n\nRemark. In probability and statistics, “deviation” usually means deviation from a population mean.\nSee: Wikipedia: Deviation (statistics)"
+  },
+  {
+    "objectID": "variance-covariance-slides.html#variance-and-related-characteristics",
+    "href": "variance-covariance-slides.html#variance-and-related-characteristics",
+    "title": "Variance and covariance",
+    "section": "2 Variance and related characteristics",
+    "text": "2 Variance and related characteristics\n\n\nDefinition 3 (Variance) The variance of a random variable \\(X\\) with \\(\\operatorname{E}\\mathopen{}\\left[X^2\\right]\\mathclose{} &lt; \\infty\\) is the expectation of the squared deviation from the mean; that is:\n\\[\\operatorname{Var}\\mathopen{}\\left(X\\right)\\mathclose{} \\stackrel{\\text{def}}{=}\\operatorname{E}\\mathopen{}\\left[[e(X)]^2\\right]\\mathclose{}\\]"
+  },
+  {
+    "objectID": "variance-covariance-slides.html#sec-bias-variance-prediction",
+    "href": "variance-covariance-slides.html#sec-bias-variance-prediction",
+    "title": "Variance and covariance",
+    "section": "3 Bias, variance, and prediction error",
+    "text": "3 Bias, variance, and prediction error\n\nExercise 2 (Expected squared error from three sources) A prediction \\(\\hat f(x_0)\\) at a new point \\(x_0\\) has squared bias \\([\\operatorname{Bias}\\mathopen{}\\left(\\hat f(x_0)\\right)\\mathclose{}]^2 = 1\\) and variance \\(\\operatorname{Var}\\mathopen{}\\left(\\hat f(x_0)\\right)\\mathclose{} = 2\\). The new response is \\(Y_0 = f(x_0) + \\varepsilon\\), where \\(\\varepsilon\\) has mean \\(0\\) and variance \\(\\sigma^2= 3\\) and is independent of \\(\\hat f(x_0)\\).\n\nWhat is the expected squared prediction error \\(\\operatorname{E}\\mathopen{}\\left[(Y_0 - \\hat f(x_0))^2\\right]\\mathclose{}\\)?\nIf we could remove all bias and all variance of \\(\\hat f(x_0)\\), what would the expected squared prediction error be?\nWhich of the three quantities (squared bias, variance of \\(\\hat f(x_0)\\), \\(\\sigma^2\\)) can a better prediction method reduce, and which cannot?"
+  },
+  {
+    "objectID": "variance-covariance-slides.html#covariance",
+    "href": "variance-covariance-slides.html#covariance",
+    "title": "Variance and covariance",
+    "section": "4 Covariance",
+    "text": "4 Covariance\n\n\nDefinition 11 (Covariance) The covariance of two random variables \\(X\\) and \\(Y\\) with \\(\\operatorname{E}\\mathopen{}\\left[X^2\\right]\\mathclose{} &lt; \\infty\\) and \\(\\operatorname{E}\\mathopen{}\\left[Y^2\\right]\\mathclose{} &lt; \\infty\\) is:\n\\[\\operatorname{Cov}\\mathopen{}\\left(X,Y\\right)\\mathclose{} \\stackrel{\\text{def}}{=}\\operatorname{E}\\mathopen{}\\left[(X - \\operatorname{E}\\mathopen{}\\left[X\\right]\\mathclose{})(Y - \\operatorname{E}\\mathopen{}\\left[Y\\right]\\mathclose{})\\right]\\mathclose{}\\]"
+  },
+  {
+    "objectID": "variance-covariance-slides.html#references",
+    "href": "variance-covariance-slides.html#references",
+    "title": "Variance and covariance",
+    "section": "References",
+    "text": "References\n\n\nBillingsley, Patrick. 1995. Probability and Measure. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.\n\n\nCasella, George, and Roger Berger. 2002. Statistical Inference. 2nd ed. Cengage Learning. https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/.\n\n\nJames, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. An Introduction to Statistical Learning: With Applications in R. 2nd ed. Springer. https://doi.org/10.1007/978-1-0716-1418-1."
+  },
+  {
     "objectID": "probability-basics.html",
     "href": "probability-basics.html",
     "title": "Probability basics",
@@ -110,6 +145,27 @@
     ]
   },
   {
+    "objectID": "probability-basics-slides.html#defining-probabilities",
+    "href": "probability-basics-slides.html#defining-probabilities",
+    "title": "Probability basics",
+    "section": "1 Defining probabilities",
+    "text": "1 Defining probabilities\n\n\n\nDefinition 1 (Sample space) The sample space of a random experiment, denoted \\(\\Omega\\), is the set of all of its possible outcomes."
+  },
+  {
+    "objectID": "probability-basics-slides.html#conditional-probability",
+    "href": "probability-basics-slides.html#conditional-probability",
+    "title": "Probability basics",
+    "section": "2 Conditional probability",
+    "text": "2 Conditional probability\n\n\nDefinition 8 (Conditional probability) For two events \\(A\\) and \\(B\\) with \\(\\Pr(B) &gt; 0\\), the conditional probability of \\(A\\) given \\(B\\), denoted \\(\\Pr(A \\mid B)\\), is:\n\\[\\Pr(A \\mid B) \\stackrel{\\text{def}}{=}\\frac{\\Pr(A \\cap B)}{\\Pr(B)}\\]\n\n\nRemark. Geometrically and computationally, conditioning on an event \\(B\\) can be viewed as slicing the sample space to retain only the outcomes compatible with \\(B\\), and then renormalizing the remaining probabilities (dividing by \\(\\Pr(B)\\)) so that they sum to 1 (Ross 2022, sec. 2.7.4)."
+  },
+  {
+    "objectID": "probability-basics-slides.html#references",
+    "href": "probability-basics-slides.html#references",
+    "title": "Probability basics",
+    "section": "References",
+    "text": "References\n\n\nHutchinson, Brian. 2024. DATA 471/571: Machine Learning. Western Washington University.\n\n\nHutchinson, Brian. n.d. DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures. Western Washington University. Accessed September 28, 2026. https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/.\n\n\nRoss, Kevin. 2022. An Introduction to Probability and Simulation. Bookdown. https://bookdown.org/kevin_davisross/probsim-book/."
+  },
+  {
     "objectID": "limit-theorems.html",
     "href": "limit-theorems.html",
     "title": "Limit theorems",
@@ -143,6 +199,20 @@
     ]
   },
   {
+    "objectID": "limit-theorems-slides.html#sec-clt",
+    "href": "limit-theorems-slides.html#sec-clt",
+    "title": "Limit theorems",
+    "section": "1 The Central Limit Theorem",
+    "text": "1 The Central Limit Theorem\n\nRemark. The sum of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. Theorem 1 makes this precise."
+  },
+  {
+    "objectID": "limit-theorems-slides.html#references",
+    "href": "limit-theorems-slides.html#references",
+    "title": "Limit theorems",
+    "section": "References",
+    "text": "References\n\n\nBillingsley, Patrick. 1995. Probability and Measure. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley."
+  },
+  {
     "objectID": "independence.html#references",
     "href": "independence.html#references",
     "title": "Independence",
@@ -152,6 +222,13 @@
       "Foundations",
       "Independence"
     ]
+  },
+  {
+    "objectID": "independence-slides.html#references",
+    "href": "independence-slides.html#references",
+    "title": "Independence",
+    "section": "References",
+    "text": "References\n\n\nBillingsley, Patrick. 1995. Probability and Measure. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.\n\n\nCasella, George, and Roger Berger. 2002. Statistical Inference. 2nd ed. Cengage Learning. https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/.\n\n\nHutchinson, Brian. 2024. DATA 471/571: Machine Learning. Western Washington University.\n\n\nHutchinson, Brian. n.d. DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures. Western Washington University. Accessed September 28, 2026. https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/."
   },
   {
     "objectID": "distributions.html#sec-bern-dist",
@@ -242,6 +319,97 @@
     ]
   },
   {
+    "objectID": "distributions-slides.html#sec-bern-dist",
+    "href": "distributions-slides.html#sec-bern-dist",
+    "title": "Key distributions",
+    "section": "1 The Bernoulli distribution",
+    "text": "1 The Bernoulli distribution\n\nExample 1 (A coin flip) The Bernoulli distribution describes a binary outcome. The indicator of heads on one flip of a fair coin is \\(\\operatorname{Ber}(1/2)\\). By the expectation of the Bernoulli distribution, \\(X \\sim \\operatorname{Ber}(\\pi)\\) has mean \\(\\pi\\), and by the variance of a Bernoulli random variable, it has variance \\(\\pi(1 - \\pi)\\)."
+  },
+  {
+    "objectID": "distributions-slides.html#sec-poisson-dist",
+    "href": "distributions-slides.html#sec-poisson-dist",
+    "title": "Key distributions",
+    "section": "2 The Poisson distribution",
+    "text": "2 The Poisson distribution\n\nDefinition 1 (Poisson distribution) A random variable \\(Y\\) has the Poisson distribution with mean parameter \\(\\mu&gt; 0\\), written \\(Y \\sim \\operatorname{Pois}(\\mu)\\), if:\n\\[\\operatorname{P}(Y = y) \\stackrel{\\text{def}}{=}\\frac{\\mu^{y} e^{-\\mu}}{y!}, \\quad y \\in \\mathbb{N}= \\mathopen{}\\left\\{0, 1, 2, \\dots\\right\\}\\mathclose{} \\tag{1}\\]\n\n\nRemark. (see Figure 1)"
+  },
+  {
+    "objectID": "distributions-slides.html#sec-nb-dist",
+    "href": "distributions-slides.html#sec-nb-dist",
+    "title": "Key distributions",
+    "section": "3 The Negative-Binomial distribution",
+    "text": "3 The Negative-Binomial distribution\n\nDefinition 5 (Negative binomial distribution) A random variable \\(Y\\) has the negative binomial distribution with mean \\(\\mu&gt; 0\\) and overdispersion parameter \\(\\rho&gt; 0\\), written \\(Y \\sim \\operatorname{NegBin}(\\mu, \\rho)\\), if, for \\(y \\in \\mathopen{}\\left\\{0, 1, 2, \\dots\\right\\}\\mathclose{}\\):\n\\[\n\\operatorname{P}(Y=y)\n\\stackrel{\\text{def}}{=}\\frac{\\mu^y}{y!}\n\\cdot \\frac{\\Gamma(\\rho+ y)}{\\Gamma(\\rho) \\cdot (\\rho+ \\mu)^y}\n\\cdot \\left(1+\\frac{\\mu}{\\rho}\\right)^{-\\rho}\n\\]\nwhere \\(\\Gamma\\) is the gamma function, which satisfies \\(\\Gamma(x) = (x-1)!\\) for positive integers \\(x\\)."
+  },
+  {
+    "objectID": "distributions-slides.html#sec-laplace",
+    "href": "distributions-slides.html#sec-laplace",
+    "title": "Key distributions",
+    "section": "4 The Laplace distribution",
+    "text": "4 The Laplace distribution\n\nDefinition 6 (Laplace distribution) A random variable \\(Y\\) has the Laplace distribution with location parameter \\(\\mu\\in \\mathbb{R}\\) and scale parameter \\(b &gt; 0\\), written \\(Y \\sim \\operatorname{Laplace}\\mathopen{}\\left(\\mu, b\\right)\\mathclose{}\\), if \\(Y\\) is continuous with density:\n\\[\\operatorname{p}(Y=y) \\stackrel{\\text{def}}{=}\\frac{1}{2b} \\text{e}^{-\\frac{\\mathopen{}\\left|y - \\mu\\right|\\mathclose{}}{b}}, \\quad y \\in \\mathbb{R} \\tag{5}\\]\n\n\nRemark. The normal density has the squared distance \\((y - \\mu)^2\\) in its exponent. The Laplace density has the absolute distance \\(\\mathopen{}\\left|y - \\mu\\right|\\mathclose{}\\) instead. Both densities are symmetric about \\(\\mu\\), but the Laplace density has a sharp peak at \\(\\mu\\) and decays more slowly in the tails."
+  },
+  {
+    "objectID": "distributions-slides.html#sec-weibull",
+    "href": "distributions-slides.html#sec-weibull",
+    "title": "Key distributions",
+    "section": "5 Weibull distribution",
+    "text": "5 Weibull distribution\n\nDefinition 7 (Weibull distribution) A non-negative random variable \\(T\\) has the Weibull distribution with shape \\(\\alpha&gt; 0\\) and rate \\({\\lambda}&gt; 0\\) if its survival function is:\n\\[\\operatorname{S}(t) \\stackrel{\\text{def}}{=}\\text{e}^{-{\\lambda}t^\\alpha}, \\quad t \\ge 0\\]"
+  },
+  {
+    "objectID": "distributions-slides.html#sec-mvn",
+    "href": "distributions-slides.html#sec-mvn",
+    "title": "Key distributions",
+    "section": "6 The multivariate normal distribution",
+    "text": "6 The multivariate normal distribution\n\nDefinition 8 (Multivariate normal distribution) A \\(p \\times 1\\) random vector \\(\\tilde{X}= {(X_1, \\ldots, X_p)}^{\\top}\\) has the multivariate normal distribution (or multivariate Gaussian distribution) with mean parameter \\(\\tilde{\\mu} \\in \\mathbb{R}^p\\) and variance parameter \\(\\mathbf{\\Sigma}\\), a \\(p \\times p\\) positive definite matrix, written \\(\\tilde{X}\\sim \\operatorname{N}_p\\mathopen{}\\left(\\tilde{\\mu}, \\mathbf{\\Sigma}\\right)\\mathclose{}\\), if \\(\\tilde{X}\\) has joint density:\n\\[\n\\operatorname{p}(\\tilde{X}= \\tilde{x}) \\stackrel{\\text{def}}{=}\n\\frac{1}{(2\\pi)^{p/2} \\det(\\mathbf{\\Sigma})^{1/2}}\n\\text{e}^{-\\frac{1}{2} {(\\tilde{x}- \\tilde{\\mu})}^{\\top} \\mathbf{\\Sigma}^{-1} (\\tilde{x}- \\tilde{\\mu})},\n\\quad \\tilde{x}\\in \\mathbb{R}^p\n\\]\nwhere \\(\\det(\\mathbf{\\Sigma})\\) is the determinant of \\(\\mathbf{\\Sigma}\\) and \\(\\mathbf{\\Sigma}^{-1}\\) is its inverse.\n\n\nRemark. A joint density of \\(p\\) random variables is the \\(p\\)-variable analogue of a joint density of two: a non-negative function on \\(\\mathbb{R}^p\\) whose integral over any region \\(A \\subseteq \\mathbb{R}^p\\) is \\(\\Pr(\\tilde{X}\\in A)\\).\nThe density is well defined because \\(\\mathbf{\\Sigma}\\) is positive definite:\n\n\\(\\mathbf{\\Sigma}^{-1}\\) exists (positive definite matrices have positive definite inverses), and\n\\(\\det(\\mathbf{\\Sigma}) &gt; 0\\) (positive definite matrices have positive determinants), so its square root is a positive number."
+  },
+  {
+    "objectID": "distributions-slides.html#sec-mixture",
+    "href": "distributions-slides.html#sec-mixture",
+    "title": "Key distributions",
+    "section": "7 Mixture distributions",
+    "text": "7 Mixture distributions\n\nDefinition 10 (Mixture density) Let \\({\\operatorname{p}_1}, \\ldots, {\\operatorname{p}_K}\\) be densities on \\(\\mathbb{R}\\), and let \\(w_1, \\ldots, w_K\\) be numbers with:\n\n\\(w_c \\ge 0\\) for every \\(c\\), and\n\\(\\sum_{c=1}^{K} w_c = 1\\).\n\nThe mixture of \\({\\operatorname{p}_1}, \\ldots, {\\operatorname{p}_K}\\) with mixing weights \\(w_1, \\ldots, w_K\\) is the function:\n\\[\n{\\operatorname{p}_{\\text{mix}}}(x) \\stackrel{\\text{def}}{=}\\sum_{c=1}^{K} w_c \\, {\\operatorname{p}_c}(x), \\quad x \\in \\mathbb{R}\n\\]\nThe densities \\({\\operatorname{p}_1}, \\ldots, {\\operatorname{p}_K}\\) are the mixture’s components."
+  },
+  {
+    "objectID": "distributions-slides.html#references",
+    "href": "distributions-slides.html#references",
+    "title": "Key distributions",
+    "section": "References",
+    "text": "References\n\n\nCasella, George, and Roger Berger. 2002. Statistical Inference. 2nd ed. Cengage Learning. https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/."
+  },
+  {
+    "objectID": "expectation-slides.html#conditional-distributions-and-expectations",
+    "href": "expectation-slides.html#conditional-distributions-and-expectations",
+    "title": "Expectation",
+    "section": "1 Conditional distributions and expectations",
+    "text": "1 Conditional distributions and expectations\n\n\nDefinition 3 (Conditional probability mass function) Let \\(X\\) and \\(Y\\) be jointly distributed discrete random variables. The conditional probability mass function of \\(Y\\) given \\(X = x\\) (for values of \\(x\\) with \\(\\operatorname{P}(X = x) &gt; 0\\)) is:\n\\[\\operatorname{P}(Y = y \\mid X = x) \\stackrel{\\text{def}}{=}\\frac{\\operatorname{P}(X = x,\\, Y = y)}{\\operatorname{P}(X = x)}\\]"
+  },
+  {
+    "objectID": "expectation-slides.html#fubinitonelli-for-expectations",
+    "href": "expectation-slides.html#fubinitonelli-for-expectations",
+    "title": "Expectation",
+    "section": "2 Fubini–Tonelli for expectations",
+    "text": "2 Fubini–Tonelli for expectations\n\nTheorem 8 (Fubini–Tonelli theorem, measure-theoretic form) Let \\(\\mu_1\\) and \\(\\mu_2\\) be \\(\\sigma\\)-finite measures on \\(\\sigma\\)-algebras of subsets of sets \\(S_1\\) and \\(S_2\\), and let \\(f\\) be a measurable function on \\(S_1 \\times S_2\\). If either\n\n\\(f \\ge 0\\) (Tonelli), or\n\\(\\int_{S_1 \\times S_2} \\mathopen{}\\left|f\\right|\\mathclose{}\\,d(\\mu_1 \\otimes \\mu_2) &lt; \\infty\\) (Fubini),\n\nthen the integral of \\(f\\) against the product measure \\(\\mu_1 \\otimes \\mu_2\\) equals both iterated integrals:\n\\[\n\\begin{aligned}\n\\int_{S_1 \\times S_2} f\\,d(\\mu_1 \\otimes \\mu_2)\n&= \\int_{S_1}\\mathopen{}\\left(\\int_{S_2} f(s_1, s_2)\\,d\\mu_2(s_2)\\right)\\mathclose{}\\,d\\mu_1(s_1)\n\\\\&= \\int_{S_2}\\mathopen{}\\left(\\int_{S_1} f(s_1, s_2)\\,d\\mu_1(s_1)\\right)\\mathclose{}\\,d\\mu_2(s_2).\n\\end{aligned}\n\\]\nIn case (b), each inner integral is finite except on a set of measure \\(0\\), which does not affect the outer integral.\n\n\nRemark. For expectations, we use this measure-theoretic form of the Fubini–Tonelli theorem, which lets us exchange the order of integration (or summation) over a product of \\(\\sigma\\)-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope (Billingsley 1995, Theorem 18.3). Lebesgue measure on the real line and counting measure on a countable set are both \\(\\sigma\\)-finite, which gives the theorem a form stated in terms of a joint distribution."
+  },
+  {
+    "objectID": "expectation-slides.html#sec-loss-risk",
+    "href": "expectation-slides.html#sec-loss-risk",
+    "title": "Expectation",
+    "section": "3 Loss and risk",
+    "text": "3 Loss and risk\n\n\nDefinition 9 (Prediction) A prediction of a random variable \\(Y\\) is a constant \\(\\hat y\\), or a function \\(\\hat{Y} \\stackrel{\\text{def}}{=}g(X)\\) of another observable random variable \\(X\\), used as a guess for the value \\(Y\\) takes:\n\\[\\hat y\\quad \\text{or} \\quad \\hat{Y} \\stackrel{\\text{def}}{=}g(X)\\]\n\n\nRemark. When no covariate or feature is available, a prediction is a single number \\(\\hat y\\) (such as a constant \\(c\\)). When an informative random variable \\(X\\) is observed, a prediction is a function \\(g(X)\\), which is itself a random variable because \\(X\\) is random. The quality of a prediction is evaluated using a loss function and its expected value, the risk."
+  },
+  {
+    "objectID": "expectation-slides.html#sec-entropy",
+    "href": "expectation-slides.html#sec-entropy",
+    "title": "Expectation",
+    "section": "4 Entropy and cross-entropy",
+    "text": "4 Entropy and cross-entropy\n\n\nDefinition 14 (Entropy) The entropy of a discrete random variable \\(X\\) with probability mass function \\(\\operatorname{P}(X=x)\\) is the expectation of \\(-\\log \\operatorname{P}(X)\\):\n\\[H(X) \\stackrel{\\text{def}}{=}\\operatorname{E}\\mathopen{}\\left[-\\log \\operatorname{P}(X)\\right]\\mathclose{} = -\\sum_{x \\in \\mathcal{R}(X)} \\operatorname{P}(X=x) \\log \\operatorname{P}(X=x)\\]\nA term with \\(\\operatorname{P}(X=x) = 0\\) is taken to be \\(0\\), because \\(p \\log p \\to 0\\) as \\(p \\to 0\\).\n\n\nRemark 1 (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in nats. With base 2, it is measured in bits. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy."
+  },
+  {
+    "objectID": "expectation-slides.html#references",
+    "href": "expectation-slides.html#references",
+    "title": "Expectation",
+    "section": "References",
+    "text": "References\n\n\nBillingsley, Patrick. 1995. Probability and Measure. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.\n\n\nCasella, George, and Roger Berger. 2002. Statistical Inference. 2nd ed. Cengage Learning. https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/.\n\n\nDobson, Annette J, and Adrian G Barnett. 2018. An Introduction to Generalized Linear Models. 4th ed. CRC press. https://doi.org/10.1201/9781315182780.\n\n\nGut, Allan. 2013. Probability: A Graduate Course. 2nd ed. Springer Texts in Statistics. Springer. https://doi.org/10.1007/978-1-4614-4708-5.\n\n\nHastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2nd ed. Springer. https://doi.org/10.1007/978-0-387-84858-7.\n\n\nMurphy, Kevin P. 2012. Machine Learning: A Probabilistic Perspective. Adaptive Computation and Machine Learning. MIT Press.\n\n\nRoss, Kevin. 2022. An Introduction to Probability and Simulation. Bookdown. https://bookdown.org/kevin_davisross/probsim-book/.\n\n\nRudin, Walter. 1976. Principles of Mathematical Analysis. 3rd ed. International Series in Pure and Applied Mathematics. McGraw-Hill.\n\n\nSoch, Joram. 2020. Proof: Expected Value of a Non-Negative Random Variable. The Book of Statistical Proofs. https://doi.org/10.5281/zenodo.4305949.\n\n\nWikipedia contributors. 2026. Law of the Unconscious Statistician — Wikipedia, the Free Encyclopedia. https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician."
+  },
+  {
     "objectID": "expectation.html#conditional-distributions-and-expectations",
     "href": "expectation.html#conditional-distributions-and-expectations",
     "title": "Expectation",
@@ -297,6 +465,34 @@
     ]
   },
   {
+    "objectID": "index-slides.html#welcome",
+    "href": "index-slides.html#welcome",
+    "title": "Probability for Data Science",
+    "section": "Welcome",
+    "text": "Welcome\nProbability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.\nThese notes collect the probability that data science courses assume. Some key results are listed here, organized by topic:\n\nNotation\nProbability basics: sample spaces and events, probability axioms, conditional probability, and Bayes’ theorem\nRandom variables: PMF, PDF, CDF, quantile function, and survival, hazard, and cumulative hazard functions\nIndependence: independence, conditional independence, and (conditionally) IID random variables\nExpectation: expectation, LOTUS, conditional expectation, Fubini-Tonelli, and the law of iterated expectations\nVariance and covariance: deviation, variance, conditional variance, homoskedasticity, and covariance\nKey distributions: Bernoulli, Poisson, negative binomial, and Weibull distributions\nLimit theorems: the Central Limit Theorem\n\nMost of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202). These notes began as the probability chapter of the Morrison Lab’s Regression Models for Epidemiology, which applies them to regression and survival models (see Additional resources)."
+  },
+  {
+    "objectID": "index-slides.html#using-these-notes-in-another-site",
+    "href": "index-slides.html#using-these-notes-in-another-site",
+    "title": "Probability for Data Science",
+    "section": "Using these notes in another site",
+    "text": "Using these notes in another site\nCourse sites link to these pages by URL; they do not include this repository as a git submodule. A host site that keeps a copy of this repository at its root, named pds, can still include fragments with paths that start with pds/, for example {{&lt; include pds/_subfiles/_thm-bayes.qmd &gt;}}. This site includes its own fragments the same way, through a pds symlink that points at the repository root.\nQuarto resolves @id cross-references only within one rendered page, so a host site that links to a result here uses an explicit link, [text](expectation.qmd#thm-lotus)."
+  },
+  {
+    "objectID": "index-slides.html#sec-additional-resources",
+    "href": "index-slides.html#sec-additional-resources",
+    "title": "Probability for Data Science",
+    "section": "Additional resources",
+    "text": "Additional resources\nComparable courses\nSeveral universities offer open-access courses with comparable or complementary coverage of probability for data science, computer science, and statistics:\n\nStanford University CS 109: Probability for Computer Scientists (Chris Piech, Mehran Sahami, and David Varodayan) introduces counting, probability axioms, random variables, joint distributions, limit theorems, and machine learning applications.\nStanford University STATS 116: Theory of Probability (John Duchi) provides a rigorous mathematical treatment of probability spaces, conditioning, random variables, transform methods, and limit theorems (see also lecture notes by Amir Dembo).\nUC Berkeley Data 140 / Stat 140: Probability for Data Science (Ani Adhikari and Jim Pitman) blends mathematical probability theory with Python simulations and computational data science applications.\nHarvard University Stat 110: Introduction to Probability (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang (2019), online at probabilitybook.net) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.\nMIT 18.05: Introduction to Probability and Statistics (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.\nMIT 6.041 / 6.431: Probabilistic Systems Analysis and Applied Probability (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.\nCal Poly / Kevin Ross: An Introduction to Probability and Simulation (Ross (2022)) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.\n\nTextbooks and companion notes\n\nMiller (2017)\nBlitzstein and Hwang (2019)\nHastie et al. (2009)\nJames et al. (2021)\nAmir Dembo and Kevin Ross, Stochastic Processes lecture notes (Dembo and Ross (2021), Stanford MATH 136 / STAT 219)\nMorrison Lab’s Regression Models for Epidemiology, which applies this material to regression and survival analysis"
+  },
+  {
+    "objectID": "index-slides.html#references",
+    "href": "index-slides.html#references",
+    "title": "Probability for Data Science",
+    "section": "References",
+    "text": "References\n\n\nBlitzstein, Joseph K, and Jessica Hwang. 2019. Introduction to Probability. 2nd ed. Chapman; Hall/CRC. https://doi.org/10.1201/9780429428357.\n\n\nDembo, Amir, and Kevin Ross. 2021. Stochastic Processes. Stanford University. https://adembo.su.domains/math-136/nnotes.pdf.\n\n\nHastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2nd ed. Springer. https://doi.org/10.1007/978-0-387-84858-7.\n\n\nJames, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. An Introduction to Statistical Learning: With Applications in R. 2nd ed. Springer. https://doi.org/10.1007/978-1-0716-1418-1.\n\n\nMiller, Steven J. 2017. The Probability Lifesaver: All the Tools You Need to Understand Chance. A Princeton Lifesaver Study Guide. Princeton University Press. https://doi.org/10.1515/9781400885381.\n\n\nRoss, Kevin. 2022. An Introduction to Probability and Simulation. Bookdown. https://bookdown.org/kevin_davisross/probsim-book/."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Probability for Data Science",
@@ -332,6 +528,20 @@
     "text": "References\n\n\nBlitzstein, Joseph K, and Jessica Hwang. 2019. Introduction to Probability. 2nd ed. Chapman; Hall/CRC. https://doi.org/10.1201/9780429428357.\n\n\nDembo, Amir, and Kevin Ross. 2021. Stochastic Processes. Stanford University. https://adembo.su.domains/math-136/nnotes.pdf.\n\n\nHastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2nd ed. Springer. https://doi.org/10.1007/978-0-387-84858-7.\n\n\nJames, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. An Introduction to Statistical Learning: With Applications in R. 2nd ed. Springer. https://doi.org/10.1007/978-1-0716-1418-1.\n\n\nMiller, Steven J. 2017. The Probability Lifesaver: All the Tools You Need to Understand Chance. A Princeton Lifesaver Study Guide. Princeton University Press. https://doi.org/10.1515/9781400885381.\n\n\nRoss, Kevin. 2022. An Introduction to Probability and Simulation. Bookdown. https://bookdown.org/kevin_davisross/probsim-book/."
   },
   {
+    "objectID": "notation-slides.html#sec-stochastic-probabilistic-random",
+    "href": "notation-slides.html#sec-stochastic-probabilistic-random",
+    "title": "Notation",
+    "section": "1 Stochastic vs. probabilistic vs. random",
+    "text": "1 Stochastic vs. probabilistic vs. random\n\nRemark. The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions."
+  },
+  {
+    "objectID": "notation-slides.html#references",
+    "href": "notation-slides.html#references",
+    "title": "Notation",
+    "section": "References",
+    "text": "References\n\n\nAdler, Robert J., and Jonathan E. Taylor. 2009. Random Fields and Geometry. Springer. https://doi.org/10.1007/978-0-387-48116-6.\n\n\nKallenberg, Olav. 2002. Foundations of Modern Probability. 2nd ed. Springer. https://doi.org/10.1007/978-1-4757-4015-8.\n\n\nStirzaker, David. 2005. Stochastic Processes and Models. Oxford University Press. https://global.oup.com/academic/product/stochastic-processes-and-models-9780198568131."
+  },
+  {
     "objectID": "notation.html",
     "href": "notation.html",
     "title": "Notation",
@@ -363,6 +573,34 @@
       "Foundations",
       "Notation"
     ]
+  },
+  {
+    "objectID": "random-variables-slides.html#sec-random-variables",
+    "href": "random-variables-slides.html#sec-random-variables",
+    "title": "Random variables",
+    "section": "1 Random variables",
+    "text": "1 Random variables\n\n\nDefinition 1 (Random variable) A random variable is a function from a sample space \\(\\Omega\\) to the real numbers \\(\\mathbb{R}\\): it assigns a number to each possible outcome of a random experiment.\n\n\nRemark. We use uppercase letters (\\(X\\), \\(Y\\), \\(Z\\), …) for random variables, and lowercase letters (\\(x\\), \\(y\\), \\(z\\), …) for their realized (observed) values. We write \\(\\{X = x\\}\\) for the event \\(\\{\\omega\\in \\Omega: X(\\omega) = x\\}\\), and similarly for \\(\\{X \\le x\\}\\) and other conditions on \\(X\\). A fully rigorous definition also requires the function to be measurable, so that every such set is an event with a probability; that requirement never binds in these notes.\nSee also: https://en.wikipedia.org/wiki/Random_variable"
+  },
+  {
+    "objectID": "random-variables-slides.html#characteristics-of-probability-distributions",
+    "href": "random-variables-slides.html#characteristics-of-probability-distributions",
+    "title": "Random variables",
+    "section": "2 Characteristics of probability distributions",
+    "text": "2 Characteristics of probability distributions\n\n\nDefinition 5 (Probability mass function (PMF)) If \\(X\\) is a discrete random variable, the probability mass function of \\(X\\) at value \\(x\\), denoted \\(f(x)\\), \\(f_X(x)\\), \\(\\operatorname{P}(x)\\), \\(\\operatorname{P}_X(x)\\), or \\(\\operatorname{P}(X=x)\\), is the probability that \\(X\\) takes exactly the value \\(x\\):\n\\[\\operatorname{P}(X=x) \\stackrel{\\text{def}}{=}\\Pr(\\{X=x\\})\\]\n\n\nRemark. See also https://en.wikipedia.org/wiki/Probability_mass_function"
+  },
+  {
+    "objectID": "random-variables-slides.html#sec-prob-haz",
+    "href": "random-variables-slides.html#sec-prob-haz",
+    "title": "Random variables",
+    "section": "3 Survival, hazard, and cumulative hazard functions",
+    "text": "3 Survival, hazard, and cumulative hazard functions\n\n\nDefinition 20 (Survival function) The survival function (or survivor function) of a random variable \\(T\\), denoted \\(\\operatorname{S}(t)\\), is the probability that \\(T\\) exceeds \\(t\\):\n\\[\\operatorname{S}(t) \\stackrel{\\text{def}}{=}\\Pr(T &gt; t)\\]\n\n\nRemark. The name comes from time-to-event analysis: if \\(T\\) is the time at which a participant dies, then \\(\\operatorname{S}(t)\\) is the probability that the participant is still alive at time \\(t\\). The definition itself applies to any random variable."
+  },
+  {
+    "objectID": "random-variables-slides.html#references",
+    "href": "random-variables-slides.html#references",
+    "title": "Random variables",
+    "section": "References",
+    "text": "References\n\n\nBillingsley, Patrick. 1995. Probability and Measure. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.\n\n\nCasella, George, and Roger Berger. 2002. Statistical Inference. 2nd ed. Cengage Learning. https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/.\n\n\nDobson, Annette J, and Adrian G Barnett. 2018. An Introduction to Generalized Linear Models. 4th ed. CRC press. https://doi.org/10.1201/9781315182780.\n\n\nHutchinson, Brian. 2024. DATA 471/571: Machine Learning. Western Washington University.\n\n\nHutchinson, Brian. n.d. DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures. Western Washington University. Accessed September 28, 2026. https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/.\n\n\nKalbfleisch, John D, and Ross L Prentice. 2011. The Statistical Analysis of Failure Time Data. John Wiley & Sons.\n\n\nKlein, John P, and Melvin L Moeschberger. 2003. Survival Analysis: Techniques for Censored and Truncated Data. 2nd ed. Springer. https://link.springer.com/book/10.1007/b97377.\n\n\nKleinbaum, David G, and Mitchel Klein. 2012. Survival Analysis: A Self-Learning Text. 3rd ed. Springer. https://link.springer.com/book/10.1007/978-1-4419-6646-9.\n\n\nRothman, Kenneth J., Timothy L. Lash, Tyler J. VanderWeele, and Sebastien Haneuse. 2021. Modern Epidemiology. Fourth edition. Wolters Kluwer.\n\n\nVittinghoff, Eric, David V Glidden, Stephen C Shiboski, and Charles E McCulloch. 2012. Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models. 2nd ed. Springer. https://doi.org/10.1007/978-1-4614-1353-0."
   },
   {
     "objectID": "random-variables.html",
