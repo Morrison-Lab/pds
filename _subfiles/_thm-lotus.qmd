@@ -57,7 +57,7 @@ this page's scope
 :::{#exm-lotus}
 #### Expected value of $X^2$ for a Bernoulli variable
 
-Let $X \sim \Ber(\pi)$.
+Let $X \sim \Ber(\prob)$.
 By LOTUS (@thm-lotus, discrete case):
 
 $$
@@ -67,11 +67,11 @@ $$
 && \text{(LOTUS, discrete case)} \\
 &= 0^2 \cd \P(X=0) + 1^2 \cd \P(X=1)
 && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)} \\
-&= 0^2 \cd (1-\pi) + 1^2 \cd \pi
+&= 0^2 \cd (1-\prob) + 1^2 \cd \prob
 && \text{(substitute Bernoulli PMF values)} \\
-&= 0 + \pi
+&= 0 + \prob
 && \text{(simplify each term)} \\
-&= \pi
+&= \prob
 && \text{(add)}
 \ea
 $$

@@ -1,1 +1,1 @@
-$$\haz(t) \eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(t \le T < t + \Delta \mid T \ge t)}{\Delta}$$
+$$\haz(t) \eqdef \lim_{\change \downarrow 0} \frac{\Pr(t \le T < t + \change \mid T \ge t)}{\change}$$

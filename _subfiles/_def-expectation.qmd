@@ -2,7 +2,7 @@
 #### Expectation, expected value, population mean
 
 The **expectation**, **expected value**, or **population mean** of a
-*discrete* random variable $X$, denoted $\E{X}$, $\mu(X)$, or $\mu_X$,
+*discrete* random variable $X$, denoted $\E{X}$, $\mean(X)$, or $\mean_X$,
 is the mean of $X$'s possible values,
 weighted by the [probability mass function](random-variables.qmd#def-pmf) of those values:
 
@@ -75,10 +75,10 @@ and by @def-expectation, $X$ has no expectation.
 :::{#thm-bernoulli-mean}
 #### Expectation of the Bernoulli distribution
 
-If $X \sim \Ber(\pi)$ ([Bernoulli distribution](random-variables.qmd#def-bernoulli)),
-that is, $\P(X = 1) = \pi$ and $\P(X = 0) = 1 - \pi$, then:
+If $X \sim \Ber(\prob)$ ([Bernoulli distribution](random-variables.qmd#def-bernoulli)),
+that is, $\P(X = 1) = \prob$ and $\P(X = 0) = 1 - \prob$, then:
 
-$$\E{X} = \pi$$
+$$\E{X} = \prob$$
 :::
 
 {{< slidebreak >}}
@@ -91,9 +91,9 @@ $$
 &= \sum_{x\in \rangef{X}} x \cd \P(X=x) && \text{(definition of expectation for discrete r.v.)}
 \\&= \sum_{x\in \set{0,1}} x \cd \P(X=x) && \text{(range of Bernoulli r.v. is } \{0, 1\} \text{)}
 \\&= \paren{0 \cd \P(X=0)} + \paren{1 \cd \P(X=1)} && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
-\\&= \paren{0 \cd (1-\pi)} + \paren{1 \cd \pi} && \text{(substitute Bernoulli PMF values)}
-\\&= 0 + \pi && \text{(multiplication by 0 and 1)}
-\\&= \pi && \text{(addition of 0)}
+\\&= \paren{0 \cd (1-\prob)} + \paren{1 \cd \prob} && \text{(substitute Bernoulli PMF values)}
+\\&= 0 + \prob && \text{(multiplication by 0 and 1)}
+\\&= \prob && \text{(addition of 0)}
 \ea
 $$
 
@@ -157,7 +157,7 @@ See [@statproofbook:mean-nnrvar] for an alternative presentation of this proof.
 
 #### Mean of an exponential random variable via survival function
 
-Let $T$ be [exponential](random-variables.qmd#def-exponential) with rate $\lambda > 0$, so $\surv(t) = \ef{-\lambda t}$
+Let $T$ be [exponential](random-variables.qmd#def-exponential) with rate $\rate > 0$, so $\surv(t) = \ef{-\rate t}$
 for $t \ge 0$,
 as computed on the [random variables page](random-variables.qmd#exm-exp-survfn).
 By @thm-surv-mean:
@@ -167,13 +167,13 @@ $$
 \E{T}
 &= \int_0^\infty \surv(t)\,dt
 && \text{(expectation via the survival function)}\\
-&= \int_0^\infty \ef{-\lambda t}\,dt
+&= \int_0^\infty \ef{-\rate t}\,dt
 && \text{(substitute the survival function)}\\
-&= \sb{-\frac{1}{\lambda}\ef{-\lambda t}}_0^\infty
+&= \sb{-\frac{1}{\rate}\ef{-\rate t}}_0^\infty
 && \text{(antiderivative)}\\
-&= 0 - \paren{-\frac{1}{\lambda}}
+&= 0 - \paren{-\frac{1}{\rate}}
 && \text{(evaluate at the bounds)}\\
-&= \frac{1}{\lambda}
+&= \frac{1}{\rate}
 && \text{(simplify)}
 \ea
 $$
@@ -218,6 +218,6 @@ the random vector $\vX = \tp{(X_1, X_2)}$ is a $2 \times 1$ random matrix, and:
 
 $$\Expp\vX = \pmat{\E{X_1} \\ \E{X_2}} = \pmat{1/2 \\ 1/2}$$
 
-since each $X_i$ is Bernoulli with $\pi = 1/2$ (@thm-bernoulli-mean).
+since each $X_i$ is Bernoulli with $\prob = 1/2$ (@thm-bernoulli-mean).
 
 :::

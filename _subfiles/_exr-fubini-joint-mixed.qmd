@@ -11,8 +11,8 @@ Compute $\E{X}$.
 
 ::::{.solution}
 
-Compute $\E{X}$ using @cor-fubini-joint with $\mu_X = \text{Lebesgue measure}$,
-$\mu_Y = \text{counting measure}$, and $h(x, y) = x$.
+Compute $\E{X}$ using @cor-fubini-joint with $\measure_X = \text{Lebesgue measure}$,
+$\measure_Y = \text{counting measure}$, and $h(x, y) = x$.
 
 The joint density w.r.t. Lebesgue $\times$ counting measure is
 $f_{X,Y}(x, y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)$:

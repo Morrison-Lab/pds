@@ -2,7 +2,7 @@
 #### Random variable
 
 A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function)
-from a [sample space](probability-basics.qmd#def-sample-space) $\Omega$
+from a [sample space](probability-basics.qmd#def-sample-space) $\samplespace$
 to the real numbers $\reals$:
 it assigns a number to each possible outcome of a random experiment.
 
@@ -12,7 +12,7 @@ it assigns a number to each possible outcome of a random experiment.
 
 We use uppercase letters ($X$, $Y$, $Z$, ...) for random variables,
 and lowercase letters ($x$, $y$, $z$, ...) for their realized (observed) values.
-We write $\{X = x\}$ for the event $\{\omega \in \Omega : X(\omega) = x\}$,
+We write $\{X = x\}$ for the event $\{\outcome \in \samplespace : X(\outcome) = x\}$,
 and similarly for $\{X \le x\}$ and other conditions on $X$.
 A fully rigorous definition also requires the function to be *measurable*,
 so that every such set is an event with a probability;
@@ -28,7 +28,7 @@ See also: <https://en.wikipedia.org/wiki/Random_variable>
 #### Number of heads in two coin flips
 
 Flip a fair coin twice.
-The sample space is $\Omega = \set{HH, HT, TH, TT}$,
+The sample space is $\samplespace = \set{HH, HT, TH, TT}$,
 each outcome with probability $1/4$.
 Let $X$ be the number of heads:
 
@@ -46,13 +46,13 @@ Then $\{X = 1\} = \set{HT, TH}$, so $\Pr(X = 1) = 1/4 + 1/4 = 1/2$.
 The **range** of a random variable $X$, denoted $\rangef{X}$,
 is the set of values $X$ can take:
 
-$$\rangef{X} \eqdef \set{X(\omega) : \omega \in \Omega}$$
+$$\rangef{X} \eqdef \set{X(\outcome) : \outcome \in \samplespace}$$
 
 :::
 
 ::: {.remark .notes}
 
-The range of $X$ is the [image](https://morrison-lab.github.io/mds/sets-functions.html#def-image) of $X$ as a function on $\Omega$.
+The range of $X$ is the [image](https://morrison-lab.github.io/mds/sets-functions.html#def-image) of $X$ as a function on $\samplespace$.
 For a general function, these notes say "image",
 because some sources use "range" for the codomain instead;
 for a random variable, "range" is the standard term.

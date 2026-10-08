@@ -2,23 +2,23 @@
 
 #### Fubini--Tonelli theorem, measure-theoretic form
 
-Let $\mu_1$ and $\mu_2$ be $\sigma$-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure)
+Let $\measure_1$ and $\measure_2$ be $\sigma$-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure)
 on $\sigma$-algebras of subsets of sets $S_1$ and $S_2$,
 and let $f$ be a measurable function on $S_1 \times S_2$.
 If either
 
 (a) $f \ge 0$ (Tonelli), or
 
-(b) $\int_{S_1 \times S_2} \abs{f}\,d(\mu_1 \otimes \mu_2) < \infty$ (Fubini),
+(b) $\int_{S_1 \times S_2} \abs{f}\,d(\measure_1 \otimes \measure_2) < \infty$ (Fubini),
 
-then the integral of $f$ against the product measure $\mu_1 \otimes \mu_2$
+then the integral of $f$ against the product measure $\measure_1 \otimes \measure_2$
 equals both iterated integrals:
 
 $$
 \ba
-\int_{S_1 \times S_2} f\,d(\mu_1 \otimes \mu_2)
-&= \int_{S_1}\paren{\int_{S_2} f(s_1, s_2)\,d\mu_2(s_2)}\,d\mu_1(s_1)
-\\&= \int_{S_2}\paren{\int_{S_1} f(s_1, s_2)\,d\mu_1(s_1)}\,d\mu_2(s_2).
+\int_{S_1 \times S_2} f\,d(\measure_1 \otimes \measure_2)
+&= \int_{S_1}\paren{\int_{S_2} f(s_1, s_2)\,d\measure_2(s_2)}\,d\measure_1(s_1)
+\\&= \int_{S_2}\paren{\int_{S_1} f(s_1, s_2)\,d\measure_1(s_1)}\,d\measure_2(s_2).
 \ea
 $$
 
@@ -53,7 +53,7 @@ which gives the theorem a form stated in terms of a joint distribution.
 Let $(X, Y)$ be jointly distributed random variables
 whose joint distribution has a density $f_{X,Y}$
 with respect to a product of $\sigma$-finite reference measures
-$\mu_X \otimes \mu_Y$ on $\rangef{X} \times \rangef{Y}$,
+$\measure_X \otimes \measure_Y$ on $\rangef{X} \times \rangef{Y}$,
 and let $h : \rangef{X} \times \rangef{Y} \to \reals$ be measurable.
 If either
 
@@ -67,19 +67,19 @@ against $f_{X,Y}$, with the order of integration exchangeable:
 $$
 \ba
 \E{h(X, Y)}
-&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} h(x, y)\,f_{X,Y}(x, y)\,d\mu_Y(y)}\,d\mu_X(x)
-\\&= \int_{\rangef{Y}}\paren{\int_{\rangef{X}} h(x, y)\,f_{X,Y}(x, y)\,d\mu_X(x)}\,d\mu_Y(y).
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} h(x, y)\,f_{X,Y}(x, y)\,d\measure_Y(y)}\,d\measure_X(x)
+\\&= \int_{\rangef{Y}}\paren{\int_{\rangef{X}} h(x, y)\,f_{X,Y}(x, y)\,d\measure_X(x)}\,d\measure_Y(y).
 \ea
 $$
 
 The choice of reference measures covers three cases:
 
-- **Both continuous:** $\mu_X = \mu_Y = \text{Lebesgue measure}$;
+- **Both continuous:** $\measure_X = \measure_Y = \text{Lebesgue measure}$;
   $f_{X,Y}$ is the joint probability density function (PDF),
-  and $\int_{\rangef{X}} g(x)\,d\mu_X(x) = \int_{\rangef{X}} g(x)\,dx$.
-- **Both discrete:** $\mu_X = \mu_Y = \text{counting measure}$;
+  and $\int_{\rangef{X}} g(x)\,d\measure_X(x) = \int_{\rangef{X}} g(x)\,dx$.
+- **Both discrete:** $\measure_X = \measure_Y = \text{counting measure}$;
   $f_{X,Y}(x,y) = \P(X = x,\, Y = y)$ is the joint probability mass function (PMF),
-  and $\int_{\rangef{X}} g(x)\,d\mu_X(x) = \sum_{x \in \rangef{X}} g(x)$.
+  and $\int_{\rangef{X}} g(x)\,d\measure_X(x) = \sum_{x \in \rangef{X}} g(x)$.
 - **Mixed** (one continuous, one discrete):
   one reference measure is Lebesgue and the other is counting;
   $f_{X,Y}$ is the [joint density-mass function](random-variables.qmd#def-joint-density-mass),
@@ -93,10 +93,10 @@ The choice of reference measures covers three cases:
 
 ::: proof
 Apply @thm-fubini-tonelli-measure with
-$\mu_1 = \mu_X$ and $\mu_2 = \mu_Y$ to the integrand
+$\measure_1 = \measure_X$ and $\measure_2 = \measure_Y$ to the integrand
 $h(x,y)\,f_{X,Y}(x,y)$ on $\rangef{X} \times \rangef{Y}$.
 Lebesgue measure and counting measure on a countable set are each
-$\sigma$-finite, so $\mu_X \otimes \mu_Y$ is $\sigma$-finite in all three cases.
+$\sigma$-finite, so $\measure_X \otimes \measure_Y$ is $\sigma$-finite in all three cases.
 The relevant condition is (a) when $h \ge 0$ and
 (b) when $\E{\abs{h(X, Y)}} < \infty$.
 Independence is not required.
@@ -120,7 +120,7 @@ We apply @cor-fubini-joint (both-continuous case) with $h(x, y) = xy$.
 Since $X$ and $Y$ are independent with densities $f_X(x) = 1$ on $[0,1]$
 and $f_Y(y) = \tfrac{1}{2}$ on $[0,2]$,
 the joint density factors as $f_{X,Y}(x,y) = f_X(x)\,f_Y(y) = \tfrac{1}{2}$,
-and $\mu_X = \mu_Y = \text{Lebesgue measure}$:
+and $\measure_X = \measure_Y = \text{Lebesgue measure}$:
 
 $$
 \ba

@@ -28,17 +28,17 @@ It does not change which distribution has the larger entropy.
 #### Entropy of a coin flip
 
 Let $X$ be the result of one flip of a coin
-with $\P(X=1) = \pi$ and $\P(X=0) = 1 - \pi$
+with $\P(X=1) = \prob$ and $\P(X=0) = 1 - \prob$
 ([Bernoulli distribution](random-variables.qmd#def-bernoulli)).
 Using logarithms to base 2,
 
-$$H(X) = -\pi \log_2 \pi - (1 - \pi) \log_2 (1 - \pi).$$
+$$H(X) = -\prob \log_2 \prob - (1 - \prob) \log_2 (1 - \prob).$$
 
-For a fair coin, $\pi = 1/2$, and
+For a fair coin, $\prob = 1/2$, and
 
 $$H(X) = -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = \tfrac{1}{2} + \tfrac{1}{2} = 1 \text{ bit}.$$
 
-For a coin that always lands heads, $\pi = 1$, and $H(X) = -1 \cdot \log_2 1 - 0 = 0$.
+For a coin that always lands heads, $\prob = 1$, and $H(X) = -1 \cdot \log_2 1 - 0 = 0$.
 The outcome is known in advance, so there is no uncertainty to measure.
 An entropy of $0$ means that all of the probability is on one outcome.
 

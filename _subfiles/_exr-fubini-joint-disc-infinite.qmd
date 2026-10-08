@@ -19,7 +19,7 @@ Compute $\E{X + Y}$.
 ::::{.solution}
 
 Compute $\E{X + Y}$ using @cor-fubini-joint with
-$\mu_X = \mu_Y = \text{counting measure}$ and $h(x, y) = x + y$.
+$\measure_X = \measure_Y = \text{counting measure}$ and $h(x, y) = x + y$.
 Since $h(x,y) = x + y \ge 0$ for every $(x,y)$ in this support,
 condition (a) holds, so @cor-fubini-joint (via Tonelli's theorem)
 guarantees the order of this now-infinite double sum is exchangeable

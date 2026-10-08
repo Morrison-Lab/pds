@@ -68,8 +68,8 @@ $$
 :::{#exm-variance-bernoulli}
 #### Variance of a Bernoulli random variable
 
-Let $X \sim \Ber(\pi)$.
-Then $\E{X} = \pi$ and $\E{X^2} = \pi$
+Let $X \sim \Ber(\prob)$.
+Then $\E{X} = \prob$ and $\E{X^2} = \prob$
 (both computed on the [expectation page](expectation.qmd#exm-lotus)), so:
 
 $$
@@ -77,14 +77,14 @@ $$
 \Var{X}
 &= \E{X^2} - \sqf{\E{X}}
 && \text{(simplified expression for variance)} \\
-&= \pi - \pi^2
+&= \prob - \prob^2
 && \text{(substitute)} \\
-&= \pi(1 - \pi)
+&= \prob(1 - \prob)
 && \text{(factor)}
 \ea
 $$
 
-For a fair coin ($\pi = 1/2$), $\Var{X} = 1/4$.
+For a fair coin ($\prob = 1/2$), $\Var{X} = 1/4$.
 
 :::
 
@@ -182,9 +182,9 @@ that is, if $\Var{Y \mid X = x}$ differs between some values of $x$.
 
 In @exm-cond-variance, $\Var{Y \mid X = 0} = 0.24 \ne 0.16 = \Var{Y \mid X = 1}$,
 so $Y$ is heteroskedastic with respect to $X$.
-More generally, a binary outcome with $\P(Y = 1 \mid X = x) = \pi(x)$
-has conditional variance $\pi(x)(1 - \pi(x))$,
-so it is homoskedastic only if $\pi(x)$ takes at most two values, $\pi$ and $1 - \pi$, for some $\pi$.
+More generally, a binary outcome with $\P(Y = 1 \mid X = x) = \prob(x)$
+has conditional variance $\prob(x)(1 - \prob(x))$,
+so it is homoskedastic only if $\prob(x)$ takes at most two values, $\prob$ and $1 - \prob$, for some $\prob$.
 
 :::
 
@@ -203,18 +203,18 @@ $$\Var{Y} = \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}$$
 
 ::: proof
 
-Write $\mu \eqdef \E{Y}$ and $m(X) \eqdef \E{Y \mid X}$.
+Write $\mean \eqdef \E{Y}$ and $m(X) \eqdef \E{Y \mid X}$.
 Adding and subtracting $m(X)$ inside the deviation and expanding the square:
 
 $$
 \ba
 \Var{Y}
-&= \E{\paren{Y - \mu}^2}
+&= \E{\paren{Y - \mean}^2}
 && \text{(definition of variance)} \\
-&= \E{\paren{\sb{Y - m(X)} + \sb{m(X) - \mu}}^2}
+&= \E{\paren{\sb{Y - m(X)} + \sb{m(X) - \mean}}^2}
 && \text{(add and subtract } m(X) \text{)} \\
-&= \E{\sqf{Y - m(X)}} + \E{\sqf{m(X) - \mu}}
-  + 2\E{\sb{Y - m(X)}\sb{m(X) - \mu}}
+&= \E{\sqf{Y - m(X)}} + \E{\sqf{m(X) - \mean}}
+  + 2\E{\sb{Y - m(X)}\sb{m(X) - \mean}}
 && \text{(expand the square; linearity of expectation)}
 \ea
 $$
@@ -239,13 +239,13 @@ $$
 \ea
 $$
 
-Second term: by the law of iterated expectations, $\E{m(X)} = \E{\E{Y \mid X}} = \mu$, so:
+Second term: by the law of iterated expectations, $\E{m(X)} = \E{\E{Y \mid X}} = \mean$, so:
 
 $$
 \ba
-\E{\sqf{m(X) - \mu}}
+\E{\sqf{m(X) - \mean}}
 &= \E{\sqf{m(X) - \E{m(X)}}}
-&& \text{(} \mu = \E{m(X)} \text{)} \\
+&& \text{(} \mean = \E{m(X)} \text{)} \\
 &= \Var{m(X)}
 && \text{(definition of variance)} \\
 &= \Var{\E{Y \mid X}}
@@ -257,16 +257,16 @@ Third term:
 
 $$
 \ba
-\E{\sb{Y - m(X)}\sb{m(X) - \mu}}
-&= \E{\E{\sb{Y - m(X)}\sb{m(X) - \mu} \mid X}}
+\E{\sb{Y - m(X)}\sb{m(X) - \mean}}
+&= \E{\E{\sb{Y - m(X)}\sb{m(X) - \mean} \mid X}}
 && \text{(law of iterated expectations)} \\
-&= \E{\sb{m(X) - \mu} \cd \E{Y - m(X) \mid X}}
-&& \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mu \text{)} \\
-&= \E{\sb{m(X) - \mu} \cd \sb{\E{Y \mid X} - \E{m(X) \mid X}}}
+&= \E{\sb{m(X) - \mean} \cd \E{Y - m(X) \mid X}}
+&& \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mean \text{)} \\
+&= \E{\sb{m(X) - \mean} \cd \sb{\E{Y \mid X} - \E{m(X) \mid X}}}
 && \text{(linearity of conditional expectation)} \\
-&= \E{\sb{m(X) - \mu} \cd \sb{\E{Y \mid X} - m(X)}}
+&= \E{\sb{m(X) - \mean} \cd \sb{\E{Y \mid X} - m(X)}}
 && \text{(} \E{g(X) \mid X} = g(X) \text{, with } g = m \text{)} \\
-&= \E{\sb{m(X) - \mu} \cd 0}
+&= \E{\sb{m(X) - \mean} \cd 0}
 && \text{(} \E{Y \mid X} = m(X) \text{)} \\
 &= 0
 && \text{(expectation of a constant)}
@@ -334,7 +334,7 @@ The **precision** of a random variable $X$, often denoted $\tau(X)$, $\tau_X$, o
 the inverse of that random variable's [variance](#def-variance)
 (for $\Var{X} > 0$); that is:
 
-$$\tau(X) \eqdef \inv{\Var{X}}$$
+$$\precision(X) \eqdef \inv{\Var{X}}$$
 :::
 
 {{< slidebreak >}}
@@ -363,7 +363,7 @@ which is why it is often the preferred measure of spread when reporting results.
 #### Precision and standard deviation of a fair coin flip
 
 In @exm-variance-bernoulli, a fair coin flip has $\Var{X} = 1/4$,
-so its precision is $\tau(X) = 1 / (1/4) = 4$
+so its precision is $\precision(X) = 1 / (1/4) = 4$
 and its standard deviation is $\SD{X} = \sqrt{1/4} = 1/2$.
 
 :::

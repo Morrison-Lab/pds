@@ -2,10 +2,10 @@
 
 #### The average squared error of pure noise
 
-Let $\varepsilon$ be a random variable with $\mathbb{E}[\varepsilon] = 0$ and
-$\Var{\varepsilon} = \sigma^2$.
+Let $\noise$ be a random variable with $\mathbb{E}[\noise] = 0$ and
+$\Var{\noise} = \varpar$.
 
-Show that $\mathbb{E}[\varepsilon^2] = \sigma^2$,
+Show that $\mathbb{E}[\noise^2] = \varpar$,
 and say which earlier result you used.
 
 :::
