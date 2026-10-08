@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 00:18:39 (PDT)
+Last modified: 2026-10-08 01:35:06 (PDT)
 
 > **NOTE:**
 >
@@ -405,6 +405,23 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
+> **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu = 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is \\\mathopen{}\left\|5 - 3\right\|\mathclose{} = 2 = b\\, so the density is \\\frac{1}{2b}\text{e}^{-1}\\. Here are both values:
+>
+> ``` r
+> b <- 2
+> c(
+>   at_mu = 1 / (2 * b),
+>   at_mu_plus_2 = exp(-1) / (2 * b)
+> ) |>
+>   round(3)
+> #>        at_mu at_mu_plus_2 
+> #>        0.250        0.092
+> ```
+>
+> The density at \\\mu + b\\ is the density at \\\mu\\ times \\\text{e}^{-1}\\, and the same holds at \\\mu - b\\, because the density depends only on the distance from \\\mu\\.
+
+> **NOTE:**
+>
 > **Theorem 9 (Mean and variance of the Laplace distribution)** If \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Definition 6](#def-laplace)), then
 >
 > \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu \quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{6}\\
@@ -421,7 +438,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 10 (Laplace and normal tails with the same mean and variance)** A Laplace variable \\Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\\ has variance \\2b^2\\ ([Theorem 9](#thm-laplace-moments)). Choosing \\b = 1/\sqrt{2}\\ gives variance \\1\\, the same mean and variance as a standard normal. [Figure 3](#fig-laplace-vs-normal) compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.
+> **Example 11 (Laplace and normal tails with the same mean and variance)** A Laplace variable \\Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\\ has variance \\2b^2\\ ([Theorem 9](#thm-laplace-moments)). Choosing \\b = 1/\sqrt{2}\\ gives variance \\1\\, the same mean and variance as a standard normal. [Figure 3](#fig-laplace-vs-normal) compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.
 >
 > Show code
 >
@@ -520,7 +537,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 11 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
+> **Example 12 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
 
 ## 6 The multivariate normal distribution
 
@@ -551,7 +568,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 12 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
+> **Example 13 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
 >
 > \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}} \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)} && \text{(substitute into the multivariate normal density)} \\ &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x - \mu)^2}{2\sigma^2}} && \text{(simplify)} \end{aligned} \\
 >
@@ -593,7 +610,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 13 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix) with diagonal elements \\\sigma_1^2, \ldots, \sigma_p^2\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma_1^2, \ldots, 1/\sigma_p^2\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
+> **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix) with diagonal elements \\\sigma_1^2, \ldots, \sigma_p^2\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma_1^2, \ldots, 1/\sigma_p^2\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
 >
 > \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2} \\
 >
@@ -614,7 +631,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma_i^2\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 13](#exm-mahalanobis-special) for the quadratic form:
+> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma_i^2\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
 >
 > \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
 >
@@ -656,7 +673,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 14 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral)). By [Theorem 13](#thm-mahalanobis-eigen):
+> **Example 15 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral)). By [Theorem 13](#thm-mahalanobis-eigen):
 >
 > \\ \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
 >
@@ -735,7 +752,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 15 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
+> **Example 16 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
 >
 > - **Mean.** By [Theorem 15](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-density), \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0.3 \cdot 0 + 0.7 \cdot 6 = 4.2\\.
 >
@@ -749,11 +766,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. [Example 15](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
+> *Remark*. [Example 16](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
 
 > **NOTE:**
 >
-> **Example 16 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\\lambda \> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g(\lambda)\\\frac{\lambda^y e^{-\lambda}}{y!}\\d\lambda\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 8](#thm-nb)).
+> **Example 17 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\\lambda \> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g(\lambda)\\\frac{\lambda^y e^{-\lambda}}{y!}\\d\lambda\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 8](#thm-nb)).
 
 ## References
 
