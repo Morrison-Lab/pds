@@ -1,0 +1,99 @@
+{{< slidebreak >}}
+
+:::{#exm-lie-auto}
+#### Fuel economy by number of cylinders
+
+The Auto data record the number of engine cylinders and the fuel economy
+(miles per gallon) of
+`{r} nrow(read.csv("data/auto.csv"))` car models
+sold between 1970 and 1982.
+They come from the StatLib library at Carnegie Mellon University
+and ship with the book *An Introduction to Statistical Learning*,
+in the Python package [`ISLP`](https://islp.readthedocs.io/)
+(`ISLP.load_data("Auto")`)
+and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
+(`ISLR2::Auto`).
+This repository holds a copy at `data/auto.csv`,
+and both code tabs below read that file.
+
+Choose one car at random, each with the same probability,
+and let $X$ be its number of cylinders and $Y$ its miles per gallon.
+Then $\P(X = x)$ is the fraction of cars with $x$ cylinders,
+and $\E{Y \mid X = x}$ from @def-cond-expectation is the average
+miles per gallon among those cars.
+The code below computes both for every $x$,
+then checks @thm-lie by averaging the conditional means
+with weights $\P(X = x)$.
+
+::: {.panel-tabset}
+
+#### Python
+
+```{python}
+#| code-fold: false
+import pandas as pd
+
+auto = pd.read_csv("data/auto.csv")
+
+by_cyl = auto.groupby("cylinders")["mpg"].agg(["count", "mean"])
+by_cyl["P(X = x)"] = by_cyl["count"] / by_cyl["count"].sum()
+by_cyl = by_cyl.rename(columns={"mean": "E(Y | X = x)"})
+by_cyl = by_cyl[["count", "P(X = x)", "E(Y | X = x)"]]
+
+lie_rhs = (by_cyl["P(X = x)"] * by_cyl["E(Y | X = x)"]).sum()
+lie_lhs = auto["mpg"].mean()
+
+by_cyl
+```
+
+#### R
+
+```{r}
+#| label: lie-auto-r
+#| code-fold: false
+auto <- read.csv("data/auto.csv")
+
+counts <- table(auto$cylinders)
+cond_mean <- tapply(auto$mpg, auto$cylinders, mean)
+by_cyl <- data.frame(
+  count = as.vector(counts),
+  "P(X = x)" = as.vector(counts) / sum(counts),
+  "E(Y | X = x)" = as.vector(cond_mean),
+  row.names = names(counts),
+  check.names = FALSE
+)
+
+lie_rhs <- sum(by_cyl[["P(X = x)"]] * by_cyl[["E(Y | X = x)"]])
+lie_lhs <- mean(auto$mpg)
+
+by_cyl
+```
+
+:::
+
+```{r}
+#| include: false
+# The claims the prose makes: both languages agree, and the weighted
+# average of the conditional means equals the overall mean.
+stopifnot(
+  abs(lie_lhs - reticulate::py$lie_lhs) < 1e-9,
+  abs(lie_rhs - reticulate::py$lie_rhs) < 1e-9,
+  abs(lie_lhs - lie_rhs) < 1e-9,
+  by_cyl[["E(Y | X = x)"]][1] < by_cyl[["E(Y | X = x)"]][2],
+  by_cyl[["E(Y | X = x)"]][5] < by_cyl[["E(Y | X = x)"]][4]
+)
+```
+
+The conditional mean $\E{Y \mid X = x}$ is the function $g(x)$ of
+@def-cond-expectation-function.
+Four-cylinder cars average
+`{r} sprintf("%.1f", by_cyl["4", "E(Y | X = x)"])`
+miles per gallon, and eight-cylinder cars average
+`{r} sprintf("%.1f", by_cyl["8", "E(Y | X = x)"])`.
+Weighting the `{r} nrow(by_cyl)` conditional means by $\P(X = x)$ gives
+`{r} round(lie_rhs, 3)`,
+which equals the overall average miles per gallon,
+`{r} round(lie_lhs, 3)`,
+as @thm-lie states: $\E{\E{Y \mid X}} = \E{Y}$.
+
+:::
