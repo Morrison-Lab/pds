@@ -29,4 +29,4 @@ jobs:
       exclude-keys: >-
         billingsley1995probability CaseBerg01 kalbfleisch2011statistical
         klein2003survival kleinbaum2012survival me4 rudin1976principles
-        Stirzaker2005probability
+        Stirzaker2005probability murphy2012mlpp
