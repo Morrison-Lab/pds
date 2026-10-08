@@ -579,8 +579,8 @@ $$
 :::{#thm-var-lincom}
 #### Variance of a linear combination
 
-For any vector of random variables $\vX = (X_1, \ldots, X_n)$
-and corresponding vector of constants $\va = (a_1, \ldots, a_n)$,
+For any vector of random variables $\vX = (\dsn{X})$
+and corresponding vector of constants $\va = (\dsn{a})$,
 the variance of their linear combination is:
 
 $$

@@ -33,7 +33,7 @@ $\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
 #### Probability measures are finitely additive
 
 Every [probability measure](#def-probability) is [finitely additive](https://morrison-lab.github.io/mds/measures.html#def-finite-additivity):
-for any [mutually exclusive](#def-mutually-exclusive) events $A_1, \ldots, A_n$,
+for any [mutually exclusive](#def-mutually-exclusive) events $\dsn{A}$,
 
 $$\Pr(A_1 \cup \cdots \cup A_n) = \sumin \Pr(A_i)$$
 
@@ -112,22 +112,22 @@ $$
 \ea
 $$
 
-With $n = 1$, this says the series $\sum_{i=1}^{\infty} \Pr(B_i)$
+With $n = 1$, this says the series $\sumto{i}{\infty} \Pr(B_i)$
 has the finite total $\Pr(A_1)$.
 So, for $n \ge 2$:
 
 $$
 \ba
 \Pr(A_n)
-&= \sum_{i=1}^{\infty} \Pr(B_i) - \sum_{i=1}^{n-1} \Pr(B_i)
+&= \sumto{i}{\infty} \Pr(B_i) - \sumto{i}{n-1} \Pr(B_i)
 && \text{(split off the first } n - 1 \text{ terms; the total is finite)} \\
-&= \Pr(A_1) - \sum_{i=1}^{n-1} \Pr(B_i)
+&= \Pr(A_1) - \sumto{i}{n-1} \Pr(B_i)
 && \text{(the case } n = 1 \text{)}
 \ea
 $$
 
 As $n \to \infty$,
-the partial sums $\sum_{i=1}^{n-1} \Pr(B_i)$ converge to the total $\Pr(A_1)$,
+the partial sums $\sumto{i}{n-1} \Pr(B_i)$ converge to the total $\Pr(A_1)$,
 so $\Pr(A_n) \to \Pr(A_1) - \Pr(A_1) = 0$.
 
 :::
@@ -154,7 +154,7 @@ is a [probability measure](#def-probability) if and only if it satisfies:
    $$\Pr(\Omega) = 1$$
 3. $\Pr$ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity):
    for any [mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
-   $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \Pr(A_i)$$
+   $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sumto{i}{\infty} \Pr(A_i)$$
 
 :::
 

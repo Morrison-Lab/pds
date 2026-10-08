@@ -2,12 +2,12 @@
 #### Risk (expected loss)
 
 For a random variable $Y$
-and a [prediction](#def-prediction) $\hat{y}$
+and a [prediction](#def-prediction) $\hy$
 (a constant, or a function $g(X)$ of a random input $X$),
 the **risk** is the expectation of the
 [loss](#def-loss-function):
 
-$$R \eqdef \E{L(Y, \hat{y})}$$
+$$R \eqdef \E{L(Y, \hy)}$$
 
 :::
 

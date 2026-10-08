@@ -2,7 +2,7 @@
 #### Statistical independence
 
 Random variables $\X1n$ are **statistically independent**
-if, for all sets of real numbers $A_1, \ldots, A_n$,
+if, for all sets of real numbers $\dsn{A}$,
 the [probability](probability-basics.qmd#def-probability)
 that every $X_i$ falls in its set
 is the product of the individual probabilities:
@@ -27,7 +27,7 @@ which can remind you of the definition.
 Discrete random variables $\X1n$ are [statistically independent](#def-indpt)
 if and only if their [joint PMF](random-variables.qmd#def-joint-pmf) factors
 into the product of their PMFs:
-for all real numbers $x_1, \ldots, x_n$,
+for all real numbers $\dsn{x}$,
 
 $$\P(\Xx1n) = \prodi1n{\P(X_i=x_i)}$$
 
@@ -39,21 +39,21 @@ $$\P(\Xx1n) = \prodi1n{\P(X_i=x_i)}$$
 Take $A_i = \set{x_i}$ for each $i$ in @def-indpt.
 
 **If.**
-Let $A_1, \ldots, A_n$ be sets of real numbers,
-and let $C$ be the set of tuples $(x_1, \ldots, x_n)$
+Let $\dsn{A}$ be sets of real numbers,
+and let $C$ be the set of tuples $(\dsn{x})$
 with each $x_i \in A_i \cap \rangef{X_i}$.
 Each [range](random-variables.qmd#def-range) $\rangef{X_i}$ is countable,
 so $C$ is countable.
 Each $X_i$ takes its values in $\rangef{X_i}$,
 so the event $\set{X_1 \in A_1, \ldots, X_n \in A_n}$
-is the disjoint union of the events $\set{\Xx1n}$ over $(x_1, \ldots, x_n) \in C$:
+is the disjoint union of the events $\set{\Xx1n}$ over $(\dsn{x}) \in C$:
 
 $$
 \ba
 \Pr(X_1 \in A_1, \ldots, X_n \in A_n)
-&= \sum_{(x_1, \ldots, x_n) \in C} \P(\Xx1n)
+&= \sum_{(\dsn{x}) \in C} \P(\Xx1n)
 && \text{(countable additivity over the disjoint events } \set{\Xx1n} \text{)} \\
-&= \sum_{(x_1, \ldots, x_n) \in C} \prodi1n{\P(X_i = x_i)}
+&= \sum_{(\dsn{x}) \in C} \prodi1n{\P(X_i = x_i)}
 && \text{(the joint PMF factors)} \\
 &= \prodi1n{\sum_{x_i \in A_i \cap \rangef{X_i}} \P(X_i = x_i)}
 && \text{(a sum over the product set } C \text{ of non-negative products factors)} \\
@@ -167,7 +167,7 @@ while $\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) = \tfrac{1}{2}
 Random variables $\dsn{Y}$ are **conditionally independent**
 given a discrete random variable (or vector) $\vX$
 if, for every value $\vx$ with $\Pr(\vX = \vx) > 0$
-and all sets of real numbers $A_1, \ldots, A_n$,
+and all sets of real numbers $\dsn{A}$,
 the conditional probability that every $Y_i$ falls in its set
 is the product of the individual conditional probabilities:
 
@@ -175,7 +175,7 @@ $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodi1n{\Pr(Y_i \in A_
 
 When $\vX$ is continuous, every event $\{\vX = \vx\}$ has probability 0,
 so the condition is stated with densities instead:
-for every $\vx$ with $\p(\vX = \vx) > 0$ and all $y_1, \ldots, y_n$,
+for every $\vx$ with $\p(\vX = \vx) > 0$ and all $\dsn{y}$,
 
 $$\frac{\p(\vX = \vx, Y_1 = y_1, \ldots, Y_n = y_n)}{\p(\vX = \vx)} = \prodi1n{\frac{\p(\vX = \vx, Y_i = y_i)}{\p(\vX = \vx)}}$$
 
@@ -304,12 +304,12 @@ and @exm-indpt-not-cind gives the second.
 Let $\vX = (\X1n)$ be a discrete random vector,
 and let $\dsn{Y}$ be [conditionally independent](#def-cind) given $\vX$.
 Suppose also that each $Y_i$ depends on $\vX$ only through $X_i$:
-for every $\vx = (x_1, \ldots, x_n)$ with $\Pr(\vX = \vx) > 0$
+for every $\vx = (\dsn{x})$ with $\Pr(\vX = \vx) > 0$
 and every set of real numbers $A_i$,
 
 $$\Pr(Y_i \in A_i \mid \vX = \vx) = \Pr(Y_i \in A_i \mid X_i = x_i)$$
 
-Then, for every such $\vx$ and all sets of real numbers $A_1, \ldots, A_n$:
+Then, for every such $\vx$ and all sets of real numbers $\dsn{A}$:
 
 $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodi1n{\Pr(Y_i \in A_i \mid X_i = x_i)}$$
 
@@ -334,7 +334,7 @@ $$
 
 ::: {.remark .notes}
 
-In regression, $\vX$ is usually the full set of covariates $(X_1, \ldots, X_n)$,
+In regression, $\vX$ is usually the full set of covariates $(\dsn{X})$,
 and a model usually also assumes, as @prp-cind-own-covariate does,
 that each $Y_i$ depends on the covariates only through its own $X_i$.
 That second assumption is a separate one, not part of conditional independence.
@@ -382,9 +382,9 @@ and for each $K$, the events $B_1, \ldots, B_K$ have union $\set{X_i \le x - \tf
 $$
 \ba
 \Pr(X_i < x)
-&= \sum_{k=1}^{\infty} \Pr(B_k)
+&= \sumto{k}{\infty} \Pr(B_k)
 && \text{(countable additivity)} \\
-&= \lim_{K \to \infty} \sum_{k=1}^{K} \Pr(B_k)
+&= \lim_{K \to \infty} \sumto{k}{K} \Pr(B_k)
 && \text{(definition of an infinite series)} \\
 &= \lim_{K \to \infty} \Pr(X_i \le x - \tfrac{1}{K})
 && \text{(finite additivity)} \\
@@ -510,7 +510,7 @@ distributed** (shorthand: "$X_i\ \iid$") if they are:
 ::: {.remark .notes}
 
 The IID assumption is one of the most common assumptions in introductory
-statistics: it says a sample $X_1, \ldots, X_n$ can be treated as $n$
+statistics: it says a sample $\dsn{X}$ can be treated as $n$
 independent draws from a single shared distribution.
 
 :::

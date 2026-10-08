@@ -6,7 +6,7 @@ on the same finite set of outcomes $\set{1, \ldots, K}$,
 with $p_k$ and $q_k$ the probabilities of outcome $k$.
 The **cross-entropy** of $q$ relative to $p$ is
 
-$$H(p, q) \eqdef -\sum_{k=1}^{K} p_k \log q_k.$$
+$$H(p, q) \eqdef -\sumto{k}{K} p_k \log q_k.$$
 
 It is the [expectation](#def-expectation) of $-\log q(X)$
 when $X$ has probability mass function $p$.
@@ -31,7 +31,7 @@ For $p$ and $q$ as in @def-cross-entropy,
 the **Kullback--Leibler divergence** (KL divergence, or relative entropy)
 of $q$ from $p$ is
 
-$$D_{\mathrm{KL}}(p \,\|\, q) \eqdef \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).$$
+$$D_{\mathrm{KL}}(p \,\|\, q) \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).$$
 
 :::
 

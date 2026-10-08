@@ -5,7 +5,7 @@ If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space,
 with $\Pr(B_i) > 0$ for every $i$,
 then for any event $A$:
 
-$$\Pr(A) = \sum_{i=1}^\infty \Pr(A \mid B_i) \cd \Pr(B_i)$$
+$$\Pr(A) = \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i)$$
 
 :::
 
@@ -20,8 +20,8 @@ and then by @thm-law-conditional-prob:
 $$
 \ba
 \Pr(A)
-&= \sum_{i=1}^\infty \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)}
-\\&= \sum_{i=1}^\infty \Pr(A \mid B_i) \cd \Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) > 0 \text{)}
+&= \sumto{i}{\infty} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)}
+\\&= \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) > 0 \text{)}
 \ea
 $$
 

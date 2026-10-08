@@ -2,9 +2,9 @@
 
 #### Squared and absolute loss
 
-1. For a true value $y = 3$ and a prediction $\hat{y} = 5$,
-compute the squared error loss $\sqf{y - \hat{y}}$
-and the absolute error loss $\abs{y - \hat{y}}$.
+1. For a true value $y = 3$ and a prediction $\hy = 5$,
+compute the squared error loss $\sqf{y - \hy}$
+and the absolute error loss $\abs{y - \hy}$.
 
 2. A random variable $Y$ has $\P(Y = 0) = 0.5$ and $\P(Y = 4) = 0.5$.
 For the constant prediction $c = 1$,

@@ -166,7 +166,7 @@ which is beyond these notes' scope.
 #### Expected total of two dice
 
 Let $X$ and $Y$ be the results of two six-sided die rolls.
-Each has expectation $\sum_{x=1}^{6} x \cd \tfrac{1}{6} = \tfrac{21}{6} = 3.5$, so:
+Each has expectation $\sumto{x}{6} x \cd \tfrac{1}{6} = \tfrac{21}{6} = 3.5$, so:
 
 $$
 \ba

@@ -1,23 +1,23 @@
 :::{#def-loss-function}
 #### Loss function
 
-A **loss function** $L(y, \hat{y})$ is a rule that gives a number that is 0 or larger:
-the cost of [predicting](#def-prediction) $\hat{y}$ when the true value is $y$.
+A **loss function** $L(y, \hy)$ is a rule that gives a number that is 0 or larger:
+the cost of [predicting](#def-prediction) $\hy$ when the true value is $y$.
 
 :::
 
 ::: {.remark .notes}
 
 The squared error loss is:
-$$L(y, \hat{y}) = \sqf{y - \hat{y}}$$
+$$L(y, \hy) = \sqf{y - \hy}$$
 
 The absolute error loss is:
-$$L(y, \hat{y}) = \abs{y - \hat{y}}$$
+$$L(y, \hy) = \abs{y - \hy}$$
 
 @hastie2009elements [p. 18] call squared error loss
 "by far the most common and convenient" choice.
 
-For the values $y = 3$ and $\hat{y} = 5$ from @exr-loss (part 1),
+For the values $y = 3$ and $\hy = 5$ from @exr-loss (part 1),
 the squared error loss is $4$,
 and the absolute error loss is $2$.
 
