@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-07 00:05:55 (PDT)
+Last modified: 2026-10-07 20:19:59 (PDT)
 
 > **NOTE:**
 >
@@ -1094,6 +1094,70 @@ Last modified: 2026-10-07 00:05:55 (PDT)
 >
 > shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
 
+## 4 Entropy and cross-entropy
+
+> **NOTE:**
+>
+> **Definition 14 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
+>
+> \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
+>
+> A term with \\\operatorname{P}(X=x) = 0\\ is taken to be \\0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
+
+> **NOTE:**
+>
+> *Remark 1* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+
+> **NOTE:**
+>
+> **Example 20 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+>
+> \\H(X) = -\pi \log_2 \pi - (1 - \pi) \log_2 (1 - \pi).\\
+>
+> For a fair coin, \\\pi = 1/2\\, and
+>
+> \\H(X) = -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = \tfrac{1}{2} + \tfrac{1}{2} = 1 \text{ bit}.\\
+>
+> For a coin that always lands heads, \\\pi = 1\\, and \\H(X) = -1 \cdot \log_2 1 - 0 = 0\\. The outcome is known in advance, so there is no uncertainty to measure. An entropy of \\0\\ means that all of the probability is on one outcome.
+
+> **NOTE:**
+>
+> *Remark 2* (Where the definition comes from). Murphy ([2012, sec. 2.8.1](#ref-murphy2012mlpp), p. 56) defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+
+> **NOTE:**
+>
+> **Definition 15 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ is
+>
+> \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
+>
+> It is the [expectation](#def-expectation) of \\-\log q(X)\\ when \\X\\ has probability mass function \\p\\. When \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite.
+
+> **NOTE:**
+>
+> *Remark 3* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\H(p, p) = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
+
+> **NOTE:**
+>
+> **Definition 16 (Kullback–Leibler divergence)** For \\p\\ and \\q\\ as in [Definition 15](#def-cross-entropy), the **Kullback–Leibler divergence** (KL divergence, or relative entropy) of \\q\\ from \\p\\ is
+>
+> \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
+
+> **NOTE:**
+>
+> *Remark 4* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
+
+> **NOTE:**
+>
+> **Example 21 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+>
+> \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} = 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} = 2 - \tfrac{1}{2} \log_2 3 \approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
+>
+> Here the cross-entropy is larger than the entropy of \\p\\, and the divergence is the difference.
+
+> **NOTE:**
+>
+> *Remark 5* (Where the definitions come from). Murphy ([2012, sec. 2.8.2](#ref-murphy2012mlpp), pp. 57–58) defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+
 ## References
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
@@ -1105,6 +1169,8 @@ Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized L
 Gut, Allan. 2013. *Probability: A Graduate Course*. 2nd ed. Springer Texts in Statistics. Springer. <https://doi.org/10.1007/978-1-4614-4708-5>.
 
 Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
+
+Murphy, Kevin P. 2012. *Machine Learning: A Probabilistic Perspective*. Adaptive Computation and Machine Learning. MIT Press.
 
 Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
 
