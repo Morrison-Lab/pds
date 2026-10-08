@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 10:03:09 (PDT)
+Last modified: 2026-10-08 10:47:21 (PDT)
 
 > **NOTE:**
 >
@@ -762,6 +762,60 @@ Last modified: 2026-10-08 10:03:09 (PDT)
 
 > **NOTE:**
 >
+> **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+>
+> Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 9](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
+>
+> ## Python
+>
+> ``` python
+> import pandas as pd
+>
+> auto = pd.read_csv("data/auto.csv")
+>
+> by_cyl = auto.groupby("cylinders")["mpg"].agg(["count", "mean"])
+> by_cyl["P(X = x)"] = by_cyl["count"] / by_cyl["count"].sum()
+> by_cyl = by_cyl.rename(columns={"mean": "E(Y | X = x)"})
+> by_cyl = by_cyl[["count", "P(X = x)", "E(Y | X = x)"]]
+>
+> lie_rhs = (by_cyl["P(X = x)"] * by_cyl["E(Y | X = x)"]).sum()
+> lie_lhs = auto["mpg"].mean()
+>
+> by_cyl
+> #>            count  P(X = x)  E(Y | X = x)
+> #> cylinders                               
+> #> 3              4  0.010204     20.550000
+> #> 4            199  0.507653     29.283920
+> #> 5              3  0.007653     27.366667
+> #> 6             83  0.211735     19.973494
+> #> 8            103  0.262755     14.963107
+> ```
+>
+> ## R
+>
+> ``` r
+> auto <- read.csv("data/auto.csv")
+>
+> counts <- table(auto$cylinders)
+> cond_mean <- tapply(auto$mpg, auto$cylinders, mean)
+> by_cyl <- data.frame(
+>   count = as.vector(counts),
+>   "P(X = x)" = as.vector(counts) / sum(counts),
+>   "E(Y | X = x)" = as.vector(cond_mean),
+>   row.names = names(counts),
+>   check.names = FALSE
+> )
+>
+> lie_rhs <- sum(by_cyl[["P(X = x)"]] * by_cyl[["E(Y | X = x)"]])
+> lie_lhs <- mean(auto$mpg)
+>
+> by_cyl
+> ```
+>
+> The conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ is the function \\g(x)\\ of [Definition 7](#def-cond-expectation-function). Four-cylinder cars average 29.3 miles per gallon, and eight-cylinder cars average 15.0. Weighting the 5 conditional means by \\\operatorname{P}(X = x)\\ gives 23.446, which equals the overall average miles per gallon, 23.446, as [Theorem 9](#thm-lie) states: \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\.
+
+> **NOTE:**
+>
 > **Theorem 10 (Conditional law of iterated expectations)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid Z\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X,Z\right\]\mathclose{} \mid Z\right\]\mathclose{}\\
@@ -786,7 +840,7 @@ Last modified: 2026-10-08 10:03:09 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
+> **Example 20 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{} = 10, \quad \operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{} = 6\\
 >
@@ -945,60 +999,6 @@ Last modified: 2026-10-08 10:03:09 (PDT)
 > | truncated sum-of-integrals |   1   |
 >
 > With \\q = 0.5\\, the truncated sum-of-integrals matches the closed form \\\frac{1}{2(1-q)} = 1\\.
-
-> **NOTE:**
->
-> **Example 20 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
->
-> Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 9](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
->
-> ## Python
->
-> ``` python
-> import pandas as pd
->
-> auto = pd.read_csv("data/auto.csv")
->
-> by_cyl = auto.groupby("cylinders")["mpg"].agg(["count", "mean"])
-> by_cyl["P(X = x)"] = by_cyl["count"] / by_cyl["count"].sum()
-> by_cyl = by_cyl.rename(columns={"mean": "E(Y | X = x)"})
-> by_cyl = by_cyl[["count", "P(X = x)", "E(Y | X = x)"]]
->
-> lie_rhs = (by_cyl["P(X = x)"] * by_cyl["E(Y | X = x)"]).sum()
-> lie_lhs = auto["mpg"].mean()
->
-> by_cyl
-> #>            count  P(X = x)  E(Y | X = x)
-> #> cylinders                               
-> #> 3              4  0.010204     20.550000
-> #> 4            199  0.507653     29.283920
-> #> 5              3  0.007653     27.366667
-> #> 6             83  0.211735     19.973494
-> #> 8            103  0.262755     14.963107
-> ```
->
-> ## R
->
-> ``` r
-> auto <- read.csv("data/auto.csv")
->
-> counts <- table(auto$cylinders)
-> cond_mean <- tapply(auto$mpg, auto$cylinders, mean)
-> by_cyl <- data.frame(
->   count = as.vector(counts),
->   "P(X = x)" = as.vector(counts) / sum(counts),
->   "E(Y | X = x)" = as.vector(cond_mean),
->   row.names = names(counts),
->   check.names = FALSE
-> )
->
-> lie_rhs <- sum(by_cyl[["P(X = x)"]] * by_cyl[["E(Y | X = x)"]])
-> lie_lhs <- mean(auto$mpg)
->
-> by_cyl
-> ```
->
-> The conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ is the function \\g(x)\\ of [Definition 7](#def-cond-expectation-function). Four-cylinder cars average 29.3 miles per gallon, and eight-cylinder cars average 15.0. Weighting the 5 conditional means by \\\operatorname{P}(X = x)\\ gives 23.446, which equals the overall average miles per gallon, 23.446, as [Theorem 9](#thm-lie) states: \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\.
 
 ## 3 Loss and risk
 
