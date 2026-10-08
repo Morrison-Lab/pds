@@ -1,0 +1,115 @@
+{{< slidebreak >}}
+
+:::{#exm-cor-auto}
+#### Correlation of horsepower and fuel economy
+
+The Auto data record the horsepower and fuel economy (miles per gallon)
+of `{r} nrow(read.csv("data/auto.csv"))` car models
+sold between 1970 and 1982.
+They come from the StatLib library at Carnegie Mellon University
+and ship with the book *An Introduction to Statistical Learning*,
+in the Python package [`ISLP`](https://islp.readthedocs.io/)
+(`ISLP.load_data("Auto")`)
+and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
+(`ISLR2::Auto`).
+This repository holds a copy at `data/auto.csv`,
+and both code tabs below read that file.
+
+Choose one car at random, each with the same probability,
+and let $X$ be its horsepower and $Y$ its miles per gallon.
+Then $\E{X}$, $\Var{X}$, and $\Cov{X,Y}$ are the averages over the cars
+in the data, and @def-correlation gives $\Cor{X,Y}$.
+The code below computes each part of the definition directly.
+
+::: {.panel-tabset}
+
+#### Python
+
+```{python}
+#| code-fold: false
+import numpy as np
+import pandas as pd
+
+auto = pd.read_csv("data/auto.csv")
+x = auto["horsepower"].to_numpy(dtype=float)
+y = auto["mpg"].to_numpy(dtype=float)
+
+cov_xy = np.mean((x - x.mean()) * (y - y.mean()))
+sd_x = np.sqrt(np.mean((x - x.mean()) ** 2))
+sd_y = np.sqrt(np.mean((y - y.mean()) ** 2))
+
+pd.Series({
+    "Cov(X, Y)": cov_xy,
+    "SD(X)": sd_x,
+    "SD(Y)": sd_y,
+    "Cor(X, Y)": cov_xy / (sd_x * sd_y),
+})
+```
+
+#### R
+
+```{r}
+#| label: cor-auto-r
+#| code-fold: false
+auto <- read.csv("data/auto.csv")
+x <- auto$horsepower
+y <- auto$mpg
+
+cov_xy <- mean((x - mean(x)) * (y - mean(y)))
+sd_x <- sqrt(mean((x - mean(x))^2))
+sd_y <- sqrt(mean((y - mean(y))^2))
+
+c(
+  "Cov(X, Y)" = cov_xy,
+  "SD(X)" = sd_x,
+  "SD(Y)" = sd_y,
+  "Cor(X, Y)" = cov_xy / (sd_x * sd_y)
+)
+```
+
+:::
+
+```{r}
+#| include: false
+# The claims the prose makes: both languages agree, the definition matches
+# R's built-in sample correlation, and the correlation is negative.
+stopifnot(
+  abs(cov_xy - reticulate::py$cov_xy) < 1e-9,
+  abs(cov_xy / (sd_x * sd_y) - cor(x, y)) < 1e-9,
+  cov_xy < 0
+)
+```
+
+@fig-cor-auto plots each car's miles per gallon against its horsepower.
+
+```{r}
+#| label: fig-cor-auto
+#| fig-cap: >-
+#|   Miles per gallon against horsepower for the cars in the Auto data.
+#|   Cars with more horsepower tend to have lower fuel economy.
+#| fig-alt: >-
+#|   A scatter plot of miles per gallon on the vertical axis against
+#|   horsepower on the horizontal axis. The points slope downward from
+#|   the upper left to the lower right and curve toward a flat floor.
+#| fig-height: 3.5
+#| fig-width: 5
+#| code-fold: true
+plot(x, y, xlab = "horsepower", ylab = "miles per gallon", pch = 16,
+     col = adjustcolor("black", alpha.f = 0.4))
+```
+
+The covariance is
+`{r} round(cov_xy, 1)`,
+in units of horsepower times miles per gallon.
+It is negative, so cars with more horsepower than average tend to have
+lower fuel economy than average.
+Dividing by the two standard deviations,
+`{r} round(sd_x, 1)` horsepower and `{r} round(sd_y, 1)` miles per gallon,
+removes the units and gives a correlation of
+`{r} round(cov_xy / (sd_x * sd_y), 2)`,
+which lies between $-1$ and $1$ as @thm-cor-bounds requires.
+The same value comes from R's built-in `cor(x, y)`,
+because the sample correlation divides the covariance and both standard
+deviations by the same count, which cancels.
+
+:::
