@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-07 18:41:19 (PDT)
+Last modified: 2026-10-07 18:50:47 (PDT)
 
 > **NOTE:**
 >
@@ -1098,11 +1098,11 @@ Last modified: 2026-10-07 18:41:19 (PDT)
 
 > **NOTE:**
 >
-> **Definition 14 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{p}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{p}(X)\\:
+> **Definition 14 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
 >
-> \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{p}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x) \log \operatorname{p}(X=x)\\
+> \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
 >
-> A term with \\\operatorname{p}(X=x) = 0\\ is taken to be \\0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
+> A term with \\\operatorname{P}(X=x) = 0\\ is taken to be \\0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
 
 > **NOTE:**
 >
