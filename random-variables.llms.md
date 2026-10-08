@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 13:05:16 (PDT)
+Last modified: 2026-10-08 14:33:50 (PDT)
 
 ## 1 Random variables
 
@@ -543,7 +543,7 @@ Last modified: 2026-10-08 13:05:16 (PDT)
 >
 > *Proof*. Every outcome has \\Y(\omega) \in \mathbb{R}\\, so \\\mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{} = \Omega\\, and:
 >
-> \\ \begin{aligned} \operatorname{P}(X = x) &= \Pr(\mathopen{}\left\\X = x\right\\\mathclose{} \cap \Omega) && \text{(} \mathopen{}\left\\X = x\right\\\mathclose{} \subseteq \Omega \text{)} \\ &= \Pr(X = x,\\ Y \in \mathbb{R}) && \text{(} \mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{} = \Omega \text{)} \\ &= \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy && \text{(definition of a joint density-mass function, with } B = \mathbb{R} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{P}(X = x) &= \Pr(\mathopen{}\left\\X = x\right\\\mathclose{} \cap \Omega) && \text{(} \mathopen{}\left\\X = x\right\\\mathclose{} \subseteq \Omega \text{)} \\ &= \Pr(X = x,\\ Y \in \mathbb{R}) && \text{(} \mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{} = \Omega \text{)} \\ &= \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy && \text{(definition of a joint density-mass function, with } B = \mathbb{R}\text{)} \end{aligned} \\
 
 > **NOTE:**
 >

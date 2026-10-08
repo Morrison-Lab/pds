@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-08 13:05:16 (PDT)</p>
+  <p class="date">Last modified: 2026-10-08 14:33:50 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -440,15 +440,15 @@
 <section class="slide level2">
 
 <div id="exr-noise-second-moment" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}(\varepsilon) = \sigma^2\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>.</p>
 <p>Show that <span class="math inline">\(\mathbb{E}[\varepsilon^2] = \sigma^2\)</span>, and say which earlier result you used.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="sol-noise-second-moment" class="proof solution">
-<p><span class="proof-title"><em>Solution 1</em>. </span><a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;2</a> says <span class="math inline">\(\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \varepsilon\)</span> and substituting <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span>,</p>
-<p><span id="eq-noise-second-moment"><span class="math display">\[\mathbb{E}[\varepsilon^2] = \operatorname{Var}(\varepsilon) + 0^2 = \sigma^2 \tag{1}\]</span></span></p>
+<p><span class="proof-title"><em>Solution 1</em>. </span><a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;2</a> says <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \varepsilon\)</span> and substituting <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span>,</p>
+<p><span id="eq-noise-second-moment"><span class="math display">\[\mathbb{E}[\varepsilon^2] = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 = \sigma^2 \tag{1}\]</span></span></p>
 <p>so for mean-zero noise the average squared value <em>is</em> the variance.</p>
 <p>The identity looks slight and does a lot of work. <a href="#/eq-noise-second-moment" class="quarto-xref">Equation&nbsp;1</a> is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the <em>spread</em> of the noise, which is what a model of the world gives you, into a statement about <em>squared error</em>, which is what the fitting objective measures.</p>
 </div>

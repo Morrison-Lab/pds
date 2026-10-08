@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 13:05:16 (PDT)
+Last modified: 2026-10-08 14:33:50 (PDT)
 
 > **NOTE:**
 >
@@ -172,7 +172,7 @@ Last modified: 2026-10-08 13:05:16 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Why the average of a sample is a random variable)** Let \\X_1, \dots, X_n\\ be independent draws from the same distribution, each with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^{n} X_i\\ be their average.
+> **Exercise 1 (Why the average of a sample is a random variable)** Let \\X_1, \dots, X_n\\ be independent draws from the same distribution, each with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^nX_i\\ be their average.
 >
 > Use [Theorem 4](#thm-linearity-expectation) to show that \\\mathbb{E}\[\bar X\] = \mu\\, and say in one sentence what that does *not* tell us.
 
@@ -180,7 +180,7 @@ Last modified: 2026-10-08 13:05:16 (PDT)
 >
 > *Solution 1*. Pull the constant \\1/n\\ out and split the sum, both by [Theorem 4](#thm-linearity-expectation):
 >
-> \\\mathbb{E}\[\bar X\] = \mathbb{E}\\\left\[\frac{1}{n}\sum\_{i=1}^{n} X_i\right\] = \frac{1}{n}\sum\_{i=1}^{n} \mathbb{E}\[X_i\] = \frac{1}{n}\\(n\mu) = \mu\\
+> \\\mathbb{E}\[\bar X\] = \mathbb{E}\\\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\] = \frac{1}{n}\sum\_{i=1}^n\mathbb{E}\[X_i\] = \frac{1}{n}\\(n\mu) = \mu\\
 >
 > So the sample average is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
 >

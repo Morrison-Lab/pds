@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 13:05:16 (PDT)
+Last modified: 2026-10-08 14:33:50 (PDT)
 
 ## 1 Defining probabilities
 
@@ -105,7 +105,7 @@ Last modified: 2026-10-08 13:05:16 (PDT)
 >
 > **Corollary 1 (Probability measures are finitely additive)** Every [probability measure](#def-probability) is [finitely additive](https://morrison-lab.github.io/mds/measures.html#def-finite-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, \ldots, A_n\\,
 >
-> \\\Pr(A_1 \cup \cdots \cup A_n) = \sum\_{i=1}^{n} \Pr(A_i)\\
+> \\\Pr(A_1 \cup \cdots \cup A_n) = \sum\_{i=1}^n\Pr(A_i)\\
 
 > **NOTE:**
 >
