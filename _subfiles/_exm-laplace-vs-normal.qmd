@@ -10,7 +10,9 @@ and lower in between.
 
 ```{r}
 #| label: fig-laplace-vs-normal
-#| fig-cap: "Laplace and standard normal densities with the same mean (0) and variance (1)"
+#| fig-cap: >-
+#|   Laplace and standard normal densities with the same mean (0)
+#|   and variance (1)
 #| fig-alt: >-
 #|   Two symmetric curves over y from minus 4 to 4. The standard normal is a
 #|   smooth bell. The Laplace curve with the same variance peaks higher at 0
