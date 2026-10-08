@@ -2,9 +2,19 @@
 
 Code
 
+- [Show All Code](javascript:void(0))
+
+- [Hide All Code](javascript:void(0))
+
+- 
+
+  ------------------------------------------------------------------------
+
+- [View Source](javascript:void(0))
+
 Published
 
-Last modified: 2026-10-08 12:54:59 (PDT)
+Last modified: 2026-10-08 13:05:16 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -580,6 +590,75 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 > \\ \begin{aligned} 0 &\le \operatorname{Var}\mathopen{}\left(\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}\right)\mathclose{} && \text{(a variance is non-negative)} \\ &= \frac{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}{\sigma_X^2} + \frac{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}{\sigma_Y^2} \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(variance of a sum of two random variables)} \\ &= 1 + 1 \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(definition of standard deviation: } \sigma_X^2 = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma_Y^2 = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\ &= 2 \pm 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(definition of correlation)} \end{aligned} \\
 >
 > With the \\+\\ sign, \\0 \le 2 + 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\ gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \ge -1\\. With the \\-\\ sign, \\0 \le 2 - 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\ gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\\.
+
+> **NOTE:**
+>
+> **Example 18 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+>
+> Choose one car at random, each with the same probability, and let \\X\\ be its horsepower and \\Y\\ its miles per gallon. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\, \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}\\, and \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}\\ are the averages over the cars in the data, and [Definition 12](#def-correlation) gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\. The code below computes each part of the definition directly.
+>
+> ## Python
+>
+> ``` python
+> import numpy as np
+> import pandas as pd
+>
+> auto = pd.read_csv("data/auto.csv")
+> x = auto["horsepower"].to_numpy(dtype=float)
+> y = auto["mpg"].to_numpy(dtype=float)
+>
+> cov_xy = np.mean((x - x.mean()) * (y - y.mean()))
+> sd_x = np.sqrt(np.mean((x - x.mean()) ** 2))
+> sd_y = np.sqrt(np.mean((y - y.mean()) ** 2))
+>
+> pd.Series({
+>     "Cov(X, Y)": cov_xy,
+>     "SD(X)": sd_x,
+>     "SD(Y)": sd_y,
+>     "Cor(X, Y)": cov_xy / (sd_x * sd_y),
+> })
+> #> Cov(X, Y)   -233.261349
+> #> SD(X)         38.442033
+> #> SD(Y)          7.795046
+> #> Cor(X, Y)     -0.778427
+> #> dtype: float64
+> ```
+>
+> ## R
+>
+> ``` r
+> auto <- read.csv("data/auto.csv")
+> x <- auto$horsepower
+> y <- auto$mpg
+>
+> cov_xy <- mean((x - mean(x)) * (y - mean(y)))
+> sd_x <- sqrt(mean((x - mean(x))^2))
+> sd_y <- sqrt(mean((y - mean(y))^2))
+>
+> c(
+>   "Cov(X, Y)" = cov_xy,
+>   "SD(X)" = sd_x,
+>   "SD(Y)" = sd_y,
+>   "Cor(X, Y)" = cov_xy / (sd_x * sd_y)
+> )
+> #>    Cov(X, Y)        SD(X)        SD(Y)    Cor(X, Y) 
+> #> -233.2613494   38.4420327    7.7950458   -0.7784268
+> ```
+>
+> [Figure 1](#fig-cor-auto) plots each car’s miles per gallon against its horsepower.
+>
+> Show code
+>
+> ``` r
+> plot(x, y, xlab = "horsepower", ylab = "miles per gallon", pch = 16,
+>      col = adjustcolor("black", alpha.f = 0.4))
+> ```
+>
+> [![A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.](variance-covariance_files/figure-html/fig-cor-auto-1.png)](variance-covariance_files/figure-html/fig-cor-auto-1.png "Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.")
+>
+> Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
+>
+> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 12](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the sample correlation divides the covariance and both standard deviations by the same count, which cancels.
 
 ## References
 
