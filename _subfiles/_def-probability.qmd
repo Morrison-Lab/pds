@@ -35,7 +35,7 @@ $\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
 Every [probability measure](#def-probability) is [finitely additive](https://morrison-lab.github.io/mds/measures.html#def-finite-additivity):
 for any [mutually exclusive](#def-mutually-exclusive) events $A_1, \ldots, A_n$,
 
-$$\Pr(A_1 \cup \cdots \cup A_n) = \sum_{i=1}^{n} \Pr(A_i)$$
+$$\Pr(A_1 \cup \cdots \cup A_n) = \sumin \Pr(A_i)$$
 
 :::
 

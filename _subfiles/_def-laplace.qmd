@@ -2,11 +2,11 @@
 #### Laplace distribution
 
 A random variable $Y$ has the **Laplace distribution**
-with location parameter $\mu \in \mathbb{R}$ and scale parameter $b > 0$,
+with location parameter $\mu \in \reals$ and scale parameter $b > 0$,
 written $Y \sim \dLaplacef{\mu, b}$,
 if $Y$ is continuous with [density](random-variables.qmd#def-pdf):
 
-$$\p(Y=y) \eqdef \frac{1}{2b} \ef{-\frac{\abs{y - \mu}}{b}}, \quad y \in \mathbb{R}$$ {#eq-laplace-pdf}
+$$\p(Y=y) \eqdef \frac{1}{2b} \ef{-\frac{\abs{y - \mu}}{b}}, \quad y \in \reals$$ {#eq-laplace-pdf}
 
 :::
 

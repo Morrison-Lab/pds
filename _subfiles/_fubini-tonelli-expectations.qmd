@@ -54,7 +54,7 @@ Let $(X, Y)$ be jointly distributed random variables
 whose joint distribution has a density $f_{X,Y}$
 with respect to a product of $\sigma$-finite reference measures
 $\mu_X \otimes \mu_Y$ on $\rangef{X} \times \rangef{Y}$,
-and let $h : \rangef{X} \times \rangef{Y} \to \mathbb{R}$ be measurable.
+and let $h : \rangef{X} \times \rangef{Y} \to \reals$ be measurable.
 If either
 
 (a) $h(X, Y) \ge 0$ almost surely, or
@@ -182,7 +182,7 @@ Fubini--Tonelli itself.
 Rather, the error is using the *wrong measure*: the joint distribution
 of $(X, X)$ is concentrated on the diagonal
 $\{(x, x) : x \in [0, 1]\} \subset [0, 1]^2$,
-which has Lebesgue measure zero in $\mathbb{R}^2$.
+which has Lebesgue measure zero in $\reals^2$.
 The joint distribution is therefore **not** absolutely continuous with
 respect to two-dimensional Lebesgue measure, so **no joint density
 $f_{X,Y}$ on $[0, 1]^2$ exists**, which is the reference density
@@ -215,7 +215,7 @@ not $\E{XX}$ for the perfectly correlated pair ($\tfrac{1}{3}$).
 The lesson is that @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$.
 For independent $(X, Y)$, this density factors as $f_X(x)\,f_Y(y)$;
 for dependent $(X, Y)$, $f_{X,Y}$ need not factor
---- and for $(X, X)$, no joint density on $\mathbb{R}^2$ exists at all,
+--- and for $(X, X)$, no joint density on $\reals^2$ exists at all,
 so @cor-fubini-joint simply does not apply.
 
 :::{#fig-fubini-prob-fail}
@@ -267,7 +267,7 @@ Samples from the joint distribution of $(X, X)$ (red, on the diagonal)
 versus an independent pair $(X_1, X_2)$ with the same marginals
 (grey, scattered over $[0, 1]^2$).
 The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal
---- a set of Lebesgue measure zero in $\mathbb{R}^2$ ---
+--- a set of Lebesgue measure zero in $\reals^2$ ---
 so no joint density on $[0, 1]^2$ exists,
 and the "$f_X(x)\,f_Y(y) = 1$" calculation integrates against the wrong measure
 (the grey distribution).

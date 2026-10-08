@@ -77,7 +77,7 @@ For the variance, apply the
 [variance of a linear combination](variance-covariance.qmd#thm-var-lincom)
 with every $a_i = 1$.
 For $i \ne j$, $X_i$ and $X_j$ are independent
-(take $A_k = \mathbb{R}$ for every other $k$ in the
+(take $A_k = \reals$ for every other $k$ in the
 [definition of independence](independence.qmd#def-indpt)),
 so $\Cov{X_i, X_j} = 0$ for
 [independent summands](variance-covariance.qmd#thm-indpt-uncorrelated);

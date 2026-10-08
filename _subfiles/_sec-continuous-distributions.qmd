@@ -1,7 +1,7 @@
 ### Continuous distributions and densities {#sec-continuous-distributions}
 
-When a random variable $X$ takes values in a continuous space $\rangef{X} \subseteq \mathbb{R}$,
-its behavior is described by a **probability density function** (PDF) $\p(x) : \rangef{X} \to \mathbb{R}_+$
+When a random variable $X$ takes values in a continuous space $\rangef{X} \subseteq \reals$,
+its behavior is described by a **probability density function** (PDF) $\p(x) : \rangef{X} \to \reals_+$
 satisfying:
 
 $$\int_{\rangef{X}} \p(x)\,\mathrm{d}x = 1$$
@@ -16,7 +16,7 @@ $$\Pr(X \in A) = \int_{A} \p(x)\,\mathrm{d}x$$
 
 #### Points have zero probability in continuous distributions
 
-For any continuous random variable and any specific value $a \in \mathbb{R}$:
+For any continuous random variable and any specific value $a \in \reals$:
 
 $$\Pr(X = a) = 0$$
 

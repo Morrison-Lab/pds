@@ -349,7 +349,7 @@ That second assumption is a separate one, not part of conditional independence.
 Random variables $\X1n$ are **identically distributed**
 if they all have the same [CDF](random-variables.qmd#def-cdf):
 
-$$\forall i\in \set{1, \ldots, n}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)$$
+$$\forall i\in \set{1, \ldots, n}, \forall x \in \reals: \Pr(X_i \le x) = \Pr(X_1 \le x)$$
 
 :::
 

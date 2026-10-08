@@ -3,7 +3,7 @@
 
 A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function)
 from a [sample space](probability-basics.qmd#def-sample-space) $\Omega$
-to the real numbers $\mathbb{R}$:
+to the real numbers $\reals$:
 it assigns a number to each possible outcome of a random experiment.
 
 :::
@@ -96,7 +96,7 @@ is discrete with a countably infinite range, $\set{0, 1, 2, \dots}$.
 #### Continuous random variable
 
 A random variable $X$ is **continuous**
-if $\Pr(X = x) = 0$ for every $x \in \mathbb{R}$.
+if $\Pr(X = x) = 0$ for every $x \in \reals$.
 
 :::
 

@@ -1,10 +1,10 @@
 ::: {#sol-noise-second-moment}
 
 @thm-variance says
-$\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$.
+$\Var{X} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$.
 Taking $X = \varepsilon$ and substituting $\mathbb{E}[\varepsilon] = 0$,
 
-$$\mathbb{E}[\varepsilon^2] = \operatorname{Var}(\varepsilon) + 0^2 = \sigma^2$$ {#eq-noise-second-moment}
+$$\mathbb{E}[\varepsilon^2] = \Var{\varepsilon} + 0^2 = \sigma^2$$ {#eq-noise-second-moment}
 
 so for mean-zero noise the average squared value *is* the variance.
 
