@@ -467,6 +467,13 @@ and the **smoothing theorem**.
 
 :::
 
+```{r}
+#| include: false
+reticulate::py_require(c("numpy", "pandas"))
+```
+
+{{< include pds/_subfiles/_exm-lie-auto.qmd >}}
+
 {{< slidebreak >}}
 
 :::{#thm-conditional-lie}
