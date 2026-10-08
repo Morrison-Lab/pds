@@ -812,6 +812,10 @@ three times the variance of a $\Pois(4)$ count with the same mean.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-laplace-density.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-laplace-moments.qmd >}}
 
 {{< slidebreak >}}
