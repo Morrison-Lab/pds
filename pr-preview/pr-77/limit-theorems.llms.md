@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 08:56:32 (PDT)
+Last modified: 2026-10-08 09:26:36 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -97,7 +97,7 @@ Last modified: 2026-10-08 08:56:32 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the UCI Machine Learning Repository and ship with the book *An Introduction to Statistical Learning*, in the Python package ISLP (`ISLP.load_data("Auto")`) and the R package ISLR2 (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+> **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
 >
 > Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the mean and variance of the 392 horsepower values. The sum \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 1](#cor-sum-iid-moments), so the sample mean \\S_n/n\\ has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\. The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s mean.
 >
@@ -119,14 +119,14 @@ Last modified: 2026-10-08 08:56:32 (PDT)
 >
 > pd.DataFrame({
 >     "n": sizes,
->     "sd of sample means": [sample_means[n].std() for n in sizes],
+>     "sd of sample means": [sample_means[n].std(ddof=1) for n in sizes],
 >     "sigma / sqrt(n)": [sigma / np.sqrt(n) for n in sizes],
 >     "skewness of sample means": [skewness(sample_means[n]) for n in sizes],
 > })
 > #>     n  sd of sample means  sigma / sqrt(n)  skewness of sample means
-> #> 0   1           38.689587        38.442033                  1.080767
-> #> 1   5           17.264803        17.191800                  0.522243
-> #> 2  30            6.970920         7.018523                  0.164940
+> #> 0   1           38.691521        38.442033                  1.080767
+> #> 1   5           17.265666        17.191800                  0.522243
+> #> 2  30            6.971269         7.018523                  0.164940
 > ```
 >
 > ## R
