@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 01:35:06 (PDT)
+Last modified: 2026-10-08 02:05:32 (PDT)
 
 > **NOTE:**
 >
@@ -401,7 +401,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. The [normal density](random-variables.llms.md#def-normal) has the squared distance \\(y - \mu)^2\\ in its exponent. The Laplace density has the absolute distance \\\mathopen{}\left\|y - \mu\right\|\mathclose{}\\ instead. Both densities are symmetric about \\\mu\\, but the Laplace density has a sharp peak at \\\mu\\ and decays more slowly in the tails (see [Figure 3](#fig-laplace-vs-normal)).
+> *Remark*. The [normal density](random-variables.llms.md#def-normal) has the squared distance \\(y - \mu)^2\\ in its exponent. The Laplace density has the absolute distance \\\mathopen{}\left\|y - \mu\right\|\mathclose{}\\ instead. Both densities are symmetric about \\\mu\\, but the Laplace density has a sharp peak at \\\mu\\ and decays more slowly in the tails.
 
 > **NOTE:**
 >
