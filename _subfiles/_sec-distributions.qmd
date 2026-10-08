@@ -806,6 +806,24 @@ three times the variance of a $\Pois(4)$ count with the same mean.
 
 {{< slidebreak >}}
 
+## The Laplace distribution {#sec-laplace}
+
+{{< include pds/_subfiles/_def-laplace.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-laplace-density.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-laplace-moments.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-laplace-vs-normal.qmd >}}
+
+{{< slidebreak >}}
+
 ## Weibull distribution {#sec-weibull}
 
 :::{#def-weibull}

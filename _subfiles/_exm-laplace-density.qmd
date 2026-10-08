@@ -1,0 +1,22 @@
+:::{#exm-laplace-density}
+#### Laplace density values
+
+Let $Y \sim \dLaplacef{3, 2}$, so $\mu = 3$ and $b = 2$ (@def-laplace).
+At the location, $\abs{y - \mu} = 0$, so the density is $\frac{1}{2b}$.
+At a point $y = 5$, the distance is $\abs{5 - 3} = 2 = b$, so the density is $\frac{1}{2b}\ef{-1}$.
+Here are both values:
+
+```{r}
+#| label: laplace-density-values
+#| code-fold: false
+b <- 2
+c(
+  at_mu = 1 / (2 * b),
+  at_mu_plus_2 = exp(-1) / (2 * b)
+) |>
+  round(3)
+```
+
+The density at $\mu + b$ is the density at $\mu$ times $\ef{-1}$,
+and the same holds at $\mu - b$, because the density depends only on the distance from $\mu$.
+:::
