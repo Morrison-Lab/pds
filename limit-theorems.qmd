@@ -1,5 +1,7 @@
 ---
 title: "Limit theorems"
+resources:
+  - data/auto.csv
 format:
   html: default
   revealjs:
@@ -15,6 +17,13 @@ format:
 {{< include latex-macros/macros.qmd >}}
 
 {{< include pds/_subfiles/_sec-CLT.qmd >}}
+
+```{r}
+#| include: false
+reticulate::py_require(c("numpy", "pandas"))
+```
+
+{{< include pds/_subfiles/_exm-clt-auto.qmd >}}
 
 ## References {.unnumbered}
 
