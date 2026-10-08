@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 14:33:50 (PDT)
+Last modified: 2026-10-08 15:39:15 (PDT)
 
 > **NOTE:**
 >
@@ -172,7 +172,7 @@ Last modified: 2026-10-08 14:33:50 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Why the average of a sample is a random variable)** Let \\X_1, \dots, X_n\\ be independent draws from the same distribution, each with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^nX_i\\ be their average.
+> **Exercise 1 (Why the average of a sample is a random variable)** Let \\X_1, \ldots, X_n\\ be independent draws from the same distribution, each with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^nX_i\\ be their average.
 >
 > Use [Theorem 4](#thm-linearity-expectation) to show that \\\mathbb{E}\[\bar X\] = \mu\\, and say in one sentence what that does *not* tell us.
 
@@ -1004,19 +1004,19 @@ Last modified: 2026-10-08 14:33:50 (PDT)
 
 > **NOTE:**
 >
-> **Definition 9 (Prediction)** A **prediction** of a random variable \\Y\\ is a constant \\\hat{y}\\, or a function \\\hat{Y} \stackrel{\text{def}}{=}g(X)\\ of another observable random variable \\X\\, used as a guess for the value \\Y\\ takes:
+> **Definition 9 (Prediction)** A **prediction** of a random variable \\Y\\ is a constant \\\hat y\\, or a function \\\hat{Y} \stackrel{\text{def}}{=}g(X)\\ of another observable random variable \\X\\, used as a guess for the value \\Y\\ takes:
 >
-> \\\hat{y} \quad \text{or} \quad \hat{Y} \stackrel{\text{def}}{=}g(X)\\
+> \\\hat y\quad \text{or} \quad \hat{Y} \stackrel{\text{def}}{=}g(X)\\
 
 > **NOTE:**
 >
-> *Remark*. When no covariate or feature is available, a prediction is a single number \\\hat{y}\\ (such as a constant \\c\\). When an informative random variable \\X\\ is observed, a prediction is a function \\g(X)\\, which is itself a random variable because \\X\\ is random. The quality of a prediction is evaluated using a [loss function](#def-loss-function) and its expected value, the [risk](#def-risk).
+> *Remark*. When no covariate or feature is available, a prediction is a single number \\\hat y\\ (such as a constant \\c\\). When an informative random variable \\X\\ is observed, a prediction is a function \\g(X)\\, which is itself a random variable because \\X\\ is random. The quality of a prediction is evaluated using a [loss function](#def-loss-function) and its expected value, the [risk](#def-risk).
 
 > **NOTE:**
 >
 > **Exercise 6 (Squared and absolute loss)**  
 >
-> 1.  For a true value \\y = 3\\ and a prediction \\\hat{y} = 5\\, compute the squared error loss \\\mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\ and the absolute error loss \\\mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\.
+> 1.  For a true value \\y = 3\\ and a prediction \\\hat y= 5\\, compute the squared error loss \\\mathopen{}\left(y - \hat y\right)^2\mathclose{}\\ and the absolute error loss \\\mathopen{}\left\|y - \hat y\right\|\mathclose{}\\.
 >
 > 2.  A random variable \\Y\\ has \\\operatorname{P}(Y = 0) = 0.5\\ and \\\operatorname{P}(Y = 4) = 0.5\\. For the constant prediction \\c = 1\\, compute the expected squared error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{}\\ and the expected absolute error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{}\\.
 >
@@ -1038,23 +1038,23 @@ Last modified: 2026-10-08 14:33:50 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat{y})\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat{y}\\ when the true value is \\y\\.
+> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\.
 
 > **NOTE:**
 >
-> *Remark*. The squared error loss is: \\L(y, \hat{y}) = \mathopen{}\left(y - \hat{y}\right)^2\mathclose{}\\
+> *Remark*. The squared error loss is: \\L(y, \hat y) = \mathopen{}\left(y - \hat y\right)^2\mathclose{}\\
 >
-> The absolute error loss is: \\L(y, \hat{y}) = \mathopen{}\left\|y - \hat{y}\right\|\mathclose{}\\
+> The absolute error loss is: \\L(y, \hat y) = \mathopen{}\left\|y - \hat y\right\|\mathclose{}\\
 >
 > Hastie et al. ([2009, 18](#ref-hastie2009elements)) call squared error loss “by far the most common and convenient” choice.
 >
-> For the values \\y = 3\\ and \\\hat{y} = 5\\ from [Exercise 6](#exr-loss) (part 1), the squared error loss is \\4\\, and the absolute error loss is \\2\\.
+> For the values \\y = 3\\ and \\\hat y= 5\\ from [Exercise 6](#exr-loss) (part 1), the squared error loss is \\4\\, and the absolute error loss is \\2\\.
 
 > **NOTE:**
 >
-> **Definition 11 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat{y}\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function):
+> **Definition 11 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function):
 >
-> \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat{y})\right\]\mathclose{}\\
+> \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat y)\right\]\mathclose{}\\
 
 > **NOTE:**
 >

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 14:33:50 (PDT)
+Last modified: 2026-10-08 15:39:15 (PDT)
 
 > **NOTE:**
 >
@@ -185,7 +185,7 @@ Figure 2: Poisson CDFs
 >
 > *Proof*. **Mean.**
 >
-> \\ \begin{aligned} \operatorname{E}\[X\] &= \sum\_{x=0}^\infty x \cdot \operatorname{P}(X=x) && (\text{definition of expected value}) \\ &= 0 \cdot \operatorname{P}(X=0) + \sum\_{x=1}^\infty x \cdot \operatorname{P}(X=x) && (\text{separate } x=0 \text{ term}) \\ &= \sum\_{x=1}^\infty x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\ &= \sum\_{x=1}^\infty x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\ &= \sum\_{x=1}^\infty \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\ &= \mu \cdot \sum\_{x=1}^\infty \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\ &= \mu \cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\ &= \mu \cdot 1 && (\text{PMF sums to 1 over state space}) \\ &= \mu && (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\[X\] &= \sum\_{x=0}^\infty x \cdot \operatorname{P}(X=x) && (\text{definition of expected value}) \\ &= 0 \cdot \operatorname{P}(X=0) + \sum\_{x=1}^{\infty} x \cdot \operatorname{P}(X=x) && (\text{separate } x=0 \text{ term}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\ &= \sum\_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\ &= \mu \cdot \sum\_{x=1}^{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\ &= \mu \cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\ &= \mu \cdot 1 && (\text{PMF sums to 1 over state space}) \\ &= \mu && (\text{simplify}) \end{aligned} \\
 >
 > **Variance.** The same steps, canceling two factors instead of one, give \\\operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}\\:
 >
@@ -612,11 +612,11 @@ Figure 2: Poisson CDFs
 >
 > **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix) with diagonal elements \\\sigma_1^2, \ldots, \sigma_p^2\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma_1^2, \ldots, 1/\sigma_p^2\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
 >
-> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2} \\
+> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma_i^2} \\
 >
 > Two special cases:
 >
-> - If \\\mathbf{\Sigma} = \mathbf{I}\_p\\, then \\\Delta(\tilde{x})^2 = \sum\_{i=1}^p (x_i - \mu_i)^2\\, so the Mahalanobis distance is the ordinary (Euclidean) distance.
+> - If \\\mathbf{\Sigma} = \mathbf{I}\_p\\, then \\\Delta(\tilde{x})^2 = \sum\_{i=1}^p(x_i - \mu_i)^2\\, so the Mahalanobis distance is the ordinary (Euclidean) distance.
 > - If \\\mathbf{\Sigma} = \sigma^2\mathbf{I}\_p\\, then \\\Delta(\tilde{x})\\ is the Euclidean distance divided by \\\sigma\\.
 >
 > In general, each coordinate’s difference is measured in units of that coordinate’s standard deviation.
@@ -633,7 +633,7 @@ Figure 2: Poisson CDFs
 >
 > *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma_i^2\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
 >
-> \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p \frac{(x_i - \mu_i)^2}{\sigma_i^2}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma_i^2}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
 >
 > which is the product of the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma_i^2\right)\mathclose{}\\ densities. Integrating out every coordinate except \\x_i\\, each other factor integrates to 1 ([the normal density integrates to 1](random-variables.llms.md#thm-normal-density)), leaving the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma_i^2\right)\mathclose{}\\ density as the density of \\X_i\\ ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables). So the joint density is the product of the marginal densities, and the components are independent by [the factorization theorem for densities](independence.llms.md#thm-indpt-density), extended to \\p\\ variables as its remark describes.
 
@@ -659,13 +659,13 @@ Figure 2: Poisson CDFs
 >
 > **Theorem 13 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
 >
-> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p \frac{\mathopen{}\left({\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i} \\
+> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{\mathopen{}\left({\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i} \\
 
 > **NOTE:**
 >
 > *Proof*. Let \\\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\\, whose \\i\\-th element is \\y_i = {\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\\. By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse), \\\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\\, with every \\\lambda_i \> 0\\. So:
 >
-> \\ \begin{aligned} \Delta(\tilde{x})^2 &= {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\tilde{x}- \tilde{\mu}) && \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\ &= {\tilde{y}}^{\top} \mathbf{\Lambda}^{-1} \tilde{y} && \text{(} {(\tilde{x}- \tilde{\mu})}^{\top}\mathbf{Q} = {\tilde{y}}^{\top} \text{)} \\ &= \sum\_{i=1}^p \frac{y_i^2}{\lambda_i} && \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)} \end{aligned} \\
+> \\ \begin{aligned} \Delta(\tilde{x})^2 &= {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\tilde{x}- \tilde{\mu}) && \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\ &= {\tilde{y}}^{\top} \mathbf{\Lambda}^{-1} \tilde{y} && \text{(} {(\tilde{x}- \tilde{\mu})}^{\top}\mathbf{Q} = {\tilde{y}}^{\top} \text{)} \\ &= \sum\_{i=1}^p\frac{y_i^2}{\lambda_i} && \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -686,11 +686,11 @@ Figure 2: Poisson CDFs
 > **Definition 10 (Mixture density)** Let \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ be densities on \\\mathbb{R}\\, and let \\w_1, \ldots, w_K\\ be numbers with:
 >
 > - \\w_c \ge 0\\ for every \\c\\, and
-> - \\\sum\_{c=1}^K w_c = 1\\.
+> - \\\sum\_{c=1}^{K} w_c = 1\\.
 >
 > The **mixture** of \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ with **mixing weights** \\w_1, \ldots, w_K\\ is the function:
 >
-> \\ {\operatorname{p}\_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum\_{c=1}^K w_c \\ {\operatorname{p}\_c}(x), \quad x \in \mathbb{R} \\
+> \\ {\operatorname{p}\_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x), \quad x \in \mathbb{R} \\
 >
 > The densities \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ are the mixture’s **components**.
 
@@ -712,7 +712,7 @@ Figure 2: Poisson CDFs
 >
 > For the last claim, the events \\\mathopen{}\left\\C = 1\right\\\mathclose{}, \ldots, \mathopen{}\left\\C = K\right\\\mathclose{}\\ are mutually exclusive, and their union is the whole sample space. So for any interval \\B\\:
 >
-> \\ \begin{aligned} \Pr(X \in B) &= \sum\_{c=1}^K \Pr(C = c,\\ X \in B) && \text{(additivity over the events } \mathopen{}\left\\C = c\right\\\mathclose{} \text{)} \\ &= \sum\_{c=1}^K \int_B w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a joint density-mass function)} \\ &= \int_B \sum\_{c=1}^K w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \int_B {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of a mixture)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(X \in B) &= \sum\_{c=1}^{K} \Pr(C = c,\\ X \in B) && \text{(additivity over the events } \mathopen{}\left\\C = c\right\\\mathclose{} \text{)} \\ &= \sum\_{c=1}^{K} \int_B w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a joint density-mass function)} \\ &= \int_B \sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \int_B {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of a mixture)} \end{aligned} \\
 >
 > And \\{\operatorname{p}\_{\text{mix}}} \ge 0\\, as a sum of non-negative terms, so \\{\operatorname{p}\_{\text{mix}}}\\ is a [density](random-variables.llms.md#def-pdf) of \\X\\.
 
@@ -724,13 +724,13 @@ Figure 2: Poisson CDFs
 >
 > **Theorem 15 (The mean of a mixture is the weighted mean of the component means)** If \\X\\ has density \\{\operatorname{p}\_{\text{mix}}}\\ ([Definition 10](#def-mixture)), and each component \\{\operatorname{p}\_c}\\ has a defined mean \\\mu_c = \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx\\, then:
 >
-> \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \sum\_{c=1}^K w_c \\ \mu_c\\
+> \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \sum\_{c=1}^{K} w_c \\ \mu_c\\
 
 > **NOTE:**
 >
-> *Proof*. The integral defining \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ converges absolutely, because \\\int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx = \sum\_{c=1}^K w_c \int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_c}(x)\\dx\\, a finite sum of finite numbers. Then:
+> *Proof*. The integral defining \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ converges absolutely, because \\\int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx = \sum\_{c=1}^{K} w_c \int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_c}(x)\\dx\\, a finite sum of finite numbers. Then:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of expectation)} \\ &= \int\_{-\infty}^{\infty} x \sum\_{c=1}^K w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a mixture)} \\ &= \sum\_{c=1}^K w_c \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \sum\_{c=1}^K w_c \\ \mu_c && \text{(definition of } \mu_c \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of expectation)} \\ &= \int\_{-\infty}^{\infty} x \sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a mixture)} \\ &= \sum\_{c=1}^{K} w_c \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \sum\_{c=1}^{K} w_c \\ \mu_c && \text{(definition of } \mu_c \text{)} \end{aligned} \\
 >
 > The first step is the [definition of expectation](expectation.llms.md#def-expectation).
 
@@ -738,13 +738,13 @@ Figure 2: Poisson CDFs
 >
 > **Theorem 16 (Which component did an observation come from?)** Under the conditions of [Theorem 14](#thm-mixture-two-stage), for each \\x\\ with \\{\operatorname{p}\_{\text{mix}}}(x) \> 0\\:
 >
-> \\ \operatorname{P}(C = c \mid X = x) = \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^K w_k \\ {\operatorname{p}\_k}(x)} \\
+> \\ \operatorname{P}(C = c \mid X = x) = \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} \\
 
 > **NOTE:**
 >
 > *Proof*. By [Theorem 14](#thm-mixture-two-stage), \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case \\X\\ continuous, \\C\\ discrete):
 >
-> \\ \begin{aligned} \operatorname{P}(C = c \mid X = x) &= \frac{\operatorname{p}(C = c,\\ X = x)}{\operatorname{p}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^K w_k \\ {\operatorname{p}\_k}(x)} && \text{(substitute the joint density-mass function and } {\operatorname{p}\_{\text{mix}}} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{P}(C = c \mid X = x) &= \frac{\operatorname{p}(C = c,\\ X = x)}{\operatorname{p}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} && \text{(substitute the joint density-mass function and } {\operatorname{p}\_{\text{mix}}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >

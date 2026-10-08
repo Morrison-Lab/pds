@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 14:33:50 (PDT)
+Last modified: 2026-10-08 15:39:15 (PDT)
 
 ## 1 Defining probabilities
 
@@ -32,7 +32,7 @@ Last modified: 2026-10-08 14:33:50 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathscr{S}\\ on \\\Omega\\ count as events; every set that arises in these notes is in \\\mathscr{S}\\. When \\\Omega\\ is finite or [countably infinite](https://morrison-lab.github.io/mds/sets-functions.html#def-countably-infinite), every subset of \\\Omega\\ can be an event, because the collection of all subsets of \\\Omega\\ is a \\\sigma\\-algebra ([all subsets form a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)), as in [\\\sigma\\-algebras for die rolls](https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra).
+> *Remark*. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathcal{S}\\ on \\\Omega\\ count as events; every set that arises in these notes is in \\\mathcal{S}\\. When \\\Omega\\ is finite or [countably infinite](https://morrison-lab.github.io/mds/sets-functions.html#def-countably-infinite), every subset of \\\Omega\\ can be an event, because the collection of all subsets of \\\Omega\\ is a \\\sigma\\-algebra ([all subsets form a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)), as in [\\\sigma\\-algebras for die rolls](https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra).
 
 > **NOTE:**
 >
@@ -247,13 +247,13 @@ Last modified: 2026-10-08 14:33:50 (PDT)
 >
 > **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\:
 >
-> \\\Pr(A) = \sum\_{i=1}^\infty \Pr(A \mid B_i) \cdot\Pr(B_i)\\
+> \\\Pr(A) = \sum\_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)\\
 
 > **NOTE:**
 >
 > *Proof*. Since \\B_1, B_2, \ldots\\ partition the sample space, the events \\A \cap B_1, A \cap B_2, \ldots\\ are mutually exclusive and their union is \\A\\. By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity), and then by [Theorem 5](#thm-law-conditional-prob):
 >
-> \\ \begin{aligned} \Pr(A) &= \sum\_{i=1}^\infty \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)} \\&= \sum\_{i=1}^\infty \Pr(A \mid B_i) \cdot\Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) \> 0 \text{)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(A) &= \sum\_{i=1}^{\infty} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)} \\&= \sum\_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) \> 0 \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
