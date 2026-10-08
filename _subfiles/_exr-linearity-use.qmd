@@ -4,7 +4,7 @@
 
 Let $X_1, \dots, X_n$ be independent draws from the same distribution,
 each with mean $\mu$ and variance $\sigma^2$,
-and let $\bar X = \frac{1}{n}\sum_{i=1}^{n} X_i$ be their average.
+and let $\bar X = \frac{1}{n}\sumin X_i$ be their average.
 
 Use @thm-linearity-expectation to show that $\mathbb{E}[\bar X] = \mu$,
 and say in one sentence what that does *not* tell us.

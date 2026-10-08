@@ -235,7 +235,7 @@ If $X \sim \Pois(\mu)$, then:
 * For $x \in \set{1, 2, \dots}$ with $x < \mu$, $\P(X=x) > \P(X = x-1)$
 * For $x = \mu$ (possible only when $\mu$ is an integer), $\P(X=x) = \P(X = x-1)$
 * For $x \in \set{1, 2, \dots}$ with $x > \mu$, $\P(X=x) < \P(X = x-1)$
-* If $\mu$ is not an integer, $\arg \max_{x} \P(X=x) = \floor{\mu}$;
+* If $\mu$ is not an integer, $\argmax_{x} \P(X=x) = \floor{\mu}$;
   if $\mu$ is an integer, the maximum is attained at both $x = \mu - 1$ and $x = \mu$
 
 :::
@@ -1014,7 +1014,7 @@ and $\E{T} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886$.
 A $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$
 has the **multivariate normal distribution**
 (or **multivariate Gaussian distribution**)
-with mean parameter $\vecf{\mu} \in \mathbb{R}^p$
+with mean parameter $\vecf{\mu} \in \reals^p$
 and variance parameter $\matr{\Sigma}$,
 a $p \times p$
 [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite)
@@ -1026,7 +1026,7 @@ $$
 \p(\vX = \vx) \eqdef
 \frac{1}{(2\pi)^{p/2} \det(\matr{\Sigma})^{1/2}}
 \ef{-\frac{1}{2} \tp{(\vx - \vecf{\mu})} \matr{\Sigma}^{-1} (\vx - \vecf{\mu})},
-\quad \vx \in \mathbb{R}^p
+\quad \vx \in \reals^p
 $$
 
 where $\det(\matr{\Sigma})$ is the
@@ -1041,8 +1041,8 @@ and $\matr{\Sigma}^{-1}$ is its
 
 A joint density of $p$ random variables is the $p$-variable analogue of a
 [joint density](random-variables.qmd#def-joint-pdf) of two:
-a non-negative function on $\mathbb{R}^p$
-whose integral over any region $A \subseteq \mathbb{R}^p$
+a non-negative function on $\reals^p$
+whose integral over any region $A \subseteq \reals^p$
 is $\Pr(\vX \in A)$.
 
 The density is well defined because $\matr{\Sigma}$ is positive definite:
@@ -1061,7 +1061,7 @@ The density is well defined because $\matr{\Sigma}$ is positive definite:
 #### The multivariate normal density integrates to 1, with mean $\vecf{\mu}$ and variance $\matr{\Sigma}$
 
 If $\vX \sim \Normal_p\paren{\vecf{\mu}, \matr{\Sigma}}$ (@def-mvn),
-then the density in @def-mvn integrates to 1 over $\mathbb{R}^p$,
+then the density in @def-mvn integrates to 1 over $\reals^p$,
 $\Expp\vX = \vecf{\mu}$
 (the [expectation of a random vector](expectation.qmd#def-expectation-matrix)),
 and $\Varf{\vX} = \matr{\Sigma}$
@@ -1115,7 +1115,7 @@ which is the [normal density](random-variables.qmd#def-normal) $\ndist{\mu, \ss}
 #### The quadratic form in the multivariate normal density is non-negative
 
 If $\matr{\Sigma}$ is a $p \times p$ positive definite matrix
-and $\vx, \vecf{\mu} \in \mathbb{R}^p$, then
+and $\vx, \vecf{\mu} \in \reals^p$, then
 
 $$\tp{(\vx - \vecf{\mu})} \matr{\Sigma}^{-1} (\vx - \vecf{\mu}) \ge 0,$$
 
@@ -1141,7 +1141,7 @@ and the quadratic form is $0$.
 #### Mahalanobis distance
 
 For a $p \times p$ positive definite matrix $\matr{\Sigma}$
-and $\vx, \vecf{\mu} \in \mathbb{R}^p$,
+and $\vx, \vecf{\mu} \in \reals^p$,
 the **Mahalanobis distance** from $\vx$ to $\vecf{\mu}$ with respect to $\matr{\Sigma}$ is:
 
 $$
@@ -1397,7 +1397,7 @@ $X_1$ and $X_2$ are positively correlated.
 :::{#def-mixture}
 #### Mixture density
 
-Let ${\p_1}, \ldots, {\p_K}$ be densities on $\mathbb{R}$,
+Let ${\p_1}, \ldots, {\p_K}$ be densities on $\reals$,
 and let $w_1, \ldots, w_K$ be numbers with:
 
 - $w_c \ge 0$ for every $c$, and
@@ -1407,7 +1407,7 @@ The **mixture** of ${\p_1}, \ldots, {\p_K}$
 with **mixing weights** $w_1, \ldots, w_K$ is the function:
 
 $$
-{\p_{\text{mix}}}(x) \eqdef \sum_{c=1}^K w_c \, {\p_c}(x), \quad x \in \mathbb{R}
+{\p_{\text{mix}}}(x) \eqdef \sum_{c=1}^K w_c \, {\p_c}(x), \quad x \in \reals
 $$
 
 The densities ${\p_1}, \ldots, {\p_K}$ are the mixture's **components**.
@@ -1476,7 +1476,7 @@ such as a disease subtype.
 Mixtures of multivariate densities,
 such as mixtures of [multivariate normal densities](#def-mvn)
 (Gaussian mixture models),
-work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
+work the same way, with $p$-variable densities in place of densities on $\reals$.
 
 :::
 

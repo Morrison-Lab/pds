@@ -207,11 +207,11 @@ do not arise in applications.
 
 A random variable $X$ has the **normal distribution**
 (or **Gaussian distribution**)
-with mean parameter $\mu \in \mathbb{R}$ and variance parameter $\ss > 0$,
+with mean parameter $\mu \in \reals$ and variance parameter $\ss > 0$,
 written $X \sim \ndist{\mu, \ss}$,
 if $X$ is continuous with [density](#def-pdf):
 
-$$\p(X=x) \eqdef \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}, \quad x \in \mathbb{R}$$
+$$\p(X=x) \eqdef \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}, \quad x \in \reals$$
 
 :::
 
@@ -341,7 +341,7 @@ With $\lambda = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0
 For a random variable $X$ (discrete or continuous),
 its **cumulative distribution function** is:
 
-$$F(t) \eqdef \Pr(X\le t), \quad t\in\mathbb{R}.$$
+$$F(t) \eqdef \Pr(X\le t), \quad t\in\reals.$$
 
 :::
 
@@ -439,7 +439,7 @@ so $F(t) \to 1$ as $t \to \infty$.
 
 If random variables $X$ and $Y$ have the same [CDF](#def-cdf),
 then $\Pr(X \in B) = \Pr(Y \in B)$
-for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) $B \subseteq \mathbb{R}$,
+for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) $B \subseteq \reals$,
 which includes every interval,
 and every set built from intervals by countably many unions, intersections, and complements.
 
@@ -851,7 +851,7 @@ $$\Pr(X_1 = 1, X = 1) = \Pr(\set{HH, HT} \cap \set{HT, TH}) = \Pr(\set{HT}) = \t
 
 The **joint distribution** of
 [jointly distributed](#def-jointly-distributed) random variables $\X1n$
-is the function that assigns to each set $A \subseteq \mathbb{R}^n$
+is the function that assigns to each set $A \subseteq \reals^n$
 for which $\{(\X1n) \in A\}$ is an [event](probability-basics.qmd#def-event)
 the probability $\Pr((\X1n) \in A)$.
 
@@ -1020,10 +1020,10 @@ which matches $X_1 \sim \Ber(1/2)$ from @exm-bernoulli-pmf.
 For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$,
 a **joint probability density function** (joint density) of $X$ and $Y$,
 denoted $f_{X,Y}(x, y)$ or $\p(X = x,\, Y = y)$,
-is a function $f_{X,Y}$ on $\mathbb{R}^2$ that satisfies:
+is a function $f_{X,Y}$ on $\reals^2$ that satisfies:
 
 - $f_{X,Y}(x, y) \ge 0$ for every $(x, y)$.
-- The integral of $f_{X,Y}$ over any region $A \subseteq \mathbb{R}^2$
+- The integral of $f_{X,Y}$ over any region $A \subseteq \reals^2$
   is the probability that the pair $(X, Y)$ falls in $A$:
   $$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
 
@@ -1109,14 +1109,14 @@ $$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy$$
 
 ::: proof
 
-For $a \le b$, the event $\{a \le X \le b\}$ is the event that $(X, Y)$ falls in the strip $[a, b] \times \mathbb{R}$, so:
+For $a \le b$, the event $\{a \le X \le b\}$ is the event that $(X, Y)$ falls in the strip $[a, b] \times \reals$, so:
 
 $$
 \ba
 \Pr(a \le X \le b)
-&= \Pr((X, Y) \in [a, b] \times \mathbb{R})
+&= \Pr((X, Y) \in [a, b] \times \reals)
 && \text{(same event)} \\
-&= \iint_{[a, b] \times \mathbb{R}} f_{X,Y}(x, y)\,dx\,dy
+&= \iint_{[a, b] \times \reals} f_{X,Y}(x, y)\,dx\,dy
 && \text{(definition of a joint density)} \\
 &= \int_a^b \paren{\int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy}\,dx
 && \text{(iterate the integral; Tonelli's theorem)} \\
@@ -1167,7 +1167,7 @@ A **joint density-mass function** of $X$ and $Y$,
 denoted $\p(X = x,\, Y = y)$,
 is a function $\p(X = x,\, Y = y) \ge 0$
 that is a probability mass in $x$ and a probability density in $y$:
-for every $x$ and every set $B \subseteq \mathbb{R}$,
+for every $x$ and every set $B \subseteq \reals$,
 
 $$\Pr(X = x,\, Y \in B) = \int_{B} \p(X = x,\, Y = y)\,dy$$
 
@@ -1194,18 +1194,18 @@ $$\P(X = x) = \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy$$
 
 ::: proof
 
-Every outcome has $Y(\omega) \in \mathbb{R}$,
-so $\set{Y \in \mathbb{R}} = \Omega$, and:
+Every outcome has $Y(\omega) \in \reals$,
+so $\set{Y \in \reals} = \Omega$, and:
 
 $$
 \ba
 \P(X = x)
 &= \Pr(\set{X = x} \cap \Omega)
 && \text{(} \set{X = x} \subseteq \Omega \text{)} \\
-&= \Pr(X = x,\, Y \in \mathbb{R})
-&& \text{(} \set{Y \in \mathbb{R}} = \Omega \text{)} \\
+&= \Pr(X = x,\, Y \in \reals)
+&& \text{(} \set{Y \in \reals} = \Omega \text{)} \\
 &= \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy
-&& \text{(definition of a joint density-mass function, with } B = \mathbb{R} \text{)}
+&& \text{(definition of a joint density-mass function, with } B = \reals \text{)}
 \ea
 $$
 
