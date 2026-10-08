@@ -6,10 +6,12 @@
 The Auto data record the horsepower and fuel economy of
 `{r} nrow(read.csv("data/auto.csv"))` car models
 sold between 1970 and 1982.
-They come from the UCI Machine Learning Repository
+They come from the StatLib library at Carnegie Mellon University
 and ship with the book *An Introduction to Statistical Learning*,
-in the Python package ISLP (`ISLP.load_data("Auto")`)
-and the R package ISLR2 (`ISLR2::Auto`).
+in the Python package [`ISLP`](https://islp.readthedocs.io/)
+(`ISLP.load_data("Auto")`)
+and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
+(`ISLR2::Auto`).
 This repository holds a copy at `data/auto.csv`,
 and both code tabs below read that file.
 
@@ -44,7 +46,7 @@ def skewness(x):
 
 pd.DataFrame({
     "n": sizes,
-    "sd of sample means": [sample_means[n].std() for n in sizes],
+    "sd of sample means": [sample_means[n].std(ddof=1) for n in sizes],
     "sigma / sqrt(n)": [sigma / np.sqrt(n) for n in sizes],
     "skewness of sample means": [skewness(sample_means[n]) for n in sizes],
 })
