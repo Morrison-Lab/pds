@@ -1,5 +1,7 @@
 ---
 title: "Variance and covariance"
+resources:
+  - data/auto.csv
 format:
   html: default
   revealjs:
@@ -60,6 +62,13 @@ format:
 <!-- No slidebreak here: the heading shares its slide with the def-cov div. -->
 
 {{< include pds/_subfiles/_def-covariance.qmd >}}
+
+```{r}
+#| include: false
+reticulate::py_require(c("numpy", "pandas"))
+```
+
+{{< include pds/_subfiles/_exm-cor-auto.qmd >}}
 
 ## References {.unnumbered}
 
