@@ -28,5 +28,5 @@ jobs:
       # against CrossRef.
       exclude-keys: >-
         billingsley1995probability CaseBerg01 kalbfleisch2011statistical
-        klein2003survival kleinbaum2012survival me4 rudin1976principles
+        klein2003survival kleinbaum2012survival me4 murphy2012mlpp rudin1976principles
         Stirzaker2005probability
