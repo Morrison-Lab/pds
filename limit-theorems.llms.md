@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:20:25 (PDT)
+Last modified: 2026-10-09 11:53:46 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -66,7 +66,7 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 > dice_sum_pmf <- function(n_dice) {
 >   totals <- rowSums(expand.grid(rep(list(1:6), n_dice)))
 >   probs <- prop.table(table(totals))
->   data.frame(total = as.numeric(names(probs)), p = as.vector(probs))
+>   tibble::tibble(total = as.numeric(names(probs)), p = as.vector(probs))
 > }
 >
 > dice_plot <-
@@ -160,22 +160,24 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 >
 > ``` r
 > n_labels <- paste("n =", sizes)
-> means_long <- data.frame(
+> means_long <- tibble::tibble(
 >   n = factor(
 >     rep(n_labels, each = length(sample_means[[1]])),
 >     levels = n_labels
 >   ),
 >   sample_mean = unlist(sample_means)
 > )
-> normal_curves <- do.call(rbind, lapply(seq_along(sizes), function(k) {
->   se <- sigma / sqrt(sizes[k])
->   grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
->   data.frame(
->     n = factor(n_labels[k], levels = n_labels),
->     sample_mean = grid,
->     density = dnorm(grid, mu, se)
->   )
-> }))
+> normal_curves <- seq_along(sizes) |>
+>   lapply(function(k) {
+>     se <- sigma / sqrt(sizes[k])
+>     grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
+>     tibble::tibble(
+>       n = factor(n_labels[k], levels = n_labels),
+>       sample_mean = grid,
+>       density = dnorm(grid, mu, se)
+>     )
+>   }) |>
+>   dplyr::bind_rows()
 >
 > ggplot2::ggplot(means_long, ggplot2::aes(x = sample_mean)) +
 >   ggplot2::geom_histogram(

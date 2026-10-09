@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:20:25 (PDT)
+Last modified: 2026-10-09 11:53:46 (PDT)
 
 > **NOTE:**
 >
@@ -267,10 +267,11 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 > marg_dens_x0 <- dnorm(x0, mean = mu_x, sd = sigma_x)
 > cond_mean <- intercept + beta * x0
 > cond_sd <- sigma_y * sqrt(1 - rho^2)
-> pander::pander(data.frame(
+> tibble::tibble(
 >   parameter = c("mu_x", "sigma_x", "mu_y", "sigma_y", "rho"),
 >   estimate = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
-> ))
+> ) |>
+>   pander::pander()
 > ```
 >
 > | parameter | estimate |
@@ -422,12 +423,12 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 > ``` r
 > senility_p10 <- predict(
 >   senility_fit,
->   newdata = data.frame(x = 10),
+>   newdata = tibble::tibble(x = 10),
 >   type = "response"
 > )
 > senility_p15 <- predict(
 >   senility_fit,
->   newdata = data.frame(x = 15),
+>   newdata = tibble::tibble(x = 15),
 >   type = "response"
 > )
 > ```
@@ -951,11 +952,12 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 > sum_y_first <- sum(rowSums(h_vals * joint_probs))
 > sum_x_first <- sum(colSums(h_vals * joint_probs))
 >
-> pander::pander(data.frame(
+> tibble::tibble(
 >   quantity = c("exact (closed form)", "sum over y first, then x",
 >                "sum over x first, then y"),
 >   value = round(c(exact_sum, sum_y_first, sum_x_first), 6)
-> ))
+> ) |>
+>   pander::pander()
 > ```
 >
 > |         quantity         | value |
@@ -996,7 +998,7 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 >
 > ``` r
 > x_fine <- seq(0, 2, by = 0.005)
-> df <- data.frame(
+> df <- tibble::tibble(
 >   x = c(x_fine[x_fine <= 1], x_fine),
 >   density = c(rep(0.4, sum(x_fine <= 1)), rep(0.3, length(x_fine))),
 >   label = c(
@@ -1065,10 +1067,11 @@ Last modified: 2026-10-09 10:20:25 (PDT)
 > cond_mean_x <- (y_vals + 1) / 2
 > trunc_ex <- sum(cond_mean_x * py_vals)
 >
-> pander::pander(data.frame(
+> tibble::tibble(
 >   quantity = c("exact (closed form)", "truncated sum-of-integrals"),
 >   value = round(c(exact_ex, trunc_ex), 6)
-> ))
+> ) |>
+>   pander::pander()
 > ```
 >
 > |          quantity          | value |

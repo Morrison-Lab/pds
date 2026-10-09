@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 10:20:25 (PDT)</p>
+  <p class="date">Last modified: 2026-10-09 11:53:46 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -462,7 +462,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>dice_sum_pmf <span class="ot">&lt;-</span> <span class="cf">function</span>(n_dice) {</span>
 <span id="cb1-2"><a aria-label="2"></a>  totals <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(<span class="fu">expand.grid</span>(<span class="fu">rep</span>(<span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), n_dice)))</span>
 <span id="cb1-3"><a aria-label="3"></a>  probs <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(totals))</span>
-<span id="cb1-4"><a aria-label="4"></a>  <span class="fu">data.frame</span>(<span class="at">total =</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(probs)), <span class="at">p =</span> <span class="fu">as.vector</span>(probs))</span>
+<span id="cb1-4"><a aria-label="4"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">total =</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(probs)), <span class="at">p =</span> <span class="fu">as.vector</span>(probs))</span>
 <span id="cb1-5"><a aria-label="5"></a>}</span>
 <span id="cb1-6"><a aria-label="6"></a></span>
 <span id="cb1-7"><a aria-label="7"></a>dice_plot <span class="ot">&lt;-</span></span>
@@ -580,38 +580,40 @@ Figure&nbsp;2: Distribution of the sum of five dice
 <details class="code-fold">
 <summary>[Code]</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>n_labels <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"n ="</span>, sizes)</span>
-<span id="cb5-2"><a aria-label="2"></a>means_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a aria-label="2"></a>means_long <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
 <span id="cb5-3"><a aria-label="3"></a>  <span class="at">n =</span> <span class="fu">factor</span>(</span>
 <span id="cb5-4"><a aria-label="4"></a>    <span class="fu">rep</span>(n_labels, <span class="at">each =</span> <span class="fu">length</span>(sample_means[[<span class="dv">1</span>]])),</span>
 <span id="cb5-5"><a aria-label="5"></a>    <span class="at">levels =</span> n_labels</span>
 <span id="cb5-6"><a aria-label="6"></a>  ),</span>
 <span id="cb5-7"><a aria-label="7"></a>  <span class="at">sample_mean =</span> <span class="fu">unlist</span>(sample_means)</span>
 <span id="cb5-8"><a aria-label="8"></a>)</span>
-<span id="cb5-9"><a aria-label="9"></a>normal_curves <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(<span class="fu">seq_along</span>(sizes), <span class="cf">function</span>(k) {</span>
-<span id="cb5-10"><a aria-label="10"></a>  se <span class="ot">&lt;-</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(sizes[k])</span>
-<span id="cb5-11"><a aria-label="11"></a>  grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(mu <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> se, mu <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> se, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
-<span id="cb5-12"><a aria-label="12"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb5-13"><a aria-label="13"></a>    <span class="at">n =</span> <span class="fu">factor</span>(n_labels[k], <span class="at">levels =</span> n_labels),</span>
-<span id="cb5-14"><a aria-label="14"></a>    <span class="at">sample_mean =</span> grid,</span>
-<span id="cb5-15"><a aria-label="15"></a>    <span class="at">density =</span> <span class="fu">dnorm</span>(grid, mu, se)</span>
-<span id="cb5-16"><a aria-label="16"></a>  )</span>
-<span id="cb5-17"><a aria-label="17"></a>}))</span>
-<span id="cb5-18"><a aria-label="18"></a></span>
-<span id="cb5-19"><a aria-label="19"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(means_long, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> sample_mean)) <span class="sc">+</span></span>
-<span id="cb5-20"><a aria-label="20"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(</span>
-<span id="cb5-21"><a aria-label="21"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> ggplot2<span class="sc">::</span><span class="fu">after_stat</span>(density)),</span>
-<span id="cb5-22"><a aria-label="22"></a>    <span class="at">bins =</span> <span class="dv">40</span>,</span>
-<span id="cb5-23"><a aria-label="23"></a>    <span class="at">fill =</span> <span class="st">"grey70"</span>,</span>
-<span id="cb5-24"><a aria-label="24"></a>    <span class="at">color =</span> <span class="st">"white"</span></span>
-<span id="cb5-25"><a aria-label="25"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-26"><a aria-label="26"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(</span>
-<span id="cb5-27"><a aria-label="27"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> density),</span>
-<span id="cb5-28"><a aria-label="28"></a>    <span class="at">data =</span> normal_curves,</span>
-<span id="cb5-29"><a aria-label="29"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
-<span id="cb5-30"><a aria-label="30"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-31"><a aria-label="31"></a>  ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(ggplot2<span class="sc">::</span><span class="fu">vars</span>(n), <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
-<span id="cb5-32"><a aria-label="32"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"sample mean of horsepower"</span>, <span class="at">y =</span> <span class="st">"density"</span>) <span class="sc">+</span></span>
-<span id="cb5-33"><a aria-label="33"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-9"><a aria-label="9"></a>normal_curves <span class="ot">&lt;-</span> <span class="fu">seq_along</span>(sizes) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a aria-label="10"></a>  <span class="fu">lapply</span>(<span class="cf">function</span>(k) {</span>
+<span id="cb5-11"><a aria-label="11"></a>    se <span class="ot">&lt;-</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(sizes[k])</span>
+<span id="cb5-12"><a aria-label="12"></a>    grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(mu <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> se, mu <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> se, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb5-13"><a aria-label="13"></a>    tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb5-14"><a aria-label="14"></a>      <span class="at">n =</span> <span class="fu">factor</span>(n_labels[k], <span class="at">levels =</span> n_labels),</span>
+<span id="cb5-15"><a aria-label="15"></a>      <span class="at">sample_mean =</span> grid,</span>
+<span id="cb5-16"><a aria-label="16"></a>      <span class="at">density =</span> <span class="fu">dnorm</span>(grid, mu, se)</span>
+<span id="cb5-17"><a aria-label="17"></a>    )</span>
+<span id="cb5-18"><a aria-label="18"></a>  }) <span class="sc">|&gt;</span></span>
+<span id="cb5-19"><a aria-label="19"></a>  dplyr<span class="sc">::</span><span class="fu">bind_rows</span>()</span>
+<span id="cb5-20"><a aria-label="20"></a></span>
+<span id="cb5-21"><a aria-label="21"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(means_long, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> sample_mean)) <span class="sc">+</span></span>
+<span id="cb5-22"><a aria-label="22"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(</span>
+<span id="cb5-23"><a aria-label="23"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> ggplot2<span class="sc">::</span><span class="fu">after_stat</span>(density)),</span>
+<span id="cb5-24"><a aria-label="24"></a>    <span class="at">bins =</span> <span class="dv">40</span>,</span>
+<span id="cb5-25"><a aria-label="25"></a>    <span class="at">fill =</span> <span class="st">"grey70"</span>,</span>
+<span id="cb5-26"><a aria-label="26"></a>    <span class="at">color =</span> <span class="st">"white"</span></span>
+<span id="cb5-27"><a aria-label="27"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-28"><a aria-label="28"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(</span>
+<span id="cb5-29"><a aria-label="29"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> density),</span>
+<span id="cb5-30"><a aria-label="30"></a>    <span class="at">data =</span> normal_curves,</span>
+<span id="cb5-31"><a aria-label="31"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb5-32"><a aria-label="32"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-33"><a aria-label="33"></a>  ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(ggplot2<span class="sc">::</span><span class="fu">vars</span>(n), <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb5-34"><a aria-label="34"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"sample mean of horsepower"</span>, <span class="at">y =</span> <span class="st">"density"</span>) <span class="sc">+</span></span>
+<span id="cb5-35"><a aria-label="35"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-clt-auto" class="quarto-float quarto-figure quarto-figure-center" alt="Three histograms side by side. The first, for one car, is skewed to the right with a long tail. The second, for five cars, is less skewed. The third, for thirty cars, is symmetric and bell-shaped. A normal curve drawn over each fits the third closely and the first poorly.">
