@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 23:04:50 (UTC)
+Last modified: 2026-10-09 00:30:33 (UTC)
 
 > **NOTE:**
 >
@@ -56,7 +56,7 @@ Table 2: Distributions typically used for test statistics
 
 > **NOTE:**
 >
-> **Definition 1 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu \> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
+> **Definition 1 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu\> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
 >
 > \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \tag{1}\\
 
@@ -86,9 +86,9 @@ Table 2: Distributions typically used for test statistics
 
 > **NOTE:**
 >
-> **Example 2 (Computing Poisson cumulative probabilities)** For a Poisson random variable \\X \sim \operatorname{Pois}(\mu = 2)\\, the probability of observing at most 2 events is computed as:
+> **Example 2 (Computing Poisson cumulative probabilities)** For a Poisson random variable \\X \sim \operatorname{Pois}(\mu= 2)\\, the probability of observing at most 2 events is computed as:
 >
-> \\ \begin{aligned} \operatorname{P}(X \le 2) &= e^{-2} \sum\_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu = 2, y = 2) \\ &= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} && (\text{expand terms for } j = 0, 1, 2) \\ &= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} && (\text{simplify factorials and powers}) \\ &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{P}(X \le 2) &= e^{-2} \sum\_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu= 2, y = 2) \\ &= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} && (\text{expand terms for } j = 0, 1, 2) \\ &= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} && (\text{simplify factorials and powers}) \\ &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value}) \end{aligned} \\
 
 > **NOTE:**
 >
@@ -153,7 +153,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Exercise 2 (Poisson distribution functions)** Let \\X \sim \operatorname{Pois}(\mu = 3.75)\\.
+> **Exercise 2 (Poisson distribution functions)** Let \\X \sim \operatorname{Pois}(\mu= 3.75)\\.
 >
 > Compute:
 >
@@ -179,13 +179,13 @@ Figure 2: Poisson CDFs
 > - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \< \mu\\, \\\operatorname{P}(X=x) \> \operatorname{P}(X = x-1)\\
 > - For \\x = \mu\\ (possible only when \\\mu\\ is an integer), \\\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\\
 > - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \> \mu\\, \\\operatorname{P}(X=x) \< \operatorname{P}(X = x-1)\\
-> - If \\\mu\\ is not an integer, \\\arg \max\_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\; if \\\mu\\ is an integer, the maximum is attained at both \\x = \mu - 1\\ and \\x = \mu\\
+> - If \\\mu\\ is not an integer, \\\arg \max\_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\; if \\\mu\\ is an integer, the maximum is attained at both \\x = \mu- 1\\ and \\x = \mu\\
 
 > **NOTE:**
 >
 > *Proof*. **Mean.**
 >
-> \\ \begin{aligned} \operatorname{E}\[X\] &= \sum\_{x=0}^\infty x \cdot \operatorname{P}(X=x) && (\text{definition of expected value}) \\ &= 0 \cdot \operatorname{P}(X=0) + \sum\_{x=1}^{\infty} x \cdot \operatorname{P}(X=x) && (\text{separate } x=0 \text{ term}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\ &= \sum\_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\ &= \mu \cdot \sum\_{x=1}^{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\ &= \mu \cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\ &= \mu \cdot 1 && (\text{PMF sums to 1 over state space}) \\ &= \mu && (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\[X\] &= \sum\_{x=0}^\infty x \cdot \operatorname{P}(X=x) && (\text{definition of expected value}) \\ &= 0 \cdot \operatorname{P}(X=0) + \sum\_{x=1}^{\infty} x \cdot \operatorname{P}(X=x) && (\text{separate } x=0 \text{ term}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\ &= \sum\_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\ &= \mu\cdot \sum\_{x=1}^{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\ &= \mu\cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\ &= \mu\cdot 1 && (\text{PMF sums to 1 over state space}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
 >
 > **Variance.** The same steps, canceling two factors instead of one, give \\\operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}\\:
 >
@@ -193,13 +193,13 @@ Figure 2: Poisson CDFs
 >
 > Then, by the [simplified expression for variance](variance-covariance.llms.md#thm-variance) and [linearity of expectation](expectation.llms.md#thm-linearity-expectation):
 >
-> \\ \begin{aligned} \operatorname{Var}(X) &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (\text{simplified expression for variance}) \\ &= \operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu - \mu^2 && (\text{substitute}) \\ &= \mu && (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}(X) &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (\text{simplified expression for variance}) \\ &= \operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu- \mu^2 && (\text{substitute}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
 >
 > **Ratio of consecutive probabilities.** For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\:
 >
 > \\ \begin{aligned} \frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x - 1)} &= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} && (\text{substitute Poisson PMF}) \\ &= \frac{\mu}{x} && (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!) \end{aligned} \\
 >
-> This ratio is greater than, equal to, or less than 1 as \\x\\ is less than, equal to, or greater than \\\mu\\, which gives the three comparisons. So \\\operatorname{P}(X = x)\\ increases while \\x \< \mu\\ and decreases once \\x \> \mu\\. If \\\mu\\ is not an integer, the last increase is at \\x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\, which is therefore the unique mode. If \\\mu\\ is an integer, \\\operatorname{P}(X = \mu) = \operatorname{P}(X = \mu - 1)\\, and both are modes.
+> This ratio is greater than, equal to, or less than 1 as \\x\\ is less than, equal to, or greater than \\\mu\\, which gives the three comparisons. So \\\operatorname{P}(X = x)\\ increases while \\x \< \mu\\ and decreases once \\x \> \mu\\. If \\\mu\\ is not an integer, the last increase is at \\x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\, which is therefore the unique mode. If \\\mu\\ is an integer, \\\operatorname{P}(X = \mu) = \operatorname{P}(X = \mu- 1)\\, and both are modes.
 >
 > See also <https://statproofbook.github.io/P/poiss-mean> and <https://statproofbook.github.io/P/poiss-var>.
 
@@ -236,9 +236,9 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 3 (Event rate)** For a count \\Y\\ observed over a fixed, known [exposure magnitude](#def-exposure) \\t \> 0\\, the **event rate**, denoted \\\lambda\\, is the mean of \\Y\\ divided by the exposure magnitude:
+> **Definition 3 (Event rate)** For a count \\Y\\ observed over a fixed, known [exposure magnitude](#def-exposure) \\t \> 0\\, the **event rate**, denoted \\{\lambda}\\, is the mean of \\Y\\ divided by the exposure magnitude:
 >
-> \\\lambda \stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{3}\\
+> \\{\lambda}\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{3}\\
 
 > **NOTE:**
 >
@@ -246,35 +246,35 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 3 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\\lambda\\, then its mean \\\mu \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
+> **Theorem 3 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
 >
-> \\\mu = \lambda \cdot t \tag{4}\\
+> \\\mu= {\lambda}\cdot t \tag{4}\\
 
 > **NOTE:**
 >
 > *Proof*. By [Definition 3](#def-event-rate):
 >
-> \\ \begin{aligned} \lambda &\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} && (\text{definition of event rate}) \\ \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \lambda \cdot t && (\text{multiply both sides by } t \> 0) \\ \mu &= \lambda \cdot t && (\mu \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) \end{aligned} \\
+> \\ \begin{aligned} {\lambda}&\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} && (\text{definition of event rate}) \\ \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= {\lambda}\cdot t && (\text{multiply both sides by } t \> 0) \\ \mu&= {\lambda}\cdot t && (\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 4 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\\lambda = 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 3](#thm-mean-vs-event-rate):
+> **Example 4 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\{\lambda}= 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 3](#thm-mean-vs-event-rate):
 >
-> \\ \begin{aligned} \mu &= \lambda \cdot t && (\text{transformation from event rate to mean}) \\ &= 0.05 \times 100 && (\text{substitute } \lambda = 0.05 \text{ and } t = 100) \\ &= 5 \text{ cases} && (\text{evaluate expected count}) \end{aligned} \\
+> \\ \begin{aligned} \mu&= {\lambda}\cdot t && (\text{transformation from event rate to mean}) \\ &= 0.05 \times 100 && (\text{substitute } {\lambda}= 0.05 \text{ and } t = 100) \\ &= 5 \text{ cases} && (\text{evaluate expected count}) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 4 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda \cdot t\\ for all \\t \ge 0\\ with one finite rate \\\lambda\\, then there are no expected events without exposure:
+> **Theorem 4 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} &= \lambda \cdot 0 && (\text{evaluate } \operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } \lambda \text{ is finite}) \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} &= {\lambda}\cdot 0 && (\text{evaluate } \operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } {\lambda}\text{ is finite}) \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\\lambda = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\\lambda\\ shared across exposure magnitudes, including \\t = 0\\.
+> *Remark*. The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\{\lambda}= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\{\lambda}\\ shared across exposure magnitudes, including \\t = 0\\.
 
 > **NOTE:**
 >
@@ -282,41 +282,41 @@ Figure 2: Poisson CDFs
 
 > **IMPORTANT:**
 >
-> A mean proportional to exposure, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = \lambda t\\, has no term that stays nonzero at \\t = 0\\: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = c + \lambda t\\ with \\c \> 0\\, would expect \\c\\ events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+> A mean proportional to exposure, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}t\\, has no term that stays nonzero at \\t = 0\\: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = c + {\lambda}t\\ with \\c \> 0\\, would expect \\c\\ events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
-> **Theorem 5 (Exposure is additive on the log scale)** If \\\mu = \lambda\cdot t\\ with \\\lambda \> 0\\ and \\t \> 0\\, then:
+> **Theorem 5 (Exposure is additive on the log scale)** If \\\mu= {\lambda}\cdot t\\ with \\{\lambda}\> 0\\ and \\t \> 0\\, then:
 >
-> \\\log{\mu} = \log{\lambda} + \log{t}\\
+> \\\log{\mu} = \log{{\lambda}} + \log{t}\\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \log{\mu} &= \log(\lambda \cdot t) && (\text{substitute } \mu = \lambda \cdot t) \\ &= \log{\lambda} + \log{t} && (\text{logarithm product rule}) \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \log{\mu} &= \log({\lambda}\cdot t) && (\text{substitute } \mu= {\lambda}\cdot t) \\ &= \log{{\lambda}} + \log{t} && (\text{logarithm product rule}) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 6 (Log-linear representation of expected counts)** If a clinic sees an event rate of \\\lambda = 0.02\\ events/day and \\t = 30\\ days of observation:
+> **Example 6 (Log-linear representation of expected counts)** If a clinic sees an event rate of \\{\lambda}= 0.02\\ events/day and \\t = 30\\ days of observation:
 >
 > \\ \begin{aligned} \log{\mu} &= \log(0.02) + \log(30) && (\text{apply log-scale formula}) \\ &= -3.912 + 3.401 && (\text{evaluate natural logarithms}) \\ &= -0.511 && (\text{sum terms}) \end{aligned} \\
 >
-> Exponentiating yields \\\mu = \operatorname{exp}\mathopen{}\left\\-0.511\right\\\mathclose{} \approx 0.60\\ expected events.
+> Exponentiating yields \\\mu= \operatorname{exp}\mathopen{}\left\\-0.511\right\\\mathclose{} \approx 0.60\\ expected events.
 
 > **NOTE:**
 >
 > **Definition 4 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 5](#thm-exposure-log-scale)),
 >
-> \\\log{\mu} = \log{\lambda} + \log{t},\\
+> \\\log{\mu} = \log{{\lambda}} + \log{t},\\
 >
 > is called the **offset**: it shifts \\\log{\mu}\\ by a known amount, with no unknown coefficient to estimate.
 
 > **NOTE:**
 >
-> *Remark*. The offset needs no covariates: with a single exposure \\t\\ and an unknown rate \\\lambda\\, \\\log{t}\\ is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+> *Remark*. The offset needs no covariates: with a single exposure \\t\\ and an unknown rate \\{\lambda}\\, \\\log{t}\\ is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
-> **Example 7 (The offset for a clinic’s event count)** In [Example 6](#exm-exposure-log-scale), the clinic was observed for \\t = 30\\ days, so the offset is \\\log{30} \approx 3.401\\. Only \\\log{\lambda}\\ is unknown before the data are seen; the offset is fixed by the length of observation. A clinic observed for \\t = 60\\ days has offset \\\log{60} \approx 4.094\\, which raises \\\log{\mu}\\ by \\\log{2} \approx 0.693\\ at the same event rate.
+> **Example 7 (The offset for a clinic’s event count)** In [Example 6](#exm-exposure-log-scale), the clinic was observed for \\t = 30\\ days, so the offset is \\\log{30} \approx 3.401\\. Only \\\log{{\lambda}}\\ is unknown before the data are seen; the offset is fixed by the length of observation. A clinic observed for \\t = 60\\ days has offset \\\log{60} \approx 4.094\\, which raises \\\log{\mu}\\ by \\\log{2} \approx 0.693\\ at the same event rate.
 
 > **NOTE:**
 >
@@ -340,31 +340,31 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 5 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu \> 0\\ and overdispersion parameter \\\rho \> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
+> **Definition 5 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu\> 0\\ and overdispersion parameter \\\rho\> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
 >
-> \\ \operatorname{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y} \cdot \left(1+\frac{\mu}{\rho}\right)^{-\rho} \\
+> \\ \operatorname{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} \cdot \left(1+\frac{\mu}{\rho}\right)^{-\rho} \\
 >
 > where \\\Gamma\\ is the gamma function, which satisfies \\\Gamma(x) = (x-1)!\\ for positive integers \\x\\.
 
 > **NOTE:**
 >
-> **Theorem 7 (The negative binomial converges to the Poisson)** Fix \\\mu \> 0\\, and let \\Y\_\rho \sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho \rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 1](#eq-pois-pmf)):
+> **Theorem 7 (The negative binomial converges to the Poisson)** Fix \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 1](#eq-pois-pmf)):
 >
-> \\\lim\_{\rho \rightarrow \infty} \operatorname{P}(Y\_\rho = y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
+> \\\lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
 
 > **NOTE:**
 >
-> *Proof*. Fix \\y\\. In [Definition 5](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho + y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho + k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
+> *Proof*. Fix \\y\\. In [Definition 5](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho+ y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
 >
-> \\ \begin{aligned} \frac{\Gamma(\rho + y)}{\Gamma(\rho) \cdot (\rho + \mu)^y} &= \frac{\Gamma(\rho) \prod\_{k=0}^{y-1} (\rho + k)}{\Gamma(\rho) \cdot (\rho + \mu)^y} && (\Gamma(x + 1) = x\\\Gamma(x) \text{, applied } y \text{ times}) \\ &= \prod\_{k=0}^{y-1} \frac{\rho + k}{\rho + \mu} && (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho + \mu \text{ per } k) \\ &= \prod\_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho} && (\text{divide each numerator and denominator by } \rho) \\ &\rightarrow \prod\_{k=0}^{y-1} \frac{1 + 0}{1 + 0} && (k/\rho \rightarrow 0 \text{ and } \mu/\rho \rightarrow 0 \text{; finitely many factors}) \\ &= 1 && (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} &= \frac{\Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} && (\Gamma(x + 1) = x\\\Gamma(x) \text{, applied } y \text{ times}) \\ &= \prod\_{k=0}^{y-1} \frac{\rho+ k}{\rho+ \mu} && (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho+ \mu\text{ per } k) \\ &= \prod\_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho} && (\text{divide each numerator and denominator by } \rho) \\ &\rightarrow \prod\_{k=0}^{y-1} \frac{1 + 0}{1 + 0} && (k/\rho\rightarrow 0 \text{ and } \mu/\rho\rightarrow 0 \text{; finitely many factors}) \\ &= 1 && (\text{simplify}) \end{aligned} \\
 >
-> For the third factor, write \\x \stackrel{\text{def}}{=}\mu/\rho\\, so \\x \rightarrow 0\\ as \\\rho \rightarrow \infty\\, and \\\rho = \mu/x\\:
+> For the third factor, write \\x \stackrel{\text{def}}{=}\mu/\rho\\, so \\x \rightarrow 0\\ as \\\rho\rightarrow \infty\\, and \\\rho= \mu/x\\:
 >
-> \\ \begin{aligned} \log\mathopen{}\left(\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho}\right)\mathclose{} &= -\rho \log\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{} && (\text{log of a power}) \\ &= -\mu \cdot \frac{\log(1 + x)}{x} && (\text{substitute } \rho = \mu/x) \\ &\rightarrow -\mu \cdot 1 && (\textstyle\lim\_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\ &= -\mu && (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \log\mathopen{}\left(\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho}\right)\mathclose{} &= -\rho\log\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{} && (\text{log of a power}) \\ &= -\mu\cdot \frac{\log(1 + x)}{x} && (\text{substitute } \rho= \mu/x) \\ &\rightarrow -\mu\cdot 1 && (\textstyle\lim\_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\ &= -\mu && (\text{simplify}) \end{aligned} \\
 >
 > so, since the exponential function is continuous, \\\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow \operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}\\. Each of the three factors has a limit, so their product does too:
 >
-> \\ \begin{aligned} \lim\_{\rho \rightarrow \infty} \operatorname{P}(Y\_\rho = y) &= \frac{\mu^y}{y!} \cdot 1 \cdot \operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{} && (\text{limit of a product of convergent factors}) \\ &= \frac{\mu^{y} e^{-\mu}}{y!} && (\text{rearrange}) \end{aligned} \\
+> \\ \begin{aligned} \lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) &= \frac{\mu^y}{y!} \cdot 1 \cdot \operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{} && (\text{limit of a product of convergent factors}) \\ &= \frac{\mu^{y} e^{-\mu}}{y!} && (\text{rearrange}) \end{aligned} \\
 >
 > which is the \\\operatorname{Pois}(\mu)\\ PMF.
 
@@ -373,29 +373,29 @@ Figure 2: Poisson CDFs
 > **Theorem 8 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
 >
 > - \\\operatorname{E}\[Y\] = \mu\\
-> - \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu + \frac{\mu^2}{\rho} \> \mu\\
+> - \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu+ \frac{\mu^2}{\rho} \> \mu\\
 
 > **NOTE:**
 >
-> *Proof*. The negative binomial distribution is a gamma mixture of Poisson distributions: if \\\Lambda\\ has the gamma density \\g(\lambda) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} \lambda^{\rho - 1} e^{-\rho\lambda/\mu}\\ for \\\lambda \> 0\\, which has mean \\\mu\\ and variance \\\mu^2/\rho\\ ([Casella and Berger 2002](#ref-CaseBerg01)), and \\Y \mid \Lambda = \lambda \sim \operatorname{Pois}(\lambda)\\, then \\Y \sim \operatorname{NegBin}(\mu, \rho)\\. To check this, integrate the joint density over \\\lambda\\:
+> *Proof*. The negative binomial distribution is a gamma mixture of Poisson distributions: if \\\Lambda\\ has the gamma density \\g({\lambda}) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\\ for \\{\lambda}\> 0\\, which has mean \\\mu\\ and variance \\\mu^2/\rho\\ ([Casella and Berger 2002](#ref-CaseBerg01)), and \\Y \mid \Lambda= {\lambda}\sim \operatorname{Pois}({\lambda})\\, then \\Y \sim \operatorname{NegBin}(\mu, \rho)\\. To check this, integrate the joint density over \\{\lambda}\\:
 >
-> \\ \begin{aligned} \operatorname{P}(Y = y) &= \int_0^\infty \frac{\lambda^y e^{-\lambda}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} \lambda^{\rho - 1} e^{-\rho\lambda/\mu}\\d\lambda && (\text{marginalize over } \Lambda) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \int_0^\infty \lambda^{y + \rho - 1} e^{-\lambda(1 + \rho/\mu)}\\d\lambda && (\text{collect powers of } \lambda \text{ and exponents}) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \cdot\frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}} && (\textstyle\int_0^\infty \lambda^{a-1} e^{-b\lambda}\\d\lambda = \Gamma(a)/b^a) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu}\right)\mathclose{}^\rho \mathopen{}\left(\frac{\mu}{\mu + \rho}\right)\mathclose{}^{y + \rho} && (1 + \rho/\mu = (\mu + \rho)/\mu) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu + \rho}\right)\mathclose{}^{\rho} \mathopen{}\left(\frac{\mu}{\mu + \rho}\right)\mathclose{}^{y} && (\text{combine the } \mu^\rho \text{ factors}) \\ &= \frac{\mu^y}{y!} \cdot\frac{\Gamma(\rho + y)}{\Gamma(\rho)\\(\rho + \mu)^y} \cdot\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho} && (\text{rearrange into the form of the definition}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{P}(Y = y) &= \int_0^\infty \frac{{\lambda}^y e^{-{\lambda}}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\\d{\lambda} && (\text{marginalize over } \Lambda) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \int_0^\infty {\lambda}^{y + \rho- 1} e^{-{\lambda}(1 + \rho/\mu)}\\d{\lambda} && (\text{collect powers of } {\lambda}\text{ and exponents}) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \cdot\frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}} && (\textstyle\int_0^\infty {\lambda}^{a-1} e^{-b{\lambda}}\\d{\lambda}= \Gamma(a)/b^a) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu}\right)\mathclose{}^\rho\mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y + \rho} && (1 + \rho/\mu= (\mu+ \rho)/\mu) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu+ \rho}\right)\mathclose{}^{\rho} \mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y} && (\text{combine the } \mu^\rho\text{ factors}) \\ &= \frac{\mu^y}{y!} \cdot\frac{\Gamma(\rho+ y)}{\Gamma(\rho)\\(\rho+ \mu)^y} \cdot\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho} && (\text{rearrange into the form of the definition}) \end{aligned} \\
 >
 > Then, by the [law of iterated expectations](expectation.llms.md#thm-lie) and the [law of total variance](variance-covariance.llms.md#thm-total-variance), using \\\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \operatorname{Var}(Y \mid \Lambda) = \Lambda\\ ([Theorem 2](#thm-poisson-properties)):
 >
-> \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu + \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
 >
-> and \\\mu^2/\rho \> 0\\ gives \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \> \mu\\.
+> and \\\mu^2/\rho\> 0\\ gives \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \> \mu\\.
 
 > **NOTE:**
 >
-> **Example 9 (Overdispersion relative to the Poisson)** With \\\mu = 4\\ and \\\rho = 2\\, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 4 + 16/2 = 12\\, three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
+> **Example 9 (Overdispersion relative to the Poisson)** With \\\mu= 4\\ and \\\rho= 2\\, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 4 + 16/2 = 12\\, three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
 
 ## 4 The Laplace distribution
 
 > **NOTE:**
 >
-> **Definition 6 (Laplace distribution)** A random variable \\Y\\ has the **Laplace distribution** with location parameter \\\mu \in \mathbb{R}\\ and scale parameter \\b \> 0\\, written \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\, if \\Y\\ is continuous with [density](random-variables.llms.md#def-pdf):
+> **Definition 6 (Laplace distribution)** A random variable \\Y\\ has the **Laplace distribution** with location parameter \\\mu\in \mathbb{R}\\ and scale parameter \\b \> 0\\, written \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\, if \\Y\\ is continuous with [density](random-variables.llms.md#def-pdf):
 >
 > \\\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left\|y - \mu\right\|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{5}\\
 
@@ -405,7 +405,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu = 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is \\\mathopen{}\left\|5 - 3\right\|\mathclose{} = 2 = b\\, so the density is \\\frac{1}{2b}\text{e}^{-1}\\. Here are both values:
+> **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu= 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is \\\mathopen{}\left\|5 - 3\right\|\mathclose{} = 2 = b\\, so the density is \\\frac{1}{2b}\text{e}^{-1}\\. Here are both values:
 >
 > ``` r
 > b <- 2
@@ -418,19 +418,19 @@ Figure 2: Poisson CDFs
 > #>        0.250        0.092
 > ```
 >
-> The density at \\\mu + b\\ is the density at \\\mu\\ times \\\text{e}^{-1}\\, and the same holds at \\\mu - b\\, because the density depends only on the distance from \\\mu\\.
+> The density at \\\mu+ b\\ is the density at \\\mu\\ times \\\text{e}^{-1}\\, and the same holds at \\\mu- b\\, because the density depends only on the distance from \\\mu\\.
 
 > **NOTE:**
 >
 > **Theorem 9 (Mean and variance of the Laplace distribution)** If \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Definition 6](#def-laplace)), then
 >
-> \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu \quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{6}\\
+> \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu\quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{6}\\
 
 > **NOTE:**
 >
 > *Proof*. Write \\U = Y - \mu\\. By [Equation 5](#eq-laplace-pdf), \\U\\ has density \\\frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\, which is symmetric about \\0\\.
 >
-> For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu + \operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = \mu\\.
+> For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu+ \operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = \mu\\.
 >
 > For the variance, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(U\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[U^2\right\]\mathclose{}\\ because \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\. The integrand \\u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is even, so
 >
@@ -479,57 +479,57 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 7 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha \> 0\\ and rate \\\lambda \> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
+> **Definition 7 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha\> 0\\ and rate \\{\lambda}\> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
 >
-> \\\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-\lambda t^\alpha}, \quad t \ge 0\\
+> \\\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0\\
 
 > **NOTE:**
 >
-> **Theorem 10 (Weibull density, hazard, and mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\\lambda\\, then for \\t \> 0\\:
+> **Theorem 10 (Weibull density, hazard, and mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then for \\t \> 0\\:
 >
-> \\ \begin{aligned} f(t) &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}\\ \operatorname{h}(t) &= \alpha\lambda t^{\alpha-1}\\ \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(1+1/\alpha)\cdot \lambda^{-1/\alpha} \end{aligned} \\
+> \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\ \operatorname{h}(t) &= \alpha{\lambda}t^{\alpha-1}\\ \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Proof*. The CDF of \\T\\ is \\F(t) = 1 - \operatorname{S}(t)\\ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is \\0\\ for \\t \< 0\\ and \\1 - \text{e}^{-\lambda t^\alpha}\\ for \\t \ge 0\\. This \\F\\ is continuous everywhere, with a continuous derivative everywhere except possibly \\t = 0\\, so \\f = F' = -\operatorname{S}'\\ is a density of \\T\\ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every \\t \> 0\\, so there the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
+> *Proof*. The CDF of \\T\\ is \\F(t) = 1 - \operatorname{S}(t)\\ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is \\0\\ for \\t \< 0\\ and \\1 - \text{e}^{-{\lambda}t^\alpha}\\ for \\t \ge 0\\. This \\F\\ is continuous everywhere, with a continuous derivative everywhere except possibly \\t = 0\\, so \\f = F' = -\operatorname{S}'\\ is a density of \\T\\ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every \\t \> 0\\, so there the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
 >
-> \\ \begin{aligned} f(t) &= -\frac{d}{dt}\text{e}^{-\lambda t^\alpha} && (f = -\operatorname{S}') \\ &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha} && (\text{chain rule}) \\ \operatorname{h}(t) &= \frac{\alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha}}{\text{e}^{-\lambda t^\alpha}} && (\text{hazard is density over survival}) \\ &= \alpha\lambda t^{\alpha-1} && (\text{cancel}) \end{aligned} \\
+> \\ \begin{aligned} f(t) &= -\frac{d}{dt}\text{e}^{-{\lambda}t^\alpha} && (f = -\operatorname{S}') \\ &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha} && (\text{chain rule}) \\ \operatorname{h}(t) &= \frac{\alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}}{\text{e}^{-{\lambda}t^\alpha}} && (\text{hazard is density over survival}) \\ &= \alpha{\lambda}t^{\alpha-1} && (\text{cancel}) \end{aligned} \\
 >
-> For the mean, use the [survival-function formula for the mean](expectation.llms.md#thm-surv-mean) and substitute \\u = \lambda t^\alpha\\, so that \\t = (u/\lambda)^{1/\alpha}\\ and \\dt = \frac{1}{\alpha}\lambda^{-1/\alpha} u^{1/\alpha - 1}\\du\\:
+> For the mean, use the [survival-function formula for the mean](expectation.llms.md#thm-surv-mean) and substitute \\u = {\lambda}t^\alpha\\, so that \\t = (u/{\lambda})^{1/\alpha}\\ and \\dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\\du\\:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \text{e}^{-\lambda t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}\lambda^{-1/\alpha} \int_0^\infty u^{1/\alpha - 1} \text{e}^{-u}\\du && (\text{substitute } u = \lambda t^\alpha) \\ &= \frac{1}{\alpha}\lambda^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\\lambda^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\\du && (\text{substitute } u = {\lambda}t^\alpha) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\{\lambda}^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. The hazard is written \\\operatorname{h}(t)\\ here, rather than \\{\lambda}(t)\\, because the Weibull rate parameter is also called \\\lambda\\.
+> *Remark*. The hazard is written \\\operatorname{h}(t)\\ here, rather than \\{\lambda}(t)\\, because the Weibull rate parameter is also called \\{\lambda}\\.
 
 > **NOTE:**
 >
-> **Corollary 1 (The Weibull with shape 1 is the exponential)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha = 1\\ and rate \\\lambda\\, then \\T\\ has the [exponential distribution](random-variables.llms.md#def-exponential) with rate \\\lambda\\.
+> **Corollary 1 (The Weibull with shape 1 is the exponential)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha= 1\\ and rate \\{\lambda}\\, then \\T\\ has the [exponential distribution](random-variables.llms.md#def-exponential) with rate \\{\lambda}\\.
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-weibull) with \\\alpha = 1\\, for \\t \> 0\\:
+> *Proof*. By [Theorem 10](#thm-weibull) with \\\alpha= 1\\, for \\t \> 0\\:
 >
-> \\ \begin{aligned} f(t) &= \alpha\lambda t^{\alpha-1}\text{e}^{-\lambda t^\alpha} && (\text{Weibull density}) \\ &= 1 \cdot \lambda t^{0}\text{e}^{-\lambda t^1} && (\text{substitute } \alpha = 1) \\ &= \lambda \text{e}^{-\lambda t} && (t^0 = 1 \text{ and } t^1 = t) \end{aligned} \\
+> \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha} && (\text{Weibull density}) \\ &= 1 \cdot {\lambda}t^{0}\text{e}^{-{\lambda}t^1} && (\text{substitute } \alpha= 1) \\ &= {\lambda}\text{e}^{-{\lambda}t} && (t^0 = 1 \text{ and } t^1 = t) \end{aligned} \\
 >
-> and \\f(t) = 0\\ for \\t \< 0\\, since \\T\\ is non-negative. This density matches the exponential density at every \\t \ne 0\\. Changing a density at the single point \\t = 0\\ does not change its integral over any set, so \\T\\ has the exponential distribution with rate \\\lambda\\.
+> and \\f(t) = 0\\ for \\t \< 0\\, since \\T\\ is non-negative. This density matches the exponential density at every \\t \ne 0\\. Changing a density at the single point \\t = 0\\ does not change its integral over any set, so \\T\\ has the exponential distribution with rate \\{\lambda}\\.
 
 > **NOTE:**
 >
-> **Corollary 2 (The Weibull shape sets the direction of the hazard)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha\\ and rate \\\lambda\\, then on \\t \> 0\\ its hazard \\\operatorname{h}(t)\\ is:
+> **Corollary 2 (The Weibull shape sets the direction of the hazard)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha\\ and rate \\{\lambda}\\, then on \\t \> 0\\ its hazard \\\operatorname{h}(t)\\ is:
 >
-> - strictly increasing if \\\alpha \> 1\\
-> - constant if \\\alpha = 1\\
-> - strictly decreasing if \\\alpha \< 1\\
+> - strictly increasing if \\\alpha\> 1\\
+> - constant if \\\alpha= 1\\
+> - strictly decreasing if \\\alpha\< 1\\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-weibull), \\\operatorname{h}(t) = \alpha\lambda t^{\alpha-1}\\ for \\t \> 0\\, so:
+> *Proof*. By [Theorem 10](#thm-weibull), \\\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}\\ for \\t \> 0\\, so:
 >
-> \\ \begin{aligned} \frac{d}{dt}\operatorname{h}(t) &= \frac{d}{dt} \alpha\lambda t^{\alpha-1} && (\text{Weibull hazard}) \\ &= \alpha(\alpha - 1)\lambda t^{\alpha-2} && (\text{power rule}) \end{aligned} \\
+> \\ \begin{aligned} \frac{d}{dt}\operatorname{h}(t) &= \frac{d}{dt} \alpha{\lambda}t^{\alpha-1} && (\text{Weibull hazard}) \\ &= \alpha(\alpha- 1){\lambda}t^{\alpha-2} && (\text{power rule}) \end{aligned} \\
 >
-> For \\t \> 0\\, the factors \\\alpha\\, \\\lambda\\, and \\t^{\alpha-2}\\ are all positive, so \\\frac{d}{dt}\operatorname{h}(t)\\ has the sign of \\\alpha - 1\\: positive for \\\alpha \> 1\\, zero for \\\alpha = 1\\, and negative for \\\alpha \< 1\\. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.
+> For \\t \> 0\\, the factors \\\alpha\\, \\{\lambda}\\, and \\t^{\alpha-2}\\ are all positive, so \\\frac{d}{dt}\operatorname{h}(t)\\ has the sign of \\\alpha- 1\\: positive for \\\alpha\> 1\\, zero for \\\alpha= 1\\, and negative for \\\alpha\< 1\\. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.
 
 > **NOTE:**
 >
@@ -537,7 +537,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 12 (Exponential as a special case)** With \\\alpha = 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = \lambda\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2)\lambda^{-1} = 1/\lambda\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha = 2\\ and \\\lambda = 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
+> **Example 12 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2){\lambda}^{-1} = 1/{\lambda}\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha= 2\\ and \\{\lambda}= 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
 
 ## 6 The multivariate normal distribution
 
@@ -606,13 +606,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. Substitute [Definition 9](#def-mahalanobis) into [Definition 8](#def-mvn). The function \\\delta \mapsto \text{e}^{-\delta^2/2}\\ decreases on \\\delta \ge 0\\, and by [Lemma 1](#lem-mahalanobis-nonneg), \\\Delta(\tilde{x}) = 0\\ only at \\\tilde{x}= \tilde{\mu}\\.
+> *Proof*. Substitute [Definition 9](#def-mahalanobis) into [Definition 8](#def-mvn). The function \\\delta\mapsto \text{e}^{-\delta^2/2}\\ decreases on \\\delta\ge 0\\, and by [Lemma 1](#lem-mahalanobis-nonneg), \\\Delta(\tilde{x}) = 0\\ only at \\\tilde{x}= \tilde{\mu}\\.
 
 > **NOTE:**
 >
-> **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix) with diagonal elements \\\sigma_1^2, \ldots, \sigma_p^2\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma_1^2, \ldots, 1/\sigma_p^2\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
+> **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix) with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma^2_1, \ldots, 1/\sigma^2_p\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
 >
-> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma_i^2} \\
+> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i} \\
 >
 > Two special cases:
 >
@@ -623,19 +623,19 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 12 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma_1^2, \ldots, \sigma_p^2\\, then:
+> **Theorem 12 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
 >
-> - the joint density of \\\tilde{X}\\ is the product of the [normal densities](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma_i^2\right)\mathclose{}\\, \\i = 1, \ldots, p\\,
-> - each \\X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma_i^2\right)\mathclose{}\\, and
+> - the joint density of \\\tilde{X}\\ is the product of the [normal densities](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, \\i = 1, \ldots, p\\,
+> - each \\X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, and
 > - \\X_1, \ldots, X_p\\ are [independent](independence.llms.md#def-indpt).
 
 > **NOTE:**
 >
-> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma_i^2\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
+> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma^2_i\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
 >
-> \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma_i^2}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma^2_i}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
 >
-> which is the product of the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma_i^2\right)\mathclose{}\\ densities. Integrating out every coordinate except \\x_i\\, each other factor integrates to 1 ([the normal density integrates to 1](random-variables.llms.md#thm-normal-density)), leaving the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma_i^2\right)\mathclose{}\\ density as the density of \\X_i\\ ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables). So the joint density is the product of the marginal densities, and the components are independent by [the factorization theorem for densities](independence.llms.md#thm-indpt-density), extended to \\p\\ variables as its remark describes.
+> which is the product of the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\ densities. Integrating out every coordinate except \\x_i\\, each other factor integrates to 1 ([the normal density integrates to 1](random-variables.llms.md#thm-normal-density)), leaving the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\ density as the density of \\X_i\\ ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables). So the joint density is the product of the marginal densities, and the components are independent by [the factorization theorem for densities](independence.llms.md#thm-indpt-density), extended to \\p\\ variables as its remark describes.
 
 > **NOTE:**
 >
@@ -770,7 +770,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 17 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\\lambda \> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g(\lambda)\\\frac{\lambda^y e^{-\lambda}}{y!}\\d\lambda\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 8](#thm-nb)).
+> **Example 17 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 8](#thm-nb)).
 
 ## References
 

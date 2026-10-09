@@ -361,7 +361,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-08 23:04:50 (UTC)</p>
+  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -374,7 +374,7 @@
 <section class="slide level2">
 
 <div id="exm-sample-space" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 (Sample space of a die roll)</strong></span> Rolling a six-sided die once has sample space <span class="math inline">\(\Omega = \mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 1 (Sample space of a die roll)</strong></span> Rolling a six-sided die once has sample space <span class="math inline">\(\Omega= \mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -418,7 +418,7 @@
 
 <div id="def-complement" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4 (Complement of an event)</strong></span> The <strong>complement</strong> of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#/def-occurs">occur</a>: the set of outcomes in the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>.</p>
-<p><span class="math display">\[\neg A \stackrel{\text{def}}{=}\Omega \setminus A\]</span></p>
+<p><span class="math display">\[\neg A \stackrel{\text{def}}{=}\Omega\setminus A\]</span></p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Other sources write <span class="math inline">\(A^c\)</span> or <span class="math inline">\(\bar{A}\)</span>.</p>
@@ -526,15 +526,15 @@
 <p><span class="math display">\[\lim_{n \to \infty} \Pr(A_n) = 0\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>For each <span class="math inline">\(i\)</span>, let <span class="math inline">\(B_i \stackrel{\text{def}}{=}A_i \setminus A_{i+1}\)</span>, the outcomes in <span class="math inline">\(A_i\)</span> but not in <span class="math inline">\(A_{i+1}\)</span>. Each <span class="math inline">\(B_i = A_i \cap (\Omega \setminus A_{i+1})\)</span> is an event, by <a href="https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure">closure properties of a <span class="math inline">\(\sigma\)</span>-algebra</a>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>For each <span class="math inline">\(i\)</span>, let <span class="math inline">\(B_i \stackrel{\text{def}}{=}A_i \setminus A_{i+1}\)</span>, the outcomes in <span class="math inline">\(A_i\)</span> but not in <span class="math inline">\(A_{i+1}\)</span>. Each <span class="math inline">\(B_i = A_i \cap (\Omega\setminus A_{i+1})\)</span> is an event, by <a href="https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure">closure properties of a <span class="math inline">\(\sigma\)</span>-algebra</a>.</p>
 <p><em>The <span class="math inline">\(B_i\)</span> are pairwise disjoint.</em> For <span class="math inline">\(i &lt; j\)</span>, <span class="math inline">\(B_j \subseteq A_j \subseteq A_{i+1}\)</span>, while <span class="math inline">\(B_i\)</span> has no outcomes in <span class="math inline">\(A_{i+1}\)</span>, so <span class="math inline">\(B_i \cap B_j = \emptyset\)</span>.</p>
-<p><em><span class="math inline">\(A_n = \bigcup_{i=n}^{\infty} B_i\)</span> for each <span class="math inline">\(n\)</span>.</em> For <span class="math inline">\(i \ge n\)</span>, <span class="math inline">\(B_i \subseteq A_i \subseteq A_n\)</span>, so the union is contained in <span class="math inline">\(A_n\)</span>. Conversely, let <span class="math inline">\(\omega \in A_n\)</span>. Since <span class="math inline">\(\bigcap_{i} A_i = \emptyset\)</span>, <span class="math inline">\(\omega\)</span> is not in every <span class="math inline">\(A_i\)</span>; since the <span class="math inline">\(A_i\)</span> are nested, the indices <span class="math inline">\(i\)</span> with <span class="math inline">\(\omega \in A_i\)</span> are <span class="math inline">\(1, \ldots, m\)</span> for some <span class="math inline">\(m \ge n\)</span>. Then <span class="math inline">\(\omega \in A_m\)</span> and <span class="math inline">\(\omega \notin A_{m+1}\)</span>, so <span class="math inline">\(\omega \in B_m\)</span>.</p>
-<p><em><span class="math inline">\(\Pr(A_1)\)</span> is finite.</em> The events <span class="math inline">\(A_1\)</span> and <span class="math inline">\(\Omega \setminus A_1\)</span> are disjoint with union <span class="math inline">\(\Omega\)</span>, so <a href="#/cor-probability-finitely-additive" class="quarto-xref">Corollary&nbsp;1</a> applies to them:</p>
+<p><em><span class="math inline">\(A_n = \bigcup_{i=n}^{\infty} B_i\)</span> for each <span class="math inline">\(n\)</span>.</em> For <span class="math inline">\(i \ge n\)</span>, <span class="math inline">\(B_i \subseteq A_i \subseteq A_n\)</span>, so the union is contained in <span class="math inline">\(A_n\)</span>. Conversely, let <span class="math inline">\(\omega\in A_n\)</span>. Since <span class="math inline">\(\bigcap_{i} A_i = \emptyset\)</span>, <span class="math inline">\(\omega\)</span> is not in every <span class="math inline">\(A_i\)</span>; since the <span class="math inline">\(A_i\)</span> are nested, the indices <span class="math inline">\(i\)</span> with <span class="math inline">\(\omega\in A_i\)</span> are <span class="math inline">\(1, \ldots, m\)</span> for some <span class="math inline">\(m \ge n\)</span>. Then <span class="math inline">\(\omega\in A_m\)</span> and <span class="math inline">\(\omega\notin A_{m+1}\)</span>, so <span class="math inline">\(\omega\in B_m\)</span>.</p>
+<p><em><span class="math inline">\(\Pr(A_1)\)</span> is finite.</em> The events <span class="math inline">\(A_1\)</span> and <span class="math inline">\(\Omega\setminus A_1\)</span> are disjoint with union <span class="math inline">\(\Omega\)</span>, so <a href="#/cor-probability-finitely-additive" class="quarto-xref">Corollary&nbsp;1</a> applies to them:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(A_1)
-&amp;\le \Pr(A_1) + \Pr(\Omega \setminus A_1)
-&amp;&amp; \text{(} \Pr(\Omega \setminus A_1) \ge 0 \text{)} \\
+&amp;\le \Pr(A_1) + \Pr(\Omega\setminus A_1)
+&amp;&amp; \text{(} \Pr(\Omega\setminus A_1) \ge 0 \text{)} \\
 &amp;= \Pr(\Omega)
 &amp;&amp; \text{(finite additivity of } \Pr \text{)} \\
 &amp;= 1
@@ -628,7 +628,7 @@
 &amp;= \Pr(A \cup \neg A)
 &amp;&amp; \text{(additivity of probability for disjoint events)} \\
 &amp;= \Pr(\Omega)
-&amp;&amp; \text{(} A \cup \neg A = \Omega \text{)} \\
+&amp;&amp; \text{(} A \cup \neg A = \Omega\text{)} \\
 &amp;= 1
 &amp;&amp; \text{(probability of the sample space is 1)}
 \end{aligned}
@@ -657,7 +657,7 @@
 \Pr(\neg A) &amp;= 1 - \Pr(A)
 &amp;&amp; \text{(complement rule)} \\
 &amp;= 1 - \pi
-&amp;&amp; \text{(substitute } \Pr(A) = \pi \text{)}
+&amp;&amp; \text{(substitute } \Pr(A) = \pi\text{)}
 \end{aligned}
 \]</span></p>
 </div>
@@ -665,7 +665,7 @@
 <section class="slide level2">
 
 <div id="exm-p-neg" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (Probability of not rolling a six)</strong></span> For a fair die, the event “the roll is a six” has probability <span class="math inline">\(\pi = 1/6\)</span>, so by <a href="#/cor-p-neg" class="quarto-xref">Corollary&nbsp;3</a> the probability of not rolling a six is <span class="math inline">\(1 - 1/6 = 5/6\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 8 (Probability of not rolling a six)</strong></span> For a fair die, the event “the roll is a six” has probability <span class="math inline">\(\pi= 1/6\)</span>, so by <a href="#/cor-p-neg" class="quarto-xref">Corollary&nbsp;3</a> the probability of not rolling a six is <span class="math inline">\(1 - 1/6 = 5/6\)</span>.</p>
 </div>
 </section>
 <section id="conditional-probability" class="slide level2" data-number="2">

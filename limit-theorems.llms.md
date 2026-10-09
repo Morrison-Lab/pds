@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 23:04:50 (UTC)
+Last modified: 2026-10-09 00:30:33 (UTC)
 
 ## 1 The Central Limit Theorem
 
@@ -38,13 +38,13 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Corollary 1 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} &= n\mu \\ \operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} &= n\sigma^2 \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} &= n\mu\\ \operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} &= n\sigma^2 \end{aligned} \\
 
 > **NOTE:**
 >
 > *Proof*. For the mean, apply [linearity of expectation](expectation.llms.md#thm-linearity-expectation) once per added summand:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} &= \sum\_{i=1}^n\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{} && \text{(linearity of expectation, applied } n - 1 \text{ times)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} &= \sum\_{i=1}^n\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{} && \text{(linearity of expectation, applied } n - 1 \text{ times)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu\text{)} \end{aligned} \\
 >
 > For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with every \\a_i = 1\\. For \\i \ne j\\, \\X_i\\ and \\X_j\\ are independent (take \\A_k = \mathbb{R}\\ for every other \\k\\ in the [definition of independence](independence.llms.md#def-indpt)), so \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated); and \\\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\\ ([covariance of a variable with itself](variance-covariance.llms.md#lem-cov-xx)):
 >
@@ -56,7 +56,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Example 1 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\, which is flat, not bell-shaped ([Figure 1](#fig-clt-1d6)). Its mean is \\\mu = 3.5\\, and its variance is \\\sigma^2= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\\.
+> **Example 1 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\, which is flat, not bell-shaped ([Figure 1](#fig-clt-1d6)). Its mean is \\\mu= 3.5\\, and its variance is \\\sigma^2= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\\.
 >
 > Show code
 >

@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-08 23:04:50 (UTC)</p>
+  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -514,13 +514,13 @@
 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{}
 &amp;= \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{}
 &amp;&amp; \text{(simplified expression for variance)} \\
-&amp;= \pi - \pi^2
+&amp;= \pi- \pi^2
 &amp;&amp; \text{(substitute)} \\
 &amp;= \pi(1 - \pi)
 &amp;&amp; \text{(factor)}
 \end{aligned}
 \]</span></p>
-<p>For a fair coin (<span class="math inline">\(\pi = 1/2\)</span>), <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\)</span>.</p>
+<p>For a fair coin (<span class="math inline">\(\pi= 1/2\)</span>), <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -585,7 +585,7 @@
 <section class="slide level2">
 
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\mu \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> and <span class="math inline">\(m(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\)</span>. Adding and subtracting <span class="math inline">\(m(X)\)</span> inside the deviation and expanding the square:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> and <span class="math inline">\(m(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\)</span>. Adding and subtracting <span class="math inline">\(m(X)\)</span> inside the deviation and expanding the square:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
@@ -614,7 +614,7 @@
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\mathopen{}\left(m(X) - \mu\right)^2\mathclose{}\right]\mathclose{}
 &amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left(m(X) - \operatorname{E}\mathopen{}\left[m(X)\right]\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
-&amp;&amp; \text{(} \mu = \operatorname{E}\mathopen{}\left[m(X)\right]\mathclose{} \text{)} \\
+&amp;&amp; \text{(} \mu= \operatorname{E}\mathopen{}\left[m(X)\right]\mathclose{} \text{)} \\
 &amp;= \operatorname{Var}\mathopen{}\left(m(X)\right)\mathclose{}
 &amp;&amp; \text{(definition of variance)} \\
 &amp;= \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\right)\mathclose{}
@@ -628,7 +628,7 @@
 &amp;= \operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[\mathopen{}\left[Y - m(X)\right]\mathclose{}\mathopen{}\left[m(X) - \mu\right]\mathclose{} \mid X\right]\mathclose{}\right]\mathclose{}
 &amp;&amp; \text{(law of iterated expectations)} \\
 &amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left[m(X) - \mu\right]\mathclose{} \cdot\operatorname{E}\mathopen{}\left[Y - m(X) \mid X\right]\mathclose{}\right]\mathclose{}
-&amp;&amp; \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mu \text{)} \\
+&amp;&amp; \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mu\text{)} \\
 &amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left[m(X) - \mu\right]\mathclose{} \cdot\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{} - \operatorname{E}\mathopen{}\left[m(X) \mid X\right]\mathclose{}\right]\mathclose{}\right]\mathclose{}
 &amp;&amp; \text{(linearity of conditional expectation)} \\
 &amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left[m(X) - \mu\right]\mathclose{} \cdot\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{} - m(X)\right]\mathclose{}\right]\mathclose{}
@@ -720,7 +720,7 @@
 <section id="sec-bias-variance-prediction" class="slide level2 scrollable" data-number="3">
 <h2><span class="header-section-number">3</span> Bias, variance, and prediction error</h2>
 <div id="exr-prediction-error" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2 (Expected squared error from three sources)</strong></span> A prediction <span class="math inline">\(\hat f(x_0)\)</span> at a new point <span class="math inline">\(x_0\)</span> has squared bias <span class="math inline">\([\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}]^2 = 1\)</span> and variance <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 2\)</span>. The new response is <span class="math inline">\(Y_0 = f(x_0) + \varepsilon\)</span>, where <span class="math inline">\(\varepsilon\)</span> has mean <span class="math inline">\(0\)</span> and variance <span class="math inline">\(\sigma^2 = 3\)</span> and is independent of <span class="math inline">\(\hat f(x_0)\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 2 (Expected squared error from three sources)</strong></span> A prediction <span class="math inline">\(\hat f(x_0)\)</span> at a new point <span class="math inline">\(x_0\)</span> has squared bias <span class="math inline">\([\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}]^2 = 1\)</span> and variance <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 2\)</span>. The new response is <span class="math inline">\(Y_0 = f(x_0) + \varepsilon\)</span>, where <span class="math inline">\(\varepsilon\)</span> has mean <span class="math inline">\(0\)</span> and variance <span class="math inline">\(\sigma^2= 3\)</span> and is independent of <span class="math inline">\(\hat f(x_0)\)</span>.</p>
 <ol type="1">
 <li>What is the expected squared prediction error <span class="math inline">\(\operatorname{E}\mathopen{}\left[(Y_0 - \hat f(x_0))^2\right]\mathclose{}\)</span>?</li>
 <li>If we could remove all bias and all variance of <span class="math inline">\(\hat f(x_0)\)</span>, what would the expected squared prediction error be?</li>
@@ -734,7 +734,7 @@
 <p><span class="proof-title"><em>Solution 2</em>. </span></p>
 <ol type="1">
 <li><p>The expected squared error is the sum of the three sources: <span class="math inline">\(1 + 2 + 3 = 6\)</span>.</p></li>
-<li><p><span class="math inline">\(0 + 0 + 3 = 3\)</span>. The noise variance <span class="math inline">\(\sigma^2 = 3\)</span> remains, so <span class="math inline">\(3\)</span> is the smallest expected squared error any prediction can have here.</p></li>
+<li><p><span class="math inline">\(0 + 0 + 3 = 3\)</span>. The noise variance <span class="math inline">\(\sigma^2= 3\)</span> remains, so <span class="math inline">\(3\)</span> is the smallest expected squared error any prediction can have here.</p></li>
 <li><p>A better method can reduce the squared bias and the variance of <span class="math inline">\(\hat f(x_0)\)</span>, because both depend on how <span class="math inline">\(\hat f\)</span> is built. It cannot reduce <span class="math inline">\(\sigma^2\)</span>, which is the variance of the noise <span class="math inline">\(\varepsilon\)</span> in the new response.</p></li>
 </ol>
 </div>
@@ -772,7 +772,7 @@
 <p><span class="math display">\[\operatorname{E}\mathopen{}\left[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right]\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{} + \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} + \sigma^2\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(Y_0 - \hat f(x_0) = \varepsilon + D\)</span>, where <span class="math inline">\(D \stackrel{\text{def}}{=}f(x_0) - \hat f(x_0)\)</span>. Expanding the square and using linearity of expectation,</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(Y_0 - \hat f(x_0) = \varepsilon+ D\)</span>, where <span class="math inline">\(D \stackrel{\text{def}}{=}f(x_0) - \hat f(x_0)\)</span>. Expanding the square and using linearity of expectation,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right]\mathclose{}
@@ -791,7 +791,7 @@
 <section class="slide level2">
 
 <div id="def-irreducible-error" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (Irreducible error)</strong></span> In <a href="#/thm-prediction-error" class="quarto-xref">Theorem&nbsp;4</a>, the term <span class="math inline">\(\sigma^2 = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\)</span> is the <strong>irreducible error</strong>. It does not depend on the prediction <span class="math inline">\(\hat f\)</span>, so no choice of prediction can remove it. For example, in <a href="#/exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>, <span class="math inline">\(\sigma^2 = 3\)</span>, so every prediction there has expected squared error at least <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 10 (Irreducible error)</strong></span> In <a href="#/thm-prediction-error" class="quarto-xref">Theorem&nbsp;4</a>, the term <span class="math inline">\(\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\)</span> is the <strong>irreducible error</strong>. It does not depend on the prediction <span class="math inline">\(\hat f\)</span>, so no choice of prediction can remove it. For example, in <a href="#/exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>, <span class="math inline">\(\sigma^2= 3\)</span>, so every prediction there has expected squared error at least <span class="math inline">\(3\)</span>.</p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>This expected prediction error decomposition into squared bias, variance, and irreducible error follows <span class="citation" data-cites="james2021islr2e">James et al. (<a href="#/references" role="doc-biblioref" onclick="">2021, sec. 2.2.2</a>)</span>.</p>
@@ -1461,7 +1461,7 @@
 &amp;= \frac{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}{\sigma_X^2} + \frac{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}{\sigma_Y^2} \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y}
 &amp;&amp; \text{(variance of a sum of two random variables)} \\
 &amp;= 1 + 1 \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y}
-&amp;&amp; \text{(definition of standard deviation: } \sigma_X^2 = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma_Y^2 = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\
+&amp;&amp; \text{(definition of standard deviation: } \sigma^2_X = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma^2_Y = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\
 &amp;= 2 \pm 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}
 &amp;&amp; \text{(definition of correlation)}
 \end{aligned}

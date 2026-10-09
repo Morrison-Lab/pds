@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 23:04:50 (UTC)
+Last modified: 2026-10-09 00:30:33 (UTC)
 
 > **NOTE:**
 >
@@ -50,7 +50,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{x\in \mathcal{R}(X)} x \cdot\operatorname{P}(X=x) && \text{(definition of expectation for discrete r.v.)} \\&= \sum\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}} x \cdot\operatorname{P}(X=x) && \text{(range of Bernoulli r.v. is } \\0, 1\\ \text{)} \\&= \mathopen{}\left(0 \cdot\operatorname{P}(X=0)\right)\mathclose{} + \mathopen{}\left(1 \cdot\operatorname{P}(X=1)\right)\mathclose{} && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)} \\&= \mathopen{}\left(0 \cdot(1-\pi)\right)\mathclose{} + \mathopen{}\left(1 \cdot\pi\right)\mathclose{} && \text{(substitute Bernoulli PMF values)} \\&= 0 + \pi && \text{(multiplication by 0 and 1)} \\&= \pi && \text{(addition of 0)} \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{x\in \mathcal{R}(X)} x \cdot\operatorname{P}(X=x) && \text{(definition of expectation for discrete r.v.)} \\&= \sum\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}} x \cdot\operatorname{P}(X=x) && \text{(range of Bernoulli r.v. is } \\0, 1\\ \text{)} \\&= \mathopen{}\left(0 \cdot\operatorname{P}(X=0)\right)\mathclose{} + \mathopen{}\left(1 \cdot\operatorname{P}(X=1)\right)\mathclose{} && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)} \\&= \mathopen{}\left(0 \cdot(1-\pi)\right)\mathclose{} + \mathopen{}\left(1 \cdot\pi\right)\mathclose{} && \text{(substitute Bernoulli PMF values)} \\&= 0 + \pi&& \text{(multiplication by 0 and 1)} \\&= \pi&& \text{(addition of 0)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -70,9 +70,9 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Example 2 (Mean of an exponential random variable via survival function)** Let \\T\\ be [exponential](random-variables.llms.md#def-exponential) with rate \\\lambda \> 0\\, so \\\operatorname{S}(t) = \text{e}^{-\lambda t}\\ for \\t \ge 0\\, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
+> **Example 2 (Mean of an exponential random variable via survival function)** Let \\T\\ be [exponential](random-variables.llms.md#def-exponential) with rate \\{\lambda}\> 0\\, so \\\operatorname{S}(t) = \text{e}^{-{\lambda}t}\\ for \\t \ge 0\\, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \operatorname{S}(t)\\dt && \text{(expectation via the survival function)}\\ &= \int_0^\infty \text{e}^{-\lambda t}\\dt && \text{(substitute the survival function)}\\ &= \mathopen{}\left\[-\frac{1}{\lambda}\text{e}^{-\lambda t}\right\]\mathclose{}\_0^\infty && \text{(antiderivative)}\\ &= 0 - \mathopen{}\left(-\frac{1}{\lambda}\right)\mathclose{} && \text{(evaluate at the bounds)}\\ &= \frac{1}{\lambda} && \text{(simplify)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \operatorname{S}(t)\\dt && \text{(expectation via the survival function)}\\ &= \int_0^\infty \text{e}^{-{\lambda}t}\\dt && \text{(substitute the survival function)}\\ &= \mathopen{}\left\[-\frac{1}{{\lambda}}\text{e}^{-{\lambda}t}\right\]\mathclose{}\_0^\infty && \text{(antiderivative)}\\ &= 0 - \mathopen{}\left(-\frac{1}{{\lambda}}\right)\mathclose{} && \text{(evaluate at the bounds)}\\ &= \frac{1}{{\lambda}} && \text{(simplify)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -90,7 +90,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > \\\operatorname{E}\tilde{X}= \begin{pmatrix}\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} \\ \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{}\end{pmatrix} = \begin{pmatrix}1/2 \\ 1/2\end{pmatrix}\\
 >
-> since each \\X_i\\ is Bernoulli with \\\pi = 1/2\\ ([Theorem 1](#thm-bernoulli-mean)).
+> since each \\X_i\\ is Bernoulli with \\\pi= 1/2\\ ([Theorem 1](#thm-bernoulli-mean)).
 
 > **NOTE:**
 >
@@ -275,15 +275,15 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these sample moments, the joint density is (a standard result; e.g. Casella and Berger ([2002](#ref-CaseBerg01))):
 >
-> \\ \operatorname{p}(X=x,\\Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \text{e}^{-\frac{1}{2(1-\rho^2)} \mathopen{}\left\[\frac{(x-\mu_X)^2}{\sigma_X^2} - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma_Y^2}\right\]\mathclose{}} \\
+> \\ \operatorname{p}(X=x,\\Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \text{e}^{-\frac{1}{2(1-\rho^2)} \mathopen{}\left\[\frac{(x-\mu_X)^2}{\sigma^2_X} - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right\]\mathclose{}} \\
 >
-> A further standard fact about the bivariate normal (Casella and Berger ([2002](#ref-CaseBerg01))) is that the marginal distribution of \\X\\ is [normal](random-variables.llms.md#def-normal), \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma_X^2\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
+> A further standard fact about the bivariate normal (Casella and Berger ([2002](#ref-CaseBerg01))) is that the marginal distribution of \\X\\ is [normal](random-variables.llms.md#def-normal), \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma^2_X\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
 >
-> \\ \begin{aligned} \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}} \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma_X^2}} && \text{(normal density at } x = 40 \text{)} \\&= \frac{1}{1.8173\sqrt{2\pi}} \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}} && \text{(substitute } \mu_X \text{ and } \sigma_X \text{)} \\&\approx 0.1591 && \text{(evaluate)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}} \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma^2_X}} && \text{(normal density at } x = 40 \text{)} \\&= \frac{1}{1.8173\sqrt{2\pi}} \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}} && \text{(substitute } \mu_X \text{ and } \sigma_X \text{)} \\&\approx 0.1591 && \text{(evaluate)} \end{aligned} \\
 >
 > By [Definition 4](#def-cond-pdf), dividing the joint density by this marginal density and simplifying the exponent (completing the square in \\y\\; Casella and Berger ([2002](#ref-CaseBerg01))) gives the conditional PDF of \\Y\\ given \\X = 40\\, which is itself normal with mean shifted along the regression line and variance reduced by a factor of \\1-\rho^2\\:
 >
-> \\ \begin{aligned} \operatorname{p}(Y=y \mid X=40) &= \frac{\operatorname{p}(X=40,\\Y=y)}{\operatorname{p}(X=40)} && \text{(definition of the conditional PDF)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left\[\frac{(40-\mu_X)^2}{\sigma_X^2} - \frac{2\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma_Y^2}\right\]\mathclose{} + \frac{(40-\mu_X)^2}{2\sigma_X^2}} && \text{(substitute both densities; combine prefactors and exponents)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\rho^2(40-\mu_X)^2}{2\sigma_X^2(1-\rho^2)} + \frac{\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)} - \frac{(y-\mu_Y)^2}{2\sigma_Y^2(1-\rho^2)}} && \text{(combine the } (40-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2\sigma_Y^2(1-\rho^2)} \mathopen{}\left\[\rho^2\frac{\sigma_Y^2}{\sigma_X^2}(40-\mu_X)^2 - 2\rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)(y-\mu_Y) + (y-\mu_Y)^2\right\]\mathclose{}} && \text{(factor } -\tfrac{1}{2\sigma_Y^2(1-\rho^2)} \text{ out of the exponent)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\mathopen{}\left(y - \mathopen{}\left\[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right\]\mathclose{}\right)\mathclose{}^2}{2\sigma_Y^2(1-\rho^2)}} && \text{(the bracket is a perfect square in } y \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(Y=y \mid X=40) &= \frac{\operatorname{p}(X=40,\\Y=y)}{\operatorname{p}(X=40)} && \text{(definition of the conditional PDF)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left\[\frac{(40-\mu_X)^2}{\sigma^2_X} - \frac{2\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right\]\mathclose{} + \frac{(40-\mu_X)^2}{2\sigma^2_X}} && \text{(substitute both densities; combine prefactors and exponents)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\rho^2(40-\mu_X)^2}{2\sigma^2_X(1-\rho^2)} + \frac{\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)} - \frac{(y-\mu_Y)^2}{2\sigma^2_Y(1-\rho^2)}} && \text{(combine the } (40-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2\sigma^2_Y(1-\rho^2)} \mathopen{}\left\[\rho^2\frac{\sigma^2_Y}{\sigma^2_X}(40-\mu_X)^2 - 2\rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)(y-\mu_Y) + (y-\mu_Y)^2\right\]\mathclose{}} && \text{(factor } -\tfrac{1}{2\sigma^2_Y(1-\rho^2)} \text{ out of the exponent)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\mathopen{}\left(y - \mathopen{}\left\[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right\]\mathclose{}\right)\mathclose{}^2}{2\sigma_Y^2(1-\rho^2)}} && \text{(the bracket is a perfect square in } y \text{)} \end{aligned} \\
 >
 > Multiplying out each of the last two exponents reproduces the one before it.
 >
@@ -1166,13 +1166,13 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Example 21 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
-> \\H(X) = -\pi \log_2 \pi - (1 - \pi) \log_2 (1 - \pi).\\
+> \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
-> For a fair coin, \\\pi = 1/2\\, and
+> For a fair coin, \\\pi= 1/2\\, and
 >
 > \\H(X) = -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = \tfrac{1}{2} + \tfrac{1}{2} = 1 \text{ bit}.\\
 >
-> For a coin that always lands heads, \\\pi = 1\\, and \\H(X) = -1 \cdot \log_2 1 - 0 = 0\\. The outcome is known in advance, so there is no uncertainty to measure. An entropy of \\0\\ means that all of the probability is on one outcome.
+> For a coin that always lands heads, \\\pi= 1\\, and \\H(X) = -1 \cdot \log_2 1 - 0 = 0\\. The outcome is known in advance, so there is no uncertainty to measure. An entropy of \\0\\ means that all of the probability is on one outcome.
 
 > **NOTE:**
 >

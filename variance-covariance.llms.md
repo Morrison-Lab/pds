@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 23:04:50 (UTC)
+Last modified: 2026-10-09 00:30:33 (UTC)
 
 ## 1 Deviation, error, and noise
 
@@ -120,9 +120,9 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > **Example 3 (Variance of a Bernoulli random variable)** Let \\X \sim \operatorname{Ber}(\pi)\\. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \pi\\ and \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} = \pi\\ (both computed on the [expectation page](expectation.llms.md#exm-lotus)), so:
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(simplified expression for variance)} \\ &= \pi - \pi^2 && \text{(substitute)} \\ &= \pi(1 - \pi) && \text{(factor)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(simplified expression for variance)} \\ &= \pi- \pi^2 && \text{(substitute)} \\ &= \pi(1 - \pi) && \text{(factor)} \end{aligned} \\
 >
-> For a fair coin (\\\pi = 1/2\\), \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\\.
+> For a fair coin (\\\pi= 1/2\\), \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\\.
 
 > **NOTE:**
 >
@@ -168,7 +168,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> *Proof*. Write \\\mu \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and \\m(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Adding and subtracting \\m(X)\\ inside the deviation and expanding the square:
+> *Proof*. Write \\\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and \\m(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Adding and subtracting \\m(X)\\ inside the deviation and expanding the square:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \mu\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\mathopen{}\left\[Y - m(X)\right\]\mathclose{} + \mathopen{}\left\[m(X) - \mu\right\]\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(add and subtract } m(X) \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - m(X)\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \mu\right)^2\mathclose{}\right\]\mathclose{} + 2\operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m(X)\right\]\mathclose{}\mathopen{}\left\[m(X) - \mu\right\]\mathclose{}\right\]\mathclose{} && \text{(expand the square; linearity of expectation)} \end{aligned} \\
 >
@@ -180,11 +180,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > Second term: by the law of iterated expectations, \\\operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = \mu\\, so:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \mu\right)^2\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(} \mu = \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{} \text{)} \\ &= \operatorname{Var}\mathopen{}\left(m(X)\right)\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(definition of } m(X) \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \mu\right)^2\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(} \mu= \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{} \text{)} \\ &= \operatorname{Var}\mathopen{}\left(m(X)\right)\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(definition of } m(X) \text{)} \end{aligned} \\
 >
 > Third term:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m(X)\right\]\mathclose{}\mathopen{}\left\[m(X) - \mu\right\]\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m(X)\right\]\mathclose{}\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - m(X) \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mu \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[m(X) \mid X\right\]\mathclose{}\right\]\mathclose{}\right\]\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - m(X)\right\]\mathclose{}\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[g(X) \mid X\right\]\mathclose{} = g(X) \text{, with } g = m \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot 0\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} = m(X) \text{)} \\ &= 0 && \text{(expectation of a constant)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m(X)\right\]\mathclose{}\mathopen{}\left\[m(X) - \mu\right\]\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m(X)\right\]\mathclose{}\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - m(X) \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mu\text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[m(X) \mid X\right\]\mathclose{}\right\]\mathclose{}\right\]\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - m(X)\right\]\mathclose{}\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[g(X) \mid X\right\]\mathclose{} = g(X) \text{, with } g = m \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m(X) - \mu\right\]\mathclose{} \cdot 0\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} = m(X) \text{)} \\ &= 0 && \text{(expectation of a constant)} \end{aligned} \\
 >
 > Substituting the three terms:
 >
@@ -226,7 +226,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Exercise 2 (Expected squared error from three sources)** A prediction \\\hat f(x_0)\\ at a new point \\x_0\\ has squared bias \\\[\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\]^2 = 1\\ and variance \\\operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 2\\. The new response is \\Y_0 = f(x_0) + \varepsilon\\, where \\\varepsilon\\ has mean \\0\\ and variance \\\sigma^2 = 3\\ and is independent of \\\hat f(x_0)\\.
+> **Exercise 2 (Expected squared error from three sources)** A prediction \\\hat f(x_0)\\ at a new point \\x_0\\ has squared bias \\\[\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\]^2 = 1\\ and variance \\\operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 2\\. The new response is \\Y_0 = f(x_0) + \varepsilon\\, where \\\varepsilon\\ has mean \\0\\ and variance \\\sigma^2= 3\\ and is independent of \\\hat f(x_0)\\.
 >
 > 1.  What is the expected squared prediction error \\\operatorname{E}\mathopen{}\left\[(Y_0 - \hat f(x_0))^2\right\]\mathclose{}\\?
 > 2.  If we could remove all bias and all variance of \\\hat f(x_0)\\, what would the expected squared prediction error be?
@@ -238,7 +238,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > 1.  The expected squared error is the sum of the three sources: \\1 + 2 + 3 = 6\\.
 >
-> 2.  \\0 + 0 + 3 = 3\\. The noise variance \\\sigma^2 = 3\\ remains, so \\3\\ is the smallest expected squared error any prediction can have here.
+> 2.  \\0 + 0 + 3 = 3\\. The noise variance \\\sigma^2= 3\\ remains, so \\3\\ is the smallest expected squared error any prediction can have here.
 >
 > 3.  A better method can reduce the squared bias and the variance of \\\hat f(x_0)\\, because both depend on how \\\hat f\\ is built. It cannot reduce \\\sigma^2\\, which is the variance of the noise \\\varepsilon\\ in the new response.
 
@@ -264,7 +264,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> *Proof*. Write \\Y_0 - \hat f(x_0) = \varepsilon + D\\, where \\D \stackrel{\text{def}}{=}f(x_0) - \hat f(x_0)\\. Expanding the square and using linearity of expectation,
+> *Proof*. Write \\Y_0 - \hat f(x_0) = \varepsilon+ D\\, where \\D \stackrel{\text{def}}{=}f(x_0) - \hat f(x_0)\\. Expanding the square and using linearity of expectation,
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + 2\operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} && \text{(expand the square)} \end{aligned} \\
 >
@@ -276,7 +276,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Definition 10 (Irreducible error)** In [Theorem 4](#thm-prediction-error), the term \\\sigma^2 = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\\ is the **irreducible error**. It does not depend on the prediction \\\hat f\\, so no choice of prediction can remove it. For example, in [Exercise 2](#exr-prediction-error), \\\sigma^2 = 3\\, so every prediction there has expected squared error at least \\3\\.
+> **Definition 10 (Irreducible error)** In [Theorem 4](#thm-prediction-error), the term \\\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\\ is the **irreducible error**. It does not depend on the prediction \\\hat f\\, so no choice of prediction can remove it. For example, in [Exercise 2](#exr-prediction-error), \\\sigma^2= 3\\, so every prediction there has expected squared error at least \\3\\.
 
 > **NOTE:**
 >
@@ -587,7 +587,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > *Proof*. Write \\\sigma_X \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} \> 0\\ and \\\sigma_Y \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} \> 0\\, and take either sign \\\pm\\ throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying [Corollary 2](#cor-var-lincom2) with \\a = 1/\sigma_X\\ and \\b = \pm 1/\sigma_Y\\:
 >
-> \\ \begin{aligned} 0 &\le \operatorname{Var}\mathopen{}\left(\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}\right)\mathclose{} && \text{(a variance is non-negative)} \\ &= \frac{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}{\sigma_X^2} + \frac{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}{\sigma_Y^2} \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(variance of a sum of two random variables)} \\ &= 1 + 1 \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(definition of standard deviation: } \sigma_X^2 = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma_Y^2 = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\ &= 2 \pm 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(definition of correlation)} \end{aligned} \\
+> \\ \begin{aligned} 0 &\le \operatorname{Var}\mathopen{}\left(\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}\right)\mathclose{} && \text{(a variance is non-negative)} \\ &= \frac{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}{\sigma_X^2} + \frac{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}{\sigma_Y^2} \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(variance of a sum of two random variables)} \\ &= 1 + 1 \pm \frac{2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}{\sigma_X \sigma_Y} && \text{(definition of standard deviation: } \sigma^2_X = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \text{, } \sigma^2_Y = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \text{)} \\ &= 2 \pm 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(definition of correlation)} \end{aligned} \\
 >
 > With the \\+\\ sign, \\0 \le 2 + 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\ gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \ge -1\\. With the \\-\\ sign, \\0 \le 2 - 2 \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\ gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\\.
 

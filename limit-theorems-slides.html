@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-08 23:04:50 (UTC)</p>
+  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -401,7 +401,7 @@
 <p><span class="theorem-title"><strong>Corollary 1 (Mean and variance of a sum of IID random variables)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables, each discrete or continuous, with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>. Then:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{} &amp;= n\mu \\
+\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{} &amp;= n\mu\\
 \operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} &amp;= n\sigma^2
 \end{aligned}
 \]</span></p>
@@ -414,7 +414,7 @@
 &amp;= \sum_{i=1}^n\operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}
 &amp;&amp; \text{(linearity of expectation, applied } n - 1 \text{ times)} \\
 &amp;= n\mu
-&amp;&amp; \text{(each } X_i \text{ has mean } \mu \text{)}
+&amp;&amp; \text{(each } X_i \text{ has mean } \mu\text{)}
 \end{aligned}
 \]</span></p>
 <p>For the variance, apply the <a href="./variance-covariance.html#thm-var-lincom">variance of a linear combination</a> with every <span class="math inline">\(a_i = 1\)</span>. For <span class="math inline">\(i \ne j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent (take <span class="math inline">\(A_k = \mathbb{R}\)</span> for every other <span class="math inline">\(k\)</span> in the <a href="./independence.html#def-indpt">definition of independence</a>), so <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> for <a href="./variance-covariance.html#thm-indpt-uncorrelated">independent summands</a>; and <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span> (<a href="./variance-covariance.html#lem-cov-xx">covariance of a variable with itself</a>):</p>
@@ -449,7 +449,7 @@
 <section class="slide level2">
 
 <div id="exm-clt-5d6" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 (The sum of five dice)</strong></span> A single fair die roll has the discrete uniform distribution on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>, which is flat, not bell-shaped (<a href="#/fig-clt-1d6" class="quarto-xref">Figure&nbsp;1</a>). Its mean is <span class="math inline">\(\mu = 3.5\)</span>, and its variance is <span class="math inline">\(\sigma^2= \sum_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 1 (The sum of five dice)</strong></span> A single fair die roll has the discrete uniform distribution on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>, which is flat, not bell-shaped (<a href="#/fig-clt-1d6" class="quarto-xref">Figure&nbsp;1</a>). Its mean is <span class="math inline">\(\mu= 3.5\)</span>, and its variance is <span class="math inline">\(\sigma^2= \sum_{x=1}^{6} (x - 3.5)^2 / 6 = 35/12\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>[Code]</summary>

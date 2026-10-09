@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 23:04:50 (UTC)
+Last modified: 2026-10-09 00:30:33 (UTC)
 
 ## 1 Defining probabilities
 
@@ -24,7 +24,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Example 1 (Sample space of a die roll)** Rolling a six-sided die once has sample space \\\Omega = \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\.
+> **Example 1 (Sample space of a die roll)** Rolling a six-sided die once has sample space \\\Omega= \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
@@ -50,7 +50,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Definition 4 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
 >
-> \\\neg A \stackrel{\text{def}}{=}\Omega \setminus A\\
+> \\\neg A \stackrel{\text{def}}{=}\Omega\setminus A\\
 
 > **NOTE:**
 >
@@ -119,15 +119,15 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> *Proof*. For each \\i\\, let \\B_i \stackrel{\text{def}}{=}A_i \setminus A\_{i+1}\\, the outcomes in \\A_i\\ but not in \\A\_{i+1}\\. Each \\B_i = A_i \cap (\Omega \setminus A\_{i+1})\\ is an event, by [closure properties of a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure).
+> *Proof*. For each \\i\\, let \\B_i \stackrel{\text{def}}{=}A_i \setminus A\_{i+1}\\, the outcomes in \\A_i\\ but not in \\A\_{i+1}\\. Each \\B_i = A_i \cap (\Omega\setminus A\_{i+1})\\ is an event, by [closure properties of a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure).
 >
 > *The \\B_i\\ are pairwise disjoint.* For \\i \< j\\, \\B_j \subseteq A_j \subseteq A\_{i+1}\\, while \\B_i\\ has no outcomes in \\A\_{i+1}\\, so \\B_i \cap B_j = \emptyset\\.
 >
-> *\\A_n = \bigcup\_{i=n}^{\infty} B_i\\ for each \\n\\.* For \\i \ge n\\, \\B_i \subseteq A_i \subseteq A_n\\, so the union is contained in \\A_n\\. Conversely, let \\\omega \in A_n\\. Since \\\bigcap\_{i} A_i = \emptyset\\, \\\omega\\ is not in every \\A_i\\; since the \\A_i\\ are nested, the indices \\i\\ with \\\omega \in A_i\\ are \\1, \ldots, m\\ for some \\m \ge n\\. Then \\\omega \in A_m\\ and \\\omega \notin A\_{m+1}\\, so \\\omega \in B_m\\.
+> *\\A_n = \bigcup\_{i=n}^{\infty} B_i\\ for each \\n\\.* For \\i \ge n\\, \\B_i \subseteq A_i \subseteq A_n\\, so the union is contained in \\A_n\\. Conversely, let \\\omega\in A_n\\. Since \\\bigcap\_{i} A_i = \emptyset\\, \\\omega\\ is not in every \\A_i\\; since the \\A_i\\ are nested, the indices \\i\\ with \\\omega\in A_i\\ are \\1, \ldots, m\\ for some \\m \ge n\\. Then \\\omega\in A_m\\ and \\\omega\notin A\_{m+1}\\, so \\\omega\in B_m\\.
 >
-> *\\\Pr(A_1)\\ is finite.* The events \\A_1\\ and \\\Omega \setminus A_1\\ are disjoint with union \\\Omega\\, so [Corollary 1](#cor-probability-finitely-additive) applies to them:
+> *\\\Pr(A_1)\\ is finite.* The events \\A_1\\ and \\\Omega\setminus A_1\\ are disjoint with union \\\Omega\\, so [Corollary 1](#cor-probability-finitely-additive) applies to them:
 >
-> \\ \begin{aligned} \Pr(A_1) &\le \Pr(A_1) + \Pr(\Omega \setminus A_1) && \text{(} \Pr(\Omega \setminus A_1) \ge 0 \text{)} \\ &= \Pr(\Omega) && \text{(finite additivity of } \Pr \text{)} \\ &= 1 && \text{(definition of a probability measure)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(A_1) &\le \Pr(A_1) + \Pr(\Omega\setminus A_1) && \text{(} \Pr(\Omega\setminus A_1) \ge 0 \text{)} \\ &= \Pr(\Omega) && \text{(finite additivity of } \Pr \text{)} \\ &= 1 && \text{(definition of a probability measure)} \end{aligned} \\
 >
 > *The limit.* For each \\n\\:
 >
@@ -179,7 +179,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > *Proof*. The events \\A\\ and \\\neg A\\ are disjoint, and their union is \\\Omega\\.
 >
-> \\ \begin{aligned} \Pr(A) + \Pr(\neg A) &= \Pr(A \cup \neg A) && \text{(additivity of probability for disjoint events)} \\ &= \Pr(\Omega) && \text{(} A \cup \neg A = \Omega \text{)} \\ &= 1 && \text{(probability of the sample space is 1)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(A) + \Pr(\neg A) &= \Pr(A \cup \neg A) && \text{(additivity of probability for disjoint events)} \\ &= \Pr(\Omega) && \text{(} A \cup \neg A = \Omega\text{)} \\ &= 1 && \text{(probability of the sample space is 1)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -199,11 +199,11 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \Pr(\neg A) &= 1 - \Pr(A) && \text{(complement rule)} \\ &= 1 - \pi && \text{(substitute } \Pr(A) = \pi \text{)} \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \Pr(\neg A) &= 1 - \Pr(A) && \text{(complement rule)} \\ &= 1 - \pi && \text{(substitute } \Pr(A) = \pi\text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 8 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi = 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
+> **Example 8 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi= 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
 
 ## 2 Conditional probability
 

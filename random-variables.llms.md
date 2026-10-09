@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 23:04:50 (UTC)
+Last modified: 2026-10-09 00:30:33 (UTC)
 
 ## 1 Random variables
 
@@ -14,13 +14,13 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> *Remark*. We use uppercase letters (\\X\\, \\Y\\, \\Z\\, …) for random variables, and lowercase letters (\\x\\, \\y\\, \\z\\, …) for their realized (observed) values. We write \\\\X = x\\\\ for the event \\\\\omega \in \Omega : X(\omega) = x\\\\, and similarly for \\\\X \le x\\\\ and other conditions on \\X\\. A fully rigorous definition also requires the function to be *measurable*, so that every such set is an event with a probability; that requirement never binds in these notes.
+> *Remark*. We use uppercase letters (\\X\\, \\Y\\, \\Z\\, …) for random variables, and lowercase letters (\\x\\, \\y\\, \\z\\, …) for their realized (observed) values. We write \\\\X = x\\\\ for the event \\\\\omega\in \Omega: X(\omega) = x\\\\, and similarly for \\\\X \le x\\\\ and other conditions on \\X\\. A fully rigorous definition also requires the function to be *measurable*, so that every such set is an event with a probability; that requirement never binds in these notes.
 >
 > See also: <https://en.wikipedia.org/wiki/Random_variable>
 
 > **NOTE:**
 >
-> **Example 1 (Number of heads in two coin flips)** Flip a fair coin twice. The sample space is \\\Omega = \mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}\\, each outcome with probability \\1/4\\. Let \\X\\ be the number of heads:
+> **Example 1 (Number of heads in two coin flips)** Flip a fair coin twice. The sample space is \\\Omega= \mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}\\, each outcome with probability \\1/4\\. Let \\X\\ be the number of heads:
 >
 > \\X(HH) = 2, \quad X(HT) = X(TH) = 1, \quad X(TT) = 0\\
 >
@@ -30,7 +30,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Definition 2 (Range of a random variable)** The **range** of a random variable \\X\\, denoted \\\mathcal{R}(X)\\, is the set of values \\X\\ can take:
 >
-> \\\mathcal{R}(X) \stackrel{\text{def}}{=}\mathopen{}\left\\X(\omega) : \omega \in \Omega\right\\\mathclose{}\\
+> \\\mathcal{R}(X) \stackrel{\text{def}}{=}\mathopen{}\left\\X(\omega) : \omega\in \Omega\right\\\mathclose{}\\
 
 > **NOTE:**
 >
@@ -94,7 +94,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi \in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\, if:
+> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\, if:
 >
 > \\ \begin{aligned} \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}}\pi^x(1-\pi)^{1-x}\\ &= \begin{cases} \pi, & x=1\\ 1-\pi, & x=0 \end{cases} \end{aligned} \\
 
@@ -115,15 +115,15 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Definition 8 (Uniform distribution)** A random variable \\X\\ has the **uniform distribution** on an interval \\\[\alpha, \beta\]\\, with \\\alpha \< \beta\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 8 (Uniform distribution)** A random variable \\X\\ has the **uniform distribution** on an interval \\\[\alpha, \beta\]\\, with \\\alpha\< \beta\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, if \\X\\ is continuous with [density](#def-pdf):
 >
-> \\ f(x) \stackrel{\text{def}}{=}\begin{cases} \frac{1}{\beta - \alpha}, & \alpha \le x \le \beta \\ 0, & \text{otherwise} \end{cases} \\
+> \\ f(x) \stackrel{\text{def}}{=}\begin{cases} \frac{1}{\beta- \alpha}, & \alpha\le x \le \beta\\ 0, & \text{otherwise} \end{cases} \\
 
 > **NOTE:**
 >
-> **Example 8 (Subinterval probabilities of a uniform random variable)** For \\X \sim \text{Uniform}(\alpha, \beta)\\ ([Definition 8](#def-uniform)) and any subinterval \\\[a, b\] \subseteq \[\alpha, \beta\]\\ (so \\\alpha \le a \le b \le \beta\\):
+> **Example 8 (Subinterval probabilities of a uniform random variable)** For \\X \sim \text{Uniform}(\alpha, \beta)\\ ([Definition 8](#def-uniform)) and any subinterval \\\[a, b\] \subseteq \[\alpha, \beta\]\\ (so \\\alpha\le a \le b \le \beta\\):
 >
-> \\ \begin{aligned} \Pr(a \le X \le b) &= \int_a^b f(x)\\dx && \text{(definition of a probability density function)} \\ &= \int_a^b \frac{1}{\beta - \alpha}\\dx && \text{(} f(x) = \tfrac{1}{\beta - \alpha} \text{ on } \[\alpha, \beta\] \text{)} \\ &= \frac{b - a}{\beta - \alpha} && \text{(integrate)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(a \le X \le b) &= \int_a^b f(x)\\dx && \text{(definition of a probability density function)} \\ &= \int_a^b \frac{1}{\beta- \alpha}\\dx && \text{(} f(x) = \tfrac{1}{\beta- \alpha} \text{ on } \[\alpha, \beta\] \text{)} \\ &= \frac{b - a}{\beta- \alpha} && \text{(integrate)} \end{aligned} \\
 >
 > In particular, the probability that \\X\\ falls in any subinterval is proportional to that subinterval’s length. For the standard uniform distribution on \\\[0, 1\]\\, \\f(x) = 1\\ for \\x \in \[0, 1\]\\ and \\f(x) = 0\\ otherwise, giving \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. An interval reaching outside \\\[\alpha, \beta\]\\ adds nothing to the probability, because \\f = 0\\ there.
 
@@ -155,7 +155,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Definition 9 (Normal distribution)** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu \in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 9 (Normal distribution)** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
 >
 > \\\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\\
 
@@ -163,7 +163,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Example 9 (Normal densities at their centers)** For \\X \sim \operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\, the density at \\x = 0\\ is:
 >
-> \\ \begin{aligned} \operatorname{p}(X=0) &= \frac{1}{1 \cdot\sqrt{2\pi}} \text{e}^{-\frac{(0-0)^2}{2 \cdot 1}} && \text{(normal density with } \mu = 0, \sigma^2= 1 \text{)} \\ &= \frac{1}{\sqrt{2\pi}} && \text{(} \text{e}^0 = 1 \text{)} \\ &\approx 0.399 && \text{(evaluate)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(X=0) &= \frac{1}{1 \cdot\sqrt{2\pi}} \text{e}^{-\frac{(0-0)^2}{2 \cdot 1}} && \text{(normal density with } \mu= 0, \sigma^2= 1 \text{)} \\ &= \frac{1}{\sqrt{2\pi}} && \text{(} \text{e}^0 = 1 \text{)} \\ &\approx 0.399 && \text{(evaluate)} \end{aligned} \\
 >
 > For \\X \sim \operatorname{N}\mathopen{}\left(0, 0.1^2\right)\mathclose{}\\, the same steps give \\\operatorname{p}(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99\\, a density greater than 1.
 
@@ -193,17 +193,17 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> **Definition 11 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\\lambda \> 0\\ if \\T\\ is continuous with [density](#def-pdf):
+> **Definition 11 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ if \\T\\ is continuous with [density](#def-pdf):
 >
-> \\ f(t) \stackrel{\text{def}}{=}\begin{cases} \lambda \text{e}^{-\lambda t}, & t \ge 0 \\ 0, & t \< 0 \end{cases} \\
+> \\ f(t) \stackrel{\text{def}}{=}\begin{cases} {\lambda}\text{e}^{-{\lambda}t}, & t \ge 0 \\ 0, & t \< 0 \end{cases} \\
 
 > **NOTE:**
 >
-> **Example 11 (Probability of an event within one time unit)** Let \\T\\ be exponential with rate \\\lambda\\. The probability that \\T\\ falls in \\\[0, 1\]\\ is:
+> **Example 11 (Probability of an event within one time unit)** Let \\T\\ be exponential with rate \\{\lambda}\\. The probability that \\T\\ falls in \\\[0, 1\]\\ is:
 >
-> \\ \begin{aligned} \Pr(0 \le T \le 1) &= \int_0^1 \lambda \text{e}^{-\lambda t}\\dt && \text{(definition of a density)} \\ &= \mathopen{}\left\[-\text{e}^{-\lambda t}\right\]\mathclose{}\_{t=0}^{1} && \text{(antiderivative of } \lambda \text{e}^{-\lambda t} \text{)} \\ &= 1 - \text{e}^{-\lambda} && \text{(evaluate at the bounds)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(0 \le T \le 1) &= \int_0^1 {\lambda}\text{e}^{-{\lambda}t}\\dt && \text{(definition of a density)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}t}\right\]\mathclose{}\_{t=0}^{1} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}t} \text{)} \\ &= 1 - \text{e}^{-{\lambda}} && \text{(evaluate at the bounds)} \end{aligned} \\
 >
-> With \\\lambda = 0.5\\, for example, \\\Pr(0 \le T \le 1) = 1 - \text{e}^{-0.5} \approx 0.393\\.
+> With \\{\lambda}= 0.5\\, for example, \\\Pr(0 \le T \le 1) = 1 - \text{e}^{-0.5} \approx 0.393\\.
 
 > **NOTE:**
 >
@@ -309,11 +309,11 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 
 > **NOTE:**
 >
-> *Proof*. For events \\A \subseteq B\\, \\B\\ is the disjoint union of \\A\\ and \\B \setminus A\\, so additivity gives \\\Pr(A) \le \Pr(B)\\. For any \\x\\ and \\\Delta \> 0\\, \\\\X = x\\ \subseteq \\x - \Delta \< X \le x\\\\, so:
+> *Proof*. For events \\A \subseteq B\\, \\B\\ is the disjoint union of \\A\\ and \\B \setminus A\\, so additivity gives \\\Pr(A) \le \Pr(B)\\. For any \\x\\ and \\\Delta\> 0\\, \\\\X = x\\ \subseteq \\x - \Delta\< X \le x\\\\, so:
 >
-> \\ \begin{aligned} 0 &\le \Pr(X = x) && \text{(probabilities are non-negative)} \\ &\le \Pr(x - \Delta \< X \le x) && \text{(} \\X = x\\ \subseteq \\x - \Delta \< X \le x\\ \text{)} \\ &= F(x) - F(x - \Delta) && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
+> \\ \begin{aligned} 0 &\le \Pr(X = x) && \text{(probabilities are non-negative)} \\ &\le \Pr(x - \Delta\< X \le x) && \text{(} \\X = x\\ \subseteq \\x - \Delta\< X \le x\\ \text{)} \\ &= F(x) - F(x - \Delta) && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
 >
-> and \\F(x) - F(x - \Delta) \to 0\\ as \\\Delta \downarrow 0\\, because \\F\\ is continuous. So \\\Pr(X = x) = 0\\ for every \\x\\, and \\X\\ is continuous. Then, for \\a \le b\\:
+> and \\F(x) - F(x - \Delta) \to 0\\ as \\\Delta\downarrow 0\\, because \\F\\ is continuous. So \\\Pr(X = x) = 0\\ for every \\x\\, and \\X\\ is continuous. Then, for \\a \le b\\:
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr(a \< X \le b) && \text{(} \Pr(X = a) = 0 \text{)} \\ &= F(b) - F(a) && \text{(additivity, and the definition of the CDF)} \\ &= \int_a^b F'(x)\\dx && \text{(fundamental theorem of calculus)} \end{aligned} \\
 >
@@ -327,27 +327,27 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Theorem 8 (A density as a limit of interval probabilities)** If \\X\\ is a continuous random variable with density \\f\\, and \\f\\ is continuous at \\x\\, then \\f(x)\\ is the limit of the probability that \\X\\ falls in an interval starting at \\x\\, divided by the width of that interval, as that width shrinks to 0:
 >
-> \\f(x) = \lim\_{\Delta \downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta}\\
+> \\f(x) = \lim\_{\Delta\downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta}\\
 
 > **NOTE:**
 >
-> *Proof*. For \\\Delta \> 0\\:
+> *Proof*. For \\\Delta\> 0\\:
 >
 > \\ \begin{aligned} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} &= \frac{\Pr(x \< X \le x + \Delta)}{\Delta} && \text{(} \Pr(X = x) = \Pr(X = x + \Delta) = 0 \text{)} \\ &= \frac{F(x + \Delta) - F(x)}{\Delta} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
 >
-> By [Theorem 6](#thm-density-vs-CDF), \\F\\ is differentiable at \\x\\ with \\F'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta \downarrow 0\\.
+> By [Theorem 6](#thm-density-vs-CDF), \\F\\ is differentiable at \\x\\ with \\F'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta\downarrow 0\\.
 
 > **NOTE:**
 >
-> *Remark*. For small \\\Delta \> 0\\, \\f(x) \cdot\Delta \approx \Pr(x \le X \< x + \Delta)\\. Although a density is not unique ([Theorem 1](#thm-density-not-unique)), this limit pins down its value at every point where it is continuous.
+> *Remark*. For small \\\Delta\> 0\\, \\f(x) \cdot\Delta\approx \Pr(x \le X \< x + \Delta)\\. Although a density is not unique ([Theorem 1](#thm-density-not-unique)), this limit pins down its value at every point where it is continuous.
 >
 > See also Rothman et al. ([2021](#ref-me4)) (Chapter 22, p. 535).
 
 > **NOTE:**
 >
-> **Example 16 (The uniform density as a limit)** For \\X \sim \text{Uniform}(0, 1)\\ and \\x \in \[0, 1)\\, \\\Pr(x \le X \< x + \Delta) = \Delta\\ once \\\Delta \le 1 - x\\, so:
+> **Example 16 (The uniform density as a limit)** For \\X \sim \text{Uniform}(0, 1)\\ and \\x \in \[0, 1)\\, \\\Pr(x \le X \< x + \Delta) = \Delta\\ once \\\Delta\le 1 - x\\, so:
 >
-> \\f(x) = \lim\_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1\\
+> \\f(x) = \lim\_{\Delta\downarrow 0} \frac{\Delta}{\Delta} = 1\\
 >
 > For \\x \< 0\\ or \\x \> 1\\, the interval eventually misses \\\[0, 1\]\\, so the limit is \\0\\. Both agree with the density of [Definition 8](#def-uniform).
 
@@ -355,17 +355,17 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > **Proposition 1 (The density limit is the right derivative of the CDF)** If \\X\\ is a continuous random variable with CDF \\F\\, then for every \\x\\:
 >
-> \\\lim\_{\Delta \downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} = \lim\_{\Delta \downarrow 0} \frac{F(x + \Delta) - F(x)}{\Delta}\\
+> \\\lim\_{\Delta\downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} = \lim\_{\Delta\downarrow 0} \frac{F(x + \Delta) - F(x)}{\Delta}\\
 >
 > whenever either limit exists; the right-hand side is the right derivative of \\F\\ at \\x\\.
 
 > **NOTE:**
 >
-> *Proof*. The first two lines of the proof of [Theorem 8](#thm-density-limit) use only that \\X\\ is continuous, so for every \\\Delta \> 0\\ the two quotients are equal. Equal functions of \\\Delta\\ have the same limit as \\\Delta \downarrow 0\\, or both have none.
+> *Proof*. The first two lines of the proof of [Theorem 8](#thm-density-limit) use only that \\X\\ is continuous, so for every \\\Delta\> 0\\ the two quotients are equal. Equal functions of \\\Delta\\ have the same limit as \\\Delta\downarrow 0\\, or both have none.
 
 > **NOTE:**
 >
-> **Example 17 (The density limit at a jump)** At a point where \\f\\ is not continuous, the limit can differ from the chosen value \\f(x)\\. For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 8](#def-uniform), which sets \\f(1) = 1\\ and \\f(x) = 0\\ for \\x \> 1\\, and for \\\Delta \> 0\\:
+> **Example 17 (The density limit at a jump)** At a point where \\f\\ is not continuous, the limit can differ from the chosen value \\f(x)\\. For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 8](#def-uniform), which sets \\f(1) = 1\\ and \\f(x) = 0\\ for \\x \> 1\\, and for \\\Delta\> 0\\:
 >
 > \\ \begin{aligned} \Pr(1 \le X \< 1 + \Delta) &= \Pr(1 \le X \le 1 + \Delta) && \text{(} \Pr(X = 1 + \Delta) = 0 \text{)} \\ &= \int_1^{1 + \Delta} f(x)\\dx && \text{(definition of the density)} \\ &= 0 && \text{(} f = 0 \text{ on } (1, 1 + \Delta\] \text{; one point does not change an integral)} \end{aligned} \\
 >
@@ -497,7 +497,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > *Proof*. Suppose \\f\\ were a joint density of \\(X, X)\\, and let \\L = \mathopen{}\left\\(x, y) : y = x\right\\\mathclose{}\\ be the diagonal line. Every outcome \\\omega\\ has \\X(\omega) = X(\omega)\\, so \\\mathopen{}\left\\(X, X) \in L\right\\\mathclose{} = \Omega\\. For each \\x\\, the function \\y \mapsto \text{1}\_{y = x} f(x, y)\\ is \\0\\ except at the single point \\y = x\\, so its integral over \\y\\ is \\0\\. Then:
 >
-> \\ \begin{aligned} 1 &= \Pr((X, X) \in L) && \text{(} \mathopen{}\left\\(X, X) \in L\right\\\mathclose{} = \Omega \text{, and } \Pr(\Omega) = 1 \text{)} \\ &= \iint_L f(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int\_{-\infty}^{\infty} \mathopen{}\left(\int\_{-\infty}^{\infty} \text{1}\_{y = x} f(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int\_{-\infty}^{\infty} 0\\dx && \text{(the inner integrand is 0 except at } y = x \text{)} \\ &= 0 && \text{(integrate)} \end{aligned} \\
+> \\ \begin{aligned} 1 &= \Pr((X, X) \in L) && \text{(} \mathopen{}\left\\(X, X) \in L\right\\\mathclose{} = \Omega\text{, and } \Pr(\Omega) = 1 \text{)} \\ &= \iint_L f(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int\_{-\infty}^{\infty} \mathopen{}\left(\int\_{-\infty}^{\infty} \text{1}\_{y = x} f(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int\_{-\infty}^{\infty} 0\\dx && \text{(the inner integrand is 0 except at } y = x \text{)} \\ &= 0 && \text{(integrate)} \end{aligned} \\
 >
 > which is a contradiction. Tonelli’s theorem allows the iterated integral because \\f \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3).
 
@@ -543,7 +543,7 @@ Last modified: 2026-10-08 23:04:50 (UTC)
 >
 > *Proof*. Every outcome has \\Y(\omega) \in \mathbb{R}\\, so \\\mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{} = \Omega\\, and:
 >
-> \\ \begin{aligned} \operatorname{P}(X = x) &= \Pr(\mathopen{}\left\\X = x\right\\\mathclose{} \cap \Omega) && \text{(} \mathopen{}\left\\X = x\right\\\mathclose{} \subseteq \Omega \text{)} \\ &= \Pr(X = x,\\ Y \in \mathbb{R}) && \text{(} \mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{} = \Omega \text{)} \\ &= \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy && \text{(definition of a joint density-mass function, with } B = \mathbb{R}\text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{P}(X = x) &= \Pr(\mathopen{}\left\\X = x\right\\\mathclose{} \cap \Omega) && \text{(} \mathopen{}\left\\X = x\right\\\mathclose{} \subseteq \Omega\text{)} \\ &= \Pr(X = x,\\ Y \in \mathbb{R}) && \text{(} \mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{} = \Omega\text{)} \\ &= \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy && \text{(definition of a joint density-mass function, with } B = \mathbb{R}\text{)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -611,7 +611,7 @@ Why? As Brian Hutchinson notes ([Hutchinson 2024](#ref-hutchinson2024data471)), 
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
-\\\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int\_{6-\epsilon}^{6+\epsilon} \operatorname{p}(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \epsilon \> 0)\\
+\\\Pr(6 - \varepsilon\le X \le 6 + \varepsilon) = \int\_{6-\varepsilon}^{6+\varepsilon} \operatorname{p}(x)\\\mathrm{d}x \> 0 \qquad (\text{for } \varepsilon\> 0)\\
 
 Every rule developed for discrete variables carries over to continuous variables by replacing sums \\\sum\_{x \in \mathcal{R}(X)}\\ with integrals \\\int\_{\mathcal{R}(X)} \mathrm{d}x\\. For example, marginalizing out \\X\\ from a joint density \\\operatorname{p}(x, y)\\ to find the marginal density \\\operatorname{p}(y)\\ becomes:
 
@@ -655,35 +655,35 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 28 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\\lambda \> 0\\ ([Definition 11](#def-exponential)), so \\T\\ has density \\f(t) = \lambda \text{e}^{-\lambda t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 15](#thm-survival-expressions-1):
+> **Example 28 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 11](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 15](#thm-survival-expressions-1):
 >
-> \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} \lambda \text{e}^{-\lambda u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-\lambda u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } \lambda \text{e}^{-\lambda u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-\lambda t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-\lambda u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-\lambda t} && \text{(simplify)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} {\lambda}\text{e}^{-{\lambda}u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-{\lambda}t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-{\lambda}u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-{\lambda}t} && \text{(simplify)} \end{aligned} \\
 >
-> For \\t \< 0\\, \\\operatorname{S}(t) = \Pr(T \> t) = 1\\, since \\T \ge 0\\. With \\\lambda = 0.5\\, for example, \\\operatorname{S}(2) = \text{e}^{-1} \approx 0.368\\.
+> For \\t \< 0\\, \\\operatorname{S}(t) = \Pr(T \> t) = 1\\, since \\T \ge 0\\. With \\{\lambda}= 0.5\\, for example, \\\operatorname{S}(2) = \text{e}^{-1} \approx 0.368\\.
 
 > **NOTE:**
 >
 > **Definition 21 (Hazard function)** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
 >
-> \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta \downarrow 0} \frac{\Pr(t \le T \< t + \Delta \mid T \ge t)}{\Delta}\\
+> \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
 > **NOTE:**
 >
 > *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett ([2018](#ref-dobson4e)), Vittinghoff et al. ([2012](#ref-vittinghoff2e)), Klein and Moeschberger ([2003](#ref-klein2003survival)), and Kleinbaum and Klein ([2012](#ref-kleinbaum2012survival)), while \\\lambda(t)\\ appears in Rothman et al. ([2021](#ref-me4)) and Kalbfleisch and Prentice ([2011](#ref-kalbfleisch2011statistical)).
 >
-> If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta \> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 21](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
+> If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 21](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
 > The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity \\{\lambda}(t)\\ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
 
 > **NOTE:**
 >
-> **Example 29 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\\lambda = 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 28](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so \\\Pr(T \ge s) = \Pr(T \> s) = \operatorname{S}(s)\\. For \\t \ge 0\\ and \\\Delta \> 0\\, \\\\T \ge t\\\\ is the disjoint union of \\\\t \le T \< t + \Delta\\\\ and \\\\T \ge t + \Delta\\\\, so:
+> **Example 29 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 28](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so \\\Pr(T \ge s) = \Pr(T \> s) = \operatorname{S}(s)\\. For \\t \ge 0\\ and \\\Delta\> 0\\, \\\\T \ge t\\\\ is the disjoint union of \\\\t \le T \< t + \Delta\\\\ and \\\\T \ge t + \Delta\\\\, so:
 >
-> \\ \begin{aligned} \Pr(t \le T \< t + \Delta \mid T \ge t) &= \frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)} && \text{(additivity)} \\ &= \frac{\operatorname{S}(t) - \operatorname{S}(t + \Delta)}{\operatorname{S}(t)} && \text{(} \Pr(T \ge s) = \operatorname{S}(s) \text{)} \\ &= \frac{\text{e}^{-2t} - \text{e}^{-2(t + \Delta)}}{\text{e}^{-2t}} && \text{(exponential survival function)} \\ &= 1 - \text{e}^{-2\Delta} && \text{(divide by } \text{e}^{-2t} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(t \le T \< t + \Delta\mid T \ge t) &= \frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)} && \text{(additivity)} \\ &= \frac{\operatorname{S}(t) - \operatorname{S}(t + \Delta)}{\operatorname{S}(t)} && \text{(} \Pr(T \ge s) = \operatorname{S}(s) \text{)} \\ &= \frac{\text{e}^{-2t} - \text{e}^{-2(t + \Delta)}}{\text{e}^{-2t}} && \text{(exponential survival function)} \\ &= 1 - \text{e}^{-2\Delta} && \text{(divide by } \text{e}^{-2t} \text{)} \end{aligned} \\
 >
 > The [subset property](probability-basics.llms.md#thm-prob-subset) applies because \\\\t \le T \< t + \Delta\\ \subseteq \\T \ge t\\\\. Then:
 >
-> \\ \begin{aligned} {\lambda}(t) &= \lim\_{\Delta \downarrow 0} \frac{1 - \text{e}^{-2\Delta}}{\Delta} && \text{(definition of the hazard function)} \\ &= \frac{\partial}{\partial \Delta} \mathopen{}\left(1 - \text{e}^{-2\Delta}\right)\mathclose{} \Big\|\_{\Delta = 0} && \text{(definition of the derivative; } 1 - \text{e}^{0} = 0 \text{)} \\ &= 2\text{e}^{0} && \text{(chain rule)} \\ &= 2 && \text{(} \text{e}^{0} = 1 \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\lambda}(t) &= \lim\_{\Delta\downarrow 0} \frac{1 - \text{e}^{-2\Delta}}{\Delta} && \text{(definition of the hazard function)} \\ &= \frac{\partial}{\partial \Delta} \mathopen{}\left(1 - \text{e}^{-2\Delta}\right)\mathclose{} \Big\|\_{\Delta= 0} && \text{(definition of the derivative; } 1 - \text{e}^{0} = 0 \text{)} \\ &= 2\text{e}^{0} && \text{(chain rule)} \\ &= 2 && \text{(} \text{e}^{0} = 1 \text{)} \end{aligned} \\
 >
 > So \\{\lambda}(t) = 2 \> 1\\ at every \\t \ge 0\\: a hazard is a rate, not a probability.
 
@@ -727,17 +727,17 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Proof*. The proof uses three facts. First, for \\\Delta \> 0\\ the event \\\\t \le T \< t + \Delta\\\\ is a subset of the event \\\\T \ge t\\\\, so intersecting them leaves \\\\t \le T \< t + \Delta\\\\ (the [subset property](probability-basics.llms.md#thm-prob-subset)). Second, \\\Pr(T = t) = 0\\ for a continuous \\T\\, so \\\Pr(T \ge t) = \Pr(T \> t) = \operatorname{S}(t)\\, which is positive. Third, because \\f\\ is continuous at \\t\\, [Theorem 8](#thm-density-limit) gives \\f(t)\\ as the limit of \\\Pr(t \le T \< t + \Delta) / \Delta\\.
+> *Proof*. The proof uses three facts. First, for \\\Delta\> 0\\ the event \\\\t \le T \< t + \Delta\\\\ is a subset of the event \\\\T \ge t\\\\, so intersecting them leaves \\\\t \le T \< t + \Delta\\\\ (the [subset property](probability-basics.llms.md#thm-prob-subset)). Second, \\\Pr(T = t) = 0\\ for a continuous \\T\\, so \\\Pr(T \ge t) = \Pr(T \> t) = \operatorname{S}(t)\\, which is positive. Third, because \\f\\ is continuous at \\t\\, [Theorem 8](#thm-density-limit) gives \\f(t)\\ as the limit of \\\Pr(t \le T \< t + \Delta) / \Delta\\.
 >
-> \\ \begin{aligned} {\lambda}(t) &\stackrel{\text{def}}{=}\lim\_{\Delta \downarrow 0} \frac{\Pr(t \le T \< t + \Delta \mid T \ge t)}{\Delta} && \text{(definition of the hazard function)} \\ &= \lim\_{\Delta \downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \lim\_{\Delta \downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{1}{\Pr(T \ge t)} \cdot\lim\_{\Delta \downarrow 0} \frac{\Pr(t \le T \< t + \Delta)}{\Delta} && \text{(} \Pr(T \ge t) \text{ does not depend on } \Delta \text{)} \\ &= \frac{f(t)}{\Pr(T \ge t)} && \text{(density as a limit; } f \text{ is continuous at } t \text{)} \\ &= \frac{f(t)}{\operatorname{S}(t)} && \text{(} \Pr(T = t) = 0 \text{ for continuous } T \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\lambda}(t) &\stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta} && \text{(definition of the hazard function)} \\ &= \lim\_{\Delta\downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \lim\_{\Delta\downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{1}{\Pr(T \ge t)} \cdot\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta)}{\Delta} && \text{(} \Pr(T \ge t) \text{ does not depend on } \Delta\text{)} \\ &= \frac{f(t)}{\Pr(T \ge t)} && \text{(density as a limit; } f \text{ is continuous at } t \text{)} \\ &= \frac{f(t)}{\operatorname{S}(t)} && \text{(} \Pr(T = t) = 0 \text{ for continuous } T \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
 > **Example 31 (Hazard function of an exponential distribution)** Continuing [Example 28](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
 >
-> \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{\lambda \text{e}^{-\lambda t}}{\text{e}^{-\lambda t}} && \text{(substitute the exponential density and survival function)} \\ &= \lambda && \text{(cancel } \text{e}^{-\lambda t} \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{{\lambda}\text{e}^{-{\lambda}t}}{\text{e}^{-{\lambda}t}} && \text{(substitute the exponential density and survival function)} \\ &= {\lambda} && \text{(cancel } \text{e}^{-{\lambda}t} \text{)} \end{aligned} \\
 >
-> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\\lambda\\, [Definition 21](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta \mid T \ge 0) / \Delta = \mathopen{}\left(1 - \text{e}^{-\lambda \Delta}\right)\mathclose{} / \Delta \to \lambda\\ as \\\Delta \downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
+> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\{\lambda}\\, [Definition 21](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}\\ as \\\Delta\downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
 
 > **NOTE:**
 >
@@ -747,9 +747,9 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 32 (Cumulative hazard function of an exponential distribution)** Continuing [Example 31](#exm-exp-haz), the hazard is \\{\lambda}(u) = \lambda\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
+> **Example 32 (Cumulative hazard function of an exponential distribution)** Continuing [Example 31](#exm-exp-haz), the hazard is \\{\lambda}(u) = {\lambda}\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
 >
-> \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} \lambda\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + \lambda t && \text{(integrate each piece)} \\ &= \lambda t && \text{(simplify)} \end{aligned} \\
+> \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} {\lambda}\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + {\lambda}t && \text{(integrate each piece)} \\ &= {\lambda}t && \text{(simplify)} \end{aligned} \\
 >
 > and \\{\Lambda}(t) = 0\\ for \\t \< 0\\.
 
@@ -761,9 +761,9 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Proof*. Let \\u \< 0\\. Every outcome has \\T(\omega) \ge 0 \> u\\, so \\\\T \ge u\\ = \Omega\\, which has probability \\1 \> 0\\, and \\{\lambda}(u)\\ is defined. For \\0 \< \Delta \le -u\\, the event \\\\u \le T \< u + \Delta\\\\ is empty, because \\u + \Delta \le 0\\, so:
+> *Proof*. Let \\u \< 0\\. Every outcome has \\T(\omega) \ge 0 \> u\\, so \\\\T \ge u\\ = \Omega\\, which has probability \\1 \> 0\\, and \\{\lambda}(u)\\ is defined. For \\0 \< \Delta\le -u\\, the event \\\\u \le T \< u + \Delta\\\\ is empty, because \\u + \Delta\le 0\\, so:
 >
-> \\ \begin{aligned} {\lambda}(u) &= \lim\_{\Delta \downarrow 0} \frac{\Pr(u \le T \< u + \Delta \mid T \ge u)}{\Delta} && \text{(definition of the hazard function)} \\ &= \lim\_{\Delta \downarrow 0} \frac{\Pr(\\u \le T \< u + \Delta\\ \cap \\T \ge u\\)}{\Delta \cdot\Pr(T \ge u)} && \text{(definition of conditional probability)} \\ &= \lim\_{\Delta \downarrow 0} \frac{\Pr(\emptyset \cap \Omega)}{\Delta \cdot\Pr(\Omega)} && \text{(the two events found above)} \\ &= \lim\_{\Delta \downarrow 0} \frac{0}{\Delta \cdot 1} && \text{(} \emptyset \cap \Omega = \emptyset \text{; } \Pr(\emptyset) = 0 \text{; } \Pr(\Omega) = 1 \text{)} \\ &= 0 && \text{(simplify)} \end{aligned} \\
+> \\ \begin{aligned} {\lambda}(u) &= \lim\_{\Delta\downarrow 0} \frac{\Pr(u \le T \< u + \Delta\mid T \ge u)}{\Delta} && \text{(definition of the hazard function)} \\ &= \lim\_{\Delta\downarrow 0} \frac{\Pr(\\u \le T \< u + \Delta\\ \cap \\T \ge u\\)}{\Delta\cdot\Pr(T \ge u)} && \text{(definition of conditional probability)} \\ &= \lim\_{\Delta\downarrow 0} \frac{\Pr(\emptyset \cap \Omega)}{\Delta\cdot\Pr(\Omega)} && \text{(the two events found above)} \\ &= \lim\_{\Delta\downarrow 0} \frac{0}{\Delta\cdot 1} && \text{(} \emptyset \cap \Omega= \emptyset \text{; } \Pr(\emptyset) = 0 \text{; } \Pr(\Omega) = 1 \text{)} \\ &= 0 && \text{(simplify)} \end{aligned} \\
 >
 > Then, for \\t \ge 0\\:
 >
@@ -799,7 +799,7 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > **Example 33 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 32](#exm-exp-cumhaz), for \\t \ge 0\\:
 >
-> \\ \begin{aligned} \operatorname{S}(t) &= \operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{} && \text{(survival function from the cumulative hazard)} \\ &= \operatorname{exp}\mathopen{}\left\\-\lambda t\right\\\mathclose{} && \text{(substitute } {\Lambda}(t) = \lambda t \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{S}(t) &= \operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{} && \text{(survival function from the cumulative hazard)} \\ &= \operatorname{exp}\mathopen{}\left\\-{\lambda}t\right\\\mathclose{} && \text{(substitute } {\Lambda}(t) = {\lambda}t \text{)} \end{aligned} \\
 >
 > which matches the survival function computed directly in [Example 28](#exm-exp-survfn).
 
@@ -808,7 +808,7 @@ Every rule developed for discrete variables carries over to continuous variables
 | [Probability density function (PDF)](#def-pdf) | \\f(t), \operatorname{p}(t)\\ | \\f \ge 0\\ with \\\int_a^b f(u)\\du = \Pr(a \le T \le b)\\ |
 | [Cumulative distribution function (CDF)](#def-cdf) | \\F(t)\\ | \\\Pr(T\leq t)\\ |
 | [Survival function](#def-surv-fn) | \\\operatorname{S}(t), \bar{F}(t)\\ | \\\Pr(T \> t)\\ |
-| [Hazard function](#def-hazard) | \\{\lambda}(t), \operatorname{h}(t)\\ | \\\lim\_{\Delta \downarrow 0} \Pr(t \le T \< t + \Delta \mid T \ge t) / \Delta\\ |
+| [Hazard function](#def-hazard) | \\{\lambda}(t), \operatorname{h}(t)\\ | \\\lim\_{\Delta\downarrow 0} \Pr(t \le T \< t + \Delta\mid T \ge t) / \Delta\\ |
 | [Cumulative hazard function](#def-cuhaz) | \\{\Lambda}(t), \operatorname{H}(t)\\ | \\\int\_{u=-\infty}^t {\lambda}(u)\\du\\ |
 | Log-hazard function | \\\eta(t)\\ | \\\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\\ |
 
