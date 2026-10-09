@@ -27,7 +27,15 @@ Suppose $f(x_0) = 10$,
 and the predictions $\hat f(x_0)$,
 over repeated training sets,
 average $11$.
-Then $\bias{\hat f(x_0)} = 11 - 10 = 1$.
+Then
+
+$$
+\begin{aligned}
+\bias{\hat f(x_0)} &= 11 - 10 \\
+&= 1.
+\end{aligned}
+$$
+
 The squared bias is $1^2 = 1$,
 the value in @exr-prediction-error.
 

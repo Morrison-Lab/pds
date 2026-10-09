@@ -117,7 +117,14 @@ are exactly the mean and variance of $S_n$.
 A single fair die roll has the discrete uniform distribution on $\set{1, \ldots, 6}$,
 which is flat, not bell-shaped (@fig-clt-1d6).
 Its mean is $\mean = 3.5$,
-and its variance is $\ss = \sumto{x}{6} (x - 3.5)^2 / 6 = 35/12$.
+and its variance is
+
+$$
+\begin{aligned}
+\ss &= \sumto{x}{6} (x - 3.5)^2 / 6 \\
+&= 35/12.
+\end{aligned}
+$$
 
 ```{r}
 #| label: fig-clt-1d6

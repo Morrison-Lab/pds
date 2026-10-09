@@ -16,7 +16,16 @@ First, for $\change > 0$ the event $\{t \le T < t + \change\}$ is a subset of th
 so intersecting them leaves $\{t \le T < t + \change\}$
 (the [subset property](probability-basics.qmd#thm-prob-subset)).
 Second, $\Pr(T = t) = 0$ for a continuous $T$,
-so $\Pr(T \ge t) = \Pr(T > t) = \surv(t)$, which is positive.
+so
+
+$$
+\begin{aligned}
+\Pr(T \ge t) &= \Pr(T > t) \\
+&= \surv(t),
+\end{aligned}
+$$
+
+which is positive.
 Third, because $f$ is continuous at $t$,
 @thm-density-limit gives $f(t)$ as the limit of $\Pr(t \le T < t + \change) / \change$.
 

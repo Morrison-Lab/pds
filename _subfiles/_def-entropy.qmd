@@ -45,7 +45,15 @@ H(X)
 \end{aligned}
 $$
 
-For a coin that always lands heads, $\prob = 1$, and $H(X) = -1 \cdot \log_2 1 - 0 = 0$.
+For a coin that always lands heads, $\prob = 1$, and
+
+$$
+\begin{aligned}
+H(X) &= -1 \cdot \log_2 1 - 0 \\
+&= 0.
+\end{aligned}
+$$
+
 The outcome is known in advance, so there is no uncertainty to measure.
 An entropy of $0$ means that all of the probability is on one outcome.
 

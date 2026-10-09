@@ -3,7 +3,16 @@
 
 Let $Y \sim \dLaplacef{3, 2}$, so $\mean = 3$ and $b = 2$ (@def-laplace).
 At the location, $\abs{y - \mean} = 0$, so the density is $\frac{1}{2b}$.
-At a point $y = 5$, the distance is $\abs{5 - 3} = 2 = b$, so the density is $\frac{1}{2b}\ef{-1}$.
+At a point $y = 5$, the distance is
+
+$$
+\begin{aligned}
+\abs{5 - 3} &= 2 \\
+&= b,
+\end{aligned}
+$$
+
+so the density is $\frac{1}{2b}\ef{-1}$.
 Here are both values:
 
 ```{r}

@@ -47,7 +47,14 @@ $$
 
 As a check using the law of iterated expectations (@thm-lie):
 $\E{X \mid Y = 0} = \tfrac{1}{2}$ and $\E{X \mid Y = 1} = 1$, so
-$\E{X} = \tfrac{1}{2}(0.4) + 1(0.6) = 0.2 + 0.6 = 0.8$.
+
+$$
+\begin{aligned}
+\E{X} &= \tfrac{1}{2}(0.4) + 1(0.6) \\
+&= 0.2 + 0.6 \\
+&= 0.8.
+\end{aligned}
+$$
 
 :::{#fig-fubini-joint-mixed}
 

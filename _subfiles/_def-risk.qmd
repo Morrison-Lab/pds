@@ -23,7 +23,15 @@ the risk is $\E{\sqf{Y - g(X)}}$.
 
 The prediction with the smallest risk depends on the loss.
 In @exr-loss, every constant $c$ from $0$ to $4$ has absolute error risk $2$,
-because $\E{\abs{Y - c}} = 0.5\,c + 0.5\,(4 - c) = 2$.
+because
+
+$$
+\begin{aligned}
+\E{\abs{Y - c}} &= 0.5\,c + 0.5\,(4 - c) \\
+&= 2.
+\end{aligned}
+$$
+
 Only $c = 2$ has the smallest squared error risk.
 Under squared error loss, the prediction function that minimizes risk
 is the conditional mean $\E{Y \mid X}$, proved below (@thm-best-predictor).

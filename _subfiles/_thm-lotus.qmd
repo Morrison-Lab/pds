@@ -166,7 +166,16 @@ which is beyond these notes' scope.
 #### Expected total of two dice
 
 Let $X$ and $Y$ be the results of two six-sided die rolls.
-Each has expectation $\sumto{x}{6} x \cd \tfrac{1}{6} = \tfrac{21}{6} = 3.5$, so:
+Each has expectation
+
+$$
+\begin{aligned}
+\sumto{x}{6} x \cd \tfrac{1}{6} &= \tfrac{21}{6} \\
+&= 3.5,
+\end{aligned}
+$$
+
+so:
 
 $$
 \ba
@@ -230,7 +239,15 @@ and the second because its integrand is a non-negative density.
 :::{#exm-linearity-affine}
 #### Expectation of a rescaled uniform variable
 
-Let $X \sim \text{Uniform}(0,1)$, so $\E{X} = \int_0^1 x\,dx = \tfrac{1}{2}$.
+Let $X \sim \text{Uniform}(0,1)$, so
+
+$$
+\begin{aligned}
+\E{X} &= \int_0^1 x\,dx \\
+&= \tfrac{1}{2}.
+\end{aligned}
+$$
+
 By @cor-linearity-affine with $a = 2$ and $c = 1$:
 
 $$

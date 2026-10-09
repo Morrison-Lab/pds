@@ -39,7 +39,15 @@ Then:
 
 - $\Pr(+ \mid D) = 0.99$ (sensitivity)
 - $\Pr(\neg + \mid \neg D) = 0.99$ (specificity),
-  so the false positive rate is $\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01$
+  so the false positive rate is
+
+  $$
+  \begin{aligned}
+  \Pr(+ \mid \neg D) &= 1 - 0.99 \\
+  &= 0.01
+  \end{aligned}
+  $$
+
 - $\Pr(D) = 0.07$ (prevalence)
 
 By @thm-bayes, with the denominator expanded by the

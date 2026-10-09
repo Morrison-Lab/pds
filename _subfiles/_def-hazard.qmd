@@ -56,7 +56,15 @@ A hazard can exceed 1, just as a density can (@exm-normal).
 Let $T$ be [exponential](#def-exponential) with rate $\rate = 2$,
 so $\surv(t) = \ef{-2t}$ for $t \ge 0$ (@exm-exp-survfn).
 Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$,
-so $\Pr(T \ge s) = \Pr(T > s) = \surv(s)$.
+so
+
+$$
+\begin{aligned}
+\Pr(T \ge s) &= \Pr(T > s) \\
+&= \surv(s).
+\end{aligned}
+$$
+
 For $t \ge 0$ and $\change > 0$,
 $\{T \ge t\}$ is the disjoint union of $\{t \le T < t + \change\}$ and $\{T \ge t + \change\}$,
 so:

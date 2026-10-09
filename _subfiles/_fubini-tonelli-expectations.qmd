@@ -74,10 +74,26 @@ $$
 
 The choice of reference measures covers three cases:
 
-- **Both continuous:** $\measure_X = \measure_Y = \text{Lebesgue measure}$;
+- **Both continuous:**
+
+  $$
+  \begin{aligned}
+  \measure_X &= \measure_Y \\
+  &= \text{Lebesgue measure};
+  \end{aligned}
+  $$
+
   $f_{X,Y}$ is the joint probability density function (PDF),
   and $\int_{\rangef{X}} g(x)\,d\measure_X(x) = \int_{\rangef{X}} g(x)\,dx$.
-- **Both discrete:** $\measure_X = \measure_Y = \text{counting measure}$;
+- **Both discrete:**
+
+  $$
+  \begin{aligned}
+  \measure_X &= \measure_Y \\
+  &= \text{counting measure};
+  \end{aligned}
+  $$
+
   $f_{X,Y}(x,y) = \P(X = x,\, Y = y)$ is the joint probability mass function (PMF),
   and $\int_{\rangef{X}} g(x)\,d\measure_X(x) = \sum_{x \in \rangef{X}} g(x)$.
 - **Mixed** (one continuous, one discrete):
@@ -119,8 +135,23 @@ Compute $\E{XY}$.
 We apply @cor-fubini-joint (both-continuous case) with $h(x, y) = xy$.
 Since $X$ and $Y$ are independent with densities $f_X(x) = 1$ on $[0,1]$
 and $f_Y(y) = \tfrac{1}{2}$ on $[0,2]$,
-the joint density factors as $f_{X,Y}(x,y) = f_X(x)\,f_Y(y) = \tfrac{1}{2}$,
-and $\measure_X = \measure_Y = \text{Lebesgue measure}$:
+the joint density factors as
+
+$$
+\begin{aligned}
+f_{X,Y}(x,y) &= f_X(x)\,f_Y(y) \\
+&= \tfrac{1}{2},
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\measure_X &= \measure_Y \\
+&= \text{Lebesgue measure}:
+\end{aligned}
+$$
 
 $$
 \ba
@@ -192,7 +223,15 @@ The following calculation is what someone would *erroneously* write
 if they assumed independence and used $f_X(x)\,f_Y(y)$ as a "joint density"
 --- a function that does not in fact correspond to the joint distribution of $(X, X)$.
 The marginals $X \sim \mathrm{Uniform}(0,1)$ and $Y \sim \mathrm{Uniform}(0,1)$
-do have densities $f_X = f_Y = 1$,
+do have densities
+
+$$
+\begin{aligned}
+f_X &= f_Y \\
+&= 1,
+\end{aligned}
+$$
+
 but the *product* $f_X(x)\,f_Y(y) = 1$ on $[0, 1]^2$
 is the density of an *independent* pair, not of $(X, X)$:
 

@@ -21,9 +21,23 @@ where $\abs{A}$ is the number of outcomes in $A$.
 This function is $1/6$ times the counting measure $\measure(A) = \abs{A}$ on the die rolls
 ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)),
 so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of $\samplespace$,
-and it gives $\Pr(\samplespace) = 6/6 = 1$.
+and it gives
+
+$$
+\begin{aligned}
+\Pr(\samplespace) &= 6/6 \\
+&= 1.
+\end{aligned}
+$$
+
 The event "the roll is even" from @exm-event has probability
-$\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
+
+$$
+\begin{aligned}
+\Pr(\set{2, 4, 6}) &= 3/6 \\
+&= 1/2.
+\end{aligned}
+$$
 
 :::
 
