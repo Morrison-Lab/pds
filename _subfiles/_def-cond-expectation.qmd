@@ -690,8 +690,23 @@ against one conditional density.
 
 Continuing @exm-cond-expectation-general,
 given $X = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each,
-so $\E{Y \mid X = 1} = 3/2$ and $\E{Y^2 \mid X = 1} = (1 + 4)/2 = 5/2$.
-By @thm-cond-linearity with $a = b = 1$:
+so $\E{Y \mid X = 1} = 3/2$ and
+
+$$
+\begin{aligned}
+\E{Y^2 \mid X = 1} &= (1 + 4)/2 \\
+&= 5/2.
+\end{aligned}
+$$
+
+By @thm-cond-linearity with
+
+$$
+\begin{aligned}
+a &= b \\
+&= 1:
+\end{aligned}
+$$
 
 $$
 \ba
@@ -705,7 +720,14 @@ $$
 \ea
 $$
 
-As a check, directly: $(1 + 1) \cd \tfrac{1}{2} + (2 + 4) \cd \tfrac{1}{2} = 1 + 3 = 4$.
+As a check, directly:
+
+$$
+\begin{aligned}
+(1 + 1) \cd \tfrac{1}{2} + (2 + 4) \cd \tfrac{1}{2} &= 1 + 3 \\
+&= 4.
+\end{aligned}
+$$
 
 :::
 
@@ -791,7 +813,15 @@ $$
 \ea
 $$
 
-and $\E{XY \mid X = 0} = 0 \cd \E{Y \mid X = 0} = 0$.
+and
+
+$$
+\begin{aligned}
+\E{XY \mid X = 0} &= 0 \cd \E{Y \mid X = 0} \\
+&= 0.
+\end{aligned}
+$$
+
 As a check, given $X = 1$ the product $XY$ equals $Y$, which is $1$ or $2$ with probability $1/2$ each.
 
 :::

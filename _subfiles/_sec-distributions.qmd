@@ -773,7 +773,15 @@ $$
 
 Then, by the [law of iterated expectations](expectation.qmd#thm-lie)
 and the [law of total variance](variance-covariance.qmd#thm-total-variance),
-using $\E{Y \mid \rvrate} = \Varr(Y \mid \rvrate) = \rvrate$
+using
+
+$$
+\begin{aligned}
+\E{Y \mid \rvrate} &= \Varr(Y \mid \rvrate) \\
+&= \rvrate
+\end{aligned}
+$$
+
 (@thm-poisson-properties):
 
 $$
@@ -805,7 +813,14 @@ and $\mean^2/\overdisp > 0$ gives $\Var{Y} > \mean$.
 #### Overdispersion relative to the Poisson
 
 With $\mean = 4$ and $\overdisp = 2$,
-$\Var{Y} = 4 + 16/2 = 12$,
+
+$$
+\begin{aligned}
+\Var{Y} &= 4 + 16/2 \\
+&= 12,
+\end{aligned}
+$$
+
 three times the variance of a $\Pois(4)$ count with the same mean.
 
 :::
@@ -867,7 +882,16 @@ The CDF of $T$ is $F(t) = 1 - \surv(t)$
 which is $0$ for $t < 0$ and $1 - \text{e}^{-\rate t^\shape}$ for $t \ge 0$.
 This $F$ is continuous everywhere,
 with a continuous derivative everywhere except possibly $t = 0$,
-so $f = F' = -\surv'$ is a density of $T$
+so
+
+$$
+\begin{aligned}
+f &= F' \\
+&= -\surv'
+\end{aligned}
+$$
+
+is a density of $T$
 ([a piecewise-smooth CDF has its derivative as a density](random-variables.qmd#thm-cdf-derivative-density)).
 This density is continuous at every $t > 0$,
 so there the hazard is $f(t)/\surv(t)$
@@ -1001,12 +1025,27 @@ provides more flexibility than the exponential.
 #### Exponential as a special case
 
 With $\shape = 1$, @thm-weibull gives $\h(t) = \rate$ and
-$\E{T} = \gammafn(2)\rate^{-1} = 1/\rate$,
+
+$$
+\begin{aligned}
+\E{T} &= \gammafn(2)\rate^{-1} \\
+&= 1/\rate,
+\end{aligned}
+$$
+
 matching the exponential distribution's constant hazard
 and mean.
 With $\shape = 2$ and $\rate = 1$,
 $\h(t) = 2t$ increases with $t$,
-and $\E{T} = \gammafn(3/2) = \sqrt{\pi}/2 \approx 0.886$.
+and
+
+$$
+\begin{aligned}
+\E{T} &= \gammafn(3/2) \\
+&= \sqrt{\pi}/2 \\
+&\approx 0.886.
+\end{aligned}
+$$
 
 :::
 
@@ -1385,10 +1424,34 @@ $$
 \mahal(\vx)^2 = \frac{(x_1 + x_2)^2}{2 \cd 3} + \frac{(x_1 - x_2)^2}{2 \cd 1}
 $$
 
-The point $\vx = \sqrt{3}\,\vecf{q}_1 = \sqrt{3/2}\,\tp{(1, 1)}$
-has $x_1 + x_2 = \sqrt{6}$ and $x_1 - x_2 = 0$, so $\mahal(\vx)^2 = 6/6 = 1$;
+The point
+
+$$
+\begin{aligned}
+\vx &= \sqrt{3}\,\vecf{q}_1 \\
+&= \sqrt{3/2}\,\tp{(1, 1)}
+\end{aligned}
+$$
+
+has $x_1 + x_2 = \sqrt{6}$ and $x_1 - x_2 = 0$, so
+
+$$
+\begin{aligned}
+\mahal(\vx)^2 &= 6/6 \\
+&= 1;
+\end{aligned}
+$$
+
 the point $\vx = \vecf{q}_2$
-has $x_1 + x_2 = 0$ and $x_1 - x_2 = \sqrt{2}$, so $\mahal(\vx)^2 = 2/2 = 1$.
+has $x_1 + x_2 = 0$ and $x_1 - x_2 = \sqrt{2}$, so
+
+$$
+\begin{aligned}
+\mahal(\vx)^2 &= 2/2 \\
+&= 1.
+\end{aligned}
+$$
+
 So the contour $\mahal(\vx) = 1$ of the $\Normal_2\paren{\vzero, \matr{\covmat}}$ density
 is an ellipse stretched along $\tp{(1, 1)}$, with half-length $\sqrt{3}$,
 and squeezed along $\tp{(1, -1)}$, with half-length $1$:
@@ -1444,10 +1507,23 @@ Then:
 ::: proof
 
 By the [marginal PMF from a joint density-mass function](random-variables.qmd#cor-joint-density-mass-marginal),
-$\P(C = c) = \int_{-\infty}^{\infty} w_c \, {\p_c}(x)\,dx = w_c$,
+
+$$
+\begin{aligned}
+\P(C = c) &= \int_{-\infty}^{\infty} w_c \, {\p_c}(x)\,dx \\
+&= w_c,
+\end{aligned}
+$$
+
 because ${\p_c}$ is a density and so integrates to 1.
 Then, by the [definition of the conditional density](expectation.qmd#def-cond-mixed),
-$\p(X = x \mid C = c) = w_c \, {\p_c}(x) / w_c = {\p_c}(x)$.
+
+$$
+\begin{aligned}
+\p(X = x \mid C = c) &= w_c \, {\p_c}(x) / w_c \\
+&= {\p_c}(x).
+\end{aligned}
+$$
 
 For the last claim, the events $\set{C = 1}, \ldots, \set{C = K}$
 are mutually exclusive, and their union is the whole sample space.
@@ -1579,7 +1655,14 @@ and let $X$ have density ${\p_{\text{mix}}} = 0.3\,{\p_1} + 0.7\,{\p_2}$.
 
 - **Mean.**
   By @thm-mixture-mean and the [normal means](random-variables.qmd#thm-normal-density),
-  $\E{X} = 0.3 \cd 0 + 0.7 \cd 6 = 4.2$.
+
+  $$
+  \begin{aligned}
+  \E{X} &= 0.3 \cd 0 + 0.7 \cd 6 \\
+  &= 4.2.
+  \end{aligned}
+  $$
+
 - **Density.**
   ${\p_{\text{mix}}}$ has peaks near the two component means,
   ${\p_{\text{mix}}}(0) \approx 0.120$ and ${\p_{\text{mix}}}(6) \approx 0.279$,

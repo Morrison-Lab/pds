@@ -76,7 +76,22 @@ See:
 
 A fair die roll $Y$ has $\E{Y} = 3.5$
 (computed on the [expectation page](expectation.qmd#exm-linearity-expectation)),
-so a roll of $y = 5$ has deviation $\devn(5) = 5 - 3.5 = 1.5$,
-and a roll of $y = 2$ has deviation $\devn(2) = 2 - 3.5 = -1.5$.
+so a roll of $y = 5$ has deviation
+
+$$
+\begin{aligned}
+\devn(5) &= 5 - 3.5 \\
+&= 1.5,
+\end{aligned}
+$$
+
+and a roll of $y = 2$ has deviation
+
+$$
+\begin{aligned}
+\devn(2) &= 2 - 3.5 \\
+&= -1.5.
+\end{aligned}
+$$
 
 :::

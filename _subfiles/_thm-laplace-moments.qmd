@@ -14,9 +14,25 @@ which is symmetric about $0$.
 
 For the mean, the integrand $u \cdot \frac{1}{2b}\ef{-\abs{u}/b}$ is an odd function,
 so its integral over $\reals$ is $0$.
-Therefore $\E{U} = 0$, and $\E{Y} = \mean + \E{U} = \mean$.
+Therefore $\E{U} = 0$, and
 
-For the variance, $\Var{Y} = \Var{U} = \E{U^2}$ because $\E{U} = 0$.
+$$
+\begin{aligned}
+\E{Y} &= \mean + \E{U} \\
+&= \mean.
+\end{aligned}
+$$
+
+For the variance,
+
+$$
+\begin{aligned}
+\Var{Y} &= \Var{U} \\
+&= \E{U^2}
+\end{aligned}
+$$
+
+because $\E{U} = 0$.
 The integrand $u^2 \cdot \frac{1}{2b}\ef{-\abs{u}/b}$ is even,
 so
 

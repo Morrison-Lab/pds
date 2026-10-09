@@ -55,9 +55,42 @@ $$
 
 In @exm-random-variable,
 let $X_1$ indicate heads on the first flip,
-so $X_1(HH) = X_1(HT) = 1$ and $X_1(TH) = X_1(TT) = 0$.
-Then $\P(X_1 = 1) = \Pr(\set{HH, HT}) = 1/2$
-and $\P(X_1 = 0) = \Pr(\set{TH, TT}) = 1/2$,
+so
+
+$$
+\begin{aligned}
+X_1(HH) &= X_1(HT) \\
+&= 1
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+X_1(TH) &= X_1(TT) \\
+&= 0.
+\end{aligned}
+$$
+
+Then
+
+$$
+\begin{aligned}
+\P(X_1 = 1) &= \Pr(\set{HH, HT}) \\
+&= 1/2
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\P(X_1 = 0) &= \Pr(\set{TH, TT}) \\
+&= 1/2,
+\end{aligned}
+$$
+
 so $X_1 \sim \Ber(1/2)$.
 
 :::
@@ -575,7 +608,14 @@ F(t)
 $$
 
 For $t \in (0, 1)$, where $f$ is continuous,
-$\deriv{t} F(t) = 1 = f(t)$.
+
+$$
+\begin{aligned}
+\deriv{t} F(t) &= 1 \\
+&= f(t).
+\end{aligned}
+$$
+
 At $t = 1$, $f$ jumps from 1 to 0, and $F$ has no derivative:
 its slope is 1 on the left and 0 on the right.
 
@@ -811,7 +851,13 @@ The last step is @thm-cdf-properties.
 #### The uniform density integrates to 1
 
 For $X \sim \text{Uniform}(0, 1)$ (@def-uniform),
-$\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1$.
+
+$$
+\begin{aligned}
+\int_{-\infty}^{\infty} f(x)\,dx &= \int_0^1 1\,dx \\
+&= 1.
+\end{aligned}
+$$
 
 :::
 
@@ -1177,7 +1223,16 @@ f_X(x)
 \ea
 $$
 
-The same steps with the roles swapped give $f_Y(y) = \int_0^y 2\,dx = 2y$ for $y \in [0, 1]$.
+The same steps with the roles swapped give
+
+$$
+\begin{aligned}
+f_Y(y) &= \int_0^y 2\,dx \\
+&= 2y
+\end{aligned}
+$$
+
+for $y \in [0, 1]$.
 
 :::
 

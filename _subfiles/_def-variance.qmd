@@ -113,7 +113,15 @@ Let $(X, Y)$ have the joint PMF
 $\P(X=0, Y=0) = 0.2$, $\P(X=0, Y=1) = 0.3$,
 $\P(X=1, Y=0) = 0.1$, $\P(X=1, Y=1) = 0.4$
 (the table in the [expectation page's exercise](expectation.qmd#exr-fubini-joint-disc)).
-Given $X = 0$, $Y$ is binary with $\P(Y = 1 \mid X = 0) = 0.3/0.5 = 0.6$,
+Given $X = 0$, $Y$ is binary with
+
+$$
+\begin{aligned}
+\P(Y = 1 \mid X = 0) &= 0.3/0.5 \\
+&= 0.6,
+\end{aligned}
+$$
+
 so $\E{Y \mid X = 0} = 0.6$, and by @def-cond-variance:
 
 $$
@@ -128,8 +136,23 @@ $$
 \ea
 $$
 
-The same steps with $\P(Y = 1 \mid X = 1) = 0.4/0.5 = 0.8$
-give $\Var{Y \mid X = 1} = (0.2)^2 \cd 0.8 + (0.8)^2 \cd 0.2 = 0.16$.
+The same steps with
+
+$$
+\begin{aligned}
+\P(Y = 1 \mid X = 1) &= 0.4/0.5 \\
+&= 0.8
+\end{aligned}
+$$
+
+give
+
+$$
+\begin{aligned}
+\Var{Y \mid X = 1} &= (0.2)^2 \cd 0.8 + (0.8)^2 \cd 0.2 \\
+&= 0.16.
+\end{aligned}
+$$
 
 :::
 
@@ -159,7 +182,15 @@ and let $Y$ be the total number of heads.
 Given $X_1 = 0$, $Y$ is $0$ or $1$ with probability $1/2$ each;
 given $X_1 = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each.
 Either way, $Y$ is $1/2$ away from its conditional mean with probability 1,
-so $\Var{Y \mid X_1 = 0} = \Var{Y \mid X_1 = 1} = 1/4$,
+so
+
+$$
+\begin{aligned}
+\Var{Y \mid X_1 = 0} &= \Var{Y \mid X_1 = 1} \\
+&= 1/4,
+\end{aligned}
+$$
+
 and $Y$ is homoskedastic with respect to $X_1$, with $\ss = 1/4$.
 
 :::
@@ -180,7 +211,16 @@ that is, if $\Var{Y \mid X = x}$ differs between some values of $x$.
 :::{#exm-heterosked}
 #### A heteroskedastic binary outcome
 
-In @exm-cond-variance, $\Var{Y \mid X = 0} = 0.24 \ne 0.16 = \Var{Y \mid X = 1}$,
+In @exm-cond-variance,
+
+$$
+\begin{aligned}
+\Var{Y \mid X = 0} &= 0.24 \\
+&\ne 0.16 \\
+&= \Var{Y \mid X = 1},
+\end{aligned}
+$$
+
 so $Y$ is heteroskedastic with respect to $X$.
 More generally, a binary outcome with $\P(Y = 1 \mid X = x) = \prob(x)$
 has conditional variance $\prob(x)(1 - \prob(x))$,
@@ -239,7 +279,16 @@ $$
 \ea
 $$
 
-Second term: by the law of iterated expectations, $\E{m(X)} = \E{\E{Y \mid X}} = \mean$, so:
+Second term: by the law of iterated expectations,
+
+$$
+\begin{aligned}
+\E{m(X)} &= \E{\E{Y \mid X}} \\
+&= \mean,
+\end{aligned}
+$$
+
+so:
 
 $$
 \ba
@@ -302,7 +351,14 @@ and the **variance decomposition formula**.
 #### Decomposing the variance of a binary outcome
 
 Continuing @exm-cond-variance,
-$\P(X = 0) = \P(X = 1) = 0.5$,
+
+$$
+\begin{aligned}
+\P(X = 0) &= \P(X = 1) \\
+&= 0.5,
+\end{aligned}
+$$
+
 $\E{Y \mid X = 0} = 0.6$, and $\E{Y \mid X = 1} = 0.8$,
 so $\E{\E{Y \mid X}} = 0.7$, and by @thm-total-variance:
 
@@ -323,8 +379,23 @@ $$
 \ea
 $$
 
-As a check, $Y$ is Bernoulli with $\P(Y = 1) = 0.3 + 0.4 = 0.7$,
-so by @exm-variance-bernoulli, $\Var{Y} = 0.7 \cd 0.3 = 0.21$.
+As a check, $Y$ is Bernoulli with
+
+$$
+\begin{aligned}
+\P(Y = 1) &= 0.3 + 0.4 \\
+&= 0.7,
+\end{aligned}
+$$
+
+so by @exm-variance-bernoulli,
+
+$$
+\begin{aligned}
+\Var{Y} &= 0.7 \cd 0.3 \\
+&= 0.21.
+\end{aligned}
+$$
 
 :::
 
@@ -366,7 +437,22 @@ which is why it is often the preferred measure of spread when reporting results.
 #### Precision and standard deviation of a fair coin flip
 
 In @exm-variance-bernoulli, a fair coin flip has $\Var{X} = 1/4$,
-so its precision is $\precision(X) = 1 / (1/4) = 4$
-and its standard deviation is $\SD{X} = \sqrt{1/4} = 1/2$.
+so its precision is
+
+$$
+\begin{aligned}
+\precision(X) &= 1 / (1/4) \\
+&= 4
+\end{aligned}
+$$
+
+and its standard deviation is
+
+$$
+\begin{aligned}
+\SD{X} &= \sqrt{1/4} \\
+&= 1/2.
+\end{aligned}
+$$
 
 :::

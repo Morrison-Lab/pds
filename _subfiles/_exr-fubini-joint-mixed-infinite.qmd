@@ -17,8 +17,15 @@ Compute $\E{X}$ using @cor-fubini-joint with $\measure_X = \text{Lebesgue measur
 $\measure_Y = \text{counting measure}$, and $h(x, y) = x$.
 
 The joint density w.r.t. Lebesgue $\times$ counting measure is
-$f_{X,Y}(x, y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)
-= \frac{(1-q)\,q^y}{y+1}$ for $x \in [0, y+1]$.
+
+$$
+\begin{aligned}
+f_{X,Y}(x, y) &= f_{X \mid Y}(x \mid y)\,\P(Y = y) \\
+&= \frac{(1-q)\,q^y}{y+1}
+\end{aligned}
+$$
+
+for $x \in [0, y+1]$.
 
 Since $h(x, y) = x \ge 0$ on this support, condition (a) holds,
 so @cor-fubini-joint (via Tonelli's theorem) guarantees the now-infinite

@@ -41,7 +41,14 @@ X(TT) &= 0
 \end{aligned}
 $$
 
-Then $\{X = 1\} = \set{HT, TH}$, so $\Pr(X = 1) = 1/4 + 1/4 = 1/2$.
+Then $\{X = 1\} = \set{HT, TH}$, so
+
+$$
+\begin{aligned}
+\Pr(X = 1) &= 1/4 + 1/4 \\
+&= 1/2.
+\end{aligned}
+$$
 
 :::
 
@@ -122,7 +129,25 @@ but they do not arise in applications.
 #### A continuous random variable
 
 Let $X$ satisfy $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
-Taking $a = b = x$ gives $\Pr(X = x) = x - x = 0$ for every $x \in [0,1]$.
+Taking
+
+$$
+\begin{aligned}
+a &= b \\
+&= x
+\end{aligned}
+$$
+
+gives
+
+$$
+\begin{aligned}
+\Pr(X = x) &= x - x \\
+&= 0
+\end{aligned}
+$$
+
+for every $x \in [0,1]$.
 Taking $a = 0$ and $b = 1$ gives $\Pr(0 \le X \le 1) = 1$,
 so by the [complement rule](probability-basics.qmd#cor-p-neg0)
 $X$ falls outside $[0, 1]$ with probability 0,
@@ -146,7 +171,16 @@ On $\set{1/2 < U < 1}$, $T$ is increasing in $U$ and takes values in $(0, \infty
 and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$.
 So $\set{T > 0} = \set{1/2 < U < 1}$,
 and $\set{T = t} = \set{U = 1 - 1/(t + 2)}$ for each $t > 0$.
-Since $\Pr(U = 1/2) = \Pr(U = 1) = 0$ (@exm-continuous-rv):
+Since
+
+$$
+\begin{aligned}
+\Pr(U = 1/2) &= \Pr(U = 1) \\
+&= 0
+\end{aligned}
+$$
+
+(@exm-continuous-rv):
 
 $$
 \ba
@@ -162,7 +196,15 @@ $$
 \ea
 $$
 
-$T$ is not continuous, because $\Pr(T = 0) = 1 - \Pr(T > 0) = 1/2$
+$T$ is not continuous, because
+
+$$
+\begin{aligned}
+\Pr(T = 0) &= 1 - \Pr(T > 0) \\
+&= 1/2
+\end{aligned}
+$$
+
 by the [complement rule](probability-basics.qmd#cor-p-neg0).
 
 $T$ is not discrete either.

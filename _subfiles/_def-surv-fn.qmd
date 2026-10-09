@@ -90,7 +90,16 @@ $$
 \ea
 $$
 
-For $t < 0$, $\surv(t) = \Pr(T > t) = 1$, since $T \ge 0$.
+For $t < 0$,
+
+$$
+\begin{aligned}
+\surv(t) &= \Pr(T > t) \\
+&= 1,
+\end{aligned}
+$$
+
+since $T \ge 0$.
 With $\rate = 0.5$, for example, $\surv(2) = \ef{-1} \approx 0.368$.
 
 :::

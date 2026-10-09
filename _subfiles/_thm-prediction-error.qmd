@@ -28,7 +28,13 @@ $$
 
 - $\E{\noise^2} = \varpar$,
   by @sol-noise-second-moment.
-- $\E{\noise D} = \E{\noise}\E{D} = 0$,
+- $$
+  \begin{aligned}
+  \E{\noise D} &= \E{\noise}\E{D} \\
+  &= 0,
+  \end{aligned}
+  $$
+
   because $\noise$ is independent of $\hat f(x_0)$,
   hence of $D$,
   and $\E{\noise} = 0$.
@@ -36,7 +42,15 @@ $$
   $\E{D^2} = \Var{D} + \sqf{\E{D}}$.
   Here $\Var{D} = \Var{\hat f(x_0)}$,
   because $f(x_0)$ is a constant,
-  and $\E{D} = f(x_0) - \E{\hat f(x_0)} = -\bias{\hat f(x_0)}$,
+  and
+
+  $$
+  \begin{aligned}
+  \E{D} &= f(x_0) - \E{\hat f(x_0)} \\
+  &= -\bias{\hat f(x_0)},
+  \end{aligned}
+  $$
+
   so $\sqf{\E{D}} = \sqf{\bias{\hat f(x_0)}}$.
 
 Adding the three terms gives the claim.

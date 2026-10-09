@@ -40,7 +40,15 @@ $$
 #### Covariance of a binary exposure and outcome
 
 For the joint PMF in @exm-cond-variance,
-$\E{XY} = \P(X = 1, Y = 1) = 0.4$, $\E{X} = 0.5$, and $\E{Y} = 0.7$, so:
+
+$$
+\begin{aligned}
+\E{XY} &= \P(X = 1, Y = 1) \\
+&= 0.4,
+\end{aligned}
+$$
+
+$\E{X} = 0.5$, and $\E{Y} = 0.7$, so:
 
 $$
 \ba
@@ -167,7 +175,25 @@ so $\Cov{X_1, X_2} = 0$, as @thm-indpt-uncorrelated requires.
 The converse of @thm-indpt-uncorrelated is false.
 Let $X$ take the values $-1$, $0$, and $1$ with probability $1/3$ each,
 and let $Y = X^2$.
-Then $\E{X} = (-1 + 0 + 1)/3 = 0$, and $XY = X^3 = X$, so:
+Then
+
+$$
+\begin{aligned}
+\E{X} &= (-1 + 0 + 1)/3 \\
+&= 0,
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+XY &= X^3 \\
+&= X,
+\end{aligned}
+$$
+
+so:
 
 $$
 \ba
@@ -184,8 +210,22 @@ $$
 $$
 
 But $X$ and $Y$ are not independent: $Y$ is a function of $X$, and
-$\P(X = 0, Y = 0) = \P(X = 0) = \tfrac{1}{3}$,
-while $\P(X = 0)\,\P(Y = 0) = \tfrac{1}{3} \cd \tfrac{1}{3} = \tfrac{1}{9}$.
+
+$$
+\begin{aligned}
+\P(X = 0, Y = 0) &= \P(X = 0) \\
+&= \tfrac{1}{3},
+\end{aligned}
+$$
+
+while
+
+$$
+\begin{aligned}
+\P(X = 0)\,\P(Y = 0) &= \tfrac{1}{3} \cd \tfrac{1}{3} \\
+&= \tfrac{1}{9}.
+\end{aligned}
+$$
 
 :::
 
@@ -597,7 +637,16 @@ $$
 ::: proof
 
 Treat $\va$ and $\vX$ as $n \times 1$ column vectors,
-so $\va \cdot \vX = \tp{\va}\vX = \sumin a_i X_i$, a scalar.
+so
+
+$$
+\begin{aligned}
+\va \cdot \vX &= \tp{\va}\vX \\
+&= \sumin a_i X_i,
+\end{aligned}
+$$
+
+a scalar.
 By linearity of expectation, $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
 
 $$
@@ -678,7 +727,14 @@ $$\Var{X + Y} = \Var{X} + \Var{Y}$$
 ::: proof
 
 By @thm-indpt-uncorrelated, $\Cov{X,Y} = 0$.
-Applying @cor-var-lincom2 with $a = b = 1$:
+Applying @cor-var-lincom2 with
+
+$$
+\begin{aligned}
+a &= b \\
+&= 1:
+\end{aligned}
+$$
 
 $$
 \ba
@@ -779,9 +835,31 @@ $$D_2 = \set{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)}.$$
 
 Both sets have first coordinates $\set{-5, 0, 0, 5}$
 and second coordinates $\set{1, -1, 1, -1}$,
-so $\E{X_1} = \E{X_2} = 0$,
-$\E{X_1^2} = (25 + 0 + 0 + 25)/4 = 12.5$,
-and $\E{X_2^2} = (1 + 1 + 1 + 1)/4 = 1$,
+so
+
+$$
+\begin{aligned}
+\E{X_1} &= \E{X_2} \\
+&= 0,
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\E{X_1^2} &= (25 + 0 + 0 + 25)/4 \\
+&= 12.5,
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\E{X_2^2} &= (1 + 1 + 1 + 1)/4 \\
+&= 1,
+\end{aligned}
+$$
+
 and likewise for $\vX'$.
 They differ in the products of the coordinates:
 
@@ -847,7 +925,15 @@ $$
 $$
 
 With $\va = \tp{(1, -1)}$,
-$\tp{\va}\Varf{\vX}\va = \Var{X_1 - X_2} = \Var{0} = 0$,
+
+$$
+\begin{aligned}
+\tp{\va}\Varf{\vX}\va &= \Var{X_1 - X_2} \\
+&= \Var{0} \\
+&= 0,
+\end{aligned}
+$$
+
 so $\Varf{\vX}$ is positive semidefinite
 but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite)
 (compare [this example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite)).
