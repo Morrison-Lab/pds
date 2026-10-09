@@ -5,7 +5,7 @@ Pull the constant $1/n$ out and split the sum, both by @thm-linearity-expectatio
 $$
 \begin{aligned}
 \Ep[\bar X]
-&= \Ep\!\left[\avgin X_i\right] \\
+&= \Ep\sb{\avgin X_i} \\
 &= \avgin \Ep[X_i] \\
 &= \frac{1}{n}\,(n\mean) \\
 &= \mean

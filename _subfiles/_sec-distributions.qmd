@@ -648,7 +648,7 @@ $$
 \P(Y=y)
 \eqdef \frac{\mean^y}{y!}
 \cdot \frac{\gammafn(\overdisp + y)}{\gammafn(\overdisp) \cdot (\overdisp + \mean)^y}
-\cdot \left(1+\frac{\mean}{\overdisp}\right)^{-\overdisp}
+\cdot \paren{1+\frac{\mean}{\overdisp}}^{-\overdisp}
 $$
 
 where $\gammafn$ is the gamma function,
