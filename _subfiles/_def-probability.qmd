@@ -119,7 +119,7 @@ For each $n$:
 $$
 \ba
 \Pr(A_n)
-&= \Pr\!\left(\bigcup_{i=n}^{\infty} B_i\right)
+&= \Pr\paren{\bigcup_{i=n}^{\infty} B_i}
 && \text{(} A_n = \bigcup_{i=n}^{\infty} B_i \text{)} \\
 &= \sum_{i=n}^{\infty} \Pr(B_i)
 && \text{(countable additivity; the } B_i \text{ are pairwise disjoint)}
@@ -168,7 +168,7 @@ is a [probability measure](#def-probability) if and only if it satisfies:
    $$\Pr(\samplespace) = 1$$
 3. $\Pr$ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity):
    for any [mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
-   $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sumto{i}{\infty} \Pr(A_i)$$
+   $$\Pr\paren{\bigcup_{i=1}^{\infty} A_i} = \sumto{i}{\infty} \Pr(A_i)$$
 
 :::
 
