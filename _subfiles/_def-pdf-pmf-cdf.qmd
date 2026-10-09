@@ -677,7 +677,7 @@ $$
 \ba
 \frac{\Pr(x \le X < x + \change)}{\change}
 &= \frac{\Pr(x < X \le x + \change)}{\change}
-&& \text{(} \Pr(X = x) = \Pr(X = x + \change) = 0 \text{)} \\
+&& \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \change) = 0 \text{)} \\
 &= \frac{F(x + \change) - F(x)}{\change}
 && \text{(additivity, and the definition of the CDF)}
 \ea
@@ -706,7 +706,13 @@ See also @me4 (Chapter 22, p. 535).
 For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$,
 $\Pr(x \le X < x + \change) = \change$ once $\change \le 1 - x$, so:
 
-$$f(x) = \lim_{\change \downarrow 0} \frac{\change}{\change} = 1$$
+$$
+\begin{aligned}
+f(x)
+&= \lim_{\change \downarrow 0} \frac{\change}{\change} \\
+&= 1
+\end{aligned}
+$$
 
 For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
 Both agree with the density of @def-uniform.
@@ -840,7 +846,14 @@ and let $X$ be the total number of heads.
 Both are functions on the same sample space, $\set{HH, HT, TH, TT}$,
 so they are jointly distributed, and, for example:
 
-$$\Pr(X_1 = 1, X = 1) = \Pr(\set{HH, HT} \cap \set{HT, TH}) = \Pr(\set{HT}) = \tfrac{1}{4}$$
+$$
+\begin{aligned}
+\Pr(X_1 = 1, X = 1)
+&= \Pr(\set{HH, HT} \cap \set{HT, TH}) \\
+&= \Pr(\set{HT}) \\
+&= \tfrac{1}{4}
+\end{aligned}
+$$
 
 :::
 
@@ -864,7 +877,13 @@ In @exm-jointly-distributed,
 the joint distribution of $X_1$ and $X$ assigns to the set
 $A = \set{(x_1, x) : x_1 = 1,\, x \ge 1}$ the probability
 
-$$\Pr((X_1, X) \in A) = \Pr(\set{HH, HT}) = \tfrac{1}{2}$$
+$$
+\begin{aligned}
+\Pr((X_1, X) \in A)
+&= \Pr(\set{HH, HT}) \\
+&= \tfrac{1}{2}
+\end{aligned}
+$$
 
 since the first flip is heads exactly on $HH$ and $HT$,
 and each of those outcomes has at least one head.
@@ -1048,7 +1067,13 @@ and it is the joint density of a pair $(X, Y)$ with $X \le Y$ always.
 For example, the probability that both are at most $1/2$
 is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
 
-$$\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cd \tfrac{1}{8} = \tfrac{1}{4}$$
+$$
+\begin{aligned}
+\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2})
+&= 2 \cd \tfrac{1}{8} \\
+&= \tfrac{1}{4}
+\end{aligned}
+$$
 
 :::
 
@@ -1223,6 +1248,12 @@ Integrating over $y$ gives $\P(X = 0) = 1/2$ and $\P(X = 1) = 1/2$,
 which add to 1.
 For example, the probability that $X = 1$ and $Y \le 1$ is:
 
-$$\Pr(X = 1,\, Y \le 1) = \int_0^1 \tfrac{1}{4}\,dy = \tfrac{1}{4}$$
+$$
+\begin{aligned}
+\Pr(X = 1,\, Y \le 1)
+&= \int_0^1 \tfrac{1}{4}\,dy \\
+&= \tfrac{1}{4}
+\end{aligned}
+$$
 
 :::

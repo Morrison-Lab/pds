@@ -172,7 +172,7 @@ $$
 \ba
 \E{X + Y}
 &= \E{X} + \E{Y}
-&& \text{(linearity of expectation with } a = b = 1, c = 0 \text{)}\\
+&& \text{(linearity of expectation with } a = 1, b = 1, c = 0 \text{)}\\
 &= 3.5 + 3.5
 && \text{(substitute)}\\
 &= 7

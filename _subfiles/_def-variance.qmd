@@ -309,14 +309,17 @@ so $\E{\E{Y \mid X}} = 0.7$, and by @thm-total-variance:
 $$
 \ba
 \E{\Var{Y \mid X}}
-&= 0.5 \cd 0.24 + 0.5 \cd 0.16 = 0.20
+&= 0.5 \cd 0.24 + 0.5 \cd 0.16
 && \text{(average the conditional variances)} \\
+&= 0.20 \\
 \Var{\E{Y \mid X}}
-&= 0.5 \cd (0.6 - 0.7)^2 + 0.5 \cd (0.8 - 0.7)^2 = 0.01
+&= 0.5 \cd (0.6 - 0.7)^2 + 0.5 \cd (0.8 - 0.7)^2
 && \text{(variance of the conditional means)} \\
+&= 0.01 \\
 \Var{Y}
-&= 0.20 + 0.01 = 0.21
-&& \text{(law of total variance)}
+&= 0.20 + 0.01
+&& \text{(law of total variance)} \\
+&= 0.21
 \ea
 $$
 

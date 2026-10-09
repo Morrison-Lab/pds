@@ -55,10 +55,12 @@ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 
 $$
 \ba
-H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4}
-= 1 + \tfrac{1}{2} \paren{2 - \log_2 3}
-= 2 - \tfrac{1}{2} \log_2 3 \approx 1.208, \\
-H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = 1, \\
+H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
+&= 1 + \tfrac{1}{2} \paren{2 - \log_2 3} \\
+&= 2 - \tfrac{1}{2} \log_2 3 \\
+&\approx 1.208, \\
+H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
+&= 1, \\
 D_{\mathrm{KL}}(p \,\|\, q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 \ea
 $$

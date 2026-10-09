@@ -19,8 +19,10 @@ $f_{X,Y}(x, y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)$:
 
 $$
 \ba
-f_{X,Y}(x,\, 0) &= 1 \cdot 0.4 = 0.4 &&\text{ for } x \in [0,1];\\
-f_{X,Y}(x,\, 1) &= \tfrac{1}{2} \cdot 0.6 = 0.3 &&\text{ for } x \in [0,2].
+f_{X,Y}(x,\, 0) &= 1 \cdot 0.4 \\
+&= 0.4 &&\text{ for } x \in [0,1]; \\
+f_{X,Y}(x,\, 1) &= \tfrac{1}{2} \cdot 0.6 \\
+&= 0.3 &&\text{ for } x \in [0,2].
 \ea
 $$
 

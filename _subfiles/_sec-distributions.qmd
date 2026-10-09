@@ -80,7 +80,13 @@ What is the range of possible values for a Poisson distribution?
 {{< slidebreak >}}
 
 :::{#sol-range-poisson}
-$$\rangef{Y} = \set{0, 1, 2, \dots} = \Nat$$
+$$
+\begin{aligned}
+\rangef{Y}
+&= \set{0, 1, 2, \dots} \\
+&= \Nat
+\end{aligned}
+$$
 :::
 
 {{< slidebreak >}}
@@ -783,7 +789,7 @@ $$
 &= \E{\Var{Y \mid \rvrate}} + \Var{\E{Y \mid \rvrate}}
 && (\text{law of total variance}) \\
 &= \E{\rvrate} + \Var{\rvrate}
-&& (\Var{Y \mid \rvrate} = \E{Y \mid \rvrate} = \rvrate) \\
+&& (\Var{Y \mid \rvrate} = \rvrate \text{ and } \E{Y \mid \rvrate} = \rvrate) \\
 &= \mean + \frac{\mean^2}{\overdisp}
 && (\text{mean and variance of the gamma distribution})
 \ea
@@ -1586,10 +1592,12 @@ and let $X$ have density ${\p_{\text{mix}}} = 0.3\,{\p_1} + 0.7\,{\p_2}$.
   ${\p_1}(3) = {\p_2}(3)$ by the symmetry of the normal density, so:
 
   $$
+  \begin{aligned}
   \P(C = 2 \mid X = 3)
-  = \frac{0.7\,{\p_2}(3)}{0.3\,{\p_1}(3) + 0.7\,{\p_2}(3)}
-  = \frac{0.7}{0.3 + 0.7}
-  = 0.7,
+  &= \frac{0.7\,{\p_2}(3)}{0.3\,{\p_1}(3) + 0.7\,{\p_2}(3)} \\
+  &= \frac{0.7}{0.3 + 0.7} \\
+  &= 0.7,
+  \end{aligned}
   $$
 
   the prior weight: an observation equally far from both components
