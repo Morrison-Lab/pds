@@ -361,7 +361,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
+  <p class="date">Last modified: 2026-10-08 22:59:46 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -851,11 +851,18 @@
 <p><span class="math display">\[\begin{aligned}
 \Pr(+) &amp;= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\
 &amp;= (0.99)(0.001) + (0.01)(0.999) \\
-&amp;= 0.00099 + 0.00999 = 0.01098
+&amp;= 0.00099 + 0.00999 \\
+&amp;= 0.01098
 \end{aligned}\]</span></p>
 <p>Then</p>
-<p><span class="math display">\[\Pr(S \mid +) = \frac{\Pr(+ \mid S)\,\Pr(S)}{\Pr(+)}
-= \frac{0.00099}{0.01098} \approx 0.0902\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(S \mid +)
+&amp;= \frac{\Pr(+ \mid S)\,\Pr(S)}{\Pr(+)} \\
+&amp;= \frac{0.00099}{0.01098} \\
+&amp;\approx 0.0902
+\end{aligned}
+\]</span></p>
 <p>About <strong>9%</strong>, not the <span class="math inline">\(99\%\)</span> most people guess.</p>
 <p>The reason is the <strong>base rate</strong>. Out of <span class="math inline">\(100{,}000\)</span> people screened, about <span class="math inline">\(100\)</span> have the disease and <span class="math inline">\(99\)</span> of them test positive, while <span class="math inline">\(99{,}900\)</span> do not have it and about <span class="math inline">\(999\)</span> of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.</p>
 <p>The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.</p>

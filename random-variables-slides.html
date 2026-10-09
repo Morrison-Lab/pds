@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
+  <p class="date">Last modified: 2026-10-08 22:59:46 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
@@ -320,7 +320,14 @@
 
 <div id="exm-random-variable" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1 (Number of heads in two coin flips)</strong></span> Flip a fair coin twice. The sample space is <span class="math inline">\(\Omega= \mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}\)</span>, each outcome with probability <span class="math inline">\(1/4\)</span>. Let <span class="math inline">\(X\)</span> be the number of heads:</p>
-<p><span class="math display">\[X(HH) = 2, \quad X(HT) = X(TH) = 1, \quad X(TT) = 0\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+X(HH) &amp;= 2, \\
+X(HT) &amp;= 1, \\
+X(TH) &amp;= 1, \\
+X(TT) &amp;= 0
+\end{aligned}
+\]</span></p>
 <p>Then <span class="math inline">\(\{X = 1\} = \mathopen{}\left\{HT, TH\right\}\mathclose{}\)</span>, so <span class="math inline">\(\Pr(X = 1) = 1/4 + 1/4 = 1/2\)</span>.</p>
 </div>
 </section>
@@ -899,7 +906,7 @@ F(t)
 \begin{aligned}
 \frac{\Pr(x \le X &lt; x + \Delta)}{\Delta}
 &amp;= \frac{\Pr(x &lt; X \le x + \Delta)}{\Delta}
-&amp;&amp; \text{(} \Pr(X = x) = \Pr(X = x + \Delta) = 0 \text{)} \\
+&amp;&amp; \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \Delta) = 0 \text{)} \\
 &amp;= \frac{F(x + \Delta) - F(x)}{\Delta}
 &amp;&amp; \text{(additivity, and the definition of the CDF)}
 \end{aligned}
@@ -925,7 +932,13 @@ F(t)
 
 <div id="exm-density-limit" class="theorem example">
 <p><span class="theorem-title"><strong>Example 16 (The uniform density as a limit)</strong></span> For <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> and <span class="math inline">\(x \in [0, 1)\)</span>, <span class="math inline">\(\Pr(x \le X &lt; x + \Delta) = \Delta\)</span> once <span class="math inline">\(\Delta\le 1 - x\)</span>, so:</p>
-<p><span class="math display">\[f(x) = \lim_{\Delta\downarrow 0} \frac{\Delta}{\Delta} = 1\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x)
+&amp;= \lim_{\Delta\downarrow 0} \frac{\Delta}{\Delta} \\
+&amp;= 1
+\end{aligned}
+\]</span></p>
 <p>For <span class="math inline">\(x &lt; 0\)</span> or <span class="math inline">\(x &gt; 1\)</span>, the interval eventually misses <span class="math inline">\([0, 1]\)</span>, so the limit is <span class="math inline">\(0\)</span>. Both agree with the density of <a href="#/def-uniform" class="quarto-xref">Definition&nbsp;8</a>.</p>
 </div>
 </section>
@@ -1009,7 +1022,14 @@ F(t)
 
 <div id="exm-jointly-distributed" class="theorem example">
 <p><span class="theorem-title"><strong>Example 19 (The first flip and the total)</strong></span> In <a href="#/exm-random-variable" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(X_1\)</span> indicate heads on the first flip (as in <a href="#/exm-bernoulli-pmf" class="quarto-xref">Example&nbsp;7</a>), and let <span class="math inline">\(X\)</span> be the total number of heads. Both are functions on the same sample space, <span class="math inline">\(\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}\)</span>, so they are jointly distributed, and, for example:</p>
-<p><span class="math display">\[\Pr(X_1 = 1, X = 1) = \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{} \cap \mathopen{}\left\{HT, TH\right\}\mathclose{}) = \Pr(\mathopen{}\left\{HT\right\}\mathclose{}) = \tfrac{1}{4}\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X_1 = 1, X = 1)
+&amp;= \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{} \cap \mathopen{}\left\{HT, TH\right\}\mathclose{}) \\
+&amp;= \Pr(\mathopen{}\left\{HT\right\}\mathclose{}) \\
+&amp;= \tfrac{1}{4}
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -1019,7 +1039,13 @@ F(t)
 </div>
 <div id="exm-joint-distribution" class="theorem example">
 <p><span class="theorem-title"><strong>Example 20 (Joint distribution of the first flip and the total)</strong></span> In <a href="#/exm-jointly-distributed" class="quarto-xref">Example&nbsp;19</a>, the joint distribution of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X\)</span> assigns to the set <span class="math inline">\(A = \mathopen{}\left\{(x_1, x) : x_1 = 1,\, x \ge 1\right\}\mathclose{}\)</span> the probability</p>
-<p><span class="math display">\[\Pr((X_1, X) \in A) = \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{}) = \tfrac{1}{2}\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr((X_1, X) \in A)
+&amp;= \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{}) \\
+&amp;= \tfrac{1}{2}
+\end{aligned}
+\]</span></p>
 <p>since the first flip is heads exactly on <span class="math inline">\(HH\)</span> and <span class="math inline">\(HT\)</span>, and each of those outcomes has at least one head.</p>
 </div>
 </section>
@@ -1172,7 +1198,13 @@ F(t)
 
 <div id="exm-joint-pdf" class="theorem example">
 <p><span class="theorem-title"><strong>Example 24 (A joint density on a triangle)</strong></span> Let <span class="math inline">\(f_{X,Y}(x, y) = 2\)</span> for <span class="math inline">\(0 \le x \le y \le 1\)</span>, and <span class="math inline">\(0\)</span> otherwise. The triangle <span class="math inline">\(\{(x, y) : 0 \le x \le y \le 1\}\)</span> has area <span class="math inline">\(1/2\)</span>, so <span class="math inline">\(f_{X,Y}\)</span> gives the whole plane probability <span class="math inline">\(2 \cdot\tfrac{1}{2} = 1\)</span>, and it is the joint density of a pair <span class="math inline">\((X, Y)\)</span> with <span class="math inline">\(X \le Y\)</span> always. For example, the probability that both are at most <span class="math inline">\(1/2\)</span> is <span class="math inline">\(2\)</span> times the area of the smaller triangle <span class="math inline">\(\{0 \le x \le y \le 1/2\}\)</span>:</p>
-<p><span class="math display">\[\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cdot\tfrac{1}{8} = \tfrac{1}{4}\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2})
+&amp;= 2 \cdot\tfrac{1}{8} \\
+&amp;= \tfrac{1}{4}
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -1287,7 +1319,13 @@ f_X(x)
 
 <div id="exm-joint-density-mass" class="theorem example">
 <p><span class="theorem-title"><strong>Example 26 (A coin flip and a waiting time)</strong></span> Let <span class="math inline">\(\operatorname{p}(X = 0,\, Y = y) = 1/2\)</span> for <span class="math inline">\(y \in [0, 1]\)</span>, <span class="math inline">\(\operatorname{p}(X = 1,\, Y = y) = 1/4\)</span> for <span class="math inline">\(y \in [0, 2]\)</span>, and <span class="math inline">\(0\)</span> otherwise. Integrating over <span class="math inline">\(y\)</span> gives <span class="math inline">\(\operatorname{P}(X = 0) = 1/2\)</span> and <span class="math inline">\(\operatorname{P}(X = 1) = 1/2\)</span>, which add to 1. For example, the probability that <span class="math inline">\(X = 1\)</span> and <span class="math inline">\(Y \le 1\)</span> is:</p>
-<p><span class="math display">\[\Pr(X = 1,\, Y \le 1) = \int_0^1 \tfrac{1}{4}\,dy = \tfrac{1}{4}\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X = 1,\, Y \le 1)
+&amp;= \int_0^1 \tfrac{1}{4}\,dy \\
+&amp;= \tfrac{1}{4}
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -1355,9 +1393,23 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </figure>
 </div>
 <p>Summing each row yields the marginal distribution of <span class="math inline">\(m\)</span>; summing each column yields the marginal distribution of <span class="math inline">\(d\)</span>. Conditioning inverts the perspective:</p>
-<p><span class="math display">\[\operatorname{P}(d=0 \mid m=1) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} = \frac{0.00000098}{0.000001} = 0.98\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(d=0 \mid m=1)
+&amp;= \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} \\
+&amp;= \frac{0.00000098}{0.000001} \\
+&amp;= 0.98
+\end{aligned}
+\]</span></p>
 <p>Given that a meteorite struck your house, you have a 98% chance of having a bad day. In reverse:</p>
-<p><span class="math display">\[\operatorname{P}(m=1 \mid d=0) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(m=1 \mid d=0)
+&amp;= \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} \\
+&amp;= \frac{0.00000098}{0.1} \\
+&amp;= 0.0000098
+\end{aligned}
+\]</span></p>
 <p>Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (<span class="math inline">\(\operatorname{P}(d=0) = 0.1\)</span>), so having one is very weak evidence that an astronomical rarity occurred.</p>
 </div>
 </section>

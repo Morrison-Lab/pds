@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
+  <p class="date">Last modified: 2026-10-08 22:59:46 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -448,7 +448,13 @@
 
 <div id="sol-noise-second-moment" class="proof solution">
 <p><span class="proof-title"><em>Solution 1</em>. </span><a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;2</a> says <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \varepsilon\)</span> and substituting <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span>,</p>
-<p><span id="eq-noise-second-moment"><span class="math display">\[\mathbb{E}[\varepsilon^2] = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 = \sigma^2 \tag{1}\]</span></span></p>
+<p><span id="eq-noise-second-moment"><span class="math display">\[
+\begin{aligned}
+\mathbb{E}[\varepsilon^2]
+&amp;= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\
+&amp;= \sigma^2
+\end{aligned}
+\tag{1}\]</span></span></p>
 <p>so for mean-zero noise the average squared value <em>is</em> the variance.</p>
 <p>The identity looks slight and does a lot of work. <a href="#/eq-noise-second-moment" class="quarto-xref">Equation&nbsp;1</a> is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the <em>spread</em> of the noise, which is what a model of the world gives you, into a statement about <em>squared error</em>, which is what the fitting objective measures.</p>
 </div>
@@ -671,14 +677,17 @@
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right]\mathclose{}
-&amp;= 0.5 \cdot 0.24 + 0.5 \cdot 0.16 = 0.20
+&amp;= 0.5 \cdot 0.24 + 0.5 \cdot 0.16
 &amp;&amp; \text{(average the conditional variances)} \\
+&amp;= 0.20 \\
 \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\right)\mathclose{}
-&amp;= 0.5 \cdot(0.6 - 0.7)^2 + 0.5 \cdot(0.8 - 0.7)^2 = 0.01
+&amp;= 0.5 \cdot(0.6 - 0.7)^2 + 0.5 \cdot(0.8 - 0.7)^2
 &amp;&amp; \text{(variance of the conditional means)} \\
+&amp;= 0.01 \\
 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
-&amp;= 0.20 + 0.01 = 0.21
-&amp;&amp; \text{(law of total variance)}
+&amp;= 0.20 + 0.01
+&amp;&amp; \text{(law of total variance)} \\
+&amp;= 0.21
 \end{aligned}
 \]</span></p>
 <p>As a check, <span class="math inline">\(Y\)</span> is Bernoulli with <span class="math inline">\(\operatorname{P}(Y = 1) = 0.3 + 0.4 = 0.7\)</span>, so by <a href="#/exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.7 \cdot 0.3 = 0.21\)</span>.</p>
@@ -930,7 +939,7 @@
 &amp;= \operatorname{E}\mathopen{}\left[XY\right]\mathclose{} - \operatorname{E}\mathopen{}\left[X\right]\mathclose{}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}
 &amp;&amp; \text{(alternative formula for covariance)} \\
 &amp;= \operatorname{E}\mathopen{}\left[X\right]\mathclose{} - \operatorname{E}\mathopen{}\left[X\right]\mathclose{}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}
-&amp;&amp; \text{(} XY = X^3 = X \text{ on } \mathopen{}\left\{-1, 0, 1\right\}\mathclose{} \text{)} \\
+&amp;&amp; \text{(} XY = X^3 \text{ and } X^3 = X \text{ on } \mathopen{}\left\{-1, 0, 1\right\}\mathclose{} \text{)} \\
 &amp;= 0 - 0 \cdot\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}
 &amp;&amp; \text{(} \operatorname{E}\mathopen{}\left[X\right]\mathclose{} = 0 \text{)} \\
 &amp;= 0
@@ -1386,8 +1395,10 @@
 <p>Both sets have first coordinates <span class="math inline">\(\mathopen{}\left\{-5, 0, 0, 5\right\}\mathclose{}\)</span> and second coordinates <span class="math inline">\(\mathopen{}\left\{1, -1, 1, -1\right\}\mathclose{}\)</span>, so <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_1\right]\mathclose{} = \operatorname{E}\mathopen{}\left[X_2\right]\mathclose{} = 0\)</span>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_1^2\right]\mathclose{} = (25 + 0 + 0 + 25)/4 = 12.5\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_2^2\right]\mathclose{} = (1 + 1 + 1 + 1)/4 = 1\)</span>, and likewise for <span class="math inline">\(\tilde{X}'\)</span>. They differ in the products of the coordinates:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[X_1 X_2\right]\mathclose{} &amp;= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} = -2.5, \\
-\operatorname{E}\mathopen{}\left[X_1' X_2'\right]\mathclose{} &amp;= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} = 2.5.
+\operatorname{E}\mathopen{}\left[X_1 X_2\right]\mathclose{} &amp;= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\
+&amp;= -2.5, \\
+\operatorname{E}\mathopen{}\left[X_1' X_2'\right]\mathclose{} &amp;= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} \\
+&amp;= 2.5.
 \end{aligned}
 \]</span></p>
 <p>Since the means are 0, <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;8</a> and <a href="#/thm-alt-cov" class="quarto-xref">Theorem&nbsp;5</a> give:</p>
@@ -1399,10 +1410,14 @@
 <p>Both are symmetric. <a href="#/thm-var-lincom" class="quarto-xref">Theorem&nbsp;10</a> with <span class="math inline">\(\tilde{a}= {(1, 1)}^{\top}\)</span> and <span class="math inline">\(\tilde{a}= {(1, -1)}^{\top}\)</span> gives:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &amp;= 12.5 + 1 + 2(-2.5) = 8.5, &amp;
-\operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &amp;= 12.5 + 1 - 2(-2.5) = 18.5, \\
-\operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &amp;= 12.5 + 1 + 2(2.5) = 18.5, &amp;
-\operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &amp;= 12.5 + 1 - 2(2.5) = 8.5.
+\operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &amp;= 12.5 + 1 + 2(-2.5) &amp;
+\operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &amp;= 12.5 + 1 - 2(-2.5) \\
+&amp;= 8.5, &amp;
+&amp;= 18.5, \\
+\operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &amp;= 12.5 + 1 + 2(2.5) &amp;
+\operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &amp;= 12.5 + 1 - 2(2.5) \\
+&amp;= 18.5, &amp;
+&amp;= 8.5.
 \end{aligned}
 \]</span></p>
 <p>As a check, <span class="math inline">\(X_1 + X_2\)</span> takes the values <span class="math inline">\(-4, -1, 1, 4\)</span>, each with probability <span class="math inline">\(1/4\)</span>, so its mean is 0 and its variance is <span class="math inline">\((16 + 1 + 1 + 16)/4 = 8.5\)</span>.</p>

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:30:33 (UTC)
+Last modified: 2026-10-08 22:59:46 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -78,7 +78,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > *Solution 1*. [Theorem 2](#thm-variance) says \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \mathbb{E}\[X^2\] - (\mathbb{E}\[X\])^2\\ for any \\X\\. Taking \\X = \varepsilon\\ and substituting \\\mathbb{E}\[\varepsilon\] = 0\\,
 >
-> \\\mathbb{E}\[\varepsilon^2\] = \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 = \sigma^2 \tag{1}\\
+> \\ \begin{aligned} \mathbb{E}\[\varepsilon^2\] &= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\ &= \sigma^2 \end{aligned} \tag{1}\\
 >
 > so for mean-zero noise the average squared value *is* the variance.
 >
@@ -198,7 +198,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > **Example 7 (Decomposing the variance of a binary outcome)** Continuing [Example 4](#exm-cond-variance), \\\operatorname{P}(X = 0) = \operatorname{P}(X = 1) = 0.5\\, \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 0.8\\, so \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 0.7\\, and by [Theorem 3](#thm-total-variance):
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} &= 0.5 \cdot 0.24 + 0.5 \cdot 0.16 = 0.20 && \text{(average the conditional variances)} \\ \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} &= 0.5 \cdot(0.6 - 0.7)^2 + 0.5 \cdot(0.8 - 0.7)^2 = 0.01 && \text{(variance of the conditional means)} \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 0.20 + 0.01 = 0.21 && \text{(law of total variance)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} &= 0.5 \cdot 0.24 + 0.5 \cdot 0.16 && \text{(average the conditional variances)} \\ &= 0.20 \\ \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} &= 0.5 \cdot(0.6 - 0.7)^2 + 0.5 \cdot(0.8 - 0.7)^2 && \text{(variance of the conditional means)} \\ &= 0.01 \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 0.20 + 0.01 && \text{(law of total variance)} \\ &= 0.21 \end{aligned} \\
 >
 > As a check, \\Y\\ is Bernoulli with \\\operatorname{P}(Y = 1) = 0.3 + 0.4 = 0.7\\, so by [Example 3](#exm-variance-bernoulli), \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.7 \cdot 0.3 = 0.21\\.
 
@@ -340,7 +340,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > **Example 12 (Zero covariance without independence)** The converse of [Theorem 6](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = (-1 + 0 + 1)/3 = 0\\, and \\XY = X^3 = X\\, so:
 >
-> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} XY = X^3 = X \text{ on } \mathopen{}\left\\-1, 0, 1\right\\\mathclose{} \text{)} \\ &= 0 - 0 \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(multiply)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} XY = X^3 \text{ and } X^3 = X \text{ on } \mathopen{}\left\\-1, 0, 1\right\\\mathclose{} \text{)} \\ &= 0 - 0 \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(multiply)} \end{aligned} \\
 >
 > But \\X\\ and \\Y\\ are not independent: \\Y\\ is a function of \\X\\, and \\\operatorname{P}(X = 0, Y = 0) = \operatorname{P}(X = 0) = \tfrac{1}{3}\\, while \\\operatorname{P}(X = 0)\\\operatorname{P}(Y = 0) = \tfrac{1}{3} \cdot\tfrac{1}{3} = \tfrac{1}{9}\\.
 
@@ -540,7 +540,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > Both sets have first coordinates \\\mathopen{}\left\\-5, 0, 0, 5\right\\\mathclose{}\\ and second coordinates \\\mathopen{}\left\\1, -1, 1, -1\right\\\mathclose{}\\, so \\\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} = 0\\, \\\operatorname{E}\mathopen{}\left\[X_1^2\right\]\mathclose{} = (25 + 0 + 0 + 25)/4 = 12.5\\, and \\\operatorname{E}\mathopen{}\left\[X_2^2\right\]\mathclose{} = (1 + 1 + 1 + 1)/4 = 1\\, and likewise for \\\tilde{X}'\\. They differ in the products of the coordinates:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} = -2.5, \\ \operatorname{E}\mathopen{}\left\[X_1' X_2'\right\]\mathclose{} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} = 2.5. \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\ &= -2.5, \\ \operatorname{E}\mathopen{}\left\[X_1' X_2'\right\]\mathclose{} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} \\ &= 2.5. \end{aligned} \\
 >
 > Since the means are 0, [Theorem 8](#thm-vcov-elements) and [Theorem 5](#thm-alt-cov) give:
 >
@@ -548,7 +548,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > Both are symmetric. [Theorem 10](#thm-var-lincom) with \\\tilde{a}= {(1, 1)}^{\top}\\ and \\\tilde{a}= {(1, -1)}^{\top}\\ gives:
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &= 12.5 + 1 + 2(-2.5) = 8.5, & \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &= 12.5 + 1 - 2(-2.5) = 18.5, \\ \operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &= 12.5 + 1 + 2(2.5) = 18.5, & \operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &= 12.5 + 1 - 2(2.5) = 8.5. \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &= 12.5 + 1 + 2(-2.5) & \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &= 12.5 + 1 - 2(-2.5) \\ &= 8.5, & &= 18.5, \\ \operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &= 12.5 + 1 + 2(2.5) & \operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &= 12.5 + 1 - 2(2.5) \\ &= 18.5, & &= 8.5. \end{aligned} \\
 >
 > As a check, \\X_1 + X_2\\ takes the values \\-4, -1, 1, 4\\, each with probability \\1/4\\, so its mean is 0 and its variance is \\(16 + 1 + 1 + 16)/4 = 8.5\\.
 

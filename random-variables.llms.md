@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:30:33 (UTC)
+Last modified: 2026-10-08 22:59:46 (PDT)
 
 ## 1 Random variables
 
@@ -22,7 +22,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 1 (Number of heads in two coin flips)** Flip a fair coin twice. The sample space is \\\Omega= \mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}\\, each outcome with probability \\1/4\\. Let \\X\\ be the number of heads:
 >
-> \\X(HH) = 2, \quad X(HT) = X(TH) = 1, \quad X(TT) = 0\\
+> \\ \begin{aligned} X(HH) &= 2, \\ X(HT) &= 1, \\ X(TH) &= 1, \\ X(TT) &= 0 \end{aligned} \\
 >
 > Then \\\\X = 1\\ = \mathopen{}\left\\HT, TH\right\\\mathclose{}\\, so \\\Pr(X = 1) = 1/4 + 1/4 = 1/2\\.
 
@@ -333,7 +333,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > *Proof*. For \\\Delta\> 0\\:
 >
-> \\ \begin{aligned} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} &= \frac{\Pr(x \< X \le x + \Delta)}{\Delta} && \text{(} \Pr(X = x) = \Pr(X = x + \Delta) = 0 \text{)} \\ &= \frac{F(x + \Delta) - F(x)}{\Delta} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
+> \\ \begin{aligned} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} &= \frac{\Pr(x \< X \le x + \Delta)}{\Delta} && \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \Delta) = 0 \text{)} \\ &= \frac{F(x + \Delta) - F(x)}{\Delta} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
 >
 > By [Theorem 6](#thm-density-vs-CDF), \\F\\ is differentiable at \\x\\ with \\F'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta\downarrow 0\\.
 
@@ -347,7 +347,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 16 (The uniform density as a limit)** For \\X \sim \text{Uniform}(0, 1)\\ and \\x \in \[0, 1)\\, \\\Pr(x \le X \< x + \Delta) = \Delta\\ once \\\Delta\le 1 - x\\, so:
 >
-> \\f(x) = \lim\_{\Delta\downarrow 0} \frac{\Delta}{\Delta} = 1\\
+> \\ \begin{aligned} f(x) &= \lim\_{\Delta\downarrow 0} \frac{\Delta}{\Delta} \\ &= 1 \end{aligned} \\
 >
 > For \\x \< 0\\ or \\x \> 1\\, the interval eventually misses \\\[0, 1\]\\, so the limit is \\0\\. Both agree with the density of [Definition 8](#def-uniform).
 
@@ -399,7 +399,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 19 (The first flip and the total)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip (as in [Example 7](#exm-bernoulli-pmf)), and let \\X\\ be the total number of heads. Both are functions on the same sample space, \\\mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}\\, so they are jointly distributed, and, for example:
 >
-> \\\Pr(X_1 = 1, X = 1) = \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{} \cap \mathopen{}\left\\HT, TH\right\\\mathclose{}) = \Pr(\mathopen{}\left\\HT\right\\\mathclose{}) = \tfrac{1}{4}\\
+> \\ \begin{aligned} \Pr(X_1 = 1, X = 1) &= \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{} \cap \mathopen{}\left\\HT, TH\right\\\mathclose{}) \\ &= \Pr(\mathopen{}\left\\HT\right\\\mathclose{}) \\ &= \tfrac{1}{4} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -409,7 +409,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 20 (Joint distribution of the first flip and the total)** In [Example 19](#exm-jointly-distributed), the joint distribution of \\X_1\\ and \\X\\ assigns to the set \\A = \mathopen{}\left\\(x_1, x) : x_1 = 1,\\ x \ge 1\right\\\mathclose{}\\ the probability
 >
-> \\\Pr((X_1, X) \in A) = \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{}) = \tfrac{1}{2}\\
+> \\ \begin{aligned} \Pr((X_1, X) \in A) &= \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{}) \\ &= \tfrac{1}{2} \end{aligned} \\
 >
 > since the first flip is heads exactly on \\HH\\ and \\HT\\, and each of those outcomes has at least one head.
 
@@ -487,7 +487,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 24 (A joint density on a triangle)** Let \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\, and \\0\\ otherwise. The triangle \\\\(x, y) : 0 \le x \le y \le 1\\\\ has area \\1/2\\, so \\f\_{X,Y}\\ gives the whole plane probability \\2 \cdot\tfrac{1}{2} = 1\\, and it is the joint density of a pair \\(X, Y)\\ with \\X \le Y\\ always. For example, the probability that both are at most \\1/2\\ is \\2\\ times the area of the smaller triangle \\\\0 \le x \le y \le 1/2\\\\:
 >
-> \\\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) = 2 \cdot\tfrac{1}{8} = \tfrac{1}{4}\\
+> \\ \begin{aligned} \Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) &= 2 \cdot\tfrac{1}{8} \\ &= \tfrac{1}{4} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -549,7 +549,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 26 (A coin flip and a waiting time)** Let \\\operatorname{p}(X = 0,\\ Y = y) = 1/2\\ for \\y \in \[0, 1\]\\, \\\operatorname{p}(X = 1,\\ Y = y) = 1/4\\ for \\y \in \[0, 2\]\\, and \\0\\ otherwise. Integrating over \\y\\ gives \\\operatorname{P}(X = 0) = 1/2\\ and \\\operatorname{P}(X = 1) = 1/2\\, which add to 1. For example, the probability that \\X = 1\\ and \\Y \le 1\\ is:
 >
-> \\\Pr(X = 1,\\ Y \le 1) = \int_0^1 \tfrac{1}{4}\\dy = \tfrac{1}{4}\\
+> \\ \begin{aligned} \Pr(X = 1,\\ Y \le 1) &= \int_0^1 \tfrac{1}{4}\\dy \\ &= \tfrac{1}{4} \end{aligned} \\
 
 ### 2.1 Joint distributions and marginalization
 
@@ -583,11 +583,11 @@ The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ 
 >
 > Summing each row yields the marginal distribution of \\m\\; summing each column yields the marginal distribution of \\d\\. Conditioning inverts the perspective:
 >
-> \\\operatorname{P}(d=0 \mid m=1) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} = \frac{0.00000098}{0.000001} = 0.98\\
+> \\ \begin{aligned} \operatorname{P}(d=0 \mid m=1) &= \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} \\ &= \frac{0.00000098}{0.000001} \\ &= 0.98 \end{aligned} \\
 >
 > Given that a meteorite struck your house, you have a 98% chance of having a bad day. In reverse:
 >
-> \\\operatorname{P}(m=1 \mid d=0) = \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} = \frac{0.00000098}{0.1} = 0.0000098\\
+> \\ \begin{aligned} \operatorname{P}(m=1 \mid d=0) &= \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} \\ &= \frac{0.00000098}{0.1} \\ &= 0.0000098 \end{aligned} \\
 >
 > Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\\operatorname{P}(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
 

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:30:33 (UTC)
+Last modified: 2026-10-08 22:59:46 (PDT)
 
 > **NOTE:**
 >
@@ -146,7 +146,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 6 (Expected total of two dice)** Let \\X\\ and \\Y\\ be the results of two six-sided die rolls. Each has expectation \\\sum\_{x=1}^{6} x \cdot\tfrac{1}{6} = \tfrac{21}{6} = 3.5\\, so:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(linearity of expectation with } a = b = 1, c = 0 \text{)}\\ &= 3.5 + 3.5 && \text{(substitute)}\\ &= 7 && \text{(add)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(linearity of expectation with } a = 1, b = 1, c = 0 \text{)}\\ &= 3.5 + 3.5 && \text{(substitute)}\\ &= 7 && \text{(add)} \end{aligned} \\
 >
 > This calculation does not need the rolls to be independent.
 
@@ -180,7 +180,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > *Solution 1*. Pull the constant \\1/n\\ out and split the sum, both by [Theorem 4](#thm-linearity-expectation):
 >
-> \\\mathbb{E}\[\bar X\] = \mathbb{E}\\\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\] = \frac{1}{n}\sum\_{i=1}^n\mathbb{E}\[X_i\] = \frac{1}{n}\\(n\mu) = \mu\\
+> \\ \begin{aligned} \mathbb{E}\[\bar X\] &= \mathbb{E}\\\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\] \\ &= \frac{1}{n}\sum\_{i=1}^n\mathbb{E}\[X_i\] \\ &= \frac{1}{n}\\(n\mu) \\ &= \mu \end{aligned} \\
 >
 > So the sample average is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
 >
@@ -910,7 +910,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > The joint density w.r.t. Lebesgue \\\times\\ counting measure is \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\:
 >
-> \\ \begin{aligned} f\_{X,Y}(x,\\ 0) &= 1 \cdot 0.4 = 0.4 &&\text{ for } x \in \[0,1\];\\ f\_{X,Y}(x,\\ 1) &= \tfrac{1}{2} \cdot 0.6 = 0.3 &&\text{ for } x \in \[0,2\]. \end{aligned} \\
+> \\ \begin{aligned} f\_{X,Y}(x,\\ 0) &= 1 \cdot 0.4 \\ &= 0.4 &&\text{ for } x \in \[0,1\]; \\ f\_{X,Y}(x,\\ 1) &= \tfrac{1}{2} \cdot 0.6 \\ &= 0.3 &&\text{ for } x \in \[0,2\]. \end{aligned} \\
 >
 > By [Corollary 3](#cor-fubini-joint) (mixed case):
 >
@@ -1030,11 +1030,11 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > 1.  For squared error loss: \\\mathopen{}\left(3 - 5\right)^2\mathclose{} = 4\\ For absolute error loss: \\\mathopen{}\left\|3 - 5\right\|\mathclose{} = 2\\
 >
-> 2.  For \\c = 1\\: The expected squared error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left(0 - 1\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 1\right)^2\mathclose{} = 0.5 \cdot 1 + 0.5 \cdot 9 = 5\\ The expected absolute error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 1\right\|\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left\|0 - 1\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 1\right\|\mathclose{} = 0.5 \cdot 1 + 0.5 \cdot 3 = 2\\
+> 2.  For \\c = 1\\: The expected squared error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left(0 - 1\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 1\right)^2\mathclose{} \\ &= 0.5 \cdot 1 + 0.5 \cdot 9 \\ &= 5 \end{aligned} \\ The expected absolute error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 1\right\|\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left\|0 - 1\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 1\right\|\mathclose{} \\ &= 0.5 \cdot 1 + 0.5 \cdot 3 \\ &= 2 \end{aligned} \\
 >
-> 3.  For \\c = 2\\: The expected squared error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 2\right)^2\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left(0 - 2\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 2\right)^2\mathclose{} = 0.5 \cdot 4 + 0.5 \cdot 4 = 4\\ The expected absolute error loss is: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 2\right\|\mathclose{}\right\]\mathclose{} = 0.5 \cdot\mathopen{}\left\|0 - 2\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 2\right\|\mathclose{} = 0.5 \cdot 2 + 0.5 \cdot 2 = 2\\
+> 3.  For \\c = 2\\: The expected squared error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 2\right)^2\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left(0 - 2\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 2\right)^2\mathclose{} \\ &= 0.5 \cdot 4 + 0.5 \cdot 4 \\ &= 4 \end{aligned} \\ The expected absolute error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 2\right\|\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left\|0 - 2\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 2\right\|\mathclose{} \\ &= 0.5 \cdot 2 + 0.5 \cdot 2 \\ &= 2 \end{aligned} \\
 >
-> 4.  The prediction \\c = 2\\ has the smaller expected squared error loss (\\4\\ versus \\5\\). The two predictions have the same expected absolute error loss (\\2\\), so under absolute error loss this exercise does not choose one of them. The prediction \\c = 2\\ equals the expectation: \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0.5 \cdot 0 + 0.5 \cdot 4 = 2\\
+> 4.  The prediction \\c = 2\\ has the smaller expected squared error loss (\\4\\ versus \\5\\). The two predictions have the same expected absolute error loss (\\2\\), so under absolute error loss this exercise does not choose one of them. The prediction \\c = 2\\ equals the expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= 0.5 \cdot 0 + 0.5 \cdot 4 \\ &= 2 \end{aligned} \\
 
 > **NOTE:**
 >
@@ -1080,13 +1080,13 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > *Solution 3*.
 >
-> 1.  For each value of \\X\\, compute the conditional expectation: \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0 \cdot 0.5 + 2 \cdot 0.5 = 1\\ \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 4 \cdot 0.5 + 6 \cdot 0.5 = 5\\ By the law of iterated expectations ([Theorem 9](#thm-lie)), the marginal mean is: \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 1 \cdot 0.5 + 5 \cdot 0.5 = 3\\ The conditional expectation function is \\g^\*(0) = 1\\ and \\g^\*(1) = 5\\, which can also be written \\g^\*(X) = 1 + 4X\\.
+> 1.  For each value of \\X\\, compute the conditional expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} &= 0 \cdot 0.5 + 2 \cdot 0.5 \\ &= 1 \end{aligned} \\ \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} &= 4 \cdot 0.5 + 6 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 9](#thm-lie)), the marginal mean is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 1 \cdot 0.5 + 5 \cdot 0.5 \\ &= 3 \end{aligned} \\ The conditional expectation function is \\g^\*(0) = 1\\ and \\g^\*(1) = 5\\, which can also be written \\g^\*(X) = 1 + 4X\\.
 >
-> 2.  For the constant prediction \\g_1(X) = 3\\: Given \\X = 0\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} = \mathopen{}\left(0 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 3\right)^2\mathclose{} \cdot 0.5 = 9 \cdot 0.5 + 1 \cdot 0.5 = 5\\ Given \\X = 1\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} = \mathopen{}\left(4 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 3\right)^2\mathclose{} \cdot 0.5 = 1 \cdot 0.5 + 9 \cdot 0.5 = 5\\ By the law of iterated expectations ([Theorem 9](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_1(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} = 5 \cdot 0.5 + 5 \cdot 0.5 = 5\\
+> 2.  For the constant prediction \\g_1(X) = 3\\: Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} &= \mathopen{}\left(0 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 3\right)^2\mathclose{} \cdot 0.5 \\ &= 9 \cdot 0.5 + 1 \cdot 0.5 \\ &= 5 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} &= \mathopen{}\left(4 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 3\right)^2\mathclose{} \cdot 0.5 \\ &= 1 \cdot 0.5 + 9 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 9](#thm-lie)): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_1(X)\right)^2\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 5 \cdot 0.5 + 5 \cdot 0.5 \\ &= 5 \end{aligned} \\
 >
-> 3.  For the prediction \\g_2(X) = 4X\\: Here \\g_2(0) = 0\\ and \\g_2(1) = 4\\. Given \\X = 0\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 0\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} = \mathopen{}\left(0 - 0\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 0\right)^2\mathclose{} \cdot 0.5 = 0 \cdot 0.5 + 4 \cdot 0.5 = 2\\ Given \\X = 1\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 4\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} = \mathopen{}\left(4 - 4\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 4\right)^2\mathclose{} \cdot 0.5 = 0 \cdot 0.5 + 4 \cdot 0.5 = 2\\ By [Theorem 9](#thm-lie): \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_2(X)\right)^2\mathclose{}\right\]\mathclose{} = 2 \cdot 0.5 + 2 \cdot 0.5 = 2\\
+> 3.  For the prediction \\g_2(X) = 4X\\: Here \\g_2(0) = 0\\ and \\g_2(1) = 4\\. Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 0\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} &= \mathopen{}\left(0 - 0\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 0\right)^2\mathclose{} \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 4\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} &= \mathopen{}\left(4 - 4\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 4\right)^2\mathclose{} \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ By [Theorem 9](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_2(X)\right)^2\mathclose{}\right\]\mathclose{} &= 2 \cdot 0.5 + 2 \cdot 0.5 \\ &= 2 \end{aligned} \\
 >
-> 4.  For the conditional mean predictor \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\: Given \\X = 0\\, \\g^\*(0) = 1\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} = \mathopen{}\left(0 - 1\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 1\right)^2\mathclose{} \cdot 0.5 = 1 \cdot 0.5 + 1 \cdot 0.5 = 1\\ Given \\X = 1\\, \\g^\*(1) = 5\\: \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 5\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} = \mathopen{}\left(4 - 5\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 5\right)^2\mathclose{} \cdot 0.5 = 1 \cdot 0.5 + 1 \cdot 0.5 = 1\\ By [Theorem 9](#thm-lie): \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{} = 1 \cdot 0.5 + 1 \cdot 0.5 = 1\\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
+> 4.  For the conditional mean predictor \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\: Given \\X = 0\\, \\g^\*(0) = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} &= \mathopen{}\left(0 - 1\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 1\right)^2\mathclose{} \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ Given \\X = 1\\, \\g^\*(1) = 5\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 5\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} &= \mathopen{}\left(4 - 5\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 5\right)^2\mathclose{} \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ By [Theorem 9](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{} &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
 
 > **NOTE:**
 >
@@ -1108,7 +1108,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > By the law of iterated expectations ([Theorem 9](#thm-lie)), the unconditional expectation of the cross-product is:
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} = 0\\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} \\ &= 0 \end{aligned} \\
 >
 > Taking expectations on both sides of the squared expansion, by linearity of expectation ([Theorem 4](#thm-linearity-expectation)):
 >
@@ -1170,7 +1170,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > For a fair coin, \\\pi= 1/2\\, and
 >
-> \\H(X) = -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = \tfrac{1}{2} + \tfrac{1}{2} = 1 \text{ bit}.\\
+> \\ \begin{aligned} H(X) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= \tfrac{1}{2} + \tfrac{1}{2} \\ &= 1 \text{ bit}. \end{aligned} \\
 >
 > For a coin that always lands heads, \\\pi= 1\\, and \\H(X) = -1 \cdot \log_2 1 - 0 = 0\\. The outcome is known in advance, so there is no uncertainty to measure. An entropy of \\0\\ means that all of the probability is on one outcome.
 
@@ -1204,7 +1204,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 22 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
-> \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} = 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} = 2 - \tfrac{1}{2} \log_2 3 \approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} = 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
+> \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
 > Here the cross-entropy is larger than the entropy of \\p\\, and the divergence is the difference.
 

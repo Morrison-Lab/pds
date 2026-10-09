@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:30:33 (UTC)
+Last modified: 2026-10-08 22:59:46 (PDT)
 
 ## 1 Defining probabilities
 
@@ -324,11 +324,11 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > [Equation 1](#eq-bayes) needs \\\Pr(+)\\, the overall chance of a positive result. Assemble it with [Theorem 6](#thm-total-prob), splitting on whether the person is sick:
 >
-> \\\begin{aligned} \Pr(+) &= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\ &= (0.99)(0.001) + (0.01)(0.999) \\ &= 0.00099 + 0.00999 = 0.01098 \end{aligned}\\
+> \\\begin{aligned} \Pr(+) &= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\ &= (0.99)(0.001) + (0.01)(0.999) \\ &= 0.00099 + 0.00999 \\ &= 0.01098 \end{aligned}\\
 >
 > Then
 >
-> \\\Pr(S \mid +) = \frac{\Pr(+ \mid S)\\\Pr(S)}{\Pr(+)} = \frac{0.00099}{0.01098} \approx 0.0902\\
+> \\ \begin{aligned} \Pr(S \mid +) &= \frac{\Pr(+ \mid S)\\\Pr(S)}{\Pr(+)} \\ &= \frac{0.00099}{0.01098} \\ &\approx 0.0902 \end{aligned} \\
 >
 > About **9%**, not the \\99\\\\ most people guess.
 >

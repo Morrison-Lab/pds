@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:30:33 (UTC)
+Last modified: 2026-10-08 22:59:46 (PDT)
 
 > **NOTE:**
 >
@@ -34,7 +34,7 @@ Last modified: 2026-10-09 00:30:33 (UTC)
 >
 > **Example 1 (Two fair coin flips)** Flip two fair coins, and let \\X_1\\ and \\X_2\\ indicate heads on the first and second flip. Each of the four outcomes has probability \\1/4\\, so for example:
 >
-> \\\operatorname{P}(X_1 = 1, X_2 = 1) = \tfrac{1}{4} = \tfrac{1}{2} \cdot\tfrac{1}{2} = \operatorname{P}(X_1 = 1)\\\operatorname{P}(X_2 = 1)\\
+> \\ \begin{aligned} \operatorname{P}(X_1 = 1, X_2 = 1) &= \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} \\ &= \operatorname{P}(X_1 = 1)\\\operatorname{P}(X_2 = 1) \end{aligned} \\
 >
 > and the same factorization holds for the other three pairs of values, so \\X_1 \perp\\\\\\\perp X_2\\ by [Theorem 1](#thm-indpt-pmf). In contrast, \\X_1\\ and the total number of heads, \\X_1 + X_2\\, are not independent: \\\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\\, but \\\operatorname{P}(X_1 = 0)\\\operatorname{P}(X_1 + X_2 = 2) = \tfrac{1}{2} \cdot\tfrac{1}{4} = \tfrac{1}{8}\\.
 

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:30:33 (UTC)
+Last modified: 2026-10-08 22:59:46 (PDT)
 
 > **NOTE:**
 >
@@ -70,7 +70,7 @@ Table 2: Distributions typically used for test statistics
 
 > **NOTE:**
 >
-> *Solution 1*. \\\mathcal{R}(Y) = \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} = \mathbb{N}\\
+> *Solution 1*. \\ \begin{aligned} \mathcal{R}(Y) &= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \\ &= \mathbb{N} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -383,7 +383,7 @@ Figure 2: Poisson CDFs
 >
 > Then, by the [law of iterated expectations](expectation.llms.md#thm-lie) and the [law of total variance](variance-covariance.llms.md#thm-total-variance), using \\\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \operatorname{Var}(Y \mid \Lambda) = \Lambda\\ ([Theorem 2](#thm-poisson-properties)):
 >
-> \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \Lambda\text{ and } \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
 >
 > and \\\mu^2/\rho\> 0\\ gives \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} \> \mu\\.
 
@@ -760,7 +760,7 @@ Figure 2: Poisson CDFs
 >
 > - **Responsibilities.** By [Theorem 16](#thm-mixture-posterior), at \\x = 3\\, halfway between the component means, \\{\operatorname{p}\_1}(3) = {\operatorname{p}\_2}(3)\\ by the symmetry of the normal density, so:
 >
->   \\ \operatorname{P}(C = 2 \mid X = 3) = \frac{0.7\\{\operatorname{p}\_2}(3)}{0.3\\{\operatorname{p}\_1}(3) + 0.7\\{\operatorname{p}\_2}(3)} = \frac{0.7}{0.3 + 0.7} = 0.7, \\
+>   \\ \begin{aligned} \operatorname{P}(C = 2 \mid X = 3) &= \frac{0.7\\{\operatorname{p}\_2}(3)}{0.3\\{\operatorname{p}\_1}(3) + 0.7\\{\operatorname{p}\_2}(3)} \\ &= \frac{0.7}{0.3 + 0.7} \\ &= 0.7, \end{aligned} \\
 >
 >   the prior weight: an observation equally far from both components carries no information about which component it came from. At \\x = 4.2\\, the same formula gives \\\operatorname{P}(C = 2 \mid X = 4.2) \approx 0.9997\\.
 

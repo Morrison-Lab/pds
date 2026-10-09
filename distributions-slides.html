@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 00:30:33 (UTC)</p>
+  <p class="date">Last modified: 2026-10-08 22:59:46 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -527,7 +527,13 @@ Table&nbsp;2: Distributions typically used for test statistics
 <section class="slide level2">
 
 <div id="sol-range-poisson" class="proof solution">
-<p><span class="proof-title"><em>Solution 1</em>. </span><span class="math display">\[\mathcal{R}(Y) = \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} = \mathbb{N}\]</span></p>
+<p><span class="proof-title"><em>Solution 1</em>. </span><span class="math display">\[
+\begin{aligned}
+\mathcal{R}(Y)
+&amp;= \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} \\
+&amp;= \mathbb{N}
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -1115,7 +1121,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 &amp;= \operatorname{E}\mathopen{}\left[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}\right)\mathclose{}
 &amp;&amp; (\text{law of total variance}) \\
 &amp;= \operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}
-&amp;&amp; (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} = \Lambda) \\
+&amp;&amp; (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \Lambda\text{ and } \operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} = \Lambda) \\
 &amp;= \mu+ \frac{\mu^2}{\rho}
 &amp;&amp; (\text{mean and variance of the gamma distribution})
 \end{aligned}
@@ -1721,10 +1727,12 @@ f(t)
 <li><p><strong>Density.</strong> <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> has peaks near the two component means, <span class="math inline">\({\operatorname{p}_{\text{mix}}}(0) \approx 0.120\)</span> and <span class="math inline">\({\operatorname{p}_{\text{mix}}}(6) \approx 0.279\)</span>, with a trough between them, <span class="math inline">\({\operatorname{p}_{\text{mix}}}(3) \approx 0.004\)</span>. The density at the mean, <span class="math inline">\({\operatorname{p}_{\text{mix}}}(4.2) \approx 0.055\)</span>, is less than half its value at either peak.</p></li>
 <li><p><strong>Responsibilities.</strong> By <a href="#/thm-mixture-posterior" class="quarto-xref">Theorem&nbsp;16</a>, at <span class="math inline">\(x = 3\)</span>, halfway between the component means, <span class="math inline">\({\operatorname{p}_1}(3) = {\operatorname{p}_2}(3)\)</span> by the symmetry of the normal density, so:</p>
 <p><span class="math display">\[
+\begin{aligned}
 \operatorname{P}(C = 2 \mid X = 3)
-= \frac{0.7\,{\operatorname{p}_2}(3)}{0.3\,{\operatorname{p}_1}(3) + 0.7\,{\operatorname{p}_2}(3)}
-= \frac{0.7}{0.3 + 0.7}
-= 0.7,
+&amp;= \frac{0.7\,{\operatorname{p}_2}(3)}{0.3\,{\operatorname{p}_1}(3) + 0.7\,{\operatorname{p}_2}(3)} \\
+&amp;= \frac{0.7}{0.3 + 0.7} \\
+&amp;= 0.7,
+\end{aligned}
 \]</span></p>
 <p>the prior weight: an observation equally far from both components carries no information about which component it came from. At <span class="math inline">\(x = 4.2\)</span>, the same formula gives <span class="math inline">\(\operatorname{P}(C = 2 \mid X = 4.2) \approx 0.9997\)</span>.</p></li>
 </ul>
