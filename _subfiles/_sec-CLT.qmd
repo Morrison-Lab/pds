@@ -133,7 +133,7 @@ $$
 dice_sum_pmf <- function(n_dice) {
   totals <- rowSums(expand.grid(rep(list(1:6), n_dice)))
   probs <- prop.table(table(totals))
-  data.frame(total = as.numeric(names(probs)), p = as.vector(probs))
+  tibble::tibble(total = as.numeric(names(probs)), p = as.vector(probs))
 }
 
 dice_plot <-

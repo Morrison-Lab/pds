@@ -120,22 +120,24 @@ with the normal density $\ndist{\mean, \varpar/n}$ from @thm-clt drawn over it.
 #| fig-width: 8
 #| code-fold: true
 n_labels <- paste("n =", sizes)
-means_long <- data.frame(
+means_long <- tibble::tibble(
   n = factor(
     rep(n_labels, each = length(sample_means[[1]])),
     levels = n_labels
   ),
   sample_mean = unlist(sample_means)
 )
-normal_curves <- do.call(rbind, lapply(seq_along(sizes), function(k) {
-  se <- sigma / sqrt(sizes[k])
-  grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
-  data.frame(
-    n = factor(n_labels[k], levels = n_labels),
-    sample_mean = grid,
-    density = dnorm(grid, mu, se)
-  )
-}))
+normal_curves <- seq_along(sizes) |>
+  lapply(function(k) {
+    se <- sigma / sqrt(sizes[k])
+    grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
+    tibble::tibble(
+      n = factor(n_labels[k], levels = n_labels),
+      sample_mean = grid,
+      density = dnorm(grid, mu, se)
+    )
+  }) |>
+  dplyr::bind_rows()
 
 ggplot2::ggplot(means_long, ggplot2::aes(x = sample_mean)) +
   ggplot2::geom_histogram(

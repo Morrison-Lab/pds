@@ -119,10 +119,11 @@ x0 <- 40
 marg_dens_x0 <- dnorm(x0, mean = mu_x, sd = sigma_x)
 cond_mean <- intercept + beta * x0
 cond_sd <- sigma_y * sqrt(1 - rho^2)
-pander::pander(data.frame(
+tibble::tibble(
   parameter = c("mu_x", "sigma_x", "mu_y", "sigma_y", "rho"),
   estimate = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
-))
+) |>
+  pander::pander()
 ```
 
 Modeling $(X, Y)$ as bivariate normal
@@ -415,12 +416,12 @@ $$
 #| code-fold: true
 senility_p10 <- predict(
   senility_fit,
-  newdata = data.frame(x = 10),
+  newdata = tibble::tibble(x = 10),
   type = "response"
 )
 senility_p15 <- predict(
   senility_fit,
-  newdata = data.frame(x = 15),
+  newdata = tibble::tibble(x = 15),
   type = "response"
 )
 ```

@@ -94,7 +94,8 @@ stopifnot(
 #| fig-height: 3.5
 #| fig-width: 5
 #| code-fold: true
-ggplot2::ggplot(data.frame(x, y), ggplot2::aes(x = x, y = y)) +
+tibble::tibble(x, y) |>
+  ggplot2::ggplot(ggplot2::aes(x = x, y = y)) +
   ggplot2::geom_point(alpha = 0.4, size = 2) +
   ggplot2::labs(x = "horsepower", y = "miles per gallon") +
   ggplot2::theme_minimal()
