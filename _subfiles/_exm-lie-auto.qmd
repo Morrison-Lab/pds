@@ -13,7 +13,7 @@ in the Python package [`ISLP`](https://islp.readthedocs.io/)
 (`ISLP.load_data("Auto")`)
 and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
 (`ISLR2::Auto`).
-This repository holds a copy at `data/auto.csv`,
+This site has a copy at [`data/auto.csv`](data/auto.csv),
 and both code tabs below read that file.
 
 Choose one car at random, each with the same probability,
