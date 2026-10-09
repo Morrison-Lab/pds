@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
+
+  <title>Probability for Data Science – Key distributions</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-3a7eae3b872f08785a56513611f0329a.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLDZY2T3JF"></script>
+
+  <script type="text/plain" cookie-consent="tracking">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLDZY2T3JF', { 'anonymize_ip': true});
+  </script>
+  
+  <script type="text/javascript" charset="UTF-8">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({
+    "notice_banner_type":"simple",
+    "consent_type":"implied",
+    "palette":"light",
+    "language":"en",
+    "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+    "notice_banner_reject_button_hide":false,
+    "preferences_center_close_button_hide":false,
+    "website_name":""
+    ,
+  "language":"en"
+    });
+  });
+  </script> 
+    
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <!--
+    Colour-theme dropdown for the qwt revealjs format: Light, Off-white,
+    Parchment, Dark. Pulled into every slide deck via the `include-in-header`
+    entry in the `revealjs:` block of `_quarto-website.yml`. Pairs with
+    `styles-reveal.scss`, which defines the palette CSS variables; the select
+    reads those vars so it stays legible in every palette. Light is the
+    default variable set, Off-white and Parchment are a data-palette attribute
+    on <html>, and Dark is the body.qwt-dark class. The choice is saved under
+    "mln-theme", the key the website's theme dropdown (theme-picker.html) uses,
+    so it carries across the site and the decks. First-time visitors get
+    Dark if their system prefers it, and Off-white otherwise.
+  -->
+  <style>
+    #qwt-theme-select {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      /* Matches reveal.js's `.slide-number` and the `#revealjs-html-link` chip
+         from `revealjs-html-links.lua`; the three elements occupy different
+         corners so they don't overlap. Keep them aligned if you bump this. */
+      z-index: 31;
+      padding: 2px 4px;
+      border: 1px solid var(--qwt-border, rgba(0, 0, 0, 0.2));
+      border-radius: 4px;
+      background: var(--qwt-chip-bg, rgba(255, 255, 255, 0.8));
+      color: var(--qwt-fg, #000);
+      cursor: pointer;
+      font: 12px sans-serif;
+      opacity: 0.7;
+    }
+    #qwt-theme-select:hover,
+    #qwt-theme-select:focus-visible {
+      opacity: 1;
+      border-color: var(--qwt-fg, rgba(0, 0, 0, 0.4));
+    }
+    #qwt-theme-select:focus-visible {
+      outline: 2px solid var(--qwt-link, #2a76dd);
+      outline-offset: 2px;
+    }
+    @media print { #qwt-theme-select { display: none; } }
+  </style>
+  <script>
+  (function () {
+    "use strict";
+    var KEY = "mln-theme";
+    var DARK_CLASS = "qwt-dark";
+    var OPTIONS = [["light", "Light"], ["offwhite", "Off-white"], ["parchment", "Parchment"], ["dark", "Dark"]];
+    var root = document.documentElement;
+
+    function valid(choice) {
+      return OPTIONS.some(function (o) { return o[0] === choice; });
+    }
+
+    function stored() {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+
+    function initialTheme() {
+      var saved = stored();
+      if (valid(saved)) return saved;
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "offwhite";
+    }
+
+    function applyTheme(choice) {
+      if (choice === "offwhite" || choice === "parchment") {
+        root.setAttribute("data-palette", choice);
+      } else {
+        root.removeAttribute("data-palette");
+      }
+      // The body can be missing when this runs from <head>; init() re-applies it.
+      if (document.body) document.body.classList.toggle(DARK_CLASS, choice === "dark");
+    }
+
+    var start = initialTheme();
+    applyTheme(start); // set the palette before first paint
+
+    function init() {
+      if (document.getElementById("qwt-theme-select")) return;
+      applyTheme(start);
+      var sel = document.createElement("select");
+      sel.id = "qwt-theme-select";
+      sel.setAttribute("aria-label", "Colour theme");
+      OPTIONS.forEach(function (o) {
+        var opt = document.createElement("option");
+        opt.value = o[0];
+        opt.textContent = o[1];
+        sel.appendChild(opt);
+      });
+      sel.value = start;
+      sel.addEventListener("change", function () {
+        applyTheme(sel.value);
+        try { localStorage.setItem(KEY, sel.value); } catch (e) { /* private mode */ }
+      });
+      document.body.appendChild(sel);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+  <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+  <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Key distributions</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">Last modified: 2026-10-09 11:32:26 (PDT)</p>
+</section>
+<section class="slide level2">
+
+<p><span id="sec-distributions"></span></p>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Some distributions are typically used for outcome models (<a href="#/tbl-outcome-distns" class="quarto-xref">Table&nbsp;1</a>); other distributions are typically used for test statistics (<a href="#/tbl-test-stat-distns" class="quarto-xref">Table&nbsp;2</a>).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div id="tbl-outcome-distns" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-outcome-distns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Distributions typically used for outcome models
+</figcaption>
+<div aria-describedby="tbl-outcome-distns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>Uses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./random-variables.html#def-bernoulli">Bernoulli</a></td>
+<td>Binary outcomes</td>
+</tr>
+<tr class="even">
+<td>Binomial</td>
+<td>Sums of Bernoulli outcomes</td>
+</tr>
+<tr class="odd">
+<td>Poisson</td>
+<td>Unbounded count outcomes</td>
+</tr>
+<tr class="even">
+<td>Geometric</td>
+<td>Counts of non-events before an event occurs</td>
+</tr>
+<tr class="odd">
+<td>Negative binomial</td>
+<td>Mixtures of Poisson distributions, counts of non-events until a given number of events occurs</td>
+</tr>
+<tr class="even">
+<td><a href="./random-variables.html#def-normal">Normal (Gaussian)</a></td>
+<td>Continuous outcomes without a more specific distribution</td>
+</tr>
+<tr class="odd">
+<td><a href="#/sec-mvn">Multivariate normal</a></td>
+<td>Vectors of continuous outcomes</td>
+</tr>
+<tr class="even">
+<td><a href="#/sec-mixture">Mixtures</a></td>
+<td>Outcomes from a population of unobserved subpopulations</td>
+</tr>
+<tr class="odd">
+<td><a href="./random-variables.html#def-exponential">Exponential</a></td>
+<td>Time to event outcomes</td>
+</tr>
+<tr class="even">
+<td>Gamma</td>
+<td>Time to event outcomes</td>
+</tr>
+<tr class="odd">
+<td>Weibull</td>
+<td>Time to event outcomes</td>
+</tr>
+<tr class="even">
+<td>Log-normal</td>
+<td>Time to event outcomes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="tbl-test-stat-distns" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-test-stat-distns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Distributions typically used for test statistics
+</figcaption>
+<div aria-describedby="tbl-test-stat-distns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<colgroup>
+<col style="width: 75%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>Uses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\chi^2\)</span></td>
+<td>Regression comparisons (asymptotic), contingency table independence tests, goodness-of-fit tests</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(F\)</span></td>
+<td>Gaussian model comparisons (exact)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Z\)</span> (standard normal)</td>
+<td>Proportions, means, regression coefficients (asymptotic)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(t\)</span> (Student’s)</td>
+<td>Means, regression coefficients in Gaussian outcome models (exact)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-bern-dist" class="slide level2" data-number="1">
+<h2><span class="header-section-number">1</span> The Bernoulli distribution</h2>
+<div id="exm-bernoulli" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (A coin flip)</strong></span> The <a href="./random-variables.html#def-bernoulli">Bernoulli distribution</a> describes a binary outcome. The indicator of heads on one flip of a fair coin is <span class="math inline">\(\operatorname{Ber}(1/2)\)</span>. By the <a href="./expectation.html#thm-bernoulli-mean">expectation of the Bernoulli distribution</a>, <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span> has mean <span class="math inline">\(\pi\)</span>, and by the <a href="./variance-covariance.html#exm-variance-bernoulli">variance of a Bernoulli random variable</a>, it has variance <span class="math inline">\(\pi(1 - \pi)\)</span>.</p>
+</div>
+</section>
+<section id="sec-poisson-dist" class="slide level2" data-number="2">
+<h2><span class="header-section-number">2</span> The Poisson distribution</h2>
+<div id="def-poisson" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Poisson distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Poisson distribution</strong> with mean parameter <span class="math inline">\(\mu&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span>, if:</p>
+<p><span id="eq-pois-pmf"><span class="math display">\[\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} \tag{1}\]</span></span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>(see <a href="#/fig-pois-pmf" class="quarto-xref">Figure&nbsp;1</a>)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exr-range-poisson" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> What is the range of possible values for a Poisson distribution?</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="sol-range-poisson" class="proof solution">
+<p><span class="proof-title"><em>Solution 1</em>. </span><span class="math display">\[
+\begin{aligned}
+\mathcal{R}(Y)
+&amp;= \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} \\
+&amp;= \mathbb{N}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-cdf-pois" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (CDF of Poisson distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span>, then for every real number <span class="math inline">\(y\)</span>:</p>
+<p><span id="eq-pois-cdf"><span class="math display">\[\operatorname{P}(Y \le y) = e^{-\mu} \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{2}\]</span></span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>For <span class="math inline">\(y &lt; 0\)</span>, both sides are <span class="math inline">\(0\)</span> (the sum is empty). For any <span class="math inline">\(y \ge 0\)</span>, the event <span class="math inline">\(\{Y \le y\}\)</span> is the disjoint union of events <span class="math inline">\(\{Y = j\}\)</span> for all non-negative integers <span class="math inline">\(j \le \mathopen{}\left\lfloor y\right\rfloor\mathclose{}\)</span>. Applying the Poisson PMF (<a href="#/eq-pois-pmf" class="quarto-xref">Equation&nbsp;1</a>) and factoring out the common term <span class="math inline">\(e^{-\mu}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(Y \le y)
+&amp;= \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \operatorname{P}(Y = j) &amp;&amp; (\text{disjoint union of events } Y = j) \\
+&amp;= \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j e^{-\mu}}{j!} &amp;&amp; (\text{definition of Poisson PMF}) \\
+&amp;= e^{-\mu} \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j}{j!} &amp;&amp; (\text{factoring out } e^{-\mu} \text{ constant wrt } j)
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-cdf-pois" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (Computing Poisson cumulative probabilities)</strong></span> For a Poisson random variable <span class="math inline">\(X \sim \operatorname{Pois}(\mu= 2)\)</span>, the probability of observing at most 2 events is computed as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X \le 2)
+&amp;= e^{-2} \sum_{j=0}^{2} \frac{2^j}{j!} &amp;&amp; (\text{apply CDF formula with } \mu= 2, y = 2) \\
+&amp;= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} &amp;&amp; (\text{expand terms for } j = 0, 1, 2) \\
+&amp;= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} &amp;&amp; (\text{simplify factorials and powers}) \\
+&amp;= 5 e^{-2} \approx 0.677 &amp;&amp; (\text{evaluate numerical value})
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>(see <a href="#/fig-pois-cdfs" class="quarto-xref">Figure&nbsp;2</a>)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<details class="code-fold">
+<summary>[Code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>pois_dists <span class="ot">&lt;-</span></span>
+<span id="cb1-2"><a aria-label="2"></a>  dplyr<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a aria-label="3"></a>  dplyr<span class="sc">::</span><span class="fu">reframe</span>(<span class="at">.by =</span> mu, <span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">30</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a aria-label="4"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb1-5"><a aria-label="5"></a>    <span class="st">`</span><span class="at">P(X = x)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dpois</span>(x, <span class="at">lambda =</span> mu),</span>
+<span id="cb1-6"><a aria-label="6"></a>    <span class="st">`</span><span class="at">P(X &lt;= x)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ppois</span>(x, <span class="at">lambda =</span> mu),</span>
+<span id="cb1-7"><a aria-label="7"></a>    <span class="at">mu =</span> <span class="fu">factor</span>(mu)</span>
+<span id="cb1-8"><a aria-label="8"></a>  )</span>
+<span id="cb1-9"><a aria-label="9"></a></span>
+<span id="cb1-10"><a aria-label="10"></a>plot0 <span class="ot">&lt;-</span></span>
+<span id="cb1-11"><a aria-label="11"></a>  pois_dists <span class="sc">|&gt;</span></span>
+<span id="cb1-12"><a aria-label="12"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb1-13"><a aria-label="13"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb1-14"><a aria-label="14"></a>      <span class="at">x =</span> x,</span>
+<span id="cb1-15"><a aria-label="15"></a>      <span class="at">y =</span> <span class="st">`</span><span class="at">P(X = x)</span><span class="st">`</span>,</span>
+<span id="cb1-16"><a aria-label="16"></a>      <span class="at">fill =</span> mu,</span>
+<span id="cb1-17"><a aria-label="17"></a>      <span class="at">col =</span> mu</span>
+<span id="cb1-18"><a aria-label="18"></a>    )</span>
+<span id="cb1-19"><a aria-label="19"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-20"><a aria-label="20"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a aria-label="21"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb1-22"><a aria-label="22"></a>    <span class="at">fill =</span> latex2exp<span class="sc">::</span><span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">mu$"</span>),</span>
+<span id="cb1-23"><a aria-label="23"></a>    <span class="at">col =</span> latex2exp<span class="sc">::</span><span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">mu$"</span>),</span>
+<span id="cb1-24"><a aria-label="24"></a>    <span class="at">y =</span> latex2exp<span class="sc">::</span><span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">Pr_{</span><span class="sc">\\</span><span class="st">mu}(X = x)$"</span>)</span>
+<span id="cb1-25"><a aria-label="25"></a>  )</span>
+<span id="cb1-26"><a aria-label="26"></a></span>
+<span id="cb1-27"><a aria-label="27"></a>plot1 <span class="ot">&lt;-</span></span>
+<span id="cb1-28"><a aria-label="28"></a>  plot0 <span class="sc">+</span></span>
+<span id="cb1-29"><a aria-label="29"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_segment</span>(<span class="at">yend =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a aria-label="30"></a>  ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(<span class="sc">~</span>mu)</span>
+<span id="cb1-31"><a aria-label="31"></a></span>
+<span id="cb1-32"><a aria-label="32"></a><span class="fu">print</span>(plot1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-pois-pmf" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pois-pmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Poisson PMFs, by mean parameter <span class="math inline">\(\mu\)</span>
+</figcaption>
+<div aria-describedby="fig-pois-pmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="distributions_files/figure-html/fig-pois-pmf-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Poisson PMFs, by mean parameter \mu"><img data-src="distributions_files/figure-html/fig-pois-pmf-1.png" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<details class="code-fold">
+<summary>[Code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>plot2 <span class="ot">&lt;-</span></span>
+<span id="cb2-2"><a aria-label="2"></a>  plot0 <span class="sc">+</span></span>
+<span id="cb2-3"><a aria-label="3"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_step</span>(<span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a aria-label="4"></a>  ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> <span class="st">`</span><span class="at">P(X &lt;= x)</span><span class="st">`</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a aria-label="5"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">y =</span> latex2exp<span class="sc">::</span><span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">Pr_{</span><span class="sc">\\</span><span class="st">mu}(X </span><span class="sc">\\</span><span class="st">leq x)$"</span>))</span>
+<span id="cb2-6"><a aria-label="6"></a></span>
+<span id="cb2-7"><a aria-label="7"></a><span class="fu">print</span>(plot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-pois-cdfs" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pois-cdfs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Poisson CDFs
+</figcaption>
+<div aria-describedby="fig-pois-cdfs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="distributions_files/figure-html/fig-pois-cdfs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Poisson CDFs"><img data-src="distributions_files/figure-html/fig-pois-cdfs-1.png" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exr-pois-dist-funs" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2 (Poisson distribution functions)</strong></span> Let <span class="math inline">\(X \sim \operatorname{Pois}(\mu= 3.75)\)</span>.</p>
+<p>Compute:</p>
+<ul>
+<li><span class="math inline">\(\operatorname{P}(X = 4)\)</span></li>
+<li><span class="math inline">\(\operatorname{P}(X \le 7)\)</span></li>
+<li><span class="math inline">\(\operatorname{P}(X &gt; 5)\)</span></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<ul>
+<li><span class="math inline">\(\operatorname{P}(X=4) = 0.1937803\)</span></li>
+<li><span class="math inline">\(\operatorname{P}(X\le 7) = 0.9623787\)</span></li>
+<li><span class="math inline">\(\operatorname{P}(X &gt; 5) = 0.1771172\)</span></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-poisson-properties" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Properties of the Poisson distribution)</strong></span> If <span class="math inline">\(X \sim \operatorname{Pois}(\mu)\)</span>, then:</p>
+<ul>
+<li><span class="math inline">\(\operatorname{E}[X] = \mu\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \mu\)</span></li>
+<li><span class="math inline">\(\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\)</span> for <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span></li>
+<li>For <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> with <span class="math inline">\(x &lt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &gt; \operatorname{P}(X = x-1)\)</span></li>
+<li>For <span class="math inline">\(x = \mu\)</span> (possible only when <span class="math inline">\(\mu\)</span> is an integer), <span class="math inline">\(\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\)</span></li>
+<li>For <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> with <span class="math inline">\(x &gt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &lt; \operatorname{P}(X = x-1)\)</span></li>
+<li>If <span class="math inline">\(\mu\)</span> is not an integer, <span class="math inline">\(\arg \max_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>; if <span class="math inline">\(\mu\)</span> is an integer, the maximum is attained at both <span class="math inline">\(x = \mu- 1\)</span> and <span class="math inline">\(x = \mu\)</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>Mean.</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}[X]
+&amp;= \sum_{x=0}^\infty x \cdot \operatorname{P}(X=x) &amp;&amp; (\text{definition of expected value}) \\
+&amp;= 0 \cdot \operatorname{P}(X=0) + \sum_{x=1}^{\infty} x \cdot \operatorname{P}(X=x) &amp;&amp; (\text{separate } x=0 \text{ term}) \\
+&amp;= \sum_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} &amp;&amp; (\text{substitute Poisson PMF}) \\
+&amp;= \sum_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} &amp;&amp; (\text{definition of factorial } x!) \\
+&amp;= \sum_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} &amp;&amp; (\text{cancel factor of } x) \\
+&amp;= \mu\cdot \sum_{x=1}^{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} &amp;&amp; (\text{factor out one power of } \mu) \\
+&amp;= \mu\cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} &amp;&amp; (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\
+&amp;= \mu\cdot 1 &amp;&amp; (\text{PMF sums to 1 over state space}) \\
+&amp;= \mu&amp;&amp; (\text{simplify})
+\end{aligned}
+\]</span></p>
+<p><strong>Variance.</strong> The same steps, canceling two factors instead of one, give <span class="math inline">\(\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}
+&amp;= \sum_{x=2}^\infty x(x-1) \cdot \frac{\mu^x e^{-\mu}}{x!} &amp;&amp; (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\
+&amp;= \sum_{x=2}^\infty \frac{\mu^x e^{-\mu}}{(x-2)!} &amp;&amp; (\text{cancel } x(x-1) \text{ against } x!) \\
+&amp;= \mu^2 \cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} &amp;&amp; (\text{factor out } \mu^2 \text{; } y \stackrel{\text{def}}{=}x - 2) \\
+&amp;= \mu^2 &amp;&amp; (\text{PMF sums to 1})
+\end{aligned}
+\]</span></p>
+<p>Then, by the <a href="./variance-covariance.html#thm-variance">simplified expression for variance</a> and <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(X)
+&amp;= \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{} &amp;&amp; (\text{simplified expression for variance}) \\
+&amp;= \operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{} &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
+&amp;= \mu^2 + \mu- \mu^2 &amp;&amp; (\text{substitute}) \\
+&amp;= \mu&amp;&amp; (\text{simplify})
+\end{aligned}
+\]</span></p>
+<p><strong>Ratio of consecutive probabilities.</strong> For <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x - 1)}
+&amp;= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} &amp;&amp; (\text{substitute Poisson PMF}) \\
+&amp;= \frac{\mu}{x} &amp;&amp; (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!)
+\end{aligned}
+\]</span></p>
+<p>This ratio is greater than, equal to, or less than 1 as <span class="math inline">\(x\)</span> is less than, equal to, or greater than <span class="math inline">\(\mu\)</span>, which gives the three comparisons. So <span class="math inline">\(\operatorname{P}(X = x)\)</span> increases while <span class="math inline">\(x &lt; \mu\)</span> and decreases once <span class="math inline">\(x &gt; \mu\)</span>. If <span class="math inline">\(\mu\)</span> is not an integer, the last increase is at <span class="math inline">\(x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>, which is therefore the unique mode. If <span class="math inline">\(\mu\)</span> is an integer, <span class="math inline">\(\operatorname{P}(X = \mu) = \operatorname{P}(X = \mu- 1)\)</span>, and both are modes.</p>
+<p>See also <a href="https://statproofbook.github.io/P/poiss-mean" class="uri">https://statproofbook.github.io/P/poiss-mean</a> and <a href="https://statproofbook.github.io/P/poiss-var" class="uri">https://statproofbook.github.io/P/poiss-var</a>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-poisson-properties" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (Mode of a Poisson distribution)</strong></span> For <span class="math inline">\(X \sim \operatorname{Pois}(2.5)\)</span>, <span class="math inline">\(\operatorname{P}(X = 2) = \frac{2.5}{2}\operatorname{P}(X = 1) &gt; \operatorname{P}(X = 1)\)</span> and <span class="math inline">\(\operatorname{P}(X = 3) = \frac{2.5}{3}\operatorname{P}(X = 2) &lt; \operatorname{P}(X = 2)\)</span>, so the mode is <span class="math inline">\(\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\)</span>. For <span class="math inline">\(X \sim \operatorname{Pois}(2)\)</span>, <span class="math inline">\(\operatorname{P}(X = 2) = \frac{2}{2}\operatorname{P}(X = 1)\)</span>, so <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> are both modes, each with probability <span class="math inline">\(2 e^{-2} \approx 0.271\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-exposure" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Exposure magnitude)</strong></span> For many count outcomes, there is some sense of an <strong>exposure magnitude</strong>, such as population size or duration of observation, which multiplicatively rescales the expected (mean) count.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exr-exposure-magnitude" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> What are some examples of exposure magnitudes?</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="smaller proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div id="tbl-exposure-units" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-exposure-units-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Examples of exposure units
+</figcaption>
+<div aria-describedby="tbl-exposure-units-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<colgroup>
+<col style="width: 69%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>outcome</th>
+<th>exposure units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>disease incidence</td>
+<td>number of individuals exposed; time at risk</td>
+</tr>
+<tr class="even">
+<td>car accidents</td>
+<td>miles driven</td>
+</tr>
+<tr class="odd">
+<td>worksite accidents</td>
+<td>person-hours worked</td>
+</tr>
+<tr class="even">
+<td>population size</td>
+<td>size of habitat</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Exposure units are similar to the number of trials in a binomial distribution, but <strong>in non-binomial count outcomes, there can be more than one event per unit of exposure</strong>.</p>
+<p>We can use <span class="math inline">\(t\)</span> to represent continuous-valued exposures/observation durations, and <span class="math inline">\(n\)</span> to represent discrete-valued exposures.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="def-event-rate" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Event rate)</strong></span> For a count <span class="math inline">\(Y\)</span> observed over a fixed, known <a href="#/def-exposure">exposure magnitude</a> <span class="math inline">\(t &gt; 0\)</span>, the <strong>event rate</strong>, denoted <span class="math inline">\({\lambda}\)</span>, is the mean of <span class="math inline">\(Y\)</span> divided by the exposure magnitude:</p>
+<p><span id="eq-def-event-rate"><span class="math display">\[{\lambda}\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}{t} \tag{3}\]</span></span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="thm-mean-vs-event-rate" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Transformation function from event rate to mean)</strong></span> If a count <span class="math inline">\(Y\)</span> is observed over exposure magnitude <span class="math inline">\(t &gt; 0\)</span> with event rate <span class="math inline">\({\lambda}\)</span>, then its mean <span class="math inline">\(\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> is:</p>
+<p><span id="eq-lambda-to-mu"><span class="math display">\[\mu= {\lambda}\cdot t \tag{4}\]</span></span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/def-event-rate" class="quarto-xref">Definition&nbsp;3</a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\lambda}&amp;\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}{t} &amp;&amp; (\text{definition of event rate}) \\
+\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} &amp;= {\lambda}\cdot t &amp;&amp; (\text{multiply both sides by } t &gt; 0) \\
+\mu&amp;= {\lambda}\cdot t &amp;&amp; (\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{})
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-mean-vs-event-rate" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 (Calculating expected counts from event rates)</strong></span> Suppose a city records a disease event rate of <span class="math inline">\({\lambda}= 0.05\)</span> cases per person-year. For a subpopulation with an exposure magnitude of <span class="math inline">\(t = 100\)</span> person-years, the expected count of cases is, by <a href="#/thm-mean-vs-event-rate" class="quarto-xref">Theorem&nbsp;3</a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mu&amp;= {\lambda}\cdot t &amp;&amp; (\text{transformation from event rate to mean}) \\
+&amp;= 0.05 \times 100 &amp;&amp; (\text{substitute } {\lambda}= 0.05 \text{ and } t = 100) \\
+&amp;= 5 \text{ cases} &amp;&amp; (\text{evaluate expected count})
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-non-exposed" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (No exposure means no expected events)</strong></span> For each exposure magnitude <span class="math inline">\(t \ge 0\)</span>, let <span class="math inline">\(Y_t\)</span> be the count observed over exposure <span class="math inline">\(t\)</span>. If the mean count is proportional to the exposure magnitude, <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = {\lambda}\cdot t\)</span> for all <span class="math inline">\(t \ge 0\)</span> with one finite rate <span class="math inline">\({\lambda}\)</span>, then there are no expected events without exposure:</p>
+<p><span class="math display">\[\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}
+&amp;= {\lambda}\cdot 0 &amp;&amp; (\text{evaluate } \operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = {\lambda}t \text{ at } t = 0) \\
+&amp;= 0 &amp;&amp; (\text{multiplication by zero; } {\lambda}\text{ is finite})
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The hypothesis carries the content here. <a href="#/def-event-rate" class="quarto-xref">Definition&nbsp;3</a> alone cannot give <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\)</span>, since <span class="math inline">\({\lambda}= \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\({\lambda}\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-non-exposed" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 (Zero exposure time)</strong></span> If a subject is observed for <span class="math inline">\(t = 0\)</span> person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>A mean proportional to exposure, <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = {\lambda}t\)</span>, has no term that stays nonzero at <span class="math inline">\(t = 0\)</span>: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = c + {\lambda}t\)</span> with <span class="math inline">\(c &gt; 0\)</span>, would expect <span class="math inline">\(c\)</span> events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-exposure-log-scale" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 5 (Exposure is additive on the log scale)</strong></span> If <span class="math inline">\(\mu= {\lambda}\cdot t\)</span> with <span class="math inline">\({\lambda}&gt; 0\)</span> and <span class="math inline">\(t &gt; 0\)</span>, then:</p>
+<p><span class="math display">\[\log{\mu} = \log{{\lambda}} + \log{t}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{aligned}
+\log{\mu}
+&amp;= \log({\lambda}\cdot t) &amp;&amp; (\text{substitute } \mu= {\lambda}\cdot t) \\
+&amp;= \log{{\lambda}} + \log{t} &amp;&amp; (\text{logarithm product rule})
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-exposure-log-scale" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6 (Log-linear representation of expected counts)</strong></span> If a clinic sees an event rate of <span class="math inline">\({\lambda}= 0.02\)</span> events/day and <span class="math inline">\(t = 30\)</span> days of observation:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log{\mu}
+&amp;= \log(0.02) + \log(30) &amp;&amp; (\text{apply log-scale formula}) \\
+&amp;= -3.912 + 3.401 &amp;&amp; (\text{evaluate natural logarithms}) \\
+&amp;= -0.511 &amp;&amp; (\text{sum terms})
+\end{aligned}
+\]</span></p>
+<p>Exponentiating yields <span class="math inline">\(\mu= \operatorname{exp}\mathopen{}\left\{-0.511\right\}\mathclose{} \approx 0.60\)</span> expected events.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-offset" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Offset)</strong></span> For a count outcome with exposure magnitude <span class="math inline">\(t\)</span>, the known term <span class="math inline">\(\log{t}\)</span> in the log-scale decomposition of the mean (<a href="#/thm-exposure-log-scale" class="quarto-xref">Theorem&nbsp;5</a>),</p>
+<p><span class="math display">\[\log{\mu} = \log{{\lambda}} + \log{t},\]</span></p>
+<p>is called the <strong>offset</strong>: it shifts <span class="math inline">\(\log{\mu}\)</span> by a known amount, with no unknown coefficient to estimate.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The offset needs no covariates: with a single exposure <span class="math inline">\(t\)</span> and an unknown rate <span class="math inline">\({\lambda}\)</span>, <span class="math inline">\(\log{t}\)</span> is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-offset" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7 (The offset for a clinic’s event count)</strong></span> In <a href="#/exm-exposure-log-scale" class="quarto-xref">Example&nbsp;6</a>, the clinic was observed for <span class="math inline">\(t = 30\)</span> days, so the offset is <span class="math inline">\(\log{30} \approx 3.401\)</span>. Only <span class="math inline">\(\log{{\lambda}}\)</span> is unknown before the data are seen; the offset is fixed by the length of observation. A clinic observed for <span class="math inline">\(t = 60\)</span> days has offset <span class="math inline">\(\log{60} \approx 4.094\)</span>, which raises <span class="math inline">\(\log{\mu}\)</span> by <span class="math inline">\(\log{2} \approx 0.693\)</span> at the same event rate.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-sum-pois" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 6 (Sum of independent Poisson random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a> Poisson random variables with means <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span>, their sum, <span class="math inline">\(Z=X+Y\)</span>, is also a Poisson random variable, with mean <span class="math inline">\(\mu_Z = \mu_X + \mu_Y\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The event <span class="math inline">\(\{Z = z\}\)</span> is the disjoint union of the events <span class="math inline">\(\{X = k, Y = z - k\}\)</span> for <span class="math inline">\(k = 0, 1, \ldots, z\)</span> (since <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are non-negative integers), so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(Z = z)
+&amp;= \sum_{k=0}^z \operatorname{P}(X = k,\, Y = z - k) &amp;&amp; (\text{countable additivity}) \\
+&amp;= \sum_{k=0}^z \operatorname{P}(X = k) \operatorname{P}(Y = z - k) &amp;&amp; (\text{independence}) \\
+&amp;= \sum_{k=0}^z \frac{\mu_X^k e^{-\mu_X}}{k!} \frac{\mu_Y^{z-k} e^{-\mu_Y}}{(z-k)!} &amp;&amp; (\text{substitute Poisson PMFs}) \\
+&amp;= e^{-(\mu_X + \mu_Y)} \sum_{k=0}^z \frac{\mu_X^k \mu_Y^{z-k}}{k!(z-k)!} &amp;&amp; (\text{factor out } e^{-\mu_X} e^{-\mu_Y}) \\
+&amp;= \frac{e^{-(\mu_X + \mu_Y)}}{z!} \sum_{k=0}^z \frac{z!}{k!(z-k)!} \mu_X^k \mu_Y^{z-k} &amp;&amp; (\text{multiply and divide by } z!) \\
+&amp;= \frac{e^{-(\mu_X + \mu_Y)}}{z!} (\mu_X + \mu_Y)^z &amp;&amp; (\text{binomial theorem})
+\end{aligned}
+\]</span></p>
+<p>This probability expression matches the PMF of a <span class="math inline">\(\operatorname{Pois}(\mu_X + \mu_Y)\)</span> random variable (see also <a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1206/lectureNotes/LN12_independent_rvs.pdf" class="uri">https://web.stanford.edu/class/archive/cs/cs109/cs109.1206/lectureNotes/LN12_independent_rvs.pdf</a>, Example 3).</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-sum-pois" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8 (Aggregating independent region counts)</strong></span> Suppose Region A records <span class="math inline">\(X \sim \operatorname{Pois}(\mu_X = 12)\)</span> cases and Region B records <span class="math inline">\(Y \sim \operatorname{Pois}(\mu_Y = 18)\)</span> cases independently. By <a href="#/thm-sum-pois" class="quarto-xref">Theorem&nbsp;6</a>, the combined total count <span class="math inline">\(Z = X + Y\)</span> follows a Poisson distribution:</p>
+<p><span class="math display">\[
+\begin{aligned}
+Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independent Poissons}) \\
+&amp;= \operatorname{Pois}(12 + 18) &amp;&amp; (\text{substitute region means}) \\
+&amp;= \operatorname{Pois}(30) &amp;&amp; (\text{evaluate sum})
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="sec-nb-dist" class="slide level2" data-number="3">
+<h2><span class="header-section-number">3</span> The Negative-Binomial distribution</h2>
+<div id="def-nb" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, if, for <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>:</p>
+<p><span class="math display">\[
+\operatorname{P}(Y=y)
+\stackrel{\text{def}}{=}\frac{\mu^y}{y!}
+\cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y}
+\cdot \left(1+\frac{\mu}{\rho}\right)^{-\rho}
+\]</span></p>
+<p>where <span class="math inline">\(\Gamma\)</span> is the gamma function, which satisfies <span class="math inline">\(\Gamma(x) = (x-1)!\)</span> for positive integers <span class="math inline">\(x\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-nb-poisson-limit" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7 (The negative binomial converges to the Poisson)</strong></span> Fix <span class="math inline">\(\mu&gt; 0\)</span>, and let <span class="math inline">\(Y_\rho\sim \operatorname{NegBin}(\mu, \rho)\)</span>. Then for each <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>, as <span class="math inline">\(\rho\rightarrow \infty\)</span>, the negative binomial PMF converges to the <a href="#/def-poisson">Poisson</a> PMF (<a href="#/eq-pois-pmf" class="quarto-xref">Equation&nbsp;1</a>):</p>
+<p><span class="math display">\[\lim_{\rho\rightarrow \infty} \operatorname{P}(Y_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Fix <span class="math inline">\(y\)</span>. In <a href="#/def-nb" class="quarto-xref">Definition&nbsp;5</a>, the first factor <span class="math inline">\(\mu^y / y!\)</span> does not depend on <span class="math inline">\(\rho\)</span>. For the second factor, <span class="math inline">\(\Gamma(\rho+ y) = \Gamma(\rho) \prod_{k=0}^{y-1} (\rho+ k)\)</span>, by applying <span class="math inline">\(\Gamma(x + 1) = x\,\Gamma(x)\)</span> <span class="math inline">\(y\)</span> times (for <span class="math inline">\(y = 0\)</span>, the product is empty and equals 1), so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y}
+&amp;= \frac{\Gamma(\rho) \prod_{k=0}^{y-1} (\rho+ k)}{\Gamma(\rho) \cdot (\rho+ \mu)^y}
+&amp;&amp; (\Gamma(x + 1) = x\,\Gamma(x) \text{, applied } y \text{ times}) \\
+&amp;= \prod_{k=0}^{y-1} \frac{\rho+ k}{\rho+ \mu}
+&amp;&amp; (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho+ \mu\text{ per } k) \\
+&amp;= \prod_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho}
+&amp;&amp; (\text{divide each numerator and denominator by } \rho) \\
+&amp;\rightarrow \prod_{k=0}^{y-1} \frac{1 + 0}{1 + 0}
+&amp;&amp; (k/\rho\rightarrow 0 \text{ and } \mu/\rho\rightarrow 0 \text{; finitely many factors}) \\
+&amp;= 1
+&amp;&amp; (\text{simplify})
+\end{aligned}
+\]</span></p>
+<p>For the third factor, write <span class="math inline">\(x \stackrel{\text{def}}{=}\mu/\rho\)</span>, so <span class="math inline">\(x \rightarrow 0\)</span> as <span class="math inline">\(\rho\rightarrow \infty\)</span>, and <span class="math inline">\(\rho= \mu/x\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log\mathopen{}\left(\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho}\right)\mathclose{}
+&amp;= -\rho\log\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}
+&amp;&amp; (\text{log of a power}) \\
+&amp;= -\mu\cdot \frac{\log(1 + x)}{x}
+&amp;&amp; (\text{substitute } \rho= \mu/x) \\
+&amp;\rightarrow -\mu\cdot 1
+&amp;&amp; (\textstyle\lim_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\
+&amp;= -\mu
+&amp;&amp; (\text{simplify})
+\end{aligned}
+\]</span></p>
+<p>so, since the exponential function is continuous, <span class="math inline">\(\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow \operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}\)</span>. Each of the three factors has a limit, so their product does too:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{\rho\rightarrow \infty} \operatorname{P}(Y_\rho= y)
+&amp;= \frac{\mu^y}{y!} \cdot 1 \cdot \operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}
+&amp;&amp; (\text{limit of a product of convergent factors}) \\
+&amp;= \frac{\mu^{y} e^{-\mu}}{y!}
+&amp;&amp; (\text{rearrange})
+\end{aligned}
+\]</span></p>
+<p>which is the <span class="math inline">\(\operatorname{Pois}(\mu)\)</span> PMF.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-nb" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8 (Mean and variance of the negative binomial distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, then:</p>
+<ul>
+<li><span class="math inline">\(\operatorname{E}[Y] = \mu\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu+ \frac{\mu^2}{\rho} &gt; \mu\)</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The negative binomial distribution is a gamma mixture of Poisson distributions: if <span class="math inline">\(\Lambda\)</span> has the gamma density <span class="math inline">\(g({\lambda}) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\)</span> for <span class="math inline">\({\lambda}&gt; 0\)</span>, which has mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\mu^2/\rho\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>)</span>, and <span class="math inline">\(Y \mid \Lambda= {\lambda}\sim \operatorname{Pois}({\lambda})\)</span>, then <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>. To check this, integrate the joint density over <span class="math inline">\({\lambda}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(Y = y)
+&amp;= \int_0^\infty \frac{{\lambda}^y e^{-{\lambda}}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\,d{\lambda}
+&amp;&amp; (\text{marginalize over } \Lambda) \\
+&amp;= \frac{(\rho/\mu)^\rho}{y!\,\Gamma(\rho)} \int_0^\infty {\lambda}^{y + \rho- 1} e^{-{\lambda}(1 + \rho/\mu)}\,d{\lambda}
+&amp;&amp; (\text{collect powers of } {\lambda}\text{ and exponents}) \\
+&amp;= \frac{(\rho/\mu)^\rho}{y!\,\Gamma(\rho)} \cdot\frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}}
+&amp;&amp; (\textstyle\int_0^\infty {\lambda}^{a-1} e^{-b{\lambda}}\,d{\lambda}= \Gamma(a)/b^a) \\
+&amp;= \frac{\Gamma(y + \rho)}{y!\,\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu}\right)\mathclose{}^\rho\mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y + \rho}
+&amp;&amp; (1 + \rho/\mu= (\mu+ \rho)/\mu) \\
+&amp;= \frac{\Gamma(y + \rho)}{y!\,\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu+ \rho}\right)\mathclose{}^{\rho} \mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y}
+&amp;&amp; (\text{combine the } \mu^\rho\text{ factors}) \\
+&amp;= \frac{\mu^y}{y!} \cdot\frac{\Gamma(\rho+ y)}{\Gamma(\rho)\,(\rho+ \mu)^y} \cdot\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho}
+&amp;&amp; (\text{rearrange into the form of the definition})
+\end{aligned}
+\]</span></p>
+<p>Then, by the <a href="./expectation.html#thm-lie">law of iterated expectations</a> and the <a href="./variance-covariance.html#thm-total-variance">law of total variance</a>, using</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} &amp;= \operatorname{Var}(Y \mid \Lambda) \\
+&amp;= \Lambda
+\end{aligned}
+\]</span></p>
+<p>(<a href="#/thm-poisson-properties" class="quarto-xref">Theorem&nbsp;2</a>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}[Y]
+&amp;= \operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}\right]\mathclose{}
+&amp;&amp; (\text{law of iterated expectations}) \\
+&amp;= \operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{}
+&amp;&amp; (\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} = \Lambda) \\
+&amp;= \mu
+&amp;&amp; (\text{mean of the gamma distribution}) \\
+\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}\right)\mathclose{}
+&amp;&amp; (\text{law of total variance}) \\
+&amp;= \operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}
+&amp;&amp; (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \Lambda\text{ and } \operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} = \Lambda) \\
+&amp;= \mu+ \frac{\mu^2}{\rho}
+&amp;&amp; (\text{mean and variance of the gamma distribution})
+\end{aligned}
+\]</span></p>
+<p>and <span class="math inline">\(\mu^2/\rho&gt; 0\)</span> gives <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &gt; \mu\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-nb" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 (Overdispersion relative to the Poisson)</strong></span> With <span class="math inline">\(\mu= 4\)</span> and <span class="math inline">\(\rho= 2\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &amp;= 4 + 16/2 \\
+&amp;= 12,
+\end{aligned}
+\]</span></p>
+<p>three times the variance of a <span class="math inline">\(\operatorname{Pois}(4)\)</span> count with the same mean.</p>
+</div>
+</section>
+<section id="sec-laplace" class="slide level2" data-number="4">
+<h2><span class="header-section-number">4</span> The Laplace distribution</h2>
+<div id="def-laplace" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6 (Laplace distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Laplace distribution</strong> with location parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and scale parameter <span class="math inline">\(b &gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\)</span>, if <span class="math inline">\(Y\)</span> is continuous with <a href="./random-variables.html#def-pdf">density</a>:</p>
+<p><span id="eq-laplace-pdf"><span class="math display">\[\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left|y - \mu\right|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{5}\]</span></span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The <a href="./random-variables.html#def-normal">normal density</a> has the squared distance <span class="math inline">\((y - \mu)^2\)</span> in its exponent. The Laplace density has the absolute distance <span class="math inline">\(\mathopen{}\left|y - \mu\right|\mathclose{}\)</span> instead. Both densities are symmetric about <span class="math inline">\(\mu\)</span>, but the Laplace density has a sharp peak at <span class="math inline">\(\mu\)</span> and decays more slowly in the tails.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-laplace-density" class="theorem example">
+<p><span class="theorem-title"><strong>Example 10 (Laplace density values)</strong></span> Let <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\)</span>, so <span class="math inline">\(\mu= 3\)</span> and <span class="math inline">\(b = 2\)</span> (<a href="#/def-laplace" class="quarto-xref">Definition&nbsp;6</a>). At the location, <span class="math inline">\(\mathopen{}\left|y - \mu\right|\mathclose{} = 0\)</span>, so the density is <span class="math inline">\(\frac{1}{2b}\)</span>. At a point <span class="math inline">\(y = 5\)</span>, the distance is</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathopen{}\left|5 - 3\right|\mathclose{} &amp;= 2 \\
+&amp;= b,
+\end{aligned}
+\]</span></p>
+<p>so the density is <span class="math inline">\(\frac{1}{2b}\text{e}^{-1}\)</span>. Here are both values:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="fu">c</span>(</span>
+<span id="cb3-3"><a aria-label="3"></a>  <span class="at">at_mu =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> b),</span>
+<span id="cb3-4"><a aria-label="4"></a>  <span class="at">at_mu_plus_2 =</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> b)</span>
+<span id="cb3-5"><a aria-label="5"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a aria-label="6"></a>  <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb3-7"><a aria-label="7"></a><span class="co">#&gt;        at_mu at_mu_plus_2 </span></span>
+<span id="cb3-8"><a aria-label="8"></a><span class="co">#&gt;        0.250        0.092</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The density at <span class="math inline">\(\mu+ b\)</span> is the density at <span class="math inline">\(\mu\)</span> times <span class="math inline">\(\text{e}^{-1}\)</span>, and the same holds at <span class="math inline">\(\mu- b\)</span>, because the density depends only on the distance from <span class="math inline">\(\mu\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-laplace-moments" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9 (Mean and variance of the Laplace distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\)</span> (<a href="#/def-laplace" class="quarto-xref">Definition&nbsp;6</a>), then</p>
+<p><span id="eq-laplace-moments"><span class="math display">\[\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = \mu\quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{6}\]</span></span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(U = Y - \mu\)</span>. By <a href="#/eq-laplace-pdf" class="quarto-xref">Equation&nbsp;5</a>, <span class="math inline">\(U\)</span> has density <span class="math inline">\(\frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span>, which is symmetric about <span class="math inline">\(0\)</span>.</p>
+<p>For the mean, the integrand <span class="math inline">\(u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is an odd function, so its integral over <span class="math inline">\(\mathbb{R}\)</span> is <span class="math inline">\(0\)</span>. Therefore <span class="math inline">\(\operatorname{E}\mathopen{}\left[U\right]\mathclose{} = 0\)</span>, and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} &amp;= \mu+ \operatorname{E}\mathopen{}\left[U\right]\mathclose{} \\
+&amp;= \mu.
+\end{aligned}
+\]</span></p>
+<p>For the variance,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &amp;= \operatorname{Var}\mathopen{}\left(U\right)\mathclose{} \\
+&amp;= \operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}
+\end{aligned}
+\]</span></p>
+<p>because <span class="math inline">\(\operatorname{E}\mathopen{}\left[U\right]\mathclose{} = 0\)</span>. The integrand <span class="math inline">\(u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is even, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}
+&amp;= 2 \int_0^\infty u^2 \frac{1}{2b} \text{e}^{-u/b} \, du
+&amp;&amp; \text{(even integrand)} \\
+&amp;= \frac{1}{b} \int_0^\infty u^2 \text{e}^{-u/b} \, du
+&amp;&amp; \text{(multiplying the constants)} \\
+&amp;= \frac{1}{b} \mathopen{}\left(2b \int_0^\infty u \text{e}^{-u/b} \, du\right)\mathclose{}
+&amp;&amp; \text{(integration by parts; the boundary terms are $0$)} \\
+&amp;= \frac{1}{b} \mathopen{}\left(2b \cdot b^2\right)\mathclose{}
+&amp;&amp; \text{(integration by parts again; the boundary terms are $0$)} \\
+&amp;= 2b^2.
+&amp;&amp; \text{(multiplying the constants)}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-laplace-vs-normal" class="theorem example">
+<p><span class="theorem-title"><strong>Example 11 (Laplace and normal tails with the same mean and variance)</strong></span> A Laplace variable <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\)</span> has variance <span class="math inline">\(2b^2\)</span> (<a href="#/thm-laplace-moments" class="quarto-xref">Theorem&nbsp;9</a>). Choosing <span class="math inline">\(b = 1/\sqrt{2}\)</span> gives variance <span class="math inline">\(1\)</span>, the same mean and variance as a standard normal. <a href="#/fig-laplace-vs-normal" class="quarto-xref">Figure&nbsp;3</a> compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>[Code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>b <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
+<span id="cb4-2"><a aria-label="2"></a>grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="at">length.out =</span> <span class="dv">801</span>)</span>
+<span id="cb4-3"><a aria-label="3"></a>dlaplace <span class="ot">&lt;-</span> <span class="cf">function</span>(y, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>) <span class="fu">exp</span>(<span class="sc">-</span><span class="fu">abs</span>(y <span class="sc">-</span> mu) <span class="sc">/</span> b) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> b)</span>
+<span id="cb4-4"><a aria-label="4"></a>densities <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb4-5"><a aria-label="5"></a>  <span class="at">y =</span> <span class="fu">rep</span>(grid, <span class="at">times =</span> <span class="dv">2</span>),</span>
+<span id="cb4-6"><a aria-label="6"></a>  <span class="at">distribution =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Laplace"</span>, <span class="st">"Normal"</span>), <span class="at">each =</span> <span class="fu">length</span>(grid)),</span>
+<span id="cb4-7"><a aria-label="7"></a>  <span class="at">density =</span> <span class="fu">c</span>(<span class="fu">dlaplace</span>(grid, <span class="at">b =</span> b), <span class="fu">dnorm</span>(grid))</span>
+<span id="cb4-8"><a aria-label="8"></a>)</span>
+<span id="cb4-9"><a aria-label="9"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(densities) <span class="sc">+</span></span>
+<span id="cb4-10"><a aria-label="10"></a>  ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> y, <span class="at">y =</span> density, <span class="at">colour =</span> distribution) <span class="sc">+</span></span>
+<span id="cb4-11"><a aria-label="11"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-12"><a aria-label="12"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">colour =</span> <span class="cn">NULL</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-laplace-vs-normal" class="quarto-float quarto-figure quarto-figure-center" alt="Two symmetric curves over y from minus 4 to 4. The standard normal is a smooth bell. The Laplace curve with the same variance peaks higher at 0 with a sharp point, falls below the normal curve at moderate distances, and stays above it in the far tails.">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-laplace-vs-normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Laplace and standard normal densities with the same mean (0) and variance (1)
+</figcaption>
+<div aria-describedby="fig-laplace-vs-normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="distributions_files/figure-html/fig-laplace-vs-normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Laplace and standard normal densities with the same mean (0) and variance (1)"><img data-src="distributions_files/figure-html/fig-laplace-vs-normal-1.png" alt="Two symmetric curves over y from minus 4 to 4. The standard normal is a smooth bell. The Laplace curve with the same variance peaks higher at 0 with a sharp point, falls below the normal curve at moderate distances, and stays above it in the far tails." width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>The probability of landing more than <span class="math inline">\(3\)</span> standard deviations from the mean shows the difference in the tails. For the Laplace distribution, <span class="math inline">\(\operatorname{P}(\mathopen{}\left|Y\right|\mathclose{} &gt; t) = \text{e}^{-t/b}\)</span>, because each tail has probability <span class="math inline">\(\frac{1}{2}\text{e}^{-t/b}\)</span> by integrating <a href="#/eq-laplace-pdf" class="quarto-xref">Equation&nbsp;5</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>t <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="fu">c</span>(</span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="at">Laplace =</span> <span class="fu">exp</span>(<span class="sc">-</span>t <span class="sc">/</span> b),</span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="at">Normal =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="sc">-</span>t)</span>
+<span id="cb5-5"><a aria-label="5"></a>)</span>
+<span id="cb5-6"><a aria-label="6"></a><span class="co">#&gt;     Laplace      Normal </span></span>
+<span id="cb5-7"><a aria-label="7"></a><span class="co">#&gt; 0.014369596 0.002699796</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The Laplace distribution puts about 5.3 times as much probability beyond <span class="math inline">\(3\)</span> standard deviations as the normal distribution does.</p>
+</div>
+</section>
+<section id="sec-weibull" class="slide level2" data-number="5">
+<h2><span class="header-section-number">5</span> Weibull distribution</h2>
+<div id="def-weibull" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (Weibull distribution)</strong></span> A non-negative random variable <span class="math inline">\(T\)</span> has the <strong>Weibull distribution</strong> with shape <span class="math inline">\(\alpha&gt; 0\)</span> and rate <span class="math inline">\({\lambda}&gt; 0\)</span> if its <a href="./random-variables.html#def-surv-fn">survival function</a> is:</p>
+<p><span class="math display">\[\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-weibull" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 10 (Weibull density, hazard, and mean)</strong></span> If <span class="math inline">\(T\)</span> has the Weibull distribution with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\({\lambda}\)</span>, then for <span class="math inline">\(t &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(t) &amp;= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\
+\operatorname{h}(t) &amp;= \alpha{\lambda}t^{\alpha-1}\\
+\operatorname{E}\mathopen{}\left[T\right]\mathclose{} &amp;= \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}
+\end{aligned}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The CDF of <span class="math inline">\(T\)</span> is <span class="math inline">\(F(t) = 1 - \operatorname{S}(t)\)</span> (<a href="./random-variables.html#thm-survival-expressions-1">survival function and CDF</a>), which is <span class="math inline">\(0\)</span> for <span class="math inline">\(t &lt; 0\)</span> and <span class="math inline">\(1 - \text{e}^{-{\lambda}t^\alpha}\)</span> for <span class="math inline">\(t \ge 0\)</span>. This <span class="math inline">\(F\)</span> is continuous everywhere, with a continuous derivative everywhere except possibly <span class="math inline">\(t = 0\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+f &amp;= F' \\
+&amp;= -\operatorname{S}'
+\end{aligned}
+\]</span></p>
+<p>is a density of <span class="math inline">\(T\)</span> (<a href="./random-variables.html#thm-cdf-derivative-density">a piecewise-smooth CDF has its derivative as a density</a>). This density is continuous at every <span class="math inline">\(t &gt; 0\)</span>, so there the hazard is <span class="math inline">\(f(t)/\operatorname{S}(t)\)</span> (<a href="./random-variables.html#thm-hazard-dens-surv">hazard equals density over survival</a>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(t)
+&amp;= -\frac{d}{dt}\text{e}^{-{\lambda}t^\alpha}
+&amp;&amp; (f = -\operatorname{S}') \\
+&amp;= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}
+&amp;&amp; (\text{chain rule}) \\
+\operatorname{h}(t)
+&amp;= \frac{\alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}}{\text{e}^{-{\lambda}t^\alpha}}
+&amp;&amp; (\text{hazard is density over survival}) \\
+&amp;= \alpha{\lambda}t^{\alpha-1}
+&amp;&amp; (\text{cancel})
+\end{aligned}
+\]</span></p>
+<p>For the mean, use the <a href="./expectation.html#thm-surv-mean">survival-function formula for the mean</a> and substitute <span class="math inline">\(u = {\lambda}t^\alpha\)</span>, so that <span class="math inline">\(t = (u/{\lambda})^{1/\alpha}\)</span> and <span class="math inline">\(dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\,du\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[T\right]\mathclose{}
+&amp;= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\,dt
+&amp;&amp; (\text{expectation via the survival function}) \\
+&amp;= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\,du
+&amp;&amp; (\text{substitute } u = {\lambda}t^\alpha) \\
+&amp;= \frac{1}{\alpha}{\lambda}^{-1/\alpha}\,\Gamma(1/\alpha)
+&amp;&amp; (\text{definition of the gamma function}) \\
+&amp;= \Gamma(1 + 1/\alpha)\,{\lambda}^{-1/\alpha}
+&amp;&amp; (\Gamma(1 + a) = a\,\Gamma(a))
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The hazard is written <span class="math inline">\(\operatorname{h}(t)\)</span> here, rather than <span class="math inline">\({\lambda}(t)\)</span>, because the Weibull rate parameter is also called <span class="math inline">\({\lambda}\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="cor-weibull-exponential" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (The Weibull with shape 1 is the exponential)</strong></span> If <span class="math inline">\(T\)</span> has the <a href="#/def-weibull">Weibull distribution</a> with shape <span class="math inline">\(\alpha= 1\)</span> and rate <span class="math inline">\({\lambda}\)</span>, then <span class="math inline">\(T\)</span> has the <a href="./random-variables.html#def-exponential">exponential distribution</a> with rate <span class="math inline">\({\lambda}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-weibull" class="quarto-xref">Theorem&nbsp;10</a> with <span class="math inline">\(\alpha= 1\)</span>, for <span class="math inline">\(t &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(t)
+&amp;= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}
+&amp;&amp; (\text{Weibull density}) \\
+&amp;= 1 \cdot {\lambda}t^{0}\text{e}^{-{\lambda}t^1}
+&amp;&amp; (\text{substitute } \alpha= 1) \\
+&amp;= {\lambda}\text{e}^{-{\lambda}t}
+&amp;&amp; (t^0 = 1 \text{ and } t^1 = t)
+\end{aligned}
+\]</span></p>
+<p>and <span class="math inline">\(f(t) = 0\)</span> for <span class="math inline">\(t &lt; 0\)</span>, since <span class="math inline">\(T\)</span> is non-negative. This density matches the exponential density at every <span class="math inline">\(t \ne 0\)</span>. Changing a density at the single point <span class="math inline">\(t = 0\)</span> does not change its integral over any set, so <span class="math inline">\(T\)</span> has the exponential distribution with rate <span class="math inline">\({\lambda}\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="cor-weibull-hazard-monotone" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2 (The Weibull shape sets the direction of the hazard)</strong></span> If <span class="math inline">\(T\)</span> has the <a href="#/def-weibull">Weibull distribution</a> with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\({\lambda}\)</span>, then on <span class="math inline">\(t &gt; 0\)</span> its hazard <span class="math inline">\(\operatorname{h}(t)\)</span> is:</p>
+<ul>
+<li>strictly increasing if <span class="math inline">\(\alpha&gt; 1\)</span></li>
+<li>constant if <span class="math inline">\(\alpha= 1\)</span></li>
+<li>strictly decreasing if <span class="math inline">\(\alpha&lt; 1\)</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-weibull" class="quarto-xref">Theorem&nbsp;10</a>, <span class="math inline">\(\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}\)</span> for <span class="math inline">\(t &gt; 0\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dt}\operatorname{h}(t)
+&amp;= \frac{d}{dt} \alpha{\lambda}t^{\alpha-1}
+&amp;&amp; (\text{Weibull hazard}) \\
+&amp;= \alpha(\alpha- 1){\lambda}t^{\alpha-2}
+&amp;&amp; (\text{power rule})
+\end{aligned}
+\]</span></p>
+<p>For <span class="math inline">\(t &gt; 0\)</span>, the factors <span class="math inline">\(\alpha\)</span>, <span class="math inline">\({\lambda}\)</span>, and <span class="math inline">\(t^{\alpha-2}\)</span> are all positive, so <span class="math inline">\(\frac{d}{dt}\operatorname{h}(t)\)</span> has the sign of <span class="math inline">\(\alpha- 1\)</span>: positive for <span class="math inline">\(\alpha&gt; 1\)</span>, zero for <span class="math inline">\(\alpha= 1\)</span>, and negative for <span class="math inline">\(\alpha&lt; 1\)</span>. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The exponential distribution’s hazard is constant, so the Weibull’s choice of an increasing, constant, or decreasing hazard (<a href="#/cor-weibull-hazard-monotone" class="quarto-xref">Corollary&nbsp;2</a>) provides more flexibility than the exponential.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-weibull" class="theorem example">
+<p><span class="theorem-title"><strong>Example 12 (Exponential as a special case)</strong></span> With <span class="math inline">\(\alpha= 1\)</span>, <a href="#/thm-weibull" class="quarto-xref">Theorem&nbsp;10</a> gives <span class="math inline">\(\operatorname{h}(t) = {\lambda}\)</span> and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[T\right]\mathclose{} &amp;= \Gamma(2){\lambda}^{-1} \\
+&amp;= 1/{\lambda},
+\end{aligned}
+\]</span></p>
+<p>matching the exponential distribution’s constant hazard and mean. With <span class="math inline">\(\alpha= 2\)</span> and <span class="math inline">\({\lambda}= 1\)</span>, <span class="math inline">\(\operatorname{h}(t) = 2t\)</span> increases with <span class="math inline">\(t\)</span>, and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[T\right]\mathclose{} &amp;= \Gamma(3/2) \\
+&amp;= \sqrt{\pi}/2 \\
+&amp;\approx 0.886.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="sec-mvn" class="slide level2" data-number="6">
+<h2><span class="header-section-number">6</span> The multivariate normal distribution</h2>
+<div id="def-mvn" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8 (Multivariate normal distribution)</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\tilde{\mu} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\tilde{X}\)</span> has joint density:</p>
+<p><span class="math display">\[
+\operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=}
+\frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}}
+\text{e}^{-\frac{1}{2} {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})},
+\quad \tilde{x}\in \mathbb{R}^p
+\]</span></p>
+<p>where <span class="math inline">\(\det(\mathbf{\Sigma})\)</span> is the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant">determinant</a> of <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is its <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse">inverse</a>.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>A joint density of <span class="math inline">\(p\)</span> random variables is the <span class="math inline">\(p\)</span>-variable analogue of a <a href="./random-variables.html#def-joint-pdf">joint density</a> of two: a non-negative function on <span class="math inline">\(\mathbb{R}^p\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^p\)</span> is <span class="math inline">\(\Pr(\tilde{X}\in A)\)</span>.</p>
+<p>The density is well defined because <span class="math inline">\(\mathbf{\Sigma}\)</span> is positive definite:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> exists (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse">positive definite matrices have positive definite inverses</a>), and</li>
+<li><span class="math inline">\(\det(\mathbf{\Sigma}) &gt; 0\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#cor-det-pd">positive definite matrices have positive determinants</a>), so its square root is a positive number.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="thm-mvn-moments" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 11 (The multivariate normal density integrates to 1, with mean <span class="math inline">\(\tilde{\mu}\)</span> and variance <span class="math inline">\(\mathbf{\Sigma}\)</span>)</strong></span> If <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#/def-mvn" class="quarto-xref">Definition&nbsp;8</a>), then the density in <a href="#/def-mvn" class="quarto-xref">Definition&nbsp;8</a> integrates to 1 over <span class="math inline">\(\mathbb{R}^p\)</span>, <span class="math inline">\(\operatorname{E}\tilde{X}= \tilde{\mu}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The proof changes variables in a <span class="math inline">\(p\)</span>-dimensional integral, which these notes do not develop; see <a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Multivariate_normal_distribution</a>. As with the univariate <a href="./random-variables.html#thm-normal-density">normal distribution</a>, these facts are where the parameters’ names come from. They also show why <span class="math inline">\(\mathbf{\Sigma}\)</span> must at least be <a href="./variance-covariance.html#thm-vcov-psd">positive semidefinite</a>; requiring it to be positive definite rules out cases like <a href="./variance-covariance.html#exm-vcov-singular">a variance matrix that is not positive definite</a>, which has no joint density.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-mvn-univariate" class="theorem example">
+<p><span class="theorem-title"><strong>Example 13 (The univariate normal is the case <span class="math inline">\(p = 1\)</span>)</strong></span> With <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(\tilde{\mu} = (\mu)\)</span>, and <span class="math inline">\(\mathbf{\Sigma} = (\sigma^2)\)</span> for <span class="math inline">\(\sigma^2&gt; 0\)</span>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \sigma^2\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant">determinant</a>, <span class="math inline">\(p = 1\)</span>) and <span class="math inline">\(\mathbf{\Sigma}^{-1} = (1/\sigma^2)\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{p}(\tilde{X}= \tilde{x})
+&amp;= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}}
+\text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)}
+&amp;&amp; \text{(substitute into the multivariate normal density)} \\
+&amp;= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x - \mu)^2}{2\sigma^2}}
+&amp;&amp; \text{(simplify)}
+\end{aligned}
+\]</span></p>
+<p>which is the <a href="./random-variables.html#def-normal">normal density</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="lem-mahalanobis-nonneg" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (The quadratic form in the multivariate normal density is non-negative)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is a <span class="math inline">\(p \times p\)</span> positive definite matrix and <span class="math inline">\(\tilde{x}, \tilde{\mu} \in \mathbb{R}^p\)</span>, then</p>
+<p><span class="math display">\[{(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu}) \ge 0,\]</span></p>
+<p>with equality if and only if <span class="math inline">\(\tilde{x}= \tilde{\mu}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is positive definite (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse">positive definite inverse</a>). If <span class="math inline">\(\tilde{x}\neq \tilde{\mu}\)</span>, then <span class="math inline">\(\tilde{x}- \tilde{\mu} \neq \tilde{0}\)</span>, so the quadratic form is positive by the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">definition of positive definite</a>. If <span class="math inline">\(\tilde{x}= \tilde{\mu}\)</span>, then <span class="math inline">\(\tilde{x}- \tilde{\mu} = \tilde{0}\)</span>, and the quadratic form is <span class="math inline">\(0\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-mahalanobis" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9 (Mahalanobis distance)</strong></span> For a <span class="math inline">\(p \times p\)</span> positive definite matrix <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\tilde{x}, \tilde{\mu} \in \mathbb{R}^p\)</span>, the <strong>Mahalanobis distance</strong> from <span class="math inline">\(\tilde{x}\)</span> to <span class="math inline">\(\tilde{\mu}\)</span> with respect to <span class="math inline">\(\mathbf{\Sigma}\)</span> is:</p>
+<p><span class="math display">\[
+\Delta(\tilde{x}) \stackrel{\text{def}}{=}\sqrt{{(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The square root is defined by <a href="#/lem-mahalanobis-nonneg" class="quarto-xref">Lemma&nbsp;1</a>. See also <a href="https://en.wikipedia.org/wiki/Mahalanobis_distance" class="uri">https://en.wikipedia.org/wiki/Mahalanobis_distance</a>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="cor-mvn-mahalanobis" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)</strong></span> If <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then:</p>
+<p><span class="math display">\[
+\operatorname{p}(\tilde{X}= \tilde{x}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\tilde{x})^2}{2}}
+\]</span></p>
+<p>where <span class="math inline">\(\Delta\)</span> is the Mahalanobis distance to <span class="math inline">\(\tilde{\mu}\)</span> with respect to <span class="math inline">\(\mathbf{\Sigma}\)</span> (<a href="#/def-mahalanobis" class="quarto-xref">Definition&nbsp;9</a>). So the density is highest at <span class="math inline">\(\tilde{x}= \tilde{\mu}\)</span>, decreases as <span class="math inline">\(\Delta(\tilde{x})\)</span> increases, and is the same at every <span class="math inline">\(\tilde{x}\)</span> with the same <span class="math inline">\(\Delta(\tilde{x})\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Substitute <a href="#/def-mahalanobis" class="quarto-xref">Definition&nbsp;9</a> into <a href="#/def-mvn" class="quarto-xref">Definition&nbsp;8</a>. The function <span class="math inline">\(\delta\mapsto \text{e}^{-\delta^2/2}\)</span> decreases on <span class="math inline">\(\delta\ge 0\)</span>, and by <a href="#/lem-mahalanobis-nonneg" class="quarto-xref">Lemma&nbsp;1</a>, <span class="math inline">\(\Delta(\tilde{x}) = 0\)</span> only at <span class="math inline">\(\tilde{x}= \tilde{\mu}\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-mahalanobis-special" class="theorem example">
+<p><span class="theorem-title"><strong>Example 14 (Mahalanobis distance for diagonal variance matrices)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix">diagonal</a> with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, all positive, then <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is diagonal with diagonal elements <span class="math inline">\(1/\sigma^2_1, \ldots, 1/\sigma^2_p\)</span> (multiplying the two gives <span class="math inline">\(\mathbf{I}_p\)</span>; <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse">matrix inverse</a>), so:</p>
+<p><span class="math display">\[
+\Delta(\tilde{x})^2 = \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}
+\]</span></p>
+<p>Two special cases:</p>
+<ul>
+<li>If <span class="math inline">\(\mathbf{\Sigma} = \mathbf{I}_p\)</span>, then <span class="math inline">\(\Delta(\tilde{x})^2 = \sum_{i=1}^p(x_i - \mu_i)^2\)</span>, so the Mahalanobis distance is the ordinary (Euclidean) distance.</li>
+<li>If <span class="math inline">\(\mathbf{\Sigma} = \sigma^2\mathbf{I}_p\)</span>, then <span class="math inline">\(\Delta(\tilde{x})\)</span> is the Euclidean distance divided by <span class="math inline">\(\sigma\)</span>.</li>
+</ul>
+<p>In general, each coordinate’s difference is measured in units of that coordinate’s standard deviation.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-mvn-diagonal-indpt" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 12 (A multivariate normal vector with diagonal variance has independent normal components)</strong></span> If <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span> and <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, then:</p>
+<ul>
+<li>the joint density of <span class="math inline">\(\tilde{X}\)</span> is the product of the <a href="./random-variables.html#def-normal">normal densities</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, <span class="math inline">\(i = 1, \ldots, p\)</span>,</li>
+<li>each <span class="math inline">\(X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, and</li>
+<li><span class="math inline">\(X_1, \ldots, X_p\)</span> are <a href="./independence.html#def-indpt">independent</a>.</li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal">determinant of a diagonal matrix</a>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i\)</span>, so <span class="math inline">\(\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i\)</span>. Using <a href="#/exm-mahalanobis-special" class="quarto-xref">Example&nbsp;14</a> for the quadratic form:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{p}(\tilde{X}= \tilde{x})
+&amp;= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sigma_i}
+\text{e}^{-\frac{1}{2} \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}}
+&amp;&amp; \text{(substitute)} \\
+&amp;= \prod_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}}
+\text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma^2_i}}
+&amp;&amp; \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)}
+\end{aligned}
+\]</span></p>
+<p>which is the product of the <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span> densities. Integrating out every coordinate except <span class="math inline">\(x_i\)</span>, each other factor integrates to 1 (<a href="./random-variables.html#thm-normal-density">the normal density integrates to 1</a>), leaving the <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span> density as the density of <span class="math inline">\(X_i\)</span> (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables). So the joint density is the product of the marginal densities, and the components are independent by <a href="./independence.html#thm-indpt-density">the factorization theorem for densities</a>, extended to <span class="math inline">\(p\)</span> variables as its remark describes.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="cor-mvn-uncorrelated-indpt" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)</strong></span> If <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then <span class="math inline">\(X_1, \ldots, X_p\)</span> are independent if and only if <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, that is, if and only if <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> for every <span class="math inline">\(i \neq j\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-mvn-moments" class="quarto-xref">Theorem&nbsp;11</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\)</span>, whose <span class="math inline">\((i,j)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span> (<a href="./variance-covariance.html#thm-vcov-elements">elements of the variance matrix</a>). If <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, the components are independent by <a href="#/thm-mvn-diagonal-indpt" class="quarto-xref">Theorem&nbsp;12</a>. If the components are independent, then:</p>
+<ul>
+<li>each pair <span class="math inline">\(X_i, X_j\)</span> with <span class="math inline">\(i \neq j\)</span> is independent,</li>
+<li>each <span class="math inline">\(X_i\)</span> is continuous, with the density left after integrating out the other coordinates of the joint density (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables), and</li>
+<li><span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span>, because <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span>, the <span class="math inline">\((i,i)\)</span>-th element of <span class="math inline">\(\mathbf{\Sigma}\)</span>, is defined, and a <a href="./variance-covariance.html#def-variance">variance</a> is defined only when <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span>.</li>
+</ul>
+<p>So <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal by <a href="./variance-covariance.html#cor-vcov-indpt-diagonal">independent components give a diagonal variance matrix</a>.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>In general, uncorrelated random variables need not be independent (<a href="./variance-covariance.html#exm-uncorrelated-not-indpt">an example</a>). <a href="#/cor-mvn-uncorrelated-indpt" class="quarto-xref">Corollary&nbsp;4</a> needs the whole vector to be multivariate normal: two random variables that are each normal and uncorrelated can still be dependent (<a href="https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent" class="uri">https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent</a>).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="thm-mahalanobis-eigen" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 13 (Mahalanobis distance in eigenvector coordinates)</strong></span> Let <span class="math inline">\(\mathbf{\Sigma}\)</span> be positive definite, with <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-eigendecomposition">eigendecomposition</a> <span class="math inline">\(\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\)</span>, where <span class="math inline">\(\mathbf{Q}\)</span> has columns <span class="math inline">\(\tilde{q}_1, \ldots, \tilde{q}_p\)</span> and <span class="math inline">\(\mathbf{\Lambda}\)</span> has diagonal elements <span class="math inline">\(\lambda_1, \ldots, \lambda_p\)</span>. Then:</p>
+<p><span class="math display">\[
+\Delta(\tilde{x})^2 = \sum_{i=1}^p\frac{\mathopen{}\left({\tilde{q}_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\)</span>, whose <span class="math inline">\(i\)</span>-th element is <span class="math inline">\(y_i = {\tilde{q}_i}^{\top}(\tilde{x}- \tilde{\mu})\)</span>. By the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse">inverse of a positive definite matrix</a>, <span class="math inline">\(\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\)</span>, with every <span class="math inline">\(\lambda_i &gt; 0\)</span>. So:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta(\tilde{x})^2
+&amp;= {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\tilde{x}- \tilde{\mu})
+&amp;&amp; \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\
+&amp;= {\tilde{y}}^{\top} \mathbf{\Lambda}^{-1} \tilde{y}
+&amp;&amp; \text{(} {(\tilde{x}- \tilde{\mu})}^{\top}\mathbf{Q} = {\tilde{y}}^{\top} \text{)} \\
+&amp;= \sum_{i=1}^p\frac{y_i^2}{\lambda_i}
+&amp;&amp; \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)}
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span><span class="math inline">\(y_i\)</span> is the coordinate of <span class="math inline">\(\tilde{x}- \tilde{\mu}\)</span> along the eigenvector <span class="math inline">\(\tilde{q}_i\)</span>. So the set of points at Mahalanobis distance <span class="math inline">\(\delta\)</span> from <span class="math inline">\(\tilde{\mu}\)</span>, where the multivariate normal density is constant (<a href="#/cor-mvn-mahalanobis" class="quarto-xref">Corollary&nbsp;3</a>), is an ellipse (<span class="math inline">\(p = 2\)</span>) or ellipsoid centered at <span class="math inline">\(\tilde{\mu}\)</span>, with axes along the eigenvectors of <span class="math inline">\(\mathbf{\Sigma}\)</span> and half-length <span class="math inline">\(\delta\sqrt{\lambda_i}\)</span> along <span class="math inline">\(\tilde{q}_i\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-mahalanobis-eigen" class="theorem example">
+<p><span class="theorem-title"><strong>Example 15 (Elliptical contours of a bivariate normal density)</strong></span> Let <span class="math inline">\(\tilde{\mu} = \tilde{0}\)</span> and <span class="math inline">\(\mathbf{\Sigma} = \begin{pmatrix}2 &amp; 1 \\ 1 &amp; 2\end{pmatrix}\)</span>, which has eigenvalues <span class="math inline">\(3\)</span> and <span class="math inline">\(1\)</span>, with eigenvectors <span class="math inline">\(\tilde{q}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\)</span> and <span class="math inline">\(\tilde{q}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral">an eigendecomposition example</a>). By <a href="#/thm-mahalanobis-eigen" class="quarto-xref">Theorem&nbsp;13</a>:</p>
+<p><span class="math display">\[
+\Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}
+\]</span></p>
+<p>The point</p>
+<p><span class="math display">\[
+\begin{aligned}
+\tilde{x}&amp;= \sqrt{3}\,\tilde{q}_1 \\
+&amp;= \sqrt{3/2}\,{(1, 1)}^{\top}
+\end{aligned}
+\]</span></p>
+<p>has <span class="math inline">\(x_1 + x_2 = \sqrt{6}\)</span> and <span class="math inline">\(x_1 - x_2 = 0\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta(\tilde{x})^2 &amp;= 6/6 \\
+&amp;= 1;
+\end{aligned}
+\]</span></p>
+<p>the point <span class="math inline">\(\tilde{x}= \tilde{q}_2\)</span> has <span class="math inline">\(x_1 + x_2 = 0\)</span> and <span class="math inline">\(x_1 - x_2 = \sqrt{2}\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta(\tilde{x})^2 &amp;= 2/2 \\
+&amp;= 1.
+\end{aligned}
+\]</span></p>
+<p>So the contour <span class="math inline">\(\Delta(\tilde{x}) = 1\)</span> of the <span class="math inline">\(\operatorname{N}_2\mathopen{}\left(\tilde{0}, \mathbf{\Sigma}\right)\mathclose{}\)</span> density is an ellipse stretched along <span class="math inline">\({(1, 1)}^{\top}\)</span>, with half-length <span class="math inline">\(\sqrt{3}\)</span>, and squeezed along <span class="math inline">\({(1, -1)}^{\top}\)</span>, with half-length <span class="math inline">\(1\)</span>: <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are positively correlated.</p>
+</div>
+</section>
+<section id="sec-mixture" class="slide level2" data-number="7">
+<h2><span class="header-section-number">7</span> Mixture distributions</h2>
+<div id="def-mixture" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 10 (Mixture density)</strong></span> Let <span class="math inline">\({\operatorname{p}_1}, \ldots, {\operatorname{p}_K}\)</span> be densities on <span class="math inline">\(\mathbb{R}\)</span>, and let <span class="math inline">\(w_1, \ldots, w_K\)</span> be numbers with:</p>
+<ul>
+<li><span class="math inline">\(w_c \ge 0\)</span> for every <span class="math inline">\(c\)</span>, and</li>
+<li><span class="math inline">\(\sum_{c=1}^{K} w_c = 1\)</span>.</li>
+</ul>
+<p>The <strong>mixture</strong> of <span class="math inline">\({\operatorname{p}_1}, \ldots, {\operatorname{p}_K}\)</span> with <strong>mixing weights</strong> <span class="math inline">\(w_1, \ldots, w_K\)</span> is the function:</p>
+<p><span class="math display">\[
+{\operatorname{p}_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x), \quad x \in \mathbb{R}
+\]</span></p>
+<p>The densities <span class="math inline">\({\operatorname{p}_1}, \ldots, {\operatorname{p}_K}\)</span> are the mixture’s <strong>components</strong>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-mixture-two-stage" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 14 (A mixture is the density of a two-stage random variable)</strong></span> Let <span class="math inline">\(C\)</span> be a discrete random variable and <span class="math inline">\(X\)</span> a continuous random variable with <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a></p>
+<p><span class="math display">\[\operatorname{p}(C = c,\, X = x) = w_c \, {\operatorname{p}_c}(x), \quad c \in \mathopen{}\left\{1, \ldots, K\right\}\mathclose{},\]</span></p>
+<p>with <span class="math inline">\({\operatorname{p}_c}\)</span> and <span class="math inline">\(w_c\)</span> as in <a href="#/def-mixture" class="quarto-xref">Definition&nbsp;10</a>. Then:</p>
+<ul>
+<li><span class="math inline">\(\operatorname{P}(C = c) = w_c\)</span>,</li>
+<li>for each <span class="math inline">\(c\)</span> with <span class="math inline">\(w_c &gt; 0\)</span>, the <a href="./expectation.html#def-cond-mixed">conditional density</a> of <span class="math inline">\(X\)</span> given <span class="math inline">\(C = c\)</span> is <span class="math inline">\({\operatorname{p}_c}\)</span>, and</li>
+<li>the mixture <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> is a density of <span class="math inline">\(X\)</span>.</li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By the <a href="./random-variables.html#cor-joint-density-mass-marginal">marginal PMF from a joint density-mass function</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(C = c) &amp;= \int_{-\infty}^{\infty} w_c \, {\operatorname{p}_c}(x)\,dx \\
+&amp;= w_c,
+\end{aligned}
+\]</span></p>
+<p>because <span class="math inline">\({\operatorname{p}_c}\)</span> is a density and so integrates to 1. Then, by the <a href="./expectation.html#def-cond-mixed">definition of the conditional density</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{p}(X = x \mid C = c) &amp;= w_c \, {\operatorname{p}_c}(x) / w_c \\
+&amp;= {\operatorname{p}_c}(x).
+\end{aligned}
+\]</span></p>
+<p>For the last claim, the events <span class="math inline">\(\mathopen{}\left\{C = 1\right\}\mathclose{}, \ldots, \mathopen{}\left\{C = K\right\}\mathclose{}\)</span> are mutually exclusive, and their union is the whole sample space. So for any interval <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X \in B)
+&amp;= \sum_{c=1}^{K} \Pr(C = c,\, X \in B)
+&amp;&amp; \text{(additivity over the events } \mathopen{}\left\{C = c\right\}\mathclose{} \text{)} \\
+&amp;= \sum_{c=1}^{K} \int_B w_c \, {\operatorname{p}_c}(x)\,dx
+&amp;&amp; \text{(definition of a joint density-mass function)} \\
+&amp;= \int_B \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
+&amp;&amp; \text{(a finite sum of integrals is the integral of the sum)} \\
+&amp;= \int_B {\operatorname{p}_{\text{mix}}}(x)\,dx
+&amp;&amp; \text{(definition of a mixture)}
+\end{aligned}
+\]</span></p>
+<p>And <span class="math inline">\({\operatorname{p}_{\text{mix}}} \ge 0\)</span>, as a sum of non-negative terms, so <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> is a <a href="./random-variables.html#def-pdf">density</a> of <span class="math inline">\(X\)</span>.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;14</a> describes how to generate a draw from a mixture: first draw a component label <span class="math inline">\(C\)</span> with <span class="math inline">\(\operatorname{P}(C = c) = w_c\)</span>, then draw <span class="math inline">\(X\)</span> from the component density <span class="math inline">\({\operatorname{p}_C}\)</span>. In applications, <span class="math inline">\(C\)</span> is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of <a href="#/def-mvn">multivariate normal densities</a> (Gaussian mixture models), work the same way, with <span class="math inline">\(p\)</span>-variable densities in place of densities on <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="thm-mixture-mean" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 15 (The mean of a mixture is the weighted mean of the component means)</strong></span> If <span class="math inline">\(X\)</span> has density <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> (<a href="#/def-mixture" class="quarto-xref">Definition&nbsp;10</a>), and each component <span class="math inline">\({\operatorname{p}_c}\)</span> has a defined mean <span class="math inline">\(\mu_c = \int_{-\infty}^{\infty} x \, {\operatorname{p}_c}(x)\,dx\)</span>, then:</p>
+<p><span class="math display">\[\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = \sum_{c=1}^{K} w_c \, \mu_c\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The integral defining <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\)</span> converges absolutely, because <span class="math inline">\(\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_c}(x)\,dx\)</span>, a finite sum of finite numbers. Then:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X\right]\mathclose{}
+&amp;= \int_{-\infty}^{\infty} x \, {\operatorname{p}_{\text{mix}}}(x)\,dx
+&amp;&amp; \text{(definition of expectation)} \\
+&amp;= \int_{-\infty}^{\infty} x \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
+&amp;&amp; \text{(definition of a mixture)} \\
+&amp;= \sum_{c=1}^{K} w_c \int_{-\infty}^{\infty} x \, {\operatorname{p}_c}(x)\,dx
+&amp;&amp; \text{(a finite sum of integrals is the integral of the sum)} \\
+&amp;= \sum_{c=1}^{K} w_c \, \mu_c
+&amp;&amp; \text{(definition of } \mu_c \text{)}
+\end{aligned}
+\]</span></p>
+<p>The first step is the <a href="./expectation.html#def-expectation">definition of expectation</a>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-mixture-posterior" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 16 (Which component did an observation come from?)</strong></span> Under the conditions of <a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;14</a>, for each <span class="math inline">\(x\)</span> with <span class="math inline">\({\operatorname{p}_{\text{mix}}}(x) &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+\operatorname{P}(C = c \mid X = x) = \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;14</a>, <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> is a density of <span class="math inline">\(X\)</span>. By the <a href="./expectation.html#def-cond-mixed">definition of the conditional PMF</a> (the case <span class="math inline">\(X\)</span> continuous, <span class="math inline">\(C\)</span> discrete):</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(C = c \mid X = x)
+&amp;= \frac{\operatorname{p}(C = c,\, X = x)}{\operatorname{p}(X = x)}
+&amp;&amp; \text{(definition of the conditional PMF)} \\
+&amp;= \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}
+&amp;&amp; \text{(substitute the joint density-mass function and } {\operatorname{p}_{\text{mix}}} \text{)}
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-mixture-posterior" class="quarto-xref">Theorem&nbsp;16</a> has the form of <a href="./probability-basics.html#thm-bayes">Bayes’ theorem</a>, with densities in place of some probabilities: the prior probability <span class="math inline">\(w_c\)</span> of component <span class="math inline">\(c\)</span> is multiplied by the component density <span class="math inline">\({\operatorname{p}_c}(x)\)</span> at the observation and divided by the overall density <span class="math inline">\({\operatorname{p}_{\text{mix}}}(x)\)</span>, which plays the role of the <a href="./probability-basics.html#thm-total-prob">law of total probability</a>. In machine learning, <span class="math inline">\(\operatorname{P}(C = c \mid X = x)\)</span> is called the <strong>responsibility</strong> of component <span class="math inline">\(c\)</span> for <span class="math inline">\(x\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-mixture-gaussian" class="theorem example">
+<p><span class="theorem-title"><strong>Example 16 (A two-component normal mixture)</strong></span> Let <span class="math inline">\({\operatorname{p}_1}\)</span> be the <span class="math inline">\(\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\)</span> density and <span class="math inline">\({\operatorname{p}_2}\)</span> the <span class="math inline">\(\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\)</span> density, with mixing weights <span class="math inline">\(w_1 = 0.3\)</span> and <span class="math inline">\(w_2 = 0.7\)</span>, and let <span class="math inline">\(X\)</span> have density <span class="math inline">\({\operatorname{p}_{\text{mix}}} = 0.3\,{\operatorname{p}_1} + 0.7\,{\operatorname{p}_2}\)</span>.</p>
+<ul>
+<li><p><strong>Mean.</strong> By <a href="#/thm-mixture-mean" class="quarto-xref">Theorem&nbsp;15</a> and the <a href="./random-variables.html#thm-normal-density">normal means</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &amp;= 0.3 \cdot 0 + 0.7 \cdot 6 \\
+&amp;= 4.2.
+\end{aligned}
+\]</span></p></li>
+<li><p><strong>Density.</strong> <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> has peaks near the two component means, <span class="math inline">\({\operatorname{p}_{\text{mix}}}(0) \approx 0.120\)</span> and <span class="math inline">\({\operatorname{p}_{\text{mix}}}(6) \approx 0.279\)</span>, with a trough between them, <span class="math inline">\({\operatorname{p}_{\text{mix}}}(3) \approx 0.004\)</span>. The density at the mean, <span class="math inline">\({\operatorname{p}_{\text{mix}}}(4.2) \approx 0.055\)</span>, is less than half its value at either peak.</p></li>
+<li><p><strong>Responsibilities.</strong> By <a href="#/thm-mixture-posterior" class="quarto-xref">Theorem&nbsp;16</a>, at <span class="math inline">\(x = 3\)</span>, halfway between the component means, <span class="math inline">\({\operatorname{p}_1}(3) = {\operatorname{p}_2}(3)\)</span> by the symmetry of the normal density, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(C = 2 \mid X = 3)
+&amp;= \frac{0.7\,{\operatorname{p}_2}(3)}{0.3\,{\operatorname{p}_1}(3) + 0.7\,{\operatorname{p}_2}(3)} \\
+&amp;= \frac{0.7}{0.3 + 0.7} \\
+&amp;= 0.7,
+\end{aligned}
+\]</span></p>
+<p>the prior weight: an observation equally far from both components carries no information about which component it came from. At <span class="math inline">\(x = 4.2\)</span>, the same formula gives <span class="math inline">\(\operatorname{P}(C = 2 \mid X = 4.2) \approx 0.9997\)</span>.</p></li>
+</ul>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/exm-mixture-gaussian" class="quarto-xref">Example&nbsp;16</a> shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-nb-mixture" class="theorem example">
+<p><span class="theorem-title"><strong>Example 17 (The negative binomial as a continuous mixture)</strong></span> The <a href="#/def-nb">negative binomial distribution</a> is a mixture of Poisson distributions with a continuum of components, one for each mean <span class="math inline">\({\lambda}&gt; 0\)</span>: its PMF is <span class="math inline">\(\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}\)</span>, where the gamma density <span class="math inline">\(g\)</span> plays the role of the mixing weights and the integral replaces the sum in <a href="#/def-mixture" class="quarto-xref">Definition&nbsp;10</a> (see the proof of <a href="#/thm-nb" class="quarto-xref">Theorem&nbsp;8</a>).</p>
+</div>
+</section>
+<section id="references" class="slide level2 unnumbered smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
+Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
+</div>
+</div>
+
+
+<script>
+const defaultAnchorIconFallback = "#";
+
+function getDefaultAnchorTemplate() {
+  const defaultAnchor = document.querySelector("a.anchorjs-link[data-anchorjs-icon]");
+  if (!defaultAnchor) {
+    return null;
+  }
+
+  return {
+    icon: defaultAnchor.getAttribute("data-anchorjs-icon"),
+    style: defaultAnchor.getAttribute("style")
+  };
+}
+
+function alignEquationAnchorWithDefault(anchor, template) {
+  if (!anchor) {
+    return;
+  }
+
+  anchor.classList.remove("external");
+
+  if (template && template.icon) {
+    anchor.setAttribute("data-anchorjs-icon", template.icon);
+    anchor.textContent = "";
+  } else if (!anchor.textContent) {
+    anchor.textContent = defaultAnchorIconFallback;
+  }
+
+  if (template && template.style) {
+    anchor.setAttribute("style", template.style);
+  } else {
+    anchor.removeAttribute("style");
+  }
+}
+
+function alignEquationAnchorsWithDefault() {
+  const template = getDefaultAnchorTemplate();
+  document.querySelectorAll("a.equation-anchor").forEach(function (anchor) {
+    alignEquationAnchorWithDefault(anchor, template);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const equations = document.querySelectorAll("span[id^='eq-']");
+  equations.forEach(function (equation) {
+    if (equation.querySelector(".equation-anchor")) {
+      return;
+    }
+
+    if (!equation.querySelector(".math.display")) {
+      return;
+    }
+
+    const id = equation.getAttribute("id");
+    if (!id) {
+      return;
+    }
+
+    equation.classList.add("equation-anchor-target");
+
+    const anchor = document.createElement("a");
+    anchor.className = "equation-anchor anchorjs-link";
+    anchor.href = "#" + id;
+    anchor.setAttribute("aria-label", "Permalink to this equation");
+    equation.appendChild(anchor);
+  });
+
+  alignEquationAnchorsWithDefault();
+});
+
+window.addEventListener("load", alignEquationAnchorsWithDefault);
+</script>
+
+<script>
+(function () {
+  var css = [
+    "#revealjs-html-link {",
+    "  position: fixed;",
+    "  top: 8px;",
+    "  right: 8px;",
+    "  z-index: 31;",
+    "  font-size: 0.55em;",
+    "  line-height: 1;",
+    "}",
+    "#revealjs-html-link a {",
+    "  color: var(--qwt-muted, rgba(0, 0, 0, 0.5));",
+    "  text-decoration: none;",
+    "  border: 1px solid var(--qwt-border, rgba(0, 0, 0, 0.2));",
+    "  padding: 4px 8px;",
+    "  border-radius: 4px;",
+    "  background: var(--qwt-chip-bg, rgba(255, 255, 255, 0.8));",
+    "  transition: color 0.15s, background 0.15s, border-color 0.15s;",
+    "}",
+    "#revealjs-html-link a:hover {",
+    "  color: var(--qwt-fg, rgba(0, 0, 0, 0.9));",
+    "  background: var(--qwt-chip-bg-hover, rgba(255, 255, 255, 0.98));",
+    "  border-color: var(--qwt-fg, rgba(0, 0, 0, 0.4));",
+    "}"
+  ].join("\n");
+
+  function getHtmlBase() {
+    var url = window.location.href.split("#")[0];
+    return url.replace(/-slides\.html$/, ".html");
+  }
+
+  function getCurrentSectionId() {
+    if (typeof Reveal === "undefined" || !Reveal.getCurrentSlide) {
+      return null;
+    }
+    var slide = Reveal.getCurrentSlide();
+    if (!slide) {
+      return null;
+    }
+    // If the current slide itself has an id, use it
+    if (slide.id) {
+      return slide.id;
+    }
+    // Walk backwards through sibling sections to find the nearest one with an id
+    var sibling = slide.previousElementSibling;
+    while (sibling) {
+      if (sibling.tagName === "SECTION" && sibling.id) {
+        return sibling.id;
+      }
+      sibling = sibling.previousElementSibling;
+    }
+    // Fall back to the first section[id] inside the parent container
+    var parent = slide.parentElement;
+    if (parent && parent.tagName === "SECTION") {
+      var firstNamed = parent.querySelector("section[id]");
+      if (firstNamed) {
+        return firstNamed.id;
+      }
+    }
+    return null;
+  }
+
+  function updateHtmlLink() {
+    var anchor = document.getElementById("revealjs-html-anchor");
+    if (!anchor) {
+      return;
+    }
+    var sectionId = getCurrentSectionId();
+    anchor.href = getHtmlBase() + (sectionId ? "#" + sectionId : "");
+  }
+
+  function initRevealJsHtmlLink() {
+    var htmlBase = getHtmlBase();
+
+    // Don't add the link if the URL doesn't follow the -slides.html convention
+    if (htmlBase === window.location.href.split("#")[0]) {
+      return;
+    }
+
+    // Inject styles
+    var styleElement = document.createElement("style");
+    styleElement.textContent = css;
+    document.head.appendChild(styleElement);
+
+    // Create the link element and append it directly to body so it stays
+    // visible across all slides regardless of Reveal.js section visibility
+    var div = document.createElement("div");
+    div.id = "revealjs-html-link";
+    var anchor = document.createElement("a");
+    anchor.id = "revealjs-html-anchor";
+    anchor.href = htmlBase;
+    anchor.target = "_blank";
+    anchor.title = "View this section in the HTML notes";
+    anchor.setAttribute("aria-label", "View this section in the HTML notes");
+    anchor.innerHTML = "&#128196;&nbsp;Webpage version";
+    div.appendChild(anchor);
+    document.body.appendChild(div);
+
+    // Register Reveal.js slide-change listener to keep the link updated
+    if (typeof Reveal !== "undefined") {
+      Reveal.on("ready", updateHtmlLink);
+      Reveal.on("slidechanged", updateHtmlLink);
+    }
+
+    updateHtmlLink();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initRevealJsHtmlLink);
+  } else {
+    initRevealJsHtmlLink();
+  }
+})();
+</script>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/morrison-lab\.github\.io\/pds\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
+    
+
+</body></html>
