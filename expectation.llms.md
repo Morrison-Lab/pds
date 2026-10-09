@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:13:34 (PDT)
+Last modified: 2026-10-09 10:20:25 (PDT)
 
 > **NOTE:**
 >
@@ -144,7 +144,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 6 (Expected total of two dice)** Let \\X\\ and \\Y\\ be the results of two six-sided die rolls. Each has expectation \\\sum\_{x=1}^{6} x \cdot\tfrac{1}{6} = \tfrac{21}{6} = 3.5\\, so:
+> **Example 6 (Expected total of two dice)** Let \\X\\ and \\Y\\ be the results of two six-sided die rolls. Each has expectation
+>
+> \\ \begin{aligned} \sum\_{x=1}^{6} x \cdot\tfrac{1}{6} &= \tfrac{21}{6} \\ &= 3.5, \end{aligned} \\
+>
+> so:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(linearity of expectation with } a = 1, b = 1, c = 0 \text{)}\\ &= 3.5 + 3.5 && \text{(substitute)}\\ &= 7 && \text{(add)} \end{aligned} \\
 >
@@ -166,7 +170,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (Expectation of a rescaled uniform variable)** Let \\X \sim \text{Uniform}(0,1)\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \int_0^1 x\\dx = \tfrac{1}{2}\\. By [Corollary 1](#cor-linearity-affine) with \\a = 2\\ and \\c = 1\\:
+> **Example 7 (Expectation of a rescaled uniform variable)** Let \\X \sim \text{Uniform}(0,1)\\, so
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \int_0^1 x\\dx \\ &= \tfrac{1}{2}. \end{aligned} \\
+>
+> By [Corollary 1](#cor-linearity-affine) with \\a = 2\\ and \\c = 1\\:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[2X + 1\right\]\mathclose{} &= 2\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + 1 && \text{(expectation of a linear function)} \\ &= 2 \cdot\tfrac{1}{2} + 1 && \text{(substitute } \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2} \text{)} \\ &= 2 && \text{(evaluate)} \end{aligned} \\
 
@@ -510,11 +518,19 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 14 (Linearity, given the first flip)** Continuing [Example 13](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 3/2\\ and \\\operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{} = (1 + 4)/2 = 5/2\\. By [Theorem 6](#thm-cond-linearity) with \\a = b = 1\\:
+> **Example 14 (Linearity, given the first flip)** Continuing [Example 13](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 3/2\\ and
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{} &= (1 + 4)/2 \\ &= 5/2. \end{aligned} \\
+>
+> By [Theorem 6](#thm-cond-linearity) with
+>
+> \\ \begin{aligned} a &= b \\ &= 1: \end{aligned} \\
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y + Y^2 \mid X = 1\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \tfrac{3}{2} + \tfrac{5}{2} && \text{(substitute)} \\ &= 4 && \text{(add)} \end{aligned} \\
 >
-> As a check, directly: \\(1 + 1) \cdot\tfrac{1}{2} + (2 + 4) \cdot\tfrac{1}{2} = 1 + 3 = 4\\.
+> As a check, directly:
+>
+> \\ \begin{aligned} (1 + 1) \cdot\tfrac{1}{2} + (2 + 4) \cdot\tfrac{1}{2} &= 1 + 3 \\ &= 4. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -546,7 +562,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY \mid X = 1\right\]\mathclose{} &= 1 \cdot\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \tfrac{3}{2} && \text{(substitute } \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = \tfrac{3}{2} \text{)} \end{aligned} \\
 >
-> and \\\operatorname{E}\mathopen{}\left\[XY \mid X = 0\right\]\mathclose{} = 0 \cdot\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0\\. As a check, given \\X = 1\\ the product \\XY\\ equals \\Y\\, which is \\1\\ or \\2\\ with probability \\1/2\\ each.
+> and
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY \mid X = 0\right\]\mathclose{} &= 0 \cdot\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} \\ &= 0. \end{aligned} \\
+>
+> As a check, given \\X = 1\\ the product \\XY\\ equals \\Y\\, which is \\1\\ or \\2\\ with probability \\1/2\\ each.
 
 > **NOTE:**
 >
@@ -565,7 +585,19 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \sum\_{x \in \\0,1\\} \sum\_{y \in \\0,1\\} (x + y)\\\operatorname{P}(X = x,\\ Y = y) && \text{(LOTUS)} \\ &= (0{+}0)(0.2) + (0{+}1)(0.3) + (1{+}0)(0.1) + (1{+}1)(0.4) && \text{(expand the four terms)} \\ &= 0 + 0.3 + 0.1 + 0.8 && \text{(multiply)} \\ &= 1.2 && \text{(add)} \end{aligned} \\
 >
-> As a check: \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0(0.5) + 1(0.5) = 0.5\\ and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0(0.3) + 1(0.7) = 0.7\\, so \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 1.2\\ by [linearity of expectation](#thm-linearity-expectation).
+> As a check:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= 0(0.5) + 1(0.5) \\ &= 0.5 \end{aligned} \\
+>
+> and
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= 0(0.3) + 1(0.7) \\ &= 0.7, \end{aligned} \\
+>
+> so
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \\ &= 1.2 \end{aligned} \\
+>
+> by [linearity of expectation](#thm-linearity-expectation).
 >
 > Show code
 >
@@ -591,7 +623,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Note that \\X\\ and \\Y\\ are **not** independent here: \\\operatorname{P}(X = 0, Y = 0) = 0.2 \neq 0.15 = \operatorname{P}(X = 0)\\\operatorname{P}(Y = 0)\\. LOTUS applies regardless, since it requires only the *actual* joint mass function, not independence.
+> *Remark*. Note that \\X\\ and \\Y\\ are **not** independent here:
+>
+> \\ \begin{aligned} \operatorname{P}(X = 0, Y = 0) &= 0.2 \\ &\neq 0.15 \\ &= \operatorname{P}(X = 0)\\\operatorname{P}(Y = 0). \end{aligned} \\
+>
+> LOTUS applies regardless, since it requires only the *actual* joint mass function, not independence.
 >
 > There are only four \\(x,y)\\ pairs here, so summing them in any order — row by row, column by column, or any other listing — gives the same total by ordinary commutativity and associativity of addition; no result about interchanging summation order is needed. Once the support is countably infinite, exchanging the order of summation needs a justification, which the Fubini–Tonelli theorem provides.
 
@@ -629,8 +665,18 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > The choice of reference measures covers three cases:
 >
-> - **Both continuous:** \\\mu_X = \mu_Y = \text{Lebesgue measure}\\; \\f\_{X,Y}\\ is the joint probability density function (PDF), and \\\int\_{\mathcal{R}(X)} g(x)\\d\mu_X(x) = \int\_{\mathcal{R}(X)} g(x)\\dx\\.
-> - **Both discrete:** \\\mu_X = \mu_Y = \text{counting measure}\\; \\f\_{X,Y}(x,y) = \operatorname{P}(X = x,\\ Y = y)\\ is the joint probability mass function (PMF), and \\\int\_{\mathcal{R}(X)} g(x)\\d\mu_X(x) = \sum\_{x \in \mathcal{R}(X)} g(x)\\.
+> - **Both continuous:**
+>
+>   \\ \begin{aligned} \mu_X &= \mu_Y \\ &= \text{Lebesgue measure}; \end{aligned} \\
+>
+>   \\f\_{X,Y}\\ is the joint probability density function (PDF), and \\\int\_{\mathcal{R}(X)} g(x)\\d\mu_X(x) = \int\_{\mathcal{R}(X)} g(x)\\dx\\.
+>
+> - **Both discrete:**
+>
+>   \\ \begin{aligned} \mu_X &= \mu_Y \\ &= \text{counting measure}; \end{aligned} \\
+>
+>   \\f\_{X,Y}(x,y) = \operatorname{P}(X = x,\\ Y = y)\\ is the joint probability mass function (PMF), and \\\int\_{\mathcal{R}(X)} g(x)\\d\mu_X(x) = \sum\_{x \in \mathcal{R}(X)} g(x)\\.
+>
 > - **Mixed** (one continuous, one discrete): one reference measure is Lebesgue and the other is counting; \\f\_{X,Y}\\ is the [joint density-mass function](random-variables.llms.md#def-joint-density-mass), \\f\_{X,Y}(x,y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ (or \\\operatorname{P}(X = x \mid Y = y)\\f_Y(y)\\ if \\X\\ is discrete and \\Y\\ continuous), and the iterated integrals combine an ordinary integral with a sum. The conditional densities/PMFs here are defined the same way as in [Definition 6](#def-cond-mixed), just conditioning on \\Y\\ instead of \\X\\.
 
 > **NOTE:**
@@ -641,7 +687,13 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > **Example 16 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\.
 >
-> We apply [Corollary 3](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as \\f\_{X,Y}(x,y) = f_X(x)\\f_Y(y) = \tfrac{1}{2}\\, and \\\mu_X = \mu_Y = \text{Lebesgue measure}\\:
+> We apply [Corollary 3](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as
+>
+> \\ \begin{aligned} f\_{X,Y}(x,y) &= f_X(x)\\f_Y(y) \\ &= \tfrac{1}{2}, \end{aligned} \\
+>
+> and
+>
+> \\ \begin{aligned} \mu_X &= \mu_Y \\ &= \text{Lebesgue measure}: \end{aligned} \\
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} &= \int_0^1 \mathopen{}\left(\int_0^2 xy \cdot\tfrac{1}{2}\\dy\right)\mathclose{}\\dx && \text{(joint-distribution form of Fubini--Tonelli)} \\&= \int_0^1 x\mathopen{}\left(\frac{1}{2}\int_0^2 y\\dy\right)\mathclose{}\\dx && \text{(factor constants out of the inner integral)} \\&= \int_0^1 x \cdot\frac{1}{2} \cdot\mathopen{}\left\[\frac{y^2}{2}\right\]\mathclose{}\_0^2\\dx && \text{(antiderivative of } y \text{)} \\&= \int_0^1 x \cdot\frac{1}{2} \cdot 2\\dx && \text{(evaluate at the bounds)} \\&= \int_0^1 x\\dx && \text{(simplify)} \\&= \frac{1}{2} && \text{(integrate)} \end{aligned} \\
 >
@@ -661,7 +713,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > Note that Fubini–Tonelli’s own conditions still hold here (\\h(x,y) = xy\\ is nonnegative and integrable), so the error is not a failure of Fubini–Tonelli itself. Rather, the error is using the *wrong measure*: the joint distribution of \\(X, X)\\ is concentrated on the diagonal \\\\(x, x) : x \in \[0, 1\]\\ \subset \[0, 1\]^2\\, which has Lebesgue measure zero in \\\mathbb{R}^2\\. The joint distribution is therefore **not** absolutely continuous with respect to two-dimensional Lebesgue measure, so **no joint density \\f\_{X,Y}\\ on \\\[0, 1\]^2\\ exists**, which is the reference density [Corollary 3](#cor-fubini-joint) requires.
 >
-> The following calculation is what someone would *erroneously* write if they assumed independence and used \\f_X(x)\\f_Y(y)\\ as a “joint density” — a function that does not in fact correspond to the joint distribution of \\(X, X)\\. The marginals \\X \sim \mathrm{Uniform}(0,1)\\ and \\Y \sim \mathrm{Uniform}(0,1)\\ do have densities \\f_X = f_Y = 1\\, but the *product* \\f_X(x)\\f_Y(y) = 1\\ on \\\[0, 1\]^2\\ is the density of an *independent* pair, not of \\(X, X)\\:
+> The following calculation is what someone would *erroneously* write if they assumed independence and used \\f_X(x)\\f_Y(y)\\ as a “joint density” — a function that does not in fact correspond to the joint distribution of \\(X, X)\\. The marginals \\X \sim \mathrm{Uniform}(0,1)\\ and \\Y \sim \mathrm{Uniform}(0,1)\\ do have densities
+>
+> \\ \begin{aligned} f_X &= f_Y \\ &= 1, \end{aligned} \\
+>
+> but the *product* \\f_X(x)\\f_Y(y) = 1\\ on \\\[0, 1\]^2\\ is the density of an *independent* pair, not of \\(X, X)\\:
 >
 > \\ \begin{aligned} \int_0^1\\\int_0^1 xy \cdot f_X(x) \cdot f_Y(y)\\dy\\dx &= \int_0^1\\\int_0^1 xy\\dy\\dx && \text{(} f_X(x)\\f_Y(y) = 1 \text{ on } \[0, 1\]^2 \text{)} \\&= \int_0^1 x\mathopen{}\left(\int_0^1 y\\dy\right)\mathclose{}\\dx && \text{(factor } x \text{ out of the inner integral)} \\&= \int_0^1 x \cdot\frac{1}{2}\\dx && \text{(} \textstyle\int_0^1 y\\dy = \tfrac{1}{2} \text{)} \\&= \frac{1}{4} && \text{(} \textstyle\int_0^1 \tfrac{x}{2}\\dx = \tfrac{1}{4} \text{)} \end{aligned} \\
 >
@@ -762,7 +818,7 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+> **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 9](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
 >
@@ -850,19 +906,35 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 3 (Both-discrete case, infinite support: joint PMF)** Let \\X\\ and \\Y\\ be independent, each Geometric on \\\mathcal{R}(X) = \mathcal{R}(Y) = \\0, 1, 2, \dots\\\\ with \\\operatorname{P}(X = x) = (1-p)\\p^x\\ for a fixed \\p \in (0, 1)\\ (\\X\\ counts the number of failures before the first success in a sequence of independent trials with success probability \\1-p\\; likewise for \\Y\\). Unlike [Exercise 2](#exr-fubini-joint-disc), the support here is countably infinite. The joint PMF is \\\operatorname{P}(X = x,\\ Y = y) = (1-p)^2\\p^{x+y}\\.
+> **Exercise 3 (Both-discrete case, infinite support: joint PMF)** Let \\X\\ and \\Y\\ be independent, each Geometric on
+>
+> \\ \begin{aligned} \mathcal{R}(X) &= \mathcal{R}(Y) \\ &= \\0, 1, 2, \dots\\ \end{aligned} \\
+>
+> with \\\operatorname{P}(X = x) = (1-p)\\p^x\\ for a fixed \\p \in (0, 1)\\ (\\X\\ counts the number of failures before the first success in a sequence of independent trials with success probability \\1-p\\; likewise for \\Y\\). Unlike [Exercise 2](#exr-fubini-joint-disc), the support here is countably infinite. The joint PMF is \\\operatorname{P}(X = x,\\ Y = y) = (1-p)^2\\p^{x+y}\\.
 >
 > Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\.
 
 > **NOTE:**
 >
-> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\ using [Corollary 3](#cor-fubini-joint) with \\\mu_X = \mu_Y = \text{counting measure}\\ and \\h(x, y) = x + y\\. Since \\h(x,y) = x + y \ge 0\\ for every \\(x,y)\\ in this support, condition (a) holds, so [Corollary 3](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the order of this now-infinite double sum is exchangeable — unlike the finite case, elementary algebra alone could not establish this.
+> *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}\\ using [Corollary 3](#cor-fubini-joint) with
+>
+> \\ \begin{aligned} \mu_X &= \mu_Y \\ &= \text{counting measure} \end{aligned} \\
+>
+> and \\h(x, y) = x + y\\. Since \\h(x,y) = x + y \ge 0\\ for every \\(x,y)\\ in this support, condition (a) holds, so [Corollary 3](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the order of this now-infinite double sum is exchangeable — unlike the finite case, elementary algebra alone could not establish this.
 >
 > The derivation uses the standard geometric-series facts \\\sum\_{y=0}^{\infty} p^y = \frac{1}{1-p}\\ and \\\sum\_{y=0}^{\infty} y\\p^y = \frac{p}{(1-p)^2}\\ (e.g. Casella and Berger ([2002](#ref-CaseBerg01))). By [Corollary 3](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)\\\operatorname{P}(X = x,\\ Y = y) && \text{(joint-distribution form of Fubini--Tonelli)} \\&= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)(1-p)^2 p^{x+y} && \text{(substitute the joint PMF)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \sum\_{y=0}^{\infty} (x + y)\\p^y && \text{(factor } (1-p)^2 p^x \text{ out of the inner sum)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(x \sum\_{y=0}^{\infty} p^y + \sum\_{y=0}^{\infty} y\\p^y\right)\mathclose{} && \text{(split the inner sum; factor out } x \text{)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(\frac{x}{1-p} + \frac{p}{(1-p)^2}\right)\mathclose{} && \text{(geometric-series facts)} \\&= \sum\_{x=0}^{\infty} p^x \mathopen{}\left\[x(1-p) + p\right\]\mathclose{} && \text{(multiply } (1-p)^2 \text{ into the parentheses)} \\&= (1-p) \sum\_{x=0}^{\infty} x\\p^x + p \sum\_{x=0}^{\infty} p^x && \text{(split the sum; factor out the constants)} \\&= (1-p) \cdot\frac{p}{(1-p)^2} + p \cdot\frac{1}{1-p} && \text{(geometric-series facts)} \\&= \frac{p}{1-p} + \frac{p}{1-p} && \text{(cancel } 1 - p \text{)} \\&= \frac{2p}{1-p} && \text{(add)} \end{aligned} \\
 >
-> As a check, \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{p}{1-p}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so \\\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{2p}{1-p}\\ by [linearity of expectation](#thm-linearity-expectation), matching.
+> As a check,
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \\ &= \frac{p}{1-p} \end{aligned} \\
+>
+> (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \\ &= \frac{2p}{1-p} \end{aligned} \\
+>
+> by [linearity of expectation](#thm-linearity-expectation), matching.
 >
 > Show code
 >
@@ -916,7 +988,9 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\ y)\\dx && \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\ &= \int_0^1 x \cdot 0.4\\dx + \int_0^2 x \cdot 0.3\\dx && \text{(expand the sum over } y \in \\0, 1\\ \text{; substitute } f\_{X,Y} \text{)} \\ &= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 && \text{(} \textstyle\int_0^b x\\dx = b^2/2 \text{)} \\ &= 0.2 + 0.6 && \text{(multiply)} \\ &= 0.8 && \text{(add)} \end{aligned} \\
 >
-> As a check using the law of iterated expectations ([Theorem 9](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \tfrac{1}{2}(0.4) + 1(0.6) = 0.2 + 0.6 = 0.8\\.
+> As a check using the law of iterated expectations ([Theorem 9](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \tfrac{1}{2}(0.4) + 1(0.6) \\ &= 0.2 + 0.6 \\ &= 0.8. \end{aligned} \\
 >
 > Show code
 >
@@ -959,7 +1033,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > *Solution*. Compute \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ using [Corollary 3](#cor-fubini-joint) with \\\mu_X = \text{Lebesgue measure}\\, \\\mu_Y = \text{counting measure}\\, and \\h(x, y) = x\\.
 >
-> The joint density w.r.t. Lebesgue \\\times\\ counting measure is \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y) = \frac{(1-q)\\q^y}{y+1}\\ for \\x \in \[0, y+1\]\\.
+> The joint density w.r.t. Lebesgue \\\times\\ counting measure is
+>
+> \\ \begin{aligned} f\_{X,Y}(x, y) &= f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y) \\ &= \frac{(1-q)\\q^y}{y+1} \end{aligned} \\
+>
+> for \\x \in \[0, y+1\]\\.
 >
 > Since \\h(x, y) = x \ge 0\\ on this support, condition (a) holds, so [Corollary 3](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the now-infinite sum-of-integrals expression is valid — unlike in [Exercise 4](#exr-fubini-joint-mixed), this Fubini–Tonelli justification is required because the sum is infinite rather than finite.
 >
@@ -1062,7 +1140,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > For squared error loss and a prediction \\g(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
 >
-> The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} = 0.5\\c + 0.5\\(4 - c) = 2\\. Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 11](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} &= 0.5\\c + 0.5\\(4 - c) \\ &= 2. \end{aligned} \\
+>
+> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 11](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
 
 > **NOTE:**
 >
@@ -1172,7 +1254,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} H(X) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= \tfrac{1}{2} + \tfrac{1}{2} \\ &= 1 \text{ bit}. \end{aligned} \\
 >
-> For a coin that always lands heads, \\\pi= 1\\, and \\H(X) = -1 \cdot \log_2 1 - 0 = 0\\. The outcome is known in advance, so there is no uncertainty to measure. An entropy of \\0\\ means that all of the probability is on one outcome.
+> For a coin that always lands heads, \\\pi= 1\\, and
+>
+> \\ \begin{aligned} H(X) &= -1 \cdot \log_2 1 - 0 \\ &= 0. \end{aligned} \\
+>
+> The outcome is known in advance, so there is no uncertainty to measure. An entropy of \\0\\ means that all of the probability is on one outcome.
 
 > **NOTE:**
 >

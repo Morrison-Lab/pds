@@ -361,7 +361,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 10:13:34 (PDT)</p>
+  <p class="date">Last modified: 2026-10-09 10:20:25 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -506,7 +506,20 @@
 <section class="slide level2">
 
 <div id="exm-probability" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (Probability measure for a fair die)</strong></span> For the die roll in <a href="#/exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, define <span class="math inline">\(\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{} / 6\)</span>, where <span class="math inline">\(\mathopen{}\left|A\right|\mathclose{}\)</span> is the number of outcomes in <span class="math inline">\(A\)</span>. This function is <span class="math inline">\(1/6\)</span> times the counting measure <span class="math inline">\(\mu(A) = \mathopen{}\left|A\right|\mathclose{}\)</span> on the die rolls (<a href="https://morrison-lab.github.io/mds/measures.html#exm-measure">counting elements is a measure</a>), so it is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the events of <span class="math inline">\(\Omega\)</span>, and it gives <span class="math inline">\(\Pr(\Omega) = 6/6 = 1\)</span>. The event “the roll is even” from <a href="#/exm-event" class="quarto-xref">Example&nbsp;2</a> has probability <span class="math inline">\(\Pr(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}) = 3/6 = 1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 7 (Probability measure for a fair die)</strong></span> For the die roll in <a href="#/exm-sample-space" class="quarto-xref">Example&nbsp;1</a>, define <span class="math inline">\(\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{} / 6\)</span>, where <span class="math inline">\(\mathopen{}\left|A\right|\mathclose{}\)</span> is the number of outcomes in <span class="math inline">\(A\)</span>. This function is <span class="math inline">\(1/6\)</span> times the counting measure <span class="math inline">\(\mu(A) = \mathopen{}\left|A\right|\mathclose{}\)</span> on the die rolls (<a href="https://morrison-lab.github.io/mds/measures.html#exm-measure">counting elements is a measure</a>), so it is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the events of <span class="math inline">\(\Omega\)</span>, and it gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(\Omega) &amp;= 6/6 \\
+&amp;= 1.
+\end{aligned}
+\]</span></p>
+<p>The event “the roll is even” from <a href="#/exm-event" class="quarto-xref">Example&nbsp;2</a> has probability</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(\mathopen{}\left\{2, 4, 6\right\}\mathclose{}) &amp;= 3/6 \\
+&amp;= 1/2.
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -783,9 +796,15 @@
 <p><span class="theorem-title"><strong>Example 11 (Positive predictive value of a medical test)</strong></span> Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.</p>
 <p>Let <span class="math inline">\(D\)</span> be the event “person has the disease” and <span class="math inline">\(+\)</span> be the event “test is positive”. Then:</p>
 <ul>
-<li><span class="math inline">\(\Pr(+ \mid D) = 0.99\)</span> (sensitivity)</li>
-<li><span class="math inline">\(\Pr(\neg + \mid \neg D) = 0.99\)</span> (specificity), so the false positive rate is <span class="math inline">\(\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01\)</span></li>
-<li><span class="math inline">\(\Pr(D) = 0.07\)</span> (prevalence)</li>
+<li><p><span class="math inline">\(\Pr(+ \mid D) = 0.99\)</span> (sensitivity)</p></li>
+<li><p><span class="math inline">\(\Pr(\neg + \mid \neg D) = 0.99\)</span> (specificity), so the false positive rate is</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(+ \mid \neg D) &amp;= 1 - 0.99 \\
+&amp;= 0.01
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(\Pr(D) = 0.07\)</span> (prevalence)</p></li>
 </ul>
 <p>By <a href="#/thm-bayes" class="quarto-xref">Theorem&nbsp;7</a>, with the denominator expanded by the <a href="#/thm-total-prob">law of total probability</a> over the partition <span class="math inline">\(\{D, \neg D\}\)</span>:</p>
 <p><span class="math display">\[

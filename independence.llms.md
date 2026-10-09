@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:13:34 (PDT)
+Last modified: 2026-10-09 10:20:25 (PDT)
 
 > **NOTE:**
 >
@@ -36,7 +36,9 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} \operatorname{P}(X_1 = 1, X_2 = 1) &= \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} \\ &= \operatorname{P}(X_1 = 1)\\\operatorname{P}(X_2 = 1) \end{aligned} \\
 >
-> and the same factorization holds for the other three pairs of values, so \\X_1 \perp\\\\\\\perp X_2\\ by [Theorem 1](#thm-indpt-pmf). In contrast, \\X_1\\ and the total number of heads, \\X_1 + X_2\\, are not independent: \\\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\\, but \\\operatorname{P}(X_1 = 0)\\\operatorname{P}(X_1 + X_2 = 2) = \tfrac{1}{2} \cdot\tfrac{1}{4} = \tfrac{1}{8}\\.
+> and the same factorization holds for the other three pairs of values, so \\X_1 \perp\\\\\\\perp X_2\\ by [Theorem 1](#thm-indpt-pmf). In contrast, \\X_1\\ and the total number of heads, \\X_1 + X_2\\, are not independent: \\\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\\, but
+>
+> \\ \begin{aligned} \operatorname{P}(X_1 = 0)\\\operatorname{P}(X_1 + X_2 = 2) &= \tfrac{1}{2} \cdot\tfrac{1}{4} \\ &= \tfrac{1}{8}. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -50,11 +52,17 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent. For instance, let \\X \sim \text{Uniform}(0, 1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is \\1\\ on \\\[0, 1\]\\, and let \\Y = X\\. For all real numbers \\x\\ and \\y\\, the event \\\mathopen{}\left\\X = x,\\ Y = y\right\\\mathclose{}\\ is \\\mathopen{}\left\\X = x\right\\\mathclose{}\\ if \\y = x\\ and empty otherwise, so it has probability \\0\\, because \\\Pr(X = x) = 0\\ for the [continuous](random-variables.llms.md#def-continuous-rv) \\X\\. Likewise \\\Pr(X = x)\\\Pr(Y = y) = 0 \cdot 0 = 0\\, so the PMF form holds. But \\X\\ and \\Y\\ are not independent:
+> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent. For instance, let \\X \sim \text{Uniform}(0, 1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is \\1\\ on \\\[0, 1\]\\, and let \\Y = X\\. For all real numbers \\x\\ and \\y\\, the event \\\mathopen{}\left\\X = x,\\ Y = y\right\\\mathclose{}\\ is \\\mathopen{}\left\\X = x\right\\\mathclose{}\\ if \\y = x\\ and empty otherwise, so it has probability \\0\\, because \\\Pr(X = x) = 0\\ for the [continuous](random-variables.llms.md#def-continuous-rv) \\X\\. Likewise
+>
+> \\ \begin{aligned} \Pr(X = x)\\\Pr(Y = y) &= 0 \cdot 0 \\ &= 0, \end{aligned} \\
+>
+> so the PMF form holds. But \\X\\ and \\Y\\ are not independent:
 >
 > \\ \begin{aligned} \Pr(X \in \[0, \tfrac{1}{2}\],\\ Y \in \[0, \tfrac{1}{2}\]) &= \Pr(X \in \[0, \tfrac{1}{2}\]) && \text{(} Y = X \text{)} \\ &= \int_0^{1/2} 1\\dx && \text{(the density of } X \text{ is } 1 \text{ on } \[0, 1\] \text{)} \\ &= \tfrac{1}{2} && \text{(integrate)} \end{aligned} \\
 >
-> while \\\Pr(X \in \[0, \tfrac{1}{2}\])\\\Pr(Y \in \[0, \tfrac{1}{2}\]) = \tfrac{1}{2} \cdot\tfrac{1}{2} = \tfrac{1}{4}\\.
+> while
+>
+> \\ \begin{aligned} \Pr(X \in \[0, \tfrac{1}{2}\])\\\Pr(Y \in \[0, \tfrac{1}{2}\]) &= \tfrac{1}{2} \cdot\tfrac{1}{2} \\ &= \tfrac{1}{4}. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -78,7 +86,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} \Pr(Y_1 = 1, Y_2 = 1) &= (0.9)(0.9)(0.1) + (0.1)(0.1)(0.9) && \text{(condition on } X \text{; factor given } X \text{)} \\ &= 0.081 + 0.009 && \text{(multiply)} \\ &= 0.09 && \text{(add)} \end{aligned} \\
 >
-> but \\\Pr(Y_1 = 1) = (0.9)(0.1) + (0.1)(0.9) = 0.18\\, so \\\Pr(Y_1 = 1)\\\Pr(Y_2 = 1) = 0.0324 \ne 0.09\\: the tests are conditionally independent given \\X\\, but not independent.
+> but
+>
+> \\ \begin{aligned} \Pr(Y_1 = 1) &= (0.9)(0.1) + (0.1)(0.9) \\ &= 0.18, \end{aligned} \\
+>
+> so \\\Pr(Y_1 = 1)\\\Pr(Y_2 = 1) = 0.0324 \ne 0.09\\: the tests are conditionally independent given \\X\\, but not independent.
 
 > **NOTE:**
 >

@@ -232,6 +232,16 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
+div.callout-prp.callout {
+  border-left-color: #827717;
+}
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
+}
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-proof.callout {
   border-left-color: #37474F;
 }
@@ -241,16 +251,6 @@ div.callout-proof.callout-style-default .callout-header {
 div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exr.callout {
   border-left-color: #FFA500;
@@ -262,25 +262,15 @@ div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-lem.callout {
-  border-left-color: #1565C0;
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
 }
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
 }
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
@@ -292,35 +282,35 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
+div.callout-remark.callout {
+  border-left-color: #AD1457;
 }
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
 }
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-cor.callout {
+  border-left-color: #00838F;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-prp.callout {
-  border-left-color: #827717;
+div.callout-lem.callout {
+  border-left-color: #1565C0;
 }
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
 }
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-solution.callout {
   border-left-color: #4E342E;
@@ -331,6 +321,16 @@ div.callout-solution.callout-style-default .callout-header {
 div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-def.callout {
+  border-left-color: #1B5E20;
+}
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
+}
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -754,7 +754,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-09 10:13:34 (PDT)</p>
+      <p class="date">Last modified: 2026-10-09 10:20:25 (PDT)</p>
     </div>
   </div>
   
@@ -849,7 +849,20 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-deviation-pop-mean" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (Deviation of a die roll from its mean)</strong></span> A fair die roll <span class="math inline">\(Y\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = 3.5\)</span> (computed on the <a href="./expectation.html#exm-linearity-expectation">expectation page</a>), so a roll of <span class="math inline">\(y = 5\)</span> has deviation <span class="math inline">\(e(5) = 5 - 3.5 = 1.5\)</span>, and a roll of <span class="math inline">\(y = 2\)</span> has deviation <span class="math inline">\(e(2) = 2 - 3.5 = -1.5\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 2 (Deviation of a die roll from its mean)</strong></span> A fair die roll <span class="math inline">\(Y\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = 3.5\)</span> (computed on the <a href="./expectation.html#exm-linearity-expectation">expectation page</a>), so a roll of <span class="math inline">\(y = 5\)</span> has deviation</p>
+<p><span class="math display">\[
+\begin{aligned}
+e(5) &amp;= 5 - 3.5 \\
+&amp;= 1.5,
+\end{aligned}
+\]</span></p>
+<p>and a roll of <span class="math inline">\(y = 2\)</span> has deviation</p>
+<p><span class="math display">\[
+\begin{aligned}
+e(2) &amp;= 2 - 3.5 \\
+&amp;= -1.5.
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -1047,7 +1060,14 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-cond-variance" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (Conditional variance of a binary outcome)</strong></span> Let <span class="math inline">\((X, Y)\)</span> have the joint PMF <span class="math inline">\(\operatorname{P}(X=0, Y=0) = 0.2\)</span>, <span class="math inline">\(\operatorname{P}(X=0, Y=1) = 0.3\)</span>, <span class="math inline">\(\operatorname{P}(X=1, Y=0) = 0.1\)</span>, <span class="math inline">\(\operatorname{P}(X=1, Y=1) = 0.4\)</span> (the table in the <a href="./expectation.html#exr-fubini-joint-disc">expectation page’s exercise</a>). Given <span class="math inline">\(X = 0\)</span>, <span class="math inline">\(Y\)</span> is binary with <span class="math inline">\(\operatorname{P}(Y = 1 \mid X = 0) = 0.3/0.5 = 0.6\)</span>, so <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y \mid X = 0\right]\mathclose{} = 0.6\)</span>, and by <a href="#def-cond-variance" class="quarto-xref">Definition&nbsp;4</a>:</p>
+<p><span class="theorem-title"><strong>Example 4 (Conditional variance of a binary outcome)</strong></span> Let <span class="math inline">\((X, Y)\)</span> have the joint PMF <span class="math inline">\(\operatorname{P}(X=0, Y=0) = 0.2\)</span>, <span class="math inline">\(\operatorname{P}(X=0, Y=1) = 0.3\)</span>, <span class="math inline">\(\operatorname{P}(X=1, Y=0) = 0.1\)</span>, <span class="math inline">\(\operatorname{P}(X=1, Y=1) = 0.4\)</span> (the table in the <a href="./expectation.html#exr-fubini-joint-disc">expectation page’s exercise</a>). Given <span class="math inline">\(X = 0\)</span>, <span class="math inline">\(Y\)</span> is binary with</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(Y = 1 \mid X = 0) &amp;= 0.3/0.5 \\
+&amp;= 0.6,
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y \mid X = 0\right]\mathclose{} = 0.6\)</span>, and by <a href="#def-cond-variance" class="quarto-xref">Definition&nbsp;4</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{}
@@ -1059,7 +1079,20 @@ window.Quarto = {
 &amp;&amp; \text{(add)}
 \end{aligned}
 \]</span></p>
-<p>The same steps with <span class="math inline">\(\operatorname{P}(Y = 1 \mid X = 1) = 0.4/0.5 = 0.8\)</span> give <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = (0.2)^2 \cdot 0.8 + (0.8)^2 \cdot 0.2 = 0.16\)</span>.</p>
+<p>The same steps with</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(Y = 1 \mid X = 1) &amp;= 0.4/0.5 \\
+&amp;= 0.8
+\end{aligned}
+\]</span></p>
+<p>give</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} &amp;= (0.2)^2 \cdot 0.8 + (0.8)^2 \cdot 0.2 \\
+&amp;= 0.16.
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -1085,7 +1118,14 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-homosked" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (A homoskedastic total)</strong></span> Flip two fair coins, let <span class="math inline">\(X_1\)</span> indicate heads on the first, and let <span class="math inline">\(Y\)</span> be the total number of heads. Given <span class="math inline">\(X_1 = 0\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each; given <span class="math inline">\(X_1 = 1\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span> with probability <span class="math inline">\(1/2\)</span> each. Either way, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1/2\)</span> away from its conditional mean with probability 1, so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 0\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X_1 = 1\right)\mathclose{} = 1/4\)</span>, and <span class="math inline">\(Y\)</span> is homoskedastic with respect to <span class="math inline">\(X_1\)</span>, with <span class="math inline">\(\sigma^2= 1/4\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 5 (A homoskedastic total)</strong></span> Flip two fair coins, let <span class="math inline">\(X_1\)</span> indicate heads on the first, and let <span class="math inline">\(Y\)</span> be the total number of heads. Given <span class="math inline">\(X_1 = 0\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each; given <span class="math inline">\(X_1 = 1\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span> with probability <span class="math inline">\(1/2\)</span> each. Either way, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1/2\)</span> away from its conditional mean with probability 1, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 0\right)\mathclose{} &amp;= \operatorname{Var}\mathopen{}\left(Y \mid X_1 = 1\right)\mathclose{} \\
+&amp;= 1/4,
+\end{aligned}
+\]</span></p>
+<p>and <span class="math inline">\(Y\)</span> is homoskedastic with respect to <span class="math inline">\(X_1\)</span>, with <span class="math inline">\(\sigma^2= 1/4\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1109,7 +1149,15 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-heterosked" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (A heteroskedastic binary outcome)</strong></span> In <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 0.24 \ne 0.16 = \operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{}\)</span>, so <span class="math inline">\(Y\)</span> is heteroskedastic with respect to <span class="math inline">\(X\)</span>. More generally, a binary outcome with <span class="math inline">\(\operatorname{P}(Y = 1 \mid X = x) = \pi(x)\)</span> has conditional variance <span class="math inline">\(\pi(x)(1 - \pi(x))\)</span>, so it is homoskedastic only if <span class="math inline">\(\pi(x)\)</span> takes at most two values, <span class="math inline">\(\pi\)</span> and <span class="math inline">\(1 - \pi\)</span>, for some <span class="math inline">\(\pi\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 6 (A heteroskedastic binary outcome)</strong></span> In <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} &amp;= 0.24 \\
+&amp;\ne 0.16 \\
+&amp;= \operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{},
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(Y\)</span> is heteroskedastic with respect to <span class="math inline">\(X\)</span>. More generally, a binary outcome with <span class="math inline">\(\operatorname{P}(Y = 1 \mid X = x) = \pi(x)\)</span> has conditional variance <span class="math inline">\(\pi(x)(1 - \pi(x))\)</span>, so it is homoskedastic only if <span class="math inline">\(\pi(x)\)</span> takes at most two values, <span class="math inline">\(\pi\)</span> and <span class="math inline">\(1 - \pi\)</span>, for some <span class="math inline">\(\pi\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1164,7 +1212,14 @@ window.Quarto = {
 &amp;&amp; \text{(definition of conditional variance)}
 \end{aligned}
 \]</span></p>
-<p>Second term: by the law of iterated expectations, <span class="math inline">\(\operatorname{E}\mathopen{}\left[m(X)\right]\mathclose{} = \operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\right]\mathclose{} = \mu\)</span>, so:</p>
+<p>Second term: by the law of iterated expectations,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[m(X)\right]\mathclose{} &amp;= \operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\right]\mathclose{} \\
+&amp;= \mu,
+\end{aligned}
+\]</span></p>
+<p>so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\mathopen{}\left(m(X) - \mu\right)^2\mathclose{}\right]\mathclose{}
@@ -1227,7 +1282,14 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-total-variance" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (Decomposing the variance of a binary outcome)</strong></span> Continuing <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, <span class="math inline">\(\operatorname{P}(X = 0) = \operatorname{P}(X = 1) = 0.5\)</span>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y \mid X = 0\right]\mathclose{} = 0.6\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y \mid X = 1\right]\mathclose{} = 0.8\)</span>, so <span class="math inline">\(\operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\right]\mathclose{} = 0.7\)</span>, and by <a href="#thm-total-variance" class="quarto-xref">Theorem&nbsp;3</a>:</p>
+<p><span class="theorem-title"><strong>Example 7 (Decomposing the variance of a binary outcome)</strong></span> Continuing <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X = 0) &amp;= \operatorname{P}(X = 1) \\
+&amp;= 0.5,
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\operatorname{E}\mathopen{}\left[Y \mid X = 0\right]\mathclose{} = 0.6\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y \mid X = 1\right]\mathclose{} = 0.8\)</span>, so <span class="math inline">\(\operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\right]\mathclose{} = 0.7\)</span>, and by <a href="#thm-total-variance" class="quarto-xref">Theorem&nbsp;3</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right]\mathclose{}
@@ -1244,7 +1306,20 @@ window.Quarto = {
 &amp;= 0.21
 \end{aligned}
 \]</span></p>
-<p>As a check, <span class="math inline">\(Y\)</span> is Bernoulli with <span class="math inline">\(\operatorname{P}(Y = 1) = 0.3 + 0.4 = 0.7\)</span>, so by <a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.7 \cdot 0.3 = 0.21\)</span>.</p>
+<p>As a check, <span class="math inline">\(Y\)</span> is Bernoulli with</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(Y = 1) &amp;= 0.3 + 0.4 \\
+&amp;= 0.7,
+\end{aligned}
+\]</span></p>
+<p>so by <a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &amp;= 0.7 \cdot 0.3 \\
+&amp;= 0.21.
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -1294,7 +1369,20 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-sd" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (Precision and standard deviation of a fair coin flip)</strong></span> In <a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>, a fair coin flip has <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\)</span>, so its precision is <span class="math inline">\(\tau(X) = 1 / (1/4) = 4\)</span> and its standard deviation is <span class="math inline">\(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} = \sqrt{1/4} = 1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 8 (Precision and standard deviation of a fair coin flip)</strong></span> In <a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>, a fair coin flip has <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\)</span>, so its precision is</p>
+<p><span class="math display">\[
+\begin{aligned}
+\tau(X) &amp;= 1 / (1/4) \\
+&amp;= 4
+\end{aligned}
+\]</span></p>
+<p>and its standard deviation is</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} &amp;= \sqrt{1/4} \\
+&amp;= 1/2.
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -1374,7 +1462,14 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-prediction-bias" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (Computing the bias of a prediction)</strong></span> Suppose <span class="math inline">\(f(x_0) = 10\)</span>, and the predictions <span class="math inline">\(\hat f(x_0)\)</span>, over repeated training sets, average <span class="math inline">\(11\)</span>. Then <span class="math inline">\(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 11 - 10 = 1\)</span>. The squared bias is <span class="math inline">\(1^2 = 1\)</span>, the value in <a href="#exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>.</p>
+<p><span class="theorem-title"><strong>Example 9 (Computing the bias of a prediction)</strong></span> Suppose <span class="math inline">\(f(x_0) = 10\)</span>, and the predictions <span class="math inline">\(\hat f(x_0)\)</span>, over repeated training sets, average <span class="math inline">\(11\)</span>. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} &amp;= 11 - 10 \\
+&amp;= 1.
+\end{aligned}
+\]</span></p>
+<p>The squared bias is <span class="math inline">\(1^2 = 1\)</span>, the value in <a href="#exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>.</p>
 </div>
 </div>
 </div>
@@ -1414,9 +1509,22 @@ window.Quarto = {
 \end{aligned}
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} = \sigma^2\)</span>, by <a href="#sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>.</li>
-<li><span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon D\right]\mathclose{} = \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\operatorname{E}\mathopen{}\left[D\right]\mathclose{} = 0\)</span>, because <span class="math inline">\(\varepsilon\)</span> is independent of <span class="math inline">\(\hat f(x_0)\)</span>, hence of <span class="math inline">\(D\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span>.</li>
-<li>By <a href="#thm-variance" class="quarto-xref">Theorem&nbsp;2</a>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[D^2\right]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left[D\right]\mathclose{}\right)^2\mathclose{}\)</span>. Here <span class="math inline">\(\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\)</span>, because <span class="math inline">\(f(x_0)\)</span> is a constant, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[D\right]\mathclose{} = f(x_0) - \operatorname{E}\mathopen{}\left[\hat f(x_0)\right]\mathclose{} = -\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\)</span>, so <span class="math inline">\(\mathopen{}\left(\operatorname{E}\mathopen{}\left[D\right]\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{}\)</span>.</li>
+<li><p><span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} = \sigma^2\)</span>, by <a href="#sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>.</p></li>
+<li><p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[\varepsilon D\right]\mathclose{} &amp;= \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\operatorname{E}\mathopen{}\left[D\right]\mathclose{} \\
+&amp;= 0,
+\end{aligned}
+\]</span></p>
+<p>because <span class="math inline">\(\varepsilon\)</span> is independent of <span class="math inline">\(\hat f(x_0)\)</span>, hence of <span class="math inline">\(D\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span>.</p></li>
+<li><p>By <a href="#thm-variance" class="quarto-xref">Theorem&nbsp;2</a>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[D^2\right]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left[D\right]\mathclose{}\right)^2\mathclose{}\)</span>. Here <span class="math inline">\(\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\)</span>, because <span class="math inline">\(f(x_0)\)</span> is a constant, and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[D\right]\mathclose{} &amp;= f(x_0) - \operatorname{E}\mathopen{}\left[\hat f(x_0)\right]\mathclose{} \\
+&amp;= -\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{},
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(\mathopen{}\left(\operatorname{E}\mathopen{}\left[D\right]\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{}\)</span>.</p></li>
 </ul>
 <p>Adding the three terms gives the claim.</p>
 </div>
@@ -1510,7 +1618,14 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-alt-cov" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (Covariance of a binary exposure and outcome)</strong></span> For the joint PMF in <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[XY\right]\mathclose{} = \operatorname{P}(X = 1, Y = 1) = 0.4\)</span>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = 0.5\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = 0.7\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 10 (Covariance of a binary exposure and outcome)</strong></span> For the joint PMF in <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[XY\right]\mathclose{} &amp;= \operatorname{P}(X = 1, Y = 1) \\
+&amp;= 0.4,
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = 0.5\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = 0.7\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}
@@ -1630,7 +1745,21 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exm-uncorrelated-not-indpt" class="theorem example">
-<p><span class="theorem-title"><strong>Example 12 (Zero covariance without independence)</strong></span> The converse of <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;6</a> is false. Let <span class="math inline">\(X\)</span> take the values <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/3\)</span> each, and let <span class="math inline">\(Y = X^2\)</span>. Then <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = (-1 + 0 + 1)/3 = 0\)</span>, and <span class="math inline">\(XY = X^3 = X\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 12 (Zero covariance without independence)</strong></span> The converse of <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;6</a> is false. Let <span class="math inline">\(X\)</span> take the values <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/3\)</span> each, and let <span class="math inline">\(Y = X^2\)</span>. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &amp;= (-1 + 0 + 1)/3 \\
+&amp;= 0,
+\end{aligned}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\begin{aligned}
+XY &amp;= X^3 \\
+&amp;= X,
+\end{aligned}
+\]</span></p>
+<p>so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}
@@ -1644,7 +1773,20 @@ window.Quarto = {
 &amp;&amp; \text{(multiply)}
 \end{aligned}
 \]</span></p>
-<p>But <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent: <span class="math inline">\(Y\)</span> is a function of <span class="math inline">\(X\)</span>, and <span class="math inline">\(\operatorname{P}(X = 0, Y = 0) = \operatorname{P}(X = 0) = \tfrac{1}{3}\)</span>, while <span class="math inline">\(\operatorname{P}(X = 0)\,\operatorname{P}(Y = 0) = \tfrac{1}{3} \cdot\tfrac{1}{3} = \tfrac{1}{9}\)</span>.</p>
+<p>But <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent: <span class="math inline">\(Y\)</span> is a function of <span class="math inline">\(X\)</span>, and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X = 0, Y = 0) &amp;= \operatorname{P}(X = 0) \\
+&amp;= \tfrac{1}{3},
+\end{aligned}
+\]</span></p>
+<p>while</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X = 0)\,\operatorname{P}(Y = 0) &amp;= \tfrac{1}{3} \cdot\tfrac{1}{3} \\
+&amp;= \tfrac{1}{9}.
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -2118,7 +2260,14 @@ window.Quarto = {
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{X}\)</span> as <span class="math inline">\(n \times 1\)</span> column vectors, so <span class="math inline">\(\tilde{a}\cdot \tilde{X}= {\tilde{a}}^{\top}\tilde{X}= \sum_{i=1}^na_i X_i\)</span>, a scalar. By linearity of expectation, <span class="math inline">\(\operatorname{E}\mathopen{}\left[{\tilde{a}}^{\top}\tilde{X}\right]\mathclose{} = {\tilde{a}}^{\top}\,\operatorname{E}\tilde{X}\)</span>, so:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{X}\)</span> as <span class="math inline">\(n \times 1\)</span> column vectors, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\tilde{a}\cdot \tilde{X}&amp;= {\tilde{a}}^{\top}\tilde{X}\\
+&amp;= \sum_{i=1}^na_i X_i,
+\end{aligned}
+\]</span></p>
+<p>a scalar. By linearity of expectation, <span class="math inline">\(\operatorname{E}\mathopen{}\left[{\tilde{a}}^{\top}\tilde{X}\right]\mathclose{} = {\tilde{a}}^{\top}\,\operatorname{E}\tilde{X}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left({\tilde{a}}^{\top}\tilde{X}\right)\mathclose{}
@@ -2219,7 +2368,13 @@ window.Quarto = {
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;6</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>. Applying <a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> with <span class="math inline">\(a = b = 1\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;6</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>. Applying <a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> with</p>
+<p><span class="math display">\[
+\begin{aligned}
+a &amp;= b \\
+&amp;= 1:
+\end{aligned}
+\]</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{}
@@ -2314,7 +2469,27 @@ window.Quarto = {
 <p><span class="math display">\[D_1 = \mathopen{}\left\{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)\right\}\mathclose{},\]</span></p>
 <p>and let <span class="math inline">\(\tilde{X}'\)</span> be equally likely to be each of the four points</p>
 <p><span class="math display">\[D_2 = \mathopen{}\left\{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)\right\}\mathclose{}.\]</span></p>
-<p>Both sets have first coordinates <span class="math inline">\(\mathopen{}\left\{-5, 0, 0, 5\right\}\mathclose{}\)</span> and second coordinates <span class="math inline">\(\mathopen{}\left\{1, -1, 1, -1\right\}\mathclose{}\)</span>, so <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_1\right]\mathclose{} = \operatorname{E}\mathopen{}\left[X_2\right]\mathclose{} = 0\)</span>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_1^2\right]\mathclose{} = (25 + 0 + 0 + 25)/4 = 12.5\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_2^2\right]\mathclose{} = (1 + 1 + 1 + 1)/4 = 1\)</span>, and likewise for <span class="math inline">\(\tilde{X}'\)</span>. They differ in the products of the coordinates:</p>
+<p>Both sets have first coordinates <span class="math inline">\(\mathopen{}\left\{-5, 0, 0, 5\right\}\mathclose{}\)</span> and second coordinates <span class="math inline">\(\mathopen{}\left\{1, -1, 1, -1\right\}\mathclose{}\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X_1\right]\mathclose{} &amp;= \operatorname{E}\mathopen{}\left[X_2\right]\mathclose{} \\
+&amp;= 0,
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X_1^2\right]\mathclose{} &amp;= (25 + 0 + 0 + 25)/4 \\
+&amp;= 12.5,
+\end{aligned}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[X_2^2\right]\mathclose{} &amp;= (1 + 1 + 1 + 1)/4 \\
+&amp;= 1,
+\end{aligned}
+\]</span></p>
+<p>and likewise for <span class="math inline">\(\tilde{X}'\)</span>. They differ in the products of the coordinates:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[X_1 X_2\right]\mathclose{} &amp;= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\
@@ -2370,7 +2545,15 @@ window.Quarto = {
 <p><span class="math display">\[
 \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
 \]</span></p>
-<p>With <span class="math inline">\(\tilde{a}= {(1, -1)}^{\top}\)</span>, <span class="math inline">\({\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} = 0\)</span>, so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\tilde{X}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
+<p>With <span class="math inline">\(\tilde{a}= {(1, -1)}^{\top}\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}&amp;= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\
+&amp;= \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} \\
+&amp;= 0,
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\tilde{X}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
 </div>
 </div>
 </div>

@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 10:13:34 (PDT)</p>
+  <p class="date">Last modified: 2026-10-09 10:20:25 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -353,7 +353,13 @@
 &amp;= \operatorname{P}(X_1 = 1)\,\operatorname{P}(X_2 = 1)
 \end{aligned}
 \]</span></p>
-<p>and the same factorization holds for the other three pairs of values, so <span class="math inline">\(X_1 \perp\!\!\!\perp X_2\)</span> by <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a>. In contrast, <span class="math inline">\(X_1\)</span> and the total number of heads, <span class="math inline">\(X_1 + X_2\)</span>, are not independent: <span class="math inline">\(\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\)</span>, but <span class="math inline">\(\operatorname{P}(X_1 = 0)\,\operatorname{P}(X_1 + X_2 = 2) = \tfrac{1}{2} \cdot\tfrac{1}{4} = \tfrac{1}{8}\)</span>.</p>
+<p>and the same factorization holds for the other three pairs of values, so <span class="math inline">\(X_1 \perp\!\!\!\perp X_2\)</span> by <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a>. In contrast, <span class="math inline">\(X_1\)</span> and the total number of heads, <span class="math inline">\(X_1 + X_2\)</span>, are not independent: <span class="math inline">\(\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\)</span>, but</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X_1 = 0)\,\operatorname{P}(X_1 + X_2 = 2) &amp;= \tfrac{1}{2} \cdot\tfrac{1}{4} \\
+&amp;= \tfrac{1}{8}.
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -379,7 +385,14 @@
 <section class="slide level2">
 
 <div id="exm-indpt-pmf-fails" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\(\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}\)</span> is <span class="math inline">\(\mathopen{}\left\{X = x\right\}\mathclose{}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise <span class="math inline">\(\Pr(X = x)\,\Pr(Y = y) = 0 \cdot 0 = 0\)</span>, so the PMF form holds. But <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent:</p>
+<p><span class="theorem-title"><strong>Example 2 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\(\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}\)</span> is <span class="math inline">\(\mathopen{}\left\{X = x\right\}\mathclose{}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X = x)\,\Pr(Y = y) &amp;= 0 \cdot 0 \\
+&amp;= 0,
+\end{aligned}
+\]</span></p>
+<p>so the PMF form holds. But <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X \in [0, \tfrac{1}{2}],\, Y \in [0, \tfrac{1}{2}])
@@ -391,7 +404,13 @@
 &amp;&amp; \text{(integrate)}
 \end{aligned}
 \]</span></p>
-<p>while <span class="math inline">\(\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) = \tfrac{1}{2} \cdot\tfrac{1}{2} = \tfrac{1}{4}\)</span>.</p>
+<p>while</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) &amp;= \tfrac{1}{2} \cdot\tfrac{1}{2} \\
+&amp;= \tfrac{1}{4}.
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -433,7 +452,14 @@
 &amp;&amp; \text{(add)}
 \end{aligned}
 \]</span></p>
-<p>but <span class="math inline">\(\Pr(Y_1 = 1) = (0.9)(0.1) + (0.1)(0.9) = 0.18\)</span>, so <span class="math inline">\(\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09\)</span>: the tests are conditionally independent given <span class="math inline">\(X\)</span>, but not independent.</p>
+<p>but</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1) &amp;= (0.9)(0.1) + (0.1)(0.9) \\
+&amp;= 0.18,
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09\)</span>: the tests are conditionally independent given <span class="math inline">\(X\)</span>, but not independent.</p>
 </div>
 </section>
 <section class="slide level2">

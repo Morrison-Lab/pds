@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 10:13:34 (PDT)</p>
+  <p class="date">Last modified: 2026-10-09 10:20:25 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
@@ -328,7 +328,13 @@ X(TH) &amp;= 1, \\
 X(TT) &amp;= 0
 \end{aligned}
 \]</span></p>
-<p>Then <span class="math inline">\(\{X = 1\} = \mathopen{}\left\{HT, TH\right\}\mathclose{}\)</span>, so <span class="math inline">\(\Pr(X = 1) = 1/4 + 1/4 = 1/2\)</span>.</p>
+<p>Then <span class="math inline">\(\{X = 1\} = \mathopen{}\left\{HT, TH\right\}\mathclose{}\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X = 1) &amp;= 1/4 + 1/4 \\
+&amp;= 1/2.
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -391,13 +397,34 @@ X(TT) &amp;= 0
 <section class="slide level2">
 
 <div id="exm-continuous-rv" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (A continuous random variable)</strong></span> Let <span class="math inline">\(X\)</span> satisfy <span class="math inline">\(\Pr(a \le X \le b) = b - a\)</span> for all <span class="math inline">\(0 \le a \le b \le 1\)</span>. Taking <span class="math inline">\(a = b = x\)</span> gives <span class="math inline">\(\Pr(X = x) = x - x = 0\)</span> for every <span class="math inline">\(x \in [0,1]\)</span>. Taking <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span> gives <span class="math inline">\(\Pr(0 \le X \le 1) = 1\)</span>, so by the <a href="./probability-basics.html#cor-p-neg0">complement rule</a> <span class="math inline">\(X\)</span> falls outside <span class="math inline">\([0, 1]\)</span> with probability 0, and <span class="math inline">\(\Pr(X = x) = 0\)</span> for every <span class="math inline">\(x\)</span> outside <span class="math inline">\([0, 1]\)</span> as well. So <span class="math inline">\(X\)</span> is continuous. Its range, <span class="math inline">\([0, 1]\)</span>, is uncountable.</p>
+<p><span class="theorem-title"><strong>Example 4 (A continuous random variable)</strong></span> Let <span class="math inline">\(X\)</span> satisfy <span class="math inline">\(\Pr(a \le X \le b) = b - a\)</span> for all <span class="math inline">\(0 \le a \le b \le 1\)</span>. Taking</p>
+<p><span class="math display">\[
+\begin{aligned}
+a &amp;= b \\
+&amp;= x
+\end{aligned}
+\]</span></p>
+<p>gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X = x) &amp;= x - x \\
+&amp;= 0
+\end{aligned}
+\]</span></p>
+<p>for every <span class="math inline">\(x \in [0,1]\)</span>. Taking <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span> gives <span class="math inline">\(\Pr(0 \le X \le 1) = 1\)</span>, so by the <a href="./probability-basics.html#cor-p-neg0">complement rule</a> <span class="math inline">\(X\)</span> falls outside <span class="math inline">\([0, 1]\)</span> with probability 0, and <span class="math inline">\(\Pr(X = x) = 0\)</span> for every <span class="math inline">\(x\)</span> outside <span class="math inline">\([0, 1]\)</span> as well. So <span class="math inline">\(X\)</span> is continuous. Its range, <span class="math inline">\([0, 1]\)</span>, is uncountable.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="exm-mixed-rv" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (A random variable that is neither discrete nor continuous)</strong></span> Some random variables are neither discrete nor continuous: a time to event that equals exactly <span class="math inline">\(0\)</span> with positive probability, and otherwise spreads over <span class="math inline">\((0, \infty)\)</span>, is one. For instance, let <span class="math inline">\(U\)</span> be the continuous random variable of <a href="#/exm-continuous-rv" class="quarto-xref">Example&nbsp;4</a>, and let <span class="math inline">\(T = 1/(1 - U) - 2\)</span> when <span class="math inline">\(1/2 &lt; U &lt; 1\)</span>, and <span class="math inline">\(T = 0\)</span> otherwise. On <span class="math inline">\(\mathopen{}\left\{1/2 &lt; U &lt; 1\right\}\mathclose{}\)</span>, <span class="math inline">\(T\)</span> is increasing in <span class="math inline">\(U\)</span> and takes values in <span class="math inline">\((0, \infty)\)</span>, and solving <span class="math inline">\(t = 1/(1 - u) - 2\)</span> for <span class="math inline">\(u\)</span> gives <span class="math inline">\(u = 1 - 1/(t + 2)\)</span>. So <span class="math inline">\(\mathopen{}\left\{T &gt; 0\right\}\mathclose{} = \mathopen{}\left\{1/2 &lt; U &lt; 1\right\}\mathclose{}\)</span>, and <span class="math inline">\(\mathopen{}\left\{T = t\right\}\mathclose{} = \mathopen{}\left\{U = 1 - 1/(t + 2)\right\}\mathclose{}\)</span> for each <span class="math inline">\(t &gt; 0\)</span>. Since <span class="math inline">\(\Pr(U = 1/2) = \Pr(U = 1) = 0\)</span> (<a href="#/exm-continuous-rv" class="quarto-xref">Example&nbsp;4</a>):</p>
+<p><span class="theorem-title"><strong>Example 5 (A random variable that is neither discrete nor continuous)</strong></span> Some random variables are neither discrete nor continuous: a time to event that equals exactly <span class="math inline">\(0\)</span> with positive probability, and otherwise spreads over <span class="math inline">\((0, \infty)\)</span>, is one. For instance, let <span class="math inline">\(U\)</span> be the continuous random variable of <a href="#/exm-continuous-rv" class="quarto-xref">Example&nbsp;4</a>, and let <span class="math inline">\(T = 1/(1 - U) - 2\)</span> when <span class="math inline">\(1/2 &lt; U &lt; 1\)</span>, and <span class="math inline">\(T = 0\)</span> otherwise. On <span class="math inline">\(\mathopen{}\left\{1/2 &lt; U &lt; 1\right\}\mathclose{}\)</span>, <span class="math inline">\(T\)</span> is increasing in <span class="math inline">\(U\)</span> and takes values in <span class="math inline">\((0, \infty)\)</span>, and solving <span class="math inline">\(t = 1/(1 - u) - 2\)</span> for <span class="math inline">\(u\)</span> gives <span class="math inline">\(u = 1 - 1/(t + 2)\)</span>. So <span class="math inline">\(\mathopen{}\left\{T &gt; 0\right\}\mathclose{} = \mathopen{}\left\{1/2 &lt; U &lt; 1\right\}\mathclose{}\)</span>, and <span class="math inline">\(\mathopen{}\left\{T = t\right\}\mathclose{} = \mathopen{}\left\{U = 1 - 1/(t + 2)\right\}\mathclose{}\)</span> for each <span class="math inline">\(t &gt; 0\)</span>. Since <span class="math inline">\(U\)</span> is continuous (<a href="#/exm-continuous-rv" class="quarto-xref">Example&nbsp;4</a>), single points have probability zero:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(U = 1/2) &amp;= \Pr(U = 1) \\
+&amp;= 0
+\end{aligned}
+\]</span></p>
+<p>Using these values:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(T &gt; 0)
@@ -411,7 +438,14 @@ X(TT) &amp;= 0
 &amp;&amp; \text{(simplify)}
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(T\)</span> is not continuous, because <span class="math inline">\(\Pr(T = 0) = 1 - \Pr(T &gt; 0) = 1/2\)</span> by the <a href="./probability-basics.html#cor-p-neg0">complement rule</a>.</p>
+<p><span class="math inline">\(T\)</span> is not continuous, because</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(T = 0) &amp;= 1 - \Pr(T &gt; 0) \\
+&amp;= 1/2
+\end{aligned}
+\]</span></p>
+<p>by the <a href="./probability-basics.html#cor-p-neg0">complement rule</a>.</p>
 <p><span class="math inline">\(T\)</span> is not discrete either. If it were, its range would be countable, so <span class="math inline">\(\mathopen{}\left\{T &gt; 0\right\}\mathclose{}\)</span> would be the disjoint union of the countably many events <span class="math inline">\(\mathopen{}\left\{T = t\right\}\mathclose{}\)</span> with <span class="math inline">\(t \in \mathcal{R}(T)\)</span> and <span class="math inline">\(t &gt; 0\)</span>, and:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -473,7 +507,35 @@ X(TT) &amp;= 0
 <section class="slide level2">
 
 <div id="exm-bernoulli-pmf" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (The first of two coin flips)</strong></span> In <a href="#/exm-random-variable" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(X_1\)</span> indicate heads on the first flip, so <span class="math inline">\(X_1(HH) = X_1(HT) = 1\)</span> and <span class="math inline">\(X_1(TH) = X_1(TT) = 0\)</span>. Then <span class="math inline">\(\operatorname{P}(X_1 = 1) = \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{}) = 1/2\)</span> and <span class="math inline">\(\operatorname{P}(X_1 = 0) = \Pr(\mathopen{}\left\{TH, TT\right\}\mathclose{}) = 1/2\)</span>, so <span class="math inline">\(X_1 \sim \operatorname{Ber}(1/2)\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 7 (The first of two coin flips)</strong></span> In <a href="#/exm-random-variable" class="quarto-xref">Example&nbsp;1</a>, let <span class="math inline">\(X_1\)</span> indicate heads on the first flip, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+X_1(HH) &amp;= X_1(HT) \\
+&amp;= 1
+\end{aligned}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\begin{aligned}
+X_1(TH) &amp;= X_1(TT) \\
+&amp;= 0.
+\end{aligned}
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X_1 = 1) &amp;= \Pr(\mathopen{}\left\{HH, HT\right\}\mathclose{}) \\
+&amp;= 1/2
+\end{aligned}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X_1 = 0) &amp;= \Pr(\mathopen{}\left\{TH, TT\right\}\mathclose{}) \\
+&amp;= 1/2,
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(X_1 \sim \operatorname{Ber}(1/2)\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -852,7 +914,14 @@ F(t)
 &amp;&amp; \text{(integrate)}
 \end{aligned}
 \]</span></p>
-<p>For <span class="math inline">\(t \in (0, 1)\)</span>, where <span class="math inline">\(f\)</span> is continuous, <span class="math inline">\(\frac{\partial}{\partial t} F(t) = 1 = f(t)\)</span>. At <span class="math inline">\(t = 1\)</span>, <span class="math inline">\(f\)</span> jumps from 1 to 0, and <span class="math inline">\(F\)</span> has no derivative: its slope is 1 on the left and 0 on the right.</p>
+<p>For <span class="math inline">\(t \in (0, 1)\)</span>, where <span class="math inline">\(f\)</span> is continuous,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial}{\partial t} F(t) &amp;= 1 \\
+&amp;= f(t).
+\end{aligned}
+\]</span></p>
+<p>At <span class="math inline">\(t = 1\)</span>, <span class="math inline">\(f\)</span> jumps from 1 to 0, and <span class="math inline">\(F\)</span> has no derivative: its slope is 1 on the left and 0 on the right.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -996,7 +1065,13 @@ f(x)
 <section class="slide level2">
 
 <div id="exm-density-sums-to-one" class="theorem example">
-<p><span class="theorem-title"><strong>Example 18 (The uniform density integrates to 1)</strong></span> For <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="#/def-uniform" class="quarto-xref">Definition&nbsp;8</a>), <span class="math inline">\(\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 18 (The uniform density integrates to 1)</strong></span> For <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="#/def-uniform" class="quarto-xref">Definition&nbsp;8</a>),</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{-\infty}^{\infty} f(x)\,dx &amp;= \int_0^1 1\,dx \\
+&amp;= 1.
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -1271,7 +1346,14 @@ f_X(x)
 &amp;&amp; \text{(integrate)}
 \end{aligned}
 \]</span></p>
-<p>The same steps with the roles swapped give <span class="math inline">\(f_Y(y) = \int_0^y 2\,dx = 2y\)</span> for <span class="math inline">\(y \in [0, 1]\)</span>.</p>
+<p>The same steps with the roles swapped give</p>
+<p><span class="math display">\[
+\begin{aligned}
+f_Y(y) &amp;= \int_0^y 2\,dx \\
+&amp;= 2y
+\end{aligned}
+\]</span></p>
+<p>for <span class="math inline">\(y \in [0, 1]\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1522,7 +1604,14 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 &amp;&amp; \text{(simplify)}
 \end{aligned}
 \]</span></p>
-<p>For <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(\operatorname{S}(t) = \Pr(T &gt; t) = 1\)</span>, since <span class="math inline">\(T \ge 0\)</span>. With <span class="math inline">\({\lambda}= 0.5\)</span>, for example, <span class="math inline">\(\operatorname{S}(2) = \text{e}^{-1} \approx 0.368\)</span>.</p>
+<p>For <span class="math inline">\(t &lt; 0\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{S}(t) &amp;= \Pr(T &gt; t) \\
+&amp;= 1,
+\end{aligned}
+\]</span></p>
+<p>since <span class="math inline">\(T \ge 0\)</span>. With <span class="math inline">\({\lambda}= 0.5\)</span>, for example, <span class="math inline">\(\operatorname{S}(2) = \text{e}^{-1} \approx 0.368\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1550,7 +1639,14 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <section class="slide level2">
 
 <div id="exm-hazard-exceeds-one" class="theorem example">
-<p><span class="theorem-title"><strong>Example 29 (A hazard greater than 1)</strong></span> A hazard can exceed 1, just as a density can (<a href="#/exm-normal" class="quarto-xref">Example&nbsp;9</a>). Let <span class="math inline">\(T\)</span> be <a href="#/def-exponential">exponential</a> with rate <span class="math inline">\({\lambda}= 2\)</span>, so <span class="math inline">\(\operatorname{S}(t) = \text{e}^{-2t}\)</span> for <span class="math inline">\(t \ge 0\)</span> (<a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;28</a>). Since <span class="math inline">\(T\)</span> is continuous, <span class="math inline">\(\Pr(T = s) = 0\)</span> for every <span class="math inline">\(s\)</span>, so <span class="math inline">\(\Pr(T \ge s) = \Pr(T &gt; s) = \operatorname{S}(s)\)</span>. For <span class="math inline">\(t \ge 0\)</span> and <span class="math inline">\(\Delta&gt; 0\)</span>, <span class="math inline">\(\{T \ge t\}\)</span> is the disjoint union of <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> and <span class="math inline">\(\{T \ge t + \Delta\}\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 29 (A hazard greater than 1)</strong></span> A hazard can exceed 1, just as a density can (<a href="#/exm-normal" class="quarto-xref">Example&nbsp;9</a>). Let <span class="math inline">\(T\)</span> be <a href="#/def-exponential">exponential</a> with rate <span class="math inline">\({\lambda}= 2\)</span>, so <span class="math inline">\(\operatorname{S}(t) = \text{e}^{-2t}\)</span> for <span class="math inline">\(t \ge 0\)</span> (<a href="#/exm-exp-survfn" class="quarto-xref">Example&nbsp;28</a>). Since <span class="math inline">\(T\)</span> is continuous, <span class="math inline">\(\Pr(T = s) = 0\)</span> for every <span class="math inline">\(s\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(T \ge s) &amp;= \Pr(T &gt; s) \\
+&amp;= \operatorname{S}(s).
+\end{aligned}
+\]</span></p>
+<p>For <span class="math inline">\(t \ge 0\)</span> and <span class="math inline">\(\Delta&gt; 0\)</span>, <span class="math inline">\(\{T \ge t\}\)</span> is the disjoint union of <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> and <span class="math inline">\(\{T \ge t + \Delta\}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(t \le T &lt; t + \Delta\mid T \ge t)
@@ -1649,7 +1745,14 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <p><span class="math display">\[{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The proof uses three facts. First, for <span class="math inline">\(\Delta&gt; 0\)</span> the event <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> is a subset of the event <span class="math inline">\(\{T \ge t\}\)</span>, so intersecting them leaves <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> (the <a href="./probability-basics.html#thm-prob-subset">subset property</a>). Second, <span class="math inline">\(\Pr(T = t) = 0\)</span> for a continuous <span class="math inline">\(T\)</span>, so <span class="math inline">\(\Pr(T \ge t) = \Pr(T &gt; t) = \operatorname{S}(t)\)</span>, which is positive. Third, because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(t\)</span>, <a href="#/thm-density-limit" class="quarto-xref">Theorem&nbsp;8</a> gives <span class="math inline">\(f(t)\)</span> as the limit of <span class="math inline">\(\Pr(t \le T &lt; t + \Delta) / \Delta\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The proof uses three facts. First, for <span class="math inline">\(\Delta&gt; 0\)</span> the event <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> is a subset of the event <span class="math inline">\(\{T \ge t\}\)</span>, so intersecting them leaves <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> (the <a href="./probability-basics.html#thm-prob-subset">subset property</a>). Second, <span class="math inline">\(\Pr(T = t) = 0\)</span> for a continuous <span class="math inline">\(T\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(T \ge t) &amp;= \Pr(T &gt; t) \\
+&amp;= \operatorname{S}(t),
+\end{aligned}
+\]</span></p>
+<p>which is positive. Third, because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(t\)</span>, <a href="#/thm-density-limit" class="quarto-xref">Theorem&nbsp;8</a> gives <span class="math inline">\(f(t)\)</span> as the limit of <span class="math inline">\(\Pr(t \le T &lt; t + \Delta) / \Delta\)</span>.</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\lambda}(t)

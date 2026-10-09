@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:13:34 (PDT)
+Last modified: 2026-10-09 10:20:25 (PDT)
 
 ## 1 Defining probabilities
 
@@ -99,7 +99,13 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (Probability measure for a fair die)** For the die roll in [Example 1](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the counting measure \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of \\\Omega\\, and it gives \\\Pr(\Omega) = 6/6 = 1\\. The event “the roll is even” from [Example 2](#exm-event) has probability \\\Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) = 3/6 = 1/2\\.
+> **Example 7 (Probability measure for a fair die)** For the die roll in [Example 1](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the counting measure \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of \\\Omega\\, and it gives
+>
+> \\ \begin{aligned} \Pr(\Omega) &= 6/6 \\ &= 1. \end{aligned} \\
+>
+> The event “the roll is even” from [Example 2](#exm-event) has probability
+>
+> \\ \begin{aligned} \Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) &= 3/6 \\ &= 1/2. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -274,7 +280,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 > Let \\D\\ be the event “person has the disease” and \\+\\ be the event “test is positive”. Then:
 >
 > - \\\Pr(+ \mid D) = 0.99\\ (sensitivity)
-> - \\\Pr(\neg + \mid \neg D) = 0.99\\ (specificity), so the false positive rate is \\\Pr(+ \mid \neg D) = 1 - 0.99 = 0.01\\
+>
+> - \\\Pr(\neg + \mid \neg D) = 0.99\\ (specificity), so the false positive rate is
+>
+>   \\ \begin{aligned} \Pr(+ \mid \neg D) &= 1 - 0.99 \\ &= 0.01 \end{aligned} \\
+>
 > - \\\Pr(D) = 0.07\\ (prevalence)
 >
 > By [Theorem 7](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition \\\\D, \neg D\\\\:

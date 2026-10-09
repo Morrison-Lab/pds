@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:13:34 (PDT)
+Last modified: 2026-10-09 10:20:25 (PDT)
 
 > **NOTE:**
 >
@@ -381,7 +381,11 @@ Figure 2: Poisson CDFs
 >
 > \\ \begin{aligned} \operatorname{P}(Y = y) &= \int_0^\infty \frac{{\lambda}^y e^{-{\lambda}}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\\d{\lambda} && (\text{marginalize over } \Lambda) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \int_0^\infty {\lambda}^{y + \rho- 1} e^{-{\lambda}(1 + \rho/\mu)}\\d{\lambda} && (\text{collect powers of } {\lambda}\text{ and exponents}) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \cdot\frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}} && (\textstyle\int_0^\infty {\lambda}^{a-1} e^{-b{\lambda}}\\d{\lambda}= \Gamma(a)/b^a) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu}\right)\mathclose{}^\rho\mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y + \rho} && (1 + \rho/\mu= (\mu+ \rho)/\mu) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu+ \rho}\right)\mathclose{}^{\rho} \mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y} && (\text{combine the } \mu^\rho\text{ factors}) \\ &= \frac{\mu^y}{y!} \cdot\frac{\Gamma(\rho+ y)}{\Gamma(\rho)\\(\rho+ \mu)^y} \cdot\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho} && (\text{rearrange into the form of the definition}) \end{aligned} \\
 >
-> Then, by the [law of iterated expectations](expectation.llms.md#thm-lie) and the [law of total variance](variance-covariance.llms.md#thm-total-variance), using \\\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \operatorname{Var}(Y \mid \Lambda) = \Lambda\\ ([Theorem 2](#thm-poisson-properties)):
+> Then, by the [law of iterated expectations](expectation.llms.md#thm-lie) and the [law of total variance](variance-covariance.llms.md#thm-total-variance), using
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} &= \operatorname{Var}(Y \mid \Lambda) \\ &= \Lambda \end{aligned} \\
+>
+> ([Theorem 2](#thm-poisson-properties)):
 >
 > \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \Lambda\text{ and } \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
 >
@@ -389,7 +393,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 9 (Overdispersion relative to the Poisson)** With \\\mu= 4\\ and \\\rho= 2\\, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 4 + 16/2 = 12\\, three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
+> **Example 9 (Overdispersion relative to the Poisson)** With \\\mu= 4\\ and \\\rho= 2\\,
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 4 + 16/2 \\ &= 12, \end{aligned} \\
+>
+> three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
 
 ## 4 The Laplace distribution
 
@@ -405,7 +413,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu= 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is \\\mathopen{}\left\|5 - 3\right\|\mathclose{} = 2 = b\\, so the density is \\\frac{1}{2b}\text{e}^{-1}\\. Here are both values:
+> **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu= 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is
+>
+> \\ \begin{aligned} \mathopen{}\left\|5 - 3\right\|\mathclose{} &= 2 \\ &= b, \end{aligned} \\
+>
+> so the density is \\\frac{1}{2b}\text{e}^{-1}\\. Here are both values:
 >
 > ``` r
 > b <- 2
@@ -430,9 +442,15 @@ Figure 2: Poisson CDFs
 >
 > *Proof*. Write \\U = Y - \mu\\. By [Equation 5](#eq-laplace-pdf), \\U\\ has density \\\frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\, which is symmetric about \\0\\.
 >
-> For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu+ \operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = \mu\\.
+> For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\, and
 >
-> For the variance, \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(U\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[U^2\right\]\mathclose{}\\ because \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\. The integrand \\u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is even, so
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \mu+ \operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} \\ &= \mu. \end{aligned} \\
+>
+> For the variance,
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(U\right)\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[U^2\right\]\mathclose{} \end{aligned} \\
+>
+> because \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\. The integrand \\u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is even, so
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[U^2\right\]\mathclose{} &= 2 \int_0^\infty u^2 \frac{1}{2b} \text{e}^{-u/b} \\ du && \text{(even integrand)} \\ &= \frac{1}{b} \int_0^\infty u^2 \text{e}^{-u/b} \\ du && \text{(multiplying the constants)} \\ &= \frac{1}{b} \mathopen{}\left(2b \int_0^\infty u \text{e}^{-u/b} \\ du\right)\mathclose{} && \text{(integration by parts; the boundary terms are \$0\$)} \\ &= \frac{1}{b} \mathopen{}\left(2b \cdot b^2\right)\mathclose{} && \text{(integration by parts again; the boundary terms are \$0\$)} \\ &= 2b^2. && \text{(multiplying the constants)} \end{aligned} \\
 
@@ -491,7 +509,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. The CDF of \\T\\ is \\F(t) = 1 - \operatorname{S}(t)\\ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is \\0\\ for \\t \< 0\\ and \\1 - \text{e}^{-{\lambda}t^\alpha}\\ for \\t \ge 0\\. This \\F\\ is continuous everywhere, with a continuous derivative everywhere except possibly \\t = 0\\, so \\f = F' = -\operatorname{S}'\\ is a density of \\T\\ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every \\t \> 0\\, so there the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
+> *Proof*. The CDF of \\T\\ is \\F(t) = 1 - \operatorname{S}(t)\\ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is \\0\\ for \\t \< 0\\ and \\1 - \text{e}^{-{\lambda}t^\alpha}\\ for \\t \ge 0\\. This \\F\\ is continuous everywhere, with a continuous derivative everywhere except possibly \\t = 0\\, so
+>
+> \\ \begin{aligned} f &= F' \\ &= -\operatorname{S}' \end{aligned} \\
+>
+> is a density of \\T\\ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every \\t \> 0\\, so there the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
 >
 > \\ \begin{aligned} f(t) &= -\frac{d}{dt}\text{e}^{-{\lambda}t^\alpha} && (f = -\operatorname{S}') \\ &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha} && (\text{chain rule}) \\ \operatorname{h}(t) &= \frac{\alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}}{\text{e}^{-{\lambda}t^\alpha}} && (\text{hazard is density over survival}) \\ &= \alpha{\lambda}t^{\alpha-1} && (\text{cancel}) \end{aligned} \\
 >
@@ -537,7 +559,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 12 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(2){\lambda}^{-1} = 1/{\lambda}\\, matching the exponential distribution’s constant hazard and mean. With \\\alpha= 2\\ and \\{\lambda}= 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(3/2) = \sqrt{\pi}/2 \approx 0.886\\.
+> **Example 12 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(2){\lambda}^{-1} \\ &= 1/{\lambda}, \end{aligned} \\
+>
+> matching the exponential distribution’s constant hazard and mean. With \\\alpha= 2\\ and \\{\lambda}= 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(3/2) \\ &= \sqrt{\pi}/2 \\ &\approx 0.886. \end{aligned} \\
 
 ## 6 The multivariate normal distribution
 
@@ -677,7 +705,19 @@ Figure 2: Poisson CDFs
 >
 > \\ \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
 >
-> The point \\\tilde{x}= \sqrt{3}\\\tilde{q}\_1 = \sqrt{3/2}\\{(1, 1)}^{\top}\\ has \\x_1 + x_2 = \sqrt{6}\\ and \\x_1 - x_2 = 0\\, so \\\Delta(\tilde{x})^2 = 6/6 = 1\\; the point \\\tilde{x}= \tilde{q}\_2\\ has \\x_1 + x_2 = 0\\ and \\x_1 - x_2 = \sqrt{2}\\, so \\\Delta(\tilde{x})^2 = 2/2 = 1\\. So the contour \\\Delta(\tilde{x}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\tilde{0}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated.
+> The point
+>
+> \\ \begin{aligned} \tilde{x}&= \sqrt{3}\\\tilde{q}\_1 \\ &= \sqrt{3/2}\\{(1, 1)}^{\top} \end{aligned} \\
+>
+> has \\x_1 + x_2 = \sqrt{6}\\ and \\x_1 - x_2 = 0\\, so
+>
+> \\ \begin{aligned} \Delta(\tilde{x})^2 &= 6/6 \\ &= 1; \end{aligned} \\
+>
+> the point \\\tilde{x}= \tilde{q}\_2\\ has \\x_1 + x_2 = 0\\ and \\x_1 - x_2 = \sqrt{2}\\, so
+>
+> \\ \begin{aligned} \Delta(\tilde{x})^2 &= 2/2 \\ &= 1. \end{aligned} \\
+>
+> So the contour \\\Delta(\tilde{x}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\tilde{0}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated.
 
 ## 7 Mixture distributions
 
@@ -708,7 +748,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By the [marginal PMF from a joint density-mass function](random-variables.llms.md#cor-joint-density-mass-marginal), \\\operatorname{P}(C = c) = \int\_{-\infty}^{\infty} w_c \\ {\operatorname{p}\_c}(x)\\dx = w_c\\, because \\{\operatorname{p}\_c}\\ is a density and so integrates to 1. Then, by the [definition of the conditional density](expectation.llms.md#def-cond-mixed), \\\operatorname{p}(X = x \mid C = c) = w_c \\ {\operatorname{p}\_c}(x) / w_c = {\operatorname{p}\_c}(x)\\.
+> *Proof*. By the [marginal PMF from a joint density-mass function](random-variables.llms.md#cor-joint-density-mass-marginal),
+>
+> \\ \begin{aligned} \operatorname{P}(C = c) &= \int\_{-\infty}^{\infty} w_c \\ {\operatorname{p}\_c}(x)\\dx \\ &= w_c, \end{aligned} \\
+>
+> because \\{\operatorname{p}\_c}\\ is a density and so integrates to 1. Then, by the [definition of the conditional density](expectation.llms.md#def-cond-mixed),
+>
+> \\ \begin{aligned} \operatorname{p}(X = x \mid C = c) &= w_c \\ {\operatorname{p}\_c}(x) / w_c \\ &= {\operatorname{p}\_c}(x). \end{aligned} \\
 >
 > For the last claim, the events \\\mathopen{}\left\\C = 1\right\\\mathclose{}, \ldots, \mathopen{}\left\\C = K\right\\\mathclose{}\\ are mutually exclusive, and their union is the whole sample space. So for any interval \\B\\:
 >
@@ -754,7 +800,9 @@ Figure 2: Poisson CDFs
 >
 > **Example 16 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
 >
-> - **Mean.** By [Theorem 15](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-density), \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0.3 \cdot 0 + 0.7 \cdot 6 = 4.2\\.
+> - **Mean.** By [Theorem 15](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-density),
+>
+>   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\ &= 4.2. \end{aligned} \\
 >
 > - **Density.** \\{\operatorname{p}\_{\text{mix}}}\\ has peaks near the two component means, \\{\operatorname{p}\_{\text{mix}}}(0) \approx 0.120\\ and \\{\operatorname{p}\_{\text{mix}}}(6) \approx 0.279\\, with a trough between them, \\{\operatorname{p}\_{\text{mix}}}(3) \approx 0.004\\. The density at the mean, \\{\operatorname{p}\_{\text{mix}}}(4.2) \approx 0.055\\, is less than half its value at either peak.
 >

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:13:34 (PDT)
+Last modified: 2026-10-09 10:20:25 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -58,7 +58,13 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation \\e(5) = 5 - 3.5 = 1.5\\, and a roll of \\y = 2\\ has deviation \\e(2) = 2 - 3.5 = -1.5\\.
+> **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation
+>
+> \\ \begin{aligned} e(5) &= 5 - 3.5 \\ &= 1.5, \end{aligned} \\
+>
+> and a roll of \\y = 2\\ has deviation
+>
+> \\ \begin{aligned} e(2) &= 2 - 3.5 \\ &= -1.5. \end{aligned} \\
 
 ### 1.1 Mean-zero noise model
 
@@ -134,11 +140,21 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 4 (Conditional variance of a binary outcome)** Let \\(X, Y)\\ have the joint PMF \\\operatorname{P}(X=0, Y=0) = 0.2\\, \\\operatorname{P}(X=0, Y=1) = 0.3\\, \\\operatorname{P}(X=1, Y=0) = 0.1\\, \\\operatorname{P}(X=1, Y=1) = 0.4\\ (the table in the [expectation page’s exercise](expectation.llms.md#exr-fubini-joint-disc)). Given \\X = 0\\, \\Y\\ is binary with \\\operatorname{P}(Y = 1 \mid X = 0) = 0.3/0.5 = 0.6\\, so \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and by [Definition 4](#def-cond-variance):
+> **Example 4 (Conditional variance of a binary outcome)** Let \\(X, Y)\\ have the joint PMF \\\operatorname{P}(X=0, Y=0) = 0.2\\, \\\operatorname{P}(X=0, Y=1) = 0.3\\, \\\operatorname{P}(X=1, Y=0) = 0.1\\, \\\operatorname{P}(X=1, Y=1) = 0.4\\ (the table in the [expectation page’s exercise](expectation.llms.md#exr-fubini-joint-disc)). Given \\X = 0\\, \\Y\\ is binary with
+>
+> \\ \begin{aligned} \operatorname{P}(Y = 1 \mid X = 0) &= 0.3/0.5 \\ &= 0.6, \end{aligned} \\
+>
+> so \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and by [Definition 4](#def-cond-variance):
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} &= (0 - 0.6)^2 \cdot 0.4 + (1 - 0.6)^2 \cdot 0.6 && \text{(definition of conditional variance)} \\ &= 0.144 + 0.096 && \text{(multiply)} \\ &= 0.24 && \text{(add)} \end{aligned} \\
 >
-> The same steps with \\\operatorname{P}(Y = 1 \mid X = 1) = 0.4/0.5 = 0.8\\ give \\\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = (0.2)^2 \cdot 0.8 + (0.8)^2 \cdot 0.2 = 0.16\\.
+> The same steps with
+>
+> \\ \begin{aligned} \operatorname{P}(Y = 1 \mid X = 1) &= 0.4/0.5 \\ &= 0.8 \end{aligned} \\
+>
+> give
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} &= (0.2)^2 \cdot 0.8 + (0.8)^2 \cdot 0.2 \\ &= 0.16. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -150,7 +166,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 5 (A homoskedastic total)** Flip two fair coins, let \\X_1\\ indicate heads on the first, and let \\Y\\ be the total number of heads. Given \\X_1 = 0\\, \\Y\\ is \\0\\ or \\1\\ with probability \\1/2\\ each; given \\X_1 = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each. Either way, \\Y\\ is \\1/2\\ away from its conditional mean with probability 1, so \\\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 0\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X_1 = 1\right)\mathclose{} = 1/4\\, and \\Y\\ is homoskedastic with respect to \\X_1\\, with \\\sigma^2= 1/4\\.
+> **Example 5 (A homoskedastic total)** Flip two fair coins, let \\X_1\\ indicate heads on the first, and let \\Y\\ be the total number of heads. Given \\X_1 = 0\\, \\Y\\ is \\0\\ or \\1\\ with probability \\1/2\\ each; given \\X_1 = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each. Either way, \\Y\\ is \\1/2\\ away from its conditional mean with probability 1, so
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y \mid X_1 = 0\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(Y \mid X_1 = 1\right)\mathclose{} \\ &= 1/4, \end{aligned} \\
+>
+> and \\Y\\ is homoskedastic with respect to \\X_1\\, with \\\sigma^2= 1/4\\.
 
 > **NOTE:**
 >
@@ -158,7 +178,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 6 (A heteroskedastic binary outcome)** In [Example 4](#exm-cond-variance), \\\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 0.24 \ne 0.16 = \operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{}\\, so \\Y\\ is heteroskedastic with respect to \\X\\. More generally, a binary outcome with \\\operatorname{P}(Y = 1 \mid X = x) = \pi(x)\\ has conditional variance \\\pi(x)(1 - \pi(x))\\, so it is homoskedastic only if \\\pi(x)\\ takes at most two values, \\\pi\\ and \\1 - \pi\\, for some \\\pi\\.
+> **Example 6 (A heteroskedastic binary outcome)** In [Example 4](#exm-cond-variance),
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} &= 0.24 \\ &\ne 0.16 \\ &= \operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{}, \end{aligned} \\
+>
+> so \\Y\\ is heteroskedastic with respect to \\X\\. More generally, a binary outcome with \\\operatorname{P}(Y = 1 \mid X = x) = \pi(x)\\ has conditional variance \\\pi(x)(1 - \pi(x))\\, so it is homoskedastic only if \\\pi(x)\\ takes at most two values, \\\pi\\ and \\1 - \pi\\, for some \\\pi\\.
 
 > **NOTE:**
 >
@@ -178,7 +202,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - m(X)\right)^2\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - m(X)\right)^2\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\ &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} && \text{(definition of conditional variance)} \end{aligned} \\
 >
-> Second term: by the law of iterated expectations, \\\operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = \mu\\, so:
+> Second term: by the law of iterated expectations,
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= \mu, \end{aligned} \\
+>
+> so:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \mu\right)^2\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(m(X) - \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} && \text{(} \mu= \operatorname{E}\mathopen{}\left\[m(X)\right\]\mathclose{} \text{)} \\ &= \operatorname{Var}\mathopen{}\left(m(X)\right)\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(definition of } m(X) \text{)} \end{aligned} \\
 >
@@ -196,11 +224,21 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 7 (Decomposing the variance of a binary outcome)** Continuing [Example 4](#exm-cond-variance), \\\operatorname{P}(X = 0) = \operatorname{P}(X = 1) = 0.5\\, \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 0.8\\, so \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 0.7\\, and by [Theorem 3](#thm-total-variance):
+> **Example 7 (Decomposing the variance of a binary outcome)** Continuing [Example 4](#exm-cond-variance),
+>
+> \\ \begin{aligned} \operatorname{P}(X = 0) &= \operatorname{P}(X = 1) \\ &= 0.5, \end{aligned} \\
+>
+> \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 0.8\\, so \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 0.7\\, and by [Theorem 3](#thm-total-variance):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} &= 0.5 \cdot 0.24 + 0.5 \cdot 0.16 && \text{(average the conditional variances)} \\ &= 0.20 \\ \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} &= 0.5 \cdot(0.6 - 0.7)^2 + 0.5 \cdot(0.8 - 0.7)^2 && \text{(variance of the conditional means)} \\ &= 0.01 \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 0.20 + 0.01 && \text{(law of total variance)} \\ &= 0.21 \end{aligned} \\
 >
-> As a check, \\Y\\ is Bernoulli with \\\operatorname{P}(Y = 1) = 0.3 + 0.4 = 0.7\\, so by [Example 3](#exm-variance-bernoulli), \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.7 \cdot 0.3 = 0.21\\.
+> As a check, \\Y\\ is Bernoulli with
+>
+> \\ \begin{aligned} \operatorname{P}(Y = 1) &= 0.3 + 0.4 \\ &= 0.7, \end{aligned} \\
+>
+> so by [Example 3](#exm-variance-bernoulli),
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 0.7 \cdot 0.3 \\ &= 0.21. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -220,7 +258,13 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 8 (Precision and standard deviation of a fair coin flip)** In [Example 3](#exm-variance-bernoulli), a fair coin flip has \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\\, so its precision is \\\tau(X) = 1 / (1/4) = 4\\ and its standard deviation is \\\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} = \sqrt{1/4} = 1/2\\.
+> **Example 8 (Precision and standard deviation of a fair coin flip)** In [Example 3](#exm-variance-bernoulli), a fair coin flip has \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\\, so its precision is
+>
+> \\ \begin{aligned} \tau(X) &= 1 / (1/4) \\ &= 4 \end{aligned} \\
+>
+> and its standard deviation is
+>
+> \\ \begin{aligned} \operatorname{SD}\mathopen{}\left(X\right)\mathclose{} &= \sqrt{1/4} \\ &= 1/2. \end{aligned} \\
 
 ## 3 Bias, variance, and prediction error
 
@@ -254,7 +298,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 9 (Computing the bias of a prediction)** Suppose \\f(x_0) = 10\\, and the predictions \\\hat f(x_0)\\, over repeated training sets, average \\11\\. Then \\\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 11 - 10 = 1\\. The squared bias is \\1^2 = 1\\, the value in [Exercise 2](#exr-prediction-error).
+> **Example 9 (Computing the bias of a prediction)** Suppose \\f(x_0) = 10\\, and the predictions \\\hat f(x_0)\\, over repeated training sets, average \\11\\. Then
+>
+> \\ \begin{aligned} \operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} &= 11 - 10 \\ &= 1. \end{aligned} \\
+>
+> The squared bias is \\1^2 = 1\\, the value in [Exercise 2](#exr-prediction-error).
 
 > **NOTE:**
 >
@@ -269,8 +317,16 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + 2\operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} && \text{(expand the square)} \end{aligned} \\
 >
 > - \\\operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} = \sigma^2\\, by [Solution 1](#sol-noise-second-moment).
-> - \\\operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} = 0\\, because \\\varepsilon\\ is independent of \\\hat f(x_0)\\, hence of \\D\\, and \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\.
-> - By [Theorem 2](#thm-variance), \\\operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\\. Here \\\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\\, because \\f(x_0)\\ is a constant, and \\\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} = f(x_0) - \operatorname{E}\mathopen{}\left\[\hat f(x_0)\right\]\mathclose{} = -\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\\, so \\\mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{}\\.
+>
+> - \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} \\ &= 0, \end{aligned} \\
+>
+>   because \\\varepsilon\\ is independent of \\\hat f(x_0)\\, hence of \\D\\, and \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\.
+>
+> - By [Theorem 2](#thm-variance), \\\operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\\. Here \\\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\\, because \\f(x_0)\\ is a constant, and
+>
+>   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} &= f(x_0) - \operatorname{E}\mathopen{}\left\[\hat f(x_0)\right\]\mathclose{} \\ &= -\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}, \end{aligned} \\
+>
+>   so \\\mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{}\\.
 >
 > Adding the three terms gives the claim.
 
@@ -302,7 +358,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 10 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance), \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{P}(X = 1, Y = 1) = 0.4\\, \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0.5\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0.7\\, so:
+> **Example 10 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance),
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} &= \operatorname{P}(X = 1, Y = 1) \\ &= 0.4, \end{aligned} \\
+>
+> \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0.5\\, and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 0.7\\, so:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= 0.4 - 0.5 \cdot 0.7 && \text{(substitute)} \\ &= 0.05 && \text{(evaluate)} \end{aligned} \\
 
@@ -338,11 +398,25 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 12 (Zero covariance without independence)** The converse of [Theorem 6](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = (-1 + 0 + 1)/3 = 0\\, and \\XY = X^3 = X\\, so:
+> **Example 12 (Zero covariance without independence)** The converse of [Theorem 6](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= (-1 + 0 + 1)/3 \\ &= 0, \end{aligned} \\
+>
+> and
+>
+> \\ \begin{aligned} XY &= X^3 \\ &= X, \end{aligned} \\
+>
+> so:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(alternative formula for covariance)} \\ &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} XY = X^3 \text{ and } X^3 = X \text{ on } \mathopen{}\left\\-1, 0, 1\right\\\mathclose{} \text{)} \\ &= 0 - 0 \cdot\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(multiply)} \end{aligned} \\
 >
-> But \\X\\ and \\Y\\ are not independent: \\Y\\ is a function of \\X\\, and \\\operatorname{P}(X = 0, Y = 0) = \operatorname{P}(X = 0) = \tfrac{1}{3}\\, while \\\operatorname{P}(X = 0)\\\operatorname{P}(Y = 0) = \tfrac{1}{3} \cdot\tfrac{1}{3} = \tfrac{1}{9}\\.
+> But \\X\\ and \\Y\\ are not independent: \\Y\\ is a function of \\X\\, and
+>
+> \\ \begin{aligned} \operatorname{P}(X = 0, Y = 0) &= \operatorname{P}(X = 0) \\ &= \tfrac{1}{3}, \end{aligned} \\
+>
+> while
+>
+> \\ \begin{aligned} \operatorname{P}(X = 0)\\\operatorname{P}(Y = 0) &= \tfrac{1}{3} \cdot\tfrac{1}{3} \\ &= \tfrac{1}{9}. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -472,7 +546,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> *Proof*. Treat \\\tilde{a}\\ and \\\tilde{X}\\ as \\n \times 1\\ column vectors, so \\\tilde{a}\cdot \tilde{X}= {\tilde{a}}^{\top}\tilde{X}= \sum\_{i=1}^na_i X_i\\, a scalar. By linearity of expectation, \\\operatorname{E}\mathopen{}\left\[{\tilde{a}}^{\top}\tilde{X}\right\]\mathclose{} = {\tilde{a}}^{\top}\\\operatorname{E}\tilde{X}\\, so:
+> *Proof*. Treat \\\tilde{a}\\ and \\\tilde{X}\\ as \\n \times 1\\ column vectors, so
+>
+> \\ \begin{aligned} \tilde{a}\cdot \tilde{X}&= {\tilde{a}}^{\top}\tilde{X}\\ &= \sum\_{i=1}^na_i X_i, \end{aligned} \\
+>
+> a scalar. By linearity of expectation, \\\operatorname{E}\mathopen{}\left\[{\tilde{a}}^{\top}\tilde{X}\right\]\mathclose{} = {\tilde{a}}^{\top}\\\operatorname{E}\tilde{X}\\, so:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left({\tilde{a}}^{\top}\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left({\tilde{a}}^{\top}\tilde{X}- {\tilde{a}}^{\top}\operatorname{E}\tilde{X}\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left({\tilde{a}}^{\top}\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(factor out } {\tilde{a}}^{\top} \text{)} \\ &= \operatorname{E}\mathopen{}\left\[{\tilde{a}}^{\top}\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}{\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\tilde{a}\right\]\mathclose{} && \text{(a scalar equals its transpose, so } s^2 = s\\{s}^{\top} \text{)} \\ &= {\tilde{a}}^{\top}\\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}{\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\right\]\mathclose{}\\\tilde{a} && \text{(linearity of expectation, element-wise)} \\ &= {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} && \text{(variance of a random vector)} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} && \text{(expand the quadratic form, using the elements of } \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \text{)} \end{aligned} \\
 
@@ -500,7 +578,9 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 6](#thm-indpt-uncorrelated), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\. Applying [Corollary 2](#cor-var-lincom2) with \\a = b = 1\\:
+> *Proof*. By [Theorem 6](#thm-indpt-uncorrelated), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\. Applying [Corollary 2](#cor-var-lincom2) with
+>
+> \\ \begin{aligned} a &= b \\ &= 1: \end{aligned} \\
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{} &= 1^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + 1^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2(1 \cdot 1) \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(variance of a sum of two random variables)} \\ &= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2 \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} && \text{(simplify)} \\ &= \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(} \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0 \text{)} \end{aligned} \\
 
@@ -538,7 +618,17 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > \\D_2 = \mathopen{}\left\\(5, 1),\\ (0, -1),\\ (0, 1),\\ (-5, -1)\right\\\mathclose{}.\\
 >
-> Both sets have first coordinates \\\mathopen{}\left\\-5, 0, 0, 5\right\\\mathclose{}\\ and second coordinates \\\mathopen{}\left\\1, -1, 1, -1\right\\\mathclose{}\\, so \\\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} = 0\\, \\\operatorname{E}\mathopen{}\left\[X_1^2\right\]\mathclose{} = (25 + 0 + 0 + 25)/4 = 12.5\\, and \\\operatorname{E}\mathopen{}\left\[X_2^2\right\]\mathclose{} = (1 + 1 + 1 + 1)/4 = 1\\, and likewise for \\\tilde{X}'\\. They differ in the products of the coordinates:
+> Both sets have first coordinates \\\mathopen{}\left\\-5, 0, 0, 5\right\\\mathclose{}\\ and second coordinates \\\mathopen{}\left\\1, -1, 1, -1\right\\\mathclose{}\\, so
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} \\ &= 0, \end{aligned} \\
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1^2\right\]\mathclose{} &= (25 + 0 + 0 + 25)/4 \\ &= 12.5, \end{aligned} \\
+>
+> and
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_2^2\right\]\mathclose{} &= (1 + 1 + 1 + 1)/4 \\ &= 1, \end{aligned} \\
+>
+> and likewise for \\\tilde{X}'\\. They differ in the products of the coordinates:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\ &= -2.5, \\ \operatorname{E}\mathopen{}\left\[X_1' X_2'\right\]\mathclose{} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} \\ &= 2.5. \end{aligned} \\
 >
@@ -562,7 +652,11 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}. \\
 >
-> With \\\tilde{a}= {(1, -1)}^{\top}\\, \\{\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} = 0\\, so \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite)). If \\X_1\\ is continuous, \\\tilde{X}\\ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
+> With \\\tilde{a}= {(1, -1)}^{\top}\\,
+>
+> \\ \begin{aligned} {\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}&= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\ &= \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} \\ &= 0, \end{aligned} \\
+>
+> so \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite)). If \\X_1\\ is continuous, \\\tilde{X}\\ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
 
 > **NOTE:**
 >

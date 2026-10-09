@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:13:34 (PDT)
+Last modified: 2026-10-09 10:20:25 (PDT)
 
 ## 1 Random variables
 
@@ -24,7 +24,9 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} X(HH) &= 2, \\ X(HT) &= 1, \\ X(TH) &= 1, \\ X(TT) &= 0 \end{aligned} \\
 >
-> Then \\\\X = 1\\ = \mathopen{}\left\\HT, TH\right\\\mathclose{}\\, so \\\Pr(X = 1) = 1/4 + 1/4 = 1/2\\.
+> Then \\\\X = 1\\ = \mathopen{}\left\\HT, TH\right\\\mathclose{}\\, so
+>
+> \\ \begin{aligned} \Pr(X = 1) &= 1/4 + 1/4 \\ &= 1/2. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -58,15 +60,31 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (A continuous random variable)** Let \\X\\ satisfy \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. Taking \\a = b = x\\ gives \\\Pr(X = x) = x - x = 0\\ for every \\x \in \[0,1\]\\. Taking \\a = 0\\ and \\b = 1\\ gives \\\Pr(0 \le X \le 1) = 1\\, so by the [complement rule](probability-basics.llms.md#cor-p-neg0) \\X\\ falls outside \\\[0, 1\]\\ with probability 0, and \\\Pr(X = x) = 0\\ for every \\x\\ outside \\\[0, 1\]\\ as well. So \\X\\ is continuous. Its range, \\\[0, 1\]\\, is uncountable.
+> **Example 4 (A continuous random variable)** Let \\X\\ satisfy \\\Pr(a \le X \le b) = b - a\\ for all \\0 \le a \le b \le 1\\. Taking
+>
+> \\ \begin{aligned} a &= b \\ &= x \end{aligned} \\
+>
+> gives
+>
+> \\ \begin{aligned} \Pr(X = x) &= x - x \\ &= 0 \end{aligned} \\
+>
+> for every \\x \in \[0,1\]\\. Taking \\a = 0\\ and \\b = 1\\ gives \\\Pr(0 \le X \le 1) = 1\\, so by the [complement rule](probability-basics.llms.md#cor-p-neg0) \\X\\ falls outside \\\[0, 1\]\\ with probability 0, and \\\Pr(X = x) = 0\\ for every \\x\\ outside \\\[0, 1\]\\ as well. So \\X\\ is continuous. Its range, \\\[0, 1\]\\, is uncountable.
 
 > **NOTE:**
 >
-> **Example 5 (A random variable that is neither discrete nor continuous)** Some random variables are neither discrete nor continuous: a time to event that equals exactly \\0\\ with positive probability, and otherwise spreads over \\(0, \infty)\\, is one. For instance, let \\U\\ be the continuous random variable of [Example 4](#exm-continuous-rv), and let \\T = 1/(1 - U) - 2\\ when \\1/2 \< U \< 1\\, and \\T = 0\\ otherwise. On \\\mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, \\T\\ is increasing in \\U\\ and takes values in \\(0, \infty)\\, and solving \\t = 1/(1 - u) - 2\\ for \\u\\ gives \\u = 1 - 1/(t + 2)\\. So \\\mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, and \\\mathopen{}\left\\T = t\right\\\mathclose{} = \mathopen{}\left\\U = 1 - 1/(t + 2)\right\\\mathclose{}\\ for each \\t \> 0\\. Since \\\Pr(U = 1/2) = \Pr(U = 1) = 0\\ ([Example 4](#exm-continuous-rv)):
+> **Example 5 (A random variable that is neither discrete nor continuous)** Some random variables are neither discrete nor continuous: a time to event that equals exactly \\0\\ with positive probability, and otherwise spreads over \\(0, \infty)\\, is one. For instance, let \\U\\ be the continuous random variable of [Example 4](#exm-continuous-rv), and let \\T = 1/(1 - U) - 2\\ when \\1/2 \< U \< 1\\, and \\T = 0\\ otherwise. On \\\mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, \\T\\ is increasing in \\U\\ and takes values in \\(0, \infty)\\, and solving \\t = 1/(1 - u) - 2\\ for \\u\\ gives \\u = 1 - 1/(t + 2)\\. So \\\mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{}\\, and \\\mathopen{}\left\\T = t\right\\\mathclose{} = \mathopen{}\left\\U = 1 - 1/(t + 2)\right\\\mathclose{}\\ for each \\t \> 0\\. Since \\U\\ is continuous ([Example 4](#exm-continuous-rv)), single points have probability zero:
+>
+> \\ \begin{aligned} \Pr(U = 1/2) &= \Pr(U = 1) \\ &= 0 \end{aligned} \\
+>
+> Using these values:
 >
 > \\ \begin{aligned} \Pr(T \> 0) &= \Pr(1/2 \< U \< 1) && \text{(} \mathopen{}\left\\T \> 0\right\\\mathclose{} = \mathopen{}\left\\1/2 \< U \< 1\right\\\mathclose{} \text{)} \\ &= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1) && \text{(additivity)} \\ &= \tfrac{1}{2} - 0 - 0 && \text{(} \Pr(a \le U \le b) = b - a \text{)} \\ &= \tfrac{1}{2} && \text{(simplify)} \end{aligned} \\
 >
-> \\T\\ is not continuous, because \\\Pr(T = 0) = 1 - \Pr(T \> 0) = 1/2\\ by the [complement rule](probability-basics.llms.md#cor-p-neg0).
+> \\T\\ is not continuous, because
+>
+> \\ \begin{aligned} \Pr(T = 0) &= 1 - \Pr(T \> 0) \\ &= 1/2 \end{aligned} \\
+>
+> by the [complement rule](probability-basics.llms.md#cor-p-neg0).
 >
 > \\T\\ is not discrete either. If it were, its range would be countable, so \\\mathopen{}\left\\T \> 0\right\\\mathclose{}\\ would be the disjoint union of the countably many events \\\mathopen{}\left\\T = t\right\\\mathclose{}\\ with \\t \in \mathcal{R}(T)\\ and \\t \> 0\\, and:
 >
@@ -100,7 +118,23 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (The first of two coin flips)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip, so \\X_1(HH) = X_1(HT) = 1\\ and \\X_1(TH) = X_1(TT) = 0\\. Then \\\operatorname{P}(X_1 = 1) = \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{}) = 1/2\\ and \\\operatorname{P}(X_1 = 0) = \Pr(\mathopen{}\left\\TH, TT\right\\\mathclose{}) = 1/2\\, so \\X_1 \sim \operatorname{Ber}(1/2)\\.
+> **Example 7 (The first of two coin flips)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip, so
+>
+> \\ \begin{aligned} X_1(HH) &= X_1(HT) \\ &= 1 \end{aligned} \\
+>
+> and
+>
+> \\ \begin{aligned} X_1(TH) &= X_1(TT) \\ &= 0. \end{aligned} \\
+>
+> Then
+>
+> \\ \begin{aligned} \operatorname{P}(X_1 = 1) &= \Pr(\mathopen{}\left\\HH, HT\right\\\mathclose{}) \\ &= 1/2 \end{aligned} \\
+>
+> and
+>
+> \\ \begin{aligned} \operatorname{P}(X_1 = 0) &= \Pr(\mathopen{}\left\\TH, TT\right\\\mathclose{}) \\ &= 1/2, \end{aligned} \\
+>
+> so \\X_1 \sim \operatorname{Ber}(1/2)\\.
 
 > **NOTE:**
 >
@@ -301,7 +335,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} F(t) &= \int\_{-\infty}^{t} f(x)\\dx && \text{(the CDF is the integral of the density)} \\ &= \int\_{-\infty}^{0} 0\\dx + \int\_{0}^{t} 1\\dx && \text{(split at 0, and substitute } f \text{)} \\ &= t && \text{(integrate)} \end{aligned} \\
 >
-> For \\t \in (0, 1)\\, where \\f\\ is continuous, \\\frac{\partial}{\partial t} F(t) = 1 = f(t)\\. At \\t = 1\\, \\f\\ jumps from 1 to 0, and \\F\\ has no derivative: its slope is 1 on the left and 0 on the right.
+> For \\t \in (0, 1)\\, where \\f\\ is continuous,
+>
+> \\ \begin{aligned} \frac{\partial}{\partial t} F(t) &= 1 \\ &= f(t). \end{aligned} \\
+>
+> At \\t = 1\\, \\f\\ jumps from 1 to 0, and \\F\\ has no derivative: its slope is 1 on the left and 0 on the right.
 
 > **NOTE:**
 >
@@ -385,7 +423,9 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (The uniform density integrates to 1)** For \\X \sim \text{Uniform}(0, 1)\\ ([Definition 8](#def-uniform)), \\\int\_{-\infty}^{\infty} f(x)\\dx = \int_0^1 1\\dx = 1\\.
+> **Example 18 (The uniform density integrates to 1)** For \\X \sim \text{Uniform}(0, 1)\\ ([Definition 8](#def-uniform)),
+>
+> \\ \begin{aligned} \int\_{-\infty}^{\infty} f(x)\\dx &= \int_0^1 1\\dx \\ &= 1. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -521,7 +561,11 @@ Last modified: 2026-10-09 10:13:34 (PDT)
 >
 > \\ \begin{aligned} f_X(x) &= \int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy && \text{(marginal density from a joint density)} \\ &= \int_x^1 2\\dy && \text{(} f\_{X,Y}(x, y) = 2 \text{ for } x \le y \le 1 \text{, else } 0 \text{)} \\ &= 2(1 - x) && \text{(integrate)} \end{aligned} \\
 >
-> The same steps with the roles swapped give \\f_Y(y) = \int_0^y 2\\dx = 2y\\ for \\y \in \[0, 1\]\\.
+> The same steps with the roles swapped give
+>
+> \\ \begin{aligned} f_Y(y) &= \int_0^y 2\\dx \\ &= 2y \end{aligned} \\
+>
+> for \\y \in \[0, 1\]\\.
 
 > **NOTE:**
 >
@@ -659,7 +703,11 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} {\lambda}\text{e}^{-{\lambda}u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-{\lambda}t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-{\lambda}u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-{\lambda}t} && \text{(simplify)} \end{aligned} \\
 >
-> For \\t \< 0\\, \\\operatorname{S}(t) = \Pr(T \> t) = 1\\, since \\T \ge 0\\. With \\{\lambda}= 0.5\\, for example, \\\operatorname{S}(2) = \text{e}^{-1} \approx 0.368\\.
+> For \\t \< 0\\,
+>
+> \\ \begin{aligned} \operatorname{S}(t) &= \Pr(T \> t) \\ &= 1, \end{aligned} \\
+>
+> since \\T \ge 0\\. With \\{\lambda}= 0.5\\, for example, \\\operatorname{S}(2) = \text{e}^{-1} \approx 0.368\\.
 
 > **NOTE:**
 >
@@ -677,7 +725,11 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 29 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 28](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so \\\Pr(T \ge s) = \Pr(T \> s) = \operatorname{S}(s)\\. For \\t \ge 0\\ and \\\Delta\> 0\\, \\\\T \ge t\\\\ is the disjoint union of \\\\t \le T \< t + \Delta\\\\ and \\\\T \ge t + \Delta\\\\, so:
+> **Example 29 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 28](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so
+>
+> \\ \begin{aligned} \Pr(T \ge s) &= \Pr(T \> s) \\ &= \operatorname{S}(s). \end{aligned} \\
+>
+> For \\t \ge 0\\ and \\\Delta\> 0\\, \\\\T \ge t\\\\ is the disjoint union of \\\\t \le T \< t + \Delta\\\\ and \\\\T \ge t + \Delta\\\\, so:
 >
 > \\ \begin{aligned} \Pr(t \le T \< t + \Delta\mid T \ge t) &= \frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)} && \text{(additivity)} \\ &= \frac{\operatorname{S}(t) - \operatorname{S}(t + \Delta)}{\operatorname{S}(t)} && \text{(} \Pr(T \ge s) = \operatorname{S}(s) \text{)} \\ &= \frac{\text{e}^{-2t} - \text{e}^{-2(t + \Delta)}}{\text{e}^{-2t}} && \text{(exponential survival function)} \\ &= 1 - \text{e}^{-2\Delta} && \text{(divide by } \text{e}^{-2t} \text{)} \end{aligned} \\
 >
@@ -727,7 +779,11 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Proof*. The proof uses three facts. First, for \\\Delta\> 0\\ the event \\\\t \le T \< t + \Delta\\\\ is a subset of the event \\\\T \ge t\\\\, so intersecting them leaves \\\\t \le T \< t + \Delta\\\\ (the [subset property](probability-basics.llms.md#thm-prob-subset)). Second, \\\Pr(T = t) = 0\\ for a continuous \\T\\, so \\\Pr(T \ge t) = \Pr(T \> t) = \operatorname{S}(t)\\, which is positive. Third, because \\f\\ is continuous at \\t\\, [Theorem 8](#thm-density-limit) gives \\f(t)\\ as the limit of \\\Pr(t \le T \< t + \Delta) / \Delta\\.
+> *Proof*. The proof uses three facts. First, for \\\Delta\> 0\\ the event \\\\t \le T \< t + \Delta\\\\ is a subset of the event \\\\T \ge t\\\\, so intersecting them leaves \\\\t \le T \< t + \Delta\\\\ (the [subset property](probability-basics.llms.md#thm-prob-subset)). Second, \\\Pr(T = t) = 0\\ for a continuous \\T\\, so
+>
+> \\ \begin{aligned} \Pr(T \ge t) &= \Pr(T \> t) \\ &= \operatorname{S}(t), \end{aligned} \\
+>
+> which is positive. Third, because \\f\\ is continuous at \\t\\, [Theorem 8](#thm-density-limit) gives \\f(t)\\ as the limit of \\\Pr(t \le T \< t + \Delta) / \Delta\\.
 >
 > \\ \begin{aligned} {\lambda}(t) &\stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta} && \text{(definition of the hazard function)} \\ &= \lim\_{\Delta\downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \lim\_{\Delta\downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{1}{\Pr(T \ge t)} \cdot\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta)}{\Delta} && \text{(} \Pr(T \ge t) \text{ does not depend on } \Delta\text{)} \\ &= \frac{f(t)}{\Pr(T \ge t)} && \text{(density as a limit; } f \text{ is continuous at } t \text{)} \\ &= \frac{f(t)}{\operatorname{S}(t)} && \text{(} \Pr(T = t) = 0 \text{ for continuous } T \text{)} \end{aligned} \\
 
