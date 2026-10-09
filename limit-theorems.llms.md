@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:05:51 (PDT)
+Last modified: 2026-10-09 10:13:34 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -157,13 +157,39 @@ Last modified: 2026-10-09 10:05:51 (PDT)
 > Show code
 >
 > ``` r
-> op <- par(mfrow = c(1, 3), mar = c(4, 4, 2, 1))
-> for (k in seq_along(sizes)) {
->   hist(sample_means[[k]], breaks = 40, freq = FALSE,
->        main = paste("n =", sizes[k]), xlab = "sample mean of horsepower")
->   curve(dnorm(x, mu, sigma / sqrt(sizes[k])), add = TRUE, lwd = 2)
-> }
-> par(op)
+> n_labels <- paste("n =", sizes)
+> means_long <- data.frame(
+>   n = factor(
+>     rep(n_labels, each = length(sample_means[[1]])),
+>     levels = n_labels
+>   ),
+>   sample_mean = unlist(sample_means)
+> )
+> normal_curves <- do.call(rbind, lapply(seq_along(sizes), function(k) {
+>   se <- sigma / sqrt(sizes[k])
+>   grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
+>   data.frame(
+>     n = factor(n_labels[k], levels = n_labels),
+>     sample_mean = grid,
+>     density = dnorm(grid, mu, se)
+>   )
+> }))
+>
+> ggplot2::ggplot(means_long, ggplot2::aes(x = sample_mean)) +
+>   ggplot2::geom_histogram(
+>     ggplot2::aes(y = ggplot2::after_stat(density)),
+>     bins = 40,
+>     fill = "grey70",
+>     color = "white"
+>   ) +
+>   ggplot2::geom_line(
+>     ggplot2::aes(y = density),
+>     data = normal_curves,
+>     linewidth = 1
+>   ) +
+>   ggplot2::facet_wrap(ggplot2::vars(n), scales = "free") +
+>   ggplot2::labs(x = "sample mean of horsepower", y = "density") +
+>   ggplot2::theme_minimal()
 > ```
 >
 > [![Three histograms side by side. The first, for one car, is skewed to the right with a long tail. The second, for five cars, is less skewed. The third, for thirty cars, is symmetric and bell-shaped. A normal curve drawn over each fits the third closely and the first poorly.](limit-theorems_files/figure-html/fig-clt-auto-1.png)](limit-theorems_files/figure-html/fig-clt-auto-1.png "Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.")

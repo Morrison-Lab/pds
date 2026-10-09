@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 10:05:51 (PDT)
+Last modified: 2026-10-09 10:13:34 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -650,8 +650,10 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 > Show code
 >
 > ``` r
-> plot(x, y, xlab = "horsepower", ylab = "miles per gallon", pch = 16,
->      col = adjustcolor("black", alpha.f = 0.4))
+> ggplot2::ggplot(data.frame(x, y), ggplot2::aes(x = x, y = y)) +
+>   ggplot2::geom_point(alpha = 0.4, size = 2) +
+>   ggplot2::labs(x = "horsepower", y = "miles per gallon") +
+>   ggplot2::theme_minimal()
 > ```
 >
 > [![A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.](variance-covariance_files/figure-html/fig-cor-auto-1.png)](variance-covariance_files/figure-html/fig-cor-auto-1.png "Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.")
