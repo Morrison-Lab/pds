@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 09:51:06 (PDT)
+Last modified: 2026-10-09 09:57:02 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -70,15 +70,15 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Exercise 1 (The average squared error of pure noise)** Let \\\varepsilon\\ be a random variable with \\\mathbb{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\.
+> **Exercise 1 (The average squared error of pure noise)** Let \\\varepsilon\\ be a random variable with \\\operatorname{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\.
 >
-> Show that \\\mathbb{E}\[\varepsilon^2\] = \sigma^2\\, and say which earlier result you used.
+> Show that \\\operatorname{E}\[\varepsilon^2\] = \sigma^2\\, and say which earlier result you used.
 
 > **NOTE:**
 >
-> *Solution 1*. [Theorem 2](#thm-variance) says \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \mathbb{E}\[X^2\] - (\mathbb{E}\[X\])^2\\ for any \\X\\. Taking \\X = \varepsilon\\ and substituting \\\mathbb{E}\[\varepsilon\] = 0\\,
+> *Solution 1*. [Theorem 2](#thm-variance) says \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\[X^2\] - (\operatorname{E}\[X\])^2\\ for any \\X\\. Taking \\X = \varepsilon\\ and substituting \\\operatorname{E}\[\varepsilon\] = 0\\,
 >
-> \\ \begin{aligned} \mathbb{E}\[\varepsilon^2\] &= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\ &= \sigma^2 \end{aligned} \tag{1}\\
+> \\ \begin{aligned} \operatorname{E}\[\varepsilon^2\] &= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\ &= \sigma^2 \end{aligned} \tag{1}\\
 >
 > so for mean-zero noise the average squared value *is* the variance.
 >
