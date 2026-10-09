@@ -27,4 +27,5 @@ Suggests:
     devtools
 VignetteBuilder: knitr
 Imports: 
-    dplyr
+    dplyr,
+    tibble

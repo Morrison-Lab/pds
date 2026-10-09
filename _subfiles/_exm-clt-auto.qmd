@@ -120,17 +120,17 @@ with the normal density $\ndist{\mean, \varpar/n}$ from @thm-clt drawn over it.
 #| fig-width: 8
 #| code-fold: true
 n_labels <- paste("n =", sizes)
-means_long <- data.frame(
+means_long <- tibble::tibble(
   n = factor(
     rep(n_labels, each = length(sample_means[[1]])),
     levels = n_labels
   ),
   sample_mean = unlist(sample_means)
 )
-normal_curves <- do.call(rbind, lapply(seq_along(sizes), function(k) {
+normal_curves <- dplyr::bind_rows(lapply(seq_along(sizes), function(k) {
   se <- sigma / sqrt(sizes[k])
   grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
-  data.frame(
+  tibble::tibble(
     n = factor(n_labels[k], levels = n_labels),
     sample_mean = grid,
     density = dnorm(grid, mu, se)
