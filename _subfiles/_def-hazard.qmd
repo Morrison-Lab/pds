@@ -88,7 +88,7 @@ $$
 \haz(t)
 &= \lim_{\change \downarrow 0} \frac{1 - \ef{-2\change}}{\change}
 && \text{(definition of the hazard function)} \\
-&= \deriv{\change} \paren{1 - \ef{-2\change}} \Big|_{\change = 0}
+&= \evalAt{\deriv{\change} \paren{1 - \ef{-2\change}}}{\change = 0}
 && \text{(definition of the derivative; } 1 - \ef{0} = 0 \text{)} \\
 &= 2\ef{0}
 && \text{(chain rule)} \\
