@@ -32,7 +32,14 @@ The sample space is $\samplespace = \set{HH, HT, TH, TT}$,
 each outcome with probability $1/4$.
 Let $X$ be the number of heads:
 
-$$X(HH) = 2, \quad X(HT) = X(TH) = 1, \quad X(TT) = 0$$
+$$
+\begin{aligned}
+X(HH) &= 2, \\
+X(HT) &= 1, \\
+X(TH) &= 1, \\
+X(TT) &= 0
+\end{aligned}
+$$
 
 Then $\{X = 1\} = \set{HT, TH}$, so $\Pr(X = 1) = 1/4 + 1/4 = 1/2$.
 

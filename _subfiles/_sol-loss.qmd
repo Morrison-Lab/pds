@@ -7,20 +7,54 @@ $$\abs{3 - 5} = 2$$
 
 2. For $c = 1$:
 The expected squared error loss is:
-$$\E{\sqf{Y - 1}} = 0.5 \cd \sqf{0 - 1} + 0.5 \cd \sqf{4 - 1} = 0.5 \cd 1 + 0.5 \cd 9 = 5$$
+$$
+\begin{aligned}
+\E{\sqf{Y - 1}}
+&= 0.5 \cd \sqf{0 - 1} + 0.5 \cd \sqf{4 - 1} \\
+&= 0.5 \cd 1 + 0.5 \cd 9 \\
+&= 5
+\end{aligned}
+$$
 The expected absolute error loss is:
-$$\E{\abs{Y - 1}} = 0.5 \cd \abs{0 - 1} + 0.5 \cd \abs{4 - 1} = 0.5 \cd 1 + 0.5 \cd 3 = 2$$
+$$
+\begin{aligned}
+\E{\abs{Y - 1}}
+&= 0.5 \cd \abs{0 - 1} + 0.5 \cd \abs{4 - 1} \\
+&= 0.5 \cd 1 + 0.5 \cd 3 \\
+&= 2
+\end{aligned}
+$$
 
 3. For $c = 2$:
 The expected squared error loss is:
-$$\E{\sqf{Y - 2}} = 0.5 \cd \sqf{0 - 2} + 0.5 \cd \sqf{4 - 2} = 0.5 \cd 4 + 0.5 \cd 4 = 4$$
+$$
+\begin{aligned}
+\E{\sqf{Y - 2}}
+&= 0.5 \cd \sqf{0 - 2} + 0.5 \cd \sqf{4 - 2} \\
+&= 0.5 \cd 4 + 0.5 \cd 4 \\
+&= 4
+\end{aligned}
+$$
 The expected absolute error loss is:
-$$\E{\abs{Y - 2}} = 0.5 \cd \abs{0 - 2} + 0.5 \cd \abs{4 - 2} = 0.5 \cd 2 + 0.5 \cd 2 = 2$$
+$$
+\begin{aligned}
+\E{\abs{Y - 2}}
+&= 0.5 \cd \abs{0 - 2} + 0.5 \cd \abs{4 - 2} \\
+&= 0.5 \cd 2 + 0.5 \cd 2 \\
+&= 2
+\end{aligned}
+$$
 
 4. The prediction $c = 2$ has the smaller expected squared error loss ($4$ versus $5$).
 The two predictions have the same expected absolute error loss ($2$),
 so under absolute error loss this exercise does not choose one of them.
 The prediction $c = 2$ equals the expectation:
-$$\E{Y} = 0.5 \cd 0 + 0.5 \cd 4 = 2$$
+$$
+\begin{aligned}
+\E{Y}
+&= 0.5 \cd 0 + 0.5 \cd 4 \\
+&= 2
+\end{aligned}
+$$
 
 :::

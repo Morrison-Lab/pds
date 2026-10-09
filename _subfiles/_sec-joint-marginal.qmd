@@ -47,12 +47,26 @@ Summing each row yields the marginal distribution of $m$;
 summing each column yields the marginal distribution of $d$.
 Conditioning inverts the perspective:
 
-$$\P(d=0 \mid m=1) = \frac{\P(m=1, d=0)}{\P(m=1)} = \frac{0.00000098}{0.000001} = 0.98$$
+$$
+\begin{aligned}
+\P(d=0 \mid m=1)
+&= \frac{\P(m=1, d=0)}{\P(m=1)} \\
+&= \frac{0.00000098}{0.000001} \\
+&= 0.98
+\end{aligned}
+$$
 
 Given that a meteorite struck your house, you have a 98% chance of having a bad day.
 In reverse:
 
-$$\P(m=1 \mid d=0) = \frac{\P(m=1, d=0)}{\P(d=0)} = \frac{0.00000098}{0.1} = 0.0000098$$
+$$
+\begin{aligned}
+\P(m=1 \mid d=0)
+&= \frac{\P(m=1, d=0)}{\P(d=0)} \\
+&= \frac{0.00000098}{0.1} \\
+&= 0.0000098
+\end{aligned}
+$$
 
 Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000.
 Bad days are common ($\P(d=0) = 0.1$), so having one is very weak evidence that an astronomical rarity occurred.

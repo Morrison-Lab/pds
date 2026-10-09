@@ -72,7 +72,14 @@ $$
 Flip two fair coins, and let $X_1$ and $X_2$ indicate heads on the first and second flip.
 Each of the four outcomes has probability $1/4$, so for example:
 
-$$\P(X_1 = 1, X_2 = 1) = \tfrac{1}{4} = \tfrac{1}{2} \cd \tfrac{1}{2} = \P(X_1 = 1)\,\P(X_2 = 1)$$
+$$
+\begin{aligned}
+\P(X_1 = 1, X_2 = 1)
+&= \tfrac{1}{4} \\
+&= \tfrac{1}{2} \cd \tfrac{1}{2} \\
+&= \P(X_1 = 1)\,\P(X_2 = 1)
+\end{aligned}
+$$
 
 and the same factorization holds for the other three pairs of values,
 so $X_1 \ind X_2$ by @thm-indpt-pmf.

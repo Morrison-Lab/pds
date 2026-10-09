@@ -2,10 +2,15 @@
 
 Pull the constant $1/n$ out and split the sum, both by @thm-linearity-expectation:
 
-$$\mathbb{E}[\bar X]
-= \mathbb{E}\!\left[\avgin X_i\right]
-= \avgin \mathbb{E}[X_i]
-= \frac{1}{n}\,(n\mean) = \mean$$
+$$
+\begin{aligned}
+\mathbb{E}[\bar X]
+&= \mathbb{E}\!\left[\avgin X_i\right] \\
+&= \avgin \mathbb{E}[X_i] \\
+&= \frac{1}{n}\,(n\mean) \\
+&= \mean
+\end{aligned}
+$$
 
 So the sample average is right *on average*.
 Independence was never used: @thm-linearity-expectation holds regardless,
