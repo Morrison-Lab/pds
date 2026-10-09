@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 00:57:34 (PDT)
+Last modified: 2026-10-09 01:18:17 (PDT)
 
 > **NOTE:**
 >
@@ -762,7 +762,7 @@ Last modified: 2026-10-09 00:57:34 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+> **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 9](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
 >
