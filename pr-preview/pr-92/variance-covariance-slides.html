@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 11:32:26 (PDT)</p>
+  <p class="date">Last modified: 2026-10-09 11:45:43 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -1727,10 +1727,11 @@ a &amp;= b \\
 <div class="cell">
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(tibble<span class="sc">::</span><span class="fu">tibble</span>(x, y), ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb3-2"><a aria-label="2"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a aria-label="3"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"horsepower"</span>, <span class="at">y =</span> <span class="st">"miles per gallon"</span>) <span class="sc">+</span></span>
-<span id="cb3-4"><a aria-label="4"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x, y) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a aria-label="2"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb3-3"><a aria-label="3"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a aria-label="4"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"horsepower"</span>, <span class="at">y =</span> <span class="st">"miles per gallon"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a aria-label="5"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-cor-auto" class="quarto-float quarto-figure quarto-figure-center" alt="A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.">

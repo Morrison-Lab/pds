@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 11:32:26 (PDT)
+Last modified: 2026-10-09 11:45:43 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -167,15 +167,17 @@ Last modified: 2026-10-09 11:32:26 (PDT)
 >   ),
 >   sample_mean = unlist(sample_means)
 > )
-> normal_curves <- dplyr::bind_rows(lapply(seq_along(sizes), function(k) {
->   se <- sigma / sqrt(sizes[k])
->   grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
->   tibble::tibble(
->     n = factor(n_labels[k], levels = n_labels),
->     sample_mean = grid,
->     density = dnorm(grid, mu, se)
->   )
-> }))
+> normal_curves <- seq_along(sizes) |>
+>   lapply(function(k) {
+>     se <- sigma / sqrt(sizes[k])
+>     grid <- seq(mu - 4 * se, mu + 4 * se, length.out = 200)
+>     tibble::tibble(
+>       n = factor(n_labels[k], levels = n_labels),
+>       sample_mean = grid,
+>       density = dnorm(grid, mu, se)
+>     )
+>   }) |>
+>   dplyr::bind_rows()
 >
 > ggplot2::ggplot(means_long, ggplot2::aes(x = sample_mean)) +
 >   ggplot2::geom_histogram(

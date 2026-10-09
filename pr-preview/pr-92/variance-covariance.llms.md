@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 11:32:26 (PDT)
+Last modified: 2026-10-09 11:45:43 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -744,7 +744,8 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 > Show code
 >
 > ``` r
-> ggplot2::ggplot(tibble::tibble(x, y), ggplot2::aes(x = x, y = y)) +
+> tibble::tibble(x, y) |>
+>   ggplot2::ggplot(ggplot2::aes(x = x, y = y)) +
 >   ggplot2::geom_point(alpha = 0.4, size = 2) +
 >   ggplot2::labs(x = "horsepower", y = "miles per gallon") +
 >   ggplot2::theme_minimal()

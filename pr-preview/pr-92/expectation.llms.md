@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 11:32:26 (PDT)
+Last modified: 2026-10-09 11:45:43 (PDT)
 
 > **NOTE:**
 >
@@ -267,10 +267,11 @@ Last modified: 2026-10-09 11:32:26 (PDT)
 > marg_dens_x0 <- dnorm(x0, mean = mu_x, sd = sigma_x)
 > cond_mean <- intercept + beta * x0
 > cond_sd <- sigma_y * sqrt(1 - rho^2)
-> pander::pander(tibble::tibble(
+> tibble::tibble(
 >   parameter = c("mu_x", "sigma_x", "mu_y", "sigma_y", "rho"),
 >   estimate = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
-> ))
+> ) |>
+>   pander::pander()
 > ```
 >
 > | parameter | estimate |
@@ -951,11 +952,12 @@ Last modified: 2026-10-09 11:32:26 (PDT)
 > sum_y_first <- sum(rowSums(h_vals * joint_probs))
 > sum_x_first <- sum(colSums(h_vals * joint_probs))
 >
-> pander::pander(tibble::tibble(
+> tibble::tibble(
 >   quantity = c("exact (closed form)", "sum over y first, then x",
 >                "sum over x first, then y"),
 >   value = round(c(exact_sum, sum_y_first, sum_x_first), 6)
-> ))
+> ) |>
+>   pander::pander()
 > ```
 >
 > |         quantity         | value |
@@ -1065,10 +1067,11 @@ Last modified: 2026-10-09 11:32:26 (PDT)
 > cond_mean_x <- (y_vals + 1) / 2
 > trunc_ex <- sum(cond_mean_x * py_vals)
 >
-> pander::pander(tibble::tibble(
+> tibble::tibble(
 >   quantity = c("exact (closed form)", "truncated sum-of-integrals"),
 >   value = round(c(exact_ex, trunc_ex), 6)
-> ))
+> ) |>
+>   pander::pander()
 > ```
 >
 > |          quantity          | value |
