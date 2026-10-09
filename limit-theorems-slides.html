@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-09 09:57:02 (PDT)</p>
+  <p class="date">Last modified: 2026-10-09 10:05:51 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -506,7 +506,7 @@ Figure&nbsp;2: Distribution of the sum of five dice
 <section class="slide level2">
 
 <div id="exm-clt-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (Sample means of car horsepower)</strong></span> The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This repository holds a copy at <code>data/auto.csv</code>, and both code tabs below read that file.</p>
+<p><span class="theorem-title"><strong>Example 2 (Sample means of car horsepower)</strong></span> The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
 <p>Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a>, treat each draw of one car at random as one IID observation <span class="math inline">\(X_i\)</span>, so that <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are the mean and variance of the 392 horsepower values. The sum <span class="math inline">\(S_n\)</span> has mean <span class="math inline">\(n\mu\)</span> and variance <span class="math inline">\(n\sigma^2\)</span> by <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;1</a>, so the sample mean <span class="math inline">\(S_n/n\)</span> has mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma/\sqrt{n}\)</span>. The code below draws 10,000 random samples of each size <span class="math inline">\(n \in \mathopen{}\left\{1, 5, 30\right\}\mathclose{}\)</span>, with replacement, and computes each sample’s mean.</p>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Python</a></li><li><a href="#tabset-1-2">R</a></li></ul>

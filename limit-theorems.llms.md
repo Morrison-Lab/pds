@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 09:57:02 (PDT)
+Last modified: 2026-10-09 10:05:51 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -97,7 +97,7 @@ Last modified: 2026-10-09 09:57:02 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+> **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the mean and variance of the 392 horsepower values. The sum \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 1](#cor-sum-iid-moments), so the sample mean \\S_n/n\\ has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\. The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s mean.
 >

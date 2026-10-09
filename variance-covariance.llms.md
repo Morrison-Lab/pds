@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 09:57:02 (PDT)
+Last modified: 2026-10-09 10:05:51 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -593,7 +593,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 
 > **NOTE:**
 >
-> **Example 18 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This repository holds a copy at `data/auto.csv`, and both code tabs below read that file.
+> **Example 18 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same probability, and let \\X\\ be its horsepower and \\Y\\ its miles per gallon. Then \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\, \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}\\, and \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}\\ are the averages over the cars in the data, and [Definition 12](#def-correlation) gives \\\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}\\. The code below computes each part of the definition directly.
 >
