@@ -6,7 +6,7 @@ Let $\dsn{X}$ be independent draws from the same distribution,
 each with mean $\mean$ and variance $\varpar$,
 and let $\bar X = \avgin X_i$ be their average.
 
-Use @thm-linearity-expectation to show that $\mathbb{E}[\bar X] = \mean$,
+Use @thm-linearity-expectation to show that $\Ep[\bar X] = \mean$,
 and say in one sentence what that does *not* tell us.
 
 :::
