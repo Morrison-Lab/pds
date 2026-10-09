@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 11:53:46 (PDT)
+Last modified: 2026-10-09 12:00:39 (PDT)
 
 > **NOTE:**
 >
@@ -188,7 +188,7 @@ Last modified: 2026-10-09 11:53:46 (PDT)
 >
 > *Solution 1*. Pull the constant \\1/n\\ out and split the sum, both by [Theorem 4](#thm-linearity-expectation):
 >
-> \\ \begin{aligned} \operatorname{E}\[\bar X\] &= \operatorname{E}\\\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\] \\ &= \frac{1}{n}\sum\_{i=1}^n\operatorname{E}\[X_i\] \\ &= \frac{1}{n}\\(n\mu) \\ &= \mu \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\[\bar X\] &= \operatorname{E}\mathopen{}\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\]\mathclose{} \\ &= \frac{1}{n}\sum\_{i=1}^n\operatorname{E}\[X_i\] \\ &= \frac{1}{n}\\(n\mu) \\ &= \mu \end{aligned} \\
 >
 > So the sample average is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
 >

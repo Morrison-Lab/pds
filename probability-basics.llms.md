@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 11:53:46 (PDT)
+Last modified: 2026-10-09 12:00:39 (PDT)
 
 ## 1 Defining probabilities
 
@@ -137,7 +137,7 @@ Last modified: 2026-10-09 11:53:46 (PDT)
 >
 > *The limit.* For each \\n\\:
 >
-> \\ \begin{aligned} \Pr(A_n) &= \Pr\\\left(\bigcup\_{i=n}^{\infty} B_i\right) && \text{(} A_n = \bigcup\_{i=n}^{\infty} B_i \text{)} \\ &= \sum\_{i=n}^{\infty} \Pr(B_i) && \text{(countable additivity; the } B_i \text{ are pairwise disjoint)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(A_n) &= \Pr\mathopen{}\left(\bigcup\_{i=n}^{\infty} B_i\right)\mathclose{} && \text{(} A_n = \bigcup\_{i=n}^{\infty} B_i \text{)} \\ &= \sum\_{i=n}^{\infty} \Pr(B_i) && \text{(countable additivity; the } B_i \text{ are pairwise disjoint)} \end{aligned} \\
 >
 > With \\n = 1\\, this says the series \\\sum\_{i=1}^{\infty} \Pr(B_i)\\ has the finite total \\\Pr(A_1)\\. So, for \\n \ge 2\\:
 >
@@ -155,7 +155,7 @@ Last modified: 2026-10-09 11:53:46 (PDT)
 >
 > 1.  For any event \\A\\, \\\Pr(A) \ge 0\\.
 > 2.  The probability of the whole sample space is 1: \\\Pr(\Omega) = 1\\
-> 3.  \\\Pr\\ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\\Pr\\\left(\bigcup\_{i=1}^{\infty} A_i\right) = \sum\_{i=1}^{\infty} \Pr(A_i)\\
+> 3.  \\\Pr\\ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\\Pr\mathopen{}\left(\bigcup\_{i=1}^{\infty} A_i\right)\mathclose{} = \sum\_{i=1}^{\infty} \Pr(A_i)\\
 
 > **NOTE:**
 >
