@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-08 22:59:46 (PDT)
+Last modified: 2026-10-09 09:51:06 (PDT)
 
 ## 1 Random variables
 
@@ -683,7 +683,7 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > The [subset property](probability-basics.llms.md#thm-prob-subset) applies because \\\\t \le T \< t + \Delta\\ \subseteq \\T \ge t\\\\. Then:
 >
-> \\ \begin{aligned} {\lambda}(t) &= \lim\_{\Delta\downarrow 0} \frac{1 - \text{e}^{-2\Delta}}{\Delta} && \text{(definition of the hazard function)} \\ &= \frac{\partial}{\partial \Delta} \mathopen{}\left(1 - \text{e}^{-2\Delta}\right)\mathclose{} \Big\|\_{\Delta= 0} && \text{(definition of the derivative; } 1 - \text{e}^{0} = 0 \text{)} \\ &= 2\text{e}^{0} && \text{(chain rule)} \\ &= 2 && \text{(} \text{e}^{0} = 1 \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\lambda}(t) &= \lim\_{\Delta\downarrow 0} \frac{1 - \text{e}^{-2\Delta}}{\Delta} && \text{(definition of the hazard function)} \\ &= \left.{\frac{\partial}{\partial \Delta} \mathopen{}\left(1 - \text{e}^{-2\Delta}\right)\mathclose{}}\right\|\_{\Delta= 0} && \text{(definition of the derivative; } 1 - \text{e}^{0} = 0 \text{)} \\ &= 2\text{e}^{0} && \text{(chain rule)} \\ &= 2 && \text{(} \text{e}^{0} = 1 \text{)} \end{aligned} \\
 >
 > So \\{\lambda}(t) = 2 \> 1\\ at every \\t \ge 0\\: a hazard is a rate, not a probability.
 
