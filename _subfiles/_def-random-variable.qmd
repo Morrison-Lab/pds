@@ -171,7 +171,8 @@ On $\set{1/2 < U < 1}$, $T$ is increasing in $U$ and takes values in $(0, \infty
 and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$.
 So $\set{T > 0} = \set{1/2 < U < 1}$,
 and $\set{T = t} = \set{U = 1 - 1/(t + 2)}$ for each $t > 0$.
-Since
+Since $U$ is continuous (@exm-continuous-rv),
+single points have probability zero:
 
 $$
 \begin{aligned}
@@ -180,7 +181,7 @@ $$
 \end{aligned}
 $$
 
-(@exm-continuous-rv):
+Using these values:
 
 $$
 \ba
