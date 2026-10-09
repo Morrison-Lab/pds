@@ -108,7 +108,7 @@ not every probabilistic model needs to describe a process evolving in time.
 #### A linear regression model
 
 A linear regression model with Gaussian errors,
-$Y = \beta_0 + \beta_1 x + \epsilon$ with $\epsilon \sim \ndist{0, \ss}$,
+$Y = \coef{0} + \coef{1} x + \noise$ with $\noise \sim \ndist{0, \ss}$,
 is probabilistic:
 for each value of the covariate $x$,
 it assigns a probability distribution to the outcome $Y$.

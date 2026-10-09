@@ -33,15 +33,15 @@ $$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \t
 :::{#def-bernoulli}
 #### Bernoulli distribution
 
-A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi \in [0, 1]$,
-written $X \sim \Ber(\pi)$, if:
+A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\prob \in [0, 1]$,
+written $X \sim \Ber(\prob)$, if:
 
 $$
 \ba
-\Pr(X=x) &\eqdef \1{x\in \set{0,1}}\pi^x(1-\pi)^{1-x}\\
+\Pr(X=x) &\eqdef \1{x\in \set{0,1}}\prob^x(1-\prob)^{1-x}\\
 &= \begin{cases}
-\pi, & x=1\\
-1-\pi, & x=0
+\prob, & x=1\\
+1-\prob, & x=0
 \end{cases}
 \ea
 $$
@@ -91,14 +91,14 @@ See also
 :::{#def-uniform}
 #### Uniform distribution
 
-A random variable $X$ has the **uniform distribution** on an interval $[\alpha, \beta]$,
-with $\alpha < \beta$,
-written $X \sim \text{Uniform}(\alpha, \beta)$,
+A random variable $X$ has the **uniform distribution** on an interval $[\lowend, \highend]$,
+with $\lowend < \highend$,
+written $X \sim \text{Uniform}(\lowend, \highend)$,
 if $X$ is continuous with [density](#def-pdf):
 
 $$
 f(x) \eqdef \begin{cases}
-\frac{1}{\beta - \alpha}, & \alpha \le x \le \beta \\
+\frac{1}{\highend - \lowend}, & \lowend \le x \le \highend \\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -110,17 +110,17 @@ $$
 :::{#exm-pdf}
 #### Subinterval probabilities of a uniform random variable
 
-For $X \sim \text{Uniform}(\alpha, \beta)$ (@def-uniform)
-and any subinterval $[a, b] \subseteq [\alpha, \beta]$ (so $\alpha \le a \le b \le \beta$):
+For $X \sim \text{Uniform}(\lowend, \highend)$ (@def-uniform)
+and any subinterval $[a, b] \subseteq [\lowend, \highend]$ (so $\lowend \le a \le b \le \highend$):
 
 $$
 \ba
 \Pr(a \le X \le b)
 &= \int_a^b f(x)\,dx
 && \text{(definition of a probability density function)} \\
-&= \int_a^b \frac{1}{\beta - \alpha}\,dx
-&& \text{(} f(x) = \tfrac{1}{\beta - \alpha} \text{ on } [\alpha, \beta] \text{)} \\
-&= \frac{b - a}{\beta - \alpha}
+&= \int_a^b \frac{1}{\highend - \lowend}\,dx
+&& \text{(} f(x) = \tfrac{1}{\highend - \lowend} \text{ on } [\lowend, \highend] \text{)} \\
+&= \frac{b - a}{\highend - \lowend}
 && \text{(integrate)}
 \ea
 $$
@@ -130,7 +130,7 @@ is proportional to that subinterval's length.
 For the standard uniform distribution on $[0, 1]$,
 $f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise,
 giving $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
-An interval reaching outside $[\alpha, \beta]$ adds nothing to the probability,
+An interval reaching outside $[\lowend, \highend]$ adds nothing to the probability,
 because $f = 0$ there.
 
 :::
@@ -207,11 +207,11 @@ do not arise in applications.
 
 A random variable $X$ has the **normal distribution**
 (or **Gaussian distribution**)
-with mean parameter $\mu \in \reals$ and variance parameter $\ss > 0$,
-written $X \sim \ndist{\mu, \ss}$,
+with mean parameter $\mean \in \reals$ and variance parameter $\ss > 0$,
+written $X \sim \ndist{\mean, \ss}$,
 if $X$ is continuous with [density](#def-pdf):
 
-$$\p(X=x) \eqdef \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}, \quad x \in \reals$$
+$$\p(X=x) \eqdef \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}, \quad x \in \reals$$
 
 :::
 
@@ -224,7 +224,7 @@ $$
 \ba
 \p(X=0)
 &= \frac{1}{1 \cd \sqrt{2\pi}} \ef{-\frac{(0-0)^2}{2 \cd 1}}
-&& \text{(normal density with } \mu = 0, \ss = 1 \text{)} \\
+&& \text{(normal density with } \mean = 0, \ss = 1 \text{)} \\
 &= \frac{1}{\sqrt{2\pi}}
 && \text{(} \text{e}^0 = 1 \text{)} \\
 &\approx 0.399
@@ -248,13 +248,13 @@ as the second density in @exm-normal does.
 {{< slidebreak >}}
 
 :::{#thm-normal-density}
-#### The normal density integrates to 1, with mean $\mu$ and variance $\ss$
+#### The normal density integrates to 1, with mean $\mean$ and variance $\ss$
 
-If $X \sim \ndist{\mu, \ss}$ (@def-normal), then:
+If $X \sim \ndist{\mean, \ss}$ (@def-normal), then:
 
-$$\int_{-\infty}^{\infty} \frac{1}{\sigma\sqrt{2\pi}} \ef{-\frac{(x-\mu)^2}{2\ss}}\,dx = 1$$
+$$\int_{-\infty}^{\infty} \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}\,dx = 1$$
 
-and $X$ has [mean](expectation.qmd#def-expectation) $\E{X} = \mu$
+and $X$ has [mean](expectation.qmd#def-expectation) $\E{X} = \mean$
 and [variance](variance-covariance.qmd#def-variance) $\Var{X} = \ss$.
 
 :::
@@ -297,12 +297,12 @@ so each is $\tfrac{1}{2}$.
 :::{#def-exponential}
 #### Exponential distribution
 
-A random variable $T$ has the **exponential distribution** with rate $\lambda > 0$
+A random variable $T$ has the **exponential distribution** with rate $\rate > 0$
 if $T$ is continuous with [density](#def-pdf):
 
 $$
 f(t) \eqdef \begin{cases}
-\lambda \ef{-\lambda t}, & t \ge 0 \\
+\rate \ef{-\rate t}, & t \ge 0 \\
 0, & t < 0
 \end{cases}
 $$
@@ -314,22 +314,22 @@ $$
 :::{#exm-exponential}
 #### Probability of an event within one time unit
 
-Let $T$ be exponential with rate $\lambda$.
+Let $T$ be exponential with rate $\rate$.
 The probability that $T$ falls in $[0, 1]$ is:
 
 $$
 \ba
 \Pr(0 \le T \le 1)
-&= \int_0^1 \lambda \ef{-\lambda t}\,dt
+&= \int_0^1 \rate \ef{-\rate t}\,dt
 && \text{(definition of a density)} \\
-&= \sb{-\ef{-\lambda t}}_{t=0}^{1}
-&& \text{(antiderivative of } \lambda \ef{-\lambda t} \text{)} \\
-&= 1 - \ef{-\lambda}
+&= \sb{-\ef{-\rate t}}_{t=0}^{1}
+&& \text{(antiderivative of } \rate \ef{-\rate t} \text{)} \\
+&= 1 - \ef{-\rate}
 && \text{(evaluate at the bounds)}
 \ea
 $$
 
-With $\lambda = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.393$.
+With $\rate = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.393$.
 
 :::
 
@@ -404,7 +404,7 @@ $$
 *Limit at $-\infty$.*
 The events $A_n = \{X \le -n\}$, $n = 1, 2, \ldots$, are decreasing,
 and their intersection is empty,
-because every outcome $\omega$ has $X(\omega) > -n$ once $n > -X(\omega)$.
+because every outcome $\outcome$ has $X(\outcome) > -n$ once $n > -X(\outcome)$.
 By [continuity of probability](probability-basics.qmd#thm-continuity-probability),
 $F(-n) = \Pr(A_n) \to 0$.
 For $t \le -n$, $0 \le F(t) \le F(-n)$, because $F$ is non-decreasing,
@@ -413,7 +413,7 @@ so $F(t) \to 0$ as $t \to -\infty$.
 *Limit at $\infty$.*
 The events $B_n = \{X > n\}$ are decreasing,
 and their intersection is empty,
-because every outcome $\omega$ has $X(\omega) \le n$ once $n \ge X(\omega)$.
+because every outcome $\outcome$ has $X(\outcome) \le n$ once $n \ge X(\outcome)$.
 By continuity of probability, $\Pr(B_n) \to 0$,
 so, by the [complement rule](probability-basics.qmd#cor-p-neg0):
 
@@ -599,22 +599,22 @@ is a density of $X$.
 For events $A \subseteq B$,
 $B$ is the disjoint union of $A$ and $B \setminus A$,
 so additivity gives $\Pr(A) \le \Pr(B)$.
-For any $x$ and $\Delta > 0$,
-$\{X = x\} \subseteq \{x - \Delta < X \le x\}$, so:
+For any $x$ and $\change > 0$,
+$\{X = x\} \subseteq \{x - \change < X \le x\}$, so:
 
 $$
 \ba
 0
 &\le \Pr(X = x)
 && \text{(probabilities are non-negative)} \\
-&\le \Pr(x - \Delta < X \le x)
-&& \text{(} \{X = x\} \subseteq \{x - \Delta < X \le x\} \text{)} \\
-&= F(x) - F(x - \Delta)
+&\le \Pr(x - \change < X \le x)
+&& \text{(} \{X = x\} \subseteq \{x - \change < X \le x\} \text{)} \\
+&= F(x) - F(x - \change)
 && \text{(additivity, and the definition of the CDF)}
 \ea
 $$
 
-and $F(x) - F(x - \Delta) \to 0$ as $\Delta \downarrow 0$, because $F$ is continuous.
+and $F(x) - F(x - \change) \to 0$ as $\change \downarrow 0$, because $F$ is continuous.
 So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous.
 Then, for $a \le b$:
 
@@ -665,32 +665,32 @@ then $f(x)$ is the limit of the probability that $X$ falls in an interval starti
 divided by the width of that interval,
 as that width shrinks to 0:
 
-$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}$$
+$$f(x) = \lim_{\change \downarrow 0} \frac{\Pr(x \le X < x + \change)}{\change}$$
 
 :::
 
 ::: proof
 
-For $\Delta > 0$:
+For $\change > 0$:
 
 $$
 \ba
-\frac{\Pr(x \le X < x + \Delta)}{\Delta}
-&= \frac{\Pr(x < X \le x + \Delta)}{\Delta}
-&& \text{(} \Pr(X = x) = \Pr(X = x + \Delta) = 0 \text{)} \\
-&= \frac{F(x + \Delta) - F(x)}{\Delta}
+\frac{\Pr(x \le X < x + \change)}{\change}
+&= \frac{\Pr(x < X \le x + \change)}{\change}
+&& \text{(} \Pr(X = x) = \Pr(X = x + \change) = 0 \text{)} \\
+&= \frac{F(x + \change) - F(x)}{\change}
 && \text{(additivity, and the definition of the CDF)}
 \ea
 $$
 
 By @thm-density-vs-CDF, $F$ is differentiable at $x$ with $F'(x) = f(x)$,
-so this difference quotient converges to $f(x)$ as $\Delta \downarrow 0$.
+so this difference quotient converges to $f(x)$ as $\change \downarrow 0$.
 
 :::
 
 ::: {.remark .notes}
 
-For small $\Delta > 0$, $f(x) \cd \Delta \approx \Pr(x \le X < x + \Delta)$.
+For small $\change > 0$, $f(x) \cd \change \approx \Pr(x \le X < x + \change)$.
 Although a density is not unique (@thm-density-not-unique),
 this limit pins down its value at every point where it is continuous.
 
@@ -704,9 +704,9 @@ See also @me4 (Chapter 22, p. 535).
 #### The uniform density as a limit
 
 For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$,
-$\Pr(x \le X < x + \Delta) = \Delta$ once $\Delta \le 1 - x$, so:
+$\Pr(x \le X < x + \change) = \change$ once $\change \le 1 - x$, so:
 
-$$f(x) = \lim_{\Delta \downarrow 0} \frac{\Delta}{\Delta} = 1$$
+$$f(x) = \lim_{\change \downarrow 0} \frac{\change}{\change} = 1$$
 
 For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
 Both agree with the density of @def-uniform.
@@ -721,8 +721,8 @@ Both agree with the density of @def-uniform.
 If $X$ is a continuous random variable with CDF $F$,
 then for every $x$:
 
-$$\lim_{\Delta \downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}
-= \lim_{\Delta \downarrow 0} \frac{F(x + \Delta) - F(x)}{\Delta}$$
+$$\lim_{\change \downarrow 0} \frac{\Pr(x \le X < x + \change)}{\change}
+= \lim_{\change \downarrow 0} \frac{F(x + \change) - F(x)}{\change}$$
 
 whenever either limit exists;
 the right-hand side is the right derivative of $F$ at $x$.
@@ -733,8 +733,8 @@ the right-hand side is the right derivative of $F$ at $x$.
 
 The first two lines of the proof of @thm-density-limit
 use only that $X$ is continuous,
-so for every $\Delta > 0$ the two quotients are equal.
-Equal functions of $\Delta$ have the same limit as $\Delta \downarrow 0$,
+so for every $\change > 0$ the two quotients are equal.
+Equal functions of $\change$ have the same limit as $\change \downarrow 0$,
 or both have none.
 
 :::
@@ -748,21 +748,21 @@ At a point where $f$ is not continuous,
 the limit can differ from the chosen value $f(x)$.
 For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @def-uniform,
 which sets $f(1) = 1$ and $f(x) = 0$ for $x > 1$,
-and for $\Delta > 0$:
+and for $\change > 0$:
 
 $$
 \ba
-\Pr(1 \le X < 1 + \Delta)
-&= \Pr(1 \le X \le 1 + \Delta)
-&& \text{(} \Pr(X = 1 + \Delta) = 0 \text{)} \\
-&= \int_1^{1 + \Delta} f(x)\,dx
+\Pr(1 \le X < 1 + \change)
+&= \Pr(1 \le X \le 1 + \change)
+&& \text{(} \Pr(X = 1 + \change) = 0 \text{)} \\
+&= \int_1^{1 + \change} f(x)\,dx
 && \text{(definition of the density)} \\
 &= 0
-&& \text{(} f = 0 \text{ on } (1, 1 + \Delta] \text{; one point does not change an integral)}
+&& \text{(} f = 0 \text{ on } (1, 1 + \change] \text{; one point does not change an integral)}
 \ea
 $$
 
-So the limit of $\Pr(1 \le X < 1 + \Delta) / \Delta$ at $x = 1$ is 0,
+So the limit of $\Pr(1 \le X < 1 + \change) / \change$ at $x = 1$ is 0,
 although $f(1) = 1$.
 By @prp-density-limit-right-derivative,
 0 is also the right derivative of $F$ at 1,
@@ -815,7 +815,7 @@ $\int_{-\infty}^{\infty} f(x)\,dx = \int_0^1 1\,dx = 1$.
 #### Jointly distributed random variables
 
 Random variables $\X1n$ are **jointly distributed**
-when they are defined on the same [sample space](probability-basics.qmd#def-sample-space) $\Omega$,
+when they are defined on the same [sample space](probability-basics.qmd#def-sample-space) $\samplespace$,
 so that an event about several of them at once,
 such as $\{X_1 \le x_1\} \cap \{X_2 \le x_2\}$,
 has a probability.
@@ -1066,8 +1066,8 @@ then the pair $(X, X)$ has no [joint density](#def-joint-pdf).
 
 Suppose $f$ were a joint density of $(X, X)$,
 and let $L = \set{(x, y) : y = x}$ be the diagonal line.
-Every outcome $\omega$ has $X(\omega) = X(\omega)$,
-so $\set{(X, X) \in L} = \Omega$.
+Every outcome $\outcome$ has $X(\outcome) = X(\outcome)$,
+so $\set{(X, X) \in L} = \samplespace$.
 For each $x$, the function $y \mapsto \1{y = x} f(x, y)$ is $0$ except at the single point $y = x$,
 so its integral over $y$ is $0$.
 Then:
@@ -1076,7 +1076,7 @@ $$
 \ba
 1
 &= \Pr((X, X) \in L)
-&& \text{(} \set{(X, X) \in L} = \Omega \text{, and } \Pr(\Omega) = 1 \text{)} \\
+&& \text{(} \set{(X, X) \in L} = \samplespace \text{, and } \Pr(\samplespace) = 1 \text{)} \\
 &= \iint_L f(x, y)\,dx\,dy
 && \text{(definition of a joint density)} \\
 &= \int_{-\infty}^{\infty} \paren{\int_{-\infty}^{\infty} \1{y = x} f(x, y)\,dy}\,dx
@@ -1194,16 +1194,16 @@ $$\P(X = x) = \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy$$
 
 ::: proof
 
-Every outcome has $Y(\omega) \in \reals$,
-so $\set{Y \in \reals} = \Omega$, and:
+Every outcome has $Y(\outcome) \in \reals$,
+so $\set{Y \in \reals} = \samplespace$, and:
 
 $$
 \ba
 \P(X = x)
-&= \Pr(\set{X = x} \cap \Omega)
-&& \text{(} \set{X = x} \subseteq \Omega \text{)} \\
+&= \Pr(\set{X = x} \cap \samplespace)
+&& \text{(} \set{X = x} \subseteq \samplespace \text{)} \\
 &= \Pr(X = x,\, Y \in \reals)
-&& \text{(} \set{Y \in \reals} = \Omega \text{)} \\
+&& \text{(} \set{Y \in \reals} = \samplespace \text{)} \\
 &= \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy
 && \text{(definition of a joint density-mass function, with } B = \reals \text{)}
 \ea

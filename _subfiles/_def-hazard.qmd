@@ -23,9 +23,9 @@ while $\lambda(t)$ appears in
 
 If $T$ is the time at which an event occurs,
 then $\haz(t)$ is a rate, not a probability:
-for a small interval width $\Delta > 0$,
-$\haz(t) \cd \Delta$ is approximately the probability
-that the event occurs in $[t, t + \Delta)$,
+for a small interval width $\change > 0$,
+$\haz(t) \cd \change$ is approximately the probability
+that the event occurs in $[t, t + \change)$,
 given that it has not occurred before $t$.
 Many sources write the hazard as $\haz(t) = \p(T = t \mid T \ge t)$,
 reading it as the density of $T$ at $t$, conditional on the event $T \ge t$;
@@ -53,42 +53,42 @@ The math is identical; only the name changes with the valence of the event.
 #### A hazard greater than 1
 
 A hazard can exceed 1, just as a density can (@exm-normal).
-Let $T$ be [exponential](#def-exponential) with rate $\lambda = 2$,
+Let $T$ be [exponential](#def-exponential) with rate $\rate = 2$,
 so $\surv(t) = \ef{-2t}$ for $t \ge 0$ (@exm-exp-survfn).
 Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$,
 so $\Pr(T \ge s) = \Pr(T > s) = \surv(s)$.
-For $t \ge 0$ and $\Delta > 0$,
-$\{T \ge t\}$ is the disjoint union of $\{t \le T < t + \Delta\}$ and $\{T \ge t + \Delta\}$,
+For $t \ge 0$ and $\change > 0$,
+$\{T \ge t\}$ is the disjoint union of $\{t \le T < t + \change\}$ and $\{T \ge t + \change\}$,
 so:
 
 $$
 \ba
-\Pr(t \le T < t + \Delta \mid T \ge t)
-&= \frac{\Pr(\{t \le T < t + \Delta\} \cap \{T \ge t\})}{\Pr(T \ge t)}
+\Pr(t \le T < t + \change \mid T \ge t)
+&= \frac{\Pr(\{t \le T < t + \change\} \cap \{T \ge t\})}{\Pr(T \ge t)}
 && \text{(definition of conditional probability)} \\
-&= \frac{\Pr(t \le T < t + \Delta)}{\Pr(T \ge t)}
+&= \frac{\Pr(t \le T < t + \change)}{\Pr(T \ge t)}
 && \text{(subset property)} \\
-&= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)}
+&= \frac{\Pr(T \ge t) - \Pr(T \ge t + \change)}{\Pr(T \ge t)}
 && \text{(additivity)} \\
-&= \frac{\surv(t) - \surv(t + \Delta)}{\surv(t)}
+&= \frac{\surv(t) - \surv(t + \change)}{\surv(t)}
 && \text{(} \Pr(T \ge s) = \surv(s) \text{)} \\
-&= \frac{\ef{-2t} - \ef{-2(t + \Delta)}}{\ef{-2t}}
+&= \frac{\ef{-2t} - \ef{-2(t + \change)}}{\ef{-2t}}
 && \text{(exponential survival function)} \\
-&= 1 - \ef{-2\Delta}
+&= 1 - \ef{-2\change}
 && \text{(divide by } \ef{-2t} \text{)}
 \ea
 $$
 
 The [subset property](probability-basics.qmd#thm-prob-subset) applies
-because $\{t \le T < t + \Delta\} \subseteq \{T \ge t\}$.
+because $\{t \le T < t + \change\} \subseteq \{T \ge t\}$.
 Then:
 
 $$
 \ba
 \haz(t)
-&= \lim_{\Delta \downarrow 0} \frac{1 - \ef{-2\Delta}}{\Delta}
+&= \lim_{\change \downarrow 0} \frac{1 - \ef{-2\change}}{\change}
 && \text{(definition of the hazard function)} \\
-&= \deriv{\Delta} \paren{1 - \ef{-2\Delta}} \Big|_{\Delta = 0}
+&= \deriv{\change} \paren{1 - \ef{-2\change}} \Big|_{\change = 0}
 && \text{(definition of the derivative; } 1 - \ef{0} = 0 \text{)} \\
 &= 2\ef{0}
 && \text{(chain rule)} \\

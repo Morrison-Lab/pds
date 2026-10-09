@@ -29,7 +29,7 @@ A single real point has width zero, so the integral over a single point is zero.
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
-$$\Pr(6 - \epsilon \le X \le 6 + \epsilon) = \int_{6-\epsilon}^{6+\epsilon} \p(x)\,\mathrm{d}x > 0 \qquad (\text{for } \epsilon > 0)$$
+$$\Pr(6 - \smallconst \le X \le 6 + \smallconst) = \int_{6-\smallconst}^{6+\smallconst} \p(x)\,\mathrm{d}x > 0 \qquad (\text{for } \smallconst > 0)$$
 
 {{< slidebreak >}}
 

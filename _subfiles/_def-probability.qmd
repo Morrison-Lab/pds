@@ -1,12 +1,12 @@
 :::{#def-probability}
 #### Probability measure
 
-A **probability measure** on a [sample space](#def-sample-space) $\Omega$,
+A **probability measure** on a [sample space](#def-sample-space) $\samplespace$,
 often denoted $\Pr()$ or $\P()$,
-is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of $\Omega$
+is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of $\samplespace$
 that gives the whole sample space probability 1:
 
-$$\Pr(\Omega) = 1$$
+$$\Pr(\samplespace) = 1$$
 
 :::
 
@@ -18,10 +18,10 @@ $$\Pr(\Omega) = 1$$
 For the die roll in @exm-sample-space,
 define $\Pr(A) \eqdef \abs{A} / 6$,
 where $\abs{A}$ is the number of outcomes in $A$.
-This function is $1/6$ times the counting measure $\mu(A) = \abs{A}$ on the die rolls
+This function is $1/6$ times the counting measure $\measure(A) = \abs{A}$ on the die rolls
 ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)),
-so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of $\Omega$,
-and it gives $\Pr(\Omega) = 6/6 = 1$.
+so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of $\samplespace$,
+and it gives $\Pr(\samplespace) = 6/6 = 1$.
 The event "the roll is even" from @exm-event has probability
 $\Pr(\set{2, 4, 6}) = 3/6 = 1/2$.
 
@@ -63,7 +63,7 @@ $$\lim_{n \to \infty} \Pr(A_n) = 0$$
 
 For each $i$, let $B_i \eqdef A_i \setminus A_{i+1}$,
 the outcomes in $A_i$ but not in $A_{i+1}$.
-Each $B_i = A_i \cap (\Omega \setminus A_{i+1})$ is an event,
+Each $B_i = A_i \cap (\samplespace \setminus A_{i+1})$ is an event,
 by [closure properties of a $\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure).
 
 *The $B_i$ are pairwise disjoint.*
@@ -75,24 +75,24 @@ so $B_i \cap B_j = \emptyset$.
 *$A_n = \bigcup_{i=n}^{\infty} B_i$ for each $n$.*
 For $i \ge n$, $B_i \subseteq A_i \subseteq A_n$,
 so the union is contained in $A_n$.
-Conversely, let $\omega \in A_n$.
+Conversely, let $\outcome \in A_n$.
 Since $\bigcap_{i} A_i = \emptyset$,
-$\omega$ is not in every $A_i$;
+$\outcome$ is not in every $A_i$;
 since the $A_i$ are nested,
-the indices $i$ with $\omega \in A_i$ are $1, \ldots, m$ for some $m \ge n$.
-Then $\omega \in A_m$ and $\omega \notin A_{m+1}$,
-so $\omega \in B_m$.
+the indices $i$ with $\outcome \in A_i$ are $1, \ldots, m$ for some $m \ge n$.
+Then $\outcome \in A_m$ and $\outcome \notin A_{m+1}$,
+so $\outcome \in B_m$.
 
 *$\Pr(A_1)$ is finite.*
-The events $A_1$ and $\Omega \setminus A_1$ are disjoint with union $\Omega$,
+The events $A_1$ and $\samplespace \setminus A_1$ are disjoint with union $\samplespace$,
 so @cor-probability-finitely-additive applies to them:
 
 $$
 \ba
 \Pr(A_1)
-&\le \Pr(A_1) + \Pr(\Omega \setminus A_1)
-&& \text{(} \Pr(\Omega \setminus A_1) \ge 0 \text{)} \\
-&= \Pr(\Omega)
+&\le \Pr(A_1) + \Pr(\samplespace \setminus A_1)
+&& \text{(} \Pr(\samplespace \setminus A_1) \ge 0 \text{)} \\
+&= \Pr(\samplespace)
 && \text{(finite additivity of } \Pr \text{)} \\
 &= 1
 && \text{(definition of a probability measure)}
@@ -146,12 +146,12 @@ and it is what makes sums over countably infinite [partitions](#def-partition) v
 #### Kolmogorov axioms
 
 A function $\Pr$ that assigns a real number $\Pr(A)$ to each [event](#def-event) $A$
-of a sample space $\Omega$
+of a sample space $\samplespace$
 is a [probability measure](#def-probability) if and only if it satisfies:
 
 1. For any event $A$, $\Pr(A) \ge 0$.
 2. The probability of the whole sample space is 1:
-   $$\Pr(\Omega) = 1$$
+   $$\Pr(\samplespace) = 1$$
 3. $\Pr$ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity):
    for any [mutually exclusive](#def-mutually-exclusive) events $A_1, A_2, \ldots$,
    $$\Pr\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sumto{i}{\infty} \Pr(A_i)$$
@@ -164,7 +164,7 @@ Suppose $\Pr$ is a probability measure.
 It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets-functions.html#def-extended-nonneg-reals) $[0, \infty]$,
 which gives axiom 1,
 and it is countably additive, which is axiom 3.
-Axiom 2 is the condition $\Pr(\Omega) = 1$ in @def-probability.
+Axiom 2 is the condition $\Pr(\samplespace) = 1$ in @def-probability.
 
 Conversely, suppose $\Pr$ satisfies the three axioms.
 By axiom 1, $\Pr$ takes values in $[0, \infty]$,
@@ -174,7 +174,7 @@ $\Pr(\emptyset)$ is 0 or $\infty$;
 $\Pr(\emptyset)$ is a real number, so $\Pr(\emptyset) = 0$.
 So $\Pr$ satisfies both conditions of the [definition of a measure](https://morrison-lab.github.io/mds/measures.html#def-measure)
 ($\Pr(\emptyset) = 0$ and countable additivity)
-and is a measure on the events of $\Omega$.
+and is a measure on the events of $\samplespace$.
 With axiom 2, $\Pr$ is a probability measure (@def-probability).
 
 :::
@@ -218,15 +218,15 @@ $$\Pr(A) + \Pr(\neg A) = 1$$
 
 ::: proof
 
-The events $A$ and $\neg A$ are disjoint, and their union is $\Omega$.
+The events $A$ and $\neg A$ are disjoint, and their union is $\samplespace$.
 
 $$
 \ba
 \Pr(A) + \Pr(\neg A)
 &= \Pr(A \cup \neg A)
 && \text{(additivity of probability for disjoint events)} \\
-&= \Pr(\Omega)
-&& \text{(} A \cup \neg A = \Omega \text{)} \\
+&= \Pr(\samplespace)
+&& \text{(} A \cup \neg A = \samplespace \text{)} \\
 &= 1
 && \text{(probability of the sample space is 1)}
 \ea
@@ -252,12 +252,12 @@ Subtract $\Pr(A)$ from both sides of @thm-total-prob-1.
 {{< slidebreak >}}
 
 :::{#cor-p-neg}
-#### Complement rule in probability ($\pi$) notation
+#### Complement rule in probability ($\prob$) notation
 
-If the probability of an event $A$ is $\Pr(A)=\pi$,
+If the probability of an event $A$ is $\Pr(A)=\prob$,
 then the probability that $A$ does not occur is:
 
-$$\Pr(\neg A)= 1 - \pi$$
+$$\Pr(\neg A)= 1 - \prob$$
 
 :::
 
@@ -267,8 +267,8 @@ $$
 \ba
 \Pr(\neg A) &= 1 - \Pr(A)
 && \text{(complement rule)} \\
-&= 1 - \pi
-&& \text{(substitute } \Pr(A) = \pi \text{)}
+&= 1 - \prob
+&& \text{(substitute } \Pr(A) = \prob \text{)}
 \ea
 $$
 
@@ -279,7 +279,7 @@ $$
 :::{#exm-p-neg}
 #### Probability of not rolling a six
 
-For a fair die, the event "the roll is a six" has probability $\pi = 1/6$,
+For a fair die, the event "the roll is a six" has probability $\prob = 1/6$,
 so by @cor-p-neg the probability of not rolling a six is $1 - 1/6 = 5/6$.
 
 :::

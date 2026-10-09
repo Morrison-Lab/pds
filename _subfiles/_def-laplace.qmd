@@ -2,17 +2,17 @@
 #### Laplace distribution
 
 A random variable $Y$ has the **Laplace distribution**
-with location parameter $\mu \in \reals$ and scale parameter $b > 0$,
-written $Y \sim \dLaplacef{\mu, b}$,
+with location parameter $\mean \in \reals$ and scale parameter $b > 0$,
+written $Y \sim \dLaplacef{\mean, b}$,
 if $Y$ is continuous with [density](random-variables.qmd#def-pdf):
 
-$$\p(Y=y) \eqdef \frac{1}{2b} \ef{-\frac{\abs{y - \mu}}{b}}, \quad y \in \reals$$ {#eq-laplace-pdf}
+$$\p(Y=y) \eqdef \frac{1}{2b} \ef{-\frac{\abs{y - \mean}}{b}}, \quad y \in \reals$$ {#eq-laplace-pdf}
 
 :::
 
 ::: {.remark .notes}
-The [normal density](random-variables.qmd#def-normal) has the squared distance $(y - \mu)^2$ in its exponent.
-The Laplace density has the absolute distance $\abs{y - \mu}$ instead.
-Both densities are symmetric about $\mu$,
-but the Laplace density has a sharp peak at $\mu$ and decays more slowly in the tails.
+The [normal density](random-variables.qmd#def-normal) has the squared distance $(y - \mean)^2$ in its exponent.
+The Laplace density has the absolute distance $\abs{y - \mean}$ instead.
+Both densities are symmetric about $\mean$,
+but the Laplace density has a sharp peak at $\mean$ and decays more slowly in the tails.
 :::

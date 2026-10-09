@@ -14,15 +14,15 @@ whatever the distributions of the individual variables.
 #### Central Limit Theorem
 
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
-with mean $\mu$ and finite variance $\ss > 0$,
+with mean $\mean$ and finite variance $\ss > 0$,
 and let $S_n \eqdef \sumin X_i$.
 Then for every real number $z$:
 
 $$
-\lim_{n \to \infty} \Pr\paren{\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z} = \Phi(z)
+\lim_{n \to \infty} \Pr\paren{\frac{S_n - n\mean}{\sdpar\sqrt{n}} \le z} = \normcdf(z)
 $$
 
-where $\Phi(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
+where $\normcdf(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
 is the CDF of the [standard normal distribution](random-variables.qmd#def-std-normal) $\ndist{0, 1}$.
 
 :::
@@ -44,13 +44,13 @@ which is why the informal statement asks only that no summand dominate.
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
 each discrete or continuous,
-with mean $\mu$ and finite variance $\ss$,
+with mean $\mean$ and finite variance $\ss$,
 and let $S_n \eqdef \sumin X_i$.
 Then:
 
 $$
 \ba
-\E{S_n} &= n\mu \\
+\E{S_n} &= n\mean \\
 \Var{S_n} &= n\ss
 \ea
 $$
@@ -68,8 +68,8 @@ $$
 \E{S_n}
 &= \sumin \E{X_i}
 && \text{(linearity of expectation, applied } n - 1 \text{ times)} \\
-&= n\mu
-&& \text{(each } X_i \text{ has mean } \mu \text{)}
+&= n\mean
+&& \text{(each } X_i \text{ has mean } \mean \text{)}
 \ea
 $$
 
@@ -103,7 +103,7 @@ $$
 ::: {.remark .notes}
 
 In practice, @thm-clt justifies approximating
-$S_n$ by a normal distribution with mean $n\mu$ and variance $n\ss$,
+$S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$,
 which by @cor-sum-iid-moments
 are exactly the mean and variance of $S_n$.
 
@@ -116,7 +116,7 @@ are exactly the mean and variance of $S_n$.
 
 A single fair die roll has the discrete uniform distribution on $\set{1, \ldots, 6}$,
 which is flat, not bell-shaped (@fig-clt-1d6).
-Its mean is $\mu = 3.5$,
+Its mean is $\mean = 3.5$,
 and its variance is $\ss = \sumto{x}{6} (x - 3.5)^2 / 6 = 35/12$.
 
 ```{r}
@@ -160,6 +160,6 @@ $\Pr(S_5 \le 15) = `r round(p_exact, 4)`$.
 The normal approximation that @thm-clt suggests,
 with mean $5 \cd 3.5 = 17.5$ and variance $5 \cd 35/12 \approx 14.58$,
 evaluated at $15.5$ to account for $S_5$ taking only integer values,
-gives $\Phi\paren{(15.5 - 17.5)/\sqrt{14.58}} \approx `r round(p_normal, 4)`$.
+gives $\normcdf\paren{(15.5 - 17.5)/\sqrt{14.58}} \approx `r round(p_normal, 4)`$.
 
 :::

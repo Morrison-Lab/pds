@@ -131,27 +131,27 @@ the joint density is
 (a standard result; e.g. @CaseBerg01):
 
 $$
-\p(X=x,\,Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}}
-\e{-\frac{1}{2(1-\rho^2)}
-\sb{\frac{(x-\mu_X)^2}{\sigma_X^2}
-- \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y}
-+ \frac{(y-\mu_Y)^2}{\sigma_Y^2}}}
+\p(X=x,\,Y=y) = \frac{1}{2\pi\sdpar_X\sdpar_Y\sqrt{1-\corpar^2}}
+\e{-\frac{1}{2(1-\corpar^2)}
+\sb{\frac{(x-\mean_X)^2}{\varpar_X}
+- \frac{2\corpar(x-\mean_X)(y-\mean_Y)}{\sdpar_X\sdpar_Y}
++ \frac{(y-\mean_Y)^2}{\varpar_Y}}}
 $$
 
 A further standard fact about the bivariate normal (@CaseBerg01)
 is that the marginal distribution of $X$ is
-[normal](random-variables.qmd#def-normal), $X \sim \ndist{\mu_X, \sigma_X^2}$.
+[normal](random-variables.qmd#def-normal), $X \sim \ndist{\mean_X, \varpar_X}$.
 At $x = `r x0`$ weeks (a full-term pregnancy),
-$\mu_X = `r round(mu_x, 4)`$ and $\sigma_X = `r round(sigma_x, 4)`$, so:
+$\mean_X = `r round(mu_x, 4)`$ and $\sdpar_X = `r round(sigma_x, 4)`$, so:
 
 $$
 \ba
-\p(X=`r x0`) &= \frac{1}{\sigma_X\sqrt{2\pi}}
-  \e{-\frac{(`r x0`-\mu_X)^2}{2\sigma_X^2}}
+\p(X=`r x0`) &= \frac{1}{\sdpar_X\sqrt{2\pi}}
+  \e{-\frac{(`r x0`-\mean_X)^2}{2\varpar_X}}
 && \text{(normal density at } x = `r x0` \text{)}
 \\&= \frac{1}{`r round(sigma_x, 4)`\sqrt{2\pi}}
   \e{-\frac{(`r x0`-`r round(mu_x, 4)`)^2}{2(`r round(sigma_x, 4)`)^2}}
-&& \text{(substitute } \mu_X \text{ and } \sigma_X \text{)}
+&& \text{(substitute } \mean_X \text{ and } \sdpar_X \text{)}
 \\&\approx `r round(marg_dens_x0, 4)`
 && \text{(evaluate)}
 \ea
@@ -163,30 +163,30 @@ and simplifying the exponent
 gives the conditional PDF of $Y$ given $X = `r x0`$,
 which is itself normal
 with mean shifted along the regression line
-and variance reduced by a factor of $1-\rho^2$:
+and variance reduced by a factor of $1-\corpar^2$:
 
 $$
 \ba
 \p(Y=y \mid X=`r x0`) &= \frac{\p(X=`r x0`,\,Y=y)}{\p(X=`r x0`)}
 && \text{(definition of the conditional PDF)}
-\\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
-  \e{-\frac{1}{2(1-\rho^2)}\sb{\frac{(`r x0`-\mu_X)^2}{\sigma_X^2}
-  - \frac{2\rho(`r x0`-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y}
-  + \frac{(y-\mu_Y)^2}{\sigma_Y^2}} + \frac{(`r x0`-\mu_X)^2}{2\sigma_X^2}}
+\\&= \frac{1}{\sdpar_Y\sqrt{2\pi(1-\corpar^2)}}
+  \e{-\frac{1}{2(1-\corpar^2)}\sb{\frac{(`r x0`-\mean_X)^2}{\varpar_X}
+  - \frac{2\corpar(`r x0`-\mean_X)(y-\mean_Y)}{\sdpar_X\sdpar_Y}
+  + \frac{(y-\mean_Y)^2}{\varpar_Y}} + \frac{(`r x0`-\mean_X)^2}{2\varpar_X}}
 && \text{(substitute both densities; combine prefactors and exponents)}
-\\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
-  \e{-\frac{\rho^2(`r x0`-\mu_X)^2}{2\sigma_X^2(1-\rho^2)}
-  + \frac{\rho(`r x0`-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)}
-  - \frac{(y-\mu_Y)^2}{2\sigma_Y^2(1-\rho^2)}}
-&& \text{(combine the } (`r x0`-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)}
-\\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
-  \e{-\frac{1}{2\sigma_Y^2(1-\rho^2)}
-  \sb{\rho^2\frac{\sigma_Y^2}{\sigma_X^2}(`r x0`-\mu_X)^2
-  - 2\rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)(y-\mu_Y)
-  + (y-\mu_Y)^2}}
-&& \text{(factor } -\tfrac{1}{2\sigma_Y^2(1-\rho^2)} \text{ out of the exponent)}
-\\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
-  \e{-\frac{\paren{y - \sb{\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(`r x0`-\mu_X)}}^2}{2\sigma_Y^2(1-\rho^2)}}
+\\&= \frac{1}{\sdpar_Y\sqrt{2\pi(1-\corpar^2)}}
+  \e{-\frac{\corpar^2(`r x0`-\mean_X)^2}{2\varpar_X(1-\corpar^2)}
+  + \frac{\corpar(`r x0`-\mean_X)(y-\mean_Y)}{\sdpar_X\sdpar_Y(1-\corpar^2)}
+  - \frac{(y-\mean_Y)^2}{2\varpar_Y(1-\corpar^2)}}
+&& \text{(combine the } (`r x0`-\mean_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\corpar^2} = \tfrac{-\corpar^2}{1-\corpar^2} \text{)}
+\\&= \frac{1}{\sdpar_Y\sqrt{2\pi(1-\corpar^2)}}
+  \e{-\frac{1}{2\varpar_Y(1-\corpar^2)}
+  \sb{\corpar^2\frac{\varpar_Y}{\varpar_X}(`r x0`-\mean_X)^2
+  - 2\corpar\frac{\sdpar_Y}{\sdpar_X}(`r x0`-\mean_X)(y-\mean_Y)
+  + (y-\mean_Y)^2}}
+&& \text{(factor } -\tfrac{1}{2\varpar_Y(1-\corpar^2)} \text{ out of the exponent)}
+\\&= \frac{1}{\sdpar_Y\sqrt{2\pi(1-\corpar^2)}}
+  \e{-\frac{\paren{y - \sb{\mean_Y + \corpar\frac{\sdpar_Y}{\sdpar_X}(`r x0`-\mean_X)}}^2}{2\sdpar_Y^2(1-\corpar^2)}}
 && \text{(the bracket is a perfect square in } y \text{)}
 \ea
 $$
@@ -459,14 +459,14 @@ gives the conditional expectation function directly:
 
 $$
 \ba
-g(x) &= \mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X)
+g(x) &= \mean_Y + \corpar\frac{\sdpar_Y}{\sdpar_X}(x-\mean_X)
 \\&= `r round(intercept, 4)` + `r round(beta, 4)`\, x
 \ea
 $$
 
 which is exactly the fitted regression line
 (the general algebraic identity
-$\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \paren{\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X} + \rho\frac{\sigma_Y}{\sigma_X}x$
+$\mean_Y + \corpar\frac{\sdpar_Y}{\sdpar_X}(x-\mean_X) = \paren{\mean_Y - \corpar\frac{\sdpar_Y}{\sdpar_X}\mean_X} + \corpar\frac{\sdpar_Y}{\sdpar_X}x$
 is what makes the bivariate-normal conditional mean linear in $x$).
 As a check, evaluating at $x = `r x0`$ recovers @exm-cond-expectation's result:
 

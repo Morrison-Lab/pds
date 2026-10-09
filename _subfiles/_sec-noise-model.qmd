@@ -1,7 +1,7 @@
 ### Mean-zero noise model {#sec-noise-model}
 
 Measurement noise is almost always modeled as a random variable
-$\varepsilon$ with **mean zero** and variance $\sigma^2$.
+$\noise$ with **mean zero** and variance $\varpar$.
 
 Mean zero is a modeling choice rather than a fact about the world,
 and it costs nothing:

@@ -12,25 +12,25 @@ $$\haz(t) = \frac{f(t)}{\surv(t)}$$
 ::: proof
 
 The proof uses three facts.
-First, for $\Delta > 0$ the event $\{t \le T < t + \Delta\}$ is a subset of the event $\{T \ge t\}$,
-so intersecting them leaves $\{t \le T < t + \Delta\}$
+First, for $\change > 0$ the event $\{t \le T < t + \change\}$ is a subset of the event $\{T \ge t\}$,
+so intersecting them leaves $\{t \le T < t + \change\}$
 (the [subset property](probability-basics.qmd#thm-prob-subset)).
 Second, $\Pr(T = t) = 0$ for a continuous $T$,
 so $\Pr(T \ge t) = \Pr(T > t) = \surv(t)$, which is positive.
 Third, because $f$ is continuous at $t$,
-@thm-density-limit gives $f(t)$ as the limit of $\Pr(t \le T < t + \Delta) / \Delta$.
+@thm-density-limit gives $f(t)$ as the limit of $\Pr(t \le T < t + \change) / \change$.
 
 $$
 \ba
 \haz(t)
-&\eqdef \lim_{\Delta \downarrow 0} \frac{\Pr(t \le T < t + \Delta \mid T \ge t)}{\Delta}
+&\eqdef \lim_{\change \downarrow 0} \frac{\Pr(t \le T < t + \change \mid T \ge t)}{\change}
 && \text{(definition of the hazard function)} \\
-&= \lim_{\Delta \downarrow 0} \frac{1}{\Delta} \cd \frac{\Pr(\{t \le T < t + \Delta\} \cap \{T \ge t\})}{\Pr(T \ge t)}
+&= \lim_{\change \downarrow 0} \frac{1}{\change} \cd \frac{\Pr(\{t \le T < t + \change\} \cap \{T \ge t\})}{\Pr(T \ge t)}
 && \text{(definition of conditional probability)} \\
-&= \lim_{\Delta \downarrow 0} \frac{1}{\Delta} \cd \frac{\Pr(t \le T < t + \Delta)}{\Pr(T \ge t)}
+&= \lim_{\change \downarrow 0} \frac{1}{\change} \cd \frac{\Pr(t \le T < t + \change)}{\Pr(T \ge t)}
 && \text{(subset property)} \\
-&= \frac{1}{\Pr(T \ge t)} \cd \lim_{\Delta \downarrow 0} \frac{\Pr(t \le T < t + \Delta)}{\Delta}
-&& \text{(} \Pr(T \ge t) \text{ does not depend on } \Delta \text{)} \\
+&= \frac{1}{\Pr(T \ge t)} \cd \lim_{\change \downarrow 0} \frac{\Pr(t \le T < t + \change)}{\change}
+&& \text{(} \Pr(T \ge t) \text{ does not depend on } \change \text{)} \\
 &= \frac{f(t)}{\Pr(T \ge t)}
 && \text{(density as a limit; } f \text{ is continuous at } t \text{)} \\
 &= \frac{f(t)}{\surv(t)}
@@ -53,17 +53,17 @@ $$
 \haz(t)
 &= \frac{f(t)}{\surv(t)}
 && \text{(hazard equals density over survival)} \\
-&= \frac{\lambda \ef{-\lambda t}}{\ef{-\lambda t}}
+&= \frac{\rate \ef{-\rate t}}{\ef{-\rate t}}
 && \text{(substitute the exponential density and survival function)} \\
-&= \lambda
-&& \text{(cancel } \ef{-\lambda t} \text{)}
+&= \rate
+&& \text{(cancel } \ef{-\rate t} \text{)}
 \ea
 $$
 
-At $t = 0$, where $f$ jumps from $0$ to $\lambda$,
+At $t = 0$, where $f$ jumps from $0$ to $\rate$,
 @def-hazard gives the same value directly:
-$\Pr(0 \le T < \Delta \mid T \ge 0) / \Delta = \paren{1 - \ef{-\lambda \Delta}} / \Delta \to \lambda$
-as $\Delta \downarrow 0$.
+$\Pr(0 \le T < \change \mid T \ge 0) / \change = \paren{1 - \ef{-\rate \change}} / \change \to \rate$
+as $\change \downarrow 0$.
 So the exponential distribution has a constant hazard for $t \ge 0$,
 equal to its rate parameter;
 for $t < 0$, $f(t) = 0$, so $\haz(t) = 0$.

@@ -4,15 +4,15 @@
 A prediction $\hat f(x_0)$ at a new point $x_0$ has
 squared bias $[\bias{\hat f(x_0)}]^2 = 1$
 and variance $\Var{\hat f(x_0)} = 2$.
-The new response is $Y_0 = f(x_0) + \varepsilon$,
-where $\varepsilon$ has mean $0$ and variance $\sigma^2 = 3$
+The new response is $Y_0 = f(x_0) + \noise$,
+where $\noise$ has mean $0$ and variance $\varpar = 3$
 and is independent of $\hat f(x_0)$.
 
 1. What is the expected squared prediction error $\E{(Y_0 - \hat f(x_0))^2}$?
 2. If we could remove all bias and all variance of $\hat f(x_0)$,
    what would the expected squared prediction error be?
 3. Which of the three quantities
-   (squared bias, variance of $\hat f(x_0)$, $\sigma^2$)
+   (squared bias, variance of $\hat f(x_0)$, $\varpar$)
    can a better prediction method reduce,
    and which cannot?
 

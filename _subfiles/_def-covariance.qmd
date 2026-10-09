@@ -75,7 +75,7 @@ If also $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then $\Cov{X,Y} = 0$.
 ::: proof
 
 Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$,
-with reference measures $\mu_X$ and $\mu_Y$ as in
+with reference measures $\measure_X$ and $\measure_Y$ as in
 the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
 ([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a discrete variable,
 Lebesgue measure for a continuous one).
@@ -87,11 +87,11 @@ First, with $h(x, y) = \abs{x}\abs{y} \ge 0$ (condition (a)):
 $$
 \ba
 \E{\abs{XY}}
-&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} \abs{x}\abs{y}\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} \abs{x}\abs{y}\,f_X(x)\,f_Y(y)\,d\measure_Y(y)}\,d\measure_X(x)
 && \text{(joint-distribution form of Fubini--Tonelli, condition (a))} \\
-&= \int_{\rangef{X}} \abs{x}\,f_X(x)\paren{\int_{\rangef{Y}} \abs{y}\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}} \abs{x}\,f_X(x)\paren{\int_{\rangef{Y}} \abs{y}\,f_Y(y)\,d\measure_Y(y)}\,d\measure_X(x)
 && \text{(} \abs{x}\,f_X(x) \text{ does not depend on } y \text{)} \\
-&= \int_{\rangef{X}} \abs{x}\,f_X(x) \cd \E{\abs{Y}}\,d\mu_X(x)
+&= \int_{\rangef{X}} \abs{x}\,f_X(x) \cd \E{\abs{Y}}\,d\measure_X(x)
 && \text{(LOTUS for } \abs{Y} \text{)} \\
 &= \E{\abs{X}} \cd \E{\abs{Y}}
 && \text{(LOTUS for } \abs{X} \text{)}
@@ -105,11 +105,11 @@ and the same steps without the absolute values give:
 $$
 \ba
 \E{XY}
-&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} xy\,f_X(x)\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} xy\,f_X(x)\,f_Y(y)\,d\measure_Y(y)}\,d\measure_X(x)
 && \text{(joint-distribution form of Fubini--Tonelli, condition (b))} \\
-&= \int_{\rangef{X}} x\,f_X(x)\paren{\int_{\rangef{Y}} y\,f_Y(y)\,d\mu_Y(y)}\,d\mu_X(x)
+&= \int_{\rangef{X}} x\,f_X(x)\paren{\int_{\rangef{Y}} y\,f_Y(y)\,d\measure_Y(y)}\,d\measure_X(x)
 && \text{(} x\,f_X(x) \text{ does not depend on } y \text{)} \\
-&= \int_{\rangef{X}} x\,f_X(x) \cd \E{Y}\,d\mu_X(x)
+&= \int_{\rangef{X}} x\,f_X(x) \cd \E{Y}\,d\measure_X(x)
 && \text{(definition of expectation)} \\
 &= \E{X} \cd \E{Y}
 && \text{(definition of expectation)}
@@ -332,21 +332,21 @@ $$\Cov{Y,Z} = \E{\Cov{Y,Z \mid X}} + \Cov{\E{Y \mid X}, \E{Z \mid X}}$$
 The proof follows the proof of the [law of total variance](#thm-total-variance),
 which is the special case $Z = Y$.
 Write $m_Y(X) \eqdef \E{Y \mid X}$, $m_Z(X) \eqdef \E{Z \mid X}$,
-$\mu_Y \eqdef \E{Y}$, and $\mu_Z \eqdef \E{Z}$.
+$\mean_Y \eqdef \E{Y}$, and $\mean_Z \eqdef \E{Z}$.
 Adding and subtracting $m_Y(X)$ and $m_Z(X)$ inside the deviations:
 
 $$
 \ba
 \Cov{Y,Z}
-&= \E{\paren{Y - \mu_Y}\paren{Z - \mu_Z}}
+&= \E{\paren{Y - \mean_Y}\paren{Z - \mean_Z}}
 && \text{(definition of covariance)} \\
-&= \E{\paren{\sb{Y - m_Y(X)} + \sb{m_Y(X) - \mu_Y}}\paren{\sb{Z - m_Z(X)} + \sb{m_Z(X) - \mu_Z}}}
+&= \E{\paren{\sb{Y - m_Y(X)} + \sb{m_Y(X) - \mean_Y}}\paren{\sb{Z - m_Z(X)} + \sb{m_Z(X) - \mean_Z}}}
 && \text{(add and subtract)} \\
 &= \E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
-+ \E{\sb{Y - m_Y(X)}\sb{m_Z(X) - \mu_Z}}
++ \E{\sb{Y - m_Y(X)}\sb{m_Z(X) - \mean_Z}}
 \\&\quad
-+ \E{\sb{m_Y(X) - \mu_Y}\sb{Z - m_Z(X)}}
-+ \E{\sb{m_Y(X) - \mu_Y}\sb{m_Z(X) - \mu_Z}}
++ \E{\sb{m_Y(X) - \mean_Y}\sb{Z - m_Z(X)}}
++ \E{\sb{m_Y(X) - \mean_Y}\sb{m_Z(X) - \mean_Z}}
 && \text{(expand the product; linearity of expectation)}
 \ea
 $$
@@ -370,11 +370,11 @@ $$
 $$
 
 For the last term, the law of iterated expectations gives
-$\E{m_Y(X)} = \mu_Y$ and $\E{m_Z(X)} = \mu_Z$, so:
+$\E{m_Y(X)} = \mean_Y$ and $\E{m_Z(X)} = \mean_Z$, so:
 
 $$
 \ba
-\E{\sb{m_Y(X) - \mu_Y}\sb{m_Z(X) - \mu_Z}}
+\E{\sb{m_Y(X) - \mean_Y}\sb{m_Z(X) - \mean_Z}}
 &= \E{\sb{m_Y(X) - \E{m_Y(X)}}\sb{m_Z(X) - \E{m_Z(X)}}}
 && \text{(substitute the means)} \\
 &= \Cov{m_Y(X), m_Z(X)}
@@ -469,8 +469,8 @@ $$
 
 ::: proof
 
-Let $\mu_i = \E{X_i}$ for $i = 1, \ldots, p$,
-so $\Expp\vX = \tp{(\mu_1, \ldots, \mu_p)}$.
+Let $\mean_i = \E{X_i}$ for $i = 1, \ldots, p$,
+so $\Expp\vX = \tp{(\mean_1, \ldots, \mean_p)}$.
 By @def-cov-vec-x:
 
 $$
@@ -482,23 +482,23 @@ $$
 }
 \\
 &= \Expf{
-  \pmat{X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p}
-  \pmat{X_1 - \mu_1 & \cdots & X_p - \mu_p}
+  \pmat{X_1 - \mean_1 \\ \vdots \\ X_p - \mean_p}
+  \pmat{X_1 - \mean_1 & \cdots & X_p - \mean_p}
 }
 \\
 &= \Expf{
   \pmat{
-    (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\
+    (X_1 - \mean_1)(X_1 - \mean_1) & \cdots & (X_1 - \mean_1)(X_p - \mean_p) \\
     \vdots                      & \ddots & \vdots                      \\
-    (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p)
+    (X_p - \mean_p)(X_1 - \mean_1) & \cdots & (X_p - \mean_p)(X_p - \mean_p)
   }
 }
 \\
 &=
   \pmat{
-    \Expf{(X_1 - \mu_1)(X_1 - \mu_1)} & \cdots & \Expf{(X_1 - \mu_1)(X_p - \mu_p)} \\
+    \Expf{(X_1 - \mean_1)(X_1 - \mean_1)} & \cdots & \Expf{(X_1 - \mean_1)(X_p - \mean_p)} \\
     \vdots                             & \ddots & \vdots                             \\
-    \Expf{(X_p - \mu_p)(X_1 - \mu_1)} & \cdots & \Expf{(X_p - \mu_p)(X_p - \mu_p)}
+    \Expf{(X_p - \mean_p)(X_1 - \mean_1)} & \cdots & \Expf{(X_p - \mean_p)(X_p - \mean_p)}
   }
 \\
 &=
@@ -723,14 +723,14 @@ $$\tp{\va} \Varf{\vX} \va \ge 0$$
 ::: proof
 
 By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$,
-and by @def-cov, with $\mu_i = \E{X_i}$:
+and by @def-cov, with $\mean_i = \E{X_i}$:
 
 $$
 \ba
 \Covs{X_i}{X_j}
-&= \E{(X_i - \mu_i)(X_j - \mu_j)}
+&= \E{(X_i - \mean_i)(X_j - \mean_j)}
 && \text{(definition of covariance)} \\
-&= \E{(X_j - \mu_j)(X_i - \mu_i)}
+&= \E{(X_j - \mean_j)(X_i - \mean_i)}
 && \text{(multiplication of numbers is commutative)} \\
 &= \Covs{X_j}{X_i}
 && \text{(definition of covariance)}
@@ -891,22 +891,22 @@ $$-1 \le \Cor{X,Y} \le 1$$
 
 ::: proof
 
-Write $\sigma_X \eqdef \SD{X} > 0$ and $\sigma_Y \eqdef \SD{Y} > 0$,
+Write $\sdpar_X \eqdef \SD{X} > 0$ and $\sdpar_Y \eqdef \SD{Y} > 0$,
 and take either sign $\pm$ throughout.
 A variance is the expectation of a squared deviation,
 a non-negative random variable,
 so it is non-negative.
-Applying @cor-var-lincom2 with $a = 1/\sigma_X$ and $b = \pm 1/\sigma_Y$:
+Applying @cor-var-lincom2 with $a = 1/\sdpar_X$ and $b = \pm 1/\sdpar_Y$:
 
 $$
 \ba
 0
-&\le \Var{\frac{X}{\sigma_X} \pm \frac{Y}{\sigma_Y}}
+&\le \Var{\frac{X}{\sdpar_X} \pm \frac{Y}{\sdpar_Y}}
 && \text{(a variance is non-negative)} \\
-&= \frac{\Var{X}}{\sigma_X^2} + \frac{\Var{Y}}{\sigma_Y^2} \pm \frac{2 \Cov{X,Y}}{\sigma_X \sigma_Y}
+&= \frac{\Var{X}}{\sdpar_X^2} + \frac{\Var{Y}}{\sdpar_Y^2} \pm \frac{2 \Cov{X,Y}}{\sdpar_X \sdpar_Y}
 && \text{(variance of a sum of two random variables)} \\
-&= 1 + 1 \pm \frac{2 \Cov{X,Y}}{\sigma_X \sigma_Y}
-&& \text{(definition of standard deviation: } \sigma_X^2 = \Var{X} \text{, } \sigma_Y^2 = \Var{Y} \text{)} \\
+&= 1 + 1 \pm \frac{2 \Cov{X,Y}}{\sdpar_X \sdpar_Y}
+&& \text{(definition of standard deviation: } \varpar_X = \Var{X} \text{, } \varpar_Y = \Var{Y} \text{)} \\
 &= 2 \pm 2 \Cor{X,Y}
 && \text{(definition of correlation)}
 \ea

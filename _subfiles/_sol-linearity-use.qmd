@@ -5,14 +5,14 @@ Pull the constant $1/n$ out and split the sum, both by @thm-linearity-expectatio
 $$\mathbb{E}[\bar X]
 = \mathbb{E}\!\left[\avgin X_i\right]
 = \avgin \mathbb{E}[X_i]
-= \frac{1}{n}\,(n\mu) = \mu$$
+= \frac{1}{n}\,(n\mean) = \mean$$
 
 So the sample average is right *on average*.
 Independence was never used: @thm-linearity-expectation holds regardless,
 so this much would be true even for draws that influence one another.
 
 What it does not tell us is how far any *particular* sample average falls
-from $\mu$ --- that is a statement about variance, not expectation,
+from $\mean$ --- that is a statement about variance, not expectation,
 and it is where independence does the work.
 The distinction matters because an estimator or fitted model is a function of one
 particular sample.

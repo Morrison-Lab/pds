@@ -13,17 +13,17 @@ $$\cuhaz(t) \eqdef \int_{u=-\infty}^{t} \haz(u)\,du$$
 #### Cumulative hazard function of an exponential distribution
 
 Continuing @exm-exp-haz,
-the hazard is $\haz(u) = \lambda$ for $u \ge 0$ and $0$ for $u < 0$,
+the hazard is $\haz(u) = \rate$ for $u \ge 0$ and $0$ for $u < 0$,
 so for $t \ge 0$:
 
 $$
 \ba
 \cuhaz(t)
-&= \int_{u=-\infty}^{0} 0\,du + \int_{u=0}^{t} \lambda\,du
+&= \int_{u=-\infty}^{0} 0\,du + \int_{u=0}^{t} \rate\,du
 && \text{(split the integral at } 0 \text{)} \\
-&= 0 + \lambda t
+&= 0 + \rate t
 && \text{(integrate each piece)} \\
-&= \lambda t
+&= \rate t
 && \text{(simplify)}
 \ea
 $$
@@ -48,22 +48,22 @@ $$\cuhaz(t) = \int_{u=0}^{t} \haz(u)\,du$$
 ::: proof
 
 Let $u < 0$.
-Every outcome has $T(\omega) \ge 0 > u$, so $\{T \ge u\} = \Omega$,
+Every outcome has $T(\outcome) \ge 0 > u$, so $\{T \ge u\} = \samplespace$,
 which has probability $1 > 0$, and $\haz(u)$ is defined.
-For $0 < \Delta \le -u$, the event $\{u \le T < u + \Delta\}$ is empty,
-because $u + \Delta \le 0$, so:
+For $0 < \change \le -u$, the event $\{u \le T < u + \change\}$ is empty,
+because $u + \change \le 0$, so:
 
 $$
 \ba
 \haz(u)
-&= \lim_{\Delta \downarrow 0} \frac{\Pr(u \le T < u + \Delta \mid T \ge u)}{\Delta}
+&= \lim_{\change \downarrow 0} \frac{\Pr(u \le T < u + \change \mid T \ge u)}{\change}
 && \text{(definition of the hazard function)} \\
-&= \lim_{\Delta \downarrow 0} \frac{\Pr(\{u \le T < u + \Delta\} \cap \{T \ge u\})}{\Delta \cd \Pr(T \ge u)}
+&= \lim_{\change \downarrow 0} \frac{\Pr(\{u \le T < u + \change\} \cap \{T \ge u\})}{\change \cd \Pr(T \ge u)}
 && \text{(definition of conditional probability)} \\
-&= \lim_{\Delta \downarrow 0} \frac{\Pr(\emptyset \cap \Omega)}{\Delta \cd \Pr(\Omega)}
+&= \lim_{\change \downarrow 0} \frac{\Pr(\emptyset \cap \samplespace)}{\change \cd \Pr(\samplespace)}
 && \text{(the two events found above)} \\
-&= \lim_{\Delta \downarrow 0} \frac{0}{\Delta \cd 1}
-&& \text{(} \emptyset \cap \Omega = \emptyset \text{; } \Pr(\emptyset) = 0 \text{; } \Pr(\Omega) = 1 \text{)} \\
+&= \lim_{\change \downarrow 0} \frac{0}{\change \cd 1}
+&& \text{(} \emptyset \cap \samplespace = \emptyset \text{; } \Pr(\emptyset) = 0 \text{; } \Pr(\samplespace) = 1 \text{)} \\
 &= 0
 && \text{(simplify)}
 \ea
@@ -171,8 +171,8 @@ $$
 \surv(t)
 &= \expf{-\cuhaz(t)}
 && \text{(survival function from the cumulative hazard)} \\
-&= \expf{-\lambda t}
-&& \text{(substitute } \cuhaz(t) = \lambda t \text{)}
+&= \expf{-\rate t}
+&& \text{(substitute } \cuhaz(t) = \rate t \text{)}
 \ea
 $$
 

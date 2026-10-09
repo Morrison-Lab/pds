@@ -483,10 +483,10 @@ the integral of $\p(X_i = x, Y_i = u) / \p(X_i = x)$ over $u \le y$
 #### A shared regression model
 
 Suppose each $Y_i$ is binary,
-with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$
-(for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$).
+with $\Pr(Y_i = 1 \mid X_i = x) = \prob(x)$ for one function $\prob$ shared by every $i$
+(for instance, $\prob(x) = x / (1 + x)$ for a dose $x \ge 0$).
 Then $\dsn{Y}$ are conditionally identically distributed given $\X1n$,
-with $G(y \mid x) = 1 - \pi(x)$ for $0 \le y < 1$
+with $G(y \mid x) = 1 - \prob(x)$ for $0 \le y < 1$
 (and $0$ for $y < 0$, $1$ for $y \ge 1$).
 Their marginal distributions can still differ:
 if participant 1 always receives dose $0$ and participant 2 always receives dose $1$,
@@ -551,7 +551,7 @@ In @exm-cident, if the $Y_i$ are also conditionally independent given all the do
 and each $Y_i$ depends on the doses only through its own $X_i$,
 then $Y_i \mid X_i\ \ciid$,
 and the joint conditional PMF is
-$\prodi1n{\pi(x_i)^{y_i}\paren{1 - \pi(x_i)}^{1 - y_i}}$:
+$\prodi1n{\prob(x_i)^{y_i}\paren{1 - \prob(x_i)}^{1 - y_i}}$:
 one shared function evaluated at each $(x_i, y_i)$.
 
 :::

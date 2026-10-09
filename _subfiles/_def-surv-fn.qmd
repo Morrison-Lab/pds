@@ -72,25 +72,25 @@ $$
 :::{#exm-exp-survfn}
 #### Survival function of an exponential distribution
 
-Let $T$ be exponential with rate $\lambda > 0$ (@def-exponential),
-so $T$ has density $f(t) = \lambda \ef{-\lambda t}$ for $t \ge 0$.
+Let $T$ be exponential with rate $\rate > 0$ (@def-exponential),
+so $T$ has density $f(t) = \rate \ef{-\rate t}$ for $t \ge 0$.
 For $t \ge 0$, by @thm-survival-expressions-1:
 
 $$
 \ba
 \surv(t)
-&= \int_{u=t}^{\infty} \lambda \ef{-\lambda u}\,du
+&= \int_{u=t}^{\infty} \rate \ef{-\rate u}\,du
 && \text{(integral form of the survival function)} \\
-&= \sb{-\ef{-\lambda u}}_{u=t}^{\infty}
-&& \text{(antiderivative of } \lambda \ef{-\lambda u} \text{)} \\
-&= 0 - \paren{-\ef{-\lambda t}}
-&& \text{(evaluate at the bounds; } \ef{-\lambda u} \to 0 \text{ as } u \to \infty \text{)} \\
-&= \ef{-\lambda t}
+&= \sb{-\ef{-\rate u}}_{u=t}^{\infty}
+&& \text{(antiderivative of } \rate \ef{-\rate u} \text{)} \\
+&= 0 - \paren{-\ef{-\rate t}}
+&& \text{(evaluate at the bounds; } \ef{-\rate u} \to 0 \text{ as } u \to \infty \text{)} \\
+&= \ef{-\rate t}
 && \text{(simplify)}
 \ea
 $$
 
 For $t < 0$, $\surv(t) = \Pr(T > t) = 1$, since $T \ge 0$.
-With $\lambda = 0.5$, for example, $\surv(2) = \ef{-1} \approx 0.368$.
+With $\rate = 0.5$, for example, $\surv(2) = \ef{-1} \approx 0.368$.
 
 :::
