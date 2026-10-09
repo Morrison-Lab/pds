@@ -99,10 +99,11 @@ py_vals <- (1 - q) * q^y_vals
 cond_mean_x <- (y_vals + 1) / 2
 trunc_ex <- sum(cond_mean_x * py_vals)
 
-pander::pander(tibble::tibble(
+tibble::tibble(
   quantity = c("exact (closed form)", "truncated sum-of-integrals"),
   value = round(c(exact_ex, trunc_ex), 6)
-))
+) |>
+  pander::pander()
 ```
 
 With $q = `r q`$, the truncated sum-of-integrals matches the closed form

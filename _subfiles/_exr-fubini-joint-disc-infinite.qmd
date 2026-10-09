@@ -114,11 +114,12 @@ h_vals <- outer(support, support, function(x, y) x + y)
 sum_y_first <- sum(rowSums(h_vals * joint_probs))
 sum_x_first <- sum(colSums(h_vals * joint_probs))
 
-pander::pander(tibble::tibble(
+tibble::tibble(
   quantity = c("exact (closed form)", "sum over y first, then x",
                "sum over x first, then y"),
   value = round(c(exact_sum, sum_y_first, sum_x_first), 6)
-))
+) |>
+  pander::pander()
 ```
 
 With $p = `r p`$, the truncated sums
