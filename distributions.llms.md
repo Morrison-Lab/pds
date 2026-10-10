@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 12:00:39 (PDT)
+Last modified: 2026-10-09 23:52:29 (PDT)
 
 > **NOTE:**
 >
@@ -571,11 +571,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 8 (Multivariate normal distribution)** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
+> **Definition 8 (Multivariate normal distribution)** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
 >
 > \\ \operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=} \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{1}{2} {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})}, \quad \tilde{x}\in \mathbb{R}^p \\
 >
-> where \\\det(\mathbf{\Sigma})\\ is the [determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant) of \\\mathbf{\Sigma}\\ and \\\mathbf{\Sigma}^{-1}\\ is its [inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse).
+> where \\\det(\mathbf{\Sigma})\\ is the [determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant) of \\\mathbf{\Sigma}\\ and \\\mathbf{\Sigma}^{-1}\\ is its [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse).
 
 > **NOTE:**
 >
@@ -583,8 +583,8 @@ Figure 2: Poisson CDFs
 >
 > The density is well defined because \\\mathbf{\Sigma}\\ is positive definite:
 >
-> - \\\mathbf{\Sigma}^{-1}\\ exists ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse)), and
-> - \\\det(\mathbf{\Sigma}) \> 0\\ ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra.html#cor-det-pd)), so its square root is a positive number.
+> - \\\mathbf{\Sigma}^{-1}\\ exists ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)), and
+> - \\\det(\mathbf{\Sigma}) \> 0\\ ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#cor-det-pd)), so its square root is a positive number.
 
 > **NOTE:**
 >
@@ -596,7 +596,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 13 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
+> **Example 13 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
 >
 > \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}} \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)} && \text{(substitute into the multivariate normal density)} \\ &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x - \mu)^2}{2\sigma^2}} && \text{(simplify)} \end{aligned} \\
 >
@@ -612,7 +612,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. \\\mathbf{\Sigma}^{-1}\\ is positive definite ([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse)). If \\\tilde{x}\neq \tilde{\mu}\\, then \\\tilde{x}- \tilde{\mu} \neq \tilde{0}\\, so the quadratic form is positive by the [definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite). If \\\tilde{x}= \tilde{\mu}\\, then \\\tilde{x}- \tilde{\mu} = \tilde{0}\\, and the quadratic form is \\0\\.
+> *Proof*. \\\mathbf{\Sigma}^{-1}\\ is positive definite ([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)). If \\\tilde{x}\neq \tilde{\mu}\\, then \\\tilde{x}- \tilde{\mu} \neq \tilde{0}\\, so the quadratic form is positive by the [definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite). If \\\tilde{x}= \tilde{\mu}\\, then \\\tilde{x}- \tilde{\mu} = \tilde{0}\\, and the quadratic form is \\0\\.
 
 > **NOTE:**
 >
@@ -638,7 +638,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix) with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma^2_1, \ldots, 1/\sigma^2_p\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
+> **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma^2_1, \ldots, 1/\sigma^2_p\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
 >
 > \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i} \\
 >
@@ -659,7 +659,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma^2_i\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
+> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma^2_i\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
 >
 > \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma^2_i}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
 >
@@ -685,13 +685,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 13 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
+> **Theorem 13 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
 >
 > \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{\mathopen{}\left({\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i} \\
 
 > **NOTE:**
 >
-> *Proof*. Let \\\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\\, whose \\i\\-th element is \\y_i = {\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\\. By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse), \\\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\\, with every \\\lambda_i \> 0\\. So:
+> *Proof*. Let \\\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\\, whose \\i\\-th element is \\y_i = {\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\\. By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse), \\\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\\, with every \\\lambda_i \> 0\\. So:
 >
 > \\ \begin{aligned} \Delta(\tilde{x})^2 &= {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\tilde{x}- \tilde{\mu}) && \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\ &= {\tilde{y}}^{\top} \mathbf{\Lambda}^{-1} \tilde{y} && \text{(} {(\tilde{x}- \tilde{\mu})}^{\top}\mathbf{Q} = {\tilde{y}}^{\top} \text{)} \\ &= \sum\_{i=1}^p\frac{y_i^2}{\lambda_i} && \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)} \end{aligned} \\
 
@@ -701,7 +701,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 15 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral)). By [Theorem 13](#thm-mahalanobis-eigen):
+> **Example 15 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 13](#thm-mahalanobis-eigen):
 >
 > \\ \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
 >

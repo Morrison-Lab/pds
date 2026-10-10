@@ -232,6 +232,16 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-def.callout {
   border-left-color: #1B5E20;
 }
@@ -241,56 +251,6 @@ div.callout-def.callout-style-default .callout-header {
 div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-prp.callout {
   border-left-color: #827717;
@@ -302,6 +262,16 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
 }
@@ -312,16 +282,6 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-cnj.callout {
   border-left-color: #558B2F;
 }
@@ -331,6 +291,46 @@ div.callout-cnj.callout-style-default .callout-header {
 div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -754,7 +754,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-09 12:00:39 (PDT)</p>
+      <p class="date">Last modified: 2026-10-09 23:52:29 (PDT)</p>
     </div>
   </div>
   
@@ -2247,14 +2247,14 @@ f(t)
 </div>
 <div class="callout-body-container">
 <div id="def-mvn" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Multivariate normal distribution)</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\tilde{\mu} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\tilde{X}\)</span> has joint density:</p>
+<p><span class="theorem-title"><strong>Definition 8 (Multivariate normal distribution)</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\tilde{\mu} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\tilde{X}\)</span> has joint density:</p>
 <p><span class="math display">\[
 \operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=}
 \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}}
 \text{e}^{-\frac{1}{2} {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})},
 \quad \tilde{x}\in \mathbb{R}^p
 \]</span></p>
-<p>where <span class="math inline">\(\det(\mathbf{\Sigma})\)</span> is the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant">determinant</a> of <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is its <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse">inverse</a>.</p>
+<p>where <span class="math inline">\(\det(\mathbf{\Sigma})\)</span> is the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant">determinant</a> of <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is its <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse">inverse</a>.</p>
 </div>
 </div>
 </div>
@@ -2269,8 +2269,8 @@ f(t)
 <p><span class="proof-title"><em>Remark</em>. </span>A joint density of <span class="math inline">\(p\)</span> random variables is the <span class="math inline">\(p\)</span>-variable analogue of a <a href="./random-variables.html#def-joint-pdf">joint density</a> of two: a non-negative function on <span class="math inline">\(\mathbb{R}^p\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^p\)</span> is <span class="math inline">\(\Pr(\tilde{X}\in A)\)</span>.</p>
 <p>The density is well defined because <span class="math inline">\(\mathbf{\Sigma}\)</span> is positive definite:</p>
 <ul>
-<li><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> exists (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse">positive definite matrices have positive definite inverses</a>), and</li>
-<li><span class="math inline">\(\det(\mathbf{\Sigma}) &gt; 0\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#cor-det-pd">positive definite matrices have positive determinants</a>), so its square root is a positive number.</li>
+<li><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> exists (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">positive definite matrices have positive definite inverses</a>), and</li>
+<li><span class="math inline">\(\det(\mathbf{\Sigma}) &gt; 0\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#cor-det-pd">positive definite matrices have positive determinants</a>), so its square root is a positive number.</li>
 </ul>
 </div>
 </div>
@@ -2307,7 +2307,7 @@ f(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-mvn-univariate" class="theorem example">
-<p><span class="theorem-title"><strong>Example 13 (The univariate normal is the case <span class="math inline">\(p = 1\)</span>)</strong></span> With <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(\tilde{\mu} = (\mu)\)</span>, and <span class="math inline">\(\mathbf{\Sigma} = (\sigma^2)\)</span> for <span class="math inline">\(\sigma^2&gt; 0\)</span>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \sigma^2\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant">determinant</a>, <span class="math inline">\(p = 1\)</span>) and <span class="math inline">\(\mathbf{\Sigma}^{-1} = (1/\sigma^2)\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 13 (The univariate normal is the case <span class="math inline">\(p = 1\)</span>)</strong></span> With <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(\tilde{\mu} = (\mu)\)</span>, and <span class="math inline">\(\mathbf{\Sigma} = (\sigma^2)\)</span> for <span class="math inline">\(\sigma^2&gt; 0\)</span>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \sigma^2\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant">determinant</a>, <span class="math inline">\(p = 1\)</span>) and <span class="math inline">\(\mathbf{\Sigma}^{-1} = (1/\sigma^2)\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{p}(\tilde{X}= \tilde{x})
@@ -2350,7 +2350,7 @@ f(t)
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is positive definite (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse">positive definite inverse</a>). If <span class="math inline">\(\tilde{x}\neq \tilde{\mu}\)</span>, then <span class="math inline">\(\tilde{x}- \tilde{\mu} \neq \tilde{0}\)</span>, so the quadratic form is positive by the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite">definition of positive definite</a>. If <span class="math inline">\(\tilde{x}= \tilde{\mu}\)</span>, then <span class="math inline">\(\tilde{x}- \tilde{\mu} = \tilde{0}\)</span>, and the quadratic form is <span class="math inline">\(0\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is positive definite (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">positive definite inverse</a>). If <span class="math inline">\(\tilde{x}\neq \tilde{\mu}\)</span>, then <span class="math inline">\(\tilde{x}- \tilde{\mu} \neq \tilde{0}\)</span>, so the quadratic form is positive by the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">definition of positive definite</a>. If <span class="math inline">\(\tilde{x}= \tilde{\mu}\)</span>, then <span class="math inline">\(\tilde{x}- \tilde{\mu} = \tilde{0}\)</span>, and the quadratic form is <span class="math inline">\(0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2423,7 +2423,7 @@ f(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-mahalanobis-special" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14 (Mahalanobis distance for diagonal variance matrices)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix">diagonal</a> with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, all positive, then <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is diagonal with diagonal elements <span class="math inline">\(1/\sigma^2_1, \ldots, 1/\sigma^2_p\)</span> (multiplying the two gives <span class="math inline">\(\mathbf{I}_p\)</span>; <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse">matrix inverse</a>), so:</p>
+<p><span class="theorem-title"><strong>Example 14 (Mahalanobis distance for diagonal variance matrices)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix">diagonal</a> with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, all positive, then <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is diagonal with diagonal elements <span class="math inline">\(1/\sigma^2_1, \ldots, 1/\sigma^2_p\)</span> (multiplying the two gives <span class="math inline">\(\mathbf{I}_p\)</span>; <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse">matrix inverse</a>), so:</p>
 <p><span class="math display">\[
 \Delta(\tilde{x})^2 = \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}
 \]</span></p>
@@ -2467,7 +2467,7 @@ f(t)
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal">determinant of a diagonal matrix</a>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i\)</span>, so <span class="math inline">\(\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i\)</span>. Using <a href="#exm-mahalanobis-special" class="quarto-xref">Example&nbsp;14</a> for the quadratic form:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal">determinant of a diagonal matrix</a>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i\)</span>, so <span class="math inline">\(\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i\)</span>. Using <a href="#exm-mahalanobis-special" class="quarto-xref">Example&nbsp;14</a> for the quadratic form:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{p}(\tilde{X}= \tilde{x})
@@ -2539,7 +2539,7 @@ f(t)
 </div>
 <div class="callout-body-container">
 <div id="thm-mahalanobis-eigen" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 13 (Mahalanobis distance in eigenvector coordinates)</strong></span> Let <span class="math inline">\(\mathbf{\Sigma}\)</span> be positive definite, with <a href="https://morrison-lab.github.io/mds/linear-algebra.html#def-eigendecomposition">eigendecomposition</a> <span class="math inline">\(\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\)</span>, where <span class="math inline">\(\mathbf{Q}\)</span> has columns <span class="math inline">\(\tilde{q}_1, \ldots, \tilde{q}_p\)</span> and <span class="math inline">\(\mathbf{\Lambda}\)</span> has diagonal elements <span class="math inline">\(\lambda_1, \ldots, \lambda_p\)</span>. Then:</p>
+<p><span class="theorem-title"><strong>Theorem 13 (Mahalanobis distance in eigenvector coordinates)</strong></span> Let <span class="math inline">\(\mathbf{\Sigma}\)</span> be positive definite, with <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition">eigendecomposition</a> <span class="math inline">\(\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\)</span>, where <span class="math inline">\(\mathbf{Q}\)</span> has columns <span class="math inline">\(\tilde{q}_1, \ldots, \tilde{q}_p\)</span> and <span class="math inline">\(\mathbf{\Lambda}\)</span> has diagonal elements <span class="math inline">\(\lambda_1, \ldots, \lambda_p\)</span>. Then:</p>
 <p><span class="math display">\[
 \Delta(\tilde{x})^2 = \sum_{i=1}^p\frac{\mathopen{}\left({\tilde{q}_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i}
 \]</span></p>
@@ -2560,7 +2560,7 @@ f(t)
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\)</span>, whose <span class="math inline">\(i\)</span>-th element is <span class="math inline">\(y_i = {\tilde{q}_i}^{\top}(\tilde{x}- \tilde{\mu})\)</span>. By the <a href="https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse">inverse of a positive definite matrix</a>, <span class="math inline">\(\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\)</span>, with every <span class="math inline">\(\lambda_i &gt; 0\)</span>. So:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\)</span>, whose <span class="math inline">\(i\)</span>-th element is <span class="math inline">\(y_i = {\tilde{q}_i}^{\top}(\tilde{x}- \tilde{\mu})\)</span>. By the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">inverse of a positive definite matrix</a>, <span class="math inline">\(\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\)</span>, with every <span class="math inline">\(\lambda_i &gt; 0\)</span>. So:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Delta(\tilde{x})^2
@@ -2595,7 +2595,7 @@ f(t)
 </div>
 <div class="callout-body-container">
 <div id="exm-mahalanobis-eigen" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15 (Elliptical contours of a bivariate normal density)</strong></span> Let <span class="math inline">\(\tilde{\mu} = \tilde{0}\)</span> and <span class="math inline">\(\mathbf{\Sigma} = \begin{pmatrix}2 &amp; 1 \\ 1 &amp; 2\end{pmatrix}\)</span>, which has eigenvalues <span class="math inline">\(3\)</span> and <span class="math inline">\(1\)</span>, with eigenvectors <span class="math inline">\(\tilde{q}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\)</span> and <span class="math inline">\(\tilde{q}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral">an eigendecomposition example</a>). By <a href="#thm-mahalanobis-eigen" class="quarto-xref">Theorem&nbsp;13</a>:</p>
+<p><span class="theorem-title"><strong>Example 15 (Elliptical contours of a bivariate normal density)</strong></span> Let <span class="math inline">\(\tilde{\mu} = \tilde{0}\)</span> and <span class="math inline">\(\mathbf{\Sigma} = \begin{pmatrix}2 &amp; 1 \\ 1 &amp; 2\end{pmatrix}\)</span>, which has eigenvalues <span class="math inline">\(3\)</span> and <span class="math inline">\(1\)</span>, with eigenvectors <span class="math inline">\(\tilde{q}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\)</span> and <span class="math inline">\(\tilde{q}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral">an eigendecomposition example</a>). By <a href="#thm-mahalanobis-eigen" class="quarto-xref">Theorem&nbsp;13</a>:</p>
 <p><span class="math display">\[
 \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}
 \]</span></p>
