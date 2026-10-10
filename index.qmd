@@ -88,7 +88,7 @@ Several universities offer open-access courses with comparable or complementary 
 
 ### Video channels {.unnumbered}
 
-The machine learning course notes keep a curated list of
+The DATA 571 (Machine Learning) course notes keep a curated list of
 [online video channels](https://morrison-lab.github.io/lds/chapters/channels.html),
 with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
 
