@@ -1062,7 +1062,7 @@ has the **multivariate normal distribution**
 with mean parameter $\vecf{\mean} \in \reals^p$
 and variance parameter $\matr{\covmat}$,
 a $p \times p$
-[positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite)
+[positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
 matrix,
 written $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
 if $\vX$ has joint density:
@@ -1075,10 +1075,10 @@ $$
 $$
 
 where $\det(\matr{\covmat})$ is the
-[determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant)
+[determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant)
 of $\matr{\covmat}$
 and $\matr{\covmat}^{-1}$ is its
-[inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse).
+[inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse).
 
 :::
 
@@ -1093,9 +1093,9 @@ is $\Pr(\vX \in A)$.
 The density is well defined because $\matr{\covmat}$ is positive definite:
 
 - $\matr{\covmat}^{-1}$ exists
-  ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse)), and
+  ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)), and
 - $\det(\matr{\covmat}) > 0$
-  ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra.html#cor-det-pd)),
+  ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#cor-det-pd)),
   so its square root is a positive number.
 
 :::
@@ -1136,7 +1136,7 @@ which has no joint density.
 
 With $p = 1$, $\vecf{\mean} = (\mean)$, and $\matr{\covmat} = (\ss)$ for $\ss > 0$,
 $\det(\matr{\covmat}) = \ss$
-([determinant](https://morrison-lab.github.io/mds/linear-algebra.html#def-determinant), $p = 1$)
+([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$)
 and $\matr{\covmat}^{-1} = (1/\ss)$, so:
 
 $$
@@ -1171,10 +1171,10 @@ with equality if and only if $\vx = \vecf{\mean}$.
 ::: proof
 
 $\matr{\covmat}^{-1}$ is positive definite
-([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse)).
+([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)).
 If $\vx \neq \vecf{\mean}$, then $\vx - \vecf{\mean} \neq \vzero$,
 so the quadratic form is positive by the
-[definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite).
+[definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite).
 If $\vx = \vecf{\mean}$, then $\vx - \vecf{\mean} = \vzero$,
 and the quadratic form is $0$.
 
@@ -1234,12 +1234,12 @@ and by @lem-mahalanobis-nonneg, $\mahal(\vx) = 0$ only at $\vx = \vecf{\mean}$.
 #### Mahalanobis distance for diagonal variance matrices
 
 If $\matr{\covmat}$ is
-[diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix)
+[diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix)
 with diagonal elements $\varpar_1, \ldots, \varpar_p$, all positive,
 then $\matr{\covmat}^{-1}$ is diagonal with diagonal elements
 $1/\varpar_1, \ldots, 1/\varpar_p$
 (multiplying the two gives $\matr{I}_p$;
-[matrix inverse](https://morrison-lab.github.io/mds/linear-algebra.html#def-matrix-inverse)), so:
+[matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
 
 $$
 \mahal(\vx)^2 = \sumip \frac{(x_i - \mean_i)^2}{\varpar_i}
@@ -1277,7 +1277,7 @@ then:
 
 ::: proof
 
-By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-det-diagonal),
+By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal),
 $\det(\matr{\covmat}) = \prod_{i=1}^p \varpar_i$,
 so $\det(\matr{\covmat})^{1/2} = \prod_{i=1}^p \sdpar_i$.
 Using @exm-mahalanobis-special for the quadratic form:
@@ -1361,7 +1361,7 @@ can still be dependent
 #### Mahalanobis distance in eigenvector coordinates
 
 Let $\matr{\covmat}$ be positive definite, with
-[eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra.html#def-eigendecomposition)
+[eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition)
 $\matr{\covmat} = \matr{Q}\matr{\Eigvals}\tp{\matr{Q}}$,
 where $\matr{Q}$ has columns $\vecf{q}_1, \ldots, \vecf{q}_p$
 and $\matr{\Eigvals}$ has diagonal elements $\eigval_1, \ldots, \eigval_p$.
@@ -1377,7 +1377,7 @@ $$
 
 Let $\vecf{y} = \tp{\matr{Q}}(\vx - \vecf{\mean})$,
 whose $i$-th element is $y_i = \tp{\vecf{q}_i}(\vx - \vecf{\mean})$.
-By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra.html#thm-pd-inverse),
+By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse),
 $\matr{\covmat}^{-1} = \matr{Q}\matr{\Eigvals}^{-1}\tp{\matr{Q}}$,
 with every $\eigval_i > 0$. So:
 
@@ -1417,7 +1417,7 @@ $\matr{\covmat} = \pmat{2 & 1 \\ 1 & 2}$,
 which has eigenvalues $3$ and $1$,
 with eigenvectors $\vecf{q}_1 = \frac{1}{\sqrt{2}}\tp{(1, 1)}$
 and $\vecf{q}_2 = \frac{1}{\sqrt{2}}\tp{(1, -1)}$
-([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-spectral)).
+([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)).
 By @thm-mahalanobis-eigen:
 
 $$
