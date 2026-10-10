@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
+
+  <title>Probability for Data Science – Independence</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-3a7eae3b872f08785a56513611f0329a.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLDZY2T3JF"></script>
+
+  <script type="text/plain" cookie-consent="tracking">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLDZY2T3JF', { 'anonymize_ip': true});
+  </script>
+  
+  <script type="text/javascript" charset="UTF-8">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({
+    "notice_banner_type":"simple",
+    "consent_type":"implied",
+    "palette":"light",
+    "language":"en",
+    "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+    "notice_banner_reject_button_hide":false,
+    "preferences_center_close_button_hide":false,
+    "website_name":""
+    ,
+  "language":"en"
+    });
+  });
+  </script> 
+    
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <!--
+    Colour-theme dropdown for the qwt revealjs format: Light, Off-white,
+    Parchment, Dark. Pulled into every slide deck via the `include-in-header`
+    entry in the `revealjs:` block of `_quarto-website.yml`. Pairs with
+    `styles-reveal.scss`, which defines the palette CSS variables; the select
+    reads those vars so it stays legible in every palette. Light is the
+    default variable set, Off-white and Parchment are a data-palette attribute
+    on <html>, and Dark is the body.qwt-dark class. The choice is saved under
+    "mln-theme", the key the website's theme dropdown (theme-picker.html) uses,
+    so it carries across the site and the decks. First-time visitors get
+    Dark if their system prefers it, and Off-white otherwise.
+  -->
+  <style>
+    #qwt-theme-select {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      /* Matches reveal.js's `.slide-number` and the `#revealjs-html-link` chip
+         from `revealjs-html-links.lua`; the three elements occupy different
+         corners so they don't overlap. Keep them aligned if you bump this. */
+      z-index: 31;
+      padding: 2px 4px;
+      border: 1px solid var(--qwt-border, rgba(0, 0, 0, 0.2));
+      border-radius: 4px;
+      background: var(--qwt-chip-bg, rgba(255, 255, 255, 0.8));
+      color: var(--qwt-fg, #000);
+      cursor: pointer;
+      font: 12px sans-serif;
+      opacity: 0.7;
+    }
+    #qwt-theme-select:hover,
+    #qwt-theme-select:focus-visible {
+      opacity: 1;
+      border-color: var(--qwt-fg, rgba(0, 0, 0, 0.4));
+    }
+    #qwt-theme-select:focus-visible {
+      outline: 2px solid var(--qwt-link, #2a76dd);
+      outline-offset: 2px;
+    }
+    @media print { #qwt-theme-select { display: none; } }
+  </style>
+  <script>
+  (function () {
+    "use strict";
+    var KEY = "mln-theme";
+    var DARK_CLASS = "qwt-dark";
+    var OPTIONS = [["light", "Light"], ["offwhite", "Off-white"], ["parchment", "Parchment"], ["dark", "Dark"]];
+    var root = document.documentElement;
+
+    function valid(choice) {
+      return OPTIONS.some(function (o) { return o[0] === choice; });
+    }
+
+    function stored() {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+
+    function initialTheme() {
+      var saved = stored();
+      if (valid(saved)) return saved;
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "offwhite";
+    }
+
+    function applyTheme(choice) {
+      if (choice === "offwhite" || choice === "parchment") {
+        root.setAttribute("data-palette", choice);
+      } else {
+        root.removeAttribute("data-palette");
+      }
+      // The body can be missing when this runs from <head>; init() re-applies it.
+      if (document.body) document.body.classList.toggle(DARK_CLASS, choice === "dark");
+    }
+
+    var start = initialTheme();
+    applyTheme(start); // set the palette before first paint
+
+    function init() {
+      if (document.getElementById("qwt-theme-select")) return;
+      applyTheme(start);
+      var sel = document.createElement("select");
+      sel.id = "qwt-theme-select";
+      sel.setAttribute("aria-label", "Colour theme");
+      OPTIONS.forEach(function (o) {
+        var opt = document.createElement("option");
+        opt.value = o[0];
+        opt.textContent = o[1];
+        sel.appendChild(opt);
+      });
+      sel.value = start;
+      sel.addEventListener("change", function () {
+        applyTheme(sel.value);
+        try { localStorage.setItem(KEY, sel.value); } catch (e) { /* private mode */ }
+      });
+      document.body.appendChild(sel);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Independence</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">Last modified: 2026-10-09 17:07:16 (PDT)</p>
+</section>
+<section class="slide level2">
+
+<p><span id="sec-independence"></span></p>
+<!-- No slidebreak here: the heading shares its slide with the def-indpt div. -->
+<div id="def-indpt" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Statistical independence)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>statistically independent</strong> if, for all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the <a href="./probability-basics.html#def-probability">probability</a> that every <span class="math inline">\(X_i\)</span> falls in its set is the product of the individual probabilities:</p>
+<p><span class="math display">\[\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prod_{i=1}^n{\Pr(X_i \in A_i)}\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>We write <span class="math inline">\(X \perp\!\!\!\perp Y\)</span> for “<span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent”. The symbol <span class="math inline">\(\perp\!\!\!\perp\)</span> is essentially <span class="math inline">\(\prod\)</span> upside-down, which can remind you of the definition.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="thm-indpt-pmf" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Independence of discrete random variables: the joint PMF factors)</strong></span> Discrete random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <a href="#/def-indpt">statistically independent</a> if and only if their <a href="./random-variables.html#def-joint-pmf">joint PMF</a> factors into the product of their PMFs: for all real numbers <span class="math inline">\(x_1, \ldots, x_n\)</span>,</p>
+<p><span class="math display">\[\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod_{i=1}^n{\operatorname{P}(X_i=x_i)}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>Only if.</strong> Take <span class="math inline">\(A_i = \mathopen{}\left\{x_i\right\}\mathclose{}\)</span> for each <span class="math inline">\(i\)</span> in <a href="#/def-indpt" class="quarto-xref">Definition&nbsp;1</a>.</p>
+<p><strong>If.</strong> Let <span class="math inline">\(A_1, \ldots, A_n\)</span> be sets of real numbers, and let <span class="math inline">\(C\)</span> be the set of tuples <span class="math inline">\((x_1, \ldots, x_n)\)</span> with each <span class="math inline">\(x_i \in A_i \cap \mathcal{R}(X_i)\)</span>. Each <a href="./random-variables.html#def-range">range</a> <span class="math inline">\(\mathcal{R}(X_i)\)</span> is countable, so <span class="math inline">\(C\)</span> is countable. Each <span class="math inline">\(X_i\)</span> takes its values in <span class="math inline">\(\mathcal{R}(X_i)\)</span>, so the event <span class="math inline">\(\mathopen{}\left\{X_1 \in A_1, \ldots, X_n \in A_n\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(\mathopen{}\left\{X_1=x_1, \ldots, X_n = x_n\right\}\mathclose{}\)</span> over <span class="math inline">\((x_1, \ldots, x_n) \in C\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X_1 \in A_1, \ldots, X_n \in A_n)
+&amp;= \sum_{(x_1, \ldots, x_n) \in C} \operatorname{P}(X_1=x_1, \ldots, X_n = x_n)
+&amp;&amp; \text{(countable additivity over the disjoint events } \mathopen{}\left\{X_1=x_1, \ldots, X_n = x_n\right\}\mathclose{} \text{)} \\
+&amp;= \sum_{(x_1, \ldots, x_n) \in C} \prod_{i=1}^n{\operatorname{P}(X_i = x_i)}
+&amp;&amp; \text{(the joint PMF factors)} \\
+&amp;= \prod_{i=1}^n{\sum_{x_i \in A_i \cap \mathcal{R}(X_i)} \operatorname{P}(X_i = x_i)}
+&amp;&amp; \text{(a sum over the product set } C \text{ of non-negative products factors)} \\
+&amp;= \prod_{i=1}^n{\Pr(X_i \in A_i)}
+&amp;&amp; \text{(countable additivity over the disjoint events } \mathopen{}\left\{X_i = x_i\right\}\mathclose{} \text{)}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-indpt" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (Two fair coin flips)</strong></span> Flip two fair coins, and let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> indicate heads on the first and second flip. Each of the four outcomes has probability <span class="math inline">\(1/4\)</span>, so for example:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X_1 = 1, X_2 = 1)
+&amp;= \tfrac{1}{4} \\
+&amp;= \tfrac{1}{2} \cdot\tfrac{1}{2} \\
+&amp;= \operatorname{P}(X_1 = 1)\,\operatorname{P}(X_2 = 1)
+\end{aligned}
+\]</span></p>
+<p>and the same factorization holds for the other three pairs of values, so <span class="math inline">\(X_1 \perp\!\!\!\perp X_2\)</span> by <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a>. In contrast, <span class="math inline">\(X_1\)</span> and the total number of heads, <span class="math inline">\(X_1 + X_2\)</span>, are not independent: <span class="math inline">\(\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\)</span>, but</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X_1 = 0)\,\operatorname{P}(X_1 + X_2 = 2) &amp;= \tfrac{1}{2} \cdot\tfrac{1}{4} \\
+&amp;= \tfrac{1}{8}.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-indpt-density" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Independence with densities: the joint density factors)</strong></span> <strong>Continuous case.</strong> Continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <a href="./random-variables.html#def-pdf">densities</a> <span class="math inline">\(\operatorname{p}(X = x)\)</span> and <span class="math inline">\(\operatorname{p}(Y = y)\)</span> are <a href="#/def-indpt">statistically independent</a> if and only if the product <span class="math inline">\(\operatorname{p}(X = x)\,\operatorname{p}(Y = y)\)</span> is a <a href="./random-variables.html#def-joint-pdf">joint density</a> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p><strong>Mixed case.</strong> A discrete random variable <span class="math inline">\(X\)</span> and a continuous random variable <span class="math inline">\(Y\)</span> with density <span class="math inline">\(\operatorname{p}(Y = y)\)</span> are statistically independent if and only if the product <span class="math inline">\(\operatorname{P}(X = x)\,\operatorname{p}(Y = y)\)</span> is a <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The proof is beyond these notes’ scope: it needs measure theory that the notes do not develop, to extend a density’s integrals from intervals to general sets and to exchange the order of integration <span class="citation" data-cites="CaseBerg01 billingsley1995probability">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>; <a href="#/references" role="doc-biblioref" onclick="">Billingsley 1995</a>)</span>. The continuous case extends to <span class="math inline">\(n\)</span> random variables with a joint density of all <span class="math inline">\(n\)</span>. The statement says “a joint density” rather than “the joint density” because a density is not unique: changing it on a set of zero area (zero length, in the mixed case) changes none of its integrals.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-indpt-pmf-fails" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\(\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}\)</span> is <span class="math inline">\(\mathopen{}\left\{X = x\right\}\mathclose{}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X = x)\,\Pr(Y = y) &amp;= 0 \cdot 0 \\
+&amp;= 0,
+\end{aligned}
+\]</span></p>
+<p>so the PMF form holds. But <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X \in [0, \tfrac{1}{2}],\, Y \in [0, \tfrac{1}{2}])
+&amp;= \Pr(X \in [0, \tfrac{1}{2}])
+&amp;&amp; \text{(} Y = X \text{)} \\
+&amp;= \int_0^{1/2} 1\,dx
+&amp;&amp; \text{(the density of } X \text{ is } 1 \text{ on } [0, 1] \text{)} \\
+&amp;= \tfrac{1}{2}
+&amp;&amp; \text{(integrate)}
+\end{aligned}
+\]</span></p>
+<p>while</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) &amp;= \tfrac{1}{2} \cdot\tfrac{1}{2} \\
+&amp;= \tfrac{1}{4}.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p><span id="sec-conditional-independence"></span></p>
+<div id="def-cind" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> given a discrete random variable (or vector) <span class="math inline">\(\tilde{X}\)</span> if, for every value <span class="math inline">\(\tilde{x}\)</span> with <span class="math inline">\(\Pr(\tilde{X}= \tilde{x}) &gt; 0\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
+<p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \tilde{X}= \tilde{x}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \tilde{X}= \tilde{x})}\]</span></p>
+<p>When <span class="math inline">\(\tilde{X}\)</span> is continuous, every event <span class="math inline">\(\{\tilde{X}= \tilde{x}\}\)</span> has probability 0, so the condition is stated with densities instead: for every <span class="math inline">\(\tilde{x}\)</span> with <span class="math inline">\(\operatorname{p}(\tilde{X}= \tilde{x}) &gt; 0\)</span> and all <span class="math inline">\(y_1, \ldots, y_n\)</span>,</p>
+<p><span class="math display">\[\frac{\operatorname{p}(\tilde{X}= \tilde{x}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\tilde{X}= \tilde{x})} = \prod_{i=1}^n{\frac{\operatorname{p}(\tilde{X}= \tilde{x}, Y_i = y_i)}{\operatorname{p}(\tilde{X}= \tilde{x})}}\]</span></p>
+<p>where each <span class="math inline">\(\operatorname{p}(\cdot)\)</span> is a <a href="./random-variables.html#def-joint-pdf">joint density</a> (with probability masses in place of densities for any discrete <span class="math inline">\(Y_i\)</span>, as in a <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a>).</p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>For continuous <span class="math inline">\(\tilde{X}\)</span>, each ratio in the density form is the density of the <span class="math inline">\(Y\)</span>’s under their conditional distribution given <span class="math inline">\(\tilde{X}= \tilde{x}\)</span>, so both forms say the same thing: given <span class="math inline">\(\tilde{X}= \tilde{x}\)</span>, the <span class="math inline">\(Y_i\)</span>’s joint distribution factors.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-cind" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (Two tests of the same patient)</strong></span> Let <span class="math inline">\(X\)</span> indicate whether a patient has a disease, and let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate positive results on two tests whose errors are unrelated, so that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are conditionally independent given <span class="math inline">\(X\)</span>. Suppose <span class="math inline">\(\Pr(X = 1) = 0.1\)</span>, each test is positive with probability <span class="math inline">\(0.9\)</span> if <span class="math inline">\(X = 1\)</span> and with probability <span class="math inline">\(0.1\)</span> if <span class="math inline">\(X = 0\)</span>. Then, by the <a href="./probability-basics.html#thm-total-prob">law of total probability</a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1, Y_2 = 1)
+&amp;= (0.9)(0.9)(0.1) + (0.1)(0.1)(0.9)
+&amp;&amp; \text{(condition on } X \text{; factor given } X \text{)} \\
+&amp;= 0.081 + 0.009
+&amp;&amp; \text{(multiply)} \\
+&amp;= 0.09
+&amp;&amp; \text{(add)}
+\end{aligned}
+\]</span></p>
+<p>but</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1) &amp;= (0.9)(0.1) + (0.1)(0.9) \\
+&amp;= 0.18,
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09\)</span>: the tests are conditionally independent given <span class="math inline">\(X\)</span>, but not independent.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-indpt-not-cind" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 (Two coins, given their total)</strong></span> Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate heads on two fair coin flips, which are independent (<a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>), and let <span class="math inline">\(X = Y_1 + Y_2\)</span> be the number of heads. Given <span class="math inline">\(X = 1\)</span>, which has probability <span class="math inline">\(1/2\)</span>, exactly one coin is heads, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1, Y_2 = 1 \mid X = 1)
+&amp;= \frac{\Pr(Y_1 = 1, Y_2 = 1, X = 1)}{\Pr(X = 1)}
+&amp;&amp; \text{(definition of conditional probability)} \\
+&amp;= \frac{0}{1/2}
+&amp;&amp; \text{(two heads make } X = 2 \text{, not } 1 \text{)} \\
+&amp;= 0
+&amp;&amp; \text{(divide)}
+\end{aligned}
+\]</span></p>
+<p>but</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 = 1 \mid X = 1)
+&amp;= \frac{\Pr(Y_1 = 1, X = 1)}{\Pr(X = 1)}
+&amp;&amp; \text{(definition of conditional probability)} \\
+&amp;= \frac{\Pr(Y_1 = 1, Y_2 = 0)}{\Pr(X = 1)}
+&amp;&amp; \text{(} Y_1 = 1 \text{ and } X = 1 \text{ means } Y_2 = 0 \text{)} \\
+&amp;= \frac{1/4}{1/2}
+&amp;&amp; \text{(substitute)} \\
+&amp;= \tfrac{1}{2}
+&amp;&amp; \text{(divide)}
+\end{aligned}
+\]</span></p>
+<p>and likewise <span class="math inline">\(\Pr(Y_2 = 1 \mid X = 1) = 1/2\)</span>, so the product of the conditional probabilities is <span class="math inline">\(1/4 \ne 0\)</span>: <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent, but not conditionally independent given <span class="math inline">\(X\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="prp-cind-indpt-neither" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Neither independence nor conditional independence implies the other)</strong></span> There are random variables <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>, and <span class="math inline">\(X\)</span> such that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\(X\)</span> but not <a href="#/def-indpt">independent</a>, and there are random variables <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>, and <span class="math inline">\(X\)</span> such that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent but not conditionally independent given <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#/exm-cind" class="quarto-xref">Example&nbsp;3</a> gives the first case, and <a href="#/exm-indpt-not-cind" class="quarto-xref">Example&nbsp;4</a> gives the second.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-umbrellas-rain" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 (Wet roads, umbrellas, and rain)</strong></span> Consider Brian Hutchinson’s intuitive illustration of conditional independence <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>:</p>
+<p>Let <span class="math inline">\(w\)</span> denote wet roads, <span class="math inline">\(u\)</span> denote people carrying umbrellas, and <span class="math inline">\(r\)</span> denote rain.</p>
+<ul>
+<li><strong>Marginally, wet roads and umbrellas are not independent (<span class="math inline">\(w \not\perp u\)</span>).</strong> If you look out a window and see people holding open umbrellas, that increases the probability that the pavement outside is wet.</li>
+<li><strong>Conditionally on rain, they are independent (<span class="math inline">\(w \perp u \mid r\)</span>).</strong> Once you know with certainty whether it is currently raining, learning whether pedestrians are carrying umbrellas tells you nothing more about the state of the roads:</li>
+</ul>
+<p><span class="math display">\[\Pr(w, u \mid r) = \Pr(w \mid r)\,\Pr(u \mid r), \qquad \Pr(w \mid u, r) = \Pr(w \mid r)\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="prp-cind-own-covariate" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2 (Conditional independence when each <span class="math inline">\(Y_i\)</span> depends only on its own <span class="math inline">\(X_i\)</span>)</strong></span> Let <span class="math inline">\(\tilde{X}= (X_1, \ldots, X_n)\)</span> be a discrete random vector, and let <span class="math inline">\(Y_1, \ldots, Y_n\)</span> be <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\(\tilde{X}\)</span>. Suppose also that each <span class="math inline">\(Y_i\)</span> depends on <span class="math inline">\(\tilde{X}\)</span> only through <span class="math inline">\(X_i\)</span>: for every <span class="math inline">\(\tilde{x}= (x_1, \ldots, x_n)\)</span> with <span class="math inline">\(\Pr(\tilde{X}= \tilde{x}) &gt; 0\)</span> and every set of real numbers <span class="math inline">\(A_i\)</span>,</p>
+<p><span class="math display">\[\Pr(Y_i \in A_i \mid \tilde{X}= \tilde{x}) = \Pr(Y_i \in A_i \mid X_i = x_i)\]</span></p>
+<p>Then, for every such <span class="math inline">\(\tilde{x}\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>:</p>
+<p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \tilde{X}= \tilde{x}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Each conditional probability given <span class="math inline">\(X_i = x_i\)</span> is defined, because <span class="math inline">\(\Pr(X_i = x_i) \ge \Pr(\tilde{X}= \tilde{x}) &gt; 0\)</span>. So:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \tilde{X}= \tilde{x})
+&amp;= \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \tilde{X}= \tilde{x})}
+&amp;&amp; \text{(conditional independence given } \tilde{X}\text{)} \\
+&amp;= \prod_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}
+&amp;&amp; \text{(each } Y_i \text{ depends on } \tilde{X}\text{ only through } X_i \text{)}
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>In regression, <span class="math inline">\(\tilde{X}\)</span> is usually the full set of covariates <span class="math inline">\((X_1, \ldots, X_n)\)</span>, and a model usually also assumes, as <a href="#/prp-cind-own-covariate" class="quarto-xref">Proposition&nbsp;2</a> does, that each <span class="math inline">\(Y_i\)</span> depends on the covariates only through its own <span class="math inline">\(X_i\)</span>. That second assumption is a separate one, not part of conditional independence.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="def-ident" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>identically distributed</strong> if they all have the same <a href="./random-variables.html#def-cdf">CDF</a>:</p>
+<p><span class="math display">\[\forall i\in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-ident-pmf" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Identically distributed discrete random variables have the same PMF)</strong></span> Discrete random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <a href="#/def-ident">identically distributed</a> if and only if they all have the same <a href="./random-variables.html#def-pmf">PMF</a>: for every <span class="math inline">\(i \in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}\)</span> and every real number <span class="math inline">\(x\)</span>,</p>
+<p><span class="math display">\[\operatorname{P}(X_i = x) = \operatorname{P}(X_1 = x)\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(F_i(t) \stackrel{\text{def}}{=}\Pr(X_i \le t)\)</span> for the CDF of <span class="math inline">\(X_i\)</span>.</p>
+<p><strong>Only if: the CDF determines the PMF through its jumps.</strong> Fix <span class="math inline">\(i\)</span> and <span class="math inline">\(x\)</span>. Every number below <span class="math inline">\(x\)</span> lies in exactly one of the intervals <span class="math inline">\((-\infty, x - 1]\)</span>, <span class="math inline">\((x - 1, x - \tfrac{1}{2}]\)</span>, <span class="math inline">\((x - \tfrac{1}{2}, x - \tfrac{1}{3}]\)</span>, <span class="math inline">\(\ldots\)</span>, so the event <span class="math inline">\(\mathopen{}\left\{X_i &lt; x\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(B_1 \stackrel{\text{def}}{=}\mathopen{}\left\{X_i \le x - 1\right\}\mathclose{}\)</span> and <span class="math inline">\(B_k \stackrel{\text{def}}{=}\mathopen{}\left\{x - \tfrac{1}{k - 1} &lt; X_i \le x - \tfrac{1}{k}\right\}\mathclose{}\)</span> for <span class="math inline">\(k \ge 2\)</span>, and for each <span class="math inline">\(K\)</span>, the events <span class="math inline">\(B_1, \ldots, B_K\)</span> have union <span class="math inline">\(\mathopen{}\left\{X_i \le x - \tfrac{1}{K}\right\}\mathclose{}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(X_i &lt; x)
+&amp;= \sum_{k=1}^{\infty} \Pr(B_k)
+&amp;&amp; \text{(countable additivity)} \\
+&amp;= \lim_{K \to \infty} \sum_{k=1}^{K} \Pr(B_k)
+&amp;&amp; \text{(definition of an infinite series)} \\
+&amp;= \lim_{K \to \infty} \Pr(X_i \le x - \tfrac{1}{K})
+&amp;&amp; \text{(finite additivity)} \\
+&amp;= \lim_{K \to \infty} F_i(x - \tfrac{1}{K})
+&amp;&amp; \text{(definition of the CDF)}
+\end{aligned}
+\]</span></p>
+<p>The event <span class="math inline">\(\mathopen{}\left\{X_i \le x\right\}\mathclose{}\)</span> is the disjoint union of <span class="math inline">\(\mathopen{}\left\{X_i &lt; x\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{X_i = x\right\}\mathclose{}\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{P}(X_i = x)
+&amp;= \Pr(X_i \le x) - \Pr(X_i &lt; x)
+&amp;&amp; \text{(finite additivity)} \\
+&amp;= F_i(x) - \Pr(X_i &lt; x)
+&amp;&amp; \text{(definition of the CDF)} \\
+&amp;= F_i(x) - \lim_{K \to \infty} F_i(x - \tfrac{1}{K})
+&amp;&amp; \text{(the display above)} \\
+&amp;= F_1(x) - \lim_{K \to \infty} F_1(x - \tfrac{1}{K})
+&amp;&amp; \text{(} F_i = F_1 \text{)} \\
+&amp;= \operatorname{P}(X_1 = x)
+&amp;&amp; \text{(the same two steps, for } X_1 \text{)}
+\end{aligned}
+\]</span></p>
+<p><strong>If: the PMF determines the CDF through sums.</strong> Let <span class="math inline">\(S\)</span> be the set of values <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{P}(X_1 = u) &gt; 0\)</span>. Since the PMFs are equal, <span class="math inline">\(S\)</span> is also the set of <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{P}(X_i = u) &gt; 0\)</span>, so <span class="math inline">\(S \subseteq \mathcal{R}(X_i)\)</span> and <span class="math inline">\(S \subseteq \mathcal{R}(X_1)\)</span>. For every real <span class="math inline">\(t\)</span>, the event <span class="math inline">\(\mathopen{}\left\{X_i \le t\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(\mathopen{}\left\{X_i = u\right\}\mathclose{}\)</span> over the countably many <span class="math inline">\(u \in \mathcal{R}(X_i)\)</span> with <span class="math inline">\(u \le t\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_i(t)
+&amp;= \sum_{u \in \mathcal{R}(X_i),\, u \le t} \operatorname{P}(X_i = u)
+&amp;&amp; \text{(countable additivity)} \\
+&amp;= \sum_{u \in S,\, u \le t} \operatorname{P}(X_i = u)
+&amp;&amp; \text{(drop the terms that are } 0 \text{)} \\
+&amp;= \sum_{u \in S,\, u \le t} \operatorname{P}(X_1 = u)
+&amp;&amp; \text{(the PMFs are equal)} \\
+&amp;= \sum_{u \in \mathcal{R}(X_1),\, u \le t} \operatorname{P}(X_1 = u)
+&amp;&amp; \text{(restore the terms that are } 0 \text{)} \\
+&amp;= F_1(t)
+&amp;&amp; \text{(countable additivity)}
+\end{aligned}
+\]</span></p>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>As with independence (<a href="#/exm-indpt-pmf-fails" class="quarto-xref">Example&nbsp;2</a>), the PMF form would not work as a definition in general: every continuous random variable has <span class="math inline">\(\Pr(X_i = x) = 0\)</span> at every <span class="math inline">\(x\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-ident" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6 (Identically distributed but not independent)</strong></span> In <a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed (<a href="#/thm-ident-pmf" class="quarto-xref">Theorem&nbsp;3</a>). They are not independent: knowing one determines the other.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-cident" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function <span class="math inline">\(G(y \mid x)\)</span> of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>: for every <span class="math inline">\(i \in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}\)</span>, every <span class="math inline">\(y\)</span>, and every <span class="math inline">\(x\)</span> with <span class="math inline">\(\Pr(X_i = x) &gt; 0\)</span>,</p>
+<p><span class="math display">\[\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)\]</span></p>
+<p>When <span class="math inline">\(X_i\)</span> is continuous, the condition applies at every <span class="math inline">\(x\)</span> with <span class="math inline">\(\operatorname{p}(X_i = x) &gt; 0\)</span>, with <span class="math inline">\(\Pr(Y_i \le y \mid X_i = x)\)</span> computed from densities: the integral of <span class="math inline">\(\operatorname{p}(X_i = x, Y_i = u) / \operatorname{p}(X_i = x)\)</span> over <span class="math inline">\(u \le y\)</span> (a sum over values <span class="math inline">\(u \le y\)</span> when <span class="math inline">\(Y_i\)</span> is discrete).</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-cident" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>, with <span class="math inline">\(G(y \mid x) = 1 - \pi(x)\)</span> for <span class="math inline">\(0 \le y &lt; 1\)</span> (and <span class="math inline">\(0\)</span> for <span class="math inline">\(y &lt; 0\)</span>, <span class="math inline">\(1\)</span> for <span class="math inline">\(y \ge 1\)</span>). Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-iid" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Independent and identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>independent and identically distributed</strong> (shorthand: “<span class="math inline">\(X_i\ \operatorname{iid}\)</span>”) if they are:</p>
+<ul>
+<li><a href="#/def-indpt">statistically independent</a>, and</li>
+<li><a href="#/def-ident">identically distributed</a>.</li>
+</ul>
+</div>
+<aside class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The IID assumption is one of the most common assumptions in introductory statistics: it says a sample <span class="math inline">\(X_1, \ldots, X_n\)</span> can be treated as <span class="math inline">\(n\)</span> independent draws from a single shared distribution.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div id="exm-iid" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-ciid" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6 (Conditionally independent and identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent and identically distributed</strong> given <span class="math inline">\(X_1, \ldots, X_n\)</span> (shorthand: “<span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>” or just “<span class="math inline">\(Y_i \mid X_i\ \operatorname{iid}\)</span>”) if:</p>
+<ul>
+<li><span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\((X_1, \ldots, X_n)\)</span>,</li>
+<li>each <span class="math inline">\(Y_i\)</span> depends on <span class="math inline">\((X_1, \ldots, X_n)\)</span> only through <span class="math inline">\(X_i\)</span>, and</li>
+<li><span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <a href="#/def-cident">conditionally identically distributed</a> given <span class="math inline">\(X_1, \ldots, X_n\)</span>.</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-ciid" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 (The usual regression assumption)</strong></span> In <a href="#/exm-cident" class="quarto-xref">Example&nbsp;7</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
+</div>
+<div title="Video lecture">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Video lecture</strong></p>
+</div>
+<div class="callout-content">
+<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers independence <span class="citation" data-cites="hutchinson_wwu_ml_videos">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson, n.d.</a>)</span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="slide level2 unnumbered smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-billingsley1995probability" class="csl-entry" role="listitem">
+Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+</div>
+<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
+Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
+</div>
+<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
+Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. Western Washington University.
+</div>
+<div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
+Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.
+</div>
+</div>
+
+
+<script>
+const defaultAnchorIconFallback = "#";
+
+function getDefaultAnchorTemplate() {
+  const defaultAnchor = document.querySelector("a.anchorjs-link[data-anchorjs-icon]");
+  if (!defaultAnchor) {
+    return null;
+  }
+
+  return {
+    icon: defaultAnchor.getAttribute("data-anchorjs-icon"),
+    style: defaultAnchor.getAttribute("style")
+  };
+}
+
+function alignEquationAnchorWithDefault(anchor, template) {
+  if (!anchor) {
+    return;
+  }
+
+  anchor.classList.remove("external");
+
+  if (template && template.icon) {
+    anchor.setAttribute("data-anchorjs-icon", template.icon);
+    anchor.textContent = "";
+  } else if (!anchor.textContent) {
+    anchor.textContent = defaultAnchorIconFallback;
+  }
+
+  if (template && template.style) {
+    anchor.setAttribute("style", template.style);
+  } else {
+    anchor.removeAttribute("style");
+  }
+}
+
+function alignEquationAnchorsWithDefault() {
+  const template = getDefaultAnchorTemplate();
+  document.querySelectorAll("a.equation-anchor").forEach(function (anchor) {
+    alignEquationAnchorWithDefault(anchor, template);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const equations = document.querySelectorAll("span[id^='eq-']");
+  equations.forEach(function (equation) {
+    if (equation.querySelector(".equation-anchor")) {
+      return;
+    }
+
+    if (!equation.querySelector(".math.display")) {
+      return;
+    }
+
+    const id = equation.getAttribute("id");
+    if (!id) {
+      return;
+    }
+
+    equation.classList.add("equation-anchor-target");
+
+    const anchor = document.createElement("a");
+    anchor.className = "equation-anchor anchorjs-link";
+    anchor.href = "#" + id;
+    anchor.setAttribute("aria-label", "Permalink to this equation");
+    equation.appendChild(anchor);
+  });
+
+  alignEquationAnchorsWithDefault();
+});
+
+window.addEventListener("load", alignEquationAnchorsWithDefault);
+</script>
+
+<script>
+(function () {
+  var css = [
+    "#revealjs-html-link {",
+    "  position: fixed;",
+    "  top: 8px;",
+    "  right: 8px;",
+    "  z-index: 31;",
+    "  font-size: 0.55em;",
+    "  line-height: 1;",
+    "}",
+    "#revealjs-html-link a {",
+    "  color: var(--qwt-muted, rgba(0, 0, 0, 0.5));",
+    "  text-decoration: none;",
+    "  border: 1px solid var(--qwt-border, rgba(0, 0, 0, 0.2));",
+    "  padding: 4px 8px;",
+    "  border-radius: 4px;",
+    "  background: var(--qwt-chip-bg, rgba(255, 255, 255, 0.8));",
+    "  transition: color 0.15s, background 0.15s, border-color 0.15s;",
+    "}",
+    "#revealjs-html-link a:hover {",
+    "  color: var(--qwt-fg, rgba(0, 0, 0, 0.9));",
+    "  background: var(--qwt-chip-bg-hover, rgba(255, 255, 255, 0.98));",
+    "  border-color: var(--qwt-fg, rgba(0, 0, 0, 0.4));",
+    "}"
+  ].join("\n");
+
+  function getHtmlBase() {
+    var url = window.location.href.split("#")[0];
+    return url.replace(/-slides\.html$/, ".html");
+  }
+
+  function getCurrentSectionId() {
+    if (typeof Reveal === "undefined" || !Reveal.getCurrentSlide) {
+      return null;
+    }
+    var slide = Reveal.getCurrentSlide();
+    if (!slide) {
+      return null;
+    }
+    // If the current slide itself has an id, use it
+    if (slide.id) {
+      return slide.id;
+    }
+    // Walk backwards through sibling sections to find the nearest one with an id
+    var sibling = slide.previousElementSibling;
+    while (sibling) {
+      if (sibling.tagName === "SECTION" && sibling.id) {
+        return sibling.id;
+      }
+      sibling = sibling.previousElementSibling;
+    }
+    // Fall back to the first section[id] inside the parent container
+    var parent = slide.parentElement;
+    if (parent && parent.tagName === "SECTION") {
+      var firstNamed = parent.querySelector("section[id]");
+      if (firstNamed) {
+        return firstNamed.id;
+      }
+    }
+    return null;
+  }
+
+  function updateHtmlLink() {
+    var anchor = document.getElementById("revealjs-html-anchor");
+    if (!anchor) {
+      return;
+    }
+    var sectionId = getCurrentSectionId();
+    anchor.href = getHtmlBase() + (sectionId ? "#" + sectionId : "");
+  }
+
+  function initRevealJsHtmlLink() {
+    var htmlBase = getHtmlBase();
+
+    // Don't add the link if the URL doesn't follow the -slides.html convention
+    if (htmlBase === window.location.href.split("#")[0]) {
+      return;
+    }
+
+    // Inject styles
+    var styleElement = document.createElement("style");
+    styleElement.textContent = css;
+    document.head.appendChild(styleElement);
+
+    // Create the link element and append it directly to body so it stays
+    // visible across all slides regardless of Reveal.js section visibility
+    var div = document.createElement("div");
+    div.id = "revealjs-html-link";
+    var anchor = document.createElement("a");
+    anchor.id = "revealjs-html-anchor";
+    anchor.href = htmlBase;
+    anchor.target = "_blank";
+    anchor.title = "View this section in the HTML notes";
+    anchor.setAttribute("aria-label", "View this section in the HTML notes");
+    anchor.innerHTML = "&#128196;&nbsp;Webpage version";
+    div.appendChild(anchor);
+    document.body.appendChild(div);
+
+    // Register Reveal.js slide-change listener to keep the link updated
+    if (typeof Reveal !== "undefined") {
+      Reveal.on("ready", updateHtmlLink);
+      Reveal.on("slidechanged", updateHtmlLink);
+    }
+
+    updateHtmlLink();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initRevealJsHtmlLink);
+  } else {
+    initRevealJsHtmlLink();
+  }
+})();
+</script>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/morrison-lab\.github\.io\/pds\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
