@@ -86,6 +86,12 @@ Several universities offer open-access courses with comparable or complementary 
 - Morrison Lab's [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
   which applies this material to regression and survival analysis
 
+### Video channels {.unnumbered}
+
+The machine learning course notes keep a curated list of
+[online video channels](https://morrison-lab.github.io/lds/chapters/channels.html),
+with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
+
 ## References {.unnumbered}
 
 ::: {#refs}
