@@ -767,9 +767,9 @@ and @cor-var-sum-indpt is the case where that term is 0.
 For a $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$
 with $\E{X_i^2} < \infty$ for every $i$,
 $\Varf{\vX}$ is
-[symmetric](https://morrison-lab.github.io/mds/linear-algebra.html#def-symmetric-matrix)
+[symmetric](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix)
 and
-[positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-semidefinite):
+[positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite):
 for every $p \times 1$ vector of constants $\va$,
 
 $$\tp{\va} \Varf{\vX} \va \ge 0$$
@@ -935,8 +935,8 @@ $$
 $$
 
 so $\Varf{\vX}$ is positive semidefinite
-but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra.html#def-positive-definite)
-(compare [this example](https://morrison-lab.github.io/mds/linear-algebra.html#exm-positive-semidefinite)).
+but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
+(compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)).
 If $X_1$ is continuous,
 $\vX$ has no [joint density](random-variables.qmd#thm-no-joint-density-diagonal).
 
@@ -955,7 +955,7 @@ with:
 - $X_i$ and $X_j$ [independent](independence.qmd#def-indpt) for every $i \neq j$.
 
 Then $\Varf{\vX}$ is
-[diagonal](https://morrison-lab.github.io/mds/linear-algebra.html#def-diagonal-matrix),
+[diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix),
 with diagonal elements $\Var{X_1}, \ldots, \Var{X_p}$.
 
 :::
