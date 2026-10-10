@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-09 23:52:29 (PDT)
+Last modified: 2026-10-10 00:00:40 (PDT)
 
 ## Welcome
 
@@ -51,6 +51,10 @@ Several universities offer open-access courses with comparable or complementary 
 - James et al. ([2021](#ref-james2021islr2e))
 - Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross ([2021](#ref-dembo-notes)), Stanford MATH 136 / STAT 219)
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
+
+### Video channels
+
+The DATA 571 (Machine Learning) course notes keep a curated list of [online video channels](https://morrison-lab.github.io/lds/chapters/channels.html), with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
 
 ## References
 
