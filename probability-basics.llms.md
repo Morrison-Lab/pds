@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 00:43:48 (PDT)
+Last modified: 2026-10-12 16:25:27 (PDT)
 
 ## 1 Defining probabilities
 
@@ -211,11 +211,40 @@ Last modified: 2026-10-12 00:43:48 (PDT)
 >
 > **Example 8 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi= 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
 
+> **NOTE:**
+>
+> **Definition 8 (Choosing at random)** Let \\S\\ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) \\\mu\\ such that \\0 \< \mu(S) \< \infty\\. To **choose an element of \\S\\ at random** is to run a random experiment whose [sample space](#def-sample-space) is \\S\\ and whose [probability measure](#def-probability) is the [uniform distribution](random-variables.llms.md#def-uniform-set) on \\S\\.
+
+> **NOTE:**
+>
+> **Example 9 (Choosing at random from a finite set and from an interval)** For a finite set \\S\\, let \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#exm-measure). Then \\\Pr(A) = \mathopen{}\left\|A\right\|\mathclose{} / \mathopen{}\left\|S\right\|\mathclose{}\\, so every element of \\S\\ has the same probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\.
+>
+> For the interval \\S = \[0, 1\]\\, let \\\mu(A)\\ be the length of \\A\\. Then \\\Pr(A)\\ is the length of \\A\\, so the probability that the chosen number lies in \\\[0.2, 0.5\]\\ is \\0.3\\. The chosen number has the [\\\text{Uniform}(0, 1)\\ distribution](https://morrison-lab.github.io/pds/random-variables.html#def-uniform).
+>
+> The integers have infinite counting measure, so they have no choice at random in this sense.
+
+> **NOTE:**
+>
+> **Example 10 (Choosing a car at random from the Auto data)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning* and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv).
+>
+> Let \\S\\ be the set of car models in the data. Choosing a car at random from \\S\\ ([Definition 8](#def-random-choice)), with the counting measure, gives each car probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\, so the probability that the car has four cylinders is the fraction of cars with four cylinders:
+>
+> ``` r
+> # read the local copy of the Auto data (one row per car model):
+> auto <- read.csv("data/auto.csv")
+>
+> # the event "four cylinders" is the set of rows where cylinders == 4;
+> # the mean of the logical vector is |A| / |S|, the probability in
+> # the definition of choosing at random:
+> mean(auto$cylinders == 4)
+> #> [1] 0.5076531
+> ```
+
 ## 2 Conditional probability
 
 > **NOTE:**
 >
-> **Definition 8 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
+> **Definition 9 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
 
@@ -225,7 +254,7 @@ Last modified: 2026-10-12 00:43:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Rolling a six, given an even roll)** For a fair die ([Example 7](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
+> **Example 11 (Rolling a six, given an even roll)** For a fair die ([Example 7](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{1/6}{3/6} && \text{(substitute the probabilities)} \\ &= \frac{1}{3} && \text{(simplify)} \end{aligned} \\
 
@@ -237,13 +266,13 @@ Last modified: 2026-10-12 00:43:48 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Rearranging [Definition 8](#def-conditional-prob):
+> *Proof*. Rearranging [Definition 9](#def-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ \Pr(A \cap B) &= \Pr(A \mid B) \cdot\Pr(B) && \text{(multiply both sides by } \Pr(B) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 10 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
+> **Example 12 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
 > Then, by [Theorem 5](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
@@ -269,13 +298,13 @@ Last modified: 2026-10-12 00:43:48 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 8](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
+> *Proof*. By [Definition 9](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(B \cap A)}{\Pr(B)} && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\ &= \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} && \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 11 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 13 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let \\D\\ be the event “person has the disease” and \\+\\ be the event “test is positive”. Then:
 >
@@ -295,13 +324,13 @@ Last modified: 2026-10-12 00:43:48 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Turn a conditional around)** [Definition 8](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
+> **Exercise 1 (Turn a conditional around)** [Definition 9](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
 >
 > Your result should express \\\Pr(A \mid B)\\ using \\\Pr(B \mid A)\\, \\\Pr(A)\\ and \\\Pr(B)\\, and none of them jointly.
 
 > **NOTE:**
 >
-> *Solution 1*. Multiplying [Definition 8](#def-conditional-prob) through by its denominator, in each direction,
+> *Solution 1*. Multiplying [Definition 9](#def-conditional-prob) through by its denominator, in each direction,
 >
 > \\\Pr(A \cap B) = \Pr(A \mid B)\\\Pr(B), \qquad \Pr(A \cap B) = \Pr(B \mid A)\\\Pr(A)\\
 >
