@@ -121,13 +121,30 @@ See also
 
 {{< slidebreak >}}
 
-:::{#def-uniform}
-#### Uniform distribution
+:::{#def-uniform-set}
+#### Uniform distribution on a set
 
-A random variable $X$ has the **uniform distribution** on an interval $[\lowend, \highend]$,
+Let $S$ be a set with a
+[measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\measure$
+such that $0 < \measure(S) < \infty$.
+The **uniform distribution** on $S$ is the
+[probability measure](probability-basics.qmd#def-probability)
+
+$$\Pr(A) \eqdef \frac{\measure(A)}{\measure(S)}, \quad A \subseteq S.$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-uniform}
+#### Uniform distribution on an interval
+
+The **uniform distribution** on an interval $[\lowend, \highend]$ (@def-uniform-set
+with $\measure$ the length),
 with $\lowend < \highend$,
+is the distribution of a random variable $X$,
 written $X \sim \text{Uniform}(\lowend, \highend)$,
-if $X$ is continuous with [density](#def-pdf):
+that is continuous with [density](#def-pdf):
 
 $$
 f(x) \eqdef \begin{cases}

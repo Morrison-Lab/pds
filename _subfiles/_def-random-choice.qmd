@@ -1,0 +1,11 @@
+:::{#def-random-choice}
+#### Choosing at random
+
+Let $S$ be a set with a
+[measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\measure$
+such that $0 < \measure(S) < \infty$.
+To **choose an element of $S$ at random** is to run a
+random experiment whose [sample space](#def-sample-space) is $S$
+and whose [probability measure](#def-probability) is the
+[uniform distribution](random-variables.qmd#def-uniform-set) on $S$.
+:::
