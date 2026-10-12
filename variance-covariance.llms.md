@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-10 23:46:45 (PDT)
+Last modified: 2026-10-12 00:43:48 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -48,7 +48,7 @@ Last modified: 2026-10-10 23:46:45 (PDT)
 >
 > *Remark*. Other sources often call this quantity an **error** or **noise term**. In regression settings, the reference mean is often conditional on covariates: \\e(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}\\.
 >
-> These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\e(\cdot)\\ for these model/data deviations, and reserve \\\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error)).
+> These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\e(\cdot)\\ for these model/data deviations, and reserve \\\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
 >
 > See:
 >
