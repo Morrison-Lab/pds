@@ -6,7 +6,8 @@ Let $S$ be a set with a
 such that $0 < \measure(S) < \infty$.
 To **choose an element of $S$ at random** is to run a
 random experiment whose [sample space](#def-sample-space) is $S$
-and whose [probability measure](#def-probability) is
+and whose [probability measure](#def-probability) is the
+**uniform distribution** on $S$:
 
 $$\Pr(A) \eqdef \frac{\measure(A)}{\measure(S)}.$$
 :::

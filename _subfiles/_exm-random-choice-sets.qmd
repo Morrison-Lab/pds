@@ -9,6 +9,8 @@ so every element of $S$ has the same probability $1/\abs{S}$.
 For the interval $S = [0, 1]$, let $\measure(A)$ be the length of $A$.
 Then $\Pr(A)$ is the length of $A$,
 so the probability that the chosen number lies in $[0.2, 0.5]$ is $0.3$.
+The chosen number has the
+[$\text{Uniform}(0, 1)$ distribution](https://morrison-lab.github.io/pds/random-variables.html#def-uniform).
 
 The integers have infinite counting measure,
 so they have no choice at random in this sense.
