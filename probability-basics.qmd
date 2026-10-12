@@ -84,6 +84,12 @@ the chain rule of probability, and Bayes' rule [@hutchinson_wwu_ml_videos].
 The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 :::
 
+::: {.callout-tip title="Another explanation"}
+The University of Washington's [CSE 312](https://courses.cs.washington.edu/courses/cse312/20su/) materials and videos
+by Alex Tsun teach probability and statistics for computing,
+and cover counting, conditional probability and Bayes' rule from a computer science viewpoint.
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}
