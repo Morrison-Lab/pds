@@ -59,7 +59,7 @@ The Morrison Lab's regression notes use "residual"
 for deviations from fitted values,
 write $\devn(\cdot)$ for these model/data deviations,
 and reserve $\erf{\cdot}$ for estimator-to-estimand deviations
-(see [Estimation](https://morrison-lab.github.io/rme/chapters/estimation.html#def-estimation-error)).
+(see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
 
 See:
 
