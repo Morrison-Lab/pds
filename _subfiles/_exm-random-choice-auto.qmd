@@ -12,7 +12,8 @@ and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
 This site has a copy at [`data/auto.csv`](data/auto.csv).
 
 Let $S$ be the set of car models in the data.
-Choosing a car at random from $S$ (@def-random-choice) gives each car
+Choosing a car at random from $S$ (@def-random-choice),
+with the counting measure, gives each car
 probability $1/\abs{S}$,
 so the probability that the car has four cylinders
 is the fraction of cars with four cylinders:

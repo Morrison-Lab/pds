@@ -1,0 +1,15 @@
+:::{#exm-random-choice-sets}
+#### Choosing at random from a finite set and from an interval
+
+For a finite set $S$, let $\measure(A) = \abs{A}$ be the
+[counting measure](https://morrison-lab.github.io/mds/measures.html#exm-measure).
+Then $\Pr(A) = \abs{A} / \abs{S}$,
+so every element of $S$ has the same probability $1/\abs{S}$.
+
+For the interval $S = [0, 1]$, let $\measure(A)$ be the length of $A$.
+Then $\Pr(A)$ is the length of $A$,
+so the probability that the chosen number lies in $[0.2, 0.5]$ is $0.3$.
+
+The integers have infinite counting measure,
+so they have no choice at random in this sense.
+:::

@@ -32,6 +32,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-random-choice-sets.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exm-random-choice-auto.qmd >}}
 
 ## Conditional probability
