@@ -1,0 +1,12 @@
+:::{#def-random-choice}
+#### Choosing at random
+
+To **choose an element at random** from a finite set $S$ is to run a
+random experiment whose [sample space](#def-sample-space) is $S$
+and whose [probability measure](#def-probability) gives every element
+the same probability:
+
+$$\Pr(A) \eqdef \frac{\abs{A}}{\abs{S}}, \quad A \subseteq S,$$
+
+where $\abs{A}$ is the number of elements of $A$.
+:::
