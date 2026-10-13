@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 15:27:43 (PDT)
+Last modified: 2026-10-13 16:32:42 (PDT)
 
 ## Welcome
 
@@ -51,6 +51,8 @@ Several universities offer open-access courses with comparable or complementary 
 - Hastie et al. ([2009](#ref-hastie2009elements))
 - James et al. ([2021](#ref-james2021islr2e))
 - Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross ([2021](#ref-dembo-notes)), Stanford MATH 136 / STAT 219)
+- Amir Dembo, [*Probability Theory*](https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf) lecture notes (Stanford STAT 310 / MATH 230, the measure-theoretic sequel to this material; used in STATS 310B)
+- John Duchi, [*Lecture Notes on Statistics and Information Theory*](https://web.stanford.edu/class/stats311/) (Stanford STATS 311), which develops entropy and divergences beyond the definitions here
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
 
 ### Video channels
