@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 14:27:07 (PDT)
+Last modified: 2026-10-13 14:34:30 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -205,6 +205,93 @@ Last modified: 2026-10-13 14:27:07 (PDT)
 > **NOTE:**
 >
 > 5MinuteAI explains [limit theorems](https://www.youtube.com/watch?v=6sQv1o-ttCw) and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw), following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
+
+## 2 Tail bounds
+
+> **NOTE:**
+>
+> **Theorem 2 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \< \infty\\. Then for every \\a \> 0\\:
+>
+> \\ \Pr\mathopen{}\left(X \ge a\right)\mathclose{} \le \frac{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}{a} \\
+
+> **NOTE:**
+>
+> *Proof*. Because \\X \ge 0\\, every outcome satisfies \\X \ge a \cdot \mathbb{1}\_{\mathopen{}\left\\X \ge a\right\\\mathclose{}}\\: when \\X \ge a\\ the right side is \\a \le X\\, and otherwise it is \\0 \le X\\. The expectation of a nonnegative random variable is nonnegative, so by [linearity of expectation](expectation.llms.md#thm-linearity-expectation), and because the expectation of an indicator is the probability of its event,
+>
+> \\ \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - a \cdot \Pr\mathopen{}\left(X \ge a\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[X - a \cdot \mathbb{1}\_{\mathopen{}\left\\X \ge a\right\\\mathclose{}}\right\]\mathclose{} \ge 0 \\
+>
+> and dividing by \\a \> 0\\ gives the claim.
+
+> **NOTE:**
+>
+> **Theorem 3 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\:
+>
+> \\ \Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{} \le \frac{1}{k^2} \\
+
+> **NOTE:**
+>
+> *Proof*. The random variable \\(X - \mu)^2\\ is nonnegative, and its expectation is \\\sigma^2\\. Because \\\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\\ exactly when \\(X - \mu)^2 \ge k^2\sigma^2\\, [Theorem 2](#thm-markov) gives
+>
+> \\ \Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{} = \Pr\mathopen{}\left((X - \mu)^2 \ge k^2\sigma^2\right)\mathclose{} \le \frac{\sigma^2}{k^2\sigma^2} = \frac{1}{k^2} \\
+
+> **NOTE:**
+>
+> *Remark*. [Theorem 3](#thm-chebyshev) needs only a mean and a variance, not a distribution, so it holds for every distribution that has them. That generality makes it loose: for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at \\k = 2\\ is 25%.
+
+> **NOTE:**
+>
+> **Example 3 (How loose is Chebyshev’s bound for car horsepower?)** Take the 392 horsepower values in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and draw one car at random. For each \\k\\, the code below counts the share of cars whose horsepower is at least \\k\\ standard deviations from the mean, and sets it beside the bound \\1/k^2\\ from [Theorem 3](#thm-chebyshev).
+>
+> ``` r
+> hp <- read.csv("data/auto.csv")$horsepower
+> mu <- mean(hp)
+> sigma <- sqrt(mean((hp - mu)^2))
+>
+> k <- c(1.5, 2, 3)
+> share_beyond <- sapply(k, function(kk) mean(abs(hp - mu) >= kk * sigma))
+> data.frame(k = k, share_of_cars = share_beyond, chebyshev_bound = 1 / k^2)
+> ```
+>
+> The bound holds at every \\k\\, as [Theorem 3](#thm-chebyshev) guarantees. At \\k = 2\\ the share of cars is 4.3%, against a bound of 25%, and at \\k = 3\\ it is 1.3% against 11.1%. The bound is loose because it must hold for every distribution with this mean and variance.
+
+> **NOTE:**
+>
+> **Exercise 1 (How many cars to estimate average fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
+>
+> 1.  Use [Corollary 1](#cor-sum-iid-moments) and [Theorem 3](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
+>
+>     \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{} \le \frac{\sigma^2}{n\epsilon^2} \\
+>
+> 2.  Compute \\\sigma^2\\ for the `mpg` column of [`data/auto.csv`](data/auto.csv), treating the 392 cars as the whole population. Find the smallest \\n\\ for which the bound in (a) guarantees \\\Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge 1\right)\mathclose{} \le 0.05\\.
+>
+> 3.  Simulate 10,000 samples of that size drawn with replacement, and count how many sample means miss \\\mu\\ by 1 or more. Why is the count so far below the 5% the bound allows?
+
+> **NOTE:**
+>
+> *Solution 1*.
+>
+> 1.  By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\ for \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 3](#thm-chebyshev) to \\\bar X_n\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
+>
+> 2.  Setting \\\sigma^2/(n \cdot 1^2) \le 0.05\\ gives \\n \ge 20\sigma^2\\.
+>
+> 3.  See the code below.
+>
+> ``` r
+> mpg <- read.csv("data/auto.csv")$mpg
+> mu <- mean(mpg)
+> sigma2 <- mean((mpg - mu)^2)
+> n_min <- ceiling(20 * sigma2)
+>
+> set.seed(571)
+> xbar <- replicate(10000, mean(sample(mpg, n_min, replace = TRUE)))
+> misses <- sum(abs(xbar - mu) >= 1)
+> normal_approx <- 2 * pnorm(-1 / sqrt(sigma2 / n_min))
+> c(variance = sigma2, n = n_min, misses = misses, normal_approx = normal_approx)
+> #>      variance             n        misses normal_approx 
+> #>  6.076274e+01  1.216000e+03  0.000000e+00  7.694705e-06
+> ```
+>
+> The population variance of `mpg` is 60.8, so \\n = 1216\\ cars suffice. Out of 10,000 samples of that size, 0 sample means missed \\\mu\\ by 1 or more, against the 5% (500 samples) the bound allows. The bound is loose because the sample mean of this many cars is nearly normal ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}; Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
 
 ## References
 
