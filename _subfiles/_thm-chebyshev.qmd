@@ -1,0 +1,38 @@
+{{< slidebreak >}}
+
+:::{#thm-chebyshev}
+#### Chebyshev's inequality
+
+Let $X$ be a random variable with mean $\mean$ and finite variance $\varpar > 0$.
+Then for every $k > 0$:
+
+$$
+\Prf{\abs{X - \mean} \ge k\sdpar} \le \frac{1}{k^2}
+$$
+
+:::
+
+::: proof
+
+The random variable $(X - \mean)^2$ is nonnegative,
+and its expectation is $\varpar$.
+Because $\abs{X - \mean} \ge k\sdpar$ exactly when $(X - \mean)^2 \ge k^2\varpar$,
+@thm-markov gives
+
+$$
+\Prf{\abs{X - \mean} \ge k\sdpar}
+= \Prf{(X - \mean)^2 \ge k^2\varpar}
+\le \frac{\varpar}{k^2\varpar}
+= \frac{1}{k^2}
+$$
+
+:::
+
+::: {.remark .notes}
+
+@thm-chebyshev needs only a mean and a variance, not a distribution,
+so it holds for every distribution that has them.
+That generality makes it loose:
+for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at $k = 2$ is 25%.
+
+:::

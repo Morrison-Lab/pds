@@ -1,0 +1,44 @@
+{{< slidebreak >}}
+
+:::{#exm-chebyshev-auto}
+#### How loose is Chebyshev's bound for car horsepower?
+
+Take the 392 horsepower values in the Auto data
+described in @exm-clt-auto as the whole population,
+and draw one car at random.
+For each $k$, the code below counts the share of cars whose horsepower
+is at least $k$ standard deviations from the mean,
+and sets it beside the bound $1/k^2$ from @thm-chebyshev.
+
+```{r}
+#| label: chebyshev-auto
+#| code-fold: false
+hp <- read.csv("data/auto.csv")$horsepower
+mu <- mean(hp)
+sigma <- sqrt(mean((hp - mu)^2))
+
+k <- c(1.5, 2, 3)
+share_beyond <- sapply(k, function(kk) mean(abs(hp - mu) >= kk * sigma))
+data.frame(k = k, share_of_cars = share_beyond, chebyshev_bound = 1 / k^2)
+```
+
+```{r}
+#| include: false
+# The claims the prose makes: the bound holds at every k, and it is
+# at least twice the observed share at k = 2 and k = 3.
+stopifnot(
+  all(share_beyond <= 1 / k^2),
+  share_beyond[2] * 2 <= 1 / k[2]^2,
+  share_beyond[3] * 2 <= 1 / k[3]^2
+)
+```
+
+The bound holds at every $k$, as @thm-chebyshev guarantees.
+At $k = 2$ the share of cars is
+`{r} round(100 * share_beyond[2], 1)`%,
+against a bound of `{r} round(100 / k[2]^2)`%,
+and at $k = 3$ it is `{r} round(100 * share_beyond[3], 1)`%
+against `{r} round(100 / k[3]^2, 1)`%.
+The bound is loose because it must hold for every distribution with this mean and variance.
+
+:::
