@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 20:22:04 (PDT)
+Last modified: 2026-10-12 20:27:50 (PDT)
 
 > **NOTE:**
 >
@@ -222,7 +222,13 @@ Last modified: 2026-10-12 20:22:04 (PDT)
 >
 > Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers independence ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
+> **NOTE:**
+>
+> 5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes, following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
+
 ## References
+
+5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 

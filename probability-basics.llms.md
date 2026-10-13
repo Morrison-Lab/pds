@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 20:22:04 (PDT)
+Last modified: 2026-10-12 20:27:50 (PDT)
 
 ## 1 Defining probabilities
 
@@ -478,7 +478,17 @@ Figure 1: The chance of disease after a positive test, as counts out of 100,000
 >
 > Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
+> **TIP:**
+>
+> The University of Washington’s [CSE 312](https://courses.cs.washington.edu/courses/cse312/20su/) materials and videos by Alex Tsun teach probability and statistics for computing, and cover counting, conditional probability and Bayes’ rule from a computer science viewpoint.
+
+> **NOTE:**
+>
+> 5MinuteAI’s five-minute videos follow the same course ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
+
 ## References
+
+5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 
