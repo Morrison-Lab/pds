@@ -29,3 +29,13 @@ $$
 and dividing by $a > 0$ gives the claim.
 
 :::
+
+::: {.remark .notes}
+
+The inequality carries Markov's name by convention.
+Chebyshev's inequality, which follows from it,
+is older [@bienayme1853; @tchebichef1867];
+see [@seneta2013] for the history of the attribution.
+A modern treatment is in [@blitzstein2019introduction].
+
+:::
