@@ -65,15 +65,20 @@ We speak of a "random variable" and a "random event" for exactly this kind of si
 
 A **stochastic process** is a collection of random variables indexed by a set,
 most often a set of times or locations.
+In probability theory,
+"stochastic process" and "random process" are synonyms
+[@Adler2009random; @Stirzaker2005probability; @Kallenberg2002foundations].
+
+:::
+
+::: {#rem-stochastic-process-word}
+#### The word "stochastic"
 
 The word "stochastic" comes from the Greek $\sigma\tau\acute{o}\chi o\varsigma$ (_st&oacute;khos_),
 meaning "aim" or "guess"
 (see [etymology](https://www.etymonline.com/search?q=stochastic)).
 The term is almost always used for processes or systems evolving in time or space under uncertain rules,
 rather than for a single variable or event.
-In probability theory,
-"stochastic process" and "random process" are synonyms
-[@Adler2009random; @Stirzaker2005probability; @Kallenberg2002foundations].
 
 :::
 

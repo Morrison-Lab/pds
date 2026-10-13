@@ -152,6 +152,11 @@ that satisfies:
 - The events $A_1, A_2, \ldots$ are [mutually exclusive](#def-mutually-exclusive).
 - Their union is $A$: $\bigcup_{i} A_i = A$.
 
+:::
+
+::: {#rem-partition-sample-space}
+#### A partition of the sample space
+
 A partition of the [sample space](#def-sample-space) is the case $A = \samplespace$.
 
 :::
