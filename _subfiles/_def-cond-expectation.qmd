@@ -131,8 +131,12 @@ tibble::tibble(
 
 Modeling $(X, Y)$ as bivariate normal
 with parameters set equal to these values computed from the data
-(they stand in for the parameters here),
-the joint density is
+(they stand in for the parameters here):
+$\mean_X$ and $\mean_Y$ are the means of $X$ and $Y$,
+$\varpar_X$ and $\varpar_Y$ their [variances](variance-covariance.qmd#def-variance),
+and $\corpar$ their [correlation](variance-covariance.qmd#def-correlation)
+(the next page defines the last two).
+The joint density is
 (a standard result; e.g. @CaseBerg01):
 
 $$
