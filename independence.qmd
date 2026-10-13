@@ -24,6 +24,11 @@ covers independence [@hutchinson_wwu_ml_videos].
 The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 :::
 
+::: {.callout-tip title="Another explanation"}
+5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes,
+following the University of Washington's CSE 312 [@fiveminuteai_probstat].
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}

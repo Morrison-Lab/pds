@@ -25,6 +25,12 @@ reticulate::py_require(c("numpy", "pandas"))
 
 {{< include pds/_subfiles/_exm-clt-auto.qmd >}}
 
+::: {.callout-tip title="Another explanation"}
+5MinuteAI explains [limit theorems](https://www.youtube.com/watch?v=6sQv1o-ttCw)
+and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw),
+following the University of Washington's CSE 312 [@fiveminuteai_probstat].
+:::
+
 ## References {.unnumbered}
 
 ::: {#refs}
