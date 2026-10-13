@@ -31,6 +31,22 @@ and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw),
 following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
+## Tail bounds {#sec-tail-bounds}
+
+{{< include pds/_subfiles/_thm-markov.qmd >}}
+
+{{< include pds/_subfiles/_thm-chebyshev.qmd >}}
+
+{{< include pds/_subfiles/_exm-chebyshev-auto.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-chebyshev-sample-size.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-chebyshev-sample-size.qmd >}}
+
 ## References {.unnumbered}
 
 ::: {#refs}

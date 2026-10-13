@@ -1,0 +1,31 @@
+{{< slidebreak >}}
+
+:::{#thm-markov}
+#### Markov's inequality
+
+Let $X$ be a random variable with $X \ge 0$ and $\E{X} < \infty$.
+Then for every $a > 0$:
+
+$$
+\Prf{X \ge a} \le \frac{\E{X}}{a}
+$$
+
+:::
+
+::: proof
+
+Because $X \ge 0$, every outcome satisfies $X \ge a \cdot \indic{\set{X \ge a}}$:
+when $X \ge a$ the right side is $a \le X$, and otherwise it is $0 \le X$.
+The expectation of a nonnegative random variable is nonnegative,
+so by [linearity of expectation](expectation.qmd#thm-linearity-expectation),
+and because the expectation of an indicator is the probability of its event,
+
+$$
+\E{X} - a \cdot \Prf{X \ge a}
+= \E{X - a \cdot \indic{\set{X \ge a}}}
+\ge 0
+$$
+
+and dividing by $a > 0$ gives the claim.
+
+:::
