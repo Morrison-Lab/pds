@@ -34,8 +34,11 @@ n_vaccine <- sum(vaccine_tab)
 n_placebo <- vaccine_tab["placebo", ]
 ```
 
-The [joint PMF](random-variables.qmd#def-joint-pmf) of $(X, Y)$ is the table of frequencies divided by the total
-$n = `r n_vaccine`$ trial participants.
+Choose one of the $n = `r n_vaccine`$ trial participants at random
+(a [random choice](probability-basics.qmd#def-random-choice)),
+and let $(X, Y)$ be that participant's treatment and response.
+The [joint PMF](random-variables.qmd#def-joint-pmf) of $(X, Y)$ is then the table of frequencies divided by the total
+$n$ trial participants.
 By the [marginal PMF theorem](random-variables.qmd#thm-marginal-pmf),
 the [marginal](random-variables.qmd#def-marginal) probability $\P(X = \text{placebo})$ is:
 
@@ -121,13 +124,14 @@ cond_mean <- intercept + beta * x0
 cond_sd <- sigma_y * sqrt(1 - rho^2)
 tibble::tibble(
   parameter = c("mu_x", "sigma_x", "mu_y", "sigma_y", "rho"),
-  estimate = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
+  value = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
 ) |>
   pander::pander()
 ```
 
 Modeling $(X, Y)$ as bivariate normal
-with parameters set equal to these sample moments,
+with parameters set equal to these values computed from the data
+(they stand in for the parameters here),
 the joint density is
 (a standard result; e.g. @CaseBerg01):
 

@@ -112,7 +112,7 @@ removes the units and gives a correlation of
 `{r} round(cov_xy / (sd_x * sd_y), 2)`,
 which lies between $-1$ and $1$ as @thm-cor-bounds requires.
 The same value comes from R's built-in `cor(x, y)`,
-because the sample correlation divides the covariance and both standard
+because the correlation computed from the data divides the covariance and both standard
 deviations by the same count, which cancels.
 
 :::
