@@ -10,6 +10,14 @@ $$\Pr(\samplespace) = 1$$
 
 :::
 
+::: {.remark .notes}
+
+Other sources call a probability measure a **probability function**
+[@CaseBerg01, Def. 1.2.4].
+The two names mean the same thing.
+
+:::
+
 {{< slidebreak >}}
 
 :::{#exm-probability}

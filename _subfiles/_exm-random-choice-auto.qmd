@@ -1,16 +1,8 @@
 :::{#exm-random-choice-auto}
 #### Choosing a car at random from the Auto data
 
-The Auto data record the number of engine cylinders and the fuel economy
-(miles per gallon) of
-`{r} nrow(read.csv("data/auto.csv"))` car models
-sold between 1970 and 1982.
-They come from the StatLib library at Carnegie Mellon University
-and ship with the book *An Introduction to Statistical Learning*
-and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
-(`ISLR2::Auto`).
-This site has a copy at [`data/auto.csv`](data/auto.csv).
-
+The Auto data of @exm-random-experiment have
+`{r} nrow(read.csv("data/auto.csv"))` car models.
 Let $S$ be the set of car models in the data.
 Choosing a car at random from $S$ (@def-random-choice),
 with the counting measure, gives each car

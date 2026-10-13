@@ -18,7 +18,15 @@ format:
 
 []{#sec-prob-axioms}
 
-<!-- No slidebreak here: the heading shares its slide with the def-sample-space div. -->
+<!-- No slidebreak here: the heading shares its slide with the def-random-experiment div. -->
+
+{{< include pds/_subfiles/_def-random-experiment.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-random-experiment.qmd >}}
+
+{{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-sample-space.qmd >}}
 
