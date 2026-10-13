@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 22:10:18 (PDT)
+Last modified: 2026-10-13 00:51:13 (PDT)
 
 > **NOTE:**
 >
@@ -282,7 +282,7 @@ Last modified: 2026-10-12 22:10:18 (PDT)
 > |  sigma_y  | 282.1  |
 > |    rho    | 0.7443 |
 >
-> Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here), the joint density is (a standard result; e.g. Casella and Berger ([2002](#ref-CaseBerg01))):
+> Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here): \\\mu_X\\ and \\\mu_Y\\ are the means of \\X\\ and \\Y\\, \\\sigma^2_X\\ and \\\sigma^2_Y\\ their [variances](variance-covariance.llms.md#def-variance), and \\\rho\\ their [correlation](variance-covariance.llms.md#def-correlation) (the next page defines the last two). The joint density is (a standard result; e.g. Casella and Berger ([2002](#ref-CaseBerg01))):
 >
 > \\ \operatorname{p}(X=x,\\Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \text{e}^{-\frac{1}{2(1-\rho^2)} \mathopen{}\left\[\frac{(x-\mu_X)^2}{\sigma^2_X} - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right\]\mathclose{}} \\
 >
