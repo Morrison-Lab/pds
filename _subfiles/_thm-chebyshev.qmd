@@ -36,3 +36,11 @@ That generality makes it loose:
 for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at $k = 2$ is 25%.
 
 :::
+
+::: {.remark .notes}
+
+Bienaymé derived this bound in 1853 [@bienayme1853],
+and Chebyshev proved a more general form in 1867 [@tchebichef1867].
+A modern treatment is in [@blitzstein2019introduction].
+
+:::
