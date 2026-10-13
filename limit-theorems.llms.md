@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 14:34:30 (PDT)
+Last modified: 2026-10-13 15:27:43 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -224,6 +224,10 @@ Last modified: 2026-10-13 14:34:30 (PDT)
 
 > **NOTE:**
 >
+> *Remark*. The inequality carries Markov’s name by convention. Chebyshev’s inequality, which follows from it, is older ([Bienaymé 1853](#ref-bienayme1853); [Tchébychef 1867](#ref-tchebichef1867)); see ([Seneta 2013](#ref-seneta2013)) for the history of the attribution. A modern treatment is in ([Blitzstein and Hwang 2019](#ref-blitzstein2019introduction)).
+
+> **NOTE:**
+>
 > **Theorem 3 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\:
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{} \le \frac{1}{k^2} \\
@@ -237,6 +241,10 @@ Last modified: 2026-10-13 14:34:30 (PDT)
 > **NOTE:**
 >
 > *Remark*. [Theorem 3](#thm-chebyshev) needs only a mean and a variance, not a distribution, so it holds for every distribution that has them. That generality makes it loose: for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at \\k = 2\\ is 25%.
+
+> **NOTE:**
+>
+> *Remark*. Bienaymé derived this bound in 1853 ([Bienaymé 1853](#ref-bienayme1853)), and Chebyshev proved a more general form in 1867 ([Tchébychef 1867](#ref-tchebichef1867)). A modern treatment is in ([Blitzstein and Hwang 2019](#ref-blitzstein2019introduction)).
 
 > **NOTE:**
 >
@@ -297,6 +305,14 @@ Last modified: 2026-10-13 14:34:30 (PDT)
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
 
+Bienaymé, Irénée-Jules. 1853. “Considérations à l’appui de La Découverte de Laplace Sur La Loi de Probabilité Dans La Méthode Des Moindres Carrés.” *Comptes Rendus de l’Académie Des Sciences* 37: 309–24. <https://www.numdam.org/item/JMPA_1867_2_12__158_0/>.
+
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+
+Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
+
+Seneta, Eugene. 2013. “A Tricentenary History of the Law of Large Numbers.” *Bernoulli* 19 (4): 1088–121. <https://doi.org/10.3150/12-BEJSP12>.
+
+Tchébychef, P. L. 1867. “Des Valeurs Moyennes.” *Journal de Mathématiques Pures Et Appliquées*, 2nd series, vol. 12: 177–84. <https://www.numdam.org/item/JMPA_1867_2_12__177_0/>.
 
 Back to top
