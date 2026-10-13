@@ -4,7 +4,7 @@
 A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function)
 from a [sample space](probability-basics.qmd#def-sample-space) $\samplespace$
 to the real numbers $\reals$:
-it assigns a number to each possible outcome of a random experiment.
+it assigns a number to each possible outcome of a [random experiment](probability-basics.qmd#def-random-experiment).
 
 :::
 

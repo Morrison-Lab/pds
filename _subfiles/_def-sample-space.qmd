@@ -1,7 +1,7 @@
 :::{#def-sample-space}
 #### Sample space
 
-The **sample space** of a random experiment, denoted $\samplespace$,
+The **sample space** of a [random experiment](#def-random-experiment), denoted $\samplespace$,
 is the [set](https://morrison-lab.github.io/mds/sets-functions.html#def-set) of all of its possible outcomes.
 
 :::
@@ -29,7 +29,8 @@ a set of outcomes.
 
 When $\samplespace$ is uncountable, such as an interval of real numbers,
 only the subsets in a designated [$\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) $\mathscr{S}$ on $\samplespace$
-count as events;
+count as events
+(some sources call a $\sigma$-algebra a **Borel field** [@CaseBerg01, Def. 1.2.1]);
 every set that arises in these notes is in $\mathscr{S}$.
 When $\samplespace$ is finite or [countably infinite](https://morrison-lab.github.io/mds/sets-functions.html#def-countably-infinite),
 every subset of $\samplespace$ can be an event,

@@ -1,0 +1,27 @@
+:::{#exm-random-experiment}
+#### Picking a car model from the Auto data
+
+The Auto data record the number of engine cylinders and the fuel economy
+(miles per gallon) of
+`{r} nrow(read.csv("data/auto.csv"))` car models
+sold between 1970 and 1982.
+They come from the StatLib library at Carnegie Mellon University
+and ship with the book *An Introduction to Statistical Learning*
+and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
+(`ISLR2::Auto`).
+This site has a copy at [`data/auto.csv`](data/auto.csv).
+
+Pick one car model from the data without looking, and record its number of cylinders.
+Which model comes up is not determined in advance,
+so this procedure is a random experiment.
+Its possible outcomes are the cylinder counts that occur in the data:
+
+```{r}
+#| code-fold: false
+# read the local copy of the Auto data (one row per car model):
+auto <- read.csv("data/auto.csv")
+
+# the possible outcomes are the distinct cylinder counts in the data:
+sort(unique(auto$cylinders))
+```
+:::
