@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 20:27:50 (PDT)
+Last modified: 2026-10-12 22:10:18 (PDT)
 
 > **NOTE:**
 >
@@ -229,7 +229,7 @@ Last modified: 2026-10-12 20:27:50 (PDT)
 > n_placebo <- vaccine_tab["placebo", ]
 > ```
 >
-> The [joint PMF](random-variables.llms.md#def-joint-pmf) of \\(X, Y)\\ is the table of frequencies divided by the total \\n = 73\\ trial participants. By the [marginal PMF theorem](random-variables.llms.md#thm-marginal-pmf), the [marginal](random-variables.llms.md#def-marginal) probability \\\operatorname{P}(X = \text{placebo})\\ is:
+> Choose one of the \\n = 73\\ trial participants at random (a [random choice](probability-basics.llms.md#def-random-choice)), and let \\(X, Y)\\ be that participant’s treatment and response. The [joint PMF](random-variables.llms.md#def-joint-pmf) of \\(X, Y)\\ is then the table of frequencies divided by the total \\n\\ trial participants. By the [marginal PMF theorem](random-variables.llms.md#thm-marginal-pmf), the [marginal](random-variables.llms.md#def-marginal) probability \\\operatorname{P}(X = \text{placebo})\\ is:
 >
 > \\ \begin{aligned} \operatorname{P}(X = \text{placebo}) &= \operatorname{P}(X = \text{placebo},\\ Y = \text{small}) + \operatorname{P}(X = \text{placebo},\\ Y = \text{moderate}) + \operatorname{P}(X = \text{placebo},\\ Y = \text{large}) && \text{(marginal PMF from the joint PMF)} \\&= \tfrac{25}{73} + \tfrac{8}{73} + \tfrac{5}{73} && \text{(read the table)} \\&= \tfrac{38}{73} && \text{(add)} \end{aligned} \\
 >
@@ -269,20 +269,20 @@ Last modified: 2026-10-12 20:27:50 (PDT)
 > cond_sd <- sigma_y * sqrt(1 - rho^2)
 > tibble::tibble(
 >   parameter = c("mu_x", "sigma_x", "mu_y", "sigma_y", "rho"),
->   estimate = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
+>   value = round(c(mu_x, sigma_x, mu_y, sigma_y, rho), 4)
 > ) |>
 >   pander::pander()
 > ```
 >
-> | parameter | estimate |
-> |:---------:|:--------:|
-> |   mu_x    |  38.54   |
-> |  sigma_x  |  1.817   |
-> |   mu_y    |   2968   |
-> |  sigma_y  |  282.1   |
-> |    rho    |  0.7443  |
+> | parameter | value  |
+> |:---------:|:------:|
+> |   mu_x    | 38.54  |
+> |  sigma_x  | 1.817  |
+> |   mu_y    |  2968  |
+> |  sigma_y  | 282.1  |
+> |    rho    | 0.7443 |
 >
-> Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these sample moments, the joint density is (a standard result; e.g. Casella and Berger ([2002](#ref-CaseBerg01))):
+> Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here), the joint density is (a standard result; e.g. Casella and Berger ([2002](#ref-CaseBerg01))):
 >
 > \\ \operatorname{p}(X=x,\\Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \text{e}^{-\frac{1}{2(1-\rho^2)} \mathopen{}\left\[\frac{(x-\mu_X)^2}{\sigma^2_X} - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right\]\mathclose{}} \\
 >

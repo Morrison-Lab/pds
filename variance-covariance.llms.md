@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 20:27:50 (PDT)
+Last modified: 2026-10-12 22:10:18 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -755,7 +755,7 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 >
-> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 12](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the sample correlation divides the covariance and both standard deviations by the same count, which cancels.
+> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 12](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
 
 > **NOTE:**
 >
