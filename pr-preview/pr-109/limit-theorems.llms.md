@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 17:23:50 (PDT)
+Last modified: 2026-10-12 19:27:50 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -202,7 +202,7 @@ Last modified: 2026-10-12 17:23:50 (PDT)
 >
 > The sample means for \\n = 1\\ are just single cars, so they are skewed. By \\n = 30\\ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of \\\sigma/\sqrt{n}\\ at every \\n\\, as [Corollary 1](#cor-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at \\n = 1\\ to 0.48 at \\n = 5\\ and 0.2 at \\n = 30\\.
 
-> **TIP:**
+> **NOTE:**
 >
 > 5MinuteAI explains [limit theorems](https://www.youtube.com/watch?v=6sQv1o-ttCw) and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw), following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
 

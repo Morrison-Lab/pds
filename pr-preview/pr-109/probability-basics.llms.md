@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 17:23:50 (PDT)
+Last modified: 2026-10-12 19:27:50 (PDT)
 
 ## 1 Defining probabilities
 
@@ -455,7 +455,11 @@ Figure 1: The chance of disease after a positive test, as counts out of 100,000
 
 > **TIP:**
 >
-> The University of Washington’s [CSE 312](https://courses.cs.washington.edu/courses/cse312/20su/) materials and videos by Alex Tsun teach probability and statistics for computing, and cover counting, conditional probability and Bayes’ rule from a computer science viewpoint. 5MinuteAI’s five-minute videos follow the same course ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
+> The University of Washington’s [CSE 312](https://courses.cs.washington.edu/courses/cse312/20su/) materials and videos by Alex Tsun teach probability and statistics for computing, and cover counting, conditional probability and Bayes’ rule from a computer science viewpoint.
+
+> **NOTE:**
+>
+> 5MinuteAI’s five-minute videos follow the same course ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
 ## References
 

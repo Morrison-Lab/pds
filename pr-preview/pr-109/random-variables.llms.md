@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 17:23:50 (PDT)
+Last modified: 2026-10-12 19:27:50 (PDT)
 
 ## 1 Random variables
 
@@ -671,7 +671,7 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
-> **TIP:**
+> **NOTE:**
 >
 > 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
 
