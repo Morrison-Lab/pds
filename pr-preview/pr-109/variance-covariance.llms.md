@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 16:45:13 (PDT)
+Last modified: 2026-10-12 17:23:50 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -757,7 +757,13 @@ That choice buys one identity, used repeatedly across statistical modeling and m
 >
 > The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 12](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the sample correlation divides the covariance and both standard deviations by the same count, which cancels.
 
+> **TIP:**
+>
+> 5MinuteAI explains [variance](https://www.youtube.com/watch?v=5CT1DXPp2HY) and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in five minutes each, following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
+
 ## References
+
+5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 

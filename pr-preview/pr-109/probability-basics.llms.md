@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-12 16:45:13 (PDT)
+Last modified: 2026-10-12 17:23:50 (PDT)
 
 ## 1 Defining probabilities
 
@@ -455,9 +455,11 @@ Figure 1: The chance of disease after a positive test, as counts out of 100,000
 
 > **TIP:**
 >
-> The University of Washington’s [CSE 312](https://courses.cs.washington.edu/courses/cse312/20su/) materials and videos by Alex Tsun teach probability and statistics for computing, and cover counting, conditional probability and Bayes’ rule from a computer science viewpoint.
+> The University of Washington’s [CSE 312](https://courses.cs.washington.edu/courses/cse312/20su/) materials and videos by Alex Tsun teach probability and statistics for computing, and cover counting, conditional probability and Bayes’ rule from a computer science viewpoint. 5MinuteAI’s five-minute videos follow the same course ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
 ## References
+
+5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
 
 Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
 
