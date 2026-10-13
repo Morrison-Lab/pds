@@ -39,7 +39,7 @@ covers probability mass functions and probability density functions [@hutchinson
 The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 :::
 
-::: {.callout-tip title="Another explanation"}
+::: {.videos}
 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8)
 and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each,
 following the University of Washington's CSE 312 [@fiveminuteai_probstat].

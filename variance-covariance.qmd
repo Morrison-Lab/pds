@@ -70,7 +70,7 @@ reticulate::py_require(c("numpy", "pandas"))
 
 {{< include pds/_subfiles/_exm-cor-auto.qmd >}}
 
-::: {.callout-tip title="Another explanation"}
+::: {.videos}
 5MinuteAI explains [variance](https://www.youtube.com/watch?v=5CT1DXPp2HY)
 and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in five minutes each,
 following the University of Washington's CSE 312 [@fiveminuteai_probstat].
