@@ -1,7 +1,7 @@
 :::{#def-sample-space}
 #### Sample space
 
-The **sample space** of a random experiment, denoted $\samplespace$,
+The **sample space** of a [random experiment](#def-random-experiment), denoted $\samplespace$,
 is the [set](https://morrison-lab.github.io/mds/sets-functions.html#def-set) of all of its possible outcomes.
 
 :::
