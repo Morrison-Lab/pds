@@ -4,13 +4,13 @@ Code
 
 Published
 
-Last modified: 2026-10-12 16:25:27 (PDT)
+Last modified: 2026-10-12 20:16:36 (PDT)
 
 ## 1 Random variables
 
 > **NOTE:**
 >
-> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\: it assigns a number to each possible outcome of a random experiment.
+> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/sets-functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\: it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
 
 > **NOTE:**
 >
