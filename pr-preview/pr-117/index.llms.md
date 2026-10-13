@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 14:15:26 (PDT)
+Last modified: 2026-10-13 14:27:28 (PDT)
 
 ## Welcome
 
@@ -38,6 +38,7 @@ Several universities offer open-access courses with comparable or complementary 
 - **Stanford University CS 109**: [*Probability for Computer Scientists*](https://web.stanford.edu/class/cs109/) (Chris Piech, Mehran Sahami, and David Varodayan) introduces counting, probability axioms, random variables, joint distributions, limit theorems, and machine learning applications.
 - **Stanford University STATS 116**: [*Theory of Probability*](https://web.stanford.edu/class/stats116/) (John Duchi) provides a rigorous mathematical treatment of probability spaces, conditioning, random variables, transform methods, and limit theorems (see also [lecture notes](https://adembo.su.domains/math-136/nnotes.pdf) by Amir Dembo).
 - **UC Berkeley Data 140 / Stat 140**: [*Probability for Data Science*](https://data140.org/textbook/) (Ani Adhikari and Jim Pitman) blends mathematical probability theory with Python simulations and computational data science applications.
+- **Stanford University EE 278**: [*Probability and Statistical Inference*](https://web.stanford.edu/class/ee278/) (Ayfer Özgür and Tsachy Weissman) builds on probability for hypothesis testing, empirical risk minimization, concentration inequalities (Markov, Chebyshev, Hoeffding), Gaussian random vectors and minimum mean-square error estimation; its [previous notes](http://web.stanford.edu/class/ee278/lectures.html) are handwritten lectures on these topics. The prerequisite probability course has open lecture notes by [David Tse](https://web.stanford.edu/~dntse/classes/ee178_278a.html) and [Abbas El Gamal](https://isl.stanford.edu/~abbas/aeglect178.php).
 - **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction)), online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
 - **MIT 18.05**: [*Introduction to Probability and Statistics*](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/) (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.
 - **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
