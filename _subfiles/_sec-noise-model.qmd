@@ -3,10 +3,15 @@
 Measurement noise is almost always modeled as a random variable
 $\noise$ with **mean zero** and variance $\varpar$.
 
-Mean zero is a modeling choice rather than a fact about the world,
-and it costs nothing:
-any systematic offset in the noise can be absorbed into the model's own
-intercept, leaving what remains centered at zero by construction.
+Mean zero is a parametrization choice, not a substantive assumption.
+In $Y = f(x) + \noise$, moving a constant from $\noise$ into $f(x)$
+changes the split but not the distribution of $Y$,
+so the data identify only the sum $f(x) + \E{\noise}$, the mean of $Y$ at $x$.
+Requiring $\E{\noise} = 0$ picks the one split in which $f(x)$ is that mean.
+It costs nothing provided the model for $f$ can absorb a constant,
+as any model with an intercept can.
+It restricts the model only when $f$ cannot absorb one,
+as in a regression through the origin.
 
 That choice buys one identity, used repeatedly across statistical modeling
 and machine learning.
