@@ -14,46 +14,110 @@ $$\E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2} = \sqf{\bias{\etargetfnf{\pr
 
 ::: proof
 
-Write $\Outvar_0 - \etargetfnf{\predvar_0} = \noise + D$,
-where $D \eqdef \targetfnf{\predvar_0} - \etargetfnf{\predvar_0}$.
-Expanding the square and using linearity of expectation,
+Write $D \eqdef \targetfnf{\predvar_0} - \etargetfnf{\predvar_0}$.
+
+First, the prediction error in terms of $\noise$ and $D$:
+
+$$
+\ba
+\Outvar_0 - \etargetfnf{\predvar_0}
+&= \paren{\targetfnf{\predvar_0} + \noise} - \etargetfnf{\predvar_0}
+&& \text{(definition of } \Outvar_0 \text{)} \\
+&= \noise + \paren{\targetfnf{\predvar_0} - \etargetfnf{\predvar_0}}
+&& \text{(reorder the terms of the sum)} \\
+&= \noise + D
+&& \text{(definition of } D \text{)}
+\ea
+$$
+
+Next, expand the square and split the expectation.
+The last two steps use
+[linearity of expectation](expectation.qmd#thm-linearity-expectation),
+first for the expectation of a sum and then for a constant factor:
 
 $$
 \ba
 \E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2}
+&= \E{\paren{\noise + D}^2}
+&& \text{(the error above)} \\
+&= \E{\noise^2 + 2 \noise D + D^2}
+&& \text{(expand: } \paren{a + b}^2 = a^2 + 2ab + b^2 \text{)} \\
+&= \E{\noise^2} + \E{2 \noise D} + \E{D^2}
+&& \text{(expectation of a sum)} \\
 &= \E{\noise^2} + 2\E{\noise D} + \E{D^2}
-&& \text{(expand the square)}
+&& \text{(constant factor 2)}
 \ea
 $$
 
-- $\E{\noise^2} = \varpar$,
+Each of the three terms is evaluated in turn.
+
+- The noise term is $\E{\noise^2} = \varpar$,
   by @sol-noise-second-moment.
-- $$
-  \begin{aligned}
-  \E{\noise D} &= \E{\noise}\E{D} \\
-  &= 0,
-  \end{aligned}
-  $$
-
-  because $\noise$ is independent of $\etargetfnf{\predvar_0}$,
+- For the cross term,
+  $\noise$ is independent of $\etargetfnf{\predvar_0}$,
   hence of $D$,
-  and $\E{\noise} = 0$.
-- By @thm-variance,
-  $\E{D^2} = \Var{D} + \sqf{\E{D}}$.
-  Here $\Var{D} = \Var{\etargetfnf{\predvar_0}}$,
-  because $\targetfnf{\predvar_0}$ is a constant,
-  and
+  because $\targetfnf{\predvar_0}$ is a constant.
+  So the expectation of the product is the product of the expectations:
 
   $$
-  \begin{aligned}
-  \E{D} &= \targetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}} \\
-  &= -\bias{\etargetfnf{\predvar_0}},
-  \end{aligned}
+  \ba
+  \E{\noise D}
+  &= \E{\noise}\E{D}
+  && \text{(independence)} \\
+  &= 0 \cdot \E{D}
+  && \text{(} \E{\noise} = 0 \text{)} \\
+  &= 0
+  && \text{(zero times a number)}
+  \ea
   $$
 
-  so $\sqf{\E{D}} = \sqf{\bias{\etargetfnf{\predvar_0}}}$.
+- For the last term,
+  @thm-variance gives $\E{D^2} = \Var{D} + \sqf{\E{D}}$.
+  The mean of $D$ is
 
-Adding the three terms gives the claim.
+  $$
+  \ba
+  \E{D}
+  &= \E{\targetfnf{\predvar_0}} - \E{\etargetfnf{\predvar_0}}
+  && \text{(expectation of a difference)} \\
+  &= \targetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}}
+  && \text{(} \targetfnf{\predvar_0} \text{ is a constant)} \\
+  &= -\paren{\E{\etargetfnf{\predvar_0}} - \targetfnf{\predvar_0}}
+  && \text{(factor out } -1 \text{)} \\
+  &= -\bias{\etargetfnf{\predvar_0}}
+  && \text{(definition of bias)}
+  \ea
+  $$
+
+  so $\sqf{\E{D}} = \sqf{\bias{\etargetfnf{\predvar_0}}}$,
+  because $\sqf{\paren{-a}} = \sqf{a}$.
+  The variance of $D$ is
+
+  $$
+  \ba
+  \Var{D}
+  &= \E{\sqf{\paren{D - \E{D}}}}
+  && \text{(definition of variance)} \\
+  &= \E{\sqf{\paren{-\paren{\etargetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}}}}}}
+  && \text{(substitute } D \text{ and } \E{D} \text{; the constant } \targetfnf{\predvar_0} \text{ cancels)} \\
+  &= \E{\sqf{\paren{\etargetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}}}}}
+  && \text{(} \sqf{\paren{-a}} = \sqf{a} \text{)} \\
+  &= \Var{\etargetfnf{\predvar_0}}
+  && \text{(definition of variance)}
+  \ea
+  $$
+
+Substituting the three terms into the expansion gives
+
+$$
+\ba
+\E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2}
+&= \varpar + 2 \cdot 0 + \paren{\Var{\etargetfnf{\predvar_0}} + \sqf{\bias{\etargetfnf{\predvar_0}}}}
+&& \text{(the three terms above)} \\
+&= \sqf{\bias{\etargetfnf{\predvar_0}}} + \Var{\etargetfnf{\predvar_0}} + \varpar
+&& \text{(drop } 2 \cdot 0 \text{, reorder the terms)}
+\ea
+$$
 
 :::
 
