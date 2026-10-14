@@ -1,72 +1,76 @@
-# Quarto Website Template
+# Probability for Data Science
 
 Code
 
 Published
 
-Last modified: 2026-06-27 16:22:54 (PDT)
+Last modified: 2026-10-13 22:38:37 (PDT)
 
-# Welcome
+## Welcome
 
-This is a Quarto website template that you can use to create your own website.
+Probability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.
 
-The notes are available in multiple formats:
+These notes collect the probability that data science courses assume. Some key results are listed here, organized by topic:
 
-- **HTML Website**: Navigate using the navbar for easy access to all pages
-- **RevealJS Slides**: Each chapter can generate a presentation format with `-slides.html` suffix
-- **PDF Handouts**: Each chapter can generate a PDF handout with `-handout.pdf` suffix
-- **DOCX Documents**: Each chapter can generate a Microsoft Word document with `.docx` extension
+- [Notation](notation.llms.md)
+- [Probability basics](probability-basics.llms.md): sample spaces and events, probability axioms, conditional probability, and Bayes’ theorem
+- [Random variables](random-variables.llms.md): PMF, PDF, CDF, quantile function, and survival, hazard, and cumulative hazard functions
+- [Independence](independence.llms.md): independence, conditional independence, and (conditionally) IID random variables
+- [Expectation](expectation.llms.md): expectation, LOTUS, conditional expectation, Fubini-Tonelli, and the law of iterated expectations
+- [Variance and covariance](variance-covariance.llms.md): deviation, variance, conditional variance, homoskedasticity, and covariance
+- [Key distributions](distributions.llms.md): Bernoulli, binomial, Poisson, negative binomial, and Weibull distributions
+- [Limit theorems](limit-theorems.llms.md): the Central Limit Theorem
 
-## 0.1 About this website
+Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202). These notes began as the probability chapter of the Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies them to regression and survival models (see [Additional resources](#sec-additional-resources)).
 
-This website is built with [Quarto](https://quarto.org/), an open-source scientific and technical publishing system. You can use Quarto to create books, websites, blogs, presentations, and more from markdown files.
+## Using these notes in another site
 
-## 0.2 Getting Started
+Course sites link to these pages by URL; they do not include this repository as a git submodule. A host site that keeps a copy of this repository at its root, named `pds`, can still include fragments with paths that start with `pds/`, for example `{{< include pds/_subfiles/_thm-bayes.qmd >}}`. This site includes its own fragments the same way, through a `pds` symlink that points at the repository root.
 
-To use this template:
+Quarto resolves `@id` cross-references only within one rendered page, so a host site that links to a result here uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
 
-1.  **Update the configuration**: Edit `_quarto-website.yml` to change the website title, site URL, and navigation menu.
+## Additional resources
 
-2.  **Add your content**: Create new `.qmd` files for each page and add them to the navigation menu in `_quarto-website.yml`.
+### Comparable courses
 
-3.  **Customize the style**: Modify `styles.css` to change the appearance of your website.
+Several universities offer open-access courses with comparable or complementary coverage of probability for data science, computer science, and statistics:
 
-4.  **Add references**: Update `references.bib` with your citations.
+- **Stanford University CS 109**: [*Probability for Computer Scientists*](https://web.stanford.edu/class/cs109/) (Chris Piech, Mehran Sahami, and David Varodayan) introduces counting, probability axioms, random variables, joint distributions, limit theorems, and machine learning applications.
+- **Stanford University STATS 116**: [*Theory of Probability*](https://web.stanford.edu/class/stats116/) (John Duchi) provides a rigorous mathematical treatment of probability spaces, conditioning, random variables, transform methods, and limit theorems (see also [lecture notes](https://adembo.su.domains/math-136/nnotes.pdf) by Amir Dembo).
+- **UC Berkeley Data 140 / Stat 140**: [*Probability for Data Science*](https://data140.org/textbook/) (Ani Adhikari and Jim Pitman) blends mathematical probability theory with Python simulations and computational data science applications.
+- **Stanford University EE 278**: [*Probability and Statistical Inference*](https://web.stanford.edu/class/ee278/) (Ayfer Özgür and Tsachy Weissman) builds on probability for hypothesis testing, empirical risk minimization, concentration inequalities (Markov, Chebyshev, Hoeffding), Gaussian random vectors and minimum mean-square error estimation; its [previous notes](http://web.stanford.edu/class/ee278/lectures.html) are handwritten lectures on these topics. The prerequisite probability course has open lecture notes by [David Tse](https://web.stanford.edu/~dntse/classes/ee178_278a.html) and [Abbas El Gamal](https://isl.stanford.edu/~abbas/aeglect178.php).
+- **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction)), online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
+- **MIT 18.05**: [*Introduction to Probability and Statistics*](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/) (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.
+- **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
+- **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (Ross ([2022](#ref-ross-probsim))) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.
 
-## 0.3 Building the website
+### Textbooks and companion notes
 
-To render the website locally:
+- Miller ([2017](#ref-problifesaver))
+- Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction))
+- Hastie et al. ([2009](#ref-hastie2009elements))
+- James et al. ([2021](#ref-james2021islr2e))
+- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross ([2021](#ref-dembo-notes)), Stanford MATH 136 / STAT 219)
+- Amir Dembo, [*Probability Theory*](https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf) lecture notes (Stanford STAT 310 / MATH 230, the measure-theoretic sequel to this material; used in STATS 310B)
+- John Duchi, [*Lecture Notes on Statistics and Information Theory*](https://web.stanford.edu/class/stats311/) (Stanford STATS 311), which develops entropy and divergences beyond the definitions here
+- Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
 
-``` bash
-quarto render
-```
+### Video channels
 
-To preview the website with live reload:
-
-``` bash
-quarto preview
-```
-
-The rendered output will be in the `_site/` directory, which can be published to GitHub Pages.
-
-## 0.4 Publishing to GitHub Pages
-
-This template includes a GitHub Actions workflow that automatically builds and publishes your website to GitHub Pages when you push to the main branch.
-
-To enable GitHub Pages:
-
-1.  Go to your repository settings
-2.  Navigate to “Pages” in the left sidebar
-3.  Under “Build and deployment”, set Source to “GitHub Actions”
-4.  Push your changes to the main branch
-5.  The workflow will automatically build and deploy your website
-
-Your website will be available at `https://YOUR-USERNAME.github.io/YOUR-REPO/`
-
-## 0.5 License
-
-Add your license information here.
+The DATA 571 (Machine Learning) course notes keep a curated list of [online video channels](https://morrison-lab.github.io/lds/chapters/channels.html), with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
 
 ## References
+
+Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
+
+Dembo, Amir, and Kevin Ross. 2021. *Stochastic Processes*. Stanford University. <https://adembo.su.domains/math-136/nnotes.pdf>.
+
+Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
+
+James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. *An Introduction to Statistical Learning: With Applications in R*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-0716-1418-1>.
+
+Miller, Steven J. 2017. *The Probability Lifesaver: All the Tools You Need to Understand Chance*. A Princeton Lifesaver Study Guide. Princeton University Press. <https://doi.org/10.1515/9781400885381>.
+
+Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
 
 Back to top
