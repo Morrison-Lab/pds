@@ -1,17 +1,29 @@
-::: {#fig-pmf-cdf-quantile fig-alt="Two rows of three plots.
-Top row, for the number of heads in two fair coin flips:
-bars of height one quarter, one half and one quarter at 0, 1 and 2;
-a staircase CDF rising from 0 to 1 in three jumps;
-and a staircase quantile function taking the values 0, 1 and 2.
-Bottom row, for the standard normal distribution:
-a bell-shaped density with the area to the left of one shaded;
-a smooth S-shaped CDF rising from 0 to 1;
-and a smooth increasing quantile function
-that drops toward negative infinity near probability 0
-and rises toward positive infinity near probability 1."}
+::: {#fig-pmf-cdf-quantile}
+
+```{r}
+#| label: pmf-cdf-quantile-alt
+#| include: false
+# The alt text, saved once
+# for the chunk option below
+# and for the aria-label of the interactive version.
+fig_alt <- paste(
+  "Two rows of three plots.",
+  "Top row, for the number of heads in two fair coin flips:",
+  "bars of height one quarter, one half and one quarter at 0, 1 and 2;",
+  "a staircase CDF rising from 0 to 1 in three jumps;",
+  "and a staircase quantile function taking the values 0, 1 and 2.",
+  "Bottom row, for the standard normal distribution:",
+  "a bell-shaped density with the area to the left of one shaded;",
+  "a smooth S-shaped CDF rising from 0 to 1;",
+  "and a smooth increasing quantile function",
+  "that drops toward negative infinity near probability 0",
+  "and rises toward positive infinity near probability 1."
+)
+```
 
 ```{r}
 #| label: pmf-cdf-quantile-plot
+#| fig-alt: !expr fig_alt
 #| echo: !expr knitr::is_html_output()
 #| message: false
 #| warning: false
@@ -174,14 +186,7 @@ if (knitr::is_html_output()) {
   # The alt text: a plotly widget has none of its own.
   htmltools::div(
     role = "img",
-    `aria-label` = paste(
-      "Six interactive plots.",
-      "Top row, number of heads in two fair coin flips:",
-      "mass function, staircase CDF and staircase quantile function.",
-      "Bottom row, standard normal:",
-      "density with the area left of one shaded,",
-      "S-shaped CDF and increasing quantile function."
-    ),
+    `aria-label` = fig_alt,
     style = "display: flex; flex-wrap: wrap; gap: 4px;",
     cell(coin_pmf),
     cell(coin_cdf),
