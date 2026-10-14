@@ -14,9 +14,9 @@ $$\E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2} = \sqf{\bias{\etargetfnf{\pr
 
 ::: proof
 
-Write $D \eqdef \targetfnf{\predvar_0} - \etargetfnf{\predvar_0}$.
+Write $\targeterrf{\predvar_0} \eqdef \targetfnf{\predvar_0} - \etargetfnf{\predvar_0}$.
 
-First, the prediction error in terms of $\noise$ and $D$:
+First, the prediction error in terms of $\noise$ and $\targeterrf{\predvar_0}$:
 
 $$
 \ba
@@ -25,8 +25,8 @@ $$
 && \text{(definition of } \Outvar_0 \text{)} \\
 &= \noise + \paren{\targetfnf{\predvar_0} - \etargetfnf{\predvar_0}}
 && \text{(reorder the terms of the sum)} \\
-&= \noise + D
-&& \text{(definition of } D \text{)}
+&= \noise + \targeterrf{\predvar_0}
+&& \text{(definition of } \targeterrf{\predvar_0} \text{)}
 \ea
 $$
 
@@ -38,13 +38,13 @@ first for the expectation of a sum and then for a constant factor:
 $$
 \ba
 \E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2}
-&= \E{\paren{\noise + D}^2}
+&= \E{\paren{\noise + \targeterrf{\predvar_0}}^2}
 && \text{(the error above)} \\
-&= \E{\noise^2 + 2 \noise D + D^2}
+&= \E{\noise^2 + 2 \noise \targeterrf{\predvar_0} + \sqf{\targeterrf{\predvar_0}}}
 && \text{(expand: } \paren{a + b}^2 = a^2 + 2ab + b^2 \text{)} \\
-&= \E{\noise^2} + \E{2 \noise D} + \E{D^2}
+&= \E{\noise^2} + \E{2 \noise \targeterrf{\predvar_0}} + \E{\sqf{\targeterrf{\predvar_0}}}
 && \text{(expectation of a sum)} \\
-&= \E{\noise^2} + 2\E{\noise D} + \E{D^2}
+&= \E{\noise^2} + 2\E{\noise \targeterrf{\predvar_0}} + \E{\sqf{\targeterrf{\predvar_0}}}
 && \text{(constant factor 2)}
 \ea
 $$
@@ -55,16 +55,16 @@ Each of the three terms is evaluated in turn.
   by @sol-noise-second-moment.
 - For the cross term,
   $\noise$ is independent of $\etargetfnf{\predvar_0}$,
-  hence of $D$,
+  hence of $\targeterrf{\predvar_0}$,
   because $\targetfnf{\predvar_0}$ is a constant.
   So the expectation of the product is the product of the expectations:
 
   $$
   \ba
-  \E{\noise D}
-  &= \E{\noise}\E{D}
+  \E{\noise \targeterrf{\predvar_0}}
+  &= \E{\noise}\E{\targeterrf{\predvar_0}}
   && \text{(independence)} \\
-  &= 0 \cdot \E{D}
+  &= 0 \cdot \E{\targeterrf{\predvar_0}}
   && \text{(} \E{\noise} = 0 \text{)} \\
   &= 0
   && \text{(zero times a number)}
@@ -72,12 +72,12 @@ Each of the three terms is evaluated in turn.
   $$
 
 - For the last term,
-  @thm-variance gives $\E{D^2} = \Var{D} + \sqf{\E{D}}$.
-  The mean of $D$ is
+  @thm-variance gives $\E{\sqf{\targeterrf{\predvar_0}}} = \Var{\targeterrf{\predvar_0}} + \sqf{\E{\targeterrf{\predvar_0}}}$.
+  The mean of $\targeterrf{\predvar_0}$ is
 
   $$
   \ba
-  \E{D}
+  \E{\targeterrf{\predvar_0}}
   &= \E{\targetfnf{\predvar_0}} - \E{\etargetfnf{\predvar_0}}
   && \text{(expectation of a difference)} \\
   &= \targetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}}
@@ -89,17 +89,17 @@ Each of the three terms is evaluated in turn.
   \ea
   $$
 
-  so $\sqf{\E{D}} = \sqf{\bias{\etargetfnf{\predvar_0}}}$,
+  so $\sqf{\E{\targeterrf{\predvar_0}}} = \sqf{\bias{\etargetfnf{\predvar_0}}}$,
   because $\sqf{\paren{-a}} = \sqf{a}$.
-  The variance of $D$ is
+  The variance of $\targeterrf{\predvar_0}$ is
 
   $$
   \ba
-  \Var{D}
-  &= \E{\sqf{\paren{D - \E{D}}}}
+  \Var{\targeterrf{\predvar_0}}
+  &= \E{\sqf{\paren{\targeterrf{\predvar_0} - \E{\targeterrf{\predvar_0}}}}}
   && \text{(definition of variance)} \\
   &= \E{\sqf{\paren{-\paren{\etargetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}}}}}}
-  && \text{(substitute } D \text{ and } \E{D} \text{; the constant } \targetfnf{\predvar_0} \text{ cancels)} \\
+  && \text{(substitute } \targeterrf{\predvar_0} \text{ and } \E{\targeterrf{\predvar_0}} \text{; the constant } \targetfnf{\predvar_0} \text{ cancels)} \\
   &= \E{\sqf{\paren{\etargetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}}}}}
   && \text{(} \sqf{\paren{-a}} = \sqf{a} \text{)} \\
   &= \Var{\etargetfnf{\predvar_0}}
