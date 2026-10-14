@@ -1,8 +1,10 @@
-:::{#thm-sample-mean-expectation}
+::: {#thm-sample-mean-expectation}
+
 #### The expectation of a sample average
 
-Let $\dsn{X}$ be random variables that each have mean $\mean$,
+Let $\dsn{X}$ be random variables, with $n \ge 1$, that each have finite mean $\mean$,
 and let $\bar X \eqdef \avgin X_i$.
+The $X_i$ need not be independent.
 Then
 
 $$\Ep[\bar X] = \mean$$
@@ -11,17 +13,8 @@ $$\Ep[\bar X] = \mean$$
 
 ::: proof
 
-This is the solution to @exr-linearity-use.
-By @thm-linearity-expectation,
-
-$$
-\begin{aligned}
-\Ep[\bar X]
-&= \Ep\sb{\avgin X_i} \\
-&= \avgin \Ep[X_i] \\
-&= \frac{1}{n}\,(n\mean) \\
-&= \mean
-\end{aligned}
-$$
+This is the solution to @exr-linearity-use, worked in @sol-linearity-use.
+It follows from @thm-linearity-expectation, which needs no independence
+and applies because each $\Ep[X_i] = \mean$ is finite.
 
 :::
