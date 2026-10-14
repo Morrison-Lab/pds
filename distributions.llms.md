@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 22:42:42 (PDT)
+Last modified: 2026-10-14 00:28:11 (PDT)
 
 > **NOTE:**
 >
@@ -23,7 +23,7 @@ Last modified: 2026-10-13 22:42:42 (PDT)
 | Distribution | Uses |
 |----|----|
 | [Bernoulli](random-variables.llms.md#def-bernoulli) | Binary outcomes |
-| Binomial | Sums of Bernoulli outcomes |
+| [Binomial](#def-binomial) | Sums of Bernoulli outcomes |
 | Poisson | Unbounded count outcomes |
 | Geometric | Counts of non-events before an event occurs |
 | Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs |
@@ -52,13 +52,92 @@ Table 2: Distributions typically used for test statistics
 >
 > **Example 1 (A coin flip)** The [Bernoulli distribution](random-variables.llms.md#def-bernoulli) describes a binary outcome. The indicator of heads on one flip of a fair coin is \\\operatorname{Ber}(1/2)\\. By the [expectation of the Bernoulli distribution](expectation.llms.md#thm-bernoulli-mean), \\X \sim \operatorname{Ber}(\pi)\\ has mean \\\pi\\, and by the [variance of a Bernoulli random variable](variance-covariance.llms.md#exm-variance-bernoulli), it has variance \\\pi(1 - \pi)\\.
 
-## 2 The Poisson distribution
+## 2 The binomial distribution
 
 > **NOTE:**
 >
-> **Definition 1 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu\> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
+> **Definition 1 (Binomial distribution)** A [discrete](random-variables.llms.md#def-discrete-rv) random variable \\X\\ has the **binomial distribution** with number of trials \\n \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ and event probability \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\\, if:
 >
-> \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \tag{1}\\
+> \\ \operatorname{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x}, \quad x \in \mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{} \tag{1}\\
+>
+> where \\\binom{n}{x} = \frac{n!}{x!\\(n - x)!}\\ is the number of ways to choose \\x\\ of the \\n\\ trials.
+
+> **NOTE:**
+>
+> *Remark*. Casella and Berger ([2002, sec. 3.2](#ref-CaseBerg01)) defines the binomial distribution the same way. With \\n = 1\\, [Equation 1](#eq-binom-pmf) is the [Bernoulli PMF](random-variables.llms.md#def-bernoulli): \\\operatorname{Bin}\mathopen{}\left(1, \pi\right)\mathclose{}\\ and \\\operatorname{Ber}(\pi)\\ are the same distribution.
+
+> **NOTE:**
+>
+> **Example 2 (Two heads in three flips)** Let \\X \sim \operatorname{Bin}\mathopen{}\left(3, 1/2\right)\mathclose{}\\ be the number of heads in three flips of a fair coin. By [Equation 1](#eq-binom-pmf):
+>
+> \\ \begin{aligned} \operatorname{P}(X = 2) &= \binom{3}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(1 - \frac{1}{2}\right)\mathclose{}^{3 - 2} && \text{(binomial PMF with } n = 3,\\ \pi= 1/2,\\ x = 2 \text{)} \\ &= \frac{3!}{2!\\1!} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^1 && \text{(definition of } \tbinom{3}{2} \text{; } 1 - 1/2 = 1/2 \text{)} \\ &= 3 \cdot\frac{1}{4} \cdot\frac{1}{2} && \text{(evaluate the factorials and powers)} \\ &= \frac{3}{8} && \text{(multiply)} \end{aligned} \\
+>
+> The three outcomes with two heads are \\HHT\\, \\HTH\\, and \\THH\\, each with probability \\1/8\\.
+
+> **NOTE:**
+>
+> **Example 3 (Draws without replacement are not binomial)** An urn holds two red balls and two blue balls. Draw two balls without replacement, and let \\X\\ be the number of red balls drawn. Each draw is red with probability \\1/2\\, but \\X \not\sim \operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}\\, because the draws are not [independent](independence.llms.md#def-indpt):
+>
+> \\ \begin{aligned} \operatorname{P}(X = 2) &= \operatorname{P}(\text{first red}) \cdot\operatorname{P}(\text{second red} \mid \text{first red}) && \text{(multiplication rule)} \\ &= \frac{2}{4} \cdot\frac{1}{3} && \text{(one red ball is left among three)} \\ &= \frac{1}{6} && \text{(multiply)} \end{aligned} \\
+>
+> whereas, by [Equation 1](#eq-binom-pmf), a \\\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}\\ random variable has
+>
+> \\ \begin{aligned} \operatorname{P}(X = 2) &= \binom{2}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^0 && \text{(binomial PMF with } n = 2,\\ \pi= 1/2,\\ x = 2 \text{)} \\ &= \frac{1}{4} && \text{(evaluate)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Theorem 1 (A sum of IID Bernoulli variables is binomial)** If \\X_1, \ldots, X_n\\ are [IID](independence.llms.md#def-iid) \\\operatorname{Ber}(\pi)\\ random variables, then their sum \\S = \sum\_{i=1}^nX_i\\ has the \\\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\\ distribution.
+
+> **NOTE:**
+>
+> *Proof*. Each \\X_i\\ is \\0\\ or \\1\\, so \\S\\ takes values in \\\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}\\. Fix \\x \in \mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}\\, and let \\A_x\\ be the set of sequences \\(s_1, \ldots, s_n) \in \mathopen{}\left\\0, 1\right\\\mathclose{}^n\\ with exactly \\x\\ ones. The event \\\mathopen{}\left\\S = x\right\\\mathclose{}\\ is the disjoint union of the events \\\mathopen{}\left\\X_1 = s_1, \ldots, X_n = s_n\right\\\mathclose{}\\ over \\(s_1, \ldots, s_n) \in A_x\\. For one such sequence:
+>
+> \\ \begin{aligned} \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n) &= \prod\_{i=1}^n \operatorname{P}(X_i = s_i) && \text{(independence)} \\ &= \prod\_{i=1}^n \pi^{s_i} (1 - \pi)^{1 - s_i} && \text{(Bernoulli PMF)} \\ &= \pi^{\sum\_{i=1}^ns_i} (1 - \pi)^{\sum\_{i=1}^n(1 - s_i)} && \text{(collect exponents)} \\ &= \pi^x (1 - \pi)^{n - x} && \text{(} \textstyle\sum\_{i=1}^ns_i = x \text{ for a sequence in } A_x \text{)} \end{aligned} \\
+>
+> Choosing which \\x\\ of the \\n\\ positions hold the ones determines the sequence, so \\A_x\\ has \\\binom{n}{x}\\ elements. Therefore:
+>
+> \\ \begin{aligned} \operatorname{P}(S = x) &= \sum\_{(s_1, \ldots, s_n) \in A_x} \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n) && \text{(additivity over disjoint events)} \\ &= \sum\_{(s_1, \ldots, s_n) \in A_x} \pi^x (1 - \pi)^{n - x} && \text{(probability of one sequence)} \\ &= \binom{n}{x} \pi^x (1 - \pi)^{n - x} && \text{(} A_x \text{ has } \tbinom{n}{x} \text{ elements)} \end{aligned} \\
+>
+> which is [Equation 1](#eq-binom-pmf).
+
+> **NOTE:**
+>
+> **Example 4 (Counting treatment responders)** Suppose five patients each respond to a treatment with probability \\0.2\\, independently of one another, and let \\X_i = 1\\ if patient \\i\\ responds and \\X_i = 0\\ otherwise. By [Theorem 1](#thm-binomial-sum-bernoulli), the number of responders \\S = \sum\_{i=1}^5 X_i\\ is \\\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}\\, so the probability that nobody responds is:
+>
+> \\ \begin{aligned} \operatorname{P}(S = 0) &= \binom{5}{0} (0.2)^0 (1 - 0.2)^{5 - 0} && \text{(binomial PMF with } n = 5,\\ \pi= 0.2,\\ x = 0 \text{)} \\ &= 1 \cdot 1 \cdot(0.8)^5 && \text{(} \tbinom{5}{0} = 1 \text{ and } (0.2)^0 = 1 \text{)} \\ &= 0.32768 && \text{(evaluate the power)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Theorem 2 (Mean and variance of the binomial distribution)** If \\X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\\, then:
+>
+> - \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = n\pi\\
+> - \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = n\pi(1 - \pi)\\
+
+> **NOTE:**
+>
+> *Proof*. The mean and variance of \\X\\ depend only on its distribution, so by [Theorem 1](#thm-binomial-sum-bernoulli) we can compute them for \\S = \sum\_{i=1}^nX_i\\, where \\X_1, \ldots, X_n\\ are IID \\\operatorname{Ber}(\pi)\\. For the mean, apply [linearity of expectation](expectation.llms.md#thm-linearity-expectation) \\n - 1\\ times, then the [Bernoulli mean](expectation.llms.md#thm-bernoulli-mean):
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\sum\_{i=1}^nX_i\right\]\mathclose{} && \text{(definition of } S \text{)} \\ &= \sum\_{i=1}^n\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= \sum\_{i=1}^n\pi && \text{(Bernoulli mean)} \\ &= n\pi && \text{(sum of } n \text{ copies of } \pi\text{)} \end{aligned} \\
+>
+> For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with \\a_1 = \cdots = a_n = 1\\, then [independent components give a diagonal variance matrix](variance-covariance.llms.md#cor-vcov-indpt-diagonal), then the [Bernoulli variance](variance-covariance.llms.md#exm-variance-bernoulli):
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(S\right)\mathclose{} &= \sum\_{i=1}^n\sum\_{j=1}^n \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} && \text{(variance of a linear combination with } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} && \text{(} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0 \text{ for } i \neq j \text{, by independence)} \\ &= \sum\_{i=1}^n\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{} && \text{(} \operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{} \text{)} \\ &= \sum\_{i=1}^n\pi(1 - \pi) && \text{(Bernoulli variance)} \\ &= n\pi(1 - \pi) && \text{(sum of } n \text{ copies of } \pi(1 - \pi) \text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 5 (Expected number of responders)** In [Example 4](#exm-binomial-sum-bernoulli), \\S \sim \operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}\\. By [Theorem 2](#thm-binomial-moments):
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S\right\]\mathclose{} &= 5 \cdot 0.2 && \text{(} n\pi\text{)} \\ &= 1 && \text{(multiply)} \\ \operatorname{Var}\mathopen{}\left(S\right)\mathclose{} &= 5 \cdot 0.2 \cdot(1 - 0.2) && \text{(} n\pi(1 - \pi) \text{)} \\ &= 0.8 && \text{(multiply)} \end{aligned} \\
+>
+> On average, one of the five patients responds.
+
+## 3 The Poisson distribution
+
+> **NOTE:**
+>
+> **Definition 2 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu\> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
+>
+> \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \tag{2}\\
 
 > **NOTE:**
 >
@@ -74,19 +153,19 @@ Table 2: Distributions typically used for test statistics
 
 > **NOTE:**
 >
-> **Theorem 1 (CDF of Poisson distribution)** If \\Y \sim \operatorname{Pois}(\mu)\\, then for every real number \\y\\:
+> **Theorem 3 (CDF of Poisson distribution)** If \\Y \sim \operatorname{Pois}(\mu)\\, then for every real number \\y\\:
 >
-> \\\operatorname{P}(Y \le y) = e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{2}\\
+> \\\operatorname{P}(Y \le y) = e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{3}\\
 
 > **NOTE:**
 >
-> *Proof*. For \\y \< 0\\, both sides are \\0\\ (the sum is empty). For any \\y \ge 0\\, the event \\\\Y \le y\\\\ is the disjoint union of events \\\\Y = j\\\\ for all non-negative integers \\j \le \mathopen{}\left\lfloor y\right\rfloor\mathclose{}\\. Applying the Poisson PMF ([Equation 1](#eq-pois-pmf)) and factoring out the common term \\e^{-\mu}\\:
+> *Proof*. For \\y \< 0\\, both sides are \\0\\ (the sum is empty). For any \\y \ge 0\\, the event \\\\Y \le y\\\\ is the disjoint union of events \\\\Y = j\\\\ for all non-negative integers \\j \le \mathopen{}\left\lfloor y\right\rfloor\mathclose{}\\. Applying the Poisson PMF ([Equation 2](#eq-pois-pmf)) and factoring out the common term \\e^{-\mu}\\:
 >
 > \\ \begin{aligned} \operatorname{P}(Y \le y) &= \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \operatorname{P}(Y = j) && (\text{disjoint union of events } Y = j) \\ &= \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j e^{-\mu}}{j!} && (\text{definition of Poisson PMF}) \\ &= e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j}{j!} && (\text{factoring out } e^{-\mu} \text{ constant wrt } j) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 2 (Computing Poisson cumulative probabilities)** For a Poisson random variable \\X \sim \operatorname{Pois}(\mu= 2)\\, the probability of observing at most 2 events is computed as:
+> **Example 6 (Computing Poisson cumulative probabilities)** For a Poisson random variable \\X \sim \operatorname{Pois}(\mu= 2)\\, the probability of observing at most 2 events is computed as:
 >
 > \\ \begin{aligned} \operatorname{P}(X \le 2) &= e^{-2} \sum\_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu= 2, y = 2) \\ &= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} && (\text{expand terms for } j = 0, 1, 2) \\ &= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} && (\text{simplify factorials and powers}) \\ &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value}) \end{aligned} \\
 
@@ -171,7 +250,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 2 (Mean and variance of the Poisson distribution)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
+> **Theorem 4 (Mean and variance of the Poisson distribution)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
 >
 > - \\\operatorname{E}\[X\] = \mu\\
 > - \\\operatorname{Var}(X) = \mu\\
@@ -194,7 +273,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 3 (Ratio of consecutive Poisson probabilities, and the mode)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
+> **Theorem 5 (Ratio of consecutive Poisson probabilities, and the mode)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
 >
 > - \\\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\\ for \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\
 > - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \< \mu\\, \\\operatorname{P}(X=x) \> \operatorname{P}(X = x-1)\\
@@ -212,11 +291,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 3 (Mode of a Poisson distribution)** For \\X \sim \operatorname{Pois}(2.5)\\, \\\operatorname{P}(X = 2) = \frac{2.5}{2}\operatorname{P}(X = 1) \> \operatorname{P}(X = 1)\\ and \\\operatorname{P}(X = 3) = \frac{2.5}{3}\operatorname{P}(X = 2) \< \operatorname{P}(X = 2)\\, so the mode is \\\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\\. For \\X \sim \operatorname{Pois}(2)\\, \\\operatorname{P}(X = 2) = \frac{2}{2}\operatorname{P}(X = 1)\\, so \\1\\ and \\2\\ are both modes, each with probability \\2 e^{-2} \approx 0.271\\.
+> **Example 7 (Mode of a Poisson distribution)** For \\X \sim \operatorname{Pois}(2.5)\\, \\\operatorname{P}(X = 2) = \frac{2.5}{2}\operatorname{P}(X = 1) \> \operatorname{P}(X = 1)\\ and \\\operatorname{P}(X = 3) = \frac{2.5}{3}\operatorname{P}(X = 2) \< \operatorname{P}(X = 2)\\, so the mode is \\\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\\. For \\X \sim \operatorname{Pois}(2)\\, \\\operatorname{P}(X = 2) = \frac{2}{2}\operatorname{P}(X = 1)\\, so \\1\\ and \\2\\ are both modes, each with probability \\2 e^{-2} \approx 0.271\\.
 
 > **NOTE:**
 >
-> **Definition 2 (Exposure magnitude)** For many count outcomes, there is some sense of an **exposure magnitude**, such as population size or duration of observation, which multiplicatively rescales the expected (mean) count.
+> **Definition 3 (Exposure magnitude)** For many count outcomes, there is some sense of an **exposure magnitude**, such as population size or duration of observation, which multiplicatively rescales the expected (mean) count.
 
 > **NOTE:**
 >
@@ -243,9 +322,9 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 3 (Event rate)** For a count \\Y\\ observed over a fixed, known [exposure magnitude](#def-exposure) \\t \> 0\\, the **event rate**, denoted \\{\lambda}\\, is the mean of \\Y\\ divided by the exposure magnitude:
+> **Definition 4 (Event rate)** For a count \\Y\\ observed over a fixed, known [exposure magnitude](#def-exposure) \\t \> 0\\, the **event rate**, denoted \\{\lambda}\\, is the mean of \\Y\\ divided by the exposure magnitude:
 >
-> \\{\lambda}\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{3}\\
+> \\{\lambda}\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} \tag{4}\\
 
 > **NOTE:**
 >
@@ -253,25 +332,25 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 4 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
+> **Theorem 6 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
 >
-> \\\mu= {\lambda}\cdot t \tag{4}\\
+> \\\mu= {\lambda}\cdot t \tag{5}\\
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 3](#def-event-rate):
+> *Proof*. By [Definition 4](#def-event-rate):
 >
 > \\ \begin{aligned} {\lambda}&\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}{t} && (\text{definition of event rate}) \\ \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= {\lambda}\cdot t && (\text{multiply both sides by } t \> 0) \\ \mu&= {\lambda}\cdot t && (\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 4 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\{\lambda}= 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 4](#thm-mean-vs-event-rate):
+> **Example 8 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\{\lambda}= 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 6](#thm-mean-vs-event-rate):
 >
 > \\ \begin{aligned} \mu&= {\lambda}\cdot t && (\text{transformation from event rate to mean}) \\ &= 0.05 \times 100 && (\text{substitute } {\lambda}= 0.05 \text{ and } t = 100) \\ &= 5 \text{ cases} && (\text{evaluate expected count}) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 5 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
+> **Theorem 7 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\
 
@@ -281,11 +360,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. The hypothesis carries the content here. [Definition 3](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\{\lambda}= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\{\lambda}\\ shared across exposure magnitudes, including \\t = 0\\.
+> *Remark*. The hypothesis carries the content here. [Definition 4](#def-event-rate) alone cannot give \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\, since \\{\lambda}= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\{\lambda}\\ shared across exposure magnitudes, including \\t = 0\\.
 
 > **NOTE:**
 >
-> **Example 5 (Zero exposure time)** If a subject is observed for \\t = 0\\ person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\.
+> **Example 9 (Zero exposure time)** If a subject is observed for \\t = 0\\ person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\.
 
 > **IMPORTANT:**
 >
@@ -293,7 +372,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 6 (Exposure is additive on the log scale)** If \\\mu= {\lambda}\cdot t\\ with \\{\lambda}\> 0\\ and \\t \> 0\\, then:
+> **Theorem 8 (Exposure is additive on the log scale)** If \\\mu= {\lambda}\cdot t\\ with \\{\lambda}\> 0\\ and \\t \> 0\\, then:
 >
 > \\\log{\mu} = \log{{\lambda}} + \log{t}\\
 
@@ -303,7 +382,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 6 (Log-linear representation of expected counts)** If a clinic sees an event rate of \\{\lambda}= 0.02\\ events/day and \\t = 30\\ days of observation:
+> **Example 10 (Log-linear representation of expected counts)** If a clinic sees an event rate of \\{\lambda}= 0.02\\ events/day and \\t = 30\\ days of observation:
 >
 > \\ \begin{aligned} \log{\mu} &= \log(0.02) + \log(30) && (\text{apply log-scale formula}) \\ &= -3.912 + 3.401 && (\text{evaluate natural logarithms}) \\ &= -0.511 && (\text{sum terms}) \end{aligned} \\
 >
@@ -311,7 +390,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 4 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 6](#thm-exposure-log-scale)),
+> **Definition 5 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 8](#thm-exposure-log-scale)),
 >
 > \\\log{\mu} = \log{{\lambda}} + \log{t},\\
 >
@@ -323,11 +402,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 7 (The offset for a clinic’s event count)** In [Example 6](#exm-exposure-log-scale), the clinic was observed for \\t = 30\\ days, so the offset is \\\log{30} \approx 3.401\\. Only \\\log{{\lambda}}\\ is unknown before the data are seen; the offset is fixed by the length of observation. A clinic observed for \\t = 60\\ days has offset \\\log{60} \approx 4.094\\, which raises \\\log{\mu}\\ by \\\log{2} \approx 0.693\\ at the same event rate.
+> **Example 11 (The offset for a clinic’s event count)** In [Example 10](#exm-exposure-log-scale), the clinic was observed for \\t = 30\\ days, so the offset is \\\log{30} \approx 3.401\\. Only \\\log{{\lambda}}\\ is unknown before the data are seen; the offset is fixed by the length of observation. A clinic observed for \\t = 60\\ days has offset \\\log{60} \approx 4.094\\, which raises \\\log{\mu}\\ by \\\log{2} \approx 0.693\\ at the same event rate.
 
 > **NOTE:**
 >
-> **Theorem 7 (Sum of independent Poisson random variables)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt) Poisson random variables with means \\\mu_X\\ and \\\mu_Y\\, their sum, \\Z=X+Y\\, is also a Poisson random variable, with mean \\\mu_Z = \mu_X + \mu_Y\\.
+> **Theorem 9 (Sum of independent Poisson random variables)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt) Poisson random variables with means \\\mu_X\\ and \\\mu_Y\\, their sum, \\Z=X+Y\\, is also a Poisson random variable, with mean \\\mu_Z = \mu_X + \mu_Y\\.
 
 > **NOTE:**
 >
@@ -339,15 +418,15 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 8 (Aggregating independent region counts)** Suppose Region A records \\X \sim \operatorname{Pois}(\mu_X = 12)\\ cases and Region B records \\Y \sim \operatorname{Pois}(\mu_Y = 18)\\ cases independently. By [Theorem 7](#thm-sum-pois), the combined total count \\Z = X + Y\\ follows a Poisson distribution:
+> **Example 12 (Aggregating independent region counts)** Suppose Region A records \\X \sim \operatorname{Pois}(\mu_X = 12)\\ cases and Region B records \\Y \sim \operatorname{Pois}(\mu_Y = 18)\\ cases independently. By [Theorem 9](#thm-sum-pois), the combined total count \\Z = X + Y\\ follows a Poisson distribution:
 >
 > \\ \begin{aligned} Z &\sim \operatorname{Pois}(\mu_X + \mu_Y) && (\text{sum of independent Poissons}) \\ &= \operatorname{Pois}(12 + 18) && (\text{substitute region means}) \\ &= \operatorname{Pois}(30) && (\text{evaluate sum}) \end{aligned} \\
 
-## 3 The Negative-Binomial distribution
+## 4 The Negative-Binomial distribution
 
 > **NOTE:**
 >
-> **Definition 5 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu\> 0\\ and overdispersion parameter \\\rho\> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
+> **Definition 6 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu\> 0\\ and overdispersion parameter \\\rho\> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
 >
 > \\ \operatorname{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} \cdot \mathopen{}\left(1+\frac{\mu}{\rho}\right)\mathclose{}^{-\rho} \\
 >
@@ -355,13 +434,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 8 (The negative binomial converges to the Poisson)** Fix \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 1](#eq-pois-pmf)):
+> **Theorem 10 (The negative binomial converges to the Poisson)** Fix \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 2](#eq-pois-pmf)):
 >
 > \\\lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
 
 > **NOTE:**
 >
-> *Proof*. Fix \\y\\. In [Definition 5](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho+ y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
+> *Proof*. Fix \\y\\. In [Definition 6](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho+ y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
 >
 > \\ \begin{aligned} \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} &= \frac{\Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} && (\Gamma(x + 1) = x\\\Gamma(x) \text{, applied } y \text{ times}) \\ &= \prod\_{k=0}^{y-1} \frac{\rho+ k}{\rho+ \mu} && (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho+ \mu\text{ per } k) \\ &= \prod\_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho} && (\text{divide each numerator and denominator by } \rho) \\ &\rightarrow \prod\_{k=0}^{y-1} \frac{1 + 0}{1 + 0} && (k/\rho\rightarrow 0 \text{ and } \mu/\rho\rightarrow 0 \text{; finitely many factors}) \\ &= 1 && (\text{simplify}) \end{aligned} \\
 >
@@ -377,7 +456,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 9 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
+> **Theorem 11 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
 >
 > - \\\operatorname{E}\[Y\] = \mu\\
 > - \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu+ \frac{\mu^2}{\rho} \> \mu\\
@@ -392,7 +471,7 @@ Figure 2: Poisson CDFs
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} &= \operatorname{Var}(Y \mid \Lambda) \\ &= \Lambda \end{aligned} \\
 >
-> ([Theorem 2](#thm-poisson-properties)):
+> ([Theorem 4](#thm-poisson-properties)):
 >
 > \\ \begin{aligned} \operatorname{E}\[Y\] &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right\]\mathclose{} && (\text{law of iterated expectations}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} && (\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}\right)\mathclose{} && (\text{law of total variance}) \\ &= \operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{} && (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \Lambda\text{ and } \operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
 >
@@ -400,19 +479,19 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 9 (Overdispersion relative to the Poisson)** With \\\mu= 4\\ and \\\rho= 2\\,
+> **Example 13 (Overdispersion relative to the Poisson)** With \\\mu= 4\\ and \\\rho= 2\\,
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 4 + 16/2 \\ &= 12, \end{aligned} \\
 >
 > three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
 
-## 4 The Laplace distribution
+## 5 The Laplace distribution
 
 > **NOTE:**
 >
-> **Definition 6 (Laplace distribution)** A random variable \\Y\\ has the **Laplace distribution** with location parameter \\\mu\in \mathbb{R}\\ and scale parameter \\b \> 0\\, written \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\, if \\Y\\ is continuous with [density](random-variables.llms.md#def-pdf):
+> **Definition 7 (Laplace distribution)** A random variable \\Y\\ has the **Laplace distribution** with location parameter \\\mu\in \mathbb{R}\\ and scale parameter \\b \> 0\\, written \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\, if \\Y\\ is continuous with [density](random-variables.llms.md#def-pdf):
 >
-> \\\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left\|y - \mu\right\|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{5}\\
+> \\\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left\|y - \mu\right\|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}\\
 
 > **NOTE:**
 >
@@ -420,7 +499,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 10 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu= 3\\ and \\b = 2\\ ([Definition 6](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is
+> **Example 14 (Laplace density values)** Let \\Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\\, so \\\mu= 3\\ and \\b = 2\\ ([Definition 7](#def-laplace)). At the location, \\\mathopen{}\left\|y - \mu\right\|\mathclose{} = 0\\, so the density is \\\frac{1}{2b}\\. At a point \\y = 5\\, the distance is
 >
 > \\ \begin{aligned} \mathopen{}\left\|5 - 3\right\|\mathclose{} &= 2 \\ &= b, \end{aligned} \\
 >
@@ -441,13 +520,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 10 (Mean and variance of the Laplace distribution)** If \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Definition 6](#def-laplace)), then
+> **Theorem 12 (Mean and variance of the Laplace distribution)** If \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Definition 7](#def-laplace)), then
 >
-> \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu\quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{6}\\
+> \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu\quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{7}\\
 
 > **NOTE:**
 >
-> *Proof*. Write \\U = Y - \mu\\. By [Equation 5](#eq-laplace-pdf), \\U\\ has density \\\frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\, which is symmetric about \\0\\.
+> *Proof*. Write \\U = Y - \mu\\. By [Equation 6](#eq-laplace-pdf), \\U\\ has density \\\frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\, which is symmetric about \\0\\.
 >
 > For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{} = 0\\, and
 >
@@ -463,7 +542,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 11 (Laplace and normal tails with the same mean and variance)** A Laplace variable \\Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\\ has variance \\2b^2\\ ([Theorem 10](#thm-laplace-moments)). Choosing \\b = 1/\sqrt{2}\\ gives variance \\1\\, the same mean and variance as a standard normal. [Figure 3](#fig-laplace-vs-normal) compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.
+> **Example 15 (Laplace and normal tails with the same mean and variance)** A Laplace variable \\Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\\ has variance \\2b^2\\ ([Theorem 12](#thm-laplace-moments)). Choosing \\b = 1/\sqrt{2}\\ gives variance \\1\\, the same mean and variance as a standard normal. [Figure 3](#fig-laplace-vs-normal) compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.
 >
 > Show code
 >
@@ -486,7 +565,7 @@ Figure 2: Poisson CDFs
 >
 > Figure 3: Laplace and standard normal densities with the same mean (0) and variance (1)
 >
-> The probability of landing more than \\3\\ standard deviations from the mean shows the difference in the tails. For the Laplace distribution, \\\operatorname{P}(\mathopen{}\left\|Y\right\|\mathclose{} \> t) = \text{e}^{-t/b}\\, because each tail has probability \\\frac{1}{2}\text{e}^{-t/b}\\ by integrating [Equation 5](#eq-laplace-pdf).
+> The probability of landing more than \\3\\ standard deviations from the mean shows the difference in the tails. For the Laplace distribution, \\\operatorname{P}(\mathopen{}\left\|Y\right\|\mathclose{} \> t) = \text{e}^{-t/b}\\, because each tail has probability \\\frac{1}{2}\text{e}^{-t/b}\\ by integrating [Equation 6](#eq-laplace-pdf).
 >
 > ``` r
 > t <- 3
@@ -500,17 +579,17 @@ Figure 2: Poisson CDFs
 >
 > The Laplace distribution puts about 5.3 times as much probability beyond \\3\\ standard deviations as the normal distribution does.
 
-## 5 Weibull distribution
+## 6 Weibull distribution
 
 > **NOTE:**
 >
-> **Definition 7 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha\> 0\\ and rate \\{\lambda}\> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
+> **Definition 8 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha\> 0\\ and rate \\{\lambda}\> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0\\
 
 > **NOTE:**
 >
-> **Theorem 11 (Weibull density and hazard)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then for \\t \> 0\\:
+> **Theorem 13 (Weibull density and hazard)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then for \\t \> 0\\:
 >
 > \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\ \operatorname{h}(t) &= \alpha{\lambda}t^{\alpha-1} \end{aligned} \\
 
@@ -530,7 +609,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 12 (Weibull mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then:
+> **Theorem 14 (Weibull mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then:
 >
 > \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\\
 
@@ -546,7 +625,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 11](#thm-weibull) with \\\alpha= 1\\, for \\t \> 0\\:
+> *Proof*. By [Theorem 13](#thm-weibull) with \\\alpha= 1\\, for \\t \> 0\\:
 >
 > \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha} && (\text{Weibull density}) \\ &= 1 \cdot {\lambda}t^{0}\text{e}^{-{\lambda}t^1} && (\text{substitute } \alpha= 1) \\ &= {\lambda}\text{e}^{-{\lambda}t} && (t^0 = 1 \text{ and } t^1 = t) \end{aligned} \\
 >
@@ -562,7 +641,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 11](#thm-weibull), \\\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}\\ for \\t \> 0\\, so:
+> *Proof*. By [Theorem 13](#thm-weibull), \\\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}\\ for \\t \> 0\\, so:
 >
 > \\ \begin{aligned} \frac{d}{dt}\operatorname{h}(t) &= \frac{d}{dt} \alpha{\lambda}t^{\alpha-1} && (\text{Weibull hazard}) \\ &= \alpha(\alpha- 1){\lambda}t^{\alpha-2} && (\text{power rule}) \end{aligned} \\
 >
@@ -574,7 +653,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 12 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 11](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and
+> **Example 16 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 13](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(2){\lambda}^{-1} \\ &= 1/{\lambda}, \end{aligned} \\
 >
@@ -582,11 +661,11 @@ Figure 2: Poisson CDFs
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(3/2) \\ &= \sqrt{\pi}/2 \\ &\approx 0.886. \end{aligned} \\
 
-## 6 The multivariate normal distribution
+## 7 The multivariate normal distribution
 
 > **NOTE:**
 >
-> **Definition 8 (Multivariate normal distribution)** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
+> **Definition 9 (Multivariate normal distribution)** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
 >
 > \\ \operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=} \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{1}{2} {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})}, \quad \tilde{x}\in \mathbb{R}^p \\
 >
@@ -603,11 +682,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 13 (The multivariate normal density integrates to 1)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 8](#def-mvn)), then the density in [Definition 8](#def-mvn) integrates to 1 over \\\mathbb{R}^p\\.
+> **Theorem 15 (The multivariate normal density integrates to 1)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then the density in [Definition 9](#def-mvn) integrates to 1 over \\\mathbb{R}^p\\.
 
 > **NOTE:**
 >
-> **Theorem 14 (The mean and variance of the multivariate normal distribution)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 8](#def-mvn)), then \\\operatorname{E}\tilde{X}= \tilde{\mu}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
+> **Theorem 16 (The mean and variance of the multivariate normal distribution)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then \\\operatorname{E}\tilde{X}= \tilde{\mu}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
 
 > **NOTE:**
 >
@@ -615,7 +694,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 13 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
+> **Example 17 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
 >
 > \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}} \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)} && \text{(substitute into the multivariate normal density)} \\ &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x - \mu)^2}{2\sigma^2}} && \text{(simplify)} \end{aligned} \\
 >
@@ -635,7 +714,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 9 (Mahalanobis distance)** For a \\p \times p\\ positive definite matrix \\\mathbf{\Sigma}\\ and \\\tilde{x}, \tilde{\mu} \in \mathbb{R}^p\\, the **Mahalanobis distance** from \\\tilde{x}\\ to \\\tilde{\mu}\\ with respect to \\\mathbf{\Sigma}\\ is:
+> **Definition 10 (Mahalanobis distance)** For a \\p \times p\\ positive definite matrix \\\mathbf{\Sigma}\\ and \\\tilde{x}, \tilde{\mu} \in \mathbb{R}^p\\, the **Mahalanobis distance** from \\\tilde{x}\\ to \\\tilde{\mu}\\ with respect to \\\mathbf{\Sigma}\\ is:
 >
 > \\ \Delta(\tilde{x}) \stackrel{\text{def}}{=}\sqrt{{(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})} \\
 
@@ -649,15 +728,15 @@ Figure 2: Poisson CDFs
 >
 > \\ \operatorname{p}(\tilde{X}= \tilde{x}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\tilde{x})^2}{2}} \\
 >
-> where \\\Delta\\ is the Mahalanobis distance to \\\tilde{\mu}\\ with respect to \\\mathbf{\Sigma}\\ ([Definition 9](#def-mahalanobis)). So the density is highest at \\\tilde{x}= \tilde{\mu}\\, decreases as \\\Delta(\tilde{x})\\ increases, and is the same at every \\\tilde{x}\\ with the same \\\Delta(\tilde{x})\\.
+> where \\\Delta\\ is the Mahalanobis distance to \\\tilde{\mu}\\ with respect to \\\mathbf{\Sigma}\\ ([Definition 10](#def-mahalanobis)). So the density is highest at \\\tilde{x}= \tilde{\mu}\\, decreases as \\\Delta(\tilde{x})\\ increases, and is the same at every \\\tilde{x}\\ with the same \\\Delta(\tilde{x})\\.
 
 > **NOTE:**
 >
-> *Proof*. Substitute [Definition 9](#def-mahalanobis) into [Definition 8](#def-mvn). The function \\\delta\mapsto \text{e}^{-\delta^2/2}\\ decreases on \\\delta\ge 0\\, and by [Lemma 1](#lem-mahalanobis-nonneg), \\\Delta(\tilde{x}) = 0\\ only at \\\tilde{x}= \tilde{\mu}\\.
+> *Proof*. Substitute [Definition 10](#def-mahalanobis) into [Definition 9](#def-mvn). The function \\\delta\mapsto \text{e}^{-\delta^2/2}\\ decreases on \\\delta\ge 0\\, and by [Lemma 1](#lem-mahalanobis-nonneg), \\\Delta(\tilde{x}) = 0\\ only at \\\tilde{x}= \tilde{\mu}\\.
 
 > **NOTE:**
 >
-> **Example 14 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma^2_1, \ldots, 1/\sigma^2_p\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
+> **Example 18 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma^2_1, \ldots, 1/\sigma^2_p\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
 >
 > \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i} \\
 >
@@ -670,7 +749,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 15 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
+> **Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
 >
 > - the joint density of \\\tilde{X}\\ is the product of the [normal densities](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, \\i = 1, \ldots, p\\,
 > - each \\X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, and
@@ -678,7 +757,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma^2_i\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 14](#exm-mahalanobis-special) for the quadratic form:
+> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma^2_i\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 18](#exm-mahalanobis-special) for the quadratic form:
 >
 > \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma^2_i}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
 >
@@ -690,7 +769,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 14](#thm-mvn-moments), \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\, whose \\(i,j)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If \\\mathbf{\Sigma}\\ is diagonal, the components are independent by [Theorem 15](#thm-mvn-diagonal-indpt). If the components are independent, then:
+> *Proof*. By [Theorem 16](#thm-mvn-moments), \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\, whose \\(i,j)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If \\\mathbf{\Sigma}\\ is diagonal, the components are independent by [Theorem 17](#thm-mvn-diagonal-indpt). If the components are independent, then:
 >
 > - each pair \\X_i, X_j\\ with \\i \neq j\\ is independent,
 > - each \\X_i\\ is continuous, with the density left after integrating out the other coordinates of the joint density ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables), and
@@ -704,7 +783,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 16 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
+> **Theorem 18 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
 >
 > \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{\mathopen{}\left({\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i} \\
 
@@ -720,7 +799,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 15 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 16](#thm-mahalanobis-eigen):
+> **Example 19 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 18](#thm-mahalanobis-eigen):
 >
 > \\ \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
 >
@@ -738,11 +817,11 @@ Figure 2: Poisson CDFs
 >
 > So the contour \\\Delta(\tilde{x}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\tilde{0}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated.
 
-## 7 Mixture distributions
+## 8 Mixture distributions
 
 > **NOTE:**
 >
-> **Definition 10 (Mixture density)** Let \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ be densities on \\\mathbb{R}\\, and let \\w_1, \ldots, w_K\\ be numbers with:
+> **Definition 11 (Mixture density)** Let \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ be densities on \\\mathbb{R}\\, and let \\w_1, \ldots, w_K\\ be numbers with:
 >
 > - \\w_c \ge 0\\ for every \\c\\, and
 > - \\\sum\_{c=1}^{K} w_c = 1\\.
@@ -753,15 +832,15 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 11 (Mixture component)** The densities \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ in a mixture ([Definition 10](#def-mixture)) are its **components**.
+> **Definition 12 (Mixture component)** The densities \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ in a mixture ([Definition 11](#def-mixture)) are its **components**.
 
 > **NOTE:**
 >
-> **Theorem 17 (A mixture is the density of a two-stage random variable)** Let \\C\\ be a discrete random variable and \\X\\ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
+> **Theorem 19 (A mixture is the density of a two-stage random variable)** Let \\C\\ be a discrete random variable and \\X\\ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
 >
 > \\\operatorname{p}(C = c,\\ X = x) = w_c \\ {\operatorname{p}\_c}(x), \quad c \in \mathopen{}\left\\1, \ldots, K\right\\\mathclose{},\\
 >
-> with \\{\operatorname{p}\_c}\\ and \\w_c\\ as in [Definition 10](#def-mixture). Then:
+> with \\{\operatorname{p}\_c}\\ and \\w_c\\ as in [Definition 11](#def-mixture). Then:
 >
 > - \\\operatorname{P}(C = c) = w_c\\,
 > - for each \\c\\ with \\w_c \> 0\\, the [conditional density](expectation.llms.md#def-cond-mixed) of \\X\\ given \\C = c\\ is \\{\operatorname{p}\_c}\\, and
@@ -785,11 +864,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 17](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label \\C\\ with \\\operatorname{P}(C = c) = w_c\\, then draw \\X\\ from the component density \\{\operatorname{p}\_C}\\. In applications, \\C\\ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with \\p\\-variable densities in place of densities on \\\mathbb{R}\\.
+> *Remark*. [Theorem 19](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label \\C\\ with \\\operatorname{P}(C = c) = w_c\\, then draw \\X\\ from the component density \\{\operatorname{p}\_C}\\. In applications, \\C\\ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with \\p\\-variable densities in place of densities on \\\mathbb{R}\\.
 
 > **NOTE:**
 >
-> **Theorem 18 (The mean of a mixture is the weighted mean of the component means)** If \\X\\ has density \\{\operatorname{p}\_{\text{mix}}}\\ ([Definition 10](#def-mixture)), and each component \\{\operatorname{p}\_c}\\ has a defined mean \\\mu_c = \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx\\, then:
+> **Theorem 20 (The mean of a mixture is the weighted mean of the component means)** If \\X\\ has density \\{\operatorname{p}\_{\text{mix}}}\\ ([Definition 11](#def-mixture)), and each component \\{\operatorname{p}\_c}\\ has a defined mean \\\mu_c = \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx\\, then:
 >
 > \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \sum\_{c=1}^{K} w_c \\ \mu_c\\
 
@@ -803,35 +882,35 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 19 (Which component did an observation come from?)** Under the conditions of [Theorem 17](#thm-mixture-two-stage), for each \\x\\ with \\{\operatorname{p}\_{\text{mix}}}(x) \> 0\\:
+> **Theorem 21 (Which component did an observation come from?)** Under the conditions of [Theorem 19](#thm-mixture-two-stage), for each \\x\\ with \\{\operatorname{p}\_{\text{mix}}}(x) \> 0\\:
 >
 > \\ \operatorname{P}(C = c \mid X = x) = \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} \\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 17](#thm-mixture-two-stage), \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case \\X\\ continuous, \\C\\ discrete):
+> *Proof*. By [Theorem 19](#thm-mixture-two-stage), \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case \\X\\ continuous, \\C\\ discrete):
 >
 > \\ \begin{aligned} \operatorname{P}(C = c \mid X = x) &= \frac{\operatorname{p}(C = c,\\ X = x)}{\operatorname{p}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} && \text{(substitute the joint density-mass function and } {\operatorname{p}\_{\text{mix}}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 19](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability \\w_c\\ of component \\c\\ is multiplied by the component density \\{\operatorname{p}\_c}(x)\\ at the observation and divided by the overall density \\{\operatorname{p}\_{\text{mix}}}(x)\\, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
+> *Remark*. [Theorem 21](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability \\w_c\\ of component \\c\\ is multiplied by the component density \\{\operatorname{p}\_c}(x)\\ at the observation and divided by the overall density \\{\operatorname{p}\_{\text{mix}}}(x)\\, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
 
 > **NOTE:**
 >
-> **Definition 12 (Responsibility of a mixture component)** In the setting of [Theorem 19](#thm-mixture-posterior), the conditional probability \\\operatorname{P}(C = c \mid X = x)\\ is called, in machine learning, the **responsibility** of component \\c\\ for \\x\\.
+> **Definition 13 (Responsibility of a mixture component)** In the setting of [Theorem 21](#thm-mixture-posterior), the conditional probability \\\operatorname{P}(C = c \mid X = x)\\ is called, in machine learning, the **responsibility** of component \\c\\ for \\x\\.
 
 > **NOTE:**
 >
-> **Example 16 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
+> **Example 20 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
 >
-> - **Mean.** By [Theorem 18](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
+> - **Mean.** By [Theorem 20](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
 >   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\ &= 4.2. \end{aligned} \\
 >
 > - **Density.** \\{\operatorname{p}\_{\text{mix}}}\\ has peaks near the two component means, \\{\operatorname{p}\_{\text{mix}}}(0) \approx 0.120\\ and \\{\operatorname{p}\_{\text{mix}}}(6) \approx 0.279\\, with a trough between them, \\{\operatorname{p}\_{\text{mix}}}(3) \approx 0.004\\. The density at the mean, \\{\operatorname{p}\_{\text{mix}}}(4.2) \approx 0.055\\, is less than half its value at either peak.
 >
-> - **Responsibilities.** By [Theorem 19](#thm-mixture-posterior), at \\x = 3\\, halfway between the component means, \\{\operatorname{p}\_1}(3) = {\operatorname{p}\_2}(3)\\ by the symmetry of the normal density, so:
+> - **Responsibilities.** By [Theorem 21](#thm-mixture-posterior), at \\x = 3\\, halfway between the component means, \\{\operatorname{p}\_1}(3) = {\operatorname{p}\_2}(3)\\ by the symmetry of the normal density, so:
 >
 >   \\ \begin{aligned} \operatorname{P}(C = 2 \mid X = 3) &= \frac{0.7\\{\operatorname{p}\_2}(3)}{0.3\\{\operatorname{p}\_1}(3) + 0.7\\{\operatorname{p}\_2}(3)} \\ &= \frac{0.7}{0.3 + 0.7} \\ &= 0.7, \end{aligned} \\
 >
@@ -839,11 +918,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. [Example 16](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
+> *Remark*. [Example 20](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
 
 > **NOTE:**
 >
-> **Example 17 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 9](#thm-nb)).
+> **Example 21 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
 ## References
 

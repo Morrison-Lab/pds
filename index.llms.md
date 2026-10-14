@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 22:42:42 (PDT)
+Last modified: 2026-10-14 00:28:11 (PDT)
 
 ## Welcome
 
@@ -18,7 +18,7 @@ These notes collect the probability that data science courses assume. Some key r
 - [Independence](independence.llms.md): independence, conditional independence, and (conditionally) IID random variables
 - [Expectation](expectation.llms.md): expectation, LOTUS, conditional expectation, Fubini-Tonelli, and the law of iterated expectations
 - [Variance and covariance](variance-covariance.llms.md): deviation, variance, conditional variance, homoskedasticity, and covariance
-- [Key distributions](distributions.llms.md): Bernoulli, Poisson, negative binomial, and Weibull distributions
+- [Key distributions](distributions.llms.md): Bernoulli, binomial, Poisson, negative binomial, and Weibull distributions
 - [Limit theorems](limit-theorems.llms.md): the Central Limit Theorem
 
 Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202). These notes began as the probability chapter of the Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies them to regression and survival models (see [Additional resources](#sec-additional-resources)).
