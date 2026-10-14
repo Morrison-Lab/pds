@@ -11,12 +11,12 @@ In $Y = f(x) + \noise$, moving a constant from $\noise$ into $f(x)$
 changes the split but not the distribution of $Y$,
 so the data identify only the sum $f(x) + \E{\noise}$, the mean of $Y$ at $x$.
 Requiring $\E{\noise} = 0$ picks the one split in which $f(x)$ is that mean.
-It costs nothing provided the model for $f$ can absorb a constant,
+This loses no generality when the model for $f$ can absorb a constant,
 as any model with an intercept can.
 It restricts the model only when $f$ cannot absorb one,
 as in a regression through the origin.
 
 :::
 
-Mean zero buys one identity, used repeatedly across statistical modeling
+Mean zero gives one identity, used repeatedly across statistical modeling
 and machine learning.
