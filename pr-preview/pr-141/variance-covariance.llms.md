@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 13:15:08 (PDT)
+Last modified: 2026-10-14 13:35:42 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -342,7 +342,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark 2* (The same identity over training sets). [Theorem 4](#thm-prediction-error) treats the prediction \\\hat f(x_0)\\ as a random variable without saying where its randomness comes from. In machine learning the randomness is the training set, so the expectation is taken over both the training set and the new output’s noise. The machine learning notes state that version as [the bias–variance decomposition](https://morrison-lab.github.io/lds/chapters/big-ideas.html#thm-bias-variance-decomposition), and prove it in two steps, one for the noise and one for the bias.
+> *Remark 2* (The same identity over training sets). [Theorem 4](#thm-prediction-error) treats the prediction as a random variable without saying where its randomness comes from. In machine learning the randomness is the training set, so the expectation is taken over both the training set and the new output’s noise. The machine learning notes state that version as [the bias–variance decomposition](https://morrison-lab.github.io/lds/chapters/big-ideas.html#thm-bias-variance-decomposition), and prove it in two steps, one for the noise and one for the bias.
 
 ## 4 Covariance
 
