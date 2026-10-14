@@ -130,7 +130,6 @@ if (knitr::is_html_output()) {
   )
 } else {
   op <- par(mfrow = c(2, 3), mar = c(4, 4, 3, 1))
-  on.exit(par(op), add = TRUE)
   blue <- "#1f77b4"
   step_x <- c(-1, heads, 3)
 
@@ -167,5 +166,7 @@ if (knitr::is_html_output()) {
     xlab = "probability p", ylab = "quantile",
     main = "Normal: quantile function"
   )
+  # Restore the plotting layout after the last panel.
+  par(op)
 }
 ```
