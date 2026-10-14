@@ -1156,7 +1156,7 @@ and $\Varf{\vX} = \matr{\covmat}$
 The proof changes variables in a $p$-dimensional integral,
 which these notes do not develop;
 see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>.
-As with the univariate [normal distribution](random-variables.qmd#thm-normal-moments),
+As with the univariate [normal distribution](random-variables.qmd#thm-normal-density),
 these facts are where the parameters' names come from.
 They also show why $\matr{\covmat}$ must at least be
 [positive semidefinite](variance-covariance.qmd#thm-vcov-psd);
@@ -1708,7 +1708,7 @@ with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$,
 and let $X$ have density ${\p_{\text{mix}}} = 0.3\,{\p_1} + 0.7\,{\p_2}$.
 
 - **Mean.**
-  By @thm-mixture-mean and the [normal means](random-variables.qmd#thm-normal-moments),
+  By @thm-mixture-mean and the [normal means](random-variables.qmd#thm-normal-density),
 
   $$
   \begin{aligned}
