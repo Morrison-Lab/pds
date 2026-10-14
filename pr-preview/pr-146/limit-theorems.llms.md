@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 13:40:13 (PDT)
+Last modified: 2026-10-14 13:51:54 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -309,7 +309,7 @@ Last modified: 2026-10-14 13:40:13 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a). Let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\, so \\\bar X_n = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 3](#thm-chebyshev) to \\\bar X_n\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar X_n\\, whose variance is \\\sigma^2/n\\ by [Corollary 1](#cor-sum-iid-moments).
 
 ## References
 
