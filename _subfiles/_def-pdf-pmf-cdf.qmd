@@ -547,9 +547,13 @@ so the median of the number of heads is $Q(0.5) = 1$.
 
 {{< slidebreak >}}
 
+::: {.remark}
+
 @fig-pmf-cdf-quantile shows the mass function, CDF and quantile function
 of the number of heads in two fair coin flips (top row),
 beside the density, CDF and quantile function of a standard normal variable (bottom row).
+
+:::
 
 {{< include pds/_subfiles/_fig-pmf-cdf-quantile.qmd >}}
 
