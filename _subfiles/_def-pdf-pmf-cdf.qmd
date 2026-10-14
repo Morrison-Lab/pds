@@ -298,13 +298,21 @@ as the second density in @exm-normal does.
 {{< slidebreak >}}
 
 :::{#thm-normal-density}
-#### The normal density integrates to 1, with mean $\mean$ and variance $\ss$
+#### The normal density integrates to 1
 
 If $X \sim \ndist{\mean, \ss}$ (@def-normal), then:
 
 $$\int_{-\infty}^{\infty} \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}\,dx = 1$$
 
-and $X$ has [mean](expectation.qmd#def-expectation) $\E{X} = \mean$
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-normal-moments}
+#### The mean and variance of the normal distribution
+
+If $X \sim \ndist{\mean, \ss}$ (@def-normal),
+then $X$ has [mean](expectation.qmd#def-expectation) $\E{X} = \mean$
 and [variance](variance-covariance.qmd#def-variance) $\Var{X} = \ss$.
 
 :::
@@ -539,16 +547,12 @@ so the median of the number of heads is $Q(0.5) = 1$.
 {{< slidebreak >}}
 
 :::{#thm-density-vs-CDF}
-#### A density integrates to the CDF, and is its derivative
+#### A density integrates to the CDF
 
 If $X$ is a continuous random variable with density $f$ and CDF $F$,
 then for every $t$:
 
 $$F(t) = \int_{-\infty}^{t} f(x)\,dx$$
-
-and at every $t$ where $f$ is continuous:
-
-$$f(t) = \deriv{t} F(t)$$
 
 :::
 
@@ -573,6 +577,24 @@ $$
 
 Letting $a \to -\infty$, $F(a) \to 0$ (@thm-cdf-properties),
 which gives $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-cdf-derivative-is-density}
+#### The derivative of the CDF is the density where the density is continuous
+
+If $X$ is a continuous random variable with density $f$ and CDF $F$,
+then at every $t$ where $f$ is continuous:
+
+$$f(t) = \deriv{t} F(t)$$
+
+:::
+
+::: proof
+
+By @thm-density-vs-CDF, $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
 The fundamental theorem of calculus then gives
 $\deriv{t} \int_{-\infty}^{t} f(x)\,dx = f(t)$
 at every $t$ where $f$ is continuous.
@@ -592,7 +614,7 @@ at all but finitely many points.
 ::: proof
 
 At every point $t$ where $f$ is continuous,
-@thm-density-vs-CDF gives $F'(t) = f(t)$,
+@thm-cdf-derivative-is-density gives $F'(t) = f(t)$,
 and by assumption those are all but finitely many points.
 
 :::
@@ -740,7 +762,7 @@ $$
 \ea
 $$
 
-By @thm-density-vs-CDF, $F$ is differentiable at $x$ with $F'(x) = f(x)$,
+By @thm-cdf-derivative-is-density, $F$ is differentiable at $x$ with $F'(x) = f(x)$,
 so this difference quotient converges to $f(x)$ as $\change \downarrow 0$.
 
 :::
