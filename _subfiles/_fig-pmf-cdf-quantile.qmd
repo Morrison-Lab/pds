@@ -1,0 +1,153 @@
+```{r}
+#| label: fig-pmf-cdf-quantile
+#| fig-cap: "A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF's, swapped."
+#| fig-alt: "Two rows of three plots. Top row, for the number of heads in two fair coin flips: bars of height one quarter, one half and one quarter at 0, 1 and 2; a staircase CDF rising from 0 to 1 in three jumps; and a staircase quantile function taking the values 0, 1 and 2. Bottom row, for the standard normal distribution: a bell-shaped density with the area to the left of one shaded; a smooth S-shaped CDF rising from 0 to 1; and a smooth increasing quantile function that drops toward negative infinity near probability 0 and rises toward positive infinity near probability 1."
+#| echo: !expr knitr::is_html_output()
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+# HTML formats get six interactive plotly panels; the handout and other
+# formats get the same panels drawn with base R graphics.
+# Top row: X = number of heads in two fair coin flips, so the pmf is
+# 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
+# Bottom row: the standard normal distribution; the density is shaded
+# up to t = 1 to show that the CDF at t is the area to its left.
+heads <- 0:2
+pmf <- c(1, 2, 1) / 4
+cdf_steps <- cumsum(pmf)
+shade_at <- 1
+z <- seq(-3.5, 3.5, length.out = 300)
+p_grid <- seq(0.005, 0.995, length.out = 300)
+z_shade <- z[z <= shade_at]
+
+if (knitr::is_html_output()) {
+  library(plotly)
+
+  # One panel's layout: words on the axes, no plotly toolbar clutter.
+  panel_layout <- function(widget, title, xlab, ylab, ...) {
+    widget |>
+      layout(
+        title = list(text = title, font = list(size = 13)),
+        xaxis = list(title = xlab, zeroline = FALSE),
+        yaxis = list(title = ylab, zeroline = FALSE, ...),
+        showlegend = FALSE, margin = list(t = 40)
+      ) |>
+      config(displaylogo = FALSE, responsive = TRUE)
+  }
+  blue <- "#1f77b4"
+  step_x <- c(-1, heads, 3)
+
+  coin_pmf <- plot_ly(
+    x = heads, y = pmf, type = "bar", marker = list(color = blue),
+    hovertemplate = "heads %{x}<br>probability %{y}<extra></extra>"
+  ) |>
+    panel_layout(
+      "Coin flips: mass function", "number of heads", "probability",
+      range = c(0, 0.6)
+    )
+  coin_cdf <- plot_ly(
+    x = step_x, y = c(0, cdf_steps, 1), type = "scatter", mode = "lines",
+    line = list(shape = "hv", color = blue),
+    hovertemplate = "t %{x}<br>CDF %{y}<extra></extra>"
+  ) |>
+    panel_layout(
+      "Coin flips: CDF", "t", "probability of at most t heads"
+    )
+  coin_quantile <- plot_ly(
+    x = c(0, 0.25, 0.75, 1), y = c(0, 1, 2, 2), type = "scatter",
+    mode = "lines", line = list(shape = "hv", color = blue),
+    hovertemplate = "p %{x}<br>quantile %{y}<extra></extra>"
+  ) |>
+    panel_layout(
+      "Coin flips: quantile function", "probability p",
+      "smallest t with CDF at least p"
+    )
+
+  normal_pdf <- plot_ly() |>
+    add_lines(
+      x = z, y = dnorm(z), line = list(color = blue),
+      hovertemplate = "x %{x:.2f}<br>density %{y:.3f}<extra></extra>"
+    ) |>
+    add_trace(
+      x = c(z_shade, shade_at), y = c(dnorm(z_shade), 0), type = "scatter",
+      mode = "lines", fill = "tozeroy", fillcolor = "rgba(31,119,180,0.3)",
+      line = list(width = 0), hoverinfo = "skip"
+    ) |>
+    panel_layout("Normal: density", "x", "density")
+  normal_cdf <- plot_ly() |>
+    add_lines(
+      x = z, y = pnorm(z), line = list(color = blue),
+      hovertemplate = "t %{x:.2f}<br>CDF %{y:.3f}<extra></extra>"
+    ) |>
+    add_markers(
+      x = shade_at, y = pnorm(shade_at), marker = list(color = blue),
+      hoverinfo = "skip"
+    ) |>
+    panel_layout("Normal: CDF", "t", "probability of at most t")
+  normal_quantile <- plot_ly() |>
+    add_lines(
+      x = p_grid, y = qnorm(p_grid), line = list(color = blue),
+      hovertemplate = "p %{x:.3f}<br>quantile %{y:.2f}<extra></extra>"
+    ) |>
+    panel_layout("Normal: quantile function", "probability p", "quantile")
+
+  # A flex container lays the panels out two rows of three, wrapping on
+  # narrow screens.
+  cell <- function(w) {
+    htmltools::div(style = "flex: 1 1 280px; min-width: 0;", w)
+  }
+  # The alt text: a plotly widget has none of its own.
+  htmltools::div(
+    role = "img",
+    `aria-label` = paste(
+      "Six interactive plots. Top row, number of heads in two fair coin",
+      "flips: mass function, staircase CDF and staircase quantile function.",
+      "Bottom row, standard normal: density with the area left of one",
+      "shaded, S-shaped CDF and increasing quantile function."
+    ),
+    style = "display: flex; flex-wrap: wrap; gap: 4px;",
+    cell(coin_pmf), cell(coin_cdf), cell(coin_quantile),
+    cell(normal_pdf), cell(normal_cdf), cell(normal_quantile)
+  )
+} else {
+  op <- par(mfrow = c(2, 3), mar = c(4, 4, 3, 1))
+  on.exit(par(op), add = TRUE)
+  blue <- "#1f77b4"
+  step_x <- c(-1, heads, 3)
+
+  barplot(
+    pmf, names.arg = heads, col = blue, ylim = c(0, 0.6),
+    xlab = "number of heads", ylab = "probability",
+    main = "Coin flips: mass function"
+  )
+  plot(
+    stepfun(heads, c(0, cdf_steps)), verticals = FALSE, pch = 16,
+    xlim = c(-1, 3), col = blue, xlab = "t",
+    ylab = "probability of at most t heads", main = "Coin flips: CDF"
+  )
+  plot(
+    stepfun(c(0.25, 0.75), c(0, 1, 2)), verticals = FALSE, pch = 16,
+    xlim = c(0, 1), col = blue, xlab = "probability p",
+    ylab = "smallest t with CDF at least p",
+    main = "Coin flips: quantile function"
+  )
+  plot(
+    z, dnorm(z), type = "l", col = blue, xlab = "x", ylab = "density",
+    main = "Normal: density"
+  )
+  polygon(c(z_shade, shade_at), c(dnorm(z_shade), 0),
+    col = adjustcolor(blue, 0.3), border = NA
+  )
+  plot(
+    z, pnorm(z), type = "l", col = blue, xlab = "t",
+    ylab = "probability of at most t", main = "Normal: CDF"
+  )
+  points(shade_at, pnorm(shade_at), pch = 16, col = blue)
+  plot(
+    p_grid, qnorm(p_grid), type = "l", col = blue,
+    xlab = "probability p", ylab = "quantile",
+    main = "Normal: quantile function"
+  )
+}
+```
