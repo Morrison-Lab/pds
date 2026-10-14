@@ -1,7 +1,25 @@
 ```{r}
 #| label: fig-pmf-cdf-quantile
-#| fig-cap: "A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF's, swapped."
-#| fig-alt: "Two rows of three plots. Top row, for the number of heads in two fair coin flips: bars of height one quarter, one half and one quarter at 0, 1 and 2; a staircase CDF rising from 0 to 1 in three jumps; and a staircase quantile function taking the values 0, 1 and 2. Bottom row, for the standard normal distribution: a bell-shaped density with the area to the left of one shaded; a smooth S-shaped CDF rising from 0 to 1; and a smooth increasing quantile function that drops toward negative infinity near probability 0 and rises toward positive infinity near probability 1."
+#| fig-cap: >-
+#|   A probability mass function, cumulative distribution function and
+#|   quantile function for a discrete random variable (top row: the
+#|   number of heads in two fair coin flips) and a continuous one
+#|   (bottom row: the standard normal distribution).
+#|   The shaded area under the normal density up to a point equals
+#|   the CDF at that point.
+#|   The quantile function reverses the CDF: its axes are the CDF's,
+#|   swapped.
+#| fig-alt: >-
+#|   Two rows of three plots. Top row, for the number of heads in two
+#|   fair coin flips: bars of height one quarter, one half and one
+#|   quarter at 0, 1 and 2; a staircase CDF rising from 0 to 1 in
+#|   three jumps; and a staircase quantile function taking the values
+#|   0, 1 and 2. Bottom row, for the standard normal distribution:
+#|   a bell-shaped density with the area to the left of one shaded;
+#|   a smooth S-shaped CDF rising from 0 to 1; and a smooth increasing
+#|   quantile function that drops toward negative infinity near
+#|   probability 0 and rises toward positive infinity near
+#|   probability 1.
 #| echo: !expr knitr::is_html_output()
 #| message: false
 #| warning: false
