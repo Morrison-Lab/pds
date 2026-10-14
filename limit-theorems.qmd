@@ -47,6 +47,10 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_sol-chebyshev-sample-size.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-chebyshev-sample-mean.qmd >}}
+
 ## References {.unnumbered}
 
 ::: {#refs}
