@@ -76,3 +76,16 @@ so every prediction there has expected squared error at least $3$.
 This expected prediction error decomposition into squared bias, variance, and irreducible error follows @james2021islr2e [Section 2.2.2].
 
 :::
+
+::: {#rem-prediction-error-training-set}
+
+#### The same identity over training sets
+
+@thm-prediction-error treats the prediction $\hat f(x_0)$ as a random variable without saying where its randomness comes from.
+In machine learning the randomness is the training set,
+so the expectation is taken over both the training set and the new output's noise.
+The machine learning notes state that version as
+[the bias--variance decomposition](https://morrison-lab.github.io/lds/chapters/big-ideas.html#thm-bias-variance-decomposition),
+and prove it in two steps, one for the noise and one for the bias.
+
+:::
