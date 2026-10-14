@@ -81,7 +81,7 @@ This expected prediction error decomposition into squared bias, variance, and ir
 
 #### The same identity over training sets
 
-@thm-prediction-error treats the prediction $\hat f(x_0)$ as a random variable without saying where its randomness comes from.
+@thm-prediction-error treats the prediction as a random variable without saying where its randomness comes from.
 In machine learning the randomness is the training set,
 so the expectation is taken over both the training set and the new output's noise.
 The machine learning notes state that version as
