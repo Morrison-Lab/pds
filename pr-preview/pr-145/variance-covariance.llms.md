@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 13:40:09 (PDT)
+Last modified: 2026-10-14 13:59:07 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -80,7 +80,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > **Exercise 1 (The average squared error of pure noise)** Let \\\varepsilon\\ be a random variable with \\\operatorname{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\.
 >
-> Show that \\\operatorname{E}\[\varepsilon^2\] = \sigma^2\\, and say which earlier result you used.
+> Find \\\operatorname{E}\[\varepsilon^2\]\\ in terms of \\\sigma^2\\, and say which earlier result you used.
 
 > **NOTE:**
 >
@@ -100,9 +100,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment). By [Theorem 3](#thm-variance), \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \operatorname{E}\[\varepsilon^2\] - (\operatorname{E}\[\varepsilon\])^2\\. Substituting \\\operatorname{E}\[\varepsilon\] = 0\\ and solving for \\\operatorname{E}\[\varepsilon^2\]\\,
->
-> \\ \begin{aligned} \operatorname{E}\[\varepsilon^2\] &= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\ &= \sigma^2 \end{aligned} \\
+> *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment), worked in [Solution 1](#sol-noise-second-moment). It rearranges [Theorem 3](#thm-variance), using \\\operatorname{E}\[\varepsilon\] = 0\\.
 
 ## 2 Variance and related characteristics
 

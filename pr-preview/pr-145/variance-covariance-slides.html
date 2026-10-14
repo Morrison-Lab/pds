@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-14 13:40:09 (PDT)</p>
+  <p class="date">Last modified: 2026-10-14 13:59:07 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -456,7 +456,7 @@ e(2) &amp;= 2 - 3.5 \\
 
 <div id="exr-noise-second-moment" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>.</p>
-<p>Show that <span class="math inline">\(\operatorname{E}[\varepsilon^2] = \sigma^2\)</span>, and say which earlier result you used.</p>
+<p>Find <span class="math inline">\(\operatorname{E}[\varepsilon^2]\)</span> in terms of <span class="math inline">\(\sigma^2\)</span>, and say which earlier result you used.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -481,14 +481,7 @@ e(2) &amp;= 2 - 3.5 \\
 <p><span class="math display">\[\operatorname{E}[\varepsilon^2] = \sigma^2\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a>. By <a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \operatorname{E}[\varepsilon^2] - (\operatorname{E}[\varepsilon])^2\)</span>. Substituting <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span> and solving for <span class="math inline">\(\operatorname{E}[\varepsilon^2]\)</span>,</p>
-<p><span class="math display">\[
-\begin{aligned}
-\operatorname{E}[\varepsilon^2]
-&amp;= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\
-&amp;= \sigma^2
-\end{aligned}
-\]</span></p>
+<p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a>, worked in <a href="#/sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>. It rearranges <a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a>, using <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span>.</p>
 </div>
 </section>
 <section id="variance-and-related-characteristics" class="slide level2" data-number="2">
