@@ -523,13 +523,13 @@ its population **quantile function**
 (generalized inverse of $F$)
 is:
 
-$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p<1.$$
+$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad p \in (0, 1).$$
 
 :::
 
 ::: {.remark .notes}
 
-The restriction to $0 < p < 1$ keeps $Q(p)$ finite:
+The restriction to $p \in (0, 1)$ keeps $Q(p)$ finite:
 for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
 as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
 
