@@ -34,6 +34,10 @@ format:
 
 {{< include pds/_subfiles/_sol-noise-second-moment.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-noise-second-moment.qmd >}}
+
 
 ## Variance and related characteristics
 

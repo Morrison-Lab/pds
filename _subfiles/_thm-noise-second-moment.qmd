@@ -1,0 +1,25 @@
+:::{#thm-noise-second-moment}
+#### The second moment of mean-zero noise
+
+Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and $\Var{\noise} = \varpar$.
+Then
+
+$$\Ep[\noise^2] = \varpar$$
+
+:::
+
+::: proof
+
+This is the solution to @exr-noise-second-moment.
+By @thm-variance, $\Var{\noise} = \Ep[\noise^2] - (\Ep[\noise])^2$.
+Substituting $\Ep[\noise] = 0$ and solving for $\Ep[\noise^2]$,
+
+$$
+\begin{aligned}
+\Ep[\noise^2]
+&= \Var{\noise} + 0^2 \\
+&= \varpar
+\end{aligned}
+$$
+
+:::
