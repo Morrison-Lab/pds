@@ -1,26 +1,26 @@
 :::{#thm-prediction-error}
 #### Expected squared prediction error
 
-Let $Y_0 = \targetfnf{x_0} + \noise$,
+Let $\Outvar_0 = \targetfnf{\predvar_0} + \noise$,
 where $\targetfn$ is a fixed function,
 $\noise$ has $\E{\noise} = 0$ and $\Var{\noise} = \varpar$,
-and $\noise$ is independent of the prediction $\etargetfnf{x_0}$,
-which has $\E{\etargetfnf{x_0}^2} < \infty$.
+and $\noise$ is independent of the prediction $\etargetfnf{\predvar_0}$,
+which has $\E{\etargetfnf{\predvar_0}^2} < \infty$.
 Then
 
-$$\E{\paren{Y_0 - \etargetfnf{x_0}}^2} = \sqf{\bias{\etargetfnf{x_0}}} + \Var{\etargetfnf{x_0}} + \varpar$$
+$$\E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2} = \sqf{\bias{\etargetfnf{\predvar_0}}} + \Var{\etargetfnf{\predvar_0}} + \varpar$$
 
 :::
 
 ::: proof
 
-Write $Y_0 - \etargetfnf{x_0} = \noise + D$,
-where $D \eqdef \targetfnf{x_0} - \etargetfnf{x_0}$.
+Write $\Outvar_0 - \etargetfnf{\predvar_0} = \noise + D$,
+where $D \eqdef \targetfnf{\predvar_0} - \etargetfnf{\predvar_0}$.
 Expanding the square and using linearity of expectation,
 
 $$
 \ba
-\E{\paren{Y_0 - \etargetfnf{x_0}}^2}
+\E{\paren{\Outvar_0 - \etargetfnf{\predvar_0}}^2}
 &= \E{\noise^2} + 2\E{\noise D} + \E{D^2}
 && \text{(expand the square)}
 \ea
@@ -35,23 +35,23 @@ $$
   \end{aligned}
   $$
 
-  because $\noise$ is independent of $\etargetfnf{x_0}$,
+  because $\noise$ is independent of $\etargetfnf{\predvar_0}$,
   hence of $D$,
   and $\E{\noise} = 0$.
 - By @thm-variance,
   $\E{D^2} = \Var{D} + \sqf{\E{D}}$.
-  Here $\Var{D} = \Var{\etargetfnf{x_0}}$,
-  because $\targetfnf{x_0}$ is a constant,
+  Here $\Var{D} = \Var{\etargetfnf{\predvar_0}}$,
+  because $\targetfnf{\predvar_0}$ is a constant,
   and
 
   $$
   \begin{aligned}
-  \E{D} &= \targetfnf{x_0} - \E{\etargetfnf{x_0}} \\
-  &= -\bias{\etargetfnf{x_0}},
+  \E{D} &= \targetfnf{\predvar_0} - \E{\etargetfnf{\predvar_0}} \\
+  &= -\bias{\etargetfnf{\predvar_0}},
   \end{aligned}
   $$
 
-  so $\sqf{\E{D}} = \sqf{\bias{\etargetfnf{x_0}}}$.
+  so $\sqf{\E{D}} = \sqf{\bias{\etargetfnf{\predvar_0}}}$.
 
 Adding the three terms gives the claim.
 
