@@ -235,25 +235,15 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
+div.callout-proof.callout {
+  border-left-color: #37474F;
 }
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
 }
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -279,36 +269,6 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-def.callout {
   border-left-color: #1B5E20;
 }
@@ -319,15 +279,15 @@ div.callout-def .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-solution.callout {
-  border-left-color: #4E342E;
+div.callout-lem.callout {
+  border-left-color: #1565C0;
 }
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
 }
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-cnj.callout {
   border-left-color: #558B2F;
@@ -339,15 +299,55 @@ div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-lem.callout {
-  border-left-color: #1565C0;
+div.callout-cor.callout {
+  border-left-color: #00838F;
 }
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
 }
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
+}
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
+}
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -774,7 +774,7 @@ window.Quarto = {
 <!-- gha-preview-page-banner:start -->
 <div class="preview-page-changes-banner" style="background: #f8f9fa; border-left: 4px solid #0d6efd; padding: 10px 15px; margin: 15px 0; border-radius: 4px;">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~1% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~2% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 3px; border-radius: 2px;">Modified text (yellow)</mark> shows changed words/phrases, 
@@ -799,7 +799,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-14 13:41:17 (PDT)</p>
+      <p class="date">Last modified: 2026-10-14 14:57:02 (PDT)</p>
     </div>
   </div>
   
@@ -1687,7 +1687,7 @@ e(2) &amp;= 2 - 3.5 \\
 <div id="callout-30" class="callout-30-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-prediction-error" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (Expected squared prediction error)</strong></span> Let <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(Y_0 = f\mathopen{}\left(x_0\right)\mathclose{} + \varepsilon\)</mark></span>, where <span class="math inline">\(f\)</span> is a fixed function, <span class="math inline">\(\varepsilon\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>, and <span class="math inline">\(\varepsilon\)</span> is independent of the prediction <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">,</mark> which has <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}^2\right]\mathclose{} &lt; \infty\)</mark></span>. Then</p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="theorem-title"><strong>Theorem 4 (Expected squared prediction error)</strong></span> Let <span class="math inline">\(Y_0 = f\mathopen{}\left(x_0\right)\mathclose{} + \varepsilon\)</span>, where <span class="math inline">\(f\)</span> is a fixed function, <span class="math inline">\(\varepsilon\)</span>, the noise in the output at <span class="math inline">\(x_0\)</span>, has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>, and <span class="math inline">\(\varepsilon\)</span> is independent of the prediction <span class="math inline">\(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\)</span>, which has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}^2\right]\mathclose{} &lt; \infty\)</span>. Then</mark></p>
 <p><span class="math display"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\[\operatorname{E}\mathopen{}\left[\mathopen{}\left(Y_0 - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}^2\right]\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}\right)^2\mathclose{} + \operatorname{Var}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{} + \sigma^2\]</mark></span></p>
 </div>
 </div>
@@ -1706,33 +1706,87 @@ e(2) &amp;= 2 - 3.5 \\
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(Y_0 - \hat{f}\mathopen{}\left(x_0\right)\mathclose{} = \varepsilon+ D\)</mark></span>, where <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(D \stackrel{\text{def}}{=}f\mathopen{}\left(x_0\right)\mathclose{} - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">.</mark> Expanding the square and using linearity of expectation,</p>
-<p><span class="math display"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\[
+<p><span class="proof-title"><em><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">Proof</mark></em><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">.</mark> </span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">Write</mark> <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(e_{f}\mathopen{}\left(x_0\right)\mathclose{} \stackrel{\text{def}}{=}f\mathopen{}\left(x_0\right)\mathclose{} - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">.</mark></p>
+<p><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">First,</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">the</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">prediction error in terms of </mark><span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\varepsilon\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;"> and </mark><span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">:</mark></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[
+\begin{aligned}
+Y_0 - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}
+&amp;= \mathopen{}\left(f\mathopen{}\left(x_0\right)\mathclose{} + \varepsilon\right)\mathclose{} - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}
+&amp;&amp; \text{(definition of } Y_0 \text{)} \\
+&amp;= \varepsilon+ \mathopen{}\left(f\mathopen{}\left(x_0\right)\mathclose{} - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}
+&amp;&amp; \text{(reorder the terms of the sum)} \\
+&amp;= \varepsilon+ e_{f}\mathopen{}\left(x_0\right)\mathclose{}
+&amp;&amp; \text{(definition of } e_{f}\mathopen{}\left(x_0\right)\mathclose{} \text{)}
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;">Next, expand the square and split the expectation. The last two steps use <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>, first for the expectation of a sum and then for a constant factor:</mark></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[\mathopen{}\left(Y_0 - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}^2\right]\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} + 2\operatorname{E}\mathopen{}\left[\varepsilon D\right]\mathclose{} + \operatorname{E}\mathopen{}\left[D^2\right]\mathclose{}
-&amp;&amp; \text{(expand the square)}
+&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left(\varepsilon+ e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}^2\right]\mathclose{}
+&amp;&amp; \text{(the error above)} \\
+&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2 + 2 \varepsilon e_{f}\mathopen{}\left(x_0\right)\mathclose{} + \mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(expand: } \mathopen{}\left(a + b\right)\mathclose{}^2 = a^2 + 2ab + b^2 \text{)} \\
+&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} + \operatorname{E}\mathopen{}\left[2 \varepsilon e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{} + \operatorname{E}\mathopen{}\left[\mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(expectation of a sum)} \\
+&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} + 2\operatorname{E}\mathopen{}\left[\varepsilon e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{} + \operatorname{E}\mathopen{}\left[\mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(constant factor 2)}
 \end{aligned}
-\]</mark></span></p>
+\]</span></mark></p>
+<p><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">Each of</mark> the three terms <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">is</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">evaluated</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">in turn.</mark></p>
 <ul>
-<li><p><span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} = \sigma^2\)</span>, by <a href="#sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>.</p></li>
-<li><p><span class="math display">\[
-\begin{aligned}
-\operatorname{E}\mathopen{}\left[\varepsilon D\right]\mathclose{} &amp;= \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\operatorname{E}\mathopen{}\left[D\right]\mathclose{} \\
-&amp;= 0,
-\end{aligned}
-\]</span></p>
-<p>because <span class="math inline">\(\varepsilon\)</span> is independent of <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">,</mark> hence of <span class="math inline">\(D\)</span>, and <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span>.</p></li>
-<li><p>By <a href="#thm-variance" class="quarto-xref">Theorem&nbsp;2</a>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[D^2\right]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left[D\right]\mathclose{}\right)^2\mathclose{}\)</span>. Here <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">,</mark> because <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(f\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span> is a constant, and</p>
+<li><p><mark class="preview-text-added" style="background-color: #d1e7dd; color: inherit; padding: 1px 2px; border-radius: 2px;">The noise term is </mark><span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} = \sigma^2\)</span>, by <a href="#sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>.</p></li>
+<li><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><p>For the cross term, <span class="math inline">\(\varepsilon\)</span> is independent of <span class="math inline">\(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\)</span>, hence of <span class="math inline">\(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\)</span>, because <span class="math inline">\(f\mathopen{}\left(x_0\right)\mathclose{}\)</span> is a constant. So the expectation of the product is the product of the expectations:</mark></p>
 <p><span class="math display"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[D\right]\mathclose{} &amp;= f\mathopen{}\left(x_0\right)\mathclose{} - \operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{} \\
-&amp;= -\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{},
+\operatorname{E}\mathopen{}\left[\varepsilon e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(independence)} \\
+&amp;= 0 \cdot \operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(} \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0 \text{)} \\
+&amp;= 0
+&amp;&amp; \text{(zero times a number)}
 \end{aligned}
-\]</mark></span></p>
-<p>so <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\mathopen{}\left(\operatorname{E}\mathopen{}\left[D\right]\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}\right)^2\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">.</mark></p></li>
+\]</mark></span></p></li>
+<li><p><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">For</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">the</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">last term, </mark><a href="#thm-variance" class="quarto-xref"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">Theorem&nbsp;2</mark></a><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;"> gives </mark><span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\operatorname{E}\mathopen{}\left[\mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{} = \operatorname{Var}\mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}\right)^2\mathclose{}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">.</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">The</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">mean</mark> <mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">of</mark> <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\)</mark></span> is</p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[f\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{} - \operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(expectation of a difference)} \\
+&amp;= f\mathopen{}\left(x_0\right)\mathclose{} - \operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(} f\mathopen{}\left(x_0\right)\mathclose{} \text{ is a constant)} \\
+&amp;= -\mathopen{}\left(\operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{} - f\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}
+&amp;&amp; \text{(factor out } -1 \text{)} \\
+&amp;= -\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}
+&amp;&amp; \text{(definition of bias)}
+\end{aligned}
+\]</span></mark></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;">so <span class="math inline">\(\mathopen{}\left(\operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}\right)^2\mathclose{}\)</span>, because <span class="math inline">\(\mathopen{}\left(\mathopen{}\left(-a\right)\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(a\right)^2\mathclose{}\)</span>. The variance of <span class="math inline">\(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\)</span> is</mark></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}\mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left(\mathopen{}\left(e_{f}\mathopen{}\left(x_0\right)\mathclose{} - \operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(definition of variance)} \\
+&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left(\mathopen{}\left(-\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{} - \operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}\right)\mathclose{}\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(substitute } e_{f}\mathopen{}\left(x_0\right)\mathclose{} \text{ and } \operatorname{E}\mathopen{}\left[e_{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{} \text{; the constant } f\mathopen{}\left(x_0\right)\mathclose{} \text{ cancels)} \\
+&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left(\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{} - \operatorname{E}\mathopen{}\left[\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right]\mathclose{}\right)\mathclose{}\right)^2\mathclose{}\right]\mathclose{}
+&amp;&amp; \text{(} \mathopen{}\left(\mathopen{}\left(-a\right)\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(a\right)^2\mathclose{} \text{)} \\
+&amp;= \operatorname{Var}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}
+&amp;&amp; \text{(definition of variance)}
+\end{aligned}
+\]</span></mark></p></li>
 </ul>
-<p>Adding the three terms gives the claim.</p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;">Substituting the three terms into the expansion gives</mark></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[\mathopen{}\left(Y_0 - \hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}^2\right]\mathclose{}
+&amp;= \sigma^2+ 2 \cdot 0 + \mathopen{}\left(\operatorname{Var}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{} + \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}\right)^2\mathclose{}\right)\mathclose{}
+&amp;&amp; \text{(the three terms above)} \\
+&amp;= \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{}\right)^2\mathclose{} + \operatorname{Var}\mathopen{}\left(\hat{f}\mathopen{}\left(x_0\right)\mathclose{}\right)\mathclose{} + \sigma^2
+&amp;&amp; \text{(drop } 2 \cdot 0 \text{, reorder the terms)}
+\end{aligned}
+\]</span></mark></p>
 </div>
 </div>
 </div>
@@ -1750,7 +1804,7 @@ e(2) &amp;= 2 - 3.5 \\
 <div id="callout-32" class="callout-32-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-irreducible-error" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (Irreducible error)</strong></span> In <a href="#thm-prediction-error" class="quarto-xref">Theorem&nbsp;4</a>, the term <span class="math inline">\(\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\)</span> is the <strong>irreducible error</strong>. It does not depend on the prediction <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\hat{f}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">,</mark> so no choice of prediction can remove it. For example, in <a href="#exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>, <span class="math inline">\(\sigma^2= 3\)</span>, so every prediction there has expected squared error at least <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 10 (Irreducible error)</strong></span> In <a href="#thm-prediction-error" class="quarto-xref">Theorem&nbsp;4</a>, the term <span class="math inline">\(\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\)</span> is the <strong>irreducible error</strong>. It does not depend on the prediction <span class="math inline"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\hat{f}\)</mark></span><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">,</mark> so no choice of prediction can remove it.<mark class="preview-text-added" style="background-color: #d1e7dd; color: inherit; padding: 1px 2px; border-radius: 2px;"> The theorem concerns the single point </mark><span class="math inline"><mark class="preview-text-added" style="background-color: #d1e7dd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(x_0\)</mark></span><mark class="preview-text-added" style="background-color: #d1e7dd; color: inherit; padding: 1px 2px; border-radius: 2px;">, so </mark><span class="math inline"><mark class="preview-text-added" style="background-color: #d1e7dd; color: inherit; padding: 1px 2px; border-radius: 2px;">\(\sigma^2\)</mark></span><mark class="preview-text-added" style="background-color: #d1e7dd; color: inherit; padding: 1px 2px; border-radius: 2px;"> may differ from one point to another: it does not assume constant noise variance across points.</mark> For example, in <a href="#exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>, <span class="math inline">\(\sigma^2= 3\)</span>, so every prediction there has expected squared error at least <span class="math inline">\(3\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2115,7 +2169,7 @@ XY &amp;= X^3 \\
 <div class="callout-body-container callout-body">
 <div id="def-uncorrelated" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 13 (Uncorrelated random variables)</strong></span> Random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span> are <strong>uncorrelated</strong> when their <a href="#def-cov">covariance</a> is 0:</p>
-<p><span class="math display">\[\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\]</span></p>
+<p><span class="math display"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\[\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\]</mark></span></p>
 </div>
 </div>
 </div>
@@ -2688,7 +2742,7 @@ XY &amp;= X^3 \\
 <div class="callout-body-container callout-body">
 <div id="cor-var-sum-indpt" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 3 (Variance of a sum of independent random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, each discrete or continuous, with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span>, then:</p>
-<p><span class="math display">\[\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}\]</span></p>
+<p><span class="math display"><mark class="preview-text-changed" style="background-color: #fff3cd; color: inherit; padding: 1px 2px; border-radius: 2px;">\[\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}\]</mark></span></p>
 </div>
 </div>
 </div>
@@ -2902,13 +2956,13 @@ a &amp;= b \\
 \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
 \]</span></p>
 <p>With <span class="math inline">\(\tilde{a}= {(1, -1)}^{\top}\)</span>,</p>
-<p><span class="math display">\[
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[
 \begin{aligned}
 {\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}&amp;= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\
 &amp;= \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} \\
 &amp;= 0,
 \end{aligned}
-\]</span></p>
+\]</span></mark></p>
 <p>so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\tilde{X}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
 </div>
 </div>
@@ -2969,7 +3023,7 @@ a &amp;= b \\
 <div class="callout-body-container callout-body">
 <div id="thm-cor-bounds" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 12 (Correlation lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#def-variance">variances</a>, then their <a href="#def-correlation">correlation</a> lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>)</span>:</p>
-<p><span class="math display">\[-1 \le \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\]</span></p>
+<p><mark class="preview-element-added" style="background-color: #cff4fc; color: inherit; padding: 1px 2px; border-radius: 2px;"><span class="math display">\[-1 \le \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\]</span></mark></p>
 </div>
 </div>
 </div>
