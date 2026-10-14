@@ -80,10 +80,24 @@ the minimum risk
 $$\E{\sqf{Y - \E{Y \mid X}}} = \E{\Var{Y \mid X}}$$
 
 is the **irreducible risk**.
-It depends only on the joint distribution of $(X, Y)$
+
+:::
+
+::: {#rem-irreducible-risk}
+#### The irreducible risk does not depend on the prediction function
+
+The irreducible risk depends only on the joint distribution of $(X, Y)$
 and not on the prediction function $g$,
 so no choice of $g$ can achieve a smaller risk.
-For example, in @exr-best-predictor,
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-irreducible-risk}
+#### Irreducible risk in the best-predictor exercise
+
+In @exr-best-predictor,
 $\Var{Y \mid X = 0} = 1$ and $\Var{Y \mid X = 1} = 1$,
 so the irreducible risk is $\E{\Var{Y \mid X}} = 1$.
 
@@ -100,8 +114,22 @@ the excess risk from choosing the prediction function $g$ instead of the conditi
 $$\E{\sqf{\E{Y \mid X} - g(X)}} \ge 0$$
 
 is the **reducible risk**.
-It is zero if and only if $\P(g(X) = \E{Y \mid X}) = 1$.
-For example, in @exr-best-predictor,
+
+:::
+
+::: {#rem-reducible-risk}
+#### When the reducible risk is zero
+
+The reducible risk is zero if and only if $\P(g(X) = \E{Y \mid X}) = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-reducible-risk}
+#### Reducible risk in the best-predictor exercise
+
+In @exr-best-predictor,
 the constant prediction $g_1(X) = 3$ has reducible risk $5 - 1 = 4$,
 and the prediction $g_2(X) = 4X$ has reducible risk $2 - 1 = 1$.
 
