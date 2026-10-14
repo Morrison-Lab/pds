@@ -3,7 +3,7 @@
 
 Let $\Outvar_0 = \targetfnf{\predvar_0} + \noise$,
 where $\targetfn$ is a fixed function,
-$\noise$ has $\E{\noise} = 0$ and $\Var{\noise} = \varpar$,
+$\noise$, the noise in the output at $\predvar_0$, has $\E{\noise} = 0$ and $\Var{\noise} = \varpar$,
 and $\noise$ is independent of the prediction $\etargetfnf{\predvar_0}$,
 which has $\E{\etargetfnf{\predvar_0}^2} < \infty$.
 Then
@@ -66,6 +66,9 @@ In @thm-prediction-error,
 the term $\varpar = \Var{\noise}$ is the **irreducible error**.
 It does not depend on the prediction $\etargetfn$,
 so no choice of prediction can remove it.
+The theorem concerns the single point $\predvar_0$,
+so $\varpar$ may differ from one point to another:
+it does not assume constant noise variance across points.
 For example, in @exr-prediction-error, $\varpar = 3$,
 so every prediction there has expected squared error at least $3$.
 
