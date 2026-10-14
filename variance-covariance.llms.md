@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 01:48:52 (PDT)
+Last modified: 2026-10-14 11:38:02 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -70,9 +70,11 @@ Last modified: 2026-10-14 01:48:52 (PDT)
 
 Measurement noise is almost always modeled as a random variable \\\varepsilon\\ with **mean zero** and variance \\\sigma^2\\.
 
-Mean zero is a modeling choice rather than a fact about the world, and it costs nothing: any systematic offset in the noise can be absorbed into the model’s own intercept, leaving what remains centered at zero by construction.
+> **NOTE:**
+>
+> *Remark 1* (Mean zero is a parametrization choice). Mean zero is a parametrization choice, not a substantive assumption. In \\Y = f(x) + \varepsilon\\, moving a constant from \\\varepsilon\\ into \\f(x)\\ changes the split but not the distribution of \\Y\\, so the data identify only the sum \\f(x) + \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{}\\, the mean of \\Y\\ at \\x\\. Requiring \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\ picks the one split in which \\f(x)\\ is that mean. This loses no generality when the model for \\f\\ can absorb a constant, as any model with an intercept can. It restricts the model only when \\f\\ cannot absorb one, as in a regression through the origin.
 
-That choice buys one identity, used repeatedly across statistical modeling and machine learning.
+Mean zero gives one identity, used repeatedly across statistical modeling and machine learning.
 
 > **NOTE:**
 >

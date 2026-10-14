@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-14 01:48:52 (PDT)</p>
+  <p class="date">Last modified: 2026-10-14 11:38:02 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -447,8 +447,10 @@ e(2) &amp;= 2 - 3.5 \\
 
 <h3 id="sec-noise-model">Mean-zero noise model</h3>
 <p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\varepsilon\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
-<p>Mean zero is a modeling choice rather than a fact about the world, and it costs nothing: any systematic offset in the noise can be absorbed into the model’s own intercept, leaving what remains centered at zero by construction.</p>
-<p>That choice buys one identity, used repeatedly across statistical modeling and machine learning.</p>
+<div id="rem-mean-zero-parametrization" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em> (Mean zero is a parametrization choice). </span>Mean zero is a parametrization choice, not a substantive assumption. In <span class="math inline">\(Y = f(x) + \varepsilon\)</span>, moving a constant from <span class="math inline">\(\varepsilon\)</span> into <span class="math inline">\(f(x)\)</span> changes the split but not the distribution of <span class="math inline">\(Y\)</span>, so the data identify only the sum <span class="math inline">\(f(x) + \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\)</span>, the mean of <span class="math inline">\(Y\)</span> at <span class="math inline">\(x\)</span>. Requiring <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> picks the one split in which <span class="math inline">\(f(x)\)</span> is that mean. This loses no generality when the model for <span class="math inline">\(f\)</span> can absorb a constant, as any model with an intercept can. It restricts the model only when <span class="math inline">\(f\)</span> cannot absorb one, as in a regression through the origin.</p>
+</div>
+<p>Mean zero gives one identity, used repeatedly across statistical modeling and machine learning.</p>
 </section>
 <section class="slide level2">
 
