@@ -518,19 +518,19 @@ see also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
 #### Quantile function (population inverse CDF)
 
 For a random variable $X$
-with [cumulative distribution function (CDF)](#def-cdf) $F$,
+with [cumulative distribution function (CDF)](#def-cdf) $\cdf$,
 its population **quantile function**
-(generalized inverse of $F$)
+(generalized inverse of $\cdf$)
 is:
 
-$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad p \in (0, 1).$$
+$$\quantilef{p} \eqdef \inf \set{t : \cdff{t} \ge p}, \quad p \in (0, 1).$$
 
 :::
 
 ::: {.remark .notes}
 
-The restriction to $p \in (0, 1)$ keeps $Q(p)$ finite:
-for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
+The restriction to $p \in (0, 1)$ keeps $\quantilef{p}$ finite:
+for $p = 1$, the set $\set{t : \cdff{t} \ge 1}$ is empty whenever $\cdff{t} < 1$ for every $t$,
 as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
 
 :::
@@ -540,8 +540,8 @@ as for a [normal distribution](#def-normal), and the infimum of the empty set is
 :::{#exm-quantile-function}
 #### Median of the number of heads
 
-From @exm-cdf, $F(t) \ge 0.5$ first holds at $t = 1$,
-so the median of the number of heads is $Q(0.5) = 1$.
+From @exm-cdf, $\cdff{t} \ge 0.5$ first holds at $t = 1$,
+so the median of the number of heads is $\quantilef{0.5} = 1$.
 
 :::
 
