@@ -8,9 +8,15 @@ The **cross-entropy** of $q$ relative to $p$ is
 
 $$H(p, q) \eqdef -\sumto{k}{K} p_k \log q_k.$$
 
-It is the [expectation](#def-expectation) of $-\log q(X)$
-when $X$ has probability mass function $p$.
 When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
+
+:::
+
+::: {#rem-cross-entropy-expectation}
+#### Cross-entropy as an expected negative log probability
+
+The cross-entropy is the [expectation](#def-expectation) of $-\log q(X)$
+when $X$ has probability mass function $p$.
 
 :::
 
