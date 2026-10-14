@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 21:13:03 (PDT)
+Last modified: 2026-10-13 21:24:35 (PDT)
 
 > **NOTE:**
 >
@@ -611,7 +611,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. The proof changes variables in a \\p\\-dimensional integral, which these notes do not develop; see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>. As with the univariate [normal distribution](random-variables.llms.md#thm-normal-moments), these facts are where the parameters’ names come from. They also show why \\\mathbf{\Sigma}\\ must at least be [positive semidefinite](variance-covariance.llms.md#thm-vcov-psd); requiring it to be positive definite rules out cases like [a variance matrix that is not positive definite](variance-covariance.llms.md#exm-vcov-singular), which has no joint density.
+> *Remark*. The proof changes variables in a \\p\\-dimensional integral, which these notes do not develop; see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>. As with the univariate [normal distribution](random-variables.llms.md#thm-normal-density), these facts are where the parameters’ names come from. They also show why \\\mathbf{\Sigma}\\ must at least be [positive semidefinite](variance-covariance.llms.md#thm-vcov-psd); requiring it to be positive definite rules out cases like [a variance matrix that is not positive definite](variance-covariance.llms.md#exm-vcov-singular), which has no joint density.
 
 > **NOTE:**
 >
@@ -825,7 +825,7 @@ Figure 2: Poisson CDFs
 >
 > **Example 16 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
 >
-> - **Mean.** By [Theorem 18](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
+> - **Mean.** By [Theorem 18](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-density),
 >
 >   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\ &= 4.2. \end{aligned} \\
 >
