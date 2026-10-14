@@ -1,4 +1,4 @@
-:::{#thm-chebyshev-sample-mean}
+::: {#thm-chebyshev-sample-mean}
 #### Chebyshev's inequality for a sample average
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables
@@ -14,12 +14,7 @@ $$
 
 ::: proof
 
-This is the solution to @exr-chebyshev-sample-size (a).
-Let $S_n \eqdef \sumin X_i$.
-By @cor-sum-iid-moments, $\Var{S_n} = n\varpar$,
-so $\bar X_n = S_n/n$ has mean $\mean$ and variance $\varpar/n$
-(a constant factor $c$ scales a variance by $c^2$).
-Apply @thm-chebyshev to $\bar X_n$ with $k\sdpar/\sqrt{n} = \epsilon$,
-that is, $k = \epsilon\sqrt{n}/\sdpar$, so $1/k^2 = \varpar/(n\epsilon^2)$.
+This is the solution to @exr-chebyshev-sample-size (a), worked in @sol-chebyshev-sample-size.
+It applies @thm-chebyshev to $\bar X_n$, whose variance is $\varpar/n$ by @cor-sum-iid-moments.
 
 :::
