@@ -114,7 +114,7 @@ $$\surv(t) = \expf{-\cuhaz(t)}$$ {#eq-surv-int-haz}
 ::: proof
 
 Since $\surv(t) = 1 - F(t)$ (@thm-survival-expressions-1)
-and $F$ has derivative $f$ wherever $f$ is continuous (@thm-density-vs-CDF),
+and $F$ has derivative $f$ wherever $f$ is continuous (@thm-cdf-derivative-is-density),
 $\surv$ has derivative $-f$ at those points.
 At each such $u$ with $\surv(u) > 0$:
 
