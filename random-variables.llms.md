@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 00:28:11 (PDT)
+Last modified: 2026-10-14 00:48:01 (PDT)
 
 ## 1 Random variables
 
@@ -223,7 +223,7 @@ Last modified: 2026-10-14 00:28:11 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The proof evaluates three integrals by calculus, one of them the Gaussian integral; it is omitted here ([Casella and Berger 2002](#ref-CaseBerg01)). These facts are where the parameters’ names come from.
+> *Remark*. The proofs of these two theorems evaluate three integrals by calculus: the total of the density, the mean integral and the variance integral. The total is the Gaussian integral. This page omits the proofs ([Casella and Berger 2002](#ref-CaseBerg01)). These facts are where the parameters’ names come from.
 
 > **NOTE:**
 >
