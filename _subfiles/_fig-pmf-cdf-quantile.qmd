@@ -29,13 +29,16 @@ fig_alt <- paste(
 #| warning: false
 #| fig-width: 9
 #| fig-height: 5
-# HTML formats get six interactive plotly panels;
-# the handout and other formats get the same panels drawn with ggplot2.
+# One ggplot2 figure serves every format:
+# HTML formats turn it into an interactive plotly widget with ggplotly(),
+# and the handout and other formats draw it as it is.
 # Top row: X = number of heads in two fair coin flips,
 # so the pmf is 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
 # Bottom row: the standard normal distribution;
 # the density is shaded up to t = 1
 # to show that the CDF at t is the area to its left.
+library(ggplot2)
+
 heads <- 0:2
 pmf <- c(1, 2, 1) / 4
 cdf_steps <- cumsum(pmf)
@@ -44,227 +47,89 @@ z <- seq(-3.5, 3.5, length.out = 300)
 p_grid <- seq(0.005, 0.995, length.out = 300)
 z_shade <- z[z <= shade_at]
 blue <- "#1f77b4"
-step_x <- c(-1, heads, 3)
+
+panel_names <- c(
+  "Coin flips: mass function",
+  "Coin flips: CDF",
+  "Coin flips: quantile function",
+  "Normal: density",
+  "Normal: CDF",
+  "Normal: quantile function"
+)
+panel_data <- function(panel, x, y) {
+  data.frame(
+    panel = factor(panel, levels = panel_names),
+    x = x,
+    y = y
+  )
+}
+
+bars <- panel_data(panel_names[1], heads, pmf)
+steps <- rbind(
+  panel_data(panel_names[2], c(-1, heads, 3), c(0, cdf_steps, 1)),
+  panel_data(panel_names[3], c(0, 0.25, 0.75, 1), c(0, 1, 2, 2))
+)
+curves <- rbind(
+  panel_data(panel_names[4], z, dnorm(z)),
+  panel_data(panel_names[5], z, pnorm(z)),
+  panel_data(panel_names[6], p_grid, qnorm(p_grid))
+)
+shaded <- panel_data(
+  panel_names[4],
+  c(z_shade, shade_at),
+  c(dnorm(z_shade), 0)
+)
+marked <- panel_data(panel_names[5], shade_at, pnorm(shade_at))
+
+pmf_cdf_quantile <- ggplot(mapping = aes(x = x, y = y)) +
+  geom_col(
+    data = bars,
+    fill = blue,
+    width = 0.6
+  ) +
+  geom_step(
+    data = steps,
+    colour = blue
+  ) +
+  geom_line(
+    data = curves,
+    colour = blue
+  ) +
+  geom_ribbon(
+    data = shaded,
+    mapping = aes(ymin = 0, ymax = y),
+    fill = blue,
+    alpha = 0.3
+  ) +
+  geom_point(
+    data = marked,
+    colour = blue
+  ) +
+  facet_wrap(
+    ~panel,
+    nrow = 2,
+    scales = "free"
+  ) +
+  labs(
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal() +
+  theme(panel.spacing = unit(2, "lines"))
 
 if (knitr::is_html_output()) {
-  library(plotly)
-
-  # One panel's layout:
-  # words on the axes, no plotly toolbar clutter.
-  panel_layout <- function(widget, title, xlab, ylab, ...) {
-    widget |>
-      layout(
-        title = list(
-          text = title,
-          font = list(size = 13)
-        ),
-        xaxis = list(
-          title = xlab,
-          zeroline = FALSE
-        ),
-        yaxis = list(
-          title = ylab,
-          zeroline = FALSE,
-          ...
-        ),
-        showlegend = FALSE,
-        margin = list(t = 40)
-      ) |>
-      config(
-        displaylogo = FALSE,
-        responsive = TRUE
-      )
-  }
-
-  coin_pmf <- plot_ly(
-    x = heads,
-    y = pmf,
-    type = "bar",
-    marker = list(color = blue),
-    hovertemplate = "heads %{x}<br>probability %{y}<extra></extra>"
-  ) |>
-    panel_layout(
-      "Coin flips: mass function",
-      "number of heads",
-      "probability",
-      range = c(0, 0.6)
-    )
-  coin_cdf <- plot_ly(
-    x = step_x,
-    y = c(0, cdf_steps, 1),
-    type = "scatter",
-    mode = "lines",
-    line = list(
-      shape = "hv",
-      color = blue
-    ),
-    hovertemplate = "t %{x}<br>CDF %{y}<extra></extra>"
-  ) |>
-    panel_layout(
-      "Coin flips: CDF",
-      "t",
-      "probability of at most t heads"
-    )
-  coin_quantile <- plot_ly(
-    x = c(0, 0.25, 0.75, 1),
-    y = c(0, 1, 2, 2),
-    type = "scatter",
-    mode = "lines",
-    line = list(
-      shape = "hv",
-      color = blue
-    ),
-    hovertemplate = "p %{x}<br>quantile %{y}<extra></extra>"
-  ) |>
-    panel_layout(
-      "Coin flips: quantile function",
-      "probability p",
-      "smallest t with CDF at least p"
-    )
-
-  normal_pdf <- plot_ly() |>
-    add_lines(
-      x = z,
-      y = dnorm(z),
-      line = list(color = blue),
-      hovertemplate = "x %{x:.2f}<br>density %{y:.3f}<extra></extra>"
-    ) |>
-    add_trace(
-      x = c(z_shade, shade_at),
-      y = c(dnorm(z_shade), 0),
-      type = "scatter",
-      mode = "lines",
-      fill = "tozeroy",
-      fillcolor = "rgba(31,119,180,0.3)",
-      line = list(width = 0),
-      hoverinfo = "skip"
-    ) |>
-    panel_layout(
-      "Normal: density",
-      "x",
-      "density"
-    )
-  normal_cdf <- plot_ly() |>
-    add_lines(
-      x = z,
-      y = pnorm(z),
-      line = list(color = blue),
-      hovertemplate = "t %{x:.2f}<br>CDF %{y:.3f}<extra></extra>"
-    ) |>
-    add_markers(
-      x = shade_at,
-      y = pnorm(shade_at),
-      marker = list(color = blue),
-      hoverinfo = "skip"
-    ) |>
-    panel_layout(
-      "Normal: CDF",
-      "t",
-      "probability of at most t"
-    )
-  normal_quantile <- plot_ly() |>
-    add_lines(
-      x = p_grid,
-      y = qnorm(p_grid),
-      line = list(color = blue),
-      hovertemplate = "p %{x:.3f}<br>quantile %{y:.2f}<extra></extra>"
-    ) |>
-    panel_layout(
-      "Normal: quantile function",
-      "probability p",
-      "quantile"
-    )
-
-  # A flex container lays the panels out in two rows of three,
-  # wrapping on narrow screens.
-  cell <- function(w) {
-    htmltools::div(
-      style = "flex: 1 1 280px; min-width: 0;",
-      w
-    )
-  }
   # The alt text: a plotly widget has none of its own.
   htmltools::div(
     role = "img",
     `aria-label` = fig_alt,
-    style = "display: flex; flex-wrap: wrap; gap: 4px;",
-    cell(coin_pmf),
-    cell(coin_cdf),
-    cell(coin_quantile),
-    cell(normal_pdf),
-    cell(normal_cdf),
-    cell(normal_quantile)
+    plotly::ggplotly(pmf_cdf_quantile) |>
+      plotly::config(
+        displaylogo = FALSE,
+        responsive = TRUE
+      )
   )
 } else {
-  library(ggplot2)
-
-  panel_names <- c(
-    "Coin flips: mass function",
-    "Coin flips: CDF",
-    "Coin flips: quantile function",
-    "Normal: density",
-    "Normal: CDF",
-    "Normal: quantile function"
-  )
-  panel_data <- function(panel, x, y) {
-    data.frame(
-      panel = factor(panel, levels = panel_names),
-      x = x,
-      y = y
-    )
-  }
-
-  bars <- panel_data(panel_names[1], heads, pmf)
-  steps <- rbind(
-    panel_data(panel_names[2], step_x, c(0, cdf_steps, 1)),
-    panel_data(panel_names[3], c(0, 0.25, 0.75, 1), c(0, 1, 2, 2))
-  )
-  curves <- rbind(
-    panel_data(panel_names[4], z, dnorm(z)),
-    panel_data(panel_names[5], z, pnorm(z)),
-    panel_data(panel_names[6], p_grid, qnorm(p_grid))
-  )
-  shaded <- panel_data(
-    panel_names[4],
-    c(z_shade, shade_at),
-    c(dnorm(z_shade), 0)
-  )
-  marked <- panel_data(panel_names[5], shade_at, pnorm(shade_at))
-
-  ggplot(mapping = aes(x = x, y = y)) +
-    geom_col(
-      data = bars,
-      fill = blue,
-      width = 0.6
-    ) +
-    geom_step(
-      data = steps,
-      colour = blue
-    ) +
-    geom_line(
-      data = curves,
-      colour = blue
-    ) +
-    geom_ribbon(
-      data = shaded,
-      mapping = aes(ymin = 0, ymax = y),
-      fill = blue,
-      alpha = 0.3
-    ) +
-    geom_point(
-      data = marked,
-      colour = blue
-    ) +
-    facet_wrap(
-      ~panel,
-      nrow = 2,
-      scales = "free"
-    ) +
-    labs(
-      x = NULL,
-      y = NULL
-    ) +
-    theme_minimal()
+  pmf_cdf_quantile
 }
 ```
 
