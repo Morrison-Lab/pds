@@ -319,9 +319,10 @@ and [variance](variance-covariance.qmd#def-variance) $\Var{X} = \ss$.
 
 ::: {.remark .notes}
 
-The proof evaluates three integrals by calculus,
-one of them the Gaussian integral;
-it is omitted here [@CaseBerg01].
+The proofs of these two theorems evaluate three integrals by calculus:
+the total of the density, the mean integral and the variance integral.
+The total is the Gaussian integral.
+This page omits the proofs [@CaseBerg01].
 These facts are where the parameters' names come from.
 
 :::
