@@ -231,18 +231,12 @@ Compute:
 {{< slidebreak >}}
 
 :::{#thm-poisson-properties}
-#### Properties of the Poisson distribution
+#### Mean and variance of the Poisson distribution
 
 If $X \sim \Pois(\mean)$, then:
 
 * $\Expp[X] = \mean$
 * $\Varr(X) = \mean$
-* $\P(X=x) = \frac{\mean}{x} \P(X = x-1)$ for $x \in \set{1, 2, \dots}$
-* For $x \in \set{1, 2, \dots}$ with $x < \mean$, $\P(X=x) > \P(X = x-1)$
-* For $x = \mean$ (possible only when $\mean$ is an integer), $\P(X=x) = \P(X = x-1)$
-* For $x \in \set{1, 2, \dots}$ with $x > \mean$, $\P(X=x) < \P(X = x-1)$
-* If $\mean$ is not an integer, $\argmax_{x} \P(X=x) = \floor{\mean}$;
-  if $\mean$ is an integer, the maximum is attained at both $x = \mean - 1$ and $x = \mean$
 
 :::
 
@@ -291,6 +285,29 @@ $$
 \ea
 $$
 
+See also <https://statproofbook.github.io/P/poiss-mean>
+and <https://statproofbook.github.io/P/poiss-var>.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-poisson-mode}
+#### Ratio of consecutive Poisson probabilities, and the mode
+
+If $X \sim \Pois(\mean)$, then:
+
+* $\P(X=x) = \frac{\mean}{x} \P(X = x-1)$ for $x \in \set{1, 2, \dots}$
+* For $x \in \set{1, 2, \dots}$ with $x < \mean$, $\P(X=x) > \P(X = x-1)$
+* For $x = \mean$ (possible only when $\mean$ is an integer), $\P(X=x) = \P(X = x-1)$
+* For $x \in \set{1, 2, \dots}$ with $x > \mean$, $\P(X=x) < \P(X = x-1)$
+* If $\mean$ is not an integer, $\argmax_{x} \P(X=x) = \floor{\mean}$;
+  if $\mean$ is an integer, the maximum is attained at both $x = \mean - 1$ and $x = \mean$
+
+:::
+
+::: proof
+
 **Ratio of consecutive probabilities.**
 For $x \in \set{1, 2, \dots}$:
 
@@ -310,9 +327,6 @@ If $\mean$ is not an integer, the last increase is at $x = \floor{\mean}$,
 which is therefore the unique mode.
 If $\mean$ is an integer, $\P(X = \mean) = \P(X = \mean - 1)$,
 and both are modes.
-
-See also <https://statproofbook.github.io/P/poiss-mean>
-and <https://statproofbook.github.io/P/poiss-var>.
 
 :::
 
@@ -861,15 +875,14 @@ $$\surv(t) \eqdef \text{e}^{-\rate t^\shape}, \quad t \ge 0$$
 {{< slidebreak >}}
 
 :::{#thm-weibull}
-#### Weibull density, hazard, and mean
+#### Weibull density and hazard
 
 If $T$ has the Weibull distribution with shape $\shape$ and rate $\rate$, then for $t > 0$:
 
 $$
 \begin{aligned}
 f(t) &= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}\\
-\h(t) &= \shape\rate t^{\shape-1}\\
-\E{T} &= \gammafn(1+1/\shape)\cdot \rate^{-1/\shape}
+\h(t) &= \shape\rate t^{\shape-1}
 \end{aligned}
 $$
 
@@ -912,6 +925,28 @@ f(t)
 \ea
 $$
 
+:::
+
+::: {.remark .notes}
+
+The hazard is written $\h(t)$ here, rather than $\haz(t)$,
+because the Weibull rate parameter is also called $\rate$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-weibull-mean}
+#### Weibull mean
+
+If $T$ has the Weibull distribution with shape $\shape$ and rate $\rate$, then:
+
+$$\E{T} = \gammafn(1+1/\shape)\cdot \rate^{-1/\shape}$$
+
+:::
+
+::: proof
+
 For the mean, use the [survival-function formula for the mean](expectation.qmd#thm-surv-mean)
 and substitute $u = \rate t^\shape$,
 so that $t = (u/\rate)^{1/\shape}$ and $dt = \frac{1}{\shape}\rate^{-1/\shape} u^{1/\shape - 1}\,du$:
@@ -929,13 +964,6 @@ $$
 && (\gammafn(1 + a) = a\,\gammafn(a))
 \ea
 $$
-
-:::
-
-::: {.remark .notes}
-
-The hazard is written $\h(t)$ here, rather than $\haz(t)$,
-because the Weibull rate parameter is also called $\rate$.
 
 :::
 
@@ -1102,12 +1130,21 @@ The density is well defined because $\matr{\covmat}$ is positive definite:
 
 {{< slidebreak >}}
 
-:::{#thm-mvn-moments}
-#### The multivariate normal density integrates to 1, with mean $\vecf{\mean}$ and variance $\matr{\covmat}$
+:::{#thm-mvn-density-integral}
+#### The multivariate normal density integrates to 1
 
 If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
-then the density in @def-mvn integrates to 1 over $\reals^p$,
-$\Expp\vX = \vecf{\mean}$
+then the density in @def-mvn integrates to 1 over $\reals^p$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-mvn-moments}
+#### The mean and variance of the multivariate normal distribution
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
+then $\Expp\vX = \vecf{\mean}$
 (the [expectation of a random vector](expectation.qmd#def-expectation-matrix)),
 and $\Varf{\vX} = \matr{\covmat}$
 (the [variance of a random vector](variance-covariance.qmd#def-cov-vec-x)).
@@ -1479,7 +1516,14 @@ $$
 {\p_{\text{mix}}}(x) \eqdef \sumto{c}{K} w_c \, {\p_c}(x), \quad x \in \reals
 $$
 
-The densities ${\p_1}, \ldots, {\p_K}$ are the mixture's **components**.
+:::
+
+{{< slidebreak >}}
+
+:::{#def-mixture-component}
+#### Mixture component
+
+The densities ${\p_1}, \ldots, {\p_K}$ in a mixture (@def-mixture) are its **components**.
 
 :::
 
@@ -1639,8 +1683,18 @@ the prior probability $w_c$ of component $c$
 is multiplied by the component density ${\p_c}(x)$ at the observation
 and divided by the overall density ${\p_{\text{mix}}}(x)$,
 which plays the role of the [law of total probability](probability-basics.qmd#thm-total-prob).
-In machine learning,
-$\P(C = c \mid X = x)$ is called the **responsibility** of component $c$ for $x$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-responsibility}
+#### Responsibility of a mixture component
+
+In the setting of @thm-mixture-posterior,
+the conditional probability $\P(C = c \mid X = x)$ is called,
+in machine learning,
+the **responsibility** of component $c$ for $x$.
 
 :::
 
