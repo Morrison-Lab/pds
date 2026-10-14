@@ -1,0 +1,27 @@
+:::{#def-binomial}
+#### Binomial distribution
+
+A [discrete](random-variables.qmd#def-discrete-rv) random variable $X$
+has the **binomial distribution**
+with number of trials $n \in \set{1, 2, \dots}$
+and event probability $\prob \in [0, 1]$,
+written $X \sim \dBinf{n, \prob}$, if:
+
+$$
+\P(X = x) \eqdef \binom{n}{x} \prob^x (1 - \prob)^{n - x},
+\quad x \in \set{0, 1, \dots, n}
+$$ {#eq-binom-pmf}
+
+where $\binom{n}{x} = \frac{n!}{x!\,(n - x)!}$
+is the number of ways to choose $x$ of the $n$ trials.
+
+:::
+
+::: {.remark .notes}
+
+@CaseBerg01 [Section 3.2] defines the binomial distribution the same way.
+With $n = 1$, @eq-binom-pmf is the
+[Bernoulli PMF](random-variables.qmd#def-bernoulli):
+$\dBinf{1, \prob}$ and $\Ber(\prob)$ are the same distribution.
+
+:::

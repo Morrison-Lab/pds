@@ -1,0 +1,18 @@
+:::{#exm-binomial-moments}
+#### Expected number of responders
+
+In @exm-binomial-sum-bernoulli, $S \sim \dBinf{5, 0.2}$.
+By @thm-binomial-moments:
+
+$$
+\ba
+\E{S} &= 5 \cd 0.2 && \text{(} n\prob \text{)} \\
+&= 1 && \text{(multiply)} \\
+\Var{S} &= 5 \cd 0.2 \cd (1 - 0.2) && \text{(} n\prob(1 - \prob) \text{)} \\
+&= 0.8 && \text{(multiply)}
+\ea
+$$
+
+On average, one of the five patients responds.
+
+:::

@@ -1,0 +1,23 @@
+:::{#exm-binomial-sum-bernoulli}
+#### Counting treatment responders
+
+Suppose five patients each respond to a treatment with probability $0.2$,
+independently of one another,
+and let $X_i = 1$ if patient $i$ responds and $X_i = 0$ otherwise.
+By @thm-binomial-sum-bernoulli,
+the number of responders $S = \sum_{i=1}^5 X_i$ is $\dBinf{5, 0.2}$,
+so the probability that nobody responds is:
+
+$$
+\ba
+\P(S = 0)
+&= \binom{5}{0} (0.2)^0 (1 - 0.2)^{5 - 0}
+&& \text{(binomial PMF with } n = 5,\ \prob = 0.2,\ x = 0 \text{)} \\
+&= 1 \cd 1 \cd (0.8)^5
+&& \text{(} \tbinom{5}{0} = 1 \text{ and } (0.2)^0 = 1 \text{)} \\
+&= 0.32768
+&& \text{(evaluate the power)}
+\ea
+$$
+
+:::

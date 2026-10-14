@@ -1,0 +1,52 @@
+:::{#thm-binomial-sum-bernoulli}
+#### A sum of IID Bernoulli variables is binomial
+
+If $\dsn{X}$ are [IID](independence.qmd#def-iid) $\Ber(\prob)$ random variables,
+then their sum $S = \sumin X_i$ has the $\dBinf{n, \prob}$ distribution.
+
+:::
+
+::: proof
+
+Each $X_i$ is $0$ or $1$, so $S$ takes values in $\set{0, 1, \dots, n}$.
+Fix $x \in \set{0, 1, \dots, n}$,
+and let $A_x$ be the set of sequences $(\dsn{s}) \in \set{0, 1}^n$
+with exactly $x$ ones.
+The event $\set{S = x}$ is the disjoint union of the events
+$\set{X_1 = s_1, \ldots, X_n = s_n}$ over $(\dsn{s}) \in A_x$.
+For one such sequence:
+
+$$
+\ba
+\P(X_1 = s_1, \ldots, X_n = s_n)
+&= \prod_{i=1}^n \P(X_i = s_i)
+&& \text{(independence)} \\
+&= \prod_{i=1}^n \prob^{s_i} (1 - \prob)^{1 - s_i}
+&& \text{(Bernoulli PMF)} \\
+&= \prob^{\sumin s_i} (1 - \prob)^{\sumin (1 - s_i)}
+&& \text{(collect exponents)} \\
+&= \prob^x (1 - \prob)^{n - x}
+&& \text{(} \textstyle\sumin s_i = x \text{ for a sequence in } A_x \text{)}
+\ea
+$$
+
+Choosing which $x$ of the $n$ positions hold the ones
+determines the sequence,
+so $A_x$ has $\binom{n}{x}$ elements.
+Therefore:
+
+$$
+\ba
+\P(S = x)
+&= \sum_{(\dsn{s}) \in A_x} \P(X_1 = s_1, \ldots, X_n = s_n)
+&& \text{(additivity over disjoint events)} \\
+&= \sum_{(\dsn{s}) \in A_x} \prob^x (1 - \prob)^{n - x}
+&& \text{(probability of one sequence)} \\
+&= \binom{n}{x} \prob^x (1 - \prob)^{n - x}
+&& \text{(} A_x \text{ has } \tbinom{n}{x} \text{ elements)}
+\ea
+$$
+
+which is @eq-binom-pmf.
+
+:::

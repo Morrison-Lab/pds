@@ -1,0 +1,24 @@
+:::{#exm-binomial-pmf}
+#### Two heads in three flips
+
+Let $X \sim \dBinf{3, 1/2}$ be the number of heads in three flips of a fair coin.
+By @eq-binom-pmf:
+
+$$
+\ba
+\P(X = 2)
+&= \binom{3}{2} \paren{\frac{1}{2}}^2 \paren{1 - \frac{1}{2}}^{3 - 2}
+&& \text{(binomial PMF with } n = 3,\ \prob = 1/2,\ x = 2 \text{)} \\
+&= \frac{3!}{2!\,1!} \paren{\frac{1}{2}}^2 \paren{\frac{1}{2}}^1
+&& \text{(definition of } \tbinom{3}{2} \text{; } 1 - 1/2 = 1/2 \text{)} \\
+&= 3 \cd \frac{1}{4} \cd \frac{1}{2}
+&& \text{(evaluate the factorials and powers)} \\
+&= \frac{3}{8}
+&& \text{(multiply)}
+\ea
+$$
+
+The three outcomes with two heads are $HHT$, $HTH$, and $THH$,
+each with probability $1/8$.
+
+:::
