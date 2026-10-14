@@ -3,6 +3,9 @@
 Measurement noise is almost always modeled as a random variable
 $\noise$ with **mean zero** and variance $\varpar$.
 
+::: {#rem-mean-zero-parametrization}
+#### Mean zero is a parametrization choice
+
 Mean zero is a parametrization choice, not a substantive assumption.
 In $Y = f(x) + \noise$, moving a constant from $\noise$ into $f(x)$
 changes the split but not the distribution of $Y$,
@@ -13,5 +16,7 @@ as any model with an intercept can.
 It restricts the model only when $f$ cannot absorb one,
 as in a regression through the origin.
 
-That choice buys one identity, used repeatedly across statistical modeling
+:::
+
+Mean zero buys one identity, used repeatedly across statistical modeling
 and machine learning.
