@@ -36,7 +36,7 @@ Some key results are listed here, organized by topic:
 - [Variance and covariance](variance-covariance.qmd):
   deviation, variance, conditional variance, homoskedasticity, and covariance
 - [Key distributions](distributions.qmd):
-  Bernoulli, Poisson, negative binomial, and Weibull distributions
+  Bernoulli, binomial, Poisson, negative binomial, and Weibull distributions
 - [Limit theorems](limit-theorems.qmd):
   the Central Limit Theorem
 

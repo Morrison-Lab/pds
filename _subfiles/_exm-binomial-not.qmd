@@ -1,0 +1,35 @@
+:::{#exm-binomial-not}
+#### Draws without replacement are not binomial
+
+An urn holds two red balls and two blue balls.
+Draw two balls without replacement,
+and let $X$ be the number of red balls drawn.
+Each draw is red with probability $1/2$,
+but $X \not\sim \dBinf{2, 1/2}$,
+because the draws are not [independent](independence.qmd#def-indpt):
+
+$$
+\ba
+\P(X = 2)
+&= \P(\text{first red}) \cd \P(\text{second red} \mid \text{first red})
+&& \text{(multiplication rule)} \\
+&= \frac{2}{4} \cd \frac{1}{3}
+&& \text{(one red ball is left among three)} \\
+&= \frac{1}{6}
+&& \text{(multiply)}
+\ea
+$$
+
+whereas, by @eq-binom-pmf, a $\dBinf{2, 1/2}$ random variable has
+
+$$
+\ba
+\P(X = 2)
+&= \binom{2}{2} \paren{\frac{1}{2}}^2 \paren{\frac{1}{2}}^0
+&& \text{(binomial PMF with } n = 2,\ \prob = 1/2,\ x = 2 \text{)} \\
+&= \frac{1}{4}
+&& \text{(evaluate)}
+\ea
+$$
+
+:::

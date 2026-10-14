@@ -9,7 +9,7 @@ other distributions are typically used for test statistics (@tbl-test-stat-distn
 Distribution | Uses
 ------------ | ---
 [Bernoulli](random-variables.qmd#def-bernoulli) | Binary outcomes
-Binomial | Sums of Bernoulli outcomes
+[Binomial](#def-binomial) | Sums of Bernoulli outcomes
 Poisson | Unbounded count outcomes
 Geometric | Counts of non-events before an event occurs
 Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs
@@ -52,6 +52,36 @@ and by the [variance of a Bernoulli random variable](variance-covariance.qmd#exm
 it has variance $\prob(1 - \prob)$.
 
 :::
+
+{{< slidebreak >}}
+
+## The binomial distribution {#sec-binomial-dist}
+
+{{< include pds/_subfiles/_def-binomial.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-binomial-pmf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-binomial-not.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-binomial-sum-bernoulli.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-binomial-sum-bernoulli.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-binomial-moments.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-binomial-moments.qmd >}}
 
 {{< slidebreak >}}
 
