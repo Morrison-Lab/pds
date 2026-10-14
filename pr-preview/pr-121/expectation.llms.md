@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 21:02:02 (PDT)
+Last modified: 2026-10-13 22:26:00 (PDT)
 
 > **NOTE:**
 >
@@ -1215,7 +1215,15 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
 >
-> is the **irreducible risk**. It depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\g\\, so no choice of \\g\\ can achieve a smaller risk. For example, in [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
+> is the **irreducible risk**.
+
+> **NOTE:**
+>
+> *Remark 1* (The irreducible risk does not depend on the prediction function). The irreducible risk depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\g\\, so no choice of \\g\\ can achieve a smaller risk.
+
+> **NOTE:**
+>
+> **Example 21 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
 
 > **NOTE:**
 >
@@ -1223,7 +1231,15 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
 >
-> is the **reducible risk**. It is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\. For example, in [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> is the **reducible risk**.
+
+> **NOTE:**
+>
+> *Remark 2* (When the reducible risk is zero). The reducible risk is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\.
+
+> **NOTE:**
+>
+> **Example 22 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1245,11 +1261,11 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 
 > **NOTE:**
 >
-> *Remark 1* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 3* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
-> **Example 21 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 23 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1265,7 +1281,7 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 
 > **NOTE:**
 >
-> *Remark 2* (Where the definition comes from). Murphy ([2012, sec. 2.8.1](#ref-murphy2012mlpp), p. 56) defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 4* (Where the definition comes from). Murphy ([2012, sec. 2.8.1](#ref-murphy2012mlpp), p. 56) defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
@@ -1273,11 +1289,15 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 >
 > \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
-> It is the [expectation](#def-expectation) of \\-\log q(X)\\ when \\X\\ has probability mass function \\p\\. When \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite.
+> When \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite.
 
 > **NOTE:**
 >
-> *Remark 3* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\H(p, p) = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
+> *Remark 5* (Cross-entropy as an expected negative log probability). The cross-entropy is the [expectation](#def-expectation) of \\-\log q(X)\\ when \\X\\ has probability mass function \\p\\.
+
+> **NOTE:**
+>
+> *Remark 6* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\H(p, p) = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
 
 > **NOTE:**
 >
@@ -1287,11 +1307,11 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 
 > **NOTE:**
 >
-> *Remark 4* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
+> *Remark 7* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
 
 > **NOTE:**
 >
-> **Example 22 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 24 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
@@ -1299,7 +1319,7 @@ Last modified: 2026-10-13 21:02:02 (PDT)
 
 > **NOTE:**
 >
-> *Remark 5* (Where the definitions come from). Murphy ([2012, sec. 2.8.2](#ref-murphy2012mlpp), pp. 57–58) defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 8* (Where the definitions come from). Murphy ([2012, sec. 2.8.2](#ref-murphy2012mlpp), pp. 57–58) defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## References
 
