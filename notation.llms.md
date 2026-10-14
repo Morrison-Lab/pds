@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 22:20:35 (PDT)
+Last modified: 2026-10-13 22:27:16 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -44,9 +44,11 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Definition 2 (Stochastic process)** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations.
+> **Definition 2 (Stochastic process)** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “random process” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
+
+> **NOTE:**
 >
-> The word “stochastic” comes from the Greek \\\sigma\tau\acute{o}\chi o\varsigma\\ (*stókhos*), meaning “aim” or “guess” (see [etymology](https://www.etymonline.com/search?q=stochastic)). The term is almost always used for processes or systems evolving in time or space under uncertain rules, rather than for a single variable or event. In probability theory, “stochastic process” and “random process” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
+> *Remark 1* (The word “stochastic”). The word “stochastic” comes from the Greek \\\sigma\tau\acute{o}\chi o\varsigma\\ (*stókhos*), meaning “aim” or “guess” (see [etymology](https://www.etymonline.com/search?q=stochastic)). The term is almost always used for processes or systems evolving in time or space under uncertain rules, rather than for a single variable or event.
 
 > **NOTE:**
 >

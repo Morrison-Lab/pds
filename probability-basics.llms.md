@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 22:20:35 (PDT)
+Last modified: 2026-10-13 22:27:16 (PDT)
 
 ## 1 Defining probabilities
 
@@ -103,8 +103,10 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 >
 > - The events \\A_1, A_2, \ldots\\ are [mutually exclusive](#def-mutually-exclusive).
 > - Their union is \\A\\: \\\bigcup\_{i} A_i = A\\.
+
+> **NOTE:**
 >
-> A partition of the [sample space](#def-sample-space) is the case \\A = \Omega\\.
+> *Remark 1* (A partition of the sample space). A partition of the [sample space](#def-sample-space) is the case \\A = \Omega\\.
 
 > **NOTE:**
 >

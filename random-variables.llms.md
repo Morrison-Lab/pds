@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 22:20:35 (PDT)
+Last modified: 2026-10-13 22:27:16 (PDT)
 
 ## 1 Random variables
 
@@ -213,11 +213,13 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 3 (The normal density integrates to 1, with mean \\\mu\\ and variance \\\sigma^2\\)** If \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\ ([Definition 10](#def-normal)), then:
+> **Theorem 3 (The normal density integrates to 1)** If \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\ ([Definition 10](#def-normal)), then:
 >
 > \\\int\_{-\infty}^{\infty} \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}\\dx = 1\\
+
+> **NOTE:**
 >
-> and \\X\\ has [mean](expectation.llms.md#def-expectation) \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \mu\\ and [variance](variance-covariance.llms.md#def-variance) \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \sigma^2\\.
+> **Theorem 4 (The mean and variance of the normal distribution)** If \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\ ([Definition 10](#def-normal)), then \\X\\ has [mean](expectation.llms.md#def-expectation) \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \mu\\ and [variance](variance-covariance.llms.md#def-variance) \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \sigma^2\\.
 
 > **NOTE:**
 >
@@ -265,7 +267,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 4 (Properties of a CDF)** The [CDF](#def-cdf) \\F\\ of any random variable \\X\\ is non-decreasing, and:
+> **Theorem 5 (Properties of a CDF)** The [CDF](#def-cdf) \\F\\ of any random variable \\X\\ is non-decreasing, and:
 >
 > \\\lim\_{t \to -\infty} F(t) = 0, \qquad \lim\_{t \to \infty} F(t) = 1\\
 
@@ -285,7 +287,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 5 (The CDF determines the distribution)** If random variables \\X\\ and \\Y\\ have the same [CDF](#def-cdf), then \\\Pr(X \in B) = \Pr(Y \in B)\\ for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) \\B \subseteq \mathbb{R}\\, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.
+> **Theorem 6 (The CDF determines the distribution)** If random variables \\X\\ and \\Y\\ have the same [CDF](#def-cdf), then \\\Pr(X \in B) = \Pr(Y \in B)\\ for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) \\B \subseteq \mathbb{R}\\, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.
 
 > **NOTE:**
 >
@@ -307,13 +309,9 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 6 (A density integrates to the CDF, and is its derivative)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\F\\, then for every \\t\\:
+> **Theorem 7 (A density integrates to the CDF)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\F\\, then for every \\t\\:
 >
 > \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\
->
-> and at every \\t\\ where \\f\\ is continuous:
->
-> \\f(t) = \frac{\partial}{\partial t} F(t)\\
 
 > **NOTE:**
 >
@@ -321,7 +319,17 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 >
 > \\ \begin{aligned} F(t) &= \Pr(X \le a) + \Pr(a \< X \le t) && \text{(additivity, and the definition of the CDF)} \\ &= F(a) + \Pr(a \le X \le t) && \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\ &= F(a) + \int_a^t f(x)\\dx && \text{(definition of the density)} \end{aligned} \\
 >
-> Letting \\a \to -\infty\\, \\F(a) \to 0\\ ([Theorem 4](#thm-cdf-properties)), which gives \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\. The fundamental theorem of calculus then gives \\\frac{\partial}{\partial t} \int\_{-\infty}^{t} f(x)\\dx = f(t)\\ at every \\t\\ where \\f\\ is continuous.
+> Letting \\a \to -\infty\\, \\F(a) \to 0\\ ([Theorem 5](#thm-cdf-properties)), which gives \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\.
+
+> **NOTE:**
+>
+> **Theorem 8 (The derivative of the CDF is the density where the density is continuous)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\F\\, then at every \\t\\ where \\f\\ is continuous:
+>
+> \\f(t) = \frac{\partial}{\partial t} F(t)\\
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 7](#thm-density-vs-CDF), \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\. The fundamental theorem of calculus then gives \\\frac{\partial}{\partial t} \int\_{-\infty}^{t} f(x)\\dx = f(t)\\ at every \\t\\ where \\f\\ is continuous.
 
 > **NOTE:**
 >
@@ -329,7 +337,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. At every point \\t\\ where \\f\\ is continuous, [Theorem 6](#thm-density-vs-CDF) gives \\F'(t) = f(t)\\, and by assumption those are all but finitely many points.
+> *Proof*. At every point \\t\\ where \\f\\ is continuous, [Theorem 8](#thm-cdf-derivative-is-density) gives \\F'(t) = f(t)\\, and by assumption those are all but finitely many points.
 
 > **NOTE:**
 >
@@ -349,7 +357,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 7 (A piecewise-smooth CDF has its derivative as a density)** If the CDF \\F\\ of a random variable \\X\\ is continuous everywhere, and has a continuous derivative at all but finitely many points, then \\X\\ is continuous, and \\F'\\ (given any values at the finitely many exceptional points) is a density of \\X\\.
+> **Theorem 9 (A piecewise-smooth CDF has its derivative as a density)** If the CDF \\F\\ of a random variable \\X\\ is continuous everywhere, and has a continuous derivative at all but finitely many points, then \\X\\ is continuous, and \\F'\\ (given any values at the finitely many exceptional points) is a density of \\X\\.
 
 > **NOTE:**
 >
@@ -361,15 +369,15 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr(a \< X \le b) && \text{(} \Pr(X = a) = 0 \text{)} \\ &= F(b) - F(a) && \text{(additivity, and the definition of the CDF)} \\ &= \int_a^b F'(x)\\dx && \text{(fundamental theorem of calculus)} \end{aligned} \\
 >
-> The last step applies the fundamental theorem of calculus on each piece of \\\[a, b\]\\ between exceptional points, where \\F'\\ is continuous, and joins the pieces using the continuity of \\F\\ at the exceptional points. Finally, \\F' \ge 0\\ wherever it exists, because \\F\\ is non-decreasing ([Theorem 4](#thm-cdf-properties)).
+> The last step applies the fundamental theorem of calculus on each piece of \\\[a, b\]\\ between exceptional points, where \\F'\\ is continuous, and joins the pieces using the continuity of \\F\\ at the exceptional points. Finally, \\F' \ge 0\\ wherever it exists, because \\F\\ is non-decreasing ([Theorem 5](#thm-cdf-properties)).
 
 > **NOTE:**
 >
-> **Example 15 (A density from a CDF with a corner)** Let \\X\\ have CDF \\F(t) = 0\\ for \\t \< 0\\, \\F(t) = t^2\\ for \\0 \le t \le 1\\, and \\F(t) = 1\\ for \\t \> 1\\. This \\F\\ is continuous everywhere, and has a continuous derivative everywhere except \\t = 1\\, where its slope drops from 2 to 0. By [Theorem 7](#thm-cdf-derivative-density), \\X\\ is continuous with density \\f(t) = 2t\\ for \\0 \le t \< 1\\ and \\f(t) = 0\\ otherwise. As a check, \\\int_0^1 2t\\dt = 1\\.
+> **Example 15 (A density from a CDF with a corner)** Let \\X\\ have CDF \\F(t) = 0\\ for \\t \< 0\\, \\F(t) = t^2\\ for \\0 \le t \le 1\\, and \\F(t) = 1\\ for \\t \> 1\\. This \\F\\ is continuous everywhere, and has a continuous derivative everywhere except \\t = 1\\, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), \\X\\ is continuous with density \\f(t) = 2t\\ for \\0 \le t \< 1\\ and \\f(t) = 0\\ otherwise. As a check, \\\int_0^1 2t\\dt = 1\\.
 
 > **NOTE:**
 >
-> **Theorem 8 (A density as a limit of interval probabilities)** If \\X\\ is a continuous random variable with density \\f\\, and \\f\\ is continuous at \\x\\, then \\f(x)\\ is the limit of the probability that \\X\\ falls in an interval starting at \\x\\, divided by the width of that interval, as that width shrinks to 0:
+> **Theorem 10 (A density as a limit of interval probabilities)** If \\X\\ is a continuous random variable with density \\f\\, and \\f\\ is continuous at \\x\\, then \\f(x)\\ is the limit of the probability that \\X\\ falls in an interval starting at \\x\\, divided by the width of that interval, as that width shrinks to 0:
 >
 > \\f(x) = \lim\_{\Delta\downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta}\\
 
@@ -379,7 +387,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 >
 > \\ \begin{aligned} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} &= \frac{\Pr(x \< X \le x + \Delta)}{\Delta} && \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \Delta) = 0 \text{)} \\ &= \frac{F(x + \Delta) - F(x)}{\Delta} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
 >
-> By [Theorem 6](#thm-density-vs-CDF), \\F\\ is differentiable at \\x\\ with \\F'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta\downarrow 0\\.
+> By [Theorem 8](#thm-cdf-derivative-is-density), \\F\\ is differentiable at \\x\\ with \\F'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta\downarrow 0\\.
 
 > **NOTE:**
 >
@@ -405,7 +413,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. The first two lines of the proof of [Theorem 8](#thm-density-limit) use only that \\X\\ is continuous, so for every \\\Delta\> 0\\ the two quotients are equal. Equal functions of \\\Delta\\ have the same limit as \\\Delta\downarrow 0\\, or both have none.
+> *Proof*. The first two lines of the proof of [Theorem 10](#thm-density-limit) use only that \\X\\ is continuous, so for every \\\Delta\> 0\\ the two quotients are equal. Equal functions of \\\Delta\\ have the same limit as \\\Delta\downarrow 0\\, or both have none.
 
 > **NOTE:**
 >
@@ -417,7 +425,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 9 (Density functions integrate to 1)** If \\X\\ is a continuous random variable with density \\f\\:
+> **Theorem 11 (Density functions integrate to 1)** If \\X\\ is a continuous random variable with density \\f\\:
 >
 > \\\int\_{-\infty}^{\infty} f(x)\\ dx = 1\\
 
@@ -425,7 +433,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 >
 > *Proof*. \\ \begin{aligned} \int\_{-\infty}^{\infty} f(x)\\ dx &= \lim\_{b \to \infty} \int\_{-\infty}^{b} f(x)\\ dx && \text{(definition of an improper integral)} \\ &= \lim\_{b \to \infty} F(b) && \text{(the CDF is the integral of the density)} \\ &= 1 && \text{(limit of a CDF)} \end{aligned} \\
 >
-> The last step is [Theorem 4](#thm-cdf-properties).
+> The last step is [Theorem 5](#thm-cdf-properties).
 
 > **NOTE:**
 >
@@ -461,7 +469,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 10 (A joint distribution is determined by its rectangle probabilities)** If [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\, and jointly distributed random variables \\Y_1, \ldots, Y_n\\, satisfy
+> **Theorem 12 (A joint distribution is determined by its rectangle probabilities)** If [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\, and jointly distributed random variables \\Y_1, \ldots, Y_n\\, satisfy
 >
 > \\\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n)\\
 >
@@ -500,7 +508,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 11 (Marginal PMF from a joint PMF)** If \\X\\ and \\Y\\ are jointly distributed discrete random variables, then for every \\x\\:
+> **Theorem 13 (Marginal PMF from a joint PMF)** If \\X\\ and \\Y\\ are jointly distributed discrete random variables, then for every \\x\\:
 >
 > \\\operatorname{P}(X = x) = \sum\_{y \in \mathcal{R}(Y)} \operatorname{P}(X = x,\\ Y = y)\\
 
@@ -537,7 +545,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 12 (Not every pair of continuous random variables has a joint density)** If \\X\\ is a continuous random variable, then the pair \\(X, X)\\ has no [joint density](#def-joint-pdf).
+> **Theorem 14 (Not every pair of continuous random variables has a joint density)** If \\X\\ is a continuous random variable, then the pair \\(X, X)\\ has no [joint density](#def-joint-pdf).
 
 > **NOTE:**
 >
@@ -549,7 +557,7 @@ Last modified: 2026-10-13 22:20:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 13 (Marginal density from a joint density)** If \\X\\ and \\Y\\ have joint density \\f\_{X,Y}\\, then \\X\\ has the density:
+> **Theorem 15 (Marginal density from a joint density)** If \\X\\ and \\Y\\ have joint density \\f\_{X,Y}\\, then \\X\\ has the density:
 >
 > \\f_X(x) = \int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\\
 
@@ -653,7 +661,7 @@ Probabilities are assigned to subsets \\A \subseteq \mathcal{R}(X)\\ by integrat
 
 > **NOTE:**
 >
-> **Theorem 14 (Points have zero probability in continuous distributions)** For any continuous random variable and any specific value \\a \in \mathbb{R}\\:
+> **Theorem 16 (Points have zero probability in continuous distributions)** For any continuous random variable and any specific value \\a \in \mathbb{R}\\:
 >
 > \\\Pr(X = a) = 0\\
 
@@ -689,7 +697,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Theorem 15 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
+> **Theorem 17 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
 >
 > \\\operatorname{S}(t) = 1 - F(t)\\
 >
@@ -703,13 +711,13 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > \\ \begin{aligned} \operatorname{S}(t) &\stackrel{\text{def}}{=}\Pr(T \> t) && \text{(definition of the survival function)} \\ &= 1 - \Pr(T \le t) && \text{(complement rule)} \\ &= 1 - F(t) && \text{(definition of the CDF)} \end{aligned} \\
 >
-> For continuous \\T\\, the density integrates to 1 over the real line ([Theorem 9](#thm-density-sums-to-one)), and \\F\\ is the integral of the density up to \\t\\ ([Theorem 6](#thm-density-vs-CDF)), so:
+> For continuous \\T\\, the density integrates to 1 over the real line ([Theorem 11](#thm-density-sums-to-one)), and \\F\\ is the integral of the density up to \\t\\ ([Theorem 7](#thm-density-vs-CDF)), so:
 >
 > \\ \begin{aligned} 1 - F(t) &= \int\_{u=-\infty}^{\infty} f(u)\\du - \int\_{u=-\infty}^{t} f(u)\\du && \text{(total integral is 1; } F \text{ is the integral of } f \text{)} \\ &= \int\_{u=t}^{\infty} f(u)\\du && \text{(split the first integral at } t \text{ and cancel)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 28 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 12](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 15](#thm-survival-expressions-1):
+> **Example 28 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 12](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 17](#thm-survival-expressions-1):
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} {\lambda}\text{e}^{-{\lambda}u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-{\lambda}t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-{\lambda}u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-{\lambda}t} && \text{(simplify)} \end{aligned} \\
 >
@@ -783,7 +791,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Theorem 16 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
+> **Theorem 18 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
 >
 > \\{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\\
 
@@ -793,7 +801,7 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > \\ \begin{aligned} \Pr(T \ge t) &= \Pr(T \> t) \\ &= \operatorname{S}(t), \end{aligned} \\
 >
-> which is positive. Third, because \\f\\ is continuous at \\t\\, [Theorem 8](#thm-density-limit) gives \\f(t)\\ as the limit of \\\Pr(t \le T \< t + \Delta) / \Delta\\.
+> which is positive. Third, because \\f\\ is continuous at \\t\\, [Theorem 10](#thm-density-limit) gives \\f(t)\\ as the limit of \\\Pr(t \le T \< t + \Delta) / \Delta\\.
 >
 > \\ \begin{aligned} {\lambda}(t) &\stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta} && \text{(definition of the hazard function)} \\ &= \lim\_{\Delta\downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(\\t \le T \< t + \Delta\\ \cap \\T \ge t\\)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \lim\_{\Delta\downarrow 0} \frac{1}{\Delta} \cdot\frac{\Pr(t \le T \< t + \Delta)}{\Pr(T \ge t)} && \text{(subset property)} \\ &= \frac{1}{\Pr(T \ge t)} \cdot\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta)}{\Delta} && \text{(} \Pr(T \ge t) \text{ does not depend on } \Delta\text{)} \\ &= \frac{f(t)}{\Pr(T \ge t)} && \text{(density as a limit; } f \text{ is continuous at } t \text{)} \\ &= \frac{f(t)}{\operatorname{S}(t)} && \text{(} \Pr(T = t) = 0 \text{ for continuous } T \text{)} \end{aligned} \\
 
@@ -851,7 +859,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 15](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 6](#thm-density-vs-CDF)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
+> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 17](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 8](#thm-cdf-derivative-is-density)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
 >
 > \\ \begin{aligned} \frac{d}{du}\mathopen{}\left(-\operatorname{log}\mathopen{}\left\\\operatorname{S}(u)\right\\\mathclose{}\right)\mathclose{} &= -\frac{1}{\operatorname{S}(u)} \cdot\frac{d}{du}\operatorname{S}(u) && \text{(chain rule)} \\ &= -\frac{1}{\operatorname{S}(u)} \cdot\mathopen{}\left(-f(u)\right)\mathclose{} && \text{(} \operatorname{S}' = -f \text{)} \\ &= \frac{f(u)}{\operatorname{S}(u)} && \text{(simplify)} \\ &= {\lambda}(u) && \text{(hazard equals density over survival)} \end{aligned} \\
 >
@@ -884,8 +892,8 @@ Table 2: Probability distribution functions of a continuous random variable \\T
 >
 > *Remark*. For a continuous random variable \\T \ge 0\\ whose density is continuous at all but finitely many points, the following results connect the functions in [Table 2](#tbl-prob-dist-fns):
 >
-> - [Theorem 15](#thm-survival-expressions-1)
-> - [Theorem 16](#thm-hazard-dens-surv)
+> - [Theorem 17](#thm-survival-expressions-1)
+> - [Theorem 18](#thm-hazard-dens-surv)
 > - [Corollary 4](#cor-cuhaz-nonneg)
 > - [Corollary 5](#cor-surv-int-haz)
 >

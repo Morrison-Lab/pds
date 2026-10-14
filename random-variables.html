@@ -230,6 +230,16 @@ cookieconsent.run({
 })();
 </script>
 <style>
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-solution.callout {
   border-left-color: #4E342E;
 }
@@ -239,26 +249,6 @@ div.callout-solution.callout-style-default .callout-header {
 div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-prp.callout {
-  border-left-color: #827717;
-}
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
-}
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
@@ -270,6 +260,16 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-proof.callout {
   border-left-color: #37474F;
 }
@@ -280,6 +280,16 @@ div.callout-proof .callout-toggle::before {  background-image: url('data:image/s
 div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-cnj.callout {
   border-left-color: #558B2F;
 }
@@ -289,26 +299,6 @@ div.callout-cnj.callout-style-default .callout-header {
 div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -324,6 +314,16 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   content: '\f144' !important;
   background-image: none;
 }
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-def.callout {
   border-left-color: #1B5E20;
 }
@@ -334,15 +334,15 @@ div.callout-def .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-remark.callout {
-  border-left-color: #AD1457;
+div.callout-prp.callout {
+  border-left-color: #827717;
 }
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
 }
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -766,7 +766,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-13 22:20:35 (PDT)</p>
+      <p class="date">Last modified: 2026-10-13 22:27:16 (PDT)</p>
     </div>
   </div>
   
@@ -1380,14 +1380,28 @@ f(x) \stackrel{\text{def}}{=}\begin{cases}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-normal-density" class="quarto-xref">Theorem&nbsp;3</a> (The normal density integrates to 1, with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>)
+<span class="screen-reader-only">Lem</span><a href="#thm-normal-density" class="quarto-xref">Theorem&nbsp;3</a> (The normal density integrates to 1)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-normal-density" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (The normal density integrates to 1, with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>)</strong></span> If <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span> (<a href="#def-normal" class="quarto-xref">Definition&nbsp;10</a>), then:</p>
+<p><span class="theorem-title"><strong>Theorem 3 (The normal density integrates to 1)</strong></span> If <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span> (<a href="#def-normal" class="quarto-xref">Definition&nbsp;10</a>), then:</p>
 <p><span class="math display">\[\int_{-\infty}^{\infty} \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}\,dx = 1\]</span></p>
-<p>and <span class="math inline">\(X\)</span> has <a href="./expectation.html#def-expectation">mean</a> <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = \mu\)</span> and <a href="./variance-covariance.html#def-variance">variance</a> <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \sigma^2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Lem</span><a href="#thm-normal-moments" class="quarto-xref">Theorem&nbsp;4</a> (The mean and variance of the normal distribution)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="thm-normal-moments" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (The mean and variance of the normal distribution)</strong></span> If <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span> (<a href="#def-normal" class="quarto-xref">Definition&nbsp;10</a>), then <span class="math inline">\(X\)</span> has <a href="./expectation.html#def-expectation">mean</a> <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = \mu\)</span> and <a href="./variance-covariance.html#def-variance">variance</a> <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \sigma^2\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1539,18 +1553,18 @@ F(t) = \begin{cases}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;4</a> (Properties of a CDF)
+<span class="screen-reader-only">Lem</span><a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;5</a> (Properties of a CDF)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-cdf-properties" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (Properties of a CDF)</strong></span> The <a href="#def-cdf">CDF</a> <span class="math inline">\(F\)</span> of any random variable <span class="math inline">\(X\)</span> is non-decreasing, and:</p>
+<p><span class="theorem-title"><strong>Theorem 5 (Properties of a CDF)</strong></span> The <a href="#def-cdf">CDF</a> <span class="math inline">\(F\)</span> of any random variable <span class="math inline">\(X\)</span> is non-decreasing, and:</p>
 <p><span class="math display">\[\lim_{t \to -\infty} F(t) = 0, \qquad \lim_{t \to \infty} F(t) = 1\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1559,7 +1573,7 @@ F(t) = \begin{cases}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><em>Non-decreasing.</em> For <span class="math inline">\(s &lt; t\)</span>, <span class="math inline">\(\{X \le t\}\)</span> is the disjoint union of <span class="math inline">\(\{X \le s\}\)</span> and <span class="math inline">\(\{s &lt; X \le t\}\)</span>, so <a href="./probability-basics.html#cor-probability-finitely-additive">finite additivity</a> gives:</p>
@@ -1596,12 +1610,12 @@ F(n)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-cdf-characterizes" class="quarto-xref">Theorem&nbsp;5</a> (The CDF determines the distribution)
+<span class="screen-reader-only">Lem</span><a href="#thm-cdf-characterizes" class="quarto-xref">Theorem&nbsp;6</a> (The CDF determines the distribution)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-cdf-characterizes" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (The CDF determines the distribution)</strong></span> If random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the same <a href="#def-cdf">CDF</a>, then <span class="math inline">\(\Pr(X \in B) = \Pr(Y \in B)\)</span> for every <a href="https://en.wikipedia.org/wiki/Borel_set">Borel set</a> <span class="math inline">\(B \subseteq \mathbb{R}\)</span>, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.</p>
+<p><span class="theorem-title"><strong>Theorem 6 (The CDF determines the distribution)</strong></span> If random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the same <a href="#def-cdf">CDF</a>, then <span class="math inline">\(\Pr(X \in B) = \Pr(Y \in B)\)</span> for every <a href="https://en.wikipedia.org/wiki/Borel_set">Borel set</a> <span class="math inline">\(B \subseteq \mathbb{R}\)</span>, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.</p>
 </div>
 </div>
 </div>
@@ -1666,20 +1680,18 @@ F(n)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a> (A density integrates to the CDF, and is its derivative)
+<span class="screen-reader-only">Lem</span><a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;7</a> (A density integrates to the CDF)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-density-vs-CDF" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (A density integrates to the CDF, and is its derivative)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span> and CDF <span class="math inline">\(F\)</span>, then for every <span class="math inline">\(t\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 7 (A density integrates to the CDF)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span> and CDF <span class="math inline">\(F\)</span>, then for every <span class="math inline">\(t\)</span>:</p>
 <p><span class="math display">\[F(t) = \int_{-\infty}^{t} f(x)\,dx\]</span></p>
-<p>and at every <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous:</p>
-<p><span class="math display">\[f(t) = \frac{\partial}{\partial t} F(t)\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1688,7 +1700,7 @@ F(n)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For any <span class="math inline">\(a &lt; t\)</span>, <span class="math inline">\(\{X \le t\}\)</span> is the disjoint union of <span class="math inline">\(\{X \le a\}\)</span> and <span class="math inline">\(\{a &lt; X \le t\}\)</span>, and <span class="math inline">\(\Pr(X = a) = 0\)</span> because <span class="math inline">\(X\)</span> is continuous. So:</p>
@@ -1703,7 +1715,41 @@ F(t)
 &amp;&amp; \text{(definition of the density)}
 \end{aligned}
 \]</span></p>
-<p>Letting <span class="math inline">\(a \to -\infty\)</span>, <span class="math inline">\(F(a) \to 0\)</span> (<a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;4</a>), which gives <span class="math inline">\(F(t) = \int_{-\infty}^{t} f(x)\,dx\)</span>. The fundamental theorem of calculus then gives <span class="math inline">\(\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)\)</span> at every <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous.</p>
+<p>Letting <span class="math inline">\(a \to -\infty\)</span>, <span class="math inline">\(F(a) \to 0\)</span> (<a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;5</a>), which gives <span class="math inline">\(F(t) = \int_{-\infty}^{t} f(x)\,dx\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Lem</span><a href="#thm-cdf-derivative-is-density" class="quarto-xref">Theorem&nbsp;8</a> (The derivative of the CDF is the density where the density is continuous)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="thm-cdf-derivative-is-density" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8 (The derivative of the CDF is the density where the density is continuous)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span> and CDF <span class="math inline">\(F\)</span>, then at every <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous:</p>
+<p><span class="math display">\[f(t) = \frac{\partial}{\partial t} F(t)\]</span></p>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;7</a>, <span class="math inline">\(F(t) = \int_{-\infty}^{t} f(x)\,dx\)</span>. The fundamental theorem of calculus then gives <span class="math inline">\(\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)\)</span> at every <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous.</p>
 </div>
 </div>
 </div>
@@ -1724,7 +1770,7 @@ F(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1733,10 +1779,10 @@ F(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>At every point <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous, <a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a> gives <span class="math inline">\(F'(t) = f(t)\)</span>, and by assumption those are all but finitely many points.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>At every point <span class="math inline">\(t\)</span> where <span class="math inline">\(f\)</span> is continuous, <a href="#thm-cdf-derivative-is-density" class="quarto-xref">Theorem&nbsp;8</a> gives <span class="math inline">\(F'(t) = f(t)\)</span>, and by assumption those are all but finitely many points.</p>
 </div>
 </div>
 </div>
@@ -1793,17 +1839,17 @@ F(t)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-cdf-derivative-density" class="quarto-xref">Theorem&nbsp;7</a> (A piecewise-smooth CDF has its derivative as a density)
+<span class="screen-reader-only">Lem</span><a href="#thm-cdf-derivative-density" class="quarto-xref">Theorem&nbsp;9</a> (A piecewise-smooth CDF has its derivative as a density)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-cdf-derivative-density" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (A piecewise-smooth CDF has its derivative as a density)</strong></span> If the CDF <span class="math inline">\(F\)</span> of a random variable <span class="math inline">\(X\)</span> is continuous everywhere, and has a continuous derivative at all but finitely many points, then <span class="math inline">\(X\)</span> is continuous, and <span class="math inline">\(F'\)</span> (given any values at the finitely many exceptional points) is a density of <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 9 (A piecewise-smooth CDF has its derivative as a density)</strong></span> If the CDF <span class="math inline">\(F\)</span> of a random variable <span class="math inline">\(X\)</span> is continuous everywhere, and has a continuous derivative at all but finitely many points, then <span class="math inline">\(X\)</span> is continuous, and <span class="math inline">\(F'\)</span> (given any values at the finitely many exceptional points) is a density of <span class="math inline">\(X\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1812,7 +1858,7 @@ F(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For events <span class="math inline">\(A \subseteq B\)</span>, <span class="math inline">\(B\)</span> is the disjoint union of <span class="math inline">\(A\)</span> and <span class="math inline">\(B \setminus A\)</span>, so additivity gives <span class="math inline">\(\Pr(A) \le \Pr(B)\)</span>. For any <span class="math inline">\(x\)</span> and <span class="math inline">\(\Delta&gt; 0\)</span>, <span class="math inline">\(\{X = x\} \subseteq \{x - \Delta&lt; X \le x\}\)</span>, so:</p>
@@ -1839,7 +1885,7 @@ F(t)
 &amp;&amp; \text{(fundamental theorem of calculus)}
 \end{aligned}
 \]</span></p>
-<p>The last step applies the fundamental theorem of calculus on each piece of <span class="math inline">\([a, b]\)</span> between exceptional points, where <span class="math inline">\(F'\)</span> is continuous, and joins the pieces using the continuity of <span class="math inline">\(F\)</span> at the exceptional points. Finally, <span class="math inline">\(F' \ge 0\)</span> wherever it exists, because <span class="math inline">\(F\)</span> is non-decreasing (<a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;4</a>).</p>
+<p>The last step applies the fundamental theorem of calculus on each piece of <span class="math inline">\([a, b]\)</span> between exceptional points, where <span class="math inline">\(F'\)</span> is continuous, and joins the pieces using the continuity of <span class="math inline">\(F\)</span> at the exceptional points. Finally, <span class="math inline">\(F' \ge 0\)</span> wherever it exists, because <span class="math inline">\(F\)</span> is non-decreasing (<a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;5</a>).</p>
 </div>
 </div>
 </div>
@@ -1855,7 +1901,7 @@ F(t)
 </div>
 <div class="callout-body-container callout-body">
 <div id="exm-cdf-derivative-density" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15 (A density from a CDF with a corner)</strong></span> Let <span class="math inline">\(X\)</span> have CDF <span class="math inline">\(F(t) = 0\)</span> for <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(F(t) = t^2\)</span> for <span class="math inline">\(0 \le t \le 1\)</span>, and <span class="math inline">\(F(t) = 1\)</span> for <span class="math inline">\(t &gt; 1\)</span>. This <span class="math inline">\(F\)</span> is continuous everywhere, and has a continuous derivative everywhere except <span class="math inline">\(t = 1\)</span>, where its slope drops from 2 to 0. By <a href="#thm-cdf-derivative-density" class="quarto-xref">Theorem&nbsp;7</a>, <span class="math inline">\(X\)</span> is continuous with density <span class="math inline">\(f(t) = 2t\)</span> for <span class="math inline">\(0 \le t &lt; 1\)</span> and <span class="math inline">\(f(t) = 0\)</span> otherwise. As a check, <span class="math inline">\(\int_0^1 2t\,dt = 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 15 (A density from a CDF with a corner)</strong></span> Let <span class="math inline">\(X\)</span> have CDF <span class="math inline">\(F(t) = 0\)</span> for <span class="math inline">\(t &lt; 0\)</span>, <span class="math inline">\(F(t) = t^2\)</span> for <span class="math inline">\(0 \le t \le 1\)</span>, and <span class="math inline">\(F(t) = 1\)</span> for <span class="math inline">\(t &gt; 1\)</span>. This <span class="math inline">\(F\)</span> is continuous everywhere, and has a continuous derivative everywhere except <span class="math inline">\(t = 1\)</span>, where its slope drops from 2 to 0. By <a href="#thm-cdf-derivative-density" class="quarto-xref">Theorem&nbsp;9</a>, <span class="math inline">\(X\)</span> is continuous with density <span class="math inline">\(f(t) = 2t\)</span> for <span class="math inline">\(0 \le t &lt; 1\)</span> and <span class="math inline">\(f(t) = 0\)</span> otherwise. As a check, <span class="math inline">\(\int_0^1 2t\,dt = 1\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1865,18 +1911,18 @@ F(t)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-density-limit" class="quarto-xref">Theorem&nbsp;8</a> (A density as a limit of interval probabilities)
+<span class="screen-reader-only">Lem</span><a href="#thm-density-limit" class="quarto-xref">Theorem&nbsp;10</a> (A density as a limit of interval probabilities)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-density-limit" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8 (A density as a limit of interval probabilities)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span>, and <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x\)</span>, then <span class="math inline">\(f(x)\)</span> is the limit of the probability that <span class="math inline">\(X\)</span> falls in an interval starting at <span class="math inline">\(x\)</span>, divided by the width of that interval, as that width shrinks to 0:</p>
+<p><span class="theorem-title"><strong>Theorem 10 (A density as a limit of interval probabilities)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span>, and <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x\)</span>, then <span class="math inline">\(f(x)\)</span> is the limit of the probability that <span class="math inline">\(X\)</span> falls in an interval starting at <span class="math inline">\(x\)</span>, divided by the width of that interval, as that width shrinks to 0:</p>
 <p><span class="math display">\[f(x) = \lim_{\Delta\downarrow 0} \frac{\Pr(x \le X &lt; x + \Delta)}{\Delta}\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1885,7 +1931,7 @@ F(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For <span class="math inline">\(\Delta&gt; 0\)</span>:</p>
@@ -1898,7 +1944,7 @@ F(t)
 &amp;&amp; \text{(additivity, and the definition of the CDF)}
 \end{aligned}
 \]</span></p>
-<p>By <a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a>, <span class="math inline">\(F\)</span> is differentiable at <span class="math inline">\(x\)</span> with <span class="math inline">\(F'(x) = f(x)\)</span>, so this difference quotient converges to <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(\Delta\downarrow 0\)</span>.</p>
+<p>By <a href="#thm-cdf-derivative-is-density" class="quarto-xref">Theorem&nbsp;8</a>, <span class="math inline">\(F\)</span> is differentiable at <span class="math inline">\(x\)</span> with <span class="math inline">\(F'(x) = f(x)\)</span>, so this difference quotient converges to <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(\Delta\downarrow 0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1958,7 +2004,7 @@ f(x)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1967,10 +2013,10 @@ f(x)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The first two lines of the proof of <a href="#thm-density-limit" class="quarto-xref">Theorem&nbsp;8</a> use only that <span class="math inline">\(X\)</span> is continuous, so for every <span class="math inline">\(\Delta&gt; 0\)</span> the two quotients are equal. Equal functions of <span class="math inline">\(\Delta\)</span> have the same limit as <span class="math inline">\(\Delta\downarrow 0\)</span>, or both have none.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The first two lines of the proof of <a href="#thm-density-limit" class="quarto-xref">Theorem&nbsp;10</a> use only that <span class="math inline">\(X\)</span> is continuous, so for every <span class="math inline">\(\Delta&gt; 0\)</span> the two quotients are equal. Equal functions of <span class="math inline">\(\Delta\)</span> have the same limit as <span class="math inline">\(\Delta\downarrow 0\)</span>, or both have none.</p>
 </div>
 </div>
 </div>
@@ -2008,18 +2054,18 @@ f(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-density-sums-to-one" class="quarto-xref">Theorem&nbsp;9</a> (Density functions integrate to 1)
+<span class="screen-reader-only">Lem</span><a href="#thm-density-sums-to-one" class="quarto-xref">Theorem&nbsp;11</a> (Density functions integrate to 1)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-density-sums-to-one" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 9 (Density functions integrate to 1)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 11 (Density functions integrate to 1)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable with density <span class="math inline">\(f\)</span>:</p>
 <p><span class="math display">\[\int_{-\infty}^{\infty} f(x)\, dx = 1\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2028,7 +2074,7 @@ f(x)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
@@ -2042,7 +2088,7 @@ f(x)
 &amp;&amp; \text{(limit of a CDF)}
 \end{aligned}
 \]</span></p>
-<p>The last step is <a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;4</a>.</p>
+<p>The last step is <a href="#thm-cdf-properties" class="quarto-xref">Theorem&nbsp;5</a>.</p>
 </div>
 </div>
 </div>
@@ -2162,12 +2208,12 @@ f(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-joint-distribution-rectangles" class="quarto-xref">Theorem&nbsp;10</a> (A joint distribution is determined by its rectangle probabilities)
+<span class="screen-reader-only">Lem</span><a href="#thm-joint-distribution-rectangles" class="quarto-xref">Theorem&nbsp;12</a> (A joint distribution is determined by its rectangle probabilities)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-joint-distribution-rectangles" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 10 (A joint distribution is determined by its rectangle probabilities)</strong></span> If <a href="#def-jointly-distributed">jointly distributed</a> random variables <span class="math inline">\(X_1, \ldots, X_n\)</span>, and jointly distributed random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span>, satisfy</p>
+<p><span class="theorem-title"><strong>Theorem 12 (A joint distribution is determined by its rectangle probabilities)</strong></span> If <a href="#def-jointly-distributed">jointly distributed</a> random variables <span class="math inline">\(X_1, \ldots, X_n\)</span>, and jointly distributed random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span>, satisfy</p>
 <p><span class="math display">\[\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n)\]</span></p>
 <p>for all sets <span class="math inline">\(A_1, \ldots, A_n\)</span> of real numbers for which these are events, then <span class="math inline">\((X_1, \ldots, X_n)\)</span> and <span class="math inline">\((Y_1, \ldots, Y_n)\)</span> have the same <a href="#def-joint-distribution">joint distribution</a>.</p>
 </div>
@@ -2288,18 +2334,18 @@ f(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-marginal-pmf" class="quarto-xref">Theorem&nbsp;11</a> (Marginal PMF from a joint PMF)
+<span class="screen-reader-only">Lem</span><a href="#thm-marginal-pmf" class="quarto-xref">Theorem&nbsp;13</a> (Marginal PMF from a joint PMF)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-marginal-pmf" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 11 (Marginal PMF from a joint PMF)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are jointly distributed discrete random variables, then for every <span class="math inline">\(x\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 13 (Marginal PMF from a joint PMF)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are jointly distributed discrete random variables, then for every <span class="math inline">\(x\)</span>:</p>
 <p><span class="math display">\[\operatorname{P}(X = x) = \sum_{y \in \mathcal{R}(Y)} \operatorname{P}(X = x,\, Y = y)\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2308,7 +2354,7 @@ f(x)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-62" class="callout-62-contents callout-collapse collapse">
+<div id="callout-65" class="callout-65-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The event <span class="math inline">\(\{X = x\}\)</span> is the disjoint union of the events <span class="math inline">\(\{X = x\} \cap \{Y = y\}\)</span> over the countably many values <span class="math inline">\(y \in \mathcal{R}(Y)\)</span>, so:</p>
@@ -2413,17 +2459,17 @@ f(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-no-joint-density-diagonal" class="quarto-xref">Theorem&nbsp;12</a> (Not every pair of continuous random variables has a joint density)
+<span class="screen-reader-only">Lem</span><a href="#thm-no-joint-density-diagonal" class="quarto-xref">Theorem&nbsp;14</a> (Not every pair of continuous random variables has a joint density)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-no-joint-density-diagonal" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12 (Not every pair of continuous random variables has a joint density)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable, then the pair <span class="math inline">\((X, X)\)</span> has no <a href="#def-joint-pdf">joint density</a>.</p>
+<p><span class="theorem-title"><strong>Theorem 14 (Not every pair of continuous random variables has a joint density)</strong></span> If <span class="math inline">\(X\)</span> is a continuous random variable, then the pair <span class="math inline">\((X, X)\)</span> has no <a href="#def-joint-pdf">joint density</a>.</p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2432,7 +2478,7 @@ f(x)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-67" class="callout-67-contents callout-collapse collapse">
+<div id="callout-70" class="callout-70-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(f\)</span> were a joint density of <span class="math inline">\((X, X)\)</span>, and let <span class="math inline">\(L = \mathopen{}\left\{(x, y) : y = x\right\}\mathclose{}\)</span> be the diagonal line. Every outcome <span class="math inline">\(\omega\)</span> has <span class="math inline">\(X(\omega) = X(\omega)\)</span>, so <span class="math inline">\(\mathopen{}\left\{(X, X) \in L\right\}\mathclose{} = \Omega\)</span>. For each <span class="math inline">\(x\)</span>, the function <span class="math inline">\(y \mapsto \text{1}_{y = x} f(x, y)\)</span> is <span class="math inline">\(0\)</span> except at the single point <span class="math inline">\(y = x\)</span>, so its integral over <span class="math inline">\(y\)</span> is <span class="math inline">\(0\)</span>. Then:</p>
@@ -2462,18 +2508,18 @@ f(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-marginal-density" class="quarto-xref">Theorem&nbsp;13</a> (Marginal density from a joint density)
+<span class="screen-reader-only">Lem</span><a href="#thm-marginal-density" class="quarto-xref">Theorem&nbsp;15</a> (Marginal density from a joint density)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-marginal-density" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 13 (Marginal density from a joint density)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have joint density <span class="math inline">\(f_{X,Y}\)</span>, then <span class="math inline">\(X\)</span> has the density:</p>
+<p><span class="theorem-title"><strong>Theorem 15 (Marginal density from a joint density)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have joint density <span class="math inline">\(f_{X,Y}\)</span>, then <span class="math inline">\(X\)</span> has the density:</p>
 <p><span class="math display">\[f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2482,7 +2528,7 @@ f(x)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-69" class="callout-69-contents callout-collapse collapse">
+<div id="callout-72" class="callout-72-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For <span class="math inline">\(a \le b\)</span>, the event <span class="math inline">\(\{a \le X \le b\}\)</span> is the event that <span class="math inline">\((X, Y)\)</span> falls in the strip <span class="math inline">\([a, b] \times \mathbb{R}\)</span>, so:</p>
@@ -2583,7 +2629,7 @@ f_Y(y) &amp;= \int_0^y 2\,dx \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2592,7 +2638,7 @@ f_Y(y) &amp;= \int_0^y 2\,dx \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-73" class="callout-73-contents callout-collapse collapse">
+<div id="callout-76" class="callout-76-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Every outcome has <span class="math inline">\(Y(\omega) \in \mathbb{R}\)</span>, so <span class="math inline">\(\mathopen{}\left\{Y \in \mathbb{R}\right\}\mathclose{} = \Omega\)</span>, and:</p>
@@ -2735,12 +2781,12 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-zero-point-prob" class="quarto-xref">Theorem&nbsp;14</a> (Points have zero probability in continuous distributions)
+<span class="screen-reader-only">Lem</span><a href="#thm-zero-point-prob" class="quarto-xref">Theorem&nbsp;16</a> (Points have zero probability in continuous distributions)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-zero-point-prob" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 14 (Points have zero probability in continuous distributions)</strong></span> For any continuous random variable and any specific value <span class="math inline">\(a \in \mathbb{R}\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 16 (Points have zero probability in continuous distributions)</strong></span> For any continuous random variable and any specific value <span class="math inline">\(a \in \mathbb{R}\)</span>:</p>
 <p><span class="math display">\[\Pr(X = a) = 0\]</span></p>
 </div>
 </div>
@@ -2815,12 +2861,12 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a> (Survival function and CDF)
+<span class="screen-reader-only">Lem</span><a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;17</a> (Survival function and CDF)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-survival-expressions-1" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 15 (Survival function and CDF)</strong></span> For any random variable <span class="math inline">\(T\)</span> with <a href="#def-cdf">CDF</a> <span class="math inline">\(F(t)\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 17 (Survival function and CDF)</strong></span> For any random variable <span class="math inline">\(T\)</span> with <a href="#def-cdf">CDF</a> <span class="math inline">\(F(t)\)</span>:</p>
 <p><span class="math display">\[\operatorname{S}(t) = 1 - F(t)\]</span></p>
 <p>If <span class="math inline">\(T\)</span> is continuous with <a href="#def-pdf">density</a> <span class="math inline">\(f(t)\)</span>, then also:</p>
 <p><span class="math display">\[\operatorname{S}(t) = \int_{u=t}^{\infty} f(u)\,du\]</span></p>
@@ -2828,7 +2874,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2837,7 +2883,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-81" class="callout-81-contents callout-collapse collapse">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The event <span class="math inline">\(\{T &gt; t\}\)</span> is the complement of the event <span class="math inline">\(\{T \le t\}\)</span>, so the <a href="./probability-basics.html#cor-p-neg0">complement rule</a> gives:</p>
@@ -2852,7 +2898,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 &amp;&amp; \text{(definition of the CDF)}
 \end{aligned}
 \]</span></p>
-<p>For continuous <span class="math inline">\(T\)</span>, the density integrates to 1 over the real line (<a href="#thm-density-sums-to-one" class="quarto-xref">Theorem&nbsp;9</a>), and <span class="math inline">\(F\)</span> is the integral of the density up to <span class="math inline">\(t\)</span> (<a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a>), so:</p>
+<p>For continuous <span class="math inline">\(T\)</span>, the density integrates to 1 over the real line (<a href="#thm-density-sums-to-one" class="quarto-xref">Theorem&nbsp;11</a>), and <span class="math inline">\(F\)</span> is the integral of the density up to <span class="math inline">\(t\)</span> (<a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;7</a>), so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 1 - F(t)
@@ -2877,7 +2923,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 <div class="callout-body-container callout-body">
 <div id="exm-exp-survfn" class="theorem example">
-<p><span class="theorem-title"><strong>Example 28 (Survival function of an exponential distribution)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\({\lambda}&gt; 0\)</span> (<a href="#def-exponential" class="quarto-xref">Definition&nbsp;12</a>), so <span class="math inline">\(T\)</span> has density <span class="math inline">\(f(t) = {\lambda}\text{e}^{-{\lambda}t}\)</span> for <span class="math inline">\(t \ge 0\)</span>. For <span class="math inline">\(t \ge 0\)</span>, by <a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a>:</p>
+<p><span class="theorem-title"><strong>Example 28 (Survival function of an exponential distribution)</strong></span> Let <span class="math inline">\(T\)</span> be exponential with rate <span class="math inline">\({\lambda}&gt; 0\)</span> (<a href="#def-exponential" class="quarto-xref">Definition&nbsp;12</a>), so <span class="math inline">\(T\)</span> has density <span class="math inline">\(f(t) = {\lambda}\text{e}^{-{\lambda}t}\)</span> for <span class="math inline">\(t \ge 0\)</span>. For <span class="math inline">\(t \ge 0\)</span>, by <a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;17</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{S}(t)
@@ -3048,7 +3094,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-88-contents" aria-controls="callout-88" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-91-contents" aria-controls="callout-91" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3057,7 +3103,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-88" class="callout-88-contents callout-collapse collapse">
+<div id="callout-91" class="callout-91-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\{T \ge t\}\)</span> is the disjoint union of <span class="math inline">\(\{T = t\}\)</span> and <span class="math inline">\(\{T &gt; t\}\)</span>, so, by additivity, <span class="math inline">\(\Pr(T \ge t) = \Pr(T = t) + \Pr(T &gt; t) \ge \Pr(T = t)\)</span>. Since <span class="math inline">\(\{T = t\} \subseteq \{T \ge t\}\)</span>:</p>
@@ -3093,18 +3139,18 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-hazard-dens-surv" class="quarto-xref">Theorem&nbsp;16</a> (Hazard equals density over survival)
+<span class="screen-reader-only">Lem</span><a href="#thm-hazard-dens-surv" class="quarto-xref">Theorem&nbsp;18</a> (Hazard equals density over survival)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="thm-hazard-dens-surv" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 16 (Hazard equals density over survival)</strong></span> If <span class="math inline">\(T\)</span> is a continuous random variable with <a href="#def-pdf">density</a> <span class="math inline">\(f(t)\)</span> and <a href="#def-surv-fn">survival function</a> <span class="math inline">\(\operatorname{S}(t)\)</span>, then for every <span class="math inline">\(t\)</span> with <span class="math inline">\(\operatorname{S}(t) &gt; 0\)</span> at which <span class="math inline">\(f\)</span> is continuous:</p>
+<p><span class="theorem-title"><strong>Theorem 18 (Hazard equals density over survival)</strong></span> If <span class="math inline">\(T\)</span> is a continuous random variable with <a href="#def-pdf">density</a> <span class="math inline">\(f(t)\)</span> and <a href="#def-surv-fn">survival function</a> <span class="math inline">\(\operatorname{S}(t)\)</span>, then for every <span class="math inline">\(t\)</span> with <span class="math inline">\(\operatorname{S}(t) &gt; 0\)</span> at which <span class="math inline">\(f\)</span> is continuous:</p>
 <p><span class="math display">\[{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\]</span></p>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-90-contents" aria-controls="callout-90" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-93-contents" aria-controls="callout-93" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3113,7 +3159,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-90" class="callout-90-contents callout-collapse collapse">
+<div id="callout-93" class="callout-93-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The proof uses three facts. First, for <span class="math inline">\(\Delta&gt; 0\)</span> the event <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> is a subset of the event <span class="math inline">\(\{T \ge t\}\)</span>, so intersecting them leaves <span class="math inline">\(\{t \le T &lt; t + \Delta\}\)</span> (the <a href="./probability-basics.html#thm-prob-subset">subset property</a>). Second, <span class="math inline">\(\Pr(T = t) = 0\)</span> for a continuous <span class="math inline">\(T\)</span>, so</p>
@@ -3123,7 +3169,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 &amp;= \operatorname{S}(t),
 \end{aligned}
 \]</span></p>
-<p>which is positive. Third, because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(t\)</span>, <a href="#thm-density-limit" class="quarto-xref">Theorem&nbsp;8</a> gives <span class="math inline">\(f(t)\)</span> as the limit of <span class="math inline">\(\Pr(t \le T &lt; t + \Delta) / \Delta\)</span>.</p>
+<p>which is positive. Third, because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(t\)</span>, <a href="#thm-density-limit" class="quarto-xref">Theorem&nbsp;10</a> gives <span class="math inline">\(f(t)\)</span> as the limit of <span class="math inline">\(\Pr(t \le T &lt; t + \Delta) / \Delta\)</span>.</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\lambda}(t)
@@ -3232,7 +3278,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-95-contents" aria-controls="callout-95" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-98-contents" aria-controls="callout-98" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3241,7 +3287,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-95" class="callout-95-contents callout-collapse collapse">
+<div id="callout-98" class="callout-98-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(u &lt; 0\)</span>. Every outcome has <span class="math inline">\(T(\omega) \ge 0 &gt; u\)</span>, so <span class="math inline">\(\{T \ge u\} = \Omega\)</span>, which has probability <span class="math inline">\(1 &gt; 0\)</span>, and <span class="math inline">\({\lambda}(u)\)</span> is defined. For <span class="math inline">\(0 &lt; \Delta\le -u\)</span>, the event <span class="math inline">\(\{u \le T &lt; u + \Delta\}\)</span> is empty, because <span class="math inline">\(u + \Delta\le 0\)</span>, so:</p>
@@ -3309,7 +3355,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-97-contents" aria-controls="callout-97" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-100-contents" aria-controls="callout-100" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3318,10 +3364,10 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-97" class="callout-97-contents callout-collapse collapse">
+<div id="callout-100" class="callout-100-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Since <span class="math inline">\(\operatorname{S}(t) = 1 - F(t)\)</span> (<a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a>) and <span class="math inline">\(F\)</span> has derivative <span class="math inline">\(f\)</span> wherever <span class="math inline">\(f\)</span> is continuous (<a href="#thm-density-vs-CDF" class="quarto-xref">Theorem&nbsp;6</a>), <span class="math inline">\(\operatorname{S}\)</span> has derivative <span class="math inline">\(-f\)</span> at those points. At each such <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{S}(u) &gt; 0\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Since <span class="math inline">\(\operatorname{S}(t) = 1 - F(t)\)</span> (<a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;17</a>) and <span class="math inline">\(F\)</span> has derivative <span class="math inline">\(f\)</span> wherever <span class="math inline">\(f\)</span> is continuous (<a href="#thm-cdf-derivative-is-density" class="quarto-xref">Theorem&nbsp;8</a>), <span class="math inline">\(\operatorname{S}\)</span> has derivative <span class="math inline">\(-f\)</span> at those points. At each such <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{S}(u) &gt; 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{d}{du}\mathopen{}\left(-\operatorname{log}\mathopen{}\left\{\operatorname{S}(u)\right\}\mathclose{}\right)\mathclose{}
@@ -3438,8 +3484,8 @@ Table&nbsp;2: Probability distribution functions of a continuous random variable
 <div class="proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>For a continuous random variable <span class="math inline">\(T \ge 0\)</span> whose density is continuous at all but finitely many points, the following results connect the functions in <a href="#tbl-prob-dist-fns" class="quarto-xref">Table&nbsp;2</a>:</p>
 <ul>
-<li><a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;15</a></li>
-<li><a href="#thm-hazard-dens-surv" class="quarto-xref">Theorem&nbsp;16</a></li>
+<li><a href="#thm-survival-expressions-1" class="quarto-xref">Theorem&nbsp;17</a></li>
+<li><a href="#thm-hazard-dens-surv" class="quarto-xref">Theorem&nbsp;18</a></li>
 <li><a href="#cor-cuhaz-nonneg" class="quarto-xref">Corollary&nbsp;4</a></li>
 <li><a href="#cor-surv-int-haz" class="quarto-xref">Corollary&nbsp;5</a></li>
 </ul>

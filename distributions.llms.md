@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-13 22:20:35 (PDT)
+Last modified: 2026-10-13 22:27:16 (PDT)
 
 > **NOTE:**
 >
@@ -171,15 +171,10 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 2 (Properties of the Poisson distribution)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
+> **Theorem 2 (Mean and variance of the Poisson distribution)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
 >
 > - \\\operatorname{E}\[X\] = \mu\\
 > - \\\operatorname{Var}(X) = \mu\\
-> - \\\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\\ for \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\
-> - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \< \mu\\, \\\operatorname{P}(X=x) \> \operatorname{P}(X = x-1)\\
-> - For \\x = \mu\\ (possible only when \\\mu\\ is an integer), \\\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\\
-> - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \> \mu\\, \\\operatorname{P}(X=x) \< \operatorname{P}(X = x-1)\\
-> - If \\\mu\\ is not an integer, \\\arg \max\_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\; if \\\mu\\ is an integer, the maximum is attained at both \\x = \mu- 1\\ and \\x = \mu\\
 
 > **NOTE:**
 >
@@ -195,13 +190,25 @@ Figure 2: Poisson CDFs
 >
 > \\ \begin{aligned} \operatorname{Var}(X) &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (\text{simplified expression for variance}) \\ &= \operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu- \mu^2 && (\text{substitute}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
 >
-> **Ratio of consecutive probabilities.** For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\:
+> See also <https://statproofbook.github.io/P/poiss-mean> and <https://statproofbook.github.io/P/poiss-var>.
+
+> **NOTE:**
+>
+> **Theorem 3 (Ratio of consecutive Poisson probabilities, and the mode)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
+>
+> - \\\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\\ for \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\
+> - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \< \mu\\, \\\operatorname{P}(X=x) \> \operatorname{P}(X = x-1)\\
+> - For \\x = \mu\\ (possible only when \\\mu\\ is an integer), \\\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\\
+> - For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ with \\x \> \mu\\, \\\operatorname{P}(X=x) \< \operatorname{P}(X = x-1)\\
+> - If \\\mu\\ is not an integer, \\\arg \max\_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\; if \\\mu\\ is an integer, the maximum is attained at both \\x = \mu- 1\\ and \\x = \mu\\
+
+> **NOTE:**
+>
+> *Proof*. **Ratio of consecutive probabilities.** For \\x \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\:
 >
 > \\ \begin{aligned} \frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x - 1)} &= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} && (\text{substitute Poisson PMF}) \\ &= \frac{\mu}{x} && (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!) \end{aligned} \\
 >
 > This ratio is greater than, equal to, or less than 1 as \\x\\ is less than, equal to, or greater than \\\mu\\, which gives the three comparisons. So \\\operatorname{P}(X = x)\\ increases while \\x \< \mu\\ and decreases once \\x \> \mu\\. If \\\mu\\ is not an integer, the last increase is at \\x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\, which is therefore the unique mode. If \\\mu\\ is an integer, \\\operatorname{P}(X = \mu) = \operatorname{P}(X = \mu- 1)\\, and both are modes.
->
-> See also <https://statproofbook.github.io/P/poiss-mean> and <https://statproofbook.github.io/P/poiss-var>.
 
 > **NOTE:**
 >
@@ -246,7 +253,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 3 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
+> **Theorem 4 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ is:
 >
 > \\\mu= {\lambda}\cdot t \tag{4}\\
 
@@ -258,13 +265,13 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 4 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\{\lambda}= 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 3](#thm-mean-vs-event-rate):
+> **Example 4 (Calculating expected counts from event rates)** Suppose a city records a disease event rate of \\{\lambda}= 0.05\\ cases per person-year. For a subpopulation with an exposure magnitude of \\t = 100\\ person-years, the expected count of cases is, by [Theorem 4](#thm-mean-vs-event-rate):
 >
 > \\ \begin{aligned} \mu&= {\lambda}\cdot t && (\text{transformation from event rate to mean}) \\ &= 0.05 \times 100 && (\text{substitute } {\lambda}= 0.05 \text{ and } t = 100) \\ &= 5 \text{ cases} && (\text{evaluate expected count}) \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 4 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
+> **Theorem 5 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{} = 0\\
 
@@ -286,7 +293,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 5 (Exposure is additive on the log scale)** If \\\mu= {\lambda}\cdot t\\ with \\{\lambda}\> 0\\ and \\t \> 0\\, then:
+> **Theorem 6 (Exposure is additive on the log scale)** If \\\mu= {\lambda}\cdot t\\ with \\{\lambda}\> 0\\ and \\t \> 0\\, then:
 >
 > \\\log{\mu} = \log{{\lambda}} + \log{t}\\
 
@@ -304,7 +311,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Definition 4 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 5](#thm-exposure-log-scale)),
+> **Definition 4 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([Theorem 6](#thm-exposure-log-scale)),
 >
 > \\\log{\mu} = \log{{\lambda}} + \log{t},\\
 >
@@ -320,7 +327,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 6 (Sum of independent Poisson random variables)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt) Poisson random variables with means \\\mu_X\\ and \\\mu_Y\\, their sum, \\Z=X+Y\\, is also a Poisson random variable, with mean \\\mu_Z = \mu_X + \mu_Y\\.
+> **Theorem 7 (Sum of independent Poisson random variables)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt) Poisson random variables with means \\\mu_X\\ and \\\mu_Y\\, their sum, \\Z=X+Y\\, is also a Poisson random variable, with mean \\\mu_Z = \mu_X + \mu_Y\\.
 
 > **NOTE:**
 >
@@ -332,7 +339,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 8 (Aggregating independent region counts)** Suppose Region A records \\X \sim \operatorname{Pois}(\mu_X = 12)\\ cases and Region B records \\Y \sim \operatorname{Pois}(\mu_Y = 18)\\ cases independently. By [Theorem 6](#thm-sum-pois), the combined total count \\Z = X + Y\\ follows a Poisson distribution:
+> **Example 8 (Aggregating independent region counts)** Suppose Region A records \\X \sim \operatorname{Pois}(\mu_X = 12)\\ cases and Region B records \\Y \sim \operatorname{Pois}(\mu_Y = 18)\\ cases independently. By [Theorem 7](#thm-sum-pois), the combined total count \\Z = X + Y\\ follows a Poisson distribution:
 >
 > \\ \begin{aligned} Z &\sim \operatorname{Pois}(\mu_X + \mu_Y) && (\text{sum of independent Poissons}) \\ &= \operatorname{Pois}(12 + 18) && (\text{substitute region means}) \\ &= \operatorname{Pois}(30) && (\text{evaluate sum}) \end{aligned} \\
 
@@ -348,7 +355,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 7 (The negative binomial converges to the Poisson)** Fix \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 1](#eq-pois-pmf)):
+> **Theorem 8 (The negative binomial converges to the Poisson)** Fix \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 1](#eq-pois-pmf)):
 >
 > \\\lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
 
@@ -370,7 +377,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 8 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
+> **Theorem 9 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
 >
 > - \\\operatorname{E}\[Y\] = \mu\\
 > - \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu+ \frac{\mu^2}{\rho} \> \mu\\
@@ -434,7 +441,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 9 (Mean and variance of the Laplace distribution)** If \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Definition 6](#def-laplace)), then
+> **Theorem 10 (Mean and variance of the Laplace distribution)** If \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Definition 6](#def-laplace)), then
 >
 > \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \mu\quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{6}\\
 
@@ -456,7 +463,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 11 (Laplace and normal tails with the same mean and variance)** A Laplace variable \\Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\\ has variance \\2b^2\\ ([Theorem 9](#thm-laplace-moments)). Choosing \\b = 1/\sqrt{2}\\ gives variance \\1\\, the same mean and variance as a standard normal. [Figure 3](#fig-laplace-vs-normal) compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.
+> **Example 11 (Laplace and normal tails with the same mean and variance)** A Laplace variable \\Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\\ has variance \\2b^2\\ ([Theorem 10](#thm-laplace-moments)). Choosing \\b = 1/\sqrt{2}\\ gives variance \\1\\, the same mean and variance as a standard normal. [Figure 3](#fig-laplace-vs-normal) compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.
 >
 > Show code
 >
@@ -503,9 +510,9 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 10 (Weibull density, hazard, and mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then for \\t \> 0\\:
+> **Theorem 11 (Weibull density and hazard)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then for \\t \> 0\\:
 >
-> \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\ \operatorname{h}(t) &= \alpha{\lambda}t^{\alpha-1}\\ \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha} \end{aligned} \\
+> \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\ \operatorname{h}(t) &= \alpha{\lambda}t^{\alpha-1} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -516,10 +523,6 @@ Figure 2: Poisson CDFs
 > is a density of \\T\\ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every \\t \> 0\\, so there the hazard is \\f(t)/\operatorname{S}(t)\\ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
 >
 > \\ \begin{aligned} f(t) &= -\frac{d}{dt}\text{e}^{-{\lambda}t^\alpha} && (f = -\operatorname{S}') \\ &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha} && (\text{chain rule}) \\ \operatorname{h}(t) &= \frac{\alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}}{\text{e}^{-{\lambda}t^\alpha}} && (\text{hazard is density over survival}) \\ &= \alpha{\lambda}t^{\alpha-1} && (\text{cancel}) \end{aligned} \\
->
-> For the mean, use the [survival-function formula for the mean](expectation.llms.md#thm-surv-mean) and substitute \\u = {\lambda}t^\alpha\\, so that \\t = (u/{\lambda})^{1/\alpha}\\ and \\dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\\du\\:
->
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\\du && (\text{substitute } u = {\lambda}t^\alpha) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\{\lambda}^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
 
 > **NOTE:**
 >
@@ -527,11 +530,23 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
+> **Theorem 12 (Weibull mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then:
+>
+> \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\\
+
+> **NOTE:**
+>
+> *Proof*. For the mean, use the [survival-function formula for the mean](expectation.llms.md#thm-surv-mean) and substitute \\u = {\lambda}t^\alpha\\, so that \\t = (u/{\lambda})^{1/\alpha}\\ and \\dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\\du\\:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\\du && (\text{substitute } u = {\lambda}t^\alpha) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\{\lambda}^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
+
+> **NOTE:**
+>
 > **Corollary 1 (The Weibull with shape 1 is the exponential)** If \\T\\ has the [Weibull distribution](#def-weibull) with shape \\\alpha= 1\\ and rate \\{\lambda}\\, then \\T\\ has the [exponential distribution](random-variables.llms.md#def-exponential) with rate \\{\lambda}\\.
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-weibull) with \\\alpha= 1\\, for \\t \> 0\\:
+> *Proof*. By [Theorem 11](#thm-weibull) with \\\alpha= 1\\, for \\t \> 0\\:
 >
 > \\ \begin{aligned} f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha} && (\text{Weibull density}) \\ &= 1 \cdot {\lambda}t^{0}\text{e}^{-{\lambda}t^1} && (\text{substitute } \alpha= 1) \\ &= {\lambda}\text{e}^{-{\lambda}t} && (t^0 = 1 \text{ and } t^1 = t) \end{aligned} \\
 >
@@ -547,7 +562,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-weibull), \\\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}\\ for \\t \> 0\\, so:
+> *Proof*. By [Theorem 11](#thm-weibull), \\\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}\\ for \\t \> 0\\, so:
 >
 > \\ \begin{aligned} \frac{d}{dt}\operatorname{h}(t) &= \frac{d}{dt} \alpha{\lambda}t^{\alpha-1} && (\text{Weibull hazard}) \\ &= \alpha(\alpha- 1){\lambda}t^{\alpha-2} && (\text{power rule}) \end{aligned} \\
 >
@@ -559,7 +574,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 12 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 10](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and
+> **Example 12 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 11](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \Gamma(2){\lambda}^{-1} \\ &= 1/{\lambda}, \end{aligned} \\
 >
@@ -588,11 +603,15 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 11 (The multivariate normal density integrates to 1, with mean \\\tilde{\mu}\\ and variance \\\mathbf{\Sigma}\\)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 8](#def-mvn)), then the density in [Definition 8](#def-mvn) integrates to 1 over \\\mathbb{R}^p\\, \\\operatorname{E}\tilde{X}= \tilde{\mu}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
+> **Theorem 13 (The multivariate normal density integrates to 1)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 8](#def-mvn)), then the density in [Definition 8](#def-mvn) integrates to 1 over \\\mathbb{R}^p\\.
 
 > **NOTE:**
 >
-> *Remark*. The proof changes variables in a \\p\\-dimensional integral, which these notes do not develop; see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>. As with the univariate [normal distribution](random-variables.llms.md#thm-normal-density), these facts are where the parameters’ names come from. They also show why \\\mathbf{\Sigma}\\ must at least be [positive semidefinite](variance-covariance.llms.md#thm-vcov-psd); requiring it to be positive definite rules out cases like [a variance matrix that is not positive definite](variance-covariance.llms.md#exm-vcov-singular), which has no joint density.
+> **Theorem 14 (The mean and variance of the multivariate normal distribution)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 8](#def-mvn)), then \\\operatorname{E}\tilde{X}= \tilde{\mu}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
+
+> **NOTE:**
+>
+> *Remark*. The proof changes variables in a \\p\\-dimensional integral, which these notes do not develop; see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>. As with the univariate [normal distribution](random-variables.llms.md#thm-normal-moments), these facts are where the parameters’ names come from. They also show why \\\mathbf{\Sigma}\\ must at least be [positive semidefinite](variance-covariance.llms.md#thm-vcov-psd); requiring it to be positive definite rules out cases like [a variance matrix that is not positive definite](variance-covariance.llms.md#exm-vcov-singular), which has no joint density.
 
 > **NOTE:**
 >
@@ -651,7 +670,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 12 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
+> **Theorem 15 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
 >
 > - the joint density of \\\tilde{X}\\ is the product of the [normal densities](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, \\i = 1, \ldots, p\\,
 > - each \\X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, and
@@ -671,7 +690,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 11](#thm-mvn-moments), \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\, whose \\(i,j)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If \\\mathbf{\Sigma}\\ is diagonal, the components are independent by [Theorem 12](#thm-mvn-diagonal-indpt). If the components are independent, then:
+> *Proof*. By [Theorem 14](#thm-mvn-moments), \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\, whose \\(i,j)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If \\\mathbf{\Sigma}\\ is diagonal, the components are independent by [Theorem 15](#thm-mvn-diagonal-indpt). If the components are independent, then:
 >
 > - each pair \\X_i, X_j\\ with \\i \neq j\\ is independent,
 > - each \\X_i\\ is continuous, with the density left after integrating out the other coordinates of the joint density ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables), and
@@ -685,7 +704,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 13 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
+> **Theorem 16 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
 >
 > \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{\mathopen{}\left({\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i} \\
 
@@ -701,7 +720,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 15 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 13](#thm-mahalanobis-eigen):
+> **Example 15 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 16](#thm-mahalanobis-eigen):
 >
 > \\ \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
 >
@@ -731,12 +750,14 @@ Figure 2: Poisson CDFs
 > The **mixture** of \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ with **mixing weights** \\w_1, \ldots, w_K\\ is the function:
 >
 > \\ {\operatorname{p}\_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x), \quad x \in \mathbb{R} \\
->
-> The densities \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ are the mixture’s **components**.
 
 > **NOTE:**
 >
-> **Theorem 14 (A mixture is the density of a two-stage random variable)** Let \\C\\ be a discrete random variable and \\X\\ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
+> **Definition 11 (Mixture component)** The densities \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ in a mixture ([Definition 10](#def-mixture)) are its **components**.
+
+> **NOTE:**
+>
+> **Theorem 17 (A mixture is the density of a two-stage random variable)** Let \\C\\ be a discrete random variable and \\X\\ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
 >
 > \\\operatorname{p}(C = c,\\ X = x) = w_c \\ {\operatorname{p}\_c}(x), \quad c \in \mathopen{}\left\\1, \ldots, K\right\\\mathclose{},\\
 >
@@ -764,11 +785,11 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 14](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label \\C\\ with \\\operatorname{P}(C = c) = w_c\\, then draw \\X\\ from the component density \\{\operatorname{p}\_C}\\. In applications, \\C\\ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with \\p\\-variable densities in place of densities on \\\mathbb{R}\\.
+> *Remark*. [Theorem 17](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label \\C\\ with \\\operatorname{P}(C = c) = w_c\\, then draw \\X\\ from the component density \\{\operatorname{p}\_C}\\. In applications, \\C\\ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with \\p\\-variable densities in place of densities on \\\mathbb{R}\\.
 
 > **NOTE:**
 >
-> **Theorem 15 (The mean of a mixture is the weighted mean of the component means)** If \\X\\ has density \\{\operatorname{p}\_{\text{mix}}}\\ ([Definition 10](#def-mixture)), and each component \\{\operatorname{p}\_c}\\ has a defined mean \\\mu_c = \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx\\, then:
+> **Theorem 18 (The mean of a mixture is the weighted mean of the component means)** If \\X\\ has density \\{\operatorname{p}\_{\text{mix}}}\\ ([Definition 10](#def-mixture)), and each component \\{\operatorname{p}\_c}\\ has a defined mean \\\mu_c = \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx\\, then:
 >
 > \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} = \sum\_{c=1}^{K} w_c \\ \mu_c\\
 
@@ -782,31 +803,35 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Theorem 16 (Which component did an observation come from?)** Under the conditions of [Theorem 14](#thm-mixture-two-stage), for each \\x\\ with \\{\operatorname{p}\_{\text{mix}}}(x) \> 0\\:
+> **Theorem 19 (Which component did an observation come from?)** Under the conditions of [Theorem 17](#thm-mixture-two-stage), for each \\x\\ with \\{\operatorname{p}\_{\text{mix}}}(x) \> 0\\:
 >
 > \\ \operatorname{P}(C = c \mid X = x) = \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} \\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 14](#thm-mixture-two-stage), \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case \\X\\ continuous, \\C\\ discrete):
+> *Proof*. By [Theorem 17](#thm-mixture-two-stage), \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case \\X\\ continuous, \\C\\ discrete):
 >
 > \\ \begin{aligned} \operatorname{P}(C = c \mid X = x) &= \frac{\operatorname{p}(C = c,\\ X = x)}{\operatorname{p}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} && \text{(substitute the joint density-mass function and } {\operatorname{p}\_{\text{mix}}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 16](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability \\w_c\\ of component \\c\\ is multiplied by the component density \\{\operatorname{p}\_c}(x)\\ at the observation and divided by the overall density \\{\operatorname{p}\_{\text{mix}}}(x)\\, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob). In machine learning, \\\operatorname{P}(C = c \mid X = x)\\ is called the **responsibility** of component \\c\\ for \\x\\.
+> *Remark*. [Theorem 19](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability \\w_c\\ of component \\c\\ is multiplied by the component density \\{\operatorname{p}\_c}(x)\\ at the observation and divided by the overall density \\{\operatorname{p}\_{\text{mix}}}(x)\\, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
+
+> **NOTE:**
+>
+> **Definition 12 (Responsibility of a mixture component)** In the setting of [Theorem 19](#thm-mixture-posterior), the conditional probability \\\operatorname{P}(C = c \mid X = x)\\ is called, in machine learning, the **responsibility** of component \\c\\ for \\x\\.
 
 > **NOTE:**
 >
 > **Example 16 (A two-component normal mixture)** Let \\{\operatorname{p}\_1}\\ be the \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\ density and \\{\operatorname{p}\_2}\\ the \\\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\\ density, with mixing weights \\w_1 = 0.3\\ and \\w_2 = 0.7\\, and let \\X\\ have density \\{\operatorname{p}\_{\text{mix}}} = 0.3\\{\operatorname{p}\_1} + 0.7\\{\operatorname{p}\_2}\\.
 >
-> - **Mean.** By [Theorem 15](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-density),
+> - **Mean.** By [Theorem 18](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
 >   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\ &= 4.2. \end{aligned} \\
 >
 > - **Density.** \\{\operatorname{p}\_{\text{mix}}}\\ has peaks near the two component means, \\{\operatorname{p}\_{\text{mix}}}(0) \approx 0.120\\ and \\{\operatorname{p}\_{\text{mix}}}(6) \approx 0.279\\, with a trough between them, \\{\operatorname{p}\_{\text{mix}}}(3) \approx 0.004\\. The density at the mean, \\{\operatorname{p}\_{\text{mix}}}(4.2) \approx 0.055\\, is less than half its value at either peak.
 >
-> - **Responsibilities.** By [Theorem 16](#thm-mixture-posterior), at \\x = 3\\, halfway between the component means, \\{\operatorname{p}\_1}(3) = {\operatorname{p}\_2}(3)\\ by the symmetry of the normal density, so:
+> - **Responsibilities.** By [Theorem 19](#thm-mixture-posterior), at \\x = 3\\, halfway between the component means, \\{\operatorname{p}\_1}(3) = {\operatorname{p}\_2}(3)\\ by the symmetry of the normal density, so:
 >
 >   \\ \begin{aligned} \operatorname{P}(C = 2 \mid X = 3) &= \frac{0.7\\{\operatorname{p}\_2}(3)}{0.3\\{\operatorname{p}\_1}(3) + 0.7\\{\operatorname{p}\_2}(3)} \\ &= \frac{0.7}{0.3 + 0.7} \\ &= 0.7, \end{aligned} \\
 >
@@ -818,7 +843,7 @@ Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
-> **Example 17 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 8](#thm-nb)).
+> **Example 17 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 10](#def-mixture) (see the proof of [Theorem 9](#thm-nb)).
 
 ## References
 
