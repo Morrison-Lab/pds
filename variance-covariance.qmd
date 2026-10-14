@@ -44,21 +44,12 @@ format:
 
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
-## Bias, variance, and prediction error {#sec-bias-variance-prediction}
+## Independent noise plus a random variable {#sec-bias-variance-prediction}
 
-{{< include pds/_subfiles/_exr-prediction-error.qmd >}}
+<!-- The bias-variance decomposition of prediction error moved to the sds notes, which define
+     training data and estimation; this section keeps the plain-probability result it rests on. -->
 
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_sol-prediction-error.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_def-prediction-bias.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_thm-prediction-error.qmd >}}
+{{< include pds/_subfiles/_thm-second-moment-noise-sum.qmd >}}
 
 ## Covariance
 

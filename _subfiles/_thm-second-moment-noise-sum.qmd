@@ -1,0 +1,78 @@
+::: {#thm-second-moment-noise-sum}
+
+#### The second moment of independent noise plus a random variable
+
+Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and $\Var{\noise} = \varpar$.
+Let $D$ be a random variable with $\E{D^2} < \infty$ that is independent of $\noise$.
+Then
+
+$$\E{\paren{\noise + D}^2} = \varpar + \Var{D} + \sqf{\E{D}}$$
+
+:::
+
+::: proof
+
+Expanding the square and using
+[linearity of expectation](expectation.qmd#thm-linearity-expectation),
+first for the expectation of a sum and then for a constant factor,
+
+$$
+\ba
+\E{\paren{\noise + D}^2}
+&= \E{\noise^2 + 2 \noise D + D^2}
+&& \text{(expand: } \paren{a + b}^2 = a^2 + 2ab + b^2 \text{)} \\
+&= \E{\noise^2} + \E{2 \noise D} + \E{D^2}
+&& \text{(expectation of a sum)} \\
+&= \E{\noise^2} + 2\E{\noise D} + \E{D^2}
+&& \text{(constant factor 2)}
+\ea
+$$
+
+Each of the three terms is evaluated in turn.
+
+- $\E{\noise^2} = \varpar$, by @thm-noise-second-moment.
+- Because $\noise$ and $D$ are independent,
+  the expectation of the product is the product of the expectations:
+
+  $$
+  \ba
+  \E{\noise D}
+  &= \E{\noise}\E{D}
+  && \text{(independence)} \\
+  &= 0 \cdot \E{D}
+  && \text{(} \E{\noise} = 0 \text{)} \\
+  &= 0
+  && \text{(zero times a number)}
+  \ea
+  $$
+
+- $\E{D^2} = \Var{D} + \sqf{\E{D}}$, by @thm-variance.
+
+Substituting the three terms gives
+
+$$
+\ba
+\E{\paren{\noise + D}^2}
+&= \varpar + 2 \cdot 0 + \paren{\Var{D} + \sqf{\E{D}}}
+&& \text{(the three terms above)} \\
+&= \varpar + \Var{D} + \sqf{\E{D}}
+&& \text{(drop } 2 \cdot 0 \text{)}
+\ea
+$$
+
+:::
+
+::: {.remark}
+
+#### Use in statistics and machine learning
+
+Take $\noise$ to be the noise in a new outcome and $D$ the difference between the true mean and a prediction.
+Then $\E{D}$ is minus the bias of the prediction, $\Var{D}$ is its variance,
+and $\varpar$ is the irreducible error.
+The statistics notes define the bias of a prediction and the training data it depends on,
+and state this result for predictions as the
+[bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition),
+with its exercise, worked example and
+[irreducible error](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
+
+:::
