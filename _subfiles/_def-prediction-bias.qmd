@@ -1,13 +1,13 @@
 :::{#def-prediction-bias}
 #### Bias of a prediction
 
-Let $f$ be a fixed function, and let $x_0$ be a point.
-Let $\hat f(x_0)$ be a [prediction](expectation.qmd#def-prediction) of the value $f(x_0)$.
-The prediction $\hat f(x_0)$ is a random variable,
+Let $\targetfn$ be a fixed function, and let $x_0$ be a point.
+Let $\etargetfnf{x_0}$ be a [prediction](expectation.qmd#def-prediction) of the value $\targetfnf{x_0}$.
+The prediction $\etargetfnf{x_0}$ is a random variable,
 because it depends on the random training data.
-The **bias** of $\hat f(x_0)$ is
+The **bias** of $\etargetfnf{x_0}$ is
 
-$$\bias{\hat f(x_0)} \eqdef \E{\hat f(x_0)} - f(x_0)$$
+$$\bias{\etargetfnf{x_0}} \eqdef \E{\etargetfnf{x_0}} - \targetfnf{x_0}$$
 
 :::
 
@@ -23,15 +23,15 @@ the bias reflects the error introduced by approximating a real-world relationshi
 :::{#exm-prediction-bias}
 #### Computing the bias of a prediction
 
-Suppose $f(x_0) = 10$,
-and the predictions $\hat f(x_0)$,
+Suppose $\targetfnf{x_0} = 10$,
+and the predictions $\etargetfnf{x_0}$,
 over repeated training sets,
 average $11$.
 Then
 
 $$
 \begin{aligned}
-\bias{\hat f(x_0)} &= 11 - 10 \\
+\bias{\etargetfnf{x_0}} &= 11 - 10 \\
 &= 1.
 \end{aligned}
 $$
