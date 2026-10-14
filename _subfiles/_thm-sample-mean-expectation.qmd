@@ -1,0 +1,27 @@
+:::{#thm-sample-mean-expectation}
+#### The expectation of a sample average
+
+Let $\dsn{X}$ be random variables that each have mean $\mean$,
+and let $\bar X \eqdef \avgin X_i$.
+Then
+
+$$\Ep[\bar X] = \mean$$
+
+:::
+
+::: proof
+
+This is the solution to @exr-linearity-use.
+By @thm-linearity-expectation,
+
+$$
+\begin{aligned}
+\Ep[\bar X]
+&= \Ep\sb{\avgin X_i} \\
+&= \avgin \Ep[X_i] \\
+&= \frac{1}{n}\,(n\mean) \\
+&= \mean
+\end{aligned}
+$$
+
+:::
