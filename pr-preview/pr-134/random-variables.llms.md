@@ -2,19 +2,9 @@
 
 Code
 
-- [Show All Code](javascript:void(0))
-
-- [Hide All Code](javascript:void(0))
-
-- 
-
-  ------------------------------------------------------------------------
-
-- [View Source](javascript:void(0))
-
 Published
 
-Last modified: 2026-10-14 14:49:11 (PDT)
+Last modified: 2026-10-14 15:13:10 (PDT)
 
 ## 1 Random variables
 
@@ -261,7 +251,7 @@ Last modified: 2026-10-14 14:49:11 (PDT)
 >
 > **Definition 13 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** is:
 >
-> \\F(t) \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\\
+> \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\\
 
 > **NOTE:**
 >
@@ -273,27 +263,27 @@ Last modified: 2026-10-14 14:49:11 (PDT)
 >
 > **Example 12 (CDF of the number of heads)** Summing the PMF in [Example 6](#exm-pmf) over values at or below \\t\\:
 >
-> \\ F(t) = \begin{cases} 0, & t \< 0 \\ \tfrac{1}{4}, & 0 \le t \< 1 \\ \tfrac{3}{4}, & 1 \le t \< 2 \\ 1, & t \ge 2 \end{cases} \\
+> \\ \operatorname{F}\mathopen{}\left(t\right)\mathclose{} = \begin{cases} 0, & t \< 0 \\ \tfrac{1}{4}, & 0 \le t \< 1 \\ \tfrac{3}{4}, & 1 \le t \< 2 \\ 1, & t \ge 2 \end{cases} \\
 
 > **NOTE:**
 >
-> **Theorem 5 (Properties of a CDF)** The [CDF](#def-cdf) \\F\\ of any random variable \\X\\ is non-decreasing, and:
+> **Theorem 5 (Properties of a CDF)** The [CDF](#def-cdf) \\\operatorname{F}\\ of any random variable \\X\\ is non-decreasing, and:
 >
-> \\\lim\_{t \to -\infty} F(t) = 0, \qquad \lim\_{t \to \infty} F(t) = 1\\
+> \\\lim\_{t \to -\infty} \operatorname{F}\mathopen{}\left(t\right)\mathclose{} = 0, \qquad \lim\_{t \to \infty} \operatorname{F}\mathopen{}\left(t\right)\mathclose{} = 1\\
 
 > **NOTE:**
 >
 > *Proof*. *Non-decreasing.* For \\s \< t\\, \\\\X \le t\\\\ is the disjoint union of \\\\X \le s\\\\ and \\\\s \< X \le t\\\\, so [finite additivity](probability-basics.llms.md#cor-probability-finitely-additive) gives:
 >
-> \\ \begin{aligned} F(t) &= \Pr(X \le s) + \Pr(s \< X \le t) && \text{(additivity, and the definition of the CDF)} \\ &\ge \Pr(X \le s) && \text{(probabilities are non-negative)} \\ &= F(s) && \text{(definition of the CDF)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{F}\mathopen{}\left(t\right)\mathclose{} &= \Pr(X \le s) + \Pr(s \< X \le t) && \text{(additivity, and the definition of the CDF)} \\ &\ge \Pr(X \le s) && \text{(probabilities are non-negative)} \\ &= \operatorname{F}\mathopen{}\left(s\right)\mathclose{} && \text{(definition of the CDF)} \end{aligned} \\
 >
-> *Limit at \\-\infty\\.* The events \\A_n = \\X \le -n\\\\, \\n = 1, 2, \ldots\\, are decreasing, and their intersection is empty, because every outcome \\\omega\\ has \\X(\omega) \> -n\\ once \\n \> -X(\omega)\\. By [continuity of probability](probability-basics.llms.md#thm-continuity-probability), \\F(-n) = \Pr(A_n) \to 0\\. For \\t \le -n\\, \\0 \le F(t) \le F(-n)\\, because \\F\\ is non-decreasing, so \\F(t) \to 0\\ as \\t \to -\infty\\.
+> *Limit at \\-\infty\\.* The events \\A_n = \\X \le -n\\\\, \\n = 1, 2, \ldots\\, are decreasing, and their intersection is empty, because every outcome \\\omega\\ has \\X(\omega) \> -n\\ once \\n \> -X(\omega)\\. By [continuity of probability](probability-basics.llms.md#thm-continuity-probability), \\\operatorname{F}\mathopen{}\left(-n\right)\mathclose{} = \Pr(A_n) \to 0\\. For \\t \le -n\\, \\0 \le \operatorname{F}\mathopen{}\left(t\right)\mathclose{} \le \operatorname{F}\mathopen{}\left(-n\right)\mathclose{}\\, because \\\operatorname{F}\\ is non-decreasing, so \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \to 0\\ as \\t \to -\infty\\.
 >
 > *Limit at \\\infty\\.* The events \\B_n = \\X \> n\\\\ are decreasing, and their intersection is empty, because every outcome \\\omega\\ has \\X(\omega) \le n\\ once \\n \ge X(\omega)\\. By continuity of probability, \\\Pr(B_n) \to 0\\, so, by the [complement rule](probability-basics.llms.md#cor-p-neg0):
 >
-> \\ \begin{aligned} F(n) &= 1 - \Pr(X \> n) && \text{(complement rule)} \\ &\to 1 - 0 && \text{(} \Pr(B_n) \to 0 \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{F}\mathopen{}\left(n\right)\mathclose{} &= 1 - \Pr(X \> n) && \text{(complement rule)} \\ &\to 1 - 0 && \text{(} \Pr(B_n) \to 0 \text{)} \end{aligned} \\
 >
-> For \\t \ge n\\, \\F(n) \le F(t) \le 1\\, because \\F\\ is non-decreasing, so \\F(t) \to 1\\ as \\t \to \infty\\.
+> For \\t \ge n\\, \\\operatorname{F}\mathopen{}\left(n\right)\mathclose{} \le \operatorname{F}\mathopen{}\left(t\right)\mathclose{} \le 1\\, because \\\operatorname{F}\\ is non-decreasing, so \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \to 1\\ as \\t \to \infty\\.
 
 > **NOTE:**
 >
@@ -305,202 +295,164 @@ Last modified: 2026-10-14 14:49:11 (PDT)
 
 > **NOTE:**
 >
-> **Definition 14 (Quantile function (population inverse CDF))** For a random variable \\X\\ with [cumulative distribution function (CDF)](#def-cdf) \\F\\, its population **quantile function** (generalized inverse of \\F\\) is:
+> **Definition 14 (Quantile function (population inverse CDF))** For a random variable \\X\\ with [cumulative distribution function (CDF)](#def-cdf) \\\operatorname{F}\\, its population **quantile function** (generalized inverse of \\\operatorname{F}\\) is:
 >
-> \\Q(p) \stackrel{\text{def}}{=}\inf\\t:F(t)\ge p\\, \quad 0\<p\<1.\\
+> \\\operatorname{Q}\mathopen{}\left(p\right)\mathclose{} \stackrel{\text{def}}{=}\inf \mathopen{}\left\\t : \operatorname{F}\mathopen{}\left(t\right)\mathclose{} \ge p\right\\\mathclose{}, \quad p \in (0, 1).\\
 
 > **NOTE:**
 >
-> *Remark*. The restriction to \\0 \< p \< 1\\ keeps \\Q(p)\\ finite: for \\p = 1\\, the set \\\\t : F(t) \ge 1\\\\ is empty whenever \\F(t) \< 1\\ for every \\t\\, as for a [normal distribution](#def-normal), and the infimum of the empty set is \\+\infty\\.
+> *Remark*. The restriction to \\p \in (0, 1)\\ keeps \\\operatorname{Q}\mathopen{}\left(p\right)\mathclose{}\\ finite: for \\p = 1\\, the set \\\mathopen{}\left\\t : \operatorname{F}\mathopen{}\left(t\right)\mathclose{} \ge 1\right\\\mathclose{}\\ is empty whenever \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \< 1\\ for every \\t\\, as for a [normal distribution](#def-normal), and the infimum of the empty set is \\+\infty\\.
 
 > **NOTE:**
 >
-> **Example 13 (Median of the number of heads)** From [Example 12](#exm-cdf), \\F(t) \ge 0.5\\ first holds at \\t = 1\\, so the median of the number of heads is \\Q(0.5) = 1\\.
+> **Example 13 (Median of the number of heads)** From [Example 12](#exm-cdf), \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \ge 0.5\\ first holds at \\t = 1\\, so the median of the number of heads is \\\operatorname{Q}\mathopen{}\left(0.5\right)\mathclose{} = 1\\.
 
-[Figure 1](#fig-pmf-cdf-quantile) shows the mass function, CDF and quantile function of the number of heads in two fair coin flips (top row), beside the density, CDF and quantile function of a standard normal variable (bottom row).
+> **NOTE:**
+>
+> *Remark*. [Figure 1](#fig-pmf-cdf-quantile) shows the mass function, CDF and quantile function of the number of heads in two fair coin flips (top row), beside the density, CDF and quantile function of a standard normal variable (bottom row).
 
 Show code
 
 ``` r
-# HTML formats get six interactive plotly panels; the handout and other
-# formats get the same panels drawn with base R graphics.
-# Top row: X = number of heads in two fair coin flips, so the pmf is
-# 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
-# Bottom row: the standard normal distribution; the density is shaded
-# up to t = 1 to show that the CDF at t is the area to its left.
-heads <- 0:2
-pmf <- c(1, 2, 1) / 4
-cdf_steps <- cumsum(pmf)
-shade_at <- 1
-z <- seq(-3.5, 3.5, length.out = 300)
-p_grid <- seq(0.005, 0.995, length.out = 300)
-z_shade <- z[z <= shade_at]
+# One ggplot2 figure serves every format:
+# HTML formats turn it into an interactive plotly widget with ggplotly(),
+# and the handout and other formats draw it as it is.
+# Top row: X = number of heads in two fair coin flips,
+# so the pmf is 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
+# Bottom row: the standard normal distribution;
+# the density is shaded up to t = 1
+# to show that the CDF at t is the area to its left.
+local({
+  library(ggplot2)
 
-if (knitr::is_html_output()) {
-  library(plotly)
-
-  # One panel's layout: words on the axes, no plotly toolbar clutter.
-  panel_layout <- function(widget, title, xlab, ylab, ...) {
-    widget |>
-      layout(
-        title = list(text = title, font = list(size = 13)),
-        xaxis = list(title = xlab, zeroline = FALSE),
-        yaxis = list(title = ylab, zeroline = FALSE, ...),
-        showlegend = FALSE, margin = list(t = 40)
-      ) |>
-      config(displaylogo = FALSE, responsive = TRUE)
-  }
+  heads <- 0:2
+  pmf <- c(1, 2, 1) / 4
+  cdf_steps <- cumsum(pmf)
+  shade_at <- 1
+  z <- seq(-3.5, 3.5, length.out = 300)
+  p_grid <- seq(0.005, 0.995, length.out = 300)
+  z_shade <- z[z <= shade_at]
   blue <- "#1f77b4"
-  step_x <- c(-1, heads, 3)
 
-  coin_pmf <- plot_ly(
-    x = heads, y = pmf, type = "bar", marker = list(color = blue),
-    hovertemplate = "heads %{x}<br>probability %{y}<extra></extra>"
-  ) |>
-    panel_layout(
-      "Coin flips: mass function", "number of heads", "probability",
-      range = c(0, 0.6)
+  panel_names <- c(
+    "Coin flips: mass function",
+    "Coin flips: CDF",
+    "Coin flips: quantile function",
+    "Normal: density",
+    "Normal: CDF",
+    "Normal: quantile function"
+  )
+  panel_data <- function(panel, x, y) {
+    data.frame(
+      panel = factor(panel, levels = panel_names),
+      x = x,
+      y = y
     )
-  coin_cdf <- plot_ly(
-    x = step_x, y = c(0, cdf_steps, 1), type = "scatter", mode = "lines",
-    line = list(shape = "hv", color = blue),
-    hovertemplate = "t %{x}<br>CDF %{y}<extra></extra>"
-  ) |>
-    panel_layout(
-      "Coin flips: CDF", "t", "probability of at most t heads"
-    )
-  coin_quantile <- plot_ly(
-    x = c(0, 0.25, 0.75, 1), y = c(0, 1, 2, 2), type = "scatter",
-    mode = "lines", line = list(shape = "hv", color = blue),
-    hovertemplate = "p %{x}<br>quantile %{y}<extra></extra>"
-  ) |>
-    panel_layout(
-      "Coin flips: quantile function", "probability p",
-      "smallest t with CDF at least p"
-    )
-
-  normal_pdf <- plot_ly() |>
-    add_lines(
-      x = z, y = dnorm(z), line = list(color = blue),
-      hovertemplate = "x %{x:.2f}<br>density %{y:.3f}<extra></extra>"
-    ) |>
-    add_trace(
-      x = c(z_shade, shade_at), y = c(dnorm(z_shade), 0), type = "scatter",
-      mode = "lines", fill = "tozeroy", fillcolor = "rgba(31,119,180,0.3)",
-      line = list(width = 0), hoverinfo = "skip"
-    ) |>
-    panel_layout("Normal: density", "x", "density")
-  normal_cdf <- plot_ly() |>
-    add_lines(
-      x = z, y = pnorm(z), line = list(color = blue),
-      hovertemplate = "t %{x:.2f}<br>CDF %{y:.3f}<extra></extra>"
-    ) |>
-    add_markers(
-      x = shade_at, y = pnorm(shade_at), marker = list(color = blue),
-      hoverinfo = "skip"
-    ) |>
-    panel_layout("Normal: CDF", "t", "probability of at most t")
-  normal_quantile <- plot_ly() |>
-    add_lines(
-      x = p_grid, y = qnorm(p_grid), line = list(color = blue),
-      hovertemplate = "p %{x:.3f}<br>quantile %{y:.2f}<extra></extra>"
-    ) |>
-    panel_layout("Normal: quantile function", "probability p", "quantile")
-
-  # A flex container lays the panels out two rows of three, wrapping on
-  # narrow screens.
-  cell <- function(w) {
-    htmltools::div(style = "flex: 1 1 280px; min-width: 0;", w)
   }
-  # The alt text: a plotly widget has none of its own.
-  htmltools::div(
-    role = "img",
-    `aria-label` = paste(
-      "Six interactive plots. Top row, number of heads in two fair coin",
-      "flips: mass function, staircase CDF and staircase quantile function.",
-      "Bottom row, standard normal: density with the area left of one",
-      "shaded, S-shaped CDF and increasing quantile function."
-    ),
-    style = "display: flex; flex-wrap: wrap; gap: 4px;",
-    cell(coin_pmf), cell(coin_cdf), cell(coin_quantile),
-    cell(normal_pdf), cell(normal_cdf), cell(normal_quantile)
-  )
-} else {
-  op <- par(mfrow = c(2, 3), mar = c(4, 4, 3, 1))
-  blue <- "#1f77b4"
-  step_x <- c(-1, heads, 3)
 
-  barplot(
-    pmf, names.arg = heads, col = blue, ylim = c(0, 0.6),
-    xlab = "number of heads", ylab = "probability",
-    main = "Coin flips: mass function"
+  bars <- panel_data(panel_names[1], heads, pmf)
+  steps <- rbind(
+    panel_data(panel_names[2], c(-1, heads, 3), c(0, cdf_steps, 1)),
+    panel_data(panel_names[3], c(0, 0.25, 0.75, 1), c(0, 1, 2, 2))
   )
-  plot(
-    stepfun(heads, c(0, cdf_steps)), verticals = FALSE, pch = 16,
-    xlim = c(-1, 3), col = blue, xlab = "t",
-    ylab = "probability of at most t heads", main = "Coin flips: CDF"
+  curves <- rbind(
+    panel_data(panel_names[4], z, dnorm(z)),
+    panel_data(panel_names[5], z, pnorm(z)),
+    panel_data(panel_names[6], p_grid, qnorm(p_grid))
   )
-  plot(
-    stepfun(c(0.25, 0.75), c(0, 1, 2)), verticals = FALSE, pch = 16,
-    xlim = c(0, 1), col = blue, xlab = "probability p",
-    ylab = "smallest t with CDF at least p",
-    main = "Coin flips: quantile function"
+  shaded <- panel_data(
+    panel_names[4],
+    c(z_shade, shade_at),
+    c(dnorm(z_shade), 0)
   )
-  plot(
-    z, dnorm(z), type = "l", col = blue, xlab = "x", ylab = "density",
-    main = "Normal: density"
-  )
-  polygon(c(z_shade, shade_at), c(dnorm(z_shade), 0),
-    col = adjustcolor(blue, 0.3), border = NA
-  )
-  plot(
-    z, pnorm(z), type = "l", col = blue, xlab = "t",
-    ylab = "probability of at most t", main = "Normal: CDF"
-  )
-  points(shade_at, pnorm(shade_at), pch = 16, col = blue)
-  plot(
-    p_grid, qnorm(p_grid), type = "l", col = blue,
-    xlab = "probability p", ylab = "quantile",
-    main = "Normal: quantile function"
-  )
-  # Restore the plotting layout after the last panel.
-  par(op)
-}
+  marked <- panel_data(panel_names[5], shade_at, pnorm(shade_at))
+
+  pmf_cdf_quantile <- ggplot(mapping = aes(x = x, y = y)) +
+    geom_col(
+      data = bars,
+      fill = blue,
+      width = 0.6
+    ) +
+    geom_step(
+      data = steps,
+      colour = blue
+    ) +
+    geom_line(
+      data = curves,
+      colour = blue
+    ) +
+    geom_ribbon(
+      data = shaded,
+      mapping = aes(ymin = 0, ymax = y),
+      fill = blue,
+      alpha = 0.3
+    ) +
+    geom_point(
+      data = marked,
+      colour = blue
+    ) +
+    facet_wrap(
+      ~panel,
+      nrow = 2,
+      scales = "free"
+    ) +
+    labs(
+      x = NULL,
+      y = NULL
+    ) +
+    theme_minimal() +
+    theme(panel.spacing = unit(2, "lines"))
+
+  if (knitr::is_html_output()) {
+    # The alt text: a plotly widget has none of its own.
+    htmltools::div(
+      role = "img",
+      `aria-label` = fig_alt,
+      plotly::ggplotly(pmf_cdf_quantile) |>
+        plotly::config(
+          displaylogo = FALSE,
+          responsive = TRUE
+        )
+    )
+  } else {
+    pmf_cdf_quantile
+  }
+})
 ```
 
 Figure 1: A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF’s, swapped.
 
 > **NOTE:**
 >
-> **Theorem 7 (A density integrates to the CDF)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\F\\, then for every \\t\\:
+> **Theorem 7 (A density integrates to the CDF)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\\operatorname{F}\\, then for every \\t\\:
 >
-> \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\
+> \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} = \int\_{-\infty}^{t} f(x)\\dx\\
 
 > **NOTE:**
 >
 > *Proof*. For any \\a \< t\\, \\\\X \le t\\\\ is the disjoint union of \\\\X \le a\\\\ and \\\\a \< X \le t\\\\, and \\\Pr(X = a) = 0\\ because \\X\\ is continuous. So:
 >
-> \\ \begin{aligned} F(t) &= \Pr(X \le a) + \Pr(a \< X \le t) && \text{(additivity, and the definition of the CDF)} \\ &= F(a) + \Pr(a \le X \le t) && \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\ &= F(a) + \int_a^t f(x)\\dx && \text{(definition of the density)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{F}\mathopen{}\left(t\right)\mathclose{} &= \Pr(X \le a) + \Pr(a \< X \le t) && \text{(additivity, and the definition of the CDF)} \\ &= \operatorname{F}\mathopen{}\left(a\right)\mathclose{} + \Pr(a \le X \le t) && \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\ &= \operatorname{F}\mathopen{}\left(a\right)\mathclose{} + \int_a^t f(x)\\dx && \text{(definition of the density)} \end{aligned} \\
 >
-> Letting \\a \to -\infty\\, \\F(a) \to 0\\ ([Theorem 5](#thm-cdf-properties)), which gives \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\.
+> Letting \\a \to -\infty\\, \\\operatorname{F}\mathopen{}\left(a\right)\mathclose{} \to 0\\ ([Theorem 5](#thm-cdf-properties)), which gives \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} = \int\_{-\infty}^{t} f(x)\\dx\\.
 
 > **NOTE:**
 >
-> **Theorem 8 (The derivative of the CDF is the density where the density is continuous)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\F\\, then at every \\t\\ where \\f\\ is continuous:
+> **Theorem 8 (The derivative of the CDF is the density where the density is continuous)** If \\X\\ is a continuous random variable with density \\f\\ and CDF \\\operatorname{F}\\, then at every \\t\\ where \\f\\ is continuous:
 >
-> \\f(t) = \frac{\partial}{\partial t} F(t)\\
+> \\f(t) = \frac{\partial}{\partial t} \operatorname{F}\mathopen{}\left(t\right)\mathclose{}\\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 7](#thm-density-vs-CDF), \\F(t) = \int\_{-\infty}^{t} f(x)\\dx\\. The fundamental theorem of calculus then gives \\\frac{\partial}{\partial t} \int\_{-\infty}^{t} f(x)\\dx = f(t)\\ at every \\t\\ where \\f\\ is continuous.
+> *Proof*. By [Theorem 7](#thm-density-vs-CDF), \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} = \int\_{-\infty}^{t} f(x)\\dx\\. The fundamental theorem of calculus then gives \\\frac{\partial}{\partial t} \int\_{-\infty}^{t} f(x)\\dx = f(t)\\ at every \\t\\ where \\f\\ is continuous.
 
 > **NOTE:**
 >
-> **Corollary 1 (A CDF has its density as derivative at all but finitely many points)** If \\X\\ is a continuous random variable with CDF \\F\\ and a density \\f\\ that is continuous at all but finitely many points, then \\F\\ is differentiable with \\F' = f\\ at all but finitely many points.
+> **Corollary 1 (A CDF has its density as derivative at all but finitely many points)** If \\X\\ is a continuous random variable with CDF \\\operatorname{F}\\ and a density \\f\\ that is continuous at all but finitely many points, then \\\operatorname{F}\\ is differentiable with \\\operatorname{F}' = f\\ at all but finitely many points.
 
 > **NOTE:**
 >
-> *Proof*. At every point \\t\\ where \\f\\ is continuous, [Theorem 8](#thm-cdf-derivative-is-density) gives \\F'(t) = f(t)\\, and by assumption those are all but finitely many points.
+> *Proof*. At every point \\t\\ where \\f\\ is continuous, [Theorem 8](#thm-cdf-derivative-is-density) gives \\\operatorname{F}'(t) = f(t)\\, and by assumption those are all but finitely many points.
 
 > **NOTE:**
 >
@@ -510,33 +462,33 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 >
 > **Example 14 (CDF and density of a uniform random variable)** For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 9](#def-uniform), and \\t \in \[0, 1\]\\:
 >
-> \\ \begin{aligned} F(t) &= \int\_{-\infty}^{t} f(x)\\dx && \text{(the CDF is the integral of the density)} \\ &= \int\_{-\infty}^{0} 0\\dx + \int\_{0}^{t} 1\\dx && \text{(split at 0, and substitute } f \text{)} \\ &= t && \text{(integrate)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{F}\mathopen{}\left(t\right)\mathclose{} &= \int\_{-\infty}^{t} f(x)\\dx && \text{(the CDF is the integral of the density)} \\ &= \int\_{-\infty}^{0} 0\\dx + \int\_{0}^{t} 1\\dx && \text{(split at 0, and substitute } f \text{)} \\ &= t && \text{(integrate)} \end{aligned} \\
 >
 > For \\t \in (0, 1)\\, where \\f\\ is continuous,
 >
-> \\ \begin{aligned} \frac{\partial}{\partial t} F(t) &= 1 \\ &= f(t). \end{aligned} \\
+> \\ \begin{aligned} \frac{\partial}{\partial t} \operatorname{F}\mathopen{}\left(t\right)\mathclose{} &= 1 \\ &= f(t). \end{aligned} \\
 >
-> At \\t = 1\\, \\f\\ jumps from 1 to 0, and \\F\\ has no derivative: its slope is 1 on the left and 0 on the right.
+> At \\t = 1\\, \\f\\ jumps from 1 to 0, and \\\operatorname{F}\\ has no derivative: its slope is 1 on the left and 0 on the right.
 
 > **NOTE:**
 >
-> **Theorem 9 (A piecewise-smooth CDF has its derivative as a density)** If the CDF \\F\\ of a random variable \\X\\ is continuous everywhere, and has a continuous derivative at all but finitely many points, then \\X\\ is continuous, and \\F'\\ (given any values at the finitely many exceptional points) is a density of \\X\\.
+> **Theorem 9 (A piecewise-smooth CDF has its derivative as a density)** If the CDF \\\operatorname{F}\\ of a random variable \\X\\ is continuous everywhere, and has a continuous derivative at all but finitely many points, then \\X\\ is continuous, and \\\operatorname{F}'\\ (given any values at the finitely many exceptional points) is a density of \\X\\.
 
 > **NOTE:**
 >
 > *Proof*. For events \\A \subseteq B\\, \\B\\ is the disjoint union of \\A\\ and \\B \setminus A\\, so additivity gives \\\Pr(A) \le \Pr(B)\\. For any \\x\\ and \\\Delta\> 0\\, \\\\X = x\\ \subseteq \\x - \Delta\< X \le x\\\\, so:
 >
-> \\ \begin{aligned} 0 &\le \Pr(X = x) && \text{(probabilities are non-negative)} \\ &\le \Pr(x - \Delta\< X \le x) && \text{(} \\X = x\\ \subseteq \\x - \Delta\< X \le x\\ \text{)} \\ &= F(x) - F(x - \Delta) && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
+> \\ \begin{aligned} 0 &\le \Pr(X = x) && \text{(probabilities are non-negative)} \\ &\le \Pr(x - \Delta\< X \le x) && \text{(} \\X = x\\ \subseteq \\x - \Delta\< X \le x\\ \text{)} \\ &= \operatorname{F}\mathopen{}\left(x\right)\mathclose{} - \operatorname{F}\mathopen{}\left(x - \Delta\right)\mathclose{} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
 >
-> and \\F(x) - F(x - \Delta) \to 0\\ as \\\Delta\downarrow 0\\, because \\F\\ is continuous. So \\\Pr(X = x) = 0\\ for every \\x\\, and \\X\\ is continuous. Then, for \\a \le b\\:
+> and \\\operatorname{F}\mathopen{}\left(x\right)\mathclose{} - \operatorname{F}\mathopen{}\left(x - \Delta\right)\mathclose{} \to 0\\ as \\\Delta\downarrow 0\\, because \\\operatorname{F}\\ is continuous. So \\\Pr(X = x) = 0\\ for every \\x\\, and \\X\\ is continuous. Then, for \\a \le b\\:
 >
-> \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr(a \< X \le b) && \text{(} \Pr(X = a) = 0 \text{)} \\ &= F(b) - F(a) && \text{(additivity, and the definition of the CDF)} \\ &= \int_a^b F'(x)\\dx && \text{(fundamental theorem of calculus)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr(a \< X \le b) && \text{(} \Pr(X = a) = 0 \text{)} \\ &= \operatorname{F}\mathopen{}\left(b\right)\mathclose{} - \operatorname{F}\mathopen{}\left(a\right)\mathclose{} && \text{(additivity, and the definition of the CDF)} \\ &= \int_a^b \operatorname{F}'(x)\\dx && \text{(fundamental theorem of calculus)} \end{aligned} \\
 >
-> The last step applies the fundamental theorem of calculus on each piece of \\\[a, b\]\\ between exceptional points, where \\F'\\ is continuous, and joins the pieces using the continuity of \\F\\ at the exceptional points. Finally, \\F' \ge 0\\ wherever it exists, because \\F\\ is non-decreasing ([Theorem 5](#thm-cdf-properties)).
+> The last step applies the fundamental theorem of calculus on each piece of \\\[a, b\]\\ between exceptional points, where \\\operatorname{F}'\\ is continuous, and joins the pieces using the continuity of \\\operatorname{F}\\ at the exceptional points. Finally, \\\operatorname{F}' \ge 0\\ wherever it exists, because \\\operatorname{F}\\ is non-decreasing ([Theorem 5](#thm-cdf-properties)).
 
 > **NOTE:**
 >
-> **Example 15 (A density from a CDF with a corner)** Let \\X\\ have CDF \\F(t) = 0\\ for \\t \< 0\\, \\F(t) = t^2\\ for \\0 \le t \le 1\\, and \\F(t) = 1\\ for \\t \> 1\\. This \\F\\ is continuous everywhere, and has a continuous derivative everywhere except \\t = 1\\, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), \\X\\ is continuous with density \\f(t) = 2t\\ for \\0 \le t \< 1\\ and \\f(t) = 0\\ otherwise. As a check, \\\int_0^1 2t\\dt = 1\\.
+> **Example 15 (A density from a CDF with a corner)** Let \\X\\ have CDF \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} = 0\\ for \\t \< 0\\, \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} = t^2\\ for \\0 \le t \le 1\\, and \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} = 1\\ for \\t \> 1\\. This \\\operatorname{F}\\ is continuous everywhere, and has a continuous derivative everywhere except \\t = 1\\, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), \\X\\ is continuous with density \\f(t) = 2t\\ for \\0 \le t \< 1\\ and \\f(t) = 0\\ otherwise. As a check, \\\int_0^1 2t\\dt = 1\\.
 
 > **NOTE:**
 >
@@ -548,9 +500,9 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 >
 > *Proof*. For \\\Delta\> 0\\:
 >
-> \\ \begin{aligned} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} &= \frac{\Pr(x \< X \le x + \Delta)}{\Delta} && \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \Delta) = 0 \text{)} \\ &= \frac{F(x + \Delta) - F(x)}{\Delta} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
+> \\ \begin{aligned} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} &= \frac{\Pr(x \< X \le x + \Delta)}{\Delta} && \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \Delta) = 0 \text{)} \\ &= \frac{\operatorname{F}\mathopen{}\left(x + \Delta\right)\mathclose{} - \operatorname{F}\mathopen{}\left(x\right)\mathclose{}}{\Delta} && \text{(additivity, and the definition of the CDF)} \end{aligned} \\
 >
-> By [Theorem 8](#thm-cdf-derivative-is-density), \\F\\ is differentiable at \\x\\ with \\F'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta\downarrow 0\\.
+> By [Theorem 8](#thm-cdf-derivative-is-density), \\\operatorname{F}\\ is differentiable at \\x\\ with \\\operatorname{F}'(x) = f(x)\\, so this difference quotient converges to \\f(x)\\ as \\\Delta\downarrow 0\\.
 
 > **NOTE:**
 >
@@ -568,11 +520,11 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 
 > **NOTE:**
 >
-> **Proposition 1 (The density limit is the right derivative of the CDF)** If \\X\\ is a continuous random variable with CDF \\F\\, then for every \\x\\:
+> **Proposition 1 (The density limit is the right derivative of the CDF)** If \\X\\ is a continuous random variable with CDF \\\operatorname{F}\\, then for every \\x\\:
 >
-> \\\lim\_{\Delta\downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} = \lim\_{\Delta\downarrow 0} \frac{F(x + \Delta) - F(x)}{\Delta}\\
+> \\\lim\_{\Delta\downarrow 0} \frac{\Pr(x \le X \< x + \Delta)}{\Delta} = \lim\_{\Delta\downarrow 0} \frac{\operatorname{F}\mathopen{}\left(x + \Delta\right)\mathclose{} - \operatorname{F}\mathopen{}\left(x\right)\mathclose{}}{\Delta}\\
 >
-> whenever either limit exists; the right-hand side is the right derivative of \\F\\ at \\x\\.
+> whenever either limit exists; the right-hand side is the right derivative of \\\operatorname{F}\\ at \\x\\.
 
 > **NOTE:**
 >
@@ -584,7 +536,7 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 >
 > \\ \begin{aligned} \Pr(1 \le X \< 1 + \Delta) &= \Pr(1 \le X \le 1 + \Delta) && \text{(} \Pr(X = 1 + \Delta) = 0 \text{)} \\ &= \int_1^{1 + \Delta} f(x)\\dx && \text{(definition of the density)} \\ &= 0 && \text{(} f = 0 \text{ on } (1, 1 + \Delta\] \text{; one point does not change an integral)} \end{aligned} \\
 >
-> So the limit of \\\Pr(1 \le X \< 1 + \Delta) / \Delta\\ at \\x = 1\\ is 0, although \\f(1) = 1\\. By [Proposition 1](#prp-density-limit-right-derivative), 0 is also the right derivative of \\F\\ at 1, matching the slope of 0 on the right in [Example 14](#exm-density-vs-CDF).
+> So the limit of \\\Pr(1 \le X \< 1 + \Delta) / \Delta\\ at \\x = 1\\ is 0, although \\f(1) = 1\\. By [Proposition 1](#prp-density-limit-right-derivative), 0 is also the right derivative of \\\operatorname{F}\\ at 1, matching the slope of 0 on the right in [Example 14](#exm-density-vs-CDF).
 
 > **NOTE:**
 >
@@ -594,7 +546,7 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \int\_{-\infty}^{\infty} f(x)\\ dx &= \lim\_{b \to \infty} \int\_{-\infty}^{b} f(x)\\ dx && \text{(definition of an improper integral)} \\ &= \lim\_{b \to \infty} F(b) && \text{(the CDF is the integral of the density)} \\ &= 1 && \text{(limit of a CDF)} \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \int\_{-\infty}^{\infty} f(x)\\ dx &= \lim\_{b \to \infty} \int\_{-\infty}^{b} f(x)\\ dx && \text{(definition of an improper integral)} \\ &= \lim\_{b \to \infty} \operatorname{F}\mathopen{}\left(b\right)\mathclose{} && \text{(the CDF is the integral of the density)} \\ &= 1 && \text{(limit of a CDF)} \end{aligned} \\
 >
 > The last step is [Theorem 5](#thm-cdf-properties).
 
