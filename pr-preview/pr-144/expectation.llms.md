@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 13:40:08 (PDT)
+Last modified: 2026-10-14 13:50:24 (PDT)
 
 > **NOTE:**
 >
@@ -196,15 +196,13 @@ Last modified: 2026-10-14 13:40:08 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 5 (The expectation of a sample average)** Let \\X_1, \ldots, X_n\\ be random variables that each have mean \\\mu\\, and let \\\bar X \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then
+> **Theorem 5 (The expectation of a sample average)** Let \\X_1, \ldots, X_n\\ be random variables, with \\n \ge 1\\, that each have finite mean \\\mu\\, and let \\\bar X \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. The \\X_i\\ need not be independent. Then
 >
 > \\\operatorname{E}\[\bar X\] = \mu\\
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-linearity-use). By [Theorem 4](#thm-linearity-expectation),
->
-> \\ \begin{aligned} \operatorname{E}\[\bar X\] &= \operatorname{E}\mathopen{}\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\]\mathclose{} \\ &= \frac{1}{n}\sum\_{i=1}^n\operatorname{E}\[X_i\] \\ &= \frac{1}{n}\\(n\mu) \\ &= \mu \end{aligned} \\
+> *Proof*. This is the solution to [Exercise 1](#exr-linearity-use), worked in [Solution 1](#sol-linearity-use). It follows from [Theorem 4](#thm-linearity-expectation), which needs no independence and applies because each \\\operatorname{E}\[X_i\] = \mu\\ is finite.
 
 ## 1 Conditional distributions and expectations
 
