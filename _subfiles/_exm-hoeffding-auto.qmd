@@ -53,7 +53,7 @@ stopifnot(
 )
 ```
 
-The simulated proportions lie below both bounds at every sample size, as the bounds require.
+The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate.
 The share of efficient cars is `{r} round(mu, 3)`.
 For $n = 50$ and $n = 100$ Chebyshev's bound is the smaller of the two,
 but the Hoeffding bound falls exponentially in $n$ while the Chebyshev bound falls only like $1/n$,
