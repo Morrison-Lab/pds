@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 00:16:44 (PDT)
+Last modified: 2026-10-15 00:30:30 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -414,11 +414,13 @@ Last modified: 2026-10-15 00:16:44 (PDT)
 >   xbar <- replicate(10000, mean(sample(efficient, nn, replace = TRUE)))
 >   mean(abs(xbar - mu) >= tol)
 > })
+> hoeffding_bound <- pmin(1, 2 * exp(-2 * n * tol^2))
+> chebyshev_bound <- pmin(1, sigma2 / (n * tol^2))
 > data.frame(
 >   n = n,
 >   share_missed = share_missed,
->   hoeffding_bound = pmin(1, 2 * exp(-2 * n * tol^2)),
->   chebyshev_bound = pmin(1, sigma2 / (n * tol^2))
+>   hoeffding_bound = hoeffding_bound,
+>   chebyshev_bound = chebyshev_bound
 > )
 > ```
 >
