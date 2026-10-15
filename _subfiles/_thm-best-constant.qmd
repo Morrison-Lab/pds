@@ -92,7 +92,8 @@ data.frame(
 
 ```{r}
 #| include: false
-# The claims the prose makes: there are 392 cars, the two columns agree, and the mean is best.
+# The prose claims 392 cars, that the two columns agree,
+# and that the mean is best.
 squared_error <- sapply(c_values, function(cc) mean((mpg - cc)^2))
 stopifnot(
   length(mpg) == 392L,
