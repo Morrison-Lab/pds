@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 01:25:47 (PDT)
+Last modified: 2026-10-15 08:11:10 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -309,6 +309,16 @@ Last modified: 2026-10-15 01:25:47 (PDT)
 
 > **NOTE:**
 >
+> **Theorem 4 (Chebyshev’s inequality for a sample average)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\epsilon \> 0\\:
+>
+> \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{} \le \frac{\sigma^2}{n\epsilon^2} \\
+
+> **NOTE:**
+>
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar X_n\\, whose variance is \\\sigma^2/n\\ by [Corollary 1](#cor-sum-iid-moments).
+
+> **NOTE:**
+>
 > **Lemma 1 (Hoeffding’s lemma)** Let \\X\\ be a random variable with \\0 \le X \le 1\\ and mean \\\mu\\. Then for every real number \\s\\,
 >
 > \\ \operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{} \le e^{s^2/8}. \\
@@ -355,7 +365,7 @@ Last modified: 2026-10-15 01:25:47 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 4 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and mean \\\mu\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
+> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and mean \\\mu\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
 >
 > \\ \Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}. \tag{1}\\
 
@@ -385,13 +395,13 @@ Last modified: 2026-10-15 01:25:47 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 2 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 4](#thm-hoeffding), for every \\\varepsilon\> 0\\,
+> **Corollary 2 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 5](#thm-hoeffding), for every \\\varepsilon\> 0\\,
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} \le 2e^{-2n\varepsilon^2}. \tag{2}\\
 
 > **NOTE:**
 >
-> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their average is \\1 - \bar X_n\\, so [Theorem 4](#thm-hoeffding) applied to them gives
+> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their average is \\1 - \bar X_n\\, so [Theorem 5](#thm-hoeffding) applied to them gives
 >
 > \\ \begin{aligned} \Pr\mathopen{}\left(\mu- \bar X_n \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left((1 - \bar X_n) - (1 - \mu) \ge \varepsilon\right)\mathclose{} && \text{(rearrange the event)} \\ &\le e^{-2n\varepsilon^2} && \text{(Hoeffding's inequality for } 1 - X_i \text{)} \end{aligned} \\
 >
@@ -405,7 +415,7 @@ Last modified: 2026-10-15 01:25:47 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Exercise 1](#exr-chebyshev-sample-size)).
+> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 4](#thm-chebyshev-sample-mean)).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -432,6 +442,42 @@ Last modified: 2026-10-15 01:25:47 (PDT)
 >
 > The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
 
+## 3 The law of large numbers
+
+> **NOTE:**
+>
+> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
+>
+> \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left\|Y_n - c\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0 \\
+>
+> We write \\Y_n \overset{\scriptstyle p}{\longrightarrow}c\\.
+>
+> > **NOTE:**
+> >
+> > Casella and Berger ([2002](#ref-CaseBerg01), Def. 5.5.1).
+
+> **NOTE:**
+>
+> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
+>
+> \\ \bar X_n \overset{\scriptstyle p}{\longrightarrow}\mu \\
+>
+> > **NOTE:**
+> >
+> > Casella and Berger ([2002](#ref-CaseBerg01), Thm. 5.5.2).
+
+> **NOTE:**
+>
+> *Proof*. By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} = n\mu\\ and \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\, where \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n / n\\ has
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\bar X_n\right\]\mathclose{} &= \frac{1}{n}\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ \operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{} &= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+>
+> Fix \\\varepsilon \> 0\\ and let \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar X_n\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
+>
+> \\ \begin{aligned} 0 \le \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{} && \text{(definition of \$k\$)}\\ &\le \frac{1}{k^2} && \text{(Chebyshev's inequality)}\\ &= \frac{\sigma^2}{n \varepsilon^2} && \text{(substitute \$k\$)} \end{aligned} \\
+>
+> The bound goes to zero as \\n \to \infty\\, so the probability, squeezed between zero and the bound, goes to zero. This holds for every \\\varepsilon \> 0\\.
+
 ## References
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
@@ -441,6 +487,8 @@ Bienaymé, Irénée-Jules. 1853. “Considérations à l’appui de La Découver
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
+
+Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 
 Hoeffding, Wassily. 1963. “Probability Inequalities for Sums of Bounded Random Variables.” *Journal of the American Statistical Association* 58 (301): 13–30. <https://doi.org/10.1080/01621459.1963.10500830>.
 

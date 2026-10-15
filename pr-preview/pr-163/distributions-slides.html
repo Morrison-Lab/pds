@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-15 01:25:47 (PDT)</p>
+  <p class="date">Last modified: 2026-10-15 08:11:10 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -903,8 +903,8 @@ Figure&nbsp;2: Poisson CDFs
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}(X)
-&amp;= \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{} &amp;&amp; (\text{simplified expression for variance}) \\
-&amp;= \operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{} &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
+&amp;= \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2 &amp;&amp; (\text{simplified expression for variance}) \\
+&amp;= \operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X\right]\mathclose{} - {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2 &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
 &amp;= \mu^2 + \mu- \mu^2 &amp;&amp; (\text{substitute}) \\
 &amp;= \mu&amp;&amp; (\text{simplify})
 \end{aligned}
@@ -1629,7 +1629,7 @@ f(t)
 <section id="sec-mvn" class="slide level2" data-number="7">
 <h2><span class="header-section-number">7</span> The multivariate normal distribution</h2>
 <div id="def-mvn" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9 (Multivariate normal distribution)</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\tilde{\mu} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\tilde{X}\)</span> has joint density:</p>
+<p><span class="theorem-title"><strong>Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\tilde{\mu} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\tilde{X}\sim \operatorname{N}_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\tilde{X}\)</span> has joint density:</p>
 <p><span class="math display">\[
 \operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=}
 \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}}
