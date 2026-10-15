@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 02:38:29 (PDT)
+Last modified: 2026-10-15 02:44:50 (PDT)
 
 ## 1 Random variables
 
@@ -195,7 +195,7 @@ Last modified: 2026-10-15 02:38:29 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Normal distribution)** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
 >
 > \\\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\\
 
@@ -481,7 +481,7 @@ Last modified: 2026-10-15 02:38:29 (PDT)
 
 > **NOTE:**
 >
-> **Definition 17 (Joint probability mass function)** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (joint PMF) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
+> **Definition 17 (Joint probability mass function (joint PMF))** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (**joint PMF**) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
 >
 > \\\operatorname{P}(X = x,\\ Y = y) \stackrel{\text{def}}{=}\Pr(\\X = x\\ \cap \\Y = y\\)\\
 
@@ -528,7 +528,7 @@ Last modified: 2026-10-15 02:38:29 (PDT)
 
 > **NOTE:**
 >
-> **Definition 19 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
+> **Definition 19 (Joint probability density function (joint density))** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (**joint density**) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
 >
 > - \\f\_{X,Y}(x, y) \ge 0\\ for every \\(x, y)\\.
 > - The integral of \\f\_{X,Y}\\ over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\: \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
@@ -689,7 +689,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 21 (Survival function)** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
+> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -731,7 +731,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Hazard function)** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
+> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
