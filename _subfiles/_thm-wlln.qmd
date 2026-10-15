@@ -23,14 +23,14 @@ $$
 &= \frac{1}{n}\E{S_n}
 && \text{(linearity of expectation)}\\
 &= \frac{1}{n} \cdot n\mean
-&& \text{(@cor-sum-iid-moments)}\\
+&& \text{(mean of a sum of IID variables)}\\
 &= \mean
 && \text{(cancel $n$)}\\
 \Var{\bar X_n}
 &= \frac{1}{n^2}\Var{S_n}
 && \text{(variance of a constant multiple)}\\
 &= \frac{1}{n^2} \cdot n\ss
-&& \text{(@cor-sum-iid-moments)}\\
+&& \text{(variance of a sum of IID variables)}\\
 &= \frac{\ss}{n}
 && \text{(cancel one factor of $n$)}
 \ea
