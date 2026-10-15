@@ -1,0 +1,109 @@
+{{< slidebreak >}}
+
+:::{#thm-constant-prediction-decompose}
+#### Expected squared error of a constant prediction
+
+Let $Y$ be a random variable with mean $\mean$ and finite variance.
+Then for every number $c$,
+
+$$
+\E{\sqf{Y - c}} = \Var{Y} + \sqf{\mean - c}.
+$$ {#eq-constant-prediction-decompose}
+
+:::
+
+::: proof
+
+Add and subtract $\mean$ inside the square,
+expand it,
+and take the expectation term by term:
+
+$$
+\ba
+\E{\sqf{Y - c}}
+&= \E{\sqf{(Y - \mean) + (\mean - c)}}
+&& \text{(add and subtract } \mean \text{)} \\
+&= \E{\sqf{Y - \mean} + 2(\mean - c)(Y - \mean) + \sqf{\mean - c}}
+&& \text{(expand the square of a sum)} \\
+&= \E{\sqf{Y - \mean}} + 2(\mean - c)\E{Y - \mean} + \sqf{\mean - c}
+&& \text{(linearity of expectation; } \mean \text{ and } c \text{ are constants)} \\
+&= \Var{Y} + 2(\mean - c)\E{Y - \mean} + \sqf{\mean - c}
+&& \text{(variance as expected squared deviation)} \\
+&= \Var{Y} + 2(\mean - c) \cdot 0 + \sqf{\mean - c}
+&& \text{(} \E{Y - \mean} = \E{Y} - \mean = 0 \text{)} \\
+&= \Var{Y} + \sqf{\mean - c}
+&& \text{(zero times a number)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-best-constant}
+#### The mean is the best constant prediction under squared error
+
+Under the assumptions of @thm-constant-prediction-decompose,
+
+$$
+\mean = \argmin_{c \in \reals} \E{\sqf{Y - c}}
+\quad \text{and} \quad
+\min_{c \in \reals} \E{\sqf{Y - c}} = \Var{Y},
+$$
+
+where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
+
+:::
+
+::: proof
+
+In @eq-constant-prediction-decompose the first term, $\Var{Y}$, does not depend on $c$.
+The second term, $\sqf{\mean - c}$, is a square, so it is never negative,
+and it is zero exactly when $c = \mean$.
+So $c = \mean$ minimizes the expected squared error and no other number does,
+and at $c = \mean$ the expected squared error is $\Var{Y}$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-best-constant-auto}
+#### The best constant prediction of fuel economy
+
+Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.qmd#exm-clt-auto) as the whole population,
+and predict the fuel economy (`mpg`) of a car drawn at random with one number $c$.
+The code below computes the expected squared error of three constants,
+and sets each beside the right side of @eq-constant-prediction-decompose.
+
+```{r}
+#| label: best-constant-auto
+#| code-fold: false
+mpg <- read.csv("data/auto.csv")$mpg
+mu <- mean(mpg)
+sigma2 <- mean((mpg - mu)^2)
+
+c_values <- c(mean = mu, median = median(mpg), twenty = 20)
+data.frame(
+  c = c_values,
+  expected_squared_error = sapply(c_values, function(cc) mean((mpg - cc)^2)),
+  decomposition = sigma2 + (mu - c_values)^2
+)
+```
+
+```{r}
+#| include: false
+# The claims the prose makes: the two columns agree, and the mean is best.
+squared_error <- sapply(c_values, function(cc) mean((mpg - cc)^2))
+stopifnot(
+  all.equal(unname(squared_error), unname(sigma2 + (mu - c_values)^2)),
+  which.min(squared_error) == 1,
+  all.equal(unname(squared_error[1]), sigma2)
+)
+```
+
+The two columns agree, as @thm-constant-prediction-decompose says.
+The mean, `{r} round(mu, 2)`, has the smallest expected squared error, `{r} round(sigma2, 2)`,
+which is the variance of `mpg`, as @cor-best-constant says;
+the median and $c = 20$ are each worse by $\sqf{\mean - c}$.
+
+:::
