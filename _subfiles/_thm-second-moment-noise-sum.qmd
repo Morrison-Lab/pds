@@ -2,7 +2,7 @@
 
 #### The second moment of independent noise plus a random variable
 
-Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and $\Var{\noise} = \varpar$.
+Let $\noise$ be a random variable with $\E{\noise} = 0$ and $\Var{\noise} = \varpar$.
 Let $\rvar$ be a random variable with $\E{\rvar^2} < \infty$ that is independent of $\noise$.
 Then
 
