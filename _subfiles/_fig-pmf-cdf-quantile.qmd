@@ -30,7 +30,9 @@ fig_alt <- paste(
 #| fig-width: 9
 #| fig-height: 5
 # One ggplot2 figure serves every format:
-# HTML formats turn it into an interactive plotly widget with ggplotly(),
+# qnp::interactive_plot() turns it into an interactive plotly widget
+# in HTML formats,
+# with the alt text as the aria-label,
 # and the handout and other formats draw it as it is.
 # Top row: X = number of heads in two fair coin flips,
 # so the pmf is 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
@@ -118,20 +120,10 @@ local({
     theme_minimal() +
     theme(panel.spacing = unit(2, "lines"))
 
-  if (knitr::is_html_output()) {
-    # The alt text: a plotly widget has none of its own.
-    htmltools::div(
-      role = "img",
-      `aria-label` = fig_alt,
-      plotly::ggplotly(pmf_cdf_quantile) |>
-        plotly::config(
-          displaylogo = FALSE,
-          responsive = TRUE
-        )
-    )
-  } else {
-    pmf_cdf_quantile
-  }
+  qnp::interactive_plot(
+    plot = pmf_cdf_quantile,
+    alt = fig_alt
+  )
 })
 ```
 
