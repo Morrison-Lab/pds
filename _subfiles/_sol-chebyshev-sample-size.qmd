@@ -1,9 +1,9 @@
 ::: {#sol-chebyshev-sample-size}
 
 a.  By @cor-sum-iid-moments, $\Var{S_n} = n\varpar$ for $S_n \eqdef \sumin X_i$,
-    so $\bar X_n = S_n/n$ has mean $\mean$ and variance $\varpar/n$
+    so $\samplemean{X}{n} = S_n/n$ has mean $\mean$ and variance $\varpar/n$
     (a constant factor $c$ scales a variance by $c^2$).
-    Apply @thm-chebyshev to $\bar X_n$ with $k\sdpar/\sqrt{n} = \epsilon$,
+    Apply @thm-chebyshev to $\samplemean{X}{n}$ with $k\sdpar/\sqrt{n} = \epsilon$,
     that is, $k = \epsilon\sqrt{n}/\sdpar$, so $1/k^2 = \varpar/(n\epsilon^2)$.
 
 b.  Setting $\varpar/(n \cdot 1^2) \le 0.05$ gives $n \ge 20\varpar$.

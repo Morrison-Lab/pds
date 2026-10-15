@@ -1,0 +1,138 @@
+::: {#fig-pmf-cdf-quantile}
+
+```{r}
+#| label: pmf-cdf-quantile-alt
+#| include: false
+# The alt text, saved once
+# for the chunk option below
+# and for the aria-label of the interactive version.
+fig_alt <- paste(
+  "Two rows of three plots.",
+  "Top row, for the number of heads in two fair coin flips:",
+  "bars of height one quarter, one half and one quarter at 0, 1 and 2;",
+  "a staircase CDF rising from 0 to 1 in three jumps;",
+  "and a staircase quantile function taking the values 0, 1 and 2.",
+  "Bottom row, for the standard normal distribution:",
+  "a bell-shaped density with the area to the left of one shaded;",
+  "a smooth S-shaped CDF rising from 0 to 1;",
+  "and a smooth increasing quantile function",
+  "that drops toward negative infinity near probability 0",
+  "and rises toward positive infinity near probability 1."
+)
+```
+
+```{r}
+#| label: pmf-cdf-quantile-plot
+#| fig-alt: !expr fig_alt
+#| echo: !expr knitr::is_html_output()
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+# One ggplot2 figure serves every format:
+# qnp::interactive_plot() turns it into an interactive plotly widget
+# in HTML formats,
+# with the alt text as the aria-label,
+# and the handout and other formats draw it as it is.
+# Top row: X = number of heads in two fair coin flips,
+# so the pmf is 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
+# Bottom row: the standard normal distribution;
+# the density is shaded up to t = 1
+# to show that the CDF at t is the area to its left.
+local({
+  library(ggplot2)
+
+  heads <- 0:2
+  pmf <- c(1, 2, 1) / 4
+  cdf_steps <- cumsum(pmf)
+  shade_at <- 1
+  z <- seq(-3.5, 3.5, length.out = 300)
+  p_grid <- seq(0.005, 0.995, length.out = 300)
+  z_shade <- z[z <= shade_at]
+  blue <- "#1f77b4"
+
+  panel_names <- c(
+    "Coin flips: mass function",
+    "Coin flips: CDF",
+    "Coin flips: quantile function",
+    "Normal: density",
+    "Normal: CDF",
+    "Normal: quantile function"
+  )
+  panel_data <- function(panel, x, y) {
+    data.frame(
+      panel = factor(panel, levels = panel_names),
+      x = x,
+      y = y
+    )
+  }
+
+  bars <- panel_data(panel_names[1], heads, pmf)
+  steps <- rbind(
+    panel_data(panel_names[2], c(-1, heads, 3), c(0, cdf_steps, 1)),
+    panel_data(panel_names[3], c(0, 0.25, 0.75, 1), c(0, 1, 2, 2))
+  )
+  curves <- rbind(
+    panel_data(panel_names[4], z, dnorm(z)),
+    panel_data(panel_names[5], z, pnorm(z)),
+    panel_data(panel_names[6], p_grid, qnorm(p_grid))
+  )
+  shaded <- panel_data(
+    panel_names[4],
+    c(z_shade, shade_at),
+    c(dnorm(z_shade), 0)
+  )
+  marked <- panel_data(panel_names[5], shade_at, pnorm(shade_at))
+
+  pmf_cdf_quantile <- ggplot(mapping = aes(x = x, y = y)) +
+    geom_col(
+      data = bars,
+      fill = blue,
+      width = 0.6
+    ) +
+    geom_step(
+      data = steps,
+      colour = blue
+    ) +
+    geom_line(
+      data = curves,
+      colour = blue
+    ) +
+    geom_ribbon(
+      data = shaded,
+      mapping = aes(ymin = 0, ymax = y),
+      fill = blue,
+      alpha = 0.3
+    ) +
+    geom_point(
+      data = marked,
+      colour = blue
+    ) +
+    facet_wrap(
+      ~panel,
+      nrow = 2,
+      scales = "free"
+    ) +
+    labs(
+      x = NULL,
+      y = NULL
+    ) +
+    theme_minimal() +
+    theme(panel.spacing = unit(2, "lines"))
+
+  qnp::interactive_plot(
+    plot = pmf_cdf_quantile,
+    alt = fig_alt
+  )
+})
+```
+
+A probability mass function, cumulative distribution function and quantile function
+for a discrete random variable
+(top row: the number of heads in two fair coin flips)
+and a continuous one
+(bottom row: the standard normal distribution).
+The shaded area under the normal density up to a point equals the CDF at that point.
+The quantile function reverses the CDF:
+its axes are the CDF's, swapped.
+:::

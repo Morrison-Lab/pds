@@ -400,7 +400,7 @@ With $\rate = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.3
 For a random variable $X$ (discrete or continuous),
 its **cumulative distribution function** is:
 
-$$F(t) \eqdef \Pr(X\le t), \quad t\in\reals.$$
+$$\cdff{t} \eqdef \Pr(X\le t), \quad t\in\reals.$$
 
 :::
 
@@ -420,7 +420,7 @@ See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 Summing the PMF in @exm-pmf over values at or below $t$:
 
 $$
-F(t) = \begin{cases}
+\cdff{t} = \begin{cases}
 0, & t < 0 \\
 \tfrac{1}{4}, & 0 \le t < 1 \\
 \tfrac{3}{4}, & 1 \le t < 2 \\
@@ -435,10 +435,10 @@ $$
 :::{#thm-cdf-properties}
 #### Properties of a CDF
 
-The [CDF](#def-cdf) $F$ of any random variable $X$ is non-decreasing,
+The [CDF](#def-cdf) $\cdf$ of any random variable $X$ is non-decreasing,
 and:
 
-$$\lim_{t \to -\infty} F(t) = 0, \qquad \lim_{t \to \infty} F(t) = 1$$
+$$\lim_{t \to -\infty} \cdff{t} = 0, \qquad \lim_{t \to \infty} \cdff{t} = 1$$
 
 :::
 
@@ -450,12 +450,12 @@ so [finite additivity](probability-basics.qmd#cor-probability-finitely-additive)
 
 $$
 \ba
-F(t)
+\cdff{t}
 &= \Pr(X \le s) + \Pr(s < X \le t)
 && \text{(additivity, and the definition of the CDF)} \\
 &\ge \Pr(X \le s)
 && \text{(probabilities are non-negative)} \\
-&= F(s)
+&= \cdff{s}
 && \text{(definition of the CDF)}
 \ea
 $$
@@ -465,9 +465,9 @@ The events $A_n = \{X \le -n\}$, $n = 1, 2, \ldots$, are decreasing,
 and their intersection is empty,
 because every outcome $\outcome$ has $X(\outcome) > -n$ once $n > -X(\outcome)$.
 By [continuity of probability](probability-basics.qmd#thm-continuity-probability),
-$F(-n) = \Pr(A_n) \to 0$.
-For $t \le -n$, $0 \le F(t) \le F(-n)$, because $F$ is non-decreasing,
-so $F(t) \to 0$ as $t \to -\infty$.
+$\cdff{-n} = \Pr(A_n) \to 0$.
+For $t \le -n$, $0 \le \cdff{t} \le \cdff{-n}$, because $\cdf$ is non-decreasing,
+so $\cdff{t} \to 0$ as $t \to -\infty$.
 
 *Limit at $\infty$.*
 The events $B_n = \{X > n\}$ are decreasing,
@@ -478,7 +478,7 @@ so, by the [complement rule](probability-basics.qmd#cor-p-neg0):
 
 $$
 \ba
-F(n)
+\cdff{n}
 &= 1 - \Pr(X > n)
 && \text{(complement rule)} \\
 &\to 1 - 0
@@ -486,8 +486,8 @@ F(n)
 \ea
 $$
 
-For $t \ge n$, $F(n) \le F(t) \le 1$, because $F$ is non-decreasing,
-so $F(t) \to 1$ as $t \to \infty$.
+For $t \ge n$, $\cdff{n} \le \cdff{t} \le 1$, because $\cdf$ is non-decreasing,
+so $\cdff{t} \to 1$ as $t \to \infty$.
 
 :::
 
@@ -518,19 +518,19 @@ see also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
 #### Quantile function (population inverse CDF)
 
 For a random variable $X$
-with [cumulative distribution function (CDF)](#def-cdf) $F$,
+with [cumulative distribution function (CDF)](#def-cdf) $\cdf$,
 its population **quantile function**
-(generalized inverse of $F$)
+(generalized inverse of $\cdf$)
 is:
 
-$$Q(p) \eqdef \inf\{t:F(t)\ge p\}, \quad 0<p<1.$$
+$$\quantilef{p} \eqdef \inf \set{t : \cdff{t} \ge p}, \quad p \in (0, 1).$$
 
 :::
 
 ::: {.remark .notes}
 
-The restriction to $0 < p < 1$ keeps $Q(p)$ finite:
-for $p = 1$, the set $\{t : F(t) \ge 1\}$ is empty whenever $F(t) < 1$ for every $t$,
+The restriction to $p \in (0, 1)$ keeps $\quantilef{p}$ finite:
+for $p = 1$, the set $\set{t : \cdff{t} \ge 1}$ is empty whenever $\cdff{t} < 1$ for every $t$,
 as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
 
 :::
@@ -540,20 +540,32 @@ as for a [normal distribution](#def-normal), and the infimum of the empty set is
 :::{#exm-quantile-function}
 #### Median of the number of heads
 
-From @exm-cdf, $F(t) \ge 0.5$ first holds at $t = 1$,
-so the median of the number of heads is $Q(0.5) = 1$.
+From @exm-cdf, $\cdff{t} \ge 0.5$ first holds at $t = 1$,
+so the median of the number of heads is $\quantilef{0.5} = 1$.
 
 :::
+
+{{< slidebreak >}}
+
+::: {.remark}
+
+@fig-pmf-cdf-quantile shows the mass function, CDF and quantile function
+of the number of heads in two fair coin flips (top row),
+beside the density, CDF and quantile function of a standard normal variable (bottom row).
+
+:::
+
+{{< include pds/_subfiles/_fig-pmf-cdf-quantile.qmd >}}
 
 {{< slidebreak >}}
 
 :::{#thm-density-vs-CDF}
 #### A density integrates to the CDF
 
-If $X$ is a continuous random variable with density $f$ and CDF $F$,
+If $X$ is a continuous random variable with density $f$ and CDF $\cdf$,
 then for every $t$:
 
-$$F(t) = \int_{-\infty}^{t} f(x)\,dx$$
+$$\cdff{t} = \int_{-\infty}^{t} f(x)\,dx$$
 
 :::
 
@@ -566,18 +578,18 @@ So:
 
 $$
 \ba
-F(t)
+\cdff{t}
 &= \Pr(X \le a) + \Pr(a < X \le t)
 && \text{(additivity, and the definition of the CDF)} \\
-&= F(a) + \Pr(a \le X \le t)
+&= \cdff{a} + \Pr(a \le X \le t)
 && \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\
-&= F(a) + \int_a^t f(x)\,dx
+&= \cdff{a} + \int_a^t f(x)\,dx
 && \text{(definition of the density)}
 \ea
 $$
 
-Letting $a \to -\infty$, $F(a) \to 0$ (@thm-cdf-properties),
-which gives $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
+Letting $a \to -\infty$, $\cdff{a} \to 0$ (@thm-cdf-properties),
+which gives $\cdff{t} = \int_{-\infty}^{t} f(x)\,dx$.
 
 :::
 
@@ -586,16 +598,16 @@ which gives $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
 :::{#thm-cdf-derivative-is-density}
 #### The derivative of the CDF is the density where the density is continuous
 
-If $X$ is a continuous random variable with density $f$ and CDF $F$,
+If $X$ is a continuous random variable with density $f$ and CDF $\cdf$,
 then at every $t$ where $f$ is continuous:
 
-$$f(t) = \deriv{t} F(t)$$
+$$f(t) = \deriv{t} \cdff{t}$$
 
 :::
 
 ::: proof
 
-By @thm-density-vs-CDF, $F(t) = \int_{-\infty}^{t} f(x)\,dx$.
+By @thm-density-vs-CDF, $\cdff{t} = \int_{-\infty}^{t} f(x)\,dx$.
 The fundamental theorem of calculus then gives
 $\deriv{t} \int_{-\infty}^{t} f(x)\,dx = f(t)$
 at every $t$ where $f$ is continuous.
@@ -605,9 +617,9 @@ at every $t$ where $f$ is continuous.
 :::{#cor-cdf-derivative-density-ae}
 #### A CDF has its density as derivative at all but finitely many points
 
-If $X$ is a continuous random variable with CDF $F$
+If $X$ is a continuous random variable with CDF $\cdf$
 and a density $f$ that is continuous at all but finitely many points,
-then $F$ is differentiable with $F' = f$
+then $\cdf$ is differentiable with $\cdf' = f$
 at all but finitely many points.
 
 :::
@@ -615,7 +627,7 @@ at all but finitely many points.
 ::: proof
 
 At every point $t$ where $f$ is continuous,
-@thm-cdf-derivative-is-density gives $F'(t) = f(t)$,
+@thm-cdf-derivative-is-density gives $\cdf'(t) = f(t)$,
 and by assumption those are all but finitely many points.
 
 :::
@@ -637,7 +649,7 @@ and $t \in [0, 1]$:
 
 $$
 \ba
-F(t)
+\cdff{t}
 &= \int_{-\infty}^{t} f(x)\,dx
 && \text{(the CDF is the integral of the density)} \\
 &= \int_{-\infty}^{0} 0\,dx + \int_{0}^{t} 1\,dx
@@ -651,12 +663,12 @@ For $t \in (0, 1)$, where $f$ is continuous,
 
 $$
 \begin{aligned}
-\deriv{t} F(t) &= 1 \\
+\deriv{t} \cdff{t} &= 1 \\
 &= f(t).
 \end{aligned}
 $$
 
-At $t = 1$, $f$ jumps from 1 to 0, and $F$ has no derivative:
+At $t = 1$, $f$ jumps from 1 to 0, and $\cdf$ has no derivative:
 its slope is 1 on the left and 0 on the right.
 
 :::
@@ -666,10 +678,10 @@ its slope is 1 on the left and 0 on the right.
 :::{#thm-cdf-derivative-density}
 #### A piecewise-smooth CDF has its derivative as a density
 
-If the CDF $F$ of a random variable $X$ is continuous everywhere,
+If the CDF $\cdf$ of a random variable $X$ is continuous everywhere,
 and has a continuous derivative at all but finitely many points,
 then $X$ is continuous,
-and $F'$ (given any values at the finitely many exceptional points)
+and $\cdf'$ (given any values at the finitely many exceptional points)
 is a density of $X$.
 
 :::
@@ -689,12 +701,12 @@ $$
 && \text{(probabilities are non-negative)} \\
 &\le \Pr(x - \change < X \le x)
 && \text{(} \{X = x\} \subseteq \{x - \change < X \le x\} \text{)} \\
-&= F(x) - F(x - \change)
+&= \cdff{x} - \cdff{x - \change}
 && \text{(additivity, and the definition of the CDF)}
 \ea
 $$
 
-and $F(x) - F(x - \change) \to 0$ as $\change \downarrow 0$, because $F$ is continuous.
+and $\cdff{x} - \cdff{x - \change} \to 0$ as $\change \downarrow 0$, because $\cdf$ is continuous.
 So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous.
 Then, for $a \le b$:
 
@@ -703,18 +715,18 @@ $$
 \Pr(a \le X \le b)
 &= \Pr(a < X \le b)
 && \text{(} \Pr(X = a) = 0 \text{)} \\
-&= F(b) - F(a)
+&= \cdff{b} - \cdff{a}
 && \text{(additivity, and the definition of the CDF)} \\
-&= \int_a^b F'(x)\,dx
+&= \int_a^b \cdf'(x)\,dx
 && \text{(fundamental theorem of calculus)}
 \ea
 $$
 
 The last step applies the fundamental theorem of calculus
 on each piece of $[a, b]$ between exceptional points,
-where $F'$ is continuous,
-and joins the pieces using the continuity of $F$ at the exceptional points.
-Finally, $F' \ge 0$ wherever it exists, because $F$ is non-decreasing (@thm-cdf-properties).
+where $\cdf'$ is continuous,
+and joins the pieces using the continuity of $\cdf$ at the exceptional points.
+Finally, $\cdf' \ge 0$ wherever it exists, because $\cdf$ is non-decreasing (@thm-cdf-properties).
 
 :::
 
@@ -723,9 +735,9 @@ Finally, $F' \ge 0$ wherever it exists, because $F$ is non-decreasing (@thm-cdf-
 :::{#exm-cdf-derivative-density}
 #### A density from a CDF with a corner
 
-Let $X$ have CDF $F(t) = 0$ for $t < 0$, $F(t) = t^2$ for $0 \le t \le 1$,
-and $F(t) = 1$ for $t > 1$.
-This $F$ is continuous everywhere,
+Let $X$ have CDF $\cdff{t} = 0$ for $t < 0$, $\cdff{t} = t^2$ for $0 \le t \le 1$,
+and $\cdff{t} = 1$ for $t > 1$.
+This $\cdf$ is continuous everywhere,
 and has a continuous derivative everywhere except $t = 1$,
 where its slope drops from 2 to 0.
 By @thm-cdf-derivative-density, $X$ is continuous with density
@@ -758,12 +770,12 @@ $$
 \frac{\Pr(x \le X < x + \change)}{\change}
 &= \frac{\Pr(x < X \le x + \change)}{\change}
 && \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \change) = 0 \text{)} \\
-&= \frac{F(x + \change) - F(x)}{\change}
+&= \frac{\cdff{x + \change} - \cdff{x}}{\change}
 && \text{(additivity, and the definition of the CDF)}
 \ea
 $$
 
-By @thm-cdf-derivative-is-density, $F$ is differentiable at $x$ with $F'(x) = f(x)$,
+By @thm-cdf-derivative-is-density, $\cdf$ is differentiable at $x$ with $\cdf'(x) = f(x)$,
 so this difference quotient converges to $f(x)$ as $\change \downarrow 0$.
 
 :::
@@ -804,14 +816,14 @@ Both agree with the density of @def-uniform.
 :::{#prp-density-limit-right-derivative}
 #### The density limit is the right derivative of the CDF
 
-If $X$ is a continuous random variable with CDF $F$,
+If $X$ is a continuous random variable with CDF $\cdf$,
 then for every $x$:
 
 $$\lim_{\change \downarrow 0} \frac{\Pr(x \le X < x + \change)}{\change}
-= \lim_{\change \downarrow 0} \frac{F(x + \change) - F(x)}{\change}$$
+= \lim_{\change \downarrow 0} \frac{\cdff{x + \change} - \cdff{x}}{\change}$$
 
 whenever either limit exists;
-the right-hand side is the right derivative of $F$ at $x$.
+the right-hand side is the right derivative of $\cdf$ at $x$.
 
 :::
 
@@ -851,7 +863,7 @@ $$
 So the limit of $\Pr(1 \le X < 1 + \change) / \change$ at $x = 1$ is 0,
 although $f(1) = 1$.
 By @prp-density-limit-right-derivative,
-0 is also the right derivative of $F$ at 1,
+0 is also the right derivative of $\cdf$ at 1,
 matching the slope of 0 on the right in @exm-density-vs-CDF.
 
 :::
@@ -874,7 +886,7 @@ $$
 \int_{-\infty}^{\infty} f(x)\, dx
 &= \lim_{b \to \infty} \int_{-\infty}^{b} f(x)\, dx
 && \text{(definition of an improper integral)} \\
-&= \lim_{b \to \infty} F(b)
+&= \lim_{b \to \infty} \cdff{b}
 && \text{(the CDF is the integral of the density)} \\
 &= 1
 && \text{(limit of a CDF)}

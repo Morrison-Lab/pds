@@ -4,11 +4,11 @@
 #### Hoeffding's inequality
 
 Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables with $0 \le X_i \le 1$ and mean $\mean$,
-and let $\bar X_n \eqdef \frac{1}{n}\sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
 Then for every $\tolout > 0$,
 
 $$
-\Prf{\bar X_n - \mean \ge \tolout} \le e^{-2n\tolout^2}.
+\Prf{\samplemean{X}{n} - \mean \ge \tolout} \le e^{-2n\tolout^2}.
 $$ {#eq-hoeffding-one-sided}
 
 :::
@@ -16,17 +16,17 @@ $$ {#eq-hoeffding-one-sided}
 ::: proof
 
 Fix $s > 0$.
-The event $\set{\bar X_n - \mean \ge \tolout}$ is the event $\set{e^{sn(\bar X_n - \mean)} \ge e^{sn\tolout}}$,
+The event $\set{\samplemean{X}{n} - \mean \ge \tolout}$ is the event $\set{e^{sn(\samplemean{X}{n} - \mean)} \ge e^{sn\tolout}}$,
 because the exponential is increasing and $sn > 0$.
-The random variable $e^{sn(\bar X_n - \mean)}$ is positive,
+The random variable $e^{sn(\samplemean{X}{n} - \mean)}$ is positive,
 so [Markov's inequality](#thm-markov) applies:
 
 $$
 \ba
-\Prf{\bar X_n - \mean \ge \tolout}
-&= \Prf{e^{sn(\bar X_n - \mean)} \ge e^{sn\tolout}}
+\Prf{\samplemean{X}{n} - \mean \ge \tolout}
+&= \Prf{e^{sn(\samplemean{X}{n} - \mean)} \ge e^{sn\tolout}}
 && \text{(the exponential is increasing)} \\
-&\le e^{-sn\tolout} \E{e^{sn(\bar X_n - \mean)}}
+&\le e^{-sn\tolout} \E{e^{sn(\samplemean{X}{n} - \mean)}}
 && \text{(Markov's inequality)}
 \ea
 $$
@@ -35,9 +35,9 @@ Rewrite the exponent as a sum, so that the exponential becomes a product:
 
 $$
 \ba
-e^{sn(\bar X_n - \mean)}
+e^{sn(\samplemean{X}{n} - \mean)}
 &= e^{s\sumin (X_i - \mean)}
-&& \text{(} n\bar X_n = \sumin X_i \text{)} \\
+&& \text{(} n\samplemean{X}{n} = \sumin X_i \text{)} \\
 &= \prod_{i=1}^n e^{s(X_i - \mean)}
 && \text{(} e^{a + b} = e^{a} e^{b} \text{)}
 \ea
@@ -51,7 +51,7 @@ Then apply @lem-hoeffding to each factor:
 
 $$
 \ba
-\E{e^{sn(\bar X_n - \mean)}}
+\E{e^{sn(\samplemean{X}{n} - \mean)}}
 &= \prod_{i=1}^n \E{e^{s(X_i - \mean)}}
 && \text{(independence)} \\
 &\le \prod_{i=1}^n e^{s^2/8}
@@ -64,7 +64,7 @@ $$
 Combining the two displays, for every $s > 0$,
 
 $$
-\Prf{\bar X_n - \mean \ge \tolout} \le e^{-sn\tolout + ns^2/8}.
+\Prf{\samplemean{X}{n} - \mean \ge \tolout} \le e^{-sn\tolout + ns^2/8}.
 $$
 
 The right side is smallest where the exponent $-sn\tolout + ns^2/8$ is smallest.
@@ -95,7 +95,7 @@ which is the claim.
 Under the assumptions of @thm-hoeffding, for every $\tolout > 0$,
 
 $$
-\Prf{\abs{\bar X_n - \mean} \ge \tolout} \le 2e^{-2n\tolout^2}.
+\Prf{\abs{\samplemean{X}{n} - \mean} \ge \tolout} \le 2e^{-2n\tolout^2}.
 $$ {#eq-hoeffding}
 
 :::
@@ -103,27 +103,27 @@ $$ {#eq-hoeffding}
 ::: proof
 
 The variables $1 - X_1, \ldots, 1 - X_n$ are IID, lie in $[0, 1]$, and have mean $1 - \mean$.
-Their average is $1 - \bar X_n$,
+Their average is $1 - \samplemean{X}{n}$,
 so @thm-hoeffding applied to them gives
 
 $$
 \ba
-\Prf{\mean - \bar X_n \ge \tolout}
-&= \Prf{(1 - \bar X_n) - (1 - \mean) \ge \tolout}
+\Prf{\mean - \samplemean{X}{n} \ge \tolout}
+&= \Prf{(1 - \samplemean{X}{n}) - (1 - \mean) \ge \tolout}
 && \text{(rearrange the event)} \\
 &\le e^{-2n\tolout^2}
 && \text{(Hoeffding's inequality for } 1 - X_i \text{)}
 \ea
 $$
 
-The event $\set{\abs{\bar X_n - \mean} \ge \tolout}$ is the union of $\set{\bar X_n - \mean \ge \tolout}$ and $\set{\mean - \bar X_n \ge \tolout}$.
+The event $\set{\abs{\samplemean{X}{n} - \mean} \ge \tolout}$ is the union of $\set{\samplemean{X}{n} - \mean \ge \tolout}$ and $\set{\mean - \samplemean{X}{n} \ge \tolout}$.
 The probability of a union is at most the sum of the probabilities,
 so
 
 $$
 \ba
-\Prf{\abs{\bar X_n - \mean} \ge \tolout}
-&\le \Prf{\bar X_n - \mean \ge \tolout} + \Prf{\mean - \bar X_n \ge \tolout}
+\Prf{\abs{\samplemean{X}{n} - \mean} \ge \tolout}
+&\le \Prf{\samplemean{X}{n} - \mean \ge \tolout} + \Prf{\mean - \samplemean{X}{n} \ge \tolout}
 && \text{(union bound)} \\
 &\le e^{-2n\tolout^2} + e^{-2n\tolout^2}
 && \text{(Hoeffding's inequality, twice)} \\
@@ -139,6 +139,6 @@ $$
 Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term [@hoeffding1963].
 This page states the case of an average of IID variables in $[0, 1]$,
 which is the case that bounds the gap between a sample proportion and the probability it estimates.
-For an indicator variable, $\mean$ is the probability of the event and $\bar X_n$ is the share of the $n$ draws in which it occurs.
+For an indicator variable, $\mean$ is the probability of the event and $\samplemean{X}{n}$ is the share of the $n$ draws in which it occurs.
 
 :::

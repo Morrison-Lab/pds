@@ -1,6 +1,6 @@
 ::: remark
 
-The sum of many independent random variables,
+The average of many independent random variables,
 none of which dominates the others,
 has a distribution that is approximately bell-shaped,
 whatever the distributions of the individual variables.
@@ -15,11 +15,11 @@ whatever the distributions of the individual variables.
 
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
 with mean $\mean$ and finite variance $\ss > 0$,
-and let $S_n \eqdef \sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
 Then for every real number $z$:
 
 $$
-\lim_{n \to \infty} \Pr\paren{\frac{S_n - n\mean}{\sdpar\sqrt{n}} \le z} = \normcdf(z)
+\lim_{n \to \infty} \Pr\paren{\frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar} \le z} = \normcdf(z)
 $$
 
 where $\normcdf(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
@@ -34,6 +34,36 @@ its proof is beyond these notes' scope
 [@billingsley1995probability, Theorem 27.1].
 Other versions relax the IID assumption,
 which is why the informal statement asks only that no summand dominate.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#cor-clt-sum}
+#### Central Limit Theorem for a sum
+
+Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
+with mean $\mean$ and finite variance $\ss > 0$,
+and let $S_n \eqdef \sumin X_i$.
+Then for every real number $z$:
+
+$$
+\lim_{n \to \infty} \Pr\paren{\frac{S_n - n\mean}{\sdpar\sqrt{n}} \le z} = \normcdf(z)
+$$
+
+:::
+
+::: proof
+
+Since $S_n = n\samplemean{X}{n}$,
+
+$$
+\frac{S_n - n\mean}{\sdpar\sqrt{n}}
+= \frac{n(\samplemean{X}{n} - \mean)}{\sdpar\sqrt{n}}
+= \frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar},
+$$
+
+so the event in this corollary is the event in @thm-clt, and the limits agree.
 
 :::
 
@@ -103,9 +133,11 @@ $$
 ::: {.remark .notes}
 
 In practice, @thm-clt justifies approximating
-$S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$,
-which by @cor-sum-iid-moments
-are exactly the mean and variance of $S_n$.
+$\samplemean{X}{n}$ by a normal distribution with mean $\mean$ and variance $\ss/n$,
+and @cor-clt-sum justifies approximating
+$S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$.
+By @cor-sum-iid-moments, these are exactly the means and variances
+of $\samplemean{X}{n} = S_n/n$ and $S_n$.
 
 :::
 
@@ -164,7 +196,7 @@ p_normal <- pnorm(15.5, mean = 5 * 3.5, sd = sqrt(5 * 35 / 12))
 
 For example, the exact probability that five dice total at most 15 is
 $\Pr(S_5 \le 15) = `r round(p_exact, 4)`$.
-The normal approximation that @thm-clt suggests,
+The normal approximation that @cor-clt-sum suggests,
 with mean $5 \cd 3.5 = 17.5$ and variance $5 \cd 35/12 \approx 14.58$,
 evaluated at $15.5$ to account for $S_5$ taking only integer values,
 gives $\normcdf\paren{(15.5 - 17.5)/\sqrt{14.58}} \approx `r round(p_normal, 4)`$.
