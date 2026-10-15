@@ -109,8 +109,8 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-dark-c086fb9aa89bc5726abb3173de9057c1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-33c90a2a9295b6ab69d7f48c49ac5fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/callouty-theorem-1.3.0/callouty-theorem.js"></script>
-<link href="site_libs/quarto-contrib/callouty-theorem-1.3.0/callouty-theorem.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/callouty-theorem-1.4.0/callouty-theorem.js"></script>
+<link href="site_libs/quarto-contrib/callouty-theorem-1.4.0/callouty-theorem.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome-7-free-7.2.0/fontawesome.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -235,6 +235,30 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-videos.callout {
+  border-left-color: #283593;
+}
+div.callout-videos.callout-style-default .callout-header {
+  background-color: rgba(40, 53, 147, 0.13);
+}
+div.callout-videos .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-videos.callout-style-default .callout-icon::before, div.callout-videos.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f144' !important;
+  background-image: none;
+}
 div.callout-cor.callout {
   border-left-color: #00838F;
 }
@@ -244,36 +268,6 @@ div.callout-cor.callout-style-default .callout-header {
 div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-tbl.callout {
-  border-left-color: #757575;
-}
-div.callout-tbl.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-prp.callout {
   border-left-color: #827717;
@@ -285,15 +279,35 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-fig.callout {
+  border-left-color: #757575;
+}
+div.callout-fig.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
+}
+div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-proof.callout {
   border-left-color: #37474F;
@@ -315,25 +329,15 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exr.callout {
-  border-left-color: #FFA500;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-fig.callout {
-  border-left-color: #757575;
-}
-div.callout-fig.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-solution.callout {
   border-left-color: #4E342E;
@@ -345,29 +349,25 @@ div.callout-solution .callout-toggle::before {  background-image: url('data:imag
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
+div.callout-tbl.callout {
+  border-left-color: #757575;
 }
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
+div.callout-tbl.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
 }
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-videos.callout {
-  border-left-color: #283593;
+div.callout-lem.callout {
+  border-left-color: #1565C0;
 }
-div.callout-videos.callout-style-default .callout-header {
-  background-color: rgba(40, 53, 147, 0.13);
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
 }
-div.callout-videos .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-videos.callout-style-default .callout-icon::before, div.callout-videos.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f144' !important;
-  background-image: none;
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -806,7 +806,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-15 00:59:01 (PDT)</p>
+      <p class="date">Last modified: 2026-10-15 01:22:28 (PDT)</p>
     </div>
   </div>
   
@@ -822,10 +822,10 @@ window.Quarto = {
 <h2 data-number="1" class="anchored" data-anchor-id="sec-deviation"><span class="header-section-number">1</span> Deviation, error, and noise</h2>
 <p><span id="sec-variance-covariance"></span></p>
 <!-- No slidebreak here: the heading shares its slide with the def-deviation div. -->
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-deviation" class="quarto-xref">Definition&nbsp;1</a> (Deviation)
@@ -841,12 +841,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>In probability and statistics, “deviation” usually means deviation from a <a href="./expectation.html#def-expectation">population mean</a>.</p>
 <p>See: <a href="https://en.wikipedia.org/wiki/Deviation_(statistics)">Wikipedia: Deviation (statistics)</a></p>
@@ -854,17 +860,17 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-deviation" class="quarto-xref">Example&nbsp;1</a> (Deviation from a reference weight)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-deviation" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1 (Deviation from a reference weight)</strong></span> A newborn weighing 3,200 g deviates from a reference weight of 3,500 g by <span class="math inline">\(3200 - 3500 = -300\)</span> g.</p>
@@ -872,17 +878,17 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a> (Deviation from a population or subpopulation mean)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-deviation-pop-mean" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Deviation from a population or subpopulation mean)</strong></span> The <strong>deviation from the mean</strong> of a random variable <span class="math inline">\(Y\)</span> is its <a href="#def-deviation">deviation</a> from its <a href="./expectation.html#def-expectation">expectation</a>:</p>
@@ -893,12 +899,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Other sources often call this quantity an <strong>error</strong> or <strong>noise term</strong>. In regression settings, the reference mean is often conditional on covariates: <span class="math inline">\(e(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left[Y_i \mid X_i = x_i\right]\mathclose{}\)</span>.</p>
 <p>These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their <a href="https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted">Linear regression chapter</a>) for deviations from fitted values, write <span class="math inline">\(e(\cdot)\)</span> for these model/data deviations, and reserve <span class="math inline">\(\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\)</span> for estimator-to-estimand deviations (see <a href="https://morrison-lab.github.io/sds/estimation.html#def-estimation-error">Estimation</a>).</p>
@@ -912,17 +924,17 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-deviation-pop-mean" class="quarto-xref">Example&nbsp;2</a> (Deviation of a die roll from its mean)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-deviation-pop-mean" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2 (Deviation of a die roll from its mean)</strong></span> A fair die roll <span class="math inline">\(Y\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = 3.5\)</span> (computed on the <a href="./expectation.html#exm-linearity-expectation">expectation page</a>), so a roll of <span class="math inline">\(y = 5\)</span> has deviation</p>
@@ -946,17 +958,17 @@ e(2) &amp;= 2 - 3.5 \\
 <section id="sec-noise-model" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="sec-noise-model"><span class="header-section-number">1.1</span> Mean-zero noise model</h3>
 <p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\varepsilon\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
-<div class="callouty-titled callout callout-style-simple callout-remark no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Remark</span><a href="#rem-mean-zero-parametrization" class="quarto-xref">Remark&nbsp;1</a> (Mean zero is a parametrization choice)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="rem-mean-zero-parametrization" class="proof remark">
 <p><span class="proof-title"><em>Remark 1</em> (Mean zero is a parametrization choice). </span>Mean zero is a parametrization choice, not a substantive assumption. In <span class="math inline">\(Y = f(x) + \varepsilon\)</span>, moving a constant from <span class="math inline">\(\varepsilon\)</span> into <span class="math inline">\(f(x)\)</span> changes the split but not the distribution of <span class="math inline">\(Y\)</span>, so the data identify only the sum <span class="math inline">\(f(x) + \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\)</span>, the mean of <span class="math inline">\(Y\)</span> at <span class="math inline">\(x\)</span>. Requiring <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> picks the one split in which <span class="math inline">\(f(x)\)</span> is that mean. This loses no generality when the model for <span class="math inline">\(f\)</span> can absorb a constant, as any model with an intercept can. It restricts the model only when <span class="math inline">\(f\)</span> cannot absorb one, as in a regression through the origin.</p>
@@ -965,17 +977,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <p>Mean zero gives one identity, used repeatedly across statistical modeling and machine learning.</p>
-<div class="callouty-titled callout callout-style-simple callout-exr no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exr callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exr</span><a href="#exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a> (The average squared error of pure noise)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exr-noise-second-moment" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>.</p>
@@ -985,7 +997,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -994,7 +1006,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="sol-noise-second-moment" class="proof solution">
 <p><span class="proof-title"><em>Solution 1</em>. </span><a href="#thm-variance" class="quarto-xref">Theorem&nbsp;3</a> says <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}[X^2] - (\operatorname{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \varepsilon\)</span> and substituting <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span>,</p>
@@ -1011,17 +1023,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-noise-second-moment" class="quarto-xref">Theorem&nbsp;1</a> (The second moment of mean-zero noise)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-noise-second-moment" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1 (The second moment of mean-zero noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>. Then</p>
@@ -1031,7 +1043,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1040,7 +1052,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a>, worked in <a href="#sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>. It rearranges <a href="#thm-variance" class="quarto-xref">Theorem&nbsp;3</a>, using <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span>.</p>
@@ -1053,17 +1065,17 @@ e(2) &amp;= 2 - 3.5 \\
 <section id="variance-and-related-characteristics" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="variance-and-related-characteristics"><span class="header-section-number">2</span> Variance and related characteristics</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-variance div. -->
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-variance" class="quarto-xref">Definition&nbsp;3</a> (Variance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-variance" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 3 (Variance)</strong></span> The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> is the <a href="./expectation.html#def-expectation">expectation</a> of the squared <a href="#def-deviation-pop-mean">deviation from the mean</a>; that is:</p>
@@ -1072,71 +1084,20 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-variance-expanded" class="quarto-xref">Theorem&nbsp;2</a> (Variance as expected squared deviation from the mean)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-variance-expanded" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 2 (Variance as expected squared deviation from the mean)</strong></span> <span class="math display">\[\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left[(X - \operatorname{E}\mathopen{}\left[X\right]\mathclose{})^2\right]\mathclose{}\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Proof</span>Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Substituting the definition of <span class="math inline">\(e(X)\)</span> from <a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a> into <a href="#def-variance" class="quarto-xref">Definition&nbsp;3</a>:</p>
-<p><span class="math display">\[
-\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[[e(X)]^2\right]\mathclose{} = \operatorname{E}\mathopen{}\left[(X - \operatorname{E}\mathopen{}\left[X\right]\mathclose{})^2\right]\mathclose{}.
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep <span class="math inline">\(e(X)\)</span> as the definition’s single building block, matching the notation of <a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-variance" class="quarto-xref">Theorem&nbsp;3</a> (Simplified expression for variance)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div id="thm-variance" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Simplified expression for variance)</strong></span> <span class="math display">\[\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}=\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{}\]</span></p>
 </div>
 </div>
 </div>
@@ -1154,6 +1115,63 @@ e(2) &amp;= 2 - 3.5 \\
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Substituting the definition of <span class="math inline">\(e(X)\)</span> from <a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a> into <a href="#def-variance" class="quarto-xref">Definition&nbsp;3</a>:</p>
+<p><span class="math display">\[
+\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[[e(X)]^2\right]\mathclose{} = \operatorname{E}\mathopen{}\left[(X - \operatorname{E}\mathopen{}\left[X\right]\mathclose{})^2\right]\mathclose{}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep <span class="math inline">\(e(X)\)</span> as the definition’s single building block, matching the notation of <a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Lem</span><a href="#thm-variance" class="quarto-xref">Theorem&nbsp;3</a> (Simplified expression for variance)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="thm-variance" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Simplified expression for variance)</strong></span> <span class="math display">\[\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}=\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)^2\mathclose{}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>, with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\)</span> treated as a constant:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1169,17 +1187,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a> (Variance of a Bernoulli random variable)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-variance-bernoulli" class="theorem example">
 <p><span class="theorem-title"><strong>Example 3 (Variance of a Bernoulli random variable)</strong></span> Let <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span>. Then <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = \pi\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} = \pi\)</span> (both computed on the <a href="./expectation.html#exm-lotus">expectation page</a>), so:</p>
@@ -1199,17 +1217,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-cond-variance" class="quarto-xref">Definition&nbsp;4</a> (Conditional variance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cond-variance" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4 (Conditional variance)</strong></span> The <strong>conditional variance</strong> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = x\)</span> is the variance of <span class="math inline">\(Y\)</span> under its conditional distribution given <span class="math inline">\(X = x\)</span>:</p>
@@ -1219,17 +1237,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a> (Conditional variance of a binary outcome)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse show">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-cond-variance" class="theorem example">
 <p><span class="theorem-title"><strong>Example 4 (Conditional variance of a binary outcome)</strong></span> Let <span class="math inline">\((X, Y)\)</span> have the joint PMF <span class="math inline">\(\operatorname{P}(X=0, Y=0) = 0.2\)</span>, <span class="math inline">\(\operatorname{P}(X=0, Y=1) = 0.3\)</span>, <span class="math inline">\(\operatorname{P}(X=1, Y=0) = 0.1\)</span>, <span class="math inline">\(\operatorname{P}(X=1, Y=1) = 0.4\)</span> (the table in the <a href="./expectation.html#exr-fubini-joint-disc">expectation page’s exercise</a>). Given <span class="math inline">\(X = 0\)</span>, <span class="math inline">\(Y\)</span> is binary with</p>
@@ -1269,17 +1287,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-homosked" class="quarto-xref">Definition&nbsp;5</a> (Homoskedasticity)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse show">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-homosked" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 5 (Homoskedasticity)</strong></span> A random variable <span class="math inline">\(Y\)</span> is <strong>homoskedastic</strong> with respect to a random variable (or vector) <span class="math inline">\(X\)</span> if the <a href="#def-cond-variance">conditional variance</a> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = x\)</span> is the same for every <span class="math inline">\(x\)</span>:</p>
@@ -1289,17 +1307,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-homosked" class="quarto-xref">Example&nbsp;5</a> (A homoskedastic total)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse show">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-homosked" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5 (A homoskedastic total)</strong></span> Flip two fair coins, let <span class="math inline">\(X_1\)</span> indicate heads on the first, and let <span class="math inline">\(Y\)</span> be the total number of heads. Given <span class="math inline">\(X_1 = 0\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each; given <span class="math inline">\(X_1 = 1\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span> with probability <span class="math inline">\(1/2\)</span> each. Either way, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1/2\)</span> away from its conditional mean with probability 1, so</p>
@@ -1314,17 +1332,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-heterosked" class="quarto-xref">Definition&nbsp;6</a> (Heteroskedasticity)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-heterosked" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 6 (Heteroskedasticity)</strong></span> A random variable <span class="math inline">\(Y\)</span> is <strong>heteroskedastic</strong> with respect to <span class="math inline">\(X\)</span> if it is not <a href="#def-homosked">homoskedastic</a> with respect to <span class="math inline">\(X\)</span>: that is, if <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\)</span> differs between some values of <span class="math inline">\(x\)</span>.</p>
@@ -1332,17 +1350,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-heterosked" class="quarto-xref">Example&nbsp;6</a> (A heteroskedastic binary outcome)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse show">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-heterosked" class="theorem example">
 <p><span class="theorem-title"><strong>Example 6 (A heteroskedastic binary outcome)</strong></span> In <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
@@ -1358,17 +1376,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-total-variance" class="quarto-xref">Theorem&nbsp;4</a> (Law of total variance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse show">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-total-variance" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 4 (Law of total variance)</strong></span> For random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span>:</p>
@@ -1378,7 +1396,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1387,7 +1405,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> and <span class="math inline">\(m(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\)</span>. Adding and subtracting <span class="math inline">\(m(X)\)</span> inside the deviation and expanding the square:</p>
@@ -1465,29 +1483,35 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Alternate names include: the <strong>conditional variance formula</strong>, <strong>Eve’s law</strong>, and the <strong>variance decomposition formula</strong>.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-total-variance" class="quarto-xref">Example&nbsp;7</a> (Decomposing the variance of a binary outcome)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse show">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-total-variance" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7 (Decomposing the variance of a binary outcome)</strong></span> Continuing <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
@@ -1532,17 +1556,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-precision" class="quarto-xref">Definition&nbsp;7</a> (Precision)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse show">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-precision" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 7 (Precision)</strong></span> The <strong>precision</strong> of a random variable <span class="math inline">\(X\)</span>, often denoted <span class="math inline">\(\tau(X)\)</span>, <span class="math inline">\(\tau_X\)</span>, or shorthanded as <span class="math inline">\(\tau\)</span>, is the inverse of that random variable’s <a href="#def-variance">variance</a> (for <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} &gt; 0\)</span>); that is:</p>
@@ -1551,17 +1575,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-sd" class="quarto-xref">Definition&nbsp;8</a> (Standard deviation)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse show">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-sd" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 8 (Standard deviation)</strong></span> The <strong>standard deviation</strong> of a random variable <span class="math inline">\(X\)</span> is the square root of the <a href="#def-variance">variance</a> of <span class="math inline">\(X\)</span>:</p>
@@ -1570,29 +1594,35 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The standard deviation is on the same scale as <span class="math inline">\(X\)</span> itself (unlike the variance, which is on the scale of <span class="math inline">\(X\)</span>’s square), which is why it is often the preferred measure of spread when reporting results.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-sd" class="quarto-xref">Example&nbsp;8</a> (Precision and standard deviation of a fair coin flip)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse show">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-sd" class="theorem example">
 <p><span class="theorem-title"><strong>Example 8 (Precision and standard deviation of a fair coin flip)</strong></span> In <a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>, a fair coin flip has <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 1/4\)</span>, so its precision is</p>
@@ -1616,17 +1646,17 @@ e(2) &amp;= 2 - 3.5 \\
 </section>
 <section id="sec-bias-variance-prediction" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="sec-bias-variance-prediction"><span class="header-section-number">3</span> Bias, variance, and prediction error</h2>
-<div class="callouty-titled callout callout-style-simple callout-exr no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exr callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exr</span><a href="#exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a> (Expected squared error from three sources)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse show">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exr-prediction-error" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2 (Expected squared error from three sources)</strong></span> A prediction <span class="math inline">\(\hat f(x_0)\)</span> at a new point <span class="math inline">\(x_0\)</span> has squared bias <span class="math inline">\([\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}]^2 = 1\)</span> and variance <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} = 2\)</span>. The new response is <span class="math inline">\(Y_0 = f(x_0) + \varepsilon\)</span>, where <span class="math inline">\(\varepsilon\)</span> has mean <span class="math inline">\(0\)</span> and variance <span class="math inline">\(\sigma^2= 3\)</span> and is independent of <span class="math inline">\(\hat f(x_0)\)</span>.</p>
@@ -1640,7 +1670,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1649,7 +1679,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="sol-prediction-error" class="proof solution">
 <p><span class="proof-title"><em>Solution 2</em>. </span></p>
@@ -1662,17 +1692,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-prediction-bias" class="quarto-xref">Definition&nbsp;9</a> (Bias of a prediction)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse show">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-prediction-bias" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9 (Bias of a prediction)</strong></span> Let <span class="math inline">\(f\)</span> be a fixed function, and let <span class="math inline">\(x_0\)</span> be a point. Let <span class="math inline">\(\hat f(x_0)\)</span> be a <a href="./expectation.html#def-prediction">prediction</a> of the value <span class="math inline">\(f(x_0)\)</span>. The prediction <span class="math inline">\(\hat f(x_0)\)</span> is a random variable, because it depends on the random training data. The <strong>bias</strong> of <span class="math inline">\(\hat f(x_0)\)</span> is</p>
@@ -1681,29 +1711,35 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>In expected prediction error decompositions <span class="citation" data-cites="james2021islr2e">(<a href="#ref-james2021islr2e" role="doc-biblioref">James et al. 2021, sec. 2.2.2</a>)</span>, the bias reflects the error introduced by approximating a real-world relationship by a model.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-prediction-bias" class="quarto-xref">Example&nbsp;9</a> (Computing the bias of a prediction)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse show">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-prediction-bias" class="theorem example">
 <p><span class="theorem-title"><strong>Example 9 (Computing the bias of a prediction)</strong></span> Suppose <span class="math inline">\(f(x_0) = 10\)</span>, and the predictions <span class="math inline">\(\hat f(x_0)\)</span>, over repeated training sets, average <span class="math inline">\(11\)</span>. Then</p>
@@ -1718,17 +1754,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-prediction-error" class="quarto-xref">Theorem&nbsp;5</a> (Expected squared prediction error)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse show">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-prediction-error" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 5 (Expected squared prediction error)</strong></span> Let <span class="math inline">\(Y_0 = f(x_0) + \varepsilon\)</span>, where <span class="math inline">\(f\)</span> is a fixed function, <span class="math inline">\(\varepsilon\)</span> has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>, and <span class="math inline">\(\varepsilon\)</span> is independent of the prediction <span class="math inline">\(\hat f(x_0)\)</span>, which has <span class="math inline">\(\operatorname{E}\mathopen{}\left[\hat f(x_0)^2\right]\mathclose{} &lt; \infty\)</span>. Then</p>
@@ -1738,7 +1774,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1747,7 +1783,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(Y_0 - \hat f(x_0) = \varepsilon+ D\)</span>, where <span class="math inline">\(D \stackrel{\text{def}}{=}f(x_0) - \hat f(x_0)\)</span>. Expanding the square and using linearity of expectation,</p>
@@ -1781,17 +1817,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-irreducible-error" class="quarto-xref">Definition&nbsp;10</a> (Irreducible error)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse show">
+<div id="callout-40" class="callout-40-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-irreducible-error" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 10 (Irreducible error)</strong></span> In <a href="#thm-prediction-error" class="quarto-xref">Theorem&nbsp;5</a>, the term <span class="math inline">\(\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\)</span> is the <strong>irreducible error</strong>. It does not depend on the prediction <span class="math inline">\(\hat f\)</span>, so no choice of prediction can remove it. For example, in <a href="#exr-prediction-error" class="quarto-xref">Exercise&nbsp;2</a>, <span class="math inline">\(\sigma^2= 3\)</span>, so every prediction there has expected squared error at least <span class="math inline">\(3\)</span>.</p>
@@ -1799,12 +1835,18 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>This expected prediction error decomposition into squared bias, variance, and irreducible error follows <span class="citation" data-cites="james2021islr2e">James et al. (<a href="#ref-james2021islr2e" role="doc-biblioref">2021, sec. 2.2.2</a>)</span>.</p>
 </div>
@@ -1815,17 +1857,17 @@ e(2) &amp;= 2 - 3.5 \\
 <section id="covariance" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="covariance"><span class="header-section-number">4</span> Covariance</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-cov div. -->
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-cov" class="quarto-xref">Definition&nbsp;11</a> (Covariance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse show">
+<div id="callout-42" class="callout-42-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cov" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 11 (Covariance)</strong></span> The <strong>covariance</strong> of two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span> is:</p>
@@ -1834,17 +1876,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-alt-cov" class="quarto-xref">Theorem&nbsp;6</a> (Alternative formula for covariance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse show">
+<div id="callout-43" class="callout-43-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-alt-cov" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 6 (Alternative formula for covariance)</strong></span> <span class="math display">\[\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}= \operatorname{E}\mathopen{}\left[XY\right]\mathclose{} - \operatorname{E}\mathopen{}\left[X\right]\mathclose{} \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\]</span></p>
@@ -1853,7 +1895,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1862,7 +1904,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>, analogous to the proof of the <a href="#thm-variance">simplified expression for variance</a>:</p>
@@ -1879,17 +1921,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-alt-cov" class="quarto-xref">Example&nbsp;10</a> (Covariance of a binary exposure and outcome)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse show">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-alt-cov" class="theorem example">
 <p><span class="theorem-title"><strong>Example 10 (Covariance of a binary exposure and outcome)</strong></span> For the joint PMF in <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
@@ -1915,17 +1957,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;7</a> (Independent random variables have zero covariance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-39" class="callout-39-contents callout-collapse collapse show">
+<div id="callout-46" class="callout-46-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-indpt-uncorrelated" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 7 (Independent random variables have zero covariance)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, each discrete or continuous, with defined expectations, then:</p>
@@ -1936,7 +1978,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1945,7 +1987,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(f_X\)</span> and <span class="math inline">\(f_Y\)</span> for the PMFs or densities of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, with reference measures <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> as in the <a href="./expectation.html#cor-fubini-joint">joint-distribution form of Fubini–Tonelli</a> (<a href="https://morrison-lab.github.io/mds/measures.html#def-counting-measure">counting measure</a> for a discrete variable, Lebesgue measure for a continuous one). Because <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, <span class="math inline">\(f_{X,Y}(x, y) = f_X(x)\,f_Y(y)\)</span> is their joint PMF, density, or density-mass function (the factorization in the notes to the <a href="./independence.html#def-indpt">definition of independence</a>). First, with <span class="math inline">\(h(x, y) = \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{} \ge 0\)</span> (condition (a)):</p>
@@ -1992,17 +2034,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-indpt-uncorrelated" class="quarto-xref">Example&nbsp;11</a> (Two independent coin flips)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse show">
+<div id="callout-48" class="callout-48-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-indpt-uncorrelated" class="theorem example">
 <p><span class="theorem-title"><strong>Example 11 (Two independent coin flips)</strong></span> For the independent coin flips <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> of <a href="./independence.html#exm-indpt">the independence page’s example</a>, <span class="math inline">\(X_1 X_2 = 1\)</span> only when both flips are heads, so:</p>
@@ -2024,17 +2066,17 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;12</a> (Zero covariance without independence)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse show">
+<div id="callout-49" class="callout-49-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-uncorrelated-not-indpt" class="theorem example">
 <p><span class="theorem-title"><strong>Example 12 (Zero covariance without independence)</strong></span> The converse of <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;7</a> is false. Let <span class="math inline">\(X\)</span> take the values <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/3\)</span> each, and let <span class="math inline">\(Y = X^2\)</span>. Then</p>
@@ -2083,17 +2125,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-correlation" class="quarto-xref">Definition&nbsp;12</a> (Correlation)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse show">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-correlation" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 12 (Correlation)</strong></span> The <strong>correlation</strong> of two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with finite, positive <a href="#def-variance">variances</a> is their <a href="#def-cov">covariance</a> divided by the product of their <a href="#def-sd">standard deviations</a>:</p>
@@ -2102,29 +2144,35 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Dividing by the standard deviations removes the units of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-correlation" class="quarto-xref">Example&nbsp;13</a> (Correlation of a binary exposure and outcome)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse show">
+<div id="callout-52" class="callout-52-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-correlation" class="theorem example">
 <p><span class="theorem-title"><strong>Example 13 (Correlation of a binary exposure and outcome)</strong></span> In <a href="#exm-alt-cov" class="quarto-xref">Example&nbsp;10</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05\)</span>, where <span class="math inline">\(X \sim \operatorname{Ber}(0.5)\)</span> has <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = 0.25\)</span> (<a href="#exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>) and <span class="math inline">\(Y\)</span> has <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 0.21\)</span> (<a href="#exm-total-variance" class="quarto-xref">Example&nbsp;7</a>), so:</p>
@@ -2145,17 +2193,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-uncorrelated" class="quarto-xref">Definition&nbsp;13</a> (Uncorrelated random variables)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse show">
+<div id="callout-53" class="callout-53-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-uncorrelated" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 13 (Uncorrelated random variables)</strong></span> Random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span> are <strong>uncorrelated</strong> when their <a href="#def-cov">covariance</a> is 0:</p>
@@ -2164,29 +2212,35 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-54" class="callout-54-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span><a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;7</a> says independent random variables are uncorrelated, and <a href="#exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;12</a> shows the converse fails.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-uncorrelated" class="quarto-xref">Example&nbsp;14</a> (Correlated and uncorrelated pairs)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse show">
+<div id="callout-55" class="callout-55-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-uncorrelated" class="theorem example">
 <p><span class="theorem-title"><strong>Example 14 (Correlated and uncorrelated pairs)</strong></span> In <a href="#exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;12</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>, so <span class="math inline">\(X\)</span> and <span class="math inline">\(Y = X^2\)</span> are uncorrelated. In <a href="#exm-alt-cov" class="quarto-xref">Example&nbsp;10</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0.05 \neq 0\)</span>, so the binary exposure and outcome are not uncorrelated.</p>
@@ -2194,17 +2248,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-cor no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-cor callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Cor</span><a href="#cor-uncorrelated-cor-zero" class="quarto-xref">Corollary&nbsp;1</a> (Uncorrelated means zero correlation)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse show">
+<div id="callout-56" class="callout-56-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-uncorrelated-cor-zero" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 1 (Uncorrelated means zero correlation)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#def-variance">variances</a>, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="#def-uncorrelated">uncorrelated</a> if and only if <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>.</p>
@@ -2213,7 +2267,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2222,7 +2276,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#def-correlation" class="quarto-xref">Definition&nbsp;12</a>, <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} / \mathopen{}\left(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\,\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}\right)\mathclose{}\)</span>, and <span class="math inline">\(\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}\,\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} &gt; 0\)</span> because both variances are positive, so <span class="math inline">\(\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span> if and only if <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>, which is <a href="#def-uncorrelated" class="quarto-xref">Definition&nbsp;13</a>.</p>
@@ -2230,17 +2284,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-cond-cov" class="quarto-xref">Definition&nbsp;14</a> (Conditional covariance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-49" class="callout-49-contents callout-collapse collapse show">
+<div id="callout-58" class="callout-58-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cond-cov" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 14 (Conditional covariance)</strong></span> The <strong>conditional covariance</strong> of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> given <span class="math inline">\(X = x\)</span> is their covariance under their conditional distribution given <span class="math inline">\(X = x\)</span>:</p>
@@ -2250,17 +2304,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-cond-cov" class="quarto-xref">Example&nbsp;15</a> (Conditional covariance of a variable with itself)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse show">
+<div id="callout-59" class="callout-59-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-cond-cov" class="theorem example">
 <p><span class="theorem-title"><strong>Example 15 (Conditional covariance of a variable with itself)</strong></span> Taking <span class="math inline">\(Z = Y\)</span> in <a href="#def-cond-cov" class="quarto-xref">Definition&nbsp;14</a> gives the <a href="#def-cond-variance">conditional variance</a>: <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}\)</span>. In <a href="#exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, for example, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{} = 0.24\)</span>.</p>
@@ -2268,17 +2322,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-total-cov" class="quarto-xref">Theorem&nbsp;8</a> (Law of total covariance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-51" class="callout-51-contents callout-collapse collapse show">
+<div id="callout-60" class="callout-60-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-total-cov" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 8 (Law of total covariance)</strong></span> For random variables <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Z^2\right]\mathclose{} &lt; \infty\)</span>:</p>
@@ -2288,7 +2342,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2297,7 +2351,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div id="callout-61" class="callout-61-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The proof follows the proof of the <a href="#thm-total-variance">law of total variance</a>, which is the special case <span class="math inline">\(Z = Y\)</span>. Write <span class="math inline">\(m_Y(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y \mid X\right]\mathclose{}\)</span>, <span class="math inline">\(m_Z(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Z \mid X\right]\mathclose{}\)</span>, <span class="math inline">\(\mu_Y \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span>, and <span class="math inline">\(\mu_Z \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Z\right]\mathclose{}\)</span>. Adding and subtracting <span class="math inline">\(m_Y(X)\)</span> and <span class="math inline">\(m_Z(X)\)</span> inside the deviations:</p>
@@ -2343,29 +2397,35 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-62" class="callout-62-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Alternate names include: the <strong>covariance decomposition formula</strong> and the <strong>conditional covariance formula</strong>.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a> (The covariance of a variable with itself is its variance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-53" class="callout-53-contents callout-collapse collapse show">
+<div id="callout-63" class="callout-63-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="lem-cov-xx" class="theorem lemma">
 <p><span class="theorem-title"><strong>Lemma 1 (The covariance of a variable with itself is its variance)</strong></span> For any random variable <span class="math inline">\(X\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span>:</p>
@@ -2375,7 +2435,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2384,7 +2444,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div id="callout-64" class="callout-64-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By the <a href="#thm-alt-cov">alternative formula for covariance</a>:</p>
@@ -2403,17 +2463,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-def no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-def callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Def</span><a href="#def-cov-vec-x" class="quarto-xref">Definition&nbsp;15</a> (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-55" class="callout-55-contents callout-collapse collapse show">
+<div id="callout-65" class="callout-65-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cov-vec-x" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 15 (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)</strong></span> For a <span class="math inline">\(p \times 1\)</span> dimensional random vector <span class="math inline">\(\tilde{X}\)</span>,</p>
@@ -2429,17 +2489,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-vcov-elements" class="quarto-xref">Theorem&nbsp;9</a> (Elements of the variance-covariance matrix are pairwise covariances)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-56" class="callout-56-contents callout-collapse collapse show">
+<div id="callout-66" class="callout-66-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-vcov-elements" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 9 (Elements of the variance-covariance matrix are pairwise covariances)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>:</p>
@@ -2457,7 +2517,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2466,7 +2526,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-57" class="callout-57-contents callout-collapse collapse">
+<div id="callout-67" class="callout-67-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span> for <span class="math inline">\(i = 1, \ldots, p\)</span>, so <span class="math inline">\(\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\)</span>. By <a href="#def-cov-vec-x" class="quarto-xref">Definition&nbsp;15</a>:</p>
@@ -2523,17 +2583,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-vcov-vec" class="quarto-xref">Theorem&nbsp;10</a> (Alternate expression for variance of a random vector)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-58" class="callout-58-contents callout-collapse collapse show">
+<div id="callout-68" class="callout-68-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-vcov-vec" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 10 (Alternate expression for variance of a random vector)</strong></span> <span class="math display">\[
@@ -2547,7 +2607,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2556,7 +2616,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-59" class="callout-59-contents callout-collapse collapse">
+<div id="callout-69" class="callout-69-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
@@ -2591,17 +2651,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-var-lincom" class="quarto-xref">Theorem&nbsp;11</a> (Variance of a linear combination)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-60" class="callout-60-contents callout-collapse collapse show">
+<div id="callout-70" class="callout-70-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-var-lincom" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 11 (Variance of a linear combination)</strong></span> For any vector of random variables <span class="math inline">\(\tilde{X}= (X_1, \ldots, X_n)\)</span> and corresponding vector of constants <span class="math inline">\(\tilde{a}= (a_1, \ldots, a_n)\)</span>, the variance of their linear combination is:</p>
@@ -2618,7 +2678,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2627,7 +2687,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-61" class="callout-61-contents callout-collapse collapse">
+<div id="callout-71" class="callout-71-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{X}\)</span> as <span class="math inline">\(n \times 1\)</span> column vectors, so</p>
@@ -2659,17 +2719,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-cor no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-cor callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Cor</span><a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> (Variance of a sum of two random variables)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-62" class="callout-62-contents callout-collapse collapse show">
+<div id="callout-72" class="callout-72-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-var-lincom2" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 2 (Variance of a sum of two random variables)</strong></span> For any two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and scalars <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
@@ -2679,7 +2739,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2688,7 +2748,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-63" class="callout-63-contents callout-collapse collapse">
+<div id="callout-73" class="callout-73-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Apply <a href="#thm-var-lincom" class="quarto-xref">Theorem&nbsp;11</a> with <span class="math inline">\(n=2\)</span>, <span class="math inline">\(X_1 = X\)</span>, and <span class="math inline">\(X_2 = Y\)</span>:</p>
@@ -2718,17 +2778,17 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-cor no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-cor callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Cor</span><a href="#cor-var-sum-indpt" class="quarto-xref">Corollary&nbsp;3</a> (Variance of a sum of independent random variables)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-64" class="callout-64-contents callout-collapse collapse show">
+<div id="callout-74" class="callout-74-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-var-sum-indpt" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 3 (Variance of a sum of independent random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, each discrete or continuous, with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y^2\right]\mathclose{} &lt; \infty\)</span>, then:</p>
@@ -2738,7 +2798,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2747,7 +2807,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-65" class="callout-65-contents callout-collapse collapse">
+<div id="callout-75" class="callout-75-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;7</a>, <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\)</span>. Applying <a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> with</p>
@@ -2772,29 +2832,35 @@ a &amp;= b \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-76" class="callout-76-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span><a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> is why two variables’ covariance matters for combining them: the covariance term is what separates the variance of their sum from the sum of their variances, and <a href="#cor-var-sum-indpt" class="quarto-xref">Corollary&nbsp;3</a> is the case where that term is 0.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-vcov-psd" class="quarto-xref">Theorem&nbsp;12</a> (A variance matrix is symmetric and positive semidefinite)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-66" class="callout-66-contents callout-collapse collapse show">
+<div id="callout-77" class="callout-77-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-vcov-psd" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 12 (A variance matrix is symmetric and positive semidefinite)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix">symmetric</a> and <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite">positive semidefinite</a>: for every <span class="math inline">\(p \times 1\)</span> vector of constants <span class="math inline">\(\tilde{a}\)</span>,</p>
@@ -2804,7 +2870,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2813,7 +2879,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-67" class="callout-67-contents callout-collapse collapse">
+<div id="callout-78" class="callout-78-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-vcov-elements" class="quarto-xref">Theorem&nbsp;9</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>, and by <a href="#def-cov" class="quarto-xref">Definition&nbsp;11</a>, with <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span>:</p>
@@ -2846,17 +2912,17 @@ a &amp;= b \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-vcov-psd" class="quarto-xref">Example&nbsp;16</a> (Two variance matrices that differ only in sign)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-68" class="callout-68-contents callout-collapse collapse show">
+<div id="callout-79" class="callout-79-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-vcov-psd" class="theorem example">
 <p><span class="theorem-title"><strong>Example 16 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\tilde{X}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
@@ -2916,29 +2982,35 @@ a &amp;= b \\
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-remark no-icon">
-<div class="callout-body d-flex">
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-80" class="callout-80-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, <span class="math inline">\({(1, 1)}^{\top}\)</span> or <span class="math inline">\({(1, -1)}^{\top}\)</span>, has the larger spread.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-vcov-singular" class="quarto-xref">Example&nbsp;17</a> (A variance matrix that is not positive definite)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-69" class="callout-69-contents callout-collapse collapse show">
+<div id="callout-81" class="callout-81-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-vcov-singular" class="theorem example">
 <p><span class="theorem-title"><strong>Example 17 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\tilde{X}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\)</span> (<a href="#lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>), so:</p>
@@ -2958,17 +3030,17 @@ a &amp;= b \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-cor no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-cor callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Cor</span><a href="#cor-vcov-indpt-diagonal" class="quarto-xref">Corollary&nbsp;4</a> (Independent components give a diagonal variance matrix)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-70" class="callout-70-contents callout-collapse collapse show">
+<div id="callout-82" class="callout-82-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-vcov-indpt-diagonal" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 4 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each discrete or continuous, with:</p>
@@ -2982,7 +3054,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2991,7 +3063,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-71" class="callout-71-contents callout-collapse collapse">
+<div id="callout-83" class="callout-83-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-vcov-elements" class="quarto-xref">Theorem&nbsp;9</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> by <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;7</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span> by <a href="#lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>.</p>
@@ -2999,17 +3071,17 @@ a &amp;= b \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-lem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Lem</span><a href="#thm-cor-bounds" class="quarto-xref">Theorem&nbsp;13</a> (Correlation lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-72" class="callout-72-contents callout-collapse collapse show">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-cor-bounds" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 13 (Correlation lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#def-variance">variances</a>, then their <a href="#def-correlation">correlation</a> lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>)</span>:</p>
@@ -3019,7 +3091,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3028,7 +3100,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-73" class="callout-73-contents callout-collapse collapse">
+<div id="callout-85" class="callout-85-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\sigma_X \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(X\right)\mathclose{} &gt; 0\)</span> and <span class="math inline">\(\sigma_Y \stackrel{\text{def}}{=}\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{} &gt; 0\)</span>, and take either sign <span class="math inline">\(\pm\)</span> throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying <a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;2</a> with <span class="math inline">\(a = 1/\sigma_X\)</span> and <span class="math inline">\(b = \pm 1/\sigma_Y\)</span>:</p>
@@ -3050,17 +3122,17 @@ a &amp;= b \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-simple callout-exm no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="true" aria-label="Toggle callout">
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Exm</span><a href="#exm-cor-auto" class="quarto-xref">Example&nbsp;18</a> (Correlation of horsepower and fuel economy)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-74" class="callout-74-contents callout-collapse collapse show">
+<div id="callout-86" class="callout-86-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-cor-auto" class="theorem example">
 <p><span class="theorem-title"><strong>Example 18 (Correlation of horsepower and fuel economy)</strong></span> The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
