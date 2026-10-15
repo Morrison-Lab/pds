@@ -5,7 +5,7 @@
 Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and
 $\Var{\noise} = \varpar$.
 
-Show that $\Ep[\noise^2] = \varpar$,
+Find $\Ep[\noise^2]$ in terms of $\varpar$,
 and say which earlier result you used.
 
 :::
