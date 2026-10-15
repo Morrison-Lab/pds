@@ -61,12 +61,12 @@ We speak of a "random variable" and a "random event" for exactly this kind of si
 {{< slidebreak >}}
 
 :::{#def-stochastic-process}
-#### Stochastic process
+#### Stochastic process (random process)
 
 A **stochastic process** is a collection of random variables indexed by a set,
 most often a set of times or locations.
 In probability theory,
-"stochastic process" and "random process" are synonyms
+"stochastic process" and "**random process**" are synonyms
 [@Adler2009random; @Stirzaker2005probability; @Kallenberg2002foundations].
 
 :::
