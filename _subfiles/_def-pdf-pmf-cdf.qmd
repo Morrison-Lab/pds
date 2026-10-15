@@ -253,7 +253,7 @@ do not arise in applications.
 {{< slidebreak >}}
 
 :::{#def-normal}
-#### Normal distribution
+#### Normal distribution (Gaussian distribution)
 
 A random variable $X$ has the **normal distribution**
 (or **Gaussian distribution**)
@@ -1006,10 +1006,10 @@ agree on the $\sigma$-algebra it generates
 {{< slidebreak >}}
 
 :::{#def-joint-pmf}
-#### Joint probability mass function
+#### Joint probability mass function (joint PMF)
 
 For [jointly distributed](#def-jointly-distributed) discrete random variables $X$ and $Y$,
-the **joint probability mass function** (joint PMF) of $X$ and $Y$
+the **joint probability mass function** (**joint PMF**) of $X$ and $Y$
 is the probability that $X$ takes the value $x$ and $Y$ takes the value $y$:
 
 $$\P(X = x,\, Y = y) \eqdef \Pr(\{X = x\} \cap \{Y = y\})$$
@@ -1120,10 +1120,10 @@ which matches $X_1 \sim \Ber(1/2)$ from @exm-bernoulli-pmf.
 {{< slidebreak >}}
 
 :::{#def-joint-pdf}
-#### Joint probability density function
+#### Joint probability density function (joint density)
 
 For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$,
-a **joint probability density function** (joint density) of $X$ and $Y$,
+a **joint probability density function** (**joint density**) of $X$ and $Y$,
 denoted $f_{X,Y}(x, y)$ or $\p(X = x,\, Y = y)$,
 is a function $f_{X,Y}$ on $\reals^2$ that satisfies:
 

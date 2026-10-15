@@ -44,6 +44,10 @@ format:
 
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
+## The best constant prediction {#sec-best-constant-prediction}
+
+{{< include pds/_subfiles/_thm-best-constant.qmd >}}
+
 ## Independent noise plus a random variable {#sec-bias-variance-prediction}
 
 <!-- The bias-variance decomposition of prediction error moved to the sds notes, which define

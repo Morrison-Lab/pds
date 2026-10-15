@@ -32,6 +32,10 @@ format:
 
 {{< include pds/_subfiles/_sol-linearity-use.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-sample-mean-expectation.qmd >}}
+
 
 ## Conditional distributions and expectations
 
@@ -80,6 +84,10 @@ format:
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_thm-best-predictor.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-best-predictor-argmin.qmd >}}
 
 ## Entropy and cross-entropy {#sec-entropy}
 
