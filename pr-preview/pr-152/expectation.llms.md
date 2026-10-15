@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 22:43:06 (PDT)
+Last modified: 2026-10-14 22:54:20 (PDT)
 
 > **NOTE:**
 >
@@ -1251,11 +1251,11 @@ Last modified: 2026-10-14 22:43:06 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among prediction functions \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin) of the squared-error risk is the conditional expectation function, up to probability-\\1\\ equality:
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among prediction functions \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the conditional expectation function is a minimizer of the squared-error risk:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} \in \arg \min\_{g} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{},\\
 >
-> and any other minimizer \\g\\ satisfies \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\.
+> where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin). Moreover, every \\g\\ in that set satisfies \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\, so the minimizer is unique up to probability-\\1\\ equality.
 
 > **NOTE:**
 >
