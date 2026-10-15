@@ -234,86 +234,6 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-prp.callout {
-  border-left-color: #827717;
-}
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
-}
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
-}
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
-}
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-fig.callout {
-  border-left-color: #757575;
-}
-div.callout-fig.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-cnj.callout {
   border-left-color: #558B2F;
 }
@@ -323,16 +243,6 @@ div.callout-cnj.callout-style-default .callout-header {
 div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-def.callout {
-  border-left-color: #1B5E20;
-}
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
-}
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-remark.callout {
   border-left-color: #AD1457;
@@ -344,15 +254,15 @@ div.callout-remark .callout-toggle::before {  background-image: url('data:image/
 div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-tbl.callout {
-  border-left-color: #757575;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-tbl.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -367,6 +277,96 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   font-style: normal;
   content: '\f144' !important;
   background-image: none;
+}
+div.callout-prp.callout {
+  border-left-color: #827717;
+}
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
+}
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-fig.callout {
+  border-left-color: #757575;
+}
+div.callout-fig.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
+}
+div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
+}
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
+}
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-tbl.callout {
+  border-left-color: #757575;
+}
+div.callout-tbl.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
+}
+div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -800,7 +800,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-15 01:13:53 (PDT)</p>
+      <p class="date">Last modified: 2026-10-15 01:21:58 (PDT)</p>
     </div>
   </div>
   
@@ -1450,6 +1450,354 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 </div>
 </div>
 </div>
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Lem</span><a href="#lem-hoeffding" class="quarto-xref">Lemma&nbsp;1</a> (Hoeffding’s lemma)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="lem-hoeffding" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Hoeffding’s lemma)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(0 \le X \le 1\)</span> and mean <span class="math inline">\(\mu\)</span>. Then for every real number <span class="math inline">\(s\)</span>,</p>
+<p><span class="math display">\[
+\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{} \le e^{s^2/8}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>First bound <span class="math inline">\(e^{sX}\)</span> by a line. The function <span class="math inline">\(x \mapsto e^{x}\)</span> is convex, and for <span class="math inline">\(0 \le X \le 1\)</span> the number <span class="math inline">\(sX\)</span> is the weighted average <span class="math inline">\((1 - X) \cdot 0 + X \cdot s\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+e^{sX}
+&amp;\le (1 - X) e^{0} + X e^{s}
+&amp;&amp; \text{(convexity of the exponential)} \\
+&amp;= 1 - X + X e^{s}
+&amp;&amp; \text{(} e^{0} = 1 \text{)}
+\end{aligned}
+\]</span></p>
+<p>Take the expectation of both sides, which preserves the inequality:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[e^{sX}\right]\mathclose{}
+&amp;\le 1 - \operatorname{E}\mathopen{}\left[X\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X\right]\mathclose{} e^{s}
+&amp;&amp; \text{(linearity of expectation)} \\
+&amp;= 1 - \mu+ \mu e^{s}
+&amp;&amp; \text{(definition of } \mu\text{)}
+\end{aligned}
+\]</span></p>
+<p>The number <span class="math inline">\(1 - \mu+ \mu e^{s}\)</span> is a weighted average of <span class="math inline">\(1\)</span> and <span class="math inline">\(e^{s}\)</span> with weights <span class="math inline">\(1 - \mu\)</span> and <span class="math inline">\(\mu\)</span>, so it is positive. Multiply by the constant <span class="math inline">\(e^{-s\mu}\)</span> and write the result as an exponential:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}
+&amp;= e^{-s\mu} \operatorname{E}\mathopen{}\left[e^{sX}\right]\mathclose{}
+&amp;&amp; \text{(} e^{-s\mu} \text{ is a constant)} \\
+&amp;\le e^{-s\mu} \mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}
+&amp;&amp; \text{(the bound above)} \\
+&amp;= e^{L(s)}
+&amp;&amp; \text{(define } L(s) \stackrel{\text{def}}{=}-s\mu+ \log\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} \text{)}
+\end{aligned}
+\]</span></p>
+<p>It remains to show <span class="math inline">\(L(s) \le s^2/8\)</span>. Write</p>
+<p><span class="math display">\[
+p(s) \stackrel{\text{def}}{=}\frac{\mu e^{s}}{1 - \mu+ \mu e^{s}},
+\]</span></p>
+<p>which lies in <span class="math inline">\([0, 1]\)</span>. The first derivative of <span class="math inline">\(L\)</span> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+L'(s)
+&amp;= -\mu+ \frac{\mu e^{s}}{1 - \mu+ \mu e^{s}}
+&amp;&amp; \text{(chain rule for the logarithm)} \\
+&amp;= -\mu+ p(s)
+&amp;&amp; \text{(definition of } p \text{)}
+\end{aligned}
+\]</span></p>
+<p>The derivative of <span class="math inline">\(p\)</span> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+p'(s)
+&amp;= \frac{\mu e^{s}\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} - \mu e^{s} \cdot \mu e^{s}}{\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}^2}
+&amp;&amp; \text{(quotient rule)} \\
+&amp;= \frac{\mu e^{s}\mathopen{}\left(1 - \mu\right)\mathclose{}}{\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}^2}
+&amp;&amp; \text{(the } \mu^2 e^{2s} \text{ terms cancel)} \\
+&amp;= p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}
+&amp;&amp; \text{(} 1 - p(s) = \tfrac{1 - \mu}{1 - \mu+ \mu e^{s}} \text{)}
+\end{aligned}
+\]</span></p>
+<p>so <span class="math inline">\(L''(s) = p'(s) = p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}\)</span>. Completing the square gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}
+&amp;= \frac{1}{4} - \mathopen{}\left(p(s) - \frac{1}{2}\right)\mathclose{}^2
+&amp;&amp; \text{(complete the square)} \\
+&amp;\le \frac{1}{4}
+&amp;&amp; \text{(a square is not negative)}
+\end{aligned}
+\]</span></p>
+<p>At <span class="math inline">\(s = 0\)</span>, <span class="math inline">\(L(0) = 0 + \log 1 = 0\)</span> and <span class="math inline">\(L'(0) = -\mu+ \mu= 0\)</span>. By Taylor’s theorem with the Lagrange remainder, there is a number <span class="math inline">\(\xi\)</span> between <span class="math inline">\(0\)</span> and <span class="math inline">\(s\)</span> with</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(s)
+&amp;= L(0) + L'(0)\, s + \frac{L''(\xi)}{2} s^2
+&amp;&amp; \text{(Taylor's theorem)} \\
+&amp;= \frac{L''(\xi)}{2} s^2
+&amp;&amp; \text{(} L(0) = L'(0) = 0 \text{)} \\
+&amp;\le \frac{s^2}{8}
+&amp;&amp; \text{(} L''(\xi) \le \tfrac{1}{4} \text{)}
+\end{aligned}
+\]</span></p>
+<p>Therefore <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{} \le e^{L(s)} \le e^{s^2/8}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>The bound on the moment generating function <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}\)</span> is the step of Hoeffding’s 1963 paper <span class="citation" data-cites="hoeffding1963">(<a href="#ref-hoeffding1963" role="doc-biblioref">Hoeffding 1963</a>)</span> that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of an average.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-lem callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Lem</span><a href="#thm-hoeffding" class="quarto-xref">Theorem&nbsp;4</a> (Hoeffding’s inequality)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="thm-hoeffding" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
+<p><span id="eq-hoeffding-one-sided"><span class="math display">\[
+\Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}.
+\tag{1}\]</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Fix <span class="math inline">\(s &gt; 0\)</span>. The event <span class="math inline">\(\mathopen{}\left\{\bar X_n - \mu\ge \varepsilon\right\}\mathclose{}\)</span> is the event <span class="math inline">\(\mathopen{}\left\{e^{sn(\bar X_n - \mu)} \ge e^{sn\varepsilon}\right\}\mathclose{}\)</span>, because the exponential is increasing and <span class="math inline">\(sn &gt; 0\)</span>. The random variable <span class="math inline">\(e^{sn(\bar X_n - \mu)}\)</span> is positive, so <a href="#thm-markov">Markov’s inequality</a> applies:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{}
+&amp;= \Pr\mathopen{}\left(e^{sn(\bar X_n - \mu)} \ge e^{sn\varepsilon}\right)\mathclose{}
+&amp;&amp; \text{(the exponential is increasing)} \\
+&amp;\le e^{-sn\varepsilon} \operatorname{E}\mathopen{}\left[e^{sn(\bar X_n - \mu)}\right]\mathclose{}
+&amp;&amp; \text{(Markov's inequality)}
+\end{aligned}
+\]</span></p>
+<p>Rewrite the exponent as a sum, so that the exponential becomes a product:</p>
+<p><span class="math display">\[
+\begin{aligned}
+e^{sn(\bar X_n - \mu)}
+&amp;= e^{s\sum_{i=1}^n(X_i - \mu)}
+&amp;&amp; \text{(} n\bar X_n = \sum_{i=1}^nX_i \text{)} \\
+&amp;= \prod_{i=1}^n e^{s(X_i - \mu)}
+&amp;&amp; \text{(} e^{a + b} = e^{a} e^{b} \text{)}
+\end{aligned}
+\]</span></p>
+<p>The factors are functions of independent random variables, so they are independent, and the expectation of a product of independent random variables is the product of their expectations (the <a href="./variance-covariance.html#thm-indpt-uncorrelated">expectation of a product of independent variables</a>, applied one factor at a time). Then apply <a href="#lem-hoeffding" class="quarto-xref">Lemma&nbsp;1</a> to each factor:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[e^{sn(\bar X_n - \mu)}\right]\mathclose{}
+&amp;= \prod_{i=1}^n \operatorname{E}\mathopen{}\left[e^{s(X_i - \mu)}\right]\mathclose{}
+&amp;&amp; \text{(independence)} \\
+&amp;\le \prod_{i=1}^n e^{s^2/8}
+&amp;&amp; \text{(Hoeffding's lemma)} \\
+&amp;= e^{ns^2/8}
+&amp;&amp; \text{(} n \text{ equal factors)}
+\end{aligned}
+\]</span></p>
+<p>Combining the two displays, for every <span class="math inline">\(s &gt; 0\)</span>,</p>
+<p><span class="math display">\[
+\Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{} \le e^{-sn\varepsilon+ ns^2/8}.
+\]</span></p>
+<p>The right side is smallest where the exponent <span class="math inline">\(-sn\varepsilon+ ns^2/8\)</span> is smallest. The exponent is a quadratic in <span class="math inline">\(s\)</span> with a positive leading coefficient, so it has one minimum, where its derivative is zero. Its derivative in <span class="math inline">\(s\)</span> is <span class="math inline">\(-n\varepsilon+ ns/4\)</span>, which is zero at <span class="math inline">\(s = 4\varepsilon\)</span>, and <span class="math inline">\(4\varepsilon&gt; 0\)</span> is allowed. There the exponent is</p>
+<p><span class="math display">\[
+\begin{aligned}
+-4\varepsilon\cdot n\varepsilon+ \frac{n(4\varepsilon)^2}{8}
+&amp;= -4n\varepsilon^2 + 2n\varepsilon^2
+&amp;&amp; \text{(substitute } s = 4\varepsilon\text{)} \\
+&amp;= -2n\varepsilon^2
+&amp;&amp; \text{(combine like terms)}
+\end{aligned}
+\]</span></p>
+<p>which is the claim.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-cor callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Cor</span><a href="#cor-hoeffding-two-sided" class="quarto-xref">Corollary&nbsp;2</a> (Hoeffding’s inequality, two-sided)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="cor-hoeffding-two-sided" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2 (Hoeffding’s inequality, two-sided)</strong></span> Under the assumptions of <a href="#thm-hoeffding" class="quarto-xref">Theorem&nbsp;4</a>, for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
+<p><span id="eq-hoeffding"><span class="math display">\[
+\Pr\mathopen{}\left(\mathopen{}\left|\bar X_n - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{} \le 2e^{-2n\varepsilon^2}.
+\tag{2}\]</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-proof callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Proof</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The variables <span class="math inline">\(1 - X_1, \ldots, 1 - X_n\)</span> are IID, lie in <span class="math inline">\([0, 1]\)</span>, and have mean <span class="math inline">\(1 - \mu\)</span>. Their average is <span class="math inline">\(1 - \bar X_n\)</span>, so <a href="#thm-hoeffding" class="quarto-xref">Theorem&nbsp;4</a> applied to them gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr\mathopen{}\left(\mu- \bar X_n \ge \varepsilon\right)\mathclose{}
+&amp;= \Pr\mathopen{}\left((1 - \bar X_n) - (1 - \mu) \ge \varepsilon\right)\mathclose{}
+&amp;&amp; \text{(rearrange the event)} \\
+&amp;\le e^{-2n\varepsilon^2}
+&amp;&amp; \text{(Hoeffding's inequality for } 1 - X_i \text{)}
+\end{aligned}
+\]</span></p>
+<p>The event <span class="math inline">\(\mathopen{}\left\{\mathopen{}\left|\bar X_n - \mu\right|\mathclose{} \ge \varepsilon\right\}\mathclose{}\)</span> is the union of <span class="math inline">\(\mathopen{}\left\{\bar X_n - \mu\ge \varepsilon\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{\mu- \bar X_n \ge \varepsilon\right\}\mathclose{}\)</span>. The probability of a union is at most the sum of the probabilities, so</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr\mathopen{}\left(\mathopen{}\left|\bar X_n - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}
+&amp;\le \Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{} + \Pr\mathopen{}\left(\mu- \bar X_n \ge \varepsilon\right)\mathclose{}
+&amp;&amp; \text{(union bound)} \\
+&amp;\le e^{-2n\varepsilon^2} + e^{-2n\varepsilon^2}
+&amp;&amp; \text{(Hoeffding's inequality, twice)} \\
+&amp;= 2e^{-2n\varepsilon^2}
+&amp;&amp; \text{(combine like terms)}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Remark</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="notes proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term <span class="citation" data-cites="hoeffding1963">(<a href="#ref-hoeffding1963" role="doc-biblioref">Hoeffding 1963</a>)</span>. This page states the case of an average of IID variables in <span class="math inline">\([0, 1]\)</span>, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, <span class="math inline">\(\mu\)</span> is the probability of the event and <span class="math inline">\(\bar X_n\)</span> is the share of the <span class="math inline">\(n\)</span> draws in which it occurs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callouty-titled callout callout-style-default callout-exm callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Exm</span><a href="#exm-hoeffding-auto" class="quarto-xref">Example&nbsp;4</a> (How loose is Hoeffding’s bound for the share of efficient cars?)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="exm-hoeffding-auto" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)</strong></span> Take the 392 cars in the Auto data described in <a href="#exm-clt-auto" class="quarto-xref">Example&nbsp;2</a> as the whole population, and call a car efficient if its fuel economy (<code>mpg</code>) is above <span class="math inline">\(25\)</span>. Let <span class="math inline">\(X_i = 1\)</span> if the <span class="math inline">\(i\)</span>th car drawn at random is efficient and <span class="math inline">\(X_i = 0\)</span> otherwise, so <span class="math inline">\(\mu\)</span> is the share of efficient cars and <span class="math inline">\(\bar X_n\)</span> is the share in a sample of <span class="math inline">\(n\)</span> draws. Each <span class="math inline">\(X_i\)</span> lies in <span class="math inline">\([0, 1]\)</span>, and the draws are made with replacement, so the <span class="math inline">\(X_i\)</span> are IID and <a href="#cor-hoeffding-two-sided" class="quarto-xref">Corollary&nbsp;2</a> applies. The code below draws <span class="math inline">\(10{,}000\)</span> samples of each size, computes the proportion of samples whose share misses <span class="math inline">\(\mu\)</span> by at least <span class="math inline">\(\varepsilon= 0.1\)</span>, and sets that proportion beside the bound <span class="math inline">\(2e^{-2n\varepsilon^2}\)</span> of <a href="#eq-hoeffding" class="quarto-xref">Equation&nbsp;2</a> and the bound <span class="math inline">\(\sigma^2/(n\varepsilon^2)\)</span> that Chebyshev’s inequality gives (<a href="#exr-chebyshev-sample-size" class="quarto-xref">Exercise&nbsp;1</a>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/auto.csv"</span>)<span class="sc">$</span>mpg</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>efficient <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(mpg <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(efficient)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="fu">mean</span>((efficient <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>tol <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">400</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">571</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>share_missed <span class="ot">&lt;-</span> <span class="fu">sapply</span>(n, <span class="cf">function</span>(nn) {</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  xbar <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(efficient, nn, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">abs</span>(xbar <span class="sc">-</span> mu) <span class="sc">&gt;=</span> tol)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>hoeffding_bound <span class="ot">&lt;-</span> <span class="fu">pmin</span>(<span class="dv">1</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> n <span class="sc">*</span> tol<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>chebyshev_bound <span class="ot">&lt;-</span> <span class="fu">pmin</span>(<span class="dv">1</span>, sigma2 <span class="sc">/</span> (n <span class="sc">*</span> tol<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> n,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">share_missed =</span> share_missed,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">hoeffding_bound =</span> hoeffding_bound,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">chebyshev_bound =</span> chebyshev_bound</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["n"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["share_missed"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["hoeffding_bound"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["chebyshev_bound"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"50","2":"0.1481","3":"0.7357588823","4":"0.47917534"},{"1":"100","2":"0.0408","3":"0.2706705665","4":"0.23958767"},{"1":"200","2":"0.0042","3":"0.0366312778","4":"0.11979384"},{"1":"400","2":"0.0000","3":"0.0006709253","4":"0.05989692"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For <span class="math inline">\(n = 50\)</span> and <span class="math inline">\(n = 100\)</span> Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in <span class="math inline">\(n\)</span> while the Chebyshev bound falls only like <span class="math inline">\(1/n\)</span>, so at <span class="math inline">\(n = 200\)</span> and <span class="math inline">\(n = 400\)</span> Hoeffding’s is the smaller. At <span class="math inline">\(n = 400\)</span> the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
@@ -1465,6 +1813,9 @@ Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Seri
 </div>
 <div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
 Blitzstein, Joseph K, and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9780429428357">https://doi.org/10.1201/9780429428357</a>.
+</div>
+<div id="ref-hoeffding1963" class="csl-entry" role="listitem">
+Hoeffding, Wassily. 1963. <span>“Probability Inequalities for Sums of Bounded Random Variables.”</span> <em>Journal of the American Statistical Association</em> 58 (301): 13–30. <a href="https://doi.org/10.1080/01621459.1963.10500830">https://doi.org/10.1080/01621459.1963.10500830</a>.
 </div>
 <div id="ref-seneta2013" class="csl-entry" role="listitem">
 Seneta, Eugene. 2013. <span>“A Tricentenary History of the Law of Large Numbers.”</span> <em>Bernoulli</em> 19 (4): 1088–121. <a href="https://doi.org/10.3150/12-BEJSP12">https://doi.org/10.3150/12-BEJSP12</a>.
@@ -2229,59 +2580,65 @@ window.addEventListener("load", alignEquationAnchorsWithDefault);
   <div class="nav-page nav-page-next">
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Limit theorems"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - data/auto.csv</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: limit-theorems-slides.html</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: limit-theorems-handout.pdf</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">  docx:</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: limit-theorems.docx</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Central Limit Theorem {#sec-clt}</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sec-CLT.qmd &gt;}}</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">py_require</span>(<span class="fu">c</span>(<span class="st">"numpy"</span>, <span class="st">"pandas"</span>))</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-clt-auto.qmd &gt;}}</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>::: {.videos}</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>5MinuteAI explains <span class="co">[</span><span class="ot">limit theorems</span><span class="co">](https://www.youtube.com/watch?v=6sQv1o-ttCw)</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>and gives a <span class="co">[</span><span class="ot">proof of the CLT</span><span class="co">](https://www.youtube.com/watch?v=-EI96KIYGWw)</span>,</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>following the University of Washington's CSE 312 <span class="co">[</span><span class="ot">@fiveminuteai_probstat</span><span class="co">]</span>.</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tail bounds {#sec-tail-bounds}</span></span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-markov.qmd &gt;}}</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-chebyshev.qmd &gt;}}</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-chebyshev-auto.qmd &gt;}}</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exr-chebyshev-sample-size.qmd &gt;}}</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sol-chebyshev-sample-size.qmd &gt;}}</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Limit theorems"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - data/auto.csv</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: limit-theorems-slides.html</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: limit-theorems-handout.pdf</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">  docx:</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: limit-theorems.docx</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Central Limit Theorem {#sec-clt}</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sec-CLT.qmd &gt;}}</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">py_require</span>(<span class="fu">c</span>(<span class="st">"numpy"</span>, <span class="st">"pandas"</span>))</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-clt-auto.qmd &gt;}}</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>::: {.videos}</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>5MinuteAI explains <span class="co">[</span><span class="ot">limit theorems</span><span class="co">](https://www.youtube.com/watch?v=6sQv1o-ttCw)</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>and gives a <span class="co">[</span><span class="ot">proof of the CLT</span><span class="co">](https://www.youtube.com/watch?v=-EI96KIYGWw)</span>,</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>following the University of Washington's CSE 312 <span class="co">[</span><span class="ot">@fiveminuteai_probstat</span><span class="co">]</span>.</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tail bounds {#sec-tail-bounds}</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-markov.qmd &gt;}}</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-chebyshev.qmd &gt;}}</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-chebyshev-auto.qmd &gt;}}</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exr-chebyshev-sample-size.qmd &gt;}}</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sol-chebyshev-sample-size.qmd &gt;}}</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_lem-hoeffding.qmd &gt;}}</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-hoeffding.qmd &gt;}}</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-hoeffding-auto.qmd &gt;}}</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
