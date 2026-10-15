@@ -1,5 +1,3 @@
-{{< slidebreak >}}
-
 :::{#thm-constant-prediction-decompose}
 #### Expected squared error of a constant prediction
 
