@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 01:35:38 (PDT)
+Last modified: 2026-10-15 01:43:39 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -432,6 +432,42 @@ Last modified: 2026-10-15 01:35:38 (PDT)
 >
 > The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
 
+## 3 The law of large numbers
+
+> **NOTE:**
+>
+> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
+>
+> \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left\|Y_n - c\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0 \\
+>
+> We write \\Y_n \overset{\scriptstyle p}{\longrightarrow}c\\.
+>
+> > **NOTE:**
+> >
+> > Casella and Berger ([2002](#ref-CaseBerg01), Def. 5.5.1).
+
+> **NOTE:**
+>
+> **Theorem 5 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
+>
+> \\ \bar X_n \overset{\scriptstyle p}{\longrightarrow}\mu \\
+>
+> > **NOTE:**
+> >
+> > Casella and Berger ([2002](#ref-CaseBerg01), Thm. 5.5.2).
+
+> **NOTE:**
+>
+> *Proof*. By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} = n\mu\\ and \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\, where \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n / n\\ has
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\bar X_n\right\]\mathclose{} &= \frac{1}{n}\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ \operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{} &= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+>
+> Fix \\\varepsilon \> 0\\ and let \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar X_n\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
+>
+> \\ \begin{aligned} 0 \le \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{} && \text{(definition of \$k\$)}\\ &\le \frac{1}{k^2} && \text{(Chebyshev's inequality)}\\ &= \frac{\sigma^2}{n \varepsilon^2} && \text{(substitute \$k\$)} \end{aligned} \\
+>
+> The bound goes to zero as \\n \to \infty\\, so the probability, squeezed between zero and the bound, goes to zero. This holds for every \\\varepsilon \> 0\\.
+
 ## References
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
@@ -441,6 +477,8 @@ Bienaymé, Irénée-Jules. 1853. “Considérations à l’appui de La Découver
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
 
 Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
+
+Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
 
 Hoeffding, Wassily. 1963. “Probability Inequalities for Sums of Bounded Random Variables.” *Journal of the American Statistical Association* 58 (301): 13–30. <https://doi.org/10.1080/01621459.1963.10500830>.
 
