@@ -3,12 +3,13 @@
 
 Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
 Among prediction functions $g(X)$ with $\E{g(X)^2} < \infty$,
-the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin)
-of the squared-error risk is the conditional expectation function, up to probability-$1$ equality:
+the conditional expectation function is a minimizer of the squared-error risk:
 
 $$\E{Y \mid X} \in \argmin_{g} \E{\sqf{Y - g(X)}},$$
 
-and any other minimizer $g$ satisfies $\P(g(X) = \E{Y \mid X}) = 1$.
+where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
+Moreover, every $g$ in that set satisfies $\P(g(X) = \E{Y \mid X}) = 1$,
+so the minimizer is unique up to probability-$1$ equality.
 
 :::
 
