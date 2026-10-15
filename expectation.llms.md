@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 17:51:58 (PDT)
+Last modified: 2026-10-14 23:01:57 (PDT)
 
 > **NOTE:**
 >
@@ -1248,6 +1248,18 @@ Last modified: 2026-10-14 17:51:58 (PDT)
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
 >
 > shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
+
+> **NOTE:**
+>
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among prediction functions \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the conditional expectation function is a minimizer of the squared-error risk:
+>
+> \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} \in \arg \min\_{g} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{},\\
+>
+> where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin). Moreover, every \\g\\ in that set satisfies \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\, so the minimizer is unique up to probability-\\1\\ equality.
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 11](#thm-best-predictor), \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ has risk no larger than that of any \\g\\, so it is a minimizer. If \\g\\ is also a minimizer, its risk equals that of \\g^\*\\, so the equality case of [Theorem 11](#thm-best-predictor) gives \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
 ## 4 Entropy and cross-entropy
 
