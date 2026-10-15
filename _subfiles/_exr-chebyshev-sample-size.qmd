@@ -5,7 +5,7 @@
 Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) draws of the fuel economy (`mpg`) of
 a car chosen at random from the Auto data,
 with mean $\mean$ and variance $\varpar$,
-and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 
 a.  Use @cor-sum-iid-moments and @thm-chebyshev to show that for every $\epsilon > 0$,
 
