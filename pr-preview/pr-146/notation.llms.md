@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 13:51:54 (PDT)
+Last modified: 2026-10-15 02:24:15 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -68,13 +68,15 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 ### 1.2 Summary of usage
 
-| Term | What it describes | Typical use | Example |
-|----|----|----|----|
-| Random | Single variable or event | Random variable, random outcome | Coin toss, die roll |
-| Stochastic | System or process in time/space | Stochastic process | Stock price evolution, Markov chain |
-| Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Regression model, Bayesian inference |
-
-Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
+> **NOTE:**
+>
+> | Term | What it describes | Typical use | Example |
+> |----|----|----|----|
+> | Random | Single variable or event | Random variable, random outcome | Coin toss, die roll |
+> | Stochastic | System or process in time/space | Stochastic process | Stock price evolution, Markov chain |
+> | Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Regression model, Bayesian inference |
+>
+> Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
 
 > **NOTE:**
 >

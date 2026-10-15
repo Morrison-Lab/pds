@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 13:51:54 (PDT)
+Last modified: 2026-10-15 02:24:15 (PDT)
 
 > **NOTE:**
 >
@@ -600,27 +600,29 @@ Last modified: 2026-10-14 13:51:54 (PDT)
 >
 > by [linearity of expectation](#thm-linearity-expectation).
 >
-> Show code
->
-> ``` r
-> x_labs <- c("X=0", "X=0", "X=1", "X=1")
-> y_labs <- c("Y=0", "Y=1", "Y=0", "Y=1")
-> probs <- c(0.2, 0.3, 0.1, 0.4)
->
-> plotly::plot_ly(
->   x = ~y_labs, y = ~probs, color = ~x_labs,
->   colors = c("steelblue", "tomato"),
->   type = "bar"
-> ) |>
->   plotly::layout(
->     barmode = "group",
->     xaxis = list(title = "Y"),
->     yaxis = list(title = "P(X = x, Y = y)", range = c(0, 0.5)),
->     legend = list(title = list(text = "X value"))
->   )
-> ```
->
-> Figure 1: Joint probability mass function \\\operatorname{P}(X = x, Y = y)\\. Marginal totals: \\\operatorname{P}(X = 0) = 0.5\\, \\\operatorname{P}(X = 1) = 0.5\\, \\\operatorname{P}(Y = 0) = 0.3\\, \\\operatorname{P}(Y = 1) = 0.7\\.
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > x_labs <- c("X=0", "X=0", "X=1", "X=1")
+> > y_labs <- c("Y=0", "Y=1", "Y=0", "Y=1")
+> > probs <- c(0.2, 0.3, 0.1, 0.4)
+> >
+> > plotly::plot_ly(
+> >   x = ~y_labs, y = ~probs, color = ~x_labs,
+> >   colors = c("steelblue", "tomato"),
+> >   type = "bar"
+> > ) |>
+> >   plotly::layout(
+> >     barmode = "group",
+> >     xaxis = list(title = "Y"),
+> >     yaxis = list(title = "P(X = x, Y = y)", range = c(0, 0.5)),
+> >     legend = list(title = list(text = "X value"))
+> >   )
+> > ```
+> >
+> > Figure 1: Joint probability mass function \\\operatorname{P}(X = x, Y = y)\\. Marginal totals: \\\operatorname{P}(X = 0) = 0.5\\, \\\operatorname{P}(X = 1) = 0.5\\, \\\operatorname{P}(Y = 0) = 0.3\\, \\\operatorname{P}(Y = 1) = 0.7\\.
 
 > **NOTE:**
 >
@@ -724,37 +726,39 @@ Last modified: 2026-10-14 13:51:54 (PDT)
 >
 > This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this density factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 3](#cor-fubini-joint) simply does not apply.
 >
-> Show code
->
-> ``` r
-> set.seed(204)
-> n <- 400
-> x_dep <- runif(n)
-> y_dep <- x_dep
-> x_ind <- runif(n)
-> y_ind <- runif(n)
->
-> plotly::plot_ly() |>
->   plotly::add_trace(
->     type = "scatter", mode = "markers",
->     x = x_ind, y = y_ind,
->     name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
->     marker = list(size = 5, color = "#999999", opacity = 0.5)
->   ) |>
->   plotly::add_trace(
->     type = "scatter", mode = "markers",
->     x = x_dep, y = y_dep,
->     name = "Actual (X, X) on diagonal",
->     marker = list(size = 6, color = "#b40426")
->   ) |>
->   plotly::layout(
->     xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
->     yaxis = list(title = "y", range = c(0, 1)),
->     legend = list(orientation = "h", y = -0.2)
->   )
-> ```
->
-> Figure 2: Samples from the joint distribution of \\(X, X)\\ (red, on the diagonal) versus an independent pair \\(X_1, X_2)\\ with the same marginals (grey, scattered over \\\[0, 1\]^2\\). The actual joint mass for \\(X, X)\\ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in \\\mathbb{R}^2\\ — so no joint density on \\\[0, 1\]^2\\ exists, and the “\\f_X(x)\\f_Y(y) = 1\\” calculation integrates against the wrong measure (the grey distribution).
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > set.seed(204)
+> > n <- 400
+> > x_dep <- runif(n)
+> > y_dep <- x_dep
+> > x_ind <- runif(n)
+> > y_ind <- runif(n)
+> >
+> > plotly::plot_ly() |>
+> >   plotly::add_trace(
+> >     type = "scatter", mode = "markers",
+> >     x = x_ind, y = y_ind,
+> >     name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
+> >     marker = list(size = 5, color = "#999999", opacity = 0.5)
+> >   ) |>
+> >   plotly::add_trace(
+> >     type = "scatter", mode = "markers",
+> >     x = x_dep, y = y_dep,
+> >     name = "Actual (X, X) on diagonal",
+> >     marker = list(size = 6, color = "#b40426")
+> >   ) |>
+> >   plotly::layout(
+> >     xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
+> >     yaxis = list(title = "y", range = c(0, 1)),
+> >     legend = list(orientation = "h", y = -0.2)
+> >   )
+> > ```
+> >
+> > Figure 2: Samples from the joint distribution of \\(X, X)\\ (red, on the diagonal) versus an independent pair \\(X_1, X_2)\\ with the same marginals (grey, scattered over \\\[0, 1\]^2\\). The actual joint mass for \\(X, X)\\ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in \\\mathbb{R}^2\\ — so no joint density on \\\[0, 1\]^2\\ exists, and the “\\f_X(x)\\f_Y(y) = 1\\” calculation integrates against the wrong measure (the grey distribution).
 
 > **NOTE:**
 >
@@ -764,30 +768,32 @@ Last modified: 2026-10-14 13:51:54 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \int_0^1\\\int_0^y (x + y) \cdot 2\\dx\\dy && \text{(joint-distribution form of Fubini--Tonelli, over the support } 0 \le x \le y \le 1 \text{)} \\&= 2\int_0^1 \mathopen{}\left\[\frac{x^2}{2} + xy\right\]\mathclose{}\_{x=0}^{x=y}\\dy && \text{(antiderivative in } x \text{)} \\&= 2\int_0^1 \mathopen{}\left(\frac{y^2}{2} + y^2\right)\mathclose{}\\dy && \text{(evaluate at the bounds)} \\&= 2\int_0^1 \frac{3y^2}{2}\\dy && \text{(add)} \\&= 3\int_0^1 y^2\\dy && \text{(simplify the constant)} \\&= 3 \cdot\frac{1}{3} && \text{(integrate)} \\&= 1 && \text{(multiply)} \end{aligned} \\
 >
-> Show code
->
-> ``` r
-> n_grid <- 51
-> x_seq <- seq(0, 1, length.out = n_grid)
-> y_seq <- seq(0, 1, length.out = n_grid)
->
-> z_mat <- outer(x_seq, y_seq, function(x, y) {
->   z <- rep(2, length(x))
->   z[x > y] <- NA
->   z
-> })
->
-> plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
->   plotly::add_surface(showscale = FALSE) |>
->   plotly::layout(scene = list(
->     xaxis = list(title = "x"),
->     yaxis = list(title = "y"),
->     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
->     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
->   ))
-> ```
->
-> Figure 3: Joint density \\f\_{X,Y}(x, y) = 2\\ on the triangular support \\\\(x, y) : 0 \le x \le y \le 1\\\\, and zero elsewhere. The total “volume” under the density is \\2 \cdot \tfrac{1}{2} = 1\\, as required.
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > n_grid <- 51
+> > x_seq <- seq(0, 1, length.out = n_grid)
+> > y_seq <- seq(0, 1, length.out = n_grid)
+> >
+> > z_mat <- outer(x_seq, y_seq, function(x, y) {
+> >   z <- rep(2, length(x))
+> >   z[x > y] <- NA
+> >   z
+> > })
+> >
+> > plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
+> >   plotly::add_surface(showscale = FALSE) |>
+> >   plotly::layout(scene = list(
+> >     xaxis = list(title = "x"),
+> >     yaxis = list(title = "y"),
+> >     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
+> >     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
+> >   ))
+> > ```
+> >
+> > Figure 3: Joint density \\f\_{X,Y}(x, y) = 2\\ on the triangular support \\\\(x, y) : 0 \le x \le y \le 1\\\\, and zero elsewhere. The total “volume” under the density is \\2 \cdot \tfrac{1}{2} = 1\\, as required.
 
 > **NOTE:**
 >
@@ -994,32 +1000,34 @@ Last modified: 2026-10-14 13:51:54 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \tfrac{1}{2}(0.4) + 1(0.6) \\ &= 0.2 + 0.6 \\ &= 0.8. \end{aligned} \\
 >
-> Show code
->
-> ``` r
-> x_fine <- seq(0, 2, by = 0.005)
-> df <- tibble::tibble(
->   x = c(x_fine[x_fine <= 1], x_fine),
->   density = c(rep(0.4, sum(x_fine <= 1)), rep(0.3, length(x_fine))),
->   label = c(
->     rep("Y = 0  (P = 0.4)", sum(x_fine <= 1)),
->     rep("Y = 1  (P = 0.6)", length(x_fine))
->   )
-> )
->
-> plotly::plot_ly(
->   df, x = ~x, y = ~density, color = ~label,
->   colors = c("steelblue", "tomato")
-> ) |>
->   plotly::add_lines() |>
->   plotly::layout(
->     xaxis = list(title = "x"),
->     yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
->     legend = list(title = list(text = "Y value"))
->   )
-> ```
->
-> Figure 4: Joint density \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ for each value of the discrete variable \\Y\\. The area under each component integrates to \\\operatorname{P}(Y = y)\\: \\0.4 \cdot 1 = 0.4\\ (blue) and \\0.3 \cdot 2 = 0.6\\ (red), summing to 1.
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > x_fine <- seq(0, 2, by = 0.005)
+> > df <- tibble::tibble(
+> >   x = c(x_fine[x_fine <= 1], x_fine),
+> >   density = c(rep(0.4, sum(x_fine <= 1)), rep(0.3, length(x_fine))),
+> >   label = c(
+> >     rep("Y = 0  (P = 0.4)", sum(x_fine <= 1)),
+> >     rep("Y = 1  (P = 0.6)", length(x_fine))
+> >   )
+> > )
+> >
+> > plotly::plot_ly(
+> >   df, x = ~x, y = ~density, color = ~label,
+> >   colors = c("steelblue", "tomato")
+> > ) |>
+> >   plotly::add_lines() |>
+> >   plotly::layout(
+> >     xaxis = list(title = "x"),
+> >     yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
+> >     legend = list(title = list(text = "Y value"))
+> >   )
+> > ```
+> >
+> > Figure 4: Joint density \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ for each value of the discrete variable \\Y\\. The area under each component integrates to \\\operatorname{P}(Y = y)\\: \\0.4 \cdot 1 = 0.4\\ (blue) and \\0.3 \cdot 2 = 0.6\\ (red), summing to 1.
 
 > **NOTE:**
 >
@@ -1248,6 +1256,18 @@ Last modified: 2026-10-14 13:51:54 (PDT)
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
 >
 > shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
+
+> **NOTE:**
+>
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among prediction functions \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the conditional expectation function is a minimizer of the squared-error risk:
+>
+> \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} \in \arg \min\_{g} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{},\\
+>
+> where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin). Moreover, every \\g\\ in that set satisfies \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\, so the minimizer is unique up to probability-\\1\\ equality.
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 11](#thm-best-predictor), \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ has risk no larger than that of any \\g\\, so it is a minimizer. If \\g\\ is also a minimizer, its risk equals that of \\g^\*\\, so the equality case of [Theorem 11](#thm-best-predictor) gives \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
 ## 4 Entropy and cross-entropy
 
