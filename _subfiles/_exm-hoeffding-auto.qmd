@@ -31,11 +31,13 @@ share_missed <- sapply(n, function(nn) {
   xbar <- replicate(10000, mean(sample(efficient, nn, replace = TRUE)))
   mean(abs(xbar - mu) >= tol)
 })
+hoeffding_bound <- pmin(1, 2 * exp(-2 * n * tol^2))
+chebyshev_bound <- pmin(1, sigma2 / (n * tol^2))
 data.frame(
   n = n,
   share_missed = share_missed,
-  hoeffding_bound = pmin(1, 2 * exp(-2 * n * tol^2)),
-  chebyshev_bound = pmin(1, sigma2 / (n * tol^2))
+  hoeffding_bound = hoeffding_bound,
+  chebyshev_bound = chebyshev_bound
 )
 ```
 
@@ -43,8 +45,6 @@ data.frame(
 #| include: false
 # The claims the prose makes: both bounds hold, and Hoeffding's bound is the
 # smaller one from n = 200 on, and not before.
-hoeffding_bound <- pmin(1, 2 * exp(-2 * n * tol^2))
-chebyshev_bound <- pmin(1, sigma2 / (n * tol^2))
 stopifnot(
   all(share_missed <= hoeffding_bound),
   all(share_missed <= chebyshev_bound),
