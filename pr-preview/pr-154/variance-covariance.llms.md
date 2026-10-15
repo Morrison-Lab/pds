@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 23:44:23 (PDT)
+Last modified: 2026-10-15 00:05:31 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -296,7 +296,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > **Corollary 1 (The mean is the best constant prediction under squared error)** Under the assumptions of [Theorem 5](#thm-constant-prediction-decompose),
 >
-> \\ \mu= \arg \min\_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{} \quad \text{and} \quad \min\_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}, \\
+> \\ \arg \min\_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{} = \mathopen{}\left\\\mu\right\\\mathclose{} \quad \text{and} \quad \min\_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}, \\
 >
 > where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
 
@@ -321,7 +321,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > )
 > ```
 >
-> The two columns agree, as [Theorem 5](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of `mpg`, as [Corollary 1](#cor-best-constant) says; the median and \\c = 20\\ are each worse by \\\mathopen{}\left(\mu- c\right)^2\mathclose{}\\.
+> The two columns agree, as [Theorem 5](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and \\c = 20\\ are each worse by \\\mathopen{}\left(\mu- c\right)^2\mathclose{}\\.
 
 ## 4 Bias, variance, and prediction error
 

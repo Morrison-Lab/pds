@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-14 23:44:23 (PDT)</p>
+  <p class="date">Last modified: 2026-10-15 00:05:31 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -863,7 +863,7 @@ e(2) &amp;= 2 - 3.5 \\
 <div id="cor-best-constant" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 1 (The mean is the best constant prediction under squared error)</strong></span> Under the assumptions of <a href="#/thm-constant-prediction-decompose" class="quarto-xref">Theorem&nbsp;5</a>,</p>
 <p><span class="math display">\[
-\mu= \arg \min_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left[\mathopen{}\left(Y - c\right)^2\mathclose{}\right]\mathclose{}
+\arg \min_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left[\mathopen{}\left(Y - c\right)^2\mathclose{}\right]\mathclose{} = \mathopen{}\left\{\mu\right\}\mathclose{}
 \quad \text{and} \quad
 \min_{c \in \mathbb{R}} \operatorname{E}\mathopen{}\left[\mathopen{}\left(Y - c\right)^2\mathclose{}\right]\mathclose{} = \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{},
 \]</span></p>
@@ -896,7 +896,7 @@ e(2) &amp;= 2 - 3.5 \\
 </div>
 </div>
 </div>
-<p>The two columns agree, as <a href="#/thm-constant-prediction-decompose" class="quarto-xref">Theorem&nbsp;5</a> says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of <code>mpg</code>, as <a href="#/cor-best-constant" class="quarto-xref">Corollary&nbsp;1</a> says; the median and <span class="math inline">\(c = 20\)</span> are each worse by <span class="math inline">\(\mathopen{}\left(\mu- c\right)^2\mathclose{}\)</span>.</p>
+<p>The two columns agree, as <a href="#/thm-constant-prediction-decompose" class="quarto-xref">Theorem&nbsp;5</a> says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of <code>mpg</code> over these cars (divisor the number of cars, not one fewer), as <a href="#/cor-best-constant" class="quarto-xref">Corollary&nbsp;1</a> says; the median and <span class="math inline">\(c = 20\)</span> are each worse by <span class="math inline">\(\mathopen{}\left(\mu- c\right)^2\mathclose{}\)</span>.</p>
 </div>
 </section>
 <section id="sec-bias-variance-prediction" class="slide level2 scrollable" data-number="4">
