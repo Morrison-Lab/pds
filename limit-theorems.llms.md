@@ -14,19 +14,19 @@ Code
 
 Published
 
-Last modified: 2026-10-15 09:10:11 (PDT)
+Last modified: 2026-10-15 12:42:26 (PDT)
 
 ## 1 The Central Limit Theorem
 
 > **NOTE:**
 >
-> *Remark*. The sum of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. [Theorem 1](#thm-clt) makes this precise.
+> *Remark*. The average of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. [Theorem 1](#thm-clt) makes this precise.
 
 > **NOTE:**
 >
-> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
+> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
 >
-> \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z) \\
+> \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\\(\bar X_n - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z) \\
 >
 > where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the [standard normal distribution](random-variables.llms.md#def-std-normal) \\\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\\.
 
@@ -36,7 +36,21 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 1 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then:
+> **Corollary 1 (Central Limit Theorem for a sum)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
+>
+> \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z) \\
+
+> **NOTE:**
+>
+> *Proof*. Since \\S_n = n\bar X_n\\,
+>
+> \\ \frac{S_n - n\mu}{\sigma\sqrt{n}} = \frac{n(\bar X_n - \mu)}{\sigma\sqrt{n}} = \frac{\sqrt{n}\\(\bar X_n - \mu)}{\sigma}, \\
+>
+> so the event in this corollary is the event in [Theorem 1](#thm-clt), and the limits agree.
+
+> **NOTE:**
+>
+> **Corollary 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} &= n\mu\\ \operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} &= n\sigma^2 \end{aligned} \\
 
@@ -52,7 +66,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. In practice, [Theorem 1](#thm-clt) justifies approximating \\S_n\\ by a normal distribution with mean \\n\mu\\ and variance \\n\sigma^2\\, which by [Corollary 1](#cor-sum-iid-moments) are exactly the mean and variance of \\S_n\\.
+> *Remark*. In practice, [Theorem 1](#thm-clt) justifies approximating \\\bar X_n\\ by a normal distribution with mean \\\mu\\ and variance \\\sigma^2/n\\, and [Corollary 1](#cor-clt-sum) justifies approximating \\S_n\\ by a normal distribution with mean \\n\mu\\ and variance \\n\sigma^2\\. By [Corollary 2](#cor-sum-iid-moments), these are exactly the means and variances of \\\bar X_n = S_n/n\\ and \\S_n\\.
 
 > **NOTE:**
 >
@@ -99,13 +113,13 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 > >
 > > Figure 2: Distribution of the sum of five dice
 >
-> For example, the exact probability that five dice total at most 15 is \\\Pr(S_5 \le 15) = 0.3052\\. The normal approximation that [Theorem 1](#thm-clt) suggests, with mean \\5 \cdot 3.5 = 17.5\\ and variance \\5 \cdot 35/12 \approx 14.58\\, evaluated at \\15.5\\ to account for \\S_5\\ taking only integer values, gives \\\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002\\.
+> For example, the exact probability that five dice total at most 15 is \\\Pr(S_5 \le 15) = 0.3052\\. The normal approximation that [Corollary 1](#cor-clt-sum) suggests, with mean \\5 \cdot 3.5 = 17.5\\ and variance \\5 \cdot 35/12 \approx 14.58\\, evaluated at \\15.5\\ to account for \\S_5\\ taking only integer values, gives \\\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002\\.
 
 > **NOTE:**
 >
 > **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
-> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the mean and variance of the 392 horsepower values. The sum \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 1](#cor-sum-iid-moments), so the sample mean \\S_n/n\\ has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\. The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s mean.
+> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the mean and variance of the 392 horsepower values. The sample mean \\\bar X_n = S_n/n\\ has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\, because \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 2](#cor-sum-iid-moments). The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s mean.
 >
 > ## Python
 >
@@ -206,7 +220,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 > >
 > > Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.
 >
-> The sample means for \\n = 1\\ are just single cars, so they are skewed. By \\n = 30\\ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of \\\sigma/\sqrt{n}\\ at every \\n\\, as [Corollary 1](#cor-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at \\n = 1\\ to 0.48 at \\n = 5\\ and 0.2 at \\n = 30\\.
+> The sample means for \\n = 1\\ are just single cars, so they are skewed. By \\n = 30\\ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of \\\sigma/\sqrt{n}\\ at every \\n\\, as [Corollary 2](#cor-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at \\n = 1\\ to 0.48 at \\n = 5\\ and 0.2 at \\n = 30\\.
 
 > **NOTE:**
 >
@@ -272,7 +286,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 >
 > **Exercise 1 (How many cars to estimate average fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
 >
-> 1.  Use [Corollary 1](#cor-sum-iid-moments) and [Theorem 3](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
+> 1.  Use [Corollary 2](#cor-sum-iid-moments) and [Theorem 3](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
 >
 >     \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{} \le \frac{\sigma^2}{n\epsilon^2} \\
 >
@@ -284,7 +298,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 >
 > *Solution 1*.
 >
-> 1.  By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\ for \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 3](#thm-chebyshev) to \\\bar X_n\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
+> 1.  By [Corollary 2](#cor-sum-iid-moments), \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\ for \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 3](#thm-chebyshev) to \\\bar X_n\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
 >
 > 2.  Setting \\\sigma^2/(n \cdot 1^2) \le 0.05\\ gives \\n \ge 20\sigma^2\\.
 >
@@ -315,7 +329,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar X_n\\, whose variance is \\\sigma^2/n\\ by [Corollary 1](#cor-sum-iid-moments).
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar X_n\\, whose variance is \\\sigma^2/n\\ by [Corollary 2](#cor-sum-iid-moments).
 
 > **NOTE:**
 >
@@ -395,7 +409,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 2 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 5](#thm-hoeffding), for every \\\varepsilon\> 0\\,
+> **Corollary 3 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 5](#thm-hoeffding), for every \\\varepsilon\> 0\\,
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} \le 2e^{-2n\varepsilon^2}. \tag{2}\\
 
@@ -415,7 +429,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 4](#thm-chebyshev-sample-mean)).
+> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 3](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 4](#thm-chebyshev-sample-mean)).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -468,7 +482,7 @@ Last modified: 2026-10-15 09:10:11 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} = n\mu\\ and \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\, where \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n / n\\ has
+> *Proof*. By [Corollary 2](#cor-sum-iid-moments), \\\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} = n\mu\\ and \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\, where \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n / n\\ has
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\bar X_n\right\]\mathclose{} &= \frac{1}{n}\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ \operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{} &= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
 >
