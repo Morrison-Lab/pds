@@ -65,7 +65,7 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 - **Code chunks**: HTML output folds code by default: `_quarto-website.yml` sets `code-fold: true` (with `code-tools: true`, so readers can show all code at once), as rme does. Keep the default when the *output* (plot, table) is the point and the code is incidental. Set `#| code-fold: false` on tutorial code, short examples, code that is the main focus, and chunks where the console output is the main content.
 - **R style**: respect `.lintr.R`. Run `lintr::lint_dir()` before declaring R changes done.
 - **Definitions and results**: one term per `#def-` div, aliases ("also called") in the same div, in bold and in the title, and a second new term in its own div that links to the first; one result per theorem-type div. See "Definitions and results" in `.github/copilot-instructions.md`.
-- **Useful resources**: a course, book or video that covers a topic pds teaches goes in that page's Further reading section,
+- **Useful resources**: a course, book or video that covers a topic pds teaches goes in the Further reading section of the matching page,
   even when lds already lists it in a directory (Ezra, 2026-10-15).
   Check each license: adapt with attribution only when the license allows it, and otherwise link.
   See [`track-useful-resources`](https://github.com/Morrison-Lab/ai-config/blob/main/shared/workflow/track-useful-resources.md).
