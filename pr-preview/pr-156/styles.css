@@ -284,6 +284,15 @@ main table col {
   width: auto !important;
 }
 
+/* A native <caption> is a table-caption box inside the block table, so on a
+ * narrow table it wrapped into a column as wide as the table. Let it take its
+ * natural width, up to the column. */
+main table > caption {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+}
+
 /* Number the lines of every code block, so a line can be named in class.
    Quarto's own `code-line-numbers: true` would do this, but downlit cannot link
    R functions to their documentation (`code-link`) in a numbered block, so the
