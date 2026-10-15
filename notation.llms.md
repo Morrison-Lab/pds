@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 02:44:50 (PDT)
+Last modified: 2026-10-15 02:50:42 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -44,7 +44,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Definition 2 (Stochastic process)** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “random process” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
+> **Definition 2 (Stochastic process (random process))** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “**random process**” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
 
 > **NOTE:**
 >

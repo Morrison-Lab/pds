@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 02:44:50 (PDT)
+Last modified: 2026-10-15 02:50:42 (PDT)
 
 > **NOTE:**
 >
@@ -677,7 +677,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 9 (Multivariate normal distribution)** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
+> **Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
 >
 > \\ \operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=} \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{1}{2} {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})}, \quad \tilde{x}\in \mathbb{R}^p \\
 >

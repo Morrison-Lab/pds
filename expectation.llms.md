@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 02:44:50 (PDT)
+Last modified: 2026-10-15 02:50:42 (PDT)
 
 > **NOTE:**
 >
@@ -1331,7 +1331,7 @@ Last modified: 2026-10-15 02:44:50 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Kullback–Leibler divergence)** For \\p\\ and \\q\\ as in [Definition 15](#def-cross-entropy), the **Kullback–Leibler divergence** (KL divergence, or relative entropy) of \\q\\ from \\p\\ is
+> **Definition 16 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 15](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
 

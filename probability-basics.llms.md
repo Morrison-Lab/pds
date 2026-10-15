@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 02:44:50 (PDT)
+Last modified: 2026-10-15 02:50:42 (PDT)
 
 ## 1 Defining probabilities
 
@@ -85,7 +85,7 @@ Last modified: 2026-10-15 02:44:50 (PDT)
 
 > **NOTE:**
 >
-> **Definition 6 (Mutually exclusive events)** Finitely or countably many sets \\A_1, A_2, \ldots\\, such as [events](#def-event), are **mutually exclusive** (also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**) when no two of them share an element:
+> **Definition 6 (Mutually exclusive events (disjoint, pairwise disjoint, mutually disjoint))** Finitely or countably many sets \\A_1, A_2, \ldots\\, such as [events](#def-event), are **mutually exclusive** (also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**) when no two of them share an element:
 >
 > \\A_i \cap A_j = \emptyset \quad \text{for all } i \neq j\\
 
