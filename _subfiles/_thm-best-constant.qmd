@@ -46,7 +46,7 @@ $$
 Under the assumptions of @thm-constant-prediction-decompose,
 
 $$
-\mean = \argmin_{c \in \reals} \E{\sqf{Y - c}}
+\argmin_{c \in \reals} \E{\sqf{Y - c}} = \set{\mean}
 \quad \text{and} \quad
 \min_{c \in \reals} \E{\sqf{Y - c}} = \Var{Y},
 $$
@@ -103,7 +103,7 @@ stopifnot(
 
 The two columns agree, as @thm-constant-prediction-decompose says.
 The mean, `{r} round(mu, 2)`, has the smallest expected squared error, `{r} round(sigma2, 2)`,
-which is the variance of `mpg`, as @cor-best-constant says;
+which is the variance of `mpg` over these cars (divisor the number of cars, not one fewer), as @cor-best-constant says;
 the median and $c = 20$ are each worse by $\sqf{\mean - c}$.
 
 :::
