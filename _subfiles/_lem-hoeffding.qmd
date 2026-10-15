@@ -1,0 +1,132 @@
+{{< slidebreak >}}
+
+:::{#lem-hoeffding}
+#### Hoeffding's lemma
+
+Let $X$ be a random variable with $0 \le X \le 1$ and mean $\mean$.
+Then for every real number $s$,
+
+$$
+\E{e^{s(X - \mean)}} \le e^{s^2/8}.
+$$
+
+:::
+
+::: proof
+
+First bound $e^{sX}$ by a line.
+The function $x \mapsto e^{x}$ is convex, and for $0 \le X \le 1$ the number $sX$ is the weighted average $(1 - X) \cdot 0 + X \cdot s$,
+so
+
+$$
+\ba
+e^{sX}
+&\le (1 - X) e^{0} + X e^{s}
+&& \text{(convexity of the exponential)} \\
+&= 1 - X + X e^{s}
+&& \text{(} e^{0} = 1 \text{)}
+\ea
+$$
+
+Take the expectation of both sides,
+which preserves the inequality:
+
+$$
+\ba
+\E{e^{sX}}
+&\le 1 - \E{X} + \E{X} e^{s}
+&& \text{(linearity of expectation)} \\
+&= 1 - \mean + \mean e^{s}
+&& \text{(definition of } \mean \text{)}
+\ea
+$$
+
+The number $1 - \mean + \mean e^{s}$ is a weighted average of $1$ and $e^{s}$ with weights $1 - \mean$ and $\mean$,
+so it is positive.
+Multiply by the constant $e^{-s\mean}$ and write the result as an exponential:
+
+$$
+\ba
+\E{e^{s(X - \mean)}}
+&= e^{-s\mean} \E{e^{sX}}
+&& \text{(} e^{-s\mean} \text{ is a constant)} \\
+&\le e^{-s\mean} \paren{1 - \mean + \mean e^{s}}
+&& \text{(the bound above)} \\
+&= e^{L(s)}
+&& \text{(define } L(s) \eqdef -s\mean + \log\paren{1 - \mean + \mean e^{s}} \text{)}
+\ea
+$$
+
+It remains to show $L(s) \le s^2/8$.
+Write
+
+$$
+p(s) \eqdef \frac{\mean e^{s}}{1 - \mean + \mean e^{s}},
+$$
+
+which lies in $[0, 1]$.
+The first derivative of $L$ is
+
+$$
+\ba
+L'(s)
+&= -\mean + \frac{\mean e^{s}}{1 - \mean + \mean e^{s}}
+&& \text{(chain rule for the logarithm)} \\
+&= -\mean + p(s)
+&& \text{(definition of } p \text{)}
+\ea
+$$
+
+The derivative of $p$ is
+
+$$
+\ba
+p'(s)
+&= \frac{\mean e^{s}\paren{1 - \mean + \mean e^{s}} - \mean e^{s} \cdot \mean e^{s}}{\paren{1 - \mean + \mean e^{s}}^2}
+&& \text{(quotient rule)} \\
+&= \frac{\mean e^{s}\paren{1 - \mean}}{\paren{1 - \mean + \mean e^{s}}^2}
+&& \text{(the } \mean^2 e^{2s} \text{ terms cancel)} \\
+&= p(s)\paren{1 - p(s)}
+&& \text{(} 1 - p(s) = \tfrac{1 - \mean}{1 - \mean + \mean e^{s}} \text{)}
+\ea
+$$
+
+so $L''(s) = p'(s) = p(s)\paren{1 - p(s)}$.
+Completing the square gives
+
+$$
+\ba
+p(s)\paren{1 - p(s)}
+&= \frac{1}{4} - \paren{p(s) - \frac{1}{2}}^2
+&& \text{(complete the square)} \\
+&\le \frac{1}{4}
+&& \text{(a square is not negative)}
+\ea
+$$
+
+At $s = 0$, $L(0) = 0 + \log 1 = 0$ and $L'(0) = -\mean + \mean = 0$.
+By Taylor's theorem with the Lagrange remainder,
+there is a number $\xi$ between $0$ and $s$ with
+
+$$
+\ba
+L(s)
+&= L(0) + L'(0)\, s + \frac{L''(\xi)}{2} s^2
+&& \text{(Taylor's theorem)} \\
+&= \frac{L''(\xi)}{2} s^2
+&& \text{(} L(0) = L'(0) = 0 \text{)} \\
+&\le \frac{s^2}{8}
+&& \text{(} L''(\xi) \le \tfrac{1}{4} \text{)}
+\ea
+$$
+
+Therefore $\E{e^{s(X - \mean)}} \le e^{L(s)} \le e^{s^2/8}$.
+
+:::
+
+::: {.remark .notes}
+
+The bound on the moment generating function $\E{e^{s(X - \mean)}}$ is the step of Hoeffding's 1963 paper [@hoeffding1963] that the literature calls Hoeffding's lemma.
+The next result uses it to bound the tails of an average.
+
+:::
