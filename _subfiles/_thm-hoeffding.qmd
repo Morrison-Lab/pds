@@ -68,6 +68,7 @@ $$
 $$
 
 The right side is smallest where the exponent $-sn\tolout + ns^2/8$ is smallest.
+The exponent is a quadratic in $s$ with a positive leading coefficient, so it has one minimum, where its derivative is zero.
 Its derivative in $s$ is $-n\tolout + ns/4$,
 which is zero at $s = 4\tolout$, and $4\tolout > 0$ is allowed.
 There the exponent is
