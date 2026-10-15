@@ -14,7 +14,7 @@ The code below draws $10{,}000$ samples of each size,
 computes the proportion of samples whose share misses $\mean$ by at least $\tolout = 0.1$,
 and sets that proportion beside the bound $2e^{-2n\tolout^2}$ of @eq-hoeffding
 and the bound $\varpar/(n\tolout^2)$ that Chebyshev's inequality gives
-(@exr-chebyshev-sample-size).
+(@thm-chebyshev-sample-mean).
 
 ```{r}
 #| label: hoeffding-auto
