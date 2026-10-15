@@ -4,7 +4,7 @@
 #### Hoeffding's inequality
 
 Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables with $0 \le X_i \le 1$ and mean $\mean$,
-and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 Then for every $\tolout > 0$,
 
 $$

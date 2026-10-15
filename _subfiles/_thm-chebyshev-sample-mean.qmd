@@ -3,7 +3,7 @@
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables
 with mean $\mean$ and finite variance $\varpar > 0$,
-and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 Then for every $\epsilon > 0$:
 
 $$
