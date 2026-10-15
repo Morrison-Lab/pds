@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-14 18:00:27 (PDT)</p>
+  <p class="date">Last modified: 2026-10-15 02:46:22 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
@@ -655,7 +655,7 @@ f(x) \stackrel{\text{def}}{=}\begin{cases}
 <section class="slide level2">
 
 <div id="def-normal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (Normal distribution)</strong></span> A random variable <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> (or <strong>Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and variance parameter <span class="math inline">\(\sigma^2&gt; 0\)</span>, written <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span>, if <span class="math inline">\(X\)</span> is continuous with <a href="#/def-pdf">density</a>:</p>
+<p><span class="theorem-title"><strong>Definition 10 (Normal distribution (Gaussian distribution))</strong></span> A random variable <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> (or <strong>Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and variance parameter <span class="math inline">\(\sigma^2&gt; 0\)</span>, written <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span>, if <span class="math inline">\(X\)</span> is continuous with <a href="#/def-pdf">density</a>:</p>
 <p><span class="math display">\[\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\]</span></p>
 </div>
 <div id="exm-normal" class="theorem example">
@@ -1168,7 +1168,7 @@ f(x)
 <section class="slide level2">
 
 <div id="def-joint-pmf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 17 (Joint probability mass function)</strong></span> For <a href="#/def-jointly-distributed">jointly distributed</a> discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the <strong>joint probability mass function</strong> (joint PMF) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is the probability that <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span> takes the value <span class="math inline">\(y\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 17 (Joint probability mass function (joint PMF))</strong></span> For <a href="#/def-jointly-distributed">jointly distributed</a> discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the <strong>joint probability mass function</strong> (<strong>joint PMF</strong>) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is the probability that <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span> takes the value <span class="math inline">\(y\)</span>:</p>
 <p><span class="math display">\[\operatorname{P}(X = x,\, Y = y) \stackrel{\text{def}}{=}\Pr(\{X = x\} \cap \{Y = y\})\]</span></p>
 </div>
 </section>
@@ -1269,7 +1269,7 @@ f(x)
 <section class="slide level2">
 
 <div id="def-joint-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 19 (Joint probability density function)</strong></span> For <a href="#/def-jointly-distributed">jointly distributed</a> continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, a <strong>joint probability density function</strong> (joint density) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(f_{X,Y}(x, y)\)</span> or <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(f_{X,Y}\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span> that satisfies:</p>
+<p><span class="theorem-title"><strong>Definition 19 (Joint probability density function (joint density))</strong></span> For <a href="#/def-jointly-distributed">jointly distributed</a> continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, a <strong>joint probability density function</strong> (<strong>joint density</strong>) of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, denoted <span class="math inline">\(f_{X,Y}(x, y)\)</span> or <span class="math inline">\(\operatorname{p}(X = x,\, Y = y)\)</span>, is a function <span class="math inline">\(f_{X,Y}\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span> that satisfies:</p>
 <ul>
 <li><span class="math inline">\(f_{X,Y}(x, y) \ge 0\)</span> for every <span class="math inline">\((x, y)\)</span>.</li>
 <li>The integral of <span class="math inline">\(f_{X,Y}\)</span> over any region <span class="math inline">\(A \subseteq \mathbb{R}^2\)</span> is the probability that the pair <span class="math inline">\((X, Y)\)</span> falls in <span class="math inline">\(A\)</span>: <span class="math display">\[\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy\]</span></li>
@@ -1560,7 +1560,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <h2><span class="header-section-number">3</span> Survival, hazard, and cumulative hazard functions</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-surv-fn div. -->
 <div id="def-surv-fn" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 21 (Survival function)</strong></span> The <strong>survival function</strong> (or <strong>survivor function</strong>) of a random variable <span class="math inline">\(T\)</span>, denoted <span class="math inline">\(\operatorname{S}(t)\)</span>, is the probability that <span class="math inline">\(T\)</span> exceeds <span class="math inline">\(t\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 21 (Survival function (survivor function))</strong></span> The <strong>survival function</strong> (or <strong>survivor function</strong>) of a random variable <span class="math inline">\(T\)</span>, denoted <span class="math inline">\(\operatorname{S}(t)\)</span>, is the probability that <span class="math inline">\(T\)</span> exceeds <span class="math inline">\(t\)</span>:</p>
 <p><span class="math display">\[\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T &gt; t)\]</span></p>
 </div>
 <aside class="notes proof remark">
@@ -1640,7 +1640,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <section class="slide level2">
 
 <div id="def-hazard" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 22 (Hazard function)</strong></span> The <strong>hazard function</strong> (also called the <strong>hazard rate</strong> or <strong>hazard rate function</strong>) of a continuous random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span>, typically denoted <span class="math inline">\({\lambda}(t)\)</span> or <span class="math inline">\(\operatorname{h}(t)\)</span>, is the limit of the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> falls in an interval starting at <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>, divided by the width of that interval, as that width shrinks to 0:</p>
+<p><span class="theorem-title"><strong>Definition 22 (Hazard function (hazard rate, hazard rate function))</strong></span> The <strong>hazard function</strong> (also called the <strong>hazard rate</strong> or <strong>hazard rate function</strong>) of a continuous random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span>, typically denoted <span class="math inline">\({\lambda}(t)\)</span> or <span class="math inline">\(\operatorname{h}(t)\)</span>, is the limit of the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> falls in an interval starting at <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>, divided by the width of that interval, as that width shrinks to 0:</p>
 <p><span class="math display">\[{\lambda}(t) \stackrel{\text{def}}{=}\lim_{\Delta\downarrow 0} \frac{\Pr(t \le T &lt; t + \Delta\mid T \ge t)}{\Delta}\]</span></p>
 </div>
 <aside class="notes proof remark">
