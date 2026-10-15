@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 23:23:36 (PDT)
+Last modified: 2026-10-15 00:07:50 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -371,7 +371,7 @@ Last modified: 2026-10-14 23:23:36 (PDT)
 >
 > \\ \Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{} \le e^{-sn\varepsilon+ ns^2/8}. \\
 >
-> The right side is smallest where the exponent \\-sn\varepsilon+ ns^2/8\\ is smallest. Its derivative in \\s\\ is \\-n\varepsilon+ ns/4\\, which is zero at \\s = 4\varepsilon\\, and \\4\varepsilon\> 0\\ is allowed. There the exponent is
+> The right side is smallest where the exponent \\-sn\varepsilon+ ns^2/8\\ is smallest. The exponent is a quadratic in \\s\\ with a positive leading coefficient, so it has one minimum, where its derivative is zero. Its derivative in \\s\\ is \\-n\varepsilon+ ns/4\\, which is zero at \\s = 4\varepsilon\\, and \\4\varepsilon\> 0\\ is allowed. There the exponent is
 >
 > \\ \begin{aligned} -4\varepsilon\cdot n\varepsilon+ \frac{n(4\varepsilon)^2}{8} &= -4n\varepsilon^2 + 2n\varepsilon^2 && \text{(substitute } s = 4\varepsilon\text{)} \\ &= -2n\varepsilon^2 && \text{(combine like terms)} \end{aligned} \\
 >
@@ -399,7 +399,7 @@ Last modified: 2026-10-14 23:23:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, so [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size with replacement, counts the samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that count beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Exercise 1](#exr-chebyshev-sample-size)).
+> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Exercise 1](#exr-chebyshev-sample-size)).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -422,7 +422,7 @@ Last modified: 2026-10-14 23:23:36 (PDT)
 > )
 > ```
 >
-> Both bounds hold at every sample size. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so from \\n = 200\\ on Hoeffding’s is smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
+> The simulated proportions lie below both bounds at every sample size, as the bounds require. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
 
 ## References
 
