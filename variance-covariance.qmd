@@ -44,6 +44,10 @@ format:
 
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
+## The best constant prediction {#sec-best-constant-prediction}
+
+{{< include pds/_subfiles/_thm-best-constant.qmd >}}
+
 ## Bias, variance, and prediction error {#sec-bias-variance-prediction}
 
 {{< include pds/_subfiles/_exr-prediction-error.qmd >}}
