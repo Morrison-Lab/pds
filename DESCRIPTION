@@ -20,6 +20,7 @@ Suggests:
     latex2exp,
     pander,
     plotly,
+    qnp,
     reticulate,
     rmarkdown,
     spelling,
@@ -29,3 +30,5 @@ VignetteBuilder: knitr
 Imports: 
     dplyr,
     tibble
+Remotes:
+    Morrison-Lab/qnp
