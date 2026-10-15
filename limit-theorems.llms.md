@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 05:08:19 (PDT)
+Last modified: 2026-10-15 05:15:30 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -309,6 +309,16 @@ Last modified: 2026-10-15 05:08:19 (PDT)
 
 > **NOTE:**
 >
+> **Theorem 4 (Chebyshev’s inequality for a sample average)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\epsilon \> 0\\:
+>
+> \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{} \le \frac{\sigma^2}{n\epsilon^2} \\
+
+> **NOTE:**
+>
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar X_n\\, whose variance is \\\sigma^2/n\\ by [Corollary 1](#cor-sum-iid-moments).
+
+> **NOTE:**
+>
 > **Lemma 1 (Hoeffding’s lemma)** Let \\X\\ be a random variable with \\0 \le X \le 1\\ and mean \\\mu\\. Then for every real number \\s\\,
 >
 > \\ \operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{} \le e^{s^2/8}. \\
@@ -355,7 +365,7 @@ Last modified: 2026-10-15 05:08:19 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 4 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and mean \\\mu\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
+> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and mean \\\mu\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
 >
 > \\ \Pr\mathopen{}\left(\bar X_n - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}. \tag{1}\\
 
@@ -385,13 +395,13 @@ Last modified: 2026-10-15 05:08:19 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 2 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 4](#thm-hoeffding), for every \\\varepsilon\> 0\\,
+> **Corollary 2 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 5](#thm-hoeffding), for every \\\varepsilon\> 0\\,
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} \le 2e^{-2n\varepsilon^2}. \tag{2}\\
 
 > **NOTE:**
 >
-> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their average is \\1 - \bar X_n\\, so [Theorem 4](#thm-hoeffding) applied to them gives
+> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their average is \\1 - \bar X_n\\, so [Theorem 5](#thm-hoeffding) applied to them gives
 >
 > \\ \begin{aligned} \Pr\mathopen{}\left(\mu- \bar X_n \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left((1 - \bar X_n) - (1 - \mu) \ge \varepsilon\right)\mathclose{} && \text{(rearrange the event)} \\ &\le e^{-2n\varepsilon^2} && \text{(Hoeffding's inequality for } 1 - X_i \text{)} \end{aligned} \\
 >
@@ -405,7 +415,7 @@ Last modified: 2026-10-15 05:08:19 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Exercise 1](#exr-chebyshev-sample-size)).
+> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar X_n\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 2](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 4](#thm-chebyshev-sample-mean)).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -448,7 +458,7 @@ Last modified: 2026-10-15 05:08:19 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 5 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
+> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
 >
 > \\ \bar X_n \overset{\scriptstyle p}{\longrightarrow}\mu \\
 >
