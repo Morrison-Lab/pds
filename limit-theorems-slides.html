@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-15 01:30:39 (PDT)</p>
+  <p class="date">Last modified: 2026-10-15 01:42:53 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -1020,6 +1020,85 @@ e^{sn(\bar X_n - \mu)}
 <p>The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For <span class="math inline">\(n = 50\)</span> and <span class="math inline">\(n = 100\)</span> Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in <span class="math inline">\(n\)</span> while the Chebyshev bound falls only like <span class="math inline">\(1/n\)</span>, so at <span class="math inline">\(n = 200\)</span> and <span class="math inline">\(n = 400\)</span> Hoeffding’s is the smaller. At <span class="math inline">\(n = 400\)</span> the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.</p>
 </div>
 </section>
+<section id="sec-lln" class="slide level2" data-number="3">
+<h2><span class="header-section-number">3</span> The law of large numbers</h2>
+<div id="def-convergence-in-probability" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Convergence in probability)</strong></span> A sequence of random variables <span class="math inline">\(Y_1, Y_2, \ldots\)</span> <strong>converges in probability</strong> to a constant <span class="math inline">\(c\)</span> if, for every distance <span class="math inline">\(\varepsilon &gt; 0\)</span>, the probability that <span class="math inline">\(Y_n\)</span> lies at least <span class="math inline">\(\varepsilon\)</span> away from <span class="math inline">\(c\)</span> goes to zero as <span class="math inline">\(n\)</span> grows:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left|Y_n - c\right|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0
+\]</span></p>
+<p>We write <span class="math inline">\(Y_n \overset{\scriptstyle p}{\longrightarrow}c\)</span>.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Source</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="citation" data-cites="CaseBerg01">Casella and Berger (<a href="#/references" role="doc-biblioref" onclick="">2002</a>, Def. 5.5.1)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="thm-wlln" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 5 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#/def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[
+\bar X_n \overset{\scriptstyle p}{\longrightarrow}\mu
+\]</span></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Source</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="citation" data-cites="CaseBerg01">Casella and Berger (<a href="#/references" role="doc-biblioref" onclick="">2002</a>, Thm. 5.5.2)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;1</a>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{} = n\mu\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\)</span>, where <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>, so <span class="math inline">\(\bar X_n = S_n / n\)</span> has</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{E}\mathopen{}\left[\bar X_n\right]\mathclose{}
+&amp;= \frac{1}{n}\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}
+&amp;&amp; \text{(linearity of expectation)}\\
+&amp;= \frac{1}{n} \cdot n\mu
+&amp;&amp; \text{(mean of a sum of IID variables)}\\
+&amp;= \mu
+&amp;&amp; \text{(cancel $n$)}\\
+\operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{}
+&amp;= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}
+&amp;&amp; \text{(variance of a constant multiple)}\\
+&amp;= \frac{1}{n^2} \cdot n\sigma^2
+&amp;&amp; \text{(variance of a sum of IID variables)}\\
+&amp;= \frac{\sigma^2}{n}
+&amp;&amp; \text{(cancel one factor of $n$)}
+\end{aligned}
+\]</span></p>
+<p>Fix <span class="math inline">\(\varepsilon &gt; 0\)</span> and let <span class="math inline">\(k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\)</span>, so that <span class="math inline">\(k \sigma/ \sqrt{n} = \varepsilon\)</span>. <a href="#/thm-chebyshev">Chebyshev’s inequality</a> for <span class="math inline">\(\bar X_n\)</span>, whose standard deviation is <span class="math inline">\(\sigma/ \sqrt{n}\)</span>, gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 \le \Pr\mathopen{}\left(\mathopen{}\left|\bar X_n - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}
+&amp;= \Pr\mathopen{}\left(\mathopen{}\left|\bar X_n - \mu\right|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{}
+&amp;&amp; \text{(definition of $k$)}\\
+&amp;\le \frac{1}{k^2}
+&amp;&amp; \text{(Chebyshev's inequality)}\\
+&amp;= \frac{\sigma^2}{n \varepsilon^2}
+&amp;&amp; \text{(substitute $k$)}
+\end{aligned}
+\]</span></p>
+<p>The bound goes to zero as <span class="math inline">\(n \to \infty\)</span>, so the probability, squeezed between zero and the bound, goes to zero. This holds for every <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
+</div>
+</section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -1034,6 +1113,9 @@ Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Seri
 </div>
 <div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
 Blitzstein, Joseph K, and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9780429428357">https://doi.org/10.1201/9780429428357</a>.
+</div>
+<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
+Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
 </div>
 <div id="ref-hoeffding1963" class="csl-entry" role="listitem">
 Hoeffding, Wassily. 1963. <span>“Probability Inequalities for Sums of Bounded Random Variables.”</span> <em>Journal of the American Statistical Association</em> 58 (301): 13–30. <a href="https://doi.org/10.1080/01621459.1963.10500830">https://doi.org/10.1080/01621459.1963.10500830</a>.
