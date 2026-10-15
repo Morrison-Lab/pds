@@ -31,6 +31,7 @@ jobs:
         any::latex2exp
         any::pander
         any::plotly
+        Morrison-Lab/qnp
         any::reticulate
         any::rmarkdown
         any::tibble
