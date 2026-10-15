@@ -1,0 +1,66 @@
+{{< slidebreak >}}
+
+:::{#exm-hoeffding-auto}
+#### How loose is Hoeffding's bound for the share of efficient cars?
+
+Take the 392 cars in the Auto data described in @exm-clt-auto as the whole population,
+and call a car efficient if its fuel economy (`mpg`) is above $25$.
+Let $X_i = 1$ if the $i$th car drawn at random is efficient and $X_i = 0$ otherwise,
+so $\mean$ is the share of efficient cars and $\bar X_n$ is the share in a sample of $n$ draws.
+Each $X_i$ lies in $[0, 1]$,
+and the draws are made with replacement, so the $X_i$ are IID
+and @cor-hoeffding-two-sided applies.
+The code below draws $10{,}000$ samples of each size,
+computes the proportion of samples whose share misses $\mean$ by at least $\tolout = 0.1$,
+and sets that proportion beside the bound $2e^{-2n\tolout^2}$ of @eq-hoeffding
+and the bound $\varpar/(n\tolout^2)$ that Chebyshev's inequality gives
+(@exr-chebyshev-sample-size).
+
+```{r}
+#| label: hoeffding-auto
+#| code-fold: false
+mpg <- read.csv("data/auto.csv")$mpg
+efficient <- as.numeric(mpg > 25)
+mu <- mean(efficient)
+sigma2 <- mean((efficient - mu)^2)
+tol <- 0.1
+
+n <- c(50, 100, 200, 400)
+set.seed(571)
+share_missed <- sapply(n, function(nn) {
+  xbar <- replicate(10000, mean(sample(efficient, nn, replace = TRUE)))
+  mean(abs(xbar - mu) >= tol)
+})
+hoeffding_bound <- pmin(1, 2 * exp(-2 * n * tol^2))
+chebyshev_bound <- pmin(1, sigma2 / (n * tol^2))
+data.frame(
+  n = n,
+  share_missed = share_missed,
+  hoeffding_bound = hoeffding_bound,
+  chebyshev_bound = chebyshev_bound
+)
+```
+
+```{r}
+#| include: false
+# The claims the prose makes: both bounds hold, and Hoeffding's bound is the
+# smaller one from n = 200 on, and not before.
+stopifnot(
+  all(share_missed <= hoeffding_bound),
+  all(share_missed <= chebyshev_bound),
+  all(hoeffding_bound[n >= 200] < chebyshev_bound[n >= 200]),
+  all(hoeffding_bound[n < 200] > chebyshev_bound[n < 200])
+)
+```
+
+The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate.
+The share of efficient cars is `{r} round(mu, 3)`.
+For $n = 50$ and $n = 100$ Chebyshev's bound is the smaller of the two,
+but the Hoeffding bound falls exponentially in $n$ while the Chebyshev bound falls only like $1/n$,
+so at $n = 200$ and $n = 400$ Hoeffding's is the smaller.
+At $n = 400$ the Hoeffding bound is `{r} format(signif(hoeffding_bound[4], 2), scientific = FALSE)`,
+against `{r} signif(chebyshev_bound[4], 2)` for Chebyshev,
+and `{r} round(share_missed[4] * 10000)` of the 10,000 samples missed.
+Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
+
+:::
