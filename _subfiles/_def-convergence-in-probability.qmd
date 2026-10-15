@@ -1,0 +1,22 @@
+:::{#def-convergence-in-probability}
+#### Convergence in probability
+
+A sequence of random variables $Y_1, Y_2, \ldots$
+**converges in probability** to a constant $c$
+if, for every distance $\varepsilon > 0$,
+the probability that $Y_n$ lies at least $\varepsilon$ away from $c$
+goes to zero as $n$ grows:
+
+$$
+\lim_{n \to \infty} \Prf{\abs{Y_n - c} \ge \varepsilon} = 0
+$$
+
+We write $Y_n \inprob c$.
+
+::: {.callout-note collapse="true"}
+#### Source
+
+@CaseBerg01 [Def. 5.5.1].
+:::
+
+:::
