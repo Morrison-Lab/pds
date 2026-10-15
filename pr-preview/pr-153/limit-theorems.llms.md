@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 00:07:50 (PDT)
+Last modified: 2026-10-15 00:16:44 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -422,7 +422,7 @@ Last modified: 2026-10-15 00:07:50 (PDT)
 > )
 > ```
 >
-> The simulated proportions lie below both bounds at every sample size, as the bounds require. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
+> The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
 
 ## References
 
