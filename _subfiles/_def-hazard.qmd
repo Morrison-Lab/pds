@@ -1,5 +1,5 @@
 :::{#def-hazard}
-#### Hazard function
+#### Hazard function (hazard rate, hazard rate function)
 
 The **hazard function** (also called the **hazard rate** or **hazard rate function**)
 of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$,
