@@ -1,0 +1,20 @@
+::: {#thm-chebyshev-sample-mean}
+#### Chebyshev's inequality for a sample average
+
+Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables
+with mean $\mean$ and finite variance $\varpar > 0$,
+and let $\bar X_n \eqdef \frac{1}{n}\sumin X_i$.
+Then for every $\epsilon > 0$:
+
+$$
+\Prf{\abs{\bar X_n - \mean} \ge \epsilon} \le \frac{\varpar}{n\epsilon^2}
+$$
+
+:::
+
+::: proof
+
+This is the solution to @exr-chebyshev-sample-size (a), worked in @sol-chebyshev-sample-size.
+It applies @thm-chebyshev to $\bar X_n$, whose variance is $\varpar/n$ by @cor-sum-iid-moments.
+
+:::

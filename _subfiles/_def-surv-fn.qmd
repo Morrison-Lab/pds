@@ -1,5 +1,5 @@
 :::{#def-surv-fn}
-#### Survival function
+#### Survival function (survivor function)
 
 The **survival function** (or **survivor function**)
 of a random variable $T$,

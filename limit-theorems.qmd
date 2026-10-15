@@ -47,6 +47,24 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_sol-chebyshev-sample-size.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-chebyshev-sample-mean.qmd >}}
+
+{{< include pds/_subfiles/_lem-hoeffding.qmd >}}
+
+{{< include pds/_subfiles/_thm-hoeffding.qmd >}}
+
+{{< include pds/_subfiles/_exm-hoeffding-auto.qmd >}}
+
+## The law of large numbers {#sec-lln}
+
+{{< include pds/_subfiles/_def-convergence-in-probability.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-wlln.qmd >}}
+
 ## References {.unnumbered}
 
 ::: {#refs}

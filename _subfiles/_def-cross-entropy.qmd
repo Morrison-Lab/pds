@@ -31,10 +31,10 @@ which is the [entropy](#def-entropy) of a random variable with mass function $p$
 {{< slidebreak >}}
 
 :::{#def-kl-divergence}
-#### Kullback--Leibler divergence
+#### Kullback--Leibler divergence (KL divergence, relative entropy)
 
 For $p$ and $q$ as in @def-cross-entropy,
-the **Kullback--Leibler divergence** (KL divergence, or relative entropy)
+the **Kullback--Leibler divergence** (**KL divergence**, or **relative entropy**)
 of $q$ from $p$ is
 
 $$D_{\mathrm{KL}}(p \,\|\, q) \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).$$

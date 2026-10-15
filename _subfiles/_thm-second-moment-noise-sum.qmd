@@ -1,0 +1,117 @@
+::: {#thm-second-moment-noise-sum}
+
+#### The second moment of independent noise plus a random variable
+
+Let $\noise$ be a random variable with $\E{\noise} = 0$ and $\Var{\noise} = \varpar$.
+Let $\Rvar$ be a random variable with $\E{\Rvar^2} < \infty$ that is independent of $\noise$.
+Then
+
+$$\E{\paren{\noise + \Rvar}^2} = \varpar + \Var{\Rvar} + \sqf{\E{\Rvar}}$$
+
+:::
+
+::: proof
+
+Expanding the square and using
+[linearity of expectation](expectation.qmd#thm-linearity-expectation),
+first for the expectation of a sum and then for a constant factor,
+
+$$
+\ba
+\E{\paren{\noise + \Rvar}^2}
+&= \E{\noise^2 + 2 \noise \Rvar + \Rvar^2}
+&& \text{(expand: } \paren{a + b}^2 = a^2 + 2ab + b^2 \text{)} \\
+&= \E{\noise^2} + \E{2 \noise \Rvar} + \E{\Rvar^2}
+&& \text{(expectation of a sum)} \\
+&= \E{\noise^2} + 2\E{\noise \Rvar} + \E{\Rvar^2}
+&& \text{(constant factor 2)}
+\ea
+$$
+
+Each of the three terms is evaluated in turn.
+
+- $\E{\noise^2} = \varpar$, by @thm-noise-second-moment.
+- Because $\noise$ and $\Rvar$ are independent,
+  the expectation of the product is the product of the expectations:
+
+  $$
+  \ba
+  \E{\noise \Rvar}
+  &= \E{\noise}\E{\Rvar}
+  && \text{(independence)} \\
+  &= 0 \cdot \E{\Rvar}
+  && \text{(} \E{\noise} = 0 \text{)} \\
+  &= 0
+  && \text{(zero times a number)}
+  \ea
+  $$
+
+- $\E{\Rvar^2} = \Var{\Rvar} + \sqf{\E{\Rvar}}$, by @thm-variance.
+
+Substituting the three terms gives
+
+$$
+\ba
+\E{\paren{\noise + \Rvar}^2}
+&= \varpar + 2 \cdot 0 + \paren{\Var{\Rvar} + \sqf{\E{\Rvar}}}
+&& \text{(the three terms above)} \\
+&= \varpar + \Var{\Rvar} + \sqf{\E{\Rvar}}
+&& \text{(drop } 2 \cdot 0 \text{)}
+\ea
+$$
+
+:::
+
+::: {.remark}
+
+#### Use in statistics and machine learning
+
+Let $\noise$ be the noise in a new outcome $\Outvar$,
+and let $\Rvar$ be the difference between the true mean $\mean = \E{\Outvar}$ and a prediction $\eoutvar$:
+
+$$\Rvar \eqdef \mean - \eoutvar$$
+
+The mean of $\Rvar$ is minus the bias of the prediction:
+
+$$
+\ba
+\E{\Rvar}
+&= \E{\mean - \eoutvar}
+&& \text{(definition of } \Rvar \text{)} \\
+&= \mean - \E{\eoutvar}
+&& \text{(expectation of a difference; } \mean \text{ is a constant)} \\
+&= -\paren{\E{\eoutvar} - \mean}
+&& \text{(factor out } -1 \text{)} \\
+&= -\bias{\eoutvar}
+&& \text{(definition of bias)}
+\ea
+$$
+
+The variance of $\Rvar$ is the variance of the prediction:
+
+$$
+\ba
+\Var{\Rvar}
+&= \Var{\mean - \eoutvar}
+&& \text{(definition of } \Rvar \text{)} \\
+&= \Var{\eoutvar}
+&& \text{(a constant shifts a variable without changing its variance, and a sign flip does not change it either)}
+\ea
+$$
+
+Substituting these two results into the theorem,
+with $\sqf{-\bias{\eoutvar}} = \sqf{\bias{\eoutvar}}$,
+gives the squared prediction error of the new outcome as
+
+$$
+\E{\sqf{\noise + \Rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
+$$
+
+where $\varpar$ is the irreducible error.
+The statistics notes define the bias of a prediction and the training data it depends on,
+and state this result for predictions as the
+[bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition),
+with its exercise, worked example and
+[irreducible error](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
+
+:::
