@@ -14,37 +14,41 @@ Code
 
 Published
 
-Last modified: 2026-10-15 00:13:11 (PDT)
+Last modified: 2026-10-15 00:40:57 (PDT)
 
 > **NOTE:**
 >
 > *Remark*. Some distributions are typically used for outcome models ([Table 1](#tbl-outcome-distns)); other distributions are typically used for test statistics ([Table 2](#tbl-test-stat-distns)).
 
-| Distribution | Uses |
-|----|----|
-| [Bernoulli](random-variables.llms.md#def-bernoulli) | Binary outcomes |
-| [Binomial](#def-binomial) | Sums of Bernoulli outcomes |
-| Poisson | Unbounded count outcomes |
-| Geometric | Counts of non-events before an event occurs |
-| Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs |
-| [Normal (Gaussian)](random-variables.llms.md#def-normal) | Continuous outcomes without a more specific distribution |
-| [Multivariate normal](#sec-mvn) | Vectors of continuous outcomes |
-| [Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations |
-| [Exponential](random-variables.llms.md#def-exponential) | Time to event outcomes |
-| Gamma | Time to event outcomes |
-| Weibull | Time to event outcomes |
-| Log-normal | Time to event outcomes |
+> **NOTE:**
+>
+> | Distribution | Uses |
+> |----|----|
+> | [Bernoulli](random-variables.llms.md#def-bernoulli) | Binary outcomes |
+> | [Binomial](#def-binomial) | Sums of Bernoulli outcomes |
+> | Poisson | Unbounded count outcomes |
+> | Geometric | Counts of non-events before an event occurs |
+> | Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs |
+> | [Normal (Gaussian)](random-variables.llms.md#def-normal) | Continuous outcomes without a more specific distribution |
+> | [Multivariate normal](#sec-mvn) | Vectors of continuous outcomes |
+> | [Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations |
+> | [Exponential](random-variables.llms.md#def-exponential) | Time to event outcomes |
+> | Gamma | Time to event outcomes |
+> | Weibull | Time to event outcomes |
+> | Log-normal | Time to event outcomes |
+>
+> Table 1: Distributions typically used for outcome models
 
-Table 1: Distributions typically used for outcome models
-
-| Distribution | Uses |
-|----|----|
-| \\\chi^2\\ | Regression comparisons (asymptotic), contingency table independence tests, goodness-of-fit tests |
-| \\F\\ | Gaussian model comparisons (exact) |
-| \\Z\\ (standard normal) | Proportions, means, regression coefficients (asymptotic) |
-| \\t\\ (Student’s) | Means, regression coefficients in Gaussian outcome models (exact) |
-
-Table 2: Distributions typically used for test statistics
+> **NOTE:**
+>
+> | Distribution | Uses |
+> |----|----|
+> | \\\chi^2\\ | Regression comparisons (asymptotic), contingency table independence tests, goodness-of-fit tests |
+> | \\F\\ | Gaussian model comparisons (exact) |
+> | \\Z\\ (standard normal) | Proportions, means, regression coefficients (asymptotic) |
+> | \\t\\ (Student’s) | Means, regression coefficients in Gaussian outcome models (exact) |
+>
+> Table 2: Distributions typically used for test statistics
 
 ## 1 The Bernoulli distribution
 
@@ -210,9 +214,11 @@ plot1 <-
 print(plot1)
 ```
 
-[![](distributions_files/figure-html/fig-pois-pmf-1.png)](distributions_files/figure-html/fig-pois-pmf-1.png "Figure 1: Poisson PMFs, by mean parameter \mu")
-
-Figure 1: Poisson PMFs, by mean parameter \\\mu\\
+> **NOTE:**
+>
+> [![](distributions_files/figure-html/fig-pois-pmf-1.png)](distributions_files/figure-html/fig-pois-pmf-1.png "Figure 1: Poisson PMFs, by mean parameter \mu")
+>
+> Figure 1: Poisson PMFs, by mean parameter \\\mu\\
 
 Show code
 
@@ -226,9 +232,11 @@ plot2 <-
 print(plot2)
 ```
 
-[![](distributions_files/figure-html/fig-pois-cdfs-1.png)](distributions_files/figure-html/fig-pois-cdfs-1.png "Figure 2: Poisson CDFs")
-
-Figure 2: Poisson CDFs
+> **NOTE:**
+>
+> [![](distributions_files/figure-html/fig-pois-cdfs-1.png)](distributions_files/figure-html/fig-pois-cdfs-1.png "Figure 2: Poisson CDFs")
+>
+> Figure 2: Poisson CDFs
 
 > **NOTE:**
 >
@@ -305,14 +313,16 @@ Figure 2: Poisson CDFs
 >
 > *Solution*.
 >
-> | outcome            | exposure units                              |
-> |--------------------|---------------------------------------------|
-> | disease incidence  | number of individuals exposed; time at risk |
-> | car accidents      | miles driven                                |
-> | worksite accidents | person-hours worked                         |
-> | population size    | size of habitat                             |
->
-> Table 3: Examples of exposure units
+> > **NOTE:**
+> >
+> > | outcome            | exposure units                              |
+> > |--------------------|---------------------------------------------|
+> > | disease incidence  | number of individuals exposed; time at risk |
+> > | car accidents      | miles driven                                |
+> > | worksite accidents | person-hours worked                         |
+> > | population size    | size of habitat                             |
+> >
+> > Table 3: Examples of exposure units
 
 > **NOTE:**
 >
@@ -561,9 +571,11 @@ Figure 2: Poisson CDFs
 >   ggplot2::labs(colour = NULL)
 > ```
 >
-> [![Two symmetric curves over y from minus 4 to 4. The standard normal is a smooth bell. The Laplace curve with the same variance peaks higher at 0 with a sharp point, falls below the normal curve at moderate distances, and stays above it in the far tails.](distributions_files/figure-html/fig-laplace-vs-normal-1.png)](distributions_files/figure-html/fig-laplace-vs-normal-1.png "Figure 3: Laplace and standard normal densities with the same mean (0) and variance (1)")
->
-> Figure 3: Laplace and standard normal densities with the same mean (0) and variance (1)
+> > **NOTE:**
+> >
+> > [![Two symmetric curves over y from minus 4 to 4. The standard normal is a smooth bell. The Laplace curve with the same variance peaks higher at 0 with a sharp point, falls below the normal curve at moderate distances, and stays above it in the far tails.](distributions_files/figure-html/fig-laplace-vs-normal-1.png)](distributions_files/figure-html/fig-laplace-vs-normal-1.png "Figure 3: Laplace and standard normal densities with the same mean (0) and variance (1)")
+> >
+> > Figure 3: Laplace and standard normal densities with the same mean (0) and variance (1)
 >
 > The probability of landing more than \\3\\ standard deviations from the mean shows the difference in the tails. For the Laplace distribution, \\\operatorname{P}(\mathopen{}\left\|Y\right\|\mathclose{} \> t) = \text{e}^{-t/b}\\, because each tail has probability \\\frac{1}{2}\text{e}^{-t/b}\\ by integrating [Equation 6](#eq-laplace-pdf).
 >

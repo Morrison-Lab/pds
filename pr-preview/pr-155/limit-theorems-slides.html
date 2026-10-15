@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-15 00:13:11 (PDT)</p>
+  <p class="date">Last modified: 2026-10-15 00:40:57 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -805,6 +805,19 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <p><span class="math display">\[
 \bar X_n \overset{\scriptstyle p}{\longrightarrow}\mu
 \]</span></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Source</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="citation" data-cites="CaseBerg01">Casella and Berger (<a href="#/references" role="doc-biblioref" onclick="">2002</a>, Thm. 5.5.2)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;1</a>, <span class="math inline">\(\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{} = n\mu\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\)</span>, where <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>, so <span class="math inline">\(\bar X_n = S_n / n\)</span> has</p>
@@ -814,14 +827,14 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 &amp;= \frac{1}{n}\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}
 &amp;&amp; \text{(linearity of expectation)}\\
 &amp;= \frac{1}{n} \cdot n\mu
-&amp;&amp; \text{(@cor-sum-iid-moments)}\\
+&amp;&amp; \text{(mean of a sum of IID variables)}\\
 &amp;= \mu
 &amp;&amp; \text{(cancel $n$)}\\
 \operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{}
 &amp;= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}
 &amp;&amp; \text{(variance of a constant multiple)}\\
 &amp;= \frac{1}{n^2} \cdot n\sigma^2
-&amp;&amp; \text{(@cor-sum-iid-moments)}\\
+&amp;&amp; \text{(variance of a sum of IID variables)}\\
 &amp;= \frac{\sigma^2}{n}
 &amp;&amp; \text{(cancel one factor of $n$)}
 \end{aligned}
@@ -839,19 +852,6 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 \end{aligned}
 \]</span></p>
 <p>The bound goes to zero as <span class="math inline">\(n \to \infty\)</span>, so the probability, squeezed between zero and the bound, goes to zero. This holds for every <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Source</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="CaseBerg01">Casella and Berger (<a href="#/references" role="doc-biblioref" onclick="">2002</a>, Thm. 5.5.2)</span>.</p>
-</div>
-</div>
 </div>
 </section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">

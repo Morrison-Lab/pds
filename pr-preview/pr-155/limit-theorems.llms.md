@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 00:13:11 (PDT)
+Last modified: 2026-10-15 00:40:57 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -78,9 +78,11 @@ Last modified: 2026-10-15 00:13:11 (PDT)
 > dice_plot + ggplot2::geom_col(data = dice_sum_pmf(1))
 > ```
 >
-> [![](limit-theorems_files/figure-html/fig-clt-1d6-1.png)](limit-theorems_files/figure-html/fig-clt-1d6-1.png "Figure 1: Distribution of the outcome of one die")
->
-> Figure 1: Distribution of the outcome of one die
+> > **NOTE:**
+> >
+> > [![](limit-theorems_files/figure-html/fig-clt-1d6-1.png)](limit-theorems_files/figure-html/fig-clt-1d6-1.png "Figure 1: Distribution of the outcome of one die")
+> >
+> > Figure 1: Distribution of the outcome of one die
 >
 > The sum of five independent rolls, \\S_5\\, is already close to bell-shaped ([Figure 2](#fig-clt-5d6)).
 >
@@ -91,9 +93,11 @@ Last modified: 2026-10-15 00:13:11 (PDT)
 > dice_plot + ggplot2::geom_col(data = pmf_five_dice)
 > ```
 >
-> [![](limit-theorems_files/figure-html/fig-clt-5d6-1.png)](limit-theorems_files/figure-html/fig-clt-5d6-1.png "Figure 2: Distribution of the sum of five dice")
->
-> Figure 2: Distribution of the sum of five dice
+> > **NOTE:**
+> >
+> > [![](limit-theorems_files/figure-html/fig-clt-5d6-1.png)](limit-theorems_files/figure-html/fig-clt-5d6-1.png "Figure 2: Distribution of the sum of five dice")
+> >
+> > Figure 2: Distribution of the sum of five dice
 >
 > For example, the exact probability that five dice total at most 15 is \\\Pr(S_5 \le 15) = 0.3052\\. The normal approximation that [Theorem 1](#thm-clt) suggests, with mean \\5 \cdot 3.5 = 17.5\\ and variance \\5 \cdot 35/12 \approx 14.58\\, evaluated at \\15.5\\ to account for \\S_5\\ taking only integer values, gives \\\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002\\.
 
@@ -196,9 +200,11 @@ Last modified: 2026-10-15 00:13:11 (PDT)
 >   ggplot2::theme_minimal()
 > ```
 >
-> [![Three histograms side by side. The first, for one car, is skewed to the right with a long tail. The second, for five cars, is less skewed. The third, for thirty cars, is symmetric and bell-shaped. A normal curve drawn over each fits the third closely and the first poorly.](limit-theorems_files/figure-html/fig-clt-auto-1.png)](limit-theorems_files/figure-html/fig-clt-auto-1.png "Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.")
->
-> Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.
+> > **NOTE:**
+> >
+> > [![Three histograms side by side. The first, for one car, is skewed to the right with a long tail. The second, for five cars, is less skewed. The third, for thirty cars, is symmetric and bell-shaped. A normal curve drawn over each fits the third closely and the first poorly.](limit-theorems_files/figure-html/fig-clt-auto-1.png)](limit-theorems_files/figure-html/fig-clt-auto-1.png "Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.")
+> >
+> > Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.
 >
 > The sample means for \\n = 1\\ are just single cars, so they are skewed. By \\n = 30\\ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of \\\sigma/\sqrt{n}\\ at every \\n\\, as [Corollary 1](#cor-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at \\n = 1\\ to 0.48 at \\n = 5\\ and 0.2 at \\n = 30\\.
 
@@ -320,22 +326,22 @@ Last modified: 2026-10-15 00:13:11 (PDT)
 > **Theorem 4 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar X_n \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
 >
 > \\ \bar X_n \overset{\scriptstyle p}{\longrightarrow}\mu \\
+>
+> > **NOTE:**
+> >
+> > Casella and Berger ([2002](#ref-CaseBerg01), Thm. 5.5.2).
 
 > **NOTE:**
 >
 > *Proof*. By [Corollary 1](#cor-sum-iid-moments), \\\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} = n\mu\\ and \\\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} = n\sigma^2\\, where \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar X_n = S_n / n\\ has
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\bar X_n\right\]\mathclose{} &= \frac{1}{n}\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(@cor-sum-iid-moments)}\\ &= \mu && \text{(cancel \$n\$)}\\ \operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{} &= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(@cor-sum-iid-moments)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\bar X_n\right\]\mathclose{} &= \frac{1}{n}\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ \operatorname{Var}\mathopen{}\left(\bar X_n\right)\mathclose{} &= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
 >
 > Fix \\\varepsilon \> 0\\ and let \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar X_n\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
 >
 > \\ \begin{aligned} 0 \le \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left(\mathopen{}\left\|\bar X_n - \mu\right\|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{} && \text{(definition of \$k\$)}\\ &\le \frac{1}{k^2} && \text{(Chebyshev's inequality)}\\ &= \frac{\sigma^2}{n \varepsilon^2} && \text{(substitute \$k\$)} \end{aligned} \\
 >
 > The bound goes to zero as \\n \to \infty\\, so the probability, squeezed between zero and the bound, goes to zero. This holds for every \\\varepsilon \> 0\\.
-
-> **NOTE:**
->
-> Casella and Berger ([2002](#ref-CaseBerg01), Thm. 5.5.2).
 
 ## References
 
