@@ -10,6 +10,12 @@ $$
 \bar X_n \inprob \mean
 $$
 
+::: {.callout-note collapse="true"}
+#### Source
+
+@CaseBerg01 [Thm. 5.5.2].
+:::
+
 :::
 
 ::: proof
@@ -57,10 +63,4 @@ The bound goes to zero as $n \to \infty$,
 so the probability, squeezed between zero and the bound, goes to zero.
 This holds for every $\varepsilon > 0$.
 
-:::
-
-::: {.callout-note collapse="true"}
-#### Source
-
-@CaseBerg01 [Thm. 5.5.2].
 :::
