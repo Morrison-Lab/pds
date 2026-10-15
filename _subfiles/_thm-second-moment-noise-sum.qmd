@@ -71,8 +71,43 @@ and let $\rvar$ be the difference between the true mean $\mean = \E{\Outvar}$ an
 
 $$\rvar \eqdef \mean - \eoutvar$$
 
-Then $\E{\rvar}$ is minus the bias of the prediction, $\Var{\rvar}$ is its variance,
-and $\varpar$ is the irreducible error.
+The mean of $\rvar$ is minus the bias of the prediction:
+
+$$
+\ba
+\E{\rvar}
+&= \E{\mean - \eoutvar}
+&& \text{(definition of } \rvar \text{)} \\
+&= \mean - \E{\eoutvar}
+&& \text{(expectation of a difference; } \mean \text{ is a constant)} \\
+&= -\paren{\E{\eoutvar} - \mean}
+&& \text{(factor out } -1 \text{)} \\
+&= -\bias{\eoutvar}
+&& \text{(definition of bias)}
+\ea
+$$
+
+The variance of $\rvar$ is the variance of the prediction:
+
+$$
+\ba
+\Var{\rvar}
+&= \Var{\mean - \eoutvar}
+&& \text{(definition of } \rvar \text{)} \\
+&= \Var{\eoutvar}
+&& \text{(a constant shifts a variable without changing its variance, and a sign flip does not change it either)}
+\ea
+$$
+
+Substituting these two results into the theorem,
+with $\sqf{-\bias{\eoutvar}} = \sqf{\bias{\eoutvar}}$,
+gives the squared prediction error of the new outcome as
+
+$$
+\E{\sqf{\noise + \rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
+$$
+
+where $\varpar$ is the irreducible error.
 The statistics notes define the bias of a prediction and the training data it depends on,
 and state this result for predictions as the
 [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition),
