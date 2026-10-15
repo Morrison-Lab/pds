@@ -67,7 +67,7 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 - **Definitions and results**: one term per `#def-` div, aliases ("also called") in the same div, in bold and in the title, and a second new term in its own div that links to the first; one result per theorem-type div. See "Definitions and results" in `.github/copilot-instructions.md`.
 - **Useful resources**: a course, book or video that covers a topic pds teaches goes in the Further reading section of the matching page,
   even when lds already lists it in a directory (Ezra, 2026-10-15).
-  Check each license: adapt with attribution only when the license allows it, and otherwise link.
+  Link the resource, and adapt it with attribution only when its license allows adapting.
   See [`track-useful-resources`](https://github.com/Morrison-Lab/ai-config/blob/main/shared/workflow/track-useful-resources.md).
 - **Quarto chunks**: prefer chunk options as YAML-style `#|` directives, not as inline `r, opt = val` arguments.
 
