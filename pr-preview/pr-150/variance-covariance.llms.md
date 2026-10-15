@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 16:16:59 (PDT)
+Last modified: 2026-10-14 18:00:27 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -282,33 +282,49 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 5 (The second moment of independent noise plus a random variable)** Let \\\varepsilon\\ be a random variable with \\\operatorname{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\. Let \\D\\ be a random variable with \\\operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} \< \infty\\ that is independent of \\\varepsilon\\. Then
+> **Theorem 5 (The second moment of independent noise plus a random variable)** Let \\\varepsilon\\ be a random variable with \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\. Let \\X\\ be a random variable with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ that is independent of \\\varepsilon\\. Then
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ D\right)\mathclose{}^2\right\]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right\]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\\
 
 > **NOTE:**
 >
 > *Proof*. Expanding the square and using [linearity of expectation](expectation.llms.md#thm-linearity-expectation), first for the expectation of a sum and then for a constant factor,
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ D\right)\mathclose{}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon^2 + 2 \varepsilon D + D^2\right\]\mathclose{} && \text{(expand: } \mathopen{}\left(a + b\right)\mathclose{}^2 = a^2 + 2ab + b^2 \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[2 \varepsilon D\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} && \text{(expectation of a sum)} \\ &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + 2\operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} && \text{(constant factor 2)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon^2 + 2 \varepsilon X+ X^2\right\]\mathclose{} && \text{(expand: } \mathopen{}\left(a + b\right)\mathclose{}^2 = a^2 + 2ab + b^2 \text{)} \\ &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[2 \varepsilon X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} && \text{(expectation of a sum)} \\ &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + 2\operatorname{E}\mathopen{}\left\[\varepsilon X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} && \text{(constant factor 2)} \end{aligned} \\
 >
 > Each of the three terms is evaluated in turn.
 >
 > - \\\operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} = \sigma^2\\, by [Theorem 1](#thm-noise-second-moment).
 >
-> - Because \\\varepsilon\\ and \\D\\ are independent, the expectation of the product is the product of the expectations:
+> - Because \\\varepsilon\\ and \\X\\ are independent, the expectation of the product is the product of the expectations:
 >
->   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} && \text{(independence)} \\ &= 0 \cdot \operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(zero times a number)} \end{aligned} \\
+>   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} && \text{(independence)} \\ &= 0 \cdot \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0 \text{)} \\ &= 0 && \text{(zero times a number)} \end{aligned} \\
 >
-> - \\\operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\\, by [Theorem 3](#thm-variance).
+> - \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\\, by [Theorem 3](#thm-variance).
 >
 > Substituting the three terms gives
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ D\right)\mathclose{}^2\right\]\mathclose{} &= \sigma^2+ 2 \cdot 0 + \mathopen{}\left(\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\right)\mathclose{} && \text{(the three terms above)} \\ &= \sigma^2+ \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{} && \text{(drop } 2 \cdot 0 \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right\]\mathclose{} &= \sigma^2+ 2 \cdot 0 + \mathopen{}\left(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\right)\mathclose{} && \text{(the three terms above)} \\ &= \sigma^2+ \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && \text{(drop } 2 \cdot 0 \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark* (Use in statistics and machine learning). Take \\\varepsilon\\ to be the noise in a new outcome and \\D\\ the difference between the true mean and a prediction. Then \\\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\\ is minus the bias of the prediction, \\\operatorname{Var}\mathopen{}\left(D\right)\mathclose{}\\ is its variance, and \\\sigma^2\\ is the irreducible error. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition), with its exercise, worked example and [irreducible error](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
+> *Remark* (Use in statistics and machine learning). Let \\\varepsilon\\ be the noise in a new outcome \\Y\\, and let \\X\\ be the difference between the true mean \\\mu= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and a prediction \\\hat{y}\\:
+>
+> \\X\stackrel{\text{def}}{=}\mu- \hat{y}\\
+>
+> The mean of \\X\\ is minus the bias of the prediction:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mu- \hat{y}\right\]\mathclose{} && \text{(definition of } X\text{)} \\ &= \mu- \operatorname{E}\mathopen{}\left\[\hat{y}\right\]\mathclose{} && \text{(expectation of a difference; } \mu\text{ is a constant)} \\ &= -\mathopen{}\left(\operatorname{E}\mathopen{}\left\[\hat{y}\right\]\mathclose{} - \mu\right)\mathclose{} && \text{(factor out } -1 \text{)} \\ &= -\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{} && \text{(definition of bias)} \end{aligned} \\
+>
+> The variance of \\X\\ is the variance of the prediction:
+>
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(\mu- \hat{y}\right)\mathclose{} && \text{(definition of } X\text{)} \\ &= \operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{} && \text{(a constant shifts a variable without changing its variance, and a sign flip does not change it either)} \end{aligned} \\
+>
+> Substituting these two results into the theorem, with \\\mathopen{}\left(-\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)^2\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)^2\mathclose{}\\, gives the squared prediction error of the new outcome as
+>
+> \\ \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\varepsilon+ X\right)^2\mathclose{}\right\]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{} + \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)^2\mathclose{}, \\
+>
+> where \\\sigma^2\\ is the irreducible error. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition), with its exercise, worked example and [irreducible error](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
 
 ## 4 Covariance
 
