@@ -5,19 +5,19 @@
 Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) draws of the fuel economy (`mpg`) of
 a car chosen at random from the Auto data,
 with mean $\mean$ and variance $\varpar$,
-and let $\bar X_n \eqdef \frac{1}{n}\sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
 
 a.  Use @cor-sum-iid-moments and @thm-chebyshev to show that for every $\epsilon > 0$,
 
     $$
-    \Prf{\abs{\bar X_n - \mean} \ge \epsilon} \le \frac{\varpar}{n\epsilon^2}
+    \Prf{\abs{\samplemean{X}{n} - \mean} \ge \epsilon} \le \frac{\varpar}{n\epsilon^2}
     $$
 
 b.  Compute $\varpar$ for the `mpg` column of
     [`data/auto.csv`](data/auto.csv),
     treating the 392 cars as the whole population.
     Find the smallest $n$ for which the bound in (a) guarantees
-    $\Prf{\abs{\bar X_n - \mean} \ge 1} \le 0.05$.
+    $\Prf{\abs{\samplemean{X}{n} - \mean} \ge 1} \le 0.05$.
 
 c.  Simulate 10,000 samples of that size drawn with replacement,
     and count how many sample means miss $\mean$ by 1 or more.

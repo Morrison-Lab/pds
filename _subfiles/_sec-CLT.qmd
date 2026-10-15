@@ -15,11 +15,11 @@ whatever the distributions of the individual variables.
 
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
 with mean $\mean$ and finite variance $\ss > 0$,
-and let $\bar X_n \eqdef \frac{1}{n}\sumin X_i$.
+and let $\samplemean{X}{n} \eqdef \frac{1}{n}\sumin X_i$.
 Then for every real number $z$:
 
 $$
-\lim_{n \to \infty} \Pr\paren{\frac{\sqrt{n}\,(\bar X_n - \mean)}{\sdpar} \le z} = \normcdf(z)
+\lim_{n \to \infty} \Pr\paren{\frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar} \le z} = \normcdf(z)
 $$
 
 where $\normcdf(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
@@ -55,12 +55,12 @@ $$
 
 ::: proof
 
-Since $S_n = n\bar X_n$,
+Since $S_n = n\samplemean{X}{n}$,
 
 $$
 \frac{S_n - n\mean}{\sdpar\sqrt{n}}
-= \frac{n(\bar X_n - \mean)}{\sdpar\sqrt{n}}
-= \frac{\sqrt{n}\,(\bar X_n - \mean)}{\sdpar},
+= \frac{n(\samplemean{X}{n} - \mean)}{\sdpar\sqrt{n}}
+= \frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar},
 $$
 
 so the event in this corollary is the event in @thm-clt, and the limits agree.
@@ -133,11 +133,11 @@ $$
 ::: {.remark .notes}
 
 In practice, @thm-clt justifies approximating
-$\bar X_n$ by a normal distribution with mean $\mean$ and variance $\ss/n$,
+$\samplemean{X}{n}$ by a normal distribution with mean $\mean$ and variance $\ss/n$,
 and @cor-clt-sum justifies approximating
 $S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$.
 By @cor-sum-iid-moments, these are exactly the means and variances
-of $\bar X_n = S_n/n$ and $S_n$.
+of $\samplemean{X}{n} = S_n/n$ and $S_n$.
 
 :::
 
