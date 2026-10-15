@@ -27,7 +27,7 @@ $$
 $$
 
 - $\E{\noise^2} = \varpar$,
-  by @sol-noise-second-moment.
+  by @thm-noise-second-moment.
 - $$
   \begin{aligned}
   \E{\noise D} &= \E{\noise}\E{D} \\
