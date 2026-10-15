@@ -34,6 +34,10 @@ format:
         \usepackage{needspace}
         \usepackage{etoolbox}
         \AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}}
+        % unicode-math's \mathbf prints nothing for Greek letters, so the
+        % bold matrix \matr{\covmat} (bold Sigma) came out blank.
+        % \symbfup is the same upright bold, and it has the Greek glyphs.
+        \AtBeginDocument{\let\mathbf\symbfup}
 
 knitr:
   opts_chunk:
