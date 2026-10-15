@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 11:38:02 (PDT)
+Last modified: 2026-10-14 17:51:58 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -80,17 +80,27 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > **Exercise 1 (The average squared error of pure noise)** Let \\\varepsilon\\ be a random variable with \\\operatorname{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\.
 >
-> Show that \\\operatorname{E}\[\varepsilon^2\] = \sigma^2\\, and say which earlier result you used.
+> Find \\\operatorname{E}\[\varepsilon^2\]\\ in terms of \\\sigma^2\\, and say which earlier result you used.
 
 > **NOTE:**
 >
-> *Solution 1*. [Theorem 2](#thm-variance) says \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\[X^2\] - (\operatorname{E}\[X\])^2\\ for any \\X\\. Taking \\X = \varepsilon\\ and substituting \\\operatorname{E}\[\varepsilon\] = 0\\,
+> *Solution 1*. [Theorem 3](#thm-variance) says \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\[X^2\] - (\operatorname{E}\[X\])^2\\ for any \\X\\. Taking \\X = \varepsilon\\ and substituting \\\operatorname{E}\[\varepsilon\] = 0\\,
 >
 > \\ \begin{aligned} \operatorname{E}\[\varepsilon^2\] &= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\ &= \sigma^2 \end{aligned} \tag{1}\\
 >
 > so for mean-zero noise the average squared value *is* the variance.
 >
 > The identity looks slight and does a lot of work. [Equation 1](#eq-noise-second-moment) is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the *spread* of the noise, which is what a model of the world gives you, into a statement about *squared error*, which is what the fitting objective measures.
+
+> **NOTE:**
+>
+> **Theorem 1 (The second moment of mean-zero noise)** Let \\\varepsilon\\ be a random variable with \\\operatorname{E}\[\varepsilon\] = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\. Then
+>
+> \\\operatorname{E}\[\varepsilon^2\] = \sigma^2\\
+
+> **NOTE:**
+>
+> *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment), worked in [Solution 1](#sol-noise-second-moment). It rearranges [Theorem 3](#thm-variance), using \\\operatorname{E}\[\varepsilon\] = 0\\.
 
 ## 2 Variance and related characteristics
 
@@ -102,7 +112,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 1 (Variance as expected squared deviation from the mean)** \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{}\\
+> **Theorem 2 (Variance as expected squared deviation from the mean)** \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})^2\right\]\mathclose{}\\
 
 > **NOTE:**
 >
@@ -116,7 +126,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 2 (Simplified expression for variance)** \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\\
+> **Theorem 3 (Simplified expression for variance)** \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}=\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{}\\
 
 > **NOTE:**
 >
@@ -188,7 +198,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 3 (Law of total variance)** For random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\:
+> **Theorem 4 (Law of total variance)** For random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{}\\
 
@@ -230,7 +240,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} \operatorname{P}(X = 0) &= \operatorname{P}(X = 1) \\ &= 0.5, \end{aligned} \\
 >
-> \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 0.8\\, so \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 0.7\\, and by [Theorem 3](#thm-total-variance):
+> \\\operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} = 0.6\\, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} = 0.8\\, so \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = 0.7\\, and by [Theorem 4](#thm-total-variance):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} &= 0.5 \cdot 0.24 + 0.5 \cdot 0.16 && \text{(average the conditional variances)} \\ &= 0.20 \\ \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} &= 0.5 \cdot(0.6 - 0.7)^2 + 0.5 \cdot(0.8 - 0.7)^2 && \text{(variance of the conditional means)} \\ &= 0.01 \\ \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &= 0.20 + 0.01 && \text{(law of total variance)} \\ &= 0.21 \end{aligned} \\
 >
@@ -308,7 +318,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 4 (Expected squared prediction error)** Let \\Y_0 = f(x_0) + \varepsilon\\, where \\f\\ is a fixed function, \\\varepsilon\\ has \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\, and \\\varepsilon\\ is independent of the prediction \\\hat f(x_0)\\, which has \\\operatorname{E}\mathopen{}\left\[\hat f(x_0)^2\right\]\mathclose{} \< \infty\\. Then
+> **Theorem 5 (Expected squared prediction error)** Let \\Y_0 = f(x_0) + \varepsilon\\, where \\f\\ is a fixed function, \\\varepsilon\\ has \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\ and \\\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\\, and \\\varepsilon\\ is independent of the prediction \\\hat f(x_0)\\, which has \\\operatorname{E}\mathopen{}\left\[\hat f(x_0)^2\right\]\mathclose{} \< \infty\\. Then
 >
 > \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right\]\mathclose{} = \mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\right)^2\mathclose{} + \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{} + \sigma^2\\
 
@@ -318,13 +328,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y_0 - \hat f(x_0)\right)\mathclose{}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} + 2\operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} && \text{(expand the square)} \end{aligned} \\
 >
-> - \\\operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} = \sigma^2\\, by [Solution 1](#sol-noise-second-moment).
+> - \\\operatorname{E}\mathopen{}\left\[\varepsilon^2\right\]\mathclose{} = \sigma^2\\, by [Theorem 1](#thm-noise-second-moment).
 >
 > - \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon D\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} \\ &= 0, \end{aligned} \\
 >
 >   because \\\varepsilon\\ is independent of \\\hat f(x_0)\\, hence of \\D\\, and \\\operatorname{E}\mathopen{}\left\[\varepsilon\right\]\mathclose{} = 0\\.
 >
-> - By [Theorem 2](#thm-variance), \\\operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\\. Here \\\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\\, because \\f(x_0)\\ is a constant, and
+> - By [Theorem 3](#thm-variance), \\\operatorname{E}\mathopen{}\left\[D^2\right\]\mathclose{} = \operatorname{Var}\mathopen{}\left(D\right)\mathclose{} + \mathopen{}\left(\operatorname{E}\mathopen{}\left\[D\right\]\mathclose{}\right)^2\mathclose{}\\. Here \\\operatorname{Var}\mathopen{}\left(D\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}\\, because \\f(x_0)\\ is a constant, and
 >
 >   \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[D\right\]\mathclose{} &= f(x_0) - \operatorname{E}\mathopen{}\left\[\hat f(x_0)\right\]\mathclose{} \\ &= -\operatorname{Bias}\mathopen{}\left(\hat f(x_0)\right)\mathclose{}, \end{aligned} \\
 >
@@ -334,7 +344,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 10 (Irreducible error)** In [Theorem 4](#thm-prediction-error), the term \\\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\\ is the **irreducible error**. It does not depend on the prediction \\\hat f\\, so no choice of prediction can remove it. For example, in [Exercise 2](#exr-prediction-error), \\\sigma^2= 3\\, so every prediction there has expected squared error at least \\3\\.
+> **Definition 10 (Irreducible error)** In [Theorem 5](#thm-prediction-error), the term \\\sigma^2= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}\\ is the **irreducible error**. It does not depend on the prediction \\\hat f\\, so no choice of prediction can remove it. For example, in [Exercise 2](#exr-prediction-error), \\\sigma^2= 3\\, so every prediction there has expected squared error at least \\3\\.
 
 > **NOTE:**
 >
@@ -350,7 +360,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 5 (Alternative formula for covariance)** \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\
+> **Theorem 6 (Alternative formula for covariance)** \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}= \operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\
 
 > **NOTE:**
 >
@@ -370,7 +380,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 6 (Independent random variables have zero covariance)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), each discrete or continuous, with defined expectations, then:
+> **Theorem 7 (Independent random variables have zero covariance)** If \\X\\ and \\Y\\ are [independent](independence.llms.md#def-indpt), each discrete or continuous, with defined expectations, then:
 >
 > \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\
 >
@@ -396,11 +406,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \operatorname{P}(X_1 = 1, X_2 = 1) && \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\ &= \tfrac{1}{4} && \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} && \text{(factor)} \\ &= \operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}\operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{} && \text{(each flip is } \operatorname{Ber}(1/2) \text{)} \end{aligned} \\
 >
-> so \\\operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} = 0\\, as [Theorem 6](#thm-indpt-uncorrelated) requires.
+> so \\\operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} = 0\\, as [Theorem 7](#thm-indpt-uncorrelated) requires.
 
 > **NOTE:**
 >
-> **Example 12 (Zero covariance without independence)** The converse of [Theorem 6](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then
+> **Example 12 (Zero covariance without independence)** The converse of [Theorem 7](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= (-1 + 0 + 1)/3 \\ &= 0, \end{aligned} \\
 >
@@ -444,7 +454,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 6](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 12](#exm-uncorrelated-not-indpt) shows the converse fails.
+> *Remark*. [Theorem 7](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 12](#exm-uncorrelated-not-indpt) shows the converse fails.
 
 > **NOTE:**
 >
@@ -472,7 +482,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 7 (Law of total covariance)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Z^2\right\]\mathclose{} \< \infty\\:
+> **Theorem 8 (Law of total covariance)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Z^2\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{Cov}\mathopen{}\left(Y,Z\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}\right\]\mathclose{} + \operatorname{Cov}\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}, \operatorname{E}\mathopen{}\left\[Z \mid X\right\]\mathclose{}\right)\mathclose{}\\
 
@@ -482,7 +492,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(Y,Z\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \mu_Y\right)\mathclose{}\mathopen{}\left(Z - \mu_Z\right)\mathclose{}\right\]\mathclose{} && \text{(definition of covariance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\mathopen{}\left\[Y - m_Y(X)\right\]\mathclose{} + \mathopen{}\left\[m_Y(X) - \mu_Y\right\]\mathclose{}\right)\mathclose{}\mathopen{}\left(\mathopen{}\left\[Z - m_Z(X)\right\]\mathclose{} + \mathopen{}\left\[m_Z(X) - \mu_Z\right\]\mathclose{}\right)\mathclose{}\right\]\mathclose{} && \text{(add and subtract)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m_Y(X)\right\]\mathclose{}\mathopen{}\left\[Z - m_Z(X)\right\]\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m_Y(X)\right\]\mathclose{}\mathopen{}\left\[m_Z(X) - \mu_Z\right\]\mathclose{}\right\]\mathclose{} \\&\quad + \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m_Y(X) - \mu_Y\right\]\mathclose{}\mathopen{}\left\[Z - m_Z(X)\right\]\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[m_Y(X) - \mu_Y\right\]\mathclose{}\mathopen{}\left\[m_Z(X) - \mu_Z\right\]\mathclose{}\right\]\mathclose{} && \text{(expand the product; linearity of expectation)} \end{aligned} \\
 >
-> The two middle terms are 0, by the same steps as the cross term in the proof of [Theorem 3](#thm-total-variance): condition on \\X\\ by the [law of iterated expectations](expectation.llms.md#thm-lie), factor out the function of \\X\\ ([pull-out property](expectation.llms.md#thm-cond-pull-out)), and use \\\operatorname{E}\mathopen{}\left\[Y - m_Y(X) \mid X\right\]\mathclose{} = 0\\ (or \\\operatorname{E}\mathopen{}\left\[Z - m_Z(X) \mid X\right\]\mathclose{} = 0\\), which follows from [linearity of conditional expectation](expectation.llms.md#thm-cond-linearity). For the first term:
+> The two middle terms are 0, by the same steps as the cross term in the proof of [Theorem 4](#thm-total-variance): condition on \\X\\ by the [law of iterated expectations](expectation.llms.md#thm-lie), factor out the function of \\X\\ ([pull-out property](expectation.llms.md#thm-cond-pull-out)), and use \\\operatorname{E}\mathopen{}\left\[Y - m_Y(X) \mid X\right\]\mathclose{} = 0\\ (or \\\operatorname{E}\mathopen{}\left\[Z - m_Z(X) \mid X\right\]\mathclose{} = 0\\), which follows from [linearity of conditional expectation](expectation.llms.md#thm-cond-linearity). For the first term:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m_Y(X)\right\]\mathclose{}\mathopen{}\left\[Z - m_Z(X)\right\]\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left\[Y - m_Y(X)\right\]\mathclose{}\mathopen{}\left\[Z - m_Z(X)\right\]\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\ &= \operatorname{E}\mathopen{}\left\[\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}\right\]\mathclose{} && \text{(definition of conditional covariance)} \end{aligned} \\
 >
@@ -516,7 +526,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 8 (Elements of the variance-covariance matrix are pairwise covariances)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\, the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\:
+> **Theorem 9 (Elements of the variance-covariance matrix are pairwise covariances)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\, the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\:
 >
 > \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \operatorname{Cov}\mathopen{}\left(X_2, X_1\right)\mathclose{} & \operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_2, X_p\right)\mathclose{} \\ \vdots & \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_p, X_2\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \\
 
@@ -534,7 +544,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 9 (Alternate expression for variance of a random vector)** \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \end{aligned} \\
+> **Theorem 10 (Alternate expression for variance of a random vector)** \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -542,7 +552,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 10 (Variance of a linear combination)** For any vector of random variables \\\tilde{X}= (X_1, \ldots, X_n)\\ and corresponding vector of constants \\\tilde{a}= (a_1, \ldots, a_n)\\, the variance of their linear combination is:
+> **Theorem 11 (Variance of a linear combination)** For any vector of random variables \\\tilde{X}= (X_1, \ldots, X_n)\\ and corresponding vector of constants \\\tilde{a}= (a_1, \ldots, a_n)\\, the variance of their linear combination is:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{a}\cdot \tilde{X}\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(\sum\_{i=1}^na_i X_i\right)\mathclose{} \\ &= {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} \end{aligned} \\
 
@@ -564,7 +574,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. Apply [Theorem 10](#thm-var-lincom) with \\n=2\\, \\X_1 = X\\, and \\X_2 = Y\\:
+> *Proof*. Apply [Theorem 11](#thm-var-lincom) with \\n=2\\, \\X_1 = X\\, and \\X_2 = Y\\:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{} &= a^2 \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + b^2 \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} + 2ab \operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} \end{aligned} \\
 >
@@ -580,7 +590,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 6](#thm-indpt-uncorrelated), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\. Applying [Corollary 2](#cor-var-lincom2) with
+> *Proof*. By [Theorem 7](#thm-indpt-uncorrelated), \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} = 0\\. Applying [Corollary 2](#cor-var-lincom2) with
 >
 > \\ \begin{aligned} a &= b \\ &= 1: \end{aligned} \\
 >
@@ -592,13 +602,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 11 (A variance matrix is symmetric and positive semidefinite)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ with \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is [symmetric](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix) and [positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite): for every \\p \times 1\\ vector of constants \\\tilde{a}\\,
+> **Theorem 12 (A variance matrix is symmetric and positive semidefinite)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ with \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is [symmetric](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix) and [positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite): for every \\p \times 1\\ vector of constants \\\tilde{a}\\,
 >
 > \\{\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a}\ge 0\\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 8](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 11](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
+> *Proof*. By [Theorem 9](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 11](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[(X_i - \mu_i)(X_j - \mu_j)\right\]\mathclose{} && \text{(definition of covariance)} \\ &= \operatorname{E}\mathopen{}\left\[(X_j - \mu_j)(X_i - \mu_i)\right\]\mathclose{} && \text{(multiplication of numbers is commutative)} \\ &= \operatorname{Cov}\mathopen{}\left(X_j, X_i\right)\mathclose{} && \text{(definition of covariance)} \end{aligned} \\
 >
@@ -608,7 +618,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} &= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(variance of a linear combination)} \\ &= \operatorname{E}\mathopen{}\left\[(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of variance)} \\ &\ge 0 && \text{(} (Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2 \ge 0 \text{)} \end{aligned} \\
 >
-> The first step is [Theorem 10](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley ([1995](#ref-billingsley1995probability))).
+> The first step is [Theorem 11](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley ([1995](#ref-billingsley1995probability))).
 
 > **NOTE:**
 >
@@ -634,11 +644,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\ &= -2.5, \\ \operatorname{E}\mathopen{}\left\[X_1' X_2'\right\]\mathclose{} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} \\ &= 2.5. \end{aligned} \\
 >
-> Since the means are 0, [Theorem 8](#thm-vcov-elements) and [Theorem 5](#thm-alt-cov) give:
+> Since the means are 0, [Theorem 9](#thm-vcov-elements) and [Theorem 6](#thm-alt-cov) give:
 >
 > \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \begin{pmatrix}12.5 & -2.5 \\ -2.5 & 1\end{pmatrix}, \qquad \operatorname{Var}\mathopen{}\left(\tilde{X}'\right)\mathclose{} = \begin{pmatrix}12.5 & 2.5 \\ 2.5 & 1\end{pmatrix}. \\
 >
-> Both are symmetric. [Theorem 10](#thm-var-lincom) with \\\tilde{a}= {(1, 1)}^{\top}\\ and \\\tilde{a}= {(1, -1)}^{\top}\\ gives:
+> Both are symmetric. [Theorem 11](#thm-var-lincom) with \\\tilde{a}= {(1, 1)}^{\top}\\ and \\\tilde{a}= {(1, -1)}^{\top}\\ gives:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &= 12.5 + 1 + 2(-2.5) & \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &= 12.5 + 1 - 2(-2.5) \\ &= 8.5, & &= 18.5, \\ \operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &= 12.5 + 1 + 2(2.5) & \operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &= 12.5 + 1 - 2(2.5) \\ &= 18.5, & &= 8.5. \end{aligned} \\
 >
@@ -671,11 +681,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 8](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ by [Theorem 6](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\\ by [Lemma 1](#lem-cov-xx).
+> *Proof*. By [Theorem 9](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ by [Theorem 7](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\\ by [Lemma 1](#lem-cov-xx).
 
 > **NOTE:**
 >
-> **Theorem 12 (Correlation lies between \\-1\\ and \\1\\)** If \\X\\ and \\Y\\ have finite, positive [variances](#def-variance), then their [correlation](#def-correlation) lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)):
+> **Theorem 13 (Correlation lies between \\-1\\ and \\1\\)** If \\X\\ and \\Y\\ have finite, positive [variances](#def-variance), then their [correlation](#def-correlation) lies in \\\[-1, 1\]\\ ([Casella and Berger 2002](#ref-CaseBerg01)):
 >
 > \\-1 \le \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\\
 
@@ -757,7 +767,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 >
-> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 12](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
+> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 13](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
 
 > **NOTE:**
 >
