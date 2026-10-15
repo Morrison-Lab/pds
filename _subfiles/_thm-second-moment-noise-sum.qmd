@@ -3,10 +3,10 @@
 #### The second moment of independent noise plus a random variable
 
 Let $\noise$ be a random variable with $\E{\noise} = 0$ and $\Var{\noise} = \varpar$.
-Let $\rvar$ be a random variable with $\E{\rvar^2} < \infty$ that is independent of $\noise$.
+Let $\Rvar$ be a random variable with $\E{\Rvar^2} < \infty$ that is independent of $\noise$.
 Then
 
-$$\E{\paren{\noise + \rvar}^2} = \varpar + \Var{\rvar} + \sqf{\E{\rvar}}$$
+$$\E{\paren{\noise + \Rvar}^2} = \varpar + \Var{\Rvar} + \sqf{\E{\Rvar}}$$
 
 :::
 
@@ -18,12 +18,12 @@ first for the expectation of a sum and then for a constant factor,
 
 $$
 \ba
-\E{\paren{\noise + \rvar}^2}
-&= \E{\noise^2 + 2 \noise \rvar + \rvar^2}
+\E{\paren{\noise + \Rvar}^2}
+&= \E{\noise^2 + 2 \noise \Rvar + \Rvar^2}
 && \text{(expand: } \paren{a + b}^2 = a^2 + 2ab + b^2 \text{)} \\
-&= \E{\noise^2} + \E{2 \noise \rvar} + \E{\rvar^2}
+&= \E{\noise^2} + \E{2 \noise \Rvar} + \E{\Rvar^2}
 && \text{(expectation of a sum)} \\
-&= \E{\noise^2} + 2\E{\noise \rvar} + \E{\rvar^2}
+&= \E{\noise^2} + 2\E{\noise \Rvar} + \E{\Rvar^2}
 && \text{(constant factor 2)}
 \ea
 $$
@@ -31,31 +31,31 @@ $$
 Each of the three terms is evaluated in turn.
 
 - $\E{\noise^2} = \varpar$, by @thm-noise-second-moment.
-- Because $\noise$ and $\rvar$ are independent,
+- Because $\noise$ and $\Rvar$ are independent,
   the expectation of the product is the product of the expectations:
 
   $$
   \ba
-  \E{\noise \rvar}
-  &= \E{\noise}\E{\rvar}
+  \E{\noise \Rvar}
+  &= \E{\noise}\E{\Rvar}
   && \text{(independence)} \\
-  &= 0 \cdot \E{\rvar}
+  &= 0 \cdot \E{\Rvar}
   && \text{(} \E{\noise} = 0 \text{)} \\
   &= 0
   && \text{(zero times a number)}
   \ea
   $$
 
-- $\E{\rvar^2} = \Var{\rvar} + \sqf{\E{\rvar}}$, by @thm-variance.
+- $\E{\Rvar^2} = \Var{\Rvar} + \sqf{\E{\Rvar}}$, by @thm-variance.
 
 Substituting the three terms gives
 
 $$
 \ba
-\E{\paren{\noise + \rvar}^2}
-&= \varpar + 2 \cdot 0 + \paren{\Var{\rvar} + \sqf{\E{\rvar}}}
+\E{\paren{\noise + \Rvar}^2}
+&= \varpar + 2 \cdot 0 + \paren{\Var{\Rvar} + \sqf{\E{\Rvar}}}
 && \text{(the three terms above)} \\
-&= \varpar + \Var{\rvar} + \sqf{\E{\rvar}}
+&= \varpar + \Var{\Rvar} + \sqf{\E{\Rvar}}
 && \text{(drop } 2 \cdot 0 \text{)}
 \ea
 $$
@@ -67,17 +67,17 @@ $$
 #### Use in statistics and machine learning
 
 Let $\noise$ be the noise in a new outcome $\Outvar$,
-and let $\rvar$ be the difference between the true mean $\mean = \E{\Outvar}$ and a prediction $\eoutvar$:
+and let $\Rvar$ be the difference between the true mean $\mean = \E{\Outvar}$ and a prediction $\eoutvar$:
 
-$$\rvar \eqdef \mean - \eoutvar$$
+$$\Rvar \eqdef \mean - \eoutvar$$
 
-The mean of $\rvar$ is minus the bias of the prediction:
+The mean of $\Rvar$ is minus the bias of the prediction:
 
 $$
 \ba
-\E{\rvar}
+\E{\Rvar}
 &= \E{\mean - \eoutvar}
-&& \text{(definition of } \rvar \text{)} \\
+&& \text{(definition of } \Rvar \text{)} \\
 &= \mean - \E{\eoutvar}
 && \text{(expectation of a difference; } \mean \text{ is a constant)} \\
 &= -\paren{\E{\eoutvar} - \mean}
@@ -87,13 +87,13 @@ $$
 \ea
 $$
 
-The variance of $\rvar$ is the variance of the prediction:
+The variance of $\Rvar$ is the variance of the prediction:
 
 $$
 \ba
-\Var{\rvar}
+\Var{\Rvar}
 &= \Var{\mean - \eoutvar}
-&& \text{(definition of } \rvar \text{)} \\
+&& \text{(definition of } \Rvar \text{)} \\
 &= \Var{\eoutvar}
 && \text{(a constant shifts a variable without changing its variance, and a sign flip does not change it either)}
 \ea
@@ -104,7 +104,7 @@ with $\sqf{-\bias{\eoutvar}} = \sqf{\bias{\eoutvar}}$,
 gives the squared prediction error of the new outcome as
 
 $$
-\E{\sqf{\noise + \rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
+\E{\sqf{\noise + \Rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
 $$
 
 where $\varpar$ is the irreducible error.
