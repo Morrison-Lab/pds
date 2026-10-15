@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 04:02:56 (PDT)
+Last modified: 2026-10-15 05:08:19 (PDT)
 
 > **NOTE:**
 >
@@ -275,7 +275,7 @@ print(plot2)
 >
 > Then, by the [simplified expression for variance](variance-covariance.llms.md#thm-variance) and [linearity of expectation](expectation.llms.md#thm-linearity-expectation):
 >
-> \\ \begin{aligned} \operatorname{Var}(X) &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (\text{simplified expression for variance}) \\ &= \operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)^2\mathclose{} && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu- \mu^2 && (\text{substitute}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}(X) &= \operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} - {\mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)\mathclose{}}^2 && (\text{simplified expression for variance}) \\ &= \operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} - {\mathopen{}\left(\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\right)\mathclose{}}^2 && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu- \mu^2 && (\text{substitute}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
 >
 > See also <https://statproofbook.github.io/P/poiss-mean> and <https://statproofbook.github.io/P/poiss-var>.
 
