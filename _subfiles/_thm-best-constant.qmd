@@ -92,9 +92,11 @@ data.frame(
 
 ```{r}
 #| include: false
-# The claims the prose makes: the two columns agree, and the mean is best.
+# The claims the prose makes: there are 392 cars, the two columns agree, and the mean is best.
 squared_error <- sapply(c_values, function(cc) mean((mpg - cc)^2))
 stopifnot(
+  length(mpg) == 392L,
+  !anyNA(mpg),
   all.equal(unname(squared_error), unname(sigma2 + (mu - c_values)^2)),
   which.min(squared_error) == 1,
   all.equal(unname(squared_error[1]), sigma2)
