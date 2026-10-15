@@ -18,8 +18,8 @@ the risk of the prediction $c = 1$ is $5$ for squared error loss and $2$ for abs
 The risk of the prediction $c = 2$ is $4$ for squared error loss and $2$ for absolute error loss.
 
 For squared error loss and a prediction $g(X)$,
-the risk is $\E{\sqf{Y - g(X)}}$.
-@hastie2009elements [p. 18] call it the expected prediction error.
+the risk is $\E{\sqf{Y - g(X)}}$,
+also called the **expected prediction error** [@hastie2009elements, p. 18].
 
 The prediction with the smallest risk depends on the loss.
 In @exr-loss, every constant $c$ from $0$ to $4$ has absolute error risk $2$,
