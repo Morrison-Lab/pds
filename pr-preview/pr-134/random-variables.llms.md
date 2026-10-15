@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 15:13:10 (PDT)
+Last modified: 2026-10-15 08:50:47 (PDT)
 
 ## 1 Random variables
 
@@ -195,7 +195,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Normal distribution)** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
 >
 > \\\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\\
 
@@ -311,116 +311,110 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > *Remark*. [Figure 1](#fig-pmf-cdf-quantile) shows the mass function, CDF and quantile function of the number of heads in two fair coin flips (top row), beside the density, CDF and quantile function of a standard normal variable (bottom row).
 
-Show code
-
-``` r
-# One ggplot2 figure serves every format:
-# HTML formats turn it into an interactive plotly widget with ggplotly(),
-# and the handout and other formats draw it as it is.
-# Top row: X = number of heads in two fair coin flips,
-# so the pmf is 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
-# Bottom row: the standard normal distribution;
-# the density is shaded up to t = 1
-# to show that the CDF at t is the area to its left.
-local({
-  library(ggplot2)
-
-  heads <- 0:2
-  pmf <- c(1, 2, 1) / 4
-  cdf_steps <- cumsum(pmf)
-  shade_at <- 1
-  z <- seq(-3.5, 3.5, length.out = 300)
-  p_grid <- seq(0.005, 0.995, length.out = 300)
-  z_shade <- z[z <= shade_at]
-  blue <- "#1f77b4"
-
-  panel_names <- c(
-    "Coin flips: mass function",
-    "Coin flips: CDF",
-    "Coin flips: quantile function",
-    "Normal: density",
-    "Normal: CDF",
-    "Normal: quantile function"
-  )
-  panel_data <- function(panel, x, y) {
-    data.frame(
-      panel = factor(panel, levels = panel_names),
-      x = x,
-      y = y
-    )
-  }
-
-  bars <- panel_data(panel_names[1], heads, pmf)
-  steps <- rbind(
-    panel_data(panel_names[2], c(-1, heads, 3), c(0, cdf_steps, 1)),
-    panel_data(panel_names[3], c(0, 0.25, 0.75, 1), c(0, 1, 2, 2))
-  )
-  curves <- rbind(
-    panel_data(panel_names[4], z, dnorm(z)),
-    panel_data(panel_names[5], z, pnorm(z)),
-    panel_data(panel_names[6], p_grid, qnorm(p_grid))
-  )
-  shaded <- panel_data(
-    panel_names[4],
-    c(z_shade, shade_at),
-    c(dnorm(z_shade), 0)
-  )
-  marked <- panel_data(panel_names[5], shade_at, pnorm(shade_at))
-
-  pmf_cdf_quantile <- ggplot(mapping = aes(x = x, y = y)) +
-    geom_col(
-      data = bars,
-      fill = blue,
-      width = 0.6
-    ) +
-    geom_step(
-      data = steps,
-      colour = blue
-    ) +
-    geom_line(
-      data = curves,
-      colour = blue
-    ) +
-    geom_ribbon(
-      data = shaded,
-      mapping = aes(ymin = 0, ymax = y),
-      fill = blue,
-      alpha = 0.3
-    ) +
-    geom_point(
-      data = marked,
-      colour = blue
-    ) +
-    facet_wrap(
-      ~panel,
-      nrow = 2,
-      scales = "free"
-    ) +
-    labs(
-      x = NULL,
-      y = NULL
-    ) +
-    theme_minimal() +
-    theme(panel.spacing = unit(2, "lines"))
-
-  if (knitr::is_html_output()) {
-    # The alt text: a plotly widget has none of its own.
-    htmltools::div(
-      role = "img",
-      `aria-label` = fig_alt,
-      plotly::ggplotly(pmf_cdf_quantile) |>
-        plotly::config(
-          displaylogo = FALSE,
-          responsive = TRUE
-        )
-    )
-  } else {
-    pmf_cdf_quantile
-  }
-})
-```
-
-Figure 1: A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF’s, swapped.
+> **NOTE:**
+>
+> Show code
+>
+> ``` r
+> # One ggplot2 figure serves every format:
+> # qnp::interactive_plot() turns it into an interactive plotly widget
+> # in HTML formats,
+> # with the alt text as the aria-label,
+> # and the handout and other formats draw it as it is.
+> # Top row: X = number of heads in two fair coin flips,
+> # so the pmf is 1/4, 1/2, 1/4 on 0, 1, 2, as in the examples above.
+> # Bottom row: the standard normal distribution;
+> # the density is shaded up to t = 1
+> # to show that the CDF at t is the area to its left.
+> local({
+>   library(ggplot2)
+>
+>   heads <- 0:2
+>   pmf <- c(1, 2, 1) / 4
+>   cdf_steps <- cumsum(pmf)
+>   shade_at <- 1
+>   z <- seq(-3.5, 3.5, length.out = 300)
+>   p_grid <- seq(0.005, 0.995, length.out = 300)
+>   z_shade <- z[z <= shade_at]
+>   blue <- "#1f77b4"
+>
+>   panel_names <- c(
+>     "Coin flips: mass function",
+>     "Coin flips: CDF",
+>     "Coin flips: quantile function",
+>     "Normal: density",
+>     "Normal: CDF",
+>     "Normal: quantile function"
+>   )
+>   panel_data <- function(panel, x, y) {
+>     data.frame(
+>       panel = factor(panel, levels = panel_names),
+>       x = x,
+>       y = y
+>     )
+>   }
+>
+>   bars <- panel_data(panel_names[1], heads, pmf)
+>   steps <- rbind(
+>     panel_data(panel_names[2], c(-1, heads, 3), c(0, cdf_steps, 1)),
+>     panel_data(panel_names[3], c(0, 0.25, 0.75, 1), c(0, 1, 2, 2))
+>   )
+>   curves <- rbind(
+>     panel_data(panel_names[4], z, dnorm(z)),
+>     panel_data(panel_names[5], z, pnorm(z)),
+>     panel_data(panel_names[6], p_grid, qnorm(p_grid))
+>   )
+>   shaded <- panel_data(
+>     panel_names[4],
+>     c(z_shade, shade_at),
+>     c(dnorm(z_shade), 0)
+>   )
+>   marked <- panel_data(panel_names[5], shade_at, pnorm(shade_at))
+>
+>   pmf_cdf_quantile <- ggplot(mapping = aes(x = x, y = y)) +
+>     geom_col(
+>       data = bars,
+>       fill = blue,
+>       width = 0.6
+>     ) +
+>     geom_step(
+>       data = steps,
+>       colour = blue
+>     ) +
+>     geom_line(
+>       data = curves,
+>       colour = blue
+>     ) +
+>     geom_ribbon(
+>       data = shaded,
+>       mapping = aes(ymin = 0, ymax = y),
+>       fill = blue,
+>       alpha = 0.3
+>     ) +
+>     geom_point(
+>       data = marked,
+>       colour = blue
+>     ) +
+>     facet_wrap(
+>       ~panel,
+>       nrow = 2,
+>       scales = "free"
+>     ) +
+>     labs(
+>       x = NULL,
+>       y = NULL
+>     ) +
+>     theme_minimal() +
+>     theme(panel.spacing = unit(2, "lines"))
+>
+>   qnp::interactive_plot(
+>     plot = pmf_cdf_quantile,
+>     alt = fig_alt
+>   )
+> })
+> ```
+>
+> Figure 1: A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF’s, swapped.
 
 > **NOTE:**
 >
@@ -596,7 +590,7 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 
 > **NOTE:**
 >
-> **Definition 17 (Joint probability mass function)** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (joint PMF) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
+> **Definition 17 (Joint probability mass function (joint PMF))** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (**joint PMF**) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
 >
 > \\\operatorname{P}(X = x,\\ Y = y) \stackrel{\text{def}}{=}\Pr(\\X = x\\ \cap \\Y = y\\)\\
 
@@ -643,7 +637,7 @@ Figure 1: A probability mass function, cumulative distribution function and qua
 
 > **NOTE:**
 >
-> **Definition 19 (Joint probability density function)** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (joint density) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
+> **Definition 19 (Joint probability density function (joint density))** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (**joint density**) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
 >
 > - \\f\_{X,Y}(x, y) \ge 0\\ for every \\(x, y)\\.
 > - The integral of \\f\_{X,Y}\\ over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\: \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
@@ -746,13 +740,15 @@ The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ 
 >
 > **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes ([Hutchinson 2024](#ref-hutchinson2024data471)). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
 >
-> |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\\operatorname{P}(m)\\ |
-> |:---|---:|---:|---:|
-> | \\m=0\\ (no meteorite) | \\0.09999902\\ | \\0.89999998\\ | \\0.999999\\ |
-> | \\m=1\\ (meteorite hit) | \\0.00000098\\ | \\0.00000002\\ | \\0.000001\\ |
-> | **Marginal \\\operatorname{P}(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
->
-> Table 1: Joint distribution of a meteorite strike (\\m\\) and day quality (\\d\\), with marginals.
+> > **NOTE:**
+> >
+> > |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\\operatorname{P}(m)\\ |
+> > |:---|---:|---:|---:|
+> > | \\m=0\\ (no meteorite) | \\0.09999902\\ | \\0.89999998\\ | \\0.999999\\ |
+> > | \\m=1\\ (meteorite hit) | \\0.00000098\\ | \\0.00000002\\ | \\0.000001\\ |
+> > | **Marginal \\\operatorname{P}(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
+> >
+> > Table 1: Joint distribution of a meteorite strike (\\m\\) and day quality (\\d\\), with marginals.
 >
 > Summing each row yields the marginal distribution of \\m\\; summing each column yields the marginal distribution of \\d\\. Conditioning inverts the perspective:
 >
@@ -802,7 +798,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 21 (Survival function)** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
+> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -844,7 +840,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Hazard function)** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
+> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
@@ -992,16 +988,18 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > which matches the survival function computed directly in [Example 28](#exm-exp-survfn).
 
-| Name | Symbols | Definition |
-|:---|----|----|
-| [Probability density function (PDF)](#def-pdf) | \\f(t), \operatorname{p}(t)\\ | \\f \ge 0\\ with \\\int_a^b f(u)\\du = \Pr(a \le T \le b)\\ |
-| [Cumulative distribution function (CDF)](#def-cdf) | \\F(t)\\ | \\\Pr(T\leq t)\\ |
-| [Survival function](#def-surv-fn) | \\\operatorname{S}(t), \bar{F}(t)\\ | \\\Pr(T \> t)\\ |
-| [Hazard function](#def-hazard) | \\{\lambda}(t), \operatorname{h}(t)\\ | \\\lim\_{\Delta\downarrow 0} \Pr(t \le T \< t + \Delta\mid T \ge t) / \Delta\\ |
-| [Cumulative hazard function](#def-cuhaz) | \\{\Lambda}(t), \operatorname{H}(t)\\ | \\\int\_{u=-\infty}^t {\lambda}(u)\\du\\ |
-| Log-hazard function | \\\eta(t)\\ | \\\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\\ |
-
-Table 2: Probability distribution functions of a continuous random variable \\T\\
+> **NOTE:**
+>
+> | Name | Symbols | Definition |
+> |:---|----|----|
+> | [Probability density function (PDF)](#def-pdf) | \\f(t), \operatorname{p}(t)\\ | \\f \ge 0\\ with \\\int_a^b f(u)\\du = \Pr(a \le T \le b)\\ |
+> | [Cumulative distribution function (CDF)](#def-cdf) | \\F(t)\\ | \\\Pr(T\leq t)\\ |
+> | [Survival function](#def-surv-fn) | \\\operatorname{S}(t), \bar{F}(t)\\ | \\\Pr(T \> t)\\ |
+> | [Hazard function](#def-hazard) | \\{\lambda}(t), \operatorname{h}(t)\\ | \\\lim\_{\Delta\downarrow 0} \Pr(t \le T \< t + \Delta\mid T \ge t) / \Delta\\ |
+> | [Cumulative hazard function](#def-cuhaz) | \\{\Lambda}(t), \operatorname{H}(t)\\ | \\\int\_{u=-\infty}^t {\lambda}(u)\\du\\ |
+> | Log-hazard function | \\\eta(t)\\ | \\\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\\ |
+>
+> Table 2: Probability distribution functions of a continuous random variable \\T\\
 
 > **NOTE:**
 >

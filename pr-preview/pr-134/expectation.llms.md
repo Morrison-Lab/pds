@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 15:13:10 (PDT)
+Last modified: 2026-10-15 08:50:47 (PDT)
 
 > **NOTE:**
 >
@@ -193,6 +193,16 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 > So the sample average is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
 >
 > What it does not tell us is how far any *particular* sample average falls from \\\mu\\ — that is a statement about variance, not expectation, and it is where independence does the work. The distinction matters because an estimator or fitted model is a function of one particular sample. Knowing that the procedure is right on average says nothing about the estimate actually in front of you, and separating those two statements is foundational to understanding bias and variance.
+
+> **NOTE:**
+>
+> **Theorem 5 (The expectation of a sample average)** Let \\X_1, \ldots, X_n\\ be random variables, with \\n \ge 1\\, that each have finite mean \\\mu\\, and let \\\bar X \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. The \\X_i\\ need not be independent. Then
+>
+> \\\operatorname{E}\[\bar X\] = \mu\\
+
+> **NOTE:**
+>
+> *Proof*. This is the solution to [Exercise 1](#exr-linearity-use), worked in [Solution 1](#sol-linearity-use). It follows from [Theorem 4](#thm-linearity-expectation), which needs no independence and applies because each \\\operatorname{E}\[X_i\] = \mu\\ is finite.
 
 ## 1 Conditional distributions and expectations
 
@@ -483,7 +493,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 5 (Conditional LOTUS, discrete case)** Let \\X\\ and \\Y\\ be jointly distributed discrete random variables, \\h\\ a function of two arguments, \\W \stackrel{\text{def}}{=}h(X, Y)\\, and \\x\\ a value with \\\operatorname{P}(X = x) \> 0\\. Then \\W\\ is discrete, and \\\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{}\\ from [Definition 8](#def-cond-expectation-general) equals \\\operatorname{E}\mathopen{}\left\[W \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation), with one sum converging absolutely exactly when the other does.
+> **Theorem 6 (Conditional LOTUS, discrete case)** Let \\X\\ and \\Y\\ be jointly distributed discrete random variables, \\h\\ a function of two arguments, \\W \stackrel{\text{def}}{=}h(X, Y)\\, and \\x\\ a value with \\\operatorname{P}(X = x) \> 0\\. Then \\W\\ is discrete, and \\\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{}\\ from [Definition 8](#def-cond-expectation-general) equals \\\operatorname{E}\mathopen{}\left\[W \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation), with one sum converging absolutely exactly when the other does.
 
 > **NOTE:**
 >
@@ -499,11 +509,11 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. [Definition 8](#def-cond-expectation-general) is the conditional version of [LOTUS](#thm-lotus): for discrete \\X\\, it is LOTUS applied under the probability measure \\\Pr(\cdot \mid X = x)\\, and by [Theorem 5](#thm-cond-lotus), results about \\\operatorname{E}\mathopen{}\left\[W \mid X\right\]\mathclose{}\\ apply to it. \\Y\\ can also be a pair \\(Y, Z)\\, with the sum or integral taken over both.
+> *Remark*. [Definition 8](#def-cond-expectation-general) is the conditional version of [LOTUS](#thm-lotus): for discrete \\X\\, it is LOTUS applied under the probability measure \\\Pr(\cdot \mid X = x)\\, and by [Theorem 6](#thm-cond-lotus), results about \\\operatorname{E}\mathopen{}\left\[W \mid X\right\]\mathclose{}\\ apply to it. \\Y\\ can also be a pair \\(Y, Z)\\, with the sum or integral taken over both.
 
 > **NOTE:**
 >
-> **Theorem 6 (Linearity of conditional expectation)** For jointly distributed \\X\\ and \\Y\\, functions \\h_1\\ and \\h_2\\ whose conditional expectations given \\X = x\\ are defined, and constants \\a\\ and \\b\\:
+> **Theorem 7 (Linearity of conditional expectation)** For jointly distributed \\X\\ and \\Y\\, functions \\h_1\\ and \\h_2\\ whose conditional expectations given \\X = x\\ are defined, and constants \\a\\ and \\b\\:
 >
 > \\\operatorname{E}\mathopen{}\left\[a h_1(X, Y) + b h_2(X, Y) \mid X = x\right\]\mathclose{} = a\operatorname{E}\mathopen{}\left\[h_1(X, Y) \mid X = x\right\]\mathclose{} + b\operatorname{E}\mathopen{}\left\[h_2(X, Y) \mid X = x\right\]\mathclose{}\\
 >
@@ -523,7 +533,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{} &= (1 + 4)/2 \\ &= 5/2. \end{aligned} \\
 >
-> By [Theorem 6](#thm-cond-linearity) with
+> By [Theorem 7](#thm-cond-linearity) with
 >
 > \\ \begin{aligned} a &= b \\ &= 1: \end{aligned} \\
 >
@@ -535,7 +545,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 7 (A function of \\X\\ factors out of a conditional expectation given \\X\\)** For jointly distributed \\X\\ and \\Y\\, a function \\g\\ of one argument, and a function \\h\\ of two arguments whose conditional expectation given \\X = x\\ is defined:
+> **Theorem 8 (A function of \\X\\ factors out of a conditional expectation given \\X\\)** For jointly distributed \\X\\ and \\Y\\, a function \\g\\ of one argument, and a function \\h\\ of two arguments whose conditional expectation given \\X = x\\ is defined:
 >
 > \\\operatorname{E}\mathopen{}\left\[g(X)\\h(X, Y) \mid X = x\right\]\mathclose{} = g(x) \cdot\operatorname{E}\mathopen{}\left\[h(X, Y) \mid X = x\right\]\mathclose{}\\
 >
@@ -600,27 +610,29 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > by [linearity of expectation](#thm-linearity-expectation).
 >
-> Show code
->
-> ``` r
-> x_labs <- c("X=0", "X=0", "X=1", "X=1")
-> y_labs <- c("Y=0", "Y=1", "Y=0", "Y=1")
-> probs <- c(0.2, 0.3, 0.1, 0.4)
->
-> plotly::plot_ly(
->   x = ~y_labs, y = ~probs, color = ~x_labs,
->   colors = c("steelblue", "tomato"),
->   type = "bar"
-> ) |>
->   plotly::layout(
->     barmode = "group",
->     xaxis = list(title = "Y"),
->     yaxis = list(title = "P(X = x, Y = y)", range = c(0, 0.5)),
->     legend = list(title = list(text = "X value"))
->   )
-> ```
->
-> Figure 1: Joint probability mass function \\\operatorname{P}(X = x, Y = y)\\. Marginal totals: \\\operatorname{P}(X = 0) = 0.5\\, \\\operatorname{P}(X = 1) = 0.5\\, \\\operatorname{P}(Y = 0) = 0.3\\, \\\operatorname{P}(Y = 1) = 0.7\\.
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > x_labs <- c("X=0", "X=0", "X=1", "X=1")
+> > y_labs <- c("Y=0", "Y=1", "Y=0", "Y=1")
+> > probs <- c(0.2, 0.3, 0.1, 0.4)
+> >
+> > plotly::plot_ly(
+> >   x = ~y_labs, y = ~probs, color = ~x_labs,
+> >   colors = c("steelblue", "tomato"),
+> >   type = "bar"
+> > ) |>
+> >   plotly::layout(
+> >     barmode = "group",
+> >     xaxis = list(title = "Y"),
+> >     yaxis = list(title = "P(X = x, Y = y)", range = c(0, 0.5)),
+> >     legend = list(title = list(text = "X value"))
+> >   )
+> > ```
+> >
+> > Figure 1: Joint probability mass function \\\operatorname{P}(X = x, Y = y)\\. Marginal totals: \\\operatorname{P}(X = 0) = 0.5\\, \\\operatorname{P}(X = 1) = 0.5\\, \\\operatorname{P}(Y = 0) = 0.3\\, \\\operatorname{P}(Y = 1) = 0.7\\.
 
 > **NOTE:**
 >
@@ -636,7 +648,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 8 (Fubini–Tonelli theorem, measure-theoretic form)** Let \\\mu_1\\ and \\\mu_2\\ be \\\sigma\\-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure) on \\\sigma\\-algebras of subsets of sets \\S_1\\ and \\S_2\\, and let \\f\\ be a measurable function on \\S_1 \times S_2\\. If either
+> **Theorem 9 (Fubini–Tonelli theorem, measure-theoretic form)** Let \\\mu_1\\ and \\\mu_2\\ be \\\sigma\\-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure) on \\\sigma\\-algebras of subsets of sets \\S_1\\ and \\S_2\\, and let \\f\\ be a measurable function on \\S_1 \times S_2\\. If either
 >
 > 1.  \\f \ge 0\\ (Tonelli), or
 >
@@ -682,7 +694,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Apply [Theorem 8](#thm-fubini-tonelli-measure) with \\\mu_1 = \mu_X\\ and \\\mu_2 = \mu_Y\\ to the integrand \\h(x,y)\\f\_{X,Y}(x,y)\\ on \\\mathcal{R}(X) \times \mathcal{R}(Y)\\. Lebesgue measure and counting measure on a countable set are each \\\sigma\\-finite, so \\\mu_X \otimes \mu_Y\\ is \\\sigma\\-finite in all three cases. The relevant condition is (a) when \\h \ge 0\\ and (b) when \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X, Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\. Independence is not required. When \\X\\ and \\Y\\ are independent, \\f\_{X,Y}(x,y) = f_X(x)\\f_Y(y)\\ (or \\\operatorname{P}(X=x,Y=y) = \operatorname{P}(X=x)\\\operatorname{P}(Y=y)\\ in the discrete case), and the iterated integrals factor into separate integrals over the marginals.
+> *Proof*. Apply [Theorem 9](#thm-fubini-tonelli-measure) with \\\mu_1 = \mu_X\\ and \\\mu_2 = \mu_Y\\ to the integrand \\h(x,y)\\f\_{X,Y}(x,y)\\ on \\\mathcal{R}(X) \times \mathcal{R}(Y)\\. Lebesgue measure and counting measure on a countable set are each \\\sigma\\-finite, so \\\mu_X \otimes \mu_Y\\ is \\\sigma\\-finite in all three cases. The relevant condition is (a) when \\h \ge 0\\ and (b) when \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X, Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\. Independence is not required. When \\X\\ and \\Y\\ are independent, \\f\_{X,Y}(x,y) = f_X(x)\\f_Y(y)\\ (or \\\operatorname{P}(X=x,Y=y) = \operatorname{P}(X=x)\\\operatorname{P}(Y=y)\\ in the discrete case), and the iterated integrals factor into separate integrals over the marginals.
 
 > **NOTE:**
 >
@@ -724,37 +736,39 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > This calculation recovers \\\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}\\ for *independent* uniforms (\\\tfrac{1}{4}\\), not \\\operatorname{E}\mathopen{}\left\[XX\right\]\mathclose{}\\ for the perfectly correlated pair (\\\tfrac{1}{3}\\). The lesson is that [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\. For independent \\(X, Y)\\, this density factors as \\f_X(x)\\f_Y(y)\\; for dependent \\(X, Y)\\, \\f\_{X,Y}\\ need not factor — and for \\(X, X)\\, no joint density on \\\mathbb{R}^2\\ exists at all, so [Corollary 3](#cor-fubini-joint) simply does not apply.
 >
-> Show code
->
-> ``` r
-> set.seed(204)
-> n <- 400
-> x_dep <- runif(n)
-> y_dep <- x_dep
-> x_ind <- runif(n)
-> y_ind <- runif(n)
->
-> plotly::plot_ly() |>
->   plotly::add_trace(
->     type = "scatter", mode = "markers",
->     x = x_ind, y = y_ind,
->     name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
->     marker = list(size = 5, color = "#999999", opacity = 0.5)
->   ) |>
->   plotly::add_trace(
->     type = "scatter", mode = "markers",
->     x = x_dep, y = y_dep,
->     name = "Actual (X, X) on diagonal",
->     marker = list(size = 6, color = "#b40426")
->   ) |>
->   plotly::layout(
->     xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
->     yaxis = list(title = "y", range = c(0, 1)),
->     legend = list(orientation = "h", y = -0.2)
->   )
-> ```
->
-> Figure 2: Samples from the joint distribution of \\(X, X)\\ (red, on the diagonal) versus an independent pair \\(X_1, X_2)\\ with the same marginals (grey, scattered over \\\[0, 1\]^2\\). The actual joint mass for \\(X, X)\\ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in \\\mathbb{R}^2\\ — so no joint density on \\\[0, 1\]^2\\ exists, and the “\\f_X(x)\\f_Y(y) = 1\\” calculation integrates against the wrong measure (the grey distribution).
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > set.seed(204)
+> > n <- 400
+> > x_dep <- runif(n)
+> > y_dep <- x_dep
+> > x_ind <- runif(n)
+> > y_ind <- runif(n)
+> >
+> > plotly::plot_ly() |>
+> >   plotly::add_trace(
+> >     type = "scatter", mode = "markers",
+> >     x = x_ind, y = y_ind,
+> >     name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
+> >     marker = list(size = 5, color = "#999999", opacity = 0.5)
+> >   ) |>
+> >   plotly::add_trace(
+> >     type = "scatter", mode = "markers",
+> >     x = x_dep, y = y_dep,
+> >     name = "Actual (X, X) on diagonal",
+> >     marker = list(size = 6, color = "#b40426")
+> >   ) |>
+> >   plotly::layout(
+> >     xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
+> >     yaxis = list(title = "y", range = c(0, 1)),
+> >     legend = list(orientation = "h", y = -0.2)
+> >   )
+> > ```
+> >
+> > Figure 2: Samples from the joint distribution of \\(X, X)\\ (red, on the diagonal) versus an independent pair \\(X_1, X_2)\\ with the same marginals (grey, scattered over \\\[0, 1\]^2\\). The actual joint mass for \\(X, X)\\ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in \\\mathbb{R}^2\\ — so no joint density on \\\[0, 1\]^2\\ exists, and the “\\f_X(x)\\f_Y(y) = 1\\” calculation integrates against the wrong measure (the grey distribution).
 
 > **NOTE:**
 >
@@ -764,34 +778,36 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \int_0^1\\\int_0^y (x + y) \cdot 2\\dx\\dy && \text{(joint-distribution form of Fubini--Tonelli, over the support } 0 \le x \le y \le 1 \text{)} \\&= 2\int_0^1 \mathopen{}\left\[\frac{x^2}{2} + xy\right\]\mathclose{}\_{x=0}^{x=y}\\dy && \text{(antiderivative in } x \text{)} \\&= 2\int_0^1 \mathopen{}\left(\frac{y^2}{2} + y^2\right)\mathclose{}\\dy && \text{(evaluate at the bounds)} \\&= 2\int_0^1 \frac{3y^2}{2}\\dy && \text{(add)} \\&= 3\int_0^1 y^2\\dy && \text{(simplify the constant)} \\&= 3 \cdot\frac{1}{3} && \text{(integrate)} \\&= 1 && \text{(multiply)} \end{aligned} \\
 >
-> Show code
->
-> ``` r
-> n_grid <- 51
-> x_seq <- seq(0, 1, length.out = n_grid)
-> y_seq <- seq(0, 1, length.out = n_grid)
->
-> z_mat <- outer(x_seq, y_seq, function(x, y) {
->   z <- rep(2, length(x))
->   z[x > y] <- NA
->   z
-> })
->
-> plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
->   plotly::add_surface(showscale = FALSE) |>
->   plotly::layout(scene = list(
->     xaxis = list(title = "x"),
->     yaxis = list(title = "y"),
->     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
->     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
->   ))
-> ```
->
-> Figure 3: Joint density \\f\_{X,Y}(x, y) = 2\\ on the triangular support \\\\(x, y) : 0 \le x \le y \le 1\\\\, and zero elsewhere. The total “volume” under the density is \\2 \cdot \tfrac{1}{2} = 1\\, as required.
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > n_grid <- 51
+> > x_seq <- seq(0, 1, length.out = n_grid)
+> > y_seq <- seq(0, 1, length.out = n_grid)
+> >
+> > z_mat <- outer(x_seq, y_seq, function(x, y) {
+> >   z <- rep(2, length(x))
+> >   z[x > y] <- NA
+> >   z
+> > })
+> >
+> > plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
+> >   plotly::add_surface(showscale = FALSE) |>
+> >   plotly::layout(scene = list(
+> >     xaxis = list(title = "x"),
+> >     yaxis = list(title = "y"),
+> >     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
+> >     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
+> >   ))
+> > ```
+> >
+> > Figure 3: Joint density \\f\_{X,Y}(x, y) = 2\\ on the triangular support \\\\(x, y) : 0 \le x \le y \le 1\\\\, and zero elsewhere. The total “volume” under the density is \\2 \cdot \tfrac{1}{2} = 1\\, as required.
 
 > **NOTE:**
 >
-> **Theorem 9 (Law of iterated expectations)** For any two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
+> **Theorem 10 (Law of iterated expectations)** For any two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{}\\
 
@@ -821,7 +837,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
-> Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 9](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
+> Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 10](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
 >
 > ## Python
 >
@@ -869,17 +885,17 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 > by_cyl
 > ```
 >
-> The conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ is the function \\g(x)\\ of [Definition 7](#def-cond-expectation-function). Four-cylinder cars average 29.3 miles per gallon, and eight-cylinder cars average 15.0. Weighting the 5 conditional means by \\\operatorname{P}(X = x)\\ gives 23.446, which equals the overall average miles per gallon, 23.446, as [Theorem 9](#thm-lie) states: \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\.
+> The conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}\\ is the function \\g(x)\\ of [Definition 7](#def-cond-expectation-function). Four-cylinder cars average 29.3 miles per gallon, and eight-cylinder cars average 15.0. Weighting the 5 conditional means by \\\operatorname{P}(X = x)\\ gives 23.446, which equals the overall average miles per gallon, 23.446, as [Theorem 10](#thm-lie) states: \\\operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Theorem 10 (Conditional law of iterated expectations)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
+> **Theorem 11 (Conditional law of iterated expectations)** For random variables \\X\\, \\Y\\, and \\Z\\ with \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y\right\|\mathclose{}\right\]\mathclose{} \< \infty\\:
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid Z\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X,Z\right\]\mathclose{} \mid Z\right\]\mathclose{}\\
 
 > **NOTE:**
 >
-> *Proof*. Fix a value \\z\\ with positive probability (discrete case) or positive density (continuous case). Conditioning every probability on \\Z = z\\ gives a probability measure, and the proof of [Theorem 9](#thm-lie) goes through under it, line by line.
+> *Proof*. Fix a value \\z\\ with positive probability (discrete case) or positive density (continuous case). Conditioning every probability on \\Z = z\\ gives a probability measure, and the proof of [Theorem 10](#thm-lie) goes through under it, line by line.
 >
 > **Discrete case.**
 >
@@ -901,7 +917,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{} = 10, \quad \operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{} = 6\\
 >
-> By the law of iterated expectations ([Theorem 9](#thm-lie)):
+> By the law of iterated expectations ([Theorem 10](#thm-lie)):
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\&= \operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{} \cdot\operatorname{P}(X=1) + \operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{} \cdot\operatorname{P}(X=0) && \text{(LOTUS over the two values of } X \text{)} \\&= 10 \cdot 0.5 + 6 \cdot 0.5 && \text{(substitute)} \\&= 5 + 3 && \text{(multiply)} \\&= 8 && \text{(add)} \end{aligned} \\
 
@@ -990,36 +1006,38 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y \in \\0,1\\} \int_0^{y+1} x\\f\_{X,Y}(x,\\ y)\\dx && \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\ &= \int_0^1 x \cdot 0.4\\dx + \int_0^2 x \cdot 0.3\\dx && \text{(expand the sum over } y \in \\0, 1\\ \text{; substitute } f\_{X,Y} \text{)} \\ &= 0.4 \cdot \frac{1}{2} + 0.3 \cdot 2 && \text{(} \textstyle\int_0^b x\\dx = b^2/2 \text{)} \\ &= 0.2 + 0.6 && \text{(multiply)} \\ &= 0.8 && \text{(add)} \end{aligned} \\
 >
-> As a check using the law of iterated expectations ([Theorem 9](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so
+> As a check using the law of iterated expectations ([Theorem 10](#thm-lie)): \\\operatorname{E}\mathopen{}\left\[X \mid Y = 0\right\]\mathclose{} = \tfrac{1}{2}\\ and \\\operatorname{E}\mathopen{}\left\[X \mid Y = 1\right\]\mathclose{} = 1\\, so
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \tfrac{1}{2}(0.4) + 1(0.6) \\ &= 0.2 + 0.6 \\ &= 0.8. \end{aligned} \\
 >
-> Show code
->
-> ``` r
-> x_fine <- seq(0, 2, by = 0.005)
-> df <- tibble::tibble(
->   x = c(x_fine[x_fine <= 1], x_fine),
->   density = c(rep(0.4, sum(x_fine <= 1)), rep(0.3, length(x_fine))),
->   label = c(
->     rep("Y = 0  (P = 0.4)", sum(x_fine <= 1)),
->     rep("Y = 1  (P = 0.6)", length(x_fine))
->   )
-> )
->
-> plotly::plot_ly(
->   df, x = ~x, y = ~density, color = ~label,
->   colors = c("steelblue", "tomato")
-> ) |>
->   plotly::add_lines() |>
->   plotly::layout(
->     xaxis = list(title = "x"),
->     yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
->     legend = list(title = list(text = "Y value"))
->   )
-> ```
->
-> Figure 4: Joint density \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ for each value of the discrete variable \\Y\\. The area under each component integrates to \\\operatorname{P}(Y = y)\\: \\0.4 \cdot 1 = 0.4\\ (blue) and \\0.3 \cdot 2 = 0.6\\ (red), summing to 1.
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > x_fine <- seq(0, 2, by = 0.005)
+> > df <- tibble::tibble(
+> >   x = c(x_fine[x_fine <= 1], x_fine),
+> >   density = c(rep(0.4, sum(x_fine <= 1)), rep(0.3, length(x_fine))),
+> >   label = c(
+> >     rep("Y = 0  (P = 0.4)", sum(x_fine <= 1)),
+> >     rep("Y = 1  (P = 0.6)", length(x_fine))
+> >   )
+> > )
+> >
+> > plotly::plot_ly(
+> >   df, x = ~x, y = ~density, color = ~label,
+> >   colors = c("steelblue", "tomato")
+> > ) |>
+> >   plotly::add_lines() |>
+> >   plotly::layout(
+> >     xaxis = list(title = "x"),
+> >     yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
+> >     legend = list(title = list(text = "Y value"))
+> >   )
+> > ```
+> >
+> > Figure 4: Joint density \\f\_{X,Y}(x, y) = f\_{X \mid Y}(x \mid y)\\\operatorname{P}(Y = y)\\ for each value of the discrete variable \\Y\\. The area under each component integrates to \\\operatorname{P}(Y = y)\\: \\0.4 \cdot 1 = 0.4\\ (blue) and \\0.3 \cdot 2 = 0.6\\ (red), summing to 1.
 
 > **NOTE:**
 >
@@ -1049,7 +1067,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > using the same geometric-series facts as [Exercise 3](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
 >
-> As a check using the law of iterated expectations ([Theorem 9](#thm-lie)) and the expectation of a linear function ([Corollary 1](#cor-linearity-affine)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
+> As a check using the law of iterated expectations ([Theorem 10](#thm-lie)) and the expectation of a linear function ([Corollary 1](#cor-linearity-affine)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[X \mid Y\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\&= \operatorname{E}\mathopen{}\left\[\frac{Y+1}{2}\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X \mid Y = y\right\]\mathclose{} = \tfrac{y+1}{2} \text{)} \\&= \frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} + 1}{2} && \text{(expectation of a linear function of one random variable)} \\&= \frac{1}{2}\mathopen{}\left(\frac{q}{1-q} + 1\right)\mathclose{} && \text{(substitute } \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \text{)} \\&= \frac{1}{2} \cdot\frac{q + (1-q)}{1-q} && \text{(common denominator)} \\&= \frac{1}{2(1-q)} && \text{(simplify the numerator)} \end{aligned} \\
 >
@@ -1097,9 +1115,9 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > **Exercise 6 (Squared and absolute loss)**  
 >
-> 1.  For a true value \\y = 3\\ and a prediction \\\hat y= 5\\, compute the squared error loss \\\mathopen{}\left(y - \hat y\right)^2\mathclose{}\\ and the absolute error loss \\\mathopen{}\left\|y - \hat y\right\|\mathclose{}\\.
+> 1.  For a true value \\y = 3\\ and a prediction \\\hat y= 5\\, compute the squared error loss \\{\mathopen{}\left(y - \hat y\right)\mathclose{}}^2\\ and the absolute error loss \\\mathopen{}\left\|y - \hat y\right\|\mathclose{}\\.
 >
-> 2.  A random variable \\Y\\ has \\\operatorname{P}(Y = 0) = 0.5\\ and \\\operatorname{P}(Y = 4) = 0.5\\. For the constant prediction \\c = 1\\, compute the expected squared error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - c\right)^2\mathclose{}\right\]\mathclose{}\\ and the expected absolute error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{}\\.
+> 2.  A random variable \\Y\\ has \\\operatorname{P}(Y = 0) = 0.5\\ and \\\operatorname{P}(Y = 4) = 0.5\\. For the constant prediction \\c = 1\\, compute the expected squared error loss \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - c\right)\mathclose{}}^2\right\]\mathclose{}\\ and the expected absolute error loss \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{}\\.
 >
 > 3.  Repeat part 2 for \\c = 2\\.
 >
@@ -1109,11 +1127,11 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > *Solution 2*.
 >
-> 1.  For squared error loss: \\\mathopen{}\left(3 - 5\right)^2\mathclose{} = 4\\ For absolute error loss: \\\mathopen{}\left\|3 - 5\right\|\mathclose{} = 2\\
+> 1.  For squared error loss: \\{\mathopen{}\left(3 - 5\right)\mathclose{}}^2 = 4\\ For absolute error loss: \\\mathopen{}\left\|3 - 5\right\|\mathclose{} = 2\\
 >
-> 2.  For \\c = 1\\: The expected squared error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left(0 - 1\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 1\right)^2\mathclose{} \\ &= 0.5 \cdot 1 + 0.5 \cdot 9 \\ &= 5 \end{aligned} \\ The expected absolute error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 1\right\|\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left\|0 - 1\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 1\right\|\mathclose{} \\ &= 0.5 \cdot 1 + 0.5 \cdot 3 \\ &= 2 \end{aligned} \\
+> 2.  For \\c = 1\\: The expected squared error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 1\right)\mathclose{}}^2\right\]\mathclose{} &= 0.5 \cdot{\mathopen{}\left(0 - 1\right)\mathclose{}}^2 + 0.5 \cdot{\mathopen{}\left(4 - 1\right)\mathclose{}}^2 \\ &= 0.5 \cdot 1 + 0.5 \cdot 9 \\ &= 5 \end{aligned} \\ The expected absolute error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 1\right\|\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left\|0 - 1\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 1\right\|\mathclose{} \\ &= 0.5 \cdot 1 + 0.5 \cdot 3 \\ &= 2 \end{aligned} \\
 >
-> 3.  For \\c = 2\\: The expected squared error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 2\right)^2\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left(0 - 2\right)^2\mathclose{} + 0.5 \cdot\mathopen{}\left(4 - 2\right)^2\mathclose{} \\ &= 0.5 \cdot 4 + 0.5 \cdot 4 \\ &= 4 \end{aligned} \\ The expected absolute error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 2\right\|\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left\|0 - 2\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 2\right\|\mathclose{} \\ &= 0.5 \cdot 2 + 0.5 \cdot 2 \\ &= 2 \end{aligned} \\
+> 3.  For \\c = 2\\: The expected squared error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 2\right)\mathclose{}}^2\right\]\mathclose{} &= 0.5 \cdot{\mathopen{}\left(0 - 2\right)\mathclose{}}^2 + 0.5 \cdot{\mathopen{}\left(4 - 2\right)\mathclose{}}^2 \\ &= 0.5 \cdot 4 + 0.5 \cdot 4 \\ &= 4 \end{aligned} \\ The expected absolute error loss is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - 2\right\|\mathclose{}\right\]\mathclose{} &= 0.5 \cdot\mathopen{}\left\|0 - 2\right\|\mathclose{} + 0.5 \cdot\mathopen{}\left\|4 - 2\right\|\mathclose{} \\ &= 0.5 \cdot 2 + 0.5 \cdot 2 \\ &= 2 \end{aligned} \\
 >
 > 4.  The prediction \\c = 2\\ has the smaller expected squared error loss (\\4\\ versus \\5\\). The two predictions have the same expected absolute error loss (\\2\\), so under absolute error loss this exercise does not choose one of them. The prediction \\c = 2\\ equals the expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= 0.5 \cdot 0 + 0.5 \cdot 4 \\ &= 2 \end{aligned} \\
 
@@ -1123,7 +1141,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The squared error loss is: \\L(y, \hat y) = \mathopen{}\left(y - \hat y\right)^2\mathclose{}\\
+> *Remark*. The squared error loss is: \\L(y, \hat y) = {\mathopen{}\left(y - \hat y\right)\mathclose{}}^2\\
 >
 > The absolute error loss is: \\L(y, \hat y) = \mathopen{}\left\|y - \hat y\right\|\mathclose{}\\
 >
@@ -1141,13 +1159,13 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > *Remark*. In [Exercise 6](#exr-loss) (parts 2 and 3), the risk of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
 >
-> For squared error loss and a prediction \\g(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
+> For squared error loss and a prediction \\g(X)\\, the risk is \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{}\\. Hastie et al. ([2009, 18](#ref-hastie2009elements)) call it the expected prediction error.
 >
 > The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} &= 0.5\\c + 0.5\\(4 - c) \\ &= 2. \end{aligned} \\
 >
-> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 11](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 12](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
 
 > **NOTE:**
 >
@@ -1155,29 +1173,29 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > 1.  Compute the marginal mean \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and the conditional expectation function \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\.
 >
-> 2.  Consider the constant prediction \\g_1(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3\\, which ignores \\X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_1(X)\right)^2\mathclose{}\right\]\mathclose{}\\.
+> 2.  Consider the constant prediction \\g_1(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3\\, which ignores \\X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_1(X)\right)\mathclose{}}^2\right\]\mathclose{}\\.
 >
-> 3.  Consider the alternate prediction \\g_2(X) \stackrel{\text{def}}{=}4X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_2(X)\right)^2\mathclose{}\right\]\mathclose{}\\.
+> 3.  Consider the alternate prediction \\g_2(X) \stackrel{\text{def}}{=}4X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_2(X)\right)\mathclose{}}^2\right\]\mathclose{}\\.
 >
-> 4.  Compute the squared-error risk \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{}\\ of the conditional mean predictor \\g^\*(X)\\. Which of \\g_1\\, \\g_2\\, and \\g^\*\\ achieves the lowest risk?
+> 4.  Compute the squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\ of the conditional mean predictor \\g^\*(X)\\. Which of \\g_1\\, \\g_2\\, and \\g^\*\\ achieves the lowest risk?
 
 > **NOTE:**
 >
 > *Solution 3*.
 >
-> 1.  For each value of \\X\\, compute the conditional expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} &= 0 \cdot 0.5 + 2 \cdot 0.5 \\ &= 1 \end{aligned} \\ \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} &= 4 \cdot 0.5 + 6 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 9](#thm-lie)), the marginal mean is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 1 \cdot 0.5 + 5 \cdot 0.5 \\ &= 3 \end{aligned} \\ The conditional expectation function is \\g^\*(0) = 1\\ and \\g^\*(1) = 5\\, which can also be written \\g^\*(X) = 1 + 4X\\.
+> 1.  For each value of \\X\\, compute the conditional expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} &= 0 \cdot 0.5 + 2 \cdot 0.5 \\ &= 1 \end{aligned} \\ \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} &= 4 \cdot 0.5 + 6 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 10](#thm-lie)), the marginal mean is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 1 \cdot 0.5 + 5 \cdot 0.5 \\ &= 3 \end{aligned} \\ The conditional expectation function is \\g^\*(0) = 1\\ and \\g^\*(1) = 5\\, which can also be written \\g^\*(X) = 1 + 4X\\.
 >
-> 2.  For the constant prediction \\g_1(X) = 3\\: Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} &= \mathopen{}\left(0 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 3\right)^2\mathclose{} \cdot 0.5 \\ &= 9 \cdot 0.5 + 1 \cdot 0.5 \\ &= 5 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} &= \mathopen{}\left(4 - 3\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 3\right)^2\mathclose{} \cdot 0.5 \\ &= 1 \cdot 0.5 + 9 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 9](#thm-lie)): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_1(X)\right)^2\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 3\right)^2\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 5 \cdot 0.5 + 5 \cdot 0.5 \\ &= 5 \end{aligned} \\
+> 2.  For the constant prediction \\g_1(X) = 3\\: Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 3\right)\mathclose{}}^2 \mid X = 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 3\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 3\right)\mathclose{}}^2 \cdot 0.5 \\ &= 9 \cdot 0.5 + 1 \cdot 0.5 \\ &= 5 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 3\right)\mathclose{}}^2 \mid X = 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 3\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 3\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 9 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 10](#thm-lie)): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_1(X)\right)\mathclose{}}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 3\right)\mathclose{}}^2 \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 5 \cdot 0.5 + 5 \cdot 0.5 \\ &= 5 \end{aligned} \\
 >
-> 3.  For the prediction \\g_2(X) = 4X\\: Here \\g_2(0) = 0\\ and \\g_2(1) = 4\\. Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 0\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} &= \mathopen{}\left(0 - 0\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 0\right)^2\mathclose{} \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 4\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} &= \mathopen{}\left(4 - 4\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 4\right)^2\mathclose{} \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ By [Theorem 9](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g_2(X)\right)^2\mathclose{}\right\]\mathclose{} &= 2 \cdot 0.5 + 2 \cdot 0.5 \\ &= 2 \end{aligned} \\
+> 3.  For the prediction \\g_2(X) = 4X\\: Here \\g_2(0) = 0\\ and \\g_2(1) = 4\\. Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 0\right)\mathclose{}}^2 \mid X = 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 0\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 0\right)\mathclose{}}^2 \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 4\right)\mathclose{}}^2 \mid X = 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 4\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 4\right)\mathclose{}}^2 \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ By [Theorem 10](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_2(X)\right)\mathclose{}}^2\right\]\mathclose{} &= 2 \cdot 0.5 + 2 \cdot 0.5 \\ &= 2 \end{aligned} \\
 >
-> 4.  For the conditional mean predictor \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\: Given \\X = 0\\, \\g^\*(0) = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 1\right)^2\mathclose{} \mid X = 0\right\]\mathclose{} &= \mathopen{}\left(0 - 1\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(2 - 1\right)^2\mathclose{} \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ Given \\X = 1\\, \\g^\*(1) = 5\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - 5\right)^2\mathclose{} \mid X = 1\right\]\mathclose{} &= \mathopen{}\left(4 - 5\right)^2\mathclose{} \cdot 0.5 + \mathopen{}\left(6 - 5\right)^2\mathclose{} \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ By [Theorem 9](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{} &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
+> 4.  For the conditional mean predictor \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\: Given \\X = 0\\, \\g^\*(0) = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 1\right)\mathclose{}}^2 \mid X = 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 1\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 1\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ Given \\X = 1\\, \\g^\*(1) = 5\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 5\right)\mathclose{}}^2 \mid X = 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 5\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 5\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ By [Theorem 10](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
 
 > **NOTE:**
 >
-> **Theorem 11 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\:
+> **Theorem 12 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\:
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
 > with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. That is, the conditional expectation function \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ minimizes the squared-error risk among all prediction functions of \\X\\.
 
@@ -1185,35 +1203,35 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 >
 > *Proof*. Write \\Y - g(X) = \mathopen{}\left(Y - g^\*(X)\right)\mathclose{} + \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\\. Squaring both sides gives:
 >
-> \\\mathopen{}\left(Y - g(X)\right)^2\mathclose{} = \mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{} + 2\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} + \mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{}\\
+> \\{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2 = {\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2 + 2\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} + {\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\\
 >
-> We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g^\*(X) - g(X)\\ is a function of \\X\\, by [Theorem 7](#thm-cond-pull-out) it factors out of the conditional expectation:
+> We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g^\*(X) - g(X)\\ is a function of \\X\\, by [Theorem 8](#thm-cond-pull-out) it factors out of the conditional expectation:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - g^\*(X) \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(definition of } g^\*(X) \text{ and } \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} = g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
 >
-> By the law of iterated expectations ([Theorem 9](#thm-lie)), the unconditional expectation of the cross-product is:
+> By the law of iterated expectations ([Theorem 10](#thm-lie)), the unconditional expectation of the cross-product is:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} \\ &= 0 \end{aligned} \\
 >
 > Taking expectations on both sides of the squared expansion, by linearity of expectation ([Theorem 4](#thm-linearity-expectation)):
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
-> Since \\\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{} \ge 0\\, its expectation is non-negative:
+> Since \\{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2 \ge 0\\, its expectation is non-negative:
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge 0\\
 >
-> with equality if and only if \\\mathopen{}\left(g^\*(X) - g(X)\right)^2\mathclose{} = 0\\ with probability \\1\\, meaning \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. Therefore:
+> with equality if and only if \\{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2 = 0\\ with probability \\1\\, meaning \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. Therefore:
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
 > with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
 > **NOTE:**
 >
-> **Definition 12 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the minimum risk
+> **Definition 12 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-best-predictor), the minimum risk
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
 >
 > is the **irreducible risk**.
 
@@ -1227,9 +1245,9 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Reducible risk)** In the squared-error risk decomposition of [Theorem 11](#thm-best-predictor), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
+> **Definition 13 (Reducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-best-predictor), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{} \ge 0\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge 0\\
 >
 > is the **reducible risk**.
 
@@ -1243,11 +1261,23 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. ([2009, sec. 2.4](#ref-hastie2009elements), eq. 2.11). The risk identity in [Theorem 11](#thm-best-predictor)
+> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. ([2009, sec. 2.4](#ref-hastie2009elements), eq. 2.11). The risk identity in [Theorem 12](#thm-best-predictor)
 >
-> \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g(X)\right)^2\mathclose{}\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)^2\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)^2\mathclose{}\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
 > shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
+
+> **NOTE:**
+>
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among prediction functions \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the conditional expectation function is a minimizer of the squared-error risk:
+>
+> \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} \in \arg \min\_{g} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{},\\
+>
+> where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin). Moreover, every \\g\\ in that set satisfies \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\, so the minimizer is unique up to probability-\\1\\ equality.
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 12](#thm-best-predictor), \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ has risk no larger than that of any \\g\\, so it is a minimizer. If \\g\\ is also a minimizer, its risk equals that of \\g^\*\\, so the equality case of [Theorem 12](#thm-best-predictor) gives \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
 ## 4 Entropy and cross-entropy
 
@@ -1301,7 +1331,7 @@ Last modified: 2026-10-14 15:13:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Kullback–Leibler divergence)** For \\p\\ and \\q\\ as in [Definition 15](#def-cross-entropy), the **Kullback–Leibler divergence** (KL divergence, or relative entropy) of \\q\\ from \\p\\ is
+> **Definition 16 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 15](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
 

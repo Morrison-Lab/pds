@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-14 15:13:10 (PDT)
+Last modified: 2026-10-15 08:50:47 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -44,7 +44,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Definition 2 (Stochastic process)** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “random process” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
+> **Definition 2 (Stochastic process (random process))** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “**random process**” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
 
 > **NOTE:**
 >
@@ -68,13 +68,15 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 ### 1.2 Summary of usage
 
-| Term | What it describes | Typical use | Example |
-|----|----|----|----|
-| Random | Single variable or event | Random variable, random outcome | Coin toss, die roll |
-| Stochastic | System or process in time/space | Stochastic process | Stock price evolution, Markov chain |
-| Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Regression model, Bayesian inference |
-
-Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
+> **NOTE:**
+>
+> | Term | What it describes | Typical use | Example |
+> |----|----|----|----|
+> | Random | Single variable or event | Random variable, random outcome | Coin toss, die roll |
+> | Stochastic | System or process in time/space | Stochastic process | Stock price evolution, Markov chain |
+> | Probabilistic | Approach/model using probability | Probabilistic model/reasoning | Regression model, Bayesian inference |
+>
+> Table 1: Comparison of “random”, “stochastic”, and “probabilistic”
 
 > **NOTE:**
 >
