@@ -3,10 +3,10 @@
 #### The second moment of independent noise plus a random variable
 
 Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and $\Var{\noise} = \varpar$.
-Let $X$ be a random variable with $\E{X^2} < \infty$ that is independent of $\noise$.
+Let $\rvar$ be a random variable with $\E{\rvar^2} < \infty$ that is independent of $\noise$.
 Then
 
-$$\E{\paren{\noise + X}^2} = \varpar + \Var{X} + \sqf{\E{X}}$$
+$$\E{\paren{\noise + \rvar}^2} = \varpar + \Var{\rvar} + \sqf{\E{\rvar}}$$
 
 :::
 
@@ -18,12 +18,12 @@ first for the expectation of a sum and then for a constant factor,
 
 $$
 \ba
-\E{\paren{\noise + X}^2}
-&= \E{\noise^2 + 2 \noise X + X^2}
+\E{\paren{\noise + \rvar}^2}
+&= \E{\noise^2 + 2 \noise \rvar + \rvar^2}
 && \text{(expand: } \paren{a + b}^2 = a^2 + 2ab + b^2 \text{)} \\
-&= \E{\noise^2} + \E{2 \noise X} + \E{X^2}
+&= \E{\noise^2} + \E{2 \noise \rvar} + \E{\rvar^2}
 && \text{(expectation of a sum)} \\
-&= \E{\noise^2} + 2\E{\noise X} + \E{X^2}
+&= \E{\noise^2} + 2\E{\noise \rvar} + \E{\rvar^2}
 && \text{(constant factor 2)}
 \ea
 $$
@@ -31,31 +31,31 @@ $$
 Each of the three terms is evaluated in turn.
 
 - $\E{\noise^2} = \varpar$, by @thm-noise-second-moment.
-- Because $\noise$ and $X$ are independent,
+- Because $\noise$ and $\rvar$ are independent,
   the expectation of the product is the product of the expectations:
 
   $$
   \ba
-  \E{\noise X}
-  &= \E{\noise}\E{X}
+  \E{\noise \rvar}
+  &= \E{\noise}\E{\rvar}
   && \text{(independence)} \\
-  &= 0 \cdot \E{X}
+  &= 0 \cdot \E{\rvar}
   && \text{(} \E{\noise} = 0 \text{)} \\
   &= 0
   && \text{(zero times a number)}
   \ea
   $$
 
-- $\E{X^2} = \Var{X} + \sqf{\E{X}}$, by @thm-variance.
+- $\E{\rvar^2} = \Var{\rvar} + \sqf{\E{\rvar}}$, by @thm-variance.
 
 Substituting the three terms gives
 
 $$
 \ba
-\E{\paren{\noise + X}^2}
-&= \varpar + 2 \cdot 0 + \paren{\Var{X} + \sqf{\E{X}}}
+\E{\paren{\noise + \rvar}^2}
+&= \varpar + 2 \cdot 0 + \paren{\Var{\rvar} + \sqf{\E{\rvar}}}
 && \text{(the three terms above)} \\
-&= \varpar + \Var{X} + \sqf{\E{X}}
+&= \varpar + \Var{\rvar} + \sqf{\E{\rvar}}
 && \text{(drop } 2 \cdot 0 \text{)}
 \ea
 $$
@@ -66,8 +66,8 @@ $$
 
 #### Use in statistics and machine learning
 
-Take $\noise$ to be the noise in a new outcome and $X$ the difference between the true mean and a prediction.
-Then $\E{X}$ is minus the bias of the prediction, $\Var{X}$ is its variance,
+Take $\noise$ to be the noise in a new outcome and $\rvar$ the difference between the true mean and a prediction.
+Then $\E{\rvar}$ is minus the bias of the prediction, $\Var{\rvar}$ is its variance,
 and $\varpar$ is the irreducible error.
 The statistics notes define the bias of a prediction and the training data it depends on,
 and state this result for predictions as the
