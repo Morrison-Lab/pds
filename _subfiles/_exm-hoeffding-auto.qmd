@@ -6,7 +6,7 @@
 Take the 392 cars in the Auto data described in @exm-clt-auto as the whole population,
 and call a car efficient if its fuel economy (`mpg`) is above $25$.
 Let $X_i = 1$ if the $i$th car drawn at random is efficient and $X_i = 0$ otherwise,
-so $\mean$ is the share of efficient cars and $\bar X_n$ is the share in a sample of $n$ draws.
+so $\mean$ is the share of efficient cars and $\samplemean{X}{n}$ is the share in a sample of $n$ draws.
 Each $X_i$ lies in $[0, 1]$,
 and the draws are made with replacement, so the $X_i$ are IID
 and @cor-hoeffding-two-sided applies.
