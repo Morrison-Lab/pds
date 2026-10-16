@@ -5,9 +5,9 @@
 # Blocking, because both tools report zero findings against this repo's
 # workflows once this file is added (four findings are suppressed in place with
 # a `zizmor: ignore` comment and a reason), so a new finding means a new
-# problem rather than a backlog. `.github/zizmor.yml` accepts tag pins (and
-# `.github/dependabot.yml` keeps them current) while still flagging a branch
-# pin such as `@main`.
+# problem rather than a backlog. `.github/zizmor.yml` accepts any `@ref` pin (and
+# `.github/dependabot.yml` keeps tag pins current), so a branch pin such as
+# `@main` is not flagged and is left to code review (see that file).
 name: Lint Workflows
 
 on:
