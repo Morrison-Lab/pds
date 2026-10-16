@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-15 15:02:49 (PDT)
+Last modified: 2026-10-15 22:53:51 (PDT)
 
 ## 1 Defining probabilities
 
@@ -43,7 +43,7 @@ Last modified: 2026-10-15 15:02:49 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets-functions.html#def-set) of all of its possible outcomes.
+> **Definition 2 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes.
 
 > **NOTE:**
 >
@@ -55,7 +55,7 @@ Last modified: 2026-10-15 15:02:49 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathcal{S}\\ on \\\Omega\\ count as events (some sources call a \\\sigma\\-algebra a **Borel field** ([Casella and Berger 2002](#ref-CaseBerg01), Def. 1.2.1)); every set that arises in these notes is in \\\mathcal{S}\\. When \\\Omega\\ is finite or [countably infinite](https://morrison-lab.github.io/mds/sets-functions.html#def-countably-infinite), every subset of \\\Omega\\ can be an event, because the collection of all subsets of \\\Omega\\ is a \\\sigma\\-algebra ([all subsets form a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)), as in [\\\sigma\\-algebras for die rolls](https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra).
+> *Remark*. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathcal{S}\\ on \\\Omega\\ count as events (some sources call a \\\sigma\\-algebra a **Borel field** ([Casella and Berger 2002](#ref-CaseBerg01), Def. 1.2.1)); every set that arises in these notes is in \\\mathcal{S}\\. When \\\Omega\\ is finite or [countably infinite](https://morrison-lab.github.io/mds/functions.html#def-countably-infinite), every subset of \\\Omega\\ can be an event, because the collection of all subsets of \\\Omega\\ is a \\\sigma\\-algebra ([all subsets form a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)), as in [\\\sigma\\-algebras for die rolls](https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra).
 
 > **NOTE:**
 >
@@ -188,7 +188,7 @@ Last modified: 2026-10-15 15:02:49 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets-functions.html#def-extended-nonneg-reals) \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 8](#def-probability).
+> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets.html#def-extended-nonneg-reals) \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 8](#def-probability).
 >
 > Conversely, suppose \\\Pr\\ satisfies the three axioms. By axiom 1, \\\Pr\\ takes values in \\\[0, \infty\]\\, so axiom 3 says \\\Pr\\ is countably additive in the sense of the [definition of countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity). Then, by [countable additivity and the empty set](https://morrison-lab.github.io/mds/measures.html#lem-countable-additivity-empty), \\\Pr(\emptyset)\\ is 0 or \\\infty\\; \\\Pr(\emptyset)\\ is a real number, so \\\Pr(\emptyset) = 0\\. So \\\Pr\\ satisfies both conditions of the [definition of a measure](https://morrison-lab.github.io/mds/measures.html#def-measure) (\\\Pr(\emptyset) = 0\\ and countable additivity) and is a measure on the events of \\\Omega\\. With axiom 2, \\\Pr\\ is a probability measure ([Definition 8](#def-probability)).
 
