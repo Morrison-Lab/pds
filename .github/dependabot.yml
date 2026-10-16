@@ -14,6 +14,10 @@ updates:
       interval: "weekly"
     commit-message:
       prefix: "chore(submodule)"
+    # Wait before adopting a new release, so a compromised or broken one is
+    # not pulled in the hour it ships.
+    cooldown:
+      default-days: 7
 
   # Also keep pinned GitHub Actions current. Dependabot scans .github/workflows/
   # and opens a PR when a newer release of a pinned action is available;
@@ -24,3 +28,7 @@ updates:
       interval: "weekly"
     commit-message:
       prefix: "chore(actions)"
+    # Same wait as above. `default-days` only: the semver-* variants are
+    # rejected for this ecosystem.
+    cooldown:
+      default-days: 7
