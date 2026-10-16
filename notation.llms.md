@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 02:15:38 (PDT)
+Last modified: 2026-10-16 02:55:55 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
