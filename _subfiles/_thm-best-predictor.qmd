@@ -53,7 +53,7 @@ and strictly so because $g_1(\Predvar) \ne g^*(\Predvar)$.
 In the squared-error risk decomposition of @thm-risk-decomposition,
 the minimum risk
 
-$$\E{\sqf{Y - \E{Y \mid X}}} = \E{\Var{Y \mid X}}$$
+$$\E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} = \E{\Var{\Outvar \mid \Predvar}}$$
 
 is the **irreducible risk**.
 
@@ -62,7 +62,7 @@ is the **irreducible risk**.
 ::: {#rem-irreducible-risk}
 #### The irreducible risk does not depend on the prediction function
 
-The irreducible risk depends only on the joint distribution of $(X, Y)$
+The irreducible risk depends only on the joint distribution of $(\Predvar, \Outvar)$
 and not on the prediction function $g$,
 so no choice of $g$ can achieve a smaller risk.
 
@@ -74,8 +74,8 @@ so no choice of $g$ can achieve a smaller risk.
 #### Irreducible risk in the best-predictor exercise
 
 In @exr-best-predictor,
-$\Var{Y \mid X = 0} = 1$ and $\Var{Y \mid X = 1} = 1$,
-so the irreducible risk is $\E{\Var{Y \mid X}} = 1$.
+$\Var{\Outvar \mid \Predvar = 0} = 1$ and $\Var{\Outvar \mid \Predvar = 1} = 1$,
+so the irreducible risk is $\E{\Var{\Outvar \mid \Predvar}} = 1$.
 
 :::
 
@@ -87,7 +87,7 @@ so the irreducible risk is $\E{\Var{Y \mid X}} = 1$.
 In the squared-error risk decomposition of @thm-risk-decomposition,
 the excess risk from choosing the prediction function $g$ instead of the conditional mean,
 
-$$\E{\sqf{\E{Y \mid X} - g(X)}} \ge 0$$
+$$\E{\sqf{\E{\Outvar \mid \Predvar} - g(\Predvar)}} \ge 0$$
 
 is the **reducible risk**.
 
@@ -96,7 +96,7 @@ is the **reducible risk**.
 ::: {#rem-reducible-risk}
 #### When the reducible risk is zero
 
-The reducible risk is zero if and only if $\P(g(X) = \E{Y \mid X}) = 1$.
+The reducible risk is zero if and only if $\P(g(\Predvar) = \E{\Outvar \mid \Predvar}) = 1$.
 
 :::
 
@@ -106,8 +106,8 @@ The reducible risk is zero if and only if $\P(g(X) = \E{Y \mid X}) = 1$.
 #### Reducible risk in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $g_1(X) = 3$ has reducible risk $5 - 1 = 4$,
-and the prediction $g_2(X) = 4X$ has reducible risk $2 - 1 = 1$.
+the constant prediction $g_1(\Predvar) = 3$ has reducible risk $5 - 1 = 4$,
+and the prediction $g_2(\Predvar) = 4\Predvar$ has reducible risk $2 - 1 = 1$.
 
 :::
 
@@ -116,7 +116,7 @@ and the prediction $g_2(X) = 4X$ has reducible risk $2 - 1 = 1$.
 This characterization of the best predictor under squared error loss follows @hastie2009elements [Section 2.4, eq. 2.11].
 The risk identity in @thm-risk-decomposition
 
-$$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - \E{Y \mid X}}} + \E{\sqf{\E{Y \mid X} - g(X)}}$$
+$$\E{\sqf{\Outvar - g(\Predvar)}} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} + \E{\sqf{\E{\Outvar \mid \Predvar} - g(\Predvar)}}$$
 
 shows that the total squared-error risk is the sum of the
 irreducible risk (@def-irreducible-risk)
