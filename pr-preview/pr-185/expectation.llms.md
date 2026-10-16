@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 01:04:12 (PDT)
+Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
@@ -1193,33 +1193,33 @@ Last modified: 2026-10-16 01:04:12 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 12 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the squared-error risk of \\g\\ decomposes as:
+> **Theorem 12 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, let \\\varepsilon_g \stackrel{\text{def}}{=}g(X) - Y\\ be the prediction error of \\g\\. The squared-error risk of \\g\\ is \\R\mathopen{}\left(g\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{}\\, and it decomposes as:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \end{aligned} \\
+> \\ \begin{aligned} R\mathopen{}\left(g\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the decomposition, proved below)} \\ &= R\mathopen{}\left(g^\*\right)\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk of } g^\* \text{)} \end{aligned} \\
 >
 > Consequently:
 >
-> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
+> \\R\mathopen{}\left(g\right)\mathclose{} \ge R\mathopen{}\left(g^\*\right)\mathclose{}\\
 >
 > with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. That is, the conditional expectation function \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ minimizes the squared-error risk among all prediction functions of \\X\\.
 
 > **NOTE:**
 >
-> *Proof*. Write \\Y - g(X) = \mathopen{}\left(Y - g^\*(X)\right)\mathclose{} + \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\\. Squaring both sides gives:
+> *Proof*. Write \\\varepsilon_g = \varepsilon\_{g^\*} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\\, which holds because \\\varepsilon_g = g(X) - Y = \mathopen{}\left(g^\*(X) - Y\right)\mathclose{} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\\. Squaring both sides gives:
 >
-> \\{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2 = {\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2 + 2\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} + {\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\\
+> \\{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2 = {\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2 + 2\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} + {\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\\
 >
-> We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g^\*(X) - g(X)\\ is a function of \\X\\, by [Theorem 8](#thm-cond-pull-out) it factors out of the conditional expectation:
+> We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g(X) - g^\*(X)\\ is a function of \\X\\, by [Theorem 8](#thm-cond-pull-out) it factors out of the conditional expectation:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[Y - g^\*(X) \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(definition of } g^\*(X) \text{ and } \operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} = g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*} \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[g^\*(X) - Y \mid X\right\]\mathclose{} && \text{(definition of } \varepsilon\_{g^\*} \text{)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(a function of } X \text{ is its own conditional mean, and definition of } g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
 >
 > By the law of iterated expectations ([Theorem 10](#thm-lie)), the unconditional expectation of the cross-product is:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} \\ &= 0 \end{aligned} \\
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} \\ &= 0 \end{aligned} \\
 >
 > Taking expectations on both sides of the squared expansion, by linearity of expectation ([Theorem 4](#thm-linearity-expectation)), gives the decomposition in the statement:
 >
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot\operatorname{E}\mathopen{}\left\[\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot 0 + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \end{aligned} \\
+> \\ \begin{aligned} R\mathopen{}\left(g\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2 + 2\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} + {\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the squared expansion)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot 0 + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the cross-product has expectation } 0 \text{)} \\ &= R\mathopen{}\left(g^\*\right)\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk of } g^\* \text{)} \end{aligned} \\
 >
 > Since \\{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2 \ge 0\\, its expectation is non-negative:
 >
@@ -1227,7 +1227,7 @@ Last modified: 2026-10-16 01:04:12 (PDT)
 >
 > with equality if and only if \\{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2 = 0\\ with probability \\1\\, meaning \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. Therefore, dropping the non-negative second term of the decomposition:
 >
-> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
+> \\R\mathopen{}\left(g\right)\mathclose{} \ge R\mathopen{}\left(g^\*\right)\mathclose{}\\
 >
 > with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
