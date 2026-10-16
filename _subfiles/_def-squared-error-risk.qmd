@@ -4,7 +4,7 @@
 The **squared-error risk** of a prediction function $\predfnf{\Predvar}$
 is the [risk](#def-risk) under squared error loss,
 the expected square of its [prediction error](#def-prediction-error),
-which compares $\predfnf{\Predvar}$ with the observed [outcome](#def-outcome) $\Outvar$ of a [new data point](#def-new-data-point),
+which compares $\predfnf{\Predvar}$ with the observed [outcome](#def-outcome) $\Outvar$ of a [new observation](#def-new-observation),
 the [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) of the prediction:
 
 $$\popriskf{\predfn} \eqdef \E{\sqf{\prederr_{\predfn}}}$$

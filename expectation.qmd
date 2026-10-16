@@ -91,7 +91,7 @@ format:
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_def-new-data-point.qmd >}}
+{{< include pds/_subfiles/_def-new-observation.qmd >}}
 
 {{< slidebreak >}}
 
