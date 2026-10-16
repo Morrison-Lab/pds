@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 02:00:47 (PDT)
+Last modified: 2026-10-16 02:24:44 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -541,21 +541,21 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 13 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\tilde{X}\\,
+> **Definition 13 (Variance/covariance of a \\p \times 1\\ random vector)** For a \\p \times 1\\ dimensional random vector \\\underset{\sim}{X}\\,
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\tilde{X}\right)\mathclose{} \\ &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\right\]\mathclose{} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} &\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \\ &\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}\right\]\mathclose{} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 10 (Elements of the variance-covariance matrix are pairwise covariances)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\, the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\:
+> **Theorem 10 (Elements of the variance-covariance matrix are pairwise covariances)** For a \\p \times 1\\ random vector \\\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\\, the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\:
 >
-> \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \operatorname{Cov}\mathopen{}\left(X_2, X_1\right)\mathclose{} & \operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_2, X_p\right)\mathclose{} \\ \vdots & \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_p, X_2\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \\
+> \\ \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \operatorname{Cov}\mathopen{}\left(X_2, X_1\right)\mathclose{} & \operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_2, X_p\right)\mathclose{} \\ \vdots & \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \operatorname{Cov}\mathopen{}\left(X_p, X_2\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \\
 
 > **NOTE:**
 >
-> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\tilde{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 13](#def-cov-vec-x):
+> *Proof*. Let \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\ for \\i = 1, \ldots, p\\, so \\\operatorname{E}\underset{\sim}{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\\. By [Definition 13](#def-cov-vec-x):
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} \begin{pmatrix}X_1 - \mu_1 & \cdots & X_p - \mu_p\end{pmatrix} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix} (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\ \vdots & \ddots & \vdots \\ (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p) \end{pmatrix} \right\]\mathclose{} \\ &= \begin{pmatrix} \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_p - \mu_p)\right\]\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_p - \mu_p)\right\]\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_p, X_p\right)\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} \begin{pmatrix}X_1 - \mu_1 & \cdots & X_p - \mu_p\end{pmatrix} \right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[ \begin{pmatrix} (X_1 - \mu_1)(X_1 - \mu_1) & \cdots & (X_1 - \mu_1)(X_p - \mu_p) \\ \vdots & \ddots & \vdots \\ (X_p - \mu_p)(X_1 - \mu_1) & \cdots & (X_p - \mu_p)(X_p - \mu_p) \end{pmatrix} \right\]\mathclose{} \\ &= \begin{pmatrix} \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_1 - \mu_1)(X_p - \mu_p)\right\]\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_1 - \mu_1)\right\]\mathclose{} & \cdots & \operatorname{E}\mathopen{}\left\[(X_p - \mu_p)(X_p - \mu_p)\right\]\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_p, X_p\right)\mathclose{} \end{pmatrix} \\ &= \begin{pmatrix} \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{} & \cdots & \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\ \vdots & \ddots & \vdots \\ \operatorname{Cov}\mathopen{}\left(X_p, X_1\right)\mathclose{} & \cdots & \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{} \end{pmatrix} \end{aligned} \\
 >
 > where:
 >
@@ -565,27 +565,27 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 11 (Alternate expression for variance of a random vector)** \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \end{aligned} \\
+> **Theorem 11 (Alternate expression for variance of a random vector)** \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\underset{\sim}{X}{\underset{\sim}{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} && \text{(definition)} \\ &= \operatorname{E}\mathopen{}\left\[ \tilde{X}{\tilde{X}}^{\top} - \tilde{X}{\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\tilde{X}}^{\top} + \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} && \text{(expand the product)} \\ &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} + \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} && \text{(linearity, element-wise; } \operatorname{E}\tilde{X}\text{ is constant)} \\ &= \operatorname{E}\mathopen{}\left\[\tilde{X}{\tilde{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\tilde{X}\right)\mathclose{}}^{\top} && \text{(combine like terms)} \end{aligned} \\
+> *Proof*. \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[ \mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} && \text{(definition)} \\ &= \operatorname{E}\mathopen{}\left\[ \underset{\sim}{X}{\underset{\sim}{X}}^{\top} - \underset{\sim}{X}{\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\underset{\sim}{X}}^{\top} + \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} \right\]\mathclose{} && \text{(expand the product)} \\ &= \operatorname{E}\mathopen{}\left\[\underset{\sim}{X}{\underset{\sim}{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} + \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} && \text{(linearity, element-wise; } \operatorname{E}\underset{\sim}{X}\text{ is constant)} \\ &= \operatorname{E}\mathopen{}\left\[\underset{\sim}{X}{\underset{\sim}{X}}^{\top}\right\]\mathclose{} - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top} && \text{(combine like terms)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Theorem 12 (Variance of a linear combination)** For any vector of random variables \\\tilde{X}= (X_1, \ldots, X_n)\\ and corresponding vector of constants \\\tilde{a}= (a_1, \ldots, a_n)\\, the variance of their linear combination is:
+> **Theorem 12 (Variance of a linear combination)** For any vector of random variables \\\underset{\sim}{X}= (X_1, \ldots, X_n)\\ and corresponding vector of constants \\\underset{\sim}{a}= (a_1, \ldots, a_n)\\, the variance of their linear combination is:
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\tilde{a}\cdot \tilde{X}\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(\sum\_{i=1}^na_i X_i\right)\mathclose{} \\ &= {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(\underset{\sim}{a}\cdot \underset{\sim}{X}\right)\mathclose{} &= \operatorname{Var}\mathopen{}\left(\sum\_{i=1}^na_i X_i\right)\mathclose{} \\ &= {\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Proof*. Treat \\\tilde{a}\\ and \\\tilde{X}\\ as \\n \times 1\\ column vectors, so
+> *Proof*. Treat \\\underset{\sim}{a}\\ and \\\underset{\sim}{X}\\ as \\n \times 1\\ column vectors, so
 >
-> \\ \begin{aligned} \tilde{a}\cdot \tilde{X}&= {\tilde{a}}^{\top}\tilde{X}\\ &= \sum\_{i=1}^na_i X_i, \end{aligned} \\
+> \\ \begin{aligned} \underset{\sim}{a}\cdot \underset{\sim}{X}&= {\underset{\sim}{a}}^{\top}\underset{\sim}{X}\\ &= \sum\_{i=1}^na_i X_i, \end{aligned} \\
 >
-> a scalar. By linearity of expectation, \\\operatorname{E}\mathopen{}\left\[{\tilde{a}}^{\top}\tilde{X}\right\]\mathclose{} = {\tilde{a}}^{\top}\\\operatorname{E}\tilde{X}\\, so:
+> a scalar. By linearity of expectation, \\\operatorname{E}\mathopen{}\left\[{\underset{\sim}{a}}^{\top}\underset{\sim}{X}\right\]\mathclose{} = {\underset{\sim}{a}}^{\top}\\\operatorname{E}\underset{\sim}{X}\\, so:
 >
-> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left({\tilde{a}}^{\top}\tilde{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left({\tilde{a}}^{\top}\tilde{X}- {\tilde{a}}^{\top}\operatorname{E}\tilde{X}\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left({\tilde{a}}^{\top}\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(factor out } {\tilde{a}}^{\top} \text{)} \\ &= \operatorname{E}\mathopen{}\left\[{\tilde{a}}^{\top}\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}{\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\tilde{a}\right\]\mathclose{} && \text{(a scalar equals its transpose, so } s^2 = s\\{s}^{\top} \text{)} \\ &= {\tilde{a}}^{\top}\\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}{\mathopen{}\left(\tilde{X}- \operatorname{E}\tilde{X}\right)\mathclose{}}^{\top}\right\]\mathclose{}\\\tilde{a} && \text{(linearity of expectation, element-wise)} \\ &= {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} && \text{(variance of a random vector)} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} && \text{(expand the quadratic form, using the elements of } \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}\mathopen{}\left({\underset{\sim}{a}}^{\top}\underset{\sim}{X}\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left({\underset{\sim}{a}}^{\top}\underset{\sim}{X}- {\underset{\sim}{a}}^{\top}\operatorname{E}\underset{\sim}{X}\right)\mathclose{}^2\right\]\mathclose{} && \text{(definition of variance)} \\ &= \operatorname{E}\mathopen{}\left\[\mathopen{}\left({\underset{\sim}{a}}^{\top}\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}\right)\mathclose{}^2\right\]\mathclose{} && \text{(factor out } {\underset{\sim}{a}}^{\top} \text{)} \\ &= \operatorname{E}\mathopen{}\left\[{\underset{\sim}{a}}^{\top}\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}{\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}\underset{\sim}{a}\right\]\mathclose{} && \text{(a scalar equals its transpose, so } s^2 = s\\{s}^{\top} \text{)} \\ &= {\underset{\sim}{a}}^{\top}\\\operatorname{E}\mathopen{}\left\[\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}{\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}\right\]\mathclose{}\\\underset{\sim}{a} && \text{(linearity of expectation, element-wise)} \\ &= {\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a} && \text{(variance of a random vector)} \\ &= \sum\_{i=1}^n\sum\_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{} && \text{(expand the quadratic form, using the elements of } \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -623,31 +623,31 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 13 (A variance matrix is symmetric and positive semidefinite)** For a \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ with \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is [symmetric](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix) and [positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite): for every \\p \times 1\\ vector of constants \\\tilde{a}\\,
+> **Theorem 13 (A variance matrix is symmetric and positive semidefinite)** For a \\p \times 1\\ random vector \\\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\\ with \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is [symmetric](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix) and [positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite): for every \\p \times 1\\ vector of constants \\\underset{\sim}{a}\\,
 >
-> \\{\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a}\ge 0\\
+> \\{\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a}\ge 0\\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 9](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
+> *Proof*. By [Theorem 10](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\, and by [Definition 9](#def-cov), with \\\mu_i = \operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}\\:
 >
 > \\ \begin{aligned} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[(X_i - \mu_i)(X_j - \mu_j)\right\]\mathclose{} && \text{(definition of covariance)} \\ &= \operatorname{E}\mathopen{}\left\[(X_j - \mu_j)(X_i - \mu_i)\right\]\mathclose{} && \text{(multiplication of numbers is commutative)} \\ &= \operatorname{Cov}\mathopen{}\left(X_j, X_i\right)\mathclose{} && \text{(definition of covariance)} \end{aligned} \\
 >
-> so the \\(i,j)\\-th and \\(j,i)\\-th elements are equal, and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is symmetric.
+> so the \\(i,j)\\-th and \\(j,i)\\-th elements are equal, and \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is symmetric.
 >
-> For positive semidefiniteness, let \\Y = {\tilde{a}}^{\top}\tilde{X}\\. Then:
+> For positive semidefiniteness, let \\Y = {\underset{\sim}{a}}^{\top}\underset{\sim}{X}\\. Then:
 >
-> \\ \begin{aligned} {\tilde{a}}^{\top} \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} \tilde{a} &= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(variance of a linear combination)} \\ &= \operatorname{E}\mathopen{}\left\[(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of variance)} \\ &\ge 0 && \text{(} (Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2 \ge 0 \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a} &= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(variance of a linear combination)} \\ &= \operatorname{E}\mathopen{}\left\[(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of variance)} \\ &\ge 0 && \text{(} (Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2 \ge 0 \text{)} \end{aligned} \\
 >
 > The first step is [Theorem 12](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley ([1995](#ref-billingsley1995probability))).
 
 > **NOTE:**
 >
-> **Example 16 (Two variance matrices that differ only in sign)** Let \\\tilde{X}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
+> **Example 16 (Two variance matrices that differ only in sign)** Let \\\underset{\sim}{X}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
 >
 > \\D_1 = \mathopen{}\left\\(-5, 1),\\ (0, -1),\\ (0, 1),\\ (5, -1)\right\\\mathclose{},\\
 >
-> and let \\\tilde{X}'\\ be equally likely to be each of the four points
+> and let \\\underset{\sim}{X}'\\ be equally likely to be each of the four points
 >
 > \\D_2 = \mathopen{}\left\\(5, 1),\\ (0, -1),\\ (0, 1),\\ (-5, -1)\right\\\mathclose{}.\\
 >
@@ -661,15 +661,15 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_2^2\right\]\mathclose{} &= (1 + 1 + 1 + 1)/4 \\ &= 1, \end{aligned} \\
 >
-> and likewise for \\\tilde{X}'\\. They differ in the products of the coordinates:
+> and likewise for \\\underset{\sim}{X}'\\. They differ in the products of the coordinates:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\ &= -2.5, \\ \operatorname{E}\mathopen{}\left\[X_1' X_2'\right\]\mathclose{} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} \\ &= 2.5. \end{aligned} \\
 >
 > Since the means are 0, [Theorem 10](#thm-vcov-elements) and [Theorem 7](#thm-alt-cov) give:
 >
-> \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \begin{pmatrix}12.5 & -2.5 \\ -2.5 & 1\end{pmatrix}, \qquad \operatorname{Var}\mathopen{}\left(\tilde{X}'\right)\mathclose{} = \begin{pmatrix}12.5 & 2.5 \\ 2.5 & 1\end{pmatrix}. \\
+> \\ \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \begin{pmatrix}12.5 & -2.5 \\ -2.5 & 1\end{pmatrix}, \qquad \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}'\right)\mathclose{} = \begin{pmatrix}12.5 & 2.5 \\ 2.5 & 1\end{pmatrix}. \\
 >
-> Both are symmetric. [Theorem 12](#thm-var-lincom) with \\\tilde{a}= {(1, 1)}^{\top}\\ and \\\tilde{a}= {(1, -1)}^{\top}\\ gives:
+> Both are symmetric. [Theorem 12](#thm-var-lincom) with \\\underset{\sim}{a}= {(1, 1)}^{\top}\\ and \\\underset{\sim}{a}= {(1, -1)}^{\top}\\ gives:
 >
 > \\ \begin{aligned} \operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &= 12.5 + 1 + 2(-2.5) & \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} &= 12.5 + 1 - 2(-2.5) \\ &= 8.5, & &= 18.5, \\ \operatorname{Var}\mathopen{}\left(X_1' + X_2'\right)\mathclose{} &= 12.5 + 1 + 2(2.5) & \operatorname{Var}\mathopen{}\left(X_1' - X_2'\right)\mathclose{} &= 12.5 + 1 - 2(2.5) \\ &= 18.5, & &= 8.5. \end{aligned} \\
 >
@@ -681,28 +681,28 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 17 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\tilde{X}= {(X_1, X_2)}^{\top}\\ is \\\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\\ ([Lemma 1](#lem-cov-xx)), so:
+> **Example 17 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\underset{\sim}{X}= {(X_1, X_2)}^{\top}\\ is \\\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\\ ([Lemma 1](#lem-cov-xx)), so:
 >
-> \\ \operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}. \\
+> \\ \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}. \\
 >
-> With \\\tilde{a}= {(1, -1)}^{\top}\\,
+> With \\\underset{\sim}{a}= {(1, -1)}^{\top}\\,
 >
-> \\ \begin{aligned} {\tilde{a}}^{\top}\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\tilde{a}&= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\ &= \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} \\ &= 0, \end{aligned} \\
+> \\ \begin{aligned} {\underset{\sim}{a}}^{\top}\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\underset{\sim}{a}&= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\ &= \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} \\ &= 0, \end{aligned} \\
 >
-> so \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)). If \\X_1\\ is continuous, \\\tilde{X}\\ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
+> so \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)). If \\X_1\\ is continuous, \\\underset{\sim}{X}\\ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
 
 > **NOTE:**
 >
-> **Corollary 5 (Independent components give a diagonal variance matrix)** Let \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ be a random vector whose components are each discrete or continuous, with:
+> **Corollary 5 (Independent components give a diagonal variance matrix)** Let \\\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\\ be a random vector whose components are each discrete or continuous, with:
 >
 > - \\\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{} \< \infty\\ for every \\i\\, and
 > - \\X_i\\ and \\X_j\\ [independent](independence.llms.md#def-indpt) for every \\i \neq j\\.
 >
-> Then \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix), with diagonal elements \\\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}, \ldots, \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}\\.
+> Then \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix), with diagonal elements \\\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}, \ldots, \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}\\.
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ by [Theorem 8](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\\ by [Lemma 1](#lem-cov-xx).
+> *Proof*. By [Theorem 10](#thm-vcov-elements), the \\(i,j)\\-th element of \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\\ is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ by [Theorem 8](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\\ by [Lemma 1](#lem-cov-xx).
 
 > **NOTE:**
 >

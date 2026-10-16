@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 02:00:47 (PDT)
+Last modified: 2026-10-16 02:24:44 (PDT)
 
 > **NOTE:**
 >
@@ -86,9 +86,9 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Example 3 (Expectation of a random vector of coin flips)** For the two fair coin flips in [the independence page’s example](independence.llms.md#exm-indpt), the random vector \\\tilde{X}= {(X_1, X_2)}^{\top}\\ is a \\2 \times 1\\ random matrix, and:
+> **Example 3 (Expectation of a random vector of coin flips)** For the two fair coin flips in [the independence page’s example](independence.llms.md#exm-indpt), the random vector \\\underset{\sim}{X}= {(X_1, X_2)}^{\top}\\ is a \\2 \times 1\\ random matrix, and:
 >
-> \\\operatorname{E}\tilde{X}= \begin{pmatrix}\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} \\ \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{}\end{pmatrix} = \begin{pmatrix}1/2 \\ 1/2\end{pmatrix}\\
+> \\\operatorname{E}\underset{\sim}{X}= \begin{pmatrix}\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} \\ \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{}\end{pmatrix} = \begin{pmatrix}1/2 \\ 1/2\end{pmatrix}\\
 >
 > since each \\X_i\\ is Bernoulli with \\\pi= 1/2\\ ([Theorem 1](#thm-bernoulli-mean)).
 
@@ -1165,7 +1165,7 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} &= 0.5\\c + 0.5\\(4 - c) \\ &= 2. \end{aligned} \\
 >
-> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 12](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 13](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
 
 > **NOTE:**
 >
@@ -1193,53 +1193,99 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 12 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, let \\\varepsilon_g \stackrel{\text{def}}{=}g(X) - Y\\ be the prediction error of \\g\\. The squared-error risk of \\g\\ is \\R\mathopen{}\left(g\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{}\\, and it decomposes as:
+> **Definition 12 (Prediction error)** A [prediction function](#def-prediction) \\g(X)\\ has as its estimand the observed outcome \\Y\\ of a new data point with input \\X\\, not the conditional mean of that outcome. The **prediction error** of \\g\\ is the prediction minus that outcome:
 >
-> \\ \begin{aligned} R\mathopen{}\left(g\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the decomposition, proved below)} \\ &= R\mathopen{}\left(g^\*\right)\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk of } g^\* \text{)} \end{aligned} \\
+> \\\varepsilon_g \stackrel{\text{def}}{=}g(X) - Y\\
+
+> **NOTE:**
 >
-> Consequently:
+> **Example 21 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has prediction error \\\varepsilon\_{g_1} = 3 - Y\\, which is \\3\\ when \\Y= 0\\ and \\-3\\ when \\Y= 6\\.
+
+> **NOTE:**
+>
+> **Definition 13 (Squared-error risk)** The **squared-error risk** of a prediction function \\g(X)\\ is the [risk](#def-risk) under squared error loss, the expected square of its [prediction error](#def-prediction-error), which compares \\g(X)\\ with the observed outcome \\Y\\ of a new data point, the estimand of the prediction:
+>
+> \\R\mathopen{}\left(g\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{}\\
+
+> **NOTE:**
+>
+> **Example 22 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has squared-error risk \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\.
+
+> **NOTE:**
+>
+> **Lemma 1 (Prediction error splits at the conditional mean)** Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\. For any prediction function \\g(X)\\:
+>
+> \\\varepsilon_g = \varepsilon\_{g^\*} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\\
+
+> **NOTE:**
+>
+> *Proof*. \\ \begin{aligned} \varepsilon_g &= g(X) - Y && \text{(definition of } \varepsilon_g \text{)} \\ &= \mathopen{}\left(g^\*(X) - Y\right)\mathclose{} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} && \text{(add and subtract } g^\*(X) \text{)} \\ &= \varepsilon\_{g^\*} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} && \text{(definition of } \varepsilon\_{g^\*} \text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 23 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant prediction \\g_1(X) = 3\\ has prediction error \\\varepsilon\_{g_1} = 3\\. The conditional mean is \\g^\*(0) = 1\\, so \\\varepsilon\_{g^\*} = 1\\ and \\g_1(0) - g^\*(0) = 2\\, and \\3 = 1 + 2\\.
+
+> **NOTE:**
+>
+> **Lemma 2 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\. For any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\:
+>
+> \\\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*} \cdot\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} = 0\\
+
+> **NOTE:**
+>
+> *Proof*. Because \\g(X) - g^\*(X)\\ is a function of \\X\\, by [Theorem 8](#thm-cond-pull-out) it factors out of the conditional expectation:
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*} \mid X\right\]\mathclose{} && \text{(a function of } X\text{ factors out)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[g^\*(X) - Y\mid X\right\]\mathclose{} && \text{(definition of } \varepsilon\_{g^\*} \text{)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(a function of } X\text{ is its own conditional mean, and definition of } g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
+>
+> By the law of iterated expectations ([Theorem 10](#thm-lie)):
+>
+> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\ &= \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} && \text{(the conditional expectation is } 0 \text{)} \\ &= 0 && \text{(expectation of a constant)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 24 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take \\g_1(X) = 3\\. When \\X= 0\\, \\g^\*(0) = 1\\, so \\g_1(0) - g^\*(0) = 2\\, and \\\varepsilon\_{g^\*} = 1 - Y\\ is \\1\\ or \\-1\\ with equal probability, so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
+
+> **NOTE:**
+>
+> **Theorem 12 (Squared-error risk decomposition)** Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\. For any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\:
+>
+> \\R\mathopen{}\left(g\right)\mathclose{} = R\mathopen{}\left(g^\*\right)\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
+
+> **NOTE:**
+>
+> *Proof*. The steps use the [squared-error risk](#def-squared-error-risk) definition, [Lemma 1](#lem-prediction-error-split), and [Lemma 2](#lem-cross-term-zero):
+>
+> \\ \begin{aligned} R\mathopen{}\left(g\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the prediction error splits at } g^\* \text{)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(expand the square; linearity of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot 0 + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the cross term is } 0 \text{)} \\ &= R\mathopen{}\left(g^\*\right)\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk of } g^\* \text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 25 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has risk \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the conditional mean plus the excess \\4\\ from using \\g_1\\.
+
+> **NOTE:**
+>
+> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Let \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\. Then for any prediction function \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\:
 >
 > \\R\mathopen{}\left(g\right)\mathclose{} \ge R\mathopen{}\left(g^\*\right)\mathclose{}\\
 >
-> with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. That is, the conditional expectation function \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ minimizes the squared-error risk among all prediction functions of \\X\\.
+> with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. That is, the conditional expectation function \\\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\ minimizes the [squared-error risk](#def-squared-error-risk) among all prediction functions of \\X\\.
 
 > **NOTE:**
 >
-> *Proof*. Write \\\varepsilon_g = \varepsilon\_{g^\*} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\\, which holds because \\\varepsilon_g = g(X) - Y = \mathopen{}\left(g^\*(X) - Y\right)\mathclose{} + \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\\. Squaring both sides gives:
+> *Proof*. By [Theorem 12](#thm-risk-decomposition):
 >
-> \\{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2 = {\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2 + 2\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} + {\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\\
+> \\ \begin{aligned} R\mathopen{}\left(g\right)\mathclose{} - R\mathopen{}\left(g^\*\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(squared-error risk decomposition)} \\ &\ge 0 && \text{(the expectation of a non-negative variable)} \end{aligned} \\
 >
-> We compute the expectation of the cross-product term by conditioning on \\X\\. Because \\g(X) - g^\*(X)\\ is a function of \\X\\, by [Theorem 8](#thm-cond-pull-out) it factors out of the conditional expectation:
->
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \mid X\right\]\mathclose{} &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*} \mid X\right\]\mathclose{} && \text{(a function of } X \text{ factors out)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\operatorname{E}\mathopen{}\left\[g^\*(X) - Y \mid X\right\]\mathclose{} && \text{(definition of } \varepsilon\_{g^\*} \text{)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\mathopen{}\left(\operatorname{E}\mathopen{}\left\[g^\*(X) \mid X\right\]\mathclose{} - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{} && \text{(linearity of conditional expectation)} \\ &= \mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \cdot\mathopen{}\left(g^\*(X) - g^\*(X)\right)\mathclose{} && \text{(a function of } X \text{ is its own conditional mean, and definition of } g^\*(X) \text{)} \\ &= 0 && \text{(evaluate)} \end{aligned} \\
->
-> By the law of iterated expectations ([Theorem 10](#thm-lie)), the unconditional expectation of the cross-product is:
->
-> \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= \operatorname{E}\mathopen{}\left\[0\right\]\mathclose{} \\ &= 0 \end{aligned} \\
->
-> Taking expectations on both sides of the squared expansion, by linearity of expectation ([Theorem 4](#thm-linearity-expectation)), gives the decomposition in the statement:
->
-> \\ \begin{aligned} R\mathopen{}\left(g\right)\mathclose{} &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon_g\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2 + 2\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{} + {\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the squared expansion)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot\operatorname{E}\mathopen{}\left\[\varepsilon\_{g^\*}\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(linearity of expectation)} \\ &= \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g^\*}\right)\mathclose{}}^2\right\]\mathclose{} + 2 \cdot 0 + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(the cross-product has expectation } 0 \text{)} \\ &= R\mathopen{}\left(g^\*\right)\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} && \text{(definition of the squared-error risk of } g^\* \text{)} \end{aligned} \\
->
-> Since \\{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2 \ge 0\\, its expectation is non-negative:
->
-> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge 0\\
->
-> with equality if and only if \\{\mathopen{}\left(g^\*(X) - g(X)\right)\mathclose{}}^2 = 0\\ with probability \\1\\, meaning \\\operatorname{P}(g(X) = g^\*(X)) = 1\\. Therefore, dropping the non-negative second term of the decomposition:
->
-> \\R\mathopen{}\left(g\right)\mathclose{} \ge R\mathopen{}\left(g^\*\right)\mathclose{}\\
->
-> with equality if and only if \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
+> The expectation of the non-negative variable \\{\mathopen{}\left(g(X) - g^\*(X)\right)\mathclose{}}^2\\ is zero if and only if the variable is \\0\\ with probability \\1\\, meaning \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
 > **NOTE:**
 >
-> **Example 21 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has total risk \\5\\, which the decomposition of [Theorem 12](#thm-best-predictor) splits as \\5 = 1 + 4\\: the risk \\1\\ of the conditional mean plus the excess \\4\\ from using \\g_1\\.
+> **Example 26 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has risk \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\, which is larger than the risk \\R\mathopen{}\left(g^\*\right)\mathclose{} = 1\\ of the conditional mean, and strictly so because \\g_1(X) \ne g^\*(X)\\.
 
 > **NOTE:**
 >
-> **Definition 12 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-best-predictor), the minimum risk
+> **Definition 14 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the minimum risk
 >
-> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}\right\]\mathclose{}\\
 >
 > is the **irreducible risk**.
 
@@ -1249,31 +1295,31 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Example 22 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y \mid X = 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
+> **Example 27 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
 
 > **NOTE:**
 >
-> **Definition 13 (Reducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-best-predictor), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
+> **Definition 15 (Reducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
 >
-> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge 0\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} - g(X)\right)\mathclose{}}^2\right\]\mathclose{} \ge 0\\
 >
 > is the **reducible risk**.
 
 > **NOTE:**
 >
-> *Remark 2* (When the reducible risk is zero). The reducible risk is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\.
+> *Remark 2* (When the reducible risk is zero). The reducible risk is zero if and only if \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}) = 1\\.
 
 > **NOTE:**
 >
-> **Example 23 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 28 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1(X) = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2(X) = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
-> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. ([2009, sec. 2.4](#ref-hastie2009elements), eq. 2.11). The risk identity in [Theorem 12](#thm-best-predictor)
+> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. ([2009, sec. 2.4](#ref-hastie2009elements), eq. 2.11). The risk identity in [Theorem 12](#thm-risk-decomposition)
 >
-> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} - g(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
+> \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g(X)\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} - g(X)\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
-> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 12](#def-irreducible-risk)) and the reducible risk ([Definition 13](#def-reducible-risk)).
+> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 14](#def-irreducible-risk)) and the reducible risk ([Definition 15](#def-reducible-risk)).
 
 > **NOTE:**
 >
@@ -1285,13 +1331,13 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 12](#thm-best-predictor), \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ has risk no larger than that of any \\g\\, so it is a minimizer. If \\g\\ is also a minimizer, its risk equals that of \\g^\*\\, so the equality case of [Theorem 12](#thm-best-predictor) gives \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
+> *Proof*. By [Theorem 13](#thm-best-predictor), \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ has risk no larger than that of any \\g\\, so it is a minimizer. If \\g\\ is also a minimizer, its risk equals that of \\g^\*\\, so the equality case of [Theorem 13](#thm-best-predictor) gives \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
 
 ## 4 Entropy and cross-entropy
 
 > **NOTE:**
 >
-> **Definition 14 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
+> **Definition 16 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
 >
 > \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
 >
@@ -1303,7 +1349,7 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Example 24 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 29 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1323,7 +1369,7 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Definition 15 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ is
+> **Definition 17 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ is
 >
 > \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1339,7 +1385,7 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 15](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
+> **Definition 18 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 17](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
 
@@ -1349,7 +1395,7 @@ Last modified: 2026-10-16 02:00:47 (PDT)
 
 > **NOTE:**
 >
-> **Example 25 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 30 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
