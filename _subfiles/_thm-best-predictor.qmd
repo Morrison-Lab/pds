@@ -4,18 +4,18 @@
 Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
 Let $g^*(X) \eqdef \E{Y \mid X}$.
 Then for any prediction function $g(X)$ with $\E{g(X)^2} < \infty$,
-the squared-error risk of $g$ decomposes as:
+the squared-error risk $\popriskf{g} \eqdef \E{\sqf{Y - g(X)}}$ of $g$ decomposes as:
 
 $$
 \ba
-\E{\sqf{Y - g(X)}}
-&= \E{\sqf{Y - g^*(X)}} + \E{\sqf{g^*(X) - g(X)}}
+\popriskf{g}
+&= \popriskf{g^*} + \E{\sqf{g^*(X) - g(X)}}
 \ea
 $$
 
 Consequently:
 
-$$\E{\sqf{Y - g(X)}} \ge \E{\sqf{Y - g^*(X)}}$$
+$$\popriskf{g} \ge \popriskf{g^*}$$
 
 with equality if and only if $\P(g(X) = g^*(X)) = 1$.
 That is, the conditional expectation function $\E{Y \mid X}$
