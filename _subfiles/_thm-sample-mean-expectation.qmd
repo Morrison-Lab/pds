@@ -1,8 +1,8 @@
 ::: {#thm-sample-mean-expectation}
 
-#### The expectation of a sample average
+#### The expectation of a sample mean
 
-Let $\dsn{X}$ be random variables, with $n \ge 1$, that each have finite mean $\mean$,
+Let $\dsn{X}$ be random variables, with $n \ge 1$, that each have finite population mean $\mean$,
 and let $\bar X \eqdef \avgin X_i$.
 The $X_i$ need not be independent.
 Then

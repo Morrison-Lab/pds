@@ -1,10 +1,10 @@
 ::: {#exr-linearity-use}
 
-#### Why the average of a sample is a random variable
+#### Why the sample mean is a random variable
 
 Let $\dsn{X}$ be independent draws from the same distribution,
-each with mean $\mean$ and variance $\varpar$,
-and let $\bar X = \avgin X_i$ be their average.
+each with population mean $\mean$ and variance $\varpar$,
+and let $\bar X = \avgin X_i$ be their sample mean.
 
 Use @thm-linearity-expectation to show that $\Ep[\bar X] = \mean$,
 and say in one sentence what that does *not* tell us.

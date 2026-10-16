@@ -1,6 +1,6 @@
 ::: remark
 
-The average of many independent random variables,
+The sample mean of many independent random variables,
 none of which dominates the others,
 has a distribution that is approximately bell-shaped,
 whatever the distributions of the individual variables.
@@ -14,7 +14,7 @@ whatever the distributions of the individual variables.
 #### Central Limit Theorem
 
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
-with mean $\mean$ and finite variance $\ss > 0$,
+with population mean $\mean$ and finite variance $\ss > 0$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 Then for every real number $z$:
 
@@ -43,7 +43,7 @@ which is why the informal statement asks only that no summand dominate.
 #### Central Limit Theorem for a sum
 
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
-with mean $\mean$ and finite variance $\ss > 0$,
+with population mean $\mean$ and finite variance $\ss > 0$,
 and let $S_n \eqdef \sumin X_i$.
 Then for every real number $z$:
 
@@ -74,7 +74,7 @@ so the event in this corollary is the event in @thm-clt, and the limits agree.
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
 each discrete or continuous,
-with mean $\mean$ and finite variance $\ss$,
+with population mean $\mean$ and finite variance $\ss$,
 and let $S_n \eqdef \sumin X_i$.
 Then:
 
