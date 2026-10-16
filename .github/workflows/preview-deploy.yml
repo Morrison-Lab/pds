@@ -13,7 +13,7 @@
 name: Quarto Preview Deploy
 
 on:
-  workflow_run:
+  workflow_run:  # zizmor: ignore[dangerous-triggers]
     workflows: ["Quarto Preview Build"]
     types: [completed]
 
