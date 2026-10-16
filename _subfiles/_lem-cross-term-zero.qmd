@@ -1,8 +1,8 @@
 :::{#lem-cross-term-zero}
 #### The conditional mean's error is uncorrelated with any function of the input
 
-Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
-For any prediction function $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
+Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
+For any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
 $$\E{\prederr_{\bestpredfn} \cd \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}} = 0$$
 
@@ -11,7 +11,7 @@ $$\E{\prederr_{\bestpredfn} \cd \paren{\predfnf{\Predvar} - \bestpredfnf{\Predva
 ::: proof
 
 Because $\predfnf{\Predvar} - \bestpredfnf{\Predvar}$ is a function of $\Predvar$,
-by @thm-cond-pull-out it factors out of the conditional expectation:
+by @thm-cond-pull-out it factors out of the [conditional expectation](#def-cond-expectation):
 
 $$
 \ba
@@ -50,7 +50,7 @@ $$
 :::{#exm-cross-term-zero}
 #### The vanishing cross term in the best-predictor exercise
 
-In @exr-best-predictor, take $\predfn_1\paren{\Predvar} = 3$.
+In @exr-best-predictor, take the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
 When $\Predvar = 0$, $\bestpredfnf{0} = 1$, so $\predfn_1\paren{0} - \bestpredfnf{0} = 2$,
 and $\prederr_{\bestpredfn} = 1 - \Outvar$ is $1$ or $-1$ with equal probability,
 so the product has conditional mean $0$.

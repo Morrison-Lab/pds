@@ -17,6 +17,6 @@ $$\popriskf{\predfn} \eqdef \E{\sqf{\prederr_{\predfn}}}$$
 #### Squared-error risk in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $\predfn_1\paren{\Predvar} = 3$ has squared-error risk $\popriskf{\predfn_1} = 5$.
+the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [squared-error risk](#def-squared-error-risk) $\popriskf{\predfn_1} = 5$.
 
 :::

@@ -1,15 +1,14 @@
 :::{#thm-best-predictor}
 #### Conditional mean minimizes squared-error risk
 
-Let $\Predvar$ and $\Outvar$ be jointly distributed random variables with $\E{\Outvar^2} < \infty$.
-Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
-Then for any prediction function $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
+Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
+Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
+Then for any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
 $$\popriskf{\predfn} \ge \popriskf{\bestpredfn}$$
 
 with equality if and only if $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
-That is, the conditional expectation function $\E{\Outvar \mid \Predvar}$
-minimizes the [squared-error risk](#def-squared-error-risk) among all prediction functions of $\Predvar$.
+That is, $\bestpredfn$ minimizes the [squared-error risk](#def-squared-error-risk) among all prediction functions of $\Predvar$.
 
 :::
 
@@ -39,7 +38,7 @@ meaning $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
 #### The best predictor in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $\predfn_1\paren{\Predvar} = 3$ has risk $\popriskf{\predfn_1} = 5$,
+the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [squared-error risk](#def-squared-error-risk) $\popriskf{\predfn_1} = 5$,
 which is larger than the risk $\popriskf{\bestpredfn} = 1$ of the conditional mean,
 and strictly so because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Predvar}$.
 
@@ -51,7 +50,7 @@ and strictly so because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Predvar}$.
 #### Irreducible risk
 
 In the squared-error risk decomposition of @thm-risk-decomposition,
-the minimum risk
+the minimum [squared-error risk](#def-squared-error-risk)
 
 $$\E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} = \E{\Var{\Outvar \mid \Predvar}}$$
 
