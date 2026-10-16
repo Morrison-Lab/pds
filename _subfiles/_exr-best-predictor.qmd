@@ -2,22 +2,22 @@
 
 #### Comparing prediction functions under squared-error loss
 
-Let $(X, Y)$ be jointly distributed discrete random variables.
-$X$ takes values in $\{0, 1\}$ with $\P(X = 0) = 0.5$ and $\P(X = 1) = 0.5$.
-Given $X = 0$, $Y$ takes values in $\{0, 2\}$ with conditional probabilities
-$\P(Y = 0 \mid X = 0) = 0.5$ and $\P(Y = 2 \mid X = 0) = 0.5$.
-Given $X = 1$, $Y$ takes values in $\{4, 6\}$ with conditional probabilities
-$\P(Y = 4 \mid X = 1) = 0.5$ and $\P(Y = 6 \mid X = 1) = 0.5$.
+Let $(\Predvar, \Outvar)$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) [discrete random variables](random-variables.qmd#def-discrete-rv).
+$\Predvar$ takes values in $\{0, 1\}$ with $\P(\Predvar = 0) = 0.5$ and $\P(\Predvar = 1) = 0.5$.
+Given $\Predvar = 0$, $\Outvar$ takes values in $\{0, 2\}$ with conditional probabilities
+$\P(\Outvar = 0 \mid \Predvar = 0) = 0.5$ and $\P(\Outvar = 2 \mid \Predvar = 0) = 0.5$.
+Given $\Predvar = 1$, $\Outvar$ takes values in $\{4, 6\}$ with conditional probabilities
+$\P(\Outvar = 4 \mid \Predvar = 1) = 0.5$ and $\P(\Outvar = 6 \mid \Predvar = 1) = 0.5$.
 
-1. Compute the marginal mean $\E{Y}$ and the conditional expectation function $g^*(X) \eqdef \E{Y \mid X}$.
+1. Compute the marginal [mean](#def-expectation) $\E{\Outvar}$ and the [conditional expectation function](#def-cond-expectation-function) $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
 
-2. Consider the constant prediction $g_1(X) \eqdef \E{Y} = 3$, which ignores $X$.
-   Compute its squared-error risk $\E{\sqf{Y - g_1(X)}}$.
+2. Consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} \eqdef \E{\Outvar} = 3$, which ignores $\Predvar$.
+   Compute its [squared-error risk](#def-risk) $\E{\sqf{\Outvar - \predfn_1\paren{\Predvar}}}$.
 
-3. Consider the alternate prediction $g_2(X) \eqdef 4X$.
-   Compute its squared-error risk $\E{\sqf{Y - g_2(X)}}$.
+3. Consider the alternate prediction $\predfn_2\paren{\Predvar} \eqdef 4\Predvar$.
+   Compute its squared-error risk $\E{\sqf{\Outvar - \predfn_2\paren{\Predvar}}}$.
 
-4. Compute the squared-error risk $\E{\sqf{Y - g^*(X)}}$ of the conditional mean predictor $g^*(X)$.
-   Which of $g_1$, $g_2$, and $g^*$ achieves the lowest risk?
+4. Compute the squared-error risk $\E{\sqf{\Outvar - \bestpredfnf{\Predvar}}}$ of the conditional mean predictor $\bestpredfnf{\Predvar}$.
+   Which of $\predfn_1$, $\predfn_2$, and $\bestpredfn$ achieves the lowest risk?
 
 :::

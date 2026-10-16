@@ -1,23 +1,30 @@
 :::{#cor-best-predictor-argmin}
 #### Conditional mean as the minimizer of squared-error risk
 
-Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
-Among prediction functions $g(X)$ with $\E{g(X)^2} < \infty$,
-the conditional expectation function is a minimizer of the squared-error risk:
+Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
+Among [prediction functions](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$,
+the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
 
-$$\E{Y \mid X} \in \argmin_{g} \E{\sqf{Y - g(X)}},$$
+$$\E{\Outvar \mid \Predvar} \in \argmin_{\predfn} \E{\sqf{\Outvar - \predfnf{\Predvar}}},$$
 
 where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
-Moreover, every $g$ in that set satisfies $\P(g(X) = \E{Y \mid X}) = 1$,
-so the minimizer is unique up to probability-$1$ equality.
 
 :::
 
 ::: proof
 
-By @thm-best-predictor, $g^*(X) = \E{Y \mid X}$ has risk no larger than that of any $g$,
-so it is a minimizer.
-If $g$ is also a minimizer, its risk equals that of $g^*$,
-so the equality case of @thm-best-predictor gives $\P(g(X) = g^*(X)) = 1$.
+By @thm-best-predictor, $\bestpredfnf{\Predvar} = \E{\Outvar \mid \Predvar}$ has [risk](#def-risk) no larger than that of any [prediction function](#def-prediction) $\predfn$,
+so it is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer).
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-best-predictor-argmin}
+#### The minimizer in the best-predictor exercise
+
+In @exr-best-predictor, the [conditional expectation function](#def-cond-expectation-function) $\bestpredfnf{\Predvar}$ has [risk](#def-risk) $1$.
+The constant prediction $\predfn_1\paren{\Predvar} = 3$ has risk $5$ and $\predfn_2\paren{\Predvar} = 4\Predvar$ has risk $2$, both larger than $1$.
+So $\bestpredfn$ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 :::
