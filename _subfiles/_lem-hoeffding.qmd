@@ -127,6 +127,6 @@ Therefore $\E{e^{s(X - \mean)}} \le e^{L(s)} \le e^{s^2/8}$.
 ::: {.remark .notes}
 
 The bound on the moment generating function $\E{e^{s(X - \mean)}}$ is the step of Hoeffding's 1963 paper [@hoeffding1963] that the literature calls Hoeffding's lemma.
-The next result uses it to bound the tails of an average.
+The next result uses it to bound the tails of a sample mean.
 
 :::

@@ -1,8 +1,8 @@
 ::: {#thm-chebyshev-sample-mean}
-#### Chebyshev's inequality for a sample average
+#### Chebyshev's inequality for a sample mean
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables
-with mean $\mean$ and finite variance $\varpar > 0$,
+with population mean $\mean$ and finite variance $\varpar > 0$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 Then for every $\epsilon > 0$:
 

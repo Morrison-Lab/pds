@@ -3,7 +3,7 @@
 :::{#thm-hoeffding}
 #### Hoeffding's inequality
 
-Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables with $0 \le X_i \le 1$ and mean $\mean$,
+Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables with $0 \le X_i \le 1$ and population mean $\mean$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 Then for every $\tolout > 0$,
 
@@ -103,7 +103,7 @@ $$ {#eq-hoeffding}
 ::: proof
 
 The variables $1 - X_1, \ldots, 1 - X_n$ are IID, lie in $[0, 1]$, and have mean $1 - \mean$.
-Their average is $1 - \samplemean{X}{n}$,
+Their sample mean is $1 - \samplemean{X}{n}$,
 so @thm-hoeffding applied to them gives
 
 $$
@@ -137,7 +137,7 @@ $$
 ::: {.remark .notes}
 
 Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term [@hoeffding1963].
-This page states the case of an average of IID variables in $[0, 1]$,
+This page states the case of the sample mean of IID variables in $[0, 1]$,
 which is the case that bounds the gap between a sample proportion and the probability it estimates.
 For an indicator variable, $\mean$ is the probability of the event and $\samplemean{X}{n}$ is the share of the $n$ draws in which it occurs.
 

@@ -18,12 +18,12 @@ and both code tabs below read that file.
 Horsepower is not bell-shaped:
 a few powerful cars give it a long right tail.
 To apply @thm-clt, treat each draw of one car at random as one IID observation $X_i$,
-so that $\mean$ and $\varpar$ are the mean and variance of the 392 horsepower values.
+so that $\mean$ and $\varpar$ are the population mean and variance of the 392 horsepower values.
 The sample mean $\samplemean{X}{n} = S_n/n$, where $S_n = \sumin X_i$, has mean $\mean$ and standard deviation $\sdpar/\sqrt{n}$,
 because $S_n$ has mean $n\mean$ and variance $n\varpar$
 by @cor-sum-iid-moments.
 The code below draws 10,000 random samples of each size $n \in \set{1, 5, 30}$,
-with replacement, and computes each sample's mean.
+with replacement, and computes each sample's sample mean.
 
 ::: {.panel-tabset}
 

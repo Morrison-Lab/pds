@@ -2,7 +2,7 @@
 #### Weak law of large numbers
 
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
-with mean $\mean$ and finite variance $\ss > 0$,
+with population mean $\mean$ and finite variance $\ss > 0$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$ be the sample mean.
 Then the sample mean [converges in probability](#def-convergence-in-probability) to $\mean$:
 
