@@ -13,8 +13,8 @@ where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/al
 
 ::: proof
 
-By @thm-best-predictor, $\bestpredfnf{\Predvar} = \E{\Outvar \mid \Predvar}$ has risk no larger than that of any $\predfn$,
-so it is a minimizer.
+By @thm-best-predictor, $\bestpredfnf{\Predvar} = \E{\Outvar \mid \Predvar}$ has [risk](#def-risk) no larger than that of any [prediction function](#def-prediction) $\predfn$,
+so it is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer).
 
 :::
 
@@ -23,8 +23,8 @@ so it is a minimizer.
 :::{#exm-best-predictor-argmin}
 #### The minimizer in the best-predictor exercise
 
-In @exr-best-predictor, the conditional expectation function $\bestpredfnf{\Predvar}$ has risk $1$.
+In @exr-best-predictor, the [conditional expectation function](#def-cond-expectation-function) $\bestpredfnf{\Predvar}$ has [risk](#def-risk) $1$.
 The constant prediction $\predfn_1\paren{\Predvar} = 3$ has risk $5$ and $\predfn_2\paren{\Predvar} = 4\Predvar$ has risk $2$, both larger than $1$.
-So $\bestpredfn$ is the minimizer among the three.
+So $\bestpredfn$ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 :::

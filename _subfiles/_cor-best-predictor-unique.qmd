@@ -13,7 +13,7 @@ $$\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1$$
 
 ::: proof
 
-If $\predfn$ is a minimizer, its risk equals that of $\bestpredfn$,
+If $\predfn$ is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), its [risk](#def-risk) equals that of $\bestpredfn$,
 so the equality case of @thm-best-predictor gives $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
 
 :::
@@ -24,6 +24,6 @@ so the equality case of @thm-best-predictor gives $\P(\predfnf{\Predvar} = \best
 #### Uniqueness in the best-predictor exercise
 
 In @exr-best-predictor, $\predfn_2\paren{\Predvar} = 4\Predvar$ differs from $\bestpredfnf{\Predvar}$ when $\Predvar = 0$, which has probability $0.5$.
-So $\predfn_2$ is not a minimizer, which matches its risk $2$ being larger than $1$.
+So $\predfn_2$ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) $2$ being larger than $1$.
 
 :::
