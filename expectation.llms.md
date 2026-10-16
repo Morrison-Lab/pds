@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 02:00:06 (PDT)
+Last modified: 2026-10-16 02:15:38 (PDT)
 
 > **NOTE:**
 >
@@ -86,9 +86,9 @@ Last modified: 2026-10-16 02:00:06 (PDT)
 
 > **NOTE:**
 >
-> **Example 3 (Expectation of a random vector of coin flips)** For the two fair coin flips in [the independence page’s example](independence.llms.md#exm-indpt), the random vector \\\tilde{X}= {(X_1, X_2)}^{\top}\\ is a \\2 \times 1\\ random matrix, and:
+> **Example 3 (Expectation of a random vector of coin flips)** For the two fair coin flips in [the independence page’s example](independence.llms.md#exm-indpt), the random vector \\\underset{\sim}{X}= {(X_1, X_2)}^{\top}\\ is a \\2 \times 1\\ random matrix, and:
 >
-> \\\operatorname{E}\tilde{X}= \begin{pmatrix}\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} \\ \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{}\end{pmatrix} = \begin{pmatrix}1/2 \\ 1/2\end{pmatrix}\\
+> \\\operatorname{E}\underset{\sim}{X}= \begin{pmatrix}\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{} \\ \operatorname{E}\mathopen{}\left\[X_2\right\]\mathclose{}\end{pmatrix} = \begin{pmatrix}1/2 \\ 1/2\end{pmatrix}\\
 >
 > since each \\X_i\\ is Bernoulli with \\\pi= 1/2\\ ([Theorem 1](#thm-bernoulli-mean)).
 

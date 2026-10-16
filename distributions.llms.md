@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 02:00:06 (PDT)
+Last modified: 2026-10-16 02:15:38 (PDT)
 
 > **NOTE:**
 >
@@ -677,15 +677,15 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))** A \\p \times 1\\ random vector \\\tilde{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\tilde{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\tilde{X}\\ has joint density:
+> **Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))** A \\p \times 1\\ random vector \\\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\\ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter \\\underset{\sim}{\mu} \in \mathbb{R}^p\\ and variance parameter \\\mathbf{\Sigma}\\, a \\p \times p\\ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written \\\underset{\sim}{X}\sim \operatorname{N}\_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, if \\\underset{\sim}{X}\\ has joint density:
 >
-> \\ \operatorname{p}(\tilde{X}= \tilde{x}) \stackrel{\text{def}}{=} \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{1}{2} {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})}, \quad \tilde{x}\in \mathbb{R}^p \\
+> \\ \operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) \stackrel{\text{def}}{=} \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{1}{2} {(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\underset{\sim}{x}- \underset{\sim}{\mu})}, \quad \underset{\sim}{x}\in \mathbb{R}^p \\
 >
 > where \\\det(\mathbf{\Sigma})\\ is the [determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant) of \\\mathbf{\Sigma}\\ and \\\mathbf{\Sigma}^{-1}\\ is its [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse).
 
 > **NOTE:**
 >
-> *Remark*. A joint density of \\p\\ random variables is the \\p\\-variable analogue of a [joint density](random-variables.llms.md#def-joint-pdf) of two: a non-negative function on \\\mathbb{R}^p\\ whose integral over any region \\A \subseteq \mathbb{R}^p\\ is \\\Pr(\tilde{X}\in A)\\.
+> *Remark*. A joint density of \\p\\ random variables is the \\p\\-variable analogue of a [joint density](random-variables.llms.md#def-joint-pdf) of two: a non-negative function on \\\mathbb{R}^p\\ whose integral over any region \\A \subseteq \mathbb{R}^p\\ is \\\Pr(\underset{\sim}{X}\in A)\\.
 >
 > The density is well defined because \\\mathbf{\Sigma}\\ is positive definite:
 >
@@ -694,11 +694,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 15 (The multivariate normal density integrates to 1)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then the density in [Definition 9](#def-mvn) integrates to 1 over \\\mathbb{R}^p\\.
+> **Theorem 15 (The multivariate normal density integrates to 1)** If \\\underset{\sim}{X}\sim \operatorname{N}\_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then the density in [Definition 9](#def-mvn) integrates to 1 over \\\mathbb{R}^p\\.
 
 > **NOTE:**
 >
-> **Theorem 16 (The mean and variance of the multivariate normal distribution)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then \\\operatorname{E}\tilde{X}= \tilde{\mu}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
+> **Theorem 16 (The mean and variance of the multivariate normal distribution)** If \\\underset{\sim}{X}\sim \operatorname{N}\_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then \\\operatorname{E}\underset{\sim}{X}= \underset{\sim}{\mu}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
 
 > **NOTE:**
 >
@@ -706,29 +706,29 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 17 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\tilde{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
+> **Example 17 (The univariate normal is the case \\p = 1\\)** With \\p = 1\\, \\\underset{\sim}{\mu} = (\mu)\\, and \\\mathbf{\Sigma} = (\sigma^2)\\ for \\\sigma^2\> 0\\, \\\det(\mathbf{\Sigma}) = \sigma^2\\ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), \\p = 1\\) and \\\mathbf{\Sigma}^{-1} = (1/\sigma^2)\\, so:
 >
-> \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}} \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)} && \text{(substitute into the multivariate normal density)} \\ &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x - \mu)^2}{2\sigma^2}} && \text{(simplify)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) &= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}} \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)} && \text{(substitute into the multivariate normal density)} \\ &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x - \mu)^2}{2\sigma^2}} && \text{(simplify)} \end{aligned} \\
 >
 > which is the [normal density](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Lemma 1 (The quadratic form in the multivariate normal density is non-negative)** If \\\mathbf{\Sigma}\\ is a \\p \times p\\ positive definite matrix and \\\tilde{x}, \tilde{\mu} \in \mathbb{R}^p\\, then
+> **Lemma 1 (The quadratic form in the multivariate normal density is non-negative)** If \\\mathbf{\Sigma}\\ is a \\p \times p\\ positive definite matrix and \\\underset{\sim}{x}, \underset{\sim}{\mu} \in \mathbb{R}^p\\, then
 >
-> \\{(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu}) \ge 0,\\
+> \\{(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\underset{\sim}{x}- \underset{\sim}{\mu}) \ge 0,\\
 >
-> with equality if and only if \\\tilde{x}= \tilde{\mu}\\.
+> with equality if and only if \\\underset{\sim}{x}= \underset{\sim}{\mu}\\.
 
 > **NOTE:**
 >
-> *Proof*. \\\mathbf{\Sigma}^{-1}\\ is positive definite ([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)). If \\\tilde{x}\neq \tilde{\mu}\\, then \\\tilde{x}- \tilde{\mu} \neq \tilde{0}\\, so the quadratic form is positive by the [definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite). If \\\tilde{x}= \tilde{\mu}\\, then \\\tilde{x}- \tilde{\mu} = \tilde{0}\\, and the quadratic form is \\0\\.
+> *Proof*. \\\mathbf{\Sigma}^{-1}\\ is positive definite ([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)). If \\\underset{\sim}{x}\neq \underset{\sim}{\mu}\\, then \\\underset{\sim}{x}- \underset{\sim}{\mu} \neq \underset{\sim}{0}\\, so the quadratic form is positive by the [definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite). If \\\underset{\sim}{x}= \underset{\sim}{\mu}\\, then \\\underset{\sim}{x}- \underset{\sim}{\mu} = \underset{\sim}{0}\\, and the quadratic form is \\0\\.
 
 > **NOTE:**
 >
-> **Definition 10 (Mahalanobis distance)** For a \\p \times p\\ positive definite matrix \\\mathbf{\Sigma}\\ and \\\tilde{x}, \tilde{\mu} \in \mathbb{R}^p\\, the **Mahalanobis distance** from \\\tilde{x}\\ to \\\tilde{\mu}\\ with respect to \\\mathbf{\Sigma}\\ is:
+> **Definition 10 (Mahalanobis distance)** For a \\p \times p\\ positive definite matrix \\\mathbf{\Sigma}\\ and \\\underset{\sim}{x}, \underset{\sim}{\mu} \in \mathbb{R}^p\\, the **Mahalanobis distance** from \\\underset{\sim}{x}\\ to \\\underset{\sim}{\mu}\\ with respect to \\\mathbf{\Sigma}\\ is:
 >
-> \\ \Delta(\tilde{x}) \stackrel{\text{def}}{=}\sqrt{{(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\tilde{x}- \tilde{\mu})} \\
+> \\ \Delta(\underset{\sim}{x}) \stackrel{\text{def}}{=}\sqrt{{(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\underset{\sim}{x}- \underset{\sim}{\mu})} \\
 
 > **NOTE:**
 >
@@ -736,34 +736,34 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, then:
+> **Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)** If \\\underset{\sim}{X}\sim \operatorname{N}\_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, then:
 >
-> \\ \operatorname{p}(\tilde{X}= \tilde{x}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\tilde{x})^2}{2}} \\
+> \\ \operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\underset{\sim}{x})^2}{2}} \\
 >
-> where \\\Delta\\ is the Mahalanobis distance to \\\tilde{\mu}\\ with respect to \\\mathbf{\Sigma}\\ ([Definition 10](#def-mahalanobis)). So the density is highest at \\\tilde{x}= \tilde{\mu}\\, decreases as \\\Delta(\tilde{x})\\ increases, and is the same at every \\\tilde{x}\\ with the same \\\Delta(\tilde{x})\\.
+> where \\\Delta\\ is the Mahalanobis distance to \\\underset{\sim}{\mu}\\ with respect to \\\mathbf{\Sigma}\\ ([Definition 10](#def-mahalanobis)). So the density is highest at \\\underset{\sim}{x}= \underset{\sim}{\mu}\\, decreases as \\\Delta(\underset{\sim}{x})\\ increases, and is the same at every \\\underset{\sim}{x}\\ with the same \\\Delta(\underset{\sim}{x})\\.
 
 > **NOTE:**
 >
-> *Proof*. Substitute [Definition 10](#def-mahalanobis) into [Definition 9](#def-mvn). The function \\\delta\mapsto \text{e}^{-\delta^2/2}\\ decreases on \\\delta\ge 0\\, and by [Lemma 1](#lem-mahalanobis-nonneg), \\\Delta(\tilde{x}) = 0\\ only at \\\tilde{x}= \tilde{\mu}\\.
+> *Proof*. Substitute [Definition 10](#def-mahalanobis) into [Definition 9](#def-mvn). The function \\\delta\mapsto \text{e}^{-\delta^2/2}\\ decreases on \\\delta\ge 0\\, and by [Lemma 1](#lem-mahalanobis-nonneg), \\\Delta(\underset{\sim}{x}) = 0\\ only at \\\underset{\sim}{x}= \underset{\sim}{\mu}\\.
 
 > **NOTE:**
 >
 > **Example 18 (Mahalanobis distance for diagonal variance matrices)** If \\\mathbf{\Sigma}\\ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, all positive, then \\\mathbf{\Sigma}^{-1}\\ is diagonal with diagonal elements \\1/\sigma^2_1, \ldots, 1/\sigma^2_p\\ (multiplying the two gives \\\mathbf{I}\_p\\; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
 >
-> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i} \\
+> \\ \Delta(\underset{\sim}{x})^2 = \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i} \\
 >
 > Two special cases:
 >
-> - If \\\mathbf{\Sigma} = \mathbf{I}\_p\\, then \\\Delta(\tilde{x})^2 = \sum\_{i=1}^p(x_i - \mu_i)^2\\, so the Mahalanobis distance is the ordinary (Euclidean) distance.
-> - If \\\mathbf{\Sigma} = \sigma^2\mathbf{I}\_p\\, then \\\Delta(\tilde{x})\\ is the Euclidean distance divided by \\\sigma\\.
+> - If \\\mathbf{\Sigma} = \mathbf{I}\_p\\, then \\\Delta(\underset{\sim}{x})^2 = \sum\_{i=1}^p(x_i - \mu_i)^2\\, so the Mahalanobis distance is the ordinary (Euclidean) distance.
+> - If \\\mathbf{\Sigma} = \sigma^2\mathbf{I}\_p\\, then \\\Delta(\underset{\sim}{x})\\ is the Euclidean distance divided by \\\sigma\\.
 >
 > In general, each coordinate’s difference is measured in units of that coordinate’s standard deviation.
 
 > **NOTE:**
 >
-> **Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
+> **Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)** If \\\underset{\sim}{X}\sim \operatorname{N}\_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\ and \\\mathbf{\Sigma}\\ is diagonal with diagonal elements \\\sigma^2_1, \ldots, \sigma^2_p\\, then:
 >
-> - the joint density of \\\tilde{X}\\ is the product of the [normal densities](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, \\i = 1, \ldots, p\\,
+> - the joint density of \\\underset{\sim}{X}\\ is the product of the [normal densities](random-variables.llms.md#def-normal) \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, \\i = 1, \ldots, p\\,
 > - each \\X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\, and
 > - \\X_1, \ldots, X_p\\ are [independent](independence.llms.md#def-indpt).
 
@@ -771,17 +771,17 @@ print(plot2)
 >
 > *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), \\\det(\mathbf{\Sigma}) = \prod\_{i=1}^p \sigma^2_i\\, so \\\det(\mathbf{\Sigma})^{1/2} = \prod\_{i=1}^p \sigma_i\\. Using [Example 18](#exm-mahalanobis-special) for the quadratic form:
 >
-> \\ \begin{aligned} \operatorname{p}(\tilde{X}= \tilde{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma^2_i}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) &= \frac{1}{(2\pi)^{p/2} \prod\_{i=1}^p \sigma_i} \text{e}^{-\frac{1}{2} \sum\_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}} && \text{(substitute)} \\ &= \prod\_{i=1}^p \frac{1}{\sigma_i \sqrt{2\pi}} \text{e}^{-\frac{(x_i - \mu_i)^2}{2\sigma^2_i}} && \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)} \end{aligned} \\
 >
 > which is the product of the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\ densities. Integrating out every coordinate except \\x_i\\, each other factor integrates to 1 ([the normal density integrates to 1](random-variables.llms.md#thm-normal-density)), leaving the \\\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\\ density as the density of \\X_i\\ ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables). So the joint density is the product of the marginal densities, and the components are independent by [the factorization theorem for densities](independence.llms.md#thm-indpt-density), extended to \\p\\ variables as its remark describes.
 
 > **NOTE:**
 >
-> **Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)** If \\\tilde{X}\sim \operatorname{N}\_p\mathopen{}\left(\tilde{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, then \\X_1, \ldots, X_p\\ are independent if and only if \\\mathbf{\Sigma}\\ is diagonal, that is, if and only if \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ for every \\i \neq j\\.
+> **Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)** If \\\underset{\sim}{X}\sim \operatorname{N}\_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\\, then \\X_1, \ldots, X_p\\ are independent if and only if \\\mathbf{\Sigma}\\ is diagonal, that is, if and only if \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\\ for every \\i \neq j\\.
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 16](#thm-mvn-moments), \\\operatorname{Var}\mathopen{}\left(\tilde{X}\right)\mathclose{} = \mathbf{\Sigma}\\, whose \\(i,j)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If \\\mathbf{\Sigma}\\ is diagonal, the components are independent by [Theorem 17](#thm-mvn-diagonal-indpt). If the components are independent, then:
+> *Proof*. By [Theorem 16](#thm-mvn-moments), \\\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \mathbf{\Sigma}\\, whose \\(i,j)\\-th element is \\\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\\ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If \\\mathbf{\Sigma}\\ is diagonal, the components are independent by [Theorem 17](#thm-mvn-diagonal-indpt). If the components are independent, then:
 >
 > - each pair \\X_i, X_j\\ with \\i \neq j\\ is independent,
 > - each \\X_i\\ is continuous, with the density left after integrating out the other coordinates of the joint density ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables), and
@@ -795,39 +795,39 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 18 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\tilde{q}\_1, \ldots, \tilde{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
+> **Theorem 18 (Mahalanobis distance in eigenvector coordinates)** Let \\\mathbf{\Sigma}\\ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) \\\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\\, where \\\mathbf{Q}\\ has columns \\\underset{\sim}{q}\_1, \ldots, \underset{\sim}{q}\_p\\ and \\\mathbf{\Lambda}\\ has diagonal elements \\\lambda_1, \ldots, \lambda_p\\. Then:
 >
-> \\ \Delta(\tilde{x})^2 = \sum\_{i=1}^p\frac{\mathopen{}\left({\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\right)\mathclose{}^2}{\lambda_i} \\
+> \\ \Delta(\underset{\sim}{x})^2 = \sum\_{i=1}^p\frac{\mathopen{}\left({\underset{\sim}{q}\_i}^{\top}(\underset{\sim}{x}- \underset{\sim}{\mu})\right)\mathclose{}^2}{\lambda_i} \\
 
 > **NOTE:**
 >
-> *Proof*. Let \\\tilde{y} = {\mathbf{Q}}^{\top}(\tilde{x}- \tilde{\mu})\\, whose \\i\\-th element is \\y_i = {\tilde{q}\_i}^{\top}(\tilde{x}- \tilde{\mu})\\. By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse), \\\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\\, with every \\\lambda_i \> 0\\. So:
+> *Proof*. Let \\\underset{\sim}{y} = {\mathbf{Q}}^{\top}(\underset{\sim}{x}- \underset{\sim}{\mu})\\, whose \\i\\-th element is \\y_i = {\underset{\sim}{q}\_i}^{\top}(\underset{\sim}{x}- \underset{\sim}{\mu})\\. By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse), \\\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\\, with every \\\lambda_i \> 0\\. So:
 >
-> \\ \begin{aligned} \Delta(\tilde{x})^2 &= {(\tilde{x}- \tilde{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\tilde{x}- \tilde{\mu}) && \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\ &= {\tilde{y}}^{\top} \mathbf{\Lambda}^{-1} \tilde{y} && \text{(} {(\tilde{x}- \tilde{\mu})}^{\top}\mathbf{Q} = {\tilde{y}}^{\top} \text{)} \\ &= \sum\_{i=1}^p\frac{y_i^2}{\lambda_i} && \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)} \end{aligned} \\
+> \\ \begin{aligned} \Delta(\underset{\sim}{x})^2 &= {(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\underset{\sim}{x}- \underset{\sim}{\mu}) && \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\ &= {\underset{\sim}{y}}^{\top} \mathbf{\Lambda}^{-1} \underset{\sim}{y} && \text{(} {(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top}\mathbf{Q} = {\underset{\sim}{y}}^{\top} \text{)} \\ &= \sum\_{i=1}^p\frac{y_i^2}{\lambda_i} && \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. \\y_i\\ is the coordinate of \\\tilde{x}- \tilde{\mu}\\ along the eigenvector \\\tilde{q}\_i\\. So the set of points at Mahalanobis distance \\\delta\\ from \\\tilde{\mu}\\, where the multivariate normal density is constant ([Corollary 3](#cor-mvn-mahalanobis)), is an ellipse (\\p = 2\\) or ellipsoid centered at \\\tilde{\mu}\\, with axes along the eigenvectors of \\\mathbf{\Sigma}\\ and half-length \\\delta\sqrt{\lambda_i}\\ along \\\tilde{q}\_i\\.
+> *Remark*. \\y_i\\ is the coordinate of \\\underset{\sim}{x}- \underset{\sim}{\mu}\\ along the eigenvector \\\underset{\sim}{q}\_i\\. So the set of points at Mahalanobis distance \\\delta\\ from \\\underset{\sim}{\mu}\\, where the multivariate normal density is constant ([Corollary 3](#cor-mvn-mahalanobis)), is an ellipse (\\p = 2\\) or ellipsoid centered at \\\underset{\sim}{\mu}\\, with axes along the eigenvectors of \\\mathbf{\Sigma}\\ and half-length \\\delta\sqrt{\lambda_i}\\ along \\\underset{\sim}{q}\_i\\.
 
 > **NOTE:**
 >
-> **Example 19 (Elliptical contours of a bivariate normal density)** Let \\\tilde{\mu} = \tilde{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\tilde{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\tilde{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 18](#thm-mahalanobis-eigen):
+> **Example 19 (Elliptical contours of a bivariate normal density)** Let \\\underset{\sim}{\mu} = \underset{\sim}{0}\\ and \\\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}\\, which has eigenvalues \\3\\ and \\1\\, with eigenvectors \\\underset{\sim}{q}\_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\\ and \\\underset{\sim}{q}\_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\\ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 18](#thm-mahalanobis-eigen):
 >
-> \\ \Delta(\tilde{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
+> \\ \Delta(\underset{\sim}{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1} \\
 >
 > The point
 >
-> \\ \begin{aligned} \tilde{x}&= \sqrt{3}\\\tilde{q}\_1 \\ &= \sqrt{3/2}\\{(1, 1)}^{\top} \end{aligned} \\
+> \\ \begin{aligned} \underset{\sim}{x}&= \sqrt{3}\\\underset{\sim}{q}\_1 \\ &= \sqrt{3/2}\\{(1, 1)}^{\top} \end{aligned} \\
 >
 > has \\x_1 + x_2 = \sqrt{6}\\ and \\x_1 - x_2 = 0\\, so
 >
-> \\ \begin{aligned} \Delta(\tilde{x})^2 &= 6/6 \\ &= 1; \end{aligned} \\
+> \\ \begin{aligned} \Delta(\underset{\sim}{x})^2 &= 6/6 \\ &= 1; \end{aligned} \\
 >
-> the point \\\tilde{x}= \tilde{q}\_2\\ has \\x_1 + x_2 = 0\\ and \\x_1 - x_2 = \sqrt{2}\\, so
+> the point \\\underset{\sim}{x}= \underset{\sim}{q}\_2\\ has \\x_1 + x_2 = 0\\ and \\x_1 - x_2 = \sqrt{2}\\, so
 >
-> \\ \begin{aligned} \Delta(\tilde{x})^2 &= 2/2 \\ &= 1. \end{aligned} \\
+> \\ \begin{aligned} \Delta(\underset{\sim}{x})^2 &= 2/2 \\ &= 1. \end{aligned} \\
 >
-> So the contour \\\Delta(\tilde{x}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\tilde{0}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated.
+> So the contour \\\Delta(\underset{\sim}{x}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\underset{\sim}{0}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated.
 
 ## 8 Mixture distributions
 
