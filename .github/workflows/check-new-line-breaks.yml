@@ -23,7 +23,8 @@ jobs:
     uses: Morrison-Lab/gha/.github/workflows/check-new-line-breaks.yml@v3
     with:
       # Space-separated git pathspecs. The upstream default is `*.md` alone;
-      # this site's prose lives in `.qmd`.
+      # this site's prose lives in `.qmd`. The root docs (`README.md`,
+      # `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`) are in scope too.
       globs: '*.md *.qmd'
       # `_extensions/` holds vendored Quarto extensions.
       # `**`, not `*`: gha's matcher stops a single `*` at a `/`.
