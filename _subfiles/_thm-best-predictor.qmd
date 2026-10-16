@@ -4,7 +4,7 @@
 Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
 Let $g^*(X) \eqdef \E{Y \mid X}$.
 Then for any prediction function $g(X)$ with $\E{g(X)^2} < \infty$,
-let $\prederr_g \eqdef Y - g(X)$ be the prediction error of $g$.
+let $\prederr_g \eqdef g(X) - Y$ be the prediction error of $g$.
 The squared-error risk of $g$ is $\popriskf{g} \eqdef \E{\sqf{\prederr_g}}$,
 and it decomposes as:
 
@@ -32,27 +32,27 @@ minimizes the squared-error risk among all prediction functions of $X$.
 
 ::: proof
 
-Write $\prederr_g = \prederr_{g^*} + \paren{g^*(X) - g(X)}$,
-which holds because $\prederr_g = Y - g(X) = \paren{Y - g^*(X)} + \paren{g^*(X) - g(X)}$.
+Write $\prederr_g = \prederr_{g^*} + \paren{g(X) - g^*(X)}$,
+which holds because $\prederr_g = g(X) - Y = \paren{g^*(X) - Y} + \paren{g(X) - g^*(X)}$.
 Squaring both sides gives:
 
-$$\sqf{\prederr_g} = \sqf{\prederr_{g^*}} + 2\prederr_{g^*}\paren{g^*(X) - g(X)} + \sqf{g^*(X) - g(X)}$$
+$$\sqf{\prederr_g} = \sqf{\prederr_{g^*}} + 2\prederr_{g^*}\paren{g(X) - g^*(X)} + \sqf{g^*(X) - g(X)}$$
 
 We compute the expectation of the cross-product term by conditioning on $X$.
-Because $g^*(X) - g(X)$ is a function of $X$,
+Because $g(X) - g^*(X)$ is a function of $X$,
 by @thm-cond-pull-out it factors out of the conditional expectation:
 
 $$
 \ba
-\E{\prederr_{g^*}\paren{g^*(X) - g(X)} \mid X}
-&= \paren{g^*(X) - g(X)} \cd \E{\prederr_{g^*} \mid X}
+\E{\prederr_{g^*}\paren{g(X) - g^*(X)} \mid X}
+&= \paren{g(X) - g^*(X)} \cd \E{\prederr_{g^*} \mid X}
 && \text{(a function of } X \text{ factors out)} \\
-&= \paren{g^*(X) - g(X)} \cd \E{Y - g^*(X) \mid X}
+&= \paren{g(X) - g^*(X)} \cd \E{g^*(X) - Y \mid X}
 && \text{(definition of } \prederr_{g^*} \text{)} \\
-&= \paren{g^*(X) - g(X)} \cd \paren{\E{Y \mid X} - \E{g^*(X) \mid X}}
+&= \paren{g(X) - g^*(X)} \cd \paren{\E{g^*(X) \mid X} - \E{Y \mid X}}
 && \text{(linearity of conditional expectation)} \\
-&= \paren{g^*(X) - g(X)} \cd \paren{g^*(X) - g^*(X)}
-&& \text{(definition of } g^*(X) \text{ and } \E{g^*(X) \mid X} = g^*(X) \text{)} \\
+&= \paren{g(X) - g^*(X)} \cd \paren{g^*(X) - g^*(X)}
+&& \text{(a function of } X \text{ is its own conditional mean, and definition of } g^*(X) \text{)} \\
 &= 0
 && \text{(evaluate)}
 \ea
@@ -63,8 +63,8 @@ the unconditional expectation of the cross-product is:
 
 $$
 \begin{aligned}
-\E{\prederr_{g^*}\paren{g^*(X) - g(X)}}
-&= \E{\E{\prederr_{g^*}\paren{g^*(X) - g(X)} \mid X}} \\
+\E{\prederr_{g^*}\paren{g(X) - g^*(X)}}
+&= \E{\E{\prederr_{g^*}\paren{g(X) - g^*(X)} \mid X}} \\
 &= \E{0} \\
 &= 0
 \end{aligned}
@@ -79,9 +79,9 @@ $$
 \popriskf{g}
 &= \E{\sqf{\prederr_g}}
 && \text{(definition of the squared-error risk)} \\
-&= \E{\sqf{\prederr_{g^*}} + 2\prederr_{g^*}\paren{g^*(X) - g(X)} + \sqf{g^*(X) - g(X)}}
+&= \E{\sqf{\prederr_{g^*}} + 2\prederr_{g^*}\paren{g(X) - g^*(X)} + \sqf{g^*(X) - g(X)}}
 && \text{(the squared expansion)} \\
-&= \E{\sqf{\prederr_{g^*}}} + 2 \cd \E{\prederr_{g^*}\paren{g^*(X) - g(X)}} + \E{\sqf{g^*(X) - g(X)}}
+&= \E{\sqf{\prederr_{g^*}}} + 2 \cd \E{\prederr_{g^*}\paren{g(X) - g^*(X)}} + \E{\sqf{g^*(X) - g(X)}}
 && \text{(linearity of expectation)} \\
 &= \E{\sqf{\prederr_{g^*}}} + 2 \cd 0 + \E{\sqf{g^*(X) - g(X)}}
 && \text{(the cross-product has expectation } 0 \text{)} \\
