@@ -3,7 +3,17 @@
 
 Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
 Let $g^*(X) \eqdef \E{Y \mid X}$.
-Then for any prediction function $g(X)$ with $\E{g(X)^2} < \infty$:
+Then for any prediction function $g(X)$ with $\E{g(X)^2} < \infty$,
+the squared-error risk of $g$ decomposes as:
+
+$$
+\ba
+\E{\sqf{Y - g(X)}}
+&= \E{\sqf{Y - g^*(X)}} + \E{\sqf{g^*(X) - g(X)}}
+\ea
+$$
+
+Consequently:
 
 $$\E{\sqf{Y - g(X)}} \ge \E{\sqf{Y - g^*(X)}}$$
 
@@ -51,9 +61,17 @@ $$
 $$
 
 Taking expectations on both sides of the squared expansion,
-by linearity of expectation (@thm-linearity-expectation):
+by linearity of expectation (@thm-linearity-expectation),
+gives the decomposition in the statement:
 
-$$\E{\sqf{Y - g(X)}} = \E{\sqf{Y - g^*(X)}} + \E{\sqf{g^*(X) - g(X)}}$$
+$$
+\ba
+\E{\sqf{Y - g(X)}}
+&= \E{\sqf{Y - g^*(X)}} + 2 \cd \E{\paren{Y - g^*(X)}\paren{g^*(X) - g(X)}} + \E{\sqf{g^*(X) - g(X)}} \\
+&= \E{\sqf{Y - g^*(X)}} + 2 \cd 0 + \E{\sqf{g^*(X) - g(X)}} \\
+&= \E{\sqf{Y - g^*(X)}} + \E{\sqf{g^*(X) - g(X)}}
+\ea
+$$
 
 Since $\sqf{g^*(X) - g(X)} \ge 0$, its expectation is non-negative:
 
@@ -61,11 +79,23 @@ $$\E{\sqf{g^*(X) - g(X)}} \ge 0$$
 
 with equality if and only if $\sqf{g^*(X) - g(X)} = 0$ with probability $1$,
 meaning $\P(g(X) = g^*(X)) = 1$.
-Therefore:
+Therefore, dropping the non-negative second term of the decomposition:
 
 $$\E{\sqf{Y - g(X)}} \ge \E{\sqf{Y - g^*(X)}}$$
 
 with equality if and only if $\P(g(X) = g^*(X)) = 1$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-best-predictor-decomposition}
+#### The risk decomposition in the best-predictor exercise
+
+In @exr-best-predictor,
+the constant prediction $g_1(X) = 3$ has total risk $5$,
+which the decomposition of @thm-best-predictor splits as $5 = 1 + 4$:
+the risk $1$ of the conditional mean plus the excess $4$ from using $g_1$.
 
 :::
 
