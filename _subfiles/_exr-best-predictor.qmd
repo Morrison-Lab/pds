@@ -12,7 +12,7 @@ $\P(\Outvar = 4 \mid \Predvar = 1) = 0.5$ and $\P(\Outvar = 6 \mid \Predvar = 1)
 1. Compute the marginal [mean](#def-expectation) $\E{\Outvar}$ and the [conditional expectation function](#def-cond-expectation-function) $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
 
 2. Consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} \eqdef \E{\Outvar} = 3$, which ignores $\Predvar$.
-   Compute its [squared-error risk](#def-squared-error-risk) $\E{\sqf{\Outvar - \predfn_1\paren{\Predvar}}}$.
+   Compute its [squared-error risk](#def-risk) $\E{\sqf{\Outvar - \predfn_1\paren{\Predvar}}}$.
 
 3. Consider the alternate prediction $\predfn_2\paren{\Predvar} \eqdef 4\Predvar$.
    Compute its squared-error risk $\E{\sqf{\Outvar - \predfn_2\paren{\Predvar}}}$.
