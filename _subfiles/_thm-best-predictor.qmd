@@ -21,7 +21,7 @@ $$
 \ba
 \popriskf{g} - \popriskf{g^*}
 &= \E{\sqf{g(X) - g^*(X)}}
-&& \text{(@thm-risk-decomposition)} \\
+&& \text{(squared-error risk decomposition)} \\
 &\ge 0
 && \text{(the expectation of a non-negative variable)}
 \ea
