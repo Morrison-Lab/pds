@@ -1,0 +1,15 @@
+:::{#def-input}
+#### Input
+
+The **input** $\Predvar$ of a data point (also called its **predictor** or **covariate**) is the observed random variable from which a [prediction](#def-prediction) of its [outcome](#def-outcome) is computed.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-input}
+#### The input in the best-predictor exercise
+
+In @exr-best-predictor, the input $\Predvar$ takes the values $0$ and $1$, each with probability $0.5$.
+
+:::

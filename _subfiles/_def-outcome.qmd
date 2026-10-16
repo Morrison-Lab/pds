@@ -1,0 +1,15 @@
+:::{#def-outcome}
+#### Outcome
+
+The **outcome** $\Outvar$ of a data point is the random variable whose value a [prediction](#def-prediction) tries to guess.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-outcome}
+#### The outcome in the best-predictor exercise
+
+In @exr-best-predictor, the outcome $\Outvar$ takes the values $0$ and $2$ when the input is $0$, and the values $4$ and $6$ when the input is $1$.
+
+:::
