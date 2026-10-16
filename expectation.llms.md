@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 03:12:14 (PDT)
+Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
@@ -1169,27 +1169,27 @@ Last modified: 2026-10-16 03:12:14 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 7 (Comparing prediction functions under squared-error loss)** Let \\(X, Y)\\ be jointly distributed discrete random variables. \\X\\ takes values in \\\\0, 1\\\\ with \\\operatorname{P}(X = 0) = 0.5\\ and \\\operatorname{P}(X = 1) = 0.5\\. Given \\X = 0\\, \\Y\\ takes values in \\\\0, 2\\\\ with conditional probabilities \\\operatorname{P}(Y = 0 \mid X = 0) = 0.5\\ and \\\operatorname{P}(Y = 2 \mid X = 0) = 0.5\\. Given \\X = 1\\, \\Y\\ takes values in \\\\4, 6\\\\ with conditional probabilities \\\operatorname{P}(Y = 4 \mid X = 1) = 0.5\\ and \\\operatorname{P}(Y = 6 \mid X = 1) = 0.5\\.
+> **Exercise 7 (Comparing prediction functions under squared-error loss)** Let \\(X, Y)\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) [discrete random variables](random-variables.llms.md#def-discrete-rv). \\X\\ takes values in \\\\0, 1\\\\ with \\\operatorname{P}(X= 0) = 0.5\\ and \\\operatorname{P}(X= 1) = 0.5\\. Given \\X= 0\\, \\Y\\ takes values in \\\\0, 2\\\\ with conditional probabilities \\\operatorname{P}(Y= 0 \mid X= 0) = 0.5\\ and \\\operatorname{P}(Y= 2 \mid X= 0) = 0.5\\. Given \\X= 1\\, \\Y\\ takes values in \\\\4, 6\\\\ with conditional probabilities \\\operatorname{P}(Y= 4 \mid X= 1) = 0.5\\ and \\\operatorname{P}(Y= 6 \mid X= 1) = 0.5\\.
 >
-> 1.  Compute the marginal mean \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and the conditional expectation function \\g^\*(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\.
+> 1.  Compute the marginal [mean](#def-expectation) \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ and the [conditional expectation function](#def-cond-expectation-function) \\g^\*\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\.
 >
-> 2.  Consider the constant prediction \\g_1(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3\\, which ignores \\X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_1(X)\right)\mathclose{}}^2\right\]\mathclose{}\\.
+> 2.  Consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = 3\\, which ignores \\X\\. Compute its [squared-error risk](#def-risk) \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g_1\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{}\\.
 >
-> 3.  Consider the alternate prediction \\g_2(X) \stackrel{\text{def}}{=}4X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_2(X)\right)\mathclose{}}^2\right\]\mathclose{}\\.
+> 3.  Consider the alternate prediction \\g_2\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}4X\\. Compute its squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g_2\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{}\\.
 >
-> 4.  Compute the squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{}\\ of the conditional mean predictor \\g^\*(X)\\. Which of \\g_1\\, \\g_2\\, and \\g^\*\\ achieves the lowest risk?
+> 4.  Compute the squared-error risk \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g^\*\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{}\\ of the conditional mean predictor \\g^\*\mathopen{}\left(X\right)\mathclose{}\\. Which of \\g_1\\, \\g_2\\, and \\g^\*\\ achieves the lowest risk?
 
 > **NOTE:**
 >
 > *Solution 3*.
 >
-> 1.  For each value of \\X\\, compute the conditional expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 0\right\]\mathclose{} &= 0 \cdot 0.5 + 2 \cdot 0.5 \\ &= 1 \end{aligned} \\ \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{} &= 4 \cdot 0.5 + 6 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 10](#thm-lie)), the marginal mean is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 1 \cdot 0.5 + 5 \cdot 0.5 \\ &= 3 \end{aligned} \\ The conditional expectation function is \\g^\*(0) = 1\\ and \\g^\*(1) = 5\\, which can also be written \\g^\*(X) = 1 + 4X\\.
+> 1.  For each value of \\X\\, compute the conditional expectation: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\mid X= 0\right\]\mathclose{} &= 0 \cdot 0.5 + 2 \cdot 0.5 \\ &= 1 \end{aligned} \\ \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\mid X= 1\right\]\mathclose{} &= 4 \cdot 0.5 + 6 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 10](#thm-lie)), the marginal mean is: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 1 \cdot 0.5 + 5 \cdot 0.5 \\ &= 3 \end{aligned} \\ The conditional expectation function is \\g^\*\mathopen{}\left(0\right)\mathclose{} = 1\\ and \\g^\*\mathopen{}\left(1\right)\mathclose{} = 5\\, which can also be written \\g^\*\mathopen{}\left(X\right)\mathclose{} = 1 + 4X\\.
 >
-> 2.  For the constant prediction \\g_1(X) = 3\\: Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 3\right)\mathclose{}}^2 \mid X = 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 3\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 3\right)\mathclose{}}^2 \cdot 0.5 \\ &= 9 \cdot 0.5 + 1 \cdot 0.5 \\ &= 5 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 3\right)\mathclose{}}^2 \mid X = 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 3\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 3\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 9 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 10](#thm-lie)): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_1(X)\right)\mathclose{}}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 3\right)\mathclose{}}^2 \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 5 \cdot 0.5 + 5 \cdot 0.5 \\ &= 5 \end{aligned} \\
+> 2.  For the constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\: Given \\X= 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 3\right)\mathclose{}}^2 \mid X= 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 3\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 3\right)\mathclose{}}^2 \cdot 0.5 \\ &= 9 \cdot 0.5 + 1 \cdot 0.5 \\ &= 5 \end{aligned} \\ Given \\X= 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 3\right)\mathclose{}}^2 \mid X= 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 3\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 3\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 9 \cdot 0.5 \\ &= 5 \end{aligned} \\ By the law of iterated expectations ([Theorem 10](#thm-lie)): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g_1\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 3\right)\mathclose{}}^2 \mid X\right\]\mathclose{}\right\]\mathclose{} \\ &= 5 \cdot 0.5 + 5 \cdot 0.5 \\ &= 5 \end{aligned} \\
 >
-> 3.  For the prediction \\g_2(X) = 4X\\: Here \\g_2(0) = 0\\ and \\g_2(1) = 4\\. Given \\X = 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 0\right)\mathclose{}}^2 \mid X = 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 0\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 0\right)\mathclose{}}^2 \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ Given \\X = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 4\right)\mathclose{}}^2 \mid X = 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 4\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 4\right)\mathclose{}}^2 \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ By [Theorem 10](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g_2(X)\right)\mathclose{}}^2\right\]\mathclose{} &= 2 \cdot 0.5 + 2 \cdot 0.5 \\ &= 2 \end{aligned} \\
+> 3.  For the prediction \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\: Here \\g_2\mathopen{}\left(0\right)\mathclose{} = 0\\ and \\g_2\mathopen{}\left(1\right)\mathclose{} = 4\\. Given \\X= 0\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 0\right)\mathclose{}}^2 \mid X= 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 0\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 0\right)\mathclose{}}^2 \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ Given \\X= 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 4\right)\mathclose{}}^2 \mid X= 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 4\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 4\right)\mathclose{}}^2 \cdot 0.5 \\ &= 0 \cdot 0.5 + 4 \cdot 0.5 \\ &= 2 \end{aligned} \\ By [Theorem 10](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g_2\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} &= 2 \cdot 0.5 + 2 \cdot 0.5 \\ &= 2 \end{aligned} \\
 >
-> 4.  For the conditional mean predictor \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\: Given \\X = 0\\, \\g^\*(0) = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 1\right)\mathclose{}}^2 \mid X = 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 1\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 1\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ Given \\X = 1\\, \\g^\*(1) = 5\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 5\right)\mathclose{}}^2 \mid X = 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 5\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 5\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ By [Theorem 10](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g^\*(X)\right)\mathclose{}}^2\right\]\mathclose{} &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
+> 4.  For the conditional mean predictor \\g^\*\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\: Given \\X= 0\\, \\g^\*\mathopen{}\left(0\right)\mathclose{} = 1\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 1\right)\mathclose{}}^2 \mid X= 0\right\]\mathclose{} &= {\mathopen{}\left(0 - 1\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(2 - 1\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ Given \\X= 1\\, \\g^\*\mathopen{}\left(1\right)\mathclose{} = 5\\: \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- 5\right)\mathclose{}}^2 \mid X= 1\right\]\mathclose{} &= {\mathopen{}\left(4 - 5\right)\mathclose{}}^2 \cdot 0.5 + {\mathopen{}\left(6 - 5\right)\mathclose{}}^2 \cdot 0.5 \\ &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ By [Theorem 10](#thm-lie): \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g^\*\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} &= 1 \cdot 0.5 + 1 \cdot 0.5 \\ &= 1 \end{aligned} \\ The conditional mean predictor \\g^\*\\ achieves the lowest risk (\\1\\), strictly outperforming \\g_2\\ (\\2\\) and the constant prediction \\g_1\\ (\\5\\).
 
 > **NOTE:**
 >
@@ -1347,15 +1347,33 @@ Last modified: 2026-10-16 03:12:14 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be jointly distributed random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among prediction functions \\g(X)\\ with \\\operatorname{E}\mathopen{}\left\[g(X)^2\right\]\mathclose{} \< \infty\\, the conditional expectation function is a minimizer of the squared-error risk:
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Among [prediction functions](#def-prediction) \\g\mathopen{}\left(X\right)\mathclose{}\\ with \\\operatorname{E}\mathopen{}\left\[g\mathopen{}\left(X\right)\mathclose{}^2\right\]\mathclose{} \< \infty\\, the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
 >
-> \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{} \in \arg \min\_{g} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - g(X)\right)\mathclose{}}^2\right\]\mathclose{},\\
+> \\\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} \in \arg \min\_{g} \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{},\\
 >
-> where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin). Moreover, every \\g\\ in that set satisfies \\\operatorname{P}(g(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}) = 1\\, so the minimizer is unique up to probability-\\1\\ equality.
+> where \\\arg \min\\ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 13](#thm-best-predictor), \\g^\*(X) = \operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\ has risk no larger than that of any \\g\\, so it is a minimizer. If \\g\\ is also a minimizer, its risk equals that of \\g^\*\\, so the equality case of [Theorem 13](#thm-best-predictor) gives \\\operatorname{P}(g(X) = g^\*(X)) = 1\\.
+> *Proof*. By [Theorem 13](#thm-best-predictor), \\g^\*\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\\ has [risk](#def-risk) no larger than that of any [prediction function](#def-prediction) \\g\\, so it is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer).
+
+> **NOTE:**
+>
+> **Example 32 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\g^\*\mathopen{}\left(X\right)\mathclose{}\\ has [risk](#def-risk) \\1\\. The constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\g^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
+
+> **NOTE:**
+>
+> **Corollary 5 (The minimizer of squared-error risk is unique up to probability-1 equality)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\. Every [prediction function](#def-prediction) \\g\mathopen{}\left(X\right)\mathclose{}\\ with \\\operatorname{E}\mathopen{}\left\[g\mathopen{}\left(X\right)\mathclose{}^2\right\]\mathclose{} \< \infty\\ that is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk) (see [Corollary 4](#cor-best-predictor-argmin)) satisfies:
+>
+> \\\operatorname{P}(g\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}) = 1\\
+
+> **NOTE:**
+>
+> *Proof*. If \\g\\ is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), its [risk](#def-risk) equals that of \\g^\*\\, so the equality case of [Theorem 13](#thm-best-predictor) gives \\\operatorname{P}(g\mathopen{}\left(X\right)\mathclose{} = g^\*\mathopen{}\left(X\right)\mathclose{}) = 1\\.
+
+> **NOTE:**
+>
+> **Example 33 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\g^\*\mathopen{}\left(X\right)\mathclose{}\\ when \\X= 0\\, which has probability \\0.5\\. So \\g_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
 ## 4 Entropy and cross-entropy
 
@@ -1373,7 +1391,7 @@ Last modified: 2026-10-16 03:12:14 (PDT)
 
 > **NOTE:**
 >
-> **Example 32 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 34 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1419,7 +1437,7 @@ Last modified: 2026-10-16 03:12:14 (PDT)
 
 > **NOTE:**
 >
-> **Example 33 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 35 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
