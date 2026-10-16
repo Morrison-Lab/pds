@@ -1,12 +1,12 @@
 :::{#def-prediction-error}
 #### Prediction error
 
-A [prediction function](#def-prediction) $g(X)$ has as its estimand
-the observed outcome $Y$ of a new data point with input $X$,
+A [prediction function](#def-prediction) $g(\Predvar)$ has as its estimand
+the observed outcome $\Outvar$ of a new data point with input $\Predvar$,
 not the conditional mean of that outcome.
 The **prediction error** of $g$ is the prediction minus that outcome:
 
-$$\prederr_g \eqdef g(X) - Y$$
+$$\prederr_g \eqdef g(\Predvar) - \Outvar$$
 
 :::
 
@@ -16,7 +16,7 @@ $$\prederr_g \eqdef g(X) - Y$$
 #### Prediction error in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $g_1(X) = 3$ has prediction error $\prederr_{g_1} = 3 - Y$,
-which is $3$ when $Y = 0$ and $-3$ when $Y = 6$.
+the constant prediction $g_1(\Predvar) = 3$ has prediction error $\prederr_{g_1} = 3 - \Outvar$,
+which is $3$ when $\Outvar = 0$ and $-3$ when $\Outvar = 6$.
 
 :::

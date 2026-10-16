@@ -1,15 +1,15 @@
 :::{#thm-best-predictor}
 #### Conditional mean minimizes squared-error risk
 
-Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
-Let $g^*(X) \eqdef \E{Y \mid X}$.
-Then for any prediction function $g(X)$ with $\E{g(X)^2} < \infty$:
+Let $\Predvar$ and $\Outvar$ be jointly distributed random variables with $\E{\Outvar^2} < \infty$.
+Let $g^*(\Predvar) \eqdef \E{\Outvar \mid \Predvar}$.
+Then for any prediction function $g(\Predvar)$ with $\E{g(\Predvar)^2} < \infty$:
 
 $$\popriskf{g} \ge \popriskf{g^*}$$
 
-with equality if and only if $\P(g(X) = g^*(X)) = 1$.
-That is, the conditional expectation function $\E{Y \mid X}$
-minimizes the [squared-error risk](#def-squared-error-risk) among all prediction functions of $X$.
+with equality if and only if $\P(g(\Predvar) = g^*(\Predvar)) = 1$.
+That is, the conditional expectation function $\E{\Outvar \mid \Predvar}$
+minimizes the [squared-error risk](#def-squared-error-risk) among all prediction functions of $\Predvar$.
 
 :::
 
@@ -20,16 +20,16 @@ By @thm-risk-decomposition:
 $$
 \ba
 \popriskf{g} - \popriskf{g^*}
-&= \E{\sqf{g(X) - g^*(X)}}
+&= \E{\sqf{g(\Predvar) - g^*(\Predvar)}}
 && \text{(squared-error risk decomposition)} \\
 &\ge 0
 && \text{(the expectation of a non-negative variable)}
 \ea
 $$
 
-The expectation of the non-negative variable $\sqf{g(X) - g^*(X)}$ is zero
+The expectation of the non-negative variable $\sqf{g(\Predvar) - g^*(\Predvar)}$ is zero
 if and only if the variable is $0$ with probability $1$,
-meaning $\P(g(X) = g^*(X)) = 1$.
+meaning $\P(g(\Predvar) = g^*(\Predvar)) = 1$.
 
 :::
 
@@ -39,9 +39,9 @@ meaning $\P(g(X) = g^*(X)) = 1$.
 #### The best predictor in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $g_1(X) = 3$ has risk $\popriskf{g_1} = 5$,
+the constant prediction $g_1(\Predvar) = 3$ has risk $\popriskf{g_1} = 5$,
 which is larger than the risk $\popriskf{g^*} = 1$ of the conditional mean,
-and strictly so because $g_1(X) \ne g^*(X)$.
+and strictly so because $g_1(\Predvar) \ne g^*(\Predvar)$.
 
 :::
 
