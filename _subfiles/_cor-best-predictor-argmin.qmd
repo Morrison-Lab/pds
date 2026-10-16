@@ -1,9 +1,9 @@
 :::{#cor-best-predictor-argmin}
 #### Conditional mean as the minimizer of squared-error risk
 
-Let $\Predvar$ and $\Outvar$ be jointly distributed random variables with $\E{\Outvar^2} < \infty$.
-Among prediction functions $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$,
-the conditional expectation function is a minimizer of the squared-error risk:
+Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
+Among [prediction functions](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$,
+the [conditional expectation function](#def-cond-expectation-function) is a minimizer of the [squared-error risk](#def-squared-error-risk):
 
 $$\E{\Outvar \mid \Predvar} \in \argmin_{\predfn} \E{\sqf{\Outvar - \predfnf{\Predvar}}},$$
 

@@ -2,17 +2,17 @@
 
 #### Comparing prediction functions under squared-error loss
 
-Let $(\Predvar, \Outvar)$ be jointly distributed discrete random variables.
+Let $(\Predvar, \Outvar)$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) [discrete random variables](random-variables.qmd#def-discrete-rv).
 $\Predvar$ takes values in $\{0, 1\}$ with $\P(\Predvar = 0) = 0.5$ and $\P(\Predvar = 1) = 0.5$.
 Given $\Predvar = 0$, $\Outvar$ takes values in $\{0, 2\}$ with conditional probabilities
 $\P(\Outvar = 0 \mid \Predvar = 0) = 0.5$ and $\P(\Outvar = 2 \mid \Predvar = 0) = 0.5$.
 Given $\Predvar = 1$, $\Outvar$ takes values in $\{4, 6\}$ with conditional probabilities
 $\P(\Outvar = 4 \mid \Predvar = 1) = 0.5$ and $\P(\Outvar = 6 \mid \Predvar = 1) = 0.5$.
 
-1. Compute the marginal mean $\E{\Outvar}$ and the conditional expectation function $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
+1. Compute the marginal [mean](#def-expectation) $\E{\Outvar}$ and the [conditional expectation function](#def-cond-expectation-function) $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
 
-2. Consider the constant prediction $\predfn_1\paren{\Predvar} \eqdef \E{\Outvar} = 3$, which ignores $\Predvar$.
-   Compute its squared-error risk $\E{\sqf{\Outvar - \predfn_1\paren{\Predvar}}}$.
+2. Consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} \eqdef \E{\Outvar} = 3$, which ignores $\Predvar$.
+   Compute its [squared-error risk](#def-squared-error-risk) $\E{\sqf{\Outvar - \predfn_1\paren{\Predvar}}}$.
 
 3. Consider the alternate prediction $\predfn_2\paren{\Predvar} \eqdef 4\Predvar$.
    Compute its squared-error risk $\E{\sqf{\Outvar - \predfn_2\paren{\Predvar}}}$.
