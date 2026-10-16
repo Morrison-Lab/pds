@@ -14,17 +14,17 @@ Code
 
 Published
 
-Last modified: 2026-10-16 03:22:58 (PDT)
+Last modified: 2026-10-16 05:12:28 (PDT)
 
 ## 1 The Central Limit Theorem
 
 > **NOTE:**
 >
-> *Remark*. The average of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. [Theorem 1](#thm-clt) makes this precise.
+> *Remark*. The sample mean of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. [Theorem 1](#thm-clt) makes this precise.
 
 > **NOTE:**
 >
-> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
+> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\\(\bar{X}\_{n} - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z) \\
 >
@@ -36,7 +36,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 1 (Central Limit Theorem for a sum)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
+> **Corollary 1 (Central Limit Theorem for a sum)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z) \\
 
@@ -50,7 +50,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then:
+> **Corollary 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with population mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} &= n\mu\\ \operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} &= n\sigma^2 \end{aligned} \\
 
@@ -119,7 +119,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 >
 > **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
-> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the mean and variance of the 392 horsepower values. The sample mean \\\bar{X}\_{n} = S_n/n\\, where \\S_n = \sum\_{i=1}^nX_i\\, has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\, because \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 2](#cor-sum-iid-moments). The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s mean.
+> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the population mean and variance of the 392 horsepower values. The sample mean \\\bar{X}\_{n} = S_n/n\\, where \\S_n = \sum\_{i=1}^nX_i\\, has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\, because \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Corollary 2](#cor-sum-iid-moments). The code below draws 10,000 random samples of each size \\n \in \mathopen{}\left\\1, 5, 30\right\\\mathclose{}\\, with replacement, and computes each sample’s sample mean.
 >
 > ## Python
 >
@@ -284,7 +284,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (How many cars to estimate average fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
+> **Exercise 1 (How many cars to estimate mean fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with population mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
 >
 > 1.  Use [Corollary 2](#cor-sum-iid-moments) and [Theorem 3](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
 >
@@ -323,7 +323,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 4 (Chebyshev’s inequality for a sample average)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\epsilon \> 0\\:
+> **Theorem 4 (Chebyshev’s inequality for a sample mean)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\epsilon \> 0\\:
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|\bar{X}\_{n} - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{} \le \frac{\sigma^2}{n\epsilon^2} \\
 
@@ -375,11 +375,11 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The bound on the moment generating function \\\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}\\ is the step of Hoeffding’s 1963 paper ([Hoeffding 1963](#ref-hoeffding1963)) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of an average.
+> *Remark*. The bound on the moment generating function \\\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}\\ is the step of Hoeffding’s 1963 paper ([Hoeffding 1963](#ref-hoeffding1963)) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
 
 > **NOTE:**
 >
-> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and mean \\\mu\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
+> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and population mean \\\mu\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
 >
 > \\ \Pr\mathopen{}\left(\bar{X}\_{n} - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}. \tag{1}\\
 
@@ -415,7 +415,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their average is \\1 - \bar{X}\_{n}\\, so [Theorem 5](#thm-hoeffding) applied to them gives
+> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their sample mean is \\1 - \bar{X}\_{n}\\, so [Theorem 5](#thm-hoeffding) applied to them gives
 >
 > \\ \begin{aligned} \Pr\mathopen{}\left(\mu- \bar{X}\_{n} \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left((1 - \bar{X}\_{n}) - (1 - \mu) \ge \varepsilon\right)\mathclose{} && \text{(rearrange the event)} \\ &\le e^{-2n\varepsilon^2} && \text{(Hoeffding's inequality for } 1 - X_i \text{)} \end{aligned} \\
 >
@@ -425,7 +425,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term ([Hoeffding 1963](#ref-hoeffding1963)). This page states the case of an average of IID variables in \\\[0, 1\]\\, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, \\\mu\\ is the probability of the event and \\\bar{X}\_{n}\\ is the share of the \\n\\ draws in which it occurs.
+> *Remark*. Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term ([Hoeffding 1963](#ref-hoeffding1963)). This page states the case of the sample mean of IID variables in \\\[0, 1\]\\, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, \\\mu\\ is the probability of the event and \\\bar{X}\_{n}\\ is the share of the \\n\\ draws in which it occurs.
 
 > **NOTE:**
 >
@@ -472,7 +472,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
+> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
 >
 > \\ \bar{X}\_{n} \overset{\scriptstyle p}{\longrightarrow}\mu \\
 >

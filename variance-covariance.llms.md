@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 03:22:58 (PDT)
+Last modified: 2026-10-16 05:12:28 (PDT)
 
 ## 1 Deviation, error, and noise
 

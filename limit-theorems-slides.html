@@ -364,18 +364,18 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-16 03:22:58 (PDT)</p>
+  <p class="date">Last modified: 2026-10-16 05:12:28 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The average of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a> makes this precise.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The sample mean of many independent random variables, none of which dominates the others, has a distribution that is approximately bell-shaped, whatever the distributions of the individual variables. <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a> makes this precise.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Central Limit Theorem)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 1 (Central Limit Theorem)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\,(\bar{X}_{n} - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z)
 \]</span></p>
@@ -398,7 +398,7 @@
 <section class="slide level2">
 
 <div id="cor-clt-sum" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 1 (Central Limit Theorem for a sum)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span>:</p>
+<p><span class="theorem-title"><strong>Corollary 1 (Central Limit Theorem for a sum)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} \Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{} = \Phi(z)
 \]</span></p>
@@ -416,7 +416,7 @@
 <section class="slide level2">
 
 <div id="cor-sum-iid-moments" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 2 (Mean and variance of a sum of IID random variables)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables, each discrete or continuous, with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>. Then:</p>
+<p><span class="theorem-title"><strong>Corollary 2 (Mean and variance of a sum of IID random variables)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables, each discrete or continuous, with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>. Then:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[S_n\right]\mathclose{} &amp;= n\mu\\
@@ -531,7 +531,7 @@ Figure&nbsp;2: Distribution of the sum of five dice
 
 <div id="exm-clt-auto" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2 (Sample means of car horsepower)</strong></span> The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
-<p>Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a>, treat each draw of one car at random as one IID observation <span class="math inline">\(X_i\)</span>, so that <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are the mean and variance of the 392 horsepower values. The sample mean <span class="math inline">\(\bar{X}_{n} = S_n/n\)</span>, where <span class="math inline">\(S_n = \sum_{i=1}^nX_i\)</span>, has mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma/\sqrt{n}\)</span>, because <span class="math inline">\(S_n\)</span> has mean <span class="math inline">\(n\mu\)</span> and variance <span class="math inline">\(n\sigma^2\)</span> by <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a>. The code below draws 10,000 random samples of each size <span class="math inline">\(n \in \mathopen{}\left\{1, 5, 30\right\}\mathclose{}\)</span>, with replacement, and computes each sample’s mean.</p>
+<p>Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply <a href="#/thm-clt" class="quarto-xref">Theorem&nbsp;1</a>, treat each draw of one car at random as one IID observation <span class="math inline">\(X_i\)</span>, so that <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are the population mean and variance of the 392 horsepower values. The sample mean <span class="math inline">\(\bar{X}_{n} = S_n/n\)</span>, where <span class="math inline">\(S_n = \sum_{i=1}^nX_i\)</span>, has mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma/\sqrt{n}\)</span>, because <span class="math inline">\(S_n\)</span> has mean <span class="math inline">\(n\mu\)</span> and variance <span class="math inline">\(n\sigma^2\)</span> by <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a>. The code below draws 10,000 random samples of each size <span class="math inline">\(n \in \mathopen{}\left\{1, 5, 30\right\}\mathclose{}\)</span>, with replacement, and computes each sample’s sample mean.</p>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Python</a></li><li><a href="#tabset-1-2">R</a></li></ul>
 <div class="tab-content">
@@ -756,7 +756,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <section class="slide level2 scrollable">
 
 <div id="exr-chebyshev-sample-size" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (How many cars to estimate average fuel economy)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> draws of the fuel economy (<code>mpg</code>) of a car chosen at random from the Auto data, with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1 (How many cars to estimate mean fuel economy)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> draws of the fuel economy (<code>mpg</code>) of a car chosen at random from the Auto data, with population mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>.</p>
 <ol type="a">
 <li><p>Use <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a> and <a href="#/thm-chebyshev" class="quarto-xref">Theorem&nbsp;3</a> to show that for every <span class="math inline">\(\epsilon &gt; 0\)</span>,</p>
 <p><span class="math display">\[
@@ -796,7 +796,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <section class="slide level2">
 
 <div id="thm-chebyshev-sample-mean" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (Chebyshev’s inequality for a sample average)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\epsilon &gt; 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 4 (Chebyshev’s inequality for a sample mean)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\epsilon &gt; 0\)</span>:</p>
 <p><span class="math display">\[
 \Pr\mathopen{}\left(\mathopen{}\left|\bar{X}_{n} - \mu\right|\mathclose{} \ge \epsilon\right)\mathclose{} \le \frac{\sigma^2}{n\epsilon^2}
 \]</span></p>
@@ -897,7 +897,7 @@ L(s)
 <p>Therefore <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{} \le e^{L(s)} \le e^{s^2/8}\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The bound on the moment generating function <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}\)</span> is the step of Hoeffding’s 1963 paper <span class="citation" data-cites="hoeffding1963">(<a href="#/references" role="doc-biblioref" onclick="">Hoeffding 1963</a>)</span> that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of an average.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The bound on the moment generating function <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}\)</span> is the step of Hoeffding’s 1963 paper <span class="citation" data-cites="hoeffding1963">(<a href="#/references" role="doc-biblioref" onclick="">Hoeffding 1963</a>)</span> that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -913,7 +913,7 @@ L(s)
 <section class="slide level2">
 
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
+<p><span class="theorem-title"><strong>Theorem 5 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and population mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
 <p><span id="eq-hoeffding-one-sided"><span class="math display">\[
 \Pr\mathopen{}\left(\bar{X}_{n} - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}.
 \tag{1}\]</span></span></p>
@@ -977,7 +977,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 \tag{2}\]</span></span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The variables <span class="math inline">\(1 - X_1, \ldots, 1 - X_n\)</span> are IID, lie in <span class="math inline">\([0, 1]\)</span>, and have mean <span class="math inline">\(1 - \mu\)</span>. Their average is <span class="math inline">\(1 - \bar{X}_{n}\)</span>, so <a href="#/thm-hoeffding" class="quarto-xref">Theorem&nbsp;5</a> applied to them gives</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The variables <span class="math inline">\(1 - X_1, \ldots, 1 - X_n\)</span> are IID, lie in <span class="math inline">\([0, 1]\)</span>, and have mean <span class="math inline">\(1 - \mu\)</span>. Their sample mean is <span class="math inline">\(1 - \bar{X}_{n}\)</span>, so <a href="#/thm-hoeffding" class="quarto-xref">Theorem&nbsp;5</a> applied to them gives</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr\mathopen{}\left(\mu- \bar{X}_{n} \ge \varepsilon\right)\mathclose{}
@@ -1001,7 +1001,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 \]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term <span class="citation" data-cites="hoeffding1963">(<a href="#/references" role="doc-biblioref" onclick="">Hoeffding 1963</a>)</span>. This page states the case of an average of IID variables in <span class="math inline">\([0, 1]\)</span>, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, <span class="math inline">\(\mu\)</span> is the probability of the event and <span class="math inline">\(\bar{X}_{n}\)</span> is the share of the <span class="math inline">\(n\)</span> draws in which it occurs.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term <span class="citation" data-cites="hoeffding1963">(<a href="#/references" role="doc-biblioref" onclick="">Hoeffding 1963</a>)</span>. This page states the case of the sample mean of IID variables in <span class="math inline">\([0, 1]\)</span>, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, <span class="math inline">\(\mu\)</span> is the probability of the event and <span class="math inline">\(\bar{X}_{n}\)</span> is the share of the <span class="math inline">\(n\)</span> draws in which it occurs.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1076,7 +1076,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <section class="slide level2">
 
 <div id="thm-wlln" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#/def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#/def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span>:</p>
 <p><span class="math display">\[
 \bar{X}_{n} \overset{\scriptstyle p}{\longrightarrow}\mu
 \]</span></p>

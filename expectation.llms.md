@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 03:22:58 (PDT)
+Last modified: 2026-10-16 05:12:28 (PDT)
 
 > **NOTE:**
 >
@@ -180,7 +180,7 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Why the average of a sample is a random variable)** Let \\X_1, \ldots, X_n\\ be independent draws from the same distribution, each with mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^nX_i\\ be their average.
+> **Exercise 1 (Why the sample mean is a random variable)** Let \\X_1, \ldots, X_n\\ be independent draws from the same distribution, each with population mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^nX_i\\ be their sample mean.
 >
 > Use [Theorem 4](#thm-linearity-expectation) to show that \\\operatorname{E}\[\bar X\] = \mu\\, and say in one sentence what that does *not* tell us.
 
@@ -190,13 +190,13 @@ Last modified: 2026-10-16 03:22:58 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\[\bar X\] &= \operatorname{E}\mathopen{}\left\[\frac{1}{n}\sum\_{i=1}^nX_i\right\]\mathclose{} \\ &= \frac{1}{n}\sum\_{i=1}^n\operatorname{E}\[X_i\] \\ &= \frac{1}{n}\\(n\mu) \\ &= \mu \end{aligned} \\
 >
-> So the sample average is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
+> So the sample mean is right *on average*. Independence was never used: [Theorem 4](#thm-linearity-expectation) holds regardless, so this much would be true even for draws that influence one another.
 >
-> What it does not tell us is how far any *particular* sample average falls from \\\mu\\ — that is a statement about variance, not expectation, and it is where independence does the work. The distinction matters because an estimator or fitted model is a function of one particular sample. Knowing that the procedure is right on average says nothing about the estimate actually in front of you, and separating those two statements is foundational to understanding bias and variance.
+> What it does not tell us is how far any *particular* sample mean falls from \\\mu\\ — that is a statement about variance, not expectation, and it is where independence does the work. The distinction matters because an estimator or fitted model is a function of one particular sample. Knowing that the procedure is right on average says nothing about the estimate actually in front of you, and separating those two statements is foundational to understanding bias and variance.
 
 > **NOTE:**
 >
-> **Theorem 5 (The expectation of a sample average)** Let \\X_1, \ldots, X_n\\ be random variables, with \\n \ge 1\\, that each have finite mean \\\mu\\, and let \\\bar X \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. The \\X_i\\ need not be independent. Then
+> **Theorem 5 (The expectation of a sample mean)** Let \\X_1, \ldots, X_n\\ be random variables, with \\n \ge 1\\, that each have finite population mean \\\mu\\, and let \\\bar X \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. The \\X_i\\ need not be independent. Then
 >
 > \\\operatorname{E}\[\bar X\] = \mu\\
 
