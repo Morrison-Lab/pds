@@ -11,8 +11,8 @@
 # The crawl is the most expensive check here, and some PRs change prose that has
 # no math. The `needs-check` job therefore skips the crawl for a PR whose
 # changed files are all `.qmd` pages or `_subfiles/` units and whose changed
-# lines hold nothing that could be math: no `$`, backslash, `^`, `_`, `{` or
-# `=`. Anything else runs it, as does a PR it cannot read (no PR number, a file
+# lines hold nothing that could be math: no `$`, backslash, `^`, `_`, `{`, `}`,
+# `=`, `&`, `<`, `>` or `|`. Anything else runs it, as does a PR it cannot read (no PR number, a file
 # with no patch). The check stays a non-required status, so a skipped run blocks
 # nothing.
 #
@@ -57,10 +57,10 @@ jobs:
           # whose added or removed lines contain no math-like character.
           skip=$(jq -r '
             def changed: .patch // "" | split("\n")
-              | map(select(test("^[+-]") and (test("^(\\+\\+\\+|---)") | not)));
+              | map(select(test("^[+-]")));
             if length == 0 then "false"
             elif all(.[]; ((.filename | endswith(".qmd")) or (.filename | startswith("_subfiles/"))) and (.patch != null)
-                     and ((changed | map(select(test("[$\\\\^_{=]"))) | length) == 0))
+                     and ((changed | map(select(test("[$\\\\^_{}=&<>|]"))) | length) == 0))
             then "true" else "false" end' files.json)
           echo "skip=${skip}"
           if [ "${skip}" = "true" ]; then
