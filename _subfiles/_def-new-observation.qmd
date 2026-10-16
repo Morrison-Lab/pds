@@ -1,0 +1,18 @@
+:::{#def-new-observation}
+#### New observation
+
+A **new observation** is an [input](#def-input) and [outcome](#def-outcome) pair $(\Predvar, \Outvar)$ with the same [joint distribution](random-variables.qmd#def-joint-distribution) as the observations used to choose the prediction,
+[statistically independent](independence.qmd#def-indpt) of them,
+whose input is observed and whose outcome is not yet observed.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-new-observation}
+#### A new observation in the best-predictor exercise
+
+In @exr-best-predictor, a new observation has input $\Predvar = 1$ and an outcome that is $4$ or $6$ with equal probability.
+A [prediction](#def-prediction) of $5$ is a guess for that unobserved outcome.
+
+:::
