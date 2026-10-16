@@ -1,8 +1,10 @@
 :::{#def-prediction-error}
 #### Prediction error
 
-For a random outcome $Y$ and a [prediction function](#def-prediction) $g(X)$,
-the **prediction error** of $g$ is the prediction minus the outcome:
+A [prediction function](#def-prediction) $g(X)$ has as its estimand
+the observed outcome $Y$ of a new data point with input $X$,
+not the conditional mean of that outcome.
+The **prediction error** of $g$ is the prediction minus that outcome:
 
 $$\prederr_g \eqdef g(X) - Y$$
 

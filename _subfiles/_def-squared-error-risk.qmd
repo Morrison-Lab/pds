@@ -3,7 +3,9 @@
 
 The **squared-error risk** of a prediction function $g(X)$
 is the [risk](#def-risk) under squared error loss,
-the expected square of its [prediction error](#def-prediction-error):
+the expected square of its [prediction error](#def-prediction-error),
+which compares $g(X)$ with the observed outcome $Y$ of a new data point,
+the estimand of the prediction:
 
 $$\popriskf{g} \eqdef \E{\sqf{\prederr_g}}$$
 
