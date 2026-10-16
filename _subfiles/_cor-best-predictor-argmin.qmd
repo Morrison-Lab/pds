@@ -1,23 +1,23 @@
 :::{#cor-best-predictor-argmin}
 #### Conditional mean as the minimizer of squared-error risk
 
-Let $X$ and $Y$ be jointly distributed random variables with $\E{Y^2} < \infty$.
-Among prediction functions $g(X)$ with $\E{g(X)^2} < \infty$,
+Let $\Predvar$ and $\Outvar$ be jointly distributed random variables with $\E{\Outvar^2} < \infty$.
+Among prediction functions $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$,
 the conditional expectation function is a minimizer of the squared-error risk:
 
-$$\E{Y \mid X} \in \argmin_{g} \E{\sqf{Y - g(X)}},$$
+$$\E{\Outvar \mid \Predvar} \in \argmin_{\predfn} \E{\sqf{\Outvar - \predfnf{\Predvar}}},$$
 
 where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
-Moreover, every $g$ in that set satisfies $\P(g(X) = \E{Y \mid X}) = 1$,
+Moreover, every $\predfn$ in that set satisfies $\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1$,
 so the minimizer is unique up to probability-$1$ equality.
 
 :::
 
 ::: proof
 
-By @thm-best-predictor, $g^*(X) = \E{Y \mid X}$ has risk no larger than that of any $g$,
+By @thm-best-predictor, $\bestpredfnf{\Predvar} = \E{\Outvar \mid \Predvar}$ has risk no larger than that of any $\predfn$,
 so it is a minimizer.
-If $g$ is also a minimizer, its risk equals that of $g^*$,
-so the equality case of @thm-best-predictor gives $\P(g(X) = g^*(X)) = 1$.
+If $\predfn$ is also a minimizer, its risk equals that of $\bestpredfn$,
+so the equality case of @thm-best-predictor gives $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
 
 :::

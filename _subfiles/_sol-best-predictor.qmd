@@ -1,16 +1,16 @@
 :::{#sol-best-predictor}
 
-1. For each value of $X$, compute the conditional expectation:
+1. For each value of $\Predvar$, compute the conditional expectation:
    $$
    \begin{aligned}
-   \E{Y \mid X = 0}
+   \E{\Outvar \mid \Predvar = 0}
    &= 0 \cd 0.5 + 2 \cd 0.5 \\
    &= 1
    \end{aligned}
    $$
    $$
    \begin{aligned}
-   \E{Y \mid X = 1}
+   \E{\Outvar \mid \Predvar = 1}
    &= 4 \cd 0.5 + 6 \cd 0.5 \\
    &= 5
    \end{aligned}
@@ -18,29 +18,29 @@
    By the law of iterated expectations (@thm-lie), the marginal mean is:
    $$
    \begin{aligned}
-   \E{Y}
-   &= \E{\E{Y \mid X}} \\
+   \E{\Outvar}
+   &= \E{\E{\Outvar \mid \Predvar}} \\
    &= 1 \cd 0.5 + 5 \cd 0.5 \\
    &= 3
    \end{aligned}
    $$
-   The conditional expectation function is $g^*(0) = 1$ and $g^*(1) = 5$,
-   which can also be written $g^*(X) = 1 + 4X$.
+   The conditional expectation function is $\bestpredfnf{0} = 1$ and $\bestpredfnf{1} = 5$,
+   which can also be written $\bestpredfnf{\Predvar} = 1 + 4\Predvar$.
 
-2. For the constant prediction $g_1(X) = 3$:
-   Given $X = 0$:
+2. For the constant prediction $\predfn_1\paren{\Predvar} = 3$:
+   Given $\Predvar = 0$:
    $$
    \begin{aligned}
-   \E{\sqf{Y - 3} \mid X = 0}
+   \E{\sqf{\Outvar - 3} \mid \Predvar = 0}
    &= \sqf{0 - 3} \cd 0.5 + \sqf{2 - 3} \cd 0.5 \\
    &= 9 \cd 0.5 + 1 \cd 0.5 \\
    &= 5
    \end{aligned}
    $$
-   Given $X = 1$:
+   Given $\Predvar = 1$:
    $$
    \begin{aligned}
-   \E{\sqf{Y - 3} \mid X = 1}
+   \E{\sqf{\Outvar - 3} \mid \Predvar = 1}
    &= \sqf{4 - 3} \cd 0.5 + \sqf{6 - 3} \cd 0.5 \\
    &= 1 \cd 0.5 + 9 \cd 0.5 \\
    &= 5
@@ -49,28 +49,28 @@
    By the law of iterated expectations (@thm-lie):
    $$
    \begin{aligned}
-   \E{\sqf{Y - g_1(X)}}
-   &= \E{\E{\sqf{Y - 3} \mid X}} \\
+   \E{\sqf{\Outvar - \predfn_1\paren{\Predvar}}}
+   &= \E{\E{\sqf{\Outvar - 3} \mid \Predvar}} \\
    &= 5 \cd 0.5 + 5 \cd 0.5 \\
    &= 5
    \end{aligned}
    $$
 
-3. For the prediction $g_2(X) = 4X$:
-   Here $g_2(0) = 0$ and $g_2(1) = 4$.
-   Given $X = 0$:
+3. For the prediction $\predfn_2\paren{\Predvar} = 4\Predvar$:
+   Here $\predfn_2\paren{0} = 0$ and $\predfn_2\paren{1} = 4$.
+   Given $\Predvar = 0$:
    $$
    \begin{aligned}
-   \E{\sqf{Y - 0} \mid X = 0}
+   \E{\sqf{\Outvar - 0} \mid \Predvar = 0}
    &= \sqf{0 - 0} \cd 0.5 + \sqf{2 - 0} \cd 0.5 \\
    &= 0 \cd 0.5 + 4 \cd 0.5 \\
    &= 2
    \end{aligned}
    $$
-   Given $X = 1$:
+   Given $\Predvar = 1$:
    $$
    \begin{aligned}
-   \E{\sqf{Y - 4} \mid X = 1}
+   \E{\sqf{\Outvar - 4} \mid \Predvar = 1}
    &= \sqf{4 - 4} \cd 0.5 + \sqf{6 - 4} \cd 0.5 \\
    &= 0 \cd 0.5 + 4 \cd 0.5 \\
    &= 2
@@ -79,26 +79,26 @@
    By @thm-lie:
    $$
    \begin{aligned}
-   \E{\sqf{Y - g_2(X)}}
+   \E{\sqf{\Outvar - \predfn_2\paren{\Predvar}}}
    &= 2 \cd 0.5 + 2 \cd 0.5 \\
    &= 2
    \end{aligned}
    $$
 
-4. For the conditional mean predictor $g^*(X) = \E{Y \mid X}$:
-   Given $X = 0$, $g^*(0) = 1$:
+4. For the conditional mean predictor $\bestpredfnf{\Predvar} = \E{\Outvar \mid \Predvar}$:
+   Given $\Predvar = 0$, $\bestpredfnf{0} = 1$:
    $$
    \begin{aligned}
-   \E{\sqf{Y - 1} \mid X = 0}
+   \E{\sqf{\Outvar - 1} \mid \Predvar = 0}
    &= \sqf{0 - 1} \cd 0.5 + \sqf{2 - 1} \cd 0.5 \\
    &= 1 \cd 0.5 + 1 \cd 0.5 \\
    &= 1
    \end{aligned}
    $$
-   Given $X = 1$, $g^*(1) = 5$:
+   Given $\Predvar = 1$, $\bestpredfnf{1} = 5$:
    $$
    \begin{aligned}
-   \E{\sqf{Y - 5} \mid X = 1}
+   \E{\sqf{\Outvar - 5} \mid \Predvar = 1}
    &= \sqf{4 - 5} \cd 0.5 + \sqf{6 - 5} \cd 0.5 \\
    &= 1 \cd 0.5 + 1 \cd 0.5 \\
    &= 1
@@ -107,12 +107,12 @@
    By @thm-lie:
    $$
    \begin{aligned}
-   \E{\sqf{Y - g^*(X)}}
+   \E{\sqf{\Outvar - \bestpredfnf{\Predvar}}}
    &= 1 \cd 0.5 + 1 \cd 0.5 \\
    &= 1
    \end{aligned}
    $$
-   The conditional mean predictor $g^*$ achieves the lowest risk ($1$),
-   strictly outperforming $g_2$ ($2$) and the constant prediction $g_1$ ($5$).
+   The conditional mean predictor $\bestpredfn$ achieves the lowest risk ($1$),
+   strictly outperforming $\predfn_2$ ($2$) and the constant prediction $\predfn_1$ ($5$).
 
 :::
