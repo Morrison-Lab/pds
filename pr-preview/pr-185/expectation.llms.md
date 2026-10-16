@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 02:44:56 (PDT)
+Last modified: 2026-10-16 02:58:15 (PDT)
 
 > **NOTE:**
 >
@@ -1193,23 +1193,47 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Definition 12 (Prediction error)** A [prediction function](#def-prediction) \\g\mathopen{}\left(X\right)\mathclose{}\\ has as its estimand the observed outcome \\Y\\ of a new data point with input \\X\\, not the [conditional mean](#def-cond-expectation-function) of that outcome. The **prediction error** of \\g\\ is the prediction minus that outcome:
+> **Definition 12 (Outcome)** The **outcome** \\Y\\ of a data point is the random variable whose value a [prediction](#def-prediction) tries to guess.
+
+> **NOTE:**
+>
+> **Example 21 (The outcome in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the outcome \\Y\\ takes the values \\0\\ and \\2\\ when the input is \\0\\, and the values \\4\\ and \\6\\ when the input is \\1\\.
+
+> **NOTE:**
+>
+> **Definition 13 (Input)** The **input** \\X\\ of a data point (also called its **predictor** or **covariate**) is the observed random variable from which a [prediction](#def-prediction) of its [outcome](#def-outcome) is computed.
+
+> **NOTE:**
+>
+> **Example 22 (The input in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the input \\X\\ takes the values \\0\\ and \\1\\, each with probability \\0.5\\.
+
+> **NOTE:**
+>
+> **Definition 14 (New observation)** A **new observation** is an [input](#def-input) and [outcome](#def-outcome) pair \\(X, Y)\\ with the same [joint distribution](random-variables.llms.md#def-joint-distribution) as the observations used to choose the prediction, [statistically independent](independence.llms.md#def-indpt) of them, whose input is observed and whose outcome is not yet observed.
+
+> **NOTE:**
+>
+> **Example 23 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), a new observation has input \\X= 1\\ and an outcome that is \\4\\ or \\6\\ with equal probability. A [prediction](#def-prediction) of \\5\\ is a guess for that unobserved outcome.
+
+> **NOTE:**
+>
+> **Definition 15 (Prediction error)** A [prediction function](#def-prediction) \\g\mathopen{}\left(X\right)\mathclose{}\\ has as its [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) the observed [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\, not the [conditional mean](#def-cond-expectation-function) of that outcome. The **prediction error** of \\g\\ is the prediction minus that outcome:
 >
 > \\\varepsilon\_{g} \stackrel{\text{def}}{=}g\mathopen{}\left(X\right)\mathclose{} - Y\\
 
 > **NOTE:**
 >
-> **Example 21 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\\varepsilon\_{g_1} = 3 - Y\\, which is \\3\\ when \\Y= 0\\ and \\-3\\ when \\Y= 6\\.
+> **Example 24 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\\varepsilon\_{g_1} = 3 - Y\\, which is \\3\\ when \\Y= 0\\ and \\-3\\ when \\Y= 6\\.
 
 > **NOTE:**
 >
-> **Definition 13 (Squared-error risk)** The **squared-error risk** of a prediction function \\g\mathopen{}\left(X\right)\mathclose{}\\ is the [risk](#def-risk) under squared error loss, the expected square of its [prediction error](#def-prediction-error), which compares \\g\mathopen{}\left(X\right)\mathclose{}\\ with the observed outcome \\Y\\ of a new data point, the estimand of the prediction:
+> **Definition 16 (Squared-error risk)** The **squared-error risk** of a prediction function \\g\mathopen{}\left(X\right)\mathclose{}\\ is the [risk](#def-risk) under squared error loss, the expected square of its [prediction error](#def-prediction-error), which compares \\g\mathopen{}\left(X\right)\mathclose{}\\ with the observed [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation), the [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) of the prediction:
 >
 > \\R\mathopen{}\left(g\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g}\right)\mathclose{}}^2\right\]\mathclose{}\\
 
 > **NOTE:**
 >
-> **Example 22 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\.
+> **Example 25 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\.
 
 > **NOTE:**
 >
@@ -1223,7 +1247,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 23 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\\varepsilon\_{g_1} = 3\\. The conditional mean is \\g^\*\mathopen{}\left(0\right)\mathclose{} = 1\\, so \\\varepsilon\_{g^\*} = 1\\ and \\g_1\mathopen{}\left(0\right)\mathclose{} - g^\*\mathopen{}\left(0\right)\mathclose{} = 2\\, and \\3 = 1 + 2\\.
+> **Example 26 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\\varepsilon\_{g_1} = 3\\. The conditional mean is \\g^\*\mathopen{}\left(0\right)\mathclose{} = 1\\, so \\\varepsilon\_{g^\*} = 1\\ and \\g_1\mathopen{}\left(0\right)\mathclose{} - g^\*\mathopen{}\left(0\right)\mathclose{} = 2\\, and \\3 = 1 + 2\\.
 
 > **NOTE:**
 >
@@ -1243,7 +1267,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 24 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\g^\*\mathopen{}\left(0\right)\mathclose{} = 1\\, so \\g_1\mathopen{}\left(0\right)\mathclose{} - g^\*\mathopen{}\left(0\right)\mathclose{} = 2\\, and \\\varepsilon\_{g^\*} = 1 - Y\\ is \\1\\ or \\-1\\ with equal probability, so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
+> **Example 27 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\g^\*\mathopen{}\left(0\right)\mathclose{} = 1\\, so \\g_1\mathopen{}\left(0\right)\mathclose{} - g^\*\mathopen{}\left(0\right)\mathclose{} = 2\\, and \\\varepsilon\_{g^\*} = 1 - Y\\ is \\1\\ or \\-1\\ with equal probability, so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
 
 > **NOTE:**
 >
@@ -1259,7 +1283,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 25 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\g_1\\.
+> **Example 28 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\g_1\\.
 
 > **NOTE:**
 >
@@ -1279,11 +1303,11 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 26 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\, which is larger than the risk \\R\mathopen{}\left(g^\*\right)\mathclose{} = 1\\ of the conditional mean, and strictly so because \\g_1\mathopen{}\left(X\right)\mathclose{} \ne g^\*\mathopen{}\left(X\right)\mathclose{}\\.
+> **Example 29 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\R\mathopen{}\left(g_1\right)\mathclose{} = 5\\, which is larger than the risk \\R\mathopen{}\left(g^\*\right)\mathclose{} = 1\\ of the conditional mean, and strictly so because \\g_1\mathopen{}\left(X\right)\mathclose{} \ne g^\*\mathopen{}\left(X\right)\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 14 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the minimum [squared-error risk](#def-squared-error-risk)
+> **Definition 17 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the minimum [squared-error risk](#def-squared-error-risk)
 >
 > \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}\right\]\mathclose{}\\
 >
@@ -1295,11 +1319,11 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 27 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
+> **Example 30 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{} = 1\\ and \\\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{} = 1\\, so the irreducible risk is \\\operatorname{E}\mathopen{}\left\[\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}\right\]\mathclose{} = 1\\.
 
 > **NOTE:**
 >
-> **Definition 15 (Reducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
+> **Definition 18 (Reducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the excess risk from choosing the prediction function \\g\\ instead of the conditional mean,
 >
 > \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} - g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} \ge 0\\
 >
@@ -1311,7 +1335,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 28 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 31 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1319,7 +1343,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} - g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
-> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 14](#def-irreducible-risk)) and the reducible risk ([Definition 15](#def-reducible-risk)).
+> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 17](#def-irreducible-risk)) and the reducible risk ([Definition 18](#def-reducible-risk)).
 
 > **NOTE:**
 >
@@ -1337,7 +1361,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
+> **Definition 19 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
 >
 > \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
 >
@@ -1349,7 +1373,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 29 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 32 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1369,7 +1393,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Definition 17 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ is
+> **Definition 20 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ is
 >
 > \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1385,7 +1409,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 17](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
+> **Definition 21 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 20](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
 
@@ -1395,7 +1419,7 @@ Last modified: 2026-10-16 02:44:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 30 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 33 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
