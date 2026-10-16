@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-16 05:12:28 (PDT)
+Last modified: 2026-10-16 15:49:22 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -60,7 +60,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, \\Y = \beta\_{0} + \beta\_{1} x + \varepsilon\\ with \\\varepsilon\sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\\, is probabilistic: for each value of the covariate \\x\\, it assigns a probability distribution to the outcome \\Y\\. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
+> **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, \\Y = \beta\_{0} + \beta\_{1} x + \nu\\ with \\\nu\sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\\, is probabilistic: for each value of the covariate \\x\\, it assigns a probability distribution to the outcome \\Y\\. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
 
 > **NOTE:**
 >

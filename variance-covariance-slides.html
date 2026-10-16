@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-16 05:12:28 (PDT)</p>
+  <p class="date">Last modified: 2026-10-16 15:49:22 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -446,27 +446,27 @@
 <section class="slide level2">
 
 <h3 id="sec-noise-model">Mean-zero noise model</h3>
-<p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\varepsilon\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\nu\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
 <div id="rem-mean-zero-parametrization" class="proof remark">
-<p><span class="proof-title"><em>Remark 1</em> (Mean zero is a parametrization choice). </span>Mean zero is a parametrization choice, not a substantive assumption. In <span class="math inline">\(Y = f(x) + \varepsilon\)</span>, moving a constant from <span class="math inline">\(\varepsilon\)</span> into <span class="math inline">\(f(x)\)</span> changes the split but not the distribution of <span class="math inline">\(Y\)</span>, so the data identify only the sum <span class="math inline">\(f(x) + \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\)</span>, the mean of <span class="math inline">\(Y\)</span> at <span class="math inline">\(x\)</span>. Requiring <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> picks the one split in which <span class="math inline">\(f(x)\)</span> is that mean. This loses no generality when the model for <span class="math inline">\(f\)</span> can absorb a constant, as any model with an intercept can. It restricts the model only when <span class="math inline">\(f\)</span> cannot absorb one, as in a regression through the origin.</p>
+<p><span class="proof-title"><em>Remark 1</em> (Mean zero is a parametrization choice). </span>Mean zero is a parametrization choice, not a substantive assumption. In <span class="math inline">\(Y = f(x) + \nu\)</span>, moving a constant from <span class="math inline">\(\nu\)</span> into <span class="math inline">\(f(x)\)</span> changes the split but not the distribution of <span class="math inline">\(Y\)</span>, so the data identify only the sum <span class="math inline">\(f(x) + \operatorname{E}\mathopen{}\left[\nu\right]\mathclose{}\)</span>, the mean of <span class="math inline">\(Y\)</span> at <span class="math inline">\(x\)</span>. Requiring <span class="math inline">\(\operatorname{E}\mathopen{}\left[\nu\right]\mathclose{} = 0\)</span> picks the one split in which <span class="math inline">\(f(x)\)</span> is that mean. This loses no generality when the model for <span class="math inline">\(f\)</span> can absorb a constant, as any model with an intercept can. It restricts the model only when <span class="math inline">\(f\)</span> cannot absorb one, as in a regression through the origin.</p>
 </div>
 <p>Mean zero gives one identity, used repeatedly across statistical modeling and machine learning.</p>
 </section>
 <section class="slide level2">
 
 <div id="exr-noise-second-moment" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>.</p>
-<p>Find <span class="math inline">\(\operatorname{E}[\varepsilon^2]\)</span> in terms of <span class="math inline">\(\sigma^2\)</span>, and say which earlier result you used.</p>
+<p><span class="theorem-title"><strong>Exercise 1 (The average squared error of pure noise)</strong></span> Let <span class="math inline">\(\nu\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\nu] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\nu\right)\mathclose{} = \sigma^2\)</span>.</p>
+<p>Find <span class="math inline">\(\operatorname{E}[\nu^2]\)</span> in terms of <span class="math inline">\(\sigma^2\)</span>, and say which earlier result you used.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="sol-noise-second-moment" class="proof solution">
-<p><span class="proof-title"><em>Solution 1</em>. </span><a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a> says <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}[X^2] - (\operatorname{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \varepsilon\)</span> and substituting <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span>,</p>
+<p><span class="proof-title"><em>Solution 1</em>. </span><a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a> says <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \operatorname{E}[X^2] - (\operatorname{E}[X])^2\)</span> for any <span class="math inline">\(X\)</span>. Taking <span class="math inline">\(X = \nu\)</span> and substituting <span class="math inline">\(\operatorname{E}[\nu] = 0\)</span>,</p>
 <p><span id="eq-noise-second-moment"><span class="math display">\[
 \begin{aligned}
-\operatorname{E}[\varepsilon^2]
-&amp;= \operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} + 0^2 \\
+\operatorname{E}[\nu^2]
+&amp;= \operatorname{Var}\mathopen{}\left(\nu\right)\mathclose{} + 0^2 \\
 &amp;= \sigma^2
 \end{aligned}
 \tag{1}\]</span></span></p>
@@ -477,11 +477,11 @@
 <section class="slide level2">
 
 <div id="thm-noise-second-moment" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (The second moment of mean-zero noise)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>. Then</p>
-<p><span class="math display">\[\operatorname{E}[\varepsilon^2] = \sigma^2\]</span></p>
+<p><span class="theorem-title"><strong>Theorem 1 (The second moment of mean-zero noise)</strong></span> Let <span class="math inline">\(\nu\)</span> be a random variable with <span class="math inline">\(\operatorname{E}[\nu] = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\nu\right)\mathclose{} = \sigma^2\)</span>. Then</p>
+<p><span class="math display">\[\operatorname{E}[\nu^2] = \sigma^2\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a>, worked in <a href="#/sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>. It rearranges <a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a>, using <span class="math inline">\(\operatorname{E}[\varepsilon] = 0\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a>, worked in <a href="#/sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>. It rearranges <a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a>, using <span class="math inline">\(\operatorname{E}[\nu] = 0\)</span>.</p>
 </div>
 </section>
 <section id="variance-and-related-characteristics" class="slide level2" data-number="2">
@@ -901,33 +901,33 @@
 <!-- The bias-variance decomposition of prediction error moved to the sds notes, which define
      training data and estimation; this section keeps the plain-probability result it rests on. -->
 <div id="thm-second-moment-noise-sum" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (The second moment of independent noise plus a random variable)</strong></span> Let <span class="math inline">\(\varepsilon\)</span> be a random variable with <span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{} = \sigma^2\)</span>. Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> that is independent of <span class="math inline">\(\varepsilon\)</span>. Then</p>
-<p><span class="math display">\[\operatorname{E}\mathopen{}\left[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2\]</span></p>
+<p><span class="theorem-title"><strong>Theorem 6 (The second moment of independent noise plus a random variable)</strong></span> Let <span class="math inline">\(\nu\)</span> be a random variable with <span class="math inline">\(\operatorname{E}\mathopen{}\left[\nu\right]\mathclose{} = 0\)</span> and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\nu\right)\mathclose{} = \sigma^2\)</span>. Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} &lt; \infty\)</span> that is independent of <span class="math inline">\(\nu\)</span>. Then</p>
+<p><span class="math display">\[\operatorname{E}\mathopen{}\left[\mathopen{}\left(\nu+ X\right)\mathclose{}^2\right]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2\]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Expanding the square and using <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>, first for the expectation of a sum and then for a constant factor,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right]\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2 + 2 \varepsilon X+ X^2\right]\mathclose{}
+\operatorname{E}\mathopen{}\left[\mathopen{}\left(\nu+ X\right)\mathclose{}^2\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\nu^2 + 2 \nu X+ X^2\right]\mathclose{}
 &amp;&amp; \text{(expand: } \mathopen{}\left(a + b\right)\mathclose{}^2 = a^2 + 2ab + b^2 \text{)} \\
-&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} + \operatorname{E}\mathopen{}\left[2 \varepsilon X\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\nu^2\right]\mathclose{} + \operatorname{E}\mathopen{}\left[2 \nu X\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{}
 &amp;&amp; \text{(expectation of a sum)} \\
-&amp;= \operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} + 2\operatorname{E}\mathopen{}\left[\varepsilon X\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\nu^2\right]\mathclose{} + 2\operatorname{E}\mathopen{}\left[\nu X\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{}
 &amp;&amp; \text{(constant factor 2)}
 \end{aligned}
 \]</span></p>
 <p>Each of the three terms is evaluated in turn.</p>
 <ul>
-<li><p><span class="math inline">\(\operatorname{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{} = \sigma^2\)</span>, by <a href="#/thm-noise-second-moment" class="quarto-xref">Theorem&nbsp;1</a>.</p></li>
-<li><p>Because <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(X\)</span> are independent, the expectation of the product is the product of the expectations:</p>
+<li><p><span class="math inline">\(\operatorname{E}\mathopen{}\left[\nu^2\right]\mathclose{} = \sigma^2\)</span>, by <a href="#/thm-noise-second-moment" class="quarto-xref">Theorem&nbsp;1</a>.</p></li>
+<li><p>Because <span class="math inline">\(\nu\)</span> and <span class="math inline">\(X\)</span> are independent, the expectation of the product is the product of the expectations:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[\varepsilon X\right]\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{}\operatorname{E}\mathopen{}\left[X\right]\mathclose{}
+\operatorname{E}\mathopen{}\left[\nu X\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\nu\right]\mathclose{}\operatorname{E}\mathopen{}\left[X\right]\mathclose{}
 &amp;&amp; \text{(independence)} \\
 &amp;= 0 \cdot \operatorname{E}\mathopen{}\left[X\right]\mathclose{}
-&amp;&amp; \text{(} \operatorname{E}\mathopen{}\left[\varepsilon\right]\mathclose{} = 0 \text{)} \\
+&amp;&amp; \text{(} \operatorname{E}\mathopen{}\left[\nu\right]\mathclose{} = 0 \text{)} \\
 &amp;= 0
 &amp;&amp; \text{(zero times a number)}
 \end{aligned}
@@ -937,7 +937,7 @@
 <p>Substituting the three terms gives</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right]\mathclose{}
+\operatorname{E}\mathopen{}\left[\mathopen{}\left(\nu+ X\right)\mathclose{}^2\right]\mathclose{}
 &amp;= \sigma^2+ 2 \cdot 0 + \mathopen{}\left(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2\right)\mathclose{}
 &amp;&amp; \text{(the three terms above)} \\
 &amp;= \sigma^2+ \operatorname{Var}\mathopen{}\left(X\right)\mathclose{} + {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2
@@ -946,7 +946,7 @@
 \]</span></p>
 </div>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remark</em> (Use in statistics and machine learning). </span>Let <span class="math inline">\(\varepsilon\)</span> be the noise in a new outcome <span class="math inline">\(Y\)</span>, and let <span class="math inline">\(X\)</span> be the difference between the true mean <span class="math inline">\(\mu= \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> and a prediction <span class="math inline">\(\hat{y}\)</span>:</p>
+<p><span class="proof-title"><em>Remark</em> (Use in statistics and machine learning). </span>Let <span class="math inline">\(\nu\)</span> be the noise in a new outcome <span class="math inline">\(Y\)</span>, and let <span class="math inline">\(X\)</span> be the difference between the true mean <span class="math inline">\(\mu= \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> and a prediction <span class="math inline">\(\hat{y}\)</span>:</p>
 <p><span class="math display">\[X\stackrel{\text{def}}{=}\mu- \hat{y}\]</span></p>
 <p>The mean of <span class="math inline">\(X\)</span> is minus the bias of the prediction:</p>
 <p><span class="math display">\[
@@ -974,7 +974,7 @@
 \]</span></p>
 <p>Substituting these two results into the theorem, with <span class="math inline">\({\mathopen{}\left(-\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)\mathclose{}}^2 = {\mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)\mathclose{}}^2\)</span>, gives the squared prediction error of the new outcome as</p>
 <p><span class="math display">\[
-\operatorname{E}\mathopen{}\left[{\mathopen{}\left(\varepsilon+ X\right)\mathclose{}}^2\right]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{} + {\mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)\mathclose{}}^2,
+\operatorname{E}\mathopen{}\left[{\mathopen{}\left(\nu+ X\right)\mathclose{}}^2\right]\mathclose{} = \sigma^2+ \operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{} + {\mathopen{}\left(\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}\right)\mathclose{}}^2,
 \]</span></p>
 <p>where <span class="math inline">\(\sigma^2\)</span> is the irreducible error. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the <a href="https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition">bias, variance and noise decomposition</a>, with its exercise, worked example and <a href="https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error">irreducible error</a>.</p>
 </div>
@@ -1322,13 +1322,13 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="def-cov-vec-x" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)</strong></span> For a <span class="math inline">\(p \times 1\)</span> dimensional random vector <span class="math inline">\(\underset{\sim}{X}\)</span>,</p>
+<p><span class="theorem-title"><strong>Definition 13 (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)</strong></span> For a <span class="math inline">\(p \times 1\)</span> dimensional random vector <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}
-&amp;\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}
+&amp;\stackrel{\text{def}}{=}\operatorname{Cov}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}
 \\
-&amp;\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}\right]\mathclose{}
+&amp;\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}\right]\mathclose{}
 \end{aligned}
 \]</span></p>
 </div>
@@ -1336,9 +1336,9 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="thm-vcov-elements" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 10 (Elements of the variance-covariance matrix are pairwise covariances)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\)</span>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 10 (Elements of the variance-covariance matrix are pairwise covariances)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\mathord{\underset{\sim}{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>:</p>
 <p><span class="math display">\[
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}=
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}=
 \begin{pmatrix}
 \operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}      &amp; \operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{} &amp; \cdots &amp; \operatorname{Cov}\mathopen{}\left(X_1, X_p\right)\mathclose{} \\
 \operatorname{Cov}\mathopen{}\left(X_2, X_1\right)\mathclose{} &amp; \operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}      &amp; \cdots &amp; \operatorname{Cov}\mathopen{}\left(X_2, X_p\right)\mathclose{} \\
@@ -1351,13 +1351,13 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span> for <span class="math inline">\(i = 1, \ldots, p\)</span>, so <span class="math inline">\(\operatorname{E}\underset{\sim}{X}= {(\mu_1, \ldots, \mu_p)}^{\top}\)</span>. By <a href="#/def-cov-vec-x" class="quarto-xref">Definition&nbsp;13</a>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span> for <span class="math inline">\(i = 1, \ldots, p\)</span>, so <span class="math inline">\(\operatorname{E}\mathord{\underset{\sim}{X}}= {(\mu_1, \ldots, \mu_p)}^{\top}\)</span>. By <a href="#/def-cov-vec-x" class="quarto-xref">Definition&nbsp;13</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}
 &amp;= \operatorname{E}\mathopen{}\left[
-  \mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}
-  {\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
+  \mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}
+  {\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
 \right]\mathclose{}
 \\
 &amp;= \operatorname{E}\mathopen{}\left[
@@ -1408,8 +1408,8 @@ XY &amp;= X^3 \\
 <div id="thm-vcov-vec" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 11 (Alternate expression for variance of a random vector)</strong></span> <span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\underset{\sim}{X}{\underset{\sim}{X}}^{\top}\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\mathord{\underset{\sim}{X}}{\mathord{\underset{\sim}{X}}}^{\top}\right]\mathclose{} - \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
 \end{aligned}
 \]</span></p>
 </div>
@@ -1419,29 +1419,29 @@ XY &amp;= X^3 \\
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}
 &amp;= \operatorname{E}\mathopen{}\left[
-    \mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}
-    {\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
+    \mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}
+    {\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
   \right]\mathclose{}
 &amp;&amp; \text{(definition)}
 \\
 &amp;= \operatorname{E}\mathopen{}\left[
-    \underset{\sim}{X}{\underset{\sim}{X}}^{\top}
-    - \underset{\sim}{X}{\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
-    - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\underset{\sim}{X}}^{\top}
-    + \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
+    \mathord{\underset{\sim}{X}}{\mathord{\underset{\sim}{X}}}^{\top}
+    - \mathord{\underset{\sim}{X}}{\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
+    - \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathord{\underset{\sim}{X}}}^{\top}
+    + \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
   \right]\mathclose{}
 &amp;&amp; \text{(expand the product)}
 \\
-&amp;= \operatorname{E}\mathopen{}\left[\underset{\sim}{X}{\underset{\sim}{X}}^{\top}\right]\mathclose{}
-  - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
-  - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
-  + \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
-&amp;&amp; \text{(linearity, element-wise; } \operatorname{E}\underset{\sim}{X}\text{ is constant)}
+&amp;= \operatorname{E}\mathopen{}\left[\mathord{\underset{\sim}{X}}{\mathord{\underset{\sim}{X}}}^{\top}\right]\mathclose{}
+  - \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
+  - \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
+  + \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
+&amp;&amp; \text{(linearity, element-wise; } \operatorname{E}\mathord{\underset{\sim}{X}}\text{ is constant)}
 \\
-&amp;= \operatorname{E}\mathopen{}\left[\underset{\sim}{X}{\underset{\sim}{X}}^{\top}\right]\mathclose{}
-  - \mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}
+&amp;= \operatorname{E}\mathopen{}\left[\mathord{\underset{\sim}{X}}{\mathord{\underset{\sim}{X}}}^{\top}\right]\mathclose{}
+  - \mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{} {\mathopen{}\left(\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}
 &amp;&amp; \text{(combine like terms)}
 \end{aligned}
 \]</span></p>
@@ -1450,40 +1450,40 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="thm-var-lincom" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12 (Variance of a linear combination)</strong></span> For any vector of random variables <span class="math inline">\(\underset{\sim}{X}= (X_1, \ldots, X_n)\)</span> and corresponding vector of constants <span class="math inline">\(\underset{\sim}{a}= (a_1, \ldots, a_n)\)</span>, the variance of their linear combination is:</p>
+<p><span class="theorem-title"><strong>Theorem 12 (Variance of a linear combination)</strong></span> For any vector of random variables <span class="math inline">\(\mathord{\underset{\sim}{X}}= (X_1, \ldots, X_n)\)</span> and corresponding vector of constants <span class="math inline">\(\mathord{\underset{\sim}{a}}= (a_1, \ldots, a_n)\)</span>, the variance of their linear combination is:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{a}\cdot \underset{\sim}{X}\right)\mathclose{}
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{a}}\cdot \mathord{\underset{\sim}{X}}\right)\mathclose{}
 &amp;= \operatorname{Var}\mathopen{}\left(\sum_{i=1}^na_i X_i\right)\mathclose{}
-\\ &amp;= {\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a}
+\\ &amp;= {\mathord{\underset{\sim}{a}}}^{\top} \operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} \mathord{\underset{\sim}{a}}
 \\ &amp;= \sum_{i=1}^n\sum_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{}
 \end{aligned}
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\underset{\sim}{a}\)</span> and <span class="math inline">\(\underset{\sim}{X}\)</span> as <span class="math inline">\(n \times 1\)</span> column vectors, so</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\mathord{\underset{\sim}{a}}\)</span> and <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> as <span class="math inline">\(n \times 1\)</span> column vectors, so</p>
 <p><span class="math display">\[
 \begin{aligned}
-\underset{\sim}{a}\cdot \underset{\sim}{X}&amp;= {\underset{\sim}{a}}^{\top}\underset{\sim}{X}\\
+\mathord{\underset{\sim}{a}}\cdot \mathord{\underset{\sim}{X}}&amp;= {\mathord{\underset{\sim}{a}}}^{\top}\mathord{\underset{\sim}{X}}\\
 &amp;= \sum_{i=1}^na_i X_i,
 \end{aligned}
 \]</span></p>
-<p>a scalar. By linearity of expectation, <span class="math inline">\(\operatorname{E}\mathopen{}\left[{\underset{\sim}{a}}^{\top}\underset{\sim}{X}\right]\mathclose{} = {\underset{\sim}{a}}^{\top}\,\operatorname{E}\underset{\sim}{X}\)</span>, so:</p>
+<p>a scalar. By linearity of expectation, <span class="math inline">\(\operatorname{E}\mathopen{}\left[{\mathord{\underset{\sim}{a}}}^{\top}\mathord{\underset{\sim}{X}}\right]\mathclose{} = {\mathord{\underset{\sim}{a}}}^{\top}\,\operatorname{E}\mathord{\underset{\sim}{X}}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left({\underset{\sim}{a}}^{\top}\underset{\sim}{X}\right)\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left({\underset{\sim}{a}}^{\top}\underset{\sim}{X}- {\underset{\sim}{a}}^{\top}\operatorname{E}\underset{\sim}{X}\right)\mathclose{}^2\right]\mathclose{}
+\operatorname{Var}\mathopen{}\left({\mathord{\underset{\sim}{a}}}^{\top}\mathord{\underset{\sim}{X}}\right)\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left({\mathord{\underset{\sim}{a}}}^{\top}\mathord{\underset{\sim}{X}}- {\mathord{\underset{\sim}{a}}}^{\top}\operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}^2\right]\mathclose{}
 &amp;&amp; \text{(definition of variance)} \\
-&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left({\underset{\sim}{a}}^{\top}\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}\right)\mathclose{}^2\right]\mathclose{}
-&amp;&amp; \text{(factor out } {\underset{\sim}{a}}^{\top} \text{)} \\
-&amp;= \operatorname{E}\mathopen{}\left[{\underset{\sim}{a}}^{\top}\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}{\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}\underset{\sim}{a}\right]\mathclose{}
+&amp;= \operatorname{E}\mathopen{}\left[\mathopen{}\left({\mathord{\underset{\sim}{a}}}^{\top}\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}\right)\mathclose{}^2\right]\mathclose{}
+&amp;&amp; \text{(factor out } {\mathord{\underset{\sim}{a}}}^{\top} \text{)} \\
+&amp;= \operatorname{E}\mathopen{}\left[{\mathord{\underset{\sim}{a}}}^{\top}\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}{\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}\mathord{\underset{\sim}{a}}\right]\mathclose{}
 &amp;&amp; \text{(a scalar equals its transpose, so } s^2 = s\,{s}^{\top} \text{)} \\
-&amp;= {\underset{\sim}{a}}^{\top}\,\operatorname{E}\mathopen{}\left[\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}{\mathopen{}\left(\underset{\sim}{X}- \operatorname{E}\underset{\sim}{X}\right)\mathclose{}}^{\top}\right]\mathclose{}\,\underset{\sim}{a}
+&amp;= {\mathord{\underset{\sim}{a}}}^{\top}\,\operatorname{E}\mathopen{}\left[\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}{\mathopen{}\left(\mathord{\underset{\sim}{X}}- \operatorname{E}\mathord{\underset{\sim}{X}}\right)\mathclose{}}^{\top}\right]\mathclose{}\,\mathord{\underset{\sim}{a}}
 &amp;&amp; \text{(linearity of expectation, element-wise)} \\
-&amp;= {\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a}
+&amp;= {\mathord{\underset{\sim}{a}}}^{\top} \operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} \mathord{\underset{\sim}{a}}
 &amp;&amp; \text{(variance of a random vector)} \\
 &amp;= \sum_{i=1}^n\sum_{j=1}^n a_i a_j \operatorname{Cov}\mathopen{}\left(X_i,X_j\right)\mathclose{}
-&amp;&amp; \text{(expand the quadratic form, using the elements of } \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \text{)}
+&amp;&amp; \text{(expand the quadratic form, using the elements of } \operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} \text{)}
 \end{aligned}
 \]</span></p>
 </div>
@@ -1563,11 +1563,11 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="thm-vcov-psd" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 13 (A variance matrix is symmetric and positive semidefinite)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix">symmetric</a> and <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite">positive semidefinite</a>: for every <span class="math inline">\(p \times 1\)</span> vector of constants <span class="math inline">\(\underset{\sim}{a}\)</span>,</p>
-<p><span class="math display">\[{\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a}\ge 0\]</span></p>
+<p><span class="theorem-title"><strong>Theorem 13 (A variance matrix is symmetric and positive semidefinite)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\mathord{\underset{\sim}{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> with <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix">symmetric</a> and <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite">positive semidefinite</a>: for every <span class="math inline">\(p \times 1\)</span> vector of constants <span class="math inline">\(\mathord{\underset{\sim}{a}}\)</span>,</p>
+<p><span class="math display">\[{\mathord{\underset{\sim}{a}}}^{\top} \operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} \mathord{\underset{\sim}{a}}\ge 0\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>, and by <a href="#/def-cov" class="quarto-xref">Definition&nbsp;9</a>, with <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>, and by <a href="#/def-cov" class="quarto-xref">Definition&nbsp;9</a>, with <span class="math inline">\(\mu_i = \operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
@@ -1579,11 +1579,11 @@ a &amp;= b \\
 &amp;&amp; \text{(definition of covariance)}
 \end{aligned}
 \]</span></p>
-<p>so the <span class="math inline">\((i,j)\)</span>-th and <span class="math inline">\((j,i)\)</span>-th elements are equal, and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is symmetric.</p>
-<p>For positive semidefiniteness, let <span class="math inline">\(Y = {\underset{\sim}{a}}^{\top}\underset{\sim}{X}\)</span>. Then:</p>
+<p>so the <span class="math inline">\((i,j)\)</span>-th and <span class="math inline">\((j,i)\)</span>-th elements are equal, and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is symmetric.</p>
+<p>For positive semidefiniteness, let <span class="math inline">\(Y = {\mathord{\underset{\sim}{a}}}^{\top}\mathord{\underset{\sim}{X}}\)</span>. Then:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\underset{\sim}{a}}^{\top} \operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} \underset{\sim}{a}
+{\mathord{\underset{\sim}{a}}}^{\top} \operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} \mathord{\underset{\sim}{a}}
 &amp;= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
 &amp;&amp; \text{(variance of a linear combination)} \\
 &amp;= \operatorname{E}\mathopen{}\left[(Y - \operatorname{E}\mathopen{}\left[Y\right]\mathclose{})^2\right]\mathclose{}
@@ -1598,9 +1598,9 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="exm-vcov-psd" class="theorem example">
-<p><span class="theorem-title"><strong>Example 16 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\underset{\sim}{X}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
+<p><span class="theorem-title"><strong>Example 16 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\mathord{\underset{\sim}{X}}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
 <p><span class="math display">\[D_1 = \mathopen{}\left\{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)\right\}\mathclose{},\]</span></p>
-<p>and let <span class="math inline">\(\underset{\sim}{X}'\)</span> be equally likely to be each of the four points</p>
+<p>and let <span class="math inline">\(\mathord{\underset{\sim}{X}}'\)</span> be equally likely to be each of the four points</p>
 <p><span class="math display">\[D_2 = \mathopen{}\left\{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)\right\}\mathclose{}.\]</span></p>
 <p>Both sets have first coordinates <span class="math inline">\(\mathopen{}\left\{-5, 0, 0, 5\right\}\mathclose{}\)</span> and second coordinates <span class="math inline">\(\mathopen{}\left\{1, -1, 1, -1\right\}\mathclose{}\)</span>, so</p>
 <p><span class="math display">\[
@@ -1622,7 +1622,7 @@ a &amp;= b \\
 &amp;= 1,
 \end{aligned}
 \]</span></p>
-<p>and likewise for <span class="math inline">\(\underset{\sim}{X}'\)</span>. They differ in the products of the coordinates:</p>
+<p>and likewise for <span class="math inline">\(\mathord{\underset{\sim}{X}}'\)</span>. They differ in the products of the coordinates:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}\mathopen{}\left[X_1 X_2\right]\mathclose{} &amp;= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\
@@ -1633,11 +1633,11 @@ a &amp;= b \\
 \]</span></p>
 <p>Since the means are 0, <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a> and <a href="#/thm-alt-cov" class="quarto-xref">Theorem&nbsp;7</a> give:</p>
 <p><span class="math display">\[
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \begin{pmatrix}12.5 &amp; -2.5 \\ -2.5 &amp; 1\end{pmatrix},
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} = \begin{pmatrix}12.5 &amp; -2.5 \\ -2.5 &amp; 1\end{pmatrix},
 \qquad
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}'\right)\mathclose{} = \begin{pmatrix}12.5 &amp; 2.5 \\ 2.5 &amp; 1\end{pmatrix}.
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}'\right)\mathclose{} = \begin{pmatrix}12.5 &amp; 2.5 \\ 2.5 &amp; 1\end{pmatrix}.
 \]</span></p>
-<p>Both are symmetric. <a href="#/thm-var-lincom" class="quarto-xref">Theorem&nbsp;12</a> with <span class="math inline">\(\underset{\sim}{a}= {(1, 1)}^{\top}\)</span> and <span class="math inline">\(\underset{\sim}{a}= {(1, -1)}^{\top}\)</span> gives:</p>
+<p>Both are symmetric. <a href="#/thm-var-lincom" class="quarto-xref">Theorem&nbsp;12</a> with <span class="math inline">\(\mathord{\underset{\sim}{a}}= {(1, 1)}^{\top}\)</span> and <span class="math inline">\(\mathord{\underset{\sim}{a}}= {(1, -1)}^{\top}\)</span> gives:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}\mathopen{}\left(X_1 + X_2\right)\mathclose{} &amp;= 12.5 + 1 + 2(-2.5) &amp;
@@ -1669,33 +1669,33 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="exm-vcov-singular" class="theorem example">
-<p><span class="theorem-title"><strong>Example 17 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\underset{\sim}{X}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\)</span> (<a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>), so:</p>
+<p><span class="theorem-title"><strong>Example 17 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\mathord{\underset{\sim}{X}}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{} = \sigma^2\)</span> (<a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>), so:</p>
 <p><span class="math display">\[
-\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
+\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
 \]</span></p>
-<p>With <span class="math inline">\(\underset{\sim}{a}= {(1, -1)}^{\top}\)</span>,</p>
+<p>With <span class="math inline">\(\mathord{\underset{\sim}{a}}= {(1, -1)}^{\top}\)</span>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\underset{\sim}{a}}^{\top}\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\underset{\sim}{a}&amp;= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\
+{\mathord{\underset{\sim}{a}}}^{\top}\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\mathord{\underset{\sim}{a}}&amp;= \operatorname{Var}\mathopen{}\left(X_1 - X_2\right)\mathclose{} \\
 &amp;= \operatorname{Var}\mathopen{}\left(0\right)\mathclose{} \\
 &amp;= 0,
 \end{aligned}
 \]</span></p>
-<p>so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\underset{\sim}{X}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
+<p>so <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="cor-vcov-indpt-diagonal" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 5 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each discrete or continuous, with:</p>
+<p><span class="theorem-title"><strong>Corollary 5 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\mathord{\underset{\sim}{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each discrete or continuous, with:</p>
 <ul>
 <li><span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, and</li>
 <li><span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> <a href="./independence.html#def-indpt">independent</a> for every <span class="math inline">\(i \neq j\)</span>.</li>
 </ul>
-<p>Then <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix">diagonal</a>, with diagonal elements <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}, \ldots, \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}\)</span>.</p>
+<p>Then <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix">diagonal</a>, with diagonal elements <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}, \ldots, \operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{}\)</span> is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>.</p>
 </div>
 </section>
 <section class="slide level2">

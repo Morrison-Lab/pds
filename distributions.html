@@ -235,15 +235,45 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-tbl.callout {
+  border-left-color: #757575;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-tbl.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exr.callout {
   border-left-color: #FFA500;
@@ -254,6 +284,16 @@ div.callout-exr.callout-style-default .callout-header {
 div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-cnj.callout {
   border-left-color: #558B2F;
@@ -274,16 +314,6 @@ div.callout-fig.callout-style-default .callout-header {
 div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -309,25 +339,15 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
 }
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
 }
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-solution.callout {
   border-left-color: #4E342E;
@@ -339,35 +359,15 @@ div.callout-solution .callout-toggle::before {  background-image: url('data:imag
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cor.callout {
-  border-left-color: #00838F;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-tbl.callout {
-  border-left-color: #757575;
-}
-div.callout-tbl.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
-}
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
-}
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -792,7 +792,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-16 05:12:28 (PDT)</p>
+      <p class="date">Last modified: 2026-10-16 15:49:22 (PDT)</p>
     </div>
   </div>
   
@@ -2983,12 +2983,12 @@ f(t)
 <div id="callout-75" class="callout-75-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-mvn" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\underset{\sim}{X}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\underset{\sim}{\mu} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\underset{\sim}{X}\sim \operatorname{N}_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\underset{\sim}{X}\)</span> has joint density:</p>
+<p><span class="theorem-title"><strong>Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\mathord{\underset{\sim}{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\mathord{\underset{\sim}{\mu}} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\mathord{\underset{\sim}{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\underset{\sim}{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> has joint density:</p>
 <p><span class="math display">\[
-\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) \stackrel{\text{def}}{=}
+\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \stackrel{\text{def}}{=}
 \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}}
-\text{e}^{-\frac{1}{2} {(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\underset{\sim}{x}- \underset{\sim}{\mu})},
-\quad \underset{\sim}{x}\in \mathbb{R}^p
+\text{e}^{-\frac{1}{2} {(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})}^{\top} \mathbf{\Sigma}^{-1} (\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})},
+\quad \mathord{\underset{\sim}{x}}\in \mathbb{R}^p
 \]</span></p>
 <p>where <span class="math inline">\(\det(\mathbf{\Sigma})\)</span> is the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant">determinant</a> of <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is its <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse">inverse</a>.</p>
 </div>
@@ -3008,7 +3008,7 @@ f(t)
 <div id="callout-76" class="callout-76-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>A joint density of <span class="math inline">\(p\)</span> random variables is the <span class="math inline">\(p\)</span>-variable analogue of a <a href="./random-variables.html#def-joint-pdf">joint density</a> of two: a non-negative function on <span class="math inline">\(\mathbb{R}^p\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^p\)</span> is <span class="math inline">\(\Pr(\underset{\sim}{X}\in A)\)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>A joint density of <span class="math inline">\(p\)</span> random variables is the <span class="math inline">\(p\)</span>-variable analogue of a <a href="./random-variables.html#def-joint-pdf">joint density</a> of two: a non-negative function on <span class="math inline">\(\mathbb{R}^p\)</span> whose integral over any region <span class="math inline">\(A \subseteq \mathbb{R}^p\)</span> is <span class="math inline">\(\Pr(\mathord{\underset{\sim}{X}}\in A)\)</span>.</p>
 <p>The density is well defined because <span class="math inline">\(\mathbf{\Sigma}\)</span> is positive definite:</p>
 <ul>
 <li><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> exists (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">positive definite matrices have positive definite inverses</a>), and</li>
@@ -3031,7 +3031,7 @@ f(t)
 <div id="callout-77" class="callout-77-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mvn-density-integral" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 15 (The multivariate normal density integrates to 1)</strong></span> If <span class="math inline">\(\underset{\sim}{X}\sim \operatorname{N}_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then the density in <a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a> integrates to 1 over <span class="math inline">\(\mathbb{R}^p\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 15 (The multivariate normal density integrates to 1)</strong></span> If <span class="math inline">\(\mathord{\underset{\sim}{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\underset{\sim}{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then the density in <a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a> integrates to 1 over <span class="math inline">\(\mathbb{R}^p\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3049,7 +3049,7 @@ f(t)
 <div id="callout-78" class="callout-78-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mvn-moments" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 16 (The mean and variance of the multivariate normal distribution)</strong></span> If <span class="math inline">\(\underset{\sim}{X}\sim \operatorname{N}_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then <span class="math inline">\(\operatorname{E}\underset{\sim}{X}= \underset{\sim}{\mu}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
+<p><span class="theorem-title"><strong>Theorem 16 (The mean and variance of the multivariate normal distribution)</strong></span> If <span class="math inline">\(\mathord{\underset{\sim}{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\underset{\sim}{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then <span class="math inline">\(\operatorname{E}\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{\mu}}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
 </div>
 </div>
 </div>
@@ -3085,10 +3085,10 @@ f(t)
 <div id="callout-80" class="callout-80-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-mvn-univariate" class="theorem example">
-<p><span class="theorem-title"><strong>Example 17 (The univariate normal is the case <span class="math inline">\(p = 1\)</span>)</strong></span> With <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(\underset{\sim}{\mu} = (\mu)\)</span>, and <span class="math inline">\(\mathbf{\Sigma} = (\sigma^2)\)</span> for <span class="math inline">\(\sigma^2&gt; 0\)</span>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \sigma^2\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant">determinant</a>, <span class="math inline">\(p = 1\)</span>) and <span class="math inline">\(\mathbf{\Sigma}^{-1} = (1/\sigma^2)\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 17 (The univariate normal is the case <span class="math inline">\(p = 1\)</span>)</strong></span> With <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(\mathord{\underset{\sim}{\mu}} = (\mu)\)</span>, and <span class="math inline">\(\mathbf{\Sigma} = (\sigma^2)\)</span> for <span class="math inline">\(\sigma^2&gt; 0\)</span>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \sigma^2\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant">determinant</a>, <span class="math inline">\(p = 1\)</span>) and <span class="math inline">\(\mathbf{\Sigma}^{-1} = (1/\sigma^2)\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x})
+\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})
 &amp;= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}}
 \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)}
 &amp;&amp; \text{(substitute into the multivariate normal density)} \\
@@ -3114,9 +3114,9 @@ f(t)
 <div id="callout-81" class="callout-81-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="lem-mahalanobis-nonneg" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1 (The quadratic form in the multivariate normal density is non-negative)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is a <span class="math inline">\(p \times p\)</span> positive definite matrix and <span class="math inline">\(\underset{\sim}{x}, \underset{\sim}{\mu} \in \mathbb{R}^p\)</span>, then</p>
-<p><span class="math display">\[{(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\underset{\sim}{x}- \underset{\sim}{\mu}) \ge 0,\]</span></p>
-<p>with equality if and only if <span class="math inline">\(\underset{\sim}{x}= \underset{\sim}{\mu}\)</span>.</p>
+<p><span class="theorem-title"><strong>Lemma 1 (The quadratic form in the multivariate normal density is non-negative)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is a <span class="math inline">\(p \times p\)</span> positive definite matrix and <span class="math inline">\(\mathord{\underset{\sim}{x}}, \mathord{\underset{\sim}{\mu}} \in \mathbb{R}^p\)</span>, then</p>
+<p><span class="math display">\[{(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})}^{\top} \mathbf{\Sigma}^{-1} (\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}}) \ge 0,\]</span></p>
+<p>with equality if and only if <span class="math inline">\(\mathord{\underset{\sim}{x}}= \mathord{\underset{\sim}{\mu}}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3134,7 +3134,7 @@ f(t)
 <div id="callout-82" class="callout-82-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is positive definite (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">positive definite inverse</a>). If <span class="math inline">\(\underset{\sim}{x}\neq \underset{\sim}{\mu}\)</span>, then <span class="math inline">\(\underset{\sim}{x}- \underset{\sim}{\mu} \neq \underset{\sim}{0}\)</span>, so the quadratic form is positive by the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">definition of positive definite</a>. If <span class="math inline">\(\underset{\sim}{x}= \underset{\sim}{\mu}\)</span>, then <span class="math inline">\(\underset{\sim}{x}- \underset{\sim}{\mu} = \underset{\sim}{0}\)</span>, and the quadratic form is <span class="math inline">\(0\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is positive definite (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">positive definite inverse</a>). If <span class="math inline">\(\mathord{\underset{\sim}{x}}\neq \mathord{\underset{\sim}{\mu}}\)</span>, then <span class="math inline">\(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}} \neq \mathord{\underset{\sim}{0}}\)</span>, so the quadratic form is positive by the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">definition of positive definite</a>. If <span class="math inline">\(\mathord{\underset{\sim}{x}}= \mathord{\underset{\sim}{\mu}}\)</span>, then <span class="math inline">\(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}} = \mathord{\underset{\sim}{0}}\)</span>, and the quadratic form is <span class="math inline">\(0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3152,9 +3152,9 @@ f(t)
 <div id="callout-83" class="callout-83-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-mahalanobis" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (Mahalanobis distance)</strong></span> For a <span class="math inline">\(p \times p\)</span> positive definite matrix <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\underset{\sim}{x}, \underset{\sim}{\mu} \in \mathbb{R}^p\)</span>, the <strong>Mahalanobis distance</strong> from <span class="math inline">\(\underset{\sim}{x}\)</span> to <span class="math inline">\(\underset{\sim}{\mu}\)</span> with respect to <span class="math inline">\(\mathbf{\Sigma}\)</span> is:</p>
+<p><span class="theorem-title"><strong>Definition 10 (Mahalanobis distance)</strong></span> For a <span class="math inline">\(p \times p\)</span> positive definite matrix <span class="math inline">\(\mathbf{\Sigma}\)</span> and <span class="math inline">\(\mathord{\underset{\sim}{x}}, \mathord{\underset{\sim}{\mu}} \in \mathbb{R}^p\)</span>, the <strong>Mahalanobis distance</strong> from <span class="math inline">\(\mathord{\underset{\sim}{x}}\)</span> to <span class="math inline">\(\mathord{\underset{\sim}{\mu}}\)</span> with respect to <span class="math inline">\(\mathbf{\Sigma}\)</span> is:</p>
 <p><span class="math display">\[
-\Delta(\underset{\sim}{x}) \stackrel{\text{def}}{=}\sqrt{{(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{\Sigma}^{-1} (\underset{\sim}{x}- \underset{\sim}{\mu})}
+\Delta(\mathord{\underset{\sim}{x}}) \stackrel{\text{def}}{=}\sqrt{{(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})}^{\top} \mathbf{\Sigma}^{-1} (\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})}
 \]</span></p>
 </div>
 </div>
@@ -3191,11 +3191,11 @@ f(t)
 <div id="callout-85" class="callout-85-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-mvn-mahalanobis" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)</strong></span> If <span class="math inline">\(\underset{\sim}{X}\sim \operatorname{N}_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then:</p>
+<p><span class="theorem-title"><strong>Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)</strong></span> If <span class="math inline">\(\mathord{\underset{\sim}{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\underset{\sim}{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then:</p>
 <p><span class="math display">\[
-\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\underset{\sim}{x})^2}{2}}
+\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\mathord{\underset{\sim}{x}})^2}{2}}
 \]</span></p>
-<p>where <span class="math inline">\(\Delta\)</span> is the Mahalanobis distance to <span class="math inline">\(\underset{\sim}{\mu}\)</span> with respect to <span class="math inline">\(\mathbf{\Sigma}\)</span> (<a href="#def-mahalanobis" class="quarto-xref">Definition&nbsp;10</a>). So the density is highest at <span class="math inline">\(\underset{\sim}{x}= \underset{\sim}{\mu}\)</span>, decreases as <span class="math inline">\(\Delta(\underset{\sim}{x})\)</span> increases, and is the same at every <span class="math inline">\(\underset{\sim}{x}\)</span> with the same <span class="math inline">\(\Delta(\underset{\sim}{x})\)</span>.</p>
+<p>where <span class="math inline">\(\Delta\)</span> is the Mahalanobis distance to <span class="math inline">\(\mathord{\underset{\sim}{\mu}}\)</span> with respect to <span class="math inline">\(\mathbf{\Sigma}\)</span> (<a href="#def-mahalanobis" class="quarto-xref">Definition&nbsp;10</a>). So the density is highest at <span class="math inline">\(\mathord{\underset{\sim}{x}}= \mathord{\underset{\sim}{\mu}}\)</span>, decreases as <span class="math inline">\(\Delta(\mathord{\underset{\sim}{x}})\)</span> increases, and is the same at every <span class="math inline">\(\mathord{\underset{\sim}{x}}\)</span> with the same <span class="math inline">\(\Delta(\mathord{\underset{\sim}{x}})\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3213,7 +3213,7 @@ f(t)
 <div id="callout-86" class="callout-86-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Substitute <a href="#def-mahalanobis" class="quarto-xref">Definition&nbsp;10</a> into <a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>. The function <span class="math inline">\(\delta\mapsto \text{e}^{-\delta^2/2}\)</span> decreases on <span class="math inline">\(\delta\ge 0\)</span>, and by <a href="#lem-mahalanobis-nonneg" class="quarto-xref">Lemma&nbsp;1</a>, <span class="math inline">\(\Delta(\underset{\sim}{x}) = 0\)</span> only at <span class="math inline">\(\underset{\sim}{x}= \underset{\sim}{\mu}\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Substitute <a href="#def-mahalanobis" class="quarto-xref">Definition&nbsp;10</a> into <a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>. The function <span class="math inline">\(\delta\mapsto \text{e}^{-\delta^2/2}\)</span> decreases on <span class="math inline">\(\delta\ge 0\)</span>, and by <a href="#lem-mahalanobis-nonneg" class="quarto-xref">Lemma&nbsp;1</a>, <span class="math inline">\(\Delta(\mathord{\underset{\sim}{x}}) = 0\)</span> only at <span class="math inline">\(\mathord{\underset{\sim}{x}}= \mathord{\underset{\sim}{\mu}}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3233,12 +3233,12 @@ f(t)
 <div id="exm-mahalanobis-special" class="theorem example">
 <p><span class="theorem-title"><strong>Example 18 (Mahalanobis distance for diagonal variance matrices)</strong></span> If <span class="math inline">\(\mathbf{\Sigma}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix">diagonal</a> with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, all positive, then <span class="math inline">\(\mathbf{\Sigma}^{-1}\)</span> is diagonal with diagonal elements <span class="math inline">\(1/\sigma^2_1, \ldots, 1/\sigma^2_p\)</span> (multiplying the two gives <span class="math inline">\(\mathbf{I}_p\)</span>; <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse">matrix inverse</a>), so:</p>
 <p><span class="math display">\[
-\Delta(\underset{\sim}{x})^2 = \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}
+\Delta(\mathord{\underset{\sim}{x}})^2 = \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}
 \]</span></p>
 <p>Two special cases:</p>
 <ul>
-<li>If <span class="math inline">\(\mathbf{\Sigma} = \mathbf{I}_p\)</span>, then <span class="math inline">\(\Delta(\underset{\sim}{x})^2 = \sum_{i=1}^p(x_i - \mu_i)^2\)</span>, so the Mahalanobis distance is the ordinary (Euclidean) distance.</li>
-<li>If <span class="math inline">\(\mathbf{\Sigma} = \sigma^2\mathbf{I}_p\)</span>, then <span class="math inline">\(\Delta(\underset{\sim}{x})\)</span> is the Euclidean distance divided by <span class="math inline">\(\sigma\)</span>.</li>
+<li>If <span class="math inline">\(\mathbf{\Sigma} = \mathbf{I}_p\)</span>, then <span class="math inline">\(\Delta(\mathord{\underset{\sim}{x}})^2 = \sum_{i=1}^p(x_i - \mu_i)^2\)</span>, so the Mahalanobis distance is the ordinary (Euclidean) distance.</li>
+<li>If <span class="math inline">\(\mathbf{\Sigma} = \sigma^2\mathbf{I}_p\)</span>, then <span class="math inline">\(\Delta(\mathord{\underset{\sim}{x}})\)</span> is the Euclidean distance divided by <span class="math inline">\(\sigma\)</span>.</li>
 </ul>
 <p>In general, each coordinate’s difference is measured in units of that coordinate’s standard deviation.</p>
 </div>
@@ -3258,9 +3258,9 @@ f(t)
 <div id="callout-88" class="callout-88-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mvn-diagonal-indpt" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)</strong></span> If <span class="math inline">\(\underset{\sim}{X}\sim \operatorname{N}_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span> and <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, then:</p>
+<p><span class="theorem-title"><strong>Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)</strong></span> If <span class="math inline">\(\mathord{\underset{\sim}{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\underset{\sim}{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> and <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, then:</p>
 <ul>
-<li>the joint density of <span class="math inline">\(\underset{\sim}{X}\)</span> is the product of the <a href="./random-variables.html#def-normal">normal densities</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, <span class="math inline">\(i = 1, \ldots, p\)</span>,</li>
+<li>the joint density of <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> is the product of the <a href="./random-variables.html#def-normal">normal densities</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, <span class="math inline">\(i = 1, \ldots, p\)</span>,</li>
 <li>each <span class="math inline">\(X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, and</li>
 <li><span class="math inline">\(X_1, \ldots, X_p\)</span> are <a href="./independence.html#def-indpt">independent</a>.</li>
 </ul>
@@ -3284,7 +3284,7 @@ f(t)
 <p><span class="proof-title"><em>Proof</em>. </span>By the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal">determinant of a diagonal matrix</a>, <span class="math inline">\(\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i\)</span>, so <span class="math inline">\(\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i\)</span>. Using <a href="#exm-mahalanobis-special" class="quarto-xref">Example&nbsp;18</a> for the quadratic form:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x})
+\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})
 &amp;= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sigma_i}
 \text{e}^{-\frac{1}{2} \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}}
 &amp;&amp; \text{(substitute)} \\
@@ -3311,7 +3311,7 @@ f(t)
 <div id="callout-90" class="callout-90-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-mvn-uncorrelated-indpt" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)</strong></span> If <span class="math inline">\(\underset{\sim}{X}\sim \operatorname{N}_p\mathopen{}\left(\underset{\sim}{\mu}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then <span class="math inline">\(X_1, \ldots, X_p\)</span> are independent if and only if <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, that is, if and only if <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> for every <span class="math inline">\(i \neq j\)</span>.</p>
+<p><span class="theorem-title"><strong>Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)</strong></span> If <span class="math inline">\(\mathord{\underset{\sim}{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\underset{\sim}{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then <span class="math inline">\(X_1, \ldots, X_p\)</span> are independent if and only if <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, that is, if and only if <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> for every <span class="math inline">\(i \neq j\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3329,7 +3329,7 @@ f(t)
 <div id="callout-91" class="callout-91-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-mvn-moments" class="quarto-xref">Theorem&nbsp;16</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\underset{\sim}{X}\right)\mathclose{} = \mathbf{\Sigma}\)</span>, whose <span class="math inline">\((i,j)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span> (<a href="./variance-covariance.html#thm-vcov-elements">elements of the variance matrix</a>). If <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, the components are independent by <a href="#thm-mvn-diagonal-indpt" class="quarto-xref">Theorem&nbsp;17</a>. If the components are independent, then:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-mvn-moments" class="quarto-xref">Theorem&nbsp;16</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\underset{\sim}{X}}\right)\mathclose{} = \mathbf{\Sigma}\)</span>, whose <span class="math inline">\((i,j)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span> (<a href="./variance-covariance.html#thm-vcov-elements">elements of the variance matrix</a>). If <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, the components are independent by <a href="#thm-mvn-diagonal-indpt" class="quarto-xref">Theorem&nbsp;17</a>. If the components are independent, then:</p>
 <ul>
 <li>each pair <span class="math inline">\(X_i, X_j\)</span> with <span class="math inline">\(i \neq j\)</span> is independent,</li>
 <li>each <span class="math inline">\(X_i\)</span> is continuous, with the density left after integrating out the other coordinates of the joint density (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables), and</li>
@@ -3371,9 +3371,9 @@ f(t)
 <div id="callout-93" class="callout-93-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mahalanobis-eigen" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 18 (Mahalanobis distance in eigenvector coordinates)</strong></span> Let <span class="math inline">\(\mathbf{\Sigma}\)</span> be positive definite, with <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition">eigendecomposition</a> <span class="math inline">\(\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\)</span>, where <span class="math inline">\(\mathbf{Q}\)</span> has columns <span class="math inline">\(\underset{\sim}{q}_1, \ldots, \underset{\sim}{q}_p\)</span> and <span class="math inline">\(\mathbf{\Lambda}\)</span> has diagonal elements <span class="math inline">\(\lambda_1, \ldots, \lambda_p\)</span>. Then:</p>
+<p><span class="theorem-title"><strong>Theorem 18 (Mahalanobis distance in eigenvector coordinates)</strong></span> Let <span class="math inline">\(\mathbf{\Sigma}\)</span> be positive definite, with <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition">eigendecomposition</a> <span class="math inline">\(\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}\)</span>, where <span class="math inline">\(\mathbf{Q}\)</span> has columns <span class="math inline">\(\mathord{\underset{\sim}{q}}_1, \ldots, \mathord{\underset{\sim}{q}}_p\)</span> and <span class="math inline">\(\mathbf{\Lambda}\)</span> has diagonal elements <span class="math inline">\(\lambda_1, \ldots, \lambda_p\)</span>. Then:</p>
 <p><span class="math display">\[
-\Delta(\underset{\sim}{x})^2 = \sum_{i=1}^p\frac{\mathopen{}\left({\underset{\sim}{q}_i}^{\top}(\underset{\sim}{x}- \underset{\sim}{\mu})\right)\mathclose{}^2}{\lambda_i}
+\Delta(\mathord{\underset{\sim}{x}})^2 = \sum_{i=1}^p\frac{\mathopen{}\left({\mathord{\underset{\sim}{q}}_i}^{\top}(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})\right)\mathclose{}^2}{\lambda_i}
 \]</span></p>
 </div>
 </div>
@@ -3392,14 +3392,14 @@ f(t)
 <div id="callout-94" class="callout-94-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\underset{\sim}{y} = {\mathbf{Q}}^{\top}(\underset{\sim}{x}- \underset{\sim}{\mu})\)</span>, whose <span class="math inline">\(i\)</span>-th element is <span class="math inline">\(y_i = {\underset{\sim}{q}_i}^{\top}(\underset{\sim}{x}- \underset{\sim}{\mu})\)</span>. By the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">inverse of a positive definite matrix</a>, <span class="math inline">\(\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\)</span>, with every <span class="math inline">\(\lambda_i &gt; 0\)</span>. So:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathord{\underset{\sim}{y}} = {\mathbf{Q}}^{\top}(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})\)</span>, whose <span class="math inline">\(i\)</span>-th element is <span class="math inline">\(y_i = {\mathord{\underset{\sim}{q}}_i}^{\top}(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})\)</span>. By the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse">inverse of a positive definite matrix</a>, <span class="math inline">\(\mathbf{\Sigma}^{-1} = \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top}\)</span>, with every <span class="math inline">\(\lambda_i &gt; 0\)</span>. So:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Delta(\underset{\sim}{x})^2
-&amp;= {(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\underset{\sim}{x}- \underset{\sim}{\mu})
+\Delta(\mathord{\underset{\sim}{x}})^2
+&amp;= {(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})}^{\top} \mathbf{Q}\mathbf{\Lambda}^{-1}{\mathbf{Q}}^{\top} (\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})
 &amp;&amp; \text{(definition; substitute } \mathbf{\Sigma}^{-1} \text{)} \\
-&amp;= {\underset{\sim}{y}}^{\top} \mathbf{\Lambda}^{-1} \underset{\sim}{y}
-&amp;&amp; \text{(} {(\underset{\sim}{x}- \underset{\sim}{\mu})}^{\top}\mathbf{Q} = {\underset{\sim}{y}}^{\top} \text{)} \\
+&amp;= {\mathord{\underset{\sim}{y}}}^{\top} \mathbf{\Lambda}^{-1} \mathord{\underset{\sim}{y}}
+&amp;&amp; \text{(} {(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}})}^{\top}\mathbf{Q} = {\mathord{\underset{\sim}{y}}}^{\top} \text{)} \\
 &amp;= \sum_{i=1}^p\frac{y_i^2}{\lambda_i}
 &amp;&amp; \text{(} \mathbf{\Lambda}^{-1} \text{ is diagonal)}
 \end{aligned}
@@ -3421,7 +3421,7 @@ f(t)
 <div id="callout-95" class="callout-95-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span><span class="math inline">\(y_i\)</span> is the coordinate of <span class="math inline">\(\underset{\sim}{x}- \underset{\sim}{\mu}\)</span> along the eigenvector <span class="math inline">\(\underset{\sim}{q}_i\)</span>. So the set of points at Mahalanobis distance <span class="math inline">\(\delta\)</span> from <span class="math inline">\(\underset{\sim}{\mu}\)</span>, where the multivariate normal density is constant (<a href="#cor-mvn-mahalanobis" class="quarto-xref">Corollary&nbsp;3</a>), is an ellipse (<span class="math inline">\(p = 2\)</span>) or ellipsoid centered at <span class="math inline">\(\underset{\sim}{\mu}\)</span>, with axes along the eigenvectors of <span class="math inline">\(\mathbf{\Sigma}\)</span> and half-length <span class="math inline">\(\delta\sqrt{\lambda_i}\)</span> along <span class="math inline">\(\underset{\sim}{q}_i\)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span><span class="math inline">\(y_i\)</span> is the coordinate of <span class="math inline">\(\mathord{\underset{\sim}{x}}- \mathord{\underset{\sim}{\mu}}\)</span> along the eigenvector <span class="math inline">\(\mathord{\underset{\sim}{q}}_i\)</span>. So the set of points at Mahalanobis distance <span class="math inline">\(\delta\)</span> from <span class="math inline">\(\mathord{\underset{\sim}{\mu}}\)</span>, where the multivariate normal density is constant (<a href="#cor-mvn-mahalanobis" class="quarto-xref">Corollary&nbsp;3</a>), is an ellipse (<span class="math inline">\(p = 2\)</span>) or ellipsoid centered at <span class="math inline">\(\mathord{\underset{\sim}{\mu}}\)</span>, with axes along the eigenvectors of <span class="math inline">\(\mathbf{\Sigma}\)</span> and half-length <span class="math inline">\(\delta\sqrt{\lambda_i}\)</span> along <span class="math inline">\(\mathord{\underset{\sim}{q}}_i\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3439,32 +3439,32 @@ f(t)
 <div id="callout-96" class="callout-96-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-mahalanobis-eigen" class="theorem example">
-<p><span class="theorem-title"><strong>Example 19 (Elliptical contours of a bivariate normal density)</strong></span> Let <span class="math inline">\(\underset{\sim}{\mu} = \underset{\sim}{0}\)</span> and <span class="math inline">\(\mathbf{\Sigma} = \begin{pmatrix}2 &amp; 1 \\ 1 &amp; 2\end{pmatrix}\)</span>, which has eigenvalues <span class="math inline">\(3\)</span> and <span class="math inline">\(1\)</span>, with eigenvectors <span class="math inline">\(\underset{\sim}{q}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\)</span> and <span class="math inline">\(\underset{\sim}{q}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral">an eigendecomposition example</a>). By <a href="#thm-mahalanobis-eigen" class="quarto-xref">Theorem&nbsp;18</a>:</p>
+<p><span class="theorem-title"><strong>Example 19 (Elliptical contours of a bivariate normal density)</strong></span> Let <span class="math inline">\(\mathord{\underset{\sim}{\mu}} = \mathord{\underset{\sim}{0}}\)</span> and <span class="math inline">\(\mathbf{\Sigma} = \begin{pmatrix}2 &amp; 1 \\ 1 &amp; 2\end{pmatrix}\)</span>, which has eigenvalues <span class="math inline">\(3\)</span> and <span class="math inline">\(1\)</span>, with eigenvectors <span class="math inline">\(\mathord{\underset{\sim}{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}\)</span> and <span class="math inline">\(\mathord{\underset{\sim}{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}\)</span> (<a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral">an eigendecomposition example</a>). By <a href="#thm-mahalanobis-eigen" class="quarto-xref">Theorem&nbsp;18</a>:</p>
 <p><span class="math display">\[
-\Delta(\underset{\sim}{x})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}
+\Delta(\mathord{\underset{\sim}{x}})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}
 \]</span></p>
 <p>The point</p>
 <p><span class="math display">\[
 \begin{aligned}
-\underset{\sim}{x}&amp;= \sqrt{3}\,\underset{\sim}{q}_1 \\
+\mathord{\underset{\sim}{x}}&amp;= \sqrt{3}\,\mathord{\underset{\sim}{q}}_1 \\
 &amp;= \sqrt{3/2}\,{(1, 1)}^{\top}
 \end{aligned}
 \]</span></p>
 <p>has <span class="math inline">\(x_1 + x_2 = \sqrt{6}\)</span> and <span class="math inline">\(x_1 - x_2 = 0\)</span>, so</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Delta(\underset{\sim}{x})^2 &amp;= 6/6 \\
+\Delta(\mathord{\underset{\sim}{x}})^2 &amp;= 6/6 \\
 &amp;= 1;
 \end{aligned}
 \]</span></p>
-<p>the point <span class="math inline">\(\underset{\sim}{x}= \underset{\sim}{q}_2\)</span> has <span class="math inline">\(x_1 + x_2 = 0\)</span> and <span class="math inline">\(x_1 - x_2 = \sqrt{2}\)</span>, so</p>
+<p>the point <span class="math inline">\(\mathord{\underset{\sim}{x}}= \mathord{\underset{\sim}{q}}_2\)</span> has <span class="math inline">\(x_1 + x_2 = 0\)</span> and <span class="math inline">\(x_1 - x_2 = \sqrt{2}\)</span>, so</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Delta(\underset{\sim}{x})^2 &amp;= 2/2 \\
+\Delta(\mathord{\underset{\sim}{x}})^2 &amp;= 2/2 \\
 &amp;= 1.
 \end{aligned}
 \]</span></p>
-<p>So the contour <span class="math inline">\(\Delta(\underset{\sim}{x}) = 1\)</span> of the <span class="math inline">\(\operatorname{N}_2\mathopen{}\left(\underset{\sim}{0}, \mathbf{\Sigma}\right)\mathclose{}\)</span> density is an ellipse stretched along <span class="math inline">\({(1, 1)}^{\top}\)</span>, with half-length <span class="math inline">\(\sqrt{3}\)</span>, and squeezed along <span class="math inline">\({(1, -1)}^{\top}\)</span>, with half-length <span class="math inline">\(1\)</span>: <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are positively correlated.</p>
+<p>So the contour <span class="math inline">\(\Delta(\mathord{\underset{\sim}{x}}) = 1\)</span> of the <span class="math inline">\(\operatorname{N}_2\mathopen{}\left(\mathord{\underset{\sim}{0}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> density is an ellipse stretched along <span class="math inline">\({(1, 1)}^{\top}\)</span>, with half-length <span class="math inline">\(\sqrt{3}\)</span>, and squeezed along <span class="math inline">\({(1, -1)}^{\top}\)</span>, with half-length <span class="math inline">\(1\)</span>: <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are positively correlated.</p>
 </div>
 </div>
 </div>

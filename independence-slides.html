@@ -293,7 +293,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-16 05:12:28 (PDT)</p>
+  <p class="date">Last modified: 2026-10-16 15:49:22 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -417,14 +417,14 @@
 
 <p><span id="sec-conditional-independence"></span></p>
 <div id="def-cind" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> given a discrete random variable (or vector) <span class="math inline">\(\underset{\sim}{X}\)</span> if, for every value <span class="math inline">\(\underset{\sim}{x}\)</span> with <span class="math inline">\(\Pr(\underset{\sim}{X}= \underset{\sim}{x}) &gt; 0\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
-<p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \underset{\sim}{X}= \underset{\sim}{x}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \underset{\sim}{X}= \underset{\sim}{x})}\]</span></p>
-<p>When <span class="math inline">\(\underset{\sim}{X}\)</span> is continuous, every event <span class="math inline">\(\{\underset{\sim}{X}= \underset{\sim}{x}\}\)</span> has probability 0, so the condition is stated with densities instead: for every <span class="math inline">\(\underset{\sim}{x}\)</span> with <span class="math inline">\(\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}) &gt; 0\)</span> and all <span class="math inline">\(y_1, \ldots, y_n\)</span>,</p>
-<p><span class="math display">\[\frac{\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x})} = \prod_{i=1}^n{\frac{\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x}, Y_i = y_i)}{\operatorname{p}(\underset{\sim}{X}= \underset{\sim}{x})}}\]</span></p>
+<p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> given a discrete random variable (or vector) <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> if, for every value <span class="math inline">\(\mathord{\underset{\sim}{x}}\)</span> with <span class="math inline">\(\Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) &gt; 0\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
+<p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})}\]</span></p>
+<p>When <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> is continuous, every event <span class="math inline">\(\{\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}\}\)</span> has probability 0, so the condition is stated with densities instead: for every <span class="math inline">\(\mathord{\underset{\sim}{x}}\)</span> with <span class="math inline">\(\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) &gt; 0\)</span> and all <span class="math inline">\(y_1, \ldots, y_n\)</span>,</p>
+<p><span class="math display">\[\frac{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})} = \prod_{i=1}^n{\frac{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}, Y_i = y_i)}{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})}}\]</span></p>
 <p>where each <span class="math inline">\(\operatorname{p}(\cdot)\)</span> is a <a href="./random-variables.html#def-joint-pdf">joint density</a> (with probability masses in place of densities for any discrete <span class="math inline">\(Y_i\)</span>, as in a <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a>).</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>For continuous <span class="math inline">\(\underset{\sim}{X}\)</span>, each ratio in the density form is the density of the <span class="math inline">\(Y\)</span>’s under their conditional distribution given <span class="math inline">\(\underset{\sim}{X}= \underset{\sim}{x}\)</span>, so both forms say the same thing: given <span class="math inline">\(\underset{\sim}{X}= \underset{\sim}{x}\)</span>, the <span class="math inline">\(Y_i\)</span>’s joint distribution factors.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>For continuous <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span>, each ratio in the density form is the density of the <span class="math inline">\(Y\)</span>’s under their conditional distribution given <span class="math inline">\(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}\)</span>, so both forms say the same thing: given <span class="math inline">\(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}\)</span>, the <span class="math inline">\(Y_i\)</span>’s joint distribution factors.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -518,25 +518,25 @@
 <section class="slide level2">
 
 <div id="prp-cind-own-covariate" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2 (Conditional independence when each <span class="math inline">\(Y_i\)</span> depends only on its own <span class="math inline">\(X_i\)</span>)</strong></span> Let <span class="math inline">\(\underset{\sim}{X}= (X_1, \ldots, X_n)\)</span> be a discrete random vector, and let <span class="math inline">\(Y_1, \ldots, Y_n\)</span> be <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\(\underset{\sim}{X}\)</span>. Suppose also that each <span class="math inline">\(Y_i\)</span> depends on <span class="math inline">\(\underset{\sim}{X}\)</span> only through <span class="math inline">\(X_i\)</span>: for every <span class="math inline">\(\underset{\sim}{x}= (x_1, \ldots, x_n)\)</span> with <span class="math inline">\(\Pr(\underset{\sim}{X}= \underset{\sim}{x}) &gt; 0\)</span> and every set of real numbers <span class="math inline">\(A_i\)</span>,</p>
-<p><span class="math display">\[\Pr(Y_i \in A_i \mid \underset{\sim}{X}= \underset{\sim}{x}) = \Pr(Y_i \in A_i \mid X_i = x_i)\]</span></p>
-<p>Then, for every such <span class="math inline">\(\underset{\sim}{x}\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>:</p>
-<p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \underset{\sim}{X}= \underset{\sim}{x}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}\]</span></p>
+<p><span class="theorem-title"><strong>Proposition 2 (Conditional independence when each <span class="math inline">\(Y_i\)</span> depends only on its own <span class="math inline">\(X_i\)</span>)</strong></span> Let <span class="math inline">\(\mathord{\underset{\sim}{X}}= (X_1, \ldots, X_n)\)</span> be a discrete random vector, and let <span class="math inline">\(Y_1, \ldots, Y_n\)</span> be <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span>. Suppose also that each <span class="math inline">\(Y_i\)</span> depends on <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> only through <span class="math inline">\(X_i\)</span>: for every <span class="math inline">\(\mathord{\underset{\sim}{x}}= (x_1, \ldots, x_n)\)</span> with <span class="math inline">\(\Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) &gt; 0\)</span> and every set of real numbers <span class="math inline">\(A_i\)</span>,</p>
+<p><span class="math display">\[\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \Pr(Y_i \in A_i \mid X_i = x_i)\]</span></p>
+<p>Then, for every such <span class="math inline">\(\mathord{\underset{\sim}{x}}\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>:</p>
+<p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Each conditional probability given <span class="math inline">\(X_i = x_i\)</span> is defined, because <span class="math inline">\(\Pr(X_i = x_i) \ge \Pr(\underset{\sim}{X}= \underset{\sim}{x}) &gt; 0\)</span>. So:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Each conditional probability given <span class="math inline">\(X_i = x_i\)</span> is defined, because <span class="math inline">\(\Pr(X_i = x_i) \ge \Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) &gt; 0\)</span>. So:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \underset{\sim}{X}= \underset{\sim}{x})
-&amp;= \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \underset{\sim}{X}= \underset{\sim}{x})}
-&amp;&amp; \text{(conditional independence given } \underset{\sim}{X}\text{)} \\
+\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})
+&amp;= \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})}
+&amp;&amp; \text{(conditional independence given } \mathord{\underset{\sim}{X}}\text{)} \\
 &amp;= \prod_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}
-&amp;&amp; \text{(each } Y_i \text{ depends on } \underset{\sim}{X}\text{ only through } X_i \text{)}
+&amp;&amp; \text{(each } Y_i \text{ depends on } \mathord{\underset{\sim}{X}}\text{ only through } X_i \text{)}
 \end{aligned}
 \]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>In regression, <span class="math inline">\(\underset{\sim}{X}\)</span> is usually the full set of covariates <span class="math inline">\((X_1, \ldots, X_n)\)</span>, and a model usually also assumes, as <a href="#/prp-cind-own-covariate" class="quarto-xref">Proposition&nbsp;2</a> does, that each <span class="math inline">\(Y_i\)</span> depends on the covariates only through its own <span class="math inline">\(X_i\)</span>. That second assumption is a separate one, not part of conditional independence.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>In regression, <span class="math inline">\(\mathord{\underset{\sim}{X}}\)</span> is usually the full set of covariates <span class="math inline">\((X_1, \ldots, X_n)\)</span>, and a model usually also assumes, as <a href="#/prp-cind-own-covariate" class="quarto-xref">Proposition&nbsp;2</a> does, that each <span class="math inline">\(Y_i\)</span> depends on the covariates only through its own <span class="math inline">\(X_i\)</span>. That second assumption is a separate one, not part of conditional independence.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
