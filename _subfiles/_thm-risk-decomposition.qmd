@@ -1,0 +1,46 @@
+:::{#thm-risk-decomposition}
+#### Squared-error risk decomposition
+
+Let $g^*(X) \eqdef \E{Y \mid X}$.
+For any prediction function $g(X)$ with $\E{g(X)^2} < \infty$:
+
+$$\popriskf{g} = \popriskf{g^*} + \E{\sqf{g(X) - g^*(X)}}$$
+
+:::
+
+::: proof
+
+The steps use
+the [squared-error risk](#def-squared-error-risk) definition,
+@lem-prediction-error-split,
+and @lem-cross-term-zero:
+
+$$
+\ba
+\popriskf{g}
+&= \E{\sqf{\prederr_g}}
+&& \text{(definition of the squared-error risk)} \\
+&= \E{\sqf{\prederr_{g^*} + \paren{g(X) - g^*(X)}}}
+&& \text{(the prediction error splits at } g^* \text{)} \\
+&= \E{\sqf{\prederr_{g^*}}} + 2 \cd \E{\prederr_{g^*}\paren{g(X) - g^*(X)}} + \E{\sqf{g(X) - g^*(X)}}
+&& \text{(expand the square; linearity of expectation)} \\
+&= \E{\sqf{\prederr_{g^*}}} + 2 \cd 0 + \E{\sqf{g(X) - g^*(X)}}
+&& \text{(the cross term is } 0 \text{)} \\
+&= \popriskf{g^*} + \E{\sqf{g(X) - g^*(X)}}
+&& \text{(definition of the squared-error risk of } g^* \text{)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-risk-decomposition}
+#### The risk decomposition in the best-predictor exercise
+
+In @exr-best-predictor,
+the constant prediction $g_1(X) = 3$ has risk $\popriskf{g_1} = 5$,
+which @thm-risk-decomposition splits as $5 = 1 + 4$:
+the risk $1$ of the conditional mean plus the excess $4$ from using $g_1$.
+
+:::

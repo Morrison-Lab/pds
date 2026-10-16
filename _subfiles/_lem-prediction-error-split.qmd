@@ -1,0 +1,39 @@
+:::{#lem-prediction-error-split}
+#### Prediction error splits at the conditional mean
+
+Let $g^*(X) \eqdef \E{Y \mid X}$.
+For any prediction function $g(X)$:
+
+$$\prederr_g = \prederr_{g^*} + \paren{g(X) - g^*(X)}$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\prederr_g
+&= g(X) - Y
+&& \text{(definition of } \prederr_g \text{)} \\
+&= \paren{g^*(X) - Y} + \paren{g(X) - g^*(X)}
+&& \text{(add and subtract } g^*(X) \text{)} \\
+&= \prederr_{g^*} + \paren{g(X) - g^*(X)}
+&& \text{(definition of } \prederr_{g^*} \text{)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-prediction-error-split}
+#### The split in the best-predictor exercise
+
+In @exr-best-predictor,
+when $X = 0$ and $Y = 0$,
+the constant prediction $g_1(X) = 3$ has prediction error $\prederr_{g_1} = 3$.
+The conditional mean is $g^*(0) = 1$,
+so $\prederr_{g^*} = 1$ and $g_1(0) - g^*(0) = 2$,
+and $3 = 1 + 2$.
+
+:::

@@ -1,0 +1,20 @@
+:::{#def-prediction-error}
+#### Prediction error
+
+For a random outcome $Y$ and a [prediction function](#def-prediction) $g(X)$,
+the **prediction error** of $g$ is the prediction minus the outcome:
+
+$$\prederr_g \eqdef g(X) - Y$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-prediction-error}
+#### Prediction error in the best-predictor exercise
+
+In @exr-best-predictor,
+the constant prediction $g_1(X) = 3$ has prediction error $\prederr_{g_1} = 3 - Y$,
+which is $3$ when $Y = 0$ and $-3$ when $Y = 6$.
+
+:::

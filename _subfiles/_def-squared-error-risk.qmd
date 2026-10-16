@@ -1,0 +1,20 @@
+:::{#def-squared-error-risk}
+#### Squared-error risk
+
+The **squared-error risk** of a prediction function $g(X)$
+is the [risk](#def-risk) under squared error loss,
+the expected square of its [prediction error](#def-prediction-error):
+
+$$\popriskf{g} \eqdef \E{\sqf{\prederr_g}}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-squared-error-risk}
+#### Squared-error risk in the best-predictor exercise
+
+In @exr-best-predictor,
+the constant prediction $g_1(X) = 3$ has squared-error risk $\popriskf{g_1} = 5$.
+
+:::

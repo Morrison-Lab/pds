@@ -1,0 +1,60 @@
+:::{#lem-cross-term-zero}
+#### The conditional mean's error is uncorrelated with any function of the input
+
+Let $g^*(X) \eqdef \E{Y \mid X}$.
+For any prediction function $g(X)$ with $\E{g(X)^2} < \infty$:
+
+$$\E{\prederr_{g^*} \cd \paren{g(X) - g^*(X)}} = 0$$
+
+:::
+
+::: proof
+
+Because $g(X) - g^*(X)$ is a function of $X$,
+by @thm-cond-pull-out it factors out of the conditional expectation:
+
+$$
+\ba
+\E{\prederr_{g^*}\paren{g(X) - g^*(X)} \mid X}
+&= \paren{g(X) - g^*(X)} \cd \E{\prederr_{g^*} \mid X}
+&& \text{(a function of } X \text{ factors out)} \\
+&= \paren{g(X) - g^*(X)} \cd \E{g^*(X) - Y \mid X}
+&& \text{(definition of } \prederr_{g^*} \text{)} \\
+&= \paren{g(X) - g^*(X)} \cd \paren{\E{g^*(X) \mid X} - \E{Y \mid X}}
+&& \text{(linearity of conditional expectation)} \\
+&= \paren{g(X) - g^*(X)} \cd \paren{g^*(X) - g^*(X)}
+&& \text{(a function of } X \text{ is its own conditional mean, and definition of } g^*(X) \text{)} \\
+&= 0
+&& \text{(evaluate)}
+\ea
+$$
+
+By the law of iterated expectations (@thm-lie):
+
+$$
+\ba
+\E{\prederr_{g^*}\paren{g(X) - g^*(X)}}
+&= \E{\E{\prederr_{g^*}\paren{g(X) - g^*(X)} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{0}
+&& \text{(the conditional expectation is } 0 \text{)} \\
+&= 0
+&& \text{(expectation of a constant)}
+\ea
+$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-cross-term-zero}
+#### The vanishing cross term in the best-predictor exercise
+
+In @exr-best-predictor, take $g_1(X) = 3$.
+When $X = 0$, $g^*(0) = 1$, so $g_1(0) - g^*(0) = 2$,
+and $\prederr_{g^*} = 1 - Y$ is $1$ or $-1$ with equal probability,
+so the product has conditional mean $0$.
+The same cancellation happens when $X = 1$,
+so the expectation of the product is $0$.
+
+:::
