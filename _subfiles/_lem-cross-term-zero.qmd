@@ -1,29 +1,29 @@
 :::{#lem-cross-term-zero}
 #### The conditional mean's error is uncorrelated with any function of the input
 
-Let $g^*(\Predvar) \eqdef \E{\Outvar \mid \Predvar}$.
-For any prediction function $g(\Predvar)$ with $\E{g(\Predvar)^2} < \infty$:
+Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
+For any prediction function $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
-$$\E{\prederr_{g^*} \cd \paren{g(\Predvar) - g^*(\Predvar)}} = 0$$
+$$\E{\prederr_{\bestpredfn} \cd \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}} = 0$$
 
 :::
 
 ::: proof
 
-Because $g(\Predvar) - g^*(\Predvar)$ is a function of $\Predvar$,
+Because $\predfnf{\Predvar} - \bestpredfnf{\Predvar}$ is a function of $\Predvar$,
 by @thm-cond-pull-out it factors out of the conditional expectation:
 
 $$
 \ba
-\E{\prederr_{g^*}\paren{g(\Predvar) - g^*(\Predvar)} \mid \Predvar}
-&= \paren{g(\Predvar) - g^*(\Predvar)} \cd \E{\prederr_{g^*} \mid \Predvar}
+\E{\prederr_{\bestpredfn}\paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}} \mid \Predvar}
+&= \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}} \cd \E{\prederr_{\bestpredfn} \mid \Predvar}
 && \text{(a function of } \Predvar \text{ factors out)} \\
-&= \paren{g(\Predvar) - g^*(\Predvar)} \cd \E{g^*(\Predvar) - \Outvar \mid \Predvar}
-&& \text{(definition of } \prederr_{g^*} \text{)} \\
-&= \paren{g(\Predvar) - g^*(\Predvar)} \cd \paren{\E{g^*(\Predvar) \mid \Predvar} - \E{\Outvar \mid \Predvar}}
+&= \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}} \cd \E{\bestpredfnf{\Predvar} - \Outvar \mid \Predvar}
+&& \text{(definition of } \prederr_{\bestpredfn} \text{)} \\
+&= \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}} \cd \paren{\E{\bestpredfnf{\Predvar} \mid \Predvar} - \E{\Outvar \mid \Predvar}}
 && \text{(linearity of conditional expectation)} \\
-&= \paren{g(\Predvar) - g^*(\Predvar)} \cd \paren{g^*(\Predvar) - g^*(\Predvar)}
-&& \text{(a function of } \Predvar \text{ is its own conditional mean, and definition of } g^*(\Predvar) \text{)} \\
+&= \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}} \cd \paren{\bestpredfnf{\Predvar} - \bestpredfnf{\Predvar}}
+&& \text{(a function of } \Predvar \text{ is its own conditional mean, and definition of } \bestpredfnf{\Predvar} \text{)} \\
 &= 0
 && \text{(evaluate)}
 \ea
@@ -33,8 +33,8 @@ By the law of iterated expectations (@thm-lie):
 
 $$
 \ba
-\E{\prederr_{g^*}\paren{g(\Predvar) - g^*(\Predvar)}}
-&= \E{\E{\prederr_{g^*}\paren{g(\Predvar) - g^*(\Predvar)} \mid \Predvar}}
+\E{\prederr_{\bestpredfn}\paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}
+&= \E{\E{\prederr_{\bestpredfn}\paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}} \mid \Predvar}}
 && \text{(law of iterated expectations)} \\
 &= \E{0}
 && \text{(the conditional expectation is } 0 \text{)} \\
@@ -50,9 +50,9 @@ $$
 :::{#exm-cross-term-zero}
 #### The vanishing cross term in the best-predictor exercise
 
-In @exr-best-predictor, take $g_1(\Predvar) = 3$.
-When $\Predvar = 0$, $g^*(0) = 1$, so $g_1(0) - g^*(0) = 2$,
-and $\prederr_{g^*} = 1 - \Outvar$ is $1$ or $-1$ with equal probability,
+In @exr-best-predictor, take $\predfn_1\paren{\Predvar} = 3$.
+When $\Predvar = 0$, $\bestpredfnf{0} = 1$, so $\predfn_1\paren{0} - \bestpredfnf{0} = 2$,
+and $\prederr_{\bestpredfn} = 1 - \Outvar$ is $1$ or $-1$ with equal probability,
 so the product has conditional mean $0$.
 The same cancellation happens when $\Predvar = 1$,
 so the expectation of the product is $0$.

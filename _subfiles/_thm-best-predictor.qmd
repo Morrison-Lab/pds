@@ -2,12 +2,12 @@
 #### Conditional mean minimizes squared-error risk
 
 Let $\Predvar$ and $\Outvar$ be jointly distributed random variables with $\E{\Outvar^2} < \infty$.
-Let $g^*(\Predvar) \eqdef \E{\Outvar \mid \Predvar}$.
-Then for any prediction function $g(\Predvar)$ with $\E{g(\Predvar)^2} < \infty$:
+Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
+Then for any prediction function $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
-$$\popriskf{g} \ge \popriskf{g^*}$$
+$$\popriskf{\predfn} \ge \popriskf{\bestpredfn}$$
 
-with equality if and only if $\P(g(\Predvar) = g^*(\Predvar)) = 1$.
+with equality if and only if $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
 That is, the conditional expectation function $\E{\Outvar \mid \Predvar}$
 minimizes the [squared-error risk](#def-squared-error-risk) among all prediction functions of $\Predvar$.
 
@@ -19,17 +19,17 @@ By @thm-risk-decomposition:
 
 $$
 \ba
-\popriskf{g} - \popriskf{g^*}
-&= \E{\sqf{g(\Predvar) - g^*(\Predvar)}}
+\popriskf{\predfn} - \popriskf{\bestpredfn}
+&= \E{\sqf{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}
 && \text{(squared-error risk decomposition)} \\
 &\ge 0
 && \text{(the expectation of a non-negative variable)}
 \ea
 $$
 
-The expectation of the non-negative variable $\sqf{g(\Predvar) - g^*(\Predvar)}$ is zero
+The expectation of the non-negative variable $\sqf{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}$ is zero
 if and only if the variable is $0$ with probability $1$,
-meaning $\P(g(\Predvar) = g^*(\Predvar)) = 1$.
+meaning $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
 
 :::
 
@@ -39,9 +39,9 @@ meaning $\P(g(\Predvar) = g^*(\Predvar)) = 1$.
 #### The best predictor in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $g_1(\Predvar) = 3$ has risk $\popriskf{g_1} = 5$,
-which is larger than the risk $\popriskf{g^*} = 1$ of the conditional mean,
-and strictly so because $g_1(\Predvar) \ne g^*(\Predvar)$.
+the constant prediction $\predfn_1\paren{\Predvar} = 3$ has risk $\popriskf{\predfn_1} = 5$,
+which is larger than the risk $\popriskf{\bestpredfn} = 1$ of the conditional mean,
+and strictly so because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Predvar}$.
 
 :::
 
@@ -63,8 +63,8 @@ is the **irreducible risk**.
 #### The irreducible risk does not depend on the prediction function
 
 The irreducible risk depends only on the joint distribution of $(\Predvar, \Outvar)$
-and not on the prediction function $g$,
-so no choice of $g$ can achieve a smaller risk.
+and not on the prediction function $\predfn$,
+so no choice of $\predfn$ can achieve a smaller risk.
 
 :::
 
@@ -85,9 +85,9 @@ so the irreducible risk is $\E{\Var{\Outvar \mid \Predvar}} = 1$.
 #### Reducible risk
 
 In the squared-error risk decomposition of @thm-risk-decomposition,
-the excess risk from choosing the prediction function $g$ instead of the conditional mean,
+the excess risk from choosing the prediction function $\predfn$ instead of the conditional mean,
 
-$$\E{\sqf{\E{\Outvar \mid \Predvar} - g(\Predvar)}} \ge 0$$
+$$\E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}} \ge 0$$
 
 is the **reducible risk**.
 
@@ -96,7 +96,7 @@ is the **reducible risk**.
 ::: {#rem-reducible-risk}
 #### When the reducible risk is zero
 
-The reducible risk is zero if and only if $\P(g(\Predvar) = \E{\Outvar \mid \Predvar}) = 1$.
+The reducible risk is zero if and only if $\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1$.
 
 :::
 
@@ -106,8 +106,8 @@ The reducible risk is zero if and only if $\P(g(\Predvar) = \E{\Outvar \mid \Pre
 #### Reducible risk in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $g_1(\Predvar) = 3$ has reducible risk $5 - 1 = 4$,
-and the prediction $g_2(\Predvar) = 4\Predvar$ has reducible risk $2 - 1 = 1$.
+the constant prediction $\predfn_1\paren{\Predvar} = 3$ has reducible risk $5 - 1 = 4$,
+and the prediction $\predfn_2\paren{\Predvar} = 4\Predvar$ has reducible risk $2 - 1 = 1$.
 
 :::
 
@@ -116,7 +116,7 @@ and the prediction $g_2(\Predvar) = 4\Predvar$ has reducible risk $2 - 1 = 1$.
 This characterization of the best predictor under squared error loss follows @hastie2009elements [Section 2.4, eq. 2.11].
 The risk identity in @thm-risk-decomposition
 
-$$\E{\sqf{\Outvar - g(\Predvar)}} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} + \E{\sqf{\E{\Outvar \mid \Predvar} - g(\Predvar)}}$$
+$$\E{\sqf{\Outvar - \predfnf{\Predvar}}} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} + \E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}}$$
 
 shows that the total squared-error risk is the sum of the
 irreducible risk (@def-irreducible-risk)

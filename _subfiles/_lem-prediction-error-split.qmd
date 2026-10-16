@@ -1,10 +1,10 @@
 :::{#lem-prediction-error-split}
 #### Prediction error splits at the conditional mean
 
-Let $g^*(\Predvar) \eqdef \E{\Outvar \mid \Predvar}$.
-For any prediction function $g(\Predvar)$:
+Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
+For any prediction function $\predfnf{\Predvar}$:
 
-$$\prederr_g = \prederr_{g^*} + \paren{g(\Predvar) - g^*(\Predvar)}$$
+$$\prederr_{\predfn} = \prederr_{\bestpredfn} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}$$
 
 :::
 
@@ -12,13 +12,13 @@ $$\prederr_g = \prederr_{g^*} + \paren{g(\Predvar) - g^*(\Predvar)}$$
 
 $$
 \ba
-\prederr_g
-&= g(\Predvar) - \Outvar
-&& \text{(definition of } \prederr_g \text{)} \\
-&= \paren{g^*(\Predvar) - \Outvar} + \paren{g(\Predvar) - g^*(\Predvar)}
-&& \text{(add and subtract } g^*(\Predvar) \text{)} \\
-&= \prederr_{g^*} + \paren{g(\Predvar) - g^*(\Predvar)}
-&& \text{(definition of } \prederr_{g^*} \text{)}
+\prederr_{\predfn}
+&= \predfnf{\Predvar} - \Outvar
+&& \text{(definition of } \prederr_{\predfn} \text{)} \\
+&= \paren{\bestpredfnf{\Predvar} - \Outvar} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}
+&& \text{(add and subtract } \bestpredfnf{\Predvar} \text{)} \\
+&= \prederr_{\bestpredfn} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}
+&& \text{(definition of } \prederr_{\bestpredfn} \text{)}
 \ea
 $$
 
@@ -31,9 +31,9 @@ $$
 
 In @exr-best-predictor,
 when $\Predvar = 0$ and $\Outvar = 0$,
-the constant prediction $g_1(\Predvar) = 3$ has prediction error $\prederr_{g_1} = 3$.
-The conditional mean is $g^*(0) = 1$,
-so $\prederr_{g^*} = 1$ and $g_1(0) - g^*(0) = 2$,
+the constant prediction $\predfn_1\paren{\Predvar} = 3$ has prediction error $\prederr_{\predfn_1} = 3$.
+The conditional mean is $\bestpredfnf{0} = 1$,
+so $\prederr_{\bestpredfn} = 1$ and $\predfn_1\paren{0} - \bestpredfnf{0} = 2$,
 and $3 = 1 + 2$.
 
 :::

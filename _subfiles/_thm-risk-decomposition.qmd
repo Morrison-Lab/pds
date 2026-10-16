@@ -1,10 +1,10 @@
 :::{#thm-risk-decomposition}
 #### Squared-error risk decomposition
 
-Let $g^*(\Predvar) \eqdef \E{\Outvar \mid \Predvar}$.
-For any prediction function $g(\Predvar)$ with $\E{g(\Predvar)^2} < \infty$:
+Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$.
+For any prediction function $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
-$$\popriskf{g} = \popriskf{g^*} + \E{\sqf{g(\Predvar) - g^*(\Predvar)}}$$
+$$\popriskf{\predfn} = \popriskf{\bestpredfn} + \E{\sqf{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}$$
 
 :::
 
@@ -17,17 +17,17 @@ and @lem-cross-term-zero:
 
 $$
 \ba
-\popriskf{g}
-&= \E{\sqf{\prederr_g}}
+\popriskf{\predfn}
+&= \E{\sqf{\prederr_{\predfn}}}
 && \text{(definition of the squared-error risk)} \\
-&= \E{\sqf{\prederr_{g^*} + \paren{g(\Predvar) - g^*(\Predvar)}}}
-&& \text{(the prediction error splits at } g^* \text{)} \\
-&= \E{\sqf{\prederr_{g^*}}} + 2 \cd \E{\prederr_{g^*}\paren{g(\Predvar) - g^*(\Predvar)}} + \E{\sqf{g(\Predvar) - g^*(\Predvar)}}
+&= \E{\sqf{\prederr_{\bestpredfn} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}}
+&& \text{(the prediction error splits at } \bestpredfn \text{)} \\
+&= \E{\sqf{\prederr_{\bestpredfn}}} + 2 \cd \E{\prederr_{\bestpredfn}\paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}} + \E{\sqf{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}
 && \text{(expand the square; linearity of expectation)} \\
-&= \E{\sqf{\prederr_{g^*}}} + 2 \cd 0 + \E{\sqf{g(\Predvar) - g^*(\Predvar)}}
+&= \E{\sqf{\prederr_{\bestpredfn}}} + 2 \cd 0 + \E{\sqf{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}
 && \text{(the cross term is } 0 \text{)} \\
-&= \popriskf{g^*} + \E{\sqf{g(\Predvar) - g^*(\Predvar)}}
-&& \text{(definition of the squared-error risk of } g^* \text{)}
+&= \popriskf{\bestpredfn} + \E{\sqf{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}}
+&& \text{(definition of the squared-error risk of } \bestpredfn \text{)}
 \ea
 $$
 
@@ -39,8 +39,8 @@ $$
 #### The risk decomposition in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant prediction $g_1(\Predvar) = 3$ has risk $\popriskf{g_1} = 5$,
+the constant prediction $\predfn_1\paren{\Predvar} = 3$ has risk $\popriskf{\predfn_1} = 5$,
 which @thm-risk-decomposition splits as $5 = 1 + 4$:
-the risk $1$ of the conditional mean plus the excess $4$ from using $g_1$.
+the risk $1$ of the conditional mean plus the excess $4$ from using $\predfn_1$.
 
 :::
