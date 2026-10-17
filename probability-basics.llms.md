@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-17 02:53:21 (PDT)
+Last modified: 2026-10-17 13:34:44 (PDT)
 
 ## 1 Defining probabilities
 
@@ -44,7 +44,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Definition 4 (Random experiment)** A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome) that we have not determined in advance.
+> **Definition 4 (Random experiment)** A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome) that we have not determined in advance ([Wikipedia contributors 2026e](#ref-wikipedia_experiment_probability_theory)).
 
 > **NOTE:**
 >
@@ -71,7 +71,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes.
+> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes ([Wikipedia contributors 2026i](#ref-wikipedia_sample_space)).
 
 > **NOTE:**
 >
@@ -79,7 +79,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Definition 6 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\: a set of outcomes.
+> **Definition 6 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\ ([Wikipedia contributors 2026d](#ref-wikipedia_event_probability_theory)): a set of outcomes.
 
 > **NOTE:**
 >
@@ -146,7 +146,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Definition 11 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1:
+> **Definition 11 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 ([Wikipedia contributors 2026h](#ref-wikipedia_probability_space)):
 >
 > \\\Pr(\Omega) = 1\\
 
@@ -222,7 +222,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 (see [Wikipedia: Probability axioms](https://en.wikipedia.org/wiki/Probability_axioms)). The axiom form does not list \\\Pr(\emptyset) = 0\\; the proof above derives it.
+> *Remark*. Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 ([Wikipedia contributors 2026g](#ref-wikipedia_probability_axioms)). The axiom form does not list \\\Pr(\emptyset) = 0\\; the proof above derives it.
 
 > **NOTE:**
 >
@@ -299,7 +299,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
+> **Definition 13 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\ ([Wikipedia contributors 2026c](#ref-wikipedia_conditional_probability)), denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
 
@@ -335,7 +335,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\:
+> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\ ([Wikipedia contributors 2026f](#ref-wikipedia_law_of_total_probability)):
 >
 > \\\Pr(A) = \sum\_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)\\
 
@@ -347,7 +347,7 @@ Last modified: 2026-10-17 02:53:21 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\:
+> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\ ([Wikipedia contributors 2026b](#ref-wikipedia_bayes_theorem)):
 >
 > \\\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\\
 
@@ -518,6 +518,20 @@ brFP = (brN - brSick) * (1 - brSpec)
 >
 > 5MinuteAI’s five-minute videos follow the same course ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
+## Further reading
+
+- Wikipedia contributors ([2026i](#ref-wikipedia_sample_space)) — sample spaces and events, with examples
+
+- Wikipedia contributors ([2026h](#ref-wikipedia_probability_space)) — the sample space, events and probability measure together
+
+- Wikipedia contributors ([2026c](#ref-wikipedia_conditional_probability)) — the definition, with common misreadings
+
+- Wikipedia contributors ([2026f](#ref-wikipedia_law_of_total_probability)) — the law, with examples
+
+- Wikipedia contributors ([2026b](#ref-wikipedia_bayes_theorem)) — the theorem, its proof and its uses
+
+- Wikipedia contributors ([2026a](#ref-wikipedia_base_rate_fallacy)) — why ignoring the base rate misleads
+
 ## References
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
@@ -529,5 +543,23 @@ Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington Un
 Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
 
 Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
+
+Wikipedia contributors. 2026a. *Base Rate Fallacy — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Base_rate_fallacy>.
+
+Wikipedia contributors. 2026b. *Bayes’ Theorem — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Bayes%27_theorem>.
+
+Wikipedia contributors. 2026c. *Conditional Probability — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Conditional_probability>.
+
+Wikipedia contributors. 2026d. *Event (Probability Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Event_(probability_theory)>.
+
+Wikipedia contributors. 2026e. *Experiment (Probability Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Experiment_(probability_theory)>.
+
+Wikipedia contributors. 2026f. *Law of Total Probability — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_total_probability>.
+
+Wikipedia contributors. 2026g. *Probability Axioms — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_axioms>.
+
+Wikipedia contributors. 2026h. *Probability Space — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_space>.
+
+Wikipedia contributors. 2026i. *Sample Space — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Sample_space>.
 
 Back to top
