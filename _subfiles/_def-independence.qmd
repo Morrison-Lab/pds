@@ -2,6 +2,7 @@
 #### Statistical independence
 
 Random variables $\X1n$ are **statistically independent**
+[@wikipedia_independence_probability_theory]
 if, for all sets of real numbers $\dsn{A}$,
 the [probability](probability-basics.qmd#def-probability)
 that every $X_i$ falls in its set
@@ -194,6 +195,7 @@ $$
 #### Conditional independence
 
 Random variables $\dsn{Y}$ are **conditionally independent**
+[@wikipedia_conditional_independence]
 given a discrete random variable (or vector) $\vX$
 if, for every value $\vx$ with $\Pr(\vX = \vx) > 0$
 and all sets of real numbers $\dsn{A}$,
@@ -537,7 +539,9 @@ then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
 #### Independent and identically distributed
 
 Random variables $\dsn{X}$ are **independent and identically
-distributed** (shorthand: "$X_i\ \iid$") if they are:
+distributed** (shorthand: "$X_i\ \iid$")
+[@wikipedia_iid]
+if they are:
 
 - [statistically independent](#def-indpt), and
 - [identically distributed](#def-ident).

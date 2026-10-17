@@ -29,6 +29,14 @@ The login for the video site is posted [on Canvas](https://wwu.instructure.com/c
 following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
+## Further reading {.unnumbered}
+
+-   @wikipedia_independence_probability_theory --- independent events and random variables
+
+-   @wikipedia_conditional_independence --- conditional independence, with examples
+
+-   @wikipedia_iid --- independent and identically distributed random variables
+
 ## References {.unnumbered}
 
 ::: {#refs}
