@@ -2,7 +2,8 @@
 #### Sample space
 
 The **sample space** of a [random experiment](#def-random-experiment), denoted $\samplespace$,
-is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes.
+is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes
+[@wikipedia_sample_space].
 
 :::
 
@@ -20,7 +21,8 @@ Rolling a six-sided die once has sample space $\samplespace = \set{1, 2, 3, 4, 5
 :::{#def-event}
 #### Event
 
-An **event** is a subset of the [sample space](#def-sample-space) $\samplespace$:
+An **event** is a subset of the [sample space](#def-sample-space) $\samplespace$
+[@wikipedia_event_probability_theory]:
 a set of outcomes.
 
 :::

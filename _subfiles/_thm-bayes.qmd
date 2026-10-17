@@ -1,7 +1,8 @@
 :::{#thm-bayes}
 #### Bayes' theorem
 
-For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$:
+For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$
+[@wikipedia_bayes_theorem]:
 
 $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}$$
 

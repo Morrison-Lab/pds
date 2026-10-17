@@ -4,7 +4,8 @@
 A **probability measure** on a [sample space](#def-sample-space) $\samplespace$,
 often denoted $\Pr()$ or $\P()$,
 is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of $\samplespace$
-that gives the whole sample space probability 1:
+that gives the whole sample space probability 1
+[@wikipedia_probability_space]:
 
 $$\Pr(\samplespace) = 1$$
 
@@ -207,7 +208,7 @@ Many sources define a probability measure by these three axioms instead;
 the theorem shows that the two definitions agree.
 The axioms are named for Kolmogorov,
 who introduced them in 1933
-(see [Wikipedia: Probability axioms](https://en.wikipedia.org/wiki/Probability_axioms)).
+[@wikipedia_probability_axioms].
 The axiom form does not list $\Pr(\emptyset) = 0$;
 the proof above derives it.
 
