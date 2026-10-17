@@ -24,6 +24,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_def-experiment-outcome.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-experiment-outcome.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exm-random-experiment.qmd >}}
 
 {{< slidebreak >}}

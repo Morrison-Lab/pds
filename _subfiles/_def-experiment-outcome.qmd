@@ -1,0 +1,6 @@
+:::{#def-experiment-outcome}
+#### Outcome of a random experiment
+
+An **outcome** of a [random experiment](#def-random-experiment) is one of its possible results.
+
+:::

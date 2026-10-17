@@ -1,0 +1,8 @@
+:::{#exm-experiment-outcome}
+#### Outcomes of a die roll
+
+Rolling a six-sided die once is a [random experiment](#def-random-experiment).
+Its possible outcomes are the numbers 1, 2, 3, 4, 5 and 6,
+and one roll produces exactly one of them.
+
+:::

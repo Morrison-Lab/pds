@@ -1,15 +1,16 @@
 :::{#def-random-experiment}
 #### Random experiment
 
-A **random experiment** is a procedure that produces exactly one outcome
-out of several possible outcomes,
-where which outcome it will produce is not determined in advance.
+A **random experiment** is a procedure that produces exactly one result
+out of several possible results,
+where which result it will produce is not determined in advance.
 
 :::
 
 ::: {.remark .notes}
 
-The possible outcomes are collected in the [sample space](#def-sample-space).
+The possible results are the experiment's [outcomes](#def-experiment-outcome),
+and they are collected in the [sample space](#def-sample-space).
 Physical procedures, such as rolling a die, and sampling procedures,
 such as picking a unit from a data set without looking, are both random experiments.
 
