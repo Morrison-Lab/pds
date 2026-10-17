@@ -11,10 +11,6 @@ $$\P(X=x) \eqdef \Pr(\{X=x\})$$
 
 :::
 
-::: {.remark .notes}
-
-:::
-
 {{< slidebreak >}}
 
 :::{#exm-pmf}
@@ -111,10 +107,6 @@ is a function $f$ that satisfies
 - The integral of $f$ over any interval
   is the [probability](probability-basics.qmd#def-probability) that $X$ falls in that interval:
   $$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
-
-:::
-
-::: {.remark .notes}
 
 :::
 
