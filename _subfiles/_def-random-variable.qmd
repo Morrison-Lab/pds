@@ -3,7 +3,8 @@
 
 A **random variable** is a [function](https://morrison-lab.github.io/mds/functions.html#def-function)
 from a [sample space](probability-basics.qmd#def-sample-space) $\samplespace$
-to the real numbers $\reals$:
+to the real numbers $\reals$
+[@wikipedia_random_variable]:
 it assigns a number to each possible outcome of a [random experiment](probability-basics.qmd#def-random-experiment).
 
 :::
@@ -17,8 +18,6 @@ and similarly for $\{X \le x\}$ and other conditions on $X$.
 A fully rigorous definition also requires the function to be *measurable*,
 so that every such set is an event with a probability;
 that requirement never binds in these notes.
-
-See also: <https://en.wikipedia.org/wiki/Random_variable>
 
 :::
 

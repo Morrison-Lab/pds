@@ -4,7 +4,8 @@
 The **survival function** (or **survivor function**)
 of a random variable $T$,
 denoted $\surv(t)$,
-is the probability that $T$ exceeds $t$:
+is the probability that $T$ exceeds $t$
+[@wikipedia_survival_function]:
 
 $$\surv(t) \eqdef \Pr(T > t)$$
 

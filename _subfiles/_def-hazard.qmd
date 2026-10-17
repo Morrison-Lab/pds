@@ -4,6 +4,7 @@
 The **hazard function** (also called the **hazard rate** or **hazard rate function**)
 of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$,
 typically denoted $\haz(t)$ or $\h(t)$,
+[@wikipedia_failure_rate]
 is the limit of the [conditional probability](probability-basics.qmd#def-conditional-prob)
 that $T$ falls in an interval starting at $t$, given $T \ge t$,
 divided by the width of that interval,

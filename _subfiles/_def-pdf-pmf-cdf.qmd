@@ -4,15 +4,14 @@
 If $X$ is a [discrete random variable](#def-discrete-rv),
 the **probability mass function** of $X$ at value $x$,
 denoted $f(x)$, $f_X(x)$, $\P(x)$, $\P_X(x)$, or $\P(X=x)$,
-is the probability that $X$ takes exactly the value $x$:
+is the probability that $X$ takes exactly the value $x$
+[@wikipedia_probability_mass_function]:
 
 $$\P(X=x) \eqdef \Pr(\{X=x\})$$
 
 :::
 
 ::: {.remark .notes}
-
-See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
 :::
 
@@ -34,7 +33,9 @@ $$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \t
 #### Bernoulli distribution
 
 A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\prob \in [0, 1]$,
-written $X \sim \Ber(\prob)$, if:
+written $X \sim \Ber(\prob)$
+[@wikipedia_bernoulli_distribution],
+if:
 
 $$
 \ba
@@ -103,7 +104,8 @@ so $X_1 \sim \Ber(1/2)$.
 If $X$ is a [continuous random variable](#def-continuous-rv),
 a **probability density function** of $X$,
 denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
-is a function $f$ that satisfies:
+is a function $f$ that satisfies
+[@wikipedia_probability_density_function]:
 
 - $f(x) \ge 0$ for every $x$.
 - The integral of $f$ over any interval
@@ -113,9 +115,6 @@ is a function $f$ that satisfies:
 :::
 
 ::: {.remark .notes}
-
-See also
-<https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
 
 :::
 
@@ -144,7 +143,8 @@ with $\measure$ the length),
 with $\lowend < \highend$,
 is the distribution of a random variable $X$,
 written $X \sim \text{Uniform}(\lowend, \highend)$,
-that is continuous with [density](#def-pdf):
+that is continuous with [density](#def-pdf)
+[@wikipedia_continuous_uniform_distribution]:
 
 $$
 f(x) \eqdef \begin{cases}
@@ -258,7 +258,8 @@ do not arise in applications.
 A random variable $X$ has the **normal distribution**
 (or **Gaussian distribution**)
 with mean parameter $\mean \in \reals$ and variance parameter $\ss > 0$,
-written $X \sim \ndist{\mean, \ss}$,
+written $X \sim \ndist{\mean, \ss}$
+[@wikipedia_normal_distribution],
 if $X$ is continuous with [density](#def-pdf):
 
 $$\p(X=x) \eqdef \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}, \quad x \in \reals$$
@@ -357,6 +358,7 @@ so each is $\tfrac{1}{2}$.
 #### Exponential distribution
 
 A random variable $T$ has the **exponential distribution** with rate $\rate > 0$
+[@wikipedia_exponential_distribution]
 if $T$ is continuous with [density](#def-pdf):
 
 $$
@@ -398,7 +400,9 @@ With $\rate = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.3
 #### Cumulative distribution function (CDF)
 
 For a random variable $X$ (discrete or continuous),
-its **cumulative distribution function** is:
+its **cumulative distribution function**
+[@wikipedia_cumulative_distribution_function]
+is:
 
 $$\cdff{t} \eqdef \Pr(X\le t), \quad t\in\reals.$$
 
@@ -407,8 +411,6 @@ $$\cdff{t} \eqdef \Pr(X\le t), \quad t\in\reals.$$
 ::: {.remark .notes}
 
 The CDF is always defined, whether $X$ is discrete or continuous.
-
-See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 
 :::
 
@@ -507,8 +509,8 @@ and every set built from intervals by countably many unions, intersections, and 
 ::: {.remark .notes}
 
 The proof needs measure theory beyond these notes
-[@billingsley1995probability];
-see also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
+[@billingsley1995probability;
+@wikipedia_cumulative_distribution_function].
 
 :::
 
@@ -964,7 +966,8 @@ The **joint distribution** of
 [jointly distributed](#def-jointly-distributed) random variables $\X1n$
 is the function that assigns to each set $A \subseteq \reals^n$
 for which $\{(\X1n) \in A\}$ is an [event](probability-basics.qmd#def-event)
-the probability $\Pr((\X1n) \in A)$.
+the probability $\Pr((\X1n) \in A)$
+[@wikipedia_joint_probability_distribution].
 
 :::
 
@@ -1053,7 +1056,8 @@ When a random variable $X$ is one of several
 [jointly distributed](#def-jointly-distributed) random variables,
 the distribution of $X$ by itself
 (its CDF, and its PMF or density)
-is called the **marginal distribution** of $X$.
+is called the **marginal distribution** of $X$
+[@wikipedia_marginal_distribution].
 
 :::
 
