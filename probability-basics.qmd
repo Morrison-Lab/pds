@@ -18,9 +18,37 @@ format:
 
 []{#sec-prob-axioms}
 
-<!-- No slidebreak here: the heading shares its slide with the def-random-experiment div. -->
+<!-- No slidebreak here: the heading shares its slide with the def-step div. -->
+
+{{< include pds/_subfiles/_def-step.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-step.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-procedure.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-procedure.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-experiment-outcome.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-experiment-outcome.qmd >}}
+
+{{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-random-experiment.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-random-experiment-die.qmd >}}
 
 {{< slidebreak >}}
 

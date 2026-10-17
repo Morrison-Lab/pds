@@ -1,9 +1,8 @@
 :::{#def-random-experiment}
 #### Random experiment
 
-A **random experiment** is a procedure that produces exactly one outcome
-out of several possible outcomes,
-where which outcome it will produce is not determined in advance.
+A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome)
+that we have not determined in advance.
 
 :::
 

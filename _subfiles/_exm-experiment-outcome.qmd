@@ -1,0 +1,8 @@
+:::{#exm-experiment-outcome}
+#### Outcomes of a die roll
+
+The [procedure](#def-procedure) in @exm-procedure ends with one number facing up.
+Each of the numbers 1, 2, 3, 4, 5 and 6 is an outcome,
+and one roll ends in exactly one of them.
+
+:::

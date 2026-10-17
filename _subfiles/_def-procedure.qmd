@@ -1,0 +1,6 @@
+:::{#def-procedure}
+#### Procedure
+
+A **procedure** is a list of instructions that can be followed, one [step](#def-step) at a time, until they are finished.
+
+:::

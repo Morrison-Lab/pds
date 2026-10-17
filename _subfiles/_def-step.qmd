@@ -1,0 +1,6 @@
+:::{#def-step}
+#### Step
+
+A **step** is the carrying out of one instruction.
+
+:::

@@ -1,0 +1,8 @@
+:::{#exm-random-experiment-die}
+#### Rolling a die as a random experiment
+
+The [procedure](#def-procedure) in @exm-procedure is a random experiment:
+it ends in exactly one of the [outcomes](#def-experiment-outcome) 1, 2, 3, 4, 5 or 6 (@exm-experiment-outcome),
+and we do not determine in advance which outcome the procedure will produce.
+
+:::
