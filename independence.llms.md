@@ -4,11 +4,11 @@ Code
 
 Published
 
-Last modified: 2026-10-17 13:43:25 (PDT)
+Last modified: 2026-10-17 13:49:30 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Statistical independence)** Random variables \\X_1, \ldots, X_n\\ are **statistically independent** if, for all sets of real numbers \\A_1, \ldots, A_n\\, the [probability](probability-basics.llms.md#def-probability) that every \\X_i\\ falls in its set is the product of the individual probabilities:
+> **Definition 1 (Statistical independence)** Random variables \\X_1, \ldots, X_n\\ are **statistically independent** ([Wikipedia contributors 2026b](#ref-wikipedia_independence_probability_theory)) if, for all sets of real numbers \\A_1, \ldots, A_n\\, the [probability](probability-basics.llms.md#def-probability) that every \\X_i\\ falls in its set is the product of the individual probabilities:
 >
 > \\\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prod\_{i=1}^n{\Pr(X_i \in A_i)}\\
 
@@ -66,7 +66,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Conditional independence)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent** given a discrete random variable (or vector) \\\mathord{\underset{\sim}{X}}\\ if, for every value \\\mathord{\underset{\sim}{x}}\\ with \\\Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \> 0\\ and all sets of real numbers \\A_1, \ldots, A_n\\, the conditional probability that every \\Y_i\\ falls in its set is the product of the individual conditional probabilities:
+> **Definition 2 (Conditional independence)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent** ([Wikipedia contributors 2026a](#ref-wikipedia_conditional_independence)) given a discrete random variable (or vector) \\\mathord{\underset{\sim}{X}}\\ if, for every value \\\mathord{\underset{\sim}{x}}\\ with \\\Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \> 0\\ and all sets of real numbers \\A_1, \ldots, A_n\\, the conditional probability that every \\Y_i\\ falls in its set is the product of the individual conditional probabilities:
 >
 > \\\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})}\\
 >
@@ -193,7 +193,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Independent and identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) if they are:
+> **Definition 5 (Independent and identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) ([Wikipedia contributors 2026c](#ref-wikipedia_iid)) if they are:
 >
 > - [statistically independent](#def-indpt), and
 > - [identically distributed](#def-ident).
@@ -226,6 +226,14 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 >
 > 5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes, following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
 
+## Further reading
+
+- Wikipedia contributors ([2026b](#ref-wikipedia_independence_probability_theory)) — independent events and random variables
+
+- Wikipedia contributors ([2026a](#ref-wikipedia_conditional_independence)) — conditional independence, with examples
+
+- Wikipedia contributors ([2026c](#ref-wikipedia_iid)) — independent and identically distributed random variables
+
 ## References
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
@@ -237,5 +245,11 @@ Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengag
 Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
 
 Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
+
+Wikipedia contributors. 2026a. *Conditional Independence — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Conditional_independence>.
+
+Wikipedia contributors. 2026b. *Independence (Probability Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Independence_(probability_theory)>.
+
+Wikipedia contributors. 2026c. *Independent and Identically Distributed Random Variables — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables>.
 
 Back to top

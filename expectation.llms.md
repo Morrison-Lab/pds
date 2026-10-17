@@ -14,11 +14,11 @@ Code
 
 Published
 
-Last modified: 2026-10-17 13:43:25 (PDT)
+Last modified: 2026-10-17 13:49:30 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Expectation, expected value, population mean)** The **expectation**, **expected value**, or **population mean** of a *discrete* random variable \\X\\, denoted \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\, \\\mu(X)\\, or \\\mu_X\\, is the mean of \\X\\’s possible values, weighted by the [probability mass function](random-variables.llms.md#def-pmf) of those values:
+> **Definition 1 (Expectation, expected value, population mean)** The **expectation**, **expected value**, or **population mean** of a *discrete* random variable \\X\\, denoted \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\, \\\mu(X)\\, or \\\mu_X\\, is the mean of \\X\\’s possible values ([Wikipedia contributors 2026d](#ref-wikipedia_expected_value)), weighted by the [probability mass function](random-variables.llms.md#def-pmf) of those values:
 >
 > \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \stackrel{\text{def}}{=}\sum\_{x \in \mathcal{R}(X)} x \cdot \operatorname{P}(X=x)\\
 >
@@ -27,10 +27,6 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 > \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \stackrel{\text{def}}{=}\int\_{x\in \mathcal{R}(X)} x \cdot \operatorname{p}(X=x)\\dx\\
 >
 > In both cases, the expectation is defined only when the sum or integral converges absolutely, that is, when it is finite with \\\mathopen{}\left\|x\right\|\mathclose{}\\ in place of \\x\\.
-
-> **NOTE:**
->
-> *Remark*. See also <https://en.wikipedia.org/wiki/Expected_value>
 
 > **NOTE:**
 >
@@ -94,7 +90,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 3 (Law of the Unconscious Statistician (LOTUS))** **Discrete case.** For any function \\g\\ of a *discrete* random variable \\X\\:
+> **Theorem 3 (Law of the Unconscious Statistician (LOTUS))** **Discrete case.** For any function \\g\\ of a *discrete* random variable \\X\\ ([Wikipedia contributors 2026e](#ref-wikipedia_law_of_the_unconscious_statistician)):
 >
 > \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{} = \sum\_{x \in \mathcal{R}(X)} g(x) \cdot\operatorname{P}(X=x)\\
 >
@@ -112,7 +108,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{}\\, we do not need to first find the distribution of \\g(X)\\; we can compute the expectation directly using the distribution of \\X\\. The continuous case is the density-weighted analogue of this argument, but a fully rigorous proof needs the general change-of-variables theorem for integrals against a pushforward measure — approximating \\g\\ by simple functions and passing to the limit — which is beyond this page’s scope ([Billingsley 1995](#ref-billingsley1995probability); [Gut 2013](#ref-gut2013); [Casella and Berger 2002](#ref-CaseBerg01); [Wikipedia contributors 2026](#ref-wp:lotus)).
+> *Remark*. LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{}\\, we do not need to first find the distribution of \\g(X)\\; we can compute the expectation directly using the distribution of \\X\\. The continuous case is the density-weighted analogue of this argument, but a fully rigorous proof needs the general change-of-variables theorem for integrals against a pushforward measure — approximating \\g\\ by simple functions and passing to the limit — which is beyond this page’s scope ([Billingsley 1995](#ref-billingsley1995probability); [Gut 2013](#ref-gut2013); [Casella and Berger 2002](#ref-CaseBerg01); [Wikipedia contributors 2026f](#ref-wp:lotus)).
 
 > **NOTE:**
 >
@@ -1137,7 +1133,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\.
+> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\ ([Wikipedia contributors 2026g](#ref-wikipedia_loss_function)).
 
 > **NOTE:**
 >
@@ -1151,7 +1147,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 11 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function):
+> **Definition 11 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the expectation of the [loss](#def-loss-function) ([Wikipedia contributors 2026h](#ref-wikipedia_risk_function)):
 >
 > \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat y)\right\]\mathclose{}\\
 
@@ -1379,7 +1375,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 19 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\:
+> **Definition 19 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\ ([Wikipedia contributors 2026c](#ref-wikipedia_entropy_information_theory)):
 >
 > \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
 >
@@ -1411,7 +1407,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 20 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ is
+> **Definition 20 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ ([Wikipedia contributors 2026b](#ref-wikipedia_cross_entropy)) is
 >
 > \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1447,6 +1443,22 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 >
 > *Remark 8* (Where the definitions come from). Murphy ([2012, sec. 2.8.2](#ref-murphy2012mlpp), pp. 57–58) defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
+## Further reading
+
+- Wikipedia contributors ([2026d](#ref-wikipedia_expected_value)) — the expectation, its properties and examples
+
+- Wikipedia contributors ([2026e](#ref-wikipedia_law_of_the_unconscious_statistician)) — the expectation of a function of a random variable
+
+- Wikipedia contributors ([2026a](#ref-wikipedia_conditional_expectation)) — conditional expectation and its properties
+
+- Wikipedia contributors ([2026g](#ref-wikipedia_loss_function)) — loss functions in statistics and machine learning
+
+- Wikipedia contributors ([2026h](#ref-wikipedia_risk_function)) — the risk as an expected loss
+
+- Wikipedia contributors ([2026c](#ref-wikipedia_entropy_information_theory)) — entropy, with examples
+
+- Wikipedia contributors ([2026b](#ref-wikipedia_cross_entropy)) — cross-entropy and its use as a loss
+
 ## References
 
 Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
@@ -1467,6 +1479,20 @@ Rudin, Walter. 1976. *Principles of Mathematical Analysis*. 3rd ed. Internationa
 
 Soch, Joram. 2020. *Proof: Expected Value of a Non-Negative Random Variable*. The Book of Statistical Proofs. <https://doi.org/10.5281/zenodo.4305949>.
 
-Wikipedia contributors. 2026. *Law of the Unconscious Statistician — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>.
+Wikipedia contributors. 2026a. *Conditional Expectation — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Conditional_expectation>.
+
+Wikipedia contributors. 2026b. *Cross-Entropy — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Cross-entropy>.
+
+Wikipedia contributors. 2026c. *Entropy (Information Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Entropy_(information_theory)>.
+
+Wikipedia contributors. 2026d. *Expected Value — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Expected_value>.
+
+Wikipedia contributors. 2026f. *Law of the Unconscious Statistician — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>.
+
+Wikipedia contributors. 2026e. *Law of the Unconscious Statistician — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>.
+
+Wikipedia contributors. 2026g. *Loss Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Loss_function>.
+
+Wikipedia contributors. 2026h. *Risk Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Risk_function>.
 
 Back to top

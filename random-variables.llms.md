@@ -4,19 +4,17 @@ Code
 
 Published
 
-Last modified: 2026-10-17 13:43:25 (PDT)
+Last modified: 2026-10-17 13:49:30 (PDT)
 
 ## 1 Random variables
 
 > **NOTE:**
 >
-> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\: it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
+> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\ ([Wikipedia contributors 2026l](#ref-wikipedia_random_variable)): it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
 
 > **NOTE:**
 >
 > *Remark*. We use uppercase letters (\\X\\, \\Y\\, \\Z\\, …) for random variables, and lowercase letters (\\x\\, \\y\\, \\z\\, …) for their realized (observed) values. We write \\\\X = x\\\\ for the event \\\\\omega\in \Omega: X(\omega) = x\\\\, and similarly for \\\\X \le x\\\\ and other conditions on \\X\\. A fully rigorous definition also requires the function to be *measurable*, so that every such set is an event with a probability; that requirement never binds in these notes.
->
-> See also: <https://en.wikipedia.org/wiki/Random_variable>
 
 > **NOTE:**
 >
@@ -96,13 +94,9 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\:
+> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ ([Wikipedia contributors 2026j](#ref-wikipedia_probability_mass_function)):
 >
 > \\\operatorname{P}(X=x) \stackrel{\text{def}}{=}\Pr(\\X=x\\)\\
-
-> **NOTE:**
->
-> *Remark*. See also <https://en.wikipedia.org/wiki/Probability_mass_function>
 
 > **NOTE:**
 >
@@ -112,7 +106,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\, if:
+> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\ ([Wikipedia contributors 2026a](#ref-wikipedia_bernoulli_distribution)), if:
 >
 > \\ \begin{aligned} \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}}\pi^x(1-\pi)^{1-x}\\ &= \begin{cases} \pi, & x=1\\ 1-\pi, & x=0 \end{cases} \end{aligned} \\
 
@@ -138,14 +132,10 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 7 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies:
+> **Definition 7 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies ([Wikipedia contributors 2026i](#ref-wikipedia_probability_density_function)):
 >
 > - \\f(x) \ge 0\\ for every \\x\\.
 > - The integral of \\f\\ over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval: \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
-
-> **NOTE:**
->
-> *Remark*. See also <https://en.wikipedia.org/wiki/Probability_density_function#Formal_definition>
 
 > **NOTE:**
 >
@@ -155,7 +145,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 9 (Uniform distribution on an interval)** The **uniform distribution** on an interval \\\[\alpha, \beta\]\\ ([Definition 8](#def-uniform-set) with \\\mu\\ the length), with \\\alpha\< \beta\\, is the distribution of a random variable \\X\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, that is continuous with [density](#def-pdf):
+> **Definition 9 (Uniform distribution on an interval)** The **uniform distribution** on an interval \\\[\alpha, \beta\]\\ ([Definition 8](#def-uniform-set) with \\\mu\\ the length), with \\\alpha\< \beta\\, is the distribution of a random variable \\X\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, that is continuous with [density](#def-pdf) ([Wikipedia contributors 2026b](#ref-wikipedia_continuous_uniform_distribution)):
 >
 > \\ f(x) \stackrel{\text{def}}{=}\begin{cases} \frac{1}{\beta- \alpha}, & \alpha\le x \le \beta\\ 0, & \text{otherwise} \end{cases} \\
 
@@ -195,7 +185,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\, if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\ ([Wikipedia contributors 2026h](#ref-wikipedia_normal_distribution)), if \\X\\ is continuous with [density](#def-pdf):
 >
 > \\\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\\
 
@@ -235,7 +225,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 12 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ if \\T\\ is continuous with [density](#def-pdf):
+> **Definition 12 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ ([Wikipedia contributors 2026d](#ref-wikipedia_exponential_distribution)) if \\T\\ is continuous with [density](#def-pdf):
 >
 > \\ f(t) \stackrel{\text{def}}{=}\begin{cases} {\lambda}\text{e}^{-{\lambda}t}, & t \ge 0 \\ 0, & t \< 0 \end{cases} \\
 
@@ -249,15 +239,13 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** is:
+> **Definition 13 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** ([Wikipedia contributors 2026c](#ref-wikipedia_cumulative_distribution_function)) is:
 >
 > \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\\
 
 > **NOTE:**
 >
 > *Remark*. The CDF is always defined, whether \\X\\ is discrete or continuous.
->
-> See also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 
 > **NOTE:**
 >
@@ -291,7 +279,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The proof needs measure theory beyond these notes ([Billingsley 1995](#ref-billingsley1995probability)); see also <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
+> *Remark*. The proof needs measure theory beyond these notes ([Billingsley 1995](#ref-billingsley1995probability); [Wikipedia contributors 2026c](#ref-wikipedia_cumulative_distribution_function)).
 
 > **NOTE:**
 >
@@ -566,7 +554,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\.
+> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ ([Wikipedia contributors 2026f](#ref-wikipedia_joint_probability_distribution)).
 
 > **NOTE:**
 >
@@ -605,7 +593,7 @@ Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\.
+> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ ([Wikipedia contributors 2026g](#ref-wikipedia_marginal_distribution)).
 
 > **NOTE:**
 >
@@ -798,7 +786,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\:
+> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ ([Wikipedia contributors 2026m](#ref-wikipedia_survival_function)):
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -840,7 +828,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0:
+> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 ([Wikipedia contributors 2026e](#ref-wikipedia_failure_rate)):
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
@@ -1016,6 +1004,24 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > \\ f(t) \xrightarrow\[\int\_{u=t}^\infty f(u)\\du\]{f(t)/{\lambda}(t)} \operatorname{S}(t) \xrightarrow\[-\operatorname{log}\mathopen{}\left\\\operatorname{S}(t)\right\\\mathclose{}\]{} {\Lambda}(t) \xrightarrow\[{\Lambda}'(t)\]{} {\lambda}(t) \xrightarrow\[\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\]{} \eta(t) \\
 
+## Further reading
+
+- Wikipedia contributors ([2026l](#ref-wikipedia_random_variable)) — random variables, with examples and measure-theoretic definition
+
+- Wikipedia contributors ([2026j](#ref-wikipedia_probability_mass_function)) — the PMF and common examples
+
+- Wikipedia contributors ([2026i](#ref-wikipedia_probability_density_function)) — the PDF, its properties and its uses
+
+- Wikipedia contributors ([2026c](#ref-wikipedia_cumulative_distribution_function)) — the CDF, its properties and its relation to the density
+
+- Wikipedia contributors ([2026k](#ref-wikipedia_quantile_function)) — the quantile function, the inverse of the CDF
+
+- Wikipedia contributors ([2026f](#ref-wikipedia_joint_probability_distribution)) — joint, marginal and conditional distributions
+
+- Wikipedia contributors ([2026m](#ref-wikipedia_survival_function)) — the survival function and its relation to the hazard
+
+- Wikipedia contributors ([2026e](#ref-wikipedia_failure_rate)) — the hazard rate, with examples
+
 ## References
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
@@ -1039,5 +1045,31 @@ Kleinbaum, David G, and Mitchel Klein. 2012. *Survival Analysis: A Self-Learning
 Rothman, Kenneth J., Timothy L. Lash, Tyler J. VanderWeele, and Sebastien Haneuse. 2021. *Modern Epidemiology*. Fourth edition. Wolters Kluwer.
 
 Vittinghoff, Eric, David V Glidden, Stephen C Shiboski, and Charles E McCulloch. 2012. *Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-4614-1353-0>.
+
+Wikipedia contributors. 2026a. *Bernoulli Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Bernoulli_distribution>.
+
+Wikipedia contributors. 2026b. *Continuous Uniform Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Continuous_uniform_distribution>.
+
+Wikipedia contributors. 2026c. *Cumulative Distribution Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
+
+Wikipedia contributors. 2026d. *Exponential Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Exponential_distribution>.
+
+Wikipedia contributors. 2026e. *Failure Rate — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Failure_rate>.
+
+Wikipedia contributors. 2026f. *Joint Probability Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Joint_probability_distribution>.
+
+Wikipedia contributors. 2026g. *Marginal Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Marginal_distribution>.
+
+Wikipedia contributors. 2026h. *Normal Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Normal_distribution>.
+
+Wikipedia contributors. 2026i. *Probability Density Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_density_function>.
+
+Wikipedia contributors. 2026j. *Probability Mass Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_mass_function>.
+
+Wikipedia contributors. 2026k. *Quantile Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Quantile_function>.
+
+Wikipedia contributors. 2026l. *Random Variable — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Random_variable>.
+
+Wikipedia contributors. 2026m. *Survival Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Survival_function>.
 
 Back to top
