@@ -40,6 +40,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-random-experiment-die.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exm-random-experiment.qmd >}}
 
 {{< slidebreak >}}
