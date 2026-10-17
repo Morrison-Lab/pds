@@ -5,7 +5,8 @@
 
 Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) random variables with $0 \le X_i \le 1$ and population mean $\mean$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
-Then for every $\tolout > 0$,
+Then for every $\tolout > 0$
+[@wikipedia_hoeffdings_inequality],
 
 $$
 \Prf{\samplemean{X}{n} - \mean \ge \tolout} \le e^{-2n\tolout^2}.

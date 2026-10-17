@@ -65,6 +65,20 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_thm-wlln.qmd >}}
 
+## Further reading {.unnumbered}
+
+-   @wikipedia_central_limit_theorem --- the theorem, its variants and its history
+
+-   @wikipedia_markovs_inequality --- the inequality and its extensions
+
+-   @wikipedia_chebyshevs_inequality --- the inequality, with examples
+
+-   @wikipedia_hoeffdings_inequality --- the inequality for bounded variables
+
+-   @wikipedia_law_of_large_numbers --- the weak and strong laws
+
+-   @wikipedia_convergence_of_random_variables --- the modes of convergence and how they relate
+
 ## References {.unnumbered}
 
 ::: {#refs}

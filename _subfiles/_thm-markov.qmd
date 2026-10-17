@@ -4,7 +4,8 @@
 #### Markov's inequality
 
 Let $X$ be a random variable with $X \ge 0$ and $\E{X} < \infty$.
-Then for every $a > 0$:
+Then for every $a > 0$
+[@wikipedia_markovs_inequality]:
 
 $$
 \Prf{X \ge a} \le \frac{\E{X}}{a}
