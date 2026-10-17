@@ -133,6 +133,20 @@ and cover counting, conditional probability and Bayes' rule from a computer scie
 and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 :::
 
+## Further reading {.unnumbered}
+
+-   @wikipedia_sample_space --- sample spaces and events, with examples
+
+-   @wikipedia_probability_space --- the sample space, events and probability measure together
+
+-   @wikipedia_conditional_probability --- the definition, with common misreadings
+
+-   @wikipedia_law_of_total_probability --- the law, with examples
+
+-   @wikipedia_bayes_theorem --- the theorem, its proof and its uses
+
+-   @wikipedia_base_rate_fallacy --- why ignoring the base rate misleads
+
 ## References {.unnumbered}
 
 ::: {#refs}

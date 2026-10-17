@@ -2,7 +2,8 @@
 #### Random experiment
 
 A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome)
-that we have not determined in advance.
+that we have not determined in advance
+[@wikipedia_experiment_probability_theory].
 
 :::
 
