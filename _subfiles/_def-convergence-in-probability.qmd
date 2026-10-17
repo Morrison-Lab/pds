@@ -3,6 +3,7 @@
 
 A sequence of random variables $Y_1, Y_2, \ldots$
 **converges in probability** to a constant $c$
+[@wikipedia_convergence_of_random_variables]
 if, for every distance $\varepsilon > 0$,
 the probability that $Y_n$ lies at least $\varepsilon$ away from $c$
 goes to zero as $n$ grows:

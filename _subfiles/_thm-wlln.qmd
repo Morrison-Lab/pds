@@ -4,7 +4,8 @@
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
 with population mean $\mean$ and finite variance $\ss > 0$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$ be the sample mean.
-Then the sample mean [converges in probability](#def-convergence-in-probability) to $\mean$:
+Then the sample mean [converges in probability](#def-convergence-in-probability) to $\mean$
+[@wikipedia_law_of_large_numbers]:
 
 $$
 \samplemean{X}{n} \inprob \mean

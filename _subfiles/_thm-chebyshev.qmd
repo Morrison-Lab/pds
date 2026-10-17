@@ -4,7 +4,8 @@
 #### Chebyshev's inequality
 
 Let $X$ be a random variable with mean $\mean$ and finite variance $\varpar > 0$.
-Then for every $k > 0$:
+Then for every $k > 0$
+[@wikipedia_chebyshevs_inequality]:
 
 $$
 \Prf{\abs{X - \mean} \ge k\sdpar} \le \frac{1}{k^2}

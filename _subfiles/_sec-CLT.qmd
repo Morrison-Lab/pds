@@ -16,7 +16,8 @@ whatever the distributions of the individual variables.
 Let $X_1, X_2, \ldots$ be [IID](independence.qmd#def-iid) random variables
 with population mean $\mean$ and finite variance $\ss > 0$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
-Then for every real number $z$:
+Then for every real number $z$
+[@wikipedia_central_limit_theorem]:
 
 $$
 \lim_{n \to \infty} \Pr\paren{\frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar} \le z} = \normcdf(z)
