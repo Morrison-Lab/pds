@@ -5,7 +5,9 @@ A [discrete](random-variables.qmd#def-discrete-rv) random variable $X$
 has the **binomial distribution**
 with number of trials $n \in \set{1, 2, \dots}$
 and event probability $\prob \in [0, 1]$,
-written $X \sim \dBinf{n, \prob}$, if:
+written $X \sim \dBinf{n, \prob}$
+[@wikipedia_binomial_distribution],
+if:
 
 $$
 \P(X = x) \eqdef \binom{n}{x} \prob^x (1 - \prob)^{n - x},

@@ -91,7 +91,9 @@ it has variance $\prob(1 - \prob)$.
 #### Poisson distribution
 
 A random variable $Y$ has the **Poisson distribution** with mean parameter $\mean > 0$,
-written $Y \sim \Pois(\mean)$, if:
+written $Y \sim \Pois(\mean)$
+[@wikipedia_poisson_distribution],
+if:
 
 $$\P(Y = y) \eqdef \frac{\mean^{y} e^{-\mean}}{y!}, \quad y \in \Nat = \set{0, 1, 2, \dots}$$ {#eq-pois-pmf}
 
@@ -686,7 +688,9 @@ $$
 
 A random variable $Y$ has the **negative binomial distribution**
 with mean $\mean > 0$ and overdispersion parameter $\overdisp > 0$,
-written $Y \sim \NegBin(\mean, \overdisp)$, if, for $y \in \set{0, 1, 2, \dots}$:
+written $Y \sim \NegBin(\mean, \overdisp)$
+[@wikipedia_negative_binomial_distribution],
+if, for $y \in \set{0, 1, 2, \dots}$:
 
 $$
 \P(Y=y)
@@ -895,7 +899,9 @@ three times the variance of a $\Pois(4)$ count with the same mean.
 #### Weibull distribution
 
 A non-negative random variable $T$ has the **Weibull distribution**
-with shape $\shape > 0$ and rate $\rate > 0$ if its
+with shape $\shape > 0$ and rate $\rate > 0$
+[@wikipedia_weibull_distribution]
+if its
 [survival function](random-variables.qmd#def-surv-fn) is:
 
 $$\surv(t) \eqdef \text{e}^{-\rate t^\shape}, \quad t \ge 0$$
@@ -1185,7 +1191,7 @@ and $\Varf{\vX} = \matr{\covmat}$
 
 The proof changes variables in a $p$-dimensional integral,
 which these notes do not develop;
-see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>.
+see [@wikipedia_multivariate_normal_distribution].
 As with the univariate [normal distribution](random-variables.qmd#thm-normal-moments),
 these facts are where the parameters' names come from.
 They also show why $\matr{\covmat}$ must at least be
@@ -1265,7 +1271,7 @@ $$
 ::: {.remark .notes}
 
 The square root is defined by @lem-mahalanobis-nonneg.
-See also <https://en.wikipedia.org/wiki/Mahalanobis_distance>.
+See also [@wikipedia_mahalanobis_distance].
 
 :::
 
