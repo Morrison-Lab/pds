@@ -1,0 +1,7 @@
+:::{#exm-step}
+#### Steps of a die roll
+
+Carrying out the instruction "roll a six-sided die once" is one step.
+Carrying out the instruction "read the number facing up" is another step.
+
+:::
