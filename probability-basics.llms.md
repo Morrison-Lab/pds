@@ -14,13 +14,37 @@ Code
 
 Published
 
-Last modified: 2026-10-16 15:49:22 (PDT)
+Last modified: 2026-10-17 00:26:45 (PDT)
 
 ## 1 Defining probabilities
 
 > **NOTE:**
 >
-> **Definition 1 (Random experiment)** A **random experiment** is a procedure that produces exactly one outcome out of several possible outcomes, where which outcome it will produce is not determined in advance.
+> **Definition 1 (Step)** A **step** is the carrying out of one instruction.
+
+> **NOTE:**
+>
+> **Example 1 (Steps of a die roll)** Carrying out the instruction “roll a six-sided die once” is one step. Carrying out the instruction “read the number facing up” is another step.
+
+> **NOTE:**
+>
+> **Definition 2 (Procedure)** A **procedure** is a list of instructions that can be followed, one [step](#def-step) at a time, until they are finished.
+
+> **NOTE:**
+>
+> **Example 2 (Rolling a die once)** The instructions “roll a six-sided die once, then read the number facing up” comprise a procedure. Following the procedure takes the two [steps](#def-step) in [Example 1](#exm-step), and then it is finished.
+
+> **NOTE:**
+>
+> **Definition 3 (Outcome)** An **outcome** is a single, fully specified way that a [procedure](#def-procedure) can end, recorded as one value.
+
+> **NOTE:**
+>
+> **Example 3 (Outcomes of a die roll)** The [procedure](#def-procedure) in [Example 2](#exm-procedure) ends with one number facing up. Each of the numbers 1, 2, 3, 4, 5 and 6 is an outcome, and one roll ends in exactly one of them.
+
+> **NOTE:**
+>
+> **Definition 4 (Random experiment)** A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome) that we have not determined in advance.
 
 > **NOTE:**
 >
@@ -28,7 +52,11 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 1 (Picking a car model from the Auto data)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning* and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv).
+> **Example 4 (Rolling a die as a random experiment)** The [procedure](#def-procedure) in [Example 2](#exm-procedure) is a random experiment: it ends in exactly one of the [outcomes](#def-experiment-outcome) 1, 2, 3, 4, 5 or 6 ([Example 3](#exm-experiment-outcome)), and we do not determine in advance which outcome the procedure will produce.
+
+> **NOTE:**
+>
+> **Example 5 (Picking a car model from the Auto data)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning* and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv).
 >
 > Pick one car model from the data without looking, and record its number of cylinders. Which model comes up is not determined in advance, so this procedure is a random experiment. Its possible outcomes are the cylinder counts that occur in the data:
 >
@@ -43,15 +71,15 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes.
+> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes.
 
 > **NOTE:**
 >
-> **Example 2 (Sample space of a die roll)** Rolling a six-sided die once has sample space \\\Omega= \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\.
+> **Example 6 (Sample space of a die roll)** Rolling a six-sided die once has sample space \\\Omega= \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 3 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\: a set of outcomes.
+> **Definition 6 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\: a set of outcomes.
 
 > **NOTE:**
 >
@@ -59,19 +87,19 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 3 (Rolling an even number)** In [Example 2](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\.
+> **Example 7 (Rolling an even number)** In [Example 6](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 4 (Occurrence of an event)** An [event](#def-event) \\A\\ **occurs** when the outcome of the experiment is in \\A\\, and does not occur when the outcome is not in \\A\\.
+> **Definition 7 (Occurrence of an event)** An [event](#def-event) \\A\\ **occurs** when the outcome of the experiment is in \\A\\, and does not occur when the outcome is not in \\A\\.
 
 > **NOTE:**
 >
-> **Example 4 (Rolling a 4)** In [Example 3](#exm-event), if the die shows 4, the event “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, occurs, because \\4 \in \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and the event “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, does not occur.
+> **Example 8 (Rolling a 4)** In [Example 7](#exm-event), if the die shows 4, the event “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, occurs, because \\4 \in \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and the event “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, does not occur.
 
 > **NOTE:**
 >
-> **Definition 5 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
+> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
 >
 > \\\neg A \stackrel{\text{def}}{=}\Omega\setminus A\\
 
@@ -81,11 +109,11 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 5 (Rolling an odd number)** In [Example 3](#exm-event), the complement of the event “the roll is even”, \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, is the event “the roll is odd”, \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
+> **Example 9 (Rolling an odd number)** In [Example 7](#exm-event), the complement of the event “the roll is even”, \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, is the event “the roll is odd”, \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
 
 > **NOTE:**
 >
-> **Definition 6 (Mutually exclusive events (disjoint, pairwise disjoint, mutually disjoint))** Finitely or countably many sets \\A_1, A_2, \ldots\\, such as [events](#def-event), are **mutually exclusive** (also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**) when no two of them share an element:
+> **Definition 9 (Mutually exclusive events (disjoint, pairwise disjoint, mutually disjoint))** Finitely or countably many sets \\A_1, A_2, \ldots\\, such as [events](#def-event), are **mutually exclusive** (also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**) when no two of them share an element:
 >
 > \\A_i \cap A_j = \emptyset \quad \text{for all } i \neq j\\
 
@@ -95,11 +123,11 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 6 (Low and high rolls)** In [Example 2](#exm-sample-space), the events “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, and “the roll is at least 5”, \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, are not mutually exclusive: a roll of 2 is in both.
+> **Example 10 (Low and high rolls)** In [Example 6](#exm-sample-space), the events “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, and “the roll is at least 5”, \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, are not mutually exclusive: a roll of 2 is in both.
 
 > **NOTE:**
 >
-> **Definition 7 (Partition of an event)** A **partition** of an [event](#def-event) \\A\\ is a finite or countably infinite collection of events \\A_1, A_2, \ldots\\ that satisfies:
+> **Definition 10 (Partition of an event)** A **partition** of an [event](#def-event) \\A\\ is a finite or countably infinite collection of events \\A_1, A_2, \ldots\\ that satisfies:
 >
 > - The events \\A_1, A_2, \ldots\\ are [mutually exclusive](#def-mutually-exclusive).
 > - Their union is \\A\\: \\\bigcup\_{i} A_i = A\\.
@@ -114,11 +142,11 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (Partitioning the die roll)** In [Example 2](#exm-sample-space), the events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is odd”, \\\mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\\mathopen{}\left\\1\right\\\mathclose{}, \mathopen{}\left\\2\right\\\mathclose{}, \ldots, \mathopen{}\left\\6\right\\\mathclose{}\\. The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ from [Example 6](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
+> **Example 11 (Partitioning the die roll)** In [Example 6](#exm-sample-space), the events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is odd”, \\\mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\\mathopen{}\left\\1\right\\\mathclose{}, \mathopen{}\left\\2\right\\\mathclose{}, \ldots, \mathopen{}\left\\6\right\\\mathclose{}\\. The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ from [Example 10](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
 
 > **NOTE:**
 >
-> **Definition 8 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1:
+> **Definition 11 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1:
 >
 > \\\Pr(\Omega) = 1\\
 
@@ -128,11 +156,11 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Probability measure for a fair die)** For the die roll in [Example 2](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the counting measure \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of \\\Omega\\, and it gives
+> **Example 12 (Probability measure for a fair die)** For the die roll in [Example 6](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the counting measure \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of \\\Omega\\, and it gives
 >
 > \\ \begin{aligned} \Pr(\Omega) &= 6/6 \\ &= 1. \end{aligned} \\
 >
-> The event “the roll is even” from [Example 3](#exm-event) has probability
+> The event “the roll is even” from [Example 7](#exm-event) has probability
 >
 > \\ \begin{aligned} \Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) &= 3/6 \\ &= 1/2. \end{aligned} \\
 
@@ -144,7 +172,7 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. A probability measure is a measure ([Definition 8](#def-probability)), so [measures are finitely additive](https://morrison-lab.github.io/mds/measures.html#cor-measure-finitely-additive) applies to it.
+> *Proof*. A probability measure is a measure ([Definition 11](#def-probability)), so [measures are finitely additive](https://morrison-lab.github.io/mds/measures.html#cor-measure-finitely-additive) applies to it.
 
 > **NOTE:**
 >
@@ -188,9 +216,9 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets.html#def-extended-nonneg-reals) \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 8](#def-probability).
+> *Proof*. Suppose \\\Pr\\ is a probability measure. It is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure), so its values lie in the [extended non-negative reals](https://morrison-lab.github.io/mds/sets.html#def-extended-nonneg-reals) \\\[0, \infty\]\\, which gives axiom 1, and it is countably additive, which is axiom 3. Axiom 2 is the condition \\\Pr(\Omega) = 1\\ in [Definition 11](#def-probability).
 >
-> Conversely, suppose \\\Pr\\ satisfies the three axioms. By axiom 1, \\\Pr\\ takes values in \\\[0, \infty\]\\, so axiom 3 says \\\Pr\\ is countably additive in the sense of the [definition of countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity). Then, by [countable additivity and the empty set](https://morrison-lab.github.io/mds/measures.html#lem-countable-additivity-empty), \\\Pr(\emptyset)\\ is 0 or \\\infty\\; \\\Pr(\emptyset)\\ is a real number, so \\\Pr(\emptyset) = 0\\. So \\\Pr\\ satisfies both conditions of the [definition of a measure](https://morrison-lab.github.io/mds/measures.html#def-measure) (\\\Pr(\emptyset) = 0\\ and countable additivity) and is a measure on the events of \\\Omega\\. With axiom 2, \\\Pr\\ is a probability measure ([Definition 8](#def-probability)).
+> Conversely, suppose \\\Pr\\ satisfies the three axioms. By axiom 1, \\\Pr\\ takes values in \\\[0, \infty\]\\, so axiom 3 says \\\Pr\\ is countably additive in the sense of the [definition of countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity). Then, by [countable additivity and the empty set](https://morrison-lab.github.io/mds/measures.html#lem-countable-additivity-empty), \\\Pr(\emptyset)\\ is 0 or \\\infty\\; \\\Pr(\emptyset)\\ is a real number, so \\\Pr(\emptyset) = 0\\. So \\\Pr\\ satisfies both conditions of the [definition of a measure](https://morrison-lab.github.io/mds/measures.html#def-measure) (\\\Pr(\emptyset) = 0\\ and countable additivity) and is a measure on the events of \\\Omega\\. With axiom 2, \\\Pr\\ is a probability measure ([Definition 11](#def-probability)).
 
 > **NOTE:**
 >
@@ -238,15 +266,15 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi= 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
+> **Example 13 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi= 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
 
 > **NOTE:**
 >
-> **Definition 9 (Choosing at random)** Let \\S\\ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) \\\mu\\ such that \\0 \< \mu(S) \< \infty\\. To **choose an element of \\S\\ at random** is to run a [random experiment](#def-random-experiment) whose [sample space](#def-sample-space) is \\S\\ and whose [probability measure](#def-probability) is the [uniform distribution](random-variables.llms.md#def-uniform-set) on \\S\\.
+> **Definition 12 (Choosing at random)** Let \\S\\ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) \\\mu\\ such that \\0 \< \mu(S) \< \infty\\. To **choose an element of \\S\\ at random** is to run a [random experiment](#def-random-experiment) whose [sample space](#def-sample-space) is \\S\\ and whose [probability measure](#def-probability) is the [uniform distribution](random-variables.llms.md#def-uniform-set) on \\S\\.
 
 > **NOTE:**
 >
-> **Example 10 (Choosing at random from a finite set and from an interval)** For a finite set \\S\\, let \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#exm-measure). Then \\\Pr(A) = \mathopen{}\left\|A\right\|\mathclose{} / \mathopen{}\left\|S\right\|\mathclose{}\\, so every element of \\S\\ has the same probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\.
+> **Example 14 (Choosing at random from a finite set and from an interval)** For a finite set \\S\\, let \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#exm-measure). Then \\\Pr(A) = \mathopen{}\left\|A\right\|\mathclose{} / \mathopen{}\left\|S\right\|\mathclose{}\\, so every element of \\S\\ has the same probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\.
 >
 > For the interval \\S = \[0, 1\]\\, let \\\mu(A)\\ be the length of \\A\\. Then \\\Pr(A)\\ is the length of \\A\\, so the probability that the chosen number lies in \\\[0.2, 0.5\]\\ is \\0.3\\. The chosen number has the [\\\text{Uniform}(0, 1)\\ distribution](https://morrison-lab.github.io/pds/random-variables.html#def-uniform).
 >
@@ -254,7 +282,7 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 11 (Choosing a car at random from the Auto data)** The Auto data of [Example 1](#exm-random-experiment) have 392 car models. Let \\S\\ be the set of car models in the data. Choosing a car at random from \\S\\ ([Definition 9](#def-random-choice)), with the counting measure, gives each car probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\, so the probability that the car has four cylinders is the fraction of cars with four cylinders:
+> **Example 15 (Choosing a car at random from the Auto data)** The Auto data of [Example 5](#exm-random-experiment) have 392 car models. Let \\S\\ be the set of car models in the data. Choosing a car at random from \\S\\ ([Definition 12](#def-random-choice)), with the counting measure, gives each car probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\, so the probability that the car has four cylinders is the fraction of cars with four cylinders:
 >
 > ``` r
 > # read the local copy of the Auto data (one row per car model):
@@ -271,7 +299,7 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
+> **Definition 13 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\, denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
 
@@ -281,7 +309,7 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 12 (Rolling a six, given an even roll)** For a fair die ([Example 8](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
+> **Example 16 (Rolling a six, given an even roll)** For a fair die ([Example 12](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{1/6}{3/6} && \text{(substitute the probabilities)} \\ &= \frac{1}{3} && \text{(simplify)} \end{aligned} \\
 
@@ -293,13 +321,13 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Rearranging [Definition 10](#def-conditional-prob):
+> *Proof*. Rearranging [Definition 13](#def-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ \Pr(A \cap B) &= \Pr(A \mid B) \cdot\Pr(B) && \text{(multiply both sides by } \Pr(B) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 13 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
+> **Example 17 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
 > Then, by [Theorem 5](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
@@ -325,13 +353,13 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 10](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
+> *Proof*. By [Definition 13](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(B \cap A)}{\Pr(B)} && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\ &= \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} && \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 14 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 18 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let \\D\\ be the event “person has the disease” and \\+\\ be the event “test is positive”. Then:
 >
@@ -351,13 +379,13 @@ Last modified: 2026-10-16 15:49:22 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Turn a conditional around)** [Definition 10](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
+> **Exercise 1 (Turn a conditional around)** [Definition 13](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
 >
 > Your result should express \\\Pr(A \mid B)\\ using \\\Pr(B \mid A)\\, \\\Pr(A)\\ and \\\Pr(B)\\, and none of them jointly.
 
 > **NOTE:**
 >
-> *Solution 1*. Multiplying [Definition 10](#def-conditional-prob) through by its denominator, in each direction,
+> *Solution 1*. Multiplying [Definition 13](#def-conditional-prob) through by its denominator, in each direction,
 >
 > \\\Pr(A \cap B) = \Pr(A \mid B)\\\Pr(B), \qquad \Pr(A \cap B) = \Pr(B \mid A)\\\Pr(A)\\
 >
