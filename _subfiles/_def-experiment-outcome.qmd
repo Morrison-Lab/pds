@@ -1,6 +1,7 @@
 :::{#def-experiment-outcome}
-#### Outcome of a random experiment
+#### Outcome
 
-An **outcome** of a [random experiment](#def-random-experiment) is one of its possible results.
+An **outcome** is a single, fully specified way that a procedure can end,
+recorded as one value.
 
 :::

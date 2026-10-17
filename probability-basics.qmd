@@ -18,17 +18,17 @@ format:
 
 []{#sec-prob-axioms}
 
-<!-- No slidebreak here: the heading shares its slide with the def-random-experiment div. -->
-
-{{< include pds/_subfiles/_def-random-experiment.qmd >}}
-
-{{< slidebreak >}}
+<!-- No slidebreak here: the heading shares its slide with the def-experiment-outcome div. -->
 
 {{< include pds/_subfiles/_def-experiment-outcome.qmd >}}
 
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exm-experiment-outcome.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-random-experiment.qmd >}}
 
 {{< slidebreak >}}
 
