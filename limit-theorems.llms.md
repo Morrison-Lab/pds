@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-17 13:34:44 (PDT)
+Last modified: 2026-10-17 13:43:25 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -24,7 +24,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
+> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\ ([Wikipedia contributors 2026a](#ref-wikipedia_central_limit_theorem)):
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\\(\bar{X}\_{n} - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z) \\
 >
@@ -230,7 +230,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 2 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \< \infty\\. Then for every \\a \> 0\\:
+> **Theorem 2 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \< \infty\\. Then for every \\a \> 0\\ ([Wikipedia contributors 2026f](#ref-wikipedia_markovs_inequality)):
 >
 > \\ \Pr\mathopen{}\left(X \ge a\right)\mathclose{} \le \frac{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}{a} \\
 
@@ -248,7 +248,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 3 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\:
+> **Theorem 3 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\ ([Wikipedia contributors 2026b](#ref-wikipedia_chebyshevs_inequality)):
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{} \le \frac{1}{k^2} \\
 
@@ -379,7 +379,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and population mean \\\mu\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\,
+> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and population mean \\\mu\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\ ([Wikipedia contributors 2026d](#ref-wikipedia_hoeffdings_inequality)),
 >
 > \\ \Pr\mathopen{}\left(\bar{X}\_{n} - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}. \tag{1}\\
 
@@ -460,7 +460,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
+> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ ([Wikipedia contributors 2026c](#ref-wikipedia_convergence_of_random_variables)) if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left\|Y_n - c\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0 \\
 >
@@ -472,7 +472,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\:
+> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\ ([Wikipedia contributors 2026e](#ref-wikipedia_law_of_large_numbers)):
 >
 > \\ \bar{X}\_{n} \overset{\scriptstyle p}{\longrightarrow}\mu \\
 >
@@ -492,6 +492,20 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 >
 > The bound goes to zero as \\n \to \infty\\, so the probability, squeezed between zero and the bound, goes to zero. This holds for every \\\varepsilon \> 0\\.
 
+## Further reading
+
+- Wikipedia contributors ([2026a](#ref-wikipedia_central_limit_theorem)) — the theorem, its variants and its history
+
+- Wikipedia contributors ([2026f](#ref-wikipedia_markovs_inequality)) — the inequality and its extensions
+
+- Wikipedia contributors ([2026b](#ref-wikipedia_chebyshevs_inequality)) — the inequality, with examples
+
+- Wikipedia contributors ([2026d](#ref-wikipedia_hoeffdings_inequality)) — the inequality for bounded variables
+
+- Wikipedia contributors ([2026e](#ref-wikipedia_law_of_large_numbers)) — the weak and strong laws
+
+- Wikipedia contributors ([2026c](#ref-wikipedia_convergence_of_random_variables)) — the modes of convergence and how they relate
+
 ## References
 
 5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
@@ -509,5 +523,17 @@ Hoeffding, Wassily. 1963. “Probability Inequalities for Sums of Bounded Random
 Seneta, Eugene. 2013. “A Tricentenary History of the Law of Large Numbers.” *Bernoulli* 19 (4): 1088–121. <https://doi.org/10.3150/12-BEJSP12>.
 
 Tchébychef, P. L. 1867. “Des Valeurs Moyennes.” *Journal de Mathématiques Pures Et Appliquées*, 2nd series, vol. 12: 177–84. <https://www.numdam.org/item/JMPA_1867_2_12__177_0/>.
+
+Wikipedia contributors. 2026a. *Central Limit Theorem — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Central_limit_theorem>.
+
+Wikipedia contributors. 2026b. *Chebyshev’s Inequality — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Chebyshev%27s_inequality>.
+
+Wikipedia contributors. 2026c. *Convergence of Random Variables — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Convergence_of_random_variables>.
+
+Wikipedia contributors. 2026d. *Hoeffding’s Inequality — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Hoeffding%27s_inequality>.
+
+Wikipedia contributors. 2026e. *Law of Large Numbers — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_large_numbers>.
+
+Wikipedia contributors. 2026f. *Markov’s Inequality — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Markov%27s_inequality>.
 
 Back to top

@@ -235,35 +235,15 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
-div.callout-prp.callout {
-  border-left-color: #827717;
+div.callout-remark.callout {
+  border-left-color: #AD1457;
 }
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
 }
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-tbl.callout {
   border-left-color: #757575;
@@ -275,6 +255,26 @@ div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-fig.callout {
   border-left-color: #757575;
 }
@@ -284,6 +284,16 @@ div.callout-fig.callout-style-default .callout-header {
 div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
+}
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
+}
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-def.callout {
   border-left-color: #1B5E20;
@@ -295,15 +305,15 @@ div.callout-def .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
+div.callout-solution.callout {
+  border-left-color: #4E342E;
 }
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
 }
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -319,25 +329,35 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   content: '\f144' !important;
   background-image: none;
 }
-div.callout-lem.callout {
-  border-left-color: #1565C0;
+div.callout-exr.callout {
+  border-left-color: #FFA500;
 }
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
 }
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
 }
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
 }
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-prp.callout {
+  border-left-color: #827717;
+}
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
+}
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-cor.callout {
   border-left-color: #00838F;
@@ -348,26 +368,6 @@ div.callout-cor.callout-style-default .callout-header {
 div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -771,6 +771,7 @@ window.Quarto = {
   <li><a href="#sec-weibull" id="toc-sec-weibull" class="nav-link" data-scroll-target="#sec-weibull"><span class="header-section-number">6</span> Weibull distribution</a></li>
   <li><a href="#sec-mvn" id="toc-sec-mvn" class="nav-link" data-scroll-target="#sec-mvn"><span class="header-section-number">7</span> The multivariate normal distribution</a></li>
   <li><a href="#sec-mixture" id="toc-sec-mixture" class="nav-link" data-scroll-target="#sec-mixture"><span class="header-section-number">8</span> Mixture distributions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/pds/edit/main/distributions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/pds/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/pds/blob/main/distributions.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="distributions-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="distributions-handout.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="distributions.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
@@ -792,7 +793,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-17 13:34:44 (PDT)</p>
+      <p class="date">Last modified: 2026-10-17 13:43:25 (PDT)</p>
     </div>
   </div>
   
@@ -983,7 +984,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Binomial distribution)</strong></span> A <a href="./random-variables.html#def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>binomial distribution</strong> with number of trials <span class="math inline">\(n \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> and event probability <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\)</span>, if:</p>
+<p><span class="theorem-title"><strong>Definition 1 (Binomial distribution)</strong></span> A <a href="./random-variables.html#def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>binomial distribution</strong> with number of trials <span class="math inline">\(n \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> and event probability <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\)</span> <span class="citation" data-cites="wikipedia_binomial_distribution">(<a href="#ref-wikipedia_binomial_distribution" role="doc-biblioref">Wikipedia contributors 2026a</a>)</span>, if:</p>
 <p><span id="eq-binom-pmf"><span class="math display">\[
 \operatorname{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x},
 \quad x \in \mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}
@@ -1285,7 +1286,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-poisson" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Poisson distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Poisson distribution</strong> with mean parameter <span class="math inline">\(\mu&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span>, if:</p>
+<p><span class="theorem-title"><strong>Definition 2 (Poisson distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Poisson distribution</strong> with mean parameter <span class="math inline">\(\mu&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span> <span class="citation" data-cites="wikipedia_poisson_distribution">(<a href="#ref-wikipedia_poisson_distribution" role="doc-biblioref">Wikipedia contributors 2026g</a>)</span>, if:</p>
 <p><span id="eq-pois-pmf"><span class="math display">\[\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} \tag{2}\]</span></span></p>
 </div>
 </div>
@@ -2257,7 +2258,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-51" class="callout-51-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-nb" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, if, for <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 6 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span> <span class="citation" data-cites="wikipedia_negative_binomial_distribution">(<a href="#ref-wikipedia_negative_binomial_distribution" role="doc-biblioref">Wikipedia contributors 2026f</a>)</span>, if, for <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>:</p>
 <p><span class="math display">\[
 \operatorname{P}(Y=y)
 \stackrel{\text{def}}{=}\frac{\mu^y}{y!}
@@ -2471,7 +2472,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-57" class="callout-57-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-laplace" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Laplace distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Laplace distribution</strong> with location parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and scale parameter <span class="math inline">\(b &gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\)</span>, if <span class="math inline">\(Y\)</span> is continuous with <a href="./random-variables.html#def-pdf">density</a>:</p>
+<p><span class="theorem-title"><strong>Definition 7 (Laplace distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Laplace distribution</strong> with location parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and scale parameter <span class="math inline">\(b &gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\)</span> <span class="citation" data-cites="wikipedia_laplace_distribution">(<a href="#ref-wikipedia_laplace_distribution" role="doc-biblioref">Wikipedia contributors 2026b</a>)</span>, if <span class="math inline">\(Y\)</span> is continuous with <a href="./random-variables.html#def-pdf">density</a>:</p>
 <p><span id="eq-laplace-pdf"><span class="math display">\[\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left|y - \mu\right|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}\]</span></span></p>
 </div>
 </div>
@@ -2681,7 +2682,7 @@ Figure&nbsp;3: Laplace and standard normal densities with the same mean (0) and 
 <div id="callout-63" class="callout-63-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-weibull" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Weibull distribution)</strong></span> A non-negative random variable <span class="math inline">\(T\)</span> has the <strong>Weibull distribution</strong> with shape <span class="math inline">\(\alpha&gt; 0\)</span> and rate <span class="math inline">\({\lambda}&gt; 0\)</span> if its <a href="./random-variables.html#def-surv-fn">survival function</a> is:</p>
+<p><span class="theorem-title"><strong>Definition 8 (Weibull distribution)</strong></span> A non-negative random variable <span class="math inline">\(T\)</span> has the <strong>Weibull distribution</strong> with shape <span class="math inline">\(\alpha&gt; 0\)</span> and rate <span class="math inline">\({\lambda}&gt; 0\)</span> <span class="citation" data-cites="wikipedia_weibull_distribution">(<a href="#ref-wikipedia_weibull_distribution" role="doc-biblioref">Wikipedia contributors 2026h</a>)</span> if its <a href="./random-variables.html#def-surv-fn">survival function</a> is:</p>
 <p><span class="math display">\[\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0\]</span></p>
 </div>
 </div>
@@ -3067,7 +3068,7 @@ f(t)
 <div id="callout-79" class="callout-79-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The proof changes variables in a <span class="math inline">\(p\)</span>-dimensional integral, which these notes do not develop; see <a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Multivariate_normal_distribution</a>. As with the univariate <a href="./random-variables.html#thm-normal-moments">normal distribution</a>, these facts are where the parameters’ names come from. They also show why <span class="math inline">\(\mathbf{\Sigma}\)</span> must at least be <a href="./variance-covariance.html#thm-vcov-psd">positive semidefinite</a>; requiring it to be positive definite rules out cases like <a href="./variance-covariance.html#exm-vcov-singular">a variance matrix that is not positive definite</a>, which has no joint density.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The proof changes variables in a <span class="math inline">\(p\)</span>-dimensional integral, which these notes do not develop; see <span class="citation" data-cites="wikipedia_multivariate_normal_distribution">(<a href="#ref-wikipedia_multivariate_normal_distribution" role="doc-biblioref">Wikipedia contributors 2026e</a>)</span>. As with the univariate <a href="./random-variables.html#thm-normal-moments">normal distribution</a>, these facts are where the parameters’ names come from. They also show why <span class="math inline">\(\mathbf{\Sigma}\)</span> must at least be <a href="./variance-covariance.html#thm-vcov-psd">positive semidefinite</a>; requiring it to be positive definite rules out cases like <a href="./variance-covariance.html#exm-vcov-singular">a variance matrix that is not positive definite</a>, which has no joint density.</p>
 </div>
 </div>
 </div>
@@ -3173,7 +3174,7 @@ f(t)
 <div id="callout-84" class="callout-84-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The square root is defined by <a href="#lem-mahalanobis-nonneg" class="quarto-xref">Lemma&nbsp;1</a>. See also <a href="https://en.wikipedia.org/wiki/Mahalanobis_distance" class="uri">https://en.wikipedia.org/wiki/Mahalanobis_distance</a>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The square root is defined by <a href="#lem-mahalanobis-nonneg" class="quarto-xref">Lemma&nbsp;1</a>. See also <span class="citation" data-cites="wikipedia_mahalanobis_distance">(<a href="#ref-wikipedia_mahalanobis_distance" role="doc-biblioref">Wikipedia contributors 2026c</a>)</span>.</p>
 </div>
 </div>
 </div>
@@ -3815,11 +3816,48 @@ f(t)
 </div>
 </div>
 </section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><p><span class="citation" data-cites="wikipedia_binomial_distribution">Wikipedia contributors (<a href="#ref-wikipedia_binomial_distribution" role="doc-biblioref">2026a</a>)</span> — the binomial distribution and its approximations</p></li>
+<li><p><span class="citation" data-cites="wikipedia_poisson_distribution">Wikipedia contributors (<a href="#ref-wikipedia_poisson_distribution" role="doc-biblioref">2026g</a>)</span> — the Poisson distribution, with examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_negative_binomial_distribution">Wikipedia contributors (<a href="#ref-wikipedia_negative_binomial_distribution" role="doc-biblioref">2026f</a>)</span> — the negative binomial distribution and its parametrizations</p></li>
+<li><p><span class="citation" data-cites="wikipedia_weibull_distribution">Wikipedia contributors (<a href="#ref-wikipedia_weibull_distribution" role="doc-biblioref">2026h</a>)</span> — the Weibull distribution and its hazard</p></li>
+<li><p><span class="citation" data-cites="wikipedia_laplace_distribution">Wikipedia contributors (<a href="#ref-wikipedia_laplace_distribution" role="doc-biblioref">2026b</a>)</span> — the Laplace distribution</p></li>
+<li><p><span class="citation" data-cites="wikipedia_multivariate_normal_distribution">Wikipedia contributors (<a href="#ref-wikipedia_multivariate_normal_distribution" role="doc-biblioref">2026e</a>)</span> — the multivariate normal distribution and its properties</p></li>
+<li><p><span class="citation" data-cites="wikipedia_mahalanobis_distance">Wikipedia contributors (<a href="#ref-wikipedia_mahalanobis_distance" role="doc-biblioref">2026c</a>)</span> — the Mahalanobis distance</p></li>
+<li><p><span class="citation" data-cites="wikipedia_mixture_distribution">Wikipedia contributors (<a href="#ref-wikipedia_mixture_distribution" role="doc-biblioref">2026d</a>)</span> — mixture distributions</p></li>
+</ul>
+</section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-CaseBerg01" class="csl-entry" role="listitem">
 Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
+</div>
+<div id="ref-wikipedia_binomial_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026a. <em>Binomial Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Binomial_distribution">https://en.wikipedia.org/wiki/Binomial_distribution</a>.
+</div>
+<div id="ref-wikipedia_laplace_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026b. <em>Laplace Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Laplace_distribution">https://en.wikipedia.org/wiki/Laplace_distribution</a>.
+</div>
+<div id="ref-wikipedia_mahalanobis_distance" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026c. <em>Mahalanobis Distance — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Mahalanobis_distance">https://en.wikipedia.org/wiki/Mahalanobis_distance</a>.
+</div>
+<div id="ref-wikipedia_mixture_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026d. <em>Mixture Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Mixture_distribution">https://en.wikipedia.org/wiki/Mixture_distribution</a>.
+</div>
+<div id="ref-wikipedia_multivariate_normal_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026e. <em>Multivariate Normal Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">https://en.wikipedia.org/wiki/Multivariate_normal_distribution</a>.
+</div>
+<div id="ref-wikipedia_negative_binomial_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026f. <em>Negative Binomial Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">https://en.wikipedia.org/wiki/Negative_binomial_distribution</a>.
+</div>
+<div id="ref-wikipedia_poisson_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026g. <em>Poisson Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Poisson_distribution">https://en.wikipedia.org/wiki/Poisson_distribution</a>.
+</div>
+<div id="ref-wikipedia_weibull_distribution" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026h. <em>Weibull Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Weibull_distribution">https://en.wikipedia.org/wiki/Weibull_distribution</a>.
 </div>
 </div>
 
@@ -4749,10 +4787,28 @@ document.querySelectorAll("main table").forEach(function (t) {
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_sec-distributions.qmd &gt;}}</span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further reading {.unnumbered}</span></span>
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_binomial_distribution --- the binomial distribution and its approximations</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_poisson_distribution --- the Poisson distribution, with examples</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_negative_binomial_distribution --- the negative binomial distribution and its parametrizations</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_weibull_distribution --- the Weibull distribution and its hazard</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_laplace_distribution --- the Laplace distribution</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_multivariate_normal_distribution --- the multivariate normal distribution and its properties</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_mahalanobis_distance --- the Mahalanobis distance</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_mixture_distribution --- mixture distributions</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

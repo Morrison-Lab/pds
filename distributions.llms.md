@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-17 13:34:44 (PDT)
+Last modified: 2026-10-17 13:43:25 (PDT)
 
 > **NOTE:**
 >
@@ -60,7 +60,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Binomial distribution)** A [discrete](random-variables.llms.md#def-discrete-rv) random variable \\X\\ has the **binomial distribution** with number of trials \\n \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ and event probability \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\\, if:
+> **Definition 1 (Binomial distribution)** A [discrete](random-variables.llms.md#def-discrete-rv) random variable \\X\\ has the **binomial distribution** with number of trials \\n \in \mathopen{}\left\\1, 2, \dots\right\\\mathclose{}\\ and event probability \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\\ ([Wikipedia contributors 2026a](#ref-wikipedia_binomial_distribution)), if:
 >
 > \\ \operatorname{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x}, \quad x \in \mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{} \tag{1}\\
 >
@@ -139,7 +139,7 @@ Last modified: 2026-10-17 13:34:44 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu\> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\, if:
+> **Definition 2 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu\> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\ ([Wikipedia contributors 2026g](#ref-wikipedia_poisson_distribution)), if:
 >
 > \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{} \tag{2}\\
 
@@ -436,7 +436,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 6 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu\> 0\\ and overdispersion parameter \\\rho\> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
+> **Definition 6 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu\> 0\\ and overdispersion parameter \\\rho\> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\ ([Wikipedia contributors 2026f](#ref-wikipedia_negative_binomial_distribution)), if, for \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\:
 >
 > \\ \operatorname{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} \cdot \mathopen{}\left(1+\frac{\mu}{\rho}\right)\mathclose{}^{-\rho} \\
 >
@@ -499,7 +499,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 7 (Laplace distribution)** A random variable \\Y\\ has the **Laplace distribution** with location parameter \\\mu\in \mathbb{R}\\ and scale parameter \\b \> 0\\, written \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\, if \\Y\\ is continuous with [density](random-variables.llms.md#def-pdf):
+> **Definition 7 (Laplace distribution)** A random variable \\Y\\ has the **Laplace distribution** with location parameter \\\mu\in \mathbb{R}\\ and scale parameter \\b \> 0\\, written \\Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\\ ([Wikipedia contributors 2026b](#ref-wikipedia_laplace_distribution)), if \\Y\\ is continuous with [density](random-variables.llms.md#def-pdf):
 >
 > \\\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left\|y - \mu\right\|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}\\
 
@@ -595,7 +595,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 8 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha\> 0\\ and rate \\{\lambda}\> 0\\ if its [survival function](random-variables.llms.md#def-surv-fn) is:
+> **Definition 8 (Weibull distribution)** A non-negative random variable \\T\\ has the **Weibull distribution** with shape \\\alpha\> 0\\ and rate \\{\lambda}\> 0\\ ([Wikipedia contributors 2026h](#ref-wikipedia_weibull_distribution)) if its [survival function](random-variables.llms.md#def-surv-fn) is:
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0\\
 
@@ -702,7 +702,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. The proof changes variables in a \\p\\-dimensional integral, which these notes do not develop; see <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>. As with the univariate [normal distribution](random-variables.llms.md#thm-normal-moments), these facts are where the parameters’ names come from. They also show why \\\mathbf{\Sigma}\\ must at least be [positive semidefinite](variance-covariance.llms.md#thm-vcov-psd); requiring it to be positive definite rules out cases like [a variance matrix that is not positive definite](variance-covariance.llms.md#exm-vcov-singular), which has no joint density.
+> *Remark*. The proof changes variables in a \\p\\-dimensional integral, which these notes do not develop; see ([Wikipedia contributors 2026e](#ref-wikipedia_multivariate_normal_distribution)). As with the univariate [normal distribution](random-variables.llms.md#thm-normal-moments), these facts are where the parameters’ names come from. They also show why \\\mathbf{\Sigma}\\ must at least be [positive semidefinite](variance-covariance.llms.md#thm-vcov-psd); requiring it to be positive definite rules out cases like [a variance matrix that is not positive definite](variance-covariance.llms.md#exm-vcov-singular), which has no joint density.
 
 > **NOTE:**
 >
@@ -732,7 +732,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. The square root is defined by [Lemma 1](#lem-mahalanobis-nonneg). See also <https://en.wikipedia.org/wiki/Mahalanobis_distance>.
+> *Remark*. The square root is defined by [Lemma 1](#lem-mahalanobis-nonneg). See also ([Wikipedia contributors 2026c](#ref-wikipedia_mahalanobis_distance)).
 
 > **NOTE:**
 >
@@ -936,8 +936,42 @@ print(plot2)
 >
 > **Example 21 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
+## Further reading
+
+- Wikipedia contributors ([2026a](#ref-wikipedia_binomial_distribution)) — the binomial distribution and its approximations
+
+- Wikipedia contributors ([2026g](#ref-wikipedia_poisson_distribution)) — the Poisson distribution, with examples
+
+- Wikipedia contributors ([2026f](#ref-wikipedia_negative_binomial_distribution)) — the negative binomial distribution and its parametrizations
+
+- Wikipedia contributors ([2026h](#ref-wikipedia_weibull_distribution)) — the Weibull distribution and its hazard
+
+- Wikipedia contributors ([2026b](#ref-wikipedia_laplace_distribution)) — the Laplace distribution
+
+- Wikipedia contributors ([2026e](#ref-wikipedia_multivariate_normal_distribution)) — the multivariate normal distribution and its properties
+
+- Wikipedia contributors ([2026c](#ref-wikipedia_mahalanobis_distance)) — the Mahalanobis distance
+
+- Wikipedia contributors ([2026d](#ref-wikipedia_mixture_distribution)) — mixture distributions
+
 ## References
 
 Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+
+Wikipedia contributors. 2026a. *Binomial Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Binomial_distribution>.
+
+Wikipedia contributors. 2026b. *Laplace Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Laplace_distribution>.
+
+Wikipedia contributors. 2026c. *Mahalanobis Distance — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Mahalanobis_distance>.
+
+Wikipedia contributors. 2026d. *Mixture Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Mixture_distribution>.
+
+Wikipedia contributors. 2026e. *Multivariate Normal Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>.
+
+Wikipedia contributors. 2026f. *Negative Binomial Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Negative_binomial_distribution>.
+
+Wikipedia contributors. 2026g. *Poisson Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Poisson_distribution>.
+
+Wikipedia contributors. 2026h. *Weibull Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Weibull_distribution>.
 
 Back to top

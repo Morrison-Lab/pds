@@ -234,6 +234,16 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-tbl.callout {
   border-left-color: #757575;
 }
@@ -244,25 +254,35 @@ div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cor.callout {
-  border-left-color: #00838F;
+div.callout-solution.callout {
+  border-left-color: #4E342E;
 }
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
 }
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-exr.callout {
-  border-left-color: #FFA500;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-fig.callout {
+  border-left-color: #757575;
+}
+div.callout-fig.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
+}
+div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-prp.callout {
   border-left-color: #827717;
@@ -274,15 +294,25 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-solution.callout {
-  border-left-color: #4E342E;
+div.callout-cor.callout {
+  border-left-color: #00838F;
 }
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
 }
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -298,6 +328,16 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   content: '\f144' !important;
   background-image: none;
 }
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
+}
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
+}
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-remark.callout {
   border-left-color: #AD1457;
 }
@@ -307,16 +347,6 @@ div.callout-remark.callout-style-default .callout-header {
 div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
@@ -328,45 +358,15 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-def.callout {
-  border-left-color: #1B5E20;
+div.callout-proof.callout {
+  border-left-color: #37474F;
 }
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
 }
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
-}
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
-}
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-fig.callout {
-  border-left-color: #757575;
-}
-div.callout-fig.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -765,6 +765,7 @@ window.Quarto = {
   <li><a href="#sec-clt" id="toc-sec-clt" class="nav-link active" data-scroll-target="#sec-clt"><span class="header-section-number">1</span> The Central Limit Theorem</a></li>
   <li><a href="#sec-tail-bounds" id="toc-sec-tail-bounds" class="nav-link" data-scroll-target="#sec-tail-bounds"><span class="header-section-number">2</span> Tail bounds</a></li>
   <li><a href="#sec-lln" id="toc-sec-lln" class="nav-link" data-scroll-target="#sec-lln"><span class="header-section-number">3</span> The law of large numbers</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/pds/edit/main/limit-theorems.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/pds/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/pds/blob/main/limit-theorems.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="limit-theorems-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="limit-theorems-handout.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="limit-theorems.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
@@ -786,7 +787,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-17 13:34:44 (PDT)</p>
+      <p class="date">Last modified: 2026-10-17 13:43:25 (PDT)</p>
     </div>
   </div>
   
@@ -831,7 +832,7 @@ window.Quarto = {
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Central Limit Theorem)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 1 (Central Limit Theorem)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span> <span class="citation" data-cites="wikipedia_central_limit_theorem">(<a href="#ref-wikipedia_central_limit_theorem" role="doc-biblioref">Wikipedia contributors 2026a</a>)</span>:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\,(\bar{X}_{n} - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z)
 \]</span></p>
@@ -1256,7 +1257,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-markov" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (Markov’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(X \ge 0\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &lt; \infty\)</span>. Then for every <span class="math inline">\(a &gt; 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 2 (Markov’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(X \ge 0\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &lt; \infty\)</span>. Then for every <span class="math inline">\(a &gt; 0\)</span> <span class="citation" data-cites="wikipedia_markovs_inequality">(<a href="#ref-wikipedia_markovs_inequality" role="doc-biblioref">Wikipedia contributors 2026f</a>)</span>:</p>
 <p><span class="math display">\[
 \Pr\mathopen{}\left(X \ge a\right)\mathclose{} \le \frac{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}{a}
 \]</span></p>
@@ -1319,7 +1320,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-chebyshev" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Chebyshev’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>. Then for every <span class="math inline">\(k &gt; 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 3 (Chebyshev’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>. Then for every <span class="math inline">\(k &gt; 0\)</span> <span class="citation" data-cites="wikipedia_chebyshevs_inequality">(<a href="#ref-wikipedia_chebyshevs_inequality" role="doc-biblioref">Wikipedia contributors 2026b</a>)</span>:</p>
 <p><span class="math display">\[
 \Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{} \le \frac{1}{k^2}
 \]</span></p>
@@ -1675,7 +1676,7 @@ L(s)
 <div id="callout-27" class="callout-27-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and population mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
+<p><span class="theorem-title"><strong>Theorem 5 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and population mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span> <span class="citation" data-cites="wikipedia_hoeffdings_inequality">(<a href="#ref-wikipedia_hoeffdings_inequality" role="doc-biblioref">Wikipedia contributors 2026d</a>)</span>,</p>
 <p><span id="eq-hoeffding-one-sided"><span class="math display">\[
 \Pr\mathopen{}\left(\bar{X}_{n} - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}.
 \tag{1}\]</span></span></p>
@@ -1889,7 +1890,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <div id="callout-34" class="callout-34-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-convergence-in-probability" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Convergence in probability)</strong></span> A sequence of random variables <span class="math inline">\(Y_1, Y_2, \ldots\)</span> <strong>converges in probability</strong> to a constant <span class="math inline">\(c\)</span> if, for every distance <span class="math inline">\(\varepsilon &gt; 0\)</span>, the probability that <span class="math inline">\(Y_n\)</span> lies at least <span class="math inline">\(\varepsilon\)</span> away from <span class="math inline">\(c\)</span> goes to zero as <span class="math inline">\(n\)</span> grows:</p>
+<p><span class="theorem-title"><strong>Definition 1 (Convergence in probability)</strong></span> A sequence of random variables <span class="math inline">\(Y_1, Y_2, \ldots\)</span> <strong>converges in probability</strong> to a constant <span class="math inline">\(c\)</span> <span class="citation" data-cites="wikipedia_convergence_of_random_variables">(<a href="#ref-wikipedia_convergence_of_random_variables" role="doc-biblioref">Wikipedia contributors 2026c</a>)</span> if, for every distance <span class="math inline">\(\varepsilon &gt; 0\)</span>, the probability that <span class="math inline">\(Y_n\)</span> lies at least <span class="math inline">\(\varepsilon\)</span> away from <span class="math inline">\(c\)</span> goes to zero as <span class="math inline">\(n\)</span> grows:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left|Y_n - c\right|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0
 \]</span></p>
@@ -1927,7 +1928,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <div id="callout-36" class="callout-36-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-wlln" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span> <span class="citation" data-cites="wikipedia_law_of_large_numbers">(<a href="#ref-wikipedia_law_of_large_numbers" role="doc-biblioref">Wikipedia contributors 2026e</a>)</span>:</p>
 <p><span class="math display">\[
 \bar{X}_{n} \overset{\scriptstyle p}{\longrightarrow}\mu
 \]</span></p>
@@ -2001,6 +2002,17 @@ e^{sn(\bar{X}_{n} - \mu)}
 </div>
 </div>
 </section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><p><span class="citation" data-cites="wikipedia_central_limit_theorem">Wikipedia contributors (<a href="#ref-wikipedia_central_limit_theorem" role="doc-biblioref">2026a</a>)</span> — the theorem, its variants and its history</p></li>
+<li><p><span class="citation" data-cites="wikipedia_markovs_inequality">Wikipedia contributors (<a href="#ref-wikipedia_markovs_inequality" role="doc-biblioref">2026f</a>)</span> — the inequality and its extensions</p></li>
+<li><p><span class="citation" data-cites="wikipedia_chebyshevs_inequality">Wikipedia contributors (<a href="#ref-wikipedia_chebyshevs_inequality" role="doc-biblioref">2026b</a>)</span> — the inequality, with examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_hoeffdings_inequality">Wikipedia contributors (<a href="#ref-wikipedia_hoeffdings_inequality" role="doc-biblioref">2026d</a>)</span> — the inequality for bounded variables</p></li>
+<li><p><span class="citation" data-cites="wikipedia_law_of_large_numbers">Wikipedia contributors (<a href="#ref-wikipedia_law_of_large_numbers" role="doc-biblioref">2026e</a>)</span> — the weak and strong laws</p></li>
+<li><p><span class="citation" data-cites="wikipedia_convergence_of_random_variables">Wikipedia contributors (<a href="#ref-wikipedia_convergence_of_random_variables" role="doc-biblioref">2026c</a>)</span> — the modes of convergence and how they relate</p></li>
+</ul>
+</section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -2027,6 +2039,24 @@ Seneta, Eugene. 2013. <span>“A Tricentenary History of the Law of Large Number
 </div>
 <div id="ref-tchebichef1867" class="csl-entry" role="listitem">
 Tchébychef, P. L. 1867. <span>“Des Valeurs Moyennes.”</span> <em>Journal de Mathématiques Pures Et Appliquées</em>, 2nd series, vol. 12: 177–84. <a href="https://www.numdam.org/item/JMPA_1867_2_12__177_0/">https://www.numdam.org/item/JMPA_1867_2_12__177_0/</a>.
+</div>
+<div id="ref-wikipedia_central_limit_theorem" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026a. <em>Central Limit Theorem — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">https://en.wikipedia.org/wiki/Central_limit_theorem</a>.
+</div>
+<div id="ref-wikipedia_chebyshevs_inequality" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026b. <em>Chebyshev’s Inequality — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Chebyshev%27s_inequality">https://en.wikipedia.org/wiki/Chebyshev%27s_inequality</a>.
+</div>
+<div id="ref-wikipedia_convergence_of_random_variables" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026c. <em>Convergence of Random Variables — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Convergence_of_random_variables">https://en.wikipedia.org/wiki/Convergence_of_random_variables</a>.
+</div>
+<div id="ref-wikipedia_hoeffdings_inequality" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026d. <em>Hoeffding’s Inequality — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Hoeffding%27s_inequality">https://en.wikipedia.org/wiki/Hoeffding%27s_inequality</a>.
+</div>
+<div id="ref-wikipedia_law_of_large_numbers" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026e. <em>Law of Large Numbers — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">https://en.wikipedia.org/wiki/Law_of_large_numbers</a>.
+</div>
+<div id="ref-wikipedia_markovs_inequality" class="csl-entry" role="listitem">
+Wikipedia contributors. 2026f. <em>Markov’s Inequality — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Markov%27s_inequality">https://en.wikipedia.org/wiki/Markov%27s_inequality</a>.
 </div>
 </div>
 
@@ -3002,10 +3032,24 @@ document.querySelectorAll("main table").forEach(function (t) {
 <span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-wlln.qmd &gt;}}</span>
 <span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further reading {.unnumbered}</span></span>
 <span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_central_limit_theorem --- the theorem, its variants and its history</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_markovs_inequality --- the inequality and its extensions</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_chebyshevs_inequality --- the inequality, with examples</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_hoeffdings_inequality --- the inequality for bounded variables</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_law_of_large_numbers --- the weak and strong laws</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>@wikipedia_convergence_of_random_variables --- the modes of convergence and how they relate</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
