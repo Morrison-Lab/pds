@@ -1,7 +1,7 @@
 :::{#def-experiment-outcome}
 #### Outcome
 
-An **outcome** is a single, fully specified way that a procedure can end,
+An **outcome** is a single, fully specified way that a [procedure](#def-procedure) can end,
 recorded as one value.
 
 :::

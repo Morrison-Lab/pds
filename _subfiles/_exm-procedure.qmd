@@ -1,0 +1,7 @@
+:::{#exm-procedure}
+#### Rolling a die once
+
+The instructions "roll a six-sided die once, then read the number facing up" are a procedure.
+Following them takes two steps, and then they are finished.
+
+:::
