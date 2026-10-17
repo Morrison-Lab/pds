@@ -7,7 +7,8 @@ typically denoted $\haz(t)$ or $\h(t)$,
 is the limit of the [conditional probability](probability-basics.qmd#def-conditional-prob)
 that $T$ falls in an interval starting at $t$, given $T \ge t$,
 divided by the width of that interval,
-as that width shrinks to 0:
+as that width shrinks to 0
+[@wikipedia_failure_rate]:
 
 {{< include pds/_subfiles/_eq-def-hazard.qmd >}}
 
