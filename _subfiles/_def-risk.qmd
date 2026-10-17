@@ -5,7 +5,8 @@ For a random variable $Y$
 and a [prediction](#def-prediction) $\hy$
 (a constant, or a function $g(X)$ of a random input $X$),
 the **risk** is the expectation of the
-[loss](#def-loss-function):
+[loss](#def-loss-function)
+[@wikipedia_risk_function]:
 
 $$R \eqdef \E{L(Y, \hy)}$$
 

@@ -3,7 +3,8 @@
 
 The **entropy** of a *discrete* random variable $X$ with
 [probability mass function](random-variables.qmd#def-pmf) $\P(X=x)$
-is the [expectation](#def-expectation) of $-\log \P(X)$:
+is the [expectation](#def-expectation) of $-\log \P(X)$
+[@wikipedia_entropy_information_theory]:
 
 $$H(X) \eqdef \E{-\log \P(X)} = -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x)$$
 
