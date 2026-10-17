@@ -3,7 +3,8 @@
 
 A random variable $Y$ has the **Laplace distribution**
 with location parameter $\mean \in \reals$ and scale parameter $b > 0$,
-written $Y \sim \dLaplacef{\mean, b}$,
+written $Y \sim \dLaplacef{\mean, b}$
+[@wikipedia_laplace_distribution],
 if $Y$ is continuous with [density](random-variables.qmd#def-pdf):
 
 $$\p(Y=y) \eqdef \frac{1}{2b} \ef{-\frac{\abs{y - \mean}}{b}}, \quad y \in \reals$$ {#eq-laplace-pdf}
