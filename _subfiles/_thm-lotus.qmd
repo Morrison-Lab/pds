@@ -2,7 +2,8 @@
 #### Law of the Unconscious Statistician (LOTUS)
 
 **Discrete case.**
-For any function $g$ of a *discrete* random variable $X$:
+For any function $g$ of a *discrete* random variable $X$
+[@wikipedia_law_of_the_unconscious_statistician]:
 
 $$\E{g(X)} = \sum_{x \in \rangef{X}} g(x) \cd \P(X=x)$$
 

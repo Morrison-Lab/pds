@@ -2,7 +2,8 @@
 #### Loss function
 
 A **loss function** $L(y, \hy)$ is a rule that gives a number that is 0 or larger:
-the cost of [predicting](#def-prediction) $\hy$ when the true value is $y$.
+the cost of [predicting](#def-prediction) $\hy$ when the true value is $y$
+[@wikipedia_loss_function].
 
 :::
 

@@ -4,7 +4,9 @@
 Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf)
 on the same finite set of outcomes $\set{1, \ldots, K}$,
 with $p_k$ and $q_k$ the probabilities of outcome $k$.
-The **cross-entropy** of $q$ relative to $p$ is
+The **cross-entropy** of $q$ relative to $p$
+[@wikipedia_cross_entropy]
+is
 
 $$H(p, q) \eqdef -\sumto{k}{K} p_k \log q_k.$$
 

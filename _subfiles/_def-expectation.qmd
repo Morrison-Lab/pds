@@ -3,7 +3,8 @@
 
 The **expectation**, **expected value**, or **population mean** of a
 *discrete* random variable $X$, denoted $\E{X}$, $\mean(X)$, or $\mean_X$,
-is the mean of $X$'s possible values,
+is the mean of $X$'s possible values
+[@wikipedia_expected_value],
 weighted by the [probability mass function](random-variables.qmd#def-pmf) of those values:
 
 $$\E{X} \eqdef \sum_{x \in \rangef{X}} x \cdot \P(X=x)$$
@@ -17,12 +18,6 @@ $$\E{X} \eqdef \int_{x\in \rangef{X}} x \cdot \p(X=x)\,dx$$
 In both cases, the expectation is defined
 only when the sum or integral converges absolutely,
 that is, when it is finite with $\abs{x}$ in place of $x$.
-
-:::
-
-::: {.remark .notes}
-
-See also <https://en.wikipedia.org/wiki/Expected_value>
 
 :::
 
