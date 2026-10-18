@@ -912,7 +912,7 @@ $$
 :::{#def-jointly-distributed}
 #### Jointly distributed random variables
 
-Random variables $\X1n$ are **jointly distributed**
+Random variables $\Xin$ are **jointly distributed**
 when they are defined on the same [sample space](probability-basics.qmd#def-sample-space) $\samplespace$,
 so that an event about several of them at once,
 such as $\{X_1 \le x_1\} \cap \{X_2 \le x_2\}$,
@@ -955,10 +955,10 @@ $$
 #### Joint distribution
 
 The **joint distribution** of
-[jointly distributed](#def-jointly-distributed) random variables $\X1n$
+[jointly distributed](#def-jointly-distributed) random variables $\Xin$
 is the function that assigns to each set $A \subseteq \reals^n$
-for which $\{(\X1n) \in A\}$ is an [event](probability-basics.qmd#def-event)
-the probability $\Pr((\X1n) \in A)$
+for which $\{(\Xin) \in A\}$ is an [event](probability-basics.qmd#def-event)
+the probability $\Pr((\Xin) \in A)$
 [@wikipedia_joint_probability_distribution].
 
 :::
@@ -988,14 +988,14 @@ and each of those outcomes has at least one head.
 :::{#thm-joint-distribution-rectangles}
 #### A joint distribution is determined by its rectangle probabilities
 
-If [jointly distributed](#def-jointly-distributed) random variables $\X1n$,
+If [jointly distributed](#def-jointly-distributed) random variables $\Xin$,
 and jointly distributed random variables $\dsn{Y}$,
 satisfy
 
 $$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n)$$
 
 for all sets $\dsn{A}$ of real numbers for which these are events,
-then $(\X1n)$ and $(\dsn{Y})$ have the same [joint distribution](#def-joint-distribution).
+then $(\Xin)$ and $(\dsn{Y})$ have the same [joint distribution](#def-joint-distribution).
 
 :::
 

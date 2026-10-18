@@ -1,14 +1,14 @@
 :::{#def-indpt}
 #### Statistical independence
 
-Random variables $\X1n$ are **statistically independent**
+Random variables $\Xin$ are **statistically independent**
 [@wikipedia_independence_probability_theory]
 if, for all sets of real numbers $\dsn{A}$,
 the [probability](probability-basics.qmd#def-probability)
 that every $X_i$ falls in its set
 is the product of the individual probabilities:
 
-$$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prodi1n{\Pr(X_i \in A_i)}$$
+$$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prodin{\Pr(X_i \in A_i)}$$
 
 :::
 
@@ -25,12 +25,12 @@ which can remind you of the definition.
 :::{#thm-indpt-pmf}
 #### Independence of discrete random variables: the joint PMF factors
 
-Discrete random variables $\X1n$ are [statistically independent](#def-indpt)
+Discrete random variables $\Xin$ are [statistically independent](#def-indpt)
 if and only if their [joint PMF](random-variables.qmd#def-joint-pmf) factors
 into the product of their PMFs:
 for all real numbers $\dsn{x}$,
 
-$$\P(\Xx1n) = \prodi1n{\P(X_i=x_i)}$$
+$$\P(\Xxin) = \prodin{\P(X_i=x_i)}$$
 
 :::
 
@@ -47,18 +47,18 @@ Each [range](random-variables.qmd#def-range) $\rangef{X_i}$ is countable,
 so $C$ is countable.
 Each $X_i$ takes its values in $\rangef{X_i}$,
 so the event $\set{X_1 \in A_1, \ldots, X_n \in A_n}$
-is the disjoint union of the events $\set{\Xx1n}$ over $(\dsn{x}) \in C$:
+is the disjoint union of the events $\set{\Xxin}$ over $(\dsn{x}) \in C$:
 
 $$
 \ba
 \Pr(X_1 \in A_1, \ldots, X_n \in A_n)
-&= \sum_{(\dsn{x}) \in C} \P(\Xx1n)
-&& \text{(countable additivity over the disjoint events } \set{\Xx1n} \text{)} \\
-&= \sum_{(\dsn{x}) \in C} \prodi1n{\P(X_i = x_i)}
+&= \sum_{(\dsn{x}) \in C} \P(\Xxin)
+&& \text{(countable additivity over the disjoint events } \set{\Xxin} \text{)} \\
+&= \sum_{(\dsn{x}) \in C} \prodin{\P(X_i = x_i)}
 && \text{(the joint PMF factors)} \\
-&= \prodi1n{\sum_{x_i \in A_i \cap \rangef{X_i}} \P(X_i = x_i)}
+&= \prodin{\sum_{x_i \in A_i \cap \rangef{X_i}} \P(X_i = x_i)}
 && \text{(a sum over the product set } C \text{ of non-negative products factors)} \\
-&= \prodi1n{\Pr(X_i \in A_i)}
+&= \prodin{\Pr(X_i \in A_i)}
 && \text{(countable additivity over the disjoint events } \set{X_i = x_i} \text{)}
 \ea
 $$
@@ -202,13 +202,13 @@ and all sets of real numbers $\dsn{A}$,
 the conditional probability that every $Y_i$ falls in its set
 is the product of the individual conditional probabilities:
 
-$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodi1n{\Pr(Y_i \in A_i \mid \vX = \vx)}$$
+$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodin{\Pr(Y_i \in A_i \mid \vX = \vx)}$$
 
 When $\vX$ is continuous, every event $\{\vX = \vx\}$ has probability 0,
 so the condition is stated with densities instead:
 for every $\vx$ with $\p(\vX = \vx) > 0$ and all $\dsn{y}$,
 
-$$\frac{\p(\vX = \vx, Y_1 = y_1, \ldots, Y_n = y_n)}{\p(\vX = \vx)} = \prodi1n{\frac{\p(\vX = \vx, Y_i = y_i)}{\p(\vX = \vx)}}$$
+$$\frac{\p(\vX = \vx, Y_1 = y_1, \ldots, Y_n = y_n)}{\p(\vX = \vx)} = \prodin{\frac{\p(\vX = \vx, Y_i = y_i)}{\p(\vX = \vx)}}$$
 
 where each $\p(\cdot)$ is a [joint density](random-variables.qmd#def-joint-pdf)
 (with probability masses in place of densities for any discrete $Y_i$,
@@ -340,7 +340,7 @@ and @exm-indpt-not-cind gives the second.
 :::{#prp-cind-own-covariate}
 #### Conditional independence when each $Y_i$ depends only on its own $X_i$
 
-Let $\vX = (\X1n)$ be a discrete random vector,
+Let $\vX = (\Xin)$ be a discrete random vector,
 and let $\dsn{Y}$ be [conditionally independent](#def-cind) given $\vX$.
 Suppose also that each $Y_i$ depends on $\vX$ only through $X_i$:
 for every $\vx = (\dsn{x})$ with $\Pr(\vX = \vx) > 0$
@@ -350,7 +350,7 @@ $$\Pr(Y_i \in A_i \mid \vX = \vx) = \Pr(Y_i \in A_i \mid X_i = x_i)$$
 
 Then, for every such $\vx$ and all sets of real numbers $\dsn{A}$:
 
-$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodi1n{\Pr(Y_i \in A_i \mid X_i = x_i)}$$
+$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodin{\Pr(Y_i \in A_i \mid X_i = x_i)}$$
 
 :::
 
@@ -362,9 +362,9 @@ because $\Pr(X_i = x_i) \ge \Pr(\vX = \vx) > 0$. So:
 $$
 \ba
 \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx)
-&= \prodi1n{\Pr(Y_i \in A_i \mid \vX = \vx)}
+&= \prodin{\Pr(Y_i \in A_i \mid \vX = \vx)}
 && \text{(conditional independence given } \vX \text{)} \\
-&= \prodi1n{\Pr(Y_i \in A_i \mid X_i = x_i)}
+&= \prodin{\Pr(Y_i \in A_i \mid X_i = x_i)}
 && \text{(each } Y_i \text{ depends on } \vX \text{ only through } X_i \text{)}
 \ea
 $$
@@ -385,7 +385,7 @@ That second assumption is a separate one, not part of conditional independence.
 :::{#def-ident}
 #### Identically distributed
 
-Random variables $\X1n$ are **identically distributed**
+Random variables $\Xin$ are **identically distributed**
 if they all have the same [CDF](random-variables.qmd#def-cdf):
 
 $$\forall i\in \set{1, \ldots, n}, \forall x \in \reals: \Pr(X_i \le x) = \Pr(X_1 \le x)$$
@@ -397,7 +397,7 @@ $$\forall i\in \set{1, \ldots, n}, \forall x \in \reals: \Pr(X_i \le x) = \Pr(X_
 :::{#thm-ident-pmf}
 #### Identically distributed discrete random variables have the same PMF
 
-Discrete random variables $\X1n$ are [identically distributed](#def-ident)
+Discrete random variables $\Xin$ are [identically distributed](#def-ident)
 if and only if they all have the same [PMF](random-variables.qmd#def-pmf):
 for every $i \in \set{1, \ldots, n}$ and every real number $x$,
 
@@ -502,7 +502,7 @@ They are not independent: knowing one determines the other.
 #### Conditionally identically distributed
 
 Random variables $\dsn{Y}$ are **conditionally identically distributed**
-given random variables $\X1n$
+given random variables $\Xin$
 if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function $G(y \mid x)$ of $y$ and $x$:
 for every $i \in \set{1, \ldots, n}$, every $y$,
 and every $x$ with $\Pr(X_i = x) > 0$,
@@ -524,7 +524,7 @@ the integral of $\p(X_i = x, Y_i = u) / \p(X_i = x)$ over $u \le y$
 Suppose each $Y_i$ is binary,
 with $\Pr(Y_i = 1 \mid X_i = x) = \prob(x)$ for one function $\prob$ shared by every $i$
 (for instance, $\prob(x) = x / (1 + x)$ for a dose $x \ge 0$).
-Then $\dsn{Y}$ are conditionally identically distributed given $\X1n$,
+Then $\dsn{Y}$ are conditionally identically distributed given $\Xin$,
 with $G(y \mid x) = 1 - \prob(x)$ for $0 \le y < 1$
 (and $0$ for $y < 0$, $1$ for $y \ge 1$).
 Their marginal distributions can still differ:
@@ -577,9 +577,9 @@ given $\dsn{X}$
 (shorthand: "$Y_i \mid X_i\ \ciid$" or just "$Y_i \mid X_i\ \iid$")
 if:
 
-- $\dsn{Y}$ are [conditionally independent](#def-cind) given $(\X1n)$,
-- each $Y_i$ depends on $(\X1n)$ only through $X_i$, and
-- $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given $\X1n$.
+- $\dsn{Y}$ are [conditionally independent](#def-cind) given $(\Xin)$,
+- each $Y_i$ depends on $(\Xin)$ only through $X_i$, and
+- $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given $\Xin$.
 
 :::
 
@@ -592,7 +592,7 @@ In @exm-cident, if the $Y_i$ are also conditionally independent given all the do
 and each $Y_i$ depends on the doses only through its own $X_i$,
 then $Y_i \mid X_i\ \ciid$,
 and the joint conditional PMF is
-$\prodi1n{\prob(x_i)^{y_i}\paren{1 - \prob(x_i)}^{1 - y_i}}$:
+$\prodin{\prob(x_i)^{y_i}\paren{1 - \prob(x_i)}^{1 - y_i}}$:
 one shared function evaluated at each $(x_i, y_i)$.
 
 :::
