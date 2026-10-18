@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:26:57 (PDT)
+Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
@@ -66,19 +66,19 @@ Last modified: 2026-10-18 11:26:57 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Conditional independence)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent** ([Wikipedia contributors 2026a](#ref-wikipedia_conditional_independence)) given a discrete random variable (or vector) \\\mathord{\underset{\sim}{X}}\\ if, for every value \\\mathord{\underset{\sim}{x}}\\ with \\\Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \> 0\\ and all sets of real numbers \\A_1, \ldots, A_n\\, the conditional probability that every \\Y_i\\ falls in its set is the product of the individual conditional probabilities:
+> **Definition 2 (Conditional independence)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent** ([Wikipedia contributors 2026a](#ref-wikipedia_conditional_independence)) given a discrete random variable (or vector) \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\ if, for every value \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\ with \\\Pr(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) \> 0\\ and all sets of real numbers \\A_1, \ldots, A_n\\, the conditional probability that every \\Y_i\\ falls in its set is the product of the individual conditional probabilities:
 >
-> \\\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})}\\
+> \\\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) = \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}})}\\
 >
-> When \\\mathord{\underset{\sim}{X}}\\ is continuous, every event \\\\\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}\\\\ has probability 0, so the condition is stated with densities instead: for every \\\mathord{\underset{\sim}{x}}\\ with \\\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \> 0\\ and all \\y_1, \ldots, y_n\\,
+> When \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\ is continuous, every event \\\\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\\\ has probability 0, so the condition is stated with densities instead: for every \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\ with \\\operatorname{p}(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) \> 0\\ and all \\y_1, \ldots, y_n\\,
 >
-> \\\frac{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})} = \prod\_{i=1}^n{\frac{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}, Y_i = y_i)}{\operatorname{p}(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})}}\\
+> \\\frac{\operatorname{p}(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}})} = \prod\_{i=1}^n{\frac{\operatorname{p}(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}, Y_i = y_i)}{\operatorname{p}(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}})}}\\
 >
 > where each \\\operatorname{p}(\cdot)\\ is a [joint density](random-variables.llms.md#def-joint-pdf) (with probability masses in place of densities for any discrete \\Y_i\\, as in a [joint density-mass function](random-variables.llms.md#def-joint-density-mass)).
 
 > **NOTE:**
 >
-> *Remark*. For continuous \\\mathord{\underset{\sim}{X}}\\, each ratio in the density form is the density of the \\Y\\’s under their conditional distribution given \\\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}\\, so both forms say the same thing: given \\\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}\\, the \\Y_i\\’s joint distribution factors.
+> *Remark*. For continuous \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\, each ratio in the density form is the density of the \\Y\\’s under their conditional distribution given \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\, so both forms say the same thing: given \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\, the \\Y_i\\’s joint distribution factors.
 
 > **NOTE:**
 >
@@ -125,23 +125,23 @@ Last modified: 2026-10-18 11:26:57 (PDT)
 
 > **NOTE:**
 >
-> **Proposition 2 (Conditional independence when each \\Y_i\\ depends only on its own \\X_i\\)** Let \\\mathord{\underset{\sim}{X}}= (X_1, \ldots, X_n)\\ be a discrete random vector, and let \\Y_1, \ldots, Y_n\\ be [conditionally independent](#def-cind) given \\\mathord{\underset{\sim}{X}}\\. Suppose also that each \\Y_i\\ depends on \\\mathord{\underset{\sim}{X}}\\ only through \\X_i\\: for every \\\mathord{\underset{\sim}{x}}= (x_1, \ldots, x_n)\\ with \\\Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \> 0\\ and every set of real numbers \\A_i\\,
+> **Proposition 2 (Conditional independence when each \\Y_i\\ depends only on its own \\X_i\\)** Let \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= (X_1, \ldots, X_n)\\ be a discrete random vector, and let \\Y_1, \ldots, Y_n\\ be [conditionally independent](#def-cind) given \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\. Suppose also that each \\Y_i\\ depends on \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\ only through \\X_i\\: for every \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}= (x_1, \ldots, x_n)\\ with \\\Pr(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) \> 0\\ and every set of real numbers \\A_i\\,
 >
-> \\\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \Pr(Y_i \in A_i \mid X_i = x_i)\\
+> \\\Pr(Y_i \in A_i \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) = \Pr(Y_i \in A_i \mid X_i = x_i)\\
 >
-> Then, for every such \\\mathord{\underset{\sim}{x}}\\ and all sets of real numbers \\A_1, \ldots, A_n\\:
+> Then, for every such \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\ and all sets of real numbers \\A_1, \ldots, A_n\\:
 >
-> \\\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) = \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}\\
+> \\\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) = \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)}\\
 
 > **NOTE:**
 >
-> *Proof*. Each conditional probability given \\X_i = x_i\\ is defined, because \\\Pr(X_i = x_i) \ge \Pr(\mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) \> 0\\. So:
+> *Proof*. Each conditional probability given \\X_i = x_i\\ is defined, because \\\Pr(X_i = x_i) \ge \Pr(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) \> 0\\. So:
 >
-> \\ \begin{aligned} \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}}) &= \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\underset{\sim}{X}}= \mathord{\underset{\sim}{x}})} && \text{(conditional independence given } \mathord{\underset{\sim}{X}}\text{)} \\ &= \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)} && \text{(each } Y_i \text{ depends on } \mathord{\underset{\sim}{X}}\text{ only through } X_i \text{)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) &= \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}})} && \text{(conditional independence given } \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\text{)} \\ &= \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid X_i = x_i)} && \text{(each } Y_i \text{ depends on } \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\text{ only through } X_i \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. In regression, \\\mathord{\underset{\sim}{X}}\\ is usually the full set of covariates \\(X_1, \ldots, X_n)\\, and a model usually also assumes, as [Proposition 2](#prp-cind-own-covariate) does, that each \\Y_i\\ depends on the covariates only through its own \\X_i\\. That second assumption is a separate one, not part of conditional independence.
+> *Remark*. In regression, \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\ is usually the full set of covariates \\(X_1, \ldots, X_n)\\, and a model usually also assumes, as [Proposition 2](#prp-cind-own-covariate) does, that each \\Y_i\\ depends on the covariates only through its own \\X_i\\. That second assumption is a separate one, not part of conditional independence.
 
 > **NOTE:**
 >
