@@ -1,11 +1,11 @@
 :::{#lem-prediction-error-split}
 #### Prediction error splits at the conditional mean
 
-Let $\bestpredfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
+Let $\truemeanfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
 For any [prediction function](#def-prediction) $\predfnf{\Predvar}$,
 the [prediction error](#def-prediction-error) splits as:
 
-$$\prederr_{\predfn} = \prederr_{\bestpredfn} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}$$
+$$\prederr_{\predfn} = \prederr_{\truemeanfn} + \paren{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}$$
 
 :::
 
@@ -16,10 +16,10 @@ $$
 \prederr_{\predfn}
 &= \predfnf{\Predvar} - \Outvar
 && \text{(definition of } \prederr_{\predfn} \text{)} \\
-&= \paren{\bestpredfnf{\Predvar} - \Outvar} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}
-&& \text{(add and subtract } \bestpredfnf{\Predvar} \text{)} \\
-&= \prederr_{\bestpredfn} + \paren{\predfnf{\Predvar} - \bestpredfnf{\Predvar}}
-&& \text{(definition of } \prederr_{\bestpredfn} \text{)}
+&= \paren{\truemeanfnf{\Predvar} - \Outvar} + \paren{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}
+&& \text{(add and subtract } \truemeanfnf{\Predvar} \text{)} \\
+&= \prederr_{\truemeanfn} + \paren{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}
+&& \text{(definition of } \prederr_{\truemeanfn} \text{)}
 \ea
 $$
 
@@ -33,8 +33,8 @@ $$
 In @exr-best-predictor,
 when $\Predvar = 0$ and $\Outvar = 0$,
 the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [prediction error](#def-prediction-error) $\prederr_{\predfn_1} = 3$.
-The conditional mean is $\bestpredfnf{0} = 1$,
-so $\prederr_{\bestpredfn} = 1$ and $\predfn_1\paren{0} - \bestpredfnf{0} = 2$,
+The conditional mean is $\truemeanfnf{0} = 1$,
+so $\prederr_{\truemeanfn} = 1$ and $\predfn_1\paren{0} - \truemeanfnf{0} = 2$,
 and $3 = 1 + 2$.
 
 :::
