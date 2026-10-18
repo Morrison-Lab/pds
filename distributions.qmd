@@ -16,23 +16,6 @@ format:
 
 {{< include pds/_subfiles/_sec-distributions.qmd >}}
 
-## Further reading {.unnumbered}
-
--   @wikipedia_binomial_distribution --- the binomial distribution and its approximations
-
--   @wikipedia_poisson_distribution --- the Poisson distribution, with examples
-
--   @wikipedia_negative_binomial_distribution --- the negative binomial distribution and its parametrizations
-
--   @wikipedia_weibull_distribution --- the Weibull distribution and its hazard
-
--   @wikipedia_laplace_distribution --- the Laplace distribution
-
--   @wikipedia_multivariate_normal_distribution --- the multivariate normal distribution and its properties
-
--   @wikipedia_mahalanobis_distance --- the Mahalanobis distance
-
--   @wikipedia_mixture_distribution --- mixture distributions
 
 ## References {.unnumbered}
 

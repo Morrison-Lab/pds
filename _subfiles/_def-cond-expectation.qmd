@@ -225,7 +225,7 @@ pander::pander(coef(lm(wt ~ ga)))
 Let $X$ and $Y$ be jointly distributed discrete random variables.
 The **conditional expectation** of $Y$ given $X = x$,
 using @def-cond-pmf,
-is:
+is [@wikipedia_conditional_expectation]:
 
 $$\E{Y \mid X = x} \eqdef \sum_{y \in \rangef{Y}} y \cd \P(Y = y \mid X = x)$$
 
