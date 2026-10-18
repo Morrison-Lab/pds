@@ -43,7 +43,7 @@ $$
 \ea
 $$
 
-Fix $\varepsilon > 0$ and let $k \eqdef \varepsilon \sqrt{n} / \sdpar$,
+Let $\varepsilon > 0$ and let $k \eqdef \varepsilon \sqrt{n} / \sdpar$,
 so that $k \sdpar / \sqrt{n} = \varepsilon$.
 [Chebyshev's inequality](#thm-chebyshev) for $\samplemean{X}{n}$,
 whose standard deviation is $\sdpar / \sqrt{n}$, gives
