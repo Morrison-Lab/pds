@@ -29,7 +29,7 @@ $$
 
 About **9%**, not the $99\%$ most people guess.
 
-The reason is the **base rate**.
+The reason is the **base rate** [@wikipedia_base_rate_fallacy].
 Out of $100{,}000$ people screened, about $100$ have the disease and $99$ of
 them test positive, while $99{,}900$ do not have it and about $999$ of them
 test positive anyway.

@@ -515,7 +515,7 @@ For a random variable $X$
 with [cumulative distribution function (CDF)](#def-cdf) $\cdf$,
 its population **quantile function**
 (generalized inverse of $\cdf$)
-is:
+is [@wikipedia_quantile_function]:
 
 $$\quantilef{p} \eqdef \inf \set{t : \cdff{t} \ge p}, \quad p \in (0, 1).$$
 

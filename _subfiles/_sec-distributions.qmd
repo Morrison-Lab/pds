@@ -1546,7 +1546,7 @@ and let $w_1, \ldots, w_K$ be numbers with:
 - $\sumto{c}{K} w_c = 1$.
 
 The **mixture** of ${\p_1}, \ldots, {\p_K}$
-with **mixing weights** $w_1, \ldots, w_K$ is the function:
+with **mixing weights** $w_1, \ldots, w_K$ is the function [@wikipedia_mixture_distribution]:
 
 $$
 {\p_{\text{mix}}}(x) \eqdef \sumto{c}{K} w_c \, {\p_c}(x), \quad x \in \reals
