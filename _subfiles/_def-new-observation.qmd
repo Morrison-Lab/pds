@@ -12,8 +12,8 @@ whose input is observed and whose outcome is not yet observed.
 :::{#exm-new-observation}
 #### A new observation in the best-predictor exercise
 
-In @exr-best-predictor, suppose the new observation $(\Predvar, \Outvar)$ has the joint distribution given in the exercise,
-and is [statistically independent](independence.qmd#def-indpt) of any observations used to choose the prediction.
+In @exr-best-predictor, suppose the new observation $(\Predvar, \Outvar)$ satisfies the suppositions of its [definition](#def-new-observation),
+with the joint distribution given in the exercise as the population it is drawn from.
 Suppose also that its input is observed to be $\Predvar = 1$.
 Then its unobserved outcome is $4$ or $6$ with equal probability,
 and a [prediction](#def-prediction) of $5$ is a guess for that outcome.
