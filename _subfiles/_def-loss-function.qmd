@@ -7,19 +7,80 @@ the cost of [predicting](#def-prediction) $\hy$ when the true value is $y$
 
 :::
 
-::: {.remark .notes}
+{{< slidebreak >}}
 
-The squared error loss is:
-$$L(y, \hy) = \sqf{y - \hy}$$
+:::{#exm-loss-function}
+#### A loss function that charges more for overpredicting
 
-The absolute error loss is:
-$$L(y, \hy) = \abs{y - \hy}$$
+Let $L(y, \hy)$ cost $2$ per unit of overprediction and $1$ per unit of underprediction:
+
+$$
+L(y, \hy) =
+\begin{cases}
+2\paren{\hy - y} & \text{if } \hy > y \\
+y - \hy & \text{if } \hy \le y.
+\end{cases}
+$$
+
+This is a [loss function](#def-loss-function) because it is never negative.
+For the true value $y = 2$ and the prediction $\hy = 7$,
+the loss is $L(2, 7) = 2 \cd 5 = 10$.
+For $y = 7$ and $\hy = 2$, the loss is $L(7, 2) = 5$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-squared-error-loss}
+#### Squared error loss
+
+The **squared error loss** is the [loss function](#def-loss-function)
+that charges the square of the difference between the true value $y$ and the [prediction](#def-prediction) $\hy$:
+
+$$L(y, \hy) \eqdef \sqf{y - \hy}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-squared-error-loss}
+#### Squared error loss for one prediction
+
+For the true value $y = 2$ and the prediction $\hy = 7$,
+the [squared error loss](#def-squared-error-loss) is
+
+$$\sqf{2 - 7} = 25.$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-absolute-error-loss}
+#### Absolute error loss
+
+The **absolute error loss** is the [loss function](#def-loss-function)
+that charges the absolute value of the difference between the true value $y$ and the [prediction](#def-prediction) $\hy$:
+
+$$L(y, \hy) \eqdef \abs{y - \hy}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-absolute-error-loss}
+#### Absolute error loss for one prediction
+
+For the true value $y = 2$ and the prediction $\hy = 7$,
+the [absolute error loss](#def-absolute-error-loss) is
+
+$$\abs{2 - 7} = 5.$$
+
+:::
+
+::: {#rem-squared-error-loss-common}
+#### Squared error loss is the most common choice
 
 @hastie2009elements [p. 18] call squared error loss
 "by far the most common and convenient" choice.
-
-For the values $y = 3$ and $\hy = 5$ from @exr-loss (part 1),
-the squared error loss is $4$,
-and the absolute error loss is $2$.
 
 :::
