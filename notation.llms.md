@@ -4,16 +4,17 @@ Code
 
 Published
 
-Last modified: 2026-10-17 13:49:30 (PDT)
+Last modified: 2026-10-17 20:50:12 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
-- **Random variables** are denoted with uppercase letters (\\X\\, \\Y\\, \\Z\\), and their realized (observed) values with the matching lowercase letters (\\x\\, \\y\\, \\z\\). Some sources instead use uppercase/lowercase pairs from different alphabets, or reserve uppercase entirely for matrices — always check a new source’s own notation section before assuming ours.
-- **Probability** is denoted \\\Pr()\\ or \\\operatorname{P}()\\ for the probability of an event, or for a probability mass function (PMF), and \\\operatorname{p}()\\ for a density. Some sources use \\P()\\ (unstylized) throughout for both, or reserve \\f()\\ for densities and mass functions and use \\P()\\ only for event probabilities.
-- **Expectation** is denoted \\\operatorname{E}\mathopen{}\left\[\cdot\right\]\mathclose{}\\, with square brackets. Some sources write \\\mathbb{E}\[\cdot\]\\ (blackboard bold), or use parentheses, \\E(\cdot)\\; the meaning is the same.
-- **Independence** is denoted \\\perp\\\\\\\perp\\ (read “\\X \perp\\\\\\\perp Y\\” as “\\X\\ is independent of \\Y\\”). Some sources instead write \\X \perp Y\\ (a single \\\perp\\) or state independence only in prose.
-- **Complements** of events are denoted \\\neg A\\ (“not \\A\\”). Some sources write \\A^c\\ or \\\bar{A}\\.
-- We write \\\stackrel{\text{def}}{=}\\ for an equality that holds **by definition**, to distinguish it from an equality that follows from other facts — most sources do not make this distinction typographically and use a bare \\=\\ for both.
+- **Random variables** are denoted with uppercase letters (\\X\\, \\Y\\, \\Z\\), and their realized (observed) values with the matching lowercase letters (\\x\\, \\y\\, \\z\\).
+- **Probability** is denoted \\\Pr()\\ or \\\operatorname{P}()\\ for the probability of an event, or for a probability mass function (PMF), and \\\operatorname{p}()\\ for a density.
+- **Expectation** is denoted \\\operatorname{E}\mathopen{}\left\[\cdot\right\]\mathclose{}\\, with square brackets.
+- **Independence** is denoted \\\perp\\\\\\\perp\\ (read “\\X \perp\\\\\\\perp Y\\” as “\\X\\ is independent of \\Y\\”).
+- **Complements** of events are denoted \\\neg A\\ (“not \\A\\”).
+- We write \\\stackrel{\text{def}}{=}\\ for an equality that holds **by definition**, to distinguish it from an equality that follows from other facts.
+- Other sources often use other symbols for these. The [notation choices page](https://morrison-lab.github.io/macros/notation-choices.html#sec-probability-notation) lists the alternatives; always check a new source’s own notation section before assuming ours.
 - The full macro list, with more notational variants, is in [`latex-macros`](https://github.com/Morrison-Lab/macros).
 
 ## 1 Stochastic vs. probabilistic vs. random
