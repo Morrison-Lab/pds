@@ -1,10 +1,10 @@
 :::{#thm-risk-decomposition}
 #### Squared-error risk decomposition
 
-Let $\truemeanfnf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
+Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
 For any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
-$$\popriskf{\predfn} = \popriskf{\truemeanfn} + \E{\sqf{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}}$$
+$$\popriskf{\predfn} = \popriskf{\truemean} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}$$
 
 :::
 
@@ -21,14 +21,14 @@ $$
 \popriskf{\predfn}
 &= \E{\sqf{\prederr_{\predfn}}}
 && \text{(definition of the squared-error risk)} \\
-&= \E{\sqf{\prederr_{\truemeanfn} + \paren{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}}}
-&& \text{(the prediction error splits at } \truemeanfn \text{)} \\
-&= \E{\sqf{\prederr_{\truemeanfn}}} + 2 \cd \E{\prederr_{\truemeanfn}\paren{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}} + \E{\sqf{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}}
+&= \E{\sqf{\prederr_{\truemean} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}}}
+&& \text{(the prediction error splits at } \truemean \text{)} \\
+&= \E{\sqf{\prederr_{\truemean}}} + 2 \cd \E{\prederr_{\truemean}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
 && \text{(expand the square; linearity of expectation)} \\
-&= \E{\sqf{\prederr_{\truemeanfn}}} + 2 \cd 0 + \E{\sqf{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}}
+&= \E{\sqf{\prederr_{\truemean}}} + 2 \cd 0 + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
 && \text{(the cross term is } 0 \text{)} \\
-&= \popriskf{\truemeanfn} + \E{\sqf{\predfnf{\Predvar} - \truemeanfnf{\Predvar}}}
-&& \text{(definition of the squared-error risk of } \truemeanfn \text{)}
+&= \popriskf{\truemean} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&& \text{(definition of the squared-error risk of } \truemean \text{)}
 \ea
 $$
 
