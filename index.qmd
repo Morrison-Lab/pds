@@ -62,6 +62,8 @@ Quarto resolves `@id` cross-references only within one rendered page,
 so a host site that links to a result here
 uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
 
+## Additional resources {#sec-additional-resources .unnumbered}
+
 ### Comparable courses {.unnumbered}
 
 Several universities offer open-access courses with comparable or complementary coverage of probability for data science, computer science, and statistics:
