@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 ## 1 Defining probabilities
 
@@ -426,7 +426,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 >
 > About **9%**, not the \\99\\\\ most people guess.
 >
-> The reason is the **base rate**. Out of \\100{,}000\\ people screened, about \\100\\ have the disease and \\99\\ of them test positive, while \\99{,}900\\ do not have it and about \\999\\ of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.
+> The reason is the **base rate** [\[12\]](#ref-wikipedia_base_rate_fallacy). Out of \\100{,}000\\ people screened, about \\100\\ have the disease and \\99\\ of them test positive, while \\99{,}900\\ do not have it and about \\999\\ of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.
 >
 > The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.
 
@@ -508,7 +508,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 > **TIP:**
 >
-> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule [\[12\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule [\[13\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 > **TIP:**
 >
@@ -516,21 +516,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 > **NOTE:**
 >
-> 5MinuteAI’s five-minute videos follow the same course [\[13\]](#ref-fiveminuteai_probstat): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
-
-## Further reading
-
-- Wikipedia contributors [\[2\]](#ref-wikipedia_sample_space) — sample spaces and events, with examples
-
-- Wikipedia contributors [\[5\]](#ref-wikipedia_probability_space) — the sample space, events and probability measure together
-
-- Wikipedia contributors [\[7\]](#ref-wikipedia_conditional_probability) — the definition, with common misreadings
-
-- Wikipedia contributors [\[9\]](#ref-wikipedia_law_of_total_probability) — the law, with examples
-
-- Wikipedia contributors [\[10\]](#ref-wikipedia_bayes_theorem) — the theorem, its proof and its uses
-
-- Wikipedia contributors [\[14\]](#ref-wikipedia_base_rate_fallacy) — why ignoring the base rate misleads
+> 5MinuteAI’s five-minute videos follow the same course [\[14\]](#ref-fiveminuteai_probstat): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
 ## References
 
@@ -580,14 +566,14 @@ B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington Universi
 
 \[12\]
 
-B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+Wikipedia contributors, “Base rate fallacy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Base_rate_fallacy>
 
 \[13\]
 
-5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
 
 \[14\]
 
-Wikipedia contributors, “Base rate fallacy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Base_rate_fallacy>
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
 
 Back to top

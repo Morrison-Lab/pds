@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 ## 1 Random variables
 
@@ -283,7 +283,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 14 (Quantile function (population inverse CDF))** For a random variable \\X\\ with [cumulative distribution function (CDF)](#def-cdf) \\\operatorname{F}\\, its population **quantile function** (generalized inverse of \\\operatorname{F}\\) is:
+> **Definition 14 (Quantile function (population inverse CDF))** For a random variable \\X\\ with [cumulative distribution function (CDF)](#def-cdf) \\\operatorname{F}\\, its population **quantile function** (generalized inverse of \\\operatorname{F}\\) is [\[11\]](#ref-wikipedia_quantile_function):
 >
 > \\\operatorname{Q}\mathopen{}\left(p\right)\mathclose{} \stackrel{\text{def}}{=}\inf \mathopen{}\left\\t : \operatorname{F}\mathopen{}\left(t\right)\mathclose{} \ge p\right\\\mathclose{}, \quad p \in (0, 1).\\
 
@@ -490,7 +490,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 >
 > *Remark*. For small \\\Delta\> 0\\, \\f(x) \cdot\Delta\approx \Pr(x \le X \< x + \Delta)\\. Although a density is not unique ([Theorem 1](#thm-density-not-unique)), this limit pins down its value at every point where it is continuous.
 >
-> See also Rothman et al. [\[11\]](#ref-me4) (Chapter 22, p. 535).
+> See also Rothman et al. [\[12\]](#ref-me4) (Chapter 22, p. 535).
 
 > **NOTE:**
 >
@@ -554,7 +554,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ [\[12\]](#ref-wikipedia_joint_probability_distribution).
+> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ [\[13\]](#ref-wikipedia_joint_probability_distribution).
 
 > **NOTE:**
 >
@@ -593,7 +593,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ [\[13\]](#ref-wikipedia_marginal_distribution).
+> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ [\[14\]](#ref-wikipedia_marginal_distribution).
 
 > **NOTE:**
 >
@@ -726,7 +726,7 @@ The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ 
 
 > **NOTE:**
 >
-> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[14\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
+> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
 >
 > > **NOTE:**
 > >
@@ -764,7 +764,7 @@ Probabilities are assigned to subsets \\A \subseteq \mathcal{R}(X)\\ by integrat
 >
 > \\\Pr(X = a) = 0\\
 
-Why? As Brian Hutchinson notes [\[14\]](#ref-hutchinson2024data471), what is the probability that someone’s height is *exactly* \\6.0000000000\dots\\ feet? Zero. A single real point has width zero, so the integral over a single point is zero.
+Why? As Brian Hutchinson notes [\[15\]](#ref-hutchinson2024data471), what is the probability that someone’s height is *exactly* \\6.0000000000\dots\\ feet? Zero. A single real point has width zero, so the integral over a single point is zero.
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
@@ -776,17 +776,17 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **TIP:**
 >
-> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions [\[15\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions [\[16\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 > **NOTE:**
 >
-> 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 [\[16\]](#ref-fiveminuteai_probstat).
+> 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 [\[17\]](#ref-fiveminuteai_probstat).
 
 ## 3 Survival, hazard, and cumulative hazard functions
 
 > **NOTE:**
 >
-> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[17\]](#ref-wikipedia_survival_function):
+> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[18\]](#ref-wikipedia_survival_function):
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -828,13 +828,13 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[18\]](#ref-wikipedia_failure_rate):
+> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
 > **NOTE:**
 >
-> *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett [\[19\]](#ref-dobson4e), Vittinghoff et al. [\[20\]](#ref-vittinghoff2e), Klein and Moeschberger [\[21\]](#ref-klein2003survival), and Kleinbaum and Klein [\[22\]](#ref-kleinbaum2012survival), while \\\lambda(t)\\ appears in Rothman et al. [\[11\]](#ref-me4) and Kalbfleisch and Prentice [\[23\]](#ref-kalbfleisch2011statistical).
+> *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett [\[20\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while \\\lambda(t)\\ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
 >
 > If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 22](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
@@ -1004,24 +1004,6 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > \\ f(t) \xrightarrow\[\int\_{u=t}^\infty f(u)\\du\]{f(t)/{\lambda}(t)} \operatorname{S}(t) \xrightarrow\[-\operatorname{log}\mathopen{}\left\\\operatorname{S}(t)\right\\\mathclose{}\]{} {\Lambda}(t) \xrightarrow\[{\Lambda}'(t)\]{} {\lambda}(t) \xrightarrow\[\operatorname{log}\mathopen{}\left\\{\lambda}(t)\right\\\mathclose{}\]{} \eta(t) \\
 
-## Further reading
-
-- Wikipedia contributors [\[1\]](#ref-wikipedia_random_variable) — random variables, with examples and measure-theoretic definition
-
-- Wikipedia contributors [\[2\]](#ref-wikipedia_probability_mass_function) — the PMF and common examples
-
-- Wikipedia contributors [\[4\]](#ref-wikipedia_probability_density_function) — the PDF, its properties and its uses
-
-- Wikipedia contributors [\[9\]](#ref-wikipedia_cumulative_distribution_function) — the CDF, its properties and its relation to the density
-
-- Wikipedia contributors [\[24\]](#ref-wikipedia_quantile_function) — the quantile function, the inverse of the CDF
-
-- Wikipedia contributors [\[12\]](#ref-wikipedia_joint_probability_distribution) — joint, marginal and conditional distributions
-
-- Wikipedia contributors [\[17\]](#ref-wikipedia_survival_function) — the survival function and its relation to the hazard
-
-- Wikipedia contributors [\[18\]](#ref-wikipedia_failure_rate) — the hazard rate, with examples
-
 ## References
 
 \[1\]
@@ -1066,58 +1048,58 @@ P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probabilit
 
 \[11\]
 
-K. J. Rothman, T. L. Lash, T. J. VanderWeele, and S. Haneuse, *Modern epidemiology*, Fourth edition. Philadelphia: Wolters Kluwer, 2021.
+Wikipedia contributors, “Quantile function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Quantile_function>
 
 \[12\]
 
-Wikipedia contributors, “Joint probability distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Joint_probability_distribution>
+K. J. Rothman, T. L. Lash, T. J. VanderWeele, and S. Haneuse, *Modern epidemiology*, Fourth edition. Philadelphia: Wolters Kluwer, 2021.
 
 \[13\]
 
-Wikipedia contributors, “Marginal distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Marginal_distribution>
+Wikipedia contributors, “Joint probability distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Joint_probability_distribution>
 
 \[14\]
 
-B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
+Wikipedia contributors, “Marginal distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Marginal_distribution>
 
 \[15\]
 
-B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
 
 \[16\]
 
-5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
 
 \[17\]
 
-Wikipedia contributors, “Survival function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Survival_function>
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
 
 \[18\]
 
-Wikipedia contributors, “Failure rate — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Failure_rate>
+Wikipedia contributors, “Survival function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Survival_function>
 
 \[19\]
 
-A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 4th ed. CRC press, 2018. doi: [10.1201/9781315182780](https://doi.org/10.1201/9781315182780).
+Wikipedia contributors, “Failure rate — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Failure_rate>
 
 \[20\]
 
-E. Vittinghoff, D. V. Glidden, S. C. Shiboski, and C. E. McCulloch, *Regression methods in biostatistics: Linear, logistic, survival, and repeated measures models*, 2nd ed. Springer, 2012. doi: [10.1007/978-1-4614-1353-0](https://doi.org/10.1007/978-1-4614-1353-0).
+A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 4th ed. CRC press, 2018. doi: [10.1201/9781315182780](https://doi.org/10.1201/9781315182780).
 
 \[21\]
 
-J. P. Klein and M. L. Moeschberger, *Survival analysis: Techniques for censored and truncated data*, 2nd ed. Springer, 2003. Available: <https://link.springer.com/book/10.1007/b97377>
+E. Vittinghoff, D. V. Glidden, S. C. Shiboski, and C. E. McCulloch, *Regression methods in biostatistics: Linear, logistic, survival, and repeated measures models*, 2nd ed. Springer, 2012. doi: [10.1007/978-1-4614-1353-0](https://doi.org/10.1007/978-1-4614-1353-0).
 
 \[22\]
 
-D. G. Kleinbaum and M. Klein, *Survival analysis: A self-learning text*, 3rd ed. Springer, 2012. Available: <https://link.springer.com/book/10.1007/978-1-4419-6646-9>
+J. P. Klein and M. L. Moeschberger, *Survival analysis: Techniques for censored and truncated data*, 2nd ed. Springer, 2003. Available: <https://link.springer.com/book/10.1007/b97377>
 
 \[23\]
 
-J. D. Kalbfleisch and R. L. Prentice, *The statistical analysis of failure time data*. John Wiley & Sons, 2011.
+D. G. Kleinbaum and M. Klein, *Survival analysis: A self-learning text*, 3rd ed. Springer, 2012. Available: <https://link.springer.com/book/10.1007/978-1-4419-6646-9>
 
 \[24\]
 
-Wikipedia contributors, “Quantile function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Quantile_function>
+J. D. Kalbfleisch and R. L. Prentice, *The statistical analysis of failure time data*. John Wiley & Sons, 2011.
 
 Back to top

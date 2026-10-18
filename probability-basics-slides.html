@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-18 11:42:28 (PDT)</p>
+  <p class="date">Last modified: 2026-10-18 13:21:58 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -1007,7 +1007,7 @@
 \end{aligned}
 \]</span></p>
 <p>About <strong>9%</strong>, not the <span class="math inline">\(99\%\)</span> most people guess.</p>
-<p>The reason is the <strong>base rate</strong>. Out of <span class="math inline">\(100{,}000\)</span> people screened, about <span class="math inline">\(100\)</span> have the disease and <span class="math inline">\(99\)</span> of them test positive, while <span class="math inline">\(99{,}900\)</span> do not have it and about <span class="math inline">\(999\)</span> of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.</p>
+<p>The reason is the <strong>base rate</strong> <span class="citation" data-cites="wikipedia_base_rate_fallacy"><a href="#/references" role="doc-biblioref" onclick="">[12]</a></span>. Out of <span class="math inline">\(100{,}000\)</span> people screened, about <span class="math inline">\(100\)</span> have the disease and <span class="math inline">\(99\)</span> of them test positive, while <span class="math inline">\(99{,}900\)</span> do not have it and about <span class="math inline">\(999\)</span> of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.</p>
 <p>The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.</p>
 </div>
 </section>
@@ -1179,7 +1179,7 @@ Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100
 <p><strong>Video lecture</strong></p>
 </div>
 <div class="callout-content">
-<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule <span class="citation" data-cites="hutchinson_wwu_ml_videos"><a href="#/references" role="doc-biblioref" onclick="">[12]</a></span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
+<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule <span class="citation" data-cites="hutchinson_wwu_ml_videos"><a href="#/references" role="doc-biblioref" onclick="">[13]</a></span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
 </div>
 </div>
 </div>
@@ -1200,19 +1200,8 @@ Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100
 </div>
 </div>
 <div class="videos">
-<p>5MinuteAI’s five-minute videos follow the same course <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[13]</a></span>: <a href="https://www.youtube.com/watch?v=LfdTIvLfdtA">introduction to discrete probability</a> and <a href="https://www.youtube.com/watch?v=c-yB3q7zYlU">conditional probability</a>.</p>
+<p>5MinuteAI’s five-minute videos follow the same course <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[14]</a></span>: <a href="https://www.youtube.com/watch?v=LfdTIvLfdtA">introduction to discrete probability</a> and <a href="https://www.youtube.com/watch?v=c-yB3q7zYlU">conditional probability</a>.</p>
 </div>
-</section>
-<section id="further-reading" class="slide level2 unnumbered">
-<h2>Further reading</h2>
-<ul>
-<li><p><span class="citation" data-cites="wikipedia_sample_space">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[2]</a></span> — sample spaces and events, with examples</p></li>
-<li><p><span class="citation" data-cites="wikipedia_probability_space">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[5]</a></span> — the sample space, events and probability measure together</p></li>
-<li><p><span class="citation" data-cites="wikipedia_conditional_probability">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[7]</a></span> — the definition, with common misreadings</p></li>
-<li><p><span class="citation" data-cites="wikipedia_law_of_total_probability">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[9]</a></span> — the law, with examples</p></li>
-<li><p><span class="citation" data-cites="wikipedia_bayes_theorem">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[10]</a></span> — the theorem, its proof and its uses</p></li>
-<li><p><span class="citation" data-cites="wikipedia_base_rate_fallacy">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[14]</a></span> — why ignoring the base rate misleads</p></li>
-</ul>
 </section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
@@ -1250,14 +1239,14 @@ Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100
 <div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[11] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571: Machine learning.”</span> Western Washington University, 2024.</div>
 </div>
+<div id="ref-wikipedia_base_rate_fallacy" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Base rate fallacy — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">https://en.wikipedia.org/wiki/Base_rate_fallacy</a></div>
+</div>
 <div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571 (machine learning) and <span>CSCI</span> 481/581 (deep learning) video lectures.”</span> Western Washington University. Accessed: Sep. 28, 2026. [Online]. Available: <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a></div>
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571 (machine learning) and <span>CSCI</span> 481/581 (deep learning) video lectures.”</span> Western Washington University. Accessed: Sep. 28, 2026. [Online]. Available: <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a></div>
 </div>
 <div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">5MinuteAI, <span>“Probability &amp; statistics.”</span> Video playlist on YouTube. Accessed: Oct. 12, 2026. [Online]. Available: <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a></div>
-</div>
-<div id="ref-wikipedia_base_rate_fallacy" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Base rate fallacy — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">https://en.wikipedia.org/wiki/Base_rate_fallacy</a></div>
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">5MinuteAI, <span>“Probability &amp; statistics.”</span> Video playlist on YouTube. Accessed: Oct. 12, 2026. [Online]. Available: <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a></div>
 </div>
 </div>
 

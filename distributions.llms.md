@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 > **NOTE:**
 >
@@ -838,7 +838,7 @@ print(plot2)
 > - \\w_c \ge 0\\ for every \\c\\, and
 > - \\\sum\_{c=1}^{K} w_c = 1\\.
 >
-> The **mixture** of \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ with **mixing weights** \\w_1, \ldots, w_K\\ is the function:
+> The **mixture** of \\{\operatorname{p}\_1}, \ldots, {\operatorname{p}\_K}\\ with **mixing weights** \\w_1, \ldots, w_K\\ is the function [\[9\]](#ref-wikipedia_mixture_distribution):
 >
 > \\ {\operatorname{p}\_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x), \quad x \in \mathbb{R} \\
 
@@ -935,24 +935,6 @@ print(plot2)
 > **NOTE:**
 >
 > **Example 21 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
-
-## Further reading
-
-- Wikipedia contributors [\[1\]](#ref-wikipedia_binomial_distribution) — the binomial distribution and its approximations
-
-- Wikipedia contributors [\[3\]](#ref-wikipedia_poisson_distribution) — the Poisson distribution, with examples
-
-- Wikipedia contributors [\[4\]](#ref-wikipedia_negative_binomial_distribution) — the negative binomial distribution and its parametrizations
-
-- Wikipedia contributors [\[6\]](#ref-wikipedia_weibull_distribution) — the Weibull distribution and its hazard
-
-- Wikipedia contributors [\[5\]](#ref-wikipedia_laplace_distribution) — the Laplace distribution
-
-- Wikipedia contributors [\[7\]](#ref-wikipedia_multivariate_normal_distribution) — the multivariate normal distribution and its properties
-
-- Wikipedia contributors [\[8\]](#ref-wikipedia_mahalanobis_distance) — the Mahalanobis distance
-
-- Wikipedia contributors [\[9\]](#ref-wikipedia_mixture_distribution) — mixture distributions
 
 ## References
 

@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 > **NOTE:**
 >
@@ -225,14 +225,6 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 > **NOTE:**
 >
 > 5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes, following the University of Washington’s CSE 312 [\[8\]](#ref-fiveminuteai_probstat).
-
-## Further reading
-
-- Wikipedia contributors [\[1\]](#ref-wikipedia_independence_probability_theory) — independent events and random variables
-
-- Wikipedia contributors [\[4\]](#ref-wikipedia_conditional_independence) — conditional independence, with examples
-
-- Wikipedia contributors [\[6\]](#ref-wikipedia_iid) — independent and identically distributed random variables
 
 ## References
 

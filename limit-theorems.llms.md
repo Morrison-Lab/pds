@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -491,20 +491,6 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 > \\ \begin{aligned} 0 \le \Pr\mathopen{}\left(\mathopen{}\left\|\bar{X}\_{n} - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left(\mathopen{}\left\|\bar{X}\_{n} - \mu\right\|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{} && \text{(definition of \$k\$)}\\ &\le \frac{1}{k^2} && \text{(Chebyshev's inequality)}\\ &= \frac{\sigma^2}{n \varepsilon^2} && \text{(substitute \$k\$)} \end{aligned} \\
 >
 > The bound goes to zero as \\n \to \infty\\, so the probability, squeezed between zero and the bound, goes to zero. This holds for every \\\varepsilon \> 0\\.
-
-## Further reading
-
-- Wikipedia contributors [\[1\]](#ref-wikipedia_central_limit_theorem) — the theorem, its variants and its history
-
-- Wikipedia contributors [\[4\]](#ref-wikipedia_markovs_inequality) — the inequality and its extensions
-
-- Wikipedia contributors [\[9\]](#ref-wikipedia_chebyshevs_inequality) — the inequality, with examples
-
-- Wikipedia contributors [\[11\]](#ref-wikipedia_hoeffdings_inequality) — the inequality for bounded variables
-
-- Wikipedia contributors [\[14\]](#ref-wikipedia_law_of_large_numbers) — the weak and strong laws
-
-- Wikipedia contributors [\[12\]](#ref-wikipedia_convergence_of_random_variables) — the modes of convergence and how they relate
 
 ## References
 

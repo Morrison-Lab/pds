@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -46,7 +46,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Other sources often call this quantity an **error** or **noise term**. In regression settings, the reference mean is often conditional on covariates: \\\delta(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}\\.
+> *Remark*. Other sources often call this quantity an **error** or **noise term** [\[1\]](#ref-wikipedia_errors_and_residuals). In regression settings, the reference mean is often conditional on covariates: \\\delta(y_i) \stackrel{\text{def}}{=}y_i - \operatorname{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}\\.
 >
 > These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\\delta(\cdot)\\ for these model/data deviations, and reserve \\\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
 >
@@ -106,7 +106,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 3 (Variance)** The **variance** of a random variable \\X\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean) [\[1\]](#ref-wikipedia_variance); that is:
+> **Definition 3 (Variance)** The **variance** of a random variable \\X\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean) [\[2\]](#ref-wikipedia_variance); that is:
 >
 > \\\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[\[\delta(X)\]^2\right\]\mathclose{}\\
 
@@ -375,7 +375,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 9 (Covariance)** The **covariance** of two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ [\[2\]](#ref-wikipedia_covariance) is:
+> **Definition 9 (Covariance)** The **covariance** of two random variables \\X\\ and \\Y\\ with \\\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{} \< \infty\\ and \\\operatorname{E}\mathopen{}\left\[Y^2\right\]\mathclose{} \< \infty\\ [\[3\]](#ref-wikipedia_covariance) is:
 >
 > \\\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[(X - \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{})(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})\right\]\mathclose{}\\
 
@@ -639,7 +639,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} {\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{a}}\vphantom{a}}}^{\top} \operatorname{Var}\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\right)\mathclose{} \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{a}}\vphantom{a}} &= \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} && \text{(variance of a linear combination)} \\ &= \operatorname{E}\mathopen{}\left\[(Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2\right\]\mathclose{} && \text{(definition of variance)} \\ &\ge 0 && \text{(} (Y - \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{})^2 \ge 0 \text{)} \end{aligned} \\
 >
-> The first step is [Theorem 12](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley [\[3\]](#ref-billingsley1995probability)).
+> The first step is [Theorem 12](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley [\[4\]](#ref-billingsley1995probability)).
 
 > **NOTE:**
 >
@@ -706,7 +706,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 14 (Correlation lies between \\-1\\ and \\1\\)** If \\X\\ and \\Y\\ have finite, positive [variances](#def-variance), then their [correlation](#def-correlation) lies in \\\[-1, 1\]\\ [\[4\]](#ref-CaseBerg01):
+> **Theorem 14 (Correlation lies between \\-1\\ and \\1\\)** If \\X\\ and \\Y\\ have finite, positive [variances](#def-variance), then their [correlation](#def-correlation) lies in \\\[-1, 1\]\\ [\[5\]](#ref-CaseBerg01):
 >
 > \\-1 \le \operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{} \le 1\\
 
@@ -794,40 +794,32 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> 5MinuteAI explains [variance](https://www.youtube.com/watch?v=5CT1DXPp2HY) and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in five minutes each, following the University of Washington’s CSE 312 [\[5\]](#ref-fiveminuteai_probstat).
-
-## Further reading
-
-- Wikipedia contributors [\[1\]](#ref-wikipedia_variance) — the variance, its properties and its computation
-
-- Wikipedia contributors [\[2\]](#ref-wikipedia_covariance) — the covariance and the covariance matrix
-
-- Wikipedia contributors [\[6\]](#ref-wikipedia_errors_and_residuals) — how an error differs from a residual
+> 5MinuteAI explains [variance](https://www.youtube.com/watch?v=5CT1DXPp2HY) and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in five minutes each, following the University of Washington’s CSE 312 [\[6\]](#ref-fiveminuteai_probstat).
 
 ## References
 
 \[1\]
 
-Wikipedia contributors, “Variance — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Variance>
+Wikipedia contributors, “Errors and residuals — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Errors_and_residuals>
 
 \[2\]
 
-Wikipedia contributors, “Covariance — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Covariance>
+Wikipedia contributors, “Variance — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Variance>
 
 \[3\]
 
-P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
+Wikipedia contributors, “Covariance — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Covariance>
 
 \[4\]
 
-G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
 
 \[5\]
 
-5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
 
 \[6\]
 
-Wikipedia contributors, “Errors and residuals — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Errors_and_residuals>
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
 
 Back to top

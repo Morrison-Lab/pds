@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:42:28 (PDT)
+Last modified: 2026-10-18 13:21:58 (PDT)
 
 > **NOTE:**
 >
@@ -316,7 +316,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Conditional expectation)** **Discrete case.** Let \\X\\ and \\Y\\ be jointly distributed discrete random variables. The **conditional expectation** of \\Y\\ given \\X = x\\, using [Definition 3](#def-cond-pmf), is:
+> **Definition 5 (Conditional expectation)** **Discrete case.** Let \\X\\ and \\Y\\ be jointly distributed discrete random variables. The **conditional expectation** of \\Y\\ given \\X = x\\, using [Definition 3](#def-cond-pmf), is [\[9\]](#ref-wikipedia_conditional_expectation):
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{} \stackrel{\text{def}}{=}\sum\_{y \in \mathcal{R}(Y)} y \cdot\operatorname{P}(Y = y \mid X = x)\\
 >
@@ -561,7 +561,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This result is often summarized as “taking out what is known” (e.g., Ross [\[9\]](#ref-ross-probsim), Section 5.6.4): given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
+> *Remark*. This result is often summarized as “taking out what is known” (e.g., Ross [\[10\]](#ref-ross-probsim), Section 5.6.4): given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
 
 > **NOTE:**
 >
@@ -982,7 +982,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> The calculation in [Exercise 3](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 3](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. [\[10\]](#ref-rudin1976principles), Theorem 3.54, p. 76 for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
+> The calculation in [Exercise 3](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 3](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. [\[11\]](#ref-rudin1976principles), Theorem 3.54, p. 76 for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
 
 > **NOTE:**
 >
@@ -1115,7 +1115,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\ [\[11\]](#ref-wikipedia_loss_function).
+> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\ [\[12\]](#ref-wikipedia_loss_function).
 
 > **NOTE:**
 >
@@ -1151,11 +1151,11 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> *Remark 2* (Squared error loss is the most common choice). Hastie et al. [\[12, p. 18\]](#ref-hastie2009elements) call squared error loss “by far the most common and convenient” choice.
+> *Remark 2* (Squared error loss is the most common choice). Hastie et al. [\[13, p. 18\]](#ref-hastie2009elements) call squared error loss “by far the most common and convenient” choice.
 
 > **NOTE:**
 >
-> **Definition 13 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the [expectation](expectation.llms.md#def-expectation) of the [loss](#def-loss-function) [\[13\]](#ref-wikipedia_risk_function):
+> **Definition 13 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the [expectation](expectation.llms.md#def-expectation) of the [loss](#def-loss-function) [\[14\]](#ref-wikipedia_risk_function):
 >
 > \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat y)\right\]\mathclose{}\\
 
@@ -1205,7 +1205,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} &= 0.5\\c + 0.5\\(4 - c) \\ &= 2. \end{aligned} \\
 >
-> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 13](#thm-best-predictor)). Hastie et al. [\[12, p. 20\]](#ref-hastie2009elements) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 13](#thm-best-predictor)). Hastie et al. [\[13, p. 20\]](#ref-hastie2009elements) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
 
 > **NOTE:**
 >
@@ -1267,7 +1267,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Squared-error risk (expected prediction error))** The **squared-error risk** of a prediction function \\g\mathopen{}\left(X\right)\mathclose{}\\, also called its **expected prediction error** [\[12, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
+> **Definition 18 (Squared-error risk (expected prediction error))** The **squared-error risk** of a prediction function \\g\mathopen{}\left(X\right)\mathclose{}\\, also called its **expected prediction error** [\[13, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
 >
 > \\R\mathopen{}\left(g\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g}\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
@@ -1381,7 +1381,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. [\[12, Sec. 2.4\]](#ref-hastie2009elements), eq. 2.11. The risk identity in [Theorem 12](#thm-risk-decomposition)
+> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. [\[13, Sec. 2.4\]](#ref-hastie2009elements), eq. 2.11. The risk identity in [Theorem 12](#thm-risk-decomposition)
 >
 > \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} - g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
@@ -1421,7 +1421,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 21 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\ [\[14\]](#ref-wikipedia_entropy_information_theory):
+> **Definition 21 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\ [\[15\]](#ref-wikipedia_entropy_information_theory):
 >
 > \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
 >
@@ -1449,11 +1449,11 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> *Remark 8* (Where the definition comes from). Murphy [\[15, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 8* (Where the definition comes from). Murphy [\[16, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
-> **Definition 22 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[16\]](#ref-wikipedia_cross_entropy) is
+> **Definition 22 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[17\]](#ref-wikipedia_cross_entropy) is
 >
 > \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1487,23 +1487,7 @@ Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> *Remark 12* (Where the definitions come from). Murphy [\[15, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
-
-## Further reading
-
-- Wikipedia contributors [\[1\]](#ref-wikipedia_expected_value) — the expectation, its properties and examples
-
-- Wikipedia contributors [\[4\]](#ref-wikipedia_law_of_the_unconscious_statistician) — the expectation of a function of a random variable
-
-- Wikipedia contributors [\[17\]](#ref-wikipedia_conditional_expectation) — conditional expectation and its properties
-
-- Wikipedia contributors [\[11\]](#ref-wikipedia_loss_function) — loss functions in statistics and machine learning
-
-- Wikipedia contributors [\[13\]](#ref-wikipedia_risk_function) — the risk as an expected loss
-
-- Wikipedia contributors [\[14\]](#ref-wikipedia_entropy_information_theory) — entropy, with examples
-
-- Wikipedia contributors [\[16\]](#ref-wikipedia_cross_entropy) — cross-entropy and its use as a loss
+> *Remark 12* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## References
 
@@ -1541,38 +1525,38 @@ A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 
 
 \[9\]
 
-K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
+Wikipedia contributors, “Conditional expectation — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_expectation>
 
 \[10\]
 
-W. Rudin, *Principles of mathematical analysis*, 3rd ed. in International series in pure and applied mathematics. New York: McGraw-Hill, 1976.
+K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
 
 \[11\]
 
-Wikipedia contributors, “Loss function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Loss_function>
+W. Rudin, *Principles of mathematical analysis*, 3rd ed. in International series in pure and applied mathematics. New York: McGraw-Hill, 1976.
 
 \[12\]
 
-T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
+Wikipedia contributors, “Loss function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Loss_function>
 
 \[13\]
 
-Wikipedia contributors, “Risk function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Risk_function>
+T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
 
 \[14\]
 
-Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
+Wikipedia contributors, “Risk function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Risk_function>
 
 \[15\]
 
-K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
 
 \[16\]
 
-Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
 
 \[17\]
 
-Wikipedia contributors, “Conditional expectation — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_expectation>
+Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
 
 Back to top
