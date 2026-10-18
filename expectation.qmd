@@ -135,22 +135,6 @@ format:
 
 {{< include pds/_subfiles/_def-cross-entropy.qmd >}}
 
-## Further reading {.unnumbered}
-
--   @wikipedia_expected_value --- the expectation, its properties and examples
-
--   @wikipedia_law_of_the_unconscious_statistician --- the expectation of a function of a random variable
-
--   @wikipedia_conditional_expectation --- conditional expectation and its properties
-
--   @wikipedia_loss_function --- loss functions in statistics and machine learning
-
--   @wikipedia_risk_function --- the risk as an expected loss
-
--   @wikipedia_entropy_information_theory --- entropy, with examples
-
--   @wikipedia_cross_entropy --- cross-entropy and its use as a loss
-
 ## References {.unnumbered}
 
 ::: {#refs}

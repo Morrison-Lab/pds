@@ -74,14 +74,6 @@ and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in
 following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
-## Further reading {.unnumbered}
-
--   @wikipedia_variance --- the variance, its properties and its computation
-
--   @wikipedia_covariance --- the covariance and the covariance matrix
-
--   @wikipedia_errors_and_residuals --- how an error differs from a residual
-
 ## References {.unnumbered}
 
 ::: {#refs}

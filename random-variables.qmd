@@ -86,24 +86,6 @@ Each arrow in the following diagram converts one function into the next:
 
 :::
 
-## Further reading {.unnumbered}
-
--   @wikipedia_random_variable --- random variables, with examples and measure-theoretic definition
-
--   @wikipedia_probability_mass_function --- the PMF and common examples
-
--   @wikipedia_probability_density_function --- the PDF, its properties and its uses
-
--   @wikipedia_cumulative_distribution_function --- the CDF, its properties and its relation to the density
-
--   @wikipedia_quantile_function --- the quantile function, the inverse of the CDF
-
--   @wikipedia_joint_probability_distribution --- joint, marginal and conditional distributions
-
--   @wikipedia_survival_function --- the survival function and its relation to the hazard
-
--   @wikipedia_failure_rate --- the hazard rate, with examples
-
 ## References {.unnumbered}
 
 ::: {#refs}
