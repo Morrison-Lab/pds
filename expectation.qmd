@@ -59,6 +59,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_def-loss-function.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-risk.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exr-loss.qmd >}}
 
 {{< slidebreak >}}
@@ -67,11 +75,7 @@ format:
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_def-loss-function.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_def-risk.qmd >}}
+{{< include pds/_subfiles/_rem-risk-loss-exercise.qmd >}}
 
 {{< slidebreak >}}
 

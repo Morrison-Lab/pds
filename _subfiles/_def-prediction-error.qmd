@@ -16,7 +16,9 @@ $$\prederr_{\predfn} \eqdef \predfnf{\Predvar} - \Outvar$$
 #### Prediction error in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [prediction error](#def-prediction-error) $\prederr_{\predfn_1} = 3 - \Outvar$,
-which is $3$ when $\Outvar = 0$ and $-3$ when $\Outvar = 6$.
+consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
+Its [prediction error](#def-prediction-error) is $\prederr_{\predfn_1} = 3 - \Outvar$.
+This is $3$ when $\Outvar = 0$.
+It is $-3$ when $\Outvar = 6$.
 
 :::

@@ -9,14 +9,27 @@ $$\hy \quad \text{or} \quad \hat{Y} \eqdef g(X)$$
 
 :::
 
-::: {.remark .notes}
+{{< slidebreak >}}
+
+:::{#exm-prediction}
+#### Predictions of a die roll
+
+Let $Y$ be the number shown by a fair six-sided die.
+The constant $\hy = 3$ is a [prediction](#def-prediction) of $Y$.
+
+Let $X$ be the indicator that $Y$ is even.
+The function $g(X) = 2 + 2X$ is also a prediction of $Y$:
+it guesses $2$ when $Y$ is odd and $4$ when $Y$ is even.
+
+:::
+
+::: {#rem-prediction-random}
+#### A prediction from a random input is random
 
 When no covariate or feature is available,
 a prediction is a single number $\hy$ (such as a constant $c$).
 When an informative random variable $X$ is observed,
 a prediction is a function $g(X)$,
 which is itself a random variable because $X$ is random.
-The quality of a prediction is evaluated using a [loss function](#def-loss-function)
-and its expected value, the [risk](#def-risk).
 
 :::
