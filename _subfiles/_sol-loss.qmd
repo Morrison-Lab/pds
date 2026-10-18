@@ -6,7 +6,7 @@ For absolute error loss:
 $$\abs{3 - 5} = 2$$
 
 2. For $c = 1$:
-The expected squared error loss is:
+The risk under squared error loss is:
 $$
 \begin{aligned}
 \E{\sqf{Y - 1}}
@@ -15,7 +15,7 @@ $$
 &= 5
 \end{aligned}
 $$
-The expected absolute error loss is:
+The risk under absolute error loss is:
 $$
 \begin{aligned}
 \E{\abs{Y - 1}}
@@ -26,7 +26,7 @@ $$
 $$
 
 3. For $c = 2$:
-The expected squared error loss is:
+The risk under squared error loss is:
 $$
 \begin{aligned}
 \E{\sqf{Y - 2}}
@@ -35,7 +35,7 @@ $$
 &= 4
 \end{aligned}
 $$
-The expected absolute error loss is:
+The risk under absolute error loss is:
 $$
 \begin{aligned}
 \E{\abs{Y - 2}}
@@ -45,8 +45,8 @@ $$
 \end{aligned}
 $$
 
-4. The prediction $c = 2$ has the smaller expected squared error loss ($4$ versus $5$).
-The two predictions have the same expected absolute error loss ($2$),
+4. The prediction $c = 2$ has the smaller risk under squared error loss ($4$ versus $5$).
+The two predictions have the same risk under absolute error loss ($2$),
 so under absolute error loss this exercise does not choose one of them.
 The prediction $c = 2$ equals the expectation:
 $$
