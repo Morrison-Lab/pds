@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 ## Welcome
 
@@ -39,18 +39,18 @@ Several universities offer open-access courses with comparable or complementary 
 - **Stanford University STATS 116**: [*Theory of Probability*](https://web.stanford.edu/class/stats116/) (John Duchi) provides a rigorous mathematical treatment of probability spaces, conditioning, random variables, transform methods, and limit theorems (see also [lecture notes](https://adembo.su.domains/math-136/nnotes.pdf) by Amir Dembo).
 - **UC Berkeley Data 140 / Stat 140**: [*Probability for Data Science*](https://data140.org/textbook/) (Ani Adhikari and Jim Pitman) blends mathematical probability theory with Python simulations and computational data science applications.
 - **Stanford University EE 278**: [*Probability and Statistical Inference*](https://web.stanford.edu/class/ee278/) (Ayfer Özgür and Tsachy Weissman) builds on probability for hypothesis testing, empirical risk minimization, concentration inequalities (Markov, Chebyshev, Hoeffding), Gaussian random vectors and minimum mean-square error estimation; its [previous notes](http://web.stanford.edu/class/ee278/lectures.html) are handwritten lectures on these topics. The prerequisite probability course has open lecture notes by [David Tse](https://web.stanford.edu/~dntse/classes/ee178_278a.html) and [Abbas El Gamal](https://isl.stanford.edu/~abbas/aeglect178.php).
-- **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction)), online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
+- **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang [\[1\]](#ref-blitzstein2019introduction), online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
 - **MIT 18.05**: [*Introduction to Probability and Statistics*](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/) (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.
 - **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
-- **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (Ross ([2022](#ref-ross-probsim))) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.
+- **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (Ross [\[2\]](#ref-ross-probsim)) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.
 
 ### Textbooks and companion notes
 
-- Miller ([2017](#ref-problifesaver))
-- Blitzstein and Hwang ([2019](#ref-blitzstein2019introduction))
-- Hastie et al. ([2009](#ref-hastie2009elements))
-- James et al. ([2021](#ref-james2021islr2e))
-- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross ([2021](#ref-dembo-notes)), Stanford MATH 136 / STAT 219)
+- Miller [\[3\]](#ref-problifesaver)
+- Blitzstein and Hwang [\[1\]](#ref-blitzstein2019introduction)
+- Hastie et al. [\[4\]](#ref-hastie2009elements)
+- James et al. [\[5\]](#ref-james2021islr2e)
+- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross [\[6\]](#ref-dembo-notes), Stanford MATH 136 / STAT 219)
 - Amir Dembo, [*Probability Theory*](https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf) lecture notes (Stanford STAT 310 / MATH 230, the measure-theoretic sequel to this material; used in STATS 310B)
 - John Duchi, [*Lecture Notes on Statistics and Information Theory*](https://web.stanford.edu/class/stats311/) (Stanford STATS 311), which develops entropy and divergences beyond the definitions here
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
@@ -61,16 +61,28 @@ The DATA 571 (Machine Learning) course notes keep a curated list of [online vide
 
 ## References
 
-Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
+\[1\]
 
-Dembo, Amir, and Kevin Ross. 2021. *Stochastic Processes*. Stanford University. <https://adembo.su.domains/math-136/nnotes.pdf>.
+J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman; Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
 
-Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
+\[2\]
 
-James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. *An Introduction to Statistical Learning: With Applications in R*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-0716-1418-1>.
+K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
 
-Miller, Steven J. 2017. *The Probability Lifesaver: All the Tools You Need to Understand Chance*. A Princeton Lifesaver Study Guide. Princeton University Press. <https://doi.org/10.1515/9781400885381>.
+\[3\]
 
-Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
+S. J. Miller, *The probability lifesaver: All the tools you need to understand chance*. in A princeton lifesaver study guide. Princeton: Princeton University Press, 2017. doi: [10.1515/9781400885381](https://doi.org/10.1515/9781400885381).
+
+\[4\]
+
+T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
+
+\[5\]
+
+G. James, D. Witten, T. Hastie, and R. Tibshirani, *An introduction to statistical learning: With applications in R*, 2nd ed. Springer, 2021. doi: [10.1007/978-1-0716-1418-1](https://doi.org/10.1007/978-1-0716-1418-1).
+
+\[6\]
+
+A. Dembo and K. Ross, “Stochastic processes.” Stanford University, 2021. Available: <https://adembo.su.domains/math-136/nnotes.pdf>
 
 Back to top

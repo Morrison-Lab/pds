@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -234,46 +235,6 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-tbl.callout {
-  border-left-color: #757575;
-}
-div.callout-tbl.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-fig.callout {
-  border-left-color: #757575;
-}
-div.callout-fig.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
-}
-div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-lem.callout {
   border-left-color: #1565C0;
 }
@@ -284,15 +245,15 @@ div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
+div.callout-prp.callout {
+  border-left-color: #827717;
 }
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
 }
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-def.callout {
   border-left-color: #1B5E20;
@@ -303,16 +264,6 @@ div.callout-def.callout-style-default .callout-header {
 div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-prp.callout {
-  border-left-color: #827717;
-}
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
-}
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -328,25 +279,45 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   content: '\f144' !important;
   background-image: none;
 }
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
+div.callout-tbl.callout {
+  border-left-color: #757575;
 }
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
+div.callout-tbl.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
 }
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-cor.callout {
-  border-left-color: #00838F;
+div.callout-proof.callout {
+  border-left-color: #37474F;
 }
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
 }
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-fig.callout {
+  border-left-color: #757575;
+}
+div.callout-fig.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
+}
+div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-exr.callout {
   border-left-color: #FFA500;
@@ -358,6 +329,16 @@ div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
+}
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
+}
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-cnj.callout {
   border-left-color: #558B2F;
 }
@@ -367,6 +348,26 @@ div.callout-cnj.callout-style-default .callout-header {
 div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -786,7 +787,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-18 11:35:41 (PDT)</p>
+      <p class="date">Last modified: 2026-10-18 11:42:28 (PDT)</p>
     </div>
   </div>
   
@@ -923,7 +924,7 @@ window.Quarto = {
 <div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-random-experiment" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Random experiment)</strong></span> A <strong>random experiment</strong> is a <a href="#def-procedure">procedure</a> that ends in exactly one <a href="#def-experiment-outcome">outcome</a> that we have not determined in advance <span class="citation" data-cites="wikipedia_experiment_probability_theory">(<a href="#ref-wikipedia_experiment_probability_theory" role="doc-biblioref">Wikipedia contributors 2026e</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 4 (Random experiment)</strong></span> A <strong>random experiment</strong> is a <a href="#def-procedure">procedure</a> that ends in exactly one <a href="#def-experiment-outcome">outcome</a> that we have not determined in advance <span class="citation" data-cites="wikipedia_experiment_probability_theory"><a href="#ref-wikipedia_experiment_probability_theory" role="doc-biblioref">[1]</a></span>.</p>
 </div>
 </div>
 </div>
@@ -1004,7 +1005,7 @@ window.Quarto = {
 <div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-sample-space" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Sample space)</strong></span> The <strong>sample space</strong> of a <a href="#def-random-experiment">random experiment</a>, denoted <span class="math inline">\(\Omega\)</span>, is the <a href="https://morrison-lab.github.io/mds/sets.html#def-set">set</a> of all of its possible outcomes <span class="citation" data-cites="wikipedia_sample_space">(<a href="#ref-wikipedia_sample_space" role="doc-biblioref">Wikipedia contributors 2026i</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 5 (Sample space)</strong></span> The <strong>sample space</strong> of a <a href="#def-random-experiment">random experiment</a>, denoted <span class="math inline">\(\Omega\)</span>, is the <a href="https://morrison-lab.github.io/mds/sets.html#def-set">set</a> of all of its possible outcomes <span class="citation" data-cites="wikipedia_sample_space"><a href="#ref-wikipedia_sample_space" role="doc-biblioref">[2]</a></span>.</p>
 </div>
 </div>
 </div>
@@ -1040,7 +1041,7 @@ window.Quarto = {
 <div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-event" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Event)</strong></span> An <strong>event</strong> is a subset of the <a href="#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span> <span class="citation" data-cites="wikipedia_event_probability_theory">(<a href="#ref-wikipedia_event_probability_theory" role="doc-biblioref">Wikipedia contributors 2026d</a>)</span>: a set of outcomes.</p>
+<p><span class="theorem-title"><strong>Definition 6 (Event)</strong></span> An <strong>event</strong> is a subset of the <a href="#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span> <span class="citation" data-cites="wikipedia_event_probability_theory"><a href="#ref-wikipedia_event_probability_theory" role="doc-biblioref">[3]</a></span>: a set of outcomes.</p>
 </div>
 </div>
 </div>
@@ -1058,7 +1059,7 @@ window.Quarto = {
 <div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>When <span class="math inline">\(\Omega\)</span> is uncountable, such as an interval of real numbers, only the subsets in a designated <a href="https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra"><span class="math inline">\(\sigma\)</span>-algebra</a> <span class="math inline">\(\mathcal{S}\)</span> on <span class="math inline">\(\Omega\)</span> count as events (some sources call a <span class="math inline">\(\sigma\)</span>-algebra a <strong>Borel field</strong> <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>, Def. 1.2.1)</span>); every set that arises in these notes is in <span class="math inline">\(\mathcal{S}\)</span>. When <span class="math inline">\(\Omega\)</span> is finite or <a href="https://morrison-lab.github.io/mds/functions.html#def-countably-infinite">countably infinite</a>, every subset of <span class="math inline">\(\Omega\)</span> can be an event, because the collection of all subsets of <span class="math inline">\(\Omega\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra (<a href="https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra">all subsets form a <span class="math inline">\(\sigma\)</span>-algebra</a>), as in <a href="https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra"><span class="math inline">\(\sigma\)</span>-algebras for die rolls</a>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>When <span class="math inline">\(\Omega\)</span> is uncountable, such as an interval of real numbers, only the subsets in a designated <a href="https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra"><span class="math inline">\(\sigma\)</span>-algebra</a> <span class="math inline">\(\mathcal{S}\)</span> on <span class="math inline">\(\Omega\)</span> count as events (some sources call a <span class="math inline">\(\sigma\)</span>-algebra a <strong>Borel field</strong> <span class="citation" data-cites="CaseBerg01"><a href="#ref-CaseBerg01" role="doc-biblioref">[4]</a>, Def. 1.2.1</span>); every set that arises in these notes is in <span class="math inline">\(\mathcal{S}\)</span>. When <span class="math inline">\(\Omega\)</span> is finite or <a href="https://morrison-lab.github.io/mds/functions.html#def-countably-infinite">countably infinite</a>, every subset of <span class="math inline">\(\Omega\)</span> can be an event, because the collection of all subsets of <span class="math inline">\(\Omega\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra (<a href="https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra">all subsets form a <span class="math inline">\(\sigma\)</span>-algebra</a>), as in <a href="https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra"><span class="math inline">\(\sigma\)</span>-algebras for die rolls</a>.</p>
 </div>
 </div>
 </div>
@@ -1316,7 +1317,7 @@ window.Quarto = {
 <div id="callout-28" class="callout-28-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-probability" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11 (Probability measure)</strong></span> A <strong>probability measure</strong> on a <a href="#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, often denoted <span class="math inline">\(\Pr()\)</span> or <span class="math inline">\(\operatorname{P}()\)</span>, is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the <a href="#def-event">events</a> of <span class="math inline">\(\Omega\)</span> that gives the whole sample space probability 1 <span class="citation" data-cites="wikipedia_probability_space">(<a href="#ref-wikipedia_probability_space" role="doc-biblioref">Wikipedia contributors 2026h</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 11 (Probability measure)</strong></span> A <strong>probability measure</strong> on a <a href="#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, often denoted <span class="math inline">\(\Pr()\)</span> or <span class="math inline">\(\operatorname{P}()\)</span>, is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the <a href="#def-event">events</a> of <span class="math inline">\(\Omega\)</span> that gives the whole sample space probability 1 <span class="citation" data-cites="wikipedia_probability_space"><a href="#ref-wikipedia_probability_space" role="doc-biblioref">[5]</a></span>:</p>
 <p><span class="math display">\[\Pr(\Omega) = 1\]</span></p>
 </div>
 </div>
@@ -1335,7 +1336,7 @@ window.Quarto = {
 <div id="callout-29" class="callout-29-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Other sources call a probability measure a <strong>probability function</strong> <span class="citation" data-cites="CaseBerg01">(<a href="#ref-CaseBerg01" role="doc-biblioref">Casella and Berger 2002</a>, Def. 1.2.4)</span>. The two names mean the same thing.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Other sources call a probability measure a <strong>probability function</strong> <span class="citation" data-cites="CaseBerg01"><a href="#ref-CaseBerg01" role="doc-biblioref">[4]</a>, Def. 1.2.4</span>. The two names mean the same thing.</p>
 </div>
 </div>
 </div>
@@ -1553,7 +1554,7 @@ window.Quarto = {
 <div id="callout-38" class="callout-38-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 <span class="citation" data-cites="wikipedia_probability_axioms">(<a href="#ref-wikipedia_probability_axioms" role="doc-biblioref">Wikipedia contributors 2026g</a>)</span>. The axiom form does not list <span class="math inline">\(\Pr(\emptyset) = 0\)</span>; the proof above derives it.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 <span class="citation" data-cites="wikipedia_probability_axioms"><a href="#ref-wikipedia_probability_axioms" role="doc-biblioref">[6]</a></span>. The axiom form does not list <span class="math inline">\(\Pr(\emptyset) = 0\)</span>; the proof above derives it.</p>
 </div>
 </div>
 </div>
@@ -1824,7 +1825,7 @@ window.Quarto = {
 <div id="callout-51" class="callout-51-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-conditional-prob" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (Conditional probability)</strong></span> For two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(B) &gt; 0\)</span>, the <strong>conditional probability</strong> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span> <span class="citation" data-cites="wikipedia_conditional_probability">(<a href="#ref-wikipedia_conditional_probability" role="doc-biblioref">Wikipedia contributors 2026c</a>)</span>, denoted <span class="math inline">\(\Pr(A \mid B)\)</span>, is:</p>
+<p><span class="theorem-title"><strong>Definition 13 (Conditional probability)</strong></span> For two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(B) &gt; 0\)</span>, the <strong>conditional probability</strong> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span> <span class="citation" data-cites="wikipedia_conditional_probability"><a href="#ref-wikipedia_conditional_probability" role="doc-biblioref">[7]</a></span>, denoted <span class="math inline">\(\Pr(A \mid B)\)</span>, is:</p>
 <p><span class="math display">\[\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\]</span></p>
 </div>
 </div>
@@ -1843,7 +1844,7 @@ window.Quarto = {
 <div id="callout-52" class="callout-52-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Geometrically and computationally, conditioning on an event <span class="math inline">\(B\)</span> can be viewed as <em>slicing</em> the sample space to retain only the outcomes compatible with <span class="math inline">\(B\)</span>, and then <em>renormalizing</em> the remaining probabilities (dividing by <span class="math inline">\(\Pr(B)\)</span>) so that they sum to 1 <span class="citation" data-cites="ross-probsim">(<a href="#ref-ross-probsim" role="doc-biblioref">Ross 2022, sec. 2.7.4</a>)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Geometrically and computationally, conditioning on an event <span class="math inline">\(B\)</span> can be viewed as <em>slicing</em> the sample space to retain only the outcomes compatible with <span class="math inline">\(B\)</span>, and then <em>renormalizing</em> the remaining probabilities (dividing by <span class="math inline">\(\Pr(B)\)</span>) so that they sum to 1 <span class="citation" data-cites="ross-probsim"><a href="#ref-ross-probsim" role="doc-biblioref">[8, Sec. 2.7.4]</a></span>.</p>
 </div>
 </div>
 </div>
@@ -1962,7 +1963,7 @@ window.Quarto = {
 <div id="callout-57" class="callout-57-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-total-prob" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Law of total probability)</strong></span> If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a <a href="#def-partition">partition</a> of the sample space, with <span class="math inline">\(\Pr(B_i) &gt; 0\)</span> for every <span class="math inline">\(i\)</span>, then for any event <span class="math inline">\(A\)</span> <span class="citation" data-cites="wikipedia_law_of_total_probability">(<a href="#ref-wikipedia_law_of_total_probability" role="doc-biblioref">Wikipedia contributors 2026f</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Law of total probability)</strong></span> If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a <a href="#def-partition">partition</a> of the sample space, with <span class="math inline">\(\Pr(B_i) &gt; 0\)</span> for every <span class="math inline">\(i\)</span>, then for any event <span class="math inline">\(A\)</span> <span class="citation" data-cites="wikipedia_law_of_total_probability"><a href="#ref-wikipedia_law_of_total_probability" role="doc-biblioref">[9]</a></span>:</p>
 <p><span class="math display">\[\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)\]</span></p>
 </div>
 </div>
@@ -2006,7 +2007,7 @@ window.Quarto = {
 <div id="callout-59" class="callout-59-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-bayes" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (Bayes’ theorem)</strong></span> For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span> <span class="citation" data-cites="wikipedia_bayes_theorem">(<a href="#ref-wikipedia_bayes_theorem" role="doc-biblioref">Wikipedia contributors 2026b</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 7 (Bayes’ theorem)</strong></span> For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span> <span class="citation" data-cites="wikipedia_bayes_theorem"><a href="#ref-wikipedia_bayes_theorem" role="doc-biblioref">[10]</a></span>:</p>
 <p><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\]</span></p>
 </div>
 </div>
@@ -2129,7 +2130,7 @@ window.Quarto = {
 <p>The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by <span class="math inline">\(\Pr(B)\)</span> gives <strong>Bayes’ rule</strong> (<a href="#thm-bayes" class="quarto-xref">Theorem&nbsp;7</a>):</p>
 <p><span id="eq-bayes"><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)} \tag{1}\]</span></span></p>
 <p>Nothing was assumed beyond <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span>, which the two conditionals need in order to be defined at all.</p>
-<p>As Hutchinson emphasizes <span class="citation" data-cites="hutchinson2024data471">(<a href="#ref-hutchinson2024data471" role="doc-biblioref">Hutchinson 2024</a>)</span>, each component carries standard Bayesian terminology:</p>
+<p>As Hutchinson emphasizes <span class="citation" data-cites="hutchinson2024data471"><a href="#ref-hutchinson2024data471" role="doc-biblioref">[11]</a></span>, each component carries standard Bayesian terminology:</p>
 <ul>
 <li><span class="math inline">\(\Pr(A \mid B)\)</span> is the <strong>posterior probability</strong> of <span class="math inline">\(A\)</span> given the observed evidence <span class="math inline">\(B\)</span>.</li>
 <li><span class="math inline">\(\Pr(B \mid A)\)</span> is the <strong>likelihood</strong> of the evidence <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span>.</li>
@@ -2374,7 +2375,7 @@ Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule <span class="citation" data-cites="hutchinson_wwu_ml_videos">(<a href="#ref-hutchinson_wwu_ml_videos" role="doc-biblioref">Hutchinson, n.d.</a>)</span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
+<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule <span class="citation" data-cites="hutchinson_wwu_ml_videos"><a href="#ref-hutchinson_wwu_ml_videos" role="doc-biblioref">[12]</a></span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Another explanation">
@@ -2403,7 +2404,7 @@ Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100
 </div>
 <div id="callout-68" class="callout-68-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>5MinuteAI’s five-minute videos follow the same course <span class="citation" data-cites="fiveminuteai_probstat">(<a href="#ref-fiveminuteai_probstat" role="doc-biblioref">5MinuteAI, n.d.</a>)</span>: <a href="https://www.youtube.com/watch?v=LfdTIvLfdtA">introduction to discrete probability</a> and <a href="https://www.youtube.com/watch?v=c-yB3q7zYlU">conditional probability</a>.</p>
+<p>5MinuteAI’s five-minute videos follow the same course <span class="citation" data-cites="fiveminuteai_probstat"><a href="#ref-fiveminuteai_probstat" role="doc-biblioref">[13]</a></span>: <a href="https://www.youtube.com/watch?v=LfdTIvLfdtA">introduction to discrete probability</a> and <a href="https://www.youtube.com/watch?v=c-yB3q7zYlU">conditional probability</a>.</p>
 </div>
 </div>
 </div>
@@ -2412,58 +2413,58 @@ Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100
 <section id="further-reading" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
 <ul>
-<li><p><span class="citation" data-cites="wikipedia_sample_space">Wikipedia contributors (<a href="#ref-wikipedia_sample_space" role="doc-biblioref">2026i</a>)</span> — sample spaces and events, with examples</p></li>
-<li><p><span class="citation" data-cites="wikipedia_probability_space">Wikipedia contributors (<a href="#ref-wikipedia_probability_space" role="doc-biblioref">2026h</a>)</span> — the sample space, events and probability measure together</p></li>
-<li><p><span class="citation" data-cites="wikipedia_conditional_probability">Wikipedia contributors (<a href="#ref-wikipedia_conditional_probability" role="doc-biblioref">2026c</a>)</span> — the definition, with common misreadings</p></li>
-<li><p><span class="citation" data-cites="wikipedia_law_of_total_probability">Wikipedia contributors (<a href="#ref-wikipedia_law_of_total_probability" role="doc-biblioref">2026f</a>)</span> — the law, with examples</p></li>
-<li><p><span class="citation" data-cites="wikipedia_bayes_theorem">Wikipedia contributors (<a href="#ref-wikipedia_bayes_theorem" role="doc-biblioref">2026b</a>)</span> — the theorem, its proof and its uses</p></li>
-<li><p><span class="citation" data-cites="wikipedia_base_rate_fallacy">Wikipedia contributors (<a href="#ref-wikipedia_base_rate_fallacy" role="doc-biblioref">2026a</a>)</span> — why ignoring the base rate misleads</p></li>
+<li><p><span class="citation" data-cites="wikipedia_sample_space">Wikipedia contributors <a href="#ref-wikipedia_sample_space" role="doc-biblioref">[2]</a></span> — sample spaces and events, with examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_probability_space">Wikipedia contributors <a href="#ref-wikipedia_probability_space" role="doc-biblioref">[5]</a></span> — the sample space, events and probability measure together</p></li>
+<li><p><span class="citation" data-cites="wikipedia_conditional_probability">Wikipedia contributors <a href="#ref-wikipedia_conditional_probability" role="doc-biblioref">[7]</a></span> — the definition, with common misreadings</p></li>
+<li><p><span class="citation" data-cites="wikipedia_law_of_total_probability">Wikipedia contributors <a href="#ref-wikipedia_law_of_total_probability" role="doc-biblioref">[9]</a></span> — the law, with examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_bayes_theorem">Wikipedia contributors <a href="#ref-wikipedia_bayes_theorem" role="doc-biblioref">[10]</a></span> — the theorem, its proof and its uses</p></li>
+<li><p><span class="citation" data-cites="wikipedia_base_rate_fallacy">Wikipedia contributors <a href="#ref-wikipedia_base_rate_fallacy" role="doc-biblioref">[14]</a></span> — why ignoring the base rate misleads</p></li>
 </ul>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
-5MinuteAI. n.d. <em>Probability &amp; Statistics</em>. Video playlist on YouTube. Accessed October 12, 2026. <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a>.
-</div>
-<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
-Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
-</div>
-<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
-Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. Western Washington University.
-</div>
-<div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
-Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.
-</div>
-<div id="ref-ross-probsim" class="csl-entry" role="listitem">
-Ross, Kevin. 2022. <em>An Introduction to Probability and Simulation</em>. Bookdown. <a href="https://bookdown.org/kevin_davisross/probsim-book/">https://bookdown.org/kevin_davisross/probsim-book/</a>.
-</div>
-<div id="ref-wikipedia_base_rate_fallacy" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026a. <em>Base Rate Fallacy — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">https://en.wikipedia.org/wiki/Base_rate_fallacy</a>.
-</div>
-<div id="ref-wikipedia_bayes_theorem" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026b. <em>Bayes’ Theorem — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">https://en.wikipedia.org/wiki/Bayes%27_theorem</a>.
-</div>
-<div id="ref-wikipedia_conditional_probability" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026c. <em>Conditional Probability — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Conditional_probability">https://en.wikipedia.org/wiki/Conditional_probability</a>.
-</div>
-<div id="ref-wikipedia_event_probability_theory" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026d. <em>Event (Probability Theory) — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Event_(probability_theory)">https://en.wikipedia.org/wiki/Event_(probability_theory)</a>.
-</div>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
 <div id="ref-wikipedia_experiment_probability_theory" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026e. <em>Experiment (Probability Theory) — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Experiment_(probability_theory)">https://en.wikipedia.org/wiki/Experiment_(probability_theory)</a>.
-</div>
-<div id="ref-wikipedia_law_of_total_probability" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026f. <em>Law of Total Probability — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">https://en.wikipedia.org/wiki/Law_of_total_probability</a>.
-</div>
-<div id="ref-wikipedia_probability_axioms" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026g. <em>Probability Axioms — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Probability_axioms">https://en.wikipedia.org/wiki/Probability_axioms</a>.
-</div>
-<div id="ref-wikipedia_probability_space" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026h. <em>Probability Space — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Probability_space">https://en.wikipedia.org/wiki/Probability_space</a>.
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Experiment (probability theory) — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Experiment_(probability_theory)">https://en.wikipedia.org/wiki/Experiment_(probability_theory)</a></div>
 </div>
 <div id="ref-wikipedia_sample_space" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026i. <em>Sample Space — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Sample_space">https://en.wikipedia.org/wiki/Sample_space</a>.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Sample space — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Sample_space">https://en.wikipedia.org/wiki/Sample_space</a></div>
+</div>
+<div id="ref-wikipedia_event_probability_theory" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Event (probability theory) — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Event_(probability_theory)">https://en.wikipedia.org/wiki/Event_(probability_theory)</a></div>
+</div>
+<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">G. Casella and R. Berger, <em>Statistical inference</em>, 2nd ed. Cengage Learning, 2002. Available: <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a></div>
+</div>
+<div id="ref-wikipedia_probability_space" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Probability space — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Probability_space">https://en.wikipedia.org/wiki/Probability_space</a></div>
+</div>
+<div id="ref-wikipedia_probability_axioms" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Probability axioms — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Probability_axioms">https://en.wikipedia.org/wiki/Probability_axioms</a></div>
+</div>
+<div id="ref-wikipedia_conditional_probability" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Conditional probability — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Conditional_probability">https://en.wikipedia.org/wiki/Conditional_probability</a></div>
+</div>
+<div id="ref-ross-probsim" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">K. Ross, <span>“An introduction to probability and simulation.”</span> Bookdown, 2022. Available: <a href="https://bookdown.org/kevin_davisross/probsim-book/">https://bookdown.org/kevin_davisross/probsim-book/</a></div>
+</div>
+<div id="ref-wikipedia_law_of_total_probability" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Law of total probability — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">https://en.wikipedia.org/wiki/Law_of_total_probability</a></div>
+</div>
+<div id="ref-wikipedia_bayes_theorem" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Bayes’ theorem — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">https://en.wikipedia.org/wiki/Bayes%27_theorem</a></div>
+</div>
+<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571: Machine learning.”</span> Western Washington University, 2024.</div>
+</div>
+<div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571 (machine learning) and <span>CSCI</span> 481/581 (deep learning) video lectures.”</span> Western Washington University. Accessed: Sep. 28, 2026. [Online]. Available: <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a></div>
+</div>
+<div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">5MinuteAI, <span>“Probability &amp; statistics.”</span> Video playlist on YouTube. Accessed: Oct. 12, 2026. [Online]. Available: <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a></div>
+</div>
+<div id="ref-wikipedia_base_rate_fallacy" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Base rate fallacy — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">https://en.wikipedia.org/wiki/Base_rate_fallacy</a></div>
 </div>
 </div>
 

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 ## 1 Defining probabilities
 
@@ -44,7 +44,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 4 (Random experiment)** A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome) that we have not determined in advance ([Wikipedia contributors 2026e](#ref-wikipedia_experiment_probability_theory)).
+> **Definition 4 (Random experiment)** A **random experiment** is a [procedure](#def-procedure) that ends in exactly one [outcome](#def-experiment-outcome) that we have not determined in advance [\[1\]](#ref-wikipedia_experiment_probability_theory).
 
 > **NOTE:**
 >
@@ -71,7 +71,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes ([Wikipedia contributors 2026i](#ref-wikipedia_sample_space)).
+> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted \\\Omega\\, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes [\[2\]](#ref-wikipedia_sample_space).
 
 > **NOTE:**
 >
@@ -79,11 +79,11 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 6 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\ ([Wikipedia contributors 2026d](#ref-wikipedia_event_probability_theory)): a set of outcomes.
+> **Definition 6 (Event)** An **event** is a subset of the [sample space](#def-sample-space) \\\Omega\\ [\[3\]](#ref-wikipedia_event_probability_theory): a set of outcomes.
 
 > **NOTE:**
 >
-> *Remark*. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathcal{S}\\ on \\\Omega\\ count as events (some sources call a \\\sigma\\-algebra a **Borel field** ([Casella and Berger 2002](#ref-CaseBerg01), Def. 1.2.1)); every set that arises in these notes is in \\\mathcal{S}\\. When \\\Omega\\ is finite or [countably infinite](https://morrison-lab.github.io/mds/functions.html#def-countably-infinite), every subset of \\\Omega\\ can be an event, because the collection of all subsets of \\\Omega\\ is a \\\sigma\\-algebra ([all subsets form a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)), as in [\\\sigma\\-algebras for die rolls](https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra).
+> *Remark*. When \\\Omega\\ is uncountable, such as an interval of real numbers, only the subsets in a designated [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathcal{S}\\ on \\\Omega\\ count as events (some sources call a \\\sigma\\-algebra a **Borel field** [\[4\]](#ref-CaseBerg01), Def. 1.2.1); every set that arises in these notes is in \\\mathcal{S}\\. When \\\Omega\\ is finite or [countably infinite](https://morrison-lab.github.io/mds/functions.html#def-countably-infinite), every subset of \\\Omega\\ can be an event, because the collection of all subsets of \\\Omega\\ is a \\\sigma\\-algebra ([all subsets form a \\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)), as in [\\\sigma\\-algebras for die rolls](https://morrison-lab.github.io/mds/measures.html#exm-sigma-algebra).
 
 > **NOTE:**
 >
@@ -146,13 +146,13 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 11 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 ([Wikipedia contributors 2026h](#ref-wikipedia_probability_space)):
+> **Definition 11 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 [\[5\]](#ref-wikipedia_probability_space):
 >
 > \\\Pr(\Omega) = 1\\
 
 > **NOTE:**
 >
-> *Remark*. Other sources call a probability measure a **probability function** ([Casella and Berger 2002](#ref-CaseBerg01), Def. 1.2.4). The two names mean the same thing.
+> *Remark*. Other sources call a probability measure a **probability function** [\[4\]](#ref-CaseBerg01), Def. 1.2.4. The two names mean the same thing.
 
 > **NOTE:**
 >
@@ -222,7 +222,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 ([Wikipedia contributors 2026g](#ref-wikipedia_probability_axioms)). The axiom form does not list \\\Pr(\emptyset) = 0\\; the proof above derives it.
+> *Remark*. Many sources define a probability measure by these three axioms instead; the theorem shows that the two definitions agree. The axioms are named for Kolmogorov, who introduced them in 1933 [\[6\]](#ref-wikipedia_probability_axioms). The axiom form does not list \\\Pr(\emptyset) = 0\\; the proof above derives it.
 
 > **NOTE:**
 >
@@ -299,13 +299,13 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\ ([Wikipedia contributors 2026c](#ref-wikipedia_conditional_probability)), denoted \\\Pr(A \mid B)\\, is:
+> **Definition 13 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\ [\[7\]](#ref-wikipedia_conditional_probability), denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
 
 > **NOTE:**
 >
-> *Remark*. Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 ([Ross 2022, sec. 2.7.4](#ref-ross-probsim)).
+> *Remark*. Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 [\[8, Sec. 2.7.4\]](#ref-ross-probsim).
 
 > **NOTE:**
 >
@@ -335,7 +335,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\ ([Wikipedia contributors 2026f](#ref-wikipedia_law_of_total_probability)):
+> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\ [\[9\]](#ref-wikipedia_law_of_total_probability):
 >
 > \\\Pr(A) = \sum\_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)\\
 
@@ -347,7 +347,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\ ([Wikipedia contributors 2026b](#ref-wikipedia_bayes_theorem)):
+> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\ [\[10\]](#ref-wikipedia_bayes_theorem):
 >
 > \\\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\\
 
@@ -395,7 +395,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > Nothing was assumed beyond \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\, which the two conditionals need in order to be defined at all.
 >
-> As Hutchinson emphasizes ([Hutchinson 2024](#ref-hutchinson2024data471)), each component carries standard Bayesian terminology:
+> As Hutchinson emphasizes [\[11\]](#ref-hutchinson2024data471), each component carries standard Bayesian terminology:
 >
 > - \\\Pr(A \mid B)\\ is the **posterior probability** of \\A\\ given the observed evidence \\B\\.
 > - \\\Pr(B \mid A)\\ is the **likelihood** of the evidence \\B\\ given \\A\\.
@@ -508,7 +508,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 > **TIP:**
 >
-> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule [\[12\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 > **TIP:**
 >
@@ -516,50 +516,78 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 > **NOTE:**
 >
-> 5MinuteAI’s five-minute videos follow the same course ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
+> 5MinuteAI’s five-minute videos follow the same course [\[13\]](#ref-fiveminuteai_probstat): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
 ## Further reading
 
-- Wikipedia contributors ([2026i](#ref-wikipedia_sample_space)) — sample spaces and events, with examples
+- Wikipedia contributors [\[2\]](#ref-wikipedia_sample_space) — sample spaces and events, with examples
 
-- Wikipedia contributors ([2026h](#ref-wikipedia_probability_space)) — the sample space, events and probability measure together
+- Wikipedia contributors [\[5\]](#ref-wikipedia_probability_space) — the sample space, events and probability measure together
 
-- Wikipedia contributors ([2026c](#ref-wikipedia_conditional_probability)) — the definition, with common misreadings
+- Wikipedia contributors [\[7\]](#ref-wikipedia_conditional_probability) — the definition, with common misreadings
 
-- Wikipedia contributors ([2026f](#ref-wikipedia_law_of_total_probability)) — the law, with examples
+- Wikipedia contributors [\[9\]](#ref-wikipedia_law_of_total_probability) — the law, with examples
 
-- Wikipedia contributors ([2026b](#ref-wikipedia_bayes_theorem)) — the theorem, its proof and its uses
+- Wikipedia contributors [\[10\]](#ref-wikipedia_bayes_theorem) — the theorem, its proof and its uses
 
-- Wikipedia contributors ([2026a](#ref-wikipedia_base_rate_fallacy)) — why ignoring the base rate misleads
+- Wikipedia contributors [\[14\]](#ref-wikipedia_base_rate_fallacy) — why ignoring the base rate misleads
 
 ## References
 
-5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
+\[1\]
 
-Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+Wikipedia contributors, “Experiment (probability theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Experiment_(probability_theory)>
 
-Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
+\[2\]
 
-Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
+Wikipedia contributors, “Sample space — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Sample_space>
 
-Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
+\[3\]
 
-Wikipedia contributors. 2026a. *Base Rate Fallacy — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Base_rate_fallacy>.
+Wikipedia contributors, “Event (probability theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Event_(probability_theory)>
 
-Wikipedia contributors. 2026b. *Bayes’ Theorem — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Bayes%27_theorem>.
+\[4\]
 
-Wikipedia contributors. 2026c. *Conditional Probability — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Conditional_probability>.
+G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
 
-Wikipedia contributors. 2026d. *Event (Probability Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Event_(probability_theory)>.
+\[5\]
 
-Wikipedia contributors. 2026e. *Experiment (Probability Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Experiment_(probability_theory)>.
+Wikipedia contributors, “Probability space — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Probability_space>
 
-Wikipedia contributors. 2026f. *Law of Total Probability — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_total_probability>.
+\[6\]
 
-Wikipedia contributors. 2026g. *Probability Axioms — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_axioms>.
+Wikipedia contributors, “Probability axioms — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Probability_axioms>
 
-Wikipedia contributors. 2026h. *Probability Space — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_space>.
+\[7\]
 
-Wikipedia contributors. 2026i. *Sample Space — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Sample_space>.
+Wikipedia contributors, “Conditional probability — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_probability>
+
+\[8\]
+
+K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
+
+\[9\]
+
+Wikipedia contributors, “Law of total probability — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_total_probability>
+
+\[10\]
+
+Wikipedia contributors, “Bayes’ theorem — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Bayes%27_theorem>
+
+\[11\]
+
+B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
+
+\[12\]
+
+B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+
+\[13\]
+
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+
+\[14\]
+
+Wikipedia contributors, “Base rate fallacy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Base_rate_fallacy>
 
 Back to top

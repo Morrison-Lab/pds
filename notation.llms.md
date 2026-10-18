@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -45,7 +45,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Definition 2 (Stochastic process (random process))** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “**random process**” are synonyms ([Adler and Taylor 2009](#ref-Adler2009random); [Stirzaker 2005](#ref-Stirzaker2005probability); [Kallenberg 2002](#ref-Kallenberg2002foundations)).
+> **Definition 2 (Stochastic process (random process))** A **stochastic process** is a collection of random variables indexed by a set, most often a set of times or locations. In probability theory, “stochastic process” and “**random process**” are synonyms [\[1\]](#ref-Adler2009random), [\[2\]](#ref-Stirzaker2005probability), [\[3\]](#ref-Kallenberg2002foundations).
 
 > **NOTE:**
 >
@@ -96,10 +96,16 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 ## References
 
-Adler, Robert J., and Jonathan E. Taylor. 2009. *Random Fields and Geometry*. Springer. <https://doi.org/10.1007/978-0-387-48116-6>.
+\[1\]
 
-Kallenberg, Olav. 2002. *Foundations of Modern Probability*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-4757-4015-8>.
+R. J. Adler and J. E. Taylor, *Random fields and geometry*. New York: Springer, 2009. doi: [10.1007/978-0-387-48116-6](https://doi.org/10.1007/978-0-387-48116-6).
 
-Stirzaker, David. 2005. *Stochastic Processes and Models*. Oxford University Press. <https://global.oup.com/academic/product/stochastic-processes-and-models-9780198568131>.
+\[2\]
+
+D. Stirzaker, *Stochastic processes and models*. Oxford: Oxford University Press, 2005. Available: <https://global.oup.com/academic/product/stochastic-processes-and-models-9780198568131>
+
+\[3\]
+
+O. Kallenberg, *Foundations of modern probability*, 2nd ed. New York: Springer, 2002. doi: [10.1007/978-1-4757-4015-8](https://doi.org/10.1007/978-1-4757-4015-8).
 
 Back to top

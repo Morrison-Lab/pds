@@ -14,11 +14,11 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Expectation, expected value, population mean)** The **expectation**, **expected value**, or **population mean** of a *discrete* random variable \\X\\, denoted \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\, \\\mu(X)\\, or \\\mu_X\\, is the mean of \\X\\’s possible values ([Wikipedia contributors 2026d](#ref-wikipedia_expected_value)), weighted by the [probability mass function](random-variables.llms.md#def-pmf) of those values:
+> **Definition 1 (Expectation, expected value, population mean)** The **expectation**, **expected value**, or **population mean** of a *discrete* random variable \\X\\, denoted \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\, \\\mu(X)\\, or \\\mu_X\\, is the mean of \\X\\’s possible values [\[1\]](#ref-wikipedia_expected_value), weighted by the [probability mass function](random-variables.llms.md#def-pmf) of those values:
 >
 > \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \stackrel{\text{def}}{=}\sum\_{x \in \mathcal{R}(X)} x \cdot \operatorname{P}(X=x)\\
 >
@@ -56,13 +56,13 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3) lets us exchange the order of integration:
+> *Proof*. We prove the continuous case, in which \\T\\ has a density \\\operatorname{f}\\. The integrand \\\operatorname{f}(u) \cdot\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}\\ is non-negative on \\\[0, \infty) \times \[0, \infty)\\, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[2\]](#ref-billingsley1995probability), Theorem 18.3) lets us exchange the order of integration:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[T\right\]\mathclose{} &= \int\_{u=0}^{\infty} u\\\operatorname{f}(u)\\du && \text{(definition of expectation; } T \ge 0 \text{)}\\ &= \int\_{u=0}^{\infty}\mathopen{}\left(\int\_{t=0}^{u} 1\\dt\right)\mathclose{}\operatorname{f}(u)\\du && \text{(} u = \textstyle\int_0^u 1\\dt \text{)}\\ &= \int\_{u=0}^{\infty}\int\_{t=0}^{u} \operatorname{f}(u)\\dt\\du && \text{(move } \operatorname{f}(u) \text{ inside the inner integral)}\\ &= \int\_{t=0}^{\infty}\int\_{u=t}^{\infty} \operatorname{f}(u)\\du\\dt && \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\ &= \int\_{t=0}^{\infty}\Pr(T\>t)\\dt && \text{(integrate the density over } (t, \infty) \text{)}\\ &= \int\_{t=0}^{\infty}\operatorname{S}(t)\\dt && \text{(definition of the survival function)} \end{aligned} \\
 >
 > Every step also holds when \\\int\_{u=0}^{\infty} u\\\operatorname{f}(u)\\du\\ is infinite, because Tonelli’s theorem needs only a non-negative integrand; so \\\int\_{t=0}^{\infty} \operatorname{S}(t)\\dt\\ is finite exactly when \\\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{}\\ is defined.
 >
-> See ([Soch 2020](#ref-statproofbook:mean-nnrvar)) for an alternative presentation of this proof.
+> See [\[3\]](#ref-statproofbook:mean-nnrvar) for an alternative presentation of this proof.
 
 > **NOTE:**
 >
@@ -90,7 +90,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 3 (Law of the Unconscious Statistician (LOTUS))** **Discrete case.** For any function \\g\\ of a *discrete* random variable \\X\\ ([Wikipedia contributors 2026e](#ref-wikipedia_law_of_the_unconscious_statistician)):
+> **Theorem 3 (Law of the Unconscious Statistician (LOTUS))** **Discrete case.** For any function \\g\\ of a *discrete* random variable \\X\\ [\[4\]](#ref-wikipedia_law_of_the_unconscious_statistician):
 >
 > \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{} = \sum\_{x \in \mathcal{R}(X)} g(x) \cdot\operatorname{P}(X=x)\\
 >
@@ -108,7 +108,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{}\\, we do not need to first find the distribution of \\g(X)\\; we can compute the expectation directly using the distribution of \\X\\. The continuous case is the density-weighted analogue of this argument, but a fully rigorous proof needs the general change-of-variables theorem for integrals against a pushforward measure — approximating \\g\\ by simple functions and passing to the limit — which is beyond this page’s scope ([Billingsley 1995](#ref-billingsley1995probability); [Gut 2013](#ref-gut2013); [Casella and Berger 2002](#ref-CaseBerg01); [Wikipedia contributors 2026f](#ref-wp:lotus)).
+> *Remark*. LOTUS says that to compute \\\operatorname{E}\mathopen{}\left\[g(X)\right\]\mathclose{}\\, we do not need to first find the distribution of \\g(X)\\; we can compute the expectation directly using the distribution of \\X\\. The continuous case is the density-weighted analogue of this argument, but a fully rigorous proof needs the general change-of-variables theorem for integrals against a pushforward measure — approximating \\g\\ by simple functions and passing to the limit — which is beyond this page’s scope [\[2\]](#ref-billingsley1995probability), [\[5\]](#ref-gut2013), [\[6\]](#ref-CaseBerg01), [\[7\]](#ref-wp:lotus).
 
 > **NOTE:**
 >
@@ -136,7 +136,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > Splitting and exchanging the sums is valid because the sums converge absolutely, since \\\mathopen{}\left\|ax + by + c\right\|\mathclose{} \le \mathopen{}\left\|a\right\|\mathclose{}\mathopen{}\left\|x\right\|\mathclose{} + \mathopen{}\left\|b\right\|\mathclose{}\mathopen{}\left\|y\right\|\mathclose{} + \mathopen{}\left\|c\right\|\mathclose{}\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}\\ and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}\\ are defined.
 >
-> Beyond the discrete case, this proof does not carry over by replacing sums with integrals. That replacement would need a joint density for \\(X, Y)\\, and some pairs have none: if \\X\\ is continuous, the pair \\(X, X)\\ has no joint density. In general, expectation is an integral against the probability measure, and the theorem is the linearity of that (Lebesgue) integral ([Billingsley 1995](#ref-billingsley1995probability)), which is beyond these notes’ scope.
+> Beyond the discrete case, this proof does not carry over by replacing sums with integrals. That replacement would need a joint density for \\(X, Y)\\, and some pairs have none: if \\X\\ is continuous, the pair \\(X, X)\\ has no joint density. In general, expectation is an integral against the probability measure, and the theorem is the linearity of that (Lebesgue) integral [\[2\]](#ref-billingsley1995probability), which is beyond these notes’ scope.
 
 > **NOTE:**
 >
@@ -210,7 +210,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
+> **Example 8 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
 >
 > Show code
 >
@@ -251,7 +251,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
+> **Example 9 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
 >
 > Show code
 >
@@ -288,15 +288,15 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 > |  sigma_y  | 282.1  |
 > |    rho    | 0.7443 |
 >
-> Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here): \\\mu_X\\ and \\\mu_Y\\ are the means of \\X\\ and \\Y\\, \\\sigma^2_X\\ and \\\sigma^2_Y\\ their [variances](variance-covariance.llms.md#def-variance), and \\\rho\\ their [correlation](variance-covariance.llms.md#def-correlation) (the next page defines the last two). The joint density is (a standard result; e.g. Casella and Berger ([2002](#ref-CaseBerg01))):
+> Modeling \\(X, Y)\\ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here): \\\mu_X\\ and \\\mu_Y\\ are the means of \\X\\ and \\Y\\, \\\sigma^2_X\\ and \\\sigma^2_Y\\ their [variances](variance-covariance.llms.md#def-variance), and \\\rho\\ their [correlation](variance-covariance.llms.md#def-correlation) (the next page defines the last two). The joint density is (a standard result; e.g. Casella and Berger [\[6\]](#ref-CaseBerg01)):
 >
 > \\ \operatorname{p}(X=x,\\Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \text{e}^{-\frac{1}{2(1-\rho^2)} \mathopen{}\left\[\frac{(x-\mu_X)^2}{\sigma^2_X} - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right\]\mathclose{}} \\
 >
-> A further standard fact about the bivariate normal (Casella and Berger ([2002](#ref-CaseBerg01))) is that the marginal distribution of \\X\\ is [normal](random-variables.llms.md#def-normal), \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma^2_X\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
+> A further standard fact about the bivariate normal (Casella and Berger [\[6\]](#ref-CaseBerg01)) is that the marginal distribution of \\X\\ is [normal](random-variables.llms.md#def-normal), \\X \sim \operatorname{N}\mathopen{}\left(\mu_X, \sigma^2_X\right)\mathclose{}\\. At \\x = 40\\ weeks (a full-term pregnancy), \\\mu_X = 38.5417\\ and \\\sigma_X = 1.8173\\, so:
 >
 > \\ \begin{aligned} \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}} \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma^2_X}} && \text{(normal density at } x = 40 \text{)} \\&= \frac{1}{1.8173\sqrt{2\pi}} \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}} && \text{(substitute } \mu_X \text{ and } \sigma_X \text{)} \\&\approx 0.1591 && \text{(evaluate)} \end{aligned} \\
 >
-> By [Definition 4](#def-cond-pdf), dividing the joint density by this marginal density and simplifying the exponent (completing the square in \\y\\; Casella and Berger ([2002](#ref-CaseBerg01))) gives the conditional PDF of \\Y\\ given \\X = 40\\, which is itself normal with mean shifted along the regression line and variance reduced by a factor of \\1-\rho^2\\:
+> By [Definition 4](#def-cond-pdf), dividing the joint density by this marginal density and simplifying the exponent (completing the square in \\y\\; Casella and Berger [\[6\]](#ref-CaseBerg01)) gives the conditional PDF of \\Y\\ given \\X = 40\\, which is itself normal with mean shifted along the regression line and variance reduced by a factor of \\1-\rho^2\\:
 >
 > \\ \begin{aligned} \operatorname{p}(Y=y \mid X=40) &= \frac{\operatorname{p}(X=40,\\Y=y)}{\operatorname{p}(X=40)} && \text{(definition of the conditional PDF)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left\[\frac{(40-\mu_X)^2}{\sigma^2_X} - \frac{2\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y} + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right\]\mathclose{} + \frac{(40-\mu_X)^2}{2\sigma^2_X}} && \text{(substitute both densities; combine prefactors and exponents)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\rho^2(40-\mu_X)^2}{2\sigma^2_X(1-\rho^2)} + \frac{\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)} - \frac{(y-\mu_Y)^2}{2\sigma^2_Y(1-\rho^2)}} && \text{(combine the } (40-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{1}{2\sigma^2_Y(1-\rho^2)} \mathopen{}\left\[\rho^2\frac{\sigma^2_Y}{\sigma^2_X}(40-\mu_X)^2 - 2\rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)(y-\mu_Y) + (y-\mu_Y)^2\right\]\mathclose{}} && \text{(factor } -\tfrac{1}{2\sigma^2_Y(1-\rho^2)} \text{ out of the exponent)} \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}} \text{e}^{-\frac{\mathopen{}\left(y - \mathopen{}\left\[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right\]\mathclose{}\right)\mathclose{}^2}{2\sigma_Y^2(1-\rho^2)}} && \text{(the bracket is a perfect square in } y \text{)} \end{aligned} \\
 >
@@ -334,7 +334,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = \text{placebo}\right\]\mathclose{} &= 1 \cdot\tfrac{25}{38} + 2 \cdot\tfrac{8}{38} + 3 \cdot\tfrac{5}{38} && \text{(definition of conditional expectation)} \\&= \frac{56}{38} && \text{(common denominator)} \\&\approx 1.47 && \text{(divide)} \end{aligned} \\
 >
-> **Continuous case.** Continuing [Example 9](#exm-cond-pdf), \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\. The mean of a normal distribution is its location parameter (Casella and Berger ([2002](#ref-CaseBerg01))), so integrating \\y\\ against this conditional density gives:
+> **Continuous case.** Continuing [Example 9](#exm-cond-pdf), \\Y \mid X = 40 \sim \operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}\\. The mean of a normal distribution is its location parameter (Casella and Berger [\[6\]](#ref-CaseBerg01)), so integrating \\y\\ against this conditional density gives:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[Y \mid X = 40\right\]\mathclose{} &= \int\_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\\dy && \text{(definition of conditional expectation)} \\&= 3136.15 \text{ g} && \text{(the mean of a normal distribution is its location parameter)} \end{aligned} \\
 >
@@ -362,7 +362,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Example 11 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
+> **Example 11 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
 >
 > Show code
 >
@@ -401,7 +401,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\\operatorname{E}\mathopen{}\left\[Y \mid X = \text{H-O}\right\]\mathclose{} = 3.95 \text{ mg/dL}, \qquad \operatorname{E}\mathopen{}\left\[Y \mid X = \text{C}\right\]\mathclose{} = 2.78 \text{ mg/dL}\\
 >
-> **\\X\\ continuous, \\Y\\ discrete.** The `senility` dataset in the `dobson` package (Dobson and Barnett ([2018](#ref-dobson4e)), Table 7.8) records, for 54 elderly people, a WAIS (Wechsler Adult Intelligence Scale) score and whether symptoms of senility were present. Let \\X\\ be WAIS score and \\Y\\ indicate senility symptoms.
+> **\\X\\ continuous, \\Y\\ discrete.** The `senility` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 7.8) records, for 54 elderly people, a WAIS (Wechsler Adult Intelligence Scale) score and whether symptoms of senility were present. Let \\X\\ be WAIS score and \\Y\\ indicate senility symptoms.
 >
 > Show code
 >
@@ -561,7 +561,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This result is often summarized as “taking out what is known” (e.g., Ross ([2022](#ref-ross-probsim)), Section 5.6.4): given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
+> *Remark*. This result is often summarized as “taking out what is known” (e.g., Ross [\[9\]](#ref-ross-probsim), Section 5.6.4): given \\X = x\\, any function of \\X\\ is the known constant \\g(x)\\.
 
 > **NOTE:**
 >
@@ -658,7 +658,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 18.3). Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
+> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of \\\sigma\\-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope [\[2\]](#ref-billingsley1995probability), Theorem 18.3. Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both \\\sigma\\-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
@@ -935,7 +935,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > and \\h(x, y) = x + y\\. Since \\h(x,y) = x + y \ge 0\\ for every \\(x,y)\\ in this support, condition (a) holds, so [Corollary 3](#cor-fubini-joint) (via Tonelli’s theorem) guarantees the order of this now-infinite double sum is exchangeable — unlike the finite case, elementary algebra alone could not establish this.
 >
-> The derivation uses the standard geometric-series facts \\\sum\_{y=0}^{\infty} p^y = \frac{1}{1-p}\\ and \\\sum\_{y=0}^{\infty} y\\p^y = \frac{p}{(1-p)^2}\\ (e.g. Casella and Berger ([2002](#ref-CaseBerg01))). By [Corollary 3](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
+> The derivation uses the standard geometric-series facts \\\sum\_{y=0}^{\infty} p^y = \frac{1}{1-p}\\ and \\\sum\_{y=0}^{\infty} y\\p^y = \frac{p}{(1-p)^2}\\ (e.g. Casella and Berger [\[6\]](#ref-CaseBerg01)). By [Corollary 3](#cor-fubini-joint) (both-discrete case), summing over \\y\\ first for each fixed \\x\\:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)\\\operatorname{P}(X = x,\\ Y = y) && \text{(joint-distribution form of Fubini--Tonelli)} \\&= \sum\_{x=0}^{\infty} \sum\_{y=0}^{\infty} (x + y)(1-p)^2 p^{x+y} && \text{(substitute the joint PMF)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \sum\_{y=0}^{\infty} (x + y)\\p^y && \text{(factor } (1-p)^2 p^x \text{ out of the inner sum)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(x \sum\_{y=0}^{\infty} p^y + \sum\_{y=0}^{\infty} y\\p^y\right)\mathclose{} && \text{(split the inner sum; factor out } x \text{)} \\&= \sum\_{x=0}^{\infty} (1-p)^2 p^x \mathopen{}\left(\frac{x}{1-p} + \frac{p}{(1-p)^2}\right)\mathclose{} && \text{(geometric-series facts)} \\&= \sum\_{x=0}^{\infty} p^x \mathopen{}\left\[x(1-p) + p\right\]\mathclose{} && \text{(multiply } (1-p)^2 \text{ into the parentheses)} \\&= (1-p) \sum\_{x=0}^{\infty} x\\p^x + p \sum\_{x=0}^{\infty} p^x && \text{(split the sum; factor out the constants)} \\&= (1-p) \cdot\frac{p}{(1-p)^2} + p \cdot\frac{1}{1-p} && \text{(geometric-series facts)} \\&= \frac{p}{1-p} + \frac{p}{1-p} && \text{(cancel } 1 - p \text{)} \\&= \frac{2p}{1-p} && \text{(add)} \end{aligned} \\
 >
@@ -943,7 +943,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \\ &= \frac{p}{1-p} \end{aligned} \\
 >
-> (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so
+> (the mean of this Geometric distribution; Casella and Berger [\[6\]](#ref-CaseBerg01)), so
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \\ &= \frac{2p}{1-p} \end{aligned} \\
 >
@@ -982,7 +982,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> The calculation in [Exercise 3](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 3](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. ([Rudin 1976](#ref-rudin1976principles), Theorem 3.54, p. 76) for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
+> The calculation in [Exercise 3](#exr-fubini-joint-disc-infinite) only needed condition (a), \\h(X,Y) \ge 0\\, because \\h(x,y) = x+y\\ is nonnegative on this support. For a **signed** \\h\\, interchanging an infinite double sum is not automatically valid — [Corollary 3](#cor-fubini-joint)’s condition (b), \\\operatorname{E}\mathopen{}\left\[\mathopen{}\left\|h(X,Y)\right\|\mathclose{}\right\]\mathclose{} \< \infty\\, is what licenses it in that case. Without either condition, the two orders can genuinely disagree. A standard example (a signed array, not a probability distribution; see e.g. [\[10\]](#ref-rudin1976principles), Theorem 3.54, p. 76 for the general theory of rearranging series): let \\a\_{m,n} = 1\\ if \\m = n\\, \\a\_{m,n} = -1\\ if \\m = n+1\\, and \\a\_{m,n} = 0\\ otherwise, for \\m, n = 0, 1, 2, \dots\\. Summing each row \\m\\ first: row \\0\\ has only the term \\a\_{0,0}=1\\ (there is no valid \\n = -1\\), so its row sum is \\1\\; every row \\m \ge 1\\ has \\a\_{m,m} = 1\\ and \\a\_{m,m-1} = -1\\, so its row sum is \\0\\. Summing the rows then gives \\1 + 0 + 0 + \cdots = 1\\. Summing each column \\n\\ first: every column \\n \ge 0\\ has \\a\_{n,n} = 1\\ and \\a\_{n+1,n} = -1\\, so its column sum is always \\0\\, and summing the columns then gives \\0 + 0 + \cdots = 0\\. The two orders give \\1\\ and \\0\\: genuinely different answers, confirming that a condition like (a) or (b) really is needed once the terms are no longer all nonnegative.
 
 > **NOTE:**
 >
@@ -1061,9 +1061,9 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \sum\_{y=0}^{\infty} \int_0^{y+1} x\\f\_{X,Y}(x,\\y)\\dx && \text{(joint-distribution form of Fubini--Tonelli, mixed case)} \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \int_0^{y+1} x\\dx && \text{(} f\_{X,Y}(x, y) \text{ is constant in } x \text{ on } \[0, y+1\] \text{)} \\&= \sum\_{y=0}^{\infty} \frac{(1-q)\\q^y}{y+1} \cdot\frac{(y+1)^2}{2} && \text{(integrate)} \\&= \frac{1-q}{2} \sum\_{y=0}^{\infty} (y+1)\\q^y && \text{(cancel } y + 1 \text{; factor out } \tfrac{1-q}{2} \text{)} \\&= \frac{1-q}{2} \mathopen{}\left(\sum\_{y=0}^{\infty} y\\q^y + \sum\_{y=0}^{\infty} q^y\right)\mathclose{} && \text{(split the sum)} \\&= \frac{1-q}{2} \mathopen{}\left(\frac{q}{(1-q)^2} + \frac{1}{1-q}\right)\mathclose{} && \text{(geometric-series facts)} \\&= \frac{1-q}{2} \cdot\frac{q + (1-q)}{(1-q)^2} && \text{(common denominator)} \\&= \frac{1-q}{2} \cdot\frac{1}{(1-q)^2} && \text{(simplify the numerator)} \\&= \frac{1}{2(1-q)} && \text{(cancel } 1 - q \text{)} \end{aligned} \\
 >
-> using the same geometric-series facts as [Exercise 3](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger ([2002](#ref-CaseBerg01))).
+> using the same geometric-series facts as [Exercise 3](#exr-fubini-joint-disc-infinite) (e.g. Casella and Berger [\[6\]](#ref-CaseBerg01)).
 >
-> As a check using the law of iterated expectations ([Theorem 10](#thm-lie)) and the expectation of a linear function ([Corollary 1](#cor-linearity-affine)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger ([2002](#ref-CaseBerg01))), so:
+> As a check using the law of iterated expectations ([Theorem 10](#thm-lie)) and the expectation of a linear function ([Corollary 1](#cor-linearity-affine)): \\\operatorname{E}\mathopen{}\left\[X \mid Y=y\right\]\mathclose{} = \frac{y+1}{2}\\ (the mean of \\\mathrm{Uniform}(0,y+1)\\) and \\\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} = \frac{q}{1-q}\\ (the mean of this Geometric distribution; Casella and Berger [\[6\]](#ref-CaseBerg01)), so:
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} &= \operatorname{E}\mathopen{}\left\[\operatorname{E}\mathopen{}\left\[X \mid Y\right\]\mathclose{}\right\]\mathclose{} && \text{(law of iterated expectations)} \\&= \operatorname{E}\mathopen{}\left\[\frac{Y+1}{2}\right\]\mathclose{} && \text{(} \operatorname{E}\mathopen{}\left\[X \mid Y = y\right\]\mathclose{} = \tfrac{y+1}{2} \text{)} \\&= \frac{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} + 1}{2} && \text{(expectation of a linear function of one random variable)} \\&= \frac{1}{2}\mathopen{}\left(\frac{q}{1-q} + 1\right)\mathclose{} && \text{(substitute } \operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{} \text{)} \\&= \frac{1}{2} \cdot\frac{q + (1-q)}{1-q} && \text{(common denominator)} \\&= \frac{1}{2(1-q)} && \text{(simplify the numerator)} \end{aligned} \\
 >
@@ -1115,7 +1115,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\ ([Wikipedia contributors 2026g](#ref-wikipedia_loss_function)).
+> **Definition 10 (Loss function)** A **loss function** \\L(y, \hat y)\\ is a rule that gives a number that is 0 or larger: the cost of [predicting](#def-prediction) \\\hat y\\ when the true value is \\y\\ [\[11\]](#ref-wikipedia_loss_function).
 
 > **NOTE:**
 >
@@ -1151,11 +1151,11 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 2* (Squared error loss is the most common choice). Hastie et al. ([2009, 18](#ref-hastie2009elements)) call squared error loss “by far the most common and convenient” choice.
+> *Remark 2* (Squared error loss is the most common choice). Hastie et al. [\[12, p. 18\]](#ref-hastie2009elements) call squared error loss “by far the most common and convenient” choice.
 
 > **NOTE:**
 >
-> **Definition 13 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the [expectation](expectation.llms.md#def-expectation) of the [loss](#def-loss-function) ([Wikipedia contributors 2026h](#ref-wikipedia_risk_function)):
+> **Definition 13 (Risk (expected loss))** For a random variable \\Y\\ and a [prediction](#def-prediction) \\\hat y\\ (a constant, or a function \\g(X)\\ of a random input \\X\\), the **risk** is the [expectation](expectation.llms.md#def-expectation) of the [loss](#def-loss-function) [\[13\]](#ref-wikipedia_risk_function):
 >
 > \\R \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[L(Y, \hat y)\right\]\mathclose{}\\
 
@@ -1205,7 +1205,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\mathopen{}\left\|Y - c\right\|\mathclose{}\right\]\mathclose{} &= 0.5\\c + 0.5\\(4 - c) \\ &= 2. \end{aligned} \\
 >
-> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 13](#thm-best-predictor)). Hastie et al. ([2009, 20](#ref-hastie2009elements)) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
+> Only \\c = 2\\ has the smallest squared error risk. Under squared error loss, the prediction function that minimizes risk is the conditional mean \\\operatorname{E}\mathopen{}\left\[Y \mid X\right\]\mathclose{}\\, proved below ([Theorem 13](#thm-best-predictor)). Hastie et al. [\[12, p. 20\]](#ref-hastie2009elements) state that, for absolute error loss, the best prediction function is the conditional median instead of the conditional mean. This statement is given here without proof.
 
 > **NOTE:**
 >
@@ -1267,7 +1267,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Squared-error risk (expected prediction error))** The **squared-error risk** of a prediction function \\g\mathopen{}\left(X\right)\mathclose{}\\, also called its **expected prediction error** ([Hastie et al. 2009, 18](#ref-hastie2009elements)), is the expected square of its [prediction error](#def-prediction-error):
+> **Definition 18 (Squared-error risk (expected prediction error))** The **squared-error risk** of a prediction function \\g\mathopen{}\left(X\right)\mathclose{}\\, also called its **expected prediction error** [\[12, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
 >
 > \\R\mathopen{}\left(g\right)\mathclose{} \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g}\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
@@ -1381,7 +1381,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. ([2009, sec. 2.4](#ref-hastie2009elements), eq. 2.11). The risk identity in [Theorem 12](#thm-risk-decomposition)
+> *Remark*. This characterization of the best predictor under squared error loss follows Hastie et al. [\[12, Sec. 2.4\]](#ref-hastie2009elements), eq. 2.11. The risk identity in [Theorem 12](#thm-risk-decomposition)
 >
 > \\\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} = \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y- \operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{} + \operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{} - g\mathopen{}\left(X\right)\mathclose{}\right)\mathclose{}}^2\right\]\mathclose{}\\
 >
@@ -1421,7 +1421,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 21 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\ ([Wikipedia contributors 2026c](#ref-wikipedia_entropy_information_theory)):
+> **Definition 21 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\operatorname{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \operatorname{P}(X)\\ [\[14\]](#ref-wikipedia_entropy_information_theory):
 >
 > \\H(X) \stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left\[-\log \operatorname{P}(X)\right\]\mathclose{} = -\sum\_{x \in \mathcal{R}(X)} \operatorname{P}(X=x) \log \operatorname{P}(X=x)\\
 >
@@ -1449,11 +1449,11 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 8* (Where the definition comes from). Murphy ([2012, sec. 2.8.1](#ref-murphy2012mlpp), p. 56) defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 8* (Where the definition comes from). Murphy [\[15, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
-> **Definition 22 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ ([Wikipedia contributors 2026b](#ref-wikipedia_cross_entropy)) is
+> **Definition 22 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[16\]](#ref-wikipedia_cross_entropy) is
 >
 > \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1487,58 +1487,92 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 12* (Where the definitions come from). Murphy ([2012, sec. 2.8.2](#ref-murphy2012mlpp), pp. 57–58) defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 12* (Where the definitions come from). Murphy [\[15, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## Further reading
 
-- Wikipedia contributors ([2026d](#ref-wikipedia_expected_value)) — the expectation, its properties and examples
+- Wikipedia contributors [\[1\]](#ref-wikipedia_expected_value) — the expectation, its properties and examples
 
-- Wikipedia contributors ([2026e](#ref-wikipedia_law_of_the_unconscious_statistician)) — the expectation of a function of a random variable
+- Wikipedia contributors [\[4\]](#ref-wikipedia_law_of_the_unconscious_statistician) — the expectation of a function of a random variable
 
-- Wikipedia contributors ([2026a](#ref-wikipedia_conditional_expectation)) — conditional expectation and its properties
+- Wikipedia contributors [\[17\]](#ref-wikipedia_conditional_expectation) — conditional expectation and its properties
 
-- Wikipedia contributors ([2026g](#ref-wikipedia_loss_function)) — loss functions in statistics and machine learning
+- Wikipedia contributors [\[11\]](#ref-wikipedia_loss_function) — loss functions in statistics and machine learning
 
-- Wikipedia contributors ([2026h](#ref-wikipedia_risk_function)) — the risk as an expected loss
+- Wikipedia contributors [\[13\]](#ref-wikipedia_risk_function) — the risk as an expected loss
 
-- Wikipedia contributors ([2026c](#ref-wikipedia_entropy_information_theory)) — entropy, with examples
+- Wikipedia contributors [\[14\]](#ref-wikipedia_entropy_information_theory) — entropy, with examples
 
-- Wikipedia contributors ([2026b](#ref-wikipedia_cross_entropy)) — cross-entropy and its use as a loss
+- Wikipedia contributors [\[16\]](#ref-wikipedia_cross_entropy) — cross-entropy and its use as a loss
 
 ## References
 
-Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+\[1\]
 
-Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+Wikipedia contributors, “Expected value — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Expected_value>
 
-Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized Linear Models*. 4th ed. CRC press. <https://doi.org/10.1201/9781315182780>.
+\[2\]
 
-Gut, Allan. 2013. *Probability: A Graduate Course*. 2nd ed. Springer Texts in Statistics. Springer. <https://doi.org/10.1007/978-1-4614-4708-5>.
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
 
-Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2nd ed. Springer. <https://doi.org/10.1007/978-0-387-84858-7>.
+\[3\]
 
-Murphy, Kevin P. 2012. *Machine Learning: A Probabilistic Perspective*. Adaptive Computation and Machine Learning. MIT Press.
+J. Soch, “Proof: Expected value of a non-negative random variable.” The Book of Statistical Proofs, 2020. doi: [10.5281/zenodo.4305949](https://doi.org/10.5281/zenodo.4305949).
 
-Ross, Kevin. 2022. *An Introduction to Probability and Simulation*. Bookdown. <https://bookdown.org/kevin_davisross/probsim-book/>.
+\[4\]
 
-Rudin, Walter. 1976. *Principles of Mathematical Analysis*. 3rd ed. International Series in Pure and Applied Mathematics. McGraw-Hill.
+Wikipedia contributors, “Law of the unconscious statistician — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>
 
-Soch, Joram. 2020. *Proof: Expected Value of a Non-Negative Random Variable*. The Book of Statistical Proofs. <https://doi.org/10.5281/zenodo.4305949>.
+\[5\]
 
-Wikipedia contributors. 2026a. *Conditional Expectation — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Conditional_expectation>.
+A. Gut, *Probability: A graduate course*, 2nd ed. in Springer texts in statistics. New York: Springer, 2013. doi: [10.1007/978-1-4614-4708-5](https://doi.org/10.1007/978-1-4614-4708-5).
 
-Wikipedia contributors. 2026b. *Cross-Entropy — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Cross-entropy>.
+\[6\]
 
-Wikipedia contributors. 2026c. *Entropy (Information Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Entropy_(information_theory)>.
+G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
 
-Wikipedia contributors. 2026d. *Expected Value — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Expected_value>.
+\[7\]
 
-Wikipedia contributors. 2026f. *Law of the Unconscious Statistician — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>.
+Wikipedia contributors, “Law of the unconscious statistician — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>
 
-Wikipedia contributors. 2026e. *Law of the Unconscious Statistician — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>.
+\[8\]
 
-Wikipedia contributors. 2026g. *Loss Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Loss_function>.
+A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 4th ed. CRC press, 2018. doi: [10.1201/9781315182780](https://doi.org/10.1201/9781315182780).
 
-Wikipedia contributors. 2026h. *Risk Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Risk_function>.
+\[9\]
+
+K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
+
+\[10\]
+
+W. Rudin, *Principles of mathematical analysis*, 3rd ed. in International series in pure and applied mathematics. New York: McGraw-Hill, 1976.
+
+\[11\]
+
+Wikipedia contributors, “Loss function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Loss_function>
+
+\[12\]
+
+T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
+
+\[13\]
+
+Wikipedia contributors, “Risk function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Risk_function>
+
+\[14\]
+
+Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
+
+\[15\]
+
+K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+
+\[16\]
+
+Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+
+\[17\]
+
+Wikipedia contributors, “Conditional expectation — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_expectation>
 
 Back to top

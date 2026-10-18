@@ -4,11 +4,11 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Statistical independence)** Random variables \\X_1, \ldots, X_n\\ are **statistically independent** ([Wikipedia contributors 2026b](#ref-wikipedia_independence_probability_theory)) if, for all sets of real numbers \\A_1, \ldots, A_n\\, the [probability](probability-basics.llms.md#def-probability) that every \\X_i\\ falls in its set is the product of the individual probabilities:
+> **Definition 1 (Statistical independence)** Random variables \\X_1, \ldots, X_n\\ are **statistically independent** [\[1\]](#ref-wikipedia_independence_probability_theory) if, for all sets of real numbers \\A_1, \ldots, A_n\\, the [probability](probability-basics.llms.md#def-probability) that every \\X_i\\ falls in its set is the product of the individual probabilities:
 >
 > \\\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prod\_{i=1}^n{\Pr(X_i \in A_i)}\\
 
@@ -48,7 +48,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The proof is beyond these notes’ scope: it needs measure theory that the notes do not develop, to extend a density’s integrals from intervals to general sets and to exchange the order of integration ([Casella and Berger 2002](#ref-CaseBerg01); [Billingsley 1995](#ref-billingsley1995probability)). The continuous case extends to \\n\\ random variables with a joint density of all \\n\\. The statement says “a joint density” rather than “the joint density” because a density is not unique: changing it on a set of zero area (zero length, in the mixed case) changes none of its integrals.
+> *Remark*. The proof is beyond these notes’ scope: it needs measure theory that the notes do not develop, to extend a density’s integrals from intervals to general sets and to exchange the order of integration [\[2\]](#ref-CaseBerg01), [\[3\]](#ref-billingsley1995probability). The continuous case extends to \\n\\ random variables with a joint density of all \\n\\. The statement says “a joint density” rather than “the joint density” because a density is not unique: changing it on a set of zero area (zero length, in the mixed case) changes none of its integrals.
 
 > **NOTE:**
 >
@@ -66,7 +66,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 2 (Conditional independence)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent** ([Wikipedia contributors 2026a](#ref-wikipedia_conditional_independence)) given a discrete random variable (or vector) \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\ if, for every value \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\ with \\\Pr(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) \> 0\\ and all sets of real numbers \\A_1, \ldots, A_n\\, the conditional probability that every \\Y_i\\ falls in its set is the product of the individual conditional probabilities:
+> **Definition 2 (Conditional independence)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally independent** [\[4\]](#ref-wikipedia_conditional_independence) given a discrete random variable (or vector) \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\\ if, for every value \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}\\ with \\\Pr(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) \> 0\\ and all sets of real numbers \\A_1, \ldots, A_n\\, the conditional probability that every \\Y_i\\ falls in its set is the product of the individual conditional probabilities:
 >
 > \\\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) = \prod\_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}})}\\
 >
@@ -114,7 +114,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Example 5 (Wet roads, umbrellas, and rain)** Consider Brian Hutchinson’s intuitive illustration of conditional independence ([Hutchinson 2024](#ref-hutchinson2024data471)):
+> **Example 5 (Wet roads, umbrellas, and rain)** Consider Brian Hutchinson’s intuitive illustration of conditional independence [\[5\]](#ref-hutchinson2024data471):
 >
 > Let \\w\\ denote wet roads, \\u\\ denote people carrying umbrellas, and \\r\\ denote rain.
 >
@@ -193,7 +193,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Independent and identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) ([Wikipedia contributors 2026c](#ref-wikipedia_iid)) if they are:
+> **Definition 5 (Independent and identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **independent and identically distributed** (shorthand: “\\X_i\\ \operatorname{iid}\\”) [\[6\]](#ref-wikipedia_iid) if they are:
 >
 > - [statistically independent](#def-indpt), and
 > - [identically distributed](#def-ident).
@@ -220,36 +220,52 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **TIP:**
 >
-> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers independence ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers independence [\[7\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 > **NOTE:**
 >
-> 5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes, following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
+> 5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes, following the University of Washington’s CSE 312 [\[8\]](#ref-fiveminuteai_probstat).
 
 ## Further reading
 
-- Wikipedia contributors ([2026b](#ref-wikipedia_independence_probability_theory)) — independent events and random variables
+- Wikipedia contributors [\[1\]](#ref-wikipedia_independence_probability_theory) — independent events and random variables
 
-- Wikipedia contributors ([2026a](#ref-wikipedia_conditional_independence)) — conditional independence, with examples
+- Wikipedia contributors [\[4\]](#ref-wikipedia_conditional_independence) — conditional independence, with examples
 
-- Wikipedia contributors ([2026c](#ref-wikipedia_iid)) — independent and identically distributed random variables
+- Wikipedia contributors [\[6\]](#ref-wikipedia_iid) — independent and identically distributed random variables
 
 ## References
 
-5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
+\[1\]
 
-Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+Wikipedia contributors, “Independence (probability theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Independence_(probability_theory)>
 
-Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+\[2\]
 
-Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
+G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
 
-Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
+\[3\]
 
-Wikipedia contributors. 2026a. *Conditional Independence — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Conditional_independence>.
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
 
-Wikipedia contributors. 2026b. *Independence (Probability Theory) — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Independence_(probability_theory)>.
+\[4\]
 
-Wikipedia contributors. 2026c. *Independent and Identically Distributed Random Variables — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables>.
+Wikipedia contributors, “Conditional independence — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_independence>
+
+\[5\]
+
+B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
+
+\[6\]
+
+Wikipedia contributors, “Independent and identically distributed random variables — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables>
+
+\[7\]
+
+B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+
+\[8\]
+
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
 
 Back to top

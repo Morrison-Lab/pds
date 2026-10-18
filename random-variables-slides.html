@@ -106,6 +106,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -370,13 +371,13 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-18 11:35:41 (PDT)</p>
+  <p class="date">Last modified: 2026-10-18 11:42:28 (PDT)</p>
 </section>
 <section id="sec-random-variables" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Random variables</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-random-variable div. -->
 <div id="def-random-variable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Random variable)</strong></span> A <strong>random variable</strong> is a <a href="https://morrison-lab.github.io/mds/functions.html#def-function">function</a> from a <a href="./probability-basics.html#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span> to the real numbers <span class="math inline">\(\mathbb{R}\)</span> <span class="citation" data-cites="wikipedia_random_variable">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026l</a>)</span>: it assigns a number to each possible outcome of a <a href="./probability-basics.html#def-random-experiment">random experiment</a>.</p>
+<p><span class="theorem-title"><strong>Definition 1 (Random variable)</strong></span> A <strong>random variable</strong> is a <a href="https://morrison-lab.github.io/mds/functions.html#def-function">function</a> from a <a href="./probability-basics.html#def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span> to the real numbers <span class="math inline">\(\mathbb{R}\)</span> <span class="citation" data-cites="wikipedia_random_variable"><a href="#/references" role="doc-biblioref" onclick="">[1]</a></span>: it assigns a number to each possible outcome of a <a href="./probability-basics.html#def-random-experiment">random experiment</a>.</p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>We use uppercase letters (<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>, …) for random variables, and lowercase letters (<span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>, …) for their realized (observed) values. We write <span class="math inline">\(\{X = x\}\)</span> for the event <span class="math inline">\(\{\omega\in \Omega: X(\omega) = x\}\)</span>, and similarly for <span class="math inline">\(\{X \le x\}\)</span> and other conditions on <span class="math inline">\(X\)</span>. A fully rigorous definition also requires the function to be <em>measurable</em>, so that every such set is an event with a probability; that requirement never binds in these notes.</p>
@@ -541,7 +542,7 @@ a &amp;= b \\
 <h2><span class="header-section-number">2</span> Characteristics of probability distributions</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-pmf div. -->
 <div id="def-pmf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Probability mass function (PMF))</strong></span> If <span class="math inline">\(X\)</span> is a <a href="#/def-discrete-rv">discrete random variable</a>, the <strong>probability mass function</strong> of <span class="math inline">\(X\)</span> at value <span class="math inline">\(x\)</span>, denoted <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(\operatorname{P}(x)\)</span>, <span class="math inline">\(\operatorname{P}_X(x)\)</span>, or <span class="math inline">\(\operatorname{P}(X=x)\)</span>, is the probability that <span class="math inline">\(X\)</span> takes exactly the value <span class="math inline">\(x\)</span> <span class="citation" data-cites="wikipedia_probability_mass_function">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026j</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 5 (Probability mass function (PMF))</strong></span> If <span class="math inline">\(X\)</span> is a <a href="#/def-discrete-rv">discrete random variable</a>, the <strong>probability mass function</strong> of <span class="math inline">\(X\)</span> at value <span class="math inline">\(x\)</span>, denoted <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(\operatorname{P}(x)\)</span>, <span class="math inline">\(\operatorname{P}_X(x)\)</span>, or <span class="math inline">\(\operatorname{P}(X=x)\)</span>, is the probability that <span class="math inline">\(X\)</span> takes exactly the value <span class="math inline">\(x\)</span> <span class="citation" data-cites="wikipedia_probability_mass_function"><a href="#/references" role="doc-biblioref" onclick="">[2]</a></span>:</p>
 <p><span class="math display">\[\operatorname{P}(X=x) \stackrel{\text{def}}{=}\Pr(\{X=x\})\]</span></p>
 </div>
 </section>
@@ -555,7 +556,7 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="def-bernoulli" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Bernoulli distribution)</strong></span> A <a href="#/def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>Bernoulli distribution</strong> with parameter <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span> <span class="citation" data-cites="wikipedia_bernoulli_distribution">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026a</a>)</span>, if:</p>
+<p><span class="theorem-title"><strong>Definition 6 (Bernoulli distribution)</strong></span> A <a href="#/def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>Bernoulli distribution</strong> with parameter <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span> <span class="citation" data-cites="wikipedia_bernoulli_distribution"><a href="#/references" role="doc-biblioref" onclick="">[3]</a></span>, if:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X=x) &amp;\stackrel{\text{def}}{=}\text{1}_{x\in \mathopen{}\left\{0,1\right\}\mathclose{}}\pi^x(1-\pi)^{1-x}\\
@@ -604,7 +605,7 @@ X_1(TH) &amp;= X_1(TT) \\
 <section class="slide level2">
 
 <div id="def-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Probability density function (PDF))</strong></span> If <span class="math inline">\(X\)</span> is a <a href="#/def-continuous-rv">continuous random variable</a>, a <strong>probability density function</strong> of <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(\operatorname{p}(x)\)</span>, <span class="math inline">\(\operatorname{p}_X(x)\)</span>, or <span class="math inline">\(\operatorname{p}(X=x)\)</span>, is a function <span class="math inline">\(f\)</span> that satisfies <span class="citation" data-cites="wikipedia_probability_density_function">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026i</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 7 (Probability density function (PDF))</strong></span> If <span class="math inline">\(X\)</span> is a <a href="#/def-continuous-rv">continuous random variable</a>, a <strong>probability density function</strong> of <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(\operatorname{p}(x)\)</span>, <span class="math inline">\(\operatorname{p}_X(x)\)</span>, or <span class="math inline">\(\operatorname{p}(X=x)\)</span>, is a function <span class="math inline">\(f\)</span> that satisfies <span class="citation" data-cites="wikipedia_probability_density_function"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span>:</p>
 <ul>
 <li><span class="math inline">\(f(x) \ge 0\)</span> for every <span class="math inline">\(x\)</span>.</li>
 <li>The integral of <span class="math inline">\(f\)</span> over any interval is the <a href="./probability-basics.html#def-probability">probability</a> that <span class="math inline">\(X\)</span> falls in that interval: <span class="math display">\[\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b\]</span></li>
@@ -621,7 +622,7 @@ X_1(TH) &amp;= X_1(TT) \\
 <section class="slide level2">
 
 <div id="def-uniform" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9 (Uniform distribution on an interval)</strong></span> The <strong>uniform distribution</strong> on an interval <span class="math inline">\([\alpha, \beta]\)</span> (<a href="#/def-uniform-set" class="quarto-xref">Definition&nbsp;8</a> with <span class="math inline">\(\mu\)</span> the length), with <span class="math inline">\(\alpha&lt; \beta\)</span>, is the distribution of a random variable <span class="math inline">\(X\)</span>, written <span class="math inline">\(X \sim \text{Uniform}(\alpha, \beta)\)</span>, that is continuous with <a href="#/def-pdf">density</a> <span class="citation" data-cites="wikipedia_continuous_uniform_distribution">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026b</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 9 (Uniform distribution on an interval)</strong></span> The <strong>uniform distribution</strong> on an interval <span class="math inline">\([\alpha, \beta]\)</span> (<a href="#/def-uniform-set" class="quarto-xref">Definition&nbsp;8</a> with <span class="math inline">\(\mu\)</span> the length), with <span class="math inline">\(\alpha&lt; \beta\)</span>, is the distribution of a random variable <span class="math inline">\(X\)</span>, written <span class="math inline">\(X \sim \text{Uniform}(\alpha, \beta)\)</span>, that is continuous with <a href="#/def-pdf">density</a> <span class="citation" data-cites="wikipedia_continuous_uniform_distribution"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>:</p>
 <p><span class="math display">\[
 f(x) \stackrel{\text{def}}{=}\begin{cases}
 \frac{1}{\beta- \alpha}, &amp; \alpha\le x \le \beta\\
@@ -705,7 +706,7 @@ f(x) \stackrel{\text{def}}{=}\begin{cases}
 <section class="slide level2">
 
 <div id="def-normal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (Normal distribution (Gaussian distribution))</strong></span> A random variable <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> (or <strong>Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and variance parameter <span class="math inline">\(\sigma^2&gt; 0\)</span>, written <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span> <span class="citation" data-cites="wikipedia_normal_distribution">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026h</a>)</span>, if <span class="math inline">\(X\)</span> is continuous with <a href="#/def-pdf">density</a>:</p>
+<p><span class="theorem-title"><strong>Definition 10 (Normal distribution (Gaussian distribution))</strong></span> A random variable <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> (or <strong>Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and variance parameter <span class="math inline">\(\sigma^2&gt; 0\)</span>, written <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span> <span class="citation" data-cites="wikipedia_normal_distribution"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span>, if <span class="math inline">\(X\)</span> is continuous with <a href="#/def-pdf">density</a>:</p>
 <p><span class="math display">\[\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\]</span></p>
 </div>
 <div id="exm-normal" class="theorem example">
@@ -750,7 +751,7 @@ f(x) \stackrel{\text{def}}{=}\begin{cases}
 <p><span class="theorem-title"><strong>Theorem 4 (The mean and variance of the normal distribution)</strong></span> If <span class="math inline">\(X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span> (<a href="#/def-normal" class="quarto-xref">Definition&nbsp;10</a>), then <span class="math inline">\(X\)</span> has <a href="./expectation.html#def-expectation">mean</a> <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = \mu\)</span> and <a href="./variance-covariance.html#def-variance">variance</a> <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = \sigma^2\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The proofs of these two theorems evaluate three integrals by calculus: the total of the density, the mean integral and the variance integral. The total is the Gaussian integral. This page omits the proofs <span class="citation" data-cites="CaseBerg01">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2002</a>)</span>. These facts are where the parameters’ names come from.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The proofs of these two theorems evaluate three integrals by calculus: the total of the density, the mean integral and the variance integral. The total is the Gaussian integral. This page omits the proofs <span class="citation" data-cites="CaseBerg01"><a href="#/references" role="doc-biblioref" onclick="">[7]</a></span>. These facts are where the parameters’ names come from.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -778,7 +779,7 @@ f(x) \stackrel{\text{def}}{=}\begin{cases}
 <section class="slide level2">
 
 <div id="def-exponential" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 12 (Exponential distribution)</strong></span> A random variable <span class="math inline">\(T\)</span> has the <strong>exponential distribution</strong> with rate <span class="math inline">\({\lambda}&gt; 0\)</span> <span class="citation" data-cites="wikipedia_exponential_distribution">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026d</a>)</span> if <span class="math inline">\(T\)</span> is continuous with <a href="#/def-pdf">density</a>:</p>
+<p><span class="theorem-title"><strong>Definition 12 (Exponential distribution)</strong></span> A random variable <span class="math inline">\(T\)</span> has the <strong>exponential distribution</strong> with rate <span class="math inline">\({\lambda}&gt; 0\)</span> <span class="citation" data-cites="wikipedia_exponential_distribution"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span> if <span class="math inline">\(T\)</span> is continuous with <a href="#/def-pdf">density</a>:</p>
 <p><span class="math display">\[
 f(t) \stackrel{\text{def}}{=}\begin{cases}
 {\lambda}\text{e}^{-{\lambda}t}, &amp; t \ge 0 \\
@@ -808,7 +809,7 @@ f(t) \stackrel{\text{def}}{=}\begin{cases}
 <section class="slide level2">
 
 <div id="def-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (Cumulative distribution function (CDF))</strong></span> For a random variable <span class="math inline">\(X\)</span> (discrete or continuous), its <strong>cumulative distribution function</strong> <span class="citation" data-cites="wikipedia_cumulative_distribution_function">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026c</a>)</span> is:</p>
+<p><span class="theorem-title"><strong>Definition 13 (Cumulative distribution function (CDF))</strong></span> For a random variable <span class="math inline">\(X\)</span> (discrete or continuous), its <strong>cumulative distribution function</strong> <span class="citation" data-cites="wikipedia_cumulative_distribution_function"><a href="#/references" role="doc-biblioref" onclick="">[9]</a></span> is:</p>
 <p><span class="math display">\[\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\]</span></p>
 </div>
 <aside class="notes proof remark">
@@ -878,7 +879,7 @@ f(t) \stackrel{\text{def}}{=}\begin{cases}
 <p><span class="theorem-title"><strong>Theorem 6 (The CDF determines the distribution)</strong></span> If random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the same <a href="#/def-cdf">CDF</a>, then <span class="math inline">\(\Pr(X \in B) = \Pr(Y \in B)\)</span> for every <a href="https://en.wikipedia.org/wiki/Borel_set">Borel set</a> <span class="math inline">\(B \subseteq \mathbb{R}\)</span>, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The proof needs measure theory beyond these notes <span class="citation" data-cites="billingsley1995probability wikipedia_cumulative_distribution_function">(<a href="#/references" role="doc-biblioref" onclick="">Billingsley 1995</a>; <a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026c</a>)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The proof needs measure theory beyond these notes <span class="citation" data-cites="billingsley1995probability wikipedia_cumulative_distribution_function"><a href="#/references" role="doc-biblioref" onclick="">[9]</a>, <a href="#/references" role="doc-biblioref" onclick="">[10]</a></span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1175,7 +1176,7 @@ Figure&nbsp;1: A probability mass function, cumulative distribution function and
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>For small <span class="math inline">\(\Delta&gt; 0\)</span>, <span class="math inline">\(f(x) \cdot\Delta\approx \Pr(x \le X &lt; x + \Delta)\)</span>. Although a density is not unique (<a href="#/thm-density-not-unique" class="quarto-xref">Theorem&nbsp;1</a>), this limit pins down its value at every point where it is continuous.</p>
-<p>See also <span class="citation" data-cites="me4">Rothman et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> (Chapter 22, p.&nbsp;535).</p>
+<p>See also <span class="citation" data-cites="me4">Rothman et al. <a href="#/references" role="doc-biblioref" onclick="">[11]</a></span> (Chapter 22, p.&nbsp;535).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1301,7 +1302,7 @@ f(x)
 <section class="slide level2">
 
 <div id="def-joint-distribution" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 16 (Joint distribution)</strong></span> The <strong>joint distribution</strong> of <a href="#/def-jointly-distributed">jointly distributed</a> random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> is the function that assigns to each set <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> for which <span class="math inline">\(\{(X_1, \ldots, X_n) \in A\}\)</span> is an <a href="./probability-basics.html#def-event">event</a> the probability <span class="math inline">\(\Pr((X_1, \ldots, X_n) \in A)\)</span> <span class="citation" data-cites="wikipedia_joint_probability_distribution">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026f</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 16 (Joint distribution)</strong></span> The <strong>joint distribution</strong> of <a href="#/def-jointly-distributed">jointly distributed</a> random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> is the function that assigns to each set <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> for which <span class="math inline">\(\{(X_1, \ldots, X_n) \in A\}\)</span> is an <a href="./probability-basics.html#def-event">event</a> the probability <span class="math inline">\(\Pr((X_1, \ldots, X_n) \in A)\)</span> <span class="citation" data-cites="wikipedia_joint_probability_distribution"><a href="#/references" role="doc-biblioref" onclick="">[12]</a></span>.</p>
 </div>
 <div id="exm-joint-distribution" class="theorem example">
 <p><span class="theorem-title"><strong>Example 20 (Joint distribution of the first flip and the total)</strong></span> In <a href="#/exm-jointly-distributed" class="quarto-xref">Example&nbsp;19</a>, the joint distribution of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X\)</span> assigns to the set <span class="math inline">\(A = \mathopen{}\left\{(x_1, x) : x_1 = 1,\, x \ge 1\right\}\mathclose{}\)</span> the probability</p>
@@ -1323,7 +1324,7 @@ f(x)
 <p>for all sets <span class="math inline">\(A_1, \ldots, A_n\)</span> of real numbers for which these are events, then <span class="math inline">\((X_1, \ldots, X_n)\)</span> and <span class="math inline">\((Y_1, \ldots, Y_n)\)</span> have the same <a href="#/def-joint-distribution">joint distribution</a>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The proof needs measure theory beyond these notes: the sets <span class="math inline">\(A_1 \times \cdots \times A_n\)</span> form a <a href="https://en.wikipedia.org/wiki/Pi-system"><span class="math inline">\(\pi\)</span>-system</a>, and two probability measures that agree on a <span class="math inline">\(\pi\)</span>-system agree on the <span class="math inline">\(\sigma\)</span>-algebra it generates <span class="citation" data-cites="billingsley1995probability">(<a href="#/references" role="doc-biblioref" onclick="">Billingsley 1995</a>)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The proof needs measure theory beyond these notes: the sets <span class="math inline">\(A_1 \times \cdots \times A_n\)</span> form a <a href="https://en.wikipedia.org/wiki/Pi-system"><span class="math inline">\(\pi\)</span>-system</a>, and two probability measures that agree on a <span class="math inline">\(\pi\)</span>-system agree on the <span class="math inline">\(\sigma\)</span>-algebra it generates <span class="citation" data-cites="billingsley1995probability"><a href="#/references" role="doc-biblioref" onclick="">[10]</a></span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1376,7 +1377,7 @@ f(x)
 <section class="slide level2">
 
 <div id="def-marginal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 18 (Marginal distribution)</strong></span> When a random variable <span class="math inline">\(X\)</span> is one of several <a href="#/def-jointly-distributed">jointly distributed</a> random variables, the distribution of <span class="math inline">\(X\)</span> by itself (its CDF, and its PMF or density) is called the <strong>marginal distribution</strong> of <span class="math inline">\(X\)</span> <span class="citation" data-cites="wikipedia_marginal_distribution">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026g</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 18 (Marginal distribution)</strong></span> When a random variable <span class="math inline">\(X\)</span> is one of several <a href="#/def-jointly-distributed">jointly distributed</a> random variables, the distribution of <span class="math inline">\(X\)</span> by itself (its CDF, and its PMF or density) is called the <strong>marginal distribution</strong> of <span class="math inline">\(X\)</span> <span class="citation" data-cites="wikipedia_marginal_distribution"><a href="#/references" role="doc-biblioref" onclick="">[13]</a></span>.</p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The word “marginal” only says that the other variables are being set aside; the marginal distribution of <span class="math inline">\(X\)</span> is the same object as the distribution of <span class="math inline">\(X\)</span>.</p>
@@ -1495,7 +1496,7 @@ f(x)
 &amp;&amp; \text{(integrate)}
 \end{aligned}
 \]</span></p>
-<p>which is a contradiction. Tonelli’s theorem allows the iterated integral because <span class="math inline">\(f \ge 0\)</span> (<a href="https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli">Fubini–Tonelli theorem</a>; <span class="citation" data-cites="billingsley1995probability">Billingsley (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, Theorem 18.3).</p>
+<p>which is a contradiction. Tonelli’s theorem allows the iterated integral because <span class="math inline">\(f \ge 0\)</span> (<a href="https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli">Fubini–Tonelli theorem</a>; <span class="citation" data-cites="billingsley1995probability">Billingsley <a href="#/references" role="doc-biblioref" onclick="">[10]</a></span>, Theorem 18.3).</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1519,7 +1520,7 @@ f(x)
 &amp;&amp; \text{(definition of } f_X \text{)}
 \end{aligned}
 \]</span></p>
-<p>Tonelli’s theorem allows the iterated integral because <span class="math inline">\(f_{X,Y} \ge 0\)</span> (<a href="https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli">Fubini–Tonelli theorem</a>; <span class="citation" data-cites="billingsley1995probability">Billingsley (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, Theorem 18.3). So <span class="math inline">\(f_X\)</span> satisfies <a href="#/def-pdf" class="quarto-xref">Definition&nbsp;7</a>.</p>
+<p>Tonelli’s theorem allows the iterated integral because <span class="math inline">\(f_{X,Y} \ge 0\)</span> (<a href="https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli">Fubini–Tonelli theorem</a>; <span class="citation" data-cites="billingsley1995probability">Billingsley <a href="#/references" role="doc-biblioref" onclick="">[10]</a></span>, Theorem 18.3). So <span class="math inline">\(f_X\)</span> satisfies <a href="#/def-pdf" class="quarto-xref">Definition&nbsp;7</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1619,7 +1620,7 @@ f_Y(y) &amp;= \int_0^y 2\,dx \\
 <section class="slide level2">
 
 <div id="exm-meteorite" class="theorem example">
-<p><span class="theorem-title"><strong>Example 27 (Joint probabilities and marginalization)</strong></span> Consider an example adapted from Brian Hutchinson’s notes <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>. Let <span class="math inline">\(m \in \{0, 1\}\)</span> indicate whether a meteorite hits your house on a given day (<span class="math inline">\(m = 1\)</span>), and let <span class="math inline">\(d \in \{0, 1\}\)</span> indicate whether you have a good day (<span class="math inline">\(d = 1\)</span>). In this distribution, 9 out of 10 days are good days (<span class="math inline">\(\operatorname{P}(d=1) = 0.9\)</span>), and the probability of a meteorite strike is 1 in a million (<span class="math inline">\(\operatorname{P}(m=1) = 10^{-6}\)</span>):</p>
+<p><span class="theorem-title"><strong>Example 27 (Joint probabilities and marginalization)</strong></span> Consider an example adapted from Brian Hutchinson’s notes <span class="citation" data-cites="hutchinson2024data471"><a href="#/references" role="doc-biblioref" onclick="">[14]</a></span>. Let <span class="math inline">\(m \in \{0, 1\}\)</span> indicate whether a meteorite hits your house on a given day (<span class="math inline">\(m = 1\)</span>), and let <span class="math inline">\(d \in \{0, 1\}\)</span> indicate whether you have a good day (<span class="math inline">\(d = 1\)</span>). In this distribution, 9 out of 10 days are good days (<span class="math inline">\(\operatorname{P}(d=1) = 0.9\)</span>), and the probability of a meteorite strike is 1 in a million (<span class="math inline">\(\operatorname{P}(m=1) = 10^{-6}\)</span>):</p>
 <div id="tbl-meteorite" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-meteorite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1700,7 +1701,7 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <p><span class="theorem-title"><strong>Theorem 16 (Points have zero probability in continuous distributions)</strong></span> For any continuous random variable and any specific value <span class="math inline">\(a \in \mathbb{R}\)</span>:</p>
 <p><span class="math display">\[\Pr(X = a) = 0\]</span></p>
 </div>
-<p>Why? As Brian Hutchinson notes <span class="citation" data-cites="hutchinson2024data471">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson 2024</a>)</span>, what is the probability that someone’s height is <em>exactly</em> <span class="math inline">\(6.0000000000\dots\)</span> feet? Zero. A single real point has width zero, so the integral over a single point is zero.</p>
+<p>Why? As Brian Hutchinson notes <span class="citation" data-cites="hutchinson2024data471"><a href="#/references" role="doc-biblioref" onclick="">[14]</a></span>, what is the probability that someone’s height is <em>exactly</em> <span class="math inline">\(6.0000000000\dots\)</span> feet? Zero. A single real point has width zero, so the integral over a single point is zero.</p>
 <p>Non-zero probabilities attach to intervals or regions of non-zero width:</p>
 <p><span class="math display">\[\Pr(6 - \varepsilon\le X \le 6 + \varepsilon) = \int_{6-\varepsilon}^{6+\varepsilon} \operatorname{p}(x)\,\mathrm{d}x &gt; 0 \qquad (\text{for } \varepsilon&gt; 0)\]</span></p>
 </section>
@@ -1718,20 +1719,20 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <p><strong>Video lecture</strong></p>
 </div>
 <div class="callout-content">
-<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers probability mass functions and probability density functions <span class="citation" data-cites="hutchinson_wwu_ml_videos">(<a href="#/references" role="doc-biblioref" onclick="">Hutchinson, n.d.</a>)</span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
+<p>Hutchinson’s <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher">Probability Refresher</a> (27 min) covers probability mass functions and probability density functions <span class="citation" data-cites="hutchinson_wwu_ml_videos"><a href="#/references" role="doc-biblioref" onclick="">[15]</a></span>. The login for the video site is posted <a href="https://wwu.instructure.com/courses/1906010/modules#module_3922392">on Canvas</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="videos">
-<p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=STcqHZyPRI8">discrete random variables</a> and <a href="https://www.youtube.com/watch?v=xP6uYaU-E0Y">continuous random variables</a> in five minutes each, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat">(<a href="#/references" role="doc-biblioref" onclick="">5MinuteAI, n.d.</a>)</span>.</p>
+<p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=STcqHZyPRI8">discrete random variables</a> and <a href="https://www.youtube.com/watch?v=xP6uYaU-E0Y">continuous random variables</a> in five minutes each, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[16]</a></span>.</p>
 </div>
 </section>
 <section id="sec-prob-haz" class="slide level2" data-number="3">
 <h2><span class="header-section-number">3</span> Survival, hazard, and cumulative hazard functions</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-surv-fn div. -->
 <div id="def-surv-fn" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 21 (Survival function (survivor function))</strong></span> The <strong>survival function</strong> (or <strong>survivor function</strong>) of a random variable <span class="math inline">\(T\)</span>, denoted <span class="math inline">\(\operatorname{S}(t)\)</span>, is the probability that <span class="math inline">\(T\)</span> exceeds <span class="math inline">\(t\)</span> <span class="citation" data-cites="wikipedia_survival_function">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026m</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 21 (Survival function (survivor function))</strong></span> The <strong>survival function</strong> (or <strong>survivor function</strong>) of a random variable <span class="math inline">\(T\)</span>, denoted <span class="math inline">\(\operatorname{S}(t)\)</span>, is the probability that <span class="math inline">\(T\)</span> exceeds <span class="math inline">\(t\)</span> <span class="citation" data-cites="wikipedia_survival_function"><a href="#/references" role="doc-biblioref" onclick="">[17]</a></span>:</p>
 <p><span class="math display">\[\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T &gt; t)\]</span></p>
 </div>
 <aside class="notes proof remark">
@@ -1811,11 +1812,11 @@ Table&nbsp;1: Joint distribution of a meteorite strike (<span class="math inline
 <section class="slide level2">
 
 <div id="def-hazard" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 22 (Hazard function (hazard rate, hazard rate function))</strong></span> The <strong>hazard function</strong> (also called the <strong>hazard rate</strong> or <strong>hazard rate function</strong>) of a continuous random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span>, typically denoted <span class="math inline">\({\lambda}(t)\)</span> or <span class="math inline">\(\operatorname{h}(t)\)</span>, is the limit of the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> falls in an interval starting at <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>, divided by the width of that interval, as that width shrinks to 0 <span class="citation" data-cites="wikipedia_failure_rate">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026e</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 22 (Hazard function (hazard rate, hazard rate function))</strong></span> The <strong>hazard function</strong> (also called the <strong>hazard rate</strong> or <strong>hazard rate function</strong>) of a continuous random variable <span class="math inline">\(T\)</span> at a value <span class="math inline">\(t\)</span> with <span class="math inline">\(\Pr(T \ge t) &gt; 0\)</span>, typically denoted <span class="math inline">\({\lambda}(t)\)</span> or <span class="math inline">\(\operatorname{h}(t)\)</span>, is the limit of the <a href="./probability-basics.html#def-conditional-prob">conditional probability</a> that <span class="math inline">\(T\)</span> falls in an interval starting at <span class="math inline">\(t\)</span>, given <span class="math inline">\(T \ge t\)</span>, divided by the width of that interval, as that width shrinks to 0 <span class="citation" data-cites="wikipedia_failure_rate"><a href="#/references" role="doc-biblioref" onclick="">[18]</a></span>:</p>
 <p><span class="math display">\[{\lambda}(t) \stackrel{\text{def}}{=}\lim_{\Delta\downarrow 0} \frac{\Pr(t \le T &lt; t + \Delta\mid T \ge t)}{\Delta}\]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Sources differ on the symbol: <span class="math inline">\(\operatorname{h}(t)\)</span> appears in <span class="citation" data-cites="dobson4e">Dobson and Barnett (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>, <span class="citation" data-cites="vittinghoff2e">Vittinghoff et al. (<a href="#/references" role="doc-biblioref" onclick="">2012</a>)</span>, <span class="citation" data-cites="klein2003survival">Klein and Moeschberger (<a href="#/references" role="doc-biblioref" onclick="">2003</a>)</span>, and <span class="citation" data-cites="kleinbaum2012survival">Kleinbaum and Klein (<a href="#/references" role="doc-biblioref" onclick="">2012</a>)</span>, while <span class="math inline">\(\lambda(t)\)</span> appears in <span class="citation" data-cites="me4">Rothman et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> and <span class="citation" data-cites="kalbfleisch2011statistical">Kalbfleisch and Prentice (<a href="#/references" role="doc-biblioref" onclick="">2011</a>)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Sources differ on the symbol: <span class="math inline">\(\operatorname{h}(t)\)</span> appears in <span class="citation" data-cites="dobson4e">Dobson and Barnett <a href="#/references" role="doc-biblioref" onclick="">[19]</a></span>, <span class="citation" data-cites="vittinghoff2e">Vittinghoff et al. <a href="#/references" role="doc-biblioref" onclick="">[20]</a></span>, <span class="citation" data-cites="klein2003survival">Klein and Moeschberger <a href="#/references" role="doc-biblioref" onclick="">[21]</a></span>, and <span class="citation" data-cites="kleinbaum2012survival">Kleinbaum and Klein <a href="#/references" role="doc-biblioref" onclick="">[22]</a></span>, while <span class="math inline">\(\lambda(t)\)</span> appears in <span class="citation" data-cites="me4">Rothman et al. <a href="#/references" role="doc-biblioref" onclick="">[11]</a></span> and <span class="citation" data-cites="kalbfleisch2011statistical">Kalbfleisch and Prentice <a href="#/references" role="doc-biblioref" onclick="">[23]</a></span>.</p>
 <p>If <span class="math inline">\(T\)</span> is the time at which an event occurs, then <span class="math inline">\({\lambda}(t)\)</span> is a rate, not a probability: for a small interval width <span class="math inline">\(\Delta&gt; 0\)</span>, <span class="math inline">\({\lambda}(t) \cdot\Delta\)</span> is approximately the probability that the event occurs in <span class="math inline">\([t, t + \Delta)\)</span>, given that it has not occurred before <span class="math inline">\(t\)</span>. Many sources write the hazard as <span class="math inline">\({\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\)</span>, reading it as the density of <span class="math inline">\(T\)</span> at <span class="math inline">\(t\)</span>, conditional on the event <span class="math inline">\(T \ge t\)</span>; that notation abbreviates the limit in <a href="#/def-hazard" class="quarto-xref">Definition&nbsp;22</a>. For a discrete <span class="math inline">\(T\)</span>, the analogous quantity is the <a href="#/def-discrete-hazard">discrete-time hazard</a>.</p>
 <p>The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity <span class="math inline">\({\lambda}(t)\)</span> is often called the <strong>event incidence rate</strong> instead. This terminology parallels the convention that conditional probabilities of undesirable events are called <strong>risks</strong>, while the same conditional probabilities for neutral or desirable events are simply called <strong>probabilities</strong>. The math is identical; only the name changes with the valence of the event.</p>
 <style type="text/css">
@@ -2205,90 +2206,90 @@ f(t)
 <section id="further-reading" class="slide level2 unnumbered">
 <h2>Further reading</h2>
 <ul>
-<li><p><span class="citation" data-cites="wikipedia_random_variable">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026l</a>)</span> — random variables, with examples and measure-theoretic definition</p></li>
-<li><p><span class="citation" data-cites="wikipedia_probability_mass_function">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026j</a>)</span> — the PMF and common examples</p></li>
-<li><p><span class="citation" data-cites="wikipedia_probability_density_function">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026i</a>)</span> — the PDF, its properties and its uses</p></li>
-<li><p><span class="citation" data-cites="wikipedia_cumulative_distribution_function">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026c</a>)</span> — the CDF, its properties and its relation to the density</p></li>
-<li><p><span class="citation" data-cites="wikipedia_quantile_function">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026k</a>)</span> — the quantile function, the inverse of the CDF</p></li>
-<li><p><span class="citation" data-cites="wikipedia_joint_probability_distribution">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026f</a>)</span> — joint, marginal and conditional distributions</p></li>
-<li><p><span class="citation" data-cites="wikipedia_survival_function">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026m</a>)</span> — the survival function and its relation to the hazard</p></li>
-<li><p><span class="citation" data-cites="wikipedia_failure_rate">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026e</a>)</span> — the hazard rate, with examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_random_variable">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[1]</a></span> — random variables, with examples and measure-theoretic definition</p></li>
+<li><p><span class="citation" data-cites="wikipedia_probability_mass_function">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[2]</a></span> — the PMF and common examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_probability_density_function">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[4]</a></span> — the PDF, its properties and its uses</p></li>
+<li><p><span class="citation" data-cites="wikipedia_cumulative_distribution_function">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[9]</a></span> — the CDF, its properties and its relation to the density</p></li>
+<li><p><span class="citation" data-cites="wikipedia_quantile_function">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[24]</a></span> — the quantile function, the inverse of the CDF</p></li>
+<li><p><span class="citation" data-cites="wikipedia_joint_probability_distribution">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[12]</a></span> — joint, marginal and conditional distributions</p></li>
+<li><p><span class="citation" data-cites="wikipedia_survival_function">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[17]</a></span> — the survival function and its relation to the hazard</p></li>
+<li><p><span class="citation" data-cites="wikipedia_failure_rate">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[18]</a></span> — the hazard rate, with examples</p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
-5MinuteAI. n.d. <em>Probability &amp; Statistics</em>. Video playlist on YouTube. Accessed October 12, 2026. <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a>.
-</div>
-<div id="ref-billingsley1995probability" class="csl-entry" role="listitem">
-Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
-</div>
-<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
-Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
-</div>
-<div id="ref-dobson4e" class="csl-entry" role="listitem">
-Dobson, Annette J, and Adrian G Barnett. 2018. <em>An Introduction to Generalized Linear Models</em>. 4th ed. CRC press. <a href="https://doi.org/10.1201/9781315182780">https://doi.org/10.1201/9781315182780</a>.
-</div>
-<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
-Hutchinson, Brian. 2024. <em><span>DATA</span> 471/571: Machine Learning</em>. Western Washington University.
-</div>
-<div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
-Hutchinson, Brian. n.d. <em><span>DATA</span> 471/571 (Machine Learning) and <span>CSCI</span> 481/581 (Deep Learning) Video Lectures</em>. Western Washington University. Accessed September 28, 2026. <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a>.
-</div>
-<div id="ref-kalbfleisch2011statistical" class="csl-entry" role="listitem">
-Kalbfleisch, John D, and Ross L Prentice. 2011. <em>The Statistical Analysis of Failure Time Data</em>. John Wiley &amp; Sons.
-</div>
-<div id="ref-klein2003survival" class="csl-entry" role="listitem">
-Klein, John P, and Melvin L Moeschberger. 2003. <em>Survival Analysis: Techniques for Censored and Truncated Data</em>. 2nd ed. Springer. <a href="https://link.springer.com/book/10.1007/b97377">https://link.springer.com/book/10.1007/b97377</a>.
-</div>
-<div id="ref-kleinbaum2012survival" class="csl-entry" role="listitem">
-Kleinbaum, David G, and Mitchel Klein. 2012. <em>Survival Analysis: A Self-Learning Text</em>. 3rd ed. Springer. <a href="https://link.springer.com/book/10.1007/978-1-4419-6646-9">https://link.springer.com/book/10.1007/978-1-4419-6646-9</a>.
-</div>
-<div id="ref-me4" class="csl-entry" role="listitem">
-Rothman, Kenneth J., Timothy L. Lash, Tyler J. VanderWeele, and Sebastien Haneuse. 2021. <em>Modern Epidemiology</em>. Fourth edition. Wolters Kluwer.
-</div>
-<div id="ref-vittinghoff2e" class="csl-entry" role="listitem">
-Vittinghoff, Eric, David V Glidden, Stephen C Shiboski, and Charles E McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. 2nd ed. Springer. <a href="https://doi.org/10.1007/978-1-4614-1353-0">https://doi.org/10.1007/978-1-4614-1353-0</a>.
-</div>
-<div id="ref-wikipedia_bernoulli_distribution" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026a. <em>Bernoulli Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">https://en.wikipedia.org/wiki/Bernoulli_distribution</a>.
-</div>
-<div id="ref-wikipedia_continuous_uniform_distribution" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026b. <em>Continuous Uniform Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Continuous_uniform_distribution">https://en.wikipedia.org/wiki/Continuous_uniform_distribution</a>.
-</div>
-<div id="ref-wikipedia_cumulative_distribution_function" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026c. <em>Cumulative Distribution Function — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">https://en.wikipedia.org/wiki/Cumulative_distribution_function</a>.
-</div>
-<div id="ref-wikipedia_exponential_distribution" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026d. <em>Exponential Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Exponential_distribution">https://en.wikipedia.org/wiki/Exponential_distribution</a>.
-</div>
-<div id="ref-wikipedia_failure_rate" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026e. <em>Failure Rate — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Failure_rate">https://en.wikipedia.org/wiki/Failure_rate</a>.
-</div>
-<div id="ref-wikipedia_joint_probability_distribution" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026f. <em>Joint Probability Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution">https://en.wikipedia.org/wiki/Joint_probability_distribution</a>.
-</div>
-<div id="ref-wikipedia_marginal_distribution" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026g. <em>Marginal Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Marginal_distribution">https://en.wikipedia.org/wiki/Marginal_distribution</a>.
-</div>
-<div id="ref-wikipedia_normal_distribution" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026h. <em>Normal Distribution — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Normal_distribution">https://en.wikipedia.org/wiki/Normal_distribution</a>.
-</div>
-<div id="ref-wikipedia_probability_density_function" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026i. <em>Probability Density Function — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Probability_density_function">https://en.wikipedia.org/wiki/Probability_density_function</a>.
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-wikipedia_random_variable" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Random variable — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Random_variable">https://en.wikipedia.org/wiki/Random_variable</a></div>
 </div>
 <div id="ref-wikipedia_probability_mass_function" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026j. <em>Probability Mass Function — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Probability_mass_function">https://en.wikipedia.org/wiki/Probability_mass_function</a>.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Probability mass function — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Probability_mass_function">https://en.wikipedia.org/wiki/Probability_mass_function</a></div>
 </div>
-<div id="ref-wikipedia_quantile_function" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026k. <em>Quantile Function — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Quantile_function">https://en.wikipedia.org/wiki/Quantile_function</a>.
+<div id="ref-wikipedia_bernoulli_distribution" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Bernoulli distribution — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">https://en.wikipedia.org/wiki/Bernoulli_distribution</a></div>
 </div>
-<div id="ref-wikipedia_random_variable" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026l. <em>Random Variable — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Random_variable">https://en.wikipedia.org/wiki/Random_variable</a>.
+<div id="ref-wikipedia_probability_density_function" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Probability density function — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Probability_density_function">https://en.wikipedia.org/wiki/Probability_density_function</a></div>
+</div>
+<div id="ref-wikipedia_continuous_uniform_distribution" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Continuous uniform distribution — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Continuous_uniform_distribution">https://en.wikipedia.org/wiki/Continuous_uniform_distribution</a></div>
+</div>
+<div id="ref-wikipedia_normal_distribution" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Normal distribution — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Normal_distribution">https://en.wikipedia.org/wiki/Normal_distribution</a></div>
+</div>
+<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">G. Casella and R. Berger, <em>Statistical inference</em>, 2nd ed. Cengage Learning, 2002. Available: <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a></div>
+</div>
+<div id="ref-wikipedia_exponential_distribution" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Exponential distribution — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Exponential_distribution">https://en.wikipedia.org/wiki/Exponential_distribution</a></div>
+</div>
+<div id="ref-wikipedia_cumulative_distribution_function" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Cumulative distribution function — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">https://en.wikipedia.org/wiki/Cumulative_distribution_function</a></div>
+</div>
+<div id="ref-billingsley1995probability" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">P. Billingsley, <em>Probability and measure</em>, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.</div>
+</div>
+<div id="ref-me4" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">K. J. Rothman, T. L. Lash, T. J. VanderWeele, and S. Haneuse, <em>Modern epidemiology</em>, Fourth edition. Philadelphia: Wolters Kluwer, 2021.</div>
+</div>
+<div id="ref-wikipedia_joint_probability_distribution" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Joint probability distribution — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution">https://en.wikipedia.org/wiki/Joint_probability_distribution</a></div>
+</div>
+<div id="ref-wikipedia_marginal_distribution" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Marginal distribution — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Marginal_distribution">https://en.wikipedia.org/wiki/Marginal_distribution</a></div>
+</div>
+<div id="ref-hutchinson2024data471" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571: Machine learning.”</span> Western Washington University, 2024.</div>
+</div>
+<div id="ref-hutchinson_wwu_ml_videos" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">B. Hutchinson, <span>“<span>DATA</span> 471/571 (machine learning) and <span>CSCI</span> 481/581 (deep learning) video lectures.”</span> Western Washington University. Accessed: Sep. 28, 2026. [Online]. Available: <a href="https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/">https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/</a></div>
+</div>
+<div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">5MinuteAI, <span>“Probability &amp; statistics.”</span> Video playlist on YouTube. Accessed: Oct. 12, 2026. [Online]. Available: <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a></div>
 </div>
 <div id="ref-wikipedia_survival_function" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026m. <em>Survival Function — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Survival_function">https://en.wikipedia.org/wiki/Survival_function</a>.
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Survival function — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Survival_function">https://en.wikipedia.org/wiki/Survival_function</a></div>
+</div>
+<div id="ref-wikipedia_failure_rate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Failure rate — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Failure_rate">https://en.wikipedia.org/wiki/Failure_rate</a></div>
+</div>
+<div id="ref-dobson4e" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">A. J. Dobson and A. G. Barnett, <em>An introduction to generalized linear models</em>, 4th ed. CRC press, 2018. doi: <a href="https://doi.org/10.1201/9781315182780">10.1201/9781315182780</a>.</div>
+</div>
+<div id="ref-vittinghoff2e" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">E. Vittinghoff, D. V. Glidden, S. C. Shiboski, and C. E. McCulloch, <em>Regression methods in biostatistics: Linear, logistic, survival, and repeated measures models</em>, 2nd ed. Springer, 2012. doi: <a href="https://doi.org/10.1007/978-1-4614-1353-0">10.1007/978-1-4614-1353-0</a>.</div>
+</div>
+<div id="ref-klein2003survival" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J. P. Klein and M. L. Moeschberger, <em>Survival analysis: Techniques for censored and truncated data</em>, 2nd ed. Springer, 2003. Available: <a href="https://link.springer.com/book/10.1007/b97377">https://link.springer.com/book/10.1007/b97377</a></div>
+</div>
+<div id="ref-kleinbaum2012survival" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">D. G. Kleinbaum and M. Klein, <em>Survival analysis: A self-learning text</em>, 3rd ed. Springer, 2012. Available: <a href="https://link.springer.com/book/10.1007/978-1-4419-6646-9">https://link.springer.com/book/10.1007/978-1-4419-6646-9</a></div>
+</div>
+<div id="ref-kalbfleisch2011statistical" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">J. D. Kalbfleisch and R. L. Prentice, <em>The statistical analysis of failure time data</em>. John Wiley &amp; Sons, 2011.</div>
+</div>
+<div id="ref-wikipedia_quantile_function" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Quantile function — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Quantile_function">https://en.wikipedia.org/wiki/Quantile_function</a></div>
 </div>
 </div>
 

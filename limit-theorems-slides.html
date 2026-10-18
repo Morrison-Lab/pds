@@ -109,6 +109,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -364,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-18 11:35:41 (PDT)</p>
+  <p class="date">Last modified: 2026-10-18 11:42:28 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -375,14 +376,14 @@
 <section class="slide level2">
 
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Central Limit Theorem)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span> <span class="citation" data-cites="wikipedia_central_limit_theorem">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026a</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 1 (Central Limit Theorem)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every real number <span class="math inline">\(z\)</span> <span class="citation" data-cites="wikipedia_central_limit_theorem"><a href="#/references" role="doc-biblioref" onclick="">[1]</a></span>:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\,(\bar{X}_{n} - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z)
 \]</span></p>
 <p>where <span class="math inline">\(\Phi(z) \stackrel{\text{def}}{=}\int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du\)</span> is the CDF of the <a href="./random-variables.html#def-std-normal">standard normal distribution</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope <span class="citation" data-cites="billingsley1995probability">(<a href="#/references" role="doc-biblioref" onclick="">Billingsley 1995</a>, Theorem 27.1)</span>. Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope <span class="citation" data-cites="billingsley1995probability"><a href="#/references" role="doc-biblioref" onclick="">[2]</a>, Theorem 27.1</span>. Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -649,7 +650,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <p>The sample means for <span class="math inline">\(n = 1\)</span> are just single cars, so they are skewed. By <span class="math inline">\(n = 30\)</span> the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of <span class="math inline">\(\sigma/\sqrt{n}\)</span> at every <span class="math inline">\(n\)</span>, as <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a> predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at <span class="math inline">\(n = 1\)</span> to 0.48 at <span class="math inline">\(n = 5\)</span> and 0.2 at <span class="math inline">\(n = 30\)</span>.</p>
 </div>
 <div class="videos">
-<p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=6sQv1o-ttCw">limit theorems</a> and gives a <a href="https://www.youtube.com/watch?v=-EI96KIYGWw">proof of the CLT</a>, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat">(<a href="#/references" role="doc-biblioref" onclick="">5MinuteAI, n.d.</a>)</span>.</p>
+<p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=6sQv1o-ttCw">limit theorems</a> and gives a <a href="https://www.youtube.com/watch?v=-EI96KIYGWw">proof of the CLT</a>, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[3]</a></span>.</p>
 </div>
 </section>
 <section id="sec-tail-bounds" class="slide level2" data-number="2">
@@ -658,7 +659,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <section class="slide level2">
 
 <div id="thm-markov" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (Markov’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(X \ge 0\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &lt; \infty\)</span>. Then for every <span class="math inline">\(a &gt; 0\)</span> <span class="citation" data-cites="wikipedia_markovs_inequality">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026f</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 2 (Markov’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(X \ge 0\)</span> and <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &lt; \infty\)</span>. Then for every <span class="math inline">\(a &gt; 0\)</span> <span class="citation" data-cites="wikipedia_markovs_inequality"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span>:</p>
 <p><span class="math display">\[
 \Pr\mathopen{}\left(X \ge a\right)\mathclose{} \le \frac{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}{a}
 \]</span></p>
@@ -673,7 +674,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <p>and dividing by <span class="math inline">\(a &gt; 0\)</span> gives the claim.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The inequality carries Markov’s name by convention. Chebyshev’s inequality, which follows from it, is older <span class="citation" data-cites="bienayme1853 tchebichef1867">(<a href="#/references" role="doc-biblioref" onclick="">Bienaymé 1853</a>; <a href="#/references" role="doc-biblioref" onclick="">Tchébychef 1867</a>)</span>; see <span class="citation" data-cites="seneta2013">(<a href="#/references" role="doc-biblioref" onclick="">Seneta 2013</a>)</span> for the history of the attribution. A modern treatment is in <span class="citation" data-cites="blitzstein2019introduction">(<a href="#/references" role="doc-biblioref" onclick="">Blitzstein and Hwang 2019</a>)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The inequality carries Markov’s name by convention. Chebyshev’s inequality, which follows from it, is older <span class="citation" data-cites="bienayme1853 tchebichef1867"><a href="#/references" role="doc-biblioref" onclick="">[5]</a>, <a href="#/references" role="doc-biblioref" onclick="">[6]</a></span>; see <span class="citation" data-cites="seneta2013"><a href="#/references" role="doc-biblioref" onclick="">[7]</a></span> for the history of the attribution. A modern treatment is in <span class="citation" data-cites="blitzstein2019introduction"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -689,7 +690,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <section class="slide level2">
 
 <div id="thm-chebyshev" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Chebyshev’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>. Then for every <span class="math inline">\(k &gt; 0\)</span> <span class="citation" data-cites="wikipedia_chebyshevs_inequality">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026b</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 3 (Chebyshev’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>. Then for every <span class="math inline">\(k &gt; 0\)</span> <span class="citation" data-cites="wikipedia_chebyshevs_inequality"><a href="#/references" role="doc-biblioref" onclick="">[9]</a></span>:</p>
 <p><span class="math display">\[
 \Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{} \le \frac{1}{k^2}
 \]</span></p>
@@ -717,7 +718,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
           display:block!important;
       }</style></aside>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Bienaymé derived this bound in 1853 <span class="citation" data-cites="bienayme1853">(<a href="#/references" role="doc-biblioref" onclick="">Bienaymé 1853</a>)</span>, and Chebyshev proved a more general form in 1867 <span class="citation" data-cites="tchebichef1867">(<a href="#/references" role="doc-biblioref" onclick="">Tchébychef 1867</a>)</span>. A modern treatment is in <span class="citation" data-cites="blitzstein2019introduction">(<a href="#/references" role="doc-biblioref" onclick="">Blitzstein and Hwang 2019</a>)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Bienaymé derived this bound in 1853 <span class="citation" data-cites="bienayme1853"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>, and Chebyshev proved a more general form in 1867 <span class="citation" data-cites="tchebichef1867"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span>. A modern treatment is in <span class="citation" data-cites="blitzstein2019introduction"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -897,7 +898,7 @@ L(s)
 <p>Therefore <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{} \le e^{L(s)} \le e^{s^2/8}\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The bound on the moment generating function <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}\)</span> is the step of Hoeffding’s 1963 paper <span class="citation" data-cites="hoeffding1963">(<a href="#/references" role="doc-biblioref" onclick="">Hoeffding 1963</a>)</span> that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The bound on the moment generating function <span class="math inline">\(\operatorname{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}\)</span> is the step of Hoeffding’s 1963 paper <span class="citation" data-cites="hoeffding1963"><a href="#/references" role="doc-biblioref" onclick="">[10]</a></span> that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -913,7 +914,7 @@ L(s)
 <section class="slide level2">
 
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and population mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span> <span class="citation" data-cites="wikipedia_hoeffdings_inequality">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026d</a>)</span>,</p>
+<p><span class="theorem-title"><strong>Theorem 5 (Hoeffding’s inequality)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with <span class="math inline">\(0 \le X_i \le 1\)</span> and population mean <span class="math inline">\(\mu\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then for every <span class="math inline">\(\varepsilon&gt; 0\)</span> <span class="citation" data-cites="wikipedia_hoeffdings_inequality"><a href="#/references" role="doc-biblioref" onclick="">[11]</a></span>,</p>
 <p><span id="eq-hoeffding-one-sided"><span class="math display">\[
 \Pr\mathopen{}\left(\bar{X}_{n} - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}.
 \tag{1}\]</span></span></p>
@@ -1001,7 +1002,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 \]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term <span class="citation" data-cites="hoeffding1963">(<a href="#/references" role="doc-biblioref" onclick="">Hoeffding 1963</a>)</span>. This page states the case of the sample mean of IID variables in <span class="math inline">\([0, 1]\)</span>, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, <span class="math inline">\(\mu\)</span> is the probability of the event and <span class="math inline">\(\bar{X}_{n}\)</span> is the share of the <span class="math inline">\(n\)</span> draws in which it occurs.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term <span class="citation" data-cites="hoeffding1963"><a href="#/references" role="doc-biblioref" onclick="">[10]</a></span>. This page states the case of the sample mean of IID variables in <span class="math inline">\([0, 1]\)</span>, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, <span class="math inline">\(\mu\)</span> is the probability of the event and <span class="math inline">\(\bar{X}_{n}\)</span> is the share of the <span class="math inline">\(n\)</span> draws in which it occurs.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1053,7 +1054,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <section id="sec-lln" class="slide level2" data-number="3">
 <h2><span class="header-section-number">3</span> The law of large numbers</h2>
 <div id="def-convergence-in-probability" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Convergence in probability)</strong></span> A sequence of random variables <span class="math inline">\(Y_1, Y_2, \ldots\)</span> <strong>converges in probability</strong> to a constant <span class="math inline">\(c\)</span> <span class="citation" data-cites="wikipedia_convergence_of_random_variables">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026c</a>)</span> if, for every distance <span class="math inline">\(\varepsilon &gt; 0\)</span>, the probability that <span class="math inline">\(Y_n\)</span> lies at least <span class="math inline">\(\varepsilon\)</span> away from <span class="math inline">\(c\)</span> goes to zero as <span class="math inline">\(n\)</span> grows:</p>
+<p><span class="theorem-title"><strong>Definition 1 (Convergence in probability)</strong></span> A sequence of random variables <span class="math inline">\(Y_1, Y_2, \ldots\)</span> <strong>converges in probability</strong> to a constant <span class="math inline">\(c\)</span> <span class="citation" data-cites="wikipedia_convergence_of_random_variables"><a href="#/references" role="doc-biblioref" onclick="">[12]</a></span> if, for every distance <span class="math inline">\(\varepsilon &gt; 0\)</span>, the probability that <span class="math inline">\(Y_n\)</span> lies at least <span class="math inline">\(\varepsilon\)</span> away from <span class="math inline">\(c\)</span> goes to zero as <span class="math inline">\(n\)</span> grows:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left|Y_n - c\right|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0
 \]</span></p>
@@ -1067,7 +1068,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <p><strong>Source</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="citation" data-cites="CaseBerg01">Casella and Berger (<a href="#/references" role="doc-biblioref" onclick="">2002</a>, Def. 5.5.1)</span>.</p>
+<p><span class="citation" data-cites="CaseBerg01">Casella and Berger <a href="#/references" role="doc-biblioref" onclick="">[13]</a>, Def. 5.5.1</span>.</p>
 </div>
 </div>
 </div>
@@ -1076,7 +1077,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <section class="slide level2">
 
 <div id="thm-wlln" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#/def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span> <span class="citation" data-cites="wikipedia_law_of_large_numbers">(<a href="#/references" role="doc-biblioref" onclick="">Wikipedia contributors 2026e</a>)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Weak law of large numbers)</strong></span> Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be <a href="./independence.html#def-iid">IID</a> random variables with population mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span> be the sample mean. Then the sample mean <a href="#/def-convergence-in-probability">converges in probability</a> to <span class="math inline">\(\mu\)</span> <span class="citation" data-cites="wikipedia_law_of_large_numbers"><a href="#/references" role="doc-biblioref" onclick="">[14]</a></span>:</p>
 <p><span class="math display">\[
 \bar{X}_{n} \overset{\scriptstyle p}{\longrightarrow}\mu
 \]</span></p>
@@ -1089,7 +1090,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <p><strong>Source</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="citation" data-cites="CaseBerg01">Casella and Berger (<a href="#/references" role="doc-biblioref" onclick="">2002</a>, Thm. 5.5.2)</span>.</p>
+<p><span class="citation" data-cites="CaseBerg01">Casella and Berger <a href="#/references" role="doc-biblioref" onclick="">[13]</a>, Thm. 5.5.2</span>.</p>
 </div>
 </div>
 </div>
@@ -1132,58 +1133,58 @@ e^{sn(\bar{X}_{n} - \mu)}
 <section id="further-reading" class="slide level2 unnumbered">
 <h2>Further reading</h2>
 <ul>
-<li><p><span class="citation" data-cites="wikipedia_central_limit_theorem">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026a</a>)</span> — the theorem, its variants and its history</p></li>
-<li><p><span class="citation" data-cites="wikipedia_markovs_inequality">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026f</a>)</span> — the inequality and its extensions</p></li>
-<li><p><span class="citation" data-cites="wikipedia_chebyshevs_inequality">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026b</a>)</span> — the inequality, with examples</p></li>
-<li><p><span class="citation" data-cites="wikipedia_hoeffdings_inequality">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026d</a>)</span> — the inequality for bounded variables</p></li>
-<li><p><span class="citation" data-cites="wikipedia_law_of_large_numbers">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026e</a>)</span> — the weak and strong laws</p></li>
-<li><p><span class="citation" data-cites="wikipedia_convergence_of_random_variables">Wikipedia contributors (<a href="#/references" role="doc-biblioref" onclick="">2026c</a>)</span> — the modes of convergence and how they relate</p></li>
+<li><p><span class="citation" data-cites="wikipedia_central_limit_theorem">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[1]</a></span> — the theorem, its variants and its history</p></li>
+<li><p><span class="citation" data-cites="wikipedia_markovs_inequality">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[4]</a></span> — the inequality and its extensions</p></li>
+<li><p><span class="citation" data-cites="wikipedia_chebyshevs_inequality">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[9]</a></span> — the inequality, with examples</p></li>
+<li><p><span class="citation" data-cites="wikipedia_hoeffdings_inequality">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[11]</a></span> — the inequality for bounded variables</p></li>
+<li><p><span class="citation" data-cites="wikipedia_law_of_large_numbers">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[14]</a></span> — the weak and strong laws</p></li>
+<li><p><span class="citation" data-cites="wikipedia_convergence_of_random_variables">Wikipedia contributors <a href="#/references" role="doc-biblioref" onclick="">[12]</a></span> — the modes of convergence and how they relate</p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">
 <h2>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
-5MinuteAI. n.d. <em>Probability &amp; Statistics</em>. Video playlist on YouTube. Accessed October 12, 2026. <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a>.
-</div>
-<div id="ref-bienayme1853" class="csl-entry" role="listitem">
-Bienaymé, Irénée-Jules. 1853. <span>“Considérations à l’appui de La Découverte de <span>Laplace</span> Sur La Loi de Probabilité Dans La Méthode Des Moindres Carrés.”</span> <em>Comptes Rendus de l’Académie Des Sciences</em> 37: 309–24. <a href="https://www.numdam.org/item/JMPA_1867_2_12__158_0/">https://www.numdam.org/item/JMPA_1867_2_12__158_0/</a>.
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-wikipedia_central_limit_theorem" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Central limit theorem — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">https://en.wikipedia.org/wiki/Central_limit_theorem</a></div>
 </div>
 <div id="ref-billingsley1995probability" class="csl-entry" role="listitem">
-Billingsley, Patrick. 1995. <em>Probability and Measure</em>. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">P. Billingsley, <em>Probability and measure</em>, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.</div>
 </div>
-<div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
-Blitzstein, Joseph K, and Jessica Hwang. 2019. <em>Introduction to Probability</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9780429428357">https://doi.org/10.1201/9780429428357</a>.
-</div>
-<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
-Casella, George, and Roger Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Cengage Learning. <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a>.
-</div>
-<div id="ref-hoeffding1963" class="csl-entry" role="listitem">
-Hoeffding, Wassily. 1963. <span>“Probability Inequalities for Sums of Bounded Random Variables.”</span> <em>Journal of the American Statistical Association</em> 58 (301): 13–30. <a href="https://doi.org/10.1080/01621459.1963.10500830">https://doi.org/10.1080/01621459.1963.10500830</a>.
-</div>
-<div id="ref-seneta2013" class="csl-entry" role="listitem">
-Seneta, Eugene. 2013. <span>“A Tricentenary History of the Law of Large Numbers.”</span> <em>Bernoulli</em> 19 (4): 1088–121. <a href="https://doi.org/10.3150/12-BEJSP12">https://doi.org/10.3150/12-BEJSP12</a>.
-</div>
-<div id="ref-tchebichef1867" class="csl-entry" role="listitem">
-Tchébychef, P. L. 1867. <span>“Des Valeurs Moyennes.”</span> <em>Journal de Mathématiques Pures Et Appliquées</em>, 2nd series, vol. 12: 177–84. <a href="https://www.numdam.org/item/JMPA_1867_2_12__177_0/">https://www.numdam.org/item/JMPA_1867_2_12__177_0/</a>.
-</div>
-<div id="ref-wikipedia_central_limit_theorem" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026a. <em>Central Limit Theorem — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">https://en.wikipedia.org/wiki/Central_limit_theorem</a>.
-</div>
-<div id="ref-wikipedia_chebyshevs_inequality" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026b. <em>Chebyshev’s Inequality — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Chebyshev%27s_inequality">https://en.wikipedia.org/wiki/Chebyshev%27s_inequality</a>.
-</div>
-<div id="ref-wikipedia_convergence_of_random_variables" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026c. <em>Convergence of Random Variables — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Convergence_of_random_variables">https://en.wikipedia.org/wiki/Convergence_of_random_variables</a>.
-</div>
-<div id="ref-wikipedia_hoeffdings_inequality" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026d. <em>Hoeffding’s Inequality — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Hoeffding%27s_inequality">https://en.wikipedia.org/wiki/Hoeffding%27s_inequality</a>.
-</div>
-<div id="ref-wikipedia_law_of_large_numbers" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026e. <em>Law of Large Numbers — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">https://en.wikipedia.org/wiki/Law_of_large_numbers</a>.
+<div id="ref-fiveminuteai_probstat" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">5MinuteAI, <span>“Probability &amp; statistics.”</span> Video playlist on YouTube. Accessed: Oct. 12, 2026. [Online]. Available: <a href="https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK">https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK</a></div>
 </div>
 <div id="ref-wikipedia_markovs_inequality" class="csl-entry" role="listitem">
-Wikipedia contributors. 2026f. <em>Markov’s Inequality — <span>Wikipedia</span><span>,</span> the Free Encyclopedia</em>. <a href="https://en.wikipedia.org/wiki/Markov%27s_inequality">https://en.wikipedia.org/wiki/Markov%27s_inequality</a>.
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Markov’s inequality — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Markov%27s_inequality">https://en.wikipedia.org/wiki/Markov%27s_inequality</a></div>
+</div>
+<div id="ref-bienayme1853" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">I.-J. Bienaymé, <span>“Considérations à l’appui de la découverte de <span>Laplace</span> sur la loi de probabilité dans la méthode des moindres carrés,”</span> <em>Comptes Rendus de l’Académie des Sciences</em>, vol. 37, pp. 309–324, 1853, Available: <a href="https://www.numdam.org/item/JMPA_1867_2_12__158_0/">https://www.numdam.org/item/JMPA_1867_2_12__158_0/</a></div>
+</div>
+<div id="ref-tchebichef1867" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">P. L. Tchébychef, <span>“Des valeurs moyennes,”</span> <em>Journal de mathématiques pures et appliquées</em>, vol. 12, pp. 177–184, 1867, Available: <a href="https://www.numdam.org/item/JMPA_1867_2_12__177_0/">https://www.numdam.org/item/JMPA_1867_2_12__177_0/</a></div>
+</div>
+<div id="ref-seneta2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">E. Seneta, <span>“A tricentenary history of the law of large numbers,”</span> <em>Bernoulli</em>, vol. 19, no. 4, pp. 1088–1121, 2013, doi: <a href="https://doi.org/10.3150/12-BEJSP12">10.3150/12-BEJSP12</a>.</div>
+</div>
+<div id="ref-blitzstein2019introduction" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">J. K. Blitzstein and J. Hwang, <em>Introduction to probability</em>, 2nd ed. Chapman; Hall/CRC, 2019. doi: <a href="https://doi.org/10.1201/9780429428357">10.1201/9780429428357</a>.</div>
+</div>
+<div id="ref-wikipedia_chebyshevs_inequality" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Chebyshev’s inequality — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Chebyshev%27s_inequality">https://en.wikipedia.org/wiki/Chebyshev%27s_inequality</a></div>
+</div>
+<div id="ref-hoeffding1963" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">W. Hoeffding, <span>“Probability inequalities for sums of bounded random variables,”</span> <em>Journal of the American Statistical Association</em>, vol. 58, no. 301, pp. 13–30, 1963, doi: <a href="https://doi.org/10.1080/01621459.1963.10500830">10.1080/01621459.1963.10500830</a>.</div>
+</div>
+<div id="ref-wikipedia_hoeffdings_inequality" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Hoeffding’s inequality — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Hoeffding%27s_inequality">https://en.wikipedia.org/wiki/Hoeffding%27s_inequality</a></div>
+</div>
+<div id="ref-wikipedia_convergence_of_random_variables" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Convergence of random variables — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Convergence_of_random_variables">https://en.wikipedia.org/wiki/Convergence_of_random_variables</a></div>
+</div>
+<div id="ref-CaseBerg01" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">G. Casella and R. Berger, <em>Statistical inference</em>, 2nd ed. Cengage Learning, 2002. Available: <a href="https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/">https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/</a></div>
+</div>
+<div id="ref-wikipedia_law_of_large_numbers" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Law of large numbers — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">https://en.wikipedia.org/wiki/Law_of_large_numbers</a></div>
 </div>
 </div>
 

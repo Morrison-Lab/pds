@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -24,7 +24,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\ ([Wikipedia contributors 2026a](#ref-wikipedia_central_limit_theorem)):
+> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\ [\[1\]](#ref-wikipedia_central_limit_theorem):
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\frac{\sqrt{n}\\(\bar{X}\_{n} - \mu)}{\sigma} \le z\right)\mathclose{} = \Phi(z) \\
 >
@@ -32,7 +32,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope ([Billingsley 1995](#ref-billingsley1995probability), Theorem 27.1). Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.
+> *Remark*. This version is the Lindeberg–Lévy CLT; its proof is beyond these notes’ scope [\[2\]](#ref-billingsley1995probability), Theorem 27.1. Other versions relax the IID assumption, which is why the informal statement asks only that no summand dominate.
 
 > **NOTE:**
 >
@@ -224,13 +224,13 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> 5MinuteAI explains [limit theorems](https://www.youtube.com/watch?v=6sQv1o-ttCw) and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw), following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
+> 5MinuteAI explains [limit theorems](https://www.youtube.com/watch?v=6sQv1o-ttCw) and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw), following the University of Washington’s CSE 312 [\[3\]](#ref-fiveminuteai_probstat).
 
 ## 2 Tail bounds
 
 > **NOTE:**
 >
-> **Theorem 2 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \< \infty\\. Then for every \\a \> 0\\ ([Wikipedia contributors 2026f](#ref-wikipedia_markovs_inequality)):
+> **Theorem 2 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{} \< \infty\\. Then for every \\a \> 0\\ [\[4\]](#ref-wikipedia_markovs_inequality):
 >
 > \\ \Pr\mathopen{}\left(X \ge a\right)\mathclose{} \le \frac{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}{a} \\
 
@@ -244,11 +244,11 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The inequality carries Markov’s name by convention. Chebyshev’s inequality, which follows from it, is older ([Bienaymé 1853](#ref-bienayme1853); [Tchébychef 1867](#ref-tchebichef1867)); see ([Seneta 2013](#ref-seneta2013)) for the history of the attribution. A modern treatment is in ([Blitzstein and Hwang 2019](#ref-blitzstein2019introduction)).
+> *Remark*. The inequality carries Markov’s name by convention. Chebyshev’s inequality, which follows from it, is older [\[5\]](#ref-bienayme1853), [\[6\]](#ref-tchebichef1867); see [\[7\]](#ref-seneta2013) for the history of the attribution. A modern treatment is in [\[8\]](#ref-blitzstein2019introduction).
 
 > **NOTE:**
 >
-> **Theorem 3 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\ ([Wikipedia contributors 2026b](#ref-wikipedia_chebyshevs_inequality)):
+> **Theorem 3 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
 >
 > \\ \Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{} \le \frac{1}{k^2} \\
 
@@ -264,7 +264,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Bienaymé derived this bound in 1853 ([Bienaymé 1853](#ref-bienayme1853)), and Chebyshev proved a more general form in 1867 ([Tchébychef 1867](#ref-tchebichef1867)). A modern treatment is in ([Blitzstein and Hwang 2019](#ref-blitzstein2019introduction)).
+> *Remark*. Bienaymé derived this bound in 1853 [\[5\]](#ref-bienayme1853), and Chebyshev proved a more general form in 1867 [\[6\]](#ref-tchebichef1867). A modern treatment is in [\[8\]](#ref-blitzstein2019introduction).
 
 > **NOTE:**
 >
@@ -375,11 +375,11 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The bound on the moment generating function \\\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}\\ is the step of Hoeffding’s 1963 paper ([Hoeffding 1963](#ref-hoeffding1963)) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
+> *Remark*. The bound on the moment generating function \\\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}\\ is the step of Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
 
 > **NOTE:**
 >
-> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and population mean \\\mu\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\ ([Wikipedia contributors 2026d](#ref-wikipedia_hoeffdings_inequality)),
+> **Theorem 5 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and population mean \\\mu\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\ [\[11\]](#ref-wikipedia_hoeffdings_inequality),
 >
 > \\ \Pr\mathopen{}\left(\bar{X}\_{n} - \mu\ge \varepsilon\right)\mathclose{} \le e^{-2n\varepsilon^2}. \tag{1}\\
 
@@ -425,7 +425,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term ([Hoeffding 1963](#ref-hoeffding1963)). This page states the case of the sample mean of IID variables in \\\[0, 1\]\\, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, \\\mu\\ is the probability of the event and \\\bar{X}\_{n}\\ is the share of the \\n\\ draws in which it occurs.
+> *Remark*. Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term [\[10\]](#ref-hoeffding1963). This page states the case of the sample mean of IID variables in \\\[0, 1\]\\, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, \\\mu\\ is the probability of the event and \\\bar{X}\_{n}\\ is the share of the \\n\\ draws in which it occurs.
 
 > **NOTE:**
 >
@@ -460,7 +460,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ ([Wikipedia contributors 2026c](#ref-wikipedia_convergence_of_random_variables)) if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
+> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ [\[12\]](#ref-wikipedia_convergence_of_random_variables) if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
 >
 > \\ \lim\_{n \to \infty} \Pr\mathopen{}\left(\mathopen{}\left\|Y_n - c\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} = 0 \\
 >
@@ -468,17 +468,17 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > > **NOTE:**
 > >
-> > Casella and Berger ([2002](#ref-CaseBerg01), Def. 5.5.1).
+> > Casella and Berger [\[13\]](#ref-CaseBerg01), Def. 5.5.1.
 
 > **NOTE:**
 >
-> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\ ([Wikipedia contributors 2026e](#ref-wikipedia_law_of_large_numbers)):
+> **Theorem 6 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\ [\[14\]](#ref-wikipedia_law_of_large_numbers):
 >
 > \\ \bar{X}\_{n} \overset{\scriptstyle p}{\longrightarrow}\mu \\
 >
 > > **NOTE:**
 > >
-> > Casella and Berger ([2002](#ref-CaseBerg01), Thm. 5.5.2).
+> > Casella and Berger [\[13\]](#ref-CaseBerg01), Thm. 5.5.2.
 
 > **NOTE:**
 >
@@ -494,46 +494,74 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 ## Further reading
 
-- Wikipedia contributors ([2026a](#ref-wikipedia_central_limit_theorem)) — the theorem, its variants and its history
+- Wikipedia contributors [\[1\]](#ref-wikipedia_central_limit_theorem) — the theorem, its variants and its history
 
-- Wikipedia contributors ([2026f](#ref-wikipedia_markovs_inequality)) — the inequality and its extensions
+- Wikipedia contributors [\[4\]](#ref-wikipedia_markovs_inequality) — the inequality and its extensions
 
-- Wikipedia contributors ([2026b](#ref-wikipedia_chebyshevs_inequality)) — the inequality, with examples
+- Wikipedia contributors [\[9\]](#ref-wikipedia_chebyshevs_inequality) — the inequality, with examples
 
-- Wikipedia contributors ([2026d](#ref-wikipedia_hoeffdings_inequality)) — the inequality for bounded variables
+- Wikipedia contributors [\[11\]](#ref-wikipedia_hoeffdings_inequality) — the inequality for bounded variables
 
-- Wikipedia contributors ([2026e](#ref-wikipedia_law_of_large_numbers)) — the weak and strong laws
+- Wikipedia contributors [\[14\]](#ref-wikipedia_law_of_large_numbers) — the weak and strong laws
 
-- Wikipedia contributors ([2026c](#ref-wikipedia_convergence_of_random_variables)) — the modes of convergence and how they relate
+- Wikipedia contributors [\[12\]](#ref-wikipedia_convergence_of_random_variables) — the modes of convergence and how they relate
 
 ## References
 
-5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
+\[1\]
 
-Bienaymé, Irénée-Jules. 1853. “Considérations à l’appui de La Découverte de Laplace Sur La Loi de Probabilité Dans La Méthode Des Moindres Carrés.” *Comptes Rendus de l’Académie Des Sciences* 37: 309–24. <https://www.numdam.org/item/JMPA_1867_2_12__158_0/>.
+Wikipedia contributors, “Central limit theorem — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Central_limit_theorem>
 
-Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+\[2\]
 
-Blitzstein, Joseph K, and Jessica Hwang. 2019. *Introduction to Probability*. 2nd ed. Chapman; Hall/CRC. <https://doi.org/10.1201/9780429428357>.
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
 
-Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+\[3\]
 
-Hoeffding, Wassily. 1963. “Probability Inequalities for Sums of Bounded Random Variables.” *Journal of the American Statistical Association* 58 (301): 13–30. <https://doi.org/10.1080/01621459.1963.10500830>.
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
 
-Seneta, Eugene. 2013. “A Tricentenary History of the Law of Large Numbers.” *Bernoulli* 19 (4): 1088–121. <https://doi.org/10.3150/12-BEJSP12>.
+\[4\]
 
-Tchébychef, P. L. 1867. “Des Valeurs Moyennes.” *Journal de Mathématiques Pures Et Appliquées*, 2nd series, vol. 12: 177–84. <https://www.numdam.org/item/JMPA_1867_2_12__177_0/>.
+Wikipedia contributors, “Markov’s inequality — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Markov%27s_inequality>
 
-Wikipedia contributors. 2026a. *Central Limit Theorem — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Central_limit_theorem>.
+\[5\]
 
-Wikipedia contributors. 2026b. *Chebyshev’s Inequality — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Chebyshev%27s_inequality>.
+I.-J. Bienaymé, “Considérations à l’appui de la découverte de Laplace sur la loi de probabilité dans la méthode des moindres carrés,” *Comptes Rendus de l’Académie des Sciences*, vol. 37, pp. 309–324, 1853, Available: <https://www.numdam.org/item/JMPA_1867_2_12__158_0/>
 
-Wikipedia contributors. 2026c. *Convergence of Random Variables — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Convergence_of_random_variables>.
+\[6\]
 
-Wikipedia contributors. 2026d. *Hoeffding’s Inequality — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Hoeffding%27s_inequality>.
+P. L. Tchébychef, “Des valeurs moyennes,” *Journal de mathématiques pures et appliquées*, vol. 12, pp. 177–184, 1867, Available: <https://www.numdam.org/item/JMPA_1867_2_12__177_0/>
 
-Wikipedia contributors. 2026e. *Law of Large Numbers — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Law_of_large_numbers>.
+\[7\]
 
-Wikipedia contributors. 2026f. *Markov’s Inequality — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Markov%27s_inequality>.
+E. Seneta, “A tricentenary history of the law of large numbers,” *Bernoulli*, vol. 19, no. 4, pp. 1088–1121, 2013, doi: [10.3150/12-BEJSP12](https://doi.org/10.3150/12-BEJSP12).
+
+\[8\]
+
+J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman; Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
+
+\[9\]
+
+Wikipedia contributors, “Chebyshev’s inequality — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Chebyshev%27s_inequality>
+
+\[10\]
+
+W. Hoeffding, “Probability inequalities for sums of bounded random variables,” *Journal of the American Statistical Association*, vol. 58, no. 301, pp. 13–30, 1963, doi: [10.1080/01621459.1963.10500830](https://doi.org/10.1080/01621459.1963.10500830).
+
+\[11\]
+
+Wikipedia contributors, “Hoeffding’s inequality — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Hoeffding%27s_inequality>
+
+\[12\]
+
+Wikipedia contributors, “Convergence of random variables — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Convergence_of_random_variables>
+
+\[13\]
+
+G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
+
+\[14\]
+
+Wikipedia contributors, “Law of large numbers — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_large_numbers>
 
 Back to top

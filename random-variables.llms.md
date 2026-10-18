@@ -4,13 +4,13 @@ Code
 
 Published
 
-Last modified: 2026-10-18 11:35:41 (PDT)
+Last modified: 2026-10-18 11:42:28 (PDT)
 
 ## 1 Random variables
 
 > **NOTE:**
 >
-> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\ ([Wikipedia contributors 2026l](#ref-wikipedia_random_variable)): it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
+> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\ to the real numbers \\\mathbb{R}\\ [\[1\]](#ref-wikipedia_random_variable): it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
 
 > **NOTE:**
 >
@@ -94,7 +94,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ ([Wikipedia contributors 2026j](#ref-wikipedia_probability_mass_function)):
+> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ [\[2\]](#ref-wikipedia_probability_mass_function):
 >
 > \\\operatorname{P}(X=x) \stackrel{\text{def}}{=}\Pr(\\X=x\\)\\
 
@@ -106,7 +106,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\ ([Wikipedia contributors 2026a](#ref-wikipedia_bernoulli_distribution)), if:
+> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
 >
 > \\ \begin{aligned} \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}\_{x\in \mathopen{}\left\\0,1\right\\\mathclose{}}\pi^x(1-\pi)^{1-x}\\ &= \begin{cases} \pi, & x=1\\ 1-\pi, & x=0 \end{cases} \end{aligned} \\
 
@@ -132,7 +132,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 7 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies ([Wikipedia contributors 2026i](#ref-wikipedia_probability_density_function)):
+> **Definition 7 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies [\[4\]](#ref-wikipedia_probability_density_function):
 >
 > - \\f(x) \ge 0\\ for every \\x\\.
 > - The integral of \\f\\ over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval: \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
@@ -145,7 +145,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 9 (Uniform distribution on an interval)** The **uniform distribution** on an interval \\\[\alpha, \beta\]\\ ([Definition 8](#def-uniform-set) with \\\mu\\ the length), with \\\alpha\< \beta\\, is the distribution of a random variable \\X\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, that is continuous with [density](#def-pdf) ([Wikipedia contributors 2026b](#ref-wikipedia_continuous_uniform_distribution)):
+> **Definition 9 (Uniform distribution on an interval)** The **uniform distribution** on an interval \\\[\alpha, \beta\]\\ ([Definition 8](#def-uniform-set) with \\\mu\\ the length), with \\\alpha\< \beta\\, is the distribution of a random variable \\X\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, that is continuous with [density](#def-pdf) [\[5\]](#ref-wikipedia_continuous_uniform_distribution):
 >
 > \\ f(x) \stackrel{\text{def}}{=}\begin{cases} \frac{1}{\beta- \alpha}, & \alpha\le x \le \beta\\ 0, & \text{otherwise} \end{cases} \\
 
@@ -185,7 +185,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\ ([Wikipedia contributors 2026h](#ref-wikipedia_normal_distribution)), if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim \operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\\ [\[6\]](#ref-wikipedia_normal_distribution), if \\X\\ is continuous with [density](#def-pdf):
 >
 > \\\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\\
 
@@ -213,7 +213,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The proofs of these two theorems evaluate three integrals by calculus: the total of the density, the mean integral and the variance integral. The total is the Gaussian integral. This page omits the proofs ([Casella and Berger 2002](#ref-CaseBerg01)). These facts are where the parameters’ names come from.
+> *Remark*. The proofs of these two theorems evaluate three integrals by calculus: the total of the density, the mean integral and the variance integral. The total is the Gaussian integral. This page omits the proofs [\[7\]](#ref-CaseBerg01). These facts are where the parameters’ names come from.
 
 > **NOTE:**
 >
@@ -225,7 +225,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 12 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ ([Wikipedia contributors 2026d](#ref-wikipedia_exponential_distribution)) if \\T\\ is continuous with [density](#def-pdf):
+> **Definition 12 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ [\[8\]](#ref-wikipedia_exponential_distribution) if \\T\\ is continuous with [density](#def-pdf):
 >
 > \\ f(t) \stackrel{\text{def}}{=}\begin{cases} {\lambda}\text{e}^{-{\lambda}t}, & t \ge 0 \\ 0, & t \< 0 \end{cases} \\
 
@@ -239,7 +239,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** ([Wikipedia contributors 2026c](#ref-wikipedia_cumulative_distribution_function)) is:
+> **Definition 13 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** [\[9\]](#ref-wikipedia_cumulative_distribution_function) is:
 >
 > \\\operatorname{F}\mathopen{}\left(t\right)\mathclose{} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\\
 
@@ -279,7 +279,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The proof needs measure theory beyond these notes ([Billingsley 1995](#ref-billingsley1995probability); [Wikipedia contributors 2026c](#ref-wikipedia_cumulative_distribution_function)).
+> *Remark*. The proof needs measure theory beyond these notes [\[9\]](#ref-wikipedia_cumulative_distribution_function), [\[10\]](#ref-billingsley1995probability).
 
 > **NOTE:**
 >
@@ -490,7 +490,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > *Remark*. For small \\\Delta\> 0\\, \\f(x) \cdot\Delta\approx \Pr(x \le X \< x + \Delta)\\. Although a density is not unique ([Theorem 1](#thm-density-not-unique)), this limit pins down its value at every point where it is continuous.
 >
-> See also Rothman et al. ([2021](#ref-me4)) (Chapter 22, p. 535).
+> See also Rothman et al. [\[11\]](#ref-me4) (Chapter 22, p. 535).
 
 > **NOTE:**
 >
@@ -554,7 +554,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ ([Wikipedia contributors 2026f](#ref-wikipedia_joint_probability_distribution)).
+> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ [\[12\]](#ref-wikipedia_joint_probability_distribution).
 
 > **NOTE:**
 >
@@ -574,7 +574,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The proof needs measure theory beyond these notes: the sets \\A_1 \times \cdots \times A_n\\ form a [\\\pi\\-system](https://en.wikipedia.org/wiki/Pi-system), and two probability measures that agree on a \\\pi\\-system agree on the \\\sigma\\-algebra it generates ([Billingsley 1995](#ref-billingsley1995probability)).
+> *Remark*. The proof needs measure theory beyond these notes: the sets \\A_1 \times \cdots \times A_n\\ form a [\\\pi\\-system](https://en.wikipedia.org/wiki/Pi-system), and two probability measures that agree on a \\\pi\\-system agree on the \\\sigma\\-algebra it generates [\[10\]](#ref-billingsley1995probability).
 
 > **NOTE:**
 >
@@ -593,7 +593,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ ([Wikipedia contributors 2026g](#ref-wikipedia_marginal_distribution)).
+> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ [\[13\]](#ref-wikipedia_marginal_distribution).
 
 > **NOTE:**
 >
@@ -650,7 +650,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\ \begin{aligned} 1 &= \Pr((X, X) \in L) && \text{(} \mathopen{}\left\\(X, X) \in L\right\\\mathclose{} = \Omega\text{, and } \Pr(\Omega) = 1 \text{)} \\ &= \iint_L f(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int\_{-\infty}^{\infty} \mathopen{}\left(\int\_{-\infty}^{\infty} \text{1}\_{y = x} f(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int\_{-\infty}^{\infty} 0\\dx && \text{(the inner integrand is 0 except at } y = x \text{)} \\ &= 0 && \text{(integrate)} \end{aligned} \\
 >
-> which is a contradiction. Tonelli’s theorem allows the iterated integral because \\f \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3).
+> which is a contradiction. Tonelli’s theorem allows the iterated integral because \\f \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[10\]](#ref-billingsley1995probability), Theorem 18.3).
 
 > **NOTE:**
 >
@@ -664,7 +664,7 @@ Last modified: 2026-10-18 11:35:41 (PDT)
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr((X, Y) \in \[a, b\] \times \mathbb{R}) && \text{(same event)} \\ &= \iint\_{\[a, b\] \times \mathbb{R}} f\_{X,Y}(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int_a^b \mathopen{}\left(\int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int_a^b f_X(x)\\dx && \text{(definition of } f_X \text{)} \end{aligned} \\
 >
-> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley ([1995](#ref-billingsley1995probability)), Theorem 18.3). So \\f_X\\ satisfies [Definition 7](#def-pdf).
+> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[10\]](#ref-billingsley1995probability), Theorem 18.3). So \\f_X\\ satisfies [Definition 7](#def-pdf).
 
 > **NOTE:**
 >
@@ -726,7 +726,7 @@ The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ 
 
 > **NOTE:**
 >
-> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes ([Hutchinson 2024](#ref-hutchinson2024data471)). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
+> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[14\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
 >
 > > **NOTE:**
 > >
@@ -764,7 +764,7 @@ Probabilities are assigned to subsets \\A \subseteq \mathcal{R}(X)\\ by integrat
 >
 > \\\Pr(X = a) = 0\\
 
-Why? As Brian Hutchinson notes ([Hutchinson 2024](#ref-hutchinson2024data471)), what is the probability that someone’s height is *exactly* \\6.0000000000\dots\\ feet? Zero. A single real point has width zero, so the integral over a single point is zero.
+Why? As Brian Hutchinson notes [\[14\]](#ref-hutchinson2024data471), what is the probability that someone’s height is *exactly* \\6.0000000000\dots\\ feet? Zero. A single real point has width zero, so the integral over a single point is zero.
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
@@ -776,17 +776,17 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **TIP:**
 >
-> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions ([Hutchinson, n.d.](#ref-hutchinson_wwu_ml_videos)). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions [\[15\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 > **NOTE:**
 >
-> 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 ([5MinuteAI, n.d.](#ref-fiveminuteai_probstat)).
+> 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 [\[16\]](#ref-fiveminuteai_probstat).
 
 ## 3 Survival, hazard, and cumulative hazard functions
 
 > **NOTE:**
 >
-> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ ([Wikipedia contributors 2026m](#ref-wikipedia_survival_function)):
+> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[17\]](#ref-wikipedia_survival_function):
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -828,13 +828,13 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 ([Wikipedia contributors 2026e](#ref-wikipedia_failure_rate)):
+> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[18\]](#ref-wikipedia_failure_rate):
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
 > **NOTE:**
 >
-> *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett ([2018](#ref-dobson4e)), Vittinghoff et al. ([2012](#ref-vittinghoff2e)), Klein and Moeschberger ([2003](#ref-klein2003survival)), and Kleinbaum and Klein ([2012](#ref-kleinbaum2012survival)), while \\\lambda(t)\\ appears in Rothman et al. ([2021](#ref-me4)) and Kalbfleisch and Prentice ([2011](#ref-kalbfleisch2011statistical)).
+> *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett [\[19\]](#ref-dobson4e), Vittinghoff et al. [\[20\]](#ref-vittinghoff2e), Klein and Moeschberger [\[21\]](#ref-klein2003survival), and Kleinbaum and Klein [\[22\]](#ref-kleinbaum2012survival), while \\\lambda(t)\\ appears in Rothman et al. [\[11\]](#ref-me4) and Kalbfleisch and Prentice [\[23\]](#ref-kalbfleisch2011statistical).
 >
 > If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 22](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
@@ -1006,70 +1006,118 @@ Every rule developed for discrete variables carries over to continuous variables
 
 ## Further reading
 
-- Wikipedia contributors ([2026l](#ref-wikipedia_random_variable)) — random variables, with examples and measure-theoretic definition
+- Wikipedia contributors [\[1\]](#ref-wikipedia_random_variable) — random variables, with examples and measure-theoretic definition
 
-- Wikipedia contributors ([2026j](#ref-wikipedia_probability_mass_function)) — the PMF and common examples
+- Wikipedia contributors [\[2\]](#ref-wikipedia_probability_mass_function) — the PMF and common examples
 
-- Wikipedia contributors ([2026i](#ref-wikipedia_probability_density_function)) — the PDF, its properties and its uses
+- Wikipedia contributors [\[4\]](#ref-wikipedia_probability_density_function) — the PDF, its properties and its uses
 
-- Wikipedia contributors ([2026c](#ref-wikipedia_cumulative_distribution_function)) — the CDF, its properties and its relation to the density
+- Wikipedia contributors [\[9\]](#ref-wikipedia_cumulative_distribution_function) — the CDF, its properties and its relation to the density
 
-- Wikipedia contributors ([2026k](#ref-wikipedia_quantile_function)) — the quantile function, the inverse of the CDF
+- Wikipedia contributors [\[24\]](#ref-wikipedia_quantile_function) — the quantile function, the inverse of the CDF
 
-- Wikipedia contributors ([2026f](#ref-wikipedia_joint_probability_distribution)) — joint, marginal and conditional distributions
+- Wikipedia contributors [\[12\]](#ref-wikipedia_joint_probability_distribution) — joint, marginal and conditional distributions
 
-- Wikipedia contributors ([2026m](#ref-wikipedia_survival_function)) — the survival function and its relation to the hazard
+- Wikipedia contributors [\[17\]](#ref-wikipedia_survival_function) — the survival function and its relation to the hazard
 
-- Wikipedia contributors ([2026e](#ref-wikipedia_failure_rate)) — the hazard rate, with examples
+- Wikipedia contributors [\[18\]](#ref-wikipedia_failure_rate) — the hazard rate, with examples
 
 ## References
 
-5MinuteAI. n.d. *Probability & Statistics*. Video playlist on YouTube. Accessed October 12, 2026. <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>.
+\[1\]
 
-Billingsley, Patrick. 1995. *Probability and Measure*. 3rd ed. Wiley Series in Probability and Mathematical Statistics. Wiley.
+Wikipedia contributors, “Random variable — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Random_variable>
 
-Casella, George, and Roger Berger. 2002. *Statistical Inference*. 2nd ed. Cengage Learning. <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>.
+\[2\]
 
-Dobson, Annette J, and Adrian G Barnett. 2018. *An Introduction to Generalized Linear Models*. 4th ed. CRC press. <https://doi.org/10.1201/9781315182780>.
+Wikipedia contributors, “Probability mass function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Probability_mass_function>
 
-Hutchinson, Brian. 2024. *DATA 471/571: Machine Learning*. Western Washington University.
+\[3\]
 
-Hutchinson, Brian. n.d. *DATA 471/571 (Machine Learning) and CSCI 481/581 (Deep Learning) Video Lectures*. Western Washington University. Accessed September 28, 2026. <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>.
+Wikipedia contributors, “Bernoulli distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Bernoulli_distribution>
 
-Kalbfleisch, John D, and Ross L Prentice. 2011. *The Statistical Analysis of Failure Time Data*. John Wiley & Sons.
+\[4\]
 
-Klein, John P, and Melvin L Moeschberger. 2003. *Survival Analysis: Techniques for Censored and Truncated Data*. 2nd ed. Springer. <https://link.springer.com/book/10.1007/b97377>.
+Wikipedia contributors, “Probability density function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Probability_density_function>
 
-Kleinbaum, David G, and Mitchel Klein. 2012. *Survival Analysis: A Self-Learning Text*. 3rd ed. Springer. <https://link.springer.com/book/10.1007/978-1-4419-6646-9>.
+\[5\]
 
-Rothman, Kenneth J., Timothy L. Lash, Tyler J. VanderWeele, and Sebastien Haneuse. 2021. *Modern Epidemiology*. Fourth edition. Wolters Kluwer.
+Wikipedia contributors, “Continuous uniform distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Continuous_uniform_distribution>
 
-Vittinghoff, Eric, David V Glidden, Stephen C Shiboski, and Charles E McCulloch. 2012. *Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models*. 2nd ed. Springer. <https://doi.org/10.1007/978-1-4614-1353-0>.
+\[6\]
 
-Wikipedia contributors. 2026a. *Bernoulli Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Bernoulli_distribution>.
+Wikipedia contributors, “Normal distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Normal_distribution>
 
-Wikipedia contributors. 2026b. *Continuous Uniform Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Continuous_uniform_distribution>.
+\[7\]
 
-Wikipedia contributors. 2026c. *Cumulative Distribution Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Cumulative_distribution_function>.
+G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 2002. Available: <https://www.cengage.com/c/statistical-inference-2e-casella-berger/9780534243128/>
 
-Wikipedia contributors. 2026d. *Exponential Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Exponential_distribution>.
+\[8\]
 
-Wikipedia contributors. 2026e. *Failure Rate — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Failure_rate>.
+Wikipedia contributors, “Exponential distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Exponential_distribution>
 
-Wikipedia contributors. 2026f. *Joint Probability Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Joint_probability_distribution>.
+\[9\]
 
-Wikipedia contributors. 2026g. *Marginal Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Marginal_distribution>.
+Wikipedia contributors, “Cumulative distribution function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cumulative_distribution_function>
 
-Wikipedia contributors. 2026h. *Normal Distribution — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Normal_distribution>.
+\[10\]
 
-Wikipedia contributors. 2026i. *Probability Density Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_density_function>.
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
 
-Wikipedia contributors. 2026j. *Probability Mass Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Probability_mass_function>.
+\[11\]
 
-Wikipedia contributors. 2026k. *Quantile Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Quantile_function>.
+K. J. Rothman, T. L. Lash, T. J. VanderWeele, and S. Haneuse, *Modern epidemiology*, Fourth edition. Philadelphia: Wolters Kluwer, 2021.
 
-Wikipedia contributors. 2026l. *Random Variable — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Random_variable>.
+\[12\]
 
-Wikipedia contributors. 2026m. *Survival Function — Wikipedia, the Free Encyclopedia*. <https://en.wikipedia.org/wiki/Survival_function>.
+Wikipedia contributors, “Joint probability distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Joint_probability_distribution>
+
+\[13\]
+
+Wikipedia contributors, “Marginal distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Marginal_distribution>
+
+\[14\]
+
+B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
+
+\[15\]
+
+B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+
+\[16\]
+
+5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+
+\[17\]
+
+Wikipedia contributors, “Survival function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Survival_function>
+
+\[18\]
+
+Wikipedia contributors, “Failure rate — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Failure_rate>
+
+\[19\]
+
+A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 4th ed. CRC press, 2018. doi: [10.1201/9781315182780](https://doi.org/10.1201/9781315182780).
+
+\[20\]
+
+E. Vittinghoff, D. V. Glidden, S. C. Shiboski, and C. E. McCulloch, *Regression methods in biostatistics: Linear, logistic, survival, and repeated measures models*, 2nd ed. Springer, 2012. doi: [10.1007/978-1-4614-1353-0](https://doi.org/10.1007/978-1-4614-1353-0).
+
+\[21\]
+
+J. P. Klein and M. L. Moeschberger, *Survival analysis: Techniques for censored and truncated data*, 2nd ed. Springer, 2003. Available: <https://link.springer.com/book/10.1007/b97377>
+
+\[22\]
+
+D. G. Kleinbaum and M. Klein, *Survival analysis: A self-learning text*, 3rd ed. Springer, 2012. Available: <https://link.springer.com/book/10.1007/978-1-4419-6646-9>
+
+\[23\]
+
+J. D. Kalbfleisch and R. L. Prentice, *The statistical analysis of failure time data*. John Wiley & Sons, 2011.
+
+\[24\]
+
+Wikipedia contributors, “Quantile function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Quantile_function>
 
 Back to top
