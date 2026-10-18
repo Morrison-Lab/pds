@@ -38,9 +38,11 @@ meaning $\P(\predfnf{\Predvar} = \bestpredfnf{\Predvar}) = 1$.
 #### The best predictor in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [squared-error risk](#def-squared-error-risk) $\popriskf{\predfn_1} = 5$,
-which is larger than the risk $\popriskf{\bestpredfn} = 1$ of the conditional mean,
-and strictly so because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Predvar}$.
+consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
+Its [squared-error risk](#def-squared-error-risk) is $\popriskf{\predfn_1} = 5$.
+The risk of the conditional mean is $\popriskf{\bestpredfn} = 1$.
+So $\predfn_1$ has the larger risk.
+The inequality is strict because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Predvar}$.
 
 :::
 

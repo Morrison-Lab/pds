@@ -3,12 +3,11 @@
 
 The **squared-error risk** of a prediction function $\predfnf{\Predvar}$,
 also called its **expected prediction error** [@hastie2009elements, p. 18],
-is the [risk](#def-risk) under squared error loss,
-the expected square of its [prediction error](#def-prediction-error),
-which compares $\predfnf{\Predvar}$ with the observed [outcome](#def-outcome) $\Outvar$ of a [new observation](#def-new-observation),
-the [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) of the prediction:
+is the expected square of its [prediction error](#def-prediction-error):
 
 $$\popriskf{\predfn} \eqdef \E{\sqf{\prederr_{\predfn}}}$$
+
+It is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
 
 :::
 
@@ -18,6 +17,7 @@ $$\popriskf{\predfn} \eqdef \E{\sqf{\prederr_{\predfn}}}$$
 #### Squared-error risk in the best-predictor exercise
 
 In @exr-best-predictor,
-the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [squared-error risk](#def-squared-error-risk) $\popriskf{\predfn_1} = 5$.
+consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
+Its [squared-error risk](#def-squared-error-risk) is $\popriskf{\predfn_1} = 5$.
 
 :::
