@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-18 16:47:26 (PDT)</p>
+  <p class="date">Last modified: 2026-10-18 21:56:25 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -920,7 +920,7 @@ L(s)
 \tag{1}\]</span></span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(s &gt; 0\)</span>. The event <span class="math inline">\(\mathopen{}\left\{\bar{X}_{n} - \mu\ge \varepsilon\right\}\mathclose{}\)</span> is the event <span class="math inline">\(\mathopen{}\left\{e^{sn(\bar{X}_{n} - \mu)} \ge e^{sn\varepsilon}\right\}\mathclose{}\)</span>, because the exponential is increasing and <span class="math inline">\(sn &gt; 0\)</span>. The random variable <span class="math inline">\(e^{sn(\bar{X}_{n} - \mu)}\)</span> is positive, so <a href="#/thm-markov">Markov’s inequality</a> applies:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let the free parameter be <span class="math inline">\(s &gt; 0\)</span>. The event <span class="math inline">\(\mathopen{}\left\{\bar{X}_{n} - \mu\ge \varepsilon\right\}\mathclose{}\)</span> is the event <span class="math inline">\(\mathopen{}\left\{e^{sn(\bar{X}_{n} - \mu)} \ge e^{sn\varepsilon}\right\}\mathclose{}\)</span>, because the exponential is increasing and <span class="math inline">\(sn &gt; 0\)</span>. The random variable <span class="math inline">\(e^{sn(\bar{X}_{n} - \mu)}\)</span> is positive, so <a href="#/thm-markov">Markov’s inequality</a> applies:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr\mathopen{}\left(\bar{X}_{n} - \mu\ge \varepsilon\right)\mathclose{}
@@ -1115,7 +1115,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 &amp;&amp; \text{(cancel one factor of $n$)}
 \end{aligned}
 \]</span></p>
-<p>Let <span class="math inline">\(\varepsilon &gt; 0\)</span> and let <span class="math inline">\(k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\)</span>, so that <span class="math inline">\(k \sigma/ \sqrt{n} = \varepsilon\)</span>. <a href="#/thm-chebyshev">Chebyshev’s inequality</a> for <span class="math inline">\(\bar{X}_{n}\)</span>, whose standard deviation is <span class="math inline">\(\sigma/ \sqrt{n}\)</span>, gives</p>
+<p>Let the tolerance be <span class="math inline">\(\varepsilon &gt; 0\)</span> and let the multiplier be <span class="math inline">\(k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\)</span>, so that <span class="math inline">\(k \sigma/ \sqrt{n} = \varepsilon\)</span>. <a href="#/thm-chebyshev">Chebyshev’s inequality</a> for <span class="math inline">\(\bar{X}_{n}\)</span>, whose standard deviation is <span class="math inline">\(\sigma/ \sqrt{n}\)</span>, gives</p>
 <p><span class="math display">\[
 \begin{aligned}
 0 \le \Pr\mathopen{}\left(\mathopen{}\left|\bar{X}_{n} - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}
