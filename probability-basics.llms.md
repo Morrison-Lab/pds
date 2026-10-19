@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 09:40:22 (PDT)
+Last modified: 2026-10-19 11:35:16 (PDT)
 
 ## 1 Defining probabilities
 
@@ -119,7 +119,7 @@ Last modified: 2026-10-19 09:40:22 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. The math notes define the same property for sets in general, as [pairwise disjoint](https://morrison-lab.github.io/mds/measures.html#def-pairwise-disjoint).
+> *Remark*. The math notes define the same property for sets in general, as [pairwise disjoint](https://morrison-lab.github.io/mds/sets.html#def-pairwise-disjoint).
 
 > **NOTE:**
 >
