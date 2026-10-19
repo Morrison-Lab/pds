@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 04:07:38 (PDT)
+Last modified: 2026-10-19 04:35:15 (PDT)
 
 ## 1 Defining probabilities
 
@@ -146,13 +146,9 @@ Last modified: 2026-10-19 04:07:38 (PDT)
 
 > **NOTE:**
 >
-> **Definition 11 (Probability measure)** A **probability measure** on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 [\[5\]](#ref-wikipedia_probability_space):
+> **Definition 11 (Probability measure (probability function))** A **probability measure** (also called a **probability function** [\[4\]](#ref-CaseBerg01), Definition 1.2.4) on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 [\[5\]](#ref-wikipedia_probability_space):
 >
 > \\\Pr(\Omega) = 1\\
-
-> **NOTE:**
->
-> *Remark*. Other sources call a probability measure a **probability function** [\[4\]](#ref-CaseBerg01), Def. 1.2.4. The two names mean the same thing.
 
 > **NOTE:**
 >
