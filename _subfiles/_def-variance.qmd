@@ -48,7 +48,7 @@ $$\Var{X}=\E{X^2} - \sqf{\E{X}}$$
 
 ::: proof
 
-Let $\mean = \E{X}$ be the population mean of $X$.
+Let $\mean = \E{X}$ be the [population mean](expectation.qmd#def-expectation) of $X$.
 It is a constant, so [linearity of expectation](expectation.qmd#thm-linearity-expectation) applies with $\mean$ as a coefficient:
 
 $$
