@@ -597,7 +597,7 @@ In a model whose linear component contains a term with no unknown coefficient,
 that term is called an **offset**:
 it shifts the linear component by a known amount.
 In a count model with exposure magnitude $t$,
-the offset is the known term $\log{t}$ in the log-scale decomposition of the mean
+the offset is the known term $\log{t}$ in the log-scale decomposition of the [mean](expectation.qmd#def-expectation)
 ([@thm-exposure-log-scale]),
 
 $$\log{\mean} = \log{\rate} + \log{t}.$$
