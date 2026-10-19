@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 21:56:25 (PDT)
+Last modified: 2026-10-18 22:11:43 (PDT)
 
 > **NOTE:**
 >
@@ -159,7 +159,7 @@ Last modified: 2026-10-18 21:56:25 (PDT)
 >
 > *Proof*. Write \\F_i(t) \stackrel{\text{def}}{=}\Pr(X_i \le t)\\ for the CDF of \\X_i\\.
 >
-> **Only if: the CDF determines the PMF through its jumps.** Choose a variable index \\i\\ and a value \\x\\. Every number below \\x\\ lies in exactly one of the intervals \\(-\infty, x - 1\]\\, \\(x - 1, x - \tfrac{1}{2}\]\\, \\(x - \tfrac{1}{2}, x - \tfrac{1}{3}\]\\, \\\ldots\\, so the event \\\mathopen{}\left\\X_i \< x\right\\\mathclose{}\\ is the disjoint union of the events \\B_1 \stackrel{\text{def}}{=}\mathopen{}\left\\X_i \le x - 1\right\\\mathclose{}\\ and \\B_k \stackrel{\text{def}}{=}\mathopen{}\left\\x - \tfrac{1}{k - 1} \< X_i \le x - \tfrac{1}{k}\right\\\mathclose{}\\ for \\k \ge 2\\, and for each \\K\\, the events \\B_1, \ldots, B_K\\ have union \\\mathopen{}\left\\X_i \le x - \tfrac{1}{K}\right\\\mathclose{}\\:
+> **Only if: the CDF determines the PMF through its jumps.** Choose an index \\i\\ and a value \\x\\ of \\X_i\\. Every number below \\x\\ lies in exactly one of the intervals \\(-\infty, x - 1\]\\, \\(x - 1, x - \tfrac{1}{2}\]\\, \\(x - \tfrac{1}{2}, x - \tfrac{1}{3}\]\\, \\\ldots\\, so the event \\\mathopen{}\left\\X_i \< x\right\\\mathclose{}\\ is the disjoint union of the events \\B_1 \stackrel{\text{def}}{=}\mathopen{}\left\\X_i \le x - 1\right\\\mathclose{}\\ and \\B_k \stackrel{\text{def}}{=}\mathopen{}\left\\x - \tfrac{1}{k - 1} \< X_i \le x - \tfrac{1}{k}\right\\\mathclose{}\\ for \\k \ge 2\\, and for each \\K\\, the events \\B_1, \ldots, B_K\\ have union \\\mathopen{}\left\\X_i \le x - \tfrac{1}{K}\right\\\mathclose{}\\:
 >
 > \\ \begin{aligned} \Pr(X_i \< x) &= \sum\_{k=1}^{\infty} \Pr(B_k) && \text{(countable additivity)} \\ &= \lim\_{K \to \infty} \sum\_{k=1}^{K} \Pr(B_k) && \text{(definition of an infinite series)} \\ &= \lim\_{K \to \infty} \Pr(X_i \le x - \tfrac{1}{K}) && \text{(finite additivity)} \\ &= \lim\_{K \to \infty} F_i(x - \tfrac{1}{K}) && \text{(definition of the CDF)} \end{aligned} \\
 >

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 21:56:25 (PDT)
+Last modified: 2026-10-18 22:11:43 (PDT)
 
 > **NOTE:**
 >
@@ -94,7 +94,7 @@ Last modified: 2026-10-18 21:56:25 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Each \\X_i\\ is \\0\\ or \\1\\, so \\S\\ takes values in \\\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}\\. Let the number of ones be \\x \in \mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}\\, and let \\A_x\\ be the set of sequences \\(s_1, \ldots, s_n) \in \mathopen{}\left\\0, 1\right\\\mathclose{}^n\\ with exactly \\x\\ ones. The event \\\mathopen{}\left\\S = x\right\\\mathclose{}\\ is the disjoint union of the events \\\mathopen{}\left\\X_1 = s_1, \ldots, X_n = s_n\right\\\mathclose{}\\ over \\(s_1, \ldots, s_n) \in A_x\\. For one such sequence:
+> *Proof*. Each \\X_i\\ is \\0\\ or \\1\\, so \\S\\ takes values in \\\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}\\. Let \\x \in \mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}\\ be a value of \\S\\, and let \\A_x\\ be the set of sequences \\(s_1, \ldots, s_n) \in \mathopen{}\left\\0, 1\right\\\mathclose{}^n\\ with exactly \\x\\ ones. The event \\\mathopen{}\left\\S = x\right\\\mathclose{}\\ is the disjoint union of the events \\\mathopen{}\left\\X_1 = s_1, \ldots, X_n = s_n\right\\\mathclose{}\\ over \\(s_1, \ldots, s_n) \in A_x\\. For one such sequence:
 >
 > \\ \begin{aligned} \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n) &= \prod\_{i=1}^n \operatorname{P}(X_i = s_i) && \text{(independence)} \\ &= \prod\_{i=1}^n \pi^{s_i} (1 - \pi)^{1 - s_i} && \text{(Bernoulli PMF)} \\ &= \pi^{\sum\_{i=1}^ns_i} (1 - \pi)^{\sum\_{i=1}^n(1 - s_i)} && \text{(collect exponents)} \\ &= \pi^x (1 - \pi)^{n - x} && \text{(} \textstyle\sum\_{i=1}^ns_i = x \text{ for a sequence in } A_x \text{)} \end{aligned} \\
 >
@@ -444,13 +444,13 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 10 (The negative binomial converges to the Poisson)** Let the [mean](expectation.llms.md#def-expectation) be \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 2](#eq-pois-pmf)):
+> **Theorem 10 (The negative binomial converges to the Poisson)** Let the population [mean](expectation.llms.md#def-expectation) be \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in \mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 2](#eq-pois-pmf)):
 >
 > \\\lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
 
 > **NOTE:**
 >
-> *Proof*. Choose a count \\y\\. In [Definition 6](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho+ y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
+> *Proof*. Choose a value \\y\\ of \\Y\_\rho\\. In [Definition 6](#def-nb), the first factor \\\mu^y / y!\\ does not depend on \\\rho\\. For the second factor, \\\Gamma(\rho+ y) = \Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)\\, by applying \\\Gamma(x + 1) = x\\\Gamma(x)\\ \\y\\ times (for \\y = 0\\, the product is empty and equals 1), so:
 >
 > \\ \begin{aligned} \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} &= \frac{\Gamma(\rho) \prod\_{k=0}^{y-1} (\rho+ k)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} && (\Gamma(x + 1) = x\\\Gamma(x) \text{, applied } y \text{ times}) \\ &= \prod\_{k=0}^{y-1} \frac{\rho+ k}{\rho+ \mu} && (\text{cancel } \Gamma(\rho) \text{; one factor of } \rho+ \mu\text{ per } k) \\ &= \prod\_{k=0}^{y-1} \frac{1 + k/\rho}{1 + \mu/\rho} && (\text{divide each numerator and denominator by } \rho) \\ &\rightarrow \prod\_{k=0}^{y-1} \frac{1 + 0}{1 + 0} && (k/\rho\rightarrow 0 \text{ and } \mu/\rho\rightarrow 0 \text{; finitely many factors}) \\ &= 1 && (\text{simplify}) \end{aligned} \\
 >
