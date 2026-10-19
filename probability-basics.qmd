@@ -74,6 +74,24 @@ format:
 
 {{< include pds/_subfiles/_exm-random-choice-auto.qmd >}}
 
+## Odds
+
+<!-- No slidebreak here: the heading shares its slide with the def-odds div. -->
+
+{{< include pds/_subfiles/_def-odds.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-odds-auto.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-log-odds.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-log-odds-auto.qmd >}}
+
 ## Conditional probability
 
 <!-- No slidebreak here: the heading shares its slide with the def-conditional-prob div. -->

@@ -1,0 +1,21 @@
+:::{#exm-odds-auto}
+#### Odds that a car in the Auto data is American
+
+In the Auto data of @exm-random-experiment,
+let $A$ be the [event](#def-event) that a car [chosen at random](#def-random-choice) is American,
+which the data code as `origin == 1`.
+Its [probability](#def-probability) is the fraction of American cars,
+as in @exm-random-choice-auto,
+and its [odds](#def-odds) follow from @def-odds:
+
+```{r}
+#| code-fold: false
+auto <- read.csv("data/auto.csv")
+p_american <- mean(auto$origin == 1)
+c(probability = p_american, odds = p_american / (1 - p_american))
+```
+
+The odds `{r} round(p_american / (1 - p_american), 2)` say that
+an American car is about `{r} round(p_american / (1 - p_american), 1)` times as likely
+as a car of non-American origin.
+:::

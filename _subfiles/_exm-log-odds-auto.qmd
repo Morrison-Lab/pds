@@ -1,0 +1,14 @@
+:::{#exm-log-odds-auto}
+#### Log-odds that a car in the Auto data is American
+
+For the [event](#def-event) $A$ of @exm-odds-auto,
+the [log-odds](#def-log-odds) of @def-log-odds are:
+
+```{r}
+#| code-fold: false
+log(p_american / (1 - p_american))
+```
+
+The log-odds are positive because the [odds](#def-odds) exceed 1:
+an American car is more likely than not.
+:::
