@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 00:13:33 (PDT)
+Last modified: 2026-10-19 03:40:33 (PDT)
 
 ## 1 Defining probabilities
 
@@ -295,21 +295,60 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 > #> [1] 0.5076531
 > ```
 
-## 2 Conditional probability
+## 2 Odds
 
 > **NOTE:**
 >
-> **Definition 13 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\ [\[7\]](#ref-wikipedia_conditional_probability), denoted \\\Pr(A \mid B)\\, is:
+> **Definition 13 (Odds)** Let \\A\\ be an [event](#def-event) with [probability](#def-probability) \\\operatorname{P}(A) \in (0, 1)\\. The **odds** of \\A\\ are [\[7\]](#ref-wikipedia_odds)
+>
+> \\\omega\stackrel{\text{def}}{=}\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)} \in (0, \infty).\\
+
+> **NOTE:**
+>
+> **Example 16 (Odds that a car in the Auto data is American)** In the Auto data of [Example 5](#exm-random-experiment), let \\A\\ be the [event](#def-event) that a car [chosen at random](#def-random-choice) is American, which the data code as `origin == 1`. Its [probability](#def-probability) is the fraction of American cars, as in [Example 15](#exm-random-choice-auto), and its [odds](#def-odds) follow from [Definition 13](#def-odds):
+>
+> ``` r
+> auto <- read.csv("data/auto.csv")
+> p_american <- mean(auto$origin == 1)
+> c(probability = p_american, odds = p_american / (1 - p_american))
+> #> probability        odds 
+> #>    0.625000    1.666667
+> ```
+>
+> The odds 1.67 say that an American car is about 1.7 times as likely as a car of non-American origin.
+
+> **NOTE:**
+>
+> **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an [event](#def-event) \\A\\ with [probability](#def-probability) \\\operatorname{P}(A) \in (0, 1)\\ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
+>
+> \\\eta\stackrel{\text{def}}{=}\operatorname{log}\mathopen{}\left\\\omega\right\\\mathclose{} = \operatorname{log}\mathopen{}\left\\\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\\\mathclose{} \in \mathbb{R}.\\
+
+> **NOTE:**
+>
+> **Example 17 (Log-odds that a car in the Auto data is American)** For the [event](#def-event) \\A\\ of [Example 16](#exm-odds-auto), the [log-odds](#def-log-odds) of [Definition 14](#def-log-odds) are:
+>
+> ``` r
+> log(p_american / (1 - p_american))
+> #> [1] 0.5108256
+> ```
+>
+> The log-odds are positive because the [odds](#def-odds) exceed 1: an American car is more likely than not.
+
+## 3 Conditional probability
+
+> **NOTE:**
+>
+> **Definition 15 (Conditional probability)** For two events \\A\\ and \\B\\ with \\\Pr(B) \> 0\\, the **conditional probability** of \\A\\ given \\B\\ [\[9\]](#ref-wikipedia_conditional_probability), denoted \\\Pr(A \mid B)\\, is:
 >
 > \\\Pr(A \mid B) \stackrel{\text{def}}{=}\frac{\Pr(A \cap B)}{\Pr(B)}\\
 
 > **NOTE:**
 >
-> *Remark*. Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 [\[8, Sec. 2.7.4\]](#ref-ross-probsim).
+> *Remark*. Geometrically and computationally, conditioning on an event \\B\\ can be viewed as *slicing* the sample space to retain only the outcomes compatible with \\B\\, and then *renormalizing* the remaining probabilities (dividing by \\\Pr(B)\\) so that they sum to 1 [\[10, Sec. 2.7.4\]](#ref-ross-probsim).
 
 > **NOTE:**
 >
-> **Example 16 (Rolling a six, given an even roll)** For a fair die ([Example 12](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
+> **Example 18 (Rolling a six, given an even roll)** For a fair die ([Example 12](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{1/6}{3/6} && \text{(substitute the probabilities)} \\ &= \frac{1}{3} && \text{(simplify)} \end{aligned} \\
 
@@ -321,13 +360,13 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Rearranging [Definition 13](#def-conditional-prob):
+> *Proof*. Rearranging [Definition 15](#def-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ \Pr(A \cap B) &= \Pr(A \mid B) \cdot\Pr(B) && \text{(multiply both sides by } \Pr(B) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 17 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
+> **Example 19 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
 > Then, by [Theorem 5](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
@@ -335,7 +374,7 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\ [\[9\]](#ref-wikipedia_law_of_total_probability):
+> **Theorem 6 (Law of total probability)** If \\B_1, B_2, \ldots\\ is a [partition](#def-partition) of the sample space, with \\\Pr(B_i) \> 0\\ for every \\i\\, then for any event \\A\\ [\[11\]](#ref-wikipedia_law_of_total_probability):
 >
 > \\\Pr(A) = \sum\_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)\\
 
@@ -347,19 +386,19 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\ [\[10\]](#ref-wikipedia_bayes_theorem):
+> **Theorem 7 (Bayes’ theorem)** For any two events \\A\\ and \\B\\ with \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\ [\[12\]](#ref-wikipedia_bayes_theorem):
 >
 > \\\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\\
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 13](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
+> *Proof*. By [Definition 15](#def-conditional-prob) and [Theorem 5](#thm-law-conditional-prob):
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(B \cap A)}{\Pr(B)} && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\ &= \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} && \text{(law of conditional probability applied to } \Pr(B \cap A) \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 18 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 20 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let \\D\\ be the event “person has the disease” and \\+\\ be the event “test is positive”. Then:
 >
@@ -379,13 +418,13 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (Turn a conditional around)** [Definition 13](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
+> **Exercise 1 (Turn a conditional around)** [Definition 15](#def-conditional-prob) defines \\\Pr(A \mid B)\\ in terms of \\\Pr(A \cap B)\\. Write the same definition with \\A\\ and \\B\\ swapped, then eliminate \\\Pr(A \cap B)\\ between the two.
 >
 > Your result should express \\\Pr(A \mid B)\\ using \\\Pr(B \mid A)\\, \\\Pr(A)\\ and \\\Pr(B)\\, and none of them jointly.
 
 > **NOTE:**
 >
-> *Solution 1*. Multiplying [Definition 13](#def-conditional-prob) through by its denominator, in each direction,
+> *Solution 1*. Multiplying [Definition 15](#def-conditional-prob) through by its denominator, in each direction,
 >
 > \\\Pr(A \cap B) = \Pr(A \mid B)\\\Pr(B), \qquad \Pr(A \cap B) = \Pr(B \mid A)\\\Pr(A)\\
 >
@@ -395,7 +434,7 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 >
 > Nothing was assumed beyond \\\Pr(A) \> 0\\ and \\\Pr(B) \> 0\\, which the two conditionals need in order to be defined at all.
 >
-> As Hutchinson emphasizes [\[11\]](#ref-hutchinson2024data471), each component carries standard Bayesian terminology:
+> As Hutchinson emphasizes [\[13\]](#ref-hutchinson2024data471), each component carries standard Bayesian terminology:
 >
 > - \\\Pr(A \mid B)\\ is the **posterior probability** of \\A\\ given the observed evidence \\B\\.
 > - \\\Pr(B \mid A)\\ is the **likelihood** of the evidence \\B\\ given \\A\\.
@@ -426,7 +465,7 @@ Last modified: 2026-10-19 00:13:33 (PDT)
 >
 > About **9%**, not the \\99\\\\ most people guess.
 >
-> The reason is the **base rate** [\[12\]](#ref-wikipedia_base_rate_fallacy). Out of \\100{,}000\\ people screened, about \\100\\ have the disease and \\99\\ of them test positive, while \\99{,}900\\ do not have it and about \\999\\ of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.
+> The reason is the **base rate** [\[14\]](#ref-wikipedia_base_rate_fallacy). Out of \\100{,}000\\ people screened, about \\100\\ have the disease and \\99\\ of them test positive, while \\99{,}900\\ do not have it and about \\999\\ of them test positive anyway. The false positives outnumber the true positives ten to one, because there are a thousand times more people available to produce them.
 >
 > The base rate is fundamental to evaluating screening tests and binary classifiers, and it illustrates why raw accuracy can be misleading on rare events.
 
@@ -508,7 +547,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 > **TIP:**
 >
-> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule [\[13\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
+> Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers conditional distributions, the law of total probability, the chain rule of probability, and Bayes’ rule [\[15\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
 
 > **TIP:**
 >
@@ -516,7 +555,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 
 > **NOTE:**
 >
-> 5MinuteAI’s five-minute videos follow the same course [\[14\]](#ref-fiveminuteai_probstat): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
+> 5MinuteAI’s five-minute videos follow the same course [\[16\]](#ref-fiveminuteai_probstat): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
 ## References
 
@@ -546,33 +585,41 @@ Wikipedia contributors, “Probability axioms — Wikipedia, the free encycloped
 
 \[7\]
 
-Wikipedia contributors, “Conditional probability — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_probability>
+Wikipedia contributors, “Odds — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Odds>
 
 \[8\]
 
-K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
+Wikipedia contributors, “Logit — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Logit>
 
 \[9\]
 
-Wikipedia contributors, “Law of total probability — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_total_probability>
+Wikipedia contributors, “Conditional probability — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Conditional_probability>
 
 \[10\]
 
-Wikipedia contributors, “Bayes’ theorem — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Bayes%27_theorem>
+K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
 
 \[11\]
 
-B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
+Wikipedia contributors, “Law of total probability — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_total_probability>
 
 \[12\]
 
-Wikipedia contributors, “Base rate fallacy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Base_rate_fallacy>
+Wikipedia contributors, “Bayes’ theorem — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Bayes%27_theorem>
 
 \[13\]
 
-B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+B. Hutchinson, “DATA 471/571: Machine learning.” Western Washington University, 2024.
 
 \[14\]
+
+Wikipedia contributors, “Base rate fallacy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Base_rate_fallacy>
+
+\[15\]
+
+B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learning) video lectures.” Western Washington University. Accessed: Sep. 28, 2026. \[Online\]. Available: <https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/>
+
+\[16\]
 
 5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
 
