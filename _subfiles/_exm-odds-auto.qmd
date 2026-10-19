@@ -2,11 +2,11 @@
 #### Odds that a car in the Auto data is American
 
 In the Auto data of @exm-random-experiment,
-let $A$ be the event that a car chosen at random is American,
+let $A$ be the [event](#def-event) that a car [chosen at random](#def-random-choice) is American,
 which the data code as `origin == 1`.
-Its probability is the fraction of American cars,
+Its [probability](#def-probability) is the fraction of American cars,
 as in @exm-random-choice-auto,
-and its odds follow from @def-odds:
+and its [odds](#def-odds) follow from @def-odds:
 
 ```{r}
 #| code-fold: false
