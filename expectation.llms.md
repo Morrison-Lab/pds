@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 23:49:20 (PDT)
+Last modified: 2026-10-19 00:13:33 (PDT)
 
 > **NOTE:**
 >
@@ -891,7 +891,7 @@ Last modified: 2026-10-18 23:49:20 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Fix a value \\z\\ with positive probability (discrete case) or positive density (continuous case). Conditioning every probability on \\Z = z\\ gives a probability measure, and the proof of [Theorem 10](#thm-lie) goes through under it, line by line.
+> *Proof*. Choose a value \\z\\ with positive [probability](probability-basics.llms.md#def-probability) ([discrete](random-variables.llms.md#def-discrete-rv) case) or positive [density](random-variables.llms.md#def-pdf) ([continuous](random-variables.llms.md#def-continuous-rv) case). Conditioning every probability on \\Z = z\\ gives a probability measure, and the proof of [Theorem 10](#thm-lie) goes through under it, line by line.
 >
 > **Discrete case.**
 >

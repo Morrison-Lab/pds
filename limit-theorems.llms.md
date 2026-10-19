@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-18 23:49:20 (PDT)
+Last modified: 2026-10-19 00:13:33 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -385,7 +385,7 @@ Last modified: 2026-10-18 23:49:20 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. Fix \\s \> 0\\. The event \\\mathopen{}\left\\\bar{X}\_{n} - \mu\ge \varepsilon\right\\\mathclose{}\\ is the event \\\mathopen{}\left\\e^{sn(\bar{X}\_{n} - \mu)} \ge e^{sn\varepsilon}\right\\\mathclose{}\\, because the exponential is increasing and \\sn \> 0\\. The random variable \\e^{sn(\bar{X}\_{n} - \mu)}\\ is positive, so [Markov’s inequality](#thm-markov) applies:
+> *Proof*. Let the free parameter be \\s \> 0\\. The event \\\mathopen{}\left\\\bar{X}\_{n} - \mu\ge \varepsilon\right\\\mathclose{}\\ is the event \\\mathopen{}\left\\e^{sn(\bar{X}\_{n} - \mu)} \ge e^{sn\varepsilon}\right\\\mathclose{}\\, because the exponential is increasing and \\sn \> 0\\. The random variable \\e^{sn(\bar{X}\_{n} - \mu)}\\ is positive, so [Markov’s inequality](#thm-markov) applies:
 >
 > \\ \begin{aligned} \Pr\mathopen{}\left(\bar{X}\_{n} - \mu\ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left(e^{sn(\bar{X}\_{n} - \mu)} \ge e^{sn\varepsilon}\right)\mathclose{} && \text{(the exponential is increasing)} \\ &\le e^{-sn\varepsilon} \operatorname{E}\mathopen{}\left\[e^{sn(\bar{X}\_{n} - \mu)}\right\]\mathclose{} && \text{(Markov's inequality)} \end{aligned} \\
 >
@@ -486,7 +486,7 @@ Last modified: 2026-10-18 23:49:20 (PDT)
 >
 > \\ \begin{aligned} \operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{} &= \frac{1}{n}\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ \operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{} &= \frac{1}{n^2}\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
 >
-> Fix \\\varepsilon \> 0\\ and let \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar{X}\_{n}\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
+> Let the tolerance be \\\varepsilon \> 0\\ and let the multiplier be \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar{X}\_{n}\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
 >
 > \\ \begin{aligned} 0 \le \Pr\mathopen{}\left(\mathopen{}\left\|\bar{X}\_{n} - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{} &= \Pr\mathopen{}\left(\mathopen{}\left\|\bar{X}\_{n} - \mu\right\|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{} && \text{(definition of \$k\$)}\\ &\le \frac{1}{k^2} && \text{(Chebyshev's inequality)}\\ &= \frac{\sigma^2}{n \varepsilon^2} && \text{(substitute \$k\$)} \end{aligned} \\
 >
