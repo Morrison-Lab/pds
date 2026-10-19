@@ -217,7 +217,7 @@ $$
 \Pr(T > 0)
 &= \sum_{t \in \rangef{T},\, t > 0} \Pr(T = t)
 && \text{(countable additivity)} \\
-&= \sum_{t \in \rangef{T},\, t > 0} \Pr\paren{U = 1 - \tfrac{1}{t + 2}}
+&= \sum_{t \in \rangef{T},\, t > 0} \Prf{U = 1 - \tfrac{1}{t + 2}}
 && \text{(} \set{T = t} = \set{U = 1 - 1/(t + 2)} \text{)} \\
 &= 0
 && \text{(} U \text{ is continuous)}
