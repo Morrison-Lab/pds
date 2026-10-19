@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 11:46:42 (PDT)
+Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
@@ -720,7 +720,7 @@ Last modified: 2026-10-19 11:46:42 (PDT)
 >
 > **Erroneously applying the product-measure formula:**
 >
-> Note that Fubini–Tonelli’s own conditions still hold here (\\h(x,y) = xy\\ is nonnegative and integrable), so the error is not a failure of Fubini–Tonelli itself. Rather, the error is using the *wrong measure*: the joint distribution of \\(X, X)\\ is concentrated on the diagonal \\\\(x, x) : x \in \[0, 1\]\\ \subset \[0, 1\]^2\\, which has Lebesgue measure zero in \\\mathbb{R}^2\\. The joint distribution is therefore **not** absolutely continuous with respect to two-dimensional Lebesgue measure, so **no joint density \\f\_{X,Y}\\ on \\\[0, 1\]^2\\ exists**, which is the reference density [Corollary 3](#cor-fubini-joint) requires.
+> Note that Fubini–Tonelli’s own conditions still hold here (\\h(x,y) = xy\\ is nonnegative and integrable), so the error is not a failure of [Fubini–Tonelli](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli) itself. Rather, the error is using the *wrong measure*: the joint distribution of \\(X, X)\\ is concentrated on the diagonal \\\\(x, x) : x \in \[0, 1\]\\ \subset \[0, 1\]^2\\, which has Lebesgue measure zero in \\\mathbb{R}^2\\. The joint distribution is therefore **not** absolutely continuous with respect to two-dimensional Lebesgue measure, so **no joint density \\f\_{X,Y}\\ on \\\[0, 1\]^2\\ exists**, which is the reference density [Corollary 3](#cor-fubini-joint) requires.
 >
 > The following calculation is what someone would *erroneously* write if they assumed independence and used \\f_X(x)\\f_Y(y)\\ as a “joint density” — a function that does not in fact correspond to the joint distribution of \\(X, X)\\. The marginals \\X \sim \mathrm{Uniform}(0,1)\\ and \\Y \sim \mathrm{Uniform}(0,1)\\ do have densities
 >

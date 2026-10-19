@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-19 11:46:42 (PDT)</p>
+  <p class="date">Last modified: 2026-10-19 14:30:48 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -1149,9 +1149,8 @@ Table&nbsp;3: Examples of exposure units
 <section class="slide level2">
 
 <div id="def-offset" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Offset)</strong></span> For a count outcome with exposure magnitude <span class="math inline">\(t\)</span>, the known term <span class="math inline">\(\log{t}\)</span> in the log-scale decomposition of the mean (<a href="#/thm-exposure-log-scale" class="quarto-xref">8</a>),</p>
-<p><span class="math display">\[\log{\mu} = \log{{\lambda}} + \log{t},\]</span></p>
-<p>is called the <strong>offset</strong>: it shifts <span class="math inline">\(\log{\mu}\)</span> by a known amount, with no unknown coefficient to estimate.</p>
+<p><span class="theorem-title"><strong>Definition 5 (Offset)</strong></span> In a model whose linear component contains a term with no unknown coefficient, that term is called an <strong>offset</strong>: it shifts the linear component by a known amount. In a count model with exposure magnitude <span class="math inline">\(t\)</span>, the offset is the known term <span class="math inline">\(\log{t}\)</span> in the log-scale decomposition of the <a href="./expectation.html#def-expectation">mean</a> (<a href="#/thm-exposure-log-scale" class="quarto-xref">8</a>),</p>
+<p><span class="math display">\[\log{\mu} = \log{{\lambda}} + \log{t}.\]</span></p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The offset needs no covariates: with a single exposure <span class="math inline">\(t\)</span> and an unknown rate <span class="math inline">\({\lambda}\)</span>, <span class="math inline">\(\log{t}\)</span> is already an offset. Regression models for counts keep the same term and add covariate terms beside it (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>

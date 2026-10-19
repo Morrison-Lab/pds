@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 11:46:42 (PDT)
+Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
@@ -400,11 +400,9 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 5 (Offset)** For a count outcome with exposure magnitude \\t\\, the known term \\\log{t}\\ in the log-scale decomposition of the mean ([8](#thm-exposure-log-scale)),
+> **Definition 5 (Offset)** In a model whose linear component contains a term with no unknown coefficient, that term is called an **offset**: it shifts the linear component by a known amount. In a count model with exposure magnitude \\t\\, the offset is the known term \\\log{t}\\ in the log-scale decomposition of the [mean](expectation.llms.md#def-expectation) ([8](#thm-exposure-log-scale)),
 >
-> \\\log{\mu} = \log{{\lambda}} + \log{t},\\
->
-> is called the **offset**: it shifts \\\log{\mu}\\ by a known amount, with no unknown coefficient to estimate.
+> \\\log{\mu} = \log{{\lambda}} + \log{t}.\\
 
 > **NOTE:**
 >

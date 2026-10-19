@@ -2130,6 +2130,10 @@
    "pds/distributions#thm-exposure-log-scale"
   ],
   [
+   "pds/distributions#def-offset",
+   "pds/expectation#def-expectation"
+  ],
+  [
    "pds/distributions#def-responsibility",
    "pds/distributions#thm-mixture-posterior"
   ],
