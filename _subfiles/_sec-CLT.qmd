@@ -20,7 +20,7 @@ Then for every real number $z$
 [@wikipedia_central_limit_theorem]:
 
 $$
-\lim_{n \to \infty} \Pr\paren{\frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar} \le z} = \normcdf(z)
+\lim_{n \to \infty} \Prf{\frac{\sqrt{n}\,(\samplemean{X}{n} - \mean)}{\sdpar} \le z} = \normcdf(z)
 $$
 
 where $\normcdf(z) \eqdef \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$
@@ -49,7 +49,7 @@ and let $S_n \eqdef \sumin X_i$.
 Then for every real number $z$:
 
 $$
-\lim_{n \to \infty} \Pr\paren{\frac{S_n - n\mean}{\sdpar\sqrt{n}} \le z} = \normcdf(z)
+\lim_{n \to \infty} \Prf{\frac{S_n - n\mean}{\sdpar\sqrt{n}} \le z} = \normcdf(z)
 $$
 
 :::

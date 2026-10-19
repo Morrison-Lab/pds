@@ -1091,7 +1091,7 @@ over the countably many values $y \in \rangef{Y}$, so:
 $$
 \ba
 \P(X = x)
-&= \Pr\paren{\bigcup_{y \in \rangef{Y}} \paren{\{X = x\} \cap \{Y = y\}}}
+&= \Prf{\bigcup_{y \in \rangef{Y}} \paren{\{X = x\} \cap \{Y = y\}}}
 && \text{(the events partition } \{X = x\} \text{)} \\
 &= \sum_{y \in \rangef{Y}} \Pr(\{X = x\} \cap \{Y = y\})
 && \text{(countable additivity)} \\
