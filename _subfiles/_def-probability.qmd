@@ -2,7 +2,8 @@
 #### Probability measure (probability function)
 
 A **probability measure**
-(also called a **probability function** [@CaseBerg01, Def. 1.2.4])
+(also called a **probability function**
+[@CaseBerg01, Def. 1.2.4])
 on a [sample space](#def-sample-space) $\samplespace$,
 often denoted $\Pr()$ or $\P()$,
 is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of $\samplespace$
