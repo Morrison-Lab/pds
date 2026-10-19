@@ -709,7 +709,7 @@ which satisfies $\gammafn(x) = (x-1)!$ for positive integers $x$.
 :::{#thm-nb-poisson-limit}
 #### The negative binomial converges to the Poisson
 
-Let $\mean > 0$, and let $Y_\overdisp \sim \NegBin(\mean, \overdisp)$.
+Let the [mean](expectation.qmd#def-expectation) be $\mean > 0$, and let $Y_\overdisp \sim \NegBin(\mean, \overdisp)$.
 Then for each $y \in \set{0, 1, 2, \dots}$,
 as $\overdisp \rightarrow \infty$,
 the negative binomial PMF converges to the [Poisson](#def-poisson) PMF (@eq-pois-pmf):
@@ -720,7 +720,7 @@ $$\lim_{\overdisp \rightarrow \infty} \P(Y_\overdisp = y) = \frac{\mean^{y} e^{-
 
 ::: proof
 
-Choose $y$.
+Choose a count $y$.
 In @def-nb, the first factor $\mean^y / y!$ does not depend on $\overdisp$.
 For the second factor,
 $\gammafn(\overdisp + y) = \gammafn(\overdisp) \prod_{k=0}^{y-1} (\overdisp + k)$,

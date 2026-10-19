@@ -16,7 +16,7 @@ $$ {#eq-hoeffding-one-sided}
 
 ::: proof
 
-Let $s > 0$.
+Let the free parameter be $s > 0$.
 The event $\set{\samplemean{X}{n} - \mean \ge \tolout}$ is the event $\set{e^{sn(\samplemean{X}{n} - \mean)} \ge e^{sn\tolout}}$,
 because the exponential is increasing and $sn > 0$.
 The random variable $e^{sn(\samplemean{X}{n} - \mean)}$ is positive,
