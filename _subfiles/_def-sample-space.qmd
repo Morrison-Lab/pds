@@ -123,7 +123,7 @@ $$A_i \cap A_j = \emptyset \quad \text{for all } i \neq j$$
 ::: {.remark .notes}
 
 The math notes define the same property for sets in general,
-as [pairwise disjoint](https://morrison-lab.github.io/mds/measures.html#def-pairwise-disjoint).
+as [pairwise disjoint](https://morrison-lab.github.io/mds/sets.html#def-pairwise-disjoint).
 
 :::
 
