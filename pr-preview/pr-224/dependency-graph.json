@@ -1179,6 +1179,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#def-log-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-log-odds",
+   "kind": "def",
+   "title": "Log-odds (also called the logit)",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#def-mutually-exclusive",
    "site": "pds",
    "page": "probability-basics",
@@ -1197,6 +1206,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#def-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-odds",
+   "kind": "def",
+   "title": "Odds",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#def-partition",
    "site": "pds",
    "page": "probability-basics",
@@ -1211,7 +1229,7 @@
    "page": "probability-basics",
    "div": "def-probability",
    "kind": "def",
-   "title": "Probability measure",
+   "title": "Probability measure (probability function)",
    "external": false
   },
   {
@@ -2624,12 +2642,32 @@
    "pds/probability-basics#def-procedure"
   ],
   [
+   "pds/probability-basics#def-log-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-log-odds",
+   "pds/probability-basics#def-odds"
+  ],
+  [
+   "pds/probability-basics#def-log-odds",
+   "pds/probability-basics#def-probability"
+  ],
+  [
    "pds/probability-basics#def-mutually-exclusive",
    "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#def-occurs",
    "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-odds",
+   "pds/probability-basics#def-probability"
   ],
   [
    "pds/probability-basics#def-partition",
