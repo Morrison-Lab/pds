@@ -1,0 +1,10 @@
+:::{#def-odds}
+#### Odds
+
+Let $A$ be an [event](#def-event) with [probability](#def-probability) $\P(A) \in (0, 1)$.
+The **odds** of $A$ are
+[@wikipedia_odds]
+
+$$\odds \eqdef \frac{\P(A)}{1 - \P(A)} \in (0, \infty).$$
+
+:::

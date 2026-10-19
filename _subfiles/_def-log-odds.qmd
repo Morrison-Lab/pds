@@ -1,0 +1,11 @@
+:::{#def-log-odds}
+#### Log-odds (also called the logit)
+
+The **log-odds**, also called the **logit**, of an event $A$
+with probability $\P(A) \in (0, 1)$
+are the natural logarithm of its [odds](#def-odds)
+[@wikipedia_logit]:
+
+$$\logodds \eqdef \logf{\odds} = \logf{\frac{\P(A)}{1 - \P(A)}} \in \reals.$$
+
+:::
