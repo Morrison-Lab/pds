@@ -209,7 +209,7 @@ $$
 
 Note that Fubini--Tonelli's own conditions still hold here ($h(x,y) = xy$
 is nonnegative and integrable), so the error is not a failure of
-Fubini--Tonelli itself.
+[Fubini--Tonelli](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli) itself.
 Rather, the error is using the *wrong measure*: the joint distribution
 of $(X, X)$ is concentrated on the diagonal
 $\{(x, x) : x \in [0, 1]\} \subset [0, 1]^2$,
