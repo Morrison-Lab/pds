@@ -528,7 +528,7 @@ $$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$$
 
 ::: proof
 
-Fix a value $z$ with positive probability (discrete case) or positive density (continuous case).
+Choose a value $z$ with positive [probability](probability-basics.qmd#def-probability) ([discrete](random-variables.qmd#def-discrete-rv) case) or positive [density](random-variables.qmd#def-pdf) ([continuous](random-variables.qmd#def-continuous-rv) case).
 Conditioning every probability on $Z = z$ gives a probability measure,
 and the proof of @thm-lie goes through under it, line by line.
 
