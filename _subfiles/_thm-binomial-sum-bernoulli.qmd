@@ -9,7 +9,7 @@ then their sum $S = \sumin X_i$ has the $\dBinf{n, \prob}$ distribution.
 ::: proof
 
 Each $X_i$ is $0$ or $1$, so $S$ takes values in $\set{0, 1, \dots, n}$.
-Let the number of ones be $x \in \set{0, 1, \dots, n}$,
+Let $x \in \set{0, 1, \dots, n}$ be a value of $S$,
 and let $A_x$ be the set of sequences $(\dsn{s}) \in \set{0, 1}^n$
 with exactly $x$ ones.
 The event $\set{S = x}$ is the disjoint union of the events
