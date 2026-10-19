@@ -1,21 +1,15 @@
 :::{#def-probability}
-#### Probability measure
+#### Probability measure (probability function)
 
-A **probability measure** on a [sample space](#def-sample-space) $\samplespace$,
+A **probability measure**
+(also called a **probability function** [@CaseBerg01, Def. 1.2.4])
+on a [sample space](#def-sample-space) $\samplespace$,
 often denoted $\Pr()$ or $\P()$,
 is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of $\samplespace$
 that gives the whole sample space probability 1
 [@wikipedia_probability_space]:
 
 $$\Pr(\samplespace) = 1$$
-
-:::
-
-::: {.remark .notes}
-
-Other sources call a probability measure a **probability function**
-[@CaseBerg01, Def. 1.2.4].
-The two names mean the same thing.
 
 :::
 
