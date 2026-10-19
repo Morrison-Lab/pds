@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 02:11:56 (PDT)
+Last modified: 2026-10-19 02:23:26 (PDT)
 
 ## 1 Defining probabilities
 
@@ -305,7 +305,7 @@ Last modified: 2026-10-19 02:11:56 (PDT)
 
 > **NOTE:**
 >
-> **Example 16 (Odds that a car in the Auto data is American)** In the Auto data of [Example 5](#exm-random-experiment), let \\A\\ be the event that a car chosen at random is American, which the data code as `origin == 1`. Its probability is the fraction of American cars, as in [Example 15](#exm-random-choice-auto), and its odds follow from [Definition 13](#def-odds):
+> **Example 16 (Odds that a car in the Auto data is American)** In the Auto data of [Example 5](#exm-random-experiment), let \\A\\ be the [event](#def-event) that a car [chosen at random](#def-random-choice) is American, which the data code as `origin == 1`. Its [probability](#def-probability) is the fraction of American cars, as in [Example 15](#exm-random-choice-auto), and its [odds](#def-odds) follow from [Definition 13](#def-odds):
 >
 > ``` r
 > auto <- read.csv("data/auto.csv")
@@ -319,20 +319,20 @@ Last modified: 2026-10-19 02:11:56 (PDT)
 
 > **NOTE:**
 >
-> **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an event \\A\\ with probability \\\operatorname{P}(A) \in (0, 1)\\ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
+> **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an [event](#def-event) \\A\\ with [probability](#def-probability) \\\operatorname{P}(A) \in (0, 1)\\ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
 >
 > \\\eta\stackrel{\text{def}}{=}\operatorname{log}\mathopen{}\left\\\omega\right\\\mathclose{} = \operatorname{log}\mathopen{}\left\\\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\\\mathclose{} \in \mathbb{R}.\\
 
 > **NOTE:**
 >
-> **Example 17 (Log-odds that a car in the Auto data is American)** For the event \\A\\ of [Example 16](#exm-odds-auto), the log-odds of [Definition 14](#def-log-odds) are:
+> **Example 17 (Log-odds that a car in the Auto data is American)** For the [event](#def-event) \\A\\ of [Example 16](#exm-odds-auto), the [log-odds](#def-log-odds) of [Definition 14](#def-log-odds) are:
 >
 > ``` r
 > log(p_american / (1 - p_american))
 > #> [1] 0.5108256
 > ```
 >
-> The log-odds is positive because the odds exceed 1: an American car is more likely than not.
+> The log-odds are positive because the [odds](#def-odds) exceed 1: an American car is more likely than not.
 
 ## 3 Conditional probability
 

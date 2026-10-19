@@ -377,7 +377,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-19 02:11:56 (PDT)</p>
+  <p class="date">Last modified: 2026-10-19 02:23:26 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -829,7 +829,7 @@
 <section class="slide level2">
 
 <div id="exm-odds-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 16 (Odds that a car in the Auto data is American)</strong></span> In the Auto data of <a href="#/exm-random-experiment" class="quarto-xref">Example&nbsp;5</a>, let <span class="math inline">\(A\)</span> be the event that a car chosen at random is American, which the data code as <code>origin == 1</code>. Its probability is the fraction of American cars, as in <a href="#/exm-random-choice-auto" class="quarto-xref">Example&nbsp;15</a>, and its odds follow from <a href="#/def-odds" class="quarto-xref">Definition&nbsp;13</a>:</p>
+<p><span class="theorem-title"><strong>Example 16 (Odds that a car in the Auto data is American)</strong></span> In the Auto data of <a href="#/exm-random-experiment" class="quarto-xref">Example&nbsp;5</a>, let <span class="math inline">\(A\)</span> be the <a href="#/def-event">event</a> that a car <a href="#/def-random-choice">chosen at random</a> is American, which the data code as <code>origin == 1</code>. Its <a href="#/def-probability">probability</a> is the fraction of American cars, as in <a href="#/exm-random-choice-auto" class="quarto-xref">Example&nbsp;15</a>, and its <a href="#/def-odds">odds</a> follow from <a href="#/def-odds" class="quarto-xref">Definition&nbsp;13</a>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>auto <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/auto.csv"</span>)</span>
 <span id="cb3-2"><a aria-label="2"></a>p_american <span class="ot">&lt;-</span> <span class="fu">mean</span>(auto<span class="sc">$</span>origin <span class="sc">==</span> <span class="dv">1</span>)</span>
@@ -843,19 +843,19 @@
 <section class="slide level2">
 
 <div id="def-log-odds" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14 (Log-odds (also called the logit))</strong></span> The <strong>log-odds</strong>, also called the <strong>logit</strong>, of an event <span class="math inline">\(A\)</span> with probability <span class="math inline">\(\operatorname{P}(A) \in (0, 1)\)</span> are the natural logarithm of its <a href="#/def-odds">odds</a> <span class="citation" data-cites="wikipedia_logit"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>:</p>
+<p><span class="theorem-title"><strong>Definition 14 (Log-odds (also called the logit))</strong></span> The <strong>log-odds</strong>, also called the <strong>logit</strong>, of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> with <a href="#/def-probability">probability</a> <span class="math inline">\(\operatorname{P}(A) \in (0, 1)\)</span> are the natural logarithm of its <a href="#/def-odds">odds</a> <span class="citation" data-cites="wikipedia_logit"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>:</p>
 <p><span class="math display">\[\eta\stackrel{\text{def}}{=}\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{} = \operatorname{log}\mathopen{}\left\{\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\}\mathclose{} \in \mathbb{R}.\]</span></p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="exm-log-odds-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 17 (Log-odds that a car in the Auto data is American)</strong></span> For the event <span class="math inline">\(A\)</span> of <a href="#/exm-odds-auto" class="quarto-xref">Example&nbsp;16</a>, the log-odds of <a href="#/def-log-odds" class="quarto-xref">Definition&nbsp;14</a> are:</p>
+<p><span class="theorem-title"><strong>Example 17 (Log-odds that a car in the Auto data is American)</strong></span> For the <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> of <a href="#/exm-odds-auto" class="quarto-xref">Example&nbsp;16</a>, the <a href="#/def-log-odds">log-odds</a> of <a href="#/def-log-odds" class="quarto-xref">Definition&nbsp;14</a> are:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a><span class="fu">log</span>(p_american <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_american))</span>
 <span id="cb4-2"><a aria-label="2"></a><span class="co">#&gt; [1] 0.5108256</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>The log-odds is positive because the odds exceed 1: an American car is more likely than not.</p>
+<p>The log-odds are positive because the <a href="#/def-odds">odds</a> exceed 1: an American car is more likely than not.</p>
 </div>
 </section>
 <section id="conditional-probability" class="slide level2" data-number="3">
