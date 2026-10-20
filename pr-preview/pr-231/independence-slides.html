@@ -294,7 +294,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-20 11:40:43 (PDT)</p>
+  <p class="date">Last modified: 2026-10-20 12:26:17 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -325,19 +325,19 @@
 <p><span class="math display">\[\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod_{i=1}^n{\operatorname{P}(X_i=x_i)}\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><strong>Only if.</strong> Take <span class="math inline">\(A_i = \mathopen{}\left\{x_i\right\}\mathclose{}\)</span> for each <span class="math inline">\(i\)</span> in <a href="#/def-indpt" class="quarto-xref">Definition&nbsp;1</a>.</p>
-<p><strong>If.</strong> Let <span class="math inline">\(A_1, \ldots, A_n\)</span> be sets of real numbers, and let <span class="math inline">\(C\)</span> be the set of tuples <span class="math inline">\((x_1, \ldots, x_n)\)</span> with each <span class="math inline">\(x_i \in A_i \cap \mathcal{R}(X_i)\)</span>. Each <a href="./random-variables.html#def-range">range</a> <span class="math inline">\(\mathcal{R}(X_i)\)</span> is countable, so <span class="math inline">\(C\)</span> is countable. Each <span class="math inline">\(X_i\)</span> takes its values in <span class="math inline">\(\mathcal{R}(X_i)\)</span>, so the event <span class="math inline">\(\mathopen{}\left\{X_1 \in A_1, \ldots, X_n \in A_n\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(\mathopen{}\left\{X_1=x_1, \ldots, X_n = x_n\right\}\mathclose{}\)</span> over <span class="math inline">\((x_1, \ldots, x_n) \in C\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span><strong>Only if.</strong> Take <span class="math inline">\(A_i = {\mathopen{}\left\{x_i\right\}\mathclose{}}\)</span> for each <span class="math inline">\(i\)</span> in <a href="#/def-indpt" class="quarto-xref">Definition&nbsp;1</a>.</p>
+<p><strong>If.</strong> Let <span class="math inline">\(A_1, \ldots, A_n\)</span> be sets of real numbers, and let <span class="math inline">\(C\)</span> be the set of tuples <span class="math inline">\((x_1, \ldots, x_n)\)</span> with each <span class="math inline">\(x_i \in A_i \cap \mathcal{R}(X_i)\)</span>. Each <a href="./random-variables.html#def-range">range</a> <span class="math inline">\(\mathcal{R}(X_i)\)</span> is countable, so <span class="math inline">\(C\)</span> is countable. Each <span class="math inline">\(X_i\)</span> takes its values in <span class="math inline">\(\mathcal{R}(X_i)\)</span>, so the event <span class="math inline">\({\mathopen{}\left\{X_1 \in A_1, \ldots, X_n \in A_n\right\}\mathclose{}}\)</span> is the disjoint union of the events <span class="math inline">\({\mathopen{}\left\{X_1=x_1, \ldots, X_n = x_n\right\}\mathclose{}}\)</span> over <span class="math inline">\((x_1, \ldots, x_n) \in C\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X_1 \in A_1, \ldots, X_n \in A_n)
 &amp;= \sum_{(x_1, \ldots, x_n) \in C} \operatorname{P}(X_1=x_1, \ldots, X_n = x_n)
-&amp;&amp; \text{(countable additivity over the disjoint events } \mathopen{}\left\{X_1=x_1, \ldots, X_n = x_n\right\}\mathclose{} \text{)} \\
+&amp;&amp; \text{(countable additivity over the disjoint events } {\mathopen{}\left\{X_1=x_1, \ldots, X_n = x_n\right\}\mathclose{}} \text{)} \\
 &amp;= \sum_{(x_1, \ldots, x_n) \in C} \prod_{i=1}^n{\operatorname{P}(X_i = x_i)}
 &amp;&amp; \text{(the joint PMF factors)} \\
 &amp;= \prod_{i=1}^n{\sum_{x_i \in A_i \cap \mathcal{R}(X_i)} \operatorname{P}(X_i = x_i)}
 &amp;&amp; \text{(a sum over the product set } C \text{ of non-negative products factors)} \\
 &amp;= \prod_{i=1}^n{\Pr(X_i \in A_i)}
-&amp;&amp; \text{(countable additivity over the disjoint events } \mathopen{}\left\{X_i = x_i\right\}\mathclose{} \text{)}
+&amp;&amp; \text{(countable additivity over the disjoint events } {\mathopen{}\left\{X_i = x_i\right\}\mathclose{}} \text{)}
 \end{aligned}
 \]</span></p>
 </div>
@@ -386,7 +386,7 @@
 <section class="slide level2">
 
 <div id="exm-indpt-pmf-fails" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\(\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}\)</span> is <span class="math inline">\(\mathopen{}\left\{X = x\right\}\mathclose{}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise</p>
+<p><span class="theorem-title"><strong>Example 2 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\({\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}}\)</span> is <span class="math inline">\({\mathopen{}\left\{X = x\right\}\mathclose{}}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X = x)\,\Pr(Y = y) &amp;= 0 \cdot 0 \\
@@ -554,18 +554,18 @@
 
 <div id="def-ident" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 3 (Identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>identically distributed</strong> if they all have the same <a href="./random-variables.html#def-cdf">CDF</a>:</p>
-<p><span class="math display">\[\forall i\in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)\]</span></p>
+<p><span class="math display">\[\forall i\in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)\]</span></p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="thm-ident-pmf" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Identically distributed discrete random variables have the same PMF)</strong></span> Discrete random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <a href="#/def-ident">identically distributed</a> if and only if they all have the same <a href="./random-variables.html#def-pmf">PMF</a>: for every <span class="math inline">\(i \in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}\)</span> and every real number <span class="math inline">\(x\)</span>,</p>
+<p><span class="theorem-title"><strong>Theorem 3 (Identically distributed discrete random variables have the same PMF)</strong></span> Discrete random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <a href="#/def-ident">identically distributed</a> if and only if they all have the same <a href="./random-variables.html#def-pmf">PMF</a>: for every <span class="math inline">\(i \in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}\)</span> and every real number <span class="math inline">\(x\)</span>,</p>
 <p><span class="math display">\[\operatorname{P}(X_i = x) = \operatorname{P}(X_1 = x)\]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(F_i(t) \stackrel{\text{def}}{=}\Pr(X_i \le t)\)</span> for the CDF of <span class="math inline">\(X_i\)</span>.</p>
-<p><strong>Only if: the CDF determines the PMF through its jumps.</strong> Choose an index <span class="math inline">\(i\)</span> and a value <span class="math inline">\(x\)</span> of <span class="math inline">\(X_i\)</span>. Every number below <span class="math inline">\(x\)</span> lies in exactly one of the intervals <span class="math inline">\((-\infty, x - 1]\)</span>, <span class="math inline">\((x - 1, x - \tfrac{1}{2}]\)</span>, <span class="math inline">\((x - \tfrac{1}{2}, x - \tfrac{1}{3}]\)</span>, <span class="math inline">\(\ldots\)</span>, so the event <span class="math inline">\(\mathopen{}\left\{X_i &lt; x\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(B_1 \stackrel{\text{def}}{=}\mathopen{}\left\{X_i \le x - 1\right\}\mathclose{}\)</span> and <span class="math inline">\(B_k \stackrel{\text{def}}{=}\mathopen{}\left\{x - \tfrac{1}{k - 1} &lt; X_i \le x - \tfrac{1}{k}\right\}\mathclose{}\)</span> for <span class="math inline">\(k \ge 2\)</span>, and for each <span class="math inline">\(K\)</span>, the events <span class="math inline">\(B_1, \ldots, B_K\)</span> have union <span class="math inline">\(\mathopen{}\left\{X_i \le x - \tfrac{1}{K}\right\}\mathclose{}\)</span>:</p>
+<p><strong>Only if: the CDF determines the PMF through its jumps.</strong> Choose an index <span class="math inline">\(i\)</span> and a value <span class="math inline">\(x\)</span> of <span class="math inline">\(X_i\)</span>. Every number below <span class="math inline">\(x\)</span> lies in exactly one of the intervals <span class="math inline">\((-\infty, x - 1]\)</span>, <span class="math inline">\((x - 1, x - \tfrac{1}{2}]\)</span>, <span class="math inline">\((x - \tfrac{1}{2}, x - \tfrac{1}{3}]\)</span>, <span class="math inline">\(\ldots\)</span>, so the event <span class="math inline">\({\mathopen{}\left\{X_i &lt; x\right\}\mathclose{}}\)</span> is the disjoint union of the events <span class="math inline">\(B_1 \stackrel{\text{def}}{=}{\mathopen{}\left\{X_i \le x - 1\right\}\mathclose{}}\)</span> and <span class="math inline">\(B_k \stackrel{\text{def}}{=}{\mathopen{}\left\{x - \tfrac{1}{k - 1} &lt; X_i \le x - \tfrac{1}{k}\right\}\mathclose{}}\)</span> for <span class="math inline">\(k \ge 2\)</span>, and for each <span class="math inline">\(K\)</span>, the events <span class="math inline">\(B_1, \ldots, B_K\)</span> have union <span class="math inline">\({\mathopen{}\left\{X_i \le x - \tfrac{1}{K}\right\}\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X_i &lt; x)
@@ -579,7 +579,7 @@
 &amp;&amp; \text{(definition of the CDF)}
 \end{aligned}
 \]</span></p>
-<p>The event <span class="math inline">\(\mathopen{}\left\{X_i \le x\right\}\mathclose{}\)</span> is the disjoint union of <span class="math inline">\(\mathopen{}\left\{X_i &lt; x\right\}\mathclose{}\)</span> and <span class="math inline">\(\mathopen{}\left\{X_i = x\right\}\mathclose{}\)</span>, so:</p>
+<p>The event <span class="math inline">\({\mathopen{}\left\{X_i \le x\right\}\mathclose{}}\)</span> is the disjoint union of <span class="math inline">\({\mathopen{}\left\{X_i &lt; x\right\}\mathclose{}}\)</span> and <span class="math inline">\({\mathopen{}\left\{X_i = x\right\}\mathclose{}}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(X_i = x)
@@ -595,7 +595,7 @@
 &amp;&amp; \text{(the same two steps, for } X_1 \text{)}
 \end{aligned}
 \]</span></p>
-<p><strong>If: the PMF determines the CDF through sums.</strong> Let <span class="math inline">\(S\)</span> be the set of values <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{P}(X_1 = u) &gt; 0\)</span>. Since the PMFs are equal, <span class="math inline">\(S\)</span> is also the set of <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{P}(X_i = u) &gt; 0\)</span>, so <span class="math inline">\(S \subseteq \mathcal{R}(X_i)\)</span> and <span class="math inline">\(S \subseteq \mathcal{R}(X_1)\)</span>. For every real <span class="math inline">\(t\)</span>, the event <span class="math inline">\(\mathopen{}\left\{X_i \le t\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(\mathopen{}\left\{X_i = u\right\}\mathclose{}\)</span> over the countably many <span class="math inline">\(u \in \mathcal{R}(X_i)\)</span> with <span class="math inline">\(u \le t\)</span>, so:</p>
+<p><strong>If: the PMF determines the CDF through sums.</strong> Let <span class="math inline">\(S\)</span> be the set of values <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{P}(X_1 = u) &gt; 0\)</span>. Since the PMFs are equal, <span class="math inline">\(S\)</span> is also the set of <span class="math inline">\(u\)</span> with <span class="math inline">\(\operatorname{P}(X_i = u) &gt; 0\)</span>, so <span class="math inline">\(S \subseteq \mathcal{R}(X_i)\)</span> and <span class="math inline">\(S \subseteq \mathcal{R}(X_1)\)</span>. For every real <span class="math inline">\(t\)</span>, the event <span class="math inline">\({\mathopen{}\left\{X_i \le t\right\}\mathclose{}}\)</span> is the disjoint union of the events <span class="math inline">\({\mathopen{}\left\{X_i = u\right\}\mathclose{}}\)</span> over the countably many <span class="math inline">\(u \in \mathcal{R}(X_i)\)</span> with <span class="math inline">\(u \le t\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 F_i(t)
@@ -635,7 +635,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="def-cident" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function <span class="math inline">\(G(y \mid x)\)</span> of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>: for every <span class="math inline">\(i \in \mathopen{}\left\{1, \ldots, n\right\}\mathclose{}\)</span>, every <span class="math inline">\(y\)</span>, and every <span class="math inline">\(x\)</span> with <span class="math inline">\(\Pr(X_i = x) &gt; 0\)</span>,</p>
+<p><span class="theorem-title"><strong>Definition 4 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function <span class="math inline">\(G(y \mid x)\)</span> of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>: for every <span class="math inline">\(i \in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}\)</span>, every <span class="math inline">\(y\)</span>, and every <span class="math inline">\(x\)</span> with <span class="math inline">\(\Pr(X_i = x) &gt; 0\)</span>,</p>
 <p><span class="math display">\[\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)\]</span></p>
 <p>When <span class="math inline">\(X_i\)</span> is continuous, the condition applies at every <span class="math inline">\(x\)</span> with <span class="math inline">\(\operatorname{p}(X_i = x) &gt; 0\)</span>, with <span class="math inline">\(\Pr(Y_i \le y \mid X_i = x)\)</span> computed from densities: the integral of <span class="math inline">\(\operatorname{p}(X_i = x, Y_i = u) / \operatorname{p}(X_i = x)\)</span> over <span class="math inline">\(u \le y\)</span> (a sum over values <span class="math inline">\(u \le y\)</span> when <span class="math inline">\(Y_i\)</span> is discrete).</p>
 </div>
@@ -672,7 +672,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-iid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\(\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 8 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\({\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}}\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
