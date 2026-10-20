@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 14:30:48 (PDT)
+Last modified: 2026-10-20 14:23:12 (PDT)
 
 > **NOTE:**
 >
@@ -24,11 +24,11 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. **Only if.** Take \\A_i = \mathopen{}\left\\x_i\right\\\mathclose{}\\ for each \\i\\ in [Definition 1](#def-indpt).
+> *Proof*. **Only if.** Take \\A_i = {\mathopen{}\left\\x_i\right\\\mathclose{}}\\ for each \\i\\ in [Definition 1](#def-indpt).
 >
-> **If.** Let \\A_1, \ldots, A_n\\ be sets of real numbers, and let \\C\\ be the set of tuples \\(x_1, \ldots, x_n)\\ with each \\x_i \in A_i \cap \mathcal{R}(X_i)\\. Each [range](random-variables.llms.md#def-range) \\\mathcal{R}(X_i)\\ is countable, so \\C\\ is countable. Each \\X_i\\ takes its values in \\\mathcal{R}(X_i)\\, so the event \\\mathopen{}\left\\X_1 \in A_1, \ldots, X_n \in A_n\right\\\mathclose{}\\ is the disjoint union of the events \\\mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{}\\ over \\(x_1, \ldots, x_n) \in C\\:
+> **If.** Let \\A_1, \ldots, A_n\\ be sets of real numbers, and let \\C\\ be the set of tuples \\(x_1, \ldots, x_n)\\ with each \\x_i \in A_i \cap \mathcal{R}(X_i)\\. Each [range](random-variables.llms.md#def-range) \\\mathcal{R}(X_i)\\ is countable, so \\C\\ is countable. Each \\X_i\\ takes its values in \\\mathcal{R}(X_i)\\, so the event \\{\mathopen{}\left\\X_1 \in A_1, \ldots, X_n \in A_n\right\\\mathclose{}}\\ is the disjoint union of the events \\{\mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{}}\\ over \\(x_1, \ldots, x_n) \in C\\:
 >
-> \\ \begin{aligned} \Pr(X_1 \in A_1, \ldots, X_n \in A_n) &= \sum\_{(x_1, \ldots, x_n) \in C} \operatorname{P}(X_1=x_1, \ldots, X_n = x_n) && \text{(countable additivity over the disjoint events } \mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{} \text{)} \\ &= \sum\_{(x_1, \ldots, x_n) \in C} \prod\_{i=1}^n{\operatorname{P}(X_i = x_i)} && \text{(the joint PMF factors)} \\ &= \prod\_{i=1}^n{\sum\_{x_i \in A_i \cap \mathcal{R}(X_i)} \operatorname{P}(X_i = x_i)} && \text{(a sum over the product set } C \text{ of non-negative products factors)} \\ &= \prod\_{i=1}^n{\Pr(X_i \in A_i)} && \text{(countable additivity over the disjoint events } \mathopen{}\left\\X_i = x_i\right\\\mathclose{} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(X_1 \in A_1, \ldots, X_n \in A_n) &= \sum\_{(x_1, \ldots, x_n) \in C} \operatorname{P}(X_1=x_1, \ldots, X_n = x_n) && \text{(countable additivity over the disjoint events } {\mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{}} \text{)} \\ &= \sum\_{(x_1, \ldots, x_n) \in C} \prod\_{i=1}^n{\operatorname{P}(X_i = x_i)} && \text{(the joint PMF factors)} \\ &= \prod\_{i=1}^n{\sum\_{x_i \in A_i \cap \mathcal{R}(X_i)} \operatorname{P}(X_i = x_i)} && \text{(a sum over the product set } C \text{ of non-negative products factors)} \\ &= \prod\_{i=1}^n{\Pr(X_i \in A_i)} && \text{(countable additivity over the disjoint events } {\mathopen{}\left\\X_i = x_i\right\\\mathclose{}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -52,7 +52,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent. For instance, let \\X \sim \text{Uniform}(0, 1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is \\1\\ on \\\[0, 1\]\\, and let \\Y = X\\. For all real numbers \\x\\ and \\y\\, the event \\\mathopen{}\left\\X = x,\\ Y = y\right\\\mathclose{}\\ is \\\mathopen{}\left\\X = x\right\\\mathclose{}\\ if \\y = x\\ and empty otherwise, so it has probability \\0\\, because \\\Pr(X = x) = 0\\ for the [continuous](random-variables.llms.md#def-continuous-rv) \\X\\. Likewise
+> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are \\0\\ at every point, so it would call every pair of continuous random variables independent. For instance, let \\X \sim \text{Uniform}(0, 1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is \\1\\ on \\\[0, 1\]\\, and let \\Y = X\\. For all real numbers \\x\\ and \\y\\, the event \\{\mathopen{}\left\\X = x,\\ Y = y\right\\\mathclose{}}\\ is \\{\mathopen{}\left\\X = x\right\\\mathclose{}}\\ if \\y = x\\ and empty otherwise, so it has probability \\0\\, because \\\Pr(X = x) = 0\\ for the [continuous](random-variables.llms.md#def-continuous-rv) \\X\\. Likewise
 >
 > \\ \begin{aligned} \Pr(X = x)\\\Pr(Y = y) &= 0 \cdot 0 \\ &= 0, \end{aligned} \\
 >
@@ -147,11 +147,11 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > **Definition 3 (Identically distributed)** Random variables \\X_1, \ldots, X_n\\ are **identically distributed** if they all have the same [CDF](random-variables.llms.md#def-cdf):
 >
-> \\\forall i\in \mathopen{}\left\\1, \ldots, n\right\\\mathclose{}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)\\
+> \\\forall i\in {\mathopen{}\left\\1, \ldots, n\right\\\mathclose{}}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)\\
 
 > **NOTE:**
 >
-> **Theorem 3 (Identically distributed discrete random variables have the same PMF)** Discrete random variables \\X_1, \ldots, X_n\\ are [identically distributed](#def-ident) if and only if they all have the same [PMF](random-variables.llms.md#def-pmf): for every \\i \in \mathopen{}\left\\1, \ldots, n\right\\\mathclose{}\\ and every real number \\x\\,
+> **Theorem 3 (Identically distributed discrete random variables have the same PMF)** Discrete random variables \\X_1, \ldots, X_n\\ are [identically distributed](#def-ident) if and only if they all have the same [PMF](random-variables.llms.md#def-pmf): for every \\i \in {\mathopen{}\left\\1, \ldots, n\right\\\mathclose{}}\\ and every real number \\x\\,
 >
 > \\\operatorname{P}(X_i = x) = \operatorname{P}(X_1 = x)\\
 
@@ -159,15 +159,15 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > *Proof*. Write \\F_i(t) \stackrel{\text{def}}{=}\Pr(X_i \le t)\\ for the CDF of \\X_i\\.
 >
-> **Only if: the CDF determines the PMF through its jumps.** Choose an index \\i\\ and a value \\x\\ of \\X_i\\. Every number below \\x\\ lies in exactly one of the intervals \\(-\infty, x - 1\]\\, \\(x - 1, x - \tfrac{1}{2}\]\\, \\(x - \tfrac{1}{2}, x - \tfrac{1}{3}\]\\, \\\ldots\\, so the event \\\mathopen{}\left\\X_i \< x\right\\\mathclose{}\\ is the disjoint union of the events \\B_1 \stackrel{\text{def}}{=}\mathopen{}\left\\X_i \le x - 1\right\\\mathclose{}\\ and \\B_k \stackrel{\text{def}}{=}\mathopen{}\left\\x - \tfrac{1}{k - 1} \< X_i \le x - \tfrac{1}{k}\right\\\mathclose{}\\ for \\k \ge 2\\, and for each \\K\\, the events \\B_1, \ldots, B_K\\ have union \\\mathopen{}\left\\X_i \le x - \tfrac{1}{K}\right\\\mathclose{}\\:
+> **Only if: the CDF determines the PMF through its jumps.** Choose an index \\i\\ and a value \\x\\ of \\X_i\\. Every number below \\x\\ lies in exactly one of the intervals \\(-\infty, x - 1\]\\, \\(x - 1, x - \tfrac{1}{2}\]\\, \\(x - \tfrac{1}{2}, x - \tfrac{1}{3}\]\\, \\\ldots\\, so the event \\{\mathopen{}\left\\X_i \< x\right\\\mathclose{}}\\ is the disjoint union of the events \\B_1 \stackrel{\text{def}}{=}{\mathopen{}\left\\X_i \le x - 1\right\\\mathclose{}}\\ and \\B_k \stackrel{\text{def}}{=}{\mathopen{}\left\\x - \tfrac{1}{k - 1} \< X_i \le x - \tfrac{1}{k}\right\\\mathclose{}}\\ for \\k \ge 2\\, and for each \\K\\, the events \\B_1, \ldots, B_K\\ have union \\{\mathopen{}\left\\X_i \le x - \tfrac{1}{K}\right\\\mathclose{}}\\:
 >
 > \\ \begin{aligned} \Pr(X_i \< x) &= \sum\_{k=1}^{\infty} \Pr(B_k) && \text{(countable additivity)} \\ &= \lim\_{K \to \infty} \sum\_{k=1}^{K} \Pr(B_k) && \text{(definition of an infinite series)} \\ &= \lim\_{K \to \infty} \Pr(X_i \le x - \tfrac{1}{K}) && \text{(finite additivity)} \\ &= \lim\_{K \to \infty} F_i(x - \tfrac{1}{K}) && \text{(definition of the CDF)} \end{aligned} \\
 >
-> The event \\\mathopen{}\left\\X_i \le x\right\\\mathclose{}\\ is the disjoint union of \\\mathopen{}\left\\X_i \< x\right\\\mathclose{}\\ and \\\mathopen{}\left\\X_i = x\right\\\mathclose{}\\, so:
+> The event \\{\mathopen{}\left\\X_i \le x\right\\\mathclose{}}\\ is the disjoint union of \\{\mathopen{}\left\\X_i \< x\right\\\mathclose{}}\\ and \\{\mathopen{}\left\\X_i = x\right\\\mathclose{}}\\, so:
 >
 > \\ \begin{aligned} \operatorname{P}(X_i = x) &= \Pr(X_i \le x) - \Pr(X_i \< x) && \text{(finite additivity)} \\ &= F_i(x) - \Pr(X_i \< x) && \text{(definition of the CDF)} \\ &= F_i(x) - \lim\_{K \to \infty} F_i(x - \tfrac{1}{K}) && \text{(the display above)} \\ &= F_1(x) - \lim\_{K \to \infty} F_1(x - \tfrac{1}{K}) && \text{(} F_i = F_1 \text{)} \\ &= \operatorname{P}(X_1 = x) && \text{(the same two steps, for } X_1 \text{)} \end{aligned} \\
 >
-> **If: the PMF determines the CDF through sums.** Let \\S\\ be the set of values \\u\\ with \\\operatorname{P}(X_1 = u) \> 0\\. Since the PMFs are equal, \\S\\ is also the set of \\u\\ with \\\operatorname{P}(X_i = u) \> 0\\, so \\S \subseteq \mathcal{R}(X_i)\\ and \\S \subseteq \mathcal{R}(X_1)\\. For every real \\t\\, the event \\\mathopen{}\left\\X_i \le t\right\\\mathclose{}\\ is the disjoint union of the events \\\mathopen{}\left\\X_i = u\right\\\mathclose{}\\ over the countably many \\u \in \mathcal{R}(X_i)\\ with \\u \le t\\, so:
+> **If: the PMF determines the CDF through sums.** Let \\S\\ be the set of values \\u\\ with \\\operatorname{P}(X_1 = u) \> 0\\. Since the PMFs are equal, \\S\\ is also the set of \\u\\ with \\\operatorname{P}(X_i = u) \> 0\\, so \\S \subseteq \mathcal{R}(X_i)\\ and \\S \subseteq \mathcal{R}(X_1)\\. For every real \\t\\, the event \\{\mathopen{}\left\\X_i \le t\right\\\mathclose{}}\\ is the disjoint union of the events \\{\mathopen{}\left\\X_i = u\right\\\mathclose{}}\\ over the countably many \\u \in \mathcal{R}(X_i)\\ with \\u \le t\\, so:
 >
 > \\ \begin{aligned} F_i(t) &= \sum\_{u \in \mathcal{R}(X_i),\\ u \le t} \operatorname{P}(X_i = u) && \text{(countable additivity)} \\ &= \sum\_{u \in S,\\ u \le t} \operatorname{P}(X_i = u) && \text{(drop the terms that are } 0 \text{)} \\ &= \sum\_{u \in S,\\ u \le t} \operatorname{P}(X_1 = u) && \text{(the PMFs are equal)} \\ &= \sum\_{u \in \mathcal{R}(X_1),\\ u \le t} \operatorname{P}(X_1 = u) && \text{(restore the terms that are } 0 \text{)} \\ &= F_1(t) && \text{(countable additivity)} \end{aligned} \\
 
@@ -181,7 +181,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Definition 4 (Conditionally identically distributed)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally identically distributed** given random variables \\X_1, \ldots, X_n\\ if the conditional CDF of each \\Y_i\\ given \\X_i = x\\ is one shared function \\G(y \mid x)\\ of \\y\\ and \\x\\: for every \\i \in \mathopen{}\left\\1, \ldots, n\right\\\mathclose{}\\, every \\y\\, and every \\x\\ with \\\Pr(X_i = x) \> 0\\,
+> **Definition 4 (Conditionally identically distributed)** Random variables \\Y_1, \ldots, Y_n\\ are **conditionally identically distributed** given random variables \\X_1, \ldots, X_n\\ if the conditional CDF of each \\Y_i\\ given \\X_i = x\\ is one shared function \\G(y \mid x)\\ of \\y\\ and \\x\\: for every \\i \in {\mathopen{}\left\\1, \ldots, n\right\\\mathclose{}}\\, every \\y\\, and every \\x\\ with \\\Pr(X_i = x) \> 0\\,
 >
 > \\\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)\\
 >
@@ -204,7 +204,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Repeated die rolls)** The results of \\n\\ rolls of the same fair die are IID: the rolls are independent, and each is uniform on \\\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}\\.
+> **Example 8 (Repeated die rolls)** The results of \\n\\ rolls of the same fair die are IID: the rolls are independent, and each is uniform on \\{\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}}\\.
 
 > **NOTE:**
 >

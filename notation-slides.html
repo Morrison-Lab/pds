@@ -294,7 +294,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-19 14:30:48 (PDT)</p>
+  <p class="date">Last modified: 2026-10-20 14:23:12 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -302,7 +302,7 @@
 <ul>
 <li><strong>Random variables</strong> are denoted with uppercase letters (<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>), and their realized (observed) values with the matching lowercase letters (<span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>).</li>
 <li><strong>Probability</strong> is denoted <span class="math inline">\(\Pr()\)</span> or <span class="math inline">\(\operatorname{P}()\)</span> for the probability of an event, or for a probability mass function (PMF), and <span class="math inline">\(\operatorname{p}()\)</span> for a density.</li>
-<li><strong>Expectation</strong> is denoted <span class="math inline">\(\operatorname{E}\mathopen{}\left[\cdot\right]\mathclose{}\)</span>, with square brackets.</li>
+<li><strong>Expectation</strong> is denoted <span class="math inline">\({\operatorname{E}\mathopen{}\left[\cdot\right]\mathclose{}}\)</span>, with square brackets.</li>
 <li><strong>Independence</strong> is denoted <span class="math inline">\(\perp\!\!\!\perp\)</span> (read “<span class="math inline">\(X \perp\!\!\!\perp Y\)</span>” as “<span class="math inline">\(X\)</span> is independent of <span class="math inline">\(Y\)</span>”).</li>
 <li><strong>Complements</strong> of events are denoted <span class="math inline">\(\neg A\)</span> (“not <span class="math inline">\(A\)</span>”).</li>
 <li>We write <span class="math inline">\(\stackrel{\text{def}}{=}\)</span> for an equality that holds <strong>by definition</strong>, to distinguish it from an equality that follows from other facts.</li>
@@ -376,7 +376,7 @@
 <section class="slide level2">
 
 <div id="exm-probabilistic" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (A linear regression model)</strong></span> A linear regression model with Gaussian errors, <span class="math inline">\(Y = \beta_{0} + \beta_{1} x + \nu\)</span> with <span class="math inline">\(\nu\sim \operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}\)</span>, is probabilistic: for each value of the covariate <span class="math inline">\(x\)</span>, it assigns a probability distribution to the outcome <span class="math inline">\(Y\)</span>. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.</p>
+<p><span class="theorem-title"><strong>Example 3 (A linear regression model)</strong></span> A linear regression model with Gaussian errors, <span class="math inline">\(Y = \beta_{0} + \beta_{1} x + u\)</span> with <span class="math inline">\(u\sim {\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}\)</span>, is probabilistic: for each value of the covariate <span class="math inline">\(x\)</span>, it assigns a probability distribution to the outcome <span class="math inline">\(Y\)</span>. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.</p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.</p>

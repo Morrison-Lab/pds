@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-19 14:30:48 (PDT)
+Last modified: 2026-10-20 14:23:12 (PDT)
 
 ## 1 Defining probabilities
 
@@ -75,7 +75,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 6 (Sample space of a die roll)** Rolling a six-sided die once has sample space \\\Omega= \mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}\\.
+> **Example 6 (Sample space of a die roll)** Rolling a six-sided die once has sample space \\\Omega= {\mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}}\\.
 
 > **NOTE:**
 >
@@ -87,7 +87,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (Rolling an even number)** In [Example 6](#exm-sample-space), the event “the roll is even” is \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\.
+> **Example 7 (Rolling an even number)** In [Example 6](#exm-sample-space), the event “the roll is even” is \\A = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\.
 
 > **NOTE:**
 >
@@ -95,7 +95,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Rolling a 4)** In [Example 7](#exm-event), if the die shows 4, the event “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, occurs, because \\4 \in \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and the event “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, does not occur.
+> **Example 8 (Rolling a 4)** In [Example 7](#exm-event), if the die shows 4, the event “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, occurs, because \\4 \in {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and the event “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, does not occur.
 
 > **NOTE:**
 >
@@ -109,7 +109,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Rolling an odd number)** In [Example 7](#exm-event), the complement of the event “the roll is even”, \\A = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, is the event “the roll is odd”, \\\neg A = \mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\.
+> **Example 9 (Rolling an odd number)** In [Example 7](#exm-event), the complement of the event “the roll is even”, \\A = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, is the event “the roll is odd”, \\\neg A = {\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\.
 
 > **NOTE:**
 >
@@ -123,7 +123,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 10 (Low and high rolls)** In [Example 6](#exm-sample-space), the events “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, and “the roll is at least 5”, \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is at most 2”, \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\, are not mutually exclusive: a roll of 2 is in both.
+> **Example 10 (Low and high rolls)** In [Example 6](#exm-sample-space), the events “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, and “the roll is at least 5”, \\{\mathopen{}\left\\5, 6\right\\\mathclose{}}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, are not mutually exclusive: a roll of 2 is in both.
 
 > **NOTE:**
 >
@@ -142,7 +142,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 11 (Partitioning the die roll)** In [Example 6](#exm-sample-space), the events “the roll is even”, \\\mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\, and “the roll is odd”, \\\mathopen{}\left\\1, 3, 5\right\\\mathclose{}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\\mathopen{}\left\\1\right\\\mathclose{}, \mathopen{}\left\\2\right\\\mathclose{}, \ldots, \mathopen{}\left\\6\right\\\mathclose{}\\. The events \\\mathopen{}\left\\1, 2\right\\\mathclose{}\\ and \\\mathopen{}\left\\5, 6\right\\\mathclose{}\\ from [Example 10](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
+> **Example 11 (Partitioning the die roll)** In [Example 6](#exm-sample-space), the events “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and “the roll is odd”, \\{\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\{\mathopen{}\left\\1\right\\\mathclose{}}, {\mathopen{}\left\\2\right\\\mathclose{}}, \ldots, {\mathopen{}\left\\6\right\\\mathclose{}}\\. The events \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\ and \\{\mathopen{}\left\\5, 6\right\\\mathclose{}}\\ from [Example 10](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
 
 > **NOTE:**
 >
@@ -158,7 +158,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > The event “the roll is even” from [Example 7](#exm-event) has probability
 >
-> \\ \begin{aligned} \Pr(\mathopen{}\left\\2, 4, 6\right\\\mathclose{}) &= 3/6 \\ &= 1/2. \end{aligned} \\
+> \\ \begin{aligned} \Pr({\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}) &= 3/6 \\ &= 1/2. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -190,7 +190,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > *The limit.* For each \\n\\:
 >
-> \\ \begin{aligned} \Pr(A_n) &= \Pr\mathopen{}\left(\bigcup\_{i=n}^{\infty} B_i\right)\mathclose{} && \text{(} A_n = \bigcup\_{i=n}^{\infty} B_i \text{)} \\ &= \sum\_{i=n}^{\infty} \Pr(B_i) && \text{(countable additivity; the } B_i \text{ are pairwise disjoint)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(A_n) &= {\Pr\mathopen{}\left(\bigcup\_{i=n}^{\infty} B_i\right)\mathclose{}} && \text{(} A_n = \bigcup\_{i=n}^{\infty} B_i \text{)} \\ &= \sum\_{i=n}^{\infty} \Pr(B_i) && \text{(countable additivity; the } B_i \text{ are pairwise disjoint)} \end{aligned} \\
 >
 > With \\n = 1\\, this says the series \\\sum\_{i=1}^{\infty} \Pr(B_i)\\ has the finite total \\\Pr(A_1)\\. So, for \\n \ge 2\\:
 >
@@ -208,7 +208,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > 1.  For any event \\A\\, \\\Pr(A) \ge 0\\.
 > 2.  The probability of the whole sample space is 1: \\\Pr(\Omega) = 1\\
-> 3.  \\\Pr\\ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\\Pr\mathopen{}\left(\bigcup\_{i=1}^{\infty} A_i\right)\mathclose{} = \sum\_{i=1}^{\infty} \Pr(A_i)\\
+> 3.  \\\Pr\\ is [countably additive](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity): for any [mutually exclusive](#def-mutually-exclusive) events \\A_1, A_2, \ldots\\, \\{\Pr\mathopen{}\left(\bigcup\_{i=1}^{\infty} A_i\right)\mathclose{}} = \sum\_{i=1}^{\infty} \Pr(A_i)\\
 
 > **NOTE:**
 >
@@ -317,7 +317,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an [event](#def-event) \\A\\ with [probability](#def-probability) \\\operatorname{P}(A) \in (0, 1)\\ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
 >
-> \\\eta\stackrel{\text{def}}{=}\operatorname{log}\mathopen{}\left\\\omega\right\\\mathclose{} = \operatorname{log}\mathopen{}\left\\\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\\\mathclose{} \in \mathbb{R}.\\
+> \\\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\\\omega\right\\\mathclose{}} = {\operatorname{log}\mathopen{}\left\\\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\\\mathclose{}} \in \mathbb{R}.\\
 
 > **NOTE:**
 >
@@ -344,7 +344,7 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (Rolling a six, given an even roll)** For a fair die ([Example 12](#exm-probability)), let \\A = \mathopen{}\left\\6\right\\\mathclose{}\\ and \\B = \mathopen{}\left\\2, 4, 6\right\\\mathclose{}\\. Then \\A \cap B = \mathopen{}\left\\6\right\\\mathclose{}\\, so:
+> **Example 18 (Rolling a six, given an even roll)** For a fair die ([Example 12](#exm-probability)), let \\A = {\mathopen{}\left\\6\right\\\mathclose{}}\\ and \\B = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\. Then \\A \cap B = {\mathopen{}\left\\6\right\\\mathclose{}}\\, so:
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{1/6}{3/6} && \text{(substitute the probabilities)} \\ &= \frac{1}{3} && \text{(simplify)} \end{aligned} \\
 
@@ -396,19 +396,19 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 >
 > **Example 20 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
-> Let \\D\\ be the event “person has the disease” and \\+\\ be the event “test is positive”. Then:
+> Let \\D\\ be the event “person has the disease” and \\{+}\\ be the event “test is positive”. Then:
 >
-> - \\\Pr(+ \mid D) = 0.99\\ (sensitivity)
+> - \\\Pr({+}\mid D) = 0.99\\ (sensitivity)
 >
-> - \\\Pr(\neg + \mid \neg D) = 0.99\\ (specificity), so the false positive rate is
+> - \\\Pr({-}\mid \neg D) = 0.99\\ (specificity), so the false positive rate is
 >
->   \\ \begin{aligned} \Pr(+ \mid \neg D) &= 1 - 0.99 \\ &= 0.01 \end{aligned} \\
+>   \\ \begin{aligned} \Pr({+}\mid \neg D) &= 1 - 0.99 \\ &= 0.01 \end{aligned} \\
 >
 > - \\\Pr(D) = 0.07\\ (prevalence)
 >
 > By [Theorem 7](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition \\\\D, \neg D\\\\:
 >
-> \\ \begin{aligned} \Pr(D \mid +) &= \frac{\Pr(+ \mid D) \cdot\Pr(D)}{\Pr(+)} && \text{(Bayes' theorem)} \\ &= \frac{\Pr(+ \mid D) \cdot\Pr(D)}{\Pr(+ \mid D) \cdot\Pr(D) + \Pr(+ \mid \neg D) \cdot\Pr(\neg D)} && \text{(law of total probability)} \\ &= \frac{0.99 \cdot 0.07}{0.99 \cdot 0.07 + 0.01 \cdot 0.93} && \text{(substitute the given values)} \\ &= \frac{0.0693}{0.0693 + 0.0093} && \text{(multiply each term in the numerator and denominator)} \\ &= \frac{0.0693}{0.0786} && \text{(add the denominator's two terms)} \\ &\approx 0.88 && \text{(divide)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(D \mid {+}) &= \frac{\Pr({+}\mid D) \cdot\Pr(D)}{\Pr({+})} && \text{(Bayes' theorem)} \\ &= \frac{\Pr({+}\mid D) \cdot\Pr(D)}{\Pr({+}\mid D) \cdot\Pr(D) + \Pr({+}\mid \neg D) \cdot\Pr(\neg D)} && \text{(law of total probability)} \\ &= \frac{0.99 \cdot 0.07}{0.99 \cdot 0.07 + 0.01 \cdot 0.93} && \text{(substitute the given values)} \\ &= \frac{0.0693}{0.0693 + 0.0093} && \text{(multiply each term in the numerator and denominator)} \\ &= \frac{0.0693}{0.0786} && \text{(add the denominator's two terms)} \\ &\approx 0.88 && \text{(divide)} \end{aligned} \\
 >
 > Even with a highly accurate test (99% sensitive and 99% specific), only about 88% of people who test positive actually have the disease, because the disease prevalence is relatively low (7%).
 
@@ -447,17 +447,17 @@ Last modified: 2026-10-19 14:30:48 (PDT)
 
 > **NOTE:**
 >
-> *Solution 2*. Write \\S\\ for having the disease and \\+\\ for a positive test. The three given numbers are
+> *Solution 2*. Write \\S\\ for having the disease and \\{+}\\ for a positive test. The three given numbers are
 >
-> \\\Pr(+ \mid S) = 0.99, \qquad \Pr(+ \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001\\
+> \\\Pr({+}\mid S) = 0.99, \qquad \Pr({+}\mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001\\
 >
-> [Equation 1](#eq-bayes) needs \\\Pr(+)\\, the overall chance of a positive result. Assemble it with [Theorem 6](#thm-total-prob), splitting on whether the person is sick:
+> [Equation 1](#eq-bayes) needs \\\Pr({+})\\, the overall chance of a positive result. Assemble it with [Theorem 6](#thm-total-prob), splitting on whether the person is sick:
 >
-> \\\begin{aligned} \Pr(+) &= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\ &= (0.99)(0.001) + (0.01)(0.999) \\ &= 0.00099 + 0.00999 \\ &= 0.01098 \end{aligned}\\
+> \\\begin{aligned} \Pr({+}) &= \Pr({+}\mid S)\Pr(S) + \Pr({+}\mid \text{not } S)\Pr(\text{not } S) \\ &= (0.99)(0.001) + (0.01)(0.999) \\ &= 0.00099 + 0.00999 \\ &= 0.01098 \end{aligned}\\
 >
 > Then
 >
-> \\ \begin{aligned} \Pr(S \mid +) &= \frac{\Pr(+ \mid S)\\\Pr(S)}{\Pr(+)} \\ &= \frac{0.00099}{0.01098} \\ &\approx 0.0902 \end{aligned} \\
+> \\ \begin{aligned} \Pr(S \mid {+}) &= \frac{\Pr({+}\mid S)\\\Pr(S)}{\Pr({+})} \\ &= \frac{0.00099}{0.01098} \\ &\approx 0.0902 \end{aligned} \\
 >
 > About **9%**, not the \\99\\\\ most people guess.
 >

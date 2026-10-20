@@ -106,9 +106,9 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33c90a2a9295b6ab69d7f48c49ac5fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-c086fb9aa89bc5726abb3173de9057c1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-33c90a2a9295b6ab69d7f48c49ac5fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e2e99260caf587923434b4f4fad7f843.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-21d6635088db142e2cbd7c5b96a7a6ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e2e99260caf587923434b4f4fad7f843.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/code-language-labels-1.0.2/code-language-labels.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/callouty-theorem-1.4.2/callouty-theorem.js"></script>
 <link href="site_libs/quarto-contrib/callouty-theorem-1.4.2/callouty-theorem.css" rel="stylesheet">
@@ -236,6 +236,36 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-proof.callout {
+  border-left-color: #37474F;
+}
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
+}
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-lem.callout {
+  border-left-color: #1565C0;
+}
+div.callout-lem.callout-style-default .callout-header {
+  background-color: rgba(21, 101, 192, 0.13);
+}
+div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-exm.callout {
   border-left-color: #6A1B9A;
 }
@@ -246,15 +276,15 @@ div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-remark.callout {
-  border-left-color: #AD1457;
+div.callout-def.callout {
+  border-left-color: #1B5E20;
 }
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
+div.callout-def.callout-style-default .callout-header {
+  background-color: rgba(27, 94, 32, 0.13);
 }
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-tbl.callout {
   border-left-color: #757575;
@@ -280,66 +310,6 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   content: '\f144' !important;
   background-image: none;
 }
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
-}
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
-}
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-def.callout {
-  border-left-color: #1B5E20;
-}
-div.callout-def.callout-style-default .callout-header {
-  background-color: rgba(27, 94, 32, 0.13);
-}
-div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-prp.callout {
-  border-left-color: #827717;
-}
-div.callout-prp.callout-style-default .callout-header {
-  background-color: rgba(130, 119, 23, 0.13);
-}
-div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-lem.callout {
-  border-left-color: #1565C0;
-}
-div.callout-lem.callout-style-default .callout-header {
-  background-color: rgba(21, 101, 192, 0.13);
-}
-div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-fig.callout {
   border-left-color: #757575;
 }
@@ -360,6 +330,16 @@ div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-prp.callout {
+  border-left-color: #827717;
+}
+div.callout-prp.callout-style-default .callout-header {
+  background-color: rgba(130, 119, 23, 0.13);
+}
+div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-solution.callout {
   border-left-color: #4E342E;
 }
@@ -369,6 +349,26 @@ div.callout-solution.callout-style-default .callout-header {
 div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
+}
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
+}
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -793,7 +793,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-10-19 14:30:48 (PDT)</p>
+      <p class="date">Last modified: 2026-10-20 14:23:12 (PDT)</p>
     </div>
   </div>
   
@@ -984,10 +984,10 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Binomial distribution)</strong></span> A <a href="./random-variables.html#def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>binomial distribution</strong> with number of trials <span class="math inline">\(n \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> and event probability <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\)</span> <span class="citation" data-cites="wikipedia_binomial_distribution"><a href="#ref-wikipedia_binomial_distribution" role="doc-biblioref">[1]</a></span>, if:</p>
+<p><span class="theorem-title"><strong>Definition 1 (Binomial distribution)</strong></span> A <a href="./random-variables.html#def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>binomial distribution</strong> with number of trials <span class="math inline">\(n \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> and event probability <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span> <span class="citation" data-cites="wikipedia_binomial_distribution"><a href="#ref-wikipedia_binomial_distribution" role="doc-biblioref">[1]</a></span>, if:</p>
 <p><span id="eq-binom-pmf"><span class="math display">\[
 \operatorname{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x},
-\quad x \in \mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}
+\quad x \in {\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}}
 \tag{1}\]</span></span></p>
 <p>where <span class="math inline">\(\binom{n}{x} = \frac{n!}{x!\,(n - x)!}\)</span> is the number of ways to choose <span class="math inline">\(x\)</span> of the <span class="math inline">\(n\)</span> trials.</p>
 </div>
@@ -1007,7 +1007,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span><span class="citation" data-cites="CaseBerg01">Casella and Berger <a href="#ref-CaseBerg01" role="doc-biblioref">[2, Sec. 3.2]</a></span> defines the binomial distribution the same way. With <span class="math inline">\(n = 1\)</span>, <a href="#eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a> is the <a href="./random-variables.html#def-bernoulli">Bernoulli PMF</a>: <span class="math inline">\(\operatorname{Bin}\mathopen{}\left(1, \pi\right)\mathclose{}\)</span> and <span class="math inline">\(\operatorname{Ber}(\pi)\)</span> are the same distribution.</p>
+<p><span class="proof-title"><em>Remark</em>. </span><span class="citation" data-cites="CaseBerg01">Casella and Berger <a href="#ref-CaseBerg01" role="doc-biblioref">[2, Sec. 3.2]</a></span> defines the binomial distribution the same way. With <span class="math inline">\(n = 1\)</span>, <a href="#eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a> is the <a href="./random-variables.html#def-bernoulli">Bernoulli PMF</a>: <span class="math inline">\({\operatorname{Bin}\mathopen{}\left(1, \pi\right)\mathclose{}}\)</span> and <span class="math inline">\(\operatorname{Ber}(\pi)\)</span> are the same distribution.</p>
 </div>
 </div>
 </div>
@@ -1025,7 +1025,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-binomial-pmf" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (Two heads in three flips)</strong></span> Let <span class="math inline">\(X \sim \operatorname{Bin}\mathopen{}\left(3, 1/2\right)\mathclose{}\)</span> be the number of heads in three flips of a fair coin. By <a href="#eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a>:</p>
+<p><span class="theorem-title"><strong>Example 2 (Two heads in three flips)</strong></span> Let <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(3, 1/2\right)\mathclose{}}\)</span> be the number of heads in three flips of a fair coin. By <a href="#eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(X = 2)
@@ -1057,7 +1057,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-binomial-not" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (Draws without replacement are not binomial)</strong></span> An urn holds two red balls and two blue balls. Draw two balls without replacement, and let <span class="math inline">\(X\)</span> be the number of red balls drawn. Each draw is red with probability <span class="math inline">\(1/2\)</span>, but <span class="math inline">\(X \not\sim \operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}\)</span>, because the draws are not <a href="./independence.html#def-indpt">independent</a>:</p>
+<p><span class="theorem-title"><strong>Example 3 (Draws without replacement are not binomial)</strong></span> An urn holds two red balls and two blue balls. Draw two balls without replacement, and let <span class="math inline">\(X\)</span> be the number of red balls drawn. Each draw is red with probability <span class="math inline">\(1/2\)</span>, but <span class="math inline">\(X \not\sim {\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}}\)</span>, because the draws are not <a href="./independence.html#def-indpt">independent</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(X = 2)
@@ -1069,7 +1069,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 &amp;&amp; \text{(multiply)}
 \end{aligned}
 \]</span></p>
-<p>whereas, by <a href="#eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a>, a <span class="math inline">\(\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}\)</span> random variable has</p>
+<p>whereas, by <a href="#eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a>, a <span class="math inline">\({\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}}\)</span> random variable has</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(X = 2)
@@ -1096,7 +1096,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-binomial-sum-bernoulli" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (A sum of IID Bernoulli variables is binomial)</strong></span> If <span class="math inline">\(X_1, \ldots, X_n\)</span> are <a href="./independence.html#def-iid">IID</a> <span class="math inline">\(\operatorname{Ber}(\pi)\)</span> random variables, then their sum <span class="math inline">\(S = \sum_{i=1}^nX_i\)</span> has the <span class="math inline">\(\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\)</span> distribution.</p>
+<p><span class="theorem-title"><strong>Theorem 1 (A sum of IID Bernoulli variables is binomial)</strong></span> If <span class="math inline">\(X_1, \ldots, X_n\)</span> are <a href="./independence.html#def-iid">IID</a> <span class="math inline">\(\operatorname{Ber}(\pi)\)</span> random variables, then their sum <span class="math inline">\(S = \sum_{i=1}^nX_i\)</span> has the <span class="math inline">\({\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span> distribution.</p>
 </div>
 </div>
 </div>
@@ -1114,7 +1114,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Each <span class="math inline">\(X_i\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>, so <span class="math inline">\(S\)</span> takes values in <span class="math inline">\(\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}\)</span>. Let <span class="math inline">\(x \in \mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}\)</span> be a value of <span class="math inline">\(S\)</span>, and let <span class="math inline">\(A_x\)</span> be the set of sequences <span class="math inline">\((s_1, \ldots, s_n) \in \mathopen{}\left\{0, 1\right\}\mathclose{}^n\)</span> with exactly <span class="math inline">\(x\)</span> ones. The event <span class="math inline">\(\mathopen{}\left\{S = x\right\}\mathclose{}\)</span> is the disjoint union of the events <span class="math inline">\(\mathopen{}\left\{X_1 = s_1, \ldots, X_n = s_n\right\}\mathclose{}\)</span> over <span class="math inline">\((s_1, \ldots, s_n) \in A_x\)</span>. For one such sequence:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Each <span class="math inline">\(X_i\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>, so <span class="math inline">\(S\)</span> takes values in <span class="math inline">\({\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}}\)</span>. Let <span class="math inline">\(x \in {\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}}\)</span> be a value of <span class="math inline">\(S\)</span>, and let <span class="math inline">\(A_x\)</span> be the set of sequences <span class="math inline">\((s_1, \ldots, s_n) \in {\mathopen{}\left\{0, 1\right\}\mathclose{}}^n\)</span> with exactly <span class="math inline">\(x\)</span> ones. The event <span class="math inline">\({\mathopen{}\left\{S = x\right\}\mathclose{}}\)</span> is the disjoint union of the events <span class="math inline">\({\mathopen{}\left\{X_1 = s_1, \ldots, X_n = s_n\right\}\mathclose{}}\)</span> over <span class="math inline">\((s_1, \ldots, s_n) \in A_x\)</span>. For one such sequence:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n)
@@ -1158,7 +1158,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-binomial-sum-bernoulli" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (Counting treatment responders)</strong></span> Suppose five patients each respond to a treatment with probability <span class="math inline">\(0.2\)</span>, independently of one another, and let <span class="math inline">\(X_i = 1\)</span> if patient <span class="math inline">\(i\)</span> responds and <span class="math inline">\(X_i = 0\)</span> otherwise. By <a href="#thm-binomial-sum-bernoulli" class="quarto-xref">Theorem&nbsp;1</a>, the number of responders <span class="math inline">\(S = \sum_{i=1}^5 X_i\)</span> is <span class="math inline">\(\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}\)</span>, so the probability that nobody responds is:</p>
+<p><span class="theorem-title"><strong>Example 4 (Counting treatment responders)</strong></span> Suppose five patients each respond to a treatment with probability <span class="math inline">\(0.2\)</span>, independently of one another, and let <span class="math inline">\(X_i = 1\)</span> if patient <span class="math inline">\(i\)</span> responds and <span class="math inline">\(X_i = 0\)</span> otherwise. By <a href="#thm-binomial-sum-bernoulli" class="quarto-xref">Theorem&nbsp;1</a>, the number of responders <span class="math inline">\(S = \sum_{i=1}^5 X_i\)</span> is <span class="math inline">\({\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}}\)</span>, so the probability that nobody responds is:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{P}(S = 0)
@@ -1187,10 +1187,10 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-binomial-moments" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (Mean and variance of the binomial distribution)</strong></span> If <span class="math inline">\(X \sim \operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}\)</span>, then:</p>
+<p><span class="theorem-title"><strong>Theorem 2 (Mean and variance of the binomial distribution)</strong></span> If <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span>, then:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = n\pi\)</span></li>
-<li><span class="math inline">\(\operatorname{Var}\mathopen{}\left(X\right)\mathclose{} = n\pi(1 - \pi)\)</span></li>
+<li><span class="math inline">\({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} = n\pi\)</span></li>
+<li><span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = n\pi(1 - \pi)\)</span></li>
 </ul>
 </div>
 </div>
@@ -1212,10 +1212,10 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="proof-title"><em>Proof</em>. </span>The mean and variance of <span class="math inline">\(X\)</span> depend only on its distribution, so by <a href="#thm-binomial-sum-bernoulli" class="quarto-xref">Theorem&nbsp;1</a> we can compute them for <span class="math inline">\(S = \sum_{i=1}^nX_i\)</span>, where <span class="math inline">\(X_1, \ldots, X_n\)</span> are IID <span class="math inline">\(\operatorname{Ber}(\pi)\)</span>. For the mean, apply <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a> <span class="math inline">\(n - 1\)</span> times, then the <a href="./expectation.html#thm-bernoulli-mean">Bernoulli mean</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[S\right]\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\sum_{i=1}^nX_i\right]\mathclose{}
+{\operatorname{E}\mathopen{}\left[S\right]\mathclose{}}
+&amp;= {\operatorname{E}\mathopen{}\left[\sum_{i=1}^nX_i\right]\mathclose{}}
 &amp;&amp; \text{(definition of } S \text{)} \\
-&amp;= \sum_{i=1}^n\operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}
+&amp;= \sum_{i=1}^n{\operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}}
 &amp;&amp; \text{(linearity of expectation)} \\
 &amp;= \sum_{i=1}^n\pi
 &amp;&amp; \text{(Bernoulli mean)} \\
@@ -1226,13 +1226,13 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p>For the variance, apply the <a href="./variance-covariance.html#thm-var-lincom">variance of a linear combination</a> with <span class="math inline">\(a_1 = \cdots = a_n = 1\)</span>, then <a href="./variance-covariance.html#cor-vcov-indpt-diagonal">independent components give a diagonal variance matrix</a>, then the <a href="./variance-covariance.html#exm-variance-bernoulli">Bernoulli variance</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(S\right)\mathclose{}
-&amp;= \sum_{i=1}^n\sum_{j=1}^n \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}
+{\operatorname{Var}\mathopen{}\left(S\right)\mathclose{}}
+&amp;= \sum_{i=1}^n\sum_{j=1}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}
 &amp;&amp; \text{(variance of a linear combination with } a_i = 1 \text{)} \\
-&amp;= \sum_{i=1}^n\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}
-&amp;&amp; \text{(} \operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0 \text{ for } i \neq j \text{, by independence)} \\
-&amp;= \sum_{i=1}^n\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}
-&amp;&amp; \text{(} \operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{} = \operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{} \text{)} \\
+&amp;= \sum_{i=1}^n{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}}
+&amp;&amp; \text{(} {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0 \text{ for } i \neq j \text{, by independence)} \\
+&amp;= \sum_{i=1}^n{\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}
+&amp;&amp; \text{(} {\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}} \text{)} \\
 &amp;= \sum_{i=1}^n\pi(1 - \pi)
 &amp;&amp; \text{(Bernoulli variance)} \\
 &amp;= n\pi(1 - \pi)
@@ -1256,12 +1256,12 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-binomial-moments" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (Expected number of responders)</strong></span> In <a href="#exm-binomial-sum-bernoulli" class="quarto-xref">Example&nbsp;4</a>, <span class="math inline">\(S \sim \operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}\)</span>. By <a href="#thm-binomial-moments" class="quarto-xref">Theorem&nbsp;2</a>:</p>
+<p><span class="theorem-title"><strong>Example 5 (Expected number of responders)</strong></span> In <a href="#exm-binomial-sum-bernoulli" class="quarto-xref">Example&nbsp;4</a>, <span class="math inline">\(S \sim {\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}}\)</span>. By <a href="#thm-binomial-moments" class="quarto-xref">Theorem&nbsp;2</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[S\right]\mathclose{} &amp;= 5 \cdot 0.2 &amp;&amp; \text{(} n\pi\text{)} \\
+{\operatorname{E}\mathopen{}\left[S\right]\mathclose{}} &amp;= 5 \cdot 0.2 &amp;&amp; \text{(} n\pi\text{)} \\
 &amp;= 1 &amp;&amp; \text{(multiply)} \\
-\operatorname{Var}\mathopen{}\left(S\right)\mathclose{} &amp;= 5 \cdot 0.2 \cdot(1 - 0.2) &amp;&amp; \text{(} n\pi(1 - \pi) \text{)} \\
+{\operatorname{Var}\mathopen{}\left(S\right)\mathclose{}} &amp;= 5 \cdot 0.2 \cdot(1 - 0.2) &amp;&amp; \text{(} n\pi(1 - \pi) \text{)} \\
 &amp;= 0.8 &amp;&amp; \text{(multiply)}
 \end{aligned}
 \]</span></p>
@@ -1287,7 +1287,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div class="callout-body-container callout-body">
 <div id="def-poisson" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Poisson distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Poisson distribution</strong> with mean parameter <span class="math inline">\(\mu&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span> <span class="citation" data-cites="wikipedia_poisson_distribution"><a href="#ref-wikipedia_poisson_distribution" role="doc-biblioref">[3]</a></span>, if:</p>
-<p><span id="eq-pois-pmf"><span class="math display">\[\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} \tag{2}\]</span></span></p>
+<p><span id="eq-pois-pmf"><span class="math display">\[\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}} \tag{2}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -1344,7 +1344,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="proof-title"><em>Solution 1</em>. </span><span class="math display">\[
 \begin{aligned}
 \mathcal{R}(Y)
-&amp;= \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{} \\
+&amp;= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}} \\
 &amp;= \mathbb{N}
 \end{aligned}
 \]</span></p>
@@ -1630,10 +1630,10 @@ Figure&nbsp;2: Poisson CDFs
 &amp;= \mu&amp;&amp; (\text{simplify})
 \end{aligned}
 \]</span></p>
-<p><strong>Variance.</strong> The same steps, canceling two factors instead of one, give <span class="math inline">\(\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}\)</span>:</p>
+<p><strong>Variance.</strong> The same steps, canceling two factors instead of one, give <span class="math inline">\({\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}
+{\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}}
 &amp;= \sum_{x=2}^\infty x(x-1) \cdot \frac{\mu^x e^{-\mu}}{x!} &amp;&amp; (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\
 &amp;= \sum_{x=2}^\infty \frac{\mu^x e^{-\mu}}{(x-2)!} &amp;&amp; (\text{cancel } x(x-1) \text{ against } x!) \\
 &amp;= \mu^2 \cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} &amp;&amp; (\text{factor out } \mu^2 \text{; } y \stackrel{\text{def}}{=}x - 2) \\
@@ -1644,8 +1644,8 @@ Figure&nbsp;2: Poisson CDFs
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}(X)
-&amp;= \operatorname{E}\mathopen{}\left[X^2\right]\mathclose{} - {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2 &amp;&amp; (\text{simplified expression for variance}) \\
-&amp;= \operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{} + \operatorname{E}\mathopen{}\left[X\right]\mathclose{} - {\mathopen{}\left(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\right)\mathclose{}}^2 &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
+&amp;= {\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{}} - {\mathopen{}\left({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2} &amp;&amp; (\text{simplified expression for variance}) \\
+&amp;= {\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}} + {\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} - {\mathopen{}\left({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2} &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
 &amp;= \mu^2 + \mu- \mu^2 &amp;&amp; (\text{substitute}) \\
 &amp;= \mu&amp;&amp; (\text{simplify})
 \end{aligned}
@@ -1670,10 +1670,10 @@ Figure&nbsp;2: Poisson CDFs
 <div id="thm-poisson-mode" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 5 (Ratio of consecutive Poisson probabilities, and the mode)</strong></span> If <span class="math inline">\(X \sim \operatorname{Pois}(\mu)\)</span>, then:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\)</span> for <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span></li>
-<li>For <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> with <span class="math inline">\(x &lt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &gt; \operatorname{P}(X = x-1)\)</span></li>
+<li><span class="math inline">\(\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\)</span> for <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span></li>
+<li>For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> with <span class="math inline">\(x &lt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &gt; \operatorname{P}(X = x-1)\)</span></li>
 <li>For <span class="math inline">\(x = \mu\)</span> (possible only when <span class="math inline">\(\mu\)</span> is an integer), <span class="math inline">\(\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\)</span></li>
-<li>For <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span> with <span class="math inline">\(x &gt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &lt; \operatorname{P}(X = x-1)\)</span></li>
+<li>For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> with <span class="math inline">\(x &gt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &lt; \operatorname{P}(X = x-1)\)</span></li>
 <li>If <span class="math inline">\(\mu\)</span> is not an integer, <span class="math inline">\(\arg \max_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>; if <span class="math inline">\(\mu\)</span> is an integer, the maximum is attained at both <span class="math inline">\(x = \mu- 1\)</span> and <span class="math inline">\(x = \mu\)</span></li>
 </ul>
 </div>
@@ -1693,7 +1693,7 @@ Figure&nbsp;2: Poisson CDFs
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><strong>Ratio of consecutive probabilities.</strong> For <span class="math inline">\(x \in \mathopen{}\left\{1, 2, \dots\right\}\mathclose{}\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span><strong>Ratio of consecutive probabilities.</strong> For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x - 1)}
@@ -1859,7 +1859,7 @@ Table&nbsp;3: Examples of exposure units
 <div class="callout-body-container callout-body">
 <div id="def-event-rate" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4 (Event rate)</strong></span> For a count <span class="math inline">\(Y\)</span> observed over a fixed, known <a href="#def-exposure">exposure magnitude</a> <span class="math inline">\(t &gt; 0\)</span>, the <strong>event rate</strong>, denoted <span class="math inline">\({\lambda}\)</span>, is the mean of <span class="math inline">\(Y\)</span> divided by the exposure magnitude:</p>
-<p><span id="eq-def-event-rate"><span class="math display">\[{\lambda}\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}{t} \tag{4}\]</span></span></p>
+<p><span id="eq-def-event-rate"><span class="math display">\[{\lambda}\stackrel{\text{def}}{=}\frac{{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}}{t} \tag{4}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -1895,7 +1895,7 @@ Table&nbsp;3: Examples of exposure units
 <div id="callout-34" class="callout-34-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mean-vs-event-rate" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Transformation function from event rate to mean)</strong></span> If a count <span class="math inline">\(Y\)</span> is observed over exposure magnitude <span class="math inline">\(t &gt; 0\)</span> with event rate <span class="math inline">\({\lambda}\)</span>, then its mean <span class="math inline">\(\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}\)</span> is:</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Transformation function from event rate to mean)</strong></span> If a count <span class="math inline">\(Y\)</span> is observed over exposure magnitude <span class="math inline">\(t &gt; 0\)</span> with event rate <span class="math inline">\({\lambda}\)</span>, then its mean <span class="math inline">\(\mu\stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}\)</span> is:</p>
 <p><span id="eq-lambda-to-mu"><span class="math display">\[\mu= {\lambda}\cdot t \tag{5}\]</span></span></p>
 </div>
 </div>
@@ -1917,9 +1917,9 @@ Table&nbsp;3: Examples of exposure units
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#def-event-rate" class="quarto-xref">Definition&nbsp;4</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\lambda}&amp;\stackrel{\text{def}}{=}\frac{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}{t} &amp;&amp; (\text{definition of event rate}) \\
-\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} &amp;= {\lambda}\cdot t &amp;&amp; (\text{multiply both sides by } t &gt; 0) \\
-\mu&amp;= {\lambda}\cdot t &amp;&amp; (\mu\stackrel{\text{def}}{=}\operatorname{E}\mathopen{}\left[Y\right]\mathclose{})
+{\lambda}&amp;\stackrel{\text{def}}{=}\frac{{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}}{t} &amp;&amp; (\text{definition of event rate}) \\
+{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}} &amp;= {\lambda}\cdot t &amp;&amp; (\text{multiply both sides by } t &gt; 0) \\
+\mu&amp;= {\lambda}\cdot t &amp;&amp; (\mu\stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}})
 \end{aligned}
 \]</span></p>
 </div>
@@ -1964,8 +1964,8 @@ Table&nbsp;3: Examples of exposure units
 <div id="callout-37" class="callout-37-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-non-exposed" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (No exposure means no expected events)</strong></span> For each exposure magnitude <span class="math inline">\(t \ge 0\)</span>, let <span class="math inline">\(Y_t\)</span> be the count observed over exposure <span class="math inline">\(t\)</span>. If the mean count is proportional to the exposure magnitude, <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = {\lambda}\cdot t\)</span> for all <span class="math inline">\(t \ge 0\)</span> with one finite rate <span class="math inline">\({\lambda}\)</span>, then there are no expected events without exposure:</p>
-<p><span class="math display">\[\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\]</span></p>
+<p><span class="theorem-title"><strong>Theorem 7 (No exposure means no expected events)</strong></span> For each exposure magnitude <span class="math inline">\(t \ge 0\)</span>, let <span class="math inline">\(Y_t\)</span> be the count observed over exposure <span class="math inline">\(t\)</span>. If the mean count is proportional to the exposure magnitude, <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}\cdot t\)</span> for all <span class="math inline">\(t \ge 0\)</span> with one finite rate <span class="math inline">\({\lambda}\)</span>, then there are no expected events without exposure:</p>
+<p><span class="math display">\[{\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\]</span></p>
 </div>
 </div>
 </div>
@@ -1985,8 +1985,8 @@ Table&nbsp;3: Examples of exposure units
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}
-&amp;= {\lambda}\cdot 0 &amp;&amp; (\text{evaluate } \operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = {\lambda}t \text{ at } t = 0) \\
+{\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}}
+&amp;= {\lambda}\cdot 0 &amp;&amp; (\text{evaluate } {\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}t \text{ at } t = 0) \\
 &amp;= 0 &amp;&amp; (\text{multiplication by zero; } {\lambda}\text{ is finite})
 \end{aligned}
 \]</span></p>
@@ -2007,7 +2007,7 @@ Table&nbsp;3: Examples of exposure units
 <div id="callout-39" class="callout-39-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The hypothesis carries the content here. <a href="#def-event-rate" class="quarto-xref">Definition&nbsp;4</a> alone cannot give <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\)</span>, since <span class="math inline">\({\lambda}= \operatorname{E}\mathopen{}\left[Y\right]\mathclose{}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\({\lambda}\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The hypothesis carries the content here. <a href="#def-event-rate" class="quarto-xref">Definition&nbsp;4</a> alone cannot give <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\)</span>, since <span class="math inline">\({\lambda}= {\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\({\lambda}\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2025,7 +2025,7 @@ Table&nbsp;3: Examples of exposure units
 <div id="callout-40" class="callout-40-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-non-exposed" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (Zero exposure time)</strong></span> If a subject is observed for <span class="math inline">\(t = 0\)</span> person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{} = 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 9 (Zero exposure time)</strong></span> If a subject is observed for <span class="math inline">\(t = 0\)</span> person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2040,7 +2040,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A mean proportional to exposure, <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = {\lambda}t\)</span>, has no term that stays nonzero at <span class="math inline">\(t = 0\)</span>: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as <span class="math inline">\(\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{} = c + {\lambda}t\)</span> with <span class="math inline">\(c &gt; 0\)</span>, would expect <span class="math inline">\(c\)</span> events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+<p>A mean proportional to exposure, <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}t\)</span>, has no term that stays nonzero at <span class="math inline">\(t = 0\)</span>: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = c + {\lambda}t\)</span> with <span class="math inline">\(c &gt; 0\)</span>, would expect <span class="math inline">\(c\)</span> events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
@@ -2108,7 +2108,7 @@ Important
 &amp;= -0.511 &amp;&amp; (\text{sum terms})
 \end{aligned}
 \]</span></p>
-<p>Exponentiating yields <span class="math inline">\(\mu= \operatorname{exp}\mathopen{}\left\{-0.511\right\}\mathclose{} \approx 0.60\)</span> expected events.</p>
+<p>Exponentiating yields <span class="math inline">\(\mu= {\operatorname{exp}\mathopen{}\left\{-0.511\right\}\mathclose{}} \approx 0.60\)</span> expected events.</p>
 </div>
 </div>
 </div>
@@ -2257,7 +2257,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-51" class="callout-51-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-nb" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span> <span class="citation" data-cites="wikipedia_negative_binomial_distribution"><a href="#ref-wikipedia_negative_binomial_distribution" role="doc-biblioref">[4]</a></span>, if, for <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 6 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span> <span class="citation" data-cites="wikipedia_negative_binomial_distribution"><a href="#ref-wikipedia_negative_binomial_distribution" role="doc-biblioref">[4]</a></span>, if, for <span class="math inline">\(y \in {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
 \operatorname{P}(Y=y)
 \stackrel{\text{def}}{=}\frac{\mu^y}{y!}
@@ -2282,7 +2282,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-52" class="callout-52-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-nb-poisson-limit" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 10 (The negative binomial converges to the Poisson)</strong></span> Let the population <a href="./expectation.html#def-expectation">mean</a> be <span class="math inline">\(\mu&gt; 0\)</span>, and let <span class="math inline">\(Y_\rho\sim \operatorname{NegBin}(\mu, \rho)\)</span>. Then for each <span class="math inline">\(y \in \mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}\)</span>, as <span class="math inline">\(\rho\rightarrow \infty\)</span>, the negative binomial PMF converges to the <a href="#def-poisson">Poisson</a> PMF (<a href="#eq-pois-pmf" class="quarto-xref">Equation&nbsp;2</a>):</p>
+<p><span class="theorem-title"><strong>Theorem 10 (The negative binomial converges to the Poisson)</strong></span> Let the population <a href="./expectation.html#def-expectation">mean</a> be <span class="math inline">\(\mu&gt; 0\)</span>, and let <span class="math inline">\(Y_\rho\sim \operatorname{NegBin}(\mu, \rho)\)</span>. Then for each <span class="math inline">\(y \in {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}}\)</span>, as <span class="math inline">\(\rho\rightarrow \infty\)</span>, the negative binomial PMF converges to the <a href="#def-poisson">Poisson</a> PMF (<a href="#eq-pois-pmf" class="quarto-xref">Equation&nbsp;2</a>):</p>
 <p><span class="math display">\[\lim_{\rho\rightarrow \infty} \operatorname{P}(Y_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\]</span></p>
 </div>
 </div>
@@ -2331,11 +2331,11 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 &amp;&amp; (\text{simplify})
 \end{aligned}
 \]</span></p>
-<p>so, since the exponential function is continuous, <span class="math inline">\(\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow \operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}\)</span>. Each of the three factors has a limit, so their product does too:</p>
+<p>so, since the exponential function is continuous, <span class="math inline">\(\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow {\operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}}\)</span>. Each of the three factors has a limit, so their product does too:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \lim_{\rho\rightarrow \infty} \operatorname{P}(Y_\rho= y)
-&amp;= \frac{\mu^y}{y!} \cdot 1 \cdot \operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}
+&amp;= \frac{\mu^y}{y!} \cdot 1 \cdot {\operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}}
 &amp;&amp; (\text{limit of a product of convergent factors}) \\
 &amp;= \frac{\mu^{y} e^{-\mu}}{y!}
 &amp;&amp; (\text{rearrange})
@@ -2362,7 +2362,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p><span class="theorem-title"><strong>Theorem 11 (Mean and variance of the negative binomial distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, then:</p>
 <ul>
 <li><span class="math inline">\(\operatorname{E}[Y] = \mu\)</span></li>
-<li><span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = \mu+ \frac{\mu^2}{\rho} &gt; \mu\)</span></li>
+<li><span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = \mu+ \frac{\mu^2}{\rho} &gt; \mu\)</span></li>
 </ul>
 </div>
 </div>
@@ -2402,7 +2402,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p>Then, by the <a href="./expectation.html#thm-lie">law of iterated expectations</a> and the <a href="./variance-covariance.html#thm-total-variance">law of total variance</a>, using</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} &amp;= \operatorname{Var}(Y \mid \Lambda) \\
+{\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} &amp;= \operatorname{Var}(Y \mid \Lambda) \\
 &amp;= \Lambda
 \end{aligned}
 \]</span></p>
@@ -2410,22 +2410,22 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{E}[Y]
-&amp;= \operatorname{E}\mathopen{}\left[\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}\right]\mathclose{}
+&amp;= {\operatorname{E}\mathopen{}\left[{\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}}\right]\mathclose{}}
 &amp;&amp; (\text{law of iterated expectations}) \\
-&amp;= \operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{}
-&amp;&amp; (\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} = \Lambda) \\
+&amp;= {\operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{}}
+&amp;&amp; ({\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} = \Lambda) \\
 &amp;= \mu
 &amp;&amp; (\text{mean of the gamma distribution}) \\
-\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}
-&amp;= \operatorname{E}\mathopen{}\left[\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}\right]\mathclose{} + \operatorname{Var}\mathopen{}\left(\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}\right)\mathclose{}
+{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}
+&amp;= {\operatorname{E}\mathopen{}\left[{\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}}\right)\mathclose{}}
 &amp;&amp; (\text{law of total variance}) \\
-&amp;= \operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{} + \operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}
-&amp;&amp; (\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{} = \Lambda\text{ and } \operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{} = \Lambda) \\
+&amp;= {\operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}}
+&amp;&amp; ({\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}} = \Lambda\text{ and } {\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} = \Lambda) \\
 &amp;= \mu+ \frac{\mu^2}{\rho}
 &amp;&amp; (\text{mean and variance of the gamma distribution})
 \end{aligned}
 \]</span></p>
-<p>and <span class="math inline">\(\mu^2/\rho&gt; 0\)</span> gives <span class="math inline">\(\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &gt; \mu\)</span>.</p>
+<p>and <span class="math inline">\(\mu^2/\rho&gt; 0\)</span> gives <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &gt; \mu\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2446,7 +2446,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p><span class="theorem-title"><strong>Example 13 (Overdispersion relative to the Poisson)</strong></span> With <span class="math inline">\(\mu= 4\)</span> and <span class="math inline">\(\rho= 2\)</span>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &amp;= 4 + 16/2 \\
+{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &amp;= 4 + 16/2 \\
 &amp;= 12,
 \end{aligned}
 \]</span></p>
@@ -2471,7 +2471,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-57" class="callout-57-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-laplace" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Laplace distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Laplace distribution</strong> with location parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and scale parameter <span class="math inline">\(b &gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\)</span> <span class="citation" data-cites="wikipedia_laplace_distribution"><a href="#ref-wikipedia_laplace_distribution" role="doc-biblioref">[5]</a></span>, if <span class="math inline">\(Y\)</span> is continuous with <a href="./random-variables.html#def-pdf">density</a>:</p>
+<p><span class="theorem-title"><strong>Definition 7 (Laplace distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Laplace distribution</strong> with location parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and scale parameter <span class="math inline">\(b &gt; 0\)</span>, written <span class="math inline">\(Y \sim {\operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}}\)</span> <span class="citation" data-cites="wikipedia_laplace_distribution"><a href="#ref-wikipedia_laplace_distribution" role="doc-biblioref">[5]</a></span>, if <span class="math inline">\(Y\)</span> is continuous with <a href="./random-variables.html#def-pdf">density</a>:</p>
 <p><span id="eq-laplace-pdf"><span class="math display">\[\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left|y - \mu\right|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}\]</span></span></p>
 </div>
 </div>
@@ -2508,7 +2508,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-59" class="callout-59-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-laplace-density" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14 (Laplace density values)</strong></span> Let <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}\)</span>, so <span class="math inline">\(\mu= 3\)</span> and <span class="math inline">\(b = 2\)</span> (<a href="#def-laplace" class="quarto-xref">Definition&nbsp;7</a>). At the location, <span class="math inline">\(\mathopen{}\left|y - \mu\right|\mathclose{} = 0\)</span>, so the density is <span class="math inline">\(\frac{1}{2b}\)</span>. At a point <span class="math inline">\(y = 5\)</span>, the distance is</p>
+<p><span class="theorem-title"><strong>Example 14 (Laplace density values)</strong></span> Let <span class="math inline">\(Y \sim {\operatorname{Laplace}\mathopen{}\left(3, 2\right)\mathclose{}}\)</span>, so <span class="math inline">\(\mu= 3\)</span> and <span class="math inline">\(b = 2\)</span> (<a href="#def-laplace" class="quarto-xref">Definition&nbsp;7</a>). At the location, <span class="math inline">\(\mathopen{}\left|y - \mu\right|\mathclose{} = 0\)</span>, so the density is <span class="math inline">\(\frac{1}{2b}\)</span>. At a point <span class="math inline">\(y = 5\)</span>, the distance is</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathopen{}\left|5 - 3\right|\mathclose{} &amp;= 2 \\
@@ -2544,8 +2544,8 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-60" class="callout-60-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-laplace-moments" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12 (Mean and variance of the Laplace distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}\)</span> (<a href="#def-laplace" class="quarto-xref">Definition&nbsp;7</a>), then</p>
-<p><span id="eq-laplace-moments"><span class="math display">\[\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} = \mu\quad \text{and} \quad \operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} = 2b^2. \tag{7}\]</span></span></p>
+<p><span class="theorem-title"><strong>Theorem 12 (Mean and variance of the Laplace distribution)</strong></span> If <span class="math inline">\(Y \sim {\operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}}\)</span> (<a href="#def-laplace" class="quarto-xref">Definition&nbsp;7</a>), then</p>
+<p><span id="eq-laplace-moments"><span class="math display">\[{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}} = \mu\quad \text{and} \quad {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 2b^2. \tag{7}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -2564,24 +2564,24 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(U = Y - \mu\)</span>. By <a href="#eq-laplace-pdf" class="quarto-xref">Equation&nbsp;6</a>, <span class="math inline">\(U\)</span> has density <span class="math inline">\(\frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span>, which is symmetric about <span class="math inline">\(0\)</span>.</p>
-<p>For the mean, the integrand <span class="math inline">\(u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is an odd function, so its integral over <span class="math inline">\(\mathbb{R}\)</span> is <span class="math inline">\(0\)</span>. Therefore <span class="math inline">\(\operatorname{E}\mathopen{}\left[U\right]\mathclose{} = 0\)</span>, and</p>
+<p>For the mean, the integrand <span class="math inline">\(u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is an odd function, so its integral over <span class="math inline">\(\mathbb{R}\)</span> is <span class="math inline">\(0\)</span>. Therefore <span class="math inline">\({\operatorname{E}\mathopen{}\left[U\right]\mathclose{}} = 0\)</span>, and</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[Y\right]\mathclose{} &amp;= \mu+ \operatorname{E}\mathopen{}\left[U\right]\mathclose{} \\
+{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}} &amp;= \mu+ {\operatorname{E}\mathopen{}\left[U\right]\mathclose{}} \\
 &amp;= \mu.
 \end{aligned}
 \]</span></p>
 <p>For the variance,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{} &amp;= \operatorname{Var}\mathopen{}\left(U\right)\mathclose{} \\
-&amp;= \operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}
+{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &amp;= {\operatorname{Var}\mathopen{}\left(U\right)\mathclose{}} \\
+&amp;= {\operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}}
 \end{aligned}
 \]</span></p>
-<p>because <span class="math inline">\(\operatorname{E}\mathopen{}\left[U\right]\mathclose{} = 0\)</span>. The integrand <span class="math inline">\(u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is even, so</p>
+<p>because <span class="math inline">\({\operatorname{E}\mathopen{}\left[U\right]\mathclose{}} = 0\)</span>. The integrand <span class="math inline">\(u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is even, so</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}
+{\operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}}
 &amp;= 2 \int_0^\infty u^2 \frac{1}{2b} \text{e}^{-u/b} \, du
 &amp;&amp; \text{(even integrand)} \\
 &amp;= \frac{1}{b} \int_0^\infty u^2 \text{e}^{-u/b} \, du
@@ -2611,7 +2611,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="callout-62" class="callout-62-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-laplace-vs-normal" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15 (Laplace and normal tails with the same mean and variance)</strong></span> A Laplace variable <span class="math inline">\(Y \sim \operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}\)</span> has variance <span class="math inline">\(2b^2\)</span> (<a href="#thm-laplace-moments" class="quarto-xref">Theorem&nbsp;12</a>). Choosing <span class="math inline">\(b = 1/\sqrt{2}\)</span> gives variance <span class="math inline">\(1\)</span>, the same mean and variance as a standard normal. <a href="#fig-laplace-vs-normal" class="quarto-xref">Figure&nbsp;3</a> compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.</p>
+<p><span class="theorem-title"><strong>Example 15 (Laplace and normal tails with the same mean and variance)</strong></span> A Laplace variable <span class="math inline">\(Y \sim {\operatorname{Laplace}\mathopen{}\left(0, b\right)\mathclose{}}\)</span> has variance <span class="math inline">\(2b^2\)</span> (<a href="#thm-laplace-moments" class="quarto-xref">Theorem&nbsp;12</a>). Choosing <span class="math inline">\(b = 1/\sqrt{2}\)</span> gives variance <span class="math inline">\(1\)</span>, the same mean and variance as a standard normal. <a href="#fig-laplace-vs-normal" class="quarto-xref">Figure&nbsp;3</a> compares the two densities. The Laplace density is higher at the center and in the far tails, and lower in between.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -2782,7 +2782,7 @@ f(t)
 <div class="callout-body-container callout-body">
 <div id="thm-weibull-mean" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 14 (Weibull mean)</strong></span> If <span class="math inline">\(T\)</span> has the Weibull distribution with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\({\lambda}\)</span>, then:</p>
-<p><span class="math display">\[\operatorname{E}\mathopen{}\left[T\right]\mathclose{} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\]</span></p>
+<p><span class="math display">\[{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\]</span></p>
 </div>
 </div>
 </div>
@@ -2803,7 +2803,7 @@ f(t)
 <p><span class="proof-title"><em>Proof</em>. </span>For the mean, use the <a href="./expectation.html#thm-surv-mean">survival-function formula for the mean</a> and substitute <span class="math inline">\(u = {\lambda}t^\alpha\)</span>, so that <span class="math inline">\(t = (u/{\lambda})^{1/\alpha}\)</span> and <span class="math inline">\(dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\,du\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[T\right]\mathclose{}
+{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}}
 &amp;= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\,dt
 &amp;&amp; (\text{expectation via the survival function}) \\
 &amp;= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\,du
@@ -2951,14 +2951,14 @@ f(t)
 <p><span class="theorem-title"><strong>Example 16 (Exponential as a special case)</strong></span> With <span class="math inline">\(\alpha= 1\)</span>, <a href="#thm-weibull" class="quarto-xref">Theorem&nbsp;13</a> gives <span class="math inline">\(\operatorname{h}(t) = {\lambda}\)</span> and</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[T\right]\mathclose{} &amp;= \Gamma(2){\lambda}^{-1} \\
+{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}} &amp;= \Gamma(2){\lambda}^{-1} \\
 &amp;= 1/{\lambda},
 \end{aligned}
 \]</span></p>
 <p>matching the exponential distribution’s constant hazard and mean. With <span class="math inline">\(\alpha= 2\)</span> and <span class="math inline">\({\lambda}= 1\)</span>, <span class="math inline">\(\operatorname{h}(t) = 2t\)</span> increases with <span class="math inline">\(t\)</span>, and</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[T\right]\mathclose{} &amp;= \Gamma(3/2) \\
+{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}} &amp;= \Gamma(3/2) \\
 &amp;= \sqrt{\pi}/2 \\
 &amp;\approx 0.886.
 \end{aligned}
@@ -3049,7 +3049,7 @@ f(t)
 <div id="callout-78" class="callout-78-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mvn-moments" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 16 (The mean and variance of the multivariate normal distribution)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then <span class="math inline">\(\operatorname{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
+<p><span class="theorem-title"><strong>Theorem 16 (The mean and variance of the multivariate normal distribution)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then <span class="math inline">\(\operatorname{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
 </div>
 </div>
 </div>
@@ -3096,7 +3096,7 @@ f(t)
 &amp;&amp; \text{(simplify)}
 \end{aligned}
 \]</span></p>
-<p>which is the <a href="./random-variables.html#def-normal">normal density</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}\)</span>.</p>
+<p>which is the <a href="./random-variables.html#def-normal">normal density</a> <span class="math inline">\({\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3260,8 +3260,8 @@ f(t)
 <div id="thm-mvn-diagonal-indpt" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> and <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal with diagonal elements <span class="math inline">\(\sigma^2_1, \ldots, \sigma^2_p\)</span>, then:</p>
 <ul>
-<li>the joint density of <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> is the product of the <a href="./random-variables.html#def-normal">normal densities</a> <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, <span class="math inline">\(i = 1, \ldots, p\)</span>,</li>
-<li>each <span class="math inline">\(X_i \sim \operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span>, and</li>
+<li>the joint density of <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> is the product of the <a href="./random-variables.html#def-normal">normal densities</a> <span class="math inline">\({\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}}\)</span>, <span class="math inline">\(i = 1, \ldots, p\)</span>,</li>
+<li>each <span class="math inline">\(X_i \sim {\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}}\)</span>, and</li>
 <li><span class="math inline">\(X_1, \ldots, X_p\)</span> are <a href="./independence.html#def-indpt">independent</a>.</li>
 </ul>
 </div>
@@ -3293,7 +3293,7 @@ f(t)
 &amp;&amp; \text{(} \text{e}^{a + b} = \text{e}^{a}\text{e}^{b} \text{)}
 \end{aligned}
 \]</span></p>
-<p>which is the product of the <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span> densities. Integrating out every coordinate except <span class="math inline">\(x_i\)</span>, each other factor integrates to 1 (<a href="./random-variables.html#thm-normal-density">the normal density integrates to 1</a>), leaving the <span class="math inline">\(\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}\)</span> density as the density of <span class="math inline">\(X_i\)</span> (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables). So the joint density is the product of the marginal densities, and the components are independent by <a href="./independence.html#thm-indpt-density">the factorization theorem for densities</a>, extended to <span class="math inline">\(p\)</span> variables as its remark describes.</p>
+<p>which is the product of the <span class="math inline">\({\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}}\)</span> densities. Integrating out every coordinate except <span class="math inline">\(x_i\)</span>, each other factor integrates to 1 (<a href="./random-variables.html#thm-normal-density">the normal density integrates to 1</a>), leaving the <span class="math inline">\({\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}}\)</span> density as the density of <span class="math inline">\(X_i\)</span> (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables). So the joint density is the product of the marginal densities, and the components are independent by <a href="./independence.html#thm-indpt-density">the factorization theorem for densities</a>, extended to <span class="math inline">\(p\)</span> variables as its remark describes.</p>
 </div>
 </div>
 </div>
@@ -3311,7 +3311,7 @@ f(t)
 <div id="callout-90" class="callout-90-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-mvn-uncorrelated-indpt" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then <span class="math inline">\(X_1, \ldots, X_p\)</span> are independent if and only if <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, that is, if and only if <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{} = 0\)</span> for every <span class="math inline">\(i \neq j\)</span>.</p>
+<p><span class="theorem-title"><strong>Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, then <span class="math inline">\(X_1, \ldots, X_p\)</span> are independent if and only if <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, that is, if and only if <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\)</span> for every <span class="math inline">\(i \neq j\)</span>.</p>
 </div>
 </div>
 </div>
@@ -3329,11 +3329,11 @@ f(t)
 <div id="callout-91" class="callout-91-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-mvn-moments" class="quarto-xref">Theorem&nbsp;16</a>, <span class="math inline">\(\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{} = \mathbf{\Sigma}\)</span>, whose <span class="math inline">\((i,j)\)</span>-th element is <span class="math inline">\(\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}\)</span> (<a href="./variance-covariance.html#thm-vcov-elements">elements of the variance matrix</a>). If <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, the components are independent by <a href="#thm-mvn-diagonal-indpt" class="quarto-xref">Theorem&nbsp;17</a>. If the components are independent, then:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-mvn-moments" class="quarto-xref">Theorem&nbsp;16</a>, <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}\)</span>, whose <span class="math inline">\((i,j)\)</span>-th element is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span> (<a href="./variance-covariance.html#thm-vcov-elements">elements of the variance matrix</a>). If <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal, the components are independent by <a href="#thm-mvn-diagonal-indpt" class="quarto-xref">Theorem&nbsp;17</a>. If the components are independent, then:</p>
 <ul>
 <li>each pair <span class="math inline">\(X_i, X_j\)</span> with <span class="math inline">\(i \neq j\)</span> is independent,</li>
 <li>each <span class="math inline">\(X_i\)</span> is continuous, with the density left after integrating out the other coordinates of the joint density (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables), and</li>
-<li><span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span>, because <span class="math inline">\(\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}\)</span>, the <span class="math inline">\((i,i)\)</span>-th element of <span class="math inline">\(\mathbf{\Sigma}\)</span>, is defined, and a <a href="./variance-covariance.html#def-variance">variance</a> is defined only when <span class="math inline">\(\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{} &lt; \infty\)</span>.</li>
+<li><span class="math inline">\({\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span>, because <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span>, the <span class="math inline">\((i,i)\)</span>-th element of <span class="math inline">\(\mathbf{\Sigma}\)</span>, is defined, and a <a href="./variance-covariance.html#def-variance">variance</a> is defined only when <span class="math inline">\({\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span>.</li>
 </ul>
 <p>So <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal by <a href="./variance-covariance.html#cor-vcov-indpt-diagonal">independent components give a diagonal variance matrix</a>.</p>
 </div>
@@ -3530,7 +3530,7 @@ f(t)
 <div class="callout-body-container callout-body">
 <div id="thm-mixture-two-stage" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 19 (A mixture is the density of a two-stage random variable)</strong></span> Let <span class="math inline">\(C\)</span> be a discrete random variable and <span class="math inline">\(X\)</span> a continuous random variable with <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a></p>
-<p><span class="math display">\[\operatorname{p}(C = c,\, X = x) = w_c \, {\operatorname{p}_c}(x), \quad c \in \mathopen{}\left\{1, \ldots, K\right\}\mathclose{},\]</span></p>
+<p><span class="math display">\[\operatorname{p}(C = c,\, X = x) = w_c \, {\operatorname{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},\]</span></p>
 <p>with <span class="math inline">\({\operatorname{p}_c}\)</span> and <span class="math inline">\(w_c\)</span> as in <a href="#def-mixture" class="quarto-xref">Definition&nbsp;11</a>. Then:</p>
 <ul>
 <li><span class="math inline">\(\operatorname{P}(C = c) = w_c\)</span>,</li>
@@ -3568,12 +3568,12 @@ f(t)
 &amp;= {\operatorname{p}_c}(x).
 \end{aligned}
 \]</span></p>
-<p>For the last claim, the events <span class="math inline">\(\mathopen{}\left\{C = 1\right\}\mathclose{}, \ldots, \mathopen{}\left\{C = K\right\}\mathclose{}\)</span> are mutually exclusive, and their union is the whole sample space. So for any interval <span class="math inline">\(B\)</span>:</p>
+<p>For the last claim, the events <span class="math inline">\({\mathopen{}\left\{C = 1\right\}\mathclose{}}, \ldots, {\mathopen{}\left\{C = K\right\}\mathclose{}}\)</span> are mutually exclusive, and their union is the whole sample space. So for any interval <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X \in B)
 &amp;= \sum_{c=1}^{K} \Pr(C = c,\, X \in B)
-&amp;&amp; \text{(additivity over the events } \mathopen{}\left\{C = c\right\}\mathclose{} \text{)} \\
+&amp;&amp; \text{(additivity over the events } {\mathopen{}\left\{C = c\right\}\mathclose{}} \text{)} \\
 &amp;= \sum_{c=1}^{K} \int_B w_c \, {\operatorname{p}_c}(x)\,dx
 &amp;&amp; \text{(definition of a joint density-mass function)} \\
 &amp;= \int_B \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
@@ -3619,7 +3619,7 @@ f(t)
 <div class="callout-body-container callout-body">
 <div id="thm-mixture-mean" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 20 (The mean of a mixture is the weighted mean of the component means)</strong></span> If <span class="math inline">\(X\)</span> has density <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> (<a href="#def-mixture" class="quarto-xref">Definition&nbsp;11</a>), and each component <span class="math inline">\({\operatorname{p}_c}\)</span> has a defined mean <span class="math inline">\(\mu_c = \int_{-\infty}^{\infty} x \, {\operatorname{p}_c}(x)\,dx\)</span>, then:</p>
-<p><span class="math display">\[\operatorname{E}\mathopen{}\left[X\right]\mathclose{} = \sum_{c=1}^{K} w_c \, \mu_c\]</span></p>
+<p><span class="math display">\[{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c\]</span></p>
 </div>
 </div>
 </div>
@@ -3637,10 +3637,10 @@ f(t)
 <div id="callout-103" class="callout-103-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The integral defining <span class="math inline">\(\operatorname{E}\mathopen{}\left[X\right]\mathclose{}\)</span> converges absolutely, because <span class="math inline">\(\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_c}(x)\,dx\)</span>, a finite sum of finite numbers. Then:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The integral defining <span class="math inline">\({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}\)</span> converges absolutely, because <span class="math inline">\(\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_c}(x)\,dx\)</span>, a finite sum of finite numbers. Then:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[X\right]\mathclose{}
+{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}
 &amp;= \int_{-\infty}^{\infty} x \, {\operatorname{p}_{\text{mix}}}(x)\,dx
 &amp;&amp; \text{(definition of expectation)} \\
 &amp;= \int_{-\infty}^{\infty} x \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
@@ -3753,12 +3753,12 @@ f(t)
 <div id="callout-108" class="callout-108-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-mixture-gaussian" class="theorem example">
-<p><span class="theorem-title"><strong>Example 20 (A two-component normal mixture)</strong></span> Let <span class="math inline">\({\operatorname{p}_1}\)</span> be the <span class="math inline">\(\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}\)</span> density and <span class="math inline">\({\operatorname{p}_2}\)</span> the <span class="math inline">\(\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}\)</span> density, with mixing weights <span class="math inline">\(w_1 = 0.3\)</span> and <span class="math inline">\(w_2 = 0.7\)</span>, and let <span class="math inline">\(X\)</span> have density <span class="math inline">\({\operatorname{p}_{\text{mix}}} = 0.3\,{\operatorname{p}_1} + 0.7\,{\operatorname{p}_2}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 20 (A two-component normal mixture)</strong></span> Let <span class="math inline">\({\operatorname{p}_1}\)</span> be the <span class="math inline">\({\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}\)</span> density and <span class="math inline">\({\operatorname{p}_2}\)</span> the <span class="math inline">\({\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}\)</span> density, with mixing weights <span class="math inline">\(w_1 = 0.3\)</span> and <span class="math inline">\(w_2 = 0.7\)</span>, and let <span class="math inline">\(X\)</span> have density <span class="math inline">\({\operatorname{p}_{\text{mix}}} = 0.3\,{\operatorname{p}_1} + 0.7\,{\operatorname{p}_2}\)</span>.</p>
 <ul>
 <li><p><strong>Mean.</strong> By <a href="#thm-mixture-mean" class="quarto-xref">Theorem&nbsp;20</a> and the <a href="./random-variables.html#thm-normal-moments">normal means</a>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}\mathopen{}\left[X\right]\mathclose{} &amp;= 0.3 \cdot 0 + 0.7 \cdot 6 \\
+{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} &amp;= 0.3 \cdot 0 + 0.7 \cdot 6 \\
 &amp;= 4.2.
 \end{aligned}
 \]</span></p></li>
