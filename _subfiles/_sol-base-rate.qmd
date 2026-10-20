@@ -1,16 +1,16 @@
 ::: {#sol-base-rate}
 
-Write $S$ for having the disease and $+$ for a positive test.
+Write $S$ for having the disease and $\posclass$ for a positive test.
 The three given numbers are
 
-$$\Pr(+ \mid S) = 0.99, \qquad \Pr(+ \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001$$
+$$\Pr(\posclass \mid S) = 0.99, \qquad \Pr(\posclass \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001$$
 
-@eq-bayes needs $\Pr(+)$, the overall chance of a positive result.
+@eq-bayes needs $\Pr(\posclass)$, the overall chance of a positive result.
 Assemble it with @thm-total-prob, splitting on whether the person is
 sick:
 
 $$\begin{aligned}
-\Pr(+) &= \Pr(+ \mid S)\Pr(S) + \Pr(+ \mid \text{not } S)\Pr(\text{not } S) \\
+\Pr(\posclass) &= \Pr(\posclass \mid S)\Pr(S) + \Pr(\posclass \mid \text{not } S)\Pr(\text{not } S) \\
 &= (0.99)(0.001) + (0.01)(0.999) \\
 &= 0.00099 + 0.00999 \\
 &= 0.01098
@@ -20,8 +20,8 @@ Then
 
 $$
 \begin{aligned}
-\Pr(S \mid +)
-&= \frac{\Pr(+ \mid S)\,\Pr(S)}{\Pr(+)} \\
+\Pr(S \mid \posclass)
+&= \frac{\Pr(\posclass \mid S)\,\Pr(S)}{\Pr(\posclass)} \\
 &= \frac{0.00099}{0.01098} \\
 &\approx 0.0902
 \end{aligned}

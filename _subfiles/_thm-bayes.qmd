@@ -35,16 +35,16 @@ Suppose a disease test has 99% sensitivity and 99% specificity,
 and the prevalence of the disease in the population is 7%.
 
 Let $D$ be the event "person has the disease"
-and $+$ be the event "test is positive".
+and $\posclass$ be the event "test is positive".
 Then:
 
-- $\Pr(+ \mid D) = 0.99$ (sensitivity)
-- $\Pr(\neg + \mid \neg D) = 0.99$ (specificity),
+- $\Pr(\posclass \mid D) = 0.99$ (sensitivity)
+- $\Pr(\negclass \mid \neg D) = 0.99$ (specificity),
   so the false positive rate is
 
   $$
   \begin{aligned}
-  \Pr(+ \mid \neg D) &= 1 - 0.99 \\
+  \Pr(\posclass \mid \neg D) &= 1 - 0.99 \\
   &= 0.01
   \end{aligned}
   $$
@@ -56,10 +56,10 @@ By @thm-bayes, with the denominator expanded by the
 
 $$
 \ba
-\Pr(D \mid +)
-&= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+)}
+\Pr(D \mid \posclass)
+&= \frac{\Pr(\posclass \mid D) \cd \Pr(D)}{\Pr(\posclass)}
 && \text{(Bayes' theorem)} \\
-&= \frac{\Pr(+ \mid D) \cd \Pr(D)}{\Pr(+ \mid D) \cd \Pr(D) + \Pr(+ \mid \neg D) \cd \Pr(\neg D)}
+&= \frac{\Pr(\posclass \mid D) \cd \Pr(D)}{\Pr(\posclass \mid D) \cd \Pr(D) + \Pr(\posclass \mid \neg D) \cd \Pr(\neg D)}
 && \text{(law of total probability)} \\
 &= \frac{0.99 \cd 0.07}{0.99 \cd 0.07 + 0.01 \cd 0.93}
 && \text{(substitute the given values)} \\
