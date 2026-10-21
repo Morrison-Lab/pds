@@ -136,9 +136,12 @@ $$
 :::{#cor-mean-iid-moments}
 #### Mean and variance of a sample mean of IID random variables
 
-Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
-each discrete or continuous,
-with population mean $\mean$ and finite variance $\ss$,
+Let $\dsn{X}$ be [IID](independence.qmd#def-iid)
+[random variables](random-variables.qmd#def-random-variable),
+each [discrete](random-variables.qmd#def-discrete-rv)
+or [continuous](random-variables.qmd#def-continuous-rv),
+with [population mean](expectation.qmd#def-expectation) $\mean$
+and finite [variance](variance-covariance.qmd#def-variance) $\ss$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 Then:
 
