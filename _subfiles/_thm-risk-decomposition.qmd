@@ -19,13 +19,13 @@ and @thm-linearity-expectation:
 $$
 \ba
 \popriskf{\predfn}
-&= \E{\sqf{\prederr_{\predfn}}}
+&= \E{\sqf{\esterr{\predfnf{\Predvar}}{\Outvar}}}
 && \text{(definition of the squared-error risk)} \\
-&= \E{\sqf{\prederr_{\truemean} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}}}
+&= \E{\sqf{\esterr{\truemeanf{\Predvar}}{\Outvar} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}}}
 && \text{(the prediction error splits at } \truemean \text{)} \\
-&= \E{\sqf{\prederr_{\truemean}}} + 2 \cd \E{\prederr_{\truemean}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&= \E{\sqf{\esterr{\truemeanf{\Predvar}}{\Outvar}}} + 2 \cd \E{\esterr{\truemeanf{\Predvar}}{\Outvar}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
 && \text{(expand the square; linearity of expectation)} \\
-&= \E{\sqf{\prederr_{\truemean}}} + 2 \cd 0 + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&= \E{\sqf{\esterr{\truemeanf{\Predvar}}{\Outvar}}} + 2 \cd 0 + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
 && \text{(the cross term is } 0 \text{)} \\
 &= \popriskf{\truemean} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
 && \text{(definition of the squared-error risk of } \truemean \text{)}

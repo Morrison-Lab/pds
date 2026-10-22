@@ -5,7 +5,7 @@ The **squared-error risk** of a prediction function $\predfnf{\Predvar}$,
 also called its **expected prediction error** [@hastie2009elements, p. 18],
 is the expected square of its [prediction error](#def-prediction-error):
 
-$$\popriskf{\predfn} \eqdef \E{\sqf{\prederr_{\predfn}}}$$
+$$\popriskf{\predfn} \eqdef \E{\sqf{\esterr{\predfnf{\Predvar}}{\Outvar}}}$$
 
 It is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
 
