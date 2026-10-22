@@ -131,6 +131,59 @@ $$
 
 :::
 
+{{< slidebreak >}}
+
+:::{#cor-mean-iid-moments}
+#### Mean and variance of a sample mean of IID random variables
+
+Let $\dsn{X}$ be [IID](independence.qmd#def-iid)
+[random variables](random-variables.qmd#def-random-variable),
+each [discrete](random-variables.qmd#def-discrete-rv)
+or [continuous](random-variables.qmd#def-continuous-rv),
+with [population mean](expectation.qmd#def-expectation) $\mean$
+and finite [variance](variance-covariance.qmd#def-variance) $\ss$,
+and let $\samplemean{X}{n} \eqdef \avgin X_i$.
+Then:
+
+$$
+\ba
+\E{\samplemean{X}{n}} &= \mean \\
+\Var{\samplemean{X}{n}} &= \frac{\ss}{n}
+\ea
+$$
+
+:::
+
+::: proof
+
+Let $S_n \eqdef \sumin X_i$, so $\samplemean{X}{n} = S_n / n$.
+By @cor-sum-iid-moments, $\E{S_n} = n\mean$ and $\Var{S_n} = n\ss$:
+
+$$
+\ba
+\E{\samplemean{X}{n}}
+&= \E{\frac{S_n}{n}}
+&& \text{(definition of sample mean)}\\
+&= \frac{1}{n}\E{S_n}
+&& \text{(linearity of expectation)}\\
+&= \frac{1}{n} \cdot n\mean
+&& \text{(mean of a sum of IID variables)}\\
+&= \mean
+&& \text{(cancel $n$)}\\
+\Var{\samplemean{X}{n}}
+&= \Var{\frac{S_n}{n}}
+&& \text{(definition of sample mean)}\\
+&= \frac{1}{n^2}\Var{S_n}
+&& \text{(variance of a constant multiple)}\\
+&= \frac{1}{n^2} \cdot n\ss
+&& \text{(variance of a sum of IID variables)}\\
+&= \frac{\ss}{n}
+&& \text{(cancel one factor of $n$)}
+\ea
+$$
+
+:::
+
 ::: {.remark .notes}
 
 In practice, @thm-clt justifies approximating

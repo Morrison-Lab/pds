@@ -21,27 +21,7 @@ $$
 
 ::: proof
 
-By @cor-sum-iid-moments, $\E{S_n} = n\mean$ and $\Var{S_n} = n\ss$,
-where $S_n \eqdef \sumin X_i$, so $\samplemean{X}{n} = S_n / n$ has
-
-$$
-\ba
-\E{\samplemean{X}{n}}
-&= \frac{1}{n}\E{S_n}
-&& \text{(linearity of expectation)}\\
-&= \frac{1}{n} \cdot n\mean
-&& \text{(mean of a sum of IID variables)}\\
-&= \mean
-&& \text{(cancel $n$)}\\
-\Var{\samplemean{X}{n}}
-&= \frac{1}{n^2}\Var{S_n}
-&& \text{(variance of a constant multiple)}\\
-&= \frac{1}{n^2} \cdot n\ss
-&& \text{(variance of a sum of IID variables)}\\
-&= \frac{\ss}{n}
-&& \text{(cancel one factor of $n$)}
-\ea
-$$
+By @cor-mean-iid-moments, $\E{\samplemean{X}{n}} = \mean$ and $\Var{\samplemean{X}{n}} = \ss/n$.
 
 Let the tolerance be $\varepsilon > 0$ and let the multiplier be $k \eqdef \varepsilon \sqrt{n} / \sdpar$,
 so that $k \sdpar / \sqrt{n} = \varepsilon$.
