@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:36:00 (PDT)
+Last modified: 2026-10-22 13:40:45 (PDT)
 
 > **NOTE:**
 >
@@ -62,7 +62,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Definition 1 (Binomial distribution)** A [discrete](random-variables.llms.md#def-discrete-rv) random variable \\X\\ has the **binomial distribution** with number of trials \\n \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\ and event probability \\\pi\in \[0, 1\]\\, written \\X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\\ [\[1\]](#ref-wikipedia_binomial_distribution), if:
 >
-> \\ \operatorname{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x}, \quad x \in {\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}} \tag{1}\\
+> \\ \mathbb{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x}, \quad x \in {\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}} \tag{1}\\
 >
 > where \\\binom{n}{x} = \frac{n!}{x!\\(n - x)!}\\ is the number of ways to choose \\x\\ of the \\n\\ trials.
 
@@ -74,7 +74,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Example 2 (Two heads in three flips)** Let \\X \sim {\operatorname{Bin}\mathopen{}\left(3, 1/2\right)\mathclose{}}\\ be the number of heads in three flips of a fair coin. By [Equation 1](#eq-binom-pmf):
 >
-> \\ \begin{aligned} \operatorname{P}(X = 2) &= \binom{3}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(1 - \frac{1}{2}\right)\mathclose{}^{3 - 2} && \text{(binomial PMF with } n = 3,\\ \pi= 1/2,\\ x = 2 \text{)} \\ &= \frac{3!}{2!\\1!} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^1 && \text{(definition of } \tbinom{3}{2} \text{; } 1 - 1/2 = 1/2 \text{)} \\ &= 3 \cdot\frac{1}{4} \cdot\frac{1}{2} && \text{(evaluate the factorials and powers)} \\ &= \frac{3}{8} && \text{(multiply)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X = 2) &= \binom{3}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(1 - \frac{1}{2}\right)\mathclose{}^{3 - 2} && \text{(binomial PMF with } n = 3,\\ \pi= 1/2,\\ x = 2 \text{)} \\ &= \frac{3!}{2!\\1!} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^1 && \text{(definition of } \tbinom{3}{2} \text{; } 1 - 1/2 = 1/2 \text{)} \\ &= 3 \cdot\frac{1}{4} \cdot\frac{1}{2} && \text{(evaluate the factorials and powers)} \\ &= \frac{3}{8} && \text{(multiply)} \end{aligned} \\
 >
 > The three outcomes with two heads are \\HHT\\, \\HTH\\, and \\THH\\, each with probability \\1/8\\.
 
@@ -82,11 +82,11 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Example 3 (Draws without replacement are not binomial)** An urn holds two red balls and two blue balls. Draw two balls without replacement, and let \\X\\ be the number of red balls drawn. Each draw is red with probability \\1/2\\, but \\X \not\sim {\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}}\\, because the draws are not [independent](independence.llms.md#def-indpt):
 >
-> \\ \begin{aligned} \operatorname{P}(X = 2) &= \operatorname{P}(\text{first red}) \cdot\operatorname{P}(\text{second red} \mid \text{first red}) && \text{(multiplication rule)} \\ &= \frac{2}{4} \cdot\frac{1}{3} && \text{(one red ball is left among three)} \\ &= \frac{1}{6} && \text{(multiply)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X = 2) &= \mathbb{P}(\text{first red}) \cdot\mathbb{P}(\text{second red} \mid \text{first red}) && \text{(multiplication rule)} \\ &= \frac{2}{4} \cdot\frac{1}{3} && \text{(one red ball is left among three)} \\ &= \frac{1}{6} && \text{(multiply)} \end{aligned} \\
 >
 > whereas, by [Equation 1](#eq-binom-pmf), a \\{\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}}\\ random variable has
 >
-> \\ \begin{aligned} \operatorname{P}(X = 2) &= \binom{2}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^0 && \text{(binomial PMF with } n = 2,\\ \pi= 1/2,\\ x = 2 \text{)} \\ &= \frac{1}{4} && \text{(evaluate)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X = 2) &= \binom{2}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^0 && \text{(binomial PMF with } n = 2,\\ \pi= 1/2,\\ x = 2 \text{)} \\ &= \frac{1}{4} && \text{(evaluate)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -96,11 +96,11 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > *Proof*. Each \\X_i\\ is \\0\\ or \\1\\, so \\S\\ takes values in \\{\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}}\\. Let \\x \in {\mathopen{}\left\\0, 1, \dots, n\right\\\mathclose{}}\\ be a value of \\S\\, and let \\A_x\\ be the set of sequences \\(s_1, \ldots, s_n) \in {\mathopen{}\left\\0, 1\right\\\mathclose{}}^n\\ with exactly \\x\\ ones. The event \\{\mathopen{}\left\\S = x\right\\\mathclose{}}\\ is the disjoint union of the events \\{\mathopen{}\left\\X_1 = s_1, \ldots, X_n = s_n\right\\\mathclose{}}\\ over \\(s_1, \ldots, s_n) \in A_x\\. For one such sequence:
 >
-> \\ \begin{aligned} \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n) &= \prod\_{i=1}^n \operatorname{P}(X_i = s_i) && \text{(independence)} \\ &= \prod\_{i=1}^n \pi^{s_i} (1 - \pi)^{1 - s_i} && \text{(Bernoulli PMF)} \\ &= \pi^{\sum\_{i=1}^ns_i} (1 - \pi)^{\sum\_{i=1}^n(1 - s_i)} && \text{(collect exponents)} \\ &= \pi^x (1 - \pi)^{n - x} && \text{(} \textstyle\sum\_{i=1}^ns_i = x \text{ for a sequence in } A_x \text{)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_1 = s_1, \ldots, X_n = s_n) &= \prod\_{i=1}^n \mathbb{P}(X_i = s_i) && \text{(independence)} \\ &= \prod\_{i=1}^n \pi^{s_i} (1 - \pi)^{1 - s_i} && \text{(Bernoulli PMF)} \\ &= \pi^{\sum\_{i=1}^ns_i} (1 - \pi)^{\sum\_{i=1}^n(1 - s_i)} && \text{(collect exponents)} \\ &= \pi^x (1 - \pi)^{n - x} && \text{(} \textstyle\sum\_{i=1}^ns_i = x \text{ for a sequence in } A_x \text{)} \end{aligned} \\
 >
 > Choosing which \\x\\ of the \\n\\ positions hold the ones determines the sequence, so \\A_x\\ has \\\binom{n}{x}\\ elements. Therefore:
 >
-> \\ \begin{aligned} \operatorname{P}(S = x) &= \sum\_{(s_1, \ldots, s_n) \in A_x} \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n) && \text{(additivity over disjoint events)} \\ &= \sum\_{(s_1, \ldots, s_n) \in A_x} \pi^x (1 - \pi)^{n - x} && \text{(probability of one sequence)} \\ &= \binom{n}{x} \pi^x (1 - \pi)^{n - x} && \text{(} A_x \text{ has } \tbinom{n}{x} \text{ elements)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(S = x) &= \sum\_{(s_1, \ldots, s_n) \in A_x} \mathbb{P}(X_1 = s_1, \ldots, X_n = s_n) && \text{(additivity over disjoint events)} \\ &= \sum\_{(s_1, \ldots, s_n) \in A_x} \pi^x (1 - \pi)^{n - x} && \text{(probability of one sequence)} \\ &= \binom{n}{x} \pi^x (1 - \pi)^{n - x} && \text{(} A_x \text{ has } \tbinom{n}{x} \text{ elements)} \end{aligned} \\
 >
 > which is [Equation 1](#eq-binom-pmf).
 
@@ -108,20 +108,20 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Example 4 (Counting treatment responders)** Suppose five patients each respond to a treatment with probability \\0.2\\, independently of one another, and let \\X_i = 1\\ if patient \\i\\ responds and \\X_i = 0\\ otherwise. By [Theorem 1](#thm-binomial-sum-bernoulli), the number of responders \\S = \sum\_{i=1}^5 X_i\\ is \\{\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}}\\, so the probability that nobody responds is:
 >
-> \\ \begin{aligned} \operatorname{P}(S = 0) &= \binom{5}{0} (0.2)^0 (1 - 0.2)^{5 - 0} && \text{(binomial PMF with } n = 5,\\ \pi= 0.2,\\ x = 0 \text{)} \\ &= 1 \cdot 1 \cdot(0.8)^5 && \text{(} \tbinom{5}{0} = 1 \text{ and } (0.2)^0 = 1 \text{)} \\ &= 0.32768 && \text{(evaluate the power)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(S = 0) &= \binom{5}{0} (0.2)^0 (1 - 0.2)^{5 - 0} && \text{(binomial PMF with } n = 5,\\ \pi= 0.2,\\ x = 0 \text{)} \\ &= 1 \cdot 1 \cdot(0.8)^5 && \text{(} \tbinom{5}{0} = 1 \text{ and } (0.2)^0 = 1 \text{)} \\ &= 0.32768 && \text{(evaluate the power)} \end{aligned} \\
 
 > **NOTE:**
 >
 > **Theorem 2 (Mean and variance of the binomial distribution)** If \\X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\\, then:
 >
-> - \\{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} = n\pi\\
+> - \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = n\pi\\
 > - \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = n\pi(1 - \pi)\\
 
 > **NOTE:**
 >
 > *Proof*. The mean and variance of \\X\\ depend only on its distribution, so by [Theorem 1](#thm-binomial-sum-bernoulli) we can compute them for \\S = \sum\_{i=1}^nX_i\\, where \\X_1, \ldots, X_n\\ are IID \\\operatorname{Ber}(\pi)\\. For the mean, apply [linearity of expectation](expectation.llms.md#thm-linearity-expectation) \\n - 1\\ times, then the [Bernoulli mean](expectation.llms.md#thm-bernoulli-mean):
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[\sum\_{i=1}^nX_i\right\]\mathclose{}} && \text{(definition of } S \text{)} \\ &= \sum\_{i=1}^n{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation)} \\ &= \sum\_{i=1}^n\pi && \text{(Bernoulli mean)} \\ &= n\pi && \text{(sum of } n \text{ copies of } \pi\text{)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[S\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[\sum\_{i=1}^nX_i\right\]\mathclose{}} && \text{(definition of } S \text{)} \\ &= \sum\_{i=1}^n{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation)} \\ &= \sum\_{i=1}^n\pi && \text{(Bernoulli mean)} \\ &= n\pi && \text{(sum of } n \text{ copies of } \pi\text{)} \end{aligned} \\
 >
 > For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with \\a_1 = \cdots = a_n = 1\\, then [independent components give a diagonal variance matrix](variance-covariance.llms.md#cor-vcov-indpt-diagonal), then the [Bernoulli variance](variance-covariance.llms.md#exm-variance-bernoulli):
 >
@@ -131,7 +131,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Example 5 (Expected number of responders)** In [Example 4](#exm-binomial-sum-bernoulli), \\S \sim {\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}}\\. By [Theorem 2](#thm-binomial-moments):
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S\right\]\mathclose{}} &= 5 \cdot 0.2 && \text{(} n\pi\text{)} \\ &= 1 && \text{(multiply)} \\ {\operatorname{Var}\mathopen{}\left(S\right)\mathclose{}} &= 5 \cdot 0.2 \cdot(1 - 0.2) && \text{(} n\pi(1 - \pi) \text{)} \\ &= 0.8 && \text{(multiply)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[S\right\]\mathclose{}} &= 5 \cdot 0.2 && \text{(} n\pi\text{)} \\ &= 1 && \text{(multiply)} \\ {\operatorname{Var}\mathopen{}\left(S\right)\mathclose{}} &= 5 \cdot 0.2 \cdot(1 - 0.2) && \text{(} n\pi(1 - \pi) \text{)} \\ &= 0.8 && \text{(multiply)} \end{aligned} \\
 >
 > On average, one of the five patients responds.
 
@@ -141,7 +141,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Definition 2 (Poisson distribution)** A random variable \\Y\\ has the **Poisson distribution** with mean parameter \\\mu\> 0\\, written \\Y \sim \operatorname{Pois}(\mu)\\ [\[3\]](#ref-wikipedia_poisson_distribution), if:
 >
-> \\\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}} \tag{2}\\
+> \\\mathbb{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}} \tag{2}\\
 
 > **NOTE:**
 >
@@ -159,19 +159,19 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Theorem 3 (CDF of Poisson distribution)** If \\Y \sim \operatorname{Pois}(\mu)\\, then for every real number \\y\\:
 >
-> \\\operatorname{P}(Y \le y) = e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{3}\\
+> \\\mathbb{P}(Y \le y) = e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{3}\\
 
 > **NOTE:**
 >
 > *Proof*. For \\y \< 0\\, both sides are \\0\\ (the sum is empty). For any \\y \ge 0\\, the event \\\\Y \le y\\\\ is the disjoint union of events \\\\Y = j\\\\ for all non-negative integers \\j \le \mathopen{}\left\lfloor y\right\rfloor\mathclose{}\\. Applying the Poisson PMF ([Equation 2](#eq-pois-pmf)) and factoring out the common term \\e^{-\mu}\\:
 >
-> \\ \begin{aligned} \operatorname{P}(Y \le y) &= \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \operatorname{P}(Y = j) && (\text{disjoint union of events } Y = j) \\ &= \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j e^{-\mu}}{j!} && (\text{definition of Poisson PMF}) \\ &= e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j}{j!} && (\text{factoring out } e^{-\mu} \text{ constant wrt } j) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(Y \le y) &= \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \mathbb{P}(Y = j) && (\text{disjoint union of events } Y = j) \\ &= \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j e^{-\mu}}{j!} && (\text{definition of Poisson PMF}) \\ &= e^{-\mu} \sum\_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j}{j!} && (\text{factoring out } e^{-\mu} \text{ constant wrt } j) \end{aligned} \\
 
 > **NOTE:**
 >
 > **Example 6 (Computing Poisson cumulative probabilities)** For a Poisson random variable \\X \sim \operatorname{Pois}(\mu= 2)\\, the probability of observing at most 2 events is computed as:
 >
-> \\ \begin{aligned} \operatorname{P}(X \le 2) &= e^{-2} \sum\_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu= 2, y = 2) \\ &= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} && (\text{expand terms for } j = 0, 1, 2) \\ &= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} && (\text{simplify factorials and powers}) \\ &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value}) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X \le 2) &= e^{-2} \sum\_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mu= 2, y = 2) \\ &= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} && (\text{expand terms for } j = 0, 1, 2) \\ &= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} && (\text{simplify factorials and powers}) \\ &= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value}) \end{aligned} \\
 
 > **NOTE:**
 >
@@ -244,38 +244,38 @@ print(plot2)
 >
 > Compute:
 >
-> - \\\operatorname{P}(X = 4)\\
-> - \\\operatorname{P}(X \le 7)\\
-> - \\\operatorname{P}(X \> 5)\\
+> - \\\mathbb{P}(X = 4)\\
+> - \\\mathbb{P}(X \le 7)\\
+> - \\\mathbb{P}(X \> 5)\\
 
 > **NOTE:**
 >
 > *Solution*.
 >
-> - \\\operatorname{P}(X=4) = 0.1937803\\
-> - \\\operatorname{P}(X\le 7) = 0.9623787\\
-> - \\\operatorname{P}(X \> 5) = 0.1771172\\
+> - \\\mathbb{P}(X=4) = 0.1937803\\
+> - \\\mathbb{P}(X\le 7) = 0.9623787\\
+> - \\\mathbb{P}(X \> 5) = 0.1771172\\
 
 > **NOTE:**
 >
 > **Theorem 4 (Mean and variance of the Poisson distribution)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
 >
-> - \\\operatorname{E}\[X\] = \mu\\
+> - \\\mathbb{E}\[X\] = \mu\\
 > - \\\operatorname{Var}(X) = \mu\\
 
 > **NOTE:**
 >
 > *Proof*. **Mean.**
 >
-> \\ \begin{aligned} \operatorname{E}\[X\] &= \sum\_{x=0}^\infty x \cdot \operatorname{P}(X=x) && (\text{definition of expected value}) \\ &= 0 \cdot \operatorname{P}(X=0) + \sum\_{x=1}^{\infty} x \cdot \operatorname{P}(X=x) && (\text{separate } x=0 \text{ term}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\ &= \sum\_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\ &= \mu\cdot \sum\_{x=1}^{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\ &= \mu\cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\ &= \mu\cdot 1 && (\text{PMF sums to 1 over state space}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{E}\[X\] &= \sum\_{x=0}^\infty x \cdot \mathbb{P}(X=x) && (\text{definition of expected value}) \\ &= 0 \cdot \mathbb{P}(X=0) + \sum\_{x=1}^{\infty} x \cdot \mathbb{P}(X=x) && (\text{separate } x=0 \text{ term}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{substitute Poisson PMF}) \\ &= \sum\_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\ &= \sum\_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} && (\text{cancel factor of } x) \\ &= \mu\cdot \sum\_{x=1}^{\infty} \frac{\mu^{x-1} e^{-\mu}}{(x-1)!} && (\text{factor out one power of } \mu) \\ &= \mu\cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{change index variable } y \stackrel{\text{def}}{=}x-1) \\ &= \mu\cdot 1 && (\text{PMF sums to 1 over state space}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
 >
-> **Variance.** The same steps, canceling two factors instead of one, give \\{\operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}}\\:
+> **Variance.** The same steps, canceling two factors instead of one, give \\{\mathbb{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}}\\:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}} &= \sum\_{x=2}^\infty x(x-1) \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\ &= \sum\_{x=2}^\infty \frac{\mu^x e^{-\mu}}{(x-2)!} && (\text{cancel } x(x-1) \text{ against } x!) \\ &= \mu^2 \cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{factor out } \mu^2 \text{; } y \stackrel{\text{def}}{=}x - 2) \\ &= \mu^2 && (\text{PMF sums to 1}) \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}} &= \sum\_{x=2}^\infty x(x-1) \cdot \frac{\mu^x e^{-\mu}}{x!} && (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\ &= \sum\_{x=2}^\infty \frac{\mu^x e^{-\mu}}{(x-2)!} && (\text{cancel } x(x-1) \text{ against } x!) \\ &= \mu^2 \cdot \sum\_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} && (\text{factor out } \mu^2 \text{; } y \stackrel{\text{def}}{=}x - 2) \\ &= \mu^2 && (\text{PMF sums to 1}) \end{aligned} \\
 >
 > Then, by the [simplified expression for variance](variance-covariance.llms.md#thm-variance) and [linearity of expectation](expectation.llms.md#thm-linearity-expectation):
 >
-> \\ \begin{aligned} \operatorname{Var}(X) &= {\operatorname{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left({\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && (\text{simplified expression for variance}) \\ &= {\operatorname{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}} + {\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} - {\mathopen{}\left({\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu- \mu^2 && (\text{substitute}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
+> \\ \begin{aligned} \operatorname{Var}(X) &= {\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && (\text{simplified expression for variance}) \\ &= {\mathbb{E}\mathopen{}\left\[X(X-1)\right\]\mathclose{}} + {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && (X^2 = X(X-1) + X \text{; linearity}) \\ &= \mu^2 + \mu- \mu^2 && (\text{substitute}) \\ &= \mu&& (\text{simplify}) \end{aligned} \\
 >
 > See also <https://statproofbook.github.io/P/poiss-mean> and <https://statproofbook.github.io/P/poiss-var>.
 
@@ -283,23 +283,23 @@ print(plot2)
 >
 > **Theorem 5 (Ratio of consecutive Poisson probabilities, and the mode)** If \\X \sim \operatorname{Pois}(\mu)\\, then:
 >
-> - \\\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\\ for \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\
-> - For \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\ with \\x \< \mu\\, \\\operatorname{P}(X=x) \> \operatorname{P}(X = x-1)\\
-> - For \\x = \mu\\ (possible only when \\\mu\\ is an integer), \\\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\\
-> - For \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\ with \\x \> \mu\\, \\\operatorname{P}(X=x) \< \operatorname{P}(X = x-1)\\
-> - If \\\mu\\ is not an integer, \\\arg \max\_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\; if \\\mu\\ is an integer, the maximum is attained at both \\x = \mu- 1\\ and \\x = \mu\\
+> - \\\mathbb{P}(X=x) = \frac{\mu}{x} \mathbb{P}(X = x-1)\\ for \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\
+> - For \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\ with \\x \< \mu\\, \\\mathbb{P}(X=x) \> \mathbb{P}(X = x-1)\\
+> - For \\x = \mu\\ (possible only when \\\mu\\ is an integer), \\\mathbb{P}(X=x) = \mathbb{P}(X = x-1)\\
+> - For \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\ with \\x \> \mu\\, \\\mathbb{P}(X=x) \< \mathbb{P}(X = x-1)\\
+> - If \\\mu\\ is not an integer, \\\arg \max\_{x} \mathbb{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\; if \\\mu\\ is an integer, the maximum is attained at both \\x = \mu- 1\\ and \\x = \mu\\
 
 > **NOTE:**
 >
 > *Proof*. **Ratio of consecutive probabilities.** For \\x \in {\mathopen{}\left\\1, 2, \dots\right\\\mathclose{}}\\:
 >
-> \\ \begin{aligned} \frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x - 1)} &= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} && (\text{substitute Poisson PMF}) \\ &= \frac{\mu}{x} && (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!) \end{aligned} \\
+> \\ \begin{aligned} \frac{\mathbb{P}(X = x)}{\mathbb{P}(X = x - 1)} &= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} && (\text{substitute Poisson PMF}) \\ &= \frac{\mu}{x} && (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!) \end{aligned} \\
 >
-> This ratio is greater than, equal to, or less than 1 as \\x\\ is less than, equal to, or greater than \\\mu\\, which gives the three comparisons. So \\\operatorname{P}(X = x)\\ increases while \\x \< \mu\\ and decreases once \\x \> \mu\\. If \\\mu\\ is not an integer, the last increase is at \\x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\, which is therefore the unique mode. If \\\mu\\ is an integer, \\\operatorname{P}(X = \mu) = \operatorname{P}(X = \mu- 1)\\, and both are modes.
+> This ratio is greater than, equal to, or less than 1 as \\x\\ is less than, equal to, or greater than \\\mu\\, which gives the three comparisons. So \\\mathbb{P}(X = x)\\ increases while \\x \< \mu\\ and decreases once \\x \> \mu\\. If \\\mu\\ is not an integer, the last increase is at \\x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\\, which is therefore the unique mode. If \\\mu\\ is an integer, \\\mathbb{P}(X = \mu) = \mathbb{P}(X = \mu- 1)\\, and both are modes.
 
 > **NOTE:**
 >
-> **Example 7 (Mode of a Poisson distribution)** For \\X \sim \operatorname{Pois}(2.5)\\, \\\operatorname{P}(X = 2) = \frac{2.5}{2}\operatorname{P}(X = 1) \> \operatorname{P}(X = 1)\\ and \\\operatorname{P}(X = 3) = \frac{2.5}{3}\operatorname{P}(X = 2) \< \operatorname{P}(X = 2)\\, so the mode is \\\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\\. For \\X \sim \operatorname{Pois}(2)\\, \\\operatorname{P}(X = 2) = \frac{2}{2}\operatorname{P}(X = 1)\\, so \\1\\ and \\2\\ are both modes, each with probability \\2 e^{-2} \approx 0.271\\.
+> **Example 7 (Mode of a Poisson distribution)** For \\X \sim \operatorname{Pois}(2.5)\\, \\\mathbb{P}(X = 2) = \frac{2.5}{2}\mathbb{P}(X = 1) \> \mathbb{P}(X = 1)\\ and \\\mathbb{P}(X = 3) = \frac{2.5}{3}\mathbb{P}(X = 2) \< \mathbb{P}(X = 2)\\, so the mode is \\\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\\. For \\X \sim \operatorname{Pois}(2)\\, \\\mathbb{P}(X = 2) = \frac{2}{2}\mathbb{P}(X = 1)\\, so \\1\\ and \\2\\ are both modes, each with probability \\2 e^{-2} \approx 0.271\\.
 
 > **NOTE:**
 >
@@ -334,7 +334,7 @@ print(plot2)
 >
 > **Definition 4 (Event rate)** For a count \\Y\\ observed over a fixed, known [exposure magnitude](#def-exposure) \\t \> 0\\, the **event rate**, denoted \\{\lambda}\\, is the mean of \\Y\\ divided by the exposure magnitude:
 >
-> \\{\lambda}\stackrel{\text{def}}{=}\frac{{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}}{t} \tag{4}\\
+> \\{\lambda}\stackrel{\text{def}}{=}\frac{{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}}{t} \tag{4}\\
 
 > **NOTE:**
 >
@@ -342,7 +342,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 6 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\ is:
+> **Theorem 6 (Transformation function from event rate to mean)** If a count \\Y\\ is observed over exposure magnitude \\t \> 0\\ with event rate \\{\lambda}\\, then its mean \\\mu\stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\ is:
 >
 > \\\mu= {\lambda}\cdot t \tag{5}\\
 
@@ -350,7 +350,7 @@ print(plot2)
 >
 > *Proof*. By [Definition 4](#def-event-rate):
 >
-> \\ \begin{aligned} {\lambda}&\stackrel{\text{def}}{=}\frac{{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}}{t} && (\text{definition of event rate}) \\ {\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= {\lambda}\cdot t && (\text{multiply both sides by } t \> 0) \\ \mu&= {\lambda}\cdot t && (\mu\stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}) \end{aligned} \\
+> \\ \begin{aligned} {\lambda}&\stackrel{\text{def}}{=}\frac{{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}}{t} && (\text{definition of event rate}) \\ {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= {\lambda}\cdot t && (\text{multiply both sides by } t \> 0) \\ \mu&= {\lambda}\cdot t && (\mu\stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}) \end{aligned} \\
 
 > **NOTE:**
 >
@@ -360,25 +360,25 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 7 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\{\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
+> **Theorem 7 (No exposure means no expected events)** For each exposure magnitude \\t \ge 0\\, let \\Y_t\\ be the count observed over exposure \\t\\. If the mean count is proportional to the exposure magnitude, \\{\mathbb{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = {\lambda}\cdot t\\ for all \\t \ge 0\\ with one finite rate \\{\lambda}\\, then there are no expected events without exposure:
 >
-> \\{\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} = 0\\
+> \\{\mathbb{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} = 0\\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} &= {\lambda}\cdot 0 && (\text{evaluate } {\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = {\lambda}t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } {\lambda}\text{ is finite}) \end{aligned} \\
+> *Proof*. \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} &= {\lambda}\cdot 0 && (\text{evaluate } {\mathbb{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = {\lambda}t \text{ at } t = 0) \\ &= 0 && (\text{multiplication by zero; } {\lambda}\text{ is finite}) \end{aligned} \\
 
 > **NOTE:**
 >
-> *Remark*. The hypothesis carries the content here. [Definition 4](#def-event-rate) alone cannot give \\{\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} = 0\\, since \\{\lambda}= {\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\{\lambda}\\ shared across exposure magnitudes, including \\t = 0\\.
+> *Remark*. The hypothesis carries the content here. [Definition 4](#def-event-rate) alone cannot give \\{\mathbb{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} = 0\\, since \\{\lambda}= {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}/t\\ is undefined at \\t = 0\\; the result holds for a model that assumes one rate \\{\lambda}\\ shared across exposure magnitudes, including \\t = 0\\.
 
 > **NOTE:**
 >
-> **Example 9 (Zero exposure time)** If a subject is observed for \\t = 0\\ person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is \\{\operatorname{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} = 0\\.
+> **Example 9 (Zero exposure time)** If a subject is observed for \\t = 0\\ person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is \\{\mathbb{E}\mathopen{}\left\[Y_0\right\]\mathclose{}} = 0\\.
 
 > **IMPORTANT:**
 >
-> A mean proportional to exposure, \\{\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = {\lambda}t\\, has no term that stays nonzero at \\t = 0\\: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as \\{\operatorname{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = c + {\lambda}t\\ with \\c \> 0\\, would expect \\c\\ events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+> A mean proportional to exposure, \\{\mathbb{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = {\lambda}t\\, has no term that stays nonzero at \\t = 0\\: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as \\{\mathbb{E}\mathopen{}\left\[Y_t\right\]\mathclose{}} = c + {\lambda}t\\ with \\c \> 0\\, would expect \\c\\ events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see [rme’s count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
 
 > **NOTE:**
 >
@@ -420,7 +420,7 @@ print(plot2)
 >
 > *Proof*. The event \\\\Z = z\\\\ is the disjoint union of the events \\\\X = k, Y = z - k\\\\ for \\k = 0, 1, \ldots, z\\ (since \\X\\ and \\Y\\ are non-negative integers), so:
 >
-> \\ \begin{aligned} \operatorname{P}(Z = z) &= \sum\_{k=0}^z \operatorname{P}(X = k,\\ Y = z - k) && (\text{countable additivity}) \\ &= \sum\_{k=0}^z \operatorname{P}(X = k) \operatorname{P}(Y = z - k) && (\text{independence}) \\ &= \sum\_{k=0}^z \frac{\mu_X^k e^{-\mu_X}}{k!} \frac{\mu_Y^{z-k} e^{-\mu_Y}}{(z-k)!} && (\text{substitute Poisson PMFs}) \\ &= e^{-(\mu_X + \mu_Y)} \sum\_{k=0}^z \frac{\mu_X^k \mu_Y^{z-k}}{k!(z-k)!} && (\text{factor out } e^{-\mu_X} e^{-\mu_Y}) \\ &= \frac{e^{-(\mu_X + \mu_Y)}}{z!} \sum\_{k=0}^z \frac{z!}{k!(z-k)!} \mu_X^k \mu_Y^{z-k} && (\text{multiply and divide by } z!) \\ &= \frac{e^{-(\mu_X + \mu_Y)}}{z!} (\mu_X + \mu_Y)^z && (\text{binomial theorem}) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(Z = z) &= \sum\_{k=0}^z \mathbb{P}(X = k,\\ Y = z - k) && (\text{countable additivity}) \\ &= \sum\_{k=0}^z \mathbb{P}(X = k) \mathbb{P}(Y = z - k) && (\text{independence}) \\ &= \sum\_{k=0}^z \frac{\mu_X^k e^{-\mu_X}}{k!} \frac{\mu_Y^{z-k} e^{-\mu_Y}}{(z-k)!} && (\text{substitute Poisson PMFs}) \\ &= e^{-(\mu_X + \mu_Y)} \sum\_{k=0}^z \frac{\mu_X^k \mu_Y^{z-k}}{k!(z-k)!} && (\text{factor out } e^{-\mu_X} e^{-\mu_Y}) \\ &= \frac{e^{-(\mu_X + \mu_Y)}}{z!} \sum\_{k=0}^z \frac{z!}{k!(z-k)!} \mu_X^k \mu_Y^{z-k} && (\text{multiply and divide by } z!) \\ &= \frac{e^{-(\mu_X + \mu_Y)}}{z!} (\mu_X + \mu_Y)^z && (\text{binomial theorem}) \end{aligned} \\
 >
 > This probability expression matches the PMF of a \\\operatorname{Pois}(\mu_X + \mu_Y)\\ random variable (see also <https://web.stanford.edu/class/archive/cs/cs109/cs109.1206/lectureNotes/LN12_independent_rvs.pdf>, Example 3).
 
@@ -436,7 +436,7 @@ print(plot2)
 >
 > **Definition 6 (Negative binomial distribution)** A random variable \\Y\\ has the **negative binomial distribution** with mean \\\mu\> 0\\ and overdispersion parameter \\\rho\> 0\\, written \\Y \sim \operatorname{NegBin}(\mu, \rho)\\ [\[4\]](#ref-wikipedia_negative_binomial_distribution), if, for \\y \in {\mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}}\\:
 >
-> \\ \operatorname{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} \cdot \mathopen{}\left(1+\frac{\mu}{\rho}\right)\mathclose{}^{-\rho} \\
+> \\ \mathbb{P}(Y=y) \stackrel{\text{def}}{=}\frac{\mu^y}{y!} \cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y} \cdot \mathopen{}\left(1+\frac{\mu}{\rho}\right)\mathclose{}^{-\rho} \\
 >
 > where \\\Gamma\\ is the gamma function, which satisfies \\\Gamma(x) = (x-1)!\\ for positive integers \\x\\.
 
@@ -444,7 +444,7 @@ print(plot2)
 >
 > **Theorem 10 (The negative binomial converges to the Poisson)** Let the population [mean](expectation.llms.md#def-expectation) be \\\mu\> 0\\, and let \\Y\_\rho\sim \operatorname{NegBin}(\mu, \rho)\\. Then for each \\y \in {\mathopen{}\left\\0, 1, 2, \dots\right\\\mathclose{}}\\, as \\\rho\rightarrow \infty\\, the negative binomial PMF converges to the [Poisson](#def-poisson) PMF ([Equation 2](#eq-pois-pmf)):
 >
-> \\\lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
+> \\\lim\_{\rho\rightarrow \infty} \mathbb{P}(Y\_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\\
 
 > **NOTE:**
 >
@@ -458,7 +458,7 @@ print(plot2)
 >
 > so, since the exponential function is continuous, \\\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow {\operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}}\\. Each of the three factors has a limit, so their product does too:
 >
-> \\ \begin{aligned} \lim\_{\rho\rightarrow \infty} \operatorname{P}(Y\_\rho= y) &= \frac{\mu^y}{y!} \cdot 1 \cdot {\operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}} && (\text{limit of a product of convergent factors}) \\ &= \frac{\mu^{y} e^{-\mu}}{y!} && (\text{rearrange}) \end{aligned} \\
+> \\ \begin{aligned} \lim\_{\rho\rightarrow \infty} \mathbb{P}(Y\_\rho= y) &= \frac{\mu^y}{y!} \cdot 1 \cdot {\operatorname{exp}\mathopen{}\left\\-\mu\right\\\mathclose{}} && (\text{limit of a product of convergent factors}) \\ &= \frac{\mu^{y} e^{-\mu}}{y!} && (\text{rearrange}) \end{aligned} \\
 >
 > which is the \\\operatorname{Pois}(\mu)\\ PMF.
 
@@ -466,22 +466,22 @@ print(plot2)
 >
 > **Theorem 11 (Mean and variance of the negative binomial distribution)** If \\Y \sim \operatorname{NegBin}(\mu, \rho)\\, then:
 >
-> - \\\operatorname{E}\[Y\] = \mu\\
+> - \\\mathbb{E}\[Y\] = \mu\\
 > - \\{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = \mu+ \frac{\mu^2}{\rho} \> \mu\\
 
 > **NOTE:**
 >
 > *Proof*. The negative binomial distribution is a gamma mixture of Poisson distributions: if \\\Lambda\\ has the gamma density \\g({\lambda}) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\\ for \\{\lambda}\> 0\\, which has mean \\\mu\\ and variance \\\mu^2/\rho\\ [\[2\]](#ref-CaseBerg01), and \\Y \mid \Lambda= {\lambda}\sim \operatorname{Pois}({\lambda})\\, then \\Y \sim \operatorname{NegBin}(\mu, \rho)\\. To check this, integrate the joint density over \\{\lambda}\\:
 >
-> \\ \begin{aligned} \operatorname{P}(Y = y) &= \int_0^\infty \frac{{\lambda}^y e^{-{\lambda}}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\\d{\lambda} && (\text{marginalize over } \Lambda) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \int_0^\infty {\lambda}^{y + \rho- 1} e^{-{\lambda}(1 + \rho/\mu)}\\d{\lambda} && (\text{collect powers of } {\lambda}\text{ and exponents}) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \cdot\frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}} && (\textstyle\int_0^\infty {\lambda}^{a-1} e^{-b{\lambda}}\\d{\lambda}= \Gamma(a)/b^a) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu}\right)\mathclose{}^\rho\mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y + \rho} && (1 + \rho/\mu= (\mu+ \rho)/\mu) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu+ \rho}\right)\mathclose{}^{\rho} \mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y} && (\text{combine the } \mu^\rho\text{ factors}) \\ &= \frac{\mu^y}{y!} \cdot\frac{\Gamma(\rho+ y)}{\Gamma(\rho)\\(\rho+ \mu)^y} \cdot\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho} && (\text{rearrange into the form of the definition}) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(Y = y) &= \int_0^\infty \frac{{\lambda}^y e^{-{\lambda}}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\\d{\lambda} && (\text{marginalize over } \Lambda) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \int_0^\infty {\lambda}^{y + \rho- 1} e^{-{\lambda}(1 + \rho/\mu)}\\d{\lambda} && (\text{collect powers of } {\lambda}\text{ and exponents}) \\ &= \frac{(\rho/\mu)^\rho}{y!\\\Gamma(\rho)} \cdot\frac{\Gamma(y + \rho)}{(1 + \rho/\mu)^{y + \rho}} && (\textstyle\int_0^\infty {\lambda}^{a-1} e^{-b{\lambda}}\\d{\lambda}= \Gamma(a)/b^a) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu}\right)\mathclose{}^\rho\mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y + \rho} && (1 + \rho/\mu= (\mu+ \rho)/\mu) \\ &= \frac{\Gamma(y + \rho)}{y!\\\Gamma(\rho)} \mathopen{}\left(\frac{\rho}{\mu+ \rho}\right)\mathclose{}^{\rho} \mathopen{}\left(\frac{\mu}{\mu+ \rho}\right)\mathclose{}^{y} && (\text{combine the } \mu^\rho\text{ factors}) \\ &= \frac{\mu^y}{y!} \cdot\frac{\Gamma(\rho+ y)}{\Gamma(\rho)\\(\rho+ \mu)^y} \cdot\mathopen{}\left(1 + \frac{\mu}{\rho}\right)\mathclose{}^{-\rho} && (\text{rearrange into the form of the definition}) \end{aligned} \\
 >
 > Then, by the [law of iterated expectations](expectation.llms.md#thm-lie) and the [law of total variance](variance-covariance.llms.md#thm-total-variance), using
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}} &= \operatorname{Var}(Y \mid \Lambda) \\ &= \Lambda \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}} &= \operatorname{Var}(Y \mid \Lambda) \\ &= \Lambda \end{aligned} \\
 >
 > ([Theorem 4](#thm-poisson-properties)):
 >
-> \\ \begin{aligned} \operatorname{E}\[Y\] &= {\operatorname{E}\mathopen{}\left\[{\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}}\right\]\mathclose{}} && (\text{law of iterated expectations}) \\ &= {\operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{}} && ({\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}}\right\]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}}\right)\mathclose{}} && (\text{law of total variance}) \\ &= {\operatorname{E}\mathopen{}\left\[\Lambda\right\]\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}} && ({\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}} = \Lambda\text{ and } {\operatorname{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{E}\[Y\] &= {\mathbb{E}\mathopen{}\left\[{\mathbb{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}}\right\]\mathclose{}} && (\text{law of iterated expectations}) \\ &= {\mathbb{E}\mathopen{}\left\[\Lambda\right\]\mathclose{}} && ({\mathbb{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}} = \Lambda) \\ &= \mu && (\text{mean of the gamma distribution}) \\ {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}}\right\]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}}\right)\mathclose{}} && (\text{law of total variance}) \\ &= {\mathbb{E}\mathopen{}\left\[\Lambda\right\]\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}} && ({\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}} = \Lambda\text{ and } {\mathbb{E}\mathopen{}\left\[Y \mid \Lambda\right\]\mathclose{}} = \Lambda) \\ &= \mu+ \frac{\mu^2}{\rho} && (\text{mean and variance of the gamma distribution}) \end{aligned} \\
 >
 > and \\\mu^2/\rho\> 0\\ gives \\{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} \> \mu\\.
 
@@ -530,23 +530,23 @@ print(plot2)
 >
 > **Theorem 12 (Mean and variance of the Laplace distribution)** If \\Y \sim {\operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}}\\ ([Definition 7](#def-laplace)), then
 >
-> \\{\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}} = \mu\quad \text{and} \quad {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 2b^2. \tag{7}\\
+> \\{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} = \mu\quad \text{and} \quad {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 2b^2. \tag{7}\\
 
 > **NOTE:**
 >
 > *Proof*. Write \\U = Y - \mu\\. By [Equation 6](#eq-laplace-pdf), \\U\\ has density \\\frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\, which is symmetric about \\0\\.
 >
-> For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\{\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{}} = 0\\, and
+> For the mean, the integrand \\u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is an odd function, so its integral over \\\mathbb{R}\\ is \\0\\. Therefore \\{\mathbb{E}\mathopen{}\left\[U\right\]\mathclose{}} = 0\\, and
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= \mu+ {\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{}} \\ &= \mu. \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= \mu+ {\mathbb{E}\mathopen{}\left\[U\right\]\mathclose{}} \\ &= \mu. \end{aligned} \\
 >
 > For the variance,
 >
-> \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(U\right)\mathclose{}} \\ &= {\operatorname{E}\mathopen{}\left\[U^2\right\]\mathclose{}} \end{aligned} \\
+> \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(U\right)\mathclose{}} \\ &= {\mathbb{E}\mathopen{}\left\[U^2\right\]\mathclose{}} \end{aligned} \\
 >
-> because \\{\operatorname{E}\mathopen{}\left\[U\right\]\mathclose{}} = 0\\. The integrand \\u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is even, so
+> because \\{\mathbb{E}\mathopen{}\left\[U\right\]\mathclose{}} = 0\\. The integrand \\u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left\|u\right\|\mathclose{}/b}\\ is even, so
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[U^2\right\]\mathclose{}} &= 2 \int_0^\infty u^2 \frac{1}{2b} \text{e}^{-u/b} \\ du && \text{(even integrand)} \\ &= \frac{1}{b} \int_0^\infty u^2 \text{e}^{-u/b} \\ du && \text{(multiplying the constants)} \\ &= \frac{1}{b} \mathopen{}\left(2b \int_0^\infty u \text{e}^{-u/b} \\ du\right)\mathclose{} && \text{(integration by parts; the boundary terms are \$0\$)} \\ &= \frac{1}{b} \mathopen{}\left(2b \cdot b^2\right)\mathclose{} && \text{(integration by parts again; the boundary terms are \$0\$)} \\ &= 2b^2. && \text{(multiplying the constants)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[U^2\right\]\mathclose{}} &= 2 \int_0^\infty u^2 \frac{1}{2b} \text{e}^{-u/b} \\ du && \text{(even integrand)} \\ &= \frac{1}{b} \int_0^\infty u^2 \text{e}^{-u/b} \\ du && \text{(multiplying the constants)} \\ &= \frac{1}{b} \mathopen{}\left(2b \int_0^\infty u \text{e}^{-u/b} \\ du\right)\mathclose{} && \text{(integration by parts; the boundary terms are \$0\$)} \\ &= \frac{1}{b} \mathopen{}\left(2b \cdot b^2\right)\mathclose{} && \text{(integration by parts again; the boundary terms are \$0\$)} \\ &= 2b^2. && \text{(multiplying the constants)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -575,7 +575,7 @@ print(plot2)
 > >
 > > Figure 3: Laplace and standard normal densities with the same mean (0) and variance (1)
 >
-> The probability of landing more than \\3\\ standard deviations from the mean shows the difference in the tails. For the Laplace distribution, \\\operatorname{P}(\mathopen{}\left\|Y\right\|\mathclose{} \> t) = \text{e}^{-t/b}\\, because each tail has probability \\\frac{1}{2}\text{e}^{-t/b}\\ by integrating [Equation 6](#eq-laplace-pdf).
+> The probability of landing more than \\3\\ standard deviations from the mean shows the difference in the tails. For the Laplace distribution, \\\mathbb{P}(\mathopen{}\left\|Y\right\|\mathclose{} \> t) = \text{e}^{-t/b}\\, because each tail has probability \\\frac{1}{2}\text{e}^{-t/b}\\ by integrating [Equation 6](#eq-laplace-pdf).
 >
 > ``` r
 > t <- 3
@@ -621,13 +621,13 @@ print(plot2)
 >
 > **Theorem 14 (Weibull mean)** If \\T\\ has the Weibull distribution with shape \\\alpha\\ and rate \\{\lambda}\\, then:
 >
-> \\{\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{}} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\\
+> \\{\mathbb{E}\mathopen{}\left\[T\right\]\mathclose{}} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\\
 
 > **NOTE:**
 >
 > *Proof*. For the mean, use the [survival-function formula for the mean](expectation.llms.md#thm-surv-mean) and substitute \\u = {\lambda}t^\alpha\\, so that \\t = (u/{\lambda})^{1/\alpha}\\ and \\dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\\du\\:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\\du && (\text{substitute } u = {\lambda}t^\alpha) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\{\lambda}^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\\dt && (\text{expectation via the survival function}) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\\du && (\text{substitute } u = {\lambda}t^\alpha) \\ &= \frac{1}{\alpha}{\lambda}^{-1/\alpha}\\\Gamma(1/\alpha) && (\text{definition of the gamma function}) \\ &= \Gamma(1 + 1/\alpha)\\{\lambda}^{-1/\alpha} && (\Gamma(1 + a) = a\\\Gamma(a)) \end{aligned} \\
 
 > **NOTE:**
 >
@@ -665,11 +665,11 @@ print(plot2)
 >
 > **Example 16 (Exponential as a special case)** With \\\alpha= 1\\, [Theorem 13](#thm-weibull) gives \\\operatorname{h}(t) = {\lambda}\\ and
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \Gamma(2){\lambda}^{-1} \\ &= 1/{\lambda}, \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \Gamma(2){\lambda}^{-1} \\ &= 1/{\lambda}, \end{aligned} \\
 >
 > matching the exponential distribution’s constant hazard and mean. With \\\alpha= 2\\ and \\{\lambda}= 1\\, \\\operatorname{h}(t) = 2t\\ increases with \\t\\, and
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \Gamma(3/2) \\ &= \sqrt{\pi}/2 \\ &\approx 0.886. \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \Gamma(3/2) \\ &= \sqrt{\pi}/2 \\ &\approx 0.886. \end{aligned} \\
 
 ## 7 The multivariate normal distribution
 
@@ -696,7 +696,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 16 (The mean and variance of the multivariate normal distribution)** If \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\sim \operatorname{N}\_p\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then \\\operatorname{E}\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{\mu}}\vphantom{\mu}}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\{\operatorname{Var}\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
+> **Theorem 16 (The mean and variance of the multivariate normal distribution)** If \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\sim \operatorname{N}\_p\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\\ ([Definition 9](#def-mvn)), then \\\mathbb{E}\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{\mu}}\vphantom{\mu}}\\ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and \\{\operatorname{Var}\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}\\ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
 
 > **NOTE:**
 >
@@ -783,7 +783,7 @@ print(plot2)
 >
 > - each pair \\X_i, X_j\\ with \\i \neq j\\ is independent,
 > - each \\X_i\\ is continuous, with the density left after integrating out the other coordinates of the joint density ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with \\p\\ variables), and
-> - \\{\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{}} \< \infty\\, because \\{\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\, the \\(i,i)\\-th element of \\\mathbf{\Sigma}\\, is defined, and a [variance](variance-covariance.llms.md#def-variance) is defined only when \\{\operatorname{E}\mathopen{}\left\[X_i^2\right\]\mathclose{}} \< \infty\\.
+> - \\{\mathbb{E}\mathopen{}\left\[X_i^2\right\]\mathclose{}} \< \infty\\, because \\{\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\, the \\(i,i)\\-th element of \\\mathbf{\Sigma}\\, is defined, and a [variance](variance-covariance.llms.md#def-variance) is defined only when \\{\mathbb{E}\mathopen{}\left\[X_i^2\right\]\mathclose{}} \< \infty\\.
 >
 > So \\\mathbf{\Sigma}\\ is diagonal by [independent components give a diagonal variance matrix](variance-covariance.llms.md#cor-vcov-indpt-diagonal).
 
@@ -852,7 +852,7 @@ print(plot2)
 >
 > with \\{\operatorname{p}\_c}\\ and \\w_c\\ as in [Definition 11](#def-mixture). Then:
 >
-> - \\\operatorname{P}(C = c) = w_c\\,
+> - \\\mathbb{P}(C = c) = w_c\\,
 > - for each \\c\\ with \\w_c \> 0\\, the [conditional density](expectation.llms.md#def-cond-mixed) of \\X\\ given \\C = c\\ is \\{\operatorname{p}\_c}\\, and
 > - the mixture \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\.
 
@@ -860,7 +860,7 @@ print(plot2)
 >
 > *Proof*. By the [marginal PMF from a joint density-mass function](random-variables.llms.md#cor-joint-density-mass-marginal),
 >
-> \\ \begin{aligned} \operatorname{P}(C = c) &= \int\_{-\infty}^{\infty} w_c \\ {\operatorname{p}\_c}(x)\\dx \\ &= w_c, \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(C = c) &= \int\_{-\infty}^{\infty} w_c \\ {\operatorname{p}\_c}(x)\\dx \\ &= w_c, \end{aligned} \\
 >
 > because \\{\operatorname{p}\_c}\\ is a density and so integrates to 1. Then, by the [definition of the conditional density](expectation.llms.md#def-cond-mixed),
 >
@@ -874,19 +874,19 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 19](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label \\C\\ with \\\operatorname{P}(C = c) = w_c\\, then draw \\X\\ from the component density \\{\operatorname{p}\_C}\\. In applications, \\C\\ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with \\p\\-variable densities in place of densities on \\\mathbb{R}\\.
+> *Remark*. [Theorem 19](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label \\C\\ with \\\mathbb{P}(C = c) = w_c\\, then draw \\X\\ from the component density \\{\operatorname{p}\_C}\\. In applications, \\C\\ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with \\p\\-variable densities in place of densities on \\\mathbb{R}\\.
 
 > **NOTE:**
 >
 > **Theorem 20 (The mean of a mixture is the weighted mean of the component means)** If \\X\\ has density \\{\operatorname{p}\_{\text{mix}}}\\ ([Definition 11](#def-mixture)), and each component \\{\operatorname{p}\_c}\\ has a defined mean \\\mu_c = \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx\\, then:
 >
-> \\{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} = \sum\_{c=1}^{K} w_c \\ \mu_c\\
+> \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = \sum\_{c=1}^{K} w_c \\ \mu_c\\
 
 > **NOTE:**
 >
-> *Proof*. The integral defining \\{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}\\ converges absolutely, because \\\int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx = \sum\_{c=1}^{K} w_c \int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_c}(x)\\dx\\, a finite sum of finite numbers. Then:
+> *Proof*. The integral defining \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\\ converges absolutely, because \\\int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx = \sum\_{c=1}^{K} w_c \int\_{-\infty}^\infty \mathopen{}\left\|x\right\|\mathclose{} \\ {\operatorname{p}\_c}(x)\\dx\\, a finite sum of finite numbers. Then:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} &= \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of expectation)} \\ &= \int\_{-\infty}^{\infty} x \sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a mixture)} \\ &= \sum\_{c=1}^{K} w_c \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \sum\_{c=1}^{K} w_c \\ \mu_c && \text{(definition of } \mu_c \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} &= \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_{\text{mix}}}(x)\\dx && \text{(definition of expectation)} \\ &= \int\_{-\infty}^{\infty} x \sum\_{c=1}^{K} w_c \\ {\operatorname{p}\_c}(x)\\dx && \text{(definition of a mixture)} \\ &= \sum\_{c=1}^{K} w_c \int\_{-\infty}^{\infty} x \\ {\operatorname{p}\_c}(x)\\dx && \text{(a finite sum of integrals is the integral of the sum)} \\ &= \sum\_{c=1}^{K} w_c \\ \mu_c && \text{(definition of } \mu_c \text{)} \end{aligned} \\
 >
 > The first step is the [definition of expectation](expectation.llms.md#def-expectation).
 
@@ -894,13 +894,13 @@ print(plot2)
 >
 > **Theorem 21 (Which component did an observation come from?)** Under the conditions of [Theorem 19](#thm-mixture-two-stage), for each \\x\\ with \\{\operatorname{p}\_{\text{mix}}}(x) \> 0\\:
 >
-> \\ \operatorname{P}(C = c \mid X = x) = \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} \\
+> \\ \mathbb{P}(C = c \mid X = x) = \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} \\
 
 > **NOTE:**
 >
 > *Proof*. By [Theorem 19](#thm-mixture-two-stage), \\{\operatorname{p}\_{\text{mix}}}\\ is a density of \\X\\. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case \\X\\ continuous, \\C\\ discrete):
 >
-> \\ \begin{aligned} \operatorname{P}(C = c \mid X = x) &= \frac{\operatorname{p}(C = c,\\ X = x)}{\operatorname{p}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} && \text{(substitute the joint density-mass function and } {\operatorname{p}\_{\text{mix}}} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(C = c \mid X = x) &= \frac{\operatorname{p}(C = c,\\ X = x)}{\operatorname{p}(X = x)} && \text{(definition of the conditional PMF)} \\ &= \frac{w_c \\ {\operatorname{p}\_c}(x)}{\sum\_{k=1}^{K} w_k \\ {\operatorname{p}\_k}(x)} && \text{(substitute the joint density-mass function and } {\operatorname{p}\_{\text{mix}}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -908,7 +908,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 13 (Responsibility of a mixture component)** In the setting of [Theorem 21](#thm-mixture-posterior), the conditional probability \\\operatorname{P}(C = c \mid X = x)\\ is called, in machine learning, the **responsibility** of component \\c\\ for \\x\\.
+> **Definition 13 (Responsibility of a mixture component)** In the setting of [Theorem 21](#thm-mixture-posterior), the conditional probability \\\mathbb{P}(C = c \mid X = x)\\ is called, in machine learning, the **responsibility** of component \\c\\ for \\x\\.
 
 > **NOTE:**
 >
@@ -916,15 +916,15 @@ print(plot2)
 >
 > - **Mean.** By [Theorem 20](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
->   \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\ &= 4.2. \end{aligned} \\
+>   \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\ &= 4.2. \end{aligned} \\
 >
 > - **Density.** \\{\operatorname{p}\_{\text{mix}}}\\ has peaks near the two component means, \\{\operatorname{p}\_{\text{mix}}}(0) \approx 0.120\\ and \\{\operatorname{p}\_{\text{mix}}}(6) \approx 0.279\\, with a trough between them, \\{\operatorname{p}\_{\text{mix}}}(3) \approx 0.004\\. The density at the mean, \\{\operatorname{p}\_{\text{mix}}}(4.2) \approx 0.055\\, is less than half its value at either peak.
 >
 > - **Responsibilities.** By [Theorem 21](#thm-mixture-posterior), at \\x = 3\\, halfway between the component means, \\{\operatorname{p}\_1}(3) = {\operatorname{p}\_2}(3)\\ by the symmetry of the normal density, so:
 >
->   \\ \begin{aligned} \operatorname{P}(C = 2 \mid X = 3) &= \frac{0.7\\{\operatorname{p}\_2}(3)}{0.3\\{\operatorname{p}\_1}(3) + 0.7\\{\operatorname{p}\_2}(3)} \\ &= \frac{0.7}{0.3 + 0.7} \\ &= 0.7, \end{aligned} \\
+>   \\ \begin{aligned} \mathbb{P}(C = 2 \mid X = 3) &= \frac{0.7\\{\operatorname{p}\_2}(3)}{0.3\\{\operatorname{p}\_1}(3) + 0.7\\{\operatorname{p}\_2}(3)} \\ &= \frac{0.7}{0.3 + 0.7} \\ &= 0.7, \end{aligned} \\
 >
->   the prior weight: an observation equally far from both components carries no information about which component it came from. At \\x = 4.2\\, the same formula gives \\\operatorname{P}(C = 2 \mid X = 4.2) \approx 0.9997\\.
+>   the prior weight: an observation equally far from both components carries no information about which component it came from. At \\x = 4.2\\, the same formula gives \\\mathbb{P}(C = 2 \mid X = 4.2) \approx 0.9997\\.
 
 > **NOTE:**
 >
@@ -932,7 +932,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 21 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
+> **Example 21 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean \\{\lambda}\> 0\\: its PMF is \\\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\\\frac{{\lambda}^y e^{-{\lambda}}}{y!}\\d{\lambda}\\, where the gamma density \\g\\ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
 ## References
 

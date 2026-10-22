@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:36:00 (PDT)
+Last modified: 2026-10-22 13:40:45 (PDT)
 
 ## 1 Defining probabilities
 
@@ -146,7 +146,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Definition 11 (Probability measure (probability function))** A **probability measure** (also called a **probability function** [\[4\]](#ref-CaseBerg01), Definition 1.2.4) on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\operatorname{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 [\[5\]](#ref-wikipedia_probability_space):
+> **Definition 11 (Probability measure (probability function))** A **probability measure** (also called a **probability function** [\[4\]](#ref-CaseBerg01), Definition 1.2.4) on a [sample space](#def-sample-space) \\\Omega\\, often denoted \\\Pr()\\ or \\\mathbb{P}()\\, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of \\\Omega\\ that gives the whole sample space probability 1 [\[5\]](#ref-wikipedia_probability_space):
 >
 > \\\Pr(\Omega) = 1\\
 
@@ -295,9 +295,9 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Odds)** Let \\A\\ be an [event](#def-event) with [probability](#def-probability) \\\operatorname{P}(A) \in (0, 1)\\. The **odds** of \\A\\ are [\[7\]](#ref-wikipedia_odds)
+> **Definition 13 (Odds)** Let \\A\\ be an [event](#def-event) with [probability](#def-probability) \\\mathbb{P}(A) \in (0, 1)\\. The **odds** of \\A\\ are [\[7\]](#ref-wikipedia_odds)
 >
-> \\\omega\stackrel{\text{def}}{=}\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)} \in (0, \infty).\\
+> \\\omega\stackrel{\text{def}}{=}\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)} \in (0, \infty).\\
 
 > **NOTE:**
 >
@@ -315,9 +315,9 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an [event](#def-event) \\A\\ with [probability](#def-probability) \\\operatorname{P}(A) \in (0, 1)\\ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
+> **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an [event](#def-event) \\A\\ with [probability](#def-probability) \\\mathbb{P}(A) \in (0, 1)\\ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
 >
-> \\\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\\\omega\right\\\mathclose{}} = {\operatorname{log}\mathopen{}\left\\\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\\\mathclose{}} \in \mathbb{R}.\\
+> \\\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\\\omega\right\\\mathclose{}} = {\operatorname{log}\mathopen{}\left\\\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}\right\\\mathclose{}} \in \mathbb{R}.\\
 
 > **NOTE:**
 >

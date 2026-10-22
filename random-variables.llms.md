@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:36:00 (PDT)
+Last modified: 2026-10-22 13:40:45 (PDT)
 
 ## 1 Random variables
 
@@ -94,15 +94,15 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{P}(x)\\, \\\operatorname{P}\_X(x)\\, or \\\operatorname{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ [\[2\]](#ref-wikipedia_probability_mass_function):
+> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\mathbb{P}(x)\\, \\\mathbb{P}\_X(x)\\, or \\\mathbb{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ [\[2\]](#ref-wikipedia_probability_mass_function):
 >
-> \\\operatorname{P}(X=x) \stackrel{\text{def}}{=}\Pr(\\X=x\\)\\
+> \\\mathbb{P}(X=x) \stackrel{\text{def}}{=}\Pr(\\X=x\\)\\
 
 > **NOTE:**
 >
 > **Example 6 (PMF of the number of heads)** For the number of heads \\X\\ in two fair coin flips ([Example 1](#exm-random-variable)):
 >
-> \\\operatorname{P}(X = 0) = \tfrac{1}{4}, \quad \operatorname{P}(X = 1) = \tfrac{1}{2}, \quad \operatorname{P}(X = 2) = \tfrac{1}{4}\\
+> \\\mathbb{P}(X = 0) = \tfrac{1}{4}, \quad \mathbb{P}(X = 1) = \tfrac{1}{2}, \quad \mathbb{P}(X = 2) = \tfrac{1}{4}\\
 
 > **NOTE:**
 >
@@ -122,11 +122,11 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > Then
 >
-> \\ \begin{aligned} \operatorname{P}(X_1 = 1) &= \Pr({\mathopen{}\left\\HH, HT\right\\\mathclose{}}) \\ &= 1/2 \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_1 = 1) &= \Pr({\mathopen{}\left\\HH, HT\right\\\mathclose{}}) \\ &= 1/2 \end{aligned} \\
 >
 > and
 >
-> \\ \begin{aligned} \operatorname{P}(X_1 = 0) &= \Pr({\mathopen{}\left\\TH, TT\right\\\mathclose{}}) \\ &= 1/2, \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_1 = 0) &= \Pr({\mathopen{}\left\\TH, TT\right\\\mathclose{}}) \\ &= 1/2, \end{aligned} \\
 >
 > so \\X_1 \sim \operatorname{Ber}(1/2)\\.
 
@@ -209,7 +209,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 4 (The mean and variance of the normal distribution)** If \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ ([Definition 10](#def-normal)), then \\X\\ has [mean](expectation.llms.md#def-expectation) \\{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} = \mu\\ and [variance](variance-covariance.llms.md#def-variance) \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \sigma^2\\.
+> **Theorem 4 (The mean and variance of the normal distribution)** If \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ ([Definition 10](#def-normal)), then \\X\\ has [mean](expectation.llms.md#def-expectation) \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = \mu\\ and [variance](variance-covariance.llms.md#def-variance) \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \sigma^2\\.
 
 > **NOTE:**
 >
@@ -580,7 +580,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Definition 17 (Joint probability mass function (joint PMF))** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (**joint PMF**) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
 >
-> \\\operatorname{P}(X = x,\\ Y = y) \stackrel{\text{def}}{=}\Pr(\\X = x\\ \cap \\Y = y\\)\\
+> \\\mathbb{P}(X = x,\\ Y = y) \stackrel{\text{def}}{=}\Pr(\\X = x\\ \cap \\Y = y\\)\\
 
 > **NOTE:**
 >
@@ -601,25 +601,25 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Example 22 (Marginal distribution of the total)** In [Example 21](#exm-joint-pmf), the marginal distribution of the total \\X\\ is the PMF of [Example 6](#exm-pmf): \\\operatorname{P}(X = 0) = 1/4\\, \\\operatorname{P}(X = 1) = 1/2\\, \\\operatorname{P}(X = 2) = 1/4\\.
+> **Example 22 (Marginal distribution of the total)** In [Example 21](#exm-joint-pmf), the marginal distribution of the total \\X\\ is the PMF of [Example 6](#exm-pmf): \\\mathbb{P}(X = 0) = 1/4\\, \\\mathbb{P}(X = 1) = 1/2\\, \\\mathbb{P}(X = 2) = 1/4\\.
 
 > **NOTE:**
 >
 > **Theorem 13 (Marginal PMF from a joint PMF)** If \\X\\ and \\Y\\ are jointly distributed discrete random variables, then for every \\x\\:
 >
-> \\\operatorname{P}(X = x) = \sum\_{y \in \mathcal{R}(Y)} \operatorname{P}(X = x,\\ Y = y)\\
+> \\\mathbb{P}(X = x) = \sum\_{y \in \mathcal{R}(Y)} \mathbb{P}(X = x,\\ Y = y)\\
 
 > **NOTE:**
 >
 > *Proof*. The event \\\\X = x\\\\ is the disjoint union of the events \\\\X = x\\ \cap \\Y = y\\\\ over the countably many values \\y \in \mathcal{R}(Y)\\, so:
 >
-> \\ \begin{aligned} \operatorname{P}(X = x) &= {\Pr\mathopen{}\left(\bigcup\_{y \in \mathcal{R}(Y)} \mathopen{}\left(\\X = x\\ \cap \\Y = y\\\right)\mathclose{}\right)\mathclose{}} && \text{(the events partition } \\X = x\\ \text{)} \\ &= \sum\_{y \in \mathcal{R}(Y)} \Pr(\\X = x\\ \cap \\Y = y\\) && \text{(countable additivity)} \\ &= \sum\_{y \in \mathcal{R}(Y)} \operatorname{P}(X = x,\\ Y = y) && \text{(definition of the joint PMF)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X = x) &= {\Pr\mathopen{}\left(\bigcup\_{y \in \mathcal{R}(Y)} \mathopen{}\left(\\X = x\\ \cap \\Y = y\\\right)\mathclose{}\right)\mathclose{}} && \text{(the events partition } \\X = x\\ \text{)} \\ &= \sum\_{y \in \mathcal{R}(Y)} \Pr(\\X = x\\ \cap \\Y = y\\) && \text{(countable additivity)} \\ &= \sum\_{y \in \mathcal{R}(Y)} \mathbb{P}(X = x,\\ Y = y) && \text{(definition of the joint PMF)} \end{aligned} \\
 
 > **NOTE:**
 >
 > **Example 23 (Summing a row of the joint PMF)** In [Example 21](#exm-joint-pmf), summing the \\X_1 = 1\\ row:
 >
-> \\ \begin{aligned} \operatorname{P}(X_1 = 1) &= \operatorname{P}(X_1 = 1, X = 0) + \operatorname{P}(X_1 = 1, X = 1) + \operatorname{P}(X_1 = 1, X = 2) && \text{(marginal PMF from the joint PMF)} \\ &= 0 + \tfrac{1}{4} + \tfrac{1}{4} && \text{(read the table)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_1 = 1) &= \mathbb{P}(X_1 = 1, X = 0) + \mathbb{P}(X_1 = 1, X = 1) + \mathbb{P}(X_1 = 1, X = 2) && \text{(marginal PMF from the joint PMF)} \\ &= 0 + \tfrac{1}{4} + \tfrac{1}{4} && \text{(read the table)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
 >
 > which matches \\X_1 \sim \operatorname{Ber}(1/2)\\ from [Example 7](#exm-bernoulli-pmf).
 
@@ -692,61 +692,61 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Corollary 2 (Marginal PMF from a joint density-mass function)** If \\X\\ and \\Y\\ have joint density-mass function \\\operatorname{p}(X = x,\\ Y = y)\\, then for every \\x\\:
 >
-> \\\operatorname{P}(X = x) = \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy\\
+> \\\mathbb{P}(X = x) = \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy\\
 
 > **NOTE:**
 >
 > *Proof*. Every outcome has \\Y(\omega) \in \mathbb{R}\\, so \\{\mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{}} = \Omega\\, and:
 >
-> \\ \begin{aligned} \operatorname{P}(X = x) &= \Pr({\mathopen{}\left\\X = x\right\\\mathclose{}} \cap \Omega) && \text{(} {\mathopen{}\left\\X = x\right\\\mathclose{}} \subseteq \Omega\text{)} \\ &= \Pr(X = x,\\ Y \in \mathbb{R}) && \text{(} {\mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{}} = \Omega\text{)} \\ &= \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy && \text{(definition of a joint density-mass function, with } B = \mathbb{R}\text{)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X = x) &= \Pr({\mathopen{}\left\\X = x\right\\\mathclose{}} \cap \Omega) && \text{(} {\mathopen{}\left\\X = x\right\\\mathclose{}} \subseteq \Omega\text{)} \\ &= \Pr(X = x,\\ Y \in \mathbb{R}) && \text{(} {\mathopen{}\left\\Y \in \mathbb{R}\right\\\mathclose{}} = \Omega\text{)} \\ &= \int\_{-\infty}^{\infty} \operatorname{p}(X = x,\\ Y = y)\\dy && \text{(definition of a joint density-mass function, with } B = \mathbb{R}\text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 26 (A coin flip and a waiting time)** Let \\\operatorname{p}(X = 0,\\ Y = y) = 1/2\\ for \\y \in \[0, 1\]\\, \\\operatorname{p}(X = 1,\\ Y = y) = 1/4\\ for \\y \in \[0, 2\]\\, and \\0\\ otherwise. Integrating over \\y\\ gives \\\operatorname{P}(X = 0) = 1/2\\ and \\\operatorname{P}(X = 1) = 1/2\\, which add to 1. For example, the probability that \\X = 1\\ and \\Y \le 1\\ is:
+> **Example 26 (A coin flip and a waiting time)** Let \\\operatorname{p}(X = 0,\\ Y = y) = 1/2\\ for \\y \in \[0, 1\]\\, \\\operatorname{p}(X = 1,\\ Y = y) = 1/4\\ for \\y \in \[0, 2\]\\, and \\0\\ otherwise. Integrating over \\y\\ gives \\\mathbb{P}(X = 0) = 1/2\\ and \\\mathbb{P}(X = 1) = 1/2\\, which add to 1. For example, the probability that \\X = 1\\ and \\Y \le 1\\ is:
 >
 > \\ \begin{aligned} \Pr(X = 1,\\ Y \le 1) &= \int_0^1 \tfrac{1}{4}\\dy \\ &= \tfrac{1}{4} \end{aligned} \\
 
 ### 2.1 Joint distributions and marginalization
 
-For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\\operatorname{P}(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
+For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\\mathbb{P}(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
 
-\\\sum\_{x \in \mathbb{X}} \operatorname{P}(x) = 1\\
+\\\sum\_{x \in \mathbb{X}} \mathbb{P}(x) = 1\\
 
-The **support** of the distribution is the subset of values where the probability is strictly positive: \\\\x \in \mathbb{X} : \operatorname{P}(x) \> 0\\\\. When \\\mathbb{X}\\ is finite, \\\operatorname{P}(x)\\ can be written as a probability vector.
+The **support** of the distribution is the subset of values where the probability is strictly positive: \\\\x \in \mathbb{X} : \mathbb{P}(x) \> 0\\\\. When \\\mathbb{X}\\ is finite, \\\mathbb{P}(x)\\ can be written as a probability vector.
 
-For two discrete variables \\X \in \mathbb{X}\\ and \\Y \in \mathbb{Y}\\, their **joint probability distribution** \\\operatorname{P}(x, y) : \mathbb{X} \times \mathbb{Y} \to \[0, 1\]\\ satisfies:
+For two discrete variables \\X \in \mathbb{X}\\ and \\Y \in \mathbb{Y}\\, their **joint probability distribution** \\\mathbb{P}(x, y) : \mathbb{X} \times \mathbb{Y} \to \[0, 1\]\\ satisfies:
 
-\\\sum\_{x \in \mathbb{X}} \sum\_{y \in \mathbb{Y}} \operatorname{P}(x, y) = 1\\
+\\\sum\_{x \in \mathbb{X}} \sum\_{y \in \mathbb{Y}} \mathbb{P}(x, y) = 1\\
 
 For two variables, the joint probabilities can be laid out in a matrix or table. Summing across a row or column collapses that variable away, a process called **marginalization**:
 
-\\\operatorname{P}(x) = \sum\_{y \in \mathbb{Y}} \operatorname{P}(x, y), \qquad \operatorname{P}(y) = \sum\_{x \in \mathbb{X}} \operatorname{P}(x, y)\\
+\\\mathbb{P}(x) = \sum\_{y \in \mathbb{Y}} \mathbb{P}(x, y), \qquad \mathbb{P}(y) = \sum\_{x \in \mathbb{X}} \mathbb{P}(x, y)\\
 
-The resulting distributions \\\operatorname{P}(x)\\ and \\\operatorname{P}(y)\\ are the **marginal distributions** of \\X\\ and \\Y\\.
+The resulting distributions \\\mathbb{P}(x)\\ and \\\mathbb{P}(y)\\ are the **marginal distributions** of \\X\\ and \\Y\\.
 
 > **NOTE:**
 >
-> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\operatorname{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\operatorname{P}(m=1) = 10^{-6}\\):
+> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\mathbb{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\mathbb{P}(m=1) = 10^{-6}\\):
 >
 > > **NOTE:**
 > >
-> > |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\\operatorname{P}(m)\\ |
+> > |  | \\d=0\\ (bad day) | \\d=1\\ (good day) | Marginal \\\mathbb{P}(m)\\ |
 > > |:---|---:|---:|---:|
 > > | \\m=0\\ (no meteorite) | \\0.09999902\\ | \\0.89999998\\ | \\0.999999\\ |
 > > | \\m=1\\ (meteorite hit) | \\0.00000098\\ | \\0.00000002\\ | \\0.000001\\ |
-> > | **Marginal \\\operatorname{P}(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
+> > | **Marginal \\\mathbb{P}(d)\\** | **\\0.10000000\\** | **\\0.90000000\\** | **\\1.000000\\** |
 > >
 > > Table 1: Joint distribution of a meteorite strike (\\m\\) and day quality (\\d\\), with marginals.
 >
 > Summing each row yields the marginal distribution of \\m\\; summing each column yields the marginal distribution of \\d\\. Conditioning inverts the perspective:
 >
-> \\ \begin{aligned} \operatorname{P}(d=0 \mid m=1) &= \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(m=1)} \\ &= \frac{0.00000098}{0.000001} \\ &= 0.98 \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(d=0 \mid m=1) &= \frac{\mathbb{P}(m=1, d=0)}{\mathbb{P}(m=1)} \\ &= \frac{0.00000098}{0.000001} \\ &= 0.98 \end{aligned} \\
 >
 > Given that a meteorite struck your house, you have a 98% chance of having a bad day. In reverse:
 >
-> \\ \begin{aligned} \operatorname{P}(m=1 \mid d=0) &= \frac{\operatorname{P}(m=1, d=0)}{\operatorname{P}(d=0)} \\ &= \frac{0.00000098}{0.1} \\ &= 0.0000098 \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(m=1 \mid d=0) &= \frac{\mathbb{P}(m=1, d=0)}{\mathbb{P}(d=0)} \\ &= \frac{0.00000098}{0.1} \\ &= 0.0000098 \end{aligned} \\
 >
-> Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\\operatorname{P}(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
+> Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\\mathbb{P}(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
 
 ### 2.2 Continuous distributions and densities
 

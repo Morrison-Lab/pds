@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:36:00 (PDT)
+Last modified: 2026-10-22 13:40:45 (PDT)
 
 > **NOTE:**
 >
@@ -20,7 +20,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Theorem 1 (Independence of discrete random variables: the joint PMF factors)** Discrete random variables \\X_1, \ldots, X_n\\ are [statistically independent](#def-indpt) if and only if their [joint PMF](random-variables.llms.md#def-joint-pmf) factors into the product of their PMFs: for all real numbers \\x_1, \ldots, x_n\\,
 >
-> \\\operatorname{P}(X_1=x_1, \ldots, X_n = x_n) = \prod\_{i=1}^n{\operatorname{P}(X_i=x_i)}\\
+> \\\mathbb{P}(X_1=x_1, \ldots, X_n = x_n) = \prod\_{i=1}^n{\mathbb{P}(X_i=x_i)}\\
 
 > **NOTE:**
 >
@@ -28,23 +28,23 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **If.** Let \\A_1, \ldots, A_n\\ be sets of real numbers, and let \\C\\ be the set of tuples \\(x_1, \ldots, x_n)\\ with each \\x_i \in A_i \cap \mathcal{R}(X_i)\\. Each [range](random-variables.llms.md#def-range) \\\mathcal{R}(X_i)\\ is countable, so \\C\\ is countable. Each \\X_i\\ takes its values in \\\mathcal{R}(X_i)\\, so the event \\{\mathopen{}\left\\X_1 \in A_1, \ldots, X_n \in A_n\right\\\mathclose{}}\\ is the disjoint union of the events \\{\mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{}}\\ over \\(x_1, \ldots, x_n) \in C\\:
 >
-> \\ \begin{aligned} \Pr(X_1 \in A_1, \ldots, X_n \in A_n) &= \sum\_{(x_1, \ldots, x_n) \in C} \operatorname{P}(X_1=x_1, \ldots, X_n = x_n) && \text{(countable additivity over the disjoint events } {\mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{}} \text{)} \\ &= \sum\_{(x_1, \ldots, x_n) \in C} \prod\_{i=1}^n{\operatorname{P}(X_i = x_i)} && \text{(the joint PMF factors)} \\ &= \prod\_{i=1}^n{\sum\_{x_i \in A_i \cap \mathcal{R}(X_i)} \operatorname{P}(X_i = x_i)} && \text{(a sum over the product set } C \text{ of non-negative products factors)} \\ &= \prod\_{i=1}^n{\Pr(X_i \in A_i)} && \text{(countable additivity over the disjoint events } {\mathopen{}\left\\X_i = x_i\right\\\mathclose{}} \text{)} \end{aligned} \\
+> \\ \begin{aligned} \Pr(X_1 \in A_1, \ldots, X_n \in A_n) &= \sum\_{(x_1, \ldots, x_n) \in C} \mathbb{P}(X_1=x_1, \ldots, X_n = x_n) && \text{(countable additivity over the disjoint events } {\mathopen{}\left\\X_1=x_1, \ldots, X_n = x_n\right\\\mathclose{}} \text{)} \\ &= \sum\_{(x_1, \ldots, x_n) \in C} \prod\_{i=1}^n{\mathbb{P}(X_i = x_i)} && \text{(the joint PMF factors)} \\ &= \prod\_{i=1}^n{\sum\_{x_i \in A_i \cap \mathcal{R}(X_i)} \mathbb{P}(X_i = x_i)} && \text{(a sum over the product set } C \text{ of non-negative products factors)} \\ &= \prod\_{i=1}^n{\Pr(X_i \in A_i)} && \text{(countable additivity over the disjoint events } {\mathopen{}\left\\X_i = x_i\right\\\mathclose{}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
 > **Example 1 (Two fair coin flips)** Flip two fair coins, and let \\X_1\\ and \\X_2\\ indicate heads on the first and second flip. Each of the four outcomes has probability \\1/4\\, so for example:
 >
-> \\ \begin{aligned} \operatorname{P}(X_1 = 1, X_2 = 1) &= \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} \\ &= \operatorname{P}(X_1 = 1)\\\operatorname{P}(X_2 = 1) \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_1 = 1, X_2 = 1) &= \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} \\ &= \mathbb{P}(X_1 = 1)\\\mathbb{P}(X_2 = 1) \end{aligned} \\
 >
-> and the same factorization holds for the other three pairs of values, so \\X_1 \perp\\\\\\\perp X_2\\ by [Theorem 1](#thm-indpt-pmf). In contrast, \\X_1\\ and the total number of heads, \\X_1 + X_2\\, are not independent: \\\operatorname{P}(X_1 = 0, X_1 + X_2 = 2) = 0\\, but
+> and the same factorization holds for the other three pairs of values, so \\X_1 \perp\\\\\\\perp X_2\\ by [Theorem 1](#thm-indpt-pmf). In contrast, \\X_1\\ and the total number of heads, \\X_1 + X_2\\, are not independent: \\\mathbb{P}(X_1 = 0, X_1 + X_2 = 2) = 0\\, but
 >
-> \\ \begin{aligned} \operatorname{P}(X_1 = 0)\\\operatorname{P}(X_1 + X_2 = 2) &= \tfrac{1}{2} \cdot\tfrac{1}{4} \\ &= \tfrac{1}{8}. \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_1 = 0)\\\mathbb{P}(X_1 + X_2 = 2) &= \tfrac{1}{2} \cdot\tfrac{1}{4} \\ &= \tfrac{1}{8}. \end{aligned} \\
 
 > **NOTE:**
 >
 > **Theorem 2 (Independence with densities: the joint density factors)** **Continuous case.** Continuous random variables \\X\\ and \\Y\\ with [densities](random-variables.llms.md#def-pdf) \\\operatorname{p}(X = x)\\ and \\\operatorname{p}(Y = y)\\ are [statistically independent](#def-indpt) if and only if the product \\\operatorname{p}(X = x)\\\operatorname{p}(Y = y)\\ is a [joint density](random-variables.llms.md#def-joint-pdf) of \\X\\ and \\Y\\.
 >
-> **Mixed case.** A discrete random variable \\X\\ and a continuous random variable \\Y\\ with density \\\operatorname{p}(Y = y)\\ are statistically independent if and only if the product \\\operatorname{P}(X = x)\\\operatorname{p}(Y = y)\\ is a [joint density-mass function](random-variables.llms.md#def-joint-density-mass) of \\X\\ and \\Y\\.
+> **Mixed case.** A discrete random variable \\X\\ and a continuous random variable \\Y\\ with density \\\operatorname{p}(Y = y)\\ are statistically independent if and only if the product \\\mathbb{P}(X = x)\\\operatorname{p}(Y = y)\\ is a [joint density-mass function](random-variables.llms.md#def-joint-density-mass) of \\X\\ and \\Y\\.
 
 > **NOTE:**
 >
@@ -153,7 +153,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Theorem 3 (Identically distributed discrete random variables have the same PMF)** Discrete random variables \\X_1, \ldots, X_n\\ are [identically distributed](#def-ident) if and only if they all have the same [PMF](random-variables.llms.md#def-pmf): for every \\i \in {\mathopen{}\left\\1, \ldots, n\right\\\mathclose{}}\\ and every real number \\x\\,
 >
-> \\\operatorname{P}(X_i = x) = \operatorname{P}(X_1 = x)\\
+> \\\mathbb{P}(X_i = x) = \mathbb{P}(X_1 = x)\\
 
 > **NOTE:**
 >
@@ -165,11 +165,11 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > The event \\{\mathopen{}\left\\X_i \le x\right\\\mathclose{}}\\ is the disjoint union of \\{\mathopen{}\left\\X_i \< x\right\\\mathclose{}}\\ and \\{\mathopen{}\left\\X_i = x\right\\\mathclose{}}\\, so:
 >
-> \\ \begin{aligned} \operatorname{P}(X_i = x) &= \Pr(X_i \le x) - \Pr(X_i \< x) && \text{(finite additivity)} \\ &= F_i(x) - \Pr(X_i \< x) && \text{(definition of the CDF)} \\ &= F_i(x) - \lim\_{K \to \infty} F_i(x - \tfrac{1}{K}) && \text{(the display above)} \\ &= F_1(x) - \lim\_{K \to \infty} F_1(x - \tfrac{1}{K}) && \text{(} F_i = F_1 \text{)} \\ &= \operatorname{P}(X_1 = x) && \text{(the same two steps, for } X_1 \text{)} \end{aligned} \\
+> \\ \begin{aligned} \mathbb{P}(X_i = x) &= \Pr(X_i \le x) - \Pr(X_i \< x) && \text{(finite additivity)} \\ &= F_i(x) - \Pr(X_i \< x) && \text{(definition of the CDF)} \\ &= F_i(x) - \lim\_{K \to \infty} F_i(x - \tfrac{1}{K}) && \text{(the display above)} \\ &= F_1(x) - \lim\_{K \to \infty} F_1(x - \tfrac{1}{K}) && \text{(} F_i = F_1 \text{)} \\ &= \mathbb{P}(X_1 = x) && \text{(the same two steps, for } X_1 \text{)} \end{aligned} \\
 >
-> **If: the PMF determines the CDF through sums.** Let \\S\\ be the set of values \\u\\ with \\\operatorname{P}(X_1 = u) \> 0\\. Since the PMFs are equal, \\S\\ is also the set of \\u\\ with \\\operatorname{P}(X_i = u) \> 0\\, so \\S \subseteq \mathcal{R}(X_i)\\ and \\S \subseteq \mathcal{R}(X_1)\\. For every real \\t\\, the event \\{\mathopen{}\left\\X_i \le t\right\\\mathclose{}}\\ is the disjoint union of the events \\{\mathopen{}\left\\X_i = u\right\\\mathclose{}}\\ over the countably many \\u \in \mathcal{R}(X_i)\\ with \\u \le t\\, so:
+> **If: the PMF determines the CDF through sums.** Let \\S\\ be the set of values \\u\\ with \\\mathbb{P}(X_1 = u) \> 0\\. Since the PMFs are equal, \\S\\ is also the set of \\u\\ with \\\mathbb{P}(X_i = u) \> 0\\, so \\S \subseteq \mathcal{R}(X_i)\\ and \\S \subseteq \mathcal{R}(X_1)\\. For every real \\t\\, the event \\{\mathopen{}\left\\X_i \le t\right\\\mathclose{}}\\ is the disjoint union of the events \\{\mathopen{}\left\\X_i = u\right\\\mathclose{}}\\ over the countably many \\u \in \mathcal{R}(X_i)\\ with \\u \le t\\, so:
 >
-> \\ \begin{aligned} F_i(t) &= \sum\_{u \in \mathcal{R}(X_i),\\ u \le t} \operatorname{P}(X_i = u) && \text{(countable additivity)} \\ &= \sum\_{u \in S,\\ u \le t} \operatorname{P}(X_i = u) && \text{(drop the terms that are } 0 \text{)} \\ &= \sum\_{u \in S,\\ u \le t} \operatorname{P}(X_1 = u) && \text{(the PMFs are equal)} \\ &= \sum\_{u \in \mathcal{R}(X_1),\\ u \le t} \operatorname{P}(X_1 = u) && \text{(restore the terms that are } 0 \text{)} \\ &= F_1(t) && \text{(countable additivity)} \end{aligned} \\
+> \\ \begin{aligned} F_i(t) &= \sum\_{u \in \mathcal{R}(X_i),\\ u \le t} \mathbb{P}(X_i = u) && \text{(countable additivity)} \\ &= \sum\_{u \in S,\\ u \le t} \mathbb{P}(X_i = u) && \text{(drop the terms that are } 0 \text{)} \\ &= \sum\_{u \in S,\\ u \le t} \mathbb{P}(X_1 = u) && \text{(the PMFs are equal)} \\ &= \sum\_{u \in \mathcal{R}(X_1),\\ u \le t} \mathbb{P}(X_1 = u) && \text{(restore the terms that are } 0 \text{)} \\ &= F_1(t) && \text{(countable additivity)} \end{aligned} \\
 
 > **NOTE:**
 >

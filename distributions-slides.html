@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-22 01:36:00 (PDT)</p>
+  <p class="date">Last modified: 2026-10-22 13:40:45 (PDT)</p>
 </section>
 <section class="slide level2">
 
@@ -504,7 +504,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="def-binomial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1 (Binomial distribution)</strong></span> A <a href="./random-variables.html#def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>binomial distribution</strong> with number of trials <span class="math inline">\(n \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> and event probability <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span> <span class="citation" data-cites="wikipedia_binomial_distribution"><a href="#/references" role="doc-biblioref" onclick="">[1]</a></span>, if:</p>
 <p><span id="eq-binom-pmf"><span class="math display">\[
-\operatorname{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x},
+\mathbb{P}(X = x) \stackrel{\text{def}}{=}\binom{n}{x} \pi^x (1 - \pi)^{n - x},
 \quad x \in {\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}}
 \tag{1}\]</span></span></p>
 <p>where <span class="math inline">\(\binom{n}{x} = \frac{n!}{x!\,(n - x)!}\)</span> is the number of ways to choose <span class="math inline">\(x\)</span> of the <span class="math inline">\(n\)</span> trials.</p>
@@ -529,7 +529,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="theorem-title"><strong>Example 2 (Two heads in three flips)</strong></span> Let <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(3, 1/2\right)\mathclose{}}\)</span> be the number of heads in three flips of a fair coin. By <a href="#/eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(X = 2)
+\mathbb{P}(X = 2)
 &amp;= \binom{3}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(1 - \frac{1}{2}\right)\mathclose{}^{3 - 2}
 &amp;&amp; \text{(binomial PMF with } n = 3,\ \pi= 1/2,\ x = 2 \text{)} \\
 &amp;= \frac{3!}{2!\,1!} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^1
@@ -549,8 +549,8 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="theorem-title"><strong>Example 3 (Draws without replacement are not binomial)</strong></span> An urn holds two red balls and two blue balls. Draw two balls without replacement, and let <span class="math inline">\(X\)</span> be the number of red balls drawn. Each draw is red with probability <span class="math inline">\(1/2\)</span>, but <span class="math inline">\(X \not\sim {\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}}\)</span>, because the draws are not <a href="./independence.html#def-indpt">independent</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(X = 2)
-&amp;= \operatorname{P}(\text{first red}) \cdot\operatorname{P}(\text{second red} \mid \text{first red})
+\mathbb{P}(X = 2)
+&amp;= \mathbb{P}(\text{first red}) \cdot\mathbb{P}(\text{second red} \mid \text{first red})
 &amp;&amp; \text{(multiplication rule)} \\
 &amp;= \frac{2}{4} \cdot\frac{1}{3}
 &amp;&amp; \text{(one red ball is left among three)} \\
@@ -561,7 +561,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p>whereas, by <a href="#/eq-binom-pmf" class="quarto-xref">Equation&nbsp;1</a>, a <span class="math inline">\({\operatorname{Bin}\mathopen{}\left(2, 1/2\right)\mathclose{}}\)</span> random variable has</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(X = 2)
+\mathbb{P}(X = 2)
 &amp;= \binom{2}{2} \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^2 \mathopen{}\left(\frac{1}{2}\right)\mathclose{}^0
 &amp;&amp; \text{(binomial PMF with } n = 2,\ \pi= 1/2,\ x = 2 \text{)} \\
 &amp;= \frac{1}{4}
@@ -579,8 +579,8 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="proof-title"><em>Proof</em>. </span>Each <span class="math inline">\(X_i\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>, so <span class="math inline">\(S\)</span> takes values in <span class="math inline">\({\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}}\)</span>. Let <span class="math inline">\(x \in {\mathopen{}\left\{0, 1, \dots, n\right\}\mathclose{}}\)</span> be a value of <span class="math inline">\(S\)</span>, and let <span class="math inline">\(A_x\)</span> be the set of sequences <span class="math inline">\((s_1, \ldots, s_n) \in {\mathopen{}\left\{0, 1\right\}\mathclose{}}^n\)</span> with exactly <span class="math inline">\(x\)</span> ones. The event <span class="math inline">\({\mathopen{}\left\{S = x\right\}\mathclose{}}\)</span> is the disjoint union of the events <span class="math inline">\({\mathopen{}\left\{X_1 = s_1, \ldots, X_n = s_n\right\}\mathclose{}}\)</span> over <span class="math inline">\((s_1, \ldots, s_n) \in A_x\)</span>. For one such sequence:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(X_1 = s_1, \ldots, X_n = s_n)
-&amp;= \prod_{i=1}^n \operatorname{P}(X_i = s_i)
+\mathbb{P}(X_1 = s_1, \ldots, X_n = s_n)
+&amp;= \prod_{i=1}^n \mathbb{P}(X_i = s_i)
 &amp;&amp; \text{(independence)} \\
 &amp;= \prod_{i=1}^n \pi^{s_i} (1 - \pi)^{1 - s_i}
 &amp;&amp; \text{(Bernoulli PMF)} \\
@@ -593,8 +593,8 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p>Choosing which <span class="math inline">\(x\)</span> of the <span class="math inline">\(n\)</span> positions hold the ones determines the sequence, so <span class="math inline">\(A_x\)</span> has <span class="math inline">\(\binom{n}{x}\)</span> elements. Therefore:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(S = x)
-&amp;= \sum_{(s_1, \ldots, s_n) \in A_x} \operatorname{P}(X_1 = s_1, \ldots, X_n = s_n)
+\mathbb{P}(S = x)
+&amp;= \sum_{(s_1, \ldots, s_n) \in A_x} \mathbb{P}(X_1 = s_1, \ldots, X_n = s_n)
 &amp;&amp; \text{(additivity over disjoint events)} \\
 &amp;= \sum_{(s_1, \ldots, s_n) \in A_x} \pi^x (1 - \pi)^{n - x}
 &amp;&amp; \text{(probability of one sequence)} \\
@@ -611,7 +611,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="theorem-title"><strong>Example 4 (Counting treatment responders)</strong></span> Suppose five patients each respond to a treatment with probability <span class="math inline">\(0.2\)</span>, independently of one another, and let <span class="math inline">\(X_i = 1\)</span> if patient <span class="math inline">\(i\)</span> responds and <span class="math inline">\(X_i = 0\)</span> otherwise. By <a href="#/thm-binomial-sum-bernoulli" class="quarto-xref">Theorem&nbsp;1</a>, the number of responders <span class="math inline">\(S = \sum_{i=1}^5 X_i\)</span> is <span class="math inline">\({\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}}\)</span>, so the probability that nobody responds is:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(S = 0)
+\mathbb{P}(S = 0)
 &amp;= \binom{5}{0} (0.2)^0 (1 - 0.2)^{5 - 0}
 &amp;&amp; \text{(binomial PMF with } n = 5,\ \pi= 0.2,\ x = 0 \text{)} \\
 &amp;= 1 \cdot 1 \cdot(0.8)^5
@@ -627,7 +627,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <div id="thm-binomial-moments" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 2 (Mean and variance of the binomial distribution)</strong></span> If <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span>, then:</p>
 <ul>
-<li><span class="math inline">\({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} = n\pi\)</span></li>
+<li><span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = n\pi\)</span></li>
 <li><span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = n\pi(1 - \pi)\)</span></li>
 </ul>
 </div>
@@ -635,10 +635,10 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="proof-title"><em>Proof</em>. </span>The mean and variance of <span class="math inline">\(X\)</span> depend only on its distribution, so by <a href="#/thm-binomial-sum-bernoulli" class="quarto-xref">Theorem&nbsp;1</a> we can compute them for <span class="math inline">\(S = \sum_{i=1}^nX_i\)</span>, where <span class="math inline">\(X_1, \ldots, X_n\)</span> are IID <span class="math inline">\(\operatorname{Ber}(\pi)\)</span>. For the mean, apply <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a> <span class="math inline">\(n - 1\)</span> times, then the <a href="./expectation.html#thm-bernoulli-mean">Bernoulli mean</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[S\right]\mathclose{}}
-&amp;= {\operatorname{E}\mathopen{}\left[\sum_{i=1}^nX_i\right]\mathclose{}}
+{\mathbb{E}\mathopen{}\left[S\right]\mathclose{}}
+&amp;= {\mathbb{E}\mathopen{}\left[\sum_{i=1}^nX_i\right]\mathclose{}}
 &amp;&amp; \text{(definition of } S \text{)} \\
-&amp;= \sum_{i=1}^n{\operatorname{E}\mathopen{}\left[X_i\right]\mathclose{}}
+&amp;= \sum_{i=1}^n{\mathbb{E}\mathopen{}\left[X_i\right]\mathclose{}}
 &amp;&amp; \text{(linearity of expectation)} \\
 &amp;= \sum_{i=1}^n\pi
 &amp;&amp; \text{(Bernoulli mean)} \\
@@ -670,7 +670,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="theorem-title"><strong>Example 5 (Expected number of responders)</strong></span> In <a href="#/exm-binomial-sum-bernoulli" class="quarto-xref">Example&nbsp;4</a>, <span class="math inline">\(S \sim {\operatorname{Bin}\mathopen{}\left(5, 0.2\right)\mathclose{}}\)</span>. By <a href="#/thm-binomial-moments" class="quarto-xref">Theorem&nbsp;2</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[S\right]\mathclose{}} &amp;= 5 \cdot 0.2 &amp;&amp; \text{(} n\pi\text{)} \\
+{\mathbb{E}\mathopen{}\left[S\right]\mathclose{}} &amp;= 5 \cdot 0.2 &amp;&amp; \text{(} n\pi\text{)} \\
 &amp;= 1 &amp;&amp; \text{(multiply)} \\
 {\operatorname{Var}\mathopen{}\left(S\right)\mathclose{}} &amp;= 5 \cdot 0.2 \cdot(1 - 0.2) &amp;&amp; \text{(} n\pi(1 - \pi) \text{)} \\
 &amp;= 0.8 &amp;&amp; \text{(multiply)}
@@ -683,7 +683,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <h2><span class="header-section-number">3</span> The Poisson distribution</h2>
 <div id="def-poisson" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Poisson distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Poisson distribution</strong> with mean parameter <span class="math inline">\(\mu&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span> <span class="citation" data-cites="wikipedia_poisson_distribution"><a href="#/references" role="doc-biblioref" onclick="">[3]</a></span>, if:</p>
-<p><span id="eq-pois-pmf"><span class="math display">\[\operatorname{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}} \tag{2}\]</span></span></p>
+<p><span id="eq-pois-pmf"><span class="math display">\[\mathbb{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}} \tag{2}\]</span></span></p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>(see <a href="#/fig-pois-pmf" class="quarto-xref">Figure&nbsp;1</a>)</p>
@@ -721,14 +721,14 @@ Table&nbsp;2: Distributions typically used for test statistics
 
 <div id="thm-cdf-pois" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 3 (CDF of Poisson distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span>, then for every real number <span class="math inline">\(y\)</span>:</p>
-<p><span id="eq-pois-cdf"><span class="math display">\[\operatorname{P}(Y \le y) = e^{-\mu} \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{3}\]</span></span></p>
+<p><span id="eq-pois-cdf"><span class="math display">\[\mathbb{P}(Y \le y) = e^{-\mu} \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}}\frac{\mu^j}{j!} \tag{3}\]</span></span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For <span class="math inline">\(y &lt; 0\)</span>, both sides are <span class="math inline">\(0\)</span> (the sum is empty). For any <span class="math inline">\(y \ge 0\)</span>, the event <span class="math inline">\(\{Y \le y\}\)</span> is the disjoint union of events <span class="math inline">\(\{Y = j\}\)</span> for all non-negative integers <span class="math inline">\(j \le \mathopen{}\left\lfloor y\right\rfloor\mathclose{}\)</span>. Applying the Poisson PMF (<a href="#/eq-pois-pmf" class="quarto-xref">Equation&nbsp;2</a>) and factoring out the common term <span class="math inline">\(e^{-\mu}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(Y \le y)
-&amp;= \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \operatorname{P}(Y = j) &amp;&amp; (\text{disjoint union of events } Y = j) \\
+\mathbb{P}(Y \le y)
+&amp;= \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \mathbb{P}(Y = j) &amp;&amp; (\text{disjoint union of events } Y = j) \\
 &amp;= \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j e^{-\mu}}{j!} &amp;&amp; (\text{definition of Poisson PMF}) \\
 &amp;= e^{-\mu} \sum_{j=0}^{\mathopen{}\left\lfloor y\right\rfloor\mathclose{}} \frac{\mu^j}{j!} &amp;&amp; (\text{factoring out } e^{-\mu} \text{ constant wrt } j)
 \end{aligned}
@@ -741,7 +741,7 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p><span class="theorem-title"><strong>Example 6 (Computing Poisson cumulative probabilities)</strong></span> For a Poisson random variable <span class="math inline">\(X \sim \operatorname{Pois}(\mu= 2)\)</span>, the probability of observing at most 2 events is computed as:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(X \le 2)
+\mathbb{P}(X \le 2)
 &amp;= e^{-2} \sum_{j=0}^{2} \frac{2^j}{j!} &amp;&amp; (\text{apply CDF formula with } \mu= 2, y = 2) \\
 &amp;= e^{-2} \mathopen{}\left(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\right)\mathclose{} &amp;&amp; (\text{expand terms for } j = 0, 1, 2) \\
 &amp;= e^{-2} \mathopen{}\left(1 + 2 + 2\right)\mathclose{} &amp;&amp; (\text{simplify factorials and powers}) \\
@@ -848,9 +848,9 @@ Figure&nbsp;2: Poisson CDFs
 <p><span class="theorem-title"><strong>Exercise 2 (Poisson distribution functions)</strong></span> Let <span class="math inline">\(X \sim \operatorname{Pois}(\mu= 3.75)\)</span>.</p>
 <p>Compute:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{P}(X = 4)\)</span></li>
-<li><span class="math inline">\(\operatorname{P}(X \le 7)\)</span></li>
-<li><span class="math inline">\(\operatorname{P}(X &gt; 5)\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X = 4)\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X \le 7)\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X &gt; 5)\)</span></li>
 </ul>
 </div>
 </section>
@@ -859,9 +859,9 @@ Figure&nbsp;2: Poisson CDFs
 <div class="proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
 <ul>
-<li><span class="math inline">\(\operatorname{P}(X=4) = 0.1937803\)</span></li>
-<li><span class="math inline">\(\operatorname{P}(X\le 7) = 0.9623787\)</span></li>
-<li><span class="math inline">\(\operatorname{P}(X &gt; 5) = 0.1771172\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X=4) = 0.1937803\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X\le 7) = 0.9623787\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X &gt; 5) = 0.1771172\)</span></li>
 </ul>
 </div>
 </section>
@@ -870,7 +870,7 @@ Figure&nbsp;2: Poisson CDFs
 <div id="thm-poisson-properties" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 4 (Mean and variance of the Poisson distribution)</strong></span> If <span class="math inline">\(X \sim \operatorname{Pois}(\mu)\)</span>, then:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{E}[X] = \mu\)</span></li>
+<li><span class="math inline">\(\mathbb{E}[X] = \mu\)</span></li>
 <li><span class="math inline">\(\operatorname{Var}(X) = \mu\)</span></li>
 </ul>
 </div>
@@ -878,9 +878,9 @@ Figure&nbsp;2: Poisson CDFs
 <p><span class="proof-title"><em>Proof</em>. </span><strong>Mean.</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}[X]
-&amp;= \sum_{x=0}^\infty x \cdot \operatorname{P}(X=x) &amp;&amp; (\text{definition of expected value}) \\
-&amp;= 0 \cdot \operatorname{P}(X=0) + \sum_{x=1}^{\infty} x \cdot \operatorname{P}(X=x) &amp;&amp; (\text{separate } x=0 \text{ term}) \\
+\mathbb{E}[X]
+&amp;= \sum_{x=0}^\infty x \cdot \mathbb{P}(X=x) &amp;&amp; (\text{definition of expected value}) \\
+&amp;= 0 \cdot \mathbb{P}(X=0) + \sum_{x=1}^{\infty} x \cdot \mathbb{P}(X=x) &amp;&amp; (\text{separate } x=0 \text{ term}) \\
 &amp;= \sum_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x!} &amp;&amp; (\text{substitute Poisson PMF}) \\
 &amp;= \sum_{x=1}^{\infty} x \cdot \frac{\mu^x e^{-\mu}}{x \cdot (x-1)!} &amp;&amp; (\text{definition of factorial } x!) \\
 &amp;= \sum_{x=1}^{\infty} \frac{\mu^x e^{-\mu}}{(x-1)!} &amp;&amp; (\text{cancel factor of } x) \\
@@ -890,10 +890,10 @@ Figure&nbsp;2: Poisson CDFs
 &amp;= \mu&amp;&amp; (\text{simplify})
 \end{aligned}
 \]</span></p>
-<p><strong>Variance.</strong> The same steps, canceling two factors instead of one, give <span class="math inline">\({\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}}\)</span>:</p>
+<p><strong>Variance.</strong> The same steps, canceling two factors instead of one, give <span class="math inline">\({\mathbb{E}\mathopen{}\left[X(X-1)\right]\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}}
+{\mathbb{E}\mathopen{}\left[X(X-1)\right]\mathclose{}}
 &amp;= \sum_{x=2}^\infty x(x-1) \cdot \frac{\mu^x e^{-\mu}}{x!} &amp;&amp; (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\
 &amp;= \sum_{x=2}^\infty \frac{\mu^x e^{-\mu}}{(x-2)!} &amp;&amp; (\text{cancel } x(x-1) \text{ against } x!) \\
 &amp;= \mu^2 \cdot \sum_{y=0}^\infty \frac{\mu^y e^{-\mu}}{y!} &amp;&amp; (\text{factor out } \mu^2 \text{; } y \stackrel{\text{def}}{=}x - 2) \\
@@ -904,8 +904,8 @@ Figure&nbsp;2: Poisson CDFs
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{Var}(X)
-&amp;= {\operatorname{E}\mathopen{}\left[X^2\right]\mathclose{}} - {\mathopen{}\left({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2} &amp;&amp; (\text{simplified expression for variance}) \\
-&amp;= {\operatorname{E}\mathopen{}\left[X(X-1)\right]\mathclose{}} + {\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} - {\mathopen{}\left({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2} &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
+&amp;= {\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2} &amp;&amp; (\text{simplified expression for variance}) \\
+&amp;= {\mathbb{E}\mathopen{}\left[X(X-1)\right]\mathclose{}} + {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2} &amp;&amp; (X^2 = X(X-1) + X \text{; linearity}) \\
 &amp;= \mu^2 + \mu- \mu^2 &amp;&amp; (\text{substitute}) \\
 &amp;= \mu&amp;&amp; (\text{simplify})
 \end{aligned}
@@ -918,29 +918,29 @@ Figure&nbsp;2: Poisson CDFs
 <div id="thm-poisson-mode" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 5 (Ratio of consecutive Poisson probabilities, and the mode)</strong></span> If <span class="math inline">\(X \sim \operatorname{Pois}(\mu)\)</span>, then:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{P}(X=x) = \frac{\mu}{x} \operatorname{P}(X = x-1)\)</span> for <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span></li>
-<li>For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> with <span class="math inline">\(x &lt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &gt; \operatorname{P}(X = x-1)\)</span></li>
-<li>For <span class="math inline">\(x = \mu\)</span> (possible only when <span class="math inline">\(\mu\)</span> is an integer), <span class="math inline">\(\operatorname{P}(X=x) = \operatorname{P}(X = x-1)\)</span></li>
-<li>For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> with <span class="math inline">\(x &gt; \mu\)</span>, <span class="math inline">\(\operatorname{P}(X=x) &lt; \operatorname{P}(X = x-1)\)</span></li>
-<li>If <span class="math inline">\(\mu\)</span> is not an integer, <span class="math inline">\(\arg \max_{x} \operatorname{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>; if <span class="math inline">\(\mu\)</span> is an integer, the maximum is attained at both <span class="math inline">\(x = \mu- 1\)</span> and <span class="math inline">\(x = \mu\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(X=x) = \frac{\mu}{x} \mathbb{P}(X = x-1)\)</span> for <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span></li>
+<li>For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> with <span class="math inline">\(x &lt; \mu\)</span>, <span class="math inline">\(\mathbb{P}(X=x) &gt; \mathbb{P}(X = x-1)\)</span></li>
+<li>For <span class="math inline">\(x = \mu\)</span> (possible only when <span class="math inline">\(\mu\)</span> is an integer), <span class="math inline">\(\mathbb{P}(X=x) = \mathbb{P}(X = x-1)\)</span></li>
+<li>For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> with <span class="math inline">\(x &gt; \mu\)</span>, <span class="math inline">\(\mathbb{P}(X=x) &lt; \mathbb{P}(X = x-1)\)</span></li>
+<li>If <span class="math inline">\(\mu\)</span> is not an integer, <span class="math inline">\(\arg \max_{x} \mathbb{P}(X=x) = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>; if <span class="math inline">\(\mu\)</span> is an integer, the maximum is attained at both <span class="math inline">\(x = \mu- 1\)</span> and <span class="math inline">\(x = \mu\)</span></li>
 </ul>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><strong>Ratio of consecutive probabilities.</strong> For <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\frac{\operatorname{P}(X = x)}{\operatorname{P}(X = x - 1)}
+\frac{\mathbb{P}(X = x)}{\mathbb{P}(X = x - 1)}
 &amp;= \frac{\mu^x e^{-\mu} / x!}{\mu^{x-1} e^{-\mu} / (x-1)!} &amp;&amp; (\text{substitute Poisson PMF}) \\
 &amp;= \frac{\mu}{x} &amp;&amp; (\text{cancel } \mu^{x-1} e^{-\mu} \text{ and } (x-1)!)
 \end{aligned}
 \]</span></p>
-<p>This ratio is greater than, equal to, or less than 1 as <span class="math inline">\(x\)</span> is less than, equal to, or greater than <span class="math inline">\(\mu\)</span>, which gives the three comparisons. So <span class="math inline">\(\operatorname{P}(X = x)\)</span> increases while <span class="math inline">\(x &lt; \mu\)</span> and decreases once <span class="math inline">\(x &gt; \mu\)</span>. If <span class="math inline">\(\mu\)</span> is not an integer, the last increase is at <span class="math inline">\(x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>, which is therefore the unique mode. If <span class="math inline">\(\mu\)</span> is an integer, <span class="math inline">\(\operatorname{P}(X = \mu) = \operatorname{P}(X = \mu- 1)\)</span>, and both are modes.</p>
+<p>This ratio is greater than, equal to, or less than 1 as <span class="math inline">\(x\)</span> is less than, equal to, or greater than <span class="math inline">\(\mu\)</span>, which gives the three comparisons. So <span class="math inline">\(\mathbb{P}(X = x)\)</span> increases while <span class="math inline">\(x &lt; \mu\)</span> and decreases once <span class="math inline">\(x &gt; \mu\)</span>. If <span class="math inline">\(\mu\)</span> is not an integer, the last increase is at <span class="math inline">\(x = \mathopen{}\left\lfloor\mu\right\rfloor\mathclose{}\)</span>, which is therefore the unique mode. If <span class="math inline">\(\mu\)</span> is an integer, <span class="math inline">\(\mathbb{P}(X = \mu) = \mathbb{P}(X = \mu- 1)\)</span>, and both are modes.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="exm-poisson-properties" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (Mode of a Poisson distribution)</strong></span> For <span class="math inline">\(X \sim \operatorname{Pois}(2.5)\)</span>, <span class="math inline">\(\operatorname{P}(X = 2) = \frac{2.5}{2}\operatorname{P}(X = 1) &gt; \operatorname{P}(X = 1)\)</span> and <span class="math inline">\(\operatorname{P}(X = 3) = \frac{2.5}{3}\operatorname{P}(X = 2) &lt; \operatorname{P}(X = 2)\)</span>, so the mode is <span class="math inline">\(\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\)</span>. For <span class="math inline">\(X \sim \operatorname{Pois}(2)\)</span>, <span class="math inline">\(\operatorname{P}(X = 2) = \frac{2}{2}\operatorname{P}(X = 1)\)</span>, so <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> are both modes, each with probability <span class="math inline">\(2 e^{-2} \approx 0.271\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 7 (Mode of a Poisson distribution)</strong></span> For <span class="math inline">\(X \sim \operatorname{Pois}(2.5)\)</span>, <span class="math inline">\(\mathbb{P}(X = 2) = \frac{2.5}{2}\mathbb{P}(X = 1) &gt; \mathbb{P}(X = 1)\)</span> and <span class="math inline">\(\mathbb{P}(X = 3) = \frac{2.5}{3}\mathbb{P}(X = 2) &lt; \mathbb{P}(X = 2)\)</span>, so the mode is <span class="math inline">\(\mathopen{}\left\lfloor 2.5\right\rfloor\mathclose{} = 2\)</span>. For <span class="math inline">\(X \sim \operatorname{Pois}(2)\)</span>, <span class="math inline">\(\mathbb{P}(X = 2) = \frac{2}{2}\mathbb{P}(X = 1)\)</span>, so <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> are both modes, each with probability <span class="math inline">\(2 e^{-2} \approx 0.271\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1018,7 +1018,7 @@ Table&nbsp;3: Examples of exposure units
 
 <div id="def-event-rate" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4 (Event rate)</strong></span> For a count <span class="math inline">\(Y\)</span> observed over a fixed, known <a href="#/def-exposure">exposure magnitude</a> <span class="math inline">\(t &gt; 0\)</span>, the <strong>event rate</strong>, denoted <span class="math inline">\({\lambda}\)</span>, is the mean of <span class="math inline">\(Y\)</span> divided by the exposure magnitude:</p>
-<p><span id="eq-def-event-rate"><span class="math display">\[{\lambda}\stackrel{\text{def}}{=}\frac{{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}}{t} \tag{4}\]</span></span></p>
+<p><span id="eq-def-event-rate"><span class="math display">\[{\lambda}\stackrel{\text{def}}{=}\frac{{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}}{t} \tag{4}\]</span></span></p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The event rate is a transformation of the mean: it removes the exposure magnitude from the mean, so counts observed over different exposures can be compared on one scale. Regression models for counts use the same decomposition, with the rate depending on covariates and the exposure magnitude known (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
@@ -1037,16 +1037,16 @@ Table&nbsp;3: Examples of exposure units
 <section class="slide level2">
 
 <div id="thm-mean-vs-event-rate" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Transformation function from event rate to mean)</strong></span> If a count <span class="math inline">\(Y\)</span> is observed over exposure magnitude <span class="math inline">\(t &gt; 0\)</span> with event rate <span class="math inline">\({\lambda}\)</span>, then its mean <span class="math inline">\(\mu\stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}\)</span> is:</p>
+<p><span class="theorem-title"><strong>Theorem 6 (Transformation function from event rate to mean)</strong></span> If a count <span class="math inline">\(Y\)</span> is observed over exposure magnitude <span class="math inline">\(t &gt; 0\)</span> with event rate <span class="math inline">\({\lambda}\)</span>, then its mean <span class="math inline">\(\mu\stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}\)</span> is:</p>
 <p><span id="eq-lambda-to-mu"><span class="math display">\[\mu= {\lambda}\cdot t \tag{5}\]</span></span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/def-event-rate" class="quarto-xref">Definition&nbsp;4</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\lambda}&amp;\stackrel{\text{def}}{=}\frac{{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}}{t} &amp;&amp; (\text{definition of event rate}) \\
-{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}} &amp;= {\lambda}\cdot t &amp;&amp; (\text{multiply both sides by } t &gt; 0) \\
-\mu&amp;= {\lambda}\cdot t &amp;&amp; (\mu\stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}})
+{\lambda}&amp;\stackrel{\text{def}}{=}\frac{{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}}{t} &amp;&amp; (\text{definition of event rate}) \\
+{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}} &amp;= {\lambda}\cdot t &amp;&amp; (\text{multiply both sides by } t &gt; 0) \\
+\mu&amp;= {\lambda}\cdot t &amp;&amp; (\mu\stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}})
 \end{aligned}
 \]</span></p>
 </div>
@@ -1067,20 +1067,20 @@ Table&nbsp;3: Examples of exposure units
 <section class="slide level2">
 
 <div id="thm-non-exposed" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (No exposure means no expected events)</strong></span> For each exposure magnitude <span class="math inline">\(t \ge 0\)</span>, let <span class="math inline">\(Y_t\)</span> be the count observed over exposure <span class="math inline">\(t\)</span>. If the mean count is proportional to the exposure magnitude, <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}\cdot t\)</span> for all <span class="math inline">\(t \ge 0\)</span> with one finite rate <span class="math inline">\({\lambda}\)</span>, then there are no expected events without exposure:</p>
-<p><span class="math display">\[{\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\]</span></p>
+<p><span class="theorem-title"><strong>Theorem 7 (No exposure means no expected events)</strong></span> For each exposure magnitude <span class="math inline">\(t \ge 0\)</span>, let <span class="math inline">\(Y_t\)</span> be the count observed over exposure <span class="math inline">\(t\)</span>. If the mean count is proportional to the exposure magnitude, <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}\cdot t\)</span> for all <span class="math inline">\(t \ge 0\)</span> with one finite rate <span class="math inline">\({\lambda}\)</span>, then there are no expected events without exposure:</p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}}
-&amp;= {\lambda}\cdot 0 &amp;&amp; (\text{evaluate } {\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}t \text{ at } t = 0) \\
+{\mathbb{E}\mathopen{}\left[Y_0\right]\mathclose{}}
+&amp;= {\lambda}\cdot 0 &amp;&amp; (\text{evaluate } {\mathbb{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}t \text{ at } t = 0) \\
 &amp;= 0 &amp;&amp; (\text{multiplication by zero; } {\lambda}\text{ is finite})
 \end{aligned}
 \]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The hypothesis carries the content here. <a href="#/def-event-rate" class="quarto-xref">Definition&nbsp;4</a> alone cannot give <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\)</span>, since <span class="math inline">\({\lambda}= {\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\({\lambda}\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The hypothesis carries the content here. <a href="#/def-event-rate" class="quarto-xref">Definition&nbsp;4</a> alone cannot give <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\)</span>, since <span class="math inline">\({\lambda}= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}/t\)</span> is undefined at <span class="math inline">\(t = 0\)</span>; the result holds for a model that assumes one rate <span class="math inline">\({\lambda}\)</span> shared across exposure magnitudes, including <span class="math inline">\(t = 0\)</span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1096,7 +1096,7 @@ Table&nbsp;3: Examples of exposure units
 <section class="slide level2">
 
 <div id="exm-non-exposed" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (Zero exposure time)</strong></span> If a subject is observed for <span class="math inline">\(t = 0\)</span> person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 9 (Zero exposure time)</strong></span> If a subject is observed for <span class="math inline">\(t = 0\)</span> person-years, no follow-up time has elapsed, so under a constant-rate model the expected number of incident events is <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y_0\right]\mathclose{}} = 0\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1110,7 +1110,7 @@ Table&nbsp;3: Examples of exposure units
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>A mean proportional to exposure, <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}t\)</span>, has no term that stays nonzero at <span class="math inline">\(t = 0\)</span>: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as <span class="math inline">\({\operatorname{E}\mathopen{}\left[Y_t\right]\mathclose{}} = c + {\lambda}t\)</span> with <span class="math inline">\(c &gt; 0\)</span>, would expect <span class="math inline">\(c\)</span> events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
+<p>A mean proportional to exposure, <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y_t\right]\mathclose{}} = {\lambda}t\)</span>, has no term that stays nonzero at <span class="math inline">\(t = 0\)</span>: a model of this form says that with no exposure, no events are expected. A mean with an added constant, such as <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y_t\right]\mathclose{}} = c + {\lambda}t\)</span> with <span class="math inline">\(c &gt; 0\)</span>, would expect <span class="math inline">\(c\)</span> events even with no exposure. Regression models for counts keep the proportional form when they add covariates (see <a href="https://morrison-lab.github.io/rme/chapters/count-regression.html">rme’s count-regression chapter</a>).</p>
 </div>
 </div>
 </div>
@@ -1181,9 +1181,9 @@ Table&nbsp;3: Examples of exposure units
 <p><span class="proof-title"><em>Proof</em>. </span>The event <span class="math inline">\(\{Z = z\}\)</span> is the disjoint union of the events <span class="math inline">\(\{X = k, Y = z - k\}\)</span> for <span class="math inline">\(k = 0, 1, \ldots, z\)</span> (since <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are non-negative integers), so:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(Z = z)
-&amp;= \sum_{k=0}^z \operatorname{P}(X = k,\, Y = z - k) &amp;&amp; (\text{countable additivity}) \\
-&amp;= \sum_{k=0}^z \operatorname{P}(X = k) \operatorname{P}(Y = z - k) &amp;&amp; (\text{independence}) \\
+\mathbb{P}(Z = z)
+&amp;= \sum_{k=0}^z \mathbb{P}(X = k,\, Y = z - k) &amp;&amp; (\text{countable additivity}) \\
+&amp;= \sum_{k=0}^z \mathbb{P}(X = k) \mathbb{P}(Y = z - k) &amp;&amp; (\text{independence}) \\
 &amp;= \sum_{k=0}^z \frac{\mu_X^k e^{-\mu_X}}{k!} \frac{\mu_Y^{z-k} e^{-\mu_Y}}{(z-k)!} &amp;&amp; (\text{substitute Poisson PMFs}) \\
 &amp;= e^{-(\mu_X + \mu_Y)} \sum_{k=0}^z \frac{\mu_X^k \mu_Y^{z-k}}{k!(z-k)!} &amp;&amp; (\text{factor out } e^{-\mu_X} e^{-\mu_Y}) \\
 &amp;= \frac{e^{-(\mu_X + \mu_Y)}}{z!} \sum_{k=0}^z \frac{z!}{k!(z-k)!} \mu_X^k \mu_Y^{z-k} &amp;&amp; (\text{multiply and divide by } z!) \\
@@ -1211,7 +1211,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="def-nb" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 6 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span> <span class="citation" data-cites="wikipedia_negative_binomial_distribution"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span>, if, for <span class="math inline">\(y \in {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
-\operatorname{P}(Y=y)
+\mathbb{P}(Y=y)
 \stackrel{\text{def}}{=}\frac{\mu^y}{y!}
 \cdot \frac{\Gamma(\rho+ y)}{\Gamma(\rho) \cdot (\rho+ \mu)^y}
 \cdot \mathopen{}\left(1+\frac{\mu}{\rho}\right)\mathclose{}^{-\rho}
@@ -1223,7 +1223,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 
 <div id="thm-nb-poisson-limit" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 10 (The negative binomial converges to the Poisson)</strong></span> Let the population <a href="./expectation.html#def-expectation">mean</a> be <span class="math inline">\(\mu&gt; 0\)</span>, and let <span class="math inline">\(Y_\rho\sim \operatorname{NegBin}(\mu, \rho)\)</span>. Then for each <span class="math inline">\(y \in {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}}\)</span>, as <span class="math inline">\(\rho\rightarrow \infty\)</span>, the negative binomial PMF converges to the <a href="#/def-poisson">Poisson</a> PMF (<a href="#/eq-pois-pmf" class="quarto-xref">Equation&nbsp;2</a>):</p>
-<p><span class="math display">\[\lim_{\rho\rightarrow \infty} \operatorname{P}(Y_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\]</span></p>
+<p><span class="math display">\[\lim_{\rho\rightarrow \infty} \mathbb{P}(Y_\rho= y) = \frac{\mu^{y} e^{-\mu}}{y!}\]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Choose a value <span class="math inline">\(y\)</span> of <span class="math inline">\(Y_\rho\)</span>. In <a href="#/def-nb" class="quarto-xref">Definition&nbsp;6</a>, the first factor <span class="math inline">\(\mu^y / y!\)</span> does not depend on <span class="math inline">\(\rho\)</span>. For the second factor, <span class="math inline">\(\Gamma(\rho+ y) = \Gamma(\rho) \prod_{k=0}^{y-1} (\rho+ k)\)</span>, by applying <span class="math inline">\(\Gamma(x + 1) = x\,\Gamma(x)\)</span> <span class="math inline">\(y\)</span> times (for <span class="math inline">\(y = 0\)</span>, the product is empty and equals 1), so:</p>
@@ -1259,7 +1259,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p>so, since the exponential function is continuous, <span class="math inline">\(\mathopen{}\left(1 + \mu/\rho\right)\mathclose{}^{-\rho} \rightarrow {\operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}}\)</span>. Each of the three factors has a limit, so their product does too:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\lim_{\rho\rightarrow \infty} \operatorname{P}(Y_\rho= y)
+\lim_{\rho\rightarrow \infty} \mathbb{P}(Y_\rho= y)
 &amp;= \frac{\mu^y}{y!} \cdot 1 \cdot {\operatorname{exp}\mathopen{}\left\{-\mu\right\}\mathclose{}}
 &amp;&amp; (\text{limit of a product of convergent factors}) \\
 &amp;= \frac{\mu^{y} e^{-\mu}}{y!}
@@ -1274,7 +1274,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <div id="thm-nb" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 11 (Mean and variance of the negative binomial distribution)</strong></span> If <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>, then:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{E}[Y] = \mu\)</span></li>
+<li><span class="math inline">\(\mathbb{E}[Y] = \mu\)</span></li>
 <li><span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = \mu+ \frac{\mu^2}{\rho} &gt; \mu\)</span></li>
 </ul>
 </div>
@@ -1282,7 +1282,7 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p><span class="proof-title"><em>Proof</em>. </span>The negative binomial distribution is a gamma mixture of Poisson distributions: if <span class="math inline">\(\Lambda\)</span> has the gamma density <span class="math inline">\(g({\lambda}) = \frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\)</span> for <span class="math inline">\({\lambda}&gt; 0\)</span>, which has mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\mu^2/\rho\)</span> <span class="citation" data-cites="CaseBerg01"><a href="#/references" role="doc-biblioref" onclick="">[2]</a></span>, and <span class="math inline">\(Y \mid \Lambda= {\lambda}\sim \operatorname{Pois}({\lambda})\)</span>, then <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span>. To check this, integrate the joint density over <span class="math inline">\({\lambda}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(Y = y)
+\mathbb{P}(Y = y)
 &amp;= \int_0^\infty \frac{{\lambda}^y e^{-{\lambda}}}{y!} \cdot\frac{(\rho/\mu)^\rho}{\Gamma(\rho)} {\lambda}^{\rho- 1} e^{-\rho{\lambda}/\mu}\,d{\lambda}
 &amp;&amp; (\text{marginalize over } \Lambda) \\
 &amp;= \frac{(\rho/\mu)^\rho}{y!\,\Gamma(\rho)} \int_0^\infty {\lambda}^{y + \rho- 1} e^{-{\lambda}(1 + \rho/\mu)}\,d{\lambda}
@@ -1300,25 +1300,25 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p>Then, by the <a href="./expectation.html#thm-lie">law of iterated expectations</a> and the <a href="./variance-covariance.html#thm-total-variance">law of total variance</a>, using</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} &amp;= \operatorname{Var}(Y \mid \Lambda) \\
+{\mathbb{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} &amp;= \operatorname{Var}(Y \mid \Lambda) \\
 &amp;= \Lambda
 \end{aligned}
 \]</span></p>
 <p>(<a href="#/thm-poisson-properties" class="quarto-xref">Theorem&nbsp;4</a>):</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{E}[Y]
-&amp;= {\operatorname{E}\mathopen{}\left[{\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}}\right]\mathclose{}}
+\mathbb{E}[Y]
+&amp;= {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}}\right]\mathclose{}}
 &amp;&amp; (\text{law of iterated expectations}) \\
-&amp;= {\operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{}}
-&amp;&amp; ({\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} = \Lambda) \\
+&amp;= {\mathbb{E}\mathopen{}\left[\Lambda\right]\mathclose{}}
+&amp;&amp; ({\mathbb{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} = \Lambda) \\
 &amp;= \mu
 &amp;&amp; (\text{mean of the gamma distribution}) \\
 {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}
-&amp;= {\operatorname{E}\mathopen{}\left[{\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}}\right)\mathclose{}}
+&amp;= {\mathbb{E}\mathopen{}\left[{\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}}\right)\mathclose{}}
 &amp;&amp; (\text{law of total variance}) \\
-&amp;= {\operatorname{E}\mathopen{}\left[\Lambda\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}}
-&amp;&amp; ({\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}} = \Lambda\text{ and } {\operatorname{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} = \Lambda) \\
+&amp;= {\mathbb{E}\mathopen{}\left[\Lambda\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\Lambda\right)\mathclose{}}
+&amp;&amp; ({\operatorname{Var}\mathopen{}\left(Y \mid \Lambda\right)\mathclose{}} = \Lambda\text{ and } {\mathbb{E}\mathopen{}\left[Y \mid \Lambda\right]\mathclose{}} = \Lambda) \\
 &amp;= \mu+ \frac{\mu^2}{\rho}
 &amp;&amp; (\text{mean and variance of the gamma distribution})
 \end{aligned}
@@ -1387,14 +1387,14 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 
 <div id="thm-laplace-moments" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 12 (Mean and variance of the Laplace distribution)</strong></span> If <span class="math inline">\(Y \sim {\operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}}\)</span> (<a href="#/def-laplace" class="quarto-xref">Definition&nbsp;7</a>), then</p>
-<p><span id="eq-laplace-moments"><span class="math display">\[{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}} = \mu\quad \text{and} \quad {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 2b^2. \tag{7}\]</span></span></p>
+<p><span id="eq-laplace-moments"><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}} = \mu\quad \text{and} \quad {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 2b^2. \tag{7}\]</span></span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(U = Y - \mu\)</span>. By <a href="#/eq-laplace-pdf" class="quarto-xref">Equation&nbsp;6</a>, <span class="math inline">\(U\)</span> has density <span class="math inline">\(\frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span>, which is symmetric about <span class="math inline">\(0\)</span>.</p>
-<p>For the mean, the integrand <span class="math inline">\(u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is an odd function, so its integral over <span class="math inline">\(\mathbb{R}\)</span> is <span class="math inline">\(0\)</span>. Therefore <span class="math inline">\({\operatorname{E}\mathopen{}\left[U\right]\mathclose{}} = 0\)</span>, and</p>
+<p>For the mean, the integrand <span class="math inline">\(u \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is an odd function, so its integral over <span class="math inline">\(\mathbb{R}\)</span> is <span class="math inline">\(0\)</span>. Therefore <span class="math inline">\({\mathbb{E}\mathopen{}\left[U\right]\mathclose{}} = 0\)</span>, and</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[Y\right]\mathclose{}} &amp;= \mu+ {\operatorname{E}\mathopen{}\left[U\right]\mathclose{}} \\
+{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}} &amp;= \mu+ {\mathbb{E}\mathopen{}\left[U\right]\mathclose{}} \\
 &amp;= \mu.
 \end{aligned}
 \]</span></p>
@@ -1402,13 +1402,13 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} &amp;= {\operatorname{Var}\mathopen{}\left(U\right)\mathclose{}} \\
-&amp;= {\operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}}
+&amp;= {\mathbb{E}\mathopen{}\left[U^2\right]\mathclose{}}
 \end{aligned}
 \]</span></p>
-<p>because <span class="math inline">\({\operatorname{E}\mathopen{}\left[U\right]\mathclose{}} = 0\)</span>. The integrand <span class="math inline">\(u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is even, so</p>
+<p>because <span class="math inline">\({\mathbb{E}\mathopen{}\left[U\right]\mathclose{}} = 0\)</span>. The integrand <span class="math inline">\(u^2 \cdot \frac{1}{2b}\text{e}^{-\mathopen{}\left|u\right|\mathclose{}/b}\)</span> is even, so</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[U^2\right]\mathclose{}}
+{\mathbb{E}\mathopen{}\left[U^2\right]\mathclose{}}
 &amp;= 2 \int_0^\infty u^2 \frac{1}{2b} \text{e}^{-u/b} \, du
 &amp;&amp; \text{(even integrand)} \\
 &amp;= \frac{1}{b} \int_0^\infty u^2 \text{e}^{-u/b} \, du
@@ -1456,7 +1456,7 @@ Figure&nbsp;3: Laplace and standard normal densities with the same mean (0) and 
 </div>
 </div>
 </div>
-<p>The probability of landing more than <span class="math inline">\(3\)</span> standard deviations from the mean shows the difference in the tails. For the Laplace distribution, <span class="math inline">\(\operatorname{P}(\mathopen{}\left|Y\right|\mathclose{} &gt; t) = \text{e}^{-t/b}\)</span>, because each tail has probability <span class="math inline">\(\frac{1}{2}\text{e}^{-t/b}\)</span> by integrating <a href="#/eq-laplace-pdf" class="quarto-xref">Equation&nbsp;6</a>.</p>
+<p>The probability of landing more than <span class="math inline">\(3\)</span> standard deviations from the mean shows the difference in the tails. For the Laplace distribution, <span class="math inline">\(\mathbb{P}(\mathopen{}\left|Y\right|\mathclose{} &gt; t) = \text{e}^{-t/b}\)</span>, because each tail has probability <span class="math inline">\(\frac{1}{2}\text{e}^{-t/b}\)</span> by integrating <a href="#/eq-laplace-pdf" class="quarto-xref">Equation&nbsp;6</a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>t <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb5-2"><a aria-label="2"></a><span class="fu">c</span>(</span>
@@ -1529,13 +1529,13 @@ f(t)
 
 <div id="thm-weibull-mean" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 14 (Weibull mean)</strong></span> If <span class="math inline">\(T\)</span> has the Weibull distribution with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\({\lambda}\)</span>, then:</p>
-<p><span class="math display">\[{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\]</span></p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}\]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>For the mean, use the <a href="./expectation.html#thm-surv-mean">survival-function formula for the mean</a> and substitute <span class="math inline">\(u = {\lambda}t^\alpha\)</span>, so that <span class="math inline">\(t = (u/{\lambda})^{1/\alpha}\)</span> and <span class="math inline">\(dt = \frac{1}{\alpha}{\lambda}^{-1/\alpha} u^{1/\alpha- 1}\,du\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}}
+{\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}
 &amp;= \int_0^\infty \text{e}^{-{\lambda}t^\alpha}\,dt
 &amp;&amp; (\text{expectation via the survival function}) \\
 &amp;= \frac{1}{\alpha}{\lambda}^{-1/\alpha} \int_0^\infty u^{1/\alpha- 1} \text{e}^{-u}\,du
@@ -1612,14 +1612,14 @@ f(t)
 <p><span class="theorem-title"><strong>Example 16 (Exponential as a special case)</strong></span> With <span class="math inline">\(\alpha= 1\)</span>, <a href="#/thm-weibull" class="quarto-xref">Theorem&nbsp;13</a> gives <span class="math inline">\(\operatorname{h}(t) = {\lambda}\)</span> and</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}} &amp;= \Gamma(2){\lambda}^{-1} \\
+{\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} &amp;= \Gamma(2){\lambda}^{-1} \\
 &amp;= 1/{\lambda},
 \end{aligned}
 \]</span></p>
 <p>matching the exponential distribution’s constant hazard and mean. With <span class="math inline">\(\alpha= 2\)</span> and <span class="math inline">\({\lambda}= 1\)</span>, <span class="math inline">\(\operatorname{h}(t) = 2t\)</span> increases with <span class="math inline">\(t\)</span>, and</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[T\right]\mathclose{}} &amp;= \Gamma(3/2) \\
+{\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} &amp;= \Gamma(3/2) \\
 &amp;= \sqrt{\pi}/2 \\
 &amp;\approx 0.886.
 \end{aligned}
@@ -1666,7 +1666,7 @@ f(t)
 <section class="slide level2">
 
 <div id="thm-mvn-moments" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 16 (The mean and variance of the multivariate normal distribution)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#/def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then <span class="math inline">\(\operatorname{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
+<p><span class="theorem-title"><strong>Theorem 16 (The mean and variance of the multivariate normal distribution)</strong></span> If <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span> (<a href="#/def-mvn" class="quarto-xref">Definition&nbsp;9</a>), then <span class="math inline">\(\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}\)</span> (the <a href="./expectation.html#def-expectation-matrix">expectation of a random vector</a>), and <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}\)</span> (the <a href="./variance-covariance.html#def-cov-vec-x">variance of a random vector</a>).</p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The proof changes variables in a <span class="math inline">\(p\)</span>-dimensional integral, which these notes do not develop; see <span class="citation" data-cites="wikipedia_multivariate_normal_distribution"><a href="#/references" role="doc-biblioref" onclick="">[7]</a></span>. As with the univariate <a href="./random-variables.html#thm-normal-moments">normal distribution</a>, these facts are where the parameters’ names come from. They also show why <span class="math inline">\(\mathbf{\Sigma}\)</span> must at least be <a href="./variance-covariance.html#thm-vcov-psd">positive semidefinite</a>; requiring it to be positive definite rules out cases like <a href="./variance-covariance.html#exm-vcov-singular">a variance matrix that is not positive definite</a>, which has no joint density.</p>
@@ -1796,7 +1796,7 @@ f(t)
 <ul>
 <li>each pair <span class="math inline">\(X_i, X_j\)</span> with <span class="math inline">\(i \neq j\)</span> is independent,</li>
 <li>each <span class="math inline">\(X_i\)</span> is continuous, with the density left after integrating out the other coordinates of the joint density (<a href="./random-variables.html#thm-marginal-density">marginal density from a joint density</a>, with <span class="math inline">\(p\)</span> variables), and</li>
-<li><span class="math inline">\({\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span>, because <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span>, the <span class="math inline">\((i,i)\)</span>-th element of <span class="math inline">\(\mathbf{\Sigma}\)</span>, is defined, and a <a href="./variance-covariance.html#def-variance">variance</a> is defined only when <span class="math inline">\({\operatorname{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span>.</li>
+<li><span class="math inline">\({\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span>, because <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span>, the <span class="math inline">\((i,i)\)</span>-th element of <span class="math inline">\(\mathbf{\Sigma}\)</span>, is defined, and a <a href="./variance-covariance.html#def-variance">variance</a> is defined only when <span class="math inline">\({\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span>.</li>
 </ul>
 <p>So <span class="math inline">\(\mathbf{\Sigma}\)</span> is diagonal by <a href="./variance-covariance.html#cor-vcov-indpt-diagonal">independent components give a diagonal variance matrix</a>.</p>
 </div>
@@ -1908,7 +1908,7 @@ f(t)
 <p><span class="math display">\[\operatorname{p}(C = c,\, X = x) = w_c \, {\operatorname{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},\]</span></p>
 <p>with <span class="math inline">\({\operatorname{p}_c}\)</span> and <span class="math inline">\(w_c\)</span> as in <a href="#/def-mixture" class="quarto-xref">Definition&nbsp;11</a>. Then:</p>
 <ul>
-<li><span class="math inline">\(\operatorname{P}(C = c) = w_c\)</span>,</li>
+<li><span class="math inline">\(\mathbb{P}(C = c) = w_c\)</span>,</li>
 <li>for each <span class="math inline">\(c\)</span> with <span class="math inline">\(w_c &gt; 0\)</span>, the <a href="./expectation.html#def-cond-mixed">conditional density</a> of <span class="math inline">\(X\)</span> given <span class="math inline">\(C = c\)</span> is <span class="math inline">\({\operatorname{p}_c}\)</span>, and</li>
 <li>the mixture <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> is a density of <span class="math inline">\(X\)</span>.</li>
 </ul>
@@ -1917,7 +1917,7 @@ f(t)
 <p><span class="proof-title"><em>Proof</em>. </span>By the <a href="./random-variables.html#cor-joint-density-mass-marginal">marginal PMF from a joint density-mass function</a>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(C = c) &amp;= \int_{-\infty}^{\infty} w_c \, {\operatorname{p}_c}(x)\,dx \\
+\mathbb{P}(C = c) &amp;= \int_{-\infty}^{\infty} w_c \, {\operatorname{p}_c}(x)\,dx \\
 &amp;= w_c,
 \end{aligned}
 \]</span></p>
@@ -1945,7 +1945,7 @@ f(t)
 <p>And <span class="math inline">\({\operatorname{p}_{\text{mix}}} \ge 0\)</span>, as a sum of non-negative terms, so <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> is a <a href="./random-variables.html#def-pdf">density</a> of <span class="math inline">\(X\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;19</a> describes how to generate a draw from a mixture: first draw a component label <span class="math inline">\(C\)</span> with <span class="math inline">\(\operatorname{P}(C = c) = w_c\)</span>, then draw <span class="math inline">\(X\)</span> from the component density <span class="math inline">\({\operatorname{p}_C}\)</span>. In applications, <span class="math inline">\(C\)</span> is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of <a href="#/def-mvn">multivariate normal densities</a> (Gaussian mixture models), work the same way, with <span class="math inline">\(p\)</span>-variable densities in place of densities on <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;19</a> describes how to generate a draw from a mixture: first draw a component label <span class="math inline">\(C\)</span> with <span class="math inline">\(\mathbb{P}(C = c) = w_c\)</span>, then draw <span class="math inline">\(X\)</span> from the component density <span class="math inline">\({\operatorname{p}_C}\)</span>. In applications, <span class="math inline">\(C\)</span> is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of <a href="#/def-mvn">multivariate normal densities</a> (Gaussian mixture models), work the same way, with <span class="math inline">\(p\)</span>-variable densities in place of densities on <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1962,13 +1962,13 @@ f(t)
 
 <div id="thm-mixture-mean" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 20 (The mean of a mixture is the weighted mean of the component means)</strong></span> If <span class="math inline">\(X\)</span> has density <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> (<a href="#/def-mixture" class="quarto-xref">Definition&nbsp;11</a>), and each component <span class="math inline">\({\operatorname{p}_c}\)</span> has a defined mean <span class="math inline">\(\mu_c = \int_{-\infty}^{\infty} x \, {\operatorname{p}_c}(x)\,dx\)</span>, then:</p>
-<p><span class="math display">\[{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c\]</span></p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The integral defining <span class="math inline">\({\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}\)</span> converges absolutely, because <span class="math inline">\(\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_c}(x)\,dx\)</span>, a finite sum of finite numbers. Then:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The integral defining <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span> converges absolutely, because <span class="math inline">\(\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_c}(x)\,dx\)</span>, a finite sum of finite numbers. Then:</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}}
+{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}
 &amp;= \int_{-\infty}^{\infty} x \, {\operatorname{p}_{\text{mix}}}(x)\,dx
 &amp;&amp; \text{(definition of expectation)} \\
 &amp;= \int_{-\infty}^{\infty} x \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
@@ -1987,14 +1987,14 @@ f(t)
 <div id="thm-mixture-posterior" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 21 (Which component did an observation come from?)</strong></span> Under the conditions of <a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;19</a>, for each <span class="math inline">\(x\)</span> with <span class="math inline">\({\operatorname{p}_{\text{mix}}}(x) &gt; 0\)</span>:</p>
 <p><span class="math display">\[
-\operatorname{P}(C = c \mid X = x) = \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}
+\mathbb{P}(C = c \mid X = x) = \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}
 \]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-mixture-two-stage" class="quarto-xref">Theorem&nbsp;19</a>, <span class="math inline">\({\operatorname{p}_{\text{mix}}}\)</span> is a density of <span class="math inline">\(X\)</span>. By the <a href="./expectation.html#def-cond-mixed">definition of the conditional PMF</a> (the case <span class="math inline">\(X\)</span> continuous, <span class="math inline">\(C\)</span> discrete):</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(C = c \mid X = x)
+\mathbb{P}(C = c \mid X = x)
 &amp;= \frac{\operatorname{p}(C = c,\, X = x)}{\operatorname{p}(X = x)}
 &amp;&amp; \text{(definition of the conditional PMF)} \\
 &amp;= \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}
@@ -2019,7 +2019,7 @@ f(t)
 <section class="slide level2">
 
 <div id="def-responsibility" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (Responsibility of a mixture component)</strong></span> In the setting of <a href="#/thm-mixture-posterior" class="quarto-xref">Theorem&nbsp;21</a>, the conditional probability <span class="math inline">\(\operatorname{P}(C = c \mid X = x)\)</span> is called, in machine learning, the <strong>responsibility</strong> of component <span class="math inline">\(c\)</span> for <span class="math inline">\(x\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 13 (Responsibility of a mixture component)</strong></span> In the setting of <a href="#/thm-mixture-posterior" class="quarto-xref">Theorem&nbsp;21</a>, the conditional probability <span class="math inline">\(\mathbb{P}(C = c \mid X = x)\)</span> is called, in machine learning, the <strong>responsibility</strong> of component <span class="math inline">\(c\)</span> for <span class="math inline">\(x\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -2030,7 +2030,7 @@ f(t)
 <li><p><strong>Mean.</strong> By <a href="#/thm-mixture-mean" class="quarto-xref">Theorem&nbsp;20</a> and the <a href="./random-variables.html#thm-normal-moments">normal means</a>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-{\operatorname{E}\mathopen{}\left[X\right]\mathclose{}} &amp;= 0.3 \cdot 0 + 0.7 \cdot 6 \\
+{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &amp;= 0.3 \cdot 0 + 0.7 \cdot 6 \\
 &amp;= 4.2.
 \end{aligned}
 \]</span></p></li>
@@ -2038,13 +2038,13 @@ f(t)
 <li><p><strong>Responsibilities.</strong> By <a href="#/thm-mixture-posterior" class="quarto-xref">Theorem&nbsp;21</a>, at <span class="math inline">\(x = 3\)</span>, halfway between the component means, <span class="math inline">\({\operatorname{p}_1}(3) = {\operatorname{p}_2}(3)\)</span> by the symmetry of the normal density, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\operatorname{P}(C = 2 \mid X = 3)
+\mathbb{P}(C = 2 \mid X = 3)
 &amp;= \frac{0.7\,{\operatorname{p}_2}(3)}{0.3\,{\operatorname{p}_1}(3) + 0.7\,{\operatorname{p}_2}(3)} \\
 &amp;= \frac{0.7}{0.3 + 0.7} \\
 &amp;= 0.7,
 \end{aligned}
 \]</span></p>
-<p>the prior weight: an observation equally far from both components carries no information about which component it came from. At <span class="math inline">\(x = 4.2\)</span>, the same formula gives <span class="math inline">\(\operatorname{P}(C = 2 \mid X = 4.2) \approx 0.9997\)</span>.</p></li>
+<p>the prior weight: an observation equally far from both components carries no information about which component it came from. At <span class="math inline">\(x = 4.2\)</span>, the same formula gives <span class="math inline">\(\mathbb{P}(C = 2 \mid X = 4.2) \approx 0.9997\)</span>.</p></li>
 </ul>
 </div>
 <aside class="notes proof remark">
@@ -2064,7 +2064,7 @@ f(t)
 <section class="slide level2">
 
 <div id="exm-nb-mixture" class="theorem example">
-<p><span class="theorem-title"><strong>Example 21 (The negative binomial as a continuous mixture)</strong></span> The <a href="#/def-nb">negative binomial distribution</a> is a mixture of Poisson distributions with a continuum of components, one for each mean <span class="math inline">\({\lambda}&gt; 0\)</span>: its PMF is <span class="math inline">\(\operatorname{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}\)</span>, where the gamma density <span class="math inline">\(g\)</span> plays the role of the mixing weights and the integral replaces the sum in <a href="#/def-mixture" class="quarto-xref">Definition&nbsp;11</a> (see the proof of <a href="#/thm-nb" class="quarto-xref">Theorem&nbsp;11</a>).</p>
+<p><span class="theorem-title"><strong>Example 21 (The negative binomial as a continuous mixture)</strong></span> The <a href="#/def-nb">negative binomial distribution</a> is a mixture of Poisson distributions with a continuum of components, one for each mean <span class="math inline">\({\lambda}&gt; 0\)</span>: its PMF is <span class="math inline">\(\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}\)</span>, where the gamma density <span class="math inline">\(g\)</span> plays the role of the mixing weights and the integral replaces the sum in <a href="#/def-mixture" class="quarto-xref">Definition&nbsp;11</a> (see the proof of <a href="#/thm-nb" class="quarto-xref">Theorem&nbsp;11</a>).</p>
 </div>
 </section>
 <section id="references" class="slide level2 unnumbered smaller scrollable">

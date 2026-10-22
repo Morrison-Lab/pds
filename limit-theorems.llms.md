@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:36:00 (PDT)
+Last modified: 2026-10-22 13:40:45 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -52,13 +52,13 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Theorem 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with population mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then, by [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom):
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= n\mu\\ {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= n\sigma^2 \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= n\mu\\ {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= n\sigma^2 \end{aligned} \\
 
 > **NOTE:**
 >
 > *Proof*. For the mean, apply [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) with every \\a_i = 1\\:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[\sum\_{i=1}^n1 \cdot X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= \sum\_{i=1}^n1 \cdot{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation for finite sums, all } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu\text{)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[\sum\_{i=1}^n1 \cdot X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= \sum\_{i=1}^n1 \cdot{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation for finite sums, all } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu\text{)} \end{aligned} \\
 >
 > For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with every \\a_i = 1\\. For \\i \ne j\\, \\X_i\\ and \\X_j\\ are independent (take \\A_k = \mathbb{R}\\ for every other \\k\\ in the [definition of independence](independence.llms.md#def-indpt)), so \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\\ for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated); and \\{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\ ([covariance of a variable with itself](variance-covariance.llms.md#lem-cov-xx)):
 >
@@ -68,13 +68,13 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Corollary 2 (Mean and variance of a sample mean of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) [random variables](random-variables.llms.md#def-random-variable), each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with [population mean](expectation.llms.md#def-expectation) \\\mu\\ and finite [variance](variance-covariance.llms.md#def-variance) \\\sigma^2\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= \mu\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= \frac{\sigma^2}{n} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= \mu\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= \frac{\sigma^2}{n} \end{aligned} \\
 
 > **NOTE:**
 >
-> *Proof*. Let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar{X}\_{n} = S_n / n\\. By [Theorem 2](#thm-sum-iid-moments), \\{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} = n\mu\\ and \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\:
+> *Proof*. Let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar{X}\_{n} = S_n / n\\. By [Theorem 2](#thm-sum-iid-moments), \\{\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} = n\mu\\ and \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[\frac{S_n}{n}\right\]\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n}{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[\frac{S_n}{n}\right\]\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n}{\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -242,15 +242,15 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 3 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} \< \infty\\. Then for every \\a \> 0\\ [\[4\]](#ref-wikipedia_markovs_inequality):
+> **Theorem 3 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} \< \infty\\. Then for every \\a \> 0\\ [\[4\]](#ref-wikipedia_markovs_inequality):
 >
-> \\ {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} \le \frac{{\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}}}{a} \\
+> \\ {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} \le \frac{{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}}{a} \\
 
 > **NOTE:**
 >
 > *Proof*. Because \\X \ge 0\\, every outcome satisfies \\X \ge a \cdot \mathbb{1}\_{{\mathopen{}\left\\X \ge a\right\\\mathclose{}}}\\: when \\X \ge a\\ the right side is \\a \le X\\, and otherwise it is \\0 \le X\\. The expectation of a nonnegative random variable is nonnegative, so by [linearity of expectation](expectation.llms.md#thm-linearity-expectation), and because the expectation of an indicator is the probability of its event,
 >
-> \\ {\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} - a \cdot {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} = {\operatorname{E}\mathopen{}\left\[X - a \cdot \mathbb{1}\_{{\mathopen{}\left\\X \ge a\right\\\mathclose{}}}\right\]\mathclose{}} \ge 0 \\
+> \\ {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} - a \cdot {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[X - a \cdot \mathbb{1}\_{{\mathopen{}\left\\X \ge a\right\\\mathclose{}}}\right\]\mathclose{}} \ge 0 \\
 >
 > and dividing by \\a \> 0\\ gives the claim.
 
@@ -347,7 +347,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > **Lemma 1 (Hoeffding’s lemma)** Let \\X\\ be a random variable with \\0 \le X \le 1\\ and mean \\\mu\\. Then for every real number \\s\\,
 >
-> \\ {\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} \le e^{s^2/8}. \\
+> \\ {\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} \le e^{s^2/8}. \\
 
 > **NOTE:**
 >
@@ -357,11 +357,11 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > Take the expectation of both sides, which preserves the inequality:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[e^{sX}\right\]\mathclose{}} &\le 1 - {\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} + {\operatorname{E}\mathopen{}\left\[X\right\]\mathclose{}} e^{s} && \text{(linearity of expectation)} \\ &= 1 - \mu+ \mu e^{s} && \text{(definition of } \mu\text{)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[e^{sX}\right\]\mathclose{}} &\le 1 - {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} + {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} e^{s} && \text{(linearity of expectation)} \\ &= 1 - \mu+ \mu e^{s} && \text{(definition of } \mu\text{)} \end{aligned} \\
 >
 > The number \\1 - \mu+ \mu e^{s}\\ is a weighted average of \\1\\ and \\e^{s}\\ with weights \\1 - \mu\\ and \\\mu\\, so it is positive. Multiply by the constant \\e^{-s\mu}\\ and write the result as an exponential:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} &= e^{-s\mu} {\operatorname{E}\mathopen{}\left\[e^{sX}\right\]\mathclose{}} && \text{(} e^{-s\mu} \text{ is a constant)} \\ &\le e^{-s\mu} \mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} && \text{(the bound above)} \\ &= e^{L(s)} && \text{(define } L(s) \stackrel{\text{def}}{=}-s\mu+ \log\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} &= e^{-s\mu} {\mathbb{E}\mathopen{}\left\[e^{sX}\right\]\mathclose{}} && \text{(} e^{-s\mu} \text{ is a constant)} \\ &\le e^{-s\mu} \mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} && \text{(the bound above)} \\ &= e^{L(s)} && \text{(define } L(s) \stackrel{\text{def}}{=}-s\mu+ \log\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} \text{)} \end{aligned} \\
 >
 > It remains to show \\L(s) \le s^2/8\\. Write
 >
@@ -383,11 +383,11 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > \\ \begin{aligned} L(s) &= L(0) + L'(0)\\ s + \frac{L''(\xi)}{2} s^2 && \text{(Taylor's theorem)} \\ &= \frac{L''(\xi)}{2} s^2 && \text{(} L(0) = L'(0) = 0 \text{)} \\ &\le \frac{s^2}{8} && \text{(} L''(\xi) \le \tfrac{1}{4} \text{)} \end{aligned} \\
 >
-> Therefore \\{\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} \le e^{L(s)} \le e^{s^2/8}\\.
+> Therefore \\{\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} \le e^{L(s)} \le e^{s^2/8}\\.
 
 > **NOTE:**
 >
-> *Remark*. The bound on the moment generating function \\{\operatorname{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}}\\ is the step of Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
+> *Remark*. The bound on the moment generating function \\{\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}}\\ is the step of Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
 
 > **NOTE:**
 >
@@ -399,7 +399,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > *Proof*. Let the free parameter be \\s \> 0\\. The event \\{\mathopen{}\left\\\bar{X}\_{n} - \mu\ge \varepsilon\right\\\mathclose{}}\\ is the event \\{\mathopen{}\left\\e^{sn(\bar{X}\_{n} - \mu)} \ge e^{sn\varepsilon}\right\\\mathclose{}}\\, because the exponential is increasing and \\sn \> 0\\. The random variable \\e^{sn(\bar{X}\_{n} - \mu)}\\ is positive, so [Markov’s inequality](#thm-markov) applies:
 >
-> \\ \begin{aligned} {\Pr\mathopen{}\left(\bar{X}\_{n} - \mu\ge \varepsilon\right)\mathclose{}} &= {\Pr\mathopen{}\left(e^{sn(\bar{X}\_{n} - \mu)} \ge e^{sn\varepsilon}\right)\mathclose{}} && \text{(the exponential is increasing)} \\ &\le e^{-sn\varepsilon} {\operatorname{E}\mathopen{}\left\[e^{sn(\bar{X}\_{n} - \mu)}\right\]\mathclose{}} && \text{(Markov's inequality)} \end{aligned} \\
+> \\ \begin{aligned} {\Pr\mathopen{}\left(\bar{X}\_{n} - \mu\ge \varepsilon\right)\mathclose{}} &= {\Pr\mathopen{}\left(e^{sn(\bar{X}\_{n} - \mu)} \ge e^{sn\varepsilon}\right)\mathclose{}} && \text{(the exponential is increasing)} \\ &\le e^{-sn\varepsilon} {\mathbb{E}\mathopen{}\left\[e^{sn(\bar{X}\_{n} - \mu)}\right\]\mathclose{}} && \text{(Markov's inequality)} \end{aligned} \\
 >
 > Rewrite the exponent as a sum, so that the exponential becomes a product:
 >
@@ -407,7 +407,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 >
 > The factors are functions of independent random variables, so they are independent, and the expectation of a product of independent random variables is the product of their expectations (the [expectation of a product of independent variables](variance-covariance.llms.md#thm-indpt-uncorrelated), applied one factor at a time). Then apply [Lemma 1](#lem-hoeffding) to each factor:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[e^{sn(\bar{X}\_{n} - \mu)}\right\]\mathclose{}} &= \prod\_{i=1}^n {\operatorname{E}\mathopen{}\left\[e^{s(X_i - \mu)}\right\]\mathclose{}} && \text{(independence)} \\ &\le \prod\_{i=1}^n e^{s^2/8} && \text{(Hoeffding's lemma)} \\ &= e^{ns^2/8} && \text{(} n \text{ equal factors)} \end{aligned} \\
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[e^{sn(\bar{X}\_{n} - \mu)}\right\]\mathclose{}} &= \prod\_{i=1}^n {\mathbb{E}\mathopen{}\left\[e^{s(X_i - \mu)}\right\]\mathclose{}} && \text{(independence)} \\ &\le \prod\_{i=1}^n e^{s^2/8} && \text{(Hoeffding's lemma)} \\ &= e^{ns^2/8} && \text{(} n \text{ equal factors)} \end{aligned} \\
 >
 > Combining the two displays, for every \\s \> 0\\,
 >
@@ -494,7 +494,7 @@ Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Corollary 2](#cor-mean-iid-moments), \\{\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} = \mu\\ and \\{\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} = \sigma^2/n\\.
+> *Proof*. By [Corollary 2](#cor-mean-iid-moments), \\{\mathbb{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} = \mu\\ and \\{\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} = \sigma^2/n\\.
 >
 > Let the tolerance be \\\varepsilon \> 0\\ and let the multiplier be \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar{X}\_{n}\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
 >

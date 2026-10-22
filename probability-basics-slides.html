@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-22 01:36:00 (PDT)</p>
+  <p class="date">Last modified: 2026-10-22 13:40:45 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -580,7 +580,7 @@
 <section class="slide level2">
 
 <div id="def-probability" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11 (Probability measure (probability function))</strong></span> A <strong>probability measure</strong> (also called a <strong>probability function</strong> <span class="citation" data-cites="CaseBerg01"><a href="#/references" role="doc-biblioref" onclick="">[4]</a>, Definition 1.2.4</span>) on a <a href="#/def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, often denoted <span class="math inline">\(\Pr()\)</span> or <span class="math inline">\(\operatorname{P}()\)</span>, is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the <a href="#/def-event">events</a> of <span class="math inline">\(\Omega\)</span> that gives the whole sample space probability 1 <span class="citation" data-cites="wikipedia_probability_space"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>:</p>
+<p><span class="theorem-title"><strong>Definition 11 (Probability measure (probability function))</strong></span> A <strong>probability measure</strong> (also called a <strong>probability function</strong> <span class="citation" data-cites="CaseBerg01"><a href="#/references" role="doc-biblioref" onclick="">[4]</a>, Definition 1.2.4</span>) on a <a href="#/def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, often denoted <span class="math inline">\(\Pr()\)</span> or <span class="math inline">\(\mathbb{P}()\)</span>, is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the <a href="#/def-event">events</a> of <span class="math inline">\(\Omega\)</span> that gives the whole sample space probability 1 <span class="citation" data-cites="wikipedia_probability_space"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>:</p>
 <p><span class="math display">\[\Pr(\Omega) = 1\]</span></p>
 </div>
 </section>
@@ -796,8 +796,8 @@
 <h2><span class="header-section-number">2</span> Odds</h2>
 <!-- No slidebreak here: the heading shares its slide with the def-odds div. -->
 <div id="def-odds" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (Odds)</strong></span> Let <span class="math inline">\(A\)</span> be an <a href="#/def-event">event</a> with <a href="#/def-probability">probability</a> <span class="math inline">\(\operatorname{P}(A) \in (0, 1)\)</span>. The <strong>odds</strong> of <span class="math inline">\(A\)</span> are <span class="citation" data-cites="wikipedia_odds"><a href="#/references" role="doc-biblioref" onclick="">[7]</a></span></p>
-<p><span class="math display">\[\omega\stackrel{\text{def}}{=}\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)} \in (0, \infty).\]</span></p>
+<p><span class="theorem-title"><strong>Definition 13 (Odds)</strong></span> Let <span class="math inline">\(A\)</span> be an <a href="#/def-event">event</a> with <a href="#/def-probability">probability</a> <span class="math inline">\(\mathbb{P}(A) \in (0, 1)\)</span>. The <strong>odds</strong> of <span class="math inline">\(A\)</span> are <span class="citation" data-cites="wikipedia_odds"><a href="#/references" role="doc-biblioref" onclick="">[7]</a></span></p>
+<p><span class="math display">\[\omega\stackrel{\text{def}}{=}\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)} \in (0, \infty).\]</span></p>
 </div>
 </section>
 <section class="slide level2">
@@ -817,8 +817,8 @@
 <section class="slide level2">
 
 <div id="def-log-odds" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14 (Log-odds (also called the logit))</strong></span> The <strong>log-odds</strong>, also called the <strong>logit</strong>, of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> with <a href="#/def-probability">probability</a> <span class="math inline">\(\operatorname{P}(A) \in (0, 1)\)</span> are the natural logarithm of its <a href="#/def-odds">odds</a> <span class="citation" data-cites="wikipedia_logit"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>:</p>
-<p><span class="math display">\[\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}} = {\operatorname{log}\mathopen{}\left\{\frac{\operatorname{P}(A)}{1 - \operatorname{P}(A)}\right\}\mathclose{}} \in \mathbb{R}.\]</span></p>
+<p><span class="theorem-title"><strong>Definition 14 (Log-odds (also called the logit))</strong></span> The <strong>log-odds</strong>, also called the <strong>logit</strong>, of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> with <a href="#/def-probability">probability</a> <span class="math inline">\(\mathbb{P}(A) \in (0, 1)\)</span> are the natural logarithm of its <a href="#/def-odds">odds</a> <span class="citation" data-cites="wikipedia_logit"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>:</p>
+<p><span class="math display">\[\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}} = {\operatorname{log}\mathopen{}\left\{\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}\right\}\mathclose{}} \in \mathbb{R}.\]</span></p>
 </div>
 </section>
 <section class="slide level2">
