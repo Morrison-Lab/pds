@@ -1017,15 +1017,6 @@
    "external": false
   },
   {
-   "id": "pds/limit-theorems#cor-sum-iid-moments",
-   "site": "pds",
-   "page": "limit-theorems",
-   "div": "cor-sum-iid-moments",
-   "kind": "cor",
-   "title": "Mean and variance of a sum of IID random variables",
-   "external": false
-  },
-  {
    "id": "pds/limit-theorems#def-convergence-in-probability",
    "site": "pds",
    "page": "limit-theorems",
@@ -1086,6 +1077,15 @@
    "div": "thm-markov",
    "kind": "thm",
    "title": "Markov's inequality",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-sum-iid-moments",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-sum-iid-moments",
+   "kind": "thm",
+   "title": "Mean and variance of a sum of IID random variables",
    "external": false
   },
   {
@@ -2623,10 +2623,6 @@
    "pds/variance-covariance#def-variance"
   ],
   [
-   "pds/limit-theorems#cor-sum-iid-moments",
-   "pds/independence#def-iid"
-  ],
-  [
    "pds/limit-theorems#thm-chebyshev-sample-mean",
    "pds/independence#def-iid"
   ],
@@ -2641,6 +2637,18 @@
   [
    "pds/limit-theorems#thm-hoeffding",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/variance-covariance#thm-var-lincom"
   ],
   [
    "pds/limit-theorems#thm-wlln",
