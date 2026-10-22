@@ -21,13 +21,18 @@ $$
 \popriskf{\predfn}
 &= \E{\sqf{\prederrf{\predfn}}}
 && \text{(definition of the squared-error risk)} \\
-&= \E{\sqf{\prederrf{\truemean} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}}}
+&= \E{\sqf{\prederrf{\truemean} + \devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}}}
 && \text{(the prediction error splits at } \truemean \text{)} \\
-&= \E{\sqf{\prederrf{\truemean}}} + 2 \cd \E{\prederrf{\truemean}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&= \E{\sqf{\prederrf{\truemean}}}
++ 2 \cd \E{\prederrf{\truemean} \cd \devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}}
++ \E{\sqf{\devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}}}
 && \text{(expand the square; linearity of expectation)} \\
-&= \E{\sqf{\prederrf{\truemean}}} + 2 \cd 0 + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&= \E{\sqf{\prederrf{\truemean}}}
++ 2 \cd 0
++ \E{\sqf{\devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}}}
 && \text{(the cross term is } 0 \text{)} \\
-&= \popriskf{\truemean} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&= \popriskf{\truemean}
++ \E{\sqf{\devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}}}
 && \text{(definition of the squared-error risk of } \truemean \text{)}
 \ea
 $$
