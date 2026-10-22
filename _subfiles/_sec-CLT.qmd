@@ -197,11 +197,13 @@ $$
 ::: {.remark .notes}
 
 In practice, @thm-clt justifies approximating
-$\samplemean{X}{n}$ by a normal distribution with mean $\mean$
+$\samplemean{X}{n}$ by a [normal distribution](random-variables.qmd#def-normal)
+with [mean](expectation.qmd#def-expectation) $\mean$
 and [variance](variance-covariance.qmd#def-variance) $\ss/n$,
 and @cor-clt-sum justifies approximating
 $S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$.
-By @thm-sum-iid-moments, these are exactly the means and variances
+By @thm-sum-iid-moments, these are exactly the means and
+[variances](variance-covariance.qmd#def-variance)
 of $\samplemean{X}{n} = S_n/n$ and $S_n$.
 
 :::
