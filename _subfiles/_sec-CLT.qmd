@@ -173,7 +173,7 @@ $$
 \ba
 \E{\samplemean{X}{n}}
 &= \E{\frac{S_n}{n}}
-&& \text{(} \samplemean{X}{n} = S_n / n \text{)}\\
+&& \text{(definition of sample mean)}\\
 &= \frac{1}{n}\E{S_n}
 && \text{(linearity of expectation)}\\
 &= \frac{1}{n} \cdot n\mean
@@ -182,7 +182,7 @@ $$
 && \text{(cancel $n$)}\\
 \Var{\samplemean{X}{n}}
 &= \Var{\frac{S_n}{n}}
-&& \text{(} \samplemean{X}{n} = S_n / n \text{)}\\
+&& \text{(definition of sample mean)}\\
 &= \frac{1}{n^2}\Var{S_n}
 && \text{(variance of a constant multiple)}\\
 &= \frac{1}{n^2} \cdot n\ss
