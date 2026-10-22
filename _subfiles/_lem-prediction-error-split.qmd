@@ -5,7 +5,7 @@ Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional 
 For any [prediction function](#def-prediction) $\predfnf{\Predvar}$,
 the [prediction error](#def-prediction-error) splits as:
 
-$$\prederr_{\predfn} = \prederr_{\truemean} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}$$
+$$\esterr{\predfnf{\Predvar}}{\Outvar} = \esterr{\truemeanf{\Predvar}}{\Outvar} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}$$
 
 :::
 
@@ -13,13 +13,13 @@ $$\prederr_{\predfn} = \prederr_{\truemean} + \paren{\predfnf{\Predvar} - \truem
 
 $$
 \ba
-\prederr_{\predfn}
+\esterr{\predfnf{\Predvar}}{\Outvar}
 &= \predfnf{\Predvar} - \Outvar
-&& \text{(definition of } \prederr_{\predfn} \text{)} \\
+&& \text{(definition of } \esterr{\predfnf{\Predvar}}{\Outvar} \text{)} \\
 &= \paren{\truemeanf{\Predvar} - \Outvar} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}
 && \text{(add and subtract } \truemeanf{\Predvar} \text{)} \\
-&= \prederr_{\truemean} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}
-&& \text{(definition of } \prederr_{\truemean} \text{)}
+&= \esterr{\truemeanf{\Predvar}}{\Outvar} + \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}
+&& \text{(definition of } \esterr{\truemeanf{\Predvar}}{\Outvar} \text{)}
 \ea
 $$
 
@@ -32,9 +32,9 @@ $$
 
 In @exr-best-predictor,
 when $\Predvar = 0$ and $\Outvar = 0$,
-the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [prediction error](#def-prediction-error) $\prederr_{\predfn_1} = 3$.
+the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [prediction error](#def-prediction-error) $\esterr{\predfn_1\paren{\Predvar}}{\Outvar} = 3$.
 The conditional mean is $\truemeanf{0} = 1$,
-so $\prederr_{\truemean} = 1$ and $\predfn_1\paren{0} - \truemeanf{0} = 2$,
+so $\esterr{\truemeanf{\Predvar}}{\Outvar} = 1$ and $\predfn_1\paren{0} - \truemeanf{0} = 2$,
 and $3 = 1 + 2$.
 
 :::

@@ -4,7 +4,7 @@
 Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
 For any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
-$$\E{\prederr_{\truemean} \cd \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} = 0$$
+$$\E{\esterr{\truemeanf{\Predvar}}{\Outvar} \cd \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} = 0$$
 
 :::
 
@@ -15,11 +15,11 @@ by @thm-cond-pull-out it factors out of the [conditional expectation](#def-cond-
 
 $$
 \ba
-\E{\prederr_{\truemean}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \mid \Predvar}
-&= \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \cd \E{\prederr_{\truemean} \mid \Predvar}
+\E{\esterr{\truemeanf{\Predvar}}{\Outvar}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \mid \Predvar}
+&= \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \cd \E{\esterr{\truemeanf{\Predvar}}{\Outvar} \mid \Predvar}
 && \text{(a function of } \Predvar \text{ factors out)} \\
 &= \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \cd \E{\truemeanf{\Predvar} - \Outvar \mid \Predvar}
-&& \text{(definition of } \prederr_{\truemean} \text{)} \\
+&& \text{(definition of } \esterr{\truemeanf{\Predvar}}{\Outvar} \text{)} \\
 &= \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \cd \paren{\E{\truemeanf{\Predvar} \mid \Predvar} - \E{\Outvar \mid \Predvar}}
 && \text{(linearity of conditional expectation)} \\
 &= \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \cd \paren{\truemeanf{\Predvar} - \truemeanf{\Predvar}}
@@ -33,8 +33,8 @@ By the law of iterated expectations (@thm-lie):
 
 $$
 \ba
-\E{\prederr_{\truemean}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
-&= \E{\E{\prederr_{\truemean}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \mid \Predvar}}
+\E{\esterr{\truemeanf{\Predvar}}{\Outvar}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}}
+&= \E{\E{\esterr{\truemeanf{\Predvar}}{\Outvar}\paren{\predfnf{\Predvar} - \truemeanf{\Predvar}} \mid \Predvar}}
 && \text{(law of iterated expectations)} \\
 &= \E{0}
 && \text{(the conditional expectation is } 0 \text{)} \\
@@ -52,7 +52,7 @@ $$
 
 In @exr-best-predictor, take the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
 When $\Predvar = 0$, $\truemeanf{0} = 1$, so $\predfn_1\paren{0} - \truemeanf{0} = 2$,
-and $\prederr_{\truemean} = 1 - \Outvar$ is $1$ or $-1$ with equal probability,
+and $\esterr{\truemeanf{\Predvar}}{\Outvar} = 1 - \Outvar$ is $1$ or $-1$ with equal [probability](#def-probability),
 so the product has conditional mean $0$.
 The same cancellation happens when $\Predvar = 1$,
 so the expectation of the product is $0$.
