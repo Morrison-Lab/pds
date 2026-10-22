@@ -136,8 +136,8 @@ $$
 
 @cor-sum-iid-moments follows from the two results named in its statement.
 It does not depend on @thm-clt or @cor-clt-sum;
-the centering and scaling in @cor-clt-sum
-are this corollary's mean and standard deviation.
+@cor-clt-sum centers and scales $S_n$
+using the values $n\mean$ and $\sqrt{n\ss}$ from this corollary.
 
 :::
 
