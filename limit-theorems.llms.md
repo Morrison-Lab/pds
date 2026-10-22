@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 00:49:36 (PDT)
+Last modified: 2026-10-22 01:12:44 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -63,6 +63,18 @@ Last modified: 2026-10-22 00:49:36 (PDT)
 > For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with every \\a_i = 1\\. For \\i \ne j\\, \\X_i\\ and \\X_j\\ are independent (take \\A_k = \mathbb{R}\\ for every other \\k\\ in the [definition of independence](independence.llms.md#def-indpt)), so \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\\ for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated); and \\{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\ ([covariance of a variable with itself](variance-covariance.llms.md#lem-cov-xx)):
 >
 > \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= \sum\_{i=1}^n\sum\_{j=1}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} && \text{(variance of a linear combination, all } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} + \sum\_{\substack{i, j = 1 \\ i \ne j}}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} && \text{(split off the terms with } i = j \text{)} \\ &= \sum\_{i=1}^n{\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}} + 0 && \text{(covariance with itself; independent summands)} \\ &= n\sigma^2 && \text{(each } X_i \text{ has variance } \sigma^2\text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Corollary 3 (Mean and variance of a sample mean of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) [random variables](random-variables.llms.md#def-random-variable), each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with [population mean](expectation.llms.md#def-expectation) \\\mu\\ and finite [variance](variance-covariance.llms.md#def-variance) \\\sigma^2\\, and let \\\bar{X}\_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then:
+>
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= \mu\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= \frac{\sigma^2}{n} \end{aligned} \\
+
+> **NOTE:**
+>
+> *Proof*. Let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar{X}\_{n} = S_n / n\\. By [Corollary 2](#cor-sum-iid-moments), \\{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} = n\mu\\ and \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\:
+>
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[\frac{S_n}{n}\right\]\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n}{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -329,7 +341,7 @@ Last modified: 2026-10-22 00:49:36 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar{X}\_{n}\\, whose variance is \\\sigma^2/n\\ by [Corollary 2](#cor-sum-iid-moments).
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 3](#thm-chebyshev) to \\\bar{X}\_{n}\\, whose [variance](variance-covariance.llms.md#def-variance) is \\\sigma^2/n\\ by [Corollary 3](#cor-mean-iid-moments).
 
 > **NOTE:**
 >
@@ -409,7 +421,7 @@ Last modified: 2026-10-22 00:49:36 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 3 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 5](#thm-hoeffding), for every \\\varepsilon\> 0\\,
+> **Corollary 4 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 5](#thm-hoeffding), for every \\\varepsilon\> 0\\,
 >
 > \\ {\Pr\mathopen{}\left(\mathopen{}\left\|\bar{X}\_{n} - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{}} \le 2e^{-2n\varepsilon^2}. \tag{2}\\
 
@@ -429,7 +441,7 @@ Last modified: 2026-10-22 00:49:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar{X}\_{n}\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 3](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 4](#thm-chebyshev-sample-mean)).
+> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\\bar{X}\_{n}\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 4](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 4](#thm-chebyshev-sample-mean)).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -482,9 +494,7 @@ Last modified: 2026-10-22 00:49:36 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Corollary 2](#cor-sum-iid-moments), \\{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} = n\mu\\ and \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\, where \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar{X}\_{n} = S_n / n\\ has
->
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= \frac{1}{n}{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+> *Proof*. By [Corollary 3](#cor-mean-iid-moments), \\{\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} = \mu\\ and \\{\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} = \sigma^2/n\\.
 >
 > Let the tolerance be \\\varepsilon \> 0\\ and let the multiplier be \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\\bar{X}\_{n}\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
 >

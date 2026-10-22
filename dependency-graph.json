@@ -1008,6 +1008,15 @@
    "external": false
   },
   {
+   "id": "pds/limit-theorems#cor-mean-iid-moments",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "cor-mean-iid-moments",
+   "kind": "cor",
+   "title": "Mean and variance of a sample mean of IID random variables",
+   "external": false
+  },
+  {
    "id": "pds/limit-theorems#cor-sum-iid-moments",
    "site": "pds",
    "page": "limit-theorems",
@@ -2588,6 +2597,30 @@
   [
    "pds/limit-theorems#cor-hoeffding-two-sided",
    "pds/limit-theorems#thm-hoeffding"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/limit-theorems#cor-sum-iid-moments",

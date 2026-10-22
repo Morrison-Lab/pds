@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-22 00:49:36 (PDT)</p>
+  <p class="date">Last modified: 2026-10-22 01:12:44 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -448,6 +448,43 @@
 &amp;&amp; \text{(covariance with itself; independent summands)} \\
 &amp;= n\sigma^2
 &amp;&amp; \text{(each } X_i \text{ has variance } \sigma^2\text{)}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="cor-mean-iid-moments" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 3 (Mean and variance of a sample mean of IID random variables)</strong></span> Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be <a href="./independence.html#def-iid">IID</a> <a href="./random-variables.html#def-random-variable">random variables</a>, each <a href="./random-variables.html#def-discrete-rv">discrete</a> or <a href="./random-variables.html#def-continuous-rv">continuous</a>, with <a href="./expectation.html#def-expectation">population mean</a> <span class="math inline">\(\mu\)</span> and finite <a href="./variance-covariance.html#def-variance">variance</a> <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\bar{X}_{n} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i\)</span>. Then:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\operatorname{E}\mathopen{}\left[\bar{X}_{n}\right]\mathclose{}} &amp;= \mu\\
+{\operatorname{Var}\mathopen{}\left(\bar{X}_{n}\right)\mathclose{}} &amp;= \frac{\sigma^2}{n}
+\end{aligned}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>, so <span class="math inline">\(\bar{X}_{n} = S_n / n\)</span>. By <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a>, <span class="math inline">\({\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}} = n\mu\)</span> and <span class="math inline">\({\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\operatorname{E}\mathopen{}\left[\bar{X}_{n}\right]\mathclose{}}
+&amp;= {\operatorname{E}\mathopen{}\left[\frac{S_n}{n}\right]\mathclose{}}
+&amp;&amp; \text{(definition of sample mean)}\\
+&amp;= \frac{1}{n}{\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}}
+&amp;&amp; \text{(linearity of expectation)}\\
+&amp;= \frac{1}{n} \cdot n\mu
+&amp;&amp; \text{(mean of a sum of IID variables)}\\
+&amp;= \mu
+&amp;&amp; \text{(cancel $n$)}\\
+{\operatorname{Var}\mathopen{}\left(\bar{X}_{n}\right)\mathclose{}}
+&amp;= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}}
+&amp;&amp; \text{(definition of sample mean)}\\
+&amp;= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}}
+&amp;&amp; \text{(variance of a constant multiple)}\\
+&amp;= \frac{1}{n^2} \cdot n\sigma^2
+&amp;&amp; \text{(variance of a sum of IID variables)}\\
+&amp;= \frac{\sigma^2}{n}
+&amp;&amp; \text{(cancel one factor of $n$)}
 \end{aligned}
 \]</span></p>
 </div>
@@ -803,7 +840,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-chebyshev-sample-size" class="quarto-xref">Exercise&nbsp;1</a> (a), worked in <a href="#/sol-chebyshev-sample-size" class="quarto-xref">Solution&nbsp;1</a>. It applies <a href="#/thm-chebyshev" class="quarto-xref">Theorem&nbsp;3</a> to <span class="math inline">\(\bar{X}_{n}\)</span>, whose variance is <span class="math inline">\(\sigma^2/n\)</span> by <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-chebyshev-sample-size" class="quarto-xref">Exercise&nbsp;1</a> (a), worked in <a href="#/sol-chebyshev-sample-size" class="quarto-xref">Solution&nbsp;1</a>. It applies <a href="#/thm-chebyshev" class="quarto-xref">Theorem&nbsp;3</a> to <span class="math inline">\(\bar{X}_{n}\)</span>, whose <a href="./variance-covariance.html#def-variance">variance</a> is <span class="math inline">\(\sigma^2/n\)</span> by <a href="#/cor-mean-iid-moments" class="quarto-xref">Corollary&nbsp;3</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -972,7 +1009,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <section class="slide level2">
 
 <div id="cor-hoeffding-two-sided" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 3 (Hoeffding’s inequality, two-sided)</strong></span> Under the assumptions of <a href="#/thm-hoeffding" class="quarto-xref">Theorem&nbsp;5</a>, for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
+<p><span class="theorem-title"><strong>Corollary 4 (Hoeffding’s inequality, two-sided)</strong></span> Under the assumptions of <a href="#/thm-hoeffding" class="quarto-xref">Theorem&nbsp;5</a>, for every <span class="math inline">\(\varepsilon&gt; 0\)</span>,</p>
 <p><span id="eq-hoeffding"><span class="math display">\[
 {\Pr\mathopen{}\left(\mathopen{}\left|\bar{X}_{n} - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}} \le 2e^{-2n\varepsilon^2}.
 \tag{2}\]</span></span></p>
@@ -1018,7 +1055,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 <section class="slide level2">
 
 <div id="exm-hoeffding-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)</strong></span> Take the 392 cars in the Auto data described in <a href="#/exm-clt-auto" class="quarto-xref">Example&nbsp;2</a> as the whole population, and call a car efficient if its fuel economy (<code>mpg</code>) is above <span class="math inline">\(25\)</span>. Let <span class="math inline">\(X_i = 1\)</span> if the <span class="math inline">\(i\)</span>th car drawn at random is efficient and <span class="math inline">\(X_i = 0\)</span> otherwise, so <span class="math inline">\(\mu\)</span> is the share of efficient cars and <span class="math inline">\(\bar{X}_{n}\)</span> is the share in a sample of <span class="math inline">\(n\)</span> draws. Each <span class="math inline">\(X_i\)</span> lies in <span class="math inline">\([0, 1]\)</span>, and the draws are made with replacement, so the <span class="math inline">\(X_i\)</span> are IID and <a href="#/cor-hoeffding-two-sided" class="quarto-xref">Corollary&nbsp;3</a> applies. The code below draws <span class="math inline">\(10{,}000\)</span> samples of each size, computes the proportion of samples whose share misses <span class="math inline">\(\mu\)</span> by at least <span class="math inline">\(\varepsilon= 0.1\)</span>, and sets that proportion beside the bound <span class="math inline">\(2e^{-2n\varepsilon^2}\)</span> of <a href="#/eq-hoeffding" class="quarto-xref">Equation&nbsp;2</a> and the bound <span class="math inline">\(\sigma^2/(n\varepsilon^2)\)</span> that Chebyshev’s inequality gives (<a href="#/thm-chebyshev-sample-mean" class="quarto-xref">Theorem&nbsp;4</a>).</p>
+<p><span class="theorem-title"><strong>Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)</strong></span> Take the 392 cars in the Auto data described in <a href="#/exm-clt-auto" class="quarto-xref">Example&nbsp;2</a> as the whole population, and call a car efficient if its fuel economy (<code>mpg</code>) is above <span class="math inline">\(25\)</span>. Let <span class="math inline">\(X_i = 1\)</span> if the <span class="math inline">\(i\)</span>th car drawn at random is efficient and <span class="math inline">\(X_i = 0\)</span> otherwise, so <span class="math inline">\(\mu\)</span> is the share of efficient cars and <span class="math inline">\(\bar{X}_{n}\)</span> is the share in a sample of <span class="math inline">\(n\)</span> draws. Each <span class="math inline">\(X_i\)</span> lies in <span class="math inline">\([0, 1]\)</span>, and the draws are made with replacement, so the <span class="math inline">\(X_i\)</span> are IID and <a href="#/cor-hoeffding-two-sided" class="quarto-xref">Corollary&nbsp;4</a> applies. The code below draws <span class="math inline">\(10{,}000\)</span> samples of each size, computes the proportion of samples whose share misses <span class="math inline">\(\mu\)</span> by at least <span class="math inline">\(\varepsilon= 0.1\)</span>, and sets that proportion beside the bound <span class="math inline">\(2e^{-2n\varepsilon^2}\)</span> of <a href="#/eq-hoeffding" class="quarto-xref">Equation&nbsp;2</a> and the bound <span class="math inline">\(\sigma^2/(n\varepsilon^2)\)</span> that Chebyshev’s inequality gives (<a href="#/thm-chebyshev-sample-mean" class="quarto-xref">Theorem&nbsp;4</a>).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>mpg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/auto.csv"</span>)<span class="sc">$</span>mpg</span>
 <span id="cb8-2"><a aria-label="2"></a>efficient <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(mpg <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
@@ -1096,25 +1133,7 @@ e^{sn(\bar{X}_{n} - \mu)}
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/cor-sum-iid-moments" class="quarto-xref">Corollary&nbsp;2</a>, <span class="math inline">\({\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}} = n\mu\)</span> and <span class="math inline">\({\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\)</span>, where <span class="math inline">\(S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i\)</span>, so <span class="math inline">\(\bar{X}_{n} = S_n / n\)</span> has</p>
-<p><span class="math display">\[
-\begin{aligned}
-{\operatorname{E}\mathopen{}\left[\bar{X}_{n}\right]\mathclose{}}
-&amp;= \frac{1}{n}{\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}}
-&amp;&amp; \text{(linearity of expectation)}\\
-&amp;= \frac{1}{n} \cdot n\mu
-&amp;&amp; \text{(mean of a sum of IID variables)}\\
-&amp;= \mu
-&amp;&amp; \text{(cancel $n$)}\\
-{\operatorname{Var}\mathopen{}\left(\bar{X}_{n}\right)\mathclose{}}
-&amp;= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}}
-&amp;&amp; \text{(variance of a constant multiple)}\\
-&amp;= \frac{1}{n^2} \cdot n\sigma^2
-&amp;&amp; \text{(variance of a sum of IID variables)}\\
-&amp;= \frac{\sigma^2}{n}
-&amp;&amp; \text{(cancel one factor of $n$)}
-\end{aligned}
-\]</span></p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/cor-mean-iid-moments" class="quarto-xref">Corollary&nbsp;3</a>, <span class="math inline">\({\operatorname{E}\mathopen{}\left[\bar{X}_{n}\right]\mathclose{}} = \mu\)</span> and <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\bar{X}_{n}\right)\mathclose{}} = \sigma^2/n\)</span>.</p>
 <p>Let the tolerance be <span class="math inline">\(\varepsilon &gt; 0\)</span> and let the multiplier be <span class="math inline">\(k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\)</span>, so that <span class="math inline">\(k \sigma/ \sqrt{n} = \varepsilon\)</span>. <a href="#/thm-chebyshev">Chebyshev’s inequality</a> for <span class="math inline">\(\bar{X}_{n}\)</span>, whose standard deviation is <span class="math inline">\(\sigma/ \sqrt{n}\)</span>, gives</p>
 <p><span class="math display">\[
 \begin{aligned}
