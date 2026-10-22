@@ -77,7 +77,7 @@ Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
 each discrete or continuous,
 with population mean $\mean$ and finite variance $\ss$,
 and let $S_n \eqdef \sumin X_i$.
-Then, by [linearity of expectation](expectation.qmd#thm-linearity-expectation)
+Then, by [linearity of expectation for finite sums](expectation.qmd#lem-linearity-finite-sum)
 and the [variance of a linear combination](variance-covariance.qmd#thm-var-lincom):
 
 $$
@@ -92,14 +92,18 @@ $$
 ::: proof
 
 For the mean, apply
-[linearity of expectation](expectation.qmd#thm-linearity-expectation)
-once per added summand:
+[linearity of expectation for finite sums](expectation.qmd#lem-linearity-finite-sum)
+with every $a_i = 1$:
 
 $$
 \ba
 \E{S_n}
+&= \E{\sumin 1 \cd X_i}
+&& \text{(} 1 \cd v = v \text{)} \\
+&= \sumin 1 \cd \E{X_i}
+&& \text{(linearity of expectation for finite sums, all } a_i = 1 \text{)} \\
 &= \sumin \E{X_i}
-&& \text{(linearity of expectation, applied } n - 1 \text{ times)} \\
+&& \text{(} 1 \cd v = v \text{)} \\
 &= n\mean
 && \text{(each } X_i \text{ has mean } \mean \text{)}
 \ea

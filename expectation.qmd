@@ -26,6 +26,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_lem-linearity-finite-sum.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-linearity-finite-sum.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exr-linearity-use.qmd >}}
 
 {{< slidebreak >}}
