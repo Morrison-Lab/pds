@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-21 16:26:23 (PDT)</p>
+  <p class="date">Last modified: 2026-10-22 00:41:30 (PDT)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -468,6 +468,8 @@
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{E}\mathopen{}\left[\bar{X}_{n}\right]\mathclose{}}
+&amp;= {\operatorname{E}\mathopen{}\left[\frac{S_n}{n}\right]\mathclose{}}
+&amp;&amp; \text{(definition of sample mean)}\\
 &amp;= \frac{1}{n}{\operatorname{E}\mathopen{}\left[S_n\right]\mathclose{}}
 &amp;&amp; \text{(linearity of expectation)}\\
 &amp;= \frac{1}{n} \cdot n\mu
@@ -475,6 +477,8 @@
 &amp;= \mu
 &amp;&amp; \text{(cancel $n$)}\\
 {\operatorname{Var}\mathopen{}\left(\bar{X}_{n}\right)\mathclose{}}
+&amp;= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}}
+&amp;&amp; \text{(definition of sample mean)}\\
 &amp;= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}}
 &amp;&amp; \text{(variance of a constant multiple)}\\
 &amp;= \frac{1}{n^2} \cdot n\sigma^2

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-21 16:26:23 (PDT)
+Last modified: 2026-10-22 00:41:30 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -74,7 +74,7 @@ Last modified: 2026-10-21 16:26:23 (PDT)
 >
 > *Proof*. Let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\\bar{X}\_{n} = S_n / n\\. By [Corollary 2](#cor-sum-iid-moments), \\{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} = n\mu\\ and \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= \frac{1}{n}{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\bar{X}\_{n}\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[\frac{S_n}{n}\right\]\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n}{\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left(\bar{X}\_{n}\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
 
 > **NOTE:**
 >
