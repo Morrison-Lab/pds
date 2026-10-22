@@ -70,14 +70,15 @@ so the event in this corollary is the event in @thm-clt, and the limits agree.
 
 {{< slidebreak >}}
 
-:::{#cor-sum-iid-moments}
+:::{#thm-sum-iid-moments}
 #### Mean and variance of a sum of IID random variables
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
 each discrete or continuous,
 with population mean $\mean$ and finite variance $\ss$,
 and let $S_n \eqdef \sumin X_i$.
-Then:
+Then, by [linearity of expectation](expectation.qmd#thm-linearity-expectation)
+and the [variance of a linear combination](variance-covariance.qmd#thm-var-lincom):
 
 $$
 \ba
@@ -157,7 +158,7 @@ $$
 ::: proof
 
 Let $S_n \eqdef \sumin X_i$, so $\samplemean{X}{n} = S_n / n$.
-By @cor-sum-iid-moments, $\E{S_n} = n\mean$ and $\Var{S_n} = n\ss$:
+By @thm-sum-iid-moments, $\E{S_n} = n\mean$ and $\Var{S_n} = n\ss$:
 
 $$
 \ba
@@ -187,10 +188,13 @@ $$
 ::: {.remark .notes}
 
 In practice, @thm-clt justifies approximating
-$\samplemean{X}{n}$ by a normal distribution with mean $\mean$ and variance $\ss/n$,
+$\samplemean{X}{n}$ by a [normal distribution](random-variables.qmd#def-normal)
+with [mean](expectation.qmd#def-expectation) $\mean$
+and [variance](variance-covariance.qmd#def-variance) $\ss/n$,
 and @cor-clt-sum justifies approximating
 $S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$.
-By @cor-sum-iid-moments, these are exactly the means and variances
+By @thm-sum-iid-moments, these are exactly the means and
+[variances](variance-covariance.qmd#def-variance)
 of $\samplemean{X}{n} = S_n/n$ and $S_n$.
 
 :::

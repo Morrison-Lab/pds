@@ -21,7 +21,7 @@ To apply @thm-clt, treat each draw of one car at random as one IID observation $
 so that $\mean$ and $\varpar$ are the population mean and variance of the 392 horsepower values.
 The sample mean $\samplemean{X}{n} = S_n/n$, where $S_n = \sumin X_i$, has mean $\mean$ and standard deviation $\sdpar/\sqrt{n}$,
 because $S_n$ has mean $n\mean$ and variance $n\varpar$
-by @cor-sum-iid-moments.
+by @thm-sum-iid-moments.
 The code below draws 10,000 random samples of each size $n \in \set{1, 5, 30}$,
 with replacement, and computes each sample's sample mean.
 
@@ -161,7 +161,7 @@ By $n = 30$ the histogram is close to the normal curve.
 The standard deviation of the sample means is within
 `{r} round(100 * max(abs(sd_ratio - 1)), 1)`%
 of $\sdpar/\sqrt{n}$ at every $n$,
-as @cor-sum-iid-moments predicts.
+as @thm-sum-iid-moments predicts.
 The skewness of the sample means,
 which is zero for a normal distribution,
 falls from `{r} round(skew_of_means[1], 2)` at $n = 1$
