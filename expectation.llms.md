@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:28:36 (PDT)
+Last modified: 2026-10-22 01:36:00 (PDT)
 
 > **NOTE:**
 >
@@ -176,6 +176,30 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
+> **Lemma 1 (Linearity of expectation for finite sums)** For [random variables](random-variables.llms.md#def-random-variable) \\X_1, \ldots, X_n\\ with defined [expectations](expectation.llms.md#def-expectation), and constants \\a_1, \ldots, a_n\\:
+>
+> \\{\operatorname{E}\mathopen{}\left\[\sum\_{i=1}^na_i X_i\right\]\mathclose{}} = \sum\_{i=1}^na_i {\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}}\\
+
+> **NOTE:**
+>
+> *Proof*. Prove this by induction on \\n\\, applying [linearity of expectation](expectation.llms.md#thm-linearity-expectation) for two variables in each step.
+>
+> For \\n = 1\\:
+>
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[a_1 X_1\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[a_1 X_1 + 0 \cdot X_1\right\]\mathclose{}} && \text{(} 0 \cdot X_1 = 0 \text{)} \\ &= {\operatorname{E}\mathopen{}\left\[a_1 X_1 + 0 \cdot X_1 + 0\right\]\mathclose{}} && \text{(} v + 0 = v \text{)} \\ &= a_1 {\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}} + 0 \cdot{\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}} + 0 && \text{(linearity of expectation, } a = a_1, b = 0, c = 0 \text{)} \\ &= a_1 {\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}} + 0 && \text{(} 0 \cdot v = 0 \text{)} \\ &= a_1 {\operatorname{E}\mathopen{}\left\[X_1\right\]\mathclose{}} && \text{(} v + 0 = v \text{)} \end{aligned} \\
+>
+> For the inductive step, assume the lemma holds for \\n - 1\\ variables, and let \\W \stackrel{\text{def}}{=}\sum\_{i=1}^{n-1} a_i X_i\\:
+>
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\sum\_{i=1}^na_i X_i\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[W + a_n X_n\right\]\mathclose{}} && \text{(split off the last term)} \\ &= {\operatorname{E}\mathopen{}\left\[1 \cdot W + a_n X_n\right\]\mathclose{}} && \text{(} 1 \cdot W = W \text{)} \\ &= {\operatorname{E}\mathopen{}\left\[1 \cdot W + a_n X_n + 0\right\]\mathclose{}} && \text{(} v + 0 = v \text{)} \\ &= 1 \cdot{\operatorname{E}\mathopen{}\left\[W\right\]\mathclose{}} + a_n {\operatorname{E}\mathopen{}\left\[X_n\right\]\mathclose{}} + 0 && \text{(linearity of expectation, } a = 1, b = a_n, c = 0 \text{)} \\ &= {\operatorname{E}\mathopen{}\left\[W\right\]\mathclose{}} + a_n {\operatorname{E}\mathopen{}\left\[X_n\right\]\mathclose{}} + 0 && \text{(} 1 \cdot v = v \text{)} \\ &= {\operatorname{E}\mathopen{}\left\[W\right\]\mathclose{}} + a_n {\operatorname{E}\mathopen{}\left\[X_n\right\]\mathclose{}} && \text{(} v + 0 = v \text{)} \\ &= \sum\_{i=1}^{n-1} a_i {\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} + a_n {\operatorname{E}\mathopen{}\left\[X_n\right\]\mathclose{}} && \text{(inductive hypothesis)} \\ &= \sum\_{i=1}^na_i {\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(include the last term in the sum)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 8 (Expected total of five dice)** Let \\X_1, \ldots, X_5\\ be the [outcomes](probability-basics.llms.md#def-experiment-outcome) of five rolls of a fair die. Each roll has [expectation](expectation.llms.md#def-expectation) \\{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} = 3.5\\. Applying [Lemma 1](#lem-linearity-finite-sum) with every \\a_i = 1\\ gives the expected total:
+>
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[\sum\_{i=1}^5 X_i\right\]\mathclose{}} &= \sum\_{i=1}^5 {\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation for finite sums)} \\ &= 5 \cdot 3.5 && \text{(each roll has expectation } 3.5 \text{)} \\ &= 17.5 && \text{(multiply)} \end{aligned} \\
+
+> **NOTE:**
+>
 > **Exercise 1 (Why the sample mean is a random variable)** Let \\X_1, \ldots, X_n\\ be independent draws from the same distribution, each with population mean \\\mu\\ and variance \\\sigma^2\\, and let \\\bar X = \frac{1}{n}\sum\_{i=1}^nX_i\\ be their sample mean.
 >
 > Use [Theorem 4](#thm-linearity-expectation) to show that \\\operatorname{E}\[\bar X\] = \mu\\, and say in one sentence what that does *not* tell us.
@@ -210,7 +234,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
+> **Example 9 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
 >
 > Show code
 >
@@ -251,7 +275,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
+> **Example 10 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
 >
 > Show code
 >
@@ -326,7 +350,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 10 (Conditional expectation from real trial and birthweight data)** **Discrete case.** Continuing [Example 8](#exm-cond-pmf), score the vaccine trial’s response levels \\\text{small} = 1\\, \\\text{moderate} = 2\\, \\\text{large} = 3\\. The conditional PMF of \\Y\\ given \\X = \text{placebo}\\ (from [Example 8](#exm-cond-pmf)) is:
+> **Example 11 (Conditional expectation from real trial and birthweight data)** **Discrete case.** Continuing [Example 9](#exm-cond-pmf), score the vaccine trial’s response levels \\\text{small} = 1\\, \\\text{moderate} = 2\\, \\\text{large} = 3\\. The conditional PMF of \\Y\\ given \\X = \text{placebo}\\ (from [Example 9](#exm-cond-pmf)) is:
 >
 > \\ \begin{aligned} \operatorname{P}(Y = \text{small} \mid X = \text{placebo}) &= \tfrac{25}{38} \\ \operatorname{P}(Y = \text{moderate} \mid X = \text{placebo}) &= \tfrac{8}{38} \\ \operatorname{P}(Y = \text{large} \mid X = \text{placebo}) &= \tfrac{5}{38} \end{aligned} \\
 >
@@ -334,7 +358,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[Y \mid X = \text{placebo}\right\]\mathclose{}} &= 1 \cdot\tfrac{25}{38} + 2 \cdot\tfrac{8}{38} + 3 \cdot\tfrac{5}{38} && \text{(definition of conditional expectation)} \\&= \frac{56}{38} && \text{(common denominator)} \\&\approx 1.47 && \text{(divide)} \end{aligned} \\
 >
-> **Continuous case.** Continuing [Example 9](#exm-cond-pdf), \\Y \mid X = 40 \sim {\operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}}\\. The mean of a normal distribution is its location parameter (Casella and Berger [\[6\]](#ref-CaseBerg01)), so integrating \\y\\ against this conditional density gives:
+> **Continuous case.** Continuing [Example 10](#exm-cond-pdf), \\Y \mid X = 40 \sim {\operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}}\\. The mean of a normal distribution is its location parameter (Casella and Berger [\[6\]](#ref-CaseBerg01)), so integrating \\y\\ against this conditional density gives:
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[Y \mid X = 40\right\]\mathclose{}} &= \int\_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\\dy && \text{(definition of conditional expectation)} \\&= 3136.15 \text{ g} && \text{(the mean of a normal distribution is its location parameter)} \end{aligned} \\
 >
@@ -362,7 +386,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 11 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
+> **Example 12 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
 >
 > Show code
 >
@@ -447,11 +471,11 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 12 (The conditional expectation function of the birthweight model)** Continuing [Example 9](#exm-cond-pdf) and [Example 10](#exm-cond-expectation), \\(X, Y)\\ (gestational age, birthweight) is modeled as bivariate normal. The general form of the conditional mean derived in [Example 9](#exm-cond-pdf), evaluated at an arbitrary \\x\\ instead of just \\x=40\\, gives the conditional expectation function directly:
+> **Example 13 (The conditional expectation function of the birthweight model)** Continuing [Example 10](#exm-cond-pdf) and [Example 11](#exm-cond-expectation), \\(X, Y)\\ (gestational age, birthweight) is modeled as bivariate normal. The general form of the conditional mean derived in [Example 10](#exm-cond-pdf), evaluated at an arbitrary \\x\\ instead of just \\x=40\\, gives the conditional expectation function directly:
 >
 > \\ \begin{aligned} g(x) &= \mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) \\&= -1484.9846 + 115.5283\\ x \end{aligned} \\
 >
-> which is exactly the fitted regression line (the general algebraic identity \\\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \mathopen{}\left(\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X\right)\mathclose{} + \rho\frac{\sigma_Y}{\sigma_X}x\\ is what makes the bivariate-normal conditional mean linear in \\x\\). As a check, evaluating at \\x = 40\\ recovers [Example 10](#exm-cond-expectation)’s result:
+> which is exactly the fitted regression line (the general algebraic identity \\\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \mathopen{}\left(\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X\right)\mathclose{} + \rho\frac{\sigma_Y}{\sigma_X}x\\ is what makes the bivariate-normal conditional mean linear in \\x\\). As a check, evaluating at \\x = 40\\ recovers [Example 11](#exm-cond-expectation)’s result:
 >
 > \\g(40) = -1484.9846 + 115.5283 \times 40 = 3136.15 \text{ g}\\
 
@@ -469,7 +493,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 13 (The second flip, given the first)** In the [joint PMF of two coin flips](random-variables.llms.md#exm-joint-pmf), write \\X\\ for the first flip and \\Y\\ for the total number of heads. Given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with conditional probability \\1/2\\ each, and \\Y - X\\ is the second flip. With \\h(x, y) = (y - x)^2\\:
+> **Example 14 (The second flip, given the first)** In the [joint PMF of two coin flips](random-variables.llms.md#exm-joint-pmf), write \\X\\ for the first flip and \\Y\\ for the total number of heads. Given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with conditional probability \\1/2\\ each, and \\Y - X\\ is the second flip. With \\h(x, y) = (y - x)^2\\:
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[(Y - X)^2 \mid X = 1\right\]\mathclose{}} &= (1 - 1)^2 \cdot\tfrac{1}{2} + (2 - 1)^2 \cdot\tfrac{1}{2} && \text{(definition, with } x = 1 \text{)} \\ &= 0 + \tfrac{1}{2} && \text{(evaluate each term)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
 
@@ -525,7 +549,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 14 (Linearity, given the first flip)** Continuing [Example 13](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\{\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} = 3/2\\ and
+> **Example 15 (Linearity, given the first flip)** Continuing [Example 14](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\{\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} = 3/2\\ and
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{}} &= (1 + 4)/2 \\ &= 5/2. \end{aligned} \\
 >
@@ -565,7 +589,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 15 (Taking out the first flip)** Continuing [Example 14](#exm-cond-linearity), with \\g(x) = x\\ and \\h(x, y) = y\\:
+> **Example 16 (Taking out the first flip)** Continuing [Example 15](#exm-cond-linearity), with \\g(x) = x\\ and \\h(x, y) = y\\:
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[XY \mid X = 1\right\]\mathclose{}} &= 1 \cdot{\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} && \text{(a function of } X \text{ factors out)} \\ &= \tfrac{3}{2} && \text{(substitute } {\operatorname{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} = \tfrac{3}{2} \text{)} \end{aligned} \\
 >
@@ -694,7 +718,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 16 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\{\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}}\\.
+> **Example 17 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\{\operatorname{E}\mathopen{}\left\[XY\right\]\mathclose{}}\\.
 >
 > We apply [Corollary 3](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as
 >
@@ -710,7 +734,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 17 (When independence fails: a counterexample)** Correctly applying [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
+> **Example 18 (When independence fails: a counterexample)** Correctly applying [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
 >
 > Let \\X \sim \mathrm{Uniform}(0, 1)\\ and set \\Y = X\\ (so \\X\\ and \\Y\\ are perfectly correlated and **not** independent).
 >
@@ -768,7 +792,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\{\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}}\\.
+> **Example 19 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\{\operatorname{E}\mathopen{}\left\[X + Y\right\]\mathclose{}}\\.
 >
 > By [Corollary 3](#cor-fubini-joint):
 >
@@ -831,7 +855,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
+> **Example 20 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\operatorname{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\{\operatorname{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 10](#thm-lie) by averaging the conditional means with weights \\\operatorname{P}(X = x)\\.
 >
@@ -909,7 +933,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 20 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
+> **Example 21 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\operatorname{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
 >
 > \\{\operatorname{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{}} = 10, \quad {\operatorname{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{}} = 6\\
 >
@@ -1105,7 +1129,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 21 (Predictions of a die roll)** Let \\Y\\ be the number shown by a fair six-sided die. The constant \\\hat y= 3\\ is a [prediction](#def-prediction) of \\Y\\.
+> **Example 22 (Predictions of a die roll)** Let \\Y\\ be the number shown by a fair six-sided die. The constant \\\hat y= 3\\ is a [prediction](#def-prediction) of \\Y\\.
 >
 > Let \\X\\ be the indicator that \\Y\\ is even. The function \\g(X) = 2 + 2X\\ is also a prediction of \\Y\\: it guesses \\2\\ when \\Y\\ is odd and \\4\\ when \\Y\\ is even.
 
@@ -1119,7 +1143,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 22 (A loss function that charges more for overpredicting)** Let \\L(y, \hat y)\\ cost \\2\\ per unit of overprediction and \\1\\ per unit of underprediction:
+> **Example 23 (A loss function that charges more for overpredicting)** Let \\L(y, \hat y)\\ cost \\2\\ per unit of overprediction and \\1\\ per unit of underprediction:
 >
 > \\ L(y, \hat y) = \begin{cases} 2\mathopen{}\left(\hat y- y\right)\mathclose{} & \text{if } \hat y\> y \\ y - \hat y& \text{if } \hat y\le y. \end{cases} \\
 >
@@ -1133,7 +1157,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 23 (Squared error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [squared error loss](#def-squared-error-loss) is
+> **Example 24 (Squared error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [squared error loss](#def-squared-error-loss) is
 >
 > \\{\mathopen{}\left(2 - 7\right)\mathclose{}}^{2} = 25.\\
 
@@ -1145,7 +1169,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 24 (Absolute error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [absolute error loss](#def-absolute-error-loss) is
+> **Example 25 (Absolute error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [absolute error loss](#def-absolute-error-loss) is
 >
 > \\\mathopen{}\left\|2 - 7\right\|\mathclose{} = 5.\\
 
@@ -1161,7 +1185,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 25 (Risk of a constant prediction)** Let \\Y\\ be a random variable with \\\operatorname{P}(Y = 0) = 0.5\\ and \\\operatorname{P}(Y = 2) = 0.5\\, and use the constant [prediction](#def-prediction) \\\hat y= 0\\. The [risk](#def-risk) under [squared error loss](#def-squared-error-loss) is
+> **Example 26 (Risk of a constant prediction)** Let \\Y\\ be a random variable with \\\operatorname{P}(Y = 0) = 0.5\\ and \\\operatorname{P}(Y = 2) = 0.5\\, and use the constant [prediction](#def-prediction) \\\hat y= 0\\. The [risk](#def-risk) under [squared error loss](#def-squared-error-loss) is
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(Y - 0\right)\mathclose{}}^{2}\right\]\mathclose{}} &= 0.5 \cdot{\mathopen{}\left(0 - 0\right)\mathclose{}}^{2} + 0.5 \cdot{\mathopen{}\left(2 - 0\right)\mathclose{}}^{2} \\ &= 2. \end{aligned} \\
 >
@@ -1237,7 +1261,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 26 (The outcome in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the outcome \\Y\\ takes the values \\0\\ and \\2\\ when the input is \\0\\, and the values \\4\\ and \\6\\ when the input is \\1\\.
+> **Example 27 (The outcome in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the outcome \\Y\\ takes the values \\0\\ and \\2\\ when the input is \\0\\, and the values \\4\\ and \\6\\ when the input is \\1\\.
 
 > **NOTE:**
 >
@@ -1245,7 +1269,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 27 (The input in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the input \\X\\ takes the values \\0\\ and \\1\\, each with probability \\0.5\\.
+> **Example 28 (The input in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the input \\X\\ takes the values \\0\\ and \\1\\, each with probability \\0.5\\.
 
 > **NOTE:**
 >
@@ -1253,7 +1277,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 28 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), suppose the new observation \\(X, Y)\\ satisfies the suppositions of its [definition](#def-new-observation), with the joint distribution given in the exercise as the population it is drawn from. Suppose also that its input is observed to be \\X= 1\\. Then its unobserved outcome is \\4\\ or \\6\\ with equal probability, and a [prediction](#def-prediction) of \\5\\ is a guess for that outcome.
+> **Example 29 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), suppose the new observation \\(X, Y)\\ satisfies the suppositions of its [definition](#def-new-observation), with the joint distribution given in the exercise as the population it is drawn from. Suppose also that its input is observed to be \\X= 1\\. Then its unobserved outcome is \\4\\ or \\6\\ with equal probability, and a [prediction](#def-prediction) of \\5\\ is a guess for that outcome.
 
 > **NOTE:**
 >
@@ -1263,7 +1287,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 29 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\\varepsilon\_{g_1} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
+> **Example 30 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\\varepsilon\_{g_1} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
 
 > **NOTE:**
 >
@@ -1275,11 +1299,11 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 30 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(g_1\right)\mathclose{}} = 5\\.
+> **Example 31 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(g_1\right)\mathclose{}} = 5\\.
 
 > **NOTE:**
 >
-> **Lemma 1 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{g\mathopen{}\left(X\right)\mathclose{}}\\, the [prediction error](#def-prediction-error) splits as:
+> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{g\mathopen{}\left(X\right)\mathclose{}}\\, the [prediction error](#def-prediction-error) splits as:
 >
 > \\\varepsilon\_{g} = \varepsilon\_{\mu} + \mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\\
 
@@ -1289,11 +1313,11 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 31 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\\varepsilon\_{g_1} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\\varepsilon\_{\mu} = 1\\ and \\g_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
+> **Example 32 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\\varepsilon\_{g_1} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\\varepsilon\_{\mu} = 1\\ and \\g_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
 
 > **NOTE:**
 >
-> **Lemma 2 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{g\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\operatorname{E}\mathopen{}\left\[{g\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Lemma 3 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\operatorname{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{g\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\operatorname{E}\mathopen{}\left\[{g\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{\operatorname{E}\mathopen{}\left\[\varepsilon\_{\mu} \cdot\mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\right\]\mathclose{}} = 0\\
 
@@ -1309,7 +1333,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 32 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\g_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\\varepsilon\_{\mu} = 1 - Y\\ is \\1\\ or \\-1\\ with equal probability, so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
+> **Example 33 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\g_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\\varepsilon\_{\mu} = 1 - Y\\ is \\1\\ or \\-1\\ with equal probability, so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
 
 > **NOTE:**
 >
@@ -1319,13 +1343,13 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. The steps use the [squared-error risk](#def-squared-error-risk) definition, [Lemma 1](#lem-prediction-error-split), [Lemma 2](#lem-cross-term-zero), and [Theorem 4](#thm-linearity-expectation):
+> *Proof*. The steps use the [squared-error risk](#def-squared-error-risk) definition, [Lemma 2](#lem-prediction-error-split), [Lemma 3](#lem-cross-term-zero), and [Theorem 4](#thm-linearity-expectation):
 >
 > \\ \begin{aligned} {R\mathopen{}\left(g\right)\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{g}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(definition of the squared-error risk)} \\ &= {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{\mu} + \mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(the prediction error splits at } \mu\text{)} \\ &= {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{\mu}\right)\mathclose{}}^{2}\right\]\mathclose{}} + 2 \cdot{\operatorname{E}\mathopen{}\left\[\varepsilon\_{\mu}\mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\right\]\mathclose{}} + {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(expand the square; linearity of expectation)} \\ &= {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon\_{\mu}\right)\mathclose{}}^{2}\right\]\mathclose{}} + 2 \cdot 0 + {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(the cross term is } 0 \text{)} \\ &= {R\mathopen{}\left(\mu\right)\mathclose{}} + {\operatorname{E}\mathopen{}\left\[{\mathopen{}\left({g\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(definition of the squared-error risk of } \mu\text{)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 33 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\{R\mathopen{}\left(g_1\right)\mathclose{}} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\g_1\\.
+> **Example 34 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\{R\mathopen{}\left(g_1\right)\mathclose{}} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\g_1\\.
 
 > **NOTE:**
 >
@@ -1345,7 +1369,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 34 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(g_1\right)\mathclose{}} = 5\\. The risk of the conditional mean is \\{R\mathopen{}\left(g^\*\right)\mathclose{}} = 1\\. So \\g_1\\ has the larger risk. The inequality is strict because \\g_1\mathopen{}\left(X\right)\mathclose{} \ne {g^\*\mathopen{}\left(X\right)\mathclose{}}\\.
+> **Example 35 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(g_1\right)\mathclose{}} = 5\\. The risk of the conditional mean is \\{R\mathopen{}\left(g^\*\right)\mathclose{}} = 1\\. So \\g_1\\ has the larger risk. The inequality is strict because \\g_1\mathopen{}\left(X\right)\mathclose{} \ne {g^\*\mathopen{}\left(X\right)\mathclose{}}\\.
 
 > **NOTE:**
 >
@@ -1361,7 +1385,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 35 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the irreducible risk is \\{\operatorname{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
+> **Example 36 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the irreducible risk is \\{\operatorname{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
 
 > **NOTE:**
 >
@@ -1377,7 +1401,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 36 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 37 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1401,7 +1425,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 37 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{g^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\g^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
+> **Example 38 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{g^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\g_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\g^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 > **NOTE:**
 >
@@ -1415,7 +1439,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 38 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{g^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\g_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
+> **Example 39 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\g_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{g^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\g_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
 ## 4 Entropy and cross-entropy
 
@@ -1433,7 +1457,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 39 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 40 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\operatorname{P}(X=1) = \pi\\ and \\\operatorname{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1479,7 +1503,7 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 40 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 41 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >

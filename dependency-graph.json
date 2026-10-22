@@ -765,6 +765,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#lem-linearity-finite-sum",
+   "site": "pds",
+   "page": "expectation",
+   "div": "lem-linearity-finite-sum",
+   "kind": "lem",
+   "title": "Linearity of expectation for finite sums",
+   "external": false
+  },
+  {
    "id": "pds/expectation#lem-prediction-error-split",
    "site": "pds",
    "page": "expectation",
@@ -2459,6 +2468,14 @@
    "pds/expectation#def-prediction"
   ],
   [
+   "pds/expectation#lem-linearity-finite-sum",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#lem-linearity-finite-sum",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/expectation#lem-prediction-error-split",
    "pds/expectation#def-cond-expectation-function"
   ],
@@ -2640,7 +2657,7 @@
   ],
   [
    "pds/limit-theorems#thm-sum-iid-moments",
-   "pds/expectation#thm-linearity-expectation"
+   "pds/expectation#lem-linearity-finite-sum"
   ],
   [
    "pds/limit-theorems#thm-sum-iid-moments",

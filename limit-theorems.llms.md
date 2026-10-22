@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-22 01:28:36 (PDT)
+Last modified: 2026-10-22 01:36:00 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -50,15 +50,15 @@ Last modified: 2026-10-22 01:28:36 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with population mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then, by [linearity of expectation](expectation.llms.md#thm-linearity-expectation) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom):
+> **Theorem 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with population mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then, by [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom):
 >
 > \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= n\mu\\ {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= n\sigma^2 \end{aligned} \\
 
 > **NOTE:**
 >
-> *Proof*. For the mean, apply [linearity of expectation](expectation.llms.md#thm-linearity-expectation) once per added summand:
+> *Proof*. For the mean, apply [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) with every \\a_i = 1\\:
 >
-> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= \sum\_{i=1}^n{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation, applied } n - 1 \text{ times)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu\text{)} \end{aligned} \\
+> \\ \begin{aligned} {\operatorname{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= {\operatorname{E}\mathopen{}\left\[\sum\_{i=1}^n1 \cdot X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= \sum\_{i=1}^n1 \cdot{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation for finite sums, all } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n{\operatorname{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu\text{)} \end{aligned} \\
 >
 > For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with every \\a_i = 1\\. For \\i \ne j\\, \\X_i\\ and \\X_j\\ are independent (take \\A_k = \mathbb{R}\\ for every other \\k\\ in the [definition of independence](independence.llms.md#def-indpt)), so \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\\ for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated); and \\{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\ ([covariance of a variable with itself](variance-covariance.llms.md#lem-cov-xx)):
 >
