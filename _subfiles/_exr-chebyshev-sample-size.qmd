@@ -7,7 +7,7 @@ a car chosen at random from the Auto data,
 with population mean $\mean$ and variance $\varpar$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 
-a.  Use @cor-sum-iid-moments and @thm-chebyshev to show that for every $\epsilon > 0$,
+a.  Use @thm-sum-iid-moments and @thm-chebyshev to show that for every $\epsilon > 0$,
 
     $$
     \Prf{\abs{\samplemean{X}{n} - \mean} \ge \epsilon} \le \frac{\varpar}{n\epsilon^2}

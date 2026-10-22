@@ -70,7 +70,7 @@ so the event in this corollary is the event in @thm-clt, and the limits agree.
 
 {{< slidebreak >}}
 
-:::{#cor-sum-iid-moments}
+:::{#thm-sum-iid-moments}
 #### Mean and variance of a sum of IID random variables
 
 Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
@@ -134,7 +134,7 @@ $$
 
 ::: {.remark .notes}
 
-@cor-sum-iid-moments follows from the two results named in its statement.
+@thm-sum-iid-moments follows from the two results named in its statement.
 It does not depend on @thm-clt or @cor-clt-sum;
 @cor-clt-sum centers and scales $S_n$
 using the values $n\mean$ and $\sqrt{n\ss}$ from this corollary.
@@ -167,7 +167,7 @@ $$
 ::: proof
 
 Let $S_n \eqdef \sumin X_i$, so $\samplemean{X}{n} = S_n / n$.
-By @cor-sum-iid-moments, $\E{S_n} = n\mean$ and $\Var{S_n} = n\ss$:
+By @thm-sum-iid-moments, $\E{S_n} = n\mean$ and $\Var{S_n} = n\ss$:
 
 $$
 \ba
@@ -200,7 +200,7 @@ In practice, @thm-clt justifies approximating
 $\samplemean{X}{n}$ by a normal distribution with mean $\mean$ and variance $\ss/n$,
 and @cor-clt-sum justifies approximating
 $S_n$ by a normal distribution with mean $n\mean$ and variance $n\ss$.
-By @cor-sum-iid-moments, these are exactly the means and variances
+By @thm-sum-iid-moments, these are exactly the means and variances
 of $\samplemean{X}{n} = S_n/n$ and $S_n$.
 
 :::

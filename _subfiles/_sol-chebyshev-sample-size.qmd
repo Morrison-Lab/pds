@@ -1,6 +1,6 @@
 ::: {#sol-chebyshev-sample-size}
 
-a.  By @cor-sum-iid-moments, $\Var{S_n} = n\varpar$ for $S_n \eqdef \sumin X_i$,
+a.  By @thm-sum-iid-moments, $\Var{S_n} = n\varpar$ for $S_n \eqdef \sumin X_i$,
     so $\samplemean{X}{n} = S_n/n$ has mean $\mean$ and variance $\varpar/n$
     (a constant factor $c$ scales a variance by $c^2$).
     Apply @thm-chebyshev to $\samplemean{X}{n}$ with $k\sdpar/\sqrt{n} = \epsilon$,
