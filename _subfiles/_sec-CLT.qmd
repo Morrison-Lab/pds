@@ -77,7 +77,8 @@ Let $\dsn{X}$ be [IID](independence.qmd#def-iid) random variables,
 each discrete or continuous,
 with population mean $\mean$ and finite variance $\ss$,
 and let $S_n \eqdef \sumin X_i$.
-Then:
+Then, by [linearity of expectation](expectation.qmd#thm-linearity-expectation)
+and the [variance of a linear combination](variance-covariance.qmd#thm-var-lincom):
 
 $$
 \ba
@@ -128,6 +129,15 @@ $$
 && \text{(each } X_i \text{ has variance } \ss \text{)}
 \ea
 $$
+
+:::
+
+::: {.remark .notes}
+
+@cor-sum-iid-moments follows from the two results named in its statement.
+It does not depend on @thm-clt or @cor-clt-sum;
+the centering and scaling in @cor-clt-sum
+are this corollary's mean and standard deviation.
 
 :::
 
