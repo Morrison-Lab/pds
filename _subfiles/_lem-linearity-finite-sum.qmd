@@ -1,0 +1,60 @@
+:::{#lem-linearity-finite-sum}
+#### Linearity of expectation for finite sums
+
+For [random variables](random-variables.qmd#def-random-variable) $\dsn{X}$ with defined [expectations](expectation.qmd#def-expectation),
+and constants $a_1, \ldots, a_n$:
+
+$$\E{\sumin a_i X_i} = \sumin a_i \E{X_i}$$
+
+:::
+
+::: proof
+
+Prove this by induction on $n$,
+applying [linearity of expectation](expectation.qmd#thm-linearity-expectation)
+for two variables in each step.
+
+For $n = 1$:
+
+$$
+\ba
+\E{a_1 X_1}
+&= \E{a_1 X_1 + 0 \cd X_1}
+&& \text{(} 0 \cd X_1 = 0 \text{)} \\
+&= \E{a_1 X_1 + 0 \cd X_1 + 0}
+&& \text{(} v + 0 = v \text{)} \\
+&= a_1 \E{X_1} + 0 \cd \E{X_1} + 0
+&& \text{(linearity of expectation, } a = a_1, b = 0, c = 0 \text{)} \\
+&= a_1 \E{X_1} + 0
+&& \text{(} 0 \cd v = 0 \text{)} \\
+&= a_1 \E{X_1}
+&& \text{(} v + 0 = v \text{)}
+\ea
+$$
+
+For the inductive step, assume the lemma holds for $n - 1$ variables,
+and let $W \eqdef \sum_{i=1}^{n-1} a_i X_i$:
+
+$$
+\ba
+\E{\sumin a_i X_i}
+&= \E{W + a_n X_n}
+&& \text{(split off the last term)} \\
+&= \E{1 \cd W + a_n X_n}
+&& \text{(} 1 \cd W = W \text{)} \\
+&= \E{1 \cd W + a_n X_n + 0}
+&& \text{(} v + 0 = v \text{)} \\
+&= 1 \cd \E{W} + a_n \E{X_n} + 0
+&& \text{(linearity of expectation, } a = 1, b = a_n, c = 0 \text{)} \\
+&= \E{W} + a_n \E{X_n} + 0
+&& \text{(} 1 \cd v = v \text{)} \\
+&= \E{W} + a_n \E{X_n}
+&& \text{(} v + 0 = v \text{)} \\
+&= \sum_{i=1}^{n-1} a_i \E{X_i} + a_n \E{X_n}
+&& \text{(inductive hypothesis)} \\
+&= \sumin a_i \E{X_i}
+&& \text{(include the last term in the sum)}
+\ea
+$$
+
+:::

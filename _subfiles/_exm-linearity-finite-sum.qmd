@@ -1,0 +1,23 @@
+:::{#exm-linearity-finite-sum}
+#### Expected total of five dice
+
+Let $X_1, \ldots, X_5$ be the [outcomes](probability-basics.qmd#def-experiment-outcome) of five rolls of a fair die.
+Each roll has
+[expectation](expectation.qmd#def-expectation)
+$\E{X_i} = `r mean(1:6)`$.
+Applying @lem-linearity-finite-sum with every $a_i = 1$ gives
+the expected total:
+
+$$
+\ba
+\E{\sum_{i=1}^5 X_i}
+&= \sum_{i=1}^5 \E{X_i}
+&& \text{(linearity of expectation for finite sums)} \\
+&= 5 \cd `r mean(1:6)`
+&& \text{(each roll has expectation } `r mean(1:6)` \text{)} \\
+&= `r 5 * mean(1:6)`
+&& \text{(multiply)}
+\ea
+$$
+
+:::
