@@ -136,15 +136,6 @@ $$
 
 :::
 
-::: {.remark .notes}
-
-@thm-sum-iid-moments follows from the two results named in its statement.
-It does not depend on @thm-clt or @cor-clt-sum;
-@cor-clt-sum centers and scales $S_n$
-using the values $n\mean$ and $\sqrt{n\ss}$ from @thm-sum-iid-moments.
-
-:::
-
 {{< slidebreak >}}
 
 :::{#cor-mean-iid-moments}
