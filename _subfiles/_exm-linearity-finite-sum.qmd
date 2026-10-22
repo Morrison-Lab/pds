@@ -1,7 +1,7 @@
 :::{#exm-linearity-finite-sum}
 #### Expected total of five dice
 
-Let $X_1, \ldots, X_5$ be the outcomes of five rolls of a fair die.
+Let $X_1, \ldots, X_5$ be the [outcomes](probability-basics.qmd#def-experiment-outcome) of five rolls of a fair die.
 Each roll has
 [expectation](expectation.qmd#def-expectation)
 $\E{X_i} = `r mean(1:6)`$.

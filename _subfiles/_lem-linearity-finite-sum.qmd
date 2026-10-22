@@ -1,7 +1,7 @@
 :::{#lem-linearity-finite-sum}
 #### Linearity of expectation for finite sums
 
-For random variables $\dsn{X}$ with defined expectations,
+For [random variables](random-variables.qmd#def-random-variable) $\dsn{X}$ with defined [expectations](expectation.qmd#def-expectation),
 and constants $a_1, \ldots, a_n$:
 
 $$\E{\sumin a_i X_i} = \sumin a_i \E{X_i}$$
