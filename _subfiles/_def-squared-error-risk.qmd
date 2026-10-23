@@ -7,8 +7,6 @@ is the expected square of its [prediction error](#def-prediction-error):
 
 $$\popriskf{\predfn} \eqdef \E{\sqf{\prederrf{\predfn}}}$$
 
-It is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
-
 :::
 
 {{< slidebreak >}}

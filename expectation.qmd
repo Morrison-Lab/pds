@@ -115,6 +115,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_rem-squared-error-risk-is-risk.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_lem-prediction-error-split.qmd >}}
 
 {{< slidebreak >}}

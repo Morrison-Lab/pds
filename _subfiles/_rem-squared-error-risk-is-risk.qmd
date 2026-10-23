@@ -1,0 +1,6 @@
+:::{#rem-squared-error-risk-is-risk .remark}
+#### The squared-error risk is a risk
+
+The [squared-error risk](#def-squared-error-risk) is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
+
+:::
