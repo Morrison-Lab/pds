@@ -3,7 +3,7 @@
 
 In @exm-random-variable, let $X$ be the number of heads in two fair coin flips.
 Run the experiment once and suppose it produces $\outcome = HT$.
-Then the realization of $X$ is $x = X(HT) = 1$.
+Then the [realization](#def-realization) of $X$ is $x = X(HT) = 1$.
 Running the experiment again might produce $TT$, with realization $x = 0$.
 The variable $X$ is the same both times;
 only its realization changes.
