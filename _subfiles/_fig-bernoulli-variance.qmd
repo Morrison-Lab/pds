@@ -1,0 +1,53 @@
+{{< slidebreak >}}
+
+::: {#fig-bernoulli-variance}
+
+::: {.panel-tabset group="language"}
+
+#### Python
+
+```{python}
+#| label: bernoulli-variance-py
+#| code-fold: false
+#| fig-alt: "A dome-shaped curve of the variance of a Bernoulli random variable against its probability, for probabilities from 0 to 1. The curve is 0 at both ends and peaks at 0.25 when the probability is 0.5, which a dot marks."
+import numpy as np
+import matplotlib.pyplot as plt
+
+prob = np.linspace(0, 1, 201)
+variance = prob * (1 - prob)
+
+fig, ax = plt.subplots(figsize=(6, 3.5), layout="constrained")
+ax.plot(prob, variance, color="#1f77b4")
+ax.plot(0.5, 0.5 * (1 - 0.5), "o", color="#ff7f0e")
+ax.set_xlabel("probability of a 1")
+ax.set_ylabel("variance")
+plt.show()
+```
+
+#### R
+
+```{r}
+#| label: bernoulli-variance-r
+#| code-fold: false
+#| fig-alt: "A dome-shaped curve of the variance of a Bernoulli random variable against its probability, for probabilities from 0 to 1. The curve is 0 at both ends and peaks at 0.25 when the probability is 0.5, which a dot marks."
+#| fig-width: 6
+#| fig-height: 3.5
+library(ggplot2)
+
+prob <- seq(0, 1, length.out = 201)
+bernoulli <- data.frame(prob = prob, variance = prob * (1 - prob))
+mid <- data.frame(prob = 0.5, variance = 0.5 * (1 - 0.5))
+
+ggplot(bernoulli, aes(x = prob, y = variance)) +
+  geom_line(colour = "#1f77b4") +
+  geom_point(data = mid, colour = "#ff7f0e", size = 2) +
+  labs(x = "probability of a 1", y = "variance") +
+  theme_minimal()
+```
+
+:::
+
+The variance $\prob(1 - \prob)$ of a Bernoulli random variable, against its probability $\prob$.
+It is 0 at $\prob = 0$ and $\prob = 1$, where the outcome is certain.
+It is largest, $1/4$, at $\prob = 1/2$ (dot), where the outcome is least predictable.
+:::
