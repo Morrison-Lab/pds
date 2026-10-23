@@ -1,0 +1,26 @@
+:::{#exm-cond-expectation-function}
+
+#### The conditional expectation function of the birthweight model
+
+Continuing @exm-cond-pdf and @exm-cond-expectation,
+$(X, Y)$ (gestational age, birthweight) is modeled as bivariate normal.
+The general form of the conditional mean derived in @exm-cond-pdf,
+evaluated at an arbitrary $x$ instead of just $x=`r x0`$,
+gives the conditional expectation function directly:
+
+$$
+\ba
+g(x) &= \mean_Y + \corpar\frac{\sdpar_Y}{\sdpar_X}(x-\mean_X)
+\\&= `r round(intercept, 4)` + `r round(beta, 4)`\, x
+\ea
+$$
+
+which is exactly the fitted regression line
+(the general algebraic identity
+$\mean_Y + \corpar\frac{\sdpar_Y}{\sdpar_X}(x-\mean_X) = \paren{\mean_Y - \corpar\frac{\sdpar_Y}{\sdpar_X}\mean_X} + \corpar\frac{\sdpar_Y}{\sdpar_X}x$
+is what makes the bivariate-normal conditional mean linear in $x$).
+As a check, evaluating at $x = `r x0`$ recovers @exm-cond-expectation's result:
+
+$$g(`r x0`) = `r round(intercept, 4)` + `r round(beta, 4)` \times `r x0` = `r round(intercept + beta*x0, 2)` \text{ g}$$
+
+:::

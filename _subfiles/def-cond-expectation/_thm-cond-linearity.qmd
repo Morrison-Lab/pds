@@ -1,0 +1,38 @@
+:::{#thm-cond-linearity}
+
+#### Linearity of conditional expectation
+
+For jointly distributed $X$ and $Y$,
+functions $h_1$ and $h_2$ whose conditional expectations given $X = x$ are defined,
+and constants $a$ and $b$:
+
+$$\E{a h_1(X, Y) + b h_2(X, Y) \mid X = x} = a\E{h_1(X, Y) \mid X = x} + b\E{h_2(X, Y) \mid X = x}$$
+
+Evaluating both sides at $X$ gives
+$\E{a h_1(X, Y) + b h_2(X, Y) \mid X} = a\E{h_1(X, Y) \mid X} + b\E{h_2(X, Y) \mid X}$.
+
+:::
+
+::: proof
+
+For discrete $Y$:
+
+$$
+\ba
+&\E{a h_1(X, Y) + b h_2(X, Y) \mid X = x}
+\\&= \sum_{y \in \rangef{Y}} \paren{a h_1(x, y) + b h_2(x, y)} \cd \P(Y = y \mid X = x)
+&& \text{(definition of conditional expectation)} \\
+&= a \sum_{y \in \rangef{Y}} h_1(x, y) \cd \P(Y = y \mid X = x) + b \sum_{y \in \rangef{Y}} h_2(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(distribute the sum over the terms; factor out the constants)} \\
+&= a\E{h_1(X, Y) \mid X = x} + b\E{h_2(X, Y) \mid X = x}
+&& \text{(definition of conditional expectation)}
+\ea
+$$
+
+Splitting the sum is valid because both sums converge absolutely.
+For continuous $Y$, the same steps hold with integrals over $y$ in place of the sums,
+by linearity of the integral:
+unlike @thm-linearity-expectation, only one variable, $y$, is integrated,
+against one conditional density.
+
+:::

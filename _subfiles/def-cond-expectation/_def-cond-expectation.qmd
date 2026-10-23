@@ -1,0 +1,21 @@
+:::{#def-cond-expectation}
+
+#### Conditional expectation
+
+**Discrete case.**
+Let $X$ and $Y$ be jointly distributed discrete random variables.
+The **conditional expectation** of $Y$ given $X = x$,
+using @def-cond-pmf,
+is [@wikipedia_conditional_expectation]:
+
+$$\E{Y \mid X = x} \eqdef \sum_{y \in \rangef{Y}} y \cd \P(Y = y \mid X = x)$$
+
+**Continuous case.**
+Let $X$ and $Y$ be jointly distributed continuous random variables.
+The **conditional expectation** of $Y$ given $X = x$,
+using @def-cond-pdf,
+is:
+
+$$\E{Y \mid X = x} \eqdef \int_{y \in \rangef{Y}} y \cd \p(Y = y \mid X = x)\, dy$$
+
+:::

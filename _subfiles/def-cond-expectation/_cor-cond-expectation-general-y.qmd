@@ -1,0 +1,36 @@
+:::{#cor-cond-expectation-general-y}
+#### With $h(x, y) = y$, the general definition gives ${\E{Y \mid X = x}}$
+
+For jointly distributed $X$ and $Y$ and $h(x, y) = y$,
+@def-cond-expectation-general gives the conditional expectation of $Y$ given $X = x$
+from @def-cond-expectation
+(when $X$ and $Y$ are both discrete or both continuous)
+or from @def-cond-mixed
+(when one is discrete and the other continuous):
+
+$$\E{h(X, Y) \mid X = x} = \E{Y \mid X = x}$$
+
+:::
+
+::: proof
+
+For discrete $Y$:
+
+$$
+\ba
+\E{h(X, Y) \mid X = x}
+&= \sum_{y \in \rangef{Y}} h(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(conditional expectation of a function, discrete } Y \text{)} \\
+&= \sum_{y \in \rangef{Y}} y \cd \P(Y = y \mid X = x)
+&& \text{(} h(x, y) = y \text{)} \\
+&= \E{Y \mid X = x}
+&& \text{(conditional expectation, discrete } Y \text{)}
+\ea
+$$
+
+The last step is @def-cond-expectation when $X$ is discrete
+and @def-cond-mixed when $X$ is continuous.
+For continuous $Y$, the same steps hold with integrals over $y$ in place of the sums
+and $\p(Y = y \mid X = x)$ in place of $\P(Y = y \mid X = x)$.
+
+:::

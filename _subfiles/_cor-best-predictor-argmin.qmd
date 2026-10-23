@@ -1,30 +1,5 @@
-:::{#cor-best-predictor-argmin}
-#### Conditional mean as the minimizer of squared-error risk
-
-Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
-Among [prediction functions](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$,
-the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
-
-$$\E{\Outvar \mid \Predvar} \in \argmin_{\predfn} \E{\sqf{\Outvar - \predfnf{\Predvar}}},$$
-
-where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
-
-:::
-
-::: proof
-
-By @thm-best-predictor, $\bestpredfnf{\Predvar} = \E{\Outvar \mid \Predvar}$ has [risk](#def-risk) no larger than that of any [prediction function](#def-prediction) $\predfn$,
-so it is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer).
-
-:::
+{{< include pds/_subfiles/cor-best-predictor-argmin/_cor-best-predictor-argmin.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-best-predictor-argmin}
-#### The minimizer in the best-predictor exercise
-
-In @exr-best-predictor, the [conditional expectation function](#def-cond-expectation-function) $\bestpredfnf{\Predvar}$ has [risk](#def-risk) $1$.
-The constant prediction $\predfn_1\paren{\Predvar} = 3$ has risk $5$ and $\predfn_2\paren{\Predvar} = 4\Predvar$ has risk $2$, both larger than $1$.
-So $\bestpredfn$ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
-
-:::
+{{< include pds/_subfiles/cor-best-predictor-argmin/_exm-best-predictor-argmin.qmd >}}

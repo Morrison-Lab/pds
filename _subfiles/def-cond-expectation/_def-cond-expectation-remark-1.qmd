@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+@def-cond-expectation-general is the conditional version of [LOTUS](#thm-lotus):
+for discrete $X$, it is LOTUS applied under the probability measure $\Pr(\cdot \mid X = x)$,
+and by @thm-cond-lotus, results about $\E{W \mid X}$ apply to it.
+$Y$ can also be a pair $(Y, Z)$, with the sum or integral taken over both.
+
+:::

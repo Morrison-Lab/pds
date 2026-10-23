@@ -1,0 +1,101 @@
+:::{#exm-cond-mixed}
+
+#### Conditional expectation, one discrete variable and one continuous variable
+
+**$X$ discrete, $Y$ continuous.**
+The `plasma` dataset in the `dobson` package
+(@dobson4e, Table 6.25)
+records plasma inorganic phosphate levels (mg/dL)
+one hour after a glucose tolerance test,
+for hyperinsulinemic obese (`H-O`) and control (`C`) participants.
+Let $X$ be group and $Y$ be phosphate level.
+
+```{r}
+#| code-fold: true
+plasma_summary <-
+  dobson::plasma |>
+  dplyr::filter(Group %in% c("H-O", "C")) |>
+  dplyr::summarise(
+    .by = Group,
+    n = dplyr::n(),
+    mean = mean(phosphate),
+    sd = sd(phosphate)
+  )
+group_stat <- function(group, stat) {
+  plasma_summary[[stat]][plasma_summary[["Group"]] == group]
+}
+n_ho <- group_stat("H-O", "n")
+n_c <- group_stat("C", "n")
+mean_ho <- group_stat("H-O", "mean")
+sd_ho <- group_stat("H-O", "sd")
+mean_c <- group_stat("C", "mean")
+sd_c <- group_stat("C", "sd")
+pander::pander(plasma_summary)
+```
+
+Modeling phosphate as approximately normal within each group,
+with parameters set equal to each group's sample mean and SD,
+and $\P(X = \text{H-O}) = `r n_ho`/`r n_ho + n_c`$:
+
+$$Y \mid X = \text{H-O} \sim \ndist{`r round(mean_ho, 2)`,\, `r round(sd_ho, 2)`^2}$$
+$$Y \mid X = \text{C} \sim \ndist{`r round(mean_c, 2)`,\, `r round(sd_c, 2)`^2}$$
+
+By @def-cond-mixed, since the mean of a normal distribution
+is its location parameter:
+
+$$\E{Y \mid X = \text{H-O}} = `r round(mean_ho, 2)` \text{ mg/dL}, \qquad
+  \E{Y \mid X = \text{C}} = `r round(mean_c, 2)` \text{ mg/dL}$$
+
+**$X$ continuous, $Y$ discrete.**
+The `senility` dataset in the `dobson` package
+(@dobson4e, Table 7.8)
+records, for 54 elderly people,
+a WAIS (Wechsler Adult Intelligence Scale) score
+and whether symptoms of senility were present.
+Let $X$ be WAIS score and $Y$ indicate senility symptoms.
+
+```{r}
+#| code-fold: true
+senility_fit <- glm(s ~ x, data = dobson::senility, family = binomial)
+b0 <- coef(senility_fit)[["(Intercept)"]]
+b1 <- coef(senility_fit)[["x"]]
+pander::pander(coef(senility_fit))
+```
+
+Modeling $\P(Y = 1 \mid X = x)$ with the fitted logistic regression:
+
+$$\logit \P(Y = 1 \mid X = x) = `r sprintf("%.4f", b0)` - `r sprintf("%.4f", abs(b1))`\, x$$
+
+By @def-cond-mixed, since $Y \mid X=x$ is Bernoulli:
+
+$$
+\ba
+\E{Y \mid X = x} &= 0 \cd \P(Y=0 \mid X=x) + 1 \cd \P(Y=1 \mid X=x)
+&& \text{(definition of conditional expectation, mixed case)}
+\\&= \P(Y=1 \mid X=x)
+&& \text{(simplify)}
+\\&= \frac{1}{1 + \e{-(`r sprintf("%.4f", b0)` - `r sprintf("%.4f", abs(b1))`\, x)}}
+&& \text{(invert the logit)}
+\ea
+$$
+
+```{r}
+#| code-fold: true
+senility_p10 <- predict(
+  senility_fit,
+  newdata = tibble::tibble(x = 10),
+  type = "response"
+)
+senility_p15 <- predict(
+  senility_fit,
+  newdata = tibble::tibble(x = 15),
+  type = "response"
+)
+```
+
+At $x = 10$: $\E{Y \mid X=10} = `r round(senility_p10, 2)`$.
+At $x = 15$: $\E{Y \mid X=15} = `r round(senility_p15, 2)`$ ---
+a lower WAIS score is associated with higher predicted probability
+of senility symptoms.
+
+:::

@@ -1,0 +1,11 @@
+:::{#def-cond-pmf}
+
+#### Conditional probability mass function
+
+Let $X$ and $Y$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) discrete random variables.
+The **conditional probability mass function** of $Y$ given $X = x$
+(for values of $x$ with $\P(X = x) > 0$) is:
+
+$$\P(Y = y \mid X = x) \eqdef \frac{\P(X = x,\, Y = y)}{\P(X = x)}$$
+
+:::

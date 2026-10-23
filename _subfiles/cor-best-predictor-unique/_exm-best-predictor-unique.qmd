@@ -1,0 +1,7 @@
+:::{#exm-best-predictor-unique}
+#### Uniqueness in the best-predictor exercise
+
+In @exr-best-predictor, $\predfn_2\paren{\Predvar} = 4\Predvar$ differs from $\bestpredfnf{\Predvar}$ when $\Predvar = 0$, which has probability $0.5$.
+So $\predfn_2$ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) $2$ being larger than $1$.
+
+:::

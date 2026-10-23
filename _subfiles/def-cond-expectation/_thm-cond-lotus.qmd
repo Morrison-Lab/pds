@@ -1,0 +1,66 @@
+:::{#thm-cond-lotus}
+#### Conditional LOTUS, discrete case
+
+Let $X$ and $Y$ be jointly distributed discrete random variables,
+$h$ a function of two arguments,
+$W \eqdef h(X, Y)$,
+and $x$ a value with $\P(X = x) > 0$.
+Then $W$ is discrete,
+and $\E{h(X, Y) \mid X = x}$ from @def-cond-expectation-general
+equals $\E{W \mid X = x}$ from @def-cond-expectation,
+with one sum converging absolutely exactly when the other does.
+
+:::
+
+::: proof
+
+$W$ is discrete because its range is contained in
+$\set{h(u, y) : u \in \rangef{X},\, y \in \rangef{Y}}$,
+which is countable.
+For each $w \in \rangef{W}$,
+the event $\set{X = x,\, W = w}$ is the disjoint union
+of the events $\set{X = x,\, Y = y}$ over the values $y \in \rangef{Y}$ with $h(x, y) = w$, so:
+
+$$
+\ba
+\P(W = w \mid X = x)
+&= \frac{\P(X = x,\, W = w)}{\P(X = x)}
+&& \text{(conditional PMF of } W \text{)} \\
+&= \frac{1}{\P(X = x)} \sum_{\substack{y \in \rangef{Y} \\ h(x, y) = w}} \P(X = x,\, Y = y)
+&& \text{(countable additivity over the disjoint events } \set{X = x,\, Y = y} \text{)} \\
+&= \sum_{\substack{y \in \rangef{Y} \\ h(x, y) = w}} \P(Y = y \mid X = x)
+&& \text{(divide each term; conditional PMF of } Y \text{)}
+\ea
+$$
+
+Every $y \in \rangef{Y}$ with $\P(Y = y \mid X = x) > 0$
+has $h(x, y) \in \rangef{W}$,
+because some outcome has $X = x$ and $Y = y$, and $W = h(x, y)$ there;
+the other values of $y$ contribute terms equal to $0$.
+So the groups $\set{y \in \rangef{Y} : h(x, y) = w}$, over $w \in \rangef{W}$,
+contain every $y$ with a non-zero term, each exactly once:
+
+$$
+\ba
+\E{W \mid X = x}
+&= \sum_{w \in \rangef{W}} w \cd \P(W = w \mid X = x)
+&& \text{(conditional expectation of } W \text{)} \\
+&= \sum_{w \in \rangef{W}} w \cd \sum_{\substack{y \in \rangef{Y} \\ h(x, y) = w}} \P(Y = y \mid X = x)
+&& \text{(the display above)} \\
+&= \sum_{w \in \rangef{W}} \sum_{\substack{y \in \rangef{Y} \\ h(x, y) = w}} w \cd \P(Y = y \mid X = x)
+&& \text{(distribute } w \text{ into the inner sum)} \\
+&= \sum_{w \in \rangef{W}} \sum_{\substack{y \in \rangef{Y} \\ h(x, y) = w}} h(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(} w = h(x, y) \text{ for every term of the inner sum)} \\
+&= \sum_{y \in \rangef{Y}} h(x, y) \cd \P(Y = y \mid X = x)
+&& \text{(the groups contain every non-zero term once)} \\
+&= \E{h(X, Y) \mid X = x}
+&& \text{(conditional expectation of a function of } X \text{ and } Y \text{)}
+\ea
+$$
+
+The same steps with $\abs{w}$ and $\abs{h(x, y)}$ in place of $w$ and $h(x, y)$
+regroup a sum of non-negative terms, which is valid whether or not it converges,
+so one sum converges absolutely exactly when the other does,
+and then the regrouping above is valid too.
+
+:::

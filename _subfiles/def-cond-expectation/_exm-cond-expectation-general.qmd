@@ -1,0 +1,23 @@
+:::{#exm-cond-expectation-general}
+
+#### The second flip, given the first
+
+In the [joint PMF of two coin flips](random-variables.qmd#exm-joint-pmf),
+write $X$ for the first flip and $Y$ for the total number of heads.
+Given $X = 1$, $Y$ is $1$ or $2$ with conditional probability $1/2$ each,
+and $Y - X$ is the second flip.
+With $h(x, y) = (y - x)^2$:
+
+$$
+\ba
+\E{(Y - X)^2 \mid X = 1}
+&= (1 - 1)^2 \cd \tfrac{1}{2} + (2 - 1)^2 \cd \tfrac{1}{2}
+&& \text{(definition, with } x = 1 \text{)} \\
+&= 0 + \tfrac{1}{2}
+&& \text{(evaluate each term)} \\
+&= \tfrac{1}{2}
+&& \text{(add)}
+\ea
+$$
+
+:::
