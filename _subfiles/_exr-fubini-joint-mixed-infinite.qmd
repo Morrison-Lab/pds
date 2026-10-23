@@ -46,7 +46,7 @@ $$
 \\&= \frac{1-q}{2} \sum_{y=0}^{\infty} (y+1)\,q^y
 && \text{(cancel } y + 1 \text{; factor out } \tfrac{1-q}{2} \text{)}
 \\&= \frac{1-q}{2} \paren{\sum_{y=0}^{\infty} y\,q^y + \sum_{y=0}^{\infty} q^y}
-&& \text{(split the sum)}
+&& \text{(distribute the sum over the terms)}
 \\&= \frac{1-q}{2} \paren{\frac{q}{(1-q)^2} + \frac{1}{1-q}}
 && \text{(geometric-series facts)}
 \\&= \frac{1-q}{2} \cd \frac{q + (1-q)}{(1-q)^2}

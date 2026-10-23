@@ -677,7 +677,7 @@ $$
 \\&= \sum_{y \in \rangef{Y}} \paren{a h_1(x, y) + b h_2(x, y)} \cd \P(Y = y \mid X = x)
 && \text{(definition of conditional expectation)} \\
 &= a \sum_{y \in \rangef{Y}} h_1(x, y) \cd \P(Y = y \mid X = x) + b \sum_{y \in \rangef{Y}} h_2(x, y) \cd \P(Y = y \mid X = x)
-&& \text{(split the sum; factor out the constants)} \\
+&& \text{(distribute the sum over the terms; factor out the constants)} \\
 &= a\E{h_1(X, Y) \mid X = x} + b\E{h_2(X, Y) \mid X = x}
 && \text{(definition of conditional expectation)}
 \ea
