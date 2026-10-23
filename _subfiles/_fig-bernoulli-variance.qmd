@@ -27,9 +27,21 @@ plt.show()
 #### R
 
 ```{r}
+#| label: bernoulli-variance-r-alt
+#| include: false
+fig_alt <- paste(
+  "A dome-shaped curve of the variance of a Bernoulli random variable",
+  "against its probability, for probabilities from 0 to 1.",
+  "The curve is 0 at both ends",
+  "and peaks at 0.25 when the probability is 0.5,",
+  "which a dot marks."
+)
+```
+
+```{r}
 #| label: bernoulli-variance-r
 #| code-fold: false
-#| fig-alt: "A dome-shaped curve of the variance of a Bernoulli random variable against its probability, for probabilities from 0 to 1. The curve is 0 at both ends and peaks at 0.25 when the probability is 0.5, which a dot marks."
+#| fig-alt: !expr fig_alt
 #| fig-width: 6
 #| fig-height: 3.5
 library(ggplot2)
