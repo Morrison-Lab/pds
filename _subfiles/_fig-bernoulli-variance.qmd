@@ -47,7 +47,8 @@ ggplot(bernoulli, aes(x = prob, y = variance)) +
 
 :::
 
-The variance $\prob(1 - \prob)$ of a Bernoulli random variable, against its probability $\prob$.
-It is 0 at $\prob = 0$ and $\prob = 1$, where the outcome is certain.
+The [variance](#def-variance) $\prob(1 - \prob)$ of a [Bernoulli](random-variables.qmd#def-bernoulli) [random variable](random-variables.qmd#def-random-variable),
+against its [probability](probability-basics.qmd#def-probability) $\prob$.
+It is 0 at $\prob = 0$ and $\prob = 1$, where the [outcome](expectation.qmd#def-outcome) is certain.
 It is largest, $1/4$, at $\prob = 1/2$ (dot), where the outcome is least predictable.
 :::
