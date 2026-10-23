@@ -9,7 +9,7 @@ for the outcome $\outcome$ that the [random experiment](probability-basics.qmd#d
 
 ::: {.remark .notes}
 
-The random variable $X$ is the rule, before the experiment is run;
+The [random variable](#def-random-variable) $X$ is the rule, before the experiment is run;
 the realization $x$ is one number, after it is run.
 Probabilities such as $\Pr(X = x)$ describe the rule,
 and a realization is a fixed number.
