@@ -1584,6 +1584,15 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#def-realization",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-realization",
+   "kind": "def",
+   "title": "Realization (observed value)",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#def-std-normal",
    "site": "pds",
    "page": "random-variables",
@@ -2902,6 +2911,18 @@
   [
    "pds/random-variables#def-random-variable",
    "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/random-variables#def-std-normal",
