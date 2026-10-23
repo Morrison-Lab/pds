@@ -1,0 +1,21 @@
+:::{#def-cond-expectation-general}
+
+#### Conditional expectation of a function of $X$ and $Y$
+
+Let $X$ and $Y$ be jointly distributed random variables,
+$h$ a function of two arguments,
+and $x$ a value at which the conditional PMF or PDF of $Y$ given $X = x$ is defined
+(@def-cond-pmf, @def-cond-pdf, or @def-cond-mixed).
+The **conditional expectation** of $h(X, Y)$ given $X = x$ is,
+for discrete $Y$:
+
+$$\E{h(X, Y) \mid X = x} \eqdef \sum_{y \in \rangef{Y}} h(x, y) \cd \P(Y = y \mid X = x)$$
+
+and for continuous $Y$:
+
+$$\E{h(X, Y) \mid X = x} \eqdef \int_{y \in \rangef{Y}} h(x, y) \cd \p(Y = y \mid X = x)\,dy$$
+
+when the sum or integral converges absolutely.
+Evaluating this function of $x$ at $X$ gives the random variable $\E{h(X, Y) \mid X}$.
+
+:::

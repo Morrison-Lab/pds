@@ -1,0 +1,13 @@
+:::{#def-cond-pdf}
+
+#### Conditional probability density function
+
+Let $X$ and $Y$ be jointly distributed continuous random variables
+with [joint density](random-variables.qmd#def-joint-pdf) $\p(X = x,\, Y = y)$
+and [marginal density](random-variables.qmd#thm-marginal-density) $\p(X = x)$.
+The **conditional probability density function** of $Y$ given $X = x$
+(for values of $x$ with $\p(X = x) > 0$) is:
+
+$$\p(Y = y \mid X = x) \eqdef \frac{\p(X = x,\, Y = y)}{\p(X = x)}$$
+
+:::

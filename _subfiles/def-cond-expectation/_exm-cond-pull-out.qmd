@@ -1,0 +1,28 @@
+:::{#exm-cond-pull-out}
+
+#### Taking out the first flip
+
+Continuing @exm-cond-linearity, with $g(x) = x$ and $h(x, y) = y$:
+
+$$
+\ba
+\E{XY \mid X = 1}
+&= 1 \cd \E{Y \mid X = 1}
+&& \text{(a function of } X \text{ factors out)} \\
+&= \tfrac{3}{2}
+&& \text{(substitute } \E{Y \mid X = 1} = \tfrac{3}{2} \text{)}
+\ea
+$$
+
+and
+
+$$
+\begin{aligned}
+\E{XY \mid X = 0} &= 0 \cd \E{Y \mid X = 0} \\
+&= 0.
+\end{aligned}
+$$
+
+As a check, given $X = 1$ the product $XY$ equals $Y$, which is $1$ or $2$ with probability $1/2$ each.
+
+:::

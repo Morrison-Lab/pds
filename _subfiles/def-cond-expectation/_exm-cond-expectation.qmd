@@ -1,0 +1,58 @@
+:::{#exm-cond-expectation}
+
+#### Conditional expectation from real trial and birthweight data
+
+**Discrete case.**
+Continuing @exm-cond-pmf,
+score the vaccine trial's response levels
+$\text{small} = 1$, $\text{moderate} = 2$, $\text{large} = 3$.
+The conditional PMF of $Y$ given $X = \text{placebo}$ (from @exm-cond-pmf) is:
+
+$$
+\ba
+\P(Y = \text{small} \mid X = \text{placebo}) &= \tfrac{`r n_placebo[["small"]]`}{`r sum(n_placebo)`}
+\\
+\P(Y = \text{moderate} \mid X = \text{placebo}) &= \tfrac{`r n_placebo[["moderate"]]`}{`r sum(n_placebo)`}
+\\
+\P(Y = \text{large} \mid X = \text{placebo}) &= \tfrac{`r n_placebo[["large"]]`}{`r sum(n_placebo)`}
+\ea
+$$
+
+so:
+
+$$
+\ba
+\E{Y \mid X = \text{placebo}}
+&= 1 \cd \tfrac{`r n_placebo[["small"]]`}{`r sum(n_placebo)`}
+ + 2 \cd \tfrac{`r n_placebo[["moderate"]]`}{`r sum(n_placebo)`}
+ + 3 \cd \tfrac{`r n_placebo[["large"]]`}{`r sum(n_placebo)`}
+&& \text{(definition of conditional expectation)}
+\\&= \frac{`r sum(1:3 * n_placebo)`}{`r sum(n_placebo)`}
+&& \text{(common denominator)}
+\\&\approx `r round(sum(1:3 * n_placebo) / sum(n_placebo), 2)`
+&& \text{(divide)}
+\ea
+$$
+
+**Continuous case.**
+Continuing @exm-cond-pdf,
+$Y \mid X = `r x0` \sim \ndist{`r round(cond_mean, 2)`,\, `r round(cond_sd, 2)`^2}$.
+The mean of a normal distribution is its location parameter
+(@CaseBerg01),
+so integrating $y$ against this conditional density gives:
+
+$$
+\ba
+\E{Y \mid X = `r x0`}
+&= \int_{-\infty}^{\infty} y \cd \p(Y=y \mid X=`r x0`)\,dy
+&& \text{(definition of conditional expectation)}
+\\&= `r round(cond_mean, 2)` \text{ g}
+&& \text{(the mean of a normal distribution is its location parameter)}
+\ea
+$$
+
+matching the fitted regression line's prediction at $x=`r x0`$ weeks exactly,
+as expected since the conditional mean of a bivariate normal
+*is* the linear regression of $Y$ on $X$.
+
+:::

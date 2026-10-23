@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+@CaseBerg01 [Section 3.2] defines the binomial distribution the same way.
+With $n = 1$, @eq-binom-pmf is the
+[Bernoulli PMF](random-variables.qmd#def-bernoulli):
+$\dBinf{1, \prob}$ and $\Ber(\prob)$ are the same distribution.
+
+:::

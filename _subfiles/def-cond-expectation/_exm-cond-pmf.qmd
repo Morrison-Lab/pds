@@ -1,0 +1,61 @@
+:::{#exm-cond-pmf}
+
+#### Conditional PMF from a vaccine trial
+
+The `vaccine` dataset in the `dobson` package
+(@dobson4e, Table 9.6)
+records the responses in a flu vaccine trial:
+$X$ is treatment group (placebo or vaccine)
+and $Y$ is the level of response to treatment (small, moderate, or large).
+
+```{r}
+#| code-fold: true
+response_levels <- c("small", "moderate", "large")
+vaccine_tab <-
+  dobson::vaccine |>
+  dplyr::mutate(response = factor(response, levels = response_levels)) |>
+  xtabs(frequency ~ treatment + response, data = _)
+pander::pander(as.data.frame.matrix(vaccine_tab))
+n_vaccine <- sum(vaccine_tab)
+n_placebo <- vaccine_tab["placebo", ]
+```
+
+Choose one of the $n = `r n_vaccine`$ trial participants at random
+(a [random choice](probability-basics.qmd#def-random-choice)),
+and let $(X, Y)$ be that participant's treatment and response.
+The [joint PMF](random-variables.qmd#def-joint-pmf) of $(X, Y)$ is then the table of frequencies divided by the total
+$n$ trial participants.
+By the [marginal PMF theorem](random-variables.qmd#thm-marginal-pmf),
+the [marginal](random-variables.qmd#def-marginal) probability $\P(X = \text{placebo})$ is:
+
+$$
+\ba
+\P(X = \text{placebo})
+&= \P(X = \text{placebo},\, Y = \text{small})
+ + \P(X = \text{placebo},\, Y = \text{moderate})
+ + \P(X = \text{placebo},\, Y = \text{large})
+&& \text{(marginal PMF from the joint PMF)}
+\\&= \tfrac{`r n_placebo[["small"]]`}{`r n_vaccine`}
+ + \tfrac{`r n_placebo[["moderate"]]`}{`r n_vaccine`}
+ + \tfrac{`r n_placebo[["large"]]`}{`r n_vaccine`}
+&& \text{(read the table)}
+\\&= \tfrac{`r sum(n_placebo)`}{`r n_vaccine`}
+&& \text{(add)}
+\ea
+$$
+
+By @def-cond-pmf, the conditional PMF of $Y$ given $X = \text{placebo}$ is:
+
+$$
+\ba
+\P(Y = \text{small} \mid X = \text{placebo})
+&= \frac{\P(X = \text{placebo},\, Y = \text{small})}{\P(X = \text{placebo})}
+&& \text{(definition of conditional PMF)}
+\\&= \frac{`r n_placebo[["small"]]`/`r n_vaccine`}{`r sum(n_placebo)`/`r n_vaccine`}
+&& \text{(substitute)}
+\\&= \frac{`r n_placebo[["small"]]`}{`r sum(n_placebo)`}
+&& \text{(cancel } `r n_vaccine` \text{)}
+\ea
+$$
+
+:::
