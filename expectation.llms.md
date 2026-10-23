@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-23 02:40:17 (PDT)
+Last modified: 2026-10-23 10:51:13 (PDT)
 
 > **NOTE:**
 >
@@ -1294,12 +1294,14 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 > **Definition 18 (Squared-error risk (expected prediction error))** The **squared-error risk** of a prediction function \\{f\mathopen{}\left(X\right)\mathclose{}}\\, also called its **expected prediction error** [\[13, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
->
-> It is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
 
 > **NOTE:**
 >
 > **Example 31 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\.
+
+> **NOTE:**
+>
+> *Remark 5* (The squared-error risk is a risk). The [squared-error risk](#def-squared-error-risk) is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
 
 > **NOTE:**
 >
@@ -1381,7 +1383,7 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 5* (The irreducible risk does not depend on the prediction function). The irreducible risk depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk.
+> *Remark 6* (The irreducible risk does not depend on the prediction function). The irreducible risk depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk.
 
 > **NOTE:**
 >
@@ -1397,7 +1399,7 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 6* (When the reducible risk is zero). The reducible risk is zero if and only if \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\.
+> *Remark 7* (When the reducible risk is zero). The reducible risk is zero if and only if \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\.
 
 > **NOTE:**
 >
@@ -1453,7 +1455,7 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 7* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 8* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
@@ -1473,7 +1475,7 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 8* (Where the definition comes from). Murphy [\[16, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 9* (Where the definition comes from). Murphy [\[16, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
@@ -1485,11 +1487,11 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 9* (Cross-entropy as an expected negative log probability). The cross-entropy is the [expectation](#def-expectation) of \\-\log q(X)\\ when \\X\\ has probability mass function \\p\\.
+> *Remark 10* (Cross-entropy as an expected negative log probability). The cross-entropy is the [expectation](#def-expectation) of \\-\log q(X)\\ when \\X\\ has probability mass function \\p\\.
 
 > **NOTE:**
 >
-> *Remark 10* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\H(p, p) = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
+> *Remark 11* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\H(p, p) = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
 
 > **NOTE:**
 >
@@ -1499,7 +1501,7 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 11* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
+> *Remark 12* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
 
 > **NOTE:**
 >
@@ -1511,7 +1513,7 @@ Last modified: 2026-10-23 02:40:17 (PDT)
 
 > **NOTE:**
 >
-> *Remark 12* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 13* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## References
 

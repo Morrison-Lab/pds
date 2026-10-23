@@ -2452,14 +2452,6 @@
    "pds/expectation#def-prediction-error"
   ],
   [
-   "pds/expectation#def-squared-error-risk",
-   "pds/expectation#def-risk"
-  ],
-  [
-   "pds/expectation#def-squared-error-risk",
-   "pds/expectation#def-squared-error-loss"
-  ],
-  [
    "pds/expectation#lem-cross-term-zero",
    "pds/expectation#def-cond-expectation-function"
   ],
