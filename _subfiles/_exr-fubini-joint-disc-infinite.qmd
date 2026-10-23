@@ -67,7 +67,7 @@ $$
 \\&= \sum_{x=0}^{\infty} p^x \sb{x(1-p) + p}
 && \text{(multiply } (1-p)^2 \text{ into the parentheses)}
 \\&= (1-p) \sum_{x=0}^{\infty} x\,p^x + p \sum_{x=0}^{\infty} p^x
-&& \text{(split the sum; factor out the constants)}
+&& \text{(distribute the sum over the terms; factor out the constants)}
 \\&= (1-p) \cd \frac{p}{(1-p)^2} + p \cd \frac{1}{1-p}
 && \text{(geometric-series facts)}
 \\&= \frac{p}{1-p} + \frac{p}{1-p}

@@ -130,7 +130,7 @@ $$
 &= a\sum_{x \in \rangef{X}}\sum_{y \in \rangef{Y}} x \cd \P(X=x, Y=y)
  + b\sum_{x \in \rangef{X}}\sum_{y \in \rangef{Y}} y \cd \P(X=x, Y=y)
  + c\sum_{x \in \rangef{X}}\sum_{y \in \rangef{Y}} \P(X=x, Y=y)
-&& \text{(split the sum; constants factor out)}\\
+&& \text{(distribute the sum over the terms; constants factor out)}\\
 &= a\sum_{x \in \rangef{X}}\sum_{y \in \rangef{Y}} x \cd \P(X=x, Y=y)
  + b\sum_{y \in \rangef{Y}}\sum_{x \in \rangef{X}} y \cd \P(X=x, Y=y)
  + c\sum_{x \in \rangef{X}}\sum_{y \in \rangef{Y}} \P(X=x, Y=y)
