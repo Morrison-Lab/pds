@@ -1,0 +1,17 @@
+:::{#def-realization}
+#### Realization (observed value)
+
+A **realization** of a [random variable](#def-random-variable) $X$
+is the value $x = X(\outcome)$ it takes
+for the outcome $\outcome$ that the [random experiment](probability-basics.qmd#def-random-experiment) produced.
+
+:::
+
+::: {.remark .notes}
+
+The random variable $X$ is the rule, before the experiment is run;
+the realization $x$ is one number, after it is run.
+Probabilities such as $\Pr(X = x)$ describe the rule,
+and a realization is not itself random.
+
+:::
