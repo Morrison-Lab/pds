@@ -3,7 +3,7 @@
 
 A **realization** of a [random variable](#def-random-variable) $X$
 is the value $x = X(\outcome)$ it takes
-for the outcome $\outcome$ that the [random experiment](probability-basics.qmd#def-random-experiment) produced.
+at the point $\outcome$ of the [sample space](probability-basics.qmd#def-sample-space) that the [random experiment](probability-basics.qmd#def-random-experiment) produced.
 
 :::
 
