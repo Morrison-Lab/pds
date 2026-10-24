@@ -2,9 +2,9 @@
 #### Expectation of a fair die roll
 
 Let $Y$ be the result of a fair die roll,
-so $\rangef{Y} = \set{1, 2, 3, 4, 5, 6}$ and $\P(Y=y) = 1/6$ for each $y$ in the range.
+so the [range](random-variables.qmd#def-range) is $\rangef{Y} =\set{1, 2, 3, 4, 5, 6}$ and $\P(Y=y) = 1/6$ for each $y$ in the range.
 Every value has the same weight,
-so the expectation is the ordinary mean of $1, \ldots, 6$:
+so the [expectation](#def-expectation) is the ordinary [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of $1, \ldots, 6$:
 
 $$
 \ba
@@ -20,7 +20,7 @@ $$
 \ea
 $$
 
-Now load the die so that the result $6$ has probability $1/2$,
+Now load the die so that the result $6$ has [probability](probability-basics.qmd#def-probability) $1/2$,
 and each of $1, \ldots, 5$ has probability $1/10$.
 The weights still add to $1$, and the expectation moves toward $6$:
 
