@@ -14,7 +14,7 @@ and the probabilities are the weights.
 The [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of $n$ numbers $\dsn{y}$ is the special case
 with every weight equal to $1/n$:
 
-$$\avgin y_i = \sum_{i=1}^{n} y_i \cdot \frac{1}{n}$$
+$$\avgin y_i = \sumin y_i \cd \frac{1}{n}$$
 
 A value with a larger [probability](probability-basics.qmd#def-probability) counts for more in the expectation.
 The expectation is the balance point of the possible values:
