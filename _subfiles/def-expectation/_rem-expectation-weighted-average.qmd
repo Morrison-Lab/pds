@@ -1,8 +1,8 @@
 ::: {#rem-expectation-weighted-average}
 #### Expectation is a probability-weighted average
 
-The [expectation](#def-expectation) of a [random variable](random-variables.qmd#def-random-variable) $X$ is a weighted average of the values of $X$,
-and the probabilities are the weights.
+The [expectation](#def-expectation) of a [random variable](random-variables.qmd#def-random-variable) $X$ is a [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) of the values of $X$,
+and the probabilities are the [weights](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weight).
 
 - A [discrete random variable](random-variables.qmd#def-discrete-rv) has a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over its possible values.
   Each value $x$ is multiplied by its weight $\P(X=x)$, and the products are added.
