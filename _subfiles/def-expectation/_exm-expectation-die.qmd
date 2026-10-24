@@ -1,0 +1,39 @@
+::: {#exm-expectation-die}
+#### Expectation of a fair die roll
+
+Let $Y$ be the result of a fair die roll,
+so $\rangef{Y} = \set{1, 2, 3, 4, 5, 6}$ and $\P(Y=y) = 1/6$ for each $y$ in the range.
+Every value has the same weight,
+so the expectation is the ordinary mean of $1, \ldots, 6$:
+
+$$
+\ba
+\E{Y}
+&= \sum_{y \in \set{1, 2, 3, 4, 5, 6}} y \cd \P(Y=y)
+&& \text{(definition of expectation for discrete r.v.)}\\
+&= \paren{1 + 2 + 3 + 4 + 5 + 6} \cd \frac{1}{6}
+&& \text{(every weight is } 1/6 \text{)}\\
+&= \frac{21}{6}
+&& \text{(add)}\\
+&= 3.5
+&& \text{(divide)}
+\ea
+$$
+
+Now load the die so that the result $6$ has probability $1/2$,
+and each of $1, \ldots, 5$ has probability $1/10$.
+The weights still add to $1$, and the expectation moves toward $6$:
+
+$$
+\ba
+\E{Y}
+&= \paren{1 + 2 + 3 + 4 + 5} \cd \frac{1}{10} + 6 \cd \frac{1}{2}
+&& \text{(weights } 1/10 \text{ and } 1/2 \text{)}\\
+&= 1.5 + 3
+&& \text{(multiply)}\\
+&= 4.5
+&& \text{(add)}
+\ea
+$$
+
+:::

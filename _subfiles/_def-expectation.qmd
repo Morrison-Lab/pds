@@ -23,6 +23,14 @@ that is, when it is finite with $\abs{x}$ in place of $x$.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-expectation/_rem-expectation-weighted-average.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-expectation/_exm-expectation-die.qmd >}}
+
+{{< slidebreak >}}
+
 :::{#exm-cauchy-no-mean}
 #### The standard Cauchy distribution has no expectation
 
