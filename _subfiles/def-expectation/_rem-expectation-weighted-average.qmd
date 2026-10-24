@@ -1,0 +1,24 @@
+::: {#rem-expectation-weighted-average}
+#### Expectation is a probability-weighted average
+
+The [expectation](#def-expectation) of a [random variable](random-variables.qmd#def-random-variable) $X$ is a weighted average of the values of $X$,
+and the probabilities are the weights.
+
+- A [discrete random variable](random-variables.qmd#def-discrete-rv) has a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over its possible values.
+  Each value $x$ is multiplied by its weight $\P(X=x)$, and the products are added.
+  The weights are non-negative and add to $1$.
+- A [continuous random variable](random-variables.qmd#def-continuous-rv) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over its possible values.
+  Each value $x$ is multiplied by its weight, the [density](random-variables.qmd#def-pdf) $\p(X=x)$, and the products are accumulated.
+  The density is non-negative and integrates to $1$.
+
+The [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of $n$ numbers $\dsn{y}$ is the special case
+with every weight equal to $1/n$:
+
+$$\avgin y_i = \sumin y_i \cd \frac{1}{n}$$
+
+A value with a larger [probability](probability-basics.qmd#def-probability) counts for more in the expectation.
+The expectation is the balance point of the possible values:
+the point where a ruler would balance
+if each value $x$ carried a weight proportional to $\P(X=x)$.
+
+:::
