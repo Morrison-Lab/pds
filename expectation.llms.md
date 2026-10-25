@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-24 14:52:33 (PDT)
+Last modified: 2026-10-24 20:18:53 (PDT)
 
 > **NOTE:**
 >
@@ -30,7 +30,7 @@ Last modified: 2026-10-24 14:52:33 (PDT)
 
 > **NOTE:**
 >
-> *Remark 1* (Expectation is a probability-weighted average). The [expectation](#def-expectation) of a [random variable](random-variables.llms.md#def-random-variable) \\X\\ is a weighted average of the values of \\X\\, and the probabilities are the weights.
+> *Remark 1* (Expectation is a probability-weighted average). The [expectation](#def-expectation) of a [random variable](random-variables.llms.md#def-random-variable) \\X\\ is a [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) of the values of \\X\\, and the probabilities are the [weights](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weight).
 >
 > - A [discrete random variable](random-variables.llms.md#def-discrete-rv) has a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over its possible values. Each value \\x\\ is multiplied by its weight \\\mathbb{P}(X=x)\\, and the products are added. The weights are non-negative and add to \\1\\.
 > - A [continuous random variable](random-variables.llms.md#def-continuous-rv) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over its possible values. Each value \\x\\ is multiplied by its weight, the [density](random-variables.llms.md#def-pdf) \\\operatorname{p}(X=x)\\, and the products are accumulated. The density is non-negative and integrates to \\1\\.
