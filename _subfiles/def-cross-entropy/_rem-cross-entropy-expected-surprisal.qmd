@@ -1,7 +1,7 @@
 :::{#rem-cross-entropy-expected-surprisal}
 #### Cross-entropy is an expected surprisal
 
-By @thm-cross-entropy-expectation, the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ is the average [surprisal](#def-surprisal) of [outcomes](probability-basics.qmd#def-experiment-outcome) drawn from $p$,
+By @thm-cross-entropy-expectation, the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$,
 with each surprisal measured by $q$ as $-\log q_k$.
 By @cor-cross-entropy-entropy, measuring with $p$ itself gives the [entropy](#def-entropy).
 

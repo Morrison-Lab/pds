@@ -12,7 +12,7 @@ $$\crossentropyf{p}{p} = \entropyf{X}.$$
 
 By @thm-cross-entropy-expectation with $q = p$, $\crossentropyf{p}{p} = \E{-\log p_X}$.
 Since $\P(X = k) = p_k$, the [random variable](random-variables.qmd#def-random-variable) $-\log p_X$ is the [surprisal](#def-surprisal) $\surprisalf{X}$.
-This is finite with [probability](probability-basics.qmd#def-probability) 1, because $X$ takes only values with $p_k > 0$,
+The surprisal $\surprisalf{X}$ is finite with [probability](probability-basics.qmd#def-probability) 1, because $X$ takes only values with $p_k > 0$,
 and the values with $p_k = 0$ contribute $0$ to both $\crossentropyf{p}{p}$ and $\entropyf{X}$ by the convention in their definitions.
 So $\crossentropyf{p}{p} = \E{\surprisalf{X}} = \entropyf{X}$ by the definition of [entropy](#def-entropy).
 
