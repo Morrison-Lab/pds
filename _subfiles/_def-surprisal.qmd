@@ -1,0 +1,22 @@
+:::{#def-surprisal}
+#### Surprisal (**self-information**, **information content**)
+
+The **surprisal** of an outcome $x$ of a *discrete* random variable $X$
+with $\P(X=x) > 0$ is
+
+$$\surprisalf{x} \eqdef -\log \P(X=x).$$
+
+The surprisal is also called the **self-information** [@goodfellow2016deep, p. 72]
+or the **information content** [@bishop2006prml, p. 49] of $x$.
+
+:::
+
+::: {#rem-surprisal-units}
+#### Rare outcomes are more surprising
+
+An outcome with probability $1$ has surprisal $0$,
+and the surprisal grows without bound as $\P(X=x) \to 0$.
+As for [entropy](#def-entropy), the base of the logarithm sets the unit:
+nats for the natural logarithm and bits for base 2.
+
+:::

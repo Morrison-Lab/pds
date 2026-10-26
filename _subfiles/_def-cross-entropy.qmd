@@ -10,25 +10,34 @@ is
 
 $$H(p, q) \eqdef -\sumto{k}{K} p_k \log q_k.$$
 
+A term with $p_k = 0$ is taken to be $0$, as for [entropy](#def-entropy).
 When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
 
 :::
 
-::: {#rem-cross-entropy-expectation}
-#### Cross-entropy as an expected negative log probability
+{{< slidebreak >}}
 
-The cross-entropy is the [expectation](#def-expectation) of $-\log q(X)$
-when $X$ has probability mass function $p$.
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-expectation.qmd >}}
 
-:::
+{{< slidebreak >}}
 
-::: {#rem-cross-entropy-entropy}
-#### Entropy is the cross-entropy of a distribution with itself
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-expectation.qmd >}}
 
-Setting $q = p$ gives $H(p, p) = -\sum_k p_k \log p_k$,
-which is the [entropy](#def-entropy) of a random variable with mass function $p$.
+{{< slidebreak >}}
 
-:::
+{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_cor-cross-entropy-entropy.qmd >}}
 
 {{< slidebreak >}}
 

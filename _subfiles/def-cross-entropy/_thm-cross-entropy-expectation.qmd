@@ -1,0 +1,35 @@
+:::{#thm-cross-entropy-expectation}
+#### Cross-entropy as an expected negative log probability
+
+Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$,
+and let $X$ have mass function $p$.
+Write $q_X$ for the random variable that equals $q_k$ when $X = k$.
+Then
+
+$$H(p, q) = \E{-\log q_X}.$$
+
+:::
+
+::: proof
+
+Let $g(k) \eqdef -\log q_k$.
+First suppose $q_k > 0$ whenever $p_k > 0$.
+Then $g(k)$ is finite for every value $k$ that $X$ takes with positive probability,
+and [LOTUS](expectation.qmd#thm-lotus) gives
+
+$$
+\ba
+\E{g(X)}
+&= \sum_{k : p_k > 0} g(k) \cd \P(X = k) && \text{(LOTUS)} \\
+&= -\sum_{k : p_k > 0} p_k \log q_k && \text{(} \P(X = k) = p_k \text{)} \\
+&= -\sumto{k}{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\
+&= H(p, q). && \text{(definition)}
+\ea
+$$
+
+Now suppose $q_k = 0$ for some $k$ with $p_k > 0$.
+Then $H(p, q) = \infty$ by definition.
+Also $-\log q_X \ge 0$, and $-\log q_X = \infty$ with probability at least $p_k > 0$,
+so $\E{-\log q_X} = \infty$.
+
+:::

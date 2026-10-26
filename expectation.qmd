@@ -143,7 +143,11 @@ format:
 
 ## Entropy and cross-entropy {#sec-entropy}
 
-<!-- No slidebreak here: the heading shares its slide with the def-entropy div. -->
+<!-- No slidebreak here: the heading shares its slide with the def-surprisal div. -->
+
+{{< include pds/_subfiles/_def-surprisal.qmd >}}
+
+{{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-entropy.qmd >}}
 

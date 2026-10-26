@@ -1,0 +1,19 @@
+:::{#exr-cross-entropy-expectation}
+
+#### Cross-entropy as an expectation
+
+Let $X$ have [probability mass function](random-variables.qmd#def-pmf) $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ on $\set{1, 2, 3}$,
+and let $q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})$.
+Write $q_X$ for the random variable that equals $q_k$ when $X = k$.
+Use logarithms to base 2.
+
+1. Find the probability mass function of $Y = -\log_2 q_X$, and compute $\E{Y}$ from it.
+
+2. Compute the [cross-entropy](#def-cross-entropy) $H(p, q)$ from its definition, and compare it with $\E{Y}$.
+
+3. Now let $p$ and $q$ be any two probability mass functions on $\set{1, \ldots, K}$ with $q_k > 0$ whenever $p_k > 0$.
+   Show that $H(p, q) = \E{-\log q_X}$ when $X$ has mass function $p$.
+
+4. What are $H(p, q)$ and $\E{-\log q_X}$ when $q_k = 0$ for some $k$ with $p_k > 0$?
+
+:::

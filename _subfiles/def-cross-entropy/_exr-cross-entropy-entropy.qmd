@@ -1,0 +1,15 @@
+:::{#exr-cross-entropy-entropy}
+
+#### The cross-entropy of a distribution with itself
+
+Let $X$ have [probability mass function](random-variables.qmd#def-pmf) $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ on $\set{1, 2, 3}$.
+Use logarithms to base 2.
+
+1. Compute the [cross-entropy](#def-cross-entropy) $H(p, p)$.
+
+2. Compute the [entropy](#def-entropy) $\entropyf{X}$ from its definition, and compare it with $H(p, p)$.
+
+3. Now let $X$ have any mass function $p$ on $\set{1, \ldots, K}$.
+   Show that $H(p, p) = \entropyf{X}$.
+
+:::
