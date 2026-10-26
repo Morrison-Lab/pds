@@ -19,4 +19,4 @@ Evaluating $\surprisalf{\cdot}$ at the [random variable](random-variables.qmd#de
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-surprisal/_rem-surprisal-units.qmd >}}
+{{< include pds/_subfiles/def-surprisal/_rem-surprisal-rarity.qmd >}}

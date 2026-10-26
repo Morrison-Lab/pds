@@ -3,7 +3,7 @@
 
 The **entropy** of a *discrete* random variable $X$ with
 [probability mass function](random-variables.qmd#def-pmf) $\P(X=x)$
-is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) $\surprisalf{X} = -\log \P(X)$
+is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) $\surprisalf{X}$
 [@wikipedia_entropy_information_theory]:
 
 $$\entropyf{X} \eqdef \E{\surprisalf{X}} = -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x)$$
