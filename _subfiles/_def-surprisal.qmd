@@ -1,7 +1,7 @@
 :::{#def-surprisal}
 #### Surprisal (**self-information**, **information content**)
 
-The **surprisal** of an [outcome](probability-basics.qmd#def-experiment-outcome) $x$ of a [discrete random variable](random-variables.qmd#def-discrete-rv) $X$
+The **surprisal** of a possible value $x$ of a [discrete random variable](random-variables.qmd#def-discrete-rv) $X$
 with $\P(X=x) > 0$ is
 
 $$\surprisalf{x} \eqdef -\log \P(X=x).$$
