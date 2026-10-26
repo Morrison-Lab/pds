@@ -2534,6 +2534,10 @@
    "pds/random-variables#def-pmf"
   ],
   [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/expectation#thm-fubini-tonelli-measure",
    "mds/measures#def-measure"
   ],

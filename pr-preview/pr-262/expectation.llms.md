@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 02:39:48 (PDT)
+Last modified: 2026-10-26 02:51:33 (PDT)
 
 > **NOTE:**
 >
@@ -1516,7 +1516,7 @@ Last modified: 2026-10-26 02:39:48 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 8 (Expected negative log probability for two mass functions)** Let \\X\\ have [probability mass function](random-variables.llms.md#def-pmf) \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\, and let \\q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})\\. Write \\q_X\\ for the random variable that equals \\q_k\\ when \\X = k\\. Find the probability mass function of \\Y = -\log_2 q_X\\, and compute \\{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\ from it.
+> **Exercise 8 (Expected negative log probability for two mass functions)** Let \\X\\ have [probability mass function](random-variables.llms.md#def-pmf) \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\, and let \\q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Find the probability mass function of \\Y = -\log_2 q_X\\, and compute \\{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\ from it.
 
 > **NOTE:**
 >
@@ -1526,21 +1526,21 @@ Last modified: 2026-10-26 02:39:48 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 9 (Cross-entropy of two mass functions from the definition)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ and \\q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})\\ be mass functions on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [cross-entropy](#def-cross-entropy) \\H(p, q)\\ in bits from its definition. If \\X\\ has mass function \\p\\, then \\{\mathbb{E}\mathopen{}\left\[-\log_2 q_X\right\]\mathclose{}} = \tfrac{7}{4}\\. Compare this value with \\H(p, q)\\.
+> **Exercise 9 (Cross-entropy of two mass functions from the definition)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ and \\q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [cross-entropy](#def-cross-entropy) \\H(p, q)\\ in bits from its definition. Compare it with your value of \\{\mathbb{E}\mathopen{}\left\[-\log_2 q_X\right\]\mathclose{}}\\ from [Exercise 8](#exr-cross-entropy-numeric-expectation), where \\X\\ has [probability mass function](random-variables.llms.md#def-pmf) \\p\\.
 
 > **NOTE:**
 >
 > *Solution 5*. \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot 2 + \tfrac{1}{4} \cdot 1 + \tfrac{1}{4} \cdot 2 \\ &= \tfrac{7}{4}. \end{aligned} \\
 >
-> This equals \\{\mathbb{E}\mathopen{}\left\[-\log_2 q_X\right\]\mathclose{}}\\. The two calculations group the same three terms differently: the expectation first combines outcomes 1 and 3, which have the same value of \\-\log_2 q_X\\.
+> This equals \\{\mathbb{E}\mathopen{}\left\[-\log_2 q_X\right\]\mathclose{}}\\. The two calculations group the same three terms differently: the [expectation](#def-expectation) first combines [outcomes](probability-basics.llms.md#def-experiment-outcome) 1 and 3, which have the same value of \\-\log_2 q_X\\.
 
 > **NOTE:**
 >
-> **Exercise 10 (Cross-entropy as an expectation, for any mass functions)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have mass function \\p\\, and write \\q_X\\ for the random variable that equals \\q_k\\ when \\X = k\\. Show that \\H(p, q) = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
+> **Exercise 10 (Cross-entropy as an expectation, for any mass functions)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Show that \\H(p, q) = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
 
 > **NOTE:**
 >
-> *Solution 6*. Let \\g(k) = -\log q_k\\. This is finite for every \\k\\ with \\p_k \> 0\\, which are the values \\X\\ takes with positive probability. By [LOTUS](expectation.llms.md#thm-lotus),
+> *Solution 6*. Let \\g(k) = -\log q_k\\. This is finite for every \\k\\ with \\p_k \> 0\\, which are the values \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability). By [LOTUS](expectation.llms.md#thm-lotus),
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k \\ &= -\sum\_{k=1}^{K} p_k \log q_k \\ &= H(p, q). \end{aligned} \\
 >
@@ -1548,15 +1548,15 @@ Last modified: 2026-10-26 02:39:48 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 11 (Cross-entropy as an expectation when \\q\\ gives zero probability to a possible outcome)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Let \\X\\ have mass function \\p\\, and write \\q_X\\ for the random variable that equals \\q_k\\ when \\X = k\\. Find \\H(p, q)\\ and \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
+> **Exercise 11 (Cross-entropy as an expectation when \\q\\ gives zero probability to a possible outcome)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Find \\H(p, q)\\ and \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
 
 > **NOTE:**
 >
-> *Solution 7*. By the definition, \\H(p, q) = \infty\\. Also \\-\log q_X \ge 0\\ always, and \\-\log q_X = \infty\\ with probability at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\ as well. Both are infinite, so they are still equal.
+> *Solution 7*. By the definition, \\H(p, q) = \infty\\. Also \\-\log q_X \ge 0\\ always, and \\-\log q_X = \infty\\ with [probability](probability-basics.llms.md#def-probability) at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\ as well. Both are infinite, so they are still equal.
 
 > **NOTE:**
 >
-> **Theorem 14 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have mass function \\p\\. Write \\q_X\\ for the random variable that equals \\q_k\\ when \\X = k\\. Then
+> **Theorem 14 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Then
 >
 > \\H(p, q) = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}.\\
 
@@ -1576,17 +1576,17 @@ Last modified: 2026-10-26 02:39:48 (PDT)
 >
 > **Definition 23 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 22](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
-> \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
+> \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
 
 > **NOTE:**
 >
-> *Remark 12* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
+> *Remark 12* (The divergence is not symmetric). In general, \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \ne {{D\_{\mathrm{KL}}}\mathopen{}\left(q \\\Vert\\ p\right)\mathclose{}}\\, so it is not a distance between \\p\\ and \\q\\.
 
 > **NOTE:**
 >
 > **Example 42 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
-> \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
+> \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
 > Here the cross-entropy is larger than the entropy of \\p\\, and the divergence is the difference.
 
