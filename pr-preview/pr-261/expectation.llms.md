@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 00:49:04 (PDT)
+Last modified: 2026-10-26 01:05:39 (PDT)
 
 > **NOTE:**
 >
@@ -670,7 +670,10 @@ Last modified: 2026-10-26 00:49:04 (PDT)
 > >   plotly::layout(
 > >     barmode = "group",
 > >     xaxis = list(title = "Value of Y"),
-> >     yaxis = list(title = "Joint probability, P(X = x, Y = y)", range = c(0, 0.5)),
+> >     yaxis = list(
+> >       title = "Joint probability, P(X = x, Y = y)",
+> >       range = c(0, 0.5)
+> >     ),
 > >     legend = list(title = list(text = "X value"))
 > >   )
 > > ```
@@ -1075,7 +1078,10 @@ Last modified: 2026-10-26 00:49:04 (PDT)
 > >   plotly::add_lines() |>
 > >   plotly::layout(
 > >     xaxis = list(title = "Value of X"),
-> >     yaxis = list(title = "Joint density, f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
+> >     yaxis = list(
+> >       title = "Joint density, f<sub>X,Y</sub>(x, y)",
+> >       range = c(0, 0.55)
+> >     ),
 > >     legend = list(title = list(text = "Y value"))
 > >   )
 > > ```
