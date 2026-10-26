@@ -1,0 +1,9 @@
+::: {#rem-surprisal-units}
+#### Rare outcomes are more surprising
+
+An outcome with probability $1$ has surprisal $0$,
+and the surprisal grows without bound as $\P(X=x) \to 0$.
+As for [entropy](#def-entropy), the base of the logarithm determines the unit:
+nats for the natural logarithm and bits for base 2.
+
+:::
