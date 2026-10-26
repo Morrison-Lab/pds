@@ -1,9 +1,9 @@
 :::{#exm-surprisal-coin}
-#### Surprisal of the outcomes of a biased coin
+#### Surprisal of the values of a biased coin flip
 
 Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\P(X=1) = \tfrac{1}{4}$ and $\P(X=0) = \tfrac{3}{4}$.
 Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of heads is $\surprisalf{1} = -\log_2 \tfrac{1}{4} = 2$ bits,
 and the surprisal of tails is $\surprisalf{0} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits.
-For a fair coin, each [outcome](probability-basics.qmd#def-experiment-outcome) has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
+For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
 
 :::
