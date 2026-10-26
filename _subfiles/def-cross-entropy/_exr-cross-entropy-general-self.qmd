@@ -2,7 +2,7 @@
 
 #### Entropy as a cross-entropy, for any mass function
 
-Let $X$ have [probability mass function](random-variables.qmd#def-pmf) $p$ on $\set{1, \ldots, K}$.
+Let $X$ be a [discrete random variable](random-variables.qmd#def-discrete-rv) with [probability mass function](random-variables.qmd#def-pmf) $p$ on $\set{1, \ldots, K}$.
 Show that $\crossentropyf{p}{p} = \entropyf{X}$.
 
 :::
