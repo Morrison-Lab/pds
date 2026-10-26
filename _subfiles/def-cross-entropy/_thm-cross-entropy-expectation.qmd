@@ -14,7 +14,7 @@ $$H(p, q) = \E{-\log q_X}.$$
 
 Let $g(k) \eqdef -\log q_k$.
 First suppose $q_k > 0$ whenever $p_k > 0$.
-Then $g(k)$ is finite for every value $k$ that $X$ takes with positive probability,
+Then $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability),
 and [LOTUS](expectation.qmd#thm-lotus) gives
 
 $$

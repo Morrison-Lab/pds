@@ -17,11 +17,35 @@ When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-expectation.qmd >}}
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-definition.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-definition.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-infinite-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-infinite-expectation.qmd >}}
 
 {{< slidebreak >}}
 
@@ -29,11 +53,27 @@ When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-entropy.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-self.qmd >}}
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-entropy.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-self.qmd >}}
 
 {{< slidebreak >}}
 

@@ -8,6 +8,7 @@ $$\surprisalf{x} \eqdef -\log \P(X=x).$$
 
 The surprisal is also called the **self-information** [@goodfellow2016deep, p. 72]
 or the **information content** [@bishop2006prml, p. 49] of $x$.
+Applying $\surprisalf{\cdot}$ to the random variable $X$ itself gives the random variable $\surprisalf{X} = -\log \P(X)$.
 
 :::
 
@@ -18,5 +19,18 @@ An outcome with probability $1$ has surprisal $0$,
 and the surprisal grows without bound as $\P(X=x) \to 0$.
 As for [entropy](#def-entropy), the base of the logarithm sets the unit:
 nats for the natural logarithm and bits for base 2.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-surprisal-coin}
+#### Surprisal of the outcomes of a biased coin
+
+Let $X$ be the result of one flip of a coin with $\P(X=1) = \tfrac{1}{4}$ and $\P(X=0) = \tfrac{3}{4}$.
+Using logarithms to base 2, the surprisal of heads is $\surprisalf{1} = -\log_2 \tfrac{1}{4} = 2$ bits,
+and the surprisal of tails is $\surprisalf{0} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits.
+For a fair coin, each outcome has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
+The rarer outcome is the more surprising one.
 
 :::

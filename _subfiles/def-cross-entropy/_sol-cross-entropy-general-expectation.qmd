@@ -1,0 +1,20 @@
+:::{#sol-cross-entropy-general-expectation}
+
+Let $g(k) = -\log q_k$.
+This is finite for every $k$ with $p_k > 0$, which are the values $X$ takes with positive probability.
+By [LOTUS](expectation.qmd#thm-lotus),
+
+$$
+\ba
+\E{-\log q_X}
+&= \E{g(X)} \\
+&= \sum_{k : p_k > 0} g(k) \cd \P(X = k) \\
+&= -\sum_{k : p_k > 0} p_k \log q_k \\
+&= -\sumto{k}{K} p_k \log q_k \\
+&= H(p, q).
+\ea
+$$
+
+The fourth line adds the terms with $p_k = 0$, which are $0$ by the convention in the definition.
+
+:::

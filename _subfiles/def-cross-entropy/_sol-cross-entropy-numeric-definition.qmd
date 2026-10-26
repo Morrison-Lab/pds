@@ -1,0 +1,16 @@
+:::{#sol-cross-entropy-numeric-definition}
+
+$$
+\ba
+H(p, q)
+&= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
+&= \tfrac{1}{2} \cd 2 + \tfrac{1}{4} \cd 1 + \tfrac{1}{4} \cd 2 \\
+&= \tfrac{7}{4}.
+\ea
+$$
+
+This equals $\E{-\log_2 q_X}$.
+The two calculations group the same three terms differently:
+the expectation first combines outcomes 1 and 3, which have the same value of $-\log_2 q_X$.
+
+:::
