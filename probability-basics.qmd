@@ -151,6 +151,12 @@ and cover counting, conditional probability and Bayes' rule from a computer scie
 and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 :::
 
+::: {.callout-tip title="Another explanation"}
+Lange's textbook [@lange2024applied] reviews [probability](#def-probability)
+and [expectation](expectation.qmd#def-expectation) in Section 1.2
+and [conditional probability](#def-conditional-prob) in Section 1.3.
+:::
+
 
 ## References {.unnumbered}
 
