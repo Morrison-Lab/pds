@@ -145,8 +145,9 @@ and cover counting, conditional probability and Bayes' rule from a computer scie
 :::
 
 ::: {.callout-tip title="Another explanation"}
-Lange's *Applied Probability* [@lange2024applied] reviews probability and expectation
-in Section 1.2 and conditional probability in Section 1.3.
+Lange's textbook [@lange2024applied] reviews [probability](#def-probability)
+and [expectation](expectation.qmd#def-expectation) in Section 1.2
+and [conditional probability](#def-conditional-prob) in Section 1.3.
 :::
 
 ::: {.videos}

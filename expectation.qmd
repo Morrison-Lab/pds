@@ -153,8 +153,8 @@ format:
 
 
 ::: {.callout-tip title="Another explanation"}
-Lange's *Applied Probability* [@lange2024applied] covers conditioning as a tool for computing expectations
-in Section 2.3, and tail-probability methods for expectations in Section 2.5.
+Lange's textbook [@lange2024applied] covers conditioning as a tool for computing [expectations](#def-expectation)
+in Section 2.3, and tail methods in Section 2.5.
 :::
 
 
