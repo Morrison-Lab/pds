@@ -1,7 +1,7 @@
 :::{#sol-cross-entropy-infinite-expectation}
 
 By the definition, $H(p, q) = \infty$.
-Also $-\log q_X \ge 0$ always, and $-\log q_X = \infty$ with probability at least $p_k > 0$,
+Also $-\log q_X \ge 0$ always, and $-\log q_X = \infty$ with [probability](probability-basics.qmd#def-probability) at least $p_k > 0$,
 so $\E{-\log q_X} = \infty$ as well.
 Both are infinite, so they are still equal.
 

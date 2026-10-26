@@ -1,7 +1,7 @@
 :::{#sol-cross-entropy-general-expectation}
 
 Let $g(k) = -\log q_k$.
-This is finite for every $k$ with $p_k > 0$, which are the values $X$ takes with positive probability.
+This is finite for every $k$ with $p_k > 0$, which are the values $X$ takes with positive [probability](probability-basics.qmd#def-probability).
 By [LOTUS](expectation.qmd#thm-lotus),
 
 $$

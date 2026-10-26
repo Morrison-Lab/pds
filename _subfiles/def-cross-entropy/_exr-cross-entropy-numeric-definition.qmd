@@ -2,9 +2,8 @@
 
 #### Cross-entropy of two mass functions from the definition
 
-Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ and $q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})$ be mass functions on $\set{1, 2, 3}$.
+Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ and $q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, 2, 3}$.
 Compute the [cross-entropy](#def-cross-entropy) $H(p, q)$ in bits from its definition.
-If $X$ has mass function $p$, then $\E{-\log_2 q_X} = \tfrac{7}{4}$.
-Compare this value with $H(p, q)$.
+Compare it with your value of $\E{-\log_2 q_X}$ from @exr-cross-entropy-numeric-expectation, where $X$ has [probability mass function](random-variables.qmd#def-pmf) $p$.
 
 :::
