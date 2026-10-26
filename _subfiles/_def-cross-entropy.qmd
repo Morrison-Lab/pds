@@ -10,8 +10,8 @@ is
 
 $$\crossentropyf{p}{q} \eqdef -\sumto{k}{K} p_k \log q_k.$$
 
-A term with $p_k = 0$ is taken to be $0$, as for [entropy](#def-entropy).
 We take $-\log 0 = \infty$, so when $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
+A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#def-entropy).
 
 :::
 

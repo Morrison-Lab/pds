@@ -1,6 +1,6 @@
 :::{#sol-cross-entropy-general-expectation}
 
-Let $g(k) = -\log q_k$, so that $-\log q_X = g(X)$.
+Let $g(k) \eqdef -\log q_k$, so that $-\log q_X = g(X)$.
 Suppose $q_k > 0$ whenever $p_k > 0$.
 Then $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability).
 By [LOTUS](#thm-lotus),

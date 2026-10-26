@@ -4,7 +4,7 @@
 Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$,
 and let $X$ have [mass function](random-variables.qmd#def-pmf) $p$.
 Write $q_X$ for the [random variable](random-variables.qmd#def-random-variable) that equals $q_k$ when $X = k$.
-Then
+Then the [cross-entropy](#def-cross-entropy) is the [expectation](#def-expectation) of $-\log q_X$:
 
 $$\crossentropyf{p}{q} = \E{-\log q_X}.$$
 
@@ -19,7 +19,8 @@ and [LOTUS](#thm-lotus) gives
 
 $$
 \ba
-\E{g(X)}
+\E{-\log q_X}
+&= \E{g(X)} && \text{(definition of } g \text{)} \\
 &= \sum_{k : p_k > 0} g(k) \cd \P(X = k) && \text{(LOTUS)} \\
 &= -\sum_{k : p_k > 0} p_k \log q_k && \text{(definition of } g \text{ and } \P(X = k) = p_k \text{)} \\
 &= -\sumto{k}{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\
