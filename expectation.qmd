@@ -143,13 +143,25 @@ format:
 
 ## Entropy and cross-entropy {#sec-entropy}
 
-<!-- No slidebreak here: the heading shares its slide with the def-entropy div. -->
+<!-- No slidebreak here: the heading shares its slide with the def-surprisal div. -->
+
+{{< include pds/_subfiles/_def-surprisal.qmd >}}
+
+{{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-entropy.qmd >}}
 
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_def-cross-entropy.qmd >}}
+
+
+## Further reading
+
+::: {.callout-tip title="Another explanation"}
+Lange's textbook [@lange2024applied] covers conditioning as a tool for computing [expectations](#def-expectation)
+in Section 2.3 and tail [probability](probability-basics.qmd#def-probability) methods in Section 2.5.
+:::
 
 
 ## References {.unnumbered}

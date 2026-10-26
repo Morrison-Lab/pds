@@ -8,27 +8,80 @@ The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
 is
 
-$$H(p, q) \eqdef -\sumto{k}{K} p_k \log q_k.$$
+$$\crossentropyf{p}{q} \eqdef -\sumto{k}{K} p_k \log q_k.$$
 
-When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
-
-:::
-
-::: {#rem-cross-entropy-expectation}
-#### Cross-entropy as an expected negative log probability
-
-The cross-entropy is the [expectation](#def-expectation) of $-\log q(X)$
-when $X$ has probability mass function $p$.
+We take $-\log 0 = \infty$, so when $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
+A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#def-entropy).
 
 :::
 
-::: {#rem-cross-entropy-entropy}
-#### Entropy is the cross-entropy of a distribution with itself
+{{< slidebreak >}}
 
-Setting $q = p$ gives $H(p, p) = -\sum_k p_k \log p_k$,
-which is the [entropy](#def-entropy) of a random variable with mass function $p$.
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-expectation.qmd >}}
 
-:::
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-definition.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-definition.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-infinite-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-infinite-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_cor-cross-entropy-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_rem-cross-entropy-expected-surprisal.qmd >}}
 
 {{< slidebreak >}}
 
@@ -39,15 +92,15 @@ For $p$ and $q$ as in @def-cross-entropy,
 the **Kullback--Leibler divergence** (**KL divergence**, or **relative entropy**)
 of $q$ from $p$ is
 
-$$D_{\mathrm{KL}}(p \,\|\, q) \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).$$
+$$\kldivf{p}{q} \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
 
 :::
 
 ::: {#rem-kl-asymmetric}
 #### The divergence is not symmetric
 
-In general, $D_{\mathrm{KL}}(p \,\|\, q) \ne D_{\mathrm{KL}}(q \,\|\, p)$,
-so it is not a distance between $p$ and $q$.
+In general, $\kldivf{p}{q} \ne \kldivf{q}{p}$,
+so KL divergence is not a distance between $p$ and $q$.
 
 :::
 
@@ -63,13 +116,13 @@ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 
 $$
 \ba
-H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
+\crossentropyf{p}{q} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
 &= 1 + \tfrac{1}{2} \paren{2 - \log_2 3} \\
 &= 2 - \tfrac{1}{2} \log_2 3 \\
 &\approx 1.208, \\
-H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
+\crossentropyf{p}{p} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
 &= 1, \\
-D_{\mathrm{KL}}(p \,\|\, q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
+\kldivf{p}{q} &= \crossentropyf{p}{q} - \crossentropyf{p}{p} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 \ea
 $$
 

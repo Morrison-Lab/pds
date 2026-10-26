@@ -1,0 +1,9 @@
+:::{#exr-cross-entropy-numeric-entropy}
+
+#### Entropy of a random variable with a given mass function
+
+Let $X$ be a [discrete random variable](random-variables.qmd#def-discrete-rv) with [probability mass function](random-variables.qmd#def-pmf) $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ on $\set{1, 2, 3}$.
+Compute the [entropy](#def-entropy) $\entropyf{X}$ in bits from its definition.
+Compare it with your value of $\crossentropyf{p}{p}$ from @exr-cross-entropy-numeric-self.
+
+:::

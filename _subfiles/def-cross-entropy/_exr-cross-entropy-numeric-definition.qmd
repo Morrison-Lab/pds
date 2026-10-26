@@ -1,0 +1,9 @@
+:::{#exr-cross-entropy-numeric-definition}
+
+#### Cross-entropy of two mass functions from the definition
+
+Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ and $q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, 2, 3}$.
+Compute the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ in bits from its definition.
+Compare it with your value of $\E{-\log_2 q_X}$ from @exr-cross-entropy-numeric-expectation, where $X$ has [probability mass function](random-variables.qmd#def-pmf) $p$.
+
+:::

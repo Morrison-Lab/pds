@@ -285,8 +285,8 @@ plotly::plot_ly() |>
     marker = list(size = 6, color = "#b40426")
   ) |>
   plotly::layout(
-    xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
-    yaxis = list(title = "y", range = c(0, 1)),
+    xaxis = list(title = "Value of X", range = c(0, 1), scaleanchor = "y"),
+    yaxis = list(title = "Value of Y", range = c(0, 1)),
     legend = list(orientation = "h", y = -0.2)
   )
 ```
@@ -368,9 +368,9 @@ z_mat <- outer(x_seq, y_seq, function(x, y) {
 plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
   plotly::add_surface(showscale = FALSE) |>
   plotly::layout(scene = list(
-    xaxis = list(title = "x"),
-    yaxis = list(title = "y"),
-    zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
+    xaxis = list(title = "Value of X"),
+    yaxis = list(title = "Value of Y"),
+    zaxis = list(title = "Joint density, f(x, y)", range = c(0, 2.5)),
     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
   ))
 ```

@@ -37,6 +37,8 @@ exclude = [
   "https://www.etymonline.com/.*",
   # Stanford su.domains server periodically throttles or times out under CI requests
   "https://adembo.su.domains/.*",
+  # probabilitybook.net times out from CI runners; the link works in a browser.
+  "https://www.probabilitybook.net/.*",
 ]
 
 # `pds` is a symlink to the repository root, so include paths read
