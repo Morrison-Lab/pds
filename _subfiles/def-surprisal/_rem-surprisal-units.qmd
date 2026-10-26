@@ -1,4 +1,4 @@
-::: {#rem-surprisal-units}
+:::{#rem-surprisal-units}
 #### Rarer outcomes are more surprising, and the logarithm base sets the unit
 
 An [outcome](probability-basics.qmd#def-experiment-outcome) with [probability](probability-basics.qmd#def-probability) $1$ has [surprisal](#def-surprisal) $0$,
