@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 03:27:31 (PDT)
+Last modified: 2026-10-26 04:06:49 (PDT)
 
 > **NOTE:**
 >
@@ -1544,9 +1544,11 @@ Last modified: 2026-10-26 03:27:31 (PDT)
 >
 > *Remark 14* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
+## 5 Further reading
+
 > **TIP:**
 >
-> Lange’s *Applied Probability* [\[18\]](#ref-lange2024applied) covers conditioning as a tool for computing expectations in Section 2.3, and tail-probability methods for expectations in Section 2.5.
+> Lange’s textbook [\[18\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
 
 ## References
 
