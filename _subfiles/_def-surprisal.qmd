@@ -8,7 +8,7 @@ $$\surprisalf{x} \eqdef -\log \P(X=x).$$
 
 The surprisal is also called the **self-information** [@goodfellow2016deep, p. 73]
 or the **information content** [@bishop2006prml, p. 49] of $x$.
-With the natural logarithm the surprisal is measured in nats, and with base 2 in bits.
+With the natural logarithm, the surprisal is measured in nats, and with base 2 in bits.
 Evaluating $\surprisalf{\cdot}$ at the [random variable](random-variables.qmd#def-random-variable) $X$ itself gives the random variable $\surprisalf{X}$, which equals $\surprisalf{x}$ when $X = x$.
 
 :::
