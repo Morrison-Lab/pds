@@ -1,0 +1,8 @@
+:::{#exr-cross-entropy-numeric-self}
+
+#### Cross-entropy of a mass function with itself
+
+Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ be a [probability mass function](random-variables.qmd#def-pmf) on $\set{1, 2, 3}$.
+Compute the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{p}$ in bits.
+
+:::
