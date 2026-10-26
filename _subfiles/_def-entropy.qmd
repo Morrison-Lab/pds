@@ -3,10 +3,10 @@
 
 The **entropy** of a *discrete* random variable $X$ with
 [probability mass function](random-variables.qmd#def-pmf) $\P(X=x)$
-is the [expectation](#def-expectation) of $-\log \P(X)$
+is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) $\surprisalf{X}$
 [@wikipedia_entropy_information_theory]:
 
-$$H(X) \eqdef \E{-\log \P(X)} = -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x)$$
+$$\entropyf{X} \eqdef \E{\surprisalf{X}} = -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x)$$
 
 A term with $\P(X=x) = 0$ is taken to be $0$,
 because $p \log p \to 0$ as $p \to 0$.

@@ -1,0 +1,7 @@
+:::{#rem-surprisal-rarity}
+#### Rarer values are more surprising
+
+A possible value $x$ with [probability](probability-basics.qmd#def-probability) $\P(X=x) = 1$ has [surprisal](#def-surprisal) $0$,
+and the surprisal grows without bound as $\P(X=x) \to 0$.
+
+:::
