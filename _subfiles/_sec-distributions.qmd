@@ -1527,7 +1527,7 @@ $$
 So the contour $\mahal(\vx) = 1$ of the $\Normal_2\paren{\vzero, \matr{\covmat}}$ density
 is an ellipse stretched along $\tp{(1, 1)}$, with half-length $\sqrt{3}$,
 and squeezed along $\tp{(1, -1)}$, with half-length $1$:
-$X_1$ and $X_2$ are positively correlated.
+$X_1$ and $X_2$ are positively correlated (@fig-mahalanobis-eigen).
 
 ```{r}
 #| label: mahalanobis-eigen-alt
@@ -1606,7 +1606,7 @@ if (knitr::is_html_output()) {
 ```
 
 The contours of the Mahalanobis distance at $1$ and $2$ for the covariance matrix of the example.
-The dots are the two points of the example on the inner ellipse.
+The dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner ellipse.
 :::
 
 :::
