@@ -2531,6 +2531,14 @@
   ],
   [
    "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
    "pds/random-variables#def-pmf"
   ],
   [
