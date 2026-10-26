@@ -78,7 +78,10 @@ plotly::plot_ly(
   plotly::layout(
     barmode = "group",
     xaxis = list(title = "Value of Y"),
-    yaxis = list(title = "Joint probability, P(X = x, Y = y)", range = c(0, 0.5)),
+    yaxis = list(
+      title = "Joint probability, P(X = x, Y = y)",
+      range = c(0, 0.5)
+    ),
     legend = list(title = list(text = "X value"))
   )
 ```
