@@ -11,7 +11,7 @@ $$
 &= \sum_{k : p_k > 0} g(k) \cd \P(X = k) \\
 &= -\sum_{k : p_k > 0} p_k \log q_k \\
 &= -\sumto{k}{K} p_k \log q_k \\
-&= H(p, q).
+&= \crossentropyf{p}{q}.
 \ea
 $$
 

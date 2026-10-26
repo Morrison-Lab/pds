@@ -8,7 +8,7 @@ The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
 is
 
-$$H(p, q) \eqdef -\sumto{k}{K} p_k \log q_k.$$
+$$\crossentropyf{p}{q} \eqdef -\sumto{k}{K} p_k \log q_k.$$
 
 A term with $p_k = 0$ is taken to be $0$, as for [entropy](#def-entropy).
 When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
@@ -54,7 +54,7 @@ When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
 ::: {#rem-cross-entropy-entropy}
 #### Entropy is the cross-entropy of a distribution with itself
 
-Setting $q = p$ gives $H(p, p) = -\sum_k p_k \log p_k$,
+Setting $q = p$ gives $\crossentropyf{p}{p} = -\sum_k p_k \log p_k$,
 which is the [entropy](#def-entropy) of a random variable with mass function $p$.
 
 :::
@@ -68,7 +68,7 @@ For $p$ and $q$ as in @def-cross-entropy,
 the **Kullback--Leibler divergence** (**KL divergence**, or **relative entropy**)
 of $q$ from $p$ is
 
-$$\kldivf{p}{q} \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).$$
+$$\kldivf{p}{q} \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
 
 :::
 
@@ -92,13 +92,13 @@ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 
 $$
 \ba
-H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
+\crossentropyf{p}{q} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
 &= 1 + \tfrac{1}{2} \paren{2 - \log_2 3} \\
 &= 2 - \tfrac{1}{2} \log_2 3 \\
 &\approx 1.208, \\
-H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
+\crossentropyf{p}{p} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
 &= 1, \\
-\kldivf{p}{q} &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
+\kldivf{p}{q} &= \crossentropyf{p}{q} - \crossentropyf{p}{p} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 \ea
 $$
 
