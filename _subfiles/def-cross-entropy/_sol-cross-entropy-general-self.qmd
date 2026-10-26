@@ -1,9 +1,10 @@
 :::{#sol-cross-entropy-general-self}
 
-By [the expectation form of cross-entropy](#thm-cross-entropy-expectation) with $q = p$,
+By @thm-cross-entropy-expectation with $q = p$,
 $H(p, p) = \E{-\log p_X}$.
 Since $\P(X = k) = p_k$, we have $-\log p_X = \surprisalf{X}$, the [surprisal](#def-surprisal) of $X$.
-This is finite with [probability](probability-basics.qmd#def-probability) 1, because $X$ takes only values with $p_k > 0$.
+This is finite with [probability](probability-basics.qmd#def-probability) 1, because $X$ takes only values with $p_k > 0$,
+and the values with $p_k = 0$ contribute $0$ to both $H(p, p)$ and $\entropyf{X}$ by the convention in their definitions.
 So $H(p, p) = \E{\surprisalf{X}} = \entropyf{X}$ by the definition of [entropy](#def-entropy).
 
 :::
