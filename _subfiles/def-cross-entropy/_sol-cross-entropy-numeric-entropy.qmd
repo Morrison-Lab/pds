@@ -1,6 +1,6 @@
 :::{#sol-cross-entropy-numeric-entropy}
 
-The range of $X$ is $\set{1, 2, 3}$, and $\P(X = k) = p_k$, so
+The [range](random-variables.qmd#def-range) of $X$ is $\set{1, 2, 3}$, and $\P(X = k) = p_k$, so
 
 $$
 \ba
@@ -11,6 +11,6 @@ $$
 \ea
 $$
 
-This equals $H(p, p)$, because the two sums have the same terms.
+This equals $H(p, p)$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
 
 :::

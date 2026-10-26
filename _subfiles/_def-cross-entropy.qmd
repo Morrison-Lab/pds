@@ -81,6 +81,10 @@ When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-cross-entropy/_rem-cross-entropy-expected-surprisal.qmd >}}
+
+{{< slidebreak >}}
+
 :::{#def-kl-divergence}
 #### Kullback--Leibler divergence (KL divergence, relative entropy)
 
