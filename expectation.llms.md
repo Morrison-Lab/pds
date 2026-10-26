@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 11:11:11 (PDT)
+Last modified: 2026-10-26 11:50:43 (PDT)
 
 > **NOTE:**
 >
@@ -1476,19 +1476,35 @@ Last modified: 2026-10-26 11:11:11 (PDT)
 
 > **NOTE:**
 >
-> **Definition 21 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \mathbb{P}(X)\\ [\[15\]](#ref-wikipedia_entropy_information_theory):
+> **Definition 21 (Surprisal (**self-information**, **information content**))** The **surprisal** of a possible value \\x\\ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) \\X\\ with \\\mathbb{P}(X=x) \> 0\\ is
 >
-> \\H(X) \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[-\log \mathbb{P}(X)\right\]\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x)\\
+> \\{s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).\\
+>
+> The surprisal is also called the **self-information** [\[15, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[16, p. 49\]](#ref-bishop2006prml) of \\x\\. With the natural logarithm, the surprisal is measured in nats, and with base 2 in bits. Evaluating \\{s\mathopen{}\left(\cdot\right)\mathclose{}}\\ at the [random variable](random-variables.llms.md#def-random-variable) \\X\\ itself gives the random variable \\{s\mathopen{}\left(X\right)\mathclose{}}\\, which equals \\{s\mathopen{}\left(x\right)\mathclose{}}\\ when \\X = x\\. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of \\X\\ implicit.
+
+> **NOTE:**
+>
+> **Example 41 (Surprisal of the values of a biased coin flip)** Let \\X\\ be \\1\\ if one flip of a coin lands heads and \\0\\ if it lands tails, with \\\mathbb{P}(X=1) = \tfrac{1}{4}\\ and \\\mathbb{P}(X=0) = \tfrac{3}{4}\\. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value \\1\\ (heads) is \\{s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2\\ bits, and the surprisal of the value \\0\\ (tails) is \\{s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415\\ bits. For a fair coin, each value of \\X\\ has surprisal \\-\log_2 \tfrac{1}{2} = 1\\ bit.
+
+> **NOTE:**
+>
+> *Remark 9* (Rarer values are more surprising). A possible value \\x\\ with [probability](probability-basics.llms.md#def-probability) \\\mathbb{P}(X=x) = 1\\ has [surprisal](#def-surprisal) \\0\\, and the surprisal grows without bound as \\\mathbb{P}(X=x) \to 0\\.
+
+> **NOTE:**
+>
+> **Definition 22 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\ [\[17\]](#ref-wikipedia_entropy_information_theory):
+>
+> \\{H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x)\\
 >
 > A term with \\\mathbb{P}(X=x) = 0\\ is taken to be \\0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
 
 > **NOTE:**
 >
-> *Remark 9* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 10* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
-> **Example 41 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 42 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1504,11 +1520,11 @@ Last modified: 2026-10-26 11:11:11 (PDT)
 
 > **NOTE:**
 >
-> *Remark 10* (Where the definition comes from). Murphy [\[16, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 11* (Where the definition comes from). Murphy [\[18, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
-> **Definition 22 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[17\]](#ref-wikipedia_cross_entropy) is
+> **Definition 23 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[19\]](#ref-wikipedia_cross_entropy) is
 >
 > \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1552,7 +1568,7 @@ Last modified: 2026-10-26 11:11:11 (PDT)
 
 > **NOTE:**
 >
-> *Solution 7*. By [Definition 22](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. Also \\-\log q_X \ge 0\\ always, and \\-\log q_X = \infty\\ with [probability](probability-basics.llms.md#def-probability) at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\ as well. Both are infinite, so they are still equal.
+> *Solution 7*. By [Definition 23](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. Also \\-\log q_X \ge 0\\ always, and \\-\log q_X = \infty\\ with [probability](probability-basics.llms.md#def-probability) at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\ as well. Both are infinite, so they are still equal.
 
 > **NOTE:**
 >
@@ -1570,21 +1586,21 @@ Last modified: 2026-10-26 11:11:11 (PDT)
 
 > **NOTE:**
 >
-> *Remark 11* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\{H\mathopen{}\left(p, p\right)\mathclose{}} = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
+> *Remark 12* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\{H\mathopen{}\left(p, p\right)\mathclose{}} = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
 
 > **NOTE:**
 >
-> **Definition 23 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 22](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
+> **Definition 24 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 23](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.\\
 
 > **NOTE:**
 >
-> *Remark 12* (The divergence is not symmetric). In general, \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \ne {{D\_{\mathrm{KL}}}\mathopen{}\left(q \\\Vert\\ p\right)\mathclose{}}\\, so KL divergence is not a distance between \\p\\ and \\q\\.
+> *Remark 13* (The divergence is not symmetric). In general, \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \ne {{D\_{\mathrm{KL}}}\mathopen{}\left(q \\\Vert\\ p\right)\mathclose{}}\\, so KL divergence is not a distance between \\p\\ and \\q\\.
 
 > **NOTE:**
 >
-> **Example 42 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 43 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
@@ -1592,13 +1608,13 @@ Last modified: 2026-10-26 11:11:11 (PDT)
 
 > **NOTE:**
 >
-> *Remark 13* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 14* (Where the definitions come from). Murphy [\[18, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## 5 Further reading
 
 > **TIP:**
 >
-> Lange’s textbook [\[18\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
+> Lange’s textbook [\[20\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
 
 ## References
 
@@ -1660,17 +1676,25 @@ Wikipedia contributors, “Risk function — Wikipedia, the free encyclopedia.�
 
 \[15\]
 
-Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
+I. Goodfellow, Y. Bengio, and A. Courville, *Deep learning*. Cambridge, MA: MIT Press, 2016. Available: <https://www.deeplearningbook.org/>
 
 \[16\]
 
-K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+C. M. Bishop, *Pattern recognition and machine learning*. in Information science and statistics. New York: Springer, 2006.
 
 \[17\]
 
-Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
 
 \[18\]
+
+K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+
+\[19\]
+
+Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+
+\[20\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
 

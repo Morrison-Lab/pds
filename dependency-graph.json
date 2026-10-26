@@ -756,6 +756,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#def-surprisal",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-surprisal",
+   "kind": "def",
+   "title": "Surprisal (**self-information**, **information content**)",
+   "external": false
+  },
+  {
    "id": "pds/expectation#lem-cross-term-zero",
    "site": "pds",
    "page": "expectation",
@@ -2367,6 +2376,10 @@
   ],
   [
    "pds/expectation#def-entropy",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-entropy",
    "pds/random-variables#def-pmf"
   ],
   [
@@ -2472,6 +2485,18 @@
   [
    "pds/expectation#def-squared-error-risk",
    "pds/expectation#def-prediction-error"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#lem-cross-term-zero",
