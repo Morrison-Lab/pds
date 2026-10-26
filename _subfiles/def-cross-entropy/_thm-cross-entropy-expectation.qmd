@@ -2,8 +2,8 @@
 #### Cross-entropy as an expected negative log probability
 
 Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$,
-and let $X$ have mass function $p$.
-Write $q_X$ for the random variable that equals $q_k$ when $X = k$.
+and let $X$ have [mass function](random-variables.qmd#def-pmf) $p$.
+Write $q_X$ for the [random variable](random-variables.qmd#def-random-variable) that equals $q_k$ when $X = k$.
 Then
 
 $$H(p, q) = \E{-\log q_X}.$$
