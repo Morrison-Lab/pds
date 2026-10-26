@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-24 20:18:53 (PDT)
+Last modified: 2026-10-26 09:08:35 (PDT)
 
 > **NOTE:**
 >
@@ -669,8 +669,11 @@ Last modified: 2026-10-24 20:18:53 (PDT)
 > > ) |>
 > >   plotly::layout(
 > >     barmode = "group",
-> >     xaxis = list(title = "Y"),
-> >     yaxis = list(title = "P(X = x, Y = y)", range = c(0, 0.5)),
+> >     xaxis = list(title = "Value of Y"),
+> >     yaxis = list(
+> >       title = "Joint probability, P(X = x, Y = y)",
+> >       range = c(0, 0.5)
+> >     ),
 > >     legend = list(title = list(text = "X value"))
 > >   )
 > > ```
@@ -805,8 +808,8 @@ Last modified: 2026-10-24 20:18:53 (PDT)
 > >     marker = list(size = 6, color = "#b40426")
 > >   ) |>
 > >   plotly::layout(
-> >     xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
-> >     yaxis = list(title = "y", range = c(0, 1)),
+> >     xaxis = list(title = "Value of X", range = c(0, 1), scaleanchor = "y"),
+> >     yaxis = list(title = "Value of Y", range = c(0, 1)),
 > >     legend = list(orientation = "h", y = -0.2)
 > >   )
 > > ```
@@ -839,9 +842,9 @@ Last modified: 2026-10-24 20:18:53 (PDT)
 > > plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
 > >   plotly::add_surface(showscale = FALSE) |>
 > >   plotly::layout(scene = list(
-> >     xaxis = list(title = "x"),
-> >     yaxis = list(title = "y"),
-> >     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
+> >     xaxis = list(title = "Value of X"),
+> >     yaxis = list(title = "Value of Y"),
+> >     zaxis = list(title = "Joint density, f(x, y)", range = c(0, 2.5)),
 > >     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
 > >   ))
 > > ```
@@ -1074,8 +1077,11 @@ Last modified: 2026-10-24 20:18:53 (PDT)
 > > ) |>
 > >   plotly::add_lines() |>
 > >   plotly::layout(
-> >     xaxis = list(title = "x"),
-> >     yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
+> >     xaxis = list(title = "Value of X"),
+> >     yaxis = list(
+> >       title = "Joint density, f<sub>X,Y</sub>(x, y)",
+> >       range = c(0, 0.55)
+> >     ),
 > >     legend = list(title = list(text = "Y value"))
 > >   )
 > > ```
@@ -1538,6 +1544,12 @@ Last modified: 2026-10-24 20:18:53 (PDT)
 >
 > *Remark 14* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
+## 5 Further reading
+
+> **TIP:**
+>
+> Lange’s textbook [\[18\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
+
 ## References
 
 \[1\]
@@ -1607,5 +1619,9 @@ K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive compu
 \[17\]
 
 Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+
+\[18\]
+
+K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
 
 Back to top

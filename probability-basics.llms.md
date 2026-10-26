@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-24 20:18:53 (PDT)
+Last modified: 2026-10-26 09:08:35 (PDT)
 
 ## 1 Defining probabilities
 
@@ -553,6 +553,10 @@ brFP = (brN - brSick) * (1 - brSpec)
 >
 > 5MinuteAI’s five-minute videos follow the same course [\[16\]](#ref-fiveminuteai_probstat): [introduction to discrete probability](https://www.youtube.com/watch?v=LfdTIvLfdtA) and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 
+> **TIP:**
+>
+> Lange’s textbook [\[17\]](#ref-lange2024applied) reviews [probability](#def-probability) and [expectation](expectation.llms.md#def-expectation) in Section 1.2 and [conditional probability](#def-conditional-prob) in Section 1.3.
+
 ## References
 
 \[1\]
@@ -618,5 +622,9 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[16\]
 
 5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+
+\[17\]
+
+K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
 
 Back to top
