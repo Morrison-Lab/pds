@@ -531,6 +531,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#cor-cross-entropy-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-cross-entropy-entropy",
+   "kind": "cor",
+   "title": "Entropy is the cross-entropy of a distribution with itself",
+   "external": false
+  },
+  {
    "id": "pds/expectation#cor-fubini-joint",
    "site": "pds",
    "page": "expectation",
@@ -2309,6 +2318,14 @@
   [
    "pds/expectation#cor-cond-expectation-general-y",
    "pds/expectation#def-cond-mixed"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-pmf"
   ],
   [
    "pds/expectation#cor-fubini-joint",

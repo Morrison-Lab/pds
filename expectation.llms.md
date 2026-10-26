@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 11:50:43 (PDT)
+Last modified: 2026-10-26 11:59:37 (PDT)
 
 > **NOTE:**
 >
@@ -1586,7 +1586,45 @@ Last modified: 2026-10-26 11:50:43 (PDT)
 
 > **NOTE:**
 >
-> *Remark 12* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\{H\mathopen{}\left(p, p\right)\mathclose{}} = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
+> **Exercise 12 (Cross-entropy of a mass function with itself)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ be a [probability mass function](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ in bits.
+
+> **NOTE:**
+>
+> *Solution 8*. \\ \begin{aligned} {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot 1 + \tfrac{1}{4} \cdot 2 + \tfrac{1}{4} \cdot 2 \\ &= \tfrac{3}{2} \text{ bits}. \end{aligned} \\
+
+> **NOTE:**
+>
+> **Exercise 13 (Entropy of a random variable with a given mass function)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [entropy](#def-entropy) \\{H\mathopen{}\left(X\right)\mathclose{}}\\ in bits from its definition. Compare it with your value of \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ from [Exercise 12](#exr-cross-entropy-numeric-self).
+
+> **NOTE:**
+>
+> *Solution 9*. The [range](random-variables.llms.md#def-range) of \\X\\ is \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\, and \\\mathbb{P}(X = k) = p_k\\, so
+>
+> \\ \begin{aligned} {H\mathopen{}\left(X\right)\mathclose{}} &= -\sum\_{k \in \mathcal{R}(X)} \mathbb{P}(X = k) \log_2 \mathbb{P}(X = k) \\ &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\ &= \tfrac{3}{2} \text{ bits}. \end{aligned} \\
+>
+> This equals \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
+
+> **NOTE:**
+>
+> **Exercise 14 (Entropy as a cross-entropy, for any mass function)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p\\ on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\. Show that \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\.
+
+> **NOTE:**
+>
+> *Solution 10*. By [Theorem 14](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p_X = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+
+> **NOTE:**
+>
+> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p\\ on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\. Then
+>
+> \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}.\\
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 14](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, the [random variable](random-variables.llms.md#def-random-variable) \\-\log p_X\\ is the [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+
+> **NOTE:**
+>
+> *Remark 12* (Cross-entropy is an expected surprisal). By [Theorem 14](#thm-cross-entropy-expectation), the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q_k\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
