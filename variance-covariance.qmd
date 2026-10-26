@@ -42,6 +42,11 @@ format:
 
 <!-- No slidebreak here: the heading shares its slide with the def-variance div. -->
 
+```{r}
+#| include: false
+reticulate::py_require(c("numpy", "pandas", "matplotlib"))
+```
+
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
 ## The best constant prediction {#sec-best-constant-prediction}
@@ -60,11 +65,6 @@ format:
 <!-- No slidebreak here: the heading shares its slide with the def-cov div. -->
 
 {{< include pds/_subfiles/_def-covariance.qmd >}}
-
-```{r}
-#| include: false
-reticulate::py_require(c("numpy", "pandas"))
-```
 
 {{< include pds/_subfiles/_exm-cor-auto.qmd >}}
 
