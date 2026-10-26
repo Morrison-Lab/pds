@@ -1527,7 +1527,87 @@ $$
 So the contour $\mahal(\vx) = 1$ of the $\Normal_2\paren{\vzero, \matr{\covmat}}$ density
 is an ellipse stretched along $\tp{(1, 1)}$, with half-length $\sqrt{3}$,
 and squeezed along $\tp{(1, -1)}$, with half-length $1$:
-$X_1$ and $X_2$ are positively correlated.
+$X_1$ and $X_2$ are positively correlated (@fig-mahalanobis-eigen).
+
+```{r}
+#| label: mahalanobis-eigen-alt
+#| echo: false
+# The alt text, saved once for the figure and its interactive widget.
+fig_alt_mahal_eigen <- paste(
+  "Contour plot of the Mahalanobis distance for a bivariate normal density",
+  "with variances 2 and covariance 1, in the plane of x1 and x2.",
+  "The contours at distances 1 and 2 are nested ellipses",
+  "stretched along the line x2 = x1 and squeezed along the line x2 = -x1.",
+  "Two dots on the inner ellipse mark the points",
+  "that are the square root of 3 along (1, 1) over the square root of 2",
+  "and 1 along (1, -1) over the square root of 2."
+)
+```
+
+:::{#fig-mahalanobis-eigen}
+
+```{r}
+#| label: mahalanobis-eigen-plot
+#| code-fold: true
+#| echo: !expr knitr::is_html_output()
+#| message: false
+#| warning: false
+#| fig-alt: !expr fig_alt_mahal_eigen
+#| fig-height: 4.5
+#| fig-width: 5
+library(ggplot2)
+
+# The covariance matrix of the example and its eigendecomposition.
+covmat <- matrix(c(2, 1, 1, 2), nrow = 2)
+eig <- eigen(covmat)
+stopifnot(all.equal(eig$values, c(3, 1)))
+
+# The Mahalanobis distance of each grid point from the mean zero.
+grid <- expand.grid(
+  x1 = seq(-3.5, 3.5, length.out = 200),
+  x2 = seq(-3.5, 3.5, length.out = 200)
+)
+grid_matrix <- as.matrix(grid)
+grid$mahal <- sqrt(rowSums((grid_matrix %*% solve(covmat)) * grid_matrix))
+
+# The points of the example: sqrt(3) q1 and q2, each at distance 1.
+q1 <- c(1, 1) / sqrt(2)
+q2 <- c(1, -1) / sqrt(2)
+examples <- data.frame(
+  x1 = c(sqrt(3) * q1[1], q2[1]),
+  x2 = c(sqrt(3) * q1[2], q2[2])
+)
+
+mahal_plot <- ggplot(grid) +
+  aes(x1, x2) +
+  geom_contour(
+    aes(z = mahal, colour = factor(after_stat(level))),
+    breaks = c(1, 2)
+  ) +
+  geom_point(data = examples, size = 2.5) +
+  scale_colour_viridis_d(name = "Mahalanobis distance", end = 0.7) +
+  coord_fixed(expand = FALSE) +
+  labs(x = "x1", y = "x2") +
+  theme(legend.position = "bottom")
+
+if (knitr::is_html_output()) {
+  htmltools::div(
+    role = "img",
+    `aria-label` = fig_alt_mahal_eigen,
+    plotly::ggplotly(mahal_plot) |>
+      plotly::layout(
+        legend = list(orientation = "h", x = 0.5, xanchor = "center", y = -0.25)
+      ) |>
+      plotly::config(displaylogo = FALSE, responsive = TRUE)
+  )
+} else {
+  mahal_plot
+}
+```
+
+The contours of the Mahalanobis distance at $1$ and $2$ for the example.
+The dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner ellipse.
+:::
 
 :::
 
