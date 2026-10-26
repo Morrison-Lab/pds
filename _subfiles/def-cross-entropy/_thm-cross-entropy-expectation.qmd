@@ -12,16 +12,16 @@ $$\crossentropyf{p}{q} = \E{-\log q_X}.$$
 
 ::: proof
 
-Let $g(k) \eqdef -\log q_k$.
+Let $g(k) \eqdef -\log q_k$, so that $-\log q_X = g(X)$.
 First suppose $q_k > 0$ whenever $p_k > 0$.
 Then $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability),
-and [LOTUS](expectation.qmd#thm-lotus) gives
+and [LOTUS](#thm-lotus) gives
 
 $$
 \ba
 \E{g(X)}
 &= \sum_{k : p_k > 0} g(k) \cd \P(X = k) && \text{(LOTUS)} \\
-&= -\sum_{k : p_k > 0} p_k \log q_k && \text{(} \P(X = k) = p_k \text{)} \\
+&= -\sum_{k : p_k > 0} p_k \log q_k && \text{(definition of } g \text{ and } \P(X = k) = p_k \text{)} \\
 &= -\sumto{k}{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\
 &= \crossentropyf{p}{q}. && \text{(definition)}
 \ea
