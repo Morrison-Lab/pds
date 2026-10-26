@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-23 13:20:10 (PDT)
+Last modified: 2026-10-26 12:25:05 (PDT)
 
 > **NOTE:**
 >
@@ -30,7 +30,30 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 1 (The standard Cauchy distribution has no expectation)** A random variable whose expectation is not defined is not exotic. Let \\X\\ have the standard Cauchy distribution, with density \\\operatorname{p}(X=x) = \frac{1}{\pi(1 + x^2)}\\ for every real \\x\\. For \\x \ge 0\\, \\\frac{1}{2\pi}\log(1 + x^2)\\ is an antiderivative of \\\mathopen{}\left\|x\right\|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{x}{\pi(1 + x^2)}\\, and for \\x \le 0\\, \\-\frac{1}{2\pi}\log(1 + x^2)\\ is an antiderivative of \\\mathopen{}\left\|x\right\|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{-x}{\pi(1 + x^2)}\\. So, integrating over each half-line:
+> *Remark 1* (Expectation is a probability-weighted average). The [expectation](#def-expectation) of a [random variable](random-variables.llms.md#def-random-variable) \\X\\ is a [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) of the values of \\X\\, and the probabilities are the [weights](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weight).
+>
+> - A [discrete random variable](random-variables.llms.md#def-discrete-rv) has a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over its possible values. Each value \\x\\ is multiplied by its weight \\\mathbb{P}(X=x)\\, and the products are added. The weights are non-negative and add to \\1\\.
+> - A [continuous random variable](random-variables.llms.md#def-continuous-rv) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over its possible values. Each value \\x\\ is multiplied by its weight, the [density](random-variables.llms.md#def-pdf) \\\operatorname{p}(X=x)\\, and the products are accumulated. The density is non-negative and integrates to \\1\\.
+>
+> The [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of \\n\\ numbers \\y_1, \ldots, y_n\\ is the special case with every weight equal to \\1/n\\:
+>
+> \\\frac{1}{n}\sum\_{i=1}^ny_i = \sum\_{i=1}^ny_i \cdot\frac{1}{n}\\
+>
+> A value with a larger [probability](probability-basics.llms.md#def-probability) counts for more in the expectation. The expectation is the balance point of the possible values: the point where a ruler would balance if each value \\x\\ carried a weight proportional to \\\mathbb{P}(X=x)\\.
+
+> **NOTE:**
+>
+> **Example 1 (Expectation of a fair die roll)** Let \\Y\\ be the result of a fair die roll, so the [range](random-variables.llms.md#def-range) is \\\mathcal{R}(Y) ={\mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}}\\ and \\\mathbb{P}(Y=y) = 1/6\\ for each \\y\\ in the range. Every value has the same weight, so the [expectation](#def-expectation) is the ordinary [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of \\1, \ldots, 6\\:
+>
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= \sum\_{y \in {\mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}}} y \cdot\mathbb{P}(Y=y) && \text{(definition of expectation for discrete r.v.)}\\ &= \mathopen{}\left(1 + 2 + 3 + 4 + 5 + 6\right)\mathclose{} \cdot\frac{1}{6} && \text{(every weight is } 1/6 \text{)}\\ &= \frac{21}{6} && \text{(add)}\\ &= 3.5 && \text{(divide)} \end{aligned} \\
+>
+> Now load the die so that the result \\6\\ has [probability](probability-basics.llms.md#def-probability) \\1/2\\, and each of \\1, \ldots, 5\\ has probability \\1/10\\. The weights still add to \\1\\, and the expectation moves toward \\6\\:
+>
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= \mathopen{}\left(1 + 2 + 3 + 4 + 5\right)\mathclose{} \cdot\frac{1}{10} + 6 \cdot\frac{1}{2} && \text{(weights } 1/10 \text{ and } 1/2 \text{)}\\ &= 1.5 + 3 && \text{(multiply)}\\ &= 4.5 && \text{(add)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 2 (The standard Cauchy distribution has no expectation)** A random variable whose expectation is not defined is not exotic. Let \\X\\ have the standard Cauchy distribution, with density \\\operatorname{p}(X=x) = \frac{1}{\pi(1 + x^2)}\\ for every real \\x\\. For \\x \ge 0\\, \\\frac{1}{2\pi}\log(1 + x^2)\\ is an antiderivative of \\\mathopen{}\left\|x\right\|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{x}{\pi(1 + x^2)}\\, and for \\x \le 0\\, \\-\frac{1}{2\pi}\log(1 + x^2)\\ is an antiderivative of \\\mathopen{}\left\|x\right\|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{-x}{\pi(1 + x^2)}\\. So, integrating over each half-line:
 >
 > \\ \begin{aligned} \int\_{0}^{\infty} \mathopen{}\left\|x\right\|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)}\\dx &= \lim\_{b \to \infty} \mathopen{}\left\[\frac{1}{2\pi}\log(1 + x^2)\right\]\mathclose{}\_{0}^{b} && \text{(antiderivative on } \[0, \infty) \text{)} \\ &= \lim\_{b \to \infty} \frac{1}{2\pi}\log(1 + b^2) && \text{(evaluate at the bounds; } \log 1 = 0 \text{)} \\ &= \infty && \text{(} \log(1 + b^2) \to \infty \text{ as } b \to \infty \text{)} \end{aligned} \\
 >
@@ -66,7 +89,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 2 (Mean of an exponential random variable via survival function)** Let \\T\\ be [exponential](random-variables.llms.md#def-exponential) with rate \\{\lambda}\> 0\\, so \\\operatorname{S}(t) = \text{e}^{-{\lambda}t}\\ for \\t \ge 0\\, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
+> **Example 3 (Mean of an exponential random variable via survival function)** Let \\T\\ be [exponential](random-variables.llms.md#def-exponential) with rate \\{\lambda}\> 0\\, so \\\operatorname{S}(t) = \text{e}^{-{\lambda}t}\\ for \\t \ge 0\\, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \int_0^\infty \operatorname{S}(t)\\dt && \text{(expectation via the survival function)}\\ &= \int_0^\infty \text{e}^{-{\lambda}t}\\dt && \text{(substitute the survival function)}\\ &= \mathopen{}\left\[-\frac{1}{{\lambda}}\text{e}^{-{\lambda}t}\right\]\mathclose{}\_0^\infty && \text{(antiderivative)}\\ &= 0 - \mathopen{}\left(-\frac{1}{{\lambda}}\right)\mathclose{} && \text{(evaluate at the bounds)}\\ &= \frac{1}{{\lambda}} && \text{(simplify)} \end{aligned} \\
 
@@ -82,7 +105,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 3 (Expectation of a random vector of coin flips)** For the two fair coin flips in [the independence page’s example](independence.llms.md#exm-indpt), the random vector \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\\ is a \\2 \times 1\\ random matrix, and:
+> **Example 4 (Expectation of a random vector of coin flips)** For the two fair coin flips in [the independence page’s example](independence.llms.md#exm-indpt), the random vector \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\\ is a \\2 \times 1\\ random matrix, and:
 >
 > \\\mathbb{E}\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= \begin{pmatrix}{\mathbb{E}\mathopen{}\left\[X_1\right\]\mathclose{}} \\ {\mathbb{E}\mathopen{}\left\[X_2\right\]\mathclose{}}\end{pmatrix} = \begin{pmatrix}1/2 \\ 1/2\end{pmatrix}\\
 >
@@ -112,13 +135,13 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 4 (Expected value of \\X^2\\ for a Bernoulli variable)** Let \\X \sim \operatorname{Ber}(\pi)\\. By LOTUS ([Theorem 3](#thm-lotus), discrete case):
+> **Example 5 (Expected value of \\X^2\\ for a Bernoulli variable)** Let \\X \sim \operatorname{Ber}(\pi)\\. By LOTUS ([Theorem 3](#thm-lotus), discrete case):
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} &= \sum\_{x \in {\mathopen{}\left\\0,1\right\\\mathclose{}}} x^2 \cdot\mathbb{P}(X=x) && \text{(LOTUS, discrete case)} \\ &= 0^2 \cdot\mathbb{P}(X=0) + 1^2 \cdot\mathbb{P}(X=1) && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)} \\ &= 0^2 \cdot(1-\pi) + 1^2 \cdot\pi && \text{(substitute Bernoulli PMF values)} \\ &= 0 + \pi && \text{(simplify each term)} \\ &= \pi && \text{(add)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 5 (Expected value of \\X^2\\ for a Uniform(0,1) variable)** Let \\X \sim \text{Uniform}(0,1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), so \\\operatorname{p}(X=x) = 1\\ for \\x \in \[0,1\]\\. By LOTUS ([Theorem 3](#thm-lotus), continuous case):
+> **Example 6 (Expected value of \\X^2\\ for a Uniform(0,1) variable)** Let \\X \sim \text{Uniform}(0,1)\\ ([uniform distribution](random-variables.llms.md#def-uniform)), so \\\operatorname{p}(X=x) = 1\\ for \\x \in \[0,1\]\\. By LOTUS ([Theorem 3](#thm-lotus), continuous case):
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} &= \int_0^1 x^2 \cdot\operatorname{p}(X=x)\\dx && \text{(LOTUS, continuous case)} \\&= \int_0^1 x^2 \cdot 1\\dx && \text{(}\operatorname{p}(X=x) = 1\text{ on } \[0,1\]\text{)} \\&= \mathopen{}\left\[\frac{x^3}{3}\right\]\mathclose{}\_0^1 && \text{(antiderivative of } x^2\text{)} \\&= \frac{1}{3}. && \text{(evaluate at the bounds)} \end{aligned} \\
 
@@ -140,7 +163,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 6 (Expected total of two dice)** Let \\X\\ and \\Y\\ be the results of two six-sided die rolls. Each has expectation
+> **Example 7 (Expected total of two dice)** Let \\X\\ and \\Y\\ be the results of two six-sided die rolls. Each has expectation
 >
 > \\ \begin{aligned} \sum\_{x=1}^{6} x \cdot\tfrac{1}{6} &= \tfrac{21}{6} \\ &= 3.5, \end{aligned} \\
 >
@@ -166,7 +189,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 7 (Expectation of a rescaled uniform variable)** Let \\X \sim \text{Uniform}(0,1)\\, so
+> **Example 8 (Expectation of a rescaled uniform variable)** Let \\X \sim \text{Uniform}(0,1)\\, so
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} &= \int_0^1 x\\dx \\ &= \tfrac{1}{2}. \end{aligned} \\
 >
@@ -194,7 +217,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 8 (Expected total of five dice)** Let \\X_1, \ldots, X_5\\ be the [outcomes](probability-basics.llms.md#def-experiment-outcome) of five rolls of a fair die. Each roll has [expectation](expectation.llms.md#def-expectation) \\{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} = 3.5\\. Applying [Lemma 1](#lem-linearity-finite-sum) with every \\a_i = 1\\ gives the expected total:
+> **Example 9 (Expected total of five dice)** Let \\X_1, \ldots, X_5\\ be the [outcomes](probability-basics.llms.md#def-experiment-outcome) of five rolls of a fair die. Each roll has [expectation](expectation.llms.md#def-expectation) \\{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} = 3.5\\. Applying [Lemma 1](#lem-linearity-finite-sum) with every \\a_i = 1\\ gives the expected total:
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[\sum\_{i=1}^5 X_i\right\]\mathclose{}} &= \sum\_{i=1}^5 {\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation for finite sums)} \\ &= 5 \cdot 3.5 && \text{(each roll has expectation } 3.5 \text{)} \\ &= 17.5 && \text{(multiply)} \end{aligned} \\
 
@@ -234,7 +257,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
+> **Example 10 (Conditional PMF from a vaccine trial)** The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: \\X\\ is treatment group (placebo or vaccine) and \\Y\\ is the level of response to treatment (small, moderate, or large).
 >
 > Show code
 >
@@ -275,7 +298,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 10 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
+> **Example 11 (Conditional PDF from a bivariate normal model of birthweight data)** The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let \\X\\ be gestational age and \\Y\\ be birthweight, pooling both sexes into \\n = 24\\ observations.
 >
 > Show code
 >
@@ -350,7 +373,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 11 (Conditional expectation from real trial and birthweight data)** **Discrete case.** Continuing [Example 9](#exm-cond-pmf), score the vaccine trial’s response levels \\\text{small} = 1\\, \\\text{moderate} = 2\\, \\\text{large} = 3\\. The conditional PMF of \\Y\\ given \\X = \text{placebo}\\ (from [Example 9](#exm-cond-pmf)) is:
+> **Example 12 (Conditional expectation from real trial and birthweight data)** **Discrete case.** Continuing [Example 10](#exm-cond-pmf), score the vaccine trial’s response levels \\\text{small} = 1\\, \\\text{moderate} = 2\\, \\\text{large} = 3\\. The conditional PMF of \\Y\\ given \\X = \text{placebo}\\ (from [Example 10](#exm-cond-pmf)) is:
 >
 > \\ \begin{aligned} \mathbb{P}(Y = \text{small} \mid X = \text{placebo}) &= \tfrac{25}{38} \\ \mathbb{P}(Y = \text{moderate} \mid X = \text{placebo}) &= \tfrac{8}{38} \\ \mathbb{P}(Y = \text{large} \mid X = \text{placebo}) &= \tfrac{5}{38} \end{aligned} \\
 >
@@ -358,7 +381,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y \mid X = \text{placebo}\right\]\mathclose{}} &= 1 \cdot\tfrac{25}{38} + 2 \cdot\tfrac{8}{38} + 3 \cdot\tfrac{5}{38} && \text{(definition of conditional expectation)} \\&= \frac{56}{38} && \text{(common denominator)} \\&\approx 1.47 && \text{(divide)} \end{aligned} \\
 >
-> **Continuous case.** Continuing [Example 10](#exm-cond-pdf), \\Y \mid X = 40 \sim {\operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}}\\. The mean of a normal distribution is its location parameter (Casella and Berger [\[6\]](#ref-CaseBerg01)), so integrating \\y\\ against this conditional density gives:
+> **Continuous case.** Continuing [Example 11](#exm-cond-pdf), \\Y \mid X = 40 \sim {\operatorname{N}\mathopen{}\left(3136.15,\\ 188.37^2\right)\mathclose{}}\\. The mean of a normal distribution is its location parameter (Casella and Berger [\[6\]](#ref-CaseBerg01)), so integrating \\y\\ against this conditional density gives:
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y \mid X = 40\right\]\mathclose{}} &= \int\_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\\dy && \text{(definition of conditional expectation)} \\&= 3136.15 \text{ g} && \text{(the mean of a normal distribution is its location parameter)} \end{aligned} \\
 >
@@ -386,7 +409,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 12 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
+> **Example 13 (Conditional expectation, one discrete variable and one continuous variable)** **\\X\\ discrete, \\Y\\ continuous.** The `plasma` dataset in the `dobson` package (Dobson and Barnett [\[8\]](#ref-dobson4e), Table 6.25) records plasma inorganic phosphate levels (mg/dL) one hour after a glucose tolerance test, for hyperinsulinemic obese (`H-O`) and control (`C`) participants. Let \\X\\ be group and \\Y\\ be phosphate level.
 >
 > Show code
 >
@@ -471,11 +494,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 13 (The conditional expectation function of the birthweight model)** Continuing [Example 10](#exm-cond-pdf) and [Example 11](#exm-cond-expectation), \\(X, Y)\\ (gestational age, birthweight) is modeled as bivariate normal. The general form of the conditional mean derived in [Example 10](#exm-cond-pdf), evaluated at an arbitrary \\x\\ instead of just \\x=40\\, gives the conditional expectation function directly:
+> **Example 14 (The conditional expectation function of the birthweight model)** Continuing [Example 11](#exm-cond-pdf) and [Example 12](#exm-cond-expectation), \\(X, Y)\\ (gestational age, birthweight) is modeled as bivariate normal. The general form of the conditional mean derived in [Example 11](#exm-cond-pdf), evaluated at an arbitrary \\x\\ instead of just \\x=40\\, gives the conditional expectation function directly:
 >
 > \\ \begin{aligned} g(x) &= \mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) \\&= -1484.9846 + 115.5283\\ x \end{aligned} \\
 >
-> which is exactly the fitted regression line (the general algebraic identity \\\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \mathopen{}\left(\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X\right)\mathclose{} + \rho\frac{\sigma_Y}{\sigma_X}x\\ is what makes the bivariate-normal conditional mean linear in \\x\\). As a check, evaluating at \\x = 40\\ recovers [Example 11](#exm-cond-expectation)’s result:
+> which is exactly the fitted regression line (the general algebraic identity \\\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X) = \mathopen{}\left(\mu_Y - \rho\frac{\sigma_Y}{\sigma_X}\mu_X\right)\mathclose{} + \rho\frac{\sigma_Y}{\sigma_X}x\\ is what makes the bivariate-normal conditional mean linear in \\x\\). As a check, evaluating at \\x = 40\\ recovers [Example 12](#exm-cond-expectation)’s result:
 >
 > \\g(40) = -1484.9846 + 115.5283 \times 40 = 3136.15 \text{ g}\\
 
@@ -493,7 +516,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 14 (The second flip, given the first)** In the [joint PMF of two coin flips](random-variables.llms.md#exm-joint-pmf), write \\X\\ for the first flip and \\Y\\ for the total number of heads. Given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with conditional probability \\1/2\\ each, and \\Y - X\\ is the second flip. With \\h(x, y) = (y - x)^2\\:
+> **Example 15 (The second flip, given the first)** In the [joint PMF of two coin flips](random-variables.llms.md#exm-joint-pmf), write \\X\\ for the first flip and \\Y\\ for the total number of heads. Given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with conditional probability \\1/2\\ each, and \\Y - X\\ is the second flip. With \\h(x, y) = (y - x)^2\\:
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[(Y - X)^2 \mid X = 1\right\]\mathclose{}} &= (1 - 1)^2 \cdot\tfrac{1}{2} + (2 - 1)^2 \cdot\tfrac{1}{2} && \text{(definition, with } x = 1 \text{)} \\ &= 0 + \tfrac{1}{2} && \text{(evaluate each term)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
 
@@ -549,7 +572,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 15 (Linearity, given the first flip)** Continuing [Example 14](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\{\mathbb{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} = 3/2\\ and
+> **Example 16 (Linearity, given the first flip)** Continuing [Example 15](#exm-cond-expectation-general), given \\X = 1\\, \\Y\\ is \\1\\ or \\2\\ with probability \\1/2\\ each, so \\{\mathbb{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} = 3/2\\ and
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y^2 \mid X = 1\right\]\mathclose{}} &= (1 + 4)/2 \\ &= 5/2. \end{aligned} \\
 >
@@ -589,7 +612,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 16 (Taking out the first flip)** Continuing [Example 15](#exm-cond-linearity), with \\g(x) = x\\ and \\h(x, y) = y\\:
+> **Example 17 (Taking out the first flip)** Continuing [Example 16](#exm-cond-linearity), with \\g(x) = x\\ and \\h(x, y) = y\\:
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[XY \mid X = 1\right\]\mathclose{}} &= 1 \cdot{\mathbb{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} && \text{(a function of } X \text{ factors out)} \\ &= \tfrac{3}{2} && \text{(substitute } {\mathbb{E}\mathopen{}\left\[Y \mid X = 1\right\]\mathclose{}} = \tfrac{3}{2} \text{)} \end{aligned} \\
 >
@@ -646,8 +669,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 > > ) |>
 > >   plotly::layout(
 > >     barmode = "group",
-> >     xaxis = list(title = "Y"),
-> >     yaxis = list(title = "P(X = x, Y = y)", range = c(0, 0.5)),
+> >     xaxis = list(title = "Value of Y"),
+> >     yaxis = list(
+> >       title = "Joint probability, P(X = x, Y = y)",
+> >       range = c(0, 0.5)
+> >     ),
 > >     legend = list(title = list(text = "X value"))
 > >   )
 > > ```
@@ -718,7 +744,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 17 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\{\mathbb{E}\mathopen{}\left\[XY\right\]\mathclose{}}\\.
+> **Example 18 (Expectation of a product of independent variables)** Let \\X \sim \mathrm{Uniform}(0, 1)\\ and \\Y \sim \mathrm{Uniform}(0, 2)\\, independently distributed. Compute \\{\mathbb{E}\mathopen{}\left\[XY\right\]\mathclose{}}\\.
 >
 > We apply [Corollary 3](#cor-fubini-joint) (both-continuous case) with \\h(x, y) = xy\\. Since \\X\\ and \\Y\\ are independent with densities \\f_X(x) = 1\\ on \\\[0,1\]\\ and \\f_Y(y) = \tfrac{1}{2}\\ on \\\[0,2\]\\, the joint density factors as
 >
@@ -734,7 +760,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (When independence fails: a counterexample)** Correctly applying [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
+> **Example 19 (When independence fails: a counterexample)** Correctly applying [Corollary 3](#cor-fubini-joint) requires the *actual* joint density \\f\_{X,Y}\\ — not the product of marginals \\f_X(x)\\f_Y(y)\\, which is valid only when \\X\\ and \\Y\\ are independent. Using the wrong joint density gives the wrong answer.
 >
 > Let \\X \sim \mathrm{Uniform}(0, 1)\\ and set \\Y = X\\ (so \\X\\ and \\Y\\ are perfectly correlated and **not** independent).
 >
@@ -782,8 +808,8 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 > >     marker = list(size = 6, color = "#b40426")
 > >   ) |>
 > >   plotly::layout(
-> >     xaxis = list(title = "x", range = c(0, 1), scaleanchor = "y"),
-> >     yaxis = list(title = "y", range = c(0, 1)),
+> >     xaxis = list(title = "Value of X", range = c(0, 1), scaleanchor = "y"),
+> >     yaxis = list(title = "Value of Y", range = c(0, 1)),
 > >     legend = list(orientation = "h", y = -0.2)
 > >   )
 > > ```
@@ -792,7 +818,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\{\mathbb{E}\mathopen{}\left\[X + Y\right\]\mathclose{}}\\.
+> **Example 20 (Both-continuous case: joint PDF on a non-rectangular support)** Let \\(X, Y)\\ have joint density \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\ (and \\0\\ otherwise). Compute \\{\mathbb{E}\mathopen{}\left\[X + Y\right\]\mathclose{}}\\.
 >
 > By [Corollary 3](#cor-fubini-joint):
 >
@@ -816,9 +842,9 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 > > plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
 > >   plotly::add_surface(showscale = FALSE) |>
 > >   plotly::layout(scene = list(
-> >     xaxis = list(title = "x"),
-> >     yaxis = list(title = "y"),
-> >     zaxis = list(title = "f(x, y)", range = c(0, 2.5)),
+> >     xaxis = list(title = "Value of X"),
+> >     yaxis = list(title = "Value of Y"),
+> >     zaxis = list(title = "Joint density, f(x, y)", range = c(0, 2.5)),
 > >     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
 > >   ))
 > > ```
@@ -855,7 +881,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 20 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
+> **Example 21 (Fuel economy by number of cylinders)** The Auto data record the number of engine cylinders and the fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same probability, and let \\X\\ be its number of cylinders and \\Y\\ its miles per gallon. Then \\\mathbb{P}(X = x)\\ is the fraction of cars with \\x\\ cylinders, and \\{\mathbb{E}\mathopen{}\left\[Y \mid X = x\right\]\mathclose{}}\\ from [Definition 5](#def-cond-expectation) is the average miles per gallon among those cars. The code below computes both for every \\x\\, then checks [Theorem 10](#thm-lie) by averaging the conditional means with weights \\\mathbb{P}(X = x)\\.
 >
@@ -933,7 +959,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 21 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\mathbb{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
+> **Example 22 (Marginal expectation from conditional expectations)** Suppose \\X\\ is a binary random variable indicating treatment assignment (\\X=1\\ treated, \\X=0\\ control), with \\\mathbb{P}(X=1) = 0.5\\, and suppose the outcome \\Y\\ has conditional expectations:
 >
 > \\{\mathbb{E}\mathopen{}\left\[Y \mid X=1\right\]\mathclose{}} = 10, \quad {\mathbb{E}\mathopen{}\left\[Y \mid X=0\right\]\mathclose{}} = 6\\
 >
@@ -1051,8 +1077,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 > > ) |>
 > >   plotly::add_lines() |>
 > >   plotly::layout(
-> >     xaxis = list(title = "x"),
-> >     yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
+> >     xaxis = list(title = "Value of X"),
+> >     yaxis = list(
+> >       title = "Joint density, f<sub>X,Y</sub>(x, y)",
+> >       range = c(0, 0.55)
+> >     ),
 > >     legend = list(title = list(text = "Y value"))
 > >   )
 > > ```
@@ -1129,13 +1158,13 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 22 (Predictions of a die roll)** Let \\Y\\ be the number shown by a fair six-sided die. The constant \\\hat y= 3\\ is a [prediction](#def-prediction) of \\Y\\.
+> **Example 23 (Predictions of a die roll)** Let \\Y\\ be the number shown by a fair six-sided die. The constant \\\hat y= 3\\ is a [prediction](#def-prediction) of \\Y\\.
 >
 > Let \\X\\ be the indicator that \\Y\\ is even. The function \\g(X) = 2 + 2X\\ is also a prediction of \\Y\\: it guesses \\2\\ when \\Y\\ is odd and \\4\\ when \\Y\\ is even.
 
 > **NOTE:**
 >
-> *Remark 1* (A prediction from a random input is random). When no covariate or feature is available, a prediction is a single number \\\hat y\\ (such as a constant \\c\\). When an informative random variable \\X\\ is observed, a prediction is a function \\g(X)\\, which is itself a random variable because \\X\\ is random.
+> *Remark 2* (A prediction from a random input is random). When no covariate or feature is available, a prediction is a single number \\\hat y\\ (such as a constant \\c\\). When an informative random variable \\X\\ is observed, a prediction is a function \\g(X)\\, which is itself a random variable because \\X\\ is random.
 
 > **NOTE:**
 >
@@ -1143,7 +1172,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 23 (A loss function that charges more for overpredicting)** Let \\L(y, \hat y)\\ cost \\2\\ per unit of overprediction and \\1\\ per unit of underprediction:
+> **Example 24 (A loss function that charges more for overpredicting)** Let \\L(y, \hat y)\\ cost \\2\\ per unit of overprediction and \\1\\ per unit of underprediction:
 >
 > \\ L(y, \hat y) = \begin{cases} 2\mathopen{}\left(\hat y- y\right)\mathclose{} & \text{if } \hat y\> y \\ y - \hat y& \text{if } \hat y\le y. \end{cases} \\
 >
@@ -1157,7 +1186,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 24 (Squared error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [squared error loss](#def-squared-error-loss) is
+> **Example 25 (Squared error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [squared error loss](#def-squared-error-loss) is
 >
 > \\{\mathopen{}\left(2 - 7\right)\mathclose{}}^{2} = 25.\\
 
@@ -1169,13 +1198,13 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 25 (Absolute error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [absolute error loss](#def-absolute-error-loss) is
+> **Example 26 (Absolute error loss for one prediction)** For the true value \\y = 2\\ and the prediction \\\hat y= 7\\, the [absolute error loss](#def-absolute-error-loss) is
 >
 > \\\mathopen{}\left\|2 - 7\right\|\mathclose{} = 5.\\
 
 > **NOTE:**
 >
-> *Remark 2* (Squared error loss is the most common choice). Hastie et al. [\[13, p. 18\]](#ref-hastie2009elements) call squared error loss “by far the most common and convenient” choice.
+> *Remark 3* (Squared error loss is the most common choice). Hastie et al. [\[13, p. 18\]](#ref-hastie2009elements) call squared error loss “by far the most common and convenient” choice.
 
 > **NOTE:**
 >
@@ -1185,7 +1214,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 26 (Risk of a constant prediction)** Let \\Y\\ be a random variable with \\\mathbb{P}(Y = 0) = 0.5\\ and \\\mathbb{P}(Y = 2) = 0.5\\, and use the constant [prediction](#def-prediction) \\\hat y= 0\\. The [risk](#def-risk) under [squared error loss](#def-squared-error-loss) is
+> **Example 27 (Risk of a constant prediction)** Let \\Y\\ be a random variable with \\\mathbb{P}(Y = 0) = 0.5\\ and \\\mathbb{P}(Y = 2) = 0.5\\, and use the constant [prediction](#def-prediction) \\\hat y= 0\\. The [risk](#def-risk) under [squared error loss](#def-squared-error-loss) is
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y - 0\right)\mathclose{}}^{2}\right\]\mathclose{}} &= 0.5 \cdot{\mathopen{}\left(0 - 0\right)\mathclose{}}^{2} + 0.5 \cdot{\mathopen{}\left(2 - 0\right)\mathclose{}}^{2} \\ &= 2. \end{aligned} \\
 >
@@ -1195,7 +1224,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark 3* (Risk measures the quality of a prediction). The quality of a prediction is evaluated using a [loss function](#def-loss-function) and its expected value, the [risk](#def-risk).
+> *Remark 4* (Risk measures the quality of a prediction). The quality of a prediction is evaluated using a [loss function](#def-loss-function) and its expected value, the [risk](#def-risk).
 
 > **NOTE:**
 >
@@ -1223,7 +1252,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark 4* (The best prediction depends on the loss). In [Exercise 6](#exr-loss) (parts 2 and 3), the [risk](#def-risk) of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
+> *Remark 5* (The best prediction depends on the loss). In [Exercise 6](#exr-loss) (parts 2 and 3), the [risk](#def-risk) of the prediction \\c = 1\\ is \\5\\ for squared error loss and \\2\\ for absolute error loss. The risk of the prediction \\c = 2\\ is \\4\\ for squared error loss and \\2\\ for absolute error loss.
 >
 > The prediction with the smallest risk depends on the loss. In [Exercise 6](#exr-loss), every constant \\c\\ from \\0\\ to \\4\\ has absolute error risk \\2\\, because
 >
@@ -1261,7 +1290,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 27 (The outcome in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the outcome \\Y\\ takes the values \\0\\ and \\2\\ when the input is \\0\\, and the values \\4\\ and \\6\\ when the input is \\1\\.
+> **Example 28 (The outcome in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the outcome \\Y\\ takes the values \\0\\ and \\2\\ when the input is \\0\\, and the values \\4\\ and \\6\\ when the input is \\1\\.
 
 > **NOTE:**
 >
@@ -1269,7 +1298,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 28 (The input in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the input \\X\\ takes the values \\0\\ and \\1\\, each with probability \\0.5\\.
+> **Example 29 (The input in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the input \\X\\ takes the values \\0\\ and \\1\\, each with probability \\0.5\\.
 
 > **NOTE:**
 >
@@ -1277,7 +1306,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 29 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), suppose the new observation \\(X, Y)\\ satisfies the suppositions of its [definition](#def-new-observation), with the joint distribution given in the exercise as the population it is drawn from. Suppose also that its input is observed to be \\X= 1\\. Then its unobserved outcome is \\4\\ or \\6\\ with equal probability, and a [prediction](#def-prediction) of \\5\\ is a guess for that outcome.
+> **Example 30 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), suppose the new observation \\(X, Y)\\ satisfies the suppositions of its [definition](#def-new-observation), with the joint distribution given in the exercise as the population it is drawn from. Suppose also that its input is observed to be \\X= 1\\. Then its unobserved outcome is \\4\\ or \\6\\ with equal probability, and a [prediction](#def-prediction) of \\5\\ is a guess for that outcome.
 
 > **NOTE:**
 >
@@ -1287,7 +1316,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 30 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
+> **Example 31 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
 
 > **NOTE:**
 >
@@ -1297,11 +1326,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 31 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\.
+> **Example 32 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\.
 
 > **NOTE:**
 >
-> *Remark 5* (The squared-error risk is a risk). The [squared-error risk](#def-squared-error-risk) is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
+> *Remark 6* (The squared-error risk is a risk). The [squared-error risk](#def-squared-error-risk) is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
 
 > **NOTE:**
 >
@@ -1315,7 +1344,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 32 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
+> **Example 33 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
 
 > **NOTE:**
 >
@@ -1335,7 +1364,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 33 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1 - Y\\ is \\1\\ or \\-1\\ with equal [probability](#def-probability), so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
+> **Example 34 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1 - Y\\ is \\1\\ or \\-1\\ with equal [probability](#def-probability), so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
 
 > **NOTE:**
 >
@@ -1351,7 +1380,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 34 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\f_1\\.
+> **Example 35 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\f_1\\.
 
 > **NOTE:**
 >
@@ -1371,7 +1400,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 35 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\. The risk of the conditional mean is \\{R\mathopen{}\left(f^\*\right)\mathclose{}} = 1\\. So \\f_1\\ has the larger risk. The inequality is strict because \\f_1\mathopen{}\left(X\right)\mathclose{} \ne {f^\*\mathopen{}\left(X\right)\mathclose{}}\\.
+> **Example 36 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\. The risk of the conditional mean is \\{R\mathopen{}\left(f^\*\right)\mathclose{}} = 1\\. So \\f_1\\ has the larger risk. The inequality is strict because \\f_1\mathopen{}\left(X\right)\mathclose{} \ne {f^\*\mathopen{}\left(X\right)\mathclose{}}\\.
 
 > **NOTE:**
 >
@@ -1383,11 +1412,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark 6* (The irreducible risk does not depend on the prediction function). The irreducible risk depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk.
+> *Remark 7* (The irreducible risk does not depend on the prediction function). The irreducible risk depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk.
 
 > **NOTE:**
 >
-> **Example 36 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the irreducible risk is \\{\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
+> **Example 37 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the irreducible risk is \\{\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
 
 > **NOTE:**
 >
@@ -1399,11 +1428,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark 7* (When the reducible risk is zero). The reducible risk is zero if and only if \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\.
+> *Remark 8* (When the reducible risk is zero). The reducible risk is zero if and only if \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\.
 
 > **NOTE:**
 >
-> **Example 37 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 38 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1427,7 +1456,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 38 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
+> **Example 39 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 > **NOTE:**
 >
@@ -1441,25 +1470,41 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 39 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
+> **Example 40 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
 ## 4 Entropy and cross-entropy
 
 > **NOTE:**
 >
-> **Definition 21 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of \\-\log \mathbb{P}(X)\\ [\[15\]](#ref-wikipedia_entropy_information_theory):
+> **Definition 21 (Surprisal (**self-information**, **information content**))** The **surprisal** of a possible value \\x\\ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) \\X\\ with \\\mathbb{P}(X=x) \> 0\\ is
 >
-> \\H(X) \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[-\log \mathbb{P}(X)\right\]\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x)\\
+> \\{s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).\\
+>
+> The surprisal is also called the **self-information** [\[15, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[16, p. 49\]](#ref-bishop2006prml) of \\x\\. With the natural logarithm, the surprisal is measured in nats, and with base 2 in bits. Evaluating \\{s\mathopen{}\left(\cdot\right)\mathclose{}}\\ at the [random variable](random-variables.llms.md#def-random-variable) \\X\\ itself gives the random variable \\{s\mathopen{}\left(X\right)\mathclose{}}\\, which equals \\{s\mathopen{}\left(x\right)\mathclose{}}\\ when \\X = x\\. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of \\X\\ implicit.
+
+> **NOTE:**
+>
+> **Example 41 (Surprisal of the values of a biased coin flip)** Let \\X\\ be \\1\\ if one flip of a coin lands heads and \\0\\ if it lands tails, with \\\mathbb{P}(X=1) = \tfrac{1}{4}\\ and \\\mathbb{P}(X=0) = \tfrac{3}{4}\\. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value \\1\\ (heads) is \\{s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2\\ bits, and the surprisal of the value \\0\\ (tails) is \\{s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415\\ bits. For a fair coin, each value of \\X\\ has surprisal \\-\log_2 \tfrac{1}{2} = 1\\ bit.
+
+> **NOTE:**
+>
+> *Remark 9* (Rarer values are more surprising). A possible value \\x\\ with [probability](probability-basics.llms.md#def-probability) \\\mathbb{P}(X=x) = 1\\ has [surprisal](#def-surprisal) \\0\\, and the surprisal grows without bound as \\\mathbb{P}(X=x) \to 0\\.
+
+> **NOTE:**
+>
+> **Definition 22 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\ [\[17\]](#ref-wikipedia_entropy_information_theory):
+>
+> \\{H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x)\\
 >
 > A term with \\\mathbb{P}(X=x) = 0\\ is taken to be \\0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
 
 > **NOTE:**
 >
-> *Remark 8* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 10* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
-> **Example 40 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 42 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1475,45 +1520,139 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark 9* (Where the definition comes from). Murphy [\[16, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 11* (Where the definition comes from). Murphy [\[18, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
-> **Definition 22 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[17\]](#ref-wikipedia_cross_entropy) is
+> **Definition 23 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[19\]](#ref-wikipedia_cross_entropy) is
 >
-> \\H(p, q) \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
-> When \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite.
+> We take \\-\log 0 = \infty\\, so when \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite. A term with \\p_k = 0\\ is taken to be \\0\\ whatever \\q_k\\ is, as for [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> *Remark 10* (Cross-entropy as an expected negative log probability). The cross-entropy is the [expectation](#def-expectation) of \\-\log q(X)\\ when \\X\\ has probability mass function \\p\\.
+> **Exercise 8 (Expected negative log probability for two mass functions)** Let \\X\\ have [probability mass function](random-variables.llms.md#def-pmf) \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\, and let \\q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})\\ be another probability mass function on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Find the probability mass function of \\Y = -\log_2 q_X\\, and compute \\{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\ from it.
 
 > **NOTE:**
 >
-> *Remark 11* (Entropy is the cross-entropy of a distribution with itself). Setting \\q = p\\ gives \\H(p, p) = -\sum_k p_k \log p_k\\, which is the [entropy](#def-entropy) of a random variable with mass function \\p\\.
+> *Solution 4*. The variable \\Y\\ equals \\-\log_2 \tfrac{1}{4} = 2\\ when \\X \in {\mathopen{}\left\\1, 3\right\\\mathclose{}}\\, and \\-\log_2 \tfrac{1}{2} = 1\\ when \\X = 2\\. So \\\mathbb{P}(Y = 2) = p_1 + p_3 = \tfrac{3}{4}\\ and \\\mathbb{P}(Y = 1) = p_2 = \tfrac{1}{4}\\, and
+>
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} &= 2 \cdot\tfrac{3}{4} + 1 \cdot\tfrac{1}{4} \\ &= \tfrac{7}{4}. \end{aligned} \\
 
 > **NOTE:**
 >
-> **Definition 23 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 22](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
->
-> \\D\_{\mathrm{KL}}(p \\\\\\ q) \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = H(p, q) - H(p, p).\\
+> **Exercise 9 (Cross-entropy of two mass functions from the definition)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ and \\q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ in bits from its definition. Compare it with your value of \\{\mathbb{E}\mathopen{}\left\[-\log_2 q_X\right\]\mathclose{}}\\ from [Exercise 8](#exr-cross-entropy-numeric-expectation), where \\X\\ has [probability mass function](random-variables.llms.md#def-pmf) \\p\\.
 
 > **NOTE:**
 >
-> *Remark 12* (The divergence is not symmetric). In general, \\D\_{\mathrm{KL}}(p \\\\\\ q) \ne D\_{\mathrm{KL}}(q \\\\\\ p)\\, so it is not a distance between \\p\\ and \\q\\.
+> *Solution 5*. \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot 2 + \tfrac{1}{4} \cdot 1 + \tfrac{1}{4} \cdot 2 \\ &= \tfrac{7}{4}. \end{aligned} \\
+>
+> The [cross-entropy](#def-cross-entropy) equals \\{\mathbb{E}\mathopen{}\left\[-\log_2 q_X\right\]\mathclose{}}\\. The two calculations group the same three terms differently: the [expectation](#def-expectation) first combines [outcomes](probability-basics.llms.md#def-experiment-outcome) 1 and 3, which have the same value of \\-\log_2 q_X\\.
 
 > **NOTE:**
 >
-> **Example 41 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Exercise 10 (Cross-entropy as an expectation when \\q\\ is positive where \\p\\ is)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Show that the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ equals the [expectation](#def-expectation) \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
+
+> **NOTE:**
 >
-> \\ \begin{aligned} H(p, q) &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ H(p, p) &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ D\_{\mathrm{KL}}(p \\\\\\ q) &= H(p, q) - H(p, p) = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
+> *Solution 6*. Let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q_X = g(X)\\. Since \\q_k \> 0\\ whenever \\p_k \> 0\\, \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability). By [LOTUS](#thm-lotus),
+>
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k \\ &= -\sum\_{k=1}^{K} p_k \log q_k \\ &= {H\mathopen{}\left(p, q\right)\mathclose{}}. \end{aligned} \\
+>
+> The fourth line adds the terms with \\p_k = 0\\, which are \\0\\ by the convention in the definition.
+
+> **NOTE:**
+>
+> **Exercise 11 (Cross-entropy as an expectation when \\q\\ gives zero probability to a possible outcome)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Find the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ and the [expectation](#def-expectation) \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
+
+> **NOTE:**
+>
+> *Solution 7*. By [Definition 23](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. Also \\-\log q_X \ge 0\\ always, and \\-\log q_X = \infty\\ with [probability](probability-basics.llms.md#def-probability) at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\ as well. Both are infinite, so they are still equal.
+
+> **NOTE:**
+>
+> **Theorem 14 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Then the [cross-entropy](#def-cross-entropy) is the [expectation](#def-expectation) of \\-\log q_X\\:
+>
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}.\\
+
+> **NOTE:**
+>
+> *Proof*. Let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q_X = g(X)\\. First suppose \\q_k \> 0\\ whenever \\p_k \> 0\\. Then \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability), and [LOTUS](#thm-lotus) gives
+>
+> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition of } g \text{)} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\ &= -\sum\_{k=1}^{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\ &= {H\mathopen{}\left(p, q\right)\mathclose{}}. && \text{(definition)} \end{aligned} \\
+>
+> Now suppose \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Then \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\ by definition. Also \\-\log q_X \ge 0\\, and \\-\log q_X = \infty\\ with probability at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\.
+
+> **NOTE:**
+>
+> **Exercise 12 (Cross-entropy of a mass function with itself)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ be a [probability mass function](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ in bits.
+
+> **NOTE:**
+>
+> *Solution 8*. \\ \begin{aligned} {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\ &= \tfrac{1}{2} \cdot 1 + \tfrac{1}{4} \cdot 2 + \tfrac{1}{4} \cdot 2 \\ &= \tfrac{3}{2} \text{ bits}. \end{aligned} \\
+
+> **NOTE:**
+>
+> **Exercise 13 (Entropy of a random variable with a given mass function)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})\\ on \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\. Compute the [entropy](#def-entropy) \\{H\mathopen{}\left(X\right)\mathclose{}}\\ in bits from its definition. Compare it with your value of \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ from [Exercise 12](#exr-cross-entropy-numeric-self).
+
+> **NOTE:**
+>
+> *Solution 9*. The [range](random-variables.llms.md#def-range) of \\X\\ is \\{\mathopen{}\left\\1, 2, 3\right\\\mathclose{}}\\, and \\\mathbb{P}(X = k) = p_k\\, so
+>
+> \\ \begin{aligned} {H\mathopen{}\left(X\right)\mathclose{}} &= -\sum\_{k \in \mathcal{R}(X)} \mathbb{P}(X = k) \log_2 \mathbb{P}(X = k) \\ &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\ &= \tfrac{3}{2} \text{ bits}. \end{aligned} \\
+>
+> This equals \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
+
+> **NOTE:**
+>
+> **Exercise 14 (Entropy as a cross-entropy, for any mass function)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p\\ on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\. Show that \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\.
+
+> **NOTE:**
+>
+> *Solution 10*. By [Theorem 14](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p_X = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+
+> **NOTE:**
+>
+> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p\\ on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\. Then
+>
+> \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}.\\
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 14](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, the [random variable](random-variables.llms.md#def-random-variable) \\-\log p_X\\ is the [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+
+> **NOTE:**
+>
+> *Remark 12* (Cross-entropy is an expected surprisal). By [Theorem 14](#thm-cross-entropy-expectation), the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q_k\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
+
+> **NOTE:**
+>
+> **Definition 24 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 23](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
+>
+> \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.\\
+
+> **NOTE:**
+>
+> *Remark 13* (The divergence is not symmetric). In general, \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \ne {{D\_{\mathrm{KL}}}\mathopen{}\left(q \\\Vert\\ p\right)\mathclose{}}\\, so KL divergence is not a distance between \\p\\ and \\q\\.
+
+> **NOTE:**
+>
+> **Example 43 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+>
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
 > Here the cross-entropy is larger than the entropy of \\p\\, and the divergence is the difference.
 
 > **NOTE:**
 >
-> *Remark 13* (Where the definitions come from). Murphy [\[16, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 14* (Where the definitions come from). Murphy [\[18, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+
+## 5 Further reading
+
+> **TIP:**
+>
+> Lange’s textbook [\[20\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
 
 ## References
 
@@ -1575,14 +1714,26 @@ Wikipedia contributors, “Risk function — Wikipedia, the free encyclopedia.�
 
 \[15\]
 
-Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
+I. Goodfellow, Y. Bengio, and A. Courville, *Deep learning*. Cambridge, MA: MIT Press, 2016. Available: <https://www.deeplearningbook.org/>
 
 \[16\]
 
-K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+C. M. Bishop, *Pattern recognition and machine learning*. in Information science and statistics. New York: Springer, 2006.
 
 \[17\]
 
+Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
+
+\[18\]
+
+K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+
+\[19\]
+
 Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+
+\[20\]
+
+K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
 
 Back to top

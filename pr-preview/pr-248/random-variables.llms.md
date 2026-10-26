@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-23 13:20:10 (PDT)
+Last modified: 2026-10-26 12:25:05 (PDT)
 
 ## 1 Random variables
 
@@ -90,29 +90,41 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 >
 > which contradicts \\\Pr(T \> 0) = 1/2\\.
 
+> **NOTE:**
+>
+> **Definition 5 (Realization (observed value))** A **realization** of a [random variable](#def-random-variable) \\X\\ is the value \\x = X(\omega)\\ it takes at the point \\\omega\\ of the [sample space](probability-basics.llms.md#def-sample-space) that the [random experiment](probability-basics.llms.md#def-random-experiment) produced.
+
+> **NOTE:**
+>
+> *Remark*. The [random variable](#def-random-variable) \\X\\ is the rule, before the experiment is run; the realization \\x\\ is one number, after it is run. Probabilities such as \\\Pr(X = x)\\ describe the rule, and a realization is a fixed number.
+
+> **NOTE:**
+>
+> **Example 6 (Realizations of the number of heads)** In [Example 1](#exm-random-variable), let \\X\\ be the number of heads in two fair coin flips. Run the experiment once and suppose it produces \\\omega= HT\\. Then the [realization](#def-realization) of \\X\\ is \\x = X(HT) = 1\\. Running the experiment again might produce \\TT\\, with realization \\x = 0\\. The variable \\X\\ is the same both times; only its realization changes.
+
 ## 2 Characteristics of probability distributions
 
 > **NOTE:**
 >
-> **Definition 5 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\mathbb{P}(x)\\, \\\mathbb{P}\_X(x)\\, or \\\mathbb{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ [\[2\]](#ref-wikipedia_probability_mass_function):
+> **Definition 6 (Probability mass function (PMF))** If \\X\\ is a [discrete random variable](#def-discrete-rv), the **probability mass function** of \\X\\ at value \\x\\, denoted \\f(x)\\, \\f_X(x)\\, \\\mathbb{P}(x)\\, \\\mathbb{P}\_X(x)\\, or \\\mathbb{P}(X=x)\\, is the probability that \\X\\ takes exactly the value \\x\\ [\[2\]](#ref-wikipedia_probability_mass_function):
 >
 > \\\mathbb{P}(X=x) \stackrel{\text{def}}{=}\Pr(\\X=x\\)\\
 
 > **NOTE:**
 >
-> **Example 6 (PMF of the number of heads)** For the number of heads \\X\\ in two fair coin flips ([Example 1](#exm-random-variable)):
+> **Example 7 (PMF of the number of heads)** For the number of heads \\X\\ in two fair coin flips ([Example 1](#exm-random-variable)):
 >
 > \\\mathbb{P}(X = 0) = \tfrac{1}{4}, \quad \mathbb{P}(X = 1) = \tfrac{1}{2}, \quad \mathbb{P}(X = 2) = \tfrac{1}{4}\\
 
 > **NOTE:**
 >
-> **Definition 6 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
+> **Definition 7 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable \\X\\ has the **Bernoulli distribution** with parameter \\\pi\in \[0, 1\]\\, written \\X \sim \operatorname{Ber}(\pi)\\ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
 >
 > \\ \begin{aligned} \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}\_{x\in {\mathopen{}\left\\0,1\right\\\mathclose{}}}\pi^x(1-\pi)^{1-x}\\ &= \begin{cases} \pi, & x=1\\ 1-\pi, & x=0 \end{cases} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 7 (The first of two coin flips)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip, so
+> **Example 8 (The first of two coin flips)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip, so
 >
 > \\ \begin{aligned} X_1(HH) &= X_1(HT) \\ &= 1 \end{aligned} \\
 >
@@ -132,26 +144,26 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 7 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies [\[4\]](#ref-wikipedia_probability_density_function):
+> **Definition 8 (Probability density function (PDF))** If \\X\\ is a [continuous random variable](#def-continuous-rv), a **probability density function** of \\X\\, denoted \\f(x)\\, \\f_X(x)\\, \\\operatorname{p}(x)\\, \\\operatorname{p}\_X(x)\\, or \\\operatorname{p}(X=x)\\, is a function \\f\\ that satisfies [\[4\]](#ref-wikipedia_probability_density_function):
 >
 > - \\f(x) \ge 0\\ for every \\x\\.
 > - The integral of \\f\\ over any interval is the [probability](probability-basics.llms.md#def-probability) that \\X\\ falls in that interval: \\\Pr(a \le X \le b) = \int_a^b f(x)\\dx \quad \text{for all } a \le b\\
 
 > **NOTE:**
 >
-> **Definition 8 (Uniform distribution on a set)** Let \\S\\ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) \\\mu\\ such that \\0 \< \mu(S) \< \infty\\. The **uniform distribution** on \\S\\ is the [probability measure](probability-basics.llms.md#def-probability)
+> **Definition 9 (Uniform distribution on a set)** Let \\S\\ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) \\\mu\\ such that \\0 \< \mu(S) \< \infty\\. The **uniform distribution** on \\S\\ is the [probability measure](probability-basics.llms.md#def-probability)
 >
 > \\\Pr(A) \stackrel{\text{def}}{=}\frac{\mu(A)}{\mu(S)}, \quad A \subseteq S.\\
 
 > **NOTE:**
 >
-> **Definition 9 (Uniform distribution on an interval)** The **uniform distribution** on an interval \\\[\alpha, \beta\]\\ ([Definition 8](#def-uniform-set) with \\\mu\\ the length), with \\\alpha\< \beta\\, is the distribution of a random variable \\X\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, that is continuous with [density](#def-pdf) [\[5\]](#ref-wikipedia_continuous_uniform_distribution):
+> **Definition 10 (Uniform distribution on an interval)** The **uniform distribution** on an interval \\\[\alpha, \beta\]\\ ([Definition 9](#def-uniform-set) with \\\mu\\ the length), with \\\alpha\< \beta\\, is the distribution of a random variable \\X\\, written \\X \sim \text{Uniform}(\alpha, \beta)\\, that is continuous with [density](#def-pdf) [\[5\]](#ref-wikipedia_continuous_uniform_distribution):
 >
 > \\ f(x) \stackrel{\text{def}}{=}\begin{cases} \frac{1}{\beta- \alpha}, & \alpha\le x \le \beta\\ 0, & \text{otherwise} \end{cases} \\
 
 > **NOTE:**
 >
-> **Example 8 (Subinterval probabilities of a uniform random variable)** For \\X \sim \text{Uniform}(\alpha, \beta)\\ ([Definition 9](#def-uniform)) and any subinterval \\\[a, b\] \subseteq \[\alpha, \beta\]\\ (so \\\alpha\le a \le b \le \beta\\):
+> **Example 9 (Subinterval probabilities of a uniform random variable)** For \\X \sim \text{Uniform}(\alpha, \beta)\\ ([Definition 10](#def-uniform)) and any subinterval \\\[a, b\] \subseteq \[\alpha, \beta\]\\ (so \\\alpha\le a \le b \le \beta\\):
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \int_a^b f(x)\\dx && \text{(definition of a probability density function)} \\ &= \int_a^b \frac{1}{\beta- \alpha}\\dx && \text{(} f(x) = \tfrac{1}{\beta- \alpha} \text{ on } \[\alpha, \beta\] \text{)} \\ &= \frac{b - a}{\beta- \alpha} && \text{(integrate)} \end{aligned} \\
 >
@@ -167,7 +179,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 >
 > \\ \begin{aligned} \int_a^b g(x)\\dx &= \int_a^b f(x)\\dx + \int_a^b \mathopen{}\left(g(x) - f(x)\right)\mathclose{}\\dx && \text{(linearity of the integral)} \\ &= \int_a^b f(x)\\dx + 0 && \text{(a function that is 0 at all but finitely many points integrates to 0)} \\ &= \Pr(a \le X \le b) && \text{(} f \text{ is a density of } X \text{)} \end{aligned} \\
 >
-> Together with \\g \ge 0\\, this is [Definition 7](#def-pdf) for \\g\\.
+> Together with \\g \ge 0\\, this is [Definition 8](#def-pdf) for \\g\\.
 
 > **NOTE:**
 >
@@ -185,13 +197,13 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 10 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ [\[6\]](#ref-wikipedia_normal_distribution), if \\X\\ is continuous with [density](#def-pdf):
+> **Definition 11 (Normal distribution (Gaussian distribution))** A random variable \\X\\ has the **normal distribution** (or **Gaussian distribution**) with mean parameter \\\mu\in \mathbb{R}\\ and variance parameter \\\sigma^2\> 0\\, written \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ [\[6\]](#ref-wikipedia_normal_distribution), if \\X\\ is continuous with [density](#def-pdf):
 >
 > \\\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}\\
 
 > **NOTE:**
 >
-> **Example 9 (Normal densities at their centers)** For \\X \sim {\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}\\, the density at \\x = 0\\ is:
+> **Example 10 (Normal densities at their centers)** For \\X \sim {\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}\\, the density at \\x = 0\\ is:
 >
 > \\ \begin{aligned} \operatorname{p}(X=0) &= \frac{1}{1 \cdot\sqrt{2\pi}} \text{e}^{-\frac{(0-0)^2}{2 \cdot 1}} && \text{(normal density with } \mu= 0, \sigma^2= 1 \text{)} \\ &= \frac{1}{\sqrt{2\pi}} && \text{(} \text{e}^0 = 1 \text{)} \\ &\approx 0.399 && \text{(evaluate)} \end{aligned} \\
 >
@@ -199,17 +211,17 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> *Remark*. A density is not a probability: it can exceed 1, as the second density in [Example 9](#exm-normal) does.
+> *Remark*. A density is not a probability: it can exceed 1, as the second density in [Example 10](#exm-normal) does.
 
 > **NOTE:**
 >
-> **Theorem 3 (The normal density integrates to 1)** If \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ ([Definition 10](#def-normal)), then:
+> **Theorem 3 (The normal density integrates to 1)** If \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ ([Definition 11](#def-normal)), then:
 >
 > \\\int\_{-\infty}^{\infty} \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}\\dx = 1\\
 
 > **NOTE:**
 >
-> **Theorem 4 (The mean and variance of the normal distribution)** If \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ ([Definition 10](#def-normal)), then \\X\\ has [mean](expectation.llms.md#def-expectation) \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = \mu\\ and [variance](variance-covariance.llms.md#def-variance) \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \sigma^2\\.
+> **Theorem 4 (The mean and variance of the normal distribution)** If \\X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}\\ ([Definition 11](#def-normal)), then \\X\\ has [mean](expectation.llms.md#def-expectation) \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = \mu\\ and [variance](variance-covariance.llms.md#def-variance) \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \sigma^2\\.
 
 > **NOTE:**
 >
@@ -217,21 +229,21 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 11 (Standard normal distribution)** The **standard normal distribution** is the [normal distribution](#def-normal) with mean parameter 0 and variance parameter 1, \\{\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}\\.
+> **Definition 12 (Standard normal distribution)** The **standard normal distribution** is the [normal distribution](#def-normal) with mean parameter 0 and variance parameter 1, \\{\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}\\.
 
 > **NOTE:**
 >
-> **Example 10 (Half of a standard normal lies below 0)** If \\Z\\ has the standard normal distribution, its density \\\operatorname{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}\\ takes the same value at \\z\\ and \\-z\\, so \\\Pr(Z \le 0) = \Pr(Z \ge 0)\\. Those two probabilities sum to 1, because \\\Pr(Z = 0) = 0\\ for a continuous \\Z\\, so each is \\\tfrac{1}{2}\\.
+> **Example 11 (Half of a standard normal lies below 0)** If \\Z\\ has the standard normal distribution, its density \\\operatorname{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}\\ takes the same value at \\z\\ and \\-z\\, so \\\Pr(Z \le 0) = \Pr(Z \ge 0)\\. Those two probabilities sum to 1, because \\\Pr(Z = 0) = 0\\ for a continuous \\Z\\, so each is \\\tfrac{1}{2}\\.
 
 > **NOTE:**
 >
-> **Definition 12 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ [\[8\]](#ref-wikipedia_exponential_distribution) if \\T\\ is continuous with [density](#def-pdf):
+> **Definition 13 (Exponential distribution)** A random variable \\T\\ has the **exponential distribution** with rate \\{\lambda}\> 0\\ [\[8\]](#ref-wikipedia_exponential_distribution) if \\T\\ is continuous with [density](#def-pdf):
 >
 > \\ f(t) \stackrel{\text{def}}{=}\begin{cases} {\lambda}\text{e}^{-{\lambda}t}, & t \ge 0 \\ 0, & t \< 0 \end{cases} \\
 
 > **NOTE:**
 >
-> **Example 11 (Probability of an event within one time unit)** Let \\T\\ be exponential with rate \\{\lambda}\\. The probability that \\T\\ falls in \\\[0, 1\]\\ is:
+> **Example 12 (Probability of an event within one time unit)** Let \\T\\ be exponential with rate \\{\lambda}\\. The probability that \\T\\ falls in \\\[0, 1\]\\ is:
 >
 > \\ \begin{aligned} \Pr(0 \le T \le 1) &= \int_0^1 {\lambda}\text{e}^{-{\lambda}t}\\dt && \text{(definition of a density)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}t}\right\]\mathclose{}\_{t=0}^{1} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}t} \text{)} \\ &= 1 - \text{e}^{-{\lambda}} && \text{(evaluate at the bounds)} \end{aligned} \\
 >
@@ -239,7 +251,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 13 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** [\[9\]](#ref-wikipedia_cumulative_distribution_function) is:
+> **Definition 14 (Cumulative distribution function (CDF))** For a random variable \\X\\ (discrete or continuous), its **cumulative distribution function** [\[9\]](#ref-wikipedia_cumulative_distribution_function) is:
 >
 > \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.\\
 
@@ -249,7 +261,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 12 (CDF of the number of heads)** Summing the PMF in [Example 6](#exm-pmf) over values at or below \\t\\:
+> **Example 13 (CDF of the number of heads)** Summing the PMF in [Example 7](#exm-pmf) over values at or below \\t\\:
 >
 > \\ {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = \begin{cases} 0, & t \< 0 \\ \tfrac{1}{4}, & 0 \le t \< 1 \\ \tfrac{3}{4}, & 1 \le t \< 2 \\ 1, & t \ge 2 \end{cases} \\
 
@@ -283,7 +295,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 14 (Quantile function (population inverse CDF))** For a random variable \\X\\ with [cumulative distribution function (CDF)](#def-cdf) \\\operatorname{F}\\, its population **quantile function** (generalized inverse of \\\operatorname{F}\\) is [\[11\]](#ref-wikipedia_quantile_function):
+> **Definition 15 (Quantile function (population inverse CDF))** For a random variable \\X\\ with [cumulative distribution function (CDF)](#def-cdf) \\\operatorname{F}\\, its population **quantile function** (generalized inverse of \\\operatorname{F}\\) is [\[11\]](#ref-wikipedia_quantile_function):
 >
 > \\{\operatorname{Q}\mathopen{}\left(p\right)\mathclose{}} \stackrel{\text{def}}{=}\inf {\mathopen{}\left\\t : {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \ge p\right\\\mathclose{}}, \quad p \in (0, 1).\\
 
@@ -293,7 +305,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 13 (Median of the number of heads)** From [Example 12](#exm-cdf), \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \ge 0.5\\ first holds at \\t = 1\\, so the median of the number of heads is \\{\operatorname{Q}\mathopen{}\left(0.5\right)\mathclose{}} = 1\\.
+> **Example 14 (Median of the number of heads)** From [Example 13](#exm-cdf), \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \ge 0.5\\ first holds at \\t = 1\\, so the median of the number of heads is \\{\operatorname{Q}\mathopen{}\left(0.5\right)\mathclose{}} = 1\\.
 
 > **NOTE:**
 >
@@ -442,7 +454,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 14 (CDF and density of a uniform random variable)** For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 9](#def-uniform), and \\t \in \[0, 1\]\\:
+> **Example 15 (CDF and density of a uniform random variable)** For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 10](#def-uniform), and \\t \in \[0, 1\]\\:
 >
 > \\ \begin{aligned} {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} &= \int\_{-\infty}^{t} f(x)\\dx && \text{(the CDF is the integral of the density)} \\ &= \int\_{-\infty}^{0} 0\\dx + \int\_{0}^{t} 1\\dx && \text{(split at 0, and substitute } f \text{)} \\ &= t && \text{(integrate)} \end{aligned} \\
 >
@@ -470,7 +482,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 15 (A density from a CDF with a corner)** Let \\X\\ have CDF \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 0\\ for \\t \< 0\\, \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = t^2\\ for \\0 \le t \le 1\\, and \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 1\\ for \\t \> 1\\. This \\\operatorname{F}\\ is continuous everywhere, and has a continuous derivative everywhere except \\t = 1\\, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), \\X\\ is continuous with density \\f(t) = 2t\\ for \\0 \le t \< 1\\ and \\f(t) = 0\\ otherwise. As a check, \\\int_0^1 2t\\dt = 1\\.
+> **Example 16 (A density from a CDF with a corner)** Let \\X\\ have CDF \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 0\\ for \\t \< 0\\, \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = t^2\\ for \\0 \le t \le 1\\, and \\{\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 1\\ for \\t \> 1\\. This \\\operatorname{F}\\ is continuous everywhere, and has a continuous derivative everywhere except \\t = 1\\, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), \\X\\ is continuous with density \\f(t) = 2t\\ for \\0 \le t \< 1\\ and \\f(t) = 0\\ otherwise. As a check, \\\int_0^1 2t\\dt = 1\\.
 
 > **NOTE:**
 >
@@ -494,11 +506,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 16 (The uniform density as a limit)** For \\X \sim \text{Uniform}(0, 1)\\ and \\x \in \[0, 1)\\, \\\Pr(x \le X \< x + \Delta) = \Delta\\ once \\\Delta\le 1 - x\\, so:
+> **Example 17 (The uniform density as a limit)** For \\X \sim \text{Uniform}(0, 1)\\ and \\x \in \[0, 1)\\, \\\Pr(x \le X \< x + \Delta) = \Delta\\ once \\\Delta\le 1 - x\\, so:
 >
 > \\ \begin{aligned} f(x) &= \lim\_{\Delta\downarrow 0} \frac{\Delta}{\Delta} \\ &= 1 \end{aligned} \\
 >
-> For \\x \< 0\\ or \\x \> 1\\, the interval eventually misses \\\[0, 1\]\\, so the limit is \\0\\. Both agree with the density of [Definition 9](#def-uniform).
+> For \\x \< 0\\ or \\x \> 1\\, the interval eventually misses \\\[0, 1\]\\, so the limit is \\0\\. Both agree with the density of [Definition 10](#def-uniform).
 
 > **NOTE:**
 >
@@ -514,11 +526,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 17 (The density limit at a jump)** At a point where \\f\\ is not continuous, the limit can differ from the chosen value \\f(x)\\. For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 9](#def-uniform), which sets \\f(1) = 1\\ and \\f(x) = 0\\ for \\x \> 1\\, and for \\\Delta\> 0\\:
+> **Example 18 (The density limit at a jump)** At a point where \\f\\ is not continuous, the limit can differ from the chosen value \\f(x)\\. For \\X \sim \text{Uniform}(0, 1)\\ with the density \\f\\ of [Definition 10](#def-uniform), which sets \\f(1) = 1\\ and \\f(x) = 0\\ for \\x \> 1\\, and for \\\Delta\> 0\\:
 >
 > \\ \begin{aligned} \Pr(1 \le X \< 1 + \Delta) &= \Pr(1 \le X \le 1 + \Delta) && \text{(} \Pr(X = 1 + \Delta) = 0 \text{)} \\ &= \int_1^{1 + \Delta} f(x)\\dx && \text{(definition of the density)} \\ &= 0 && \text{(} f = 0 \text{ on } (1, 1 + \Delta\] \text{; one point does not change an integral)} \end{aligned} \\
 >
-> So the limit of \\\Pr(1 \le X \< 1 + \Delta) / \Delta\\ at \\x = 1\\ is 0, although \\f(1) = 1\\. By [Proposition 1](#prp-density-limit-right-derivative), 0 is also the right derivative of \\\operatorname{F}\\ at 1, matching the slope of 0 on the right in [Example 14](#exm-density-vs-CDF).
+> So the limit of \\\Pr(1 \le X \< 1 + \Delta) / \Delta\\ at \\x = 1\\ is 0, although \\f(1) = 1\\. By [Proposition 1](#prp-density-limit-right-derivative), 0 is also the right derivative of \\\operatorname{F}\\ at 1, matching the slope of 0 on the right in [Example 15](#exm-density-vs-CDF).
 
 > **NOTE:**
 >
@@ -534,13 +546,13 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (The uniform density integrates to 1)** For \\X \sim \text{Uniform}(0, 1)\\ ([Definition 9](#def-uniform)),
+> **Example 19 (The uniform density integrates to 1)** For \\X \sim \text{Uniform}(0, 1)\\ ([Definition 10](#def-uniform)),
 >
 > \\ \begin{aligned} \int\_{-\infty}^{\infty} f(x)\\dx &= \int_0^1 1\\dx \\ &= 1. \end{aligned} \\
 
 > **NOTE:**
 >
-> **Definition 15 (Jointly distributed random variables)** Random variables \\X_1, \ldots, X_n\\ are **jointly distributed** when they are defined on the same [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\, so that an event about several of them at once, such as \\\\X_1 \le x_1\\ \cap \\X_2 \le x_2\\\\, has a probability.
+> **Definition 16 (Jointly distributed random variables)** Random variables \\X_1, \ldots, X_n\\ are **jointly distributed** when they are defined on the same [sample space](probability-basics.llms.md#def-sample-space) \\\Omega\\, so that an event about several of them at once, such as \\\\X_1 \le x_1\\ \cap \\X_2 \le x_2\\\\, has a probability.
 
 > **NOTE:**
 >
@@ -548,17 +560,17 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (The first flip and the total)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip (as in [Example 7](#exm-bernoulli-pmf)), and let \\X\\ be the total number of heads. Both are functions on the same sample space, \\{\mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}}\\, so they are jointly distributed, and, for example:
+> **Example 20 (The first flip and the total)** In [Example 1](#exm-random-variable), let \\X_1\\ indicate heads on the first flip (as in [Example 8](#exm-bernoulli-pmf)), and let \\X\\ be the total number of heads. Both are functions on the same sample space, \\{\mathopen{}\left\\HH, HT, TH, TT\right\\\mathclose{}}\\, so they are jointly distributed, and, for example:
 >
 > \\ \begin{aligned} \Pr(X_1 = 1, X = 1) &= \Pr({\mathopen{}\left\\HH, HT\right\\\mathclose{}} \cap {\mathopen{}\left\\HT, TH\right\\\mathclose{}}) \\ &= \Pr({\mathopen{}\left\\HT\right\\\mathclose{}}) \\ &= \tfrac{1}{4} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Definition 16 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ [\[13\]](#ref-wikipedia_joint_probability_distribution).
+> **Definition 17 (Joint distribution)** The **joint distribution** of [jointly distributed](#def-jointly-distributed) random variables \\X_1, \ldots, X_n\\ is the function that assigns to each set \\A \subseteq \mathbb{R}^n\\ for which \\\\(X_1, \ldots, X_n) \in A\\\\ is an [event](probability-basics.llms.md#def-event) the probability \\\Pr((X_1, \ldots, X_n) \in A)\\ [\[13\]](#ref-wikipedia_joint_probability_distribution).
 
 > **NOTE:**
 >
-> **Example 20 (Joint distribution of the first flip and the total)** In [Example 19](#exm-jointly-distributed), the joint distribution of \\X_1\\ and \\X\\ assigns to the set \\A = {\mathopen{}\left\\(x_1, x) : x_1 = 1,\\ x \ge 1\right\\\mathclose{}}\\ the probability
+> **Example 21 (Joint distribution of the first flip and the total)** In [Example 20](#exm-jointly-distributed), the joint distribution of \\X_1\\ and \\X\\ assigns to the set \\A = {\mathopen{}\left\\(x_1, x) : x_1 = 1,\\ x \ge 1\right\\\mathclose{}}\\ the probability
 >
 > \\ \begin{aligned} \Pr((X_1, X) \in A) &= \Pr({\mathopen{}\left\\HH, HT\right\\\mathclose{}}) \\ &= \tfrac{1}{2} \end{aligned} \\
 >
@@ -578,13 +590,13 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 17 (Joint probability mass function (joint PMF))** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (**joint PMF**) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
+> **Definition 18 (Joint probability mass function (joint PMF))** For [jointly distributed](#def-jointly-distributed) discrete random variables \\X\\ and \\Y\\, the **joint probability mass function** (**joint PMF**) of \\X\\ and \\Y\\ is the probability that \\X\\ takes the value \\x\\ and \\Y\\ takes the value \\y\\:
 >
 > \\\mathbb{P}(X = x,\\ Y = y) \stackrel{\text{def}}{=}\Pr(\\X = x\\ \cap \\Y = y\\)\\
 
 > **NOTE:**
 >
-> **Example 21 (Joint PMF of the first flip and the total)** Continuing [Example 19](#exm-jointly-distributed), each outcome of the two flips fixes both \\X_1\\ and \\X\\, so the joint PMF puts probability \\1/4\\ on each outcome’s pair of values:
+> **Example 22 (Joint PMF of the first flip and the total)** Continuing [Example 20](#exm-jointly-distributed), each outcome of the two flips fixes both \\X_1\\ and \\X\\, so the joint PMF puts probability \\1/4\\ on each outcome’s pair of values:
 >
 > |             |    \\X = 0\\     |    \\X = 1\\     |    \\X = 2\\     |
 > |:-----------:|:----------------:|:----------------:|:----------------:|
@@ -593,7 +605,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ [\[14\]](#ref-wikipedia_marginal_distribution).
+> **Definition 19 (Marginal distribution)** When a random variable \\X\\ is one of several [jointly distributed](#def-jointly-distributed) random variables, the distribution of \\X\\ by itself (its CDF, and its PMF or density) is called the **marginal distribution** of \\X\\ [\[14\]](#ref-wikipedia_marginal_distribution).
 
 > **NOTE:**
 >
@@ -601,7 +613,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 22 (Marginal distribution of the total)** In [Example 21](#exm-joint-pmf), the marginal distribution of the total \\X\\ is the PMF of [Example 6](#exm-pmf): \\\mathbb{P}(X = 0) = 1/4\\, \\\mathbb{P}(X = 1) = 1/2\\, \\\mathbb{P}(X = 2) = 1/4\\.
+> **Example 23 (Marginal distribution of the total)** In [Example 22](#exm-joint-pmf), the marginal distribution of the total \\X\\ is the PMF of [Example 7](#exm-pmf): \\\mathbb{P}(X = 0) = 1/4\\, \\\mathbb{P}(X = 1) = 1/2\\, \\\mathbb{P}(X = 2) = 1/4\\.
 
 > **NOTE:**
 >
@@ -617,15 +629,15 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 23 (Summing a row of the joint PMF)** In [Example 21](#exm-joint-pmf), summing the \\X_1 = 1\\ row:
+> **Example 24 (Summing a row of the joint PMF)** In [Example 22](#exm-joint-pmf), summing the \\X_1 = 1\\ row:
 >
 > \\ \begin{aligned} \mathbb{P}(X_1 = 1) &= \mathbb{P}(X_1 = 1, X = 0) + \mathbb{P}(X_1 = 1, X = 1) + \mathbb{P}(X_1 = 1, X = 2) && \text{(marginal PMF from the joint PMF)} \\ &= 0 + \tfrac{1}{4} + \tfrac{1}{4} && \text{(read the table)} \\ &= \tfrac{1}{2} && \text{(add)} \end{aligned} \\
 >
-> which matches \\X_1 \sim \operatorname{Ber}(1/2)\\ from [Example 7](#exm-bernoulli-pmf).
+> which matches \\X_1 \sim \operatorname{Ber}(1/2)\\ from [Example 8](#exm-bernoulli-pmf).
 
 > **NOTE:**
 >
-> **Definition 19 (Joint probability density function (joint density))** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (**joint density**) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
+> **Definition 20 (Joint probability density function (joint density))** For [jointly distributed](#def-jointly-distributed) continuous random variables \\X\\ and \\Y\\, a **joint probability density function** (**joint density**) of \\X\\ and \\Y\\, denoted \\f\_{X,Y}(x, y)\\ or \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\f\_{X,Y}\\ on \\\mathbb{R}^2\\ that satisfies:
 >
 > - \\f\_{X,Y}(x, y) \ge 0\\ for every \\(x, y)\\.
 > - The integral of \\f\_{X,Y}\\ over any region \\A \subseteq \mathbb{R}^2\\ is the probability that the pair \\(X, Y)\\ falls in \\A\\: \\\Pr((X, Y) \in A) = \iint_A f\_{X,Y}(x, y)\\dx\\dy\\
@@ -636,7 +648,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 24 (A joint density on a triangle)** Let \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\, and \\0\\ otherwise. The triangle \\\\(x, y) : 0 \le x \le y \le 1\\\\ has area \\1/2\\, so \\f\_{X,Y}\\ gives the whole plane probability \\2 \cdot\tfrac{1}{2} = 1\\, and it is the joint density of a pair \\(X, Y)\\ with \\X \le Y\\ always. For example, the probability that both are at most \\1/2\\ is \\2\\ times the area of the smaller triangle \\\\0 \le x \le y \le 1/2\\\\:
+> **Example 25 (A joint density on a triangle)** Let \\f\_{X,Y}(x, y) = 2\\ for \\0 \le x \le y \le 1\\, and \\0\\ otherwise. The triangle \\\\(x, y) : 0 \le x \le y \le 1\\\\ has area \\1/2\\, so \\f\_{X,Y}\\ gives the whole plane probability \\2 \cdot\tfrac{1}{2} = 1\\, and it is the joint density of a pair \\(X, Y)\\ with \\X \le Y\\ always. For example, the probability that both are at most \\1/2\\ is \\2\\ times the area of the smaller triangle \\\\0 \le x \le y \le 1/2\\\\:
 >
 > \\ \begin{aligned} \Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2}) &= 2 \cdot\tfrac{1}{8} \\ &= \tfrac{1}{4} \end{aligned} \\
 
@@ -664,11 +676,11 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 >
 > \\ \begin{aligned} \Pr(a \le X \le b) &= \Pr((X, Y) \in \[a, b\] \times \mathbb{R}) && \text{(same event)} \\ &= \iint\_{\[a, b\] \times \mathbb{R}} f\_{X,Y}(x, y)\\dx\\dy && \text{(definition of a joint density)} \\ &= \int_a^b \mathopen{}\left(\int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy\right)\mathclose{}\\dx && \text{(iterate the integral; Tonelli's theorem)} \\ &= \int_a^b f_X(x)\\dx && \text{(definition of } f_X \text{)} \end{aligned} \\
 >
-> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[10\]](#ref-billingsley1995probability), Theorem 18.3). So \\f_X\\ satisfies [Definition 7](#def-pdf).
+> Tonelli’s theorem allows the iterated integral because \\f\_{X,Y} \ge 0\\ ([Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[10\]](#ref-billingsley1995probability), Theorem 18.3). So \\f_X\\ satisfies [Definition 8](#def-pdf).
 
 > **NOTE:**
 >
-> **Example 25 (Marginal densities on the triangle)** For the joint density of [Example 24](#exm-joint-pdf) and \\x \in \[0, 1\]\\, \\f\_{X,Y}(x, y) = 2\\ exactly when \\x \le y \le 1\\, so:
+> **Example 26 (Marginal densities on the triangle)** For the joint density of [Example 25](#exm-joint-pdf) and \\x \in \[0, 1\]\\, \\f\_{X,Y}(x, y) = 2\\ exactly when \\x \le y \le 1\\, so:
 >
 > \\ \begin{aligned} f_X(x) &= \int\_{-\infty}^{\infty} f\_{X,Y}(x, y)\\dy && \text{(marginal density from a joint density)} \\ &= \int_x^1 2\\dy && \text{(} f\_{X,Y}(x, y) = 2 \text{ for } x \le y \le 1 \text{, else } 0 \text{)} \\ &= 2(1 - x) && \text{(integrate)} \end{aligned} \\
 >
@@ -680,7 +692,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Definition 20 (Joint density-mass function)** Let \\X\\ be a discrete random variable and \\Y\\ a continuous random variable, [jointly distributed](#def-jointly-distributed). A **joint density-mass function** of \\X\\ and \\Y\\, denoted \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\\operatorname{p}(X = x,\\ Y = y) \ge 0\\ that is a probability mass in \\x\\ and a probability density in \\y\\: for every \\x\\ and every set \\B \subseteq \mathbb{R}\\,
+> **Definition 21 (Joint density-mass function)** Let \\X\\ be a discrete random variable and \\Y\\ a continuous random variable, [jointly distributed](#def-jointly-distributed). A **joint density-mass function** of \\X\\ and \\Y\\, denoted \\\operatorname{p}(X = x,\\ Y = y)\\, is a function \\\operatorname{p}(X = x,\\ Y = y) \ge 0\\ that is a probability mass in \\x\\ and a probability density in \\y\\: for every \\x\\ and every set \\B \subseteq \mathbb{R}\\,
 >
 > \\\Pr(X = x,\\ Y \in B) = \int\_{B} \operatorname{p}(X = x,\\ Y = y)\\dy\\
 
@@ -702,7 +714,7 @@ Last modified: 2026-10-23 13:20:10 (PDT)
 
 > **NOTE:**
 >
-> **Example 26 (A coin flip and a waiting time)** Let \\\operatorname{p}(X = 0,\\ Y = y) = 1/2\\ for \\y \in \[0, 1\]\\, \\\operatorname{p}(X = 1,\\ Y = y) = 1/4\\ for \\y \in \[0, 2\]\\, and \\0\\ otherwise. Integrating over \\y\\ gives \\\mathbb{P}(X = 0) = 1/2\\ and \\\mathbb{P}(X = 1) = 1/2\\, which add to 1. For example, the probability that \\X = 1\\ and \\Y \le 1\\ is:
+> **Example 27 (A coin flip and a waiting time)** Let \\\operatorname{p}(X = 0,\\ Y = y) = 1/2\\ for \\y \in \[0, 1\]\\, \\\operatorname{p}(X = 1,\\ Y = y) = 1/4\\ for \\y \in \[0, 2\]\\, and \\0\\ otherwise. Integrating over \\y\\ gives \\\mathbb{P}(X = 0) = 1/2\\ and \\\mathbb{P}(X = 1) = 1/2\\, which add to 1. For example, the probability that \\X = 1\\ and \\Y \le 1\\ is:
 >
 > \\ \begin{aligned} \Pr(X = 1,\\ Y \le 1) &= \int_0^1 \tfrac{1}{4}\\dy \\ &= \tfrac{1}{4} \end{aligned} \\
 
@@ -726,7 +738,7 @@ The resulting distributions \\\mathbb{P}(x)\\ and \\\mathbb{P}(y)\\ are the **ma
 
 > **NOTE:**
 >
-> **Example 27 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\mathbb{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\mathbb{P}(m=1) = 10^{-6}\\):
+> **Example 28 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let \\m \in \\0, 1\\\\ indicate whether a meteorite hits your house on a given day (\\m = 1\\), and let \\d \in \\0, 1\\\\ indicate whether you have a good day (\\d = 1\\). In this distribution, 9 out of 10 days are good days (\\\mathbb{P}(d=1) = 0.9\\), and the probability of a meteorite strike is 1 in a million (\\\mathbb{P}(m=1) = 10^{-6}\\):
 >
 > > **NOTE:**
 > >
@@ -786,7 +798,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 21 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[18\]](#ref-wikipedia_survival_function):
+> **Definition 22 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[18\]](#ref-wikipedia_survival_function):
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -816,7 +828,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 28 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 12](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 17](#thm-survival-expressions-1):
+> **Example 29 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 13](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 17](#thm-survival-expressions-1):
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} {\lambda}\text{e}^{-{\lambda}u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-{\lambda}t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-{\lambda}u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-{\lambda}t} && \text{(simplify)} \end{aligned} \\
 >
@@ -828,7 +840,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
+> **Definition 23 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
@@ -836,13 +848,13 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett [\[20\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while \\\lambda(t)\\ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
 >
-> If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 22](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
+> If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 23](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
 > The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity \\{\lambda}(t)\\ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
 
 > **NOTE:**
 >
-> **Example 29 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 9](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 28](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so
+> **Example 30 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 10](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 29](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so
 >
 > \\ \begin{aligned} \Pr(T \ge s) &= \Pr(T \> s) \\ &= \operatorname{S}(s). \end{aligned} \\
 >
@@ -858,13 +870,13 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 23 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ equals \\t\\, given \\T \ge t\\:
+> **Definition 24 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ equals \\t\\, given \\T \ge t\\:
 >
 > \\\Pr(T = t \mid T \ge t)\\
 
 > **NOTE:**
 >
-> **Example 30 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
+> **Example 31 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
 >
 > \\ \begin{aligned} \Pr(T = t \mid T \ge t) &= \frac{\Pr(T = t,\\ T \ge t)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(T = t)}{\Pr(T \ge t)} && \text{(} T = t \text{ implies } T \ge t \text{)} \\ &= \frac{(5/6)^{t-1} \cdot(1/6)}{(5/6)^{t-1}} && \text{(rolls are independent)} \\ &= \frac{1}{6} && \text{(cancel)} \end{aligned} \\
 >
@@ -886,7 +898,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 29](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
+> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 30](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
 
 > **NOTE:**
 >
@@ -906,21 +918,21 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 31 (Hazard function of an exponential distribution)** Continuing [Example 28](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
+> **Example 32 (Hazard function of an exponential distribution)** Continuing [Example 29](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
 >
 > \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{{\lambda}\text{e}^{-{\lambda}t}}{\text{e}^{-{\lambda}t}} && \text{(substitute the exponential density and survival function)} \\ &= {\lambda} && \text{(cancel } \text{e}^{-{\lambda}t} \text{)} \end{aligned} \\
 >
-> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\{\lambda}\\, [Definition 22](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}\\ as \\\Delta\downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
+> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\{\lambda}\\, [Definition 23](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}\\ as \\\Delta\downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
 
 > **NOTE:**
 >
-> **Definition 24 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
+> **Definition 25 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
 >
 > \\{\Lambda}(t) \stackrel{\text{def}}{=}\int\_{u=-\infty}^{t} {\lambda}(u)\\du\\
 
 > **NOTE:**
 >
-> **Example 32 (Cumulative hazard function of an exponential distribution)** Continuing [Example 31](#exm-exp-haz), the hazard is \\{\lambda}(u) = {\lambda}\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
+> **Example 33 (Cumulative hazard function of an exponential distribution)** Continuing [Example 32](#exm-exp-haz), the hazard is \\{\lambda}(u) = {\lambda}\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
 >
 > \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} {\lambda}\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + {\lambda}t && \text{(integrate each piece)} \\ &= {\lambda}t && \text{(simplify)} \end{aligned} \\
 >
@@ -970,11 +982,11 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 33 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 32](#exm-exp-cumhaz), for \\t \ge 0\\:
+> **Example 34 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 33](#exm-exp-cumhaz), for \\t \ge 0\\:
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= {\operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{}} && \text{(survival function from the cumulative hazard)} \\ &= {\operatorname{exp}\mathopen{}\left\\-{\lambda}t\right\\\mathclose{}} && \text{(substitute } {\Lambda}(t) = {\lambda}t \text{)} \end{aligned} \\
 >
-> which matches the survival function computed directly in [Example 28](#exm-exp-survfn).
+> which matches the survival function computed directly in [Example 29](#exm-exp-survfn).
 
 > **NOTE:**
 >

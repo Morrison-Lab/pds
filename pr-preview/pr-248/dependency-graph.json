@@ -531,6 +531,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#cor-cross-entropy-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-cross-entropy-entropy",
+   "kind": "cor",
+   "title": "Entropy is the cross-entropy of a distribution with itself",
+   "external": false
+  },
+  {
    "id": "pds/expectation#cor-fubini-joint",
    "site": "pds",
    "page": "expectation",
@@ -756,6 +765,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#def-surprisal",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-surprisal",
+   "kind": "def",
+   "title": "Surprisal (**self-information**, **information content**)",
+   "external": false
+  },
+  {
    "id": "pds/expectation#lem-cross-term-zero",
    "site": "pds",
    "page": "expectation",
@@ -834,6 +852,15 @@
    "div": "thm-conditional-lie",
    "kind": "thm",
    "title": "Conditional law of iterated expectations",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-cross-entropy-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cross-entropy-expectation",
+   "kind": "thm",
+   "title": "Cross-entropy as an expected negative log probability",
    "external": false
   },
   {
@@ -1584,6 +1611,15 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#def-realization",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-realization",
+   "kind": "def",
+   "title": "Realization (observed value)",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#def-std-normal",
    "site": "pds",
    "page": "random-variables",
@@ -2284,6 +2320,14 @@
    "pds/expectation#def-cond-mixed"
   ],
   [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-pmf"
+  ],
+  [
    "pds/expectation#cor-fubini-joint",
    "pds/expectation#def-cond-mixed"
   ],
@@ -2337,11 +2381,19 @@
   ],
   [
    "pds/expectation#def-cross-entropy",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
    "pds/random-variables#def-pmf"
   ],
   [
    "pds/expectation#def-entropy",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/expectation#def-surprisal"
   ],
   [
    "pds/expectation#def-entropy",
@@ -2452,6 +2504,18 @@
    "pds/expectation#def-prediction-error"
   ],
   [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/expectation#lem-cross-term-zero",
    "pds/expectation#def-cond-expectation-function"
   ],
@@ -2506,6 +2570,22 @@
   [
    "pds/expectation#thm-cond-lotus",
    "pds/expectation#def-cond-expectation-general"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#thm-fubini-tonelli-measure",
@@ -2902,6 +2982,18 @@
   [
    "pds/random-variables#def-random-variable",
    "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/random-variables#def-std-normal",
