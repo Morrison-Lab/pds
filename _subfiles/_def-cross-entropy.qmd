@@ -51,13 +51,33 @@ When $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
 
 {{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-expectation.qmd >}}
 
-::: {#rem-cross-entropy-entropy}
-#### Entropy is the cross-entropy of a distribution with itself
+{{< slidebreak >}}
 
-Setting $q = p$ gives $H(p, p) = -\sum_k p_k \log p_k$,
-which is the [entropy](#def-entropy) of a random variable with mass function $p$.
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-self.qmd >}}
 
-:::
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-self.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_cor-cross-entropy-entropy.qmd >}}
 
 {{< slidebreak >}}
 
