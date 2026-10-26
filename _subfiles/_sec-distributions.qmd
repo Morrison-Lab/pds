@@ -1605,7 +1605,7 @@ if (knitr::is_html_output()) {
 }
 ```
 
-The contours of the Mahalanobis distance at $1$ and $2$ for the covariance matrix of the example.
+The contours of the Mahalanobis distance at $1$ and $2$ for the example.
 The dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner ellipse.
 :::
 
