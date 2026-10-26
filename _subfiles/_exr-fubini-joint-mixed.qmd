@@ -80,8 +80,8 @@ plotly::plot_ly(
 ) |>
   plotly::add_lines() |>
   plotly::layout(
-    xaxis = list(title = "x"),
-    yaxis = list(title = "f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
+    xaxis = list(title = "Value of X"),
+    yaxis = list(title = "Joint density, f<sub>X,Y</sub>(x, y)", range = c(0, 0.55)),
     legend = list(title = list(text = "Y value"))
   )
 ```
