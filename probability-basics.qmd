@@ -144,6 +144,11 @@ by Alex Tsun teach probability and statistics for computing,
 and cover counting, conditional probability and Bayes' rule from a computer science viewpoint.
 :::
 
+::: {.callout-tip title="Another explanation"}
+Lange's *Applied Probability* [@lange2024applied] reviews probability and expectation
+in Section 1.2 and conditional probability in Section 1.3.
+:::
+
 ::: {.videos}
 5MinuteAI's five-minute videos follow the same course
 [@fiveminuteai_probstat]:
