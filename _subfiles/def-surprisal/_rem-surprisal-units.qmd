@@ -1,9 +1,0 @@
-:::{#rem-surprisal-units}
-#### Rarer values are more surprising, and the logarithm base sets the unit
-
-A possible value $x$ with [probability](probability-basics.qmd#def-probability) $\P(X=x) = 1$ has [surprisal](#def-surprisal) $0$,
-and the surprisal grows without bound as $\P(X=x) \to 0$.
-The base of the logarithm determines the unit:
-nats for the natural logarithm and bits for base 2.
-
-:::
