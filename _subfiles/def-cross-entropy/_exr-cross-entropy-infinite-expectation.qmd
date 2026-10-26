@@ -4,6 +4,6 @@
 
 Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$ with $q_k = 0$ for some $k$ with $p_k > 0$.
 Let $X$ have [mass function](random-variables.qmd#def-pmf) $p$, and write $q_X$ for the [random variable](random-variables.qmd#def-random-variable) that equals $q_k$ when $X = k$.
-Find $H(p, q)$ and $\E{-\log q_X}$.
+Find $\crossentropyf{p}{q}$ and $\E{-\log q_X}$.
 
 :::

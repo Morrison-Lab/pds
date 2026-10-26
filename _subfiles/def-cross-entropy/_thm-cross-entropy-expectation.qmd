@@ -6,7 +6,7 @@ and let $X$ have [mass function](random-variables.qmd#def-pmf) $p$.
 Write $q_X$ for the [random variable](random-variables.qmd#def-random-variable) that equals $q_k$ when $X = k$.
 Then
 
-$$H(p, q) = \E{-\log q_X}.$$
+$$\crossentropyf{p}{q} = \E{-\log q_X}.$$
 
 :::
 
@@ -23,12 +23,12 @@ $$
 &= \sum_{k : p_k > 0} g(k) \cd \P(X = k) && \text{(LOTUS)} \\
 &= -\sum_{k : p_k > 0} p_k \log q_k && \text{(} \P(X = k) = p_k \text{)} \\
 &= -\sumto{k}{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\
-&= H(p, q). && \text{(definition)}
+&= \crossentropyf{p}{q}. && \text{(definition)}
 \ea
 $$
 
 Now suppose $q_k = 0$ for some $k$ with $p_k > 0$.
-Then $H(p, q) = \infty$ by definition.
+Then $\crossentropyf{p}{q} = \infty$ by definition.
 Also $-\log q_X \ge 0$, and $-\log q_X = \infty$ with probability at least $p_k > 0$,
 so $\E{-\log q_X} = \infty$.
 

@@ -2,7 +2,7 @@
 
 $$
 \ba
-H(p, q)
+\crossentropyf{p}{q}
 &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
 &= \tfrac{1}{2} \cd 2 + \tfrac{1}{4} \cd 1 + \tfrac{1}{4} \cd 2 \\
 &= \tfrac{7}{4}.
