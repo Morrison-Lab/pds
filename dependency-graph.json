@@ -837,6 +837,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#thm-cross-entropy-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cross-entropy-expectation",
+   "kind": "thm",
+   "title": "Cross-entropy as an expected negative log probability",
+   "external": false
+  },
+  {
    "id": "pds/expectation#thm-fubini-tonelli-measure",
    "site": "pds",
    "page": "expectation",
@@ -2346,6 +2355,10 @@
   ],
   [
    "pds/expectation#def-cross-entropy",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
    "pds/random-variables#def-pmf"
   ],
   [
@@ -2515,6 +2528,22 @@
   [
    "pds/expectation#thm-cond-lotus",
    "pds/expectation#def-cond-expectation-general"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#thm-fubini-tonelli-measure",
