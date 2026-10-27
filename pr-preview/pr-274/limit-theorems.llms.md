@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-27 02:20:30 (PDT)
+Last modified: 2026-10-27 02:46:11 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -349,6 +349,8 @@ Last modified: 2026-10-27 02:20:30 (PDT)
 > *Solution 4*.
 >
 > ``` r
+> # Uses mpg and mu from sol-chebyshev-variance,
+> # and n_min from sol-chebyshev-min-n.
 > set.seed(571)
 > xbar <- replicate(10000, mean(sample(mpg, n_min, replace = TRUE)))
 > misses <- sum(abs(xbar - mu) >= 1)
@@ -360,7 +362,7 @@ Last modified: 2026-10-27 02:20:30 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 5 (Why Chebyshev’s bound is loose here)** Explain why the count in [Exercise 4](#exr-chebyshev-simulation) is so far below the 5% the bound allows.
+> **Exercise 5 (Why Chebyshev’s bound is loose here)** Compare the count in [Exercise 4](#exr-chebyshev-simulation) with the 5% the bound allows, and explain the difference.
 
 > **NOTE:**
 >
@@ -372,7 +374,7 @@ Last modified: 2026-10-27 02:20:30 (PDT)
 > #> [1] 7.694705e-06
 > ```
 >
-> The bound is loose because the sample mean of this many cars is nearly normal ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}; Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
+> The bound is loose because the sample [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of this many cars is nearly [normal](random-variables.llms.md#def-normal) ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}. Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
 
 > **NOTE:**
 >
