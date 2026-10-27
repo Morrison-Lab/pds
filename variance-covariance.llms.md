@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 23:43:51 (PDT)
+Last modified: 2026-10-27 10:44:58 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -38,17 +38,17 @@ Last modified: 2026-10-26 23:43:51 (PDT)
 >
 > **Definition 2 (Deviation from a population or subpopulation mean)** The **deviation from the mean** of a random variable \\Y\\ is its [deviation](#def-deviation) from its [expectation](expectation.llms.md#def-expectation):
 >
-> \\\delta(Y) \stackrel{\text{def}}{=}Y - {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\
+> \\\mathbb{d}(Y) \stackrel{\text{def}}{=}Y - {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\
 >
 > For a realized observation \\y\\:
 >
-> \\\delta(y) \stackrel{\text{def}}{=}y - {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\
+> \\\mathbb{d}(y) \stackrel{\text{def}}{=}y - {\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}}\\
 
 > **NOTE:**
 >
-> *Remark*. Other sources often call this quantity an **error** or **noise term** [\[1\]](#ref-wikipedia_errors_and_residuals). In regression settings, the reference mean is often conditional on covariates: \\\delta(y_i) \stackrel{\text{def}}{=}y_i - {\mathbb{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}}\\.
+> *Remark*. Other sources often call this quantity an **error** or **noise term** [\[1\]](#ref-wikipedia_errors_and_residuals). In regression settings, the reference mean is often conditional on covariates: \\\mathbb{d}(y_i) \stackrel{\text{def}}{=}y_i - {\mathbb{E}\mathopen{}\left\[Y_i \mid X_i = x_i\right\]\mathclose{}}\\.
 >
-> These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\\delta(\cdot)\\ for these model/data deviations, and reserve \\{\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
+> These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write \\\mathbb{d}(\cdot)\\ for these model/data deviations, and reserve \\{\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}}\\ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
 >
 > See:
 >
@@ -60,11 +60,11 @@ Last modified: 2026-10-26 23:43:51 (PDT)
 >
 > **Example 2 (Deviation of a die roll from its mean)** A fair die roll \\Y\\ has \\{\mathbb{E}\mathopen{}\left\[Y\right\]\mathclose{}} = 3.5\\ (computed on the [expectation page](expectation.llms.md#exm-linearity-expectation)), so a roll of \\y = 5\\ has deviation
 >
-> \\ \begin{aligned} \delta(5) &= 5 - 3.5 \\ &= 1.5, \end{aligned} \\
+> \\ \begin{aligned} \mathbb{d}(5) &= 5 - 3.5 \\ &= 1.5, \end{aligned} \\
 >
 > and a roll of \\y = 2\\ has deviation
 >
-> \\ \begin{aligned} \delta(2) &= 2 - 3.5 \\ &= -1.5. \end{aligned} \\
+> \\ \begin{aligned} \mathbb{d}(2) &= 2 - 3.5 \\ &= -1.5. \end{aligned} \\
 
 ### 1.1 Mean-zero noise model
 
@@ -108,7 +108,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > **Definition 3 (Variance)** The **variance** of a random variable \\X\\ with \\{\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} \< \infty\\ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean) [\[2\]](#ref-wikipedia_variance); that is:
 >
-> \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[\[\delta(X)\]^2\right\]\mathclose{}}\\
+> \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[\[\mathbb{d}(X)\]^2\right\]\mathclose{}}\\
 
 > **NOTE:**
 >
@@ -116,13 +116,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. Substituting the definition of \\\delta(X)\\ from [Definition 2](#def-deviation-pop-mean) into [Definition 3](#def-variance):
+> *Proof*. Substituting the definition of \\\mathbb{d}(X)\\ from [Definition 2](#def-deviation-pop-mean) into [Definition 3](#def-variance):
 >
-> \\ {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[\[\delta(X)\]^2\right\]\mathclose{}} = {\mathbb{E}\mathopen{}\left\[(X - {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}})^2\right\]\mathclose{}}. \\
+> \\ {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[\[\mathbb{d}(X)\]^2\right\]\mathclose{}} = {\mathbb{E}\mathopen{}\left\[(X - {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}})^2\right\]\mathclose{}}. \\
 
 > **NOTE:**
 >
-> *Remark*. This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep \\\delta(X)\\ as the definition’s single building block, matching the notation of [Definition 2](#def-deviation-pop-mean).
+> *Remark*. This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep \\\mathbb{d}(X)\\ as the definition’s single building block, matching the notation of [Definition 2](#def-deviation-pop-mean).
 
 > **NOTE:**
 >
@@ -132,7 +132,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > *Proof*. Let \\\mu= {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\\ be the [population mean](expectation.llms.md#def-expectation) of \\X\\. It is a constant, so [linearity of expectation](expectation.llms.md#thm-linearity-expectation) applies with \\\mu\\ as a coefficient:
 >
-> \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} &\stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[\[\delta(X)\]^2\right\]\mathclose{}} && \text{(definition of variance)} \\ &= {\mathbb{E}\mathopen{}\left\[(X-\mu)^2\right\]\mathclose{}} && \text{(definition of deviation from the population mean } \mu\text{)} \\ &={\mathbb{E}\mathopen{}\left\[X^2 - 2X\mu+ {\mathopen{}\left(\mu\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(expand binomial square)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - 2\mu{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} + {\mathopen{}\left(\mu\right)\mathclose{}}^{2} && \text{(linearity of expectation; } \mu\text{ is a constant)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - 2{\mathopen{}\left(\mu\right)\mathclose{}}^{2} + {\mathopen{}\left(\mu\right)\mathclose{}}^{2} && \text{(} {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = \mu\text{)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left(\mu\right)\mathclose{}}^{2} && \text{(combine like terms)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && \text{(} \mu= {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} \text{)} \end{aligned} \\
+> \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} &\stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[\[\mathbb{d}(X)\]^2\right\]\mathclose{}} && \text{(definition of variance)} \\ &= {\mathbb{E}\mathopen{}\left\[(X-\mu)^2\right\]\mathclose{}} && \text{(definition of deviation from the population mean } \mu\text{)} \\ &={\mathbb{E}\mathopen{}\left\[X^2 - 2X\mu+ {\mathopen{}\left(\mu\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(expand binomial square)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - 2\mu{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} + {\mathopen{}\left(\mu\right)\mathclose{}}^{2} && \text{(linearity of expectation; } \mu\text{ is a constant)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - 2{\mathopen{}\left(\mu\right)\mathclose{}}^{2} + {\mathopen{}\left(\mu\right)\mathclose{}}^{2} && \text{(} {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} = \mu\text{)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left(\mu\right)\mathclose{}}^{2} && \text{(combine like terms)} \\ &={\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && \text{(} \mu= {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} \text{)} \end{aligned} \\
 
 > **NOTE:**
 >
