@@ -107,7 +107,7 @@ $$
 \E{\sqf{\noise + \Rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
 $$
 
-where $\varpar$ is the residual variance.
+where $\varpar$ is the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
 The statistics notes define the bias of a prediction and the training data it depends on,
 and state this result for predictions as the
 [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition),
