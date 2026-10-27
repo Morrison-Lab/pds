@@ -4,7 +4,7 @@
     and $-\log_2 \tfrac{1}{2} = 1$ when $X = 2$.
     So $\P(Y = 2) = p_1 + p_3 = \tfrac{3}{4}$ and $\P(Y = 1) = p_2 = \tfrac{1}{4}$.
 
-2.  From this mass function,
+2.  From this [mass function](random-variables.qmd#def-pmf),
 
     $$
     \ba
