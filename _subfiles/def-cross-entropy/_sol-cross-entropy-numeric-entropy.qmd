@@ -1,6 +1,8 @@
 :::{#sol-cross-entropy-numeric-entropy}
 
-The [range](random-variables.qmd#def-range) of $X$ is $\set{1, 2, 3}$, and $\P(X = k) = p_k$, so
+The [range](random-variables.qmd#def-range) of $X$ is $\set{1, 2, 3}$,
+and $\P(X = k) = p_k$,
+so
 
 $$
 \ba

@@ -2,6 +2,7 @@
 
 ```{r}
 #| label: chebyshev-simulation
+# Uses mpg and mu from sol-chebyshev-variance and n_min from sol-chebyshev-min-n.
 #| code-fold: false
 set.seed(571)
 xbar <- replicate(10000, mean(sample(mpg, n_min, replace = TRUE)))
