@@ -1,0 +1,14 @@
+::: {#sol-chebyshev-min-n}
+
+Setting $\varpar/(n \cdot 1^2) \le 0.05$ gives $n \ge 20\varpar$.
+
+```{r}
+#| label: chebyshev-min-n
+#| code-fold: false
+n_min <- ceiling(20 * sigma2)
+n_min
+```
+
+With $\varpar$ from @sol-chebyshev-variance, $n = `{r} n_min`$ cars suffice.
+
+:::

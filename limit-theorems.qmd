@@ -49,6 +49,38 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exr-chebyshev-variance.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-chebyshev-variance.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-chebyshev-min-n.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-chebyshev-min-n.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-chebyshev-simulation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-chebyshev-simulation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-chebyshev-loose.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-chebyshev-loose.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-chebyshev-sample-mean.qmd >}}
 
 {{< include pds/_subfiles/_lem-hoeffding.qmd >}}

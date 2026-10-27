@@ -1,0 +1,8 @@
+::: {#exr-chebyshev-min-n}
+
+#### Smallest sample size from Chebyshev's bound
+
+Find the smallest $n$ for which the bound in @exr-chebyshev-sample-size guarantees
+$\Prf{\abs{\samplemean{X}{n} - \mean} \ge 1} \le 0.05$.
+
+:::

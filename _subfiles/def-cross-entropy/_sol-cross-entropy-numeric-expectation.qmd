@@ -1,17 +1,13 @@
 :::{#sol-cross-entropy-numeric-expectation}
 
-1.  The variable $Y$ equals $-\log_2 \tfrac{1}{4} = 2$ when $X \in \set{1, 3}$,
-    and $-\log_2 \tfrac{1}{2} = 1$ when $X = 2$.
-    So $\P(Y = 2) = p_1 + p_3 = \tfrac{3}{4}$ and $\P(Y = 1) = p_2 = \tfrac{1}{4}$.
+From the [mass function](random-variables.qmd#def-pmf) in @sol-cross-entropy-numeric-pmf,
 
-2.  From this [mass function](random-variables.qmd#def-pmf),
-
-    $$
-    \ba
-    \E{Y}
-    &= 2 \cd \tfrac{3}{4} + 1 \cd \tfrac{1}{4} \\
-    &= \tfrac{7}{4}.
-    \ea
-    $$
+$$
+\ba
+\E{Y}
+&= 2 \cd \tfrac{3}{4} + 1 \cd \tfrac{1}{4} \\
+&= \tfrac{7}{4}.
+\ea
+$$
 
 :::

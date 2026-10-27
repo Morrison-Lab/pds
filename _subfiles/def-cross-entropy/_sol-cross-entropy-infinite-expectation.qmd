@@ -1,9 +1,5 @@
 :::{#sol-cross-entropy-infinite-expectation}
 
-1.  By @def-cross-entropy, $\crossentropyf{p}{q} = \infty$.
-
-2.  Here $-\log q_X \ge 0$ always, and $-\log q_X = \infty$ with [probability](probability-basics.qmd#def-probability) at least $p_k > 0$,
-    so $\E{-\log q_X} = \infty$ as well.
-    Both are infinite, so they are still equal.
+By @def-cross-entropy, $\crossentropyf{p}{q} = \infty$.
 
 :::

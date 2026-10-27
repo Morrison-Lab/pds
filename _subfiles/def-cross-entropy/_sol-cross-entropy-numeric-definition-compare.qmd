@@ -1,0 +1,7 @@
+:::{#sol-cross-entropy-numeric-definition-compare}
+
+The [cross-entropy](#def-cross-entropy) equals $\E{-\log_2 q_X}$.
+The two calculations group the same three terms differently:
+the [expectation](#def-expectation) first combines [outcomes](probability-basics.qmd#def-experiment-outcome) 1 and 3, which have the same value of $-\log_2 q_X$.
+
+:::

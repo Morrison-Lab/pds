@@ -14,7 +14,7 @@ $$
 
 ::: proof
 
-This is the solution to @exr-chebyshev-sample-size (a), worked in @sol-chebyshev-sample-size.
+This is the solution to @exr-chebyshev-sample-size, worked in @sol-chebyshev-sample-size.
 It applies @thm-chebyshev to $\samplemean{X}{n}$, whose [variance](variance-covariance.qmd#def-variance) is $\varpar/n$ by @cor-mean-iid-moments.
 
 :::

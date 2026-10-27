@@ -1,0 +1,7 @@
+:::{#exr-cross-entropy-infinite-expectation-mean}
+
+#### Expected negative log probability when $q$ gives zero probability to a possible outcome
+
+In the setting of @exr-cross-entropy-infinite-expectation, find the [expectation](#def-expectation) $\E{-\log q_X}$.
+
+:::
