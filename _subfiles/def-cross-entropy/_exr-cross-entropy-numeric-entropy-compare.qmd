@@ -1,0 +1,7 @@
+:::{#exr-cross-entropy-numeric-entropy-compare}
+
+#### Entropy and the cross-entropy of a mass function with itself
+
+Compare your value of $\entropyf{X}$ from @exr-cross-entropy-numeric-entropy with your value of $\crossentropyf{p}{p}$ from @exr-cross-entropy-numeric-self.
+
+:::

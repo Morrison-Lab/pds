@@ -1,0 +1,20 @@
+::: {#sol-chebyshev-loose}
+
+```{r}
+#| label: chebyshev-loose
+#| code-fold: false
+normal_approx <- 2 * pnorm(-1 / sqrt(sigma2 / n_min))
+normal_approx
+```
+
+In @sol-chebyshev-simulation,
+the count is far below the 5% (500 samples) the bound allows.
+The bound is loose
+because the sample [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of this many cars is nearly [normal](random-variables.qmd#def-normal)
+(@thm-clt),
+and the normal approximation puts the chance of a miss at about
+`{r} signif(normal_approx, 2)`.
+Chebyshev's inequality must hold for every distribution, as in
+@exm-chebyshev-auto.
+
+:::

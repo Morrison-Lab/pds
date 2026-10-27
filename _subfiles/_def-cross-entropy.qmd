@@ -17,6 +17,14 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-pmf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-pmf.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-expectation.qmd >}}
 
 {{< slidebreak >}}
@@ -33,6 +41,14 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-definition-compare.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-definition-compare.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-expectation.qmd >}}
 
 {{< slidebreak >}}
@@ -46,6 +62,14 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-infinite-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-infinite-expectation-mean.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-infinite-expectation-mean.qmd >}}
 
 {{< slidebreak >}}
 
@@ -66,6 +90,14 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-entropy.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-numeric-entropy-compare.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-numeric-entropy-compare.qmd >}}
 
 {{< slidebreak >}}
 

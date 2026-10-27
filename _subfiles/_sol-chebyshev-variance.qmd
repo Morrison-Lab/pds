@@ -1,0 +1,14 @@
+::: {#sol-chebyshev-variance}
+
+```{r}
+#| label: chebyshev-variance
+#| code-fold: false
+mpg <- read.csv("data/auto.csv")$mpg
+mu <- mean(mpg)
+sigma2 <- mean((mpg - mu)^2)
+sigma2
+```
+
+The population [variance](variance-covariance.qmd#def-variance) of `mpg` is `{r} round(sigma2, 1)`.
+
+:::

@@ -1,0 +1,8 @@
+::: {#exr-chebyshev-loose}
+
+#### Why Chebyshev's bound is loose here
+
+Explain why the count in @exr-chebyshev-simulation
+is far below the 5% the bound allows.
+
+:::

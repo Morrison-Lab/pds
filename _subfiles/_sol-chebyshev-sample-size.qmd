@@ -1,45 +1,9 @@
 ::: {#sol-chebyshev-sample-size}
 
-a.  By @thm-sum-iid-moments, $\Var{S_n} = n\varpar$ for $S_n \eqdef \sumin X_i$,
-    so $\samplemean{X}{n} = S_n/n$ has mean $\mean$ and variance $\varpar/n$
-    (a constant factor $c$ scales a variance by $c^2$).
-    Apply @thm-chebyshev to $\samplemean{X}{n}$ with $k\sdpar/\sqrt{n} = \epsilon$,
-    that is, $k = \epsilon\sqrt{n}/\sdpar$, so $1/k^2 = \varpar/(n\epsilon^2)$.
-
-b.  Setting $\varpar/(n \cdot 1^2) \le 0.05$ gives $n \ge 20\varpar$.
-
-c.  See the code below.
-
-```{r}
-#| label: chebyshev-sample-size
-#| code-fold: false
-mpg <- read.csv("data/auto.csv")$mpg
-mu <- mean(mpg)
-sigma2 <- mean((mpg - mu)^2)
-n_min <- ceiling(20 * sigma2)
-
-set.seed(571)
-xbar <- replicate(10000, mean(sample(mpg, n_min, replace = TRUE)))
-misses <- sum(abs(xbar - mu) >= 1)
-normal_approx <- 2 * pnorm(-1 / sqrt(sigma2 / n_min))
-c(variance = sigma2, n = n_min, misses = misses, normal_approx = normal_approx)
-```
-
-```{r}
-#| include: false
-# The claims the prose makes: the bound is respected, and it is far from tight.
-stopifnot(misses / 10000 <= 0.05, misses <= 5, n_min >= 1)
-```
-
-The population variance of `mpg` is `{r} round(sigma2, 1)`,
-so $n = `{r} n_min`$ cars suffice.
-Out of 10,000 samples of that size, `{r} misses` sample means missed $\mean$ by 1 or more,
-against the 5% (500 samples) the bound allows.
-The bound is loose because the sample mean of this many cars is nearly normal
-(@thm-clt),
-and the normal approximation puts the chance of a miss at about
-`{r} signif(normal_approx, 2)`;
-Chebyshev's inequality must hold for every distribution, as in
-@exm-chebyshev-auto.
+By @thm-sum-iid-moments, $\Var{S_n} = n\varpar$ for $S_n \eqdef \sumin X_i$,
+so $\samplemean{X}{n} = S_n/n$ has mean $\mean$ and variance $\varpar/n$
+(a constant factor $c$ scales a variance by $c^2$).
+Apply @thm-chebyshev to $\samplemean{X}{n}$ with $k\sdpar/\sqrt{n} = \epsilon$,
+that is, $k = \epsilon\sqrt{n}/\sdpar$, so $1/k^2 = \varpar/(n\epsilon^2)$.
 
 :::
