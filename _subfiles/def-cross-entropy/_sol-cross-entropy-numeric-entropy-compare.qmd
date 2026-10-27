@@ -1,5 +1,5 @@
 :::{#sol-cross-entropy-numeric-entropy-compare}
 
-The entropy equals $\crossentropyf{p}{p}$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
+The [entropy](#def-entropy) equals $\crossentropyf{p}{p}$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
 
 :::

@@ -3,6 +3,6 @@
 #### Simulated misses of the sample mean
 
 Draw 10,000 samples of the size from @exr-chebyshev-min-n with replacement,
-and report how many of the sample means $\samplemean{X}{n}$ miss $\mean$ by 1 or more.
+and report how many of the sample [means](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) $\samplemean{X}{n}$ miss $\mean$ by 1 or more.
 
 :::

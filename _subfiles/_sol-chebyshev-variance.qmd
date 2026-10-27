@@ -9,6 +9,6 @@ sigma2 <- mean((mpg - mu)^2)
 sigma2
 ```
 
-The population variance of `mpg` is `{r} round(sigma2, 1)`.
+The population [variance](variance-covariance.qmd#def-variance) of `mpg` is `{r} round(sigma2, 1)`.
 
 :::

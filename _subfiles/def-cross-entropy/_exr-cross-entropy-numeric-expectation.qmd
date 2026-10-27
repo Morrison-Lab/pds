@@ -2,6 +2,6 @@
 
 #### Expected negative log probability for two mass functions
 
-Using the mass function of $Y = -\log_2 q_X$ from @exr-cross-entropy-numeric-pmf, compute $\E{Y}$.
+Using the [mass function](random-variables.qmd#def-pmf) of $Y = -\log_2 q_X$ from @exr-cross-entropy-numeric-pmf, compute $\E{Y}$.
 
 :::
