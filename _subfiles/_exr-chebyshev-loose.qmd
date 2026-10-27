@@ -2,7 +2,7 @@
 
 #### Why Chebyshev's bound is loose here
 
-Compare the count in @exr-chebyshev-simulation with the 5% the bound allows,
-and explain the difference.
+Explain why the count in @exr-chebyshev-simulation
+is far below the 5% the bound allows.
 
 :::
