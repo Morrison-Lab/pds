@@ -88,8 +88,11 @@ $$
 $$
 
 For a fair coin ($\prob = 1/2$), $\Var{X} = 1/4$.
+@fig-bernoulli-variance graphs $\Var{X}$ against $\prob$.
 
 :::
+
+{{< include pds/_subfiles/_fig-bernoulli-variance.qmd >}}
 
 {{< slidebreak >}}
 
