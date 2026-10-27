@@ -1,16 +1,16 @@
 :::{#sol-cross-entropy-numeric-entropy}
 
-The [range](random-variables.qmd#def-range) of $X$ is $\set{1, 2, 3}$, and $\P(X = k) = p_k$, so
+1.  The [range](random-variables.qmd#def-range) of $X$ is $\set{1, 2, 3}$, and $\P(X = k) = p_k$, so
 
-$$
-\ba
-\entropyf{X}
-&= -\sum_{k \in \rangef{X}} \P(X = k) \log_2 \P(X = k) \\
-&= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
-&= \tfrac{3}{2} \text{ bits}.
-\ea
-$$
+    $$
+    \ba
+    \entropyf{X}
+    &= -\sum_{k \in \rangef{X}} \P(X = k) \log_2 \P(X = k) \\
+    &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
+    &= \tfrac{3}{2} \text{ bits}.
+    \ea
+    $$
 
-This equals $\crossentropyf{p}{p}$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
+2.  This equals $\crossentropyf{p}{p}$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
 
 :::
