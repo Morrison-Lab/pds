@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-27 02:46:11 (PDT)
+Last modified: 2026-10-27 04:03:48 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -326,7 +326,7 @@ Last modified: 2026-10-27 02:46:11 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 3 (Smallest sample size from Chebyshev’s bound)** Find the smallest \\n\\ for which the bound in [Exercise 1](#exr-chebyshev-sample-size) guarantees \\{\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge 1\right)\mathclose{}} \le 0.05\\.
+> **Exercise 3 (Smallest sample size from Chebyshev’s bound)** With \\\sigma^2\\ from [Exercise 2](#exr-chebyshev-variance), find the smallest \\n\\ for which the bound in [Exercise 1](#exr-chebyshev-sample-size) guarantees \\{\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge 1\right)\mathclose{}} \le 0.05\\.
 
 > **NOTE:**
 >
@@ -362,7 +362,7 @@ Last modified: 2026-10-27 02:46:11 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 5 (Why Chebyshev’s bound is loose here)** Compare the count in [Exercise 4](#exr-chebyshev-simulation) with the 5% the bound allows, and explain the difference.
+> **Exercise 5 (Why Chebyshev’s bound is loose here)** Explain why the count in [Exercise 4](#exr-chebyshev-simulation) is far below the 5% the bound allows.
 
 > **NOTE:**
 >
@@ -374,7 +374,7 @@ Last modified: 2026-10-27 02:46:11 (PDT)
 > #> [1] 7.694705e-06
 > ```
 >
-> The bound is loose because the sample [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of this many cars is nearly [normal](random-variables.llms.md#def-normal) ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}. Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
+> In [Solution 4](#sol-chebyshev-simulation), the count is far below the 5% (500 samples) the bound allows. The bound is loose because the sample [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of this many cars is nearly [normal](random-variables.llms.md#def-normal) ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}. Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
 
 > **NOTE:**
 >
