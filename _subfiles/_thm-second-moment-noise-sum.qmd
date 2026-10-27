@@ -111,7 +111,6 @@ where $\varpar$ is the [residual variance](https://morrison-lab.github.io/sds/mo
 The statistics notes define the bias of a prediction and the training data it depends on,
 and state this result for predictions as the
 [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition),
-with its exercise, worked example and
-[residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
+with its exercise, worked example and definition of the residual variance.
 
 :::
