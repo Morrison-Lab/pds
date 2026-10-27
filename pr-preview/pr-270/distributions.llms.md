@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 12:23:34 (PDT)
+Last modified: 2026-10-26 23:15:40 (PDT)
 
 > **NOTE:**
 >
@@ -825,7 +825,64 @@ print(plot2)
 >
 > \\ \begin{aligned} \Delta(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}})^2 &= 2/2 \\ &= 1. \end{aligned} \\
 >
-> So the contour \\\Delta(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated.
+> So the contour \\\Delta(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{x}}\vphantom{x}}) = 1\\ of the \\\operatorname{N}\_2\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}\\ density is an ellipse stretched along \\{(1, 1)}^{\top}\\, with half-length \\\sqrt{3}\\, and squeezed along \\{(1, -1)}^{\top}\\, with half-length \\1\\: \\X_1\\ and \\X_2\\ are positively correlated ([Figure 4](#fig-mahalanobis-eigen)).
+>
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > library(ggplot2)
+> >
+> > # The covariance matrix of the example and its eigendecomposition.
+> > covmat <- matrix(c(2, 1, 1, 2), nrow = 2)
+> > eig <- eigen(covmat)
+> > stopifnot(all.equal(eig$values, c(3, 1)))
+> >
+> > # The Mahalanobis distance of each grid point from the mean zero.
+> > grid <- expand.grid(
+> >   x1 = seq(-3.5, 3.5, length.out = 200),
+> >   x2 = seq(-3.5, 3.5, length.out = 200)
+> > )
+> > grid_matrix <- as.matrix(grid)
+> > grid$mahal <- sqrt(rowSums((grid_matrix %*% solve(covmat)) * grid_matrix))
+> >
+> > # The points of the example: sqrt(3) q1 and q2, each at distance 1.
+> > q1 <- c(1, 1) / sqrt(2)
+> > q2 <- c(1, -1) / sqrt(2)
+> > examples <- data.frame(
+> >   x1 = c(sqrt(3) * q1[1], q2[1]),
+> >   x2 = c(sqrt(3) * q1[2], q2[2])
+> > )
+> >
+> > mahal_plot <- ggplot(grid) +
+> >   aes(x1, x2) +
+> >   geom_contour(
+> >     aes(z = mahal, colour = factor(after_stat(level))),
+> >     breaks = c(1, 2)
+> >   ) +
+> >   geom_point(data = examples, size = 2.5) +
+> >   scale_colour_viridis_d(name = "Mahalanobis distance", end = 0.7) +
+> >   coord_fixed(expand = FALSE) +
+> >   labs(x = "x1", y = "x2") +
+> >   theme(legend.position = "bottom")
+> >
+> > if (knitr::is_html_output()) {
+> >   htmltools::div(
+> >     role = "img",
+> >     `aria-label` = fig_alt_mahal_eigen,
+> >     plotly::ggplotly(mahal_plot) |>
+> >       plotly::layout(
+> >         legend = list(orientation = "h", x = 0.5, xanchor = "center", y = -0.25)
+> >       ) |>
+> >       plotly::config(displaylogo = FALSE, responsive = TRUE)
+> >   )
+> > } else {
+> >   mahal_plot
+> > }
+> > ```
+> >
+> > Figure 4: The contours of the Mahalanobis distance at \\1\\ and \\2\\ for the example. The dots are the points \\\sqrt{3}\\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{q}}\vphantom{q}}\_1\\ and \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{q}}\vphantom{q}}\_2\\ of the example on the inner ellipse.
 
 ## 8 Mixture distributions
 

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-26 12:23:34 (PDT)
+Last modified: 2026-10-26 23:15:40 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -140,7 +140,48 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\right)\mathclose{}}^{2} && \text{(simplified expression for variance)} \\ &= \pi- \pi^2 && \text{(substitute)} \\ &= \pi(1 - \pi) && \text{(factor)} \end{aligned} \\
 >
-> For a fair coin (\\\pi= 1/2\\), \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 1/4\\.
+> For a fair coin (\\\pi= 1/2\\), \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 1/4\\. [Figure 1](#fig-bernoulli-variance) graphs \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\\ against \\\pi\\.
+
+> **NOTE:**
+>
+> ## Python
+>
+> ``` python
+> import numpy as np
+> import matplotlib.pyplot as plt
+>
+> prob = np.linspace(0, 1, 201)
+> variance = prob * (1 - prob)
+>
+> fig, ax = plt.subplots(figsize=(6, 3.5), layout="constrained")
+> ax.plot(prob, variance, color="#1f77b4")
+> ax.plot(0.5, 0.5 * (1 - 0.5), "o", color="#ff7f0e")
+> ax.set_xlabel("probability of a 1")
+> ax.set_ylabel("variance")
+> plt.show()
+> ```
+>
+> [![A dome-shaped curve of the variance of a Bernoulli random variable against its probability, for probabilities from 0 to 1. The curve is 0 at both ends and peaks at 0.25 when the probability is 0.5, which a dot marks.](variance-covariance_files/figure-html/bernoulli-variance-py-1.png)](variance-covariance_files/figure-html/bernoulli-variance-py-1.png "Figure 1: The variance \pi(1 - \pi) of a Bernoulli random variable, against its probability \pi. It is 0 at \pi= 0 and \pi= 1, where the outcome is certain. It is largest, 1/4, at \pi= 1/2 (dot), where the outcome is least predictable.")
+>
+> ## R
+>
+> ``` r
+> library(ggplot2)
+>
+> prob <- seq(0, 1, length.out = 201)
+> bernoulli <- data.frame(prob = prob, variance = prob * (1 - prob))
+> mid <- data.frame(prob = 0.5, variance = 0.5 * (1 - 0.5))
+>
+> ggplot(bernoulli, aes(x = prob, y = variance)) +
+>   geom_line(colour = "#1f77b4") +
+>   geom_point(data = mid, colour = "#ff7f0e", size = 2) +
+>   labs(x = "probability of a 1", y = "variance") +
+>   theme_minimal()
+> ```
+>
+> [![A dome-shaped curve of the variance of a Bernoulli random variable against its probability, for probabilities from 0 to 1. The curve is 0 at both ends and peaks at 0.25 when the probability is 0.5, which a dot marks.](variance-covariance_files/figure-html/bernoulli-variance-r-1.png)](variance-covariance_files/figure-html/bernoulli-variance-r-1.png "Figure 1: The variance \pi(1 - \pi) of a Bernoulli random variable, against its probability \pi. It is 0 at \pi= 0 and \pi= 1, where the outcome is certain. It is largest, 1/4, at \pi= 1/2 (dot), where the outcome is least predictable.")
+>
+> Figure 1: The [variance](#def-variance) \\\pi(1 - \pi)\\ of a [Bernoulli](random-variables.llms.md#def-bernoulli) [random variable](random-variables.llms.md#def-random-variable), against its [probability](probability-basics.llms.md#def-probability) \\\pi\\. It is 0 at \\\pi= 0\\ and \\\pi= 1\\, where the [outcome](expectation.llms.md#def-outcome) is certain. It is largest, \\1/4\\, at \\\pi= 1/2\\ (dot), where the outcome is least predictable.
 
 > **NOTE:**
 >
@@ -772,7 +813,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > #> -233.2613494   38.4420327    7.7950458   -0.7784268
 > ```
 >
-> [Figure 1](#fig-cor-auto) plots each car’s miles per gallon against its horsepower.
+> [Figure 2](#fig-cor-auto) plots each car’s miles per gallon against its horsepower.
 >
 > Show code
 >
@@ -786,9 +827,9 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > > **NOTE:**
 > >
-> > [![A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.](variance-covariance_files/figure-html/fig-cor-auto-1.png)](variance-covariance_files/figure-html/fig-cor-auto-1.png "Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.")
+> > [![A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.](variance-covariance_files/figure-html/fig-cor-auto-1.png)](variance-covariance_files/figure-html/fig-cor-auto-1.png "Figure 2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.")
 > >
-> > Figure 1: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
+> > Figure 2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 >
 > The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between \\-1\\ and \\1\\ as [Theorem 14](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
 
