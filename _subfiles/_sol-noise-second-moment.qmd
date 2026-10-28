@@ -15,7 +15,7 @@ $$ {#eq-noise-second-moment}
 so for mean-zero noise the average squared value *is* the variance.
 
 The identity looks slight and does a lot of work.
-@eq-noise-second-moment is the step that produces the irreducible error term
+@eq-noise-second-moment is the step that produces the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error) term
 in regression and statistical modeling:
 it converts a statement about the *spread* of the noise, which is what a
 model of the world gives you, into a statement about *squared error*, which
