@@ -1,0 +1,11 @@
+:::{#exr-cross-entropy-numeric-pmf}
+
+#### Mass function of the negative log probability for two mass functions
+
+Let $X$ have [probability mass function](random-variables.qmd#def-pmf) $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ on $\set{1, 2, 3}$,
+and let $q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})$ be another probability mass function on $\set{1, 2, 3}$.
+Write $q_X$ for the [random variable](random-variables.qmd#def-random-variable) that equals $q_k$ when $X = k$.
+
+Find the probability mass function of $Y = -\log_2 q_X$.
+
+:::

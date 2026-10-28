@@ -1,9 +1,10 @@
 :::{#exr-cross-entropy-infinite-expectation}
 
-#### Cross-entropy as an expectation when $q$ gives zero probability to a possible outcome
+#### Cross-entropy when $q$ gives zero probability to a possible outcome
 
 Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$ with $q_k = 0$ for some $k$ with $p_k > 0$.
 Let $X$ have [mass function](random-variables.qmd#def-pmf) $p$, and write $q_X$ for the [random variable](random-variables.qmd#def-random-variable) that equals $q_k$ when $X = k$.
-Find the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ and the [expectation](#def-expectation) $\E{-\log q_X}$.
+
+Find the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$.
 
 :::

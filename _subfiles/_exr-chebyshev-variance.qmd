@@ -1,0 +1,9 @@
+::: {#exr-chebyshev-variance}
+
+#### Population variance of the fuel economy
+
+Compute $\varpar$ for the `mpg` column of
+[`data/auto.csv`](data/auto.csv),
+treating the 392 cars as the whole population.
+
+:::

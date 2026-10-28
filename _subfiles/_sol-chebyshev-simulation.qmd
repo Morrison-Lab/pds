@@ -1,0 +1,23 @@
+::: {#sol-chebyshev-simulation}
+
+```{r}
+#| label: chebyshev-simulation
+#| code-fold: false
+# Uses mpg and mu from sol-chebyshev-variance,
+# and n_min from sol-chebyshev-min-n.
+set.seed(571)
+xbar <- replicate(10000, mean(sample(mpg, n_min, replace = TRUE)))
+misses <- sum(abs(xbar - mu) >= 1)
+misses
+```
+
+```{r}
+#| include: false
+# The claims the prose makes: the bound is respected, and it is far from tight.
+stopifnot(misses / 10000 <= 0.05, misses <= 5, n_min >= 1)
+```
+
+Out of 10,000 samples of that size, `{r} misses` sample means missed $\mean$ by 1 or more,
+against the 5% (500 samples) the bound allows.
+
+:::

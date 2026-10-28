@@ -1,26 +1,16 @@
 ::: {#exr-chebyshev-sample-size}
 
-#### How many cars to estimate mean fuel economy
+#### Chebyshev's bound for the mean fuel economy
 
 Let $X_1, \ldots, X_n$ be [IID](independence.qmd#def-iid) draws of the fuel economy (`mpg`) of
 a car chosen at random from the Auto data,
 with population mean $\mean$ and variance $\varpar$,
 and let $\samplemean{X}{n} \eqdef \avgin X_i$.
 
-a.  Use @thm-sum-iid-moments and @thm-chebyshev to show that for every $\epsilon > 0$,
+Use @thm-sum-iid-moments and @thm-chebyshev to show that for every $\epsilon > 0$,
 
-    $$
-    \Prf{\abs{\samplemean{X}{n} - \mean} \ge \epsilon} \le \frac{\varpar}{n\epsilon^2}
-    $$
-
-b.  Compute $\varpar$ for the `mpg` column of
-    [`data/auto.csv`](data/auto.csv),
-    treating the 392 cars as the whole population.
-    Find the smallest $n$ for which the bound in (a) guarantees
-    $\Prf{\abs{\samplemean{X}{n} - \mean} \ge 1} \le 0.05$.
-
-c.  Simulate 10,000 samples of that size drawn with replacement,
-    and count how many sample means miss $\mean$ by 1 or more.
-    Why is the count so far below the 5% the bound allows?
+$$
+\Prf{\abs{\samplemean{X}{n} - \mean} \ge \epsilon} \le \frac{\varpar}{n\epsilon^2}
+$$
 
 :::

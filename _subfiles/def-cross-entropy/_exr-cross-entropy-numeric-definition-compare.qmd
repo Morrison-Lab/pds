@@ -1,0 +1,7 @@
+:::{#exr-cross-entropy-numeric-definition-compare}
+
+#### Cross-entropy and the expected negative log probability
+
+Compare your value of $\crossentropyf{p}{q}$ from @exr-cross-entropy-numeric-definition with your value of $\E{-\log_2 q_X}$ from @exr-cross-entropy-numeric-expectation, where $X$ has [probability mass function](random-variables.qmd#def-pmf) $p$.
+
+:::
