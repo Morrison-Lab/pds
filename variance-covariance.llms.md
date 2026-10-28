@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-27 10:52:35 (PDT)
+Last modified: 2026-10-28 13:11:09 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -90,7 +90,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > so for mean-zero noise the average squared value *is* the variance.
 >
-> The identity looks slight and does a lot of work. [Equation 1](#eq-noise-second-moment) is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the *spread* of the noise, which is what a model of the world gives you, into a statement about *squared error*, which is what the fitting objective measures.
+> The identity looks slight and does a lot of work. [Equation 1](#eq-noise-second-moment) is the step that produces the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error) term in regression and statistical modeling: it converts a statement about the *spread* of the noise, which is what a model of the world gives you, into a statement about *squared error*, which is what the fitting objective measures.
 
 > **NOTE:**
 >
@@ -410,7 +410,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(\varepsilon+ X\right)\mathclose{}}^{2}\right\]\mathclose{}} = \sigma^2+ {\operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{}} + {\mathopen{}\left({\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2}, \\
 >
-> where \\\sigma^2\\ is the irreducible error. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition), with its exercise, worked example and [irreducible error](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error).
+> where \\\sigma^2\\ is the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error). The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition), with its exercise, worked example and definition of the residual variance.
 
 ## 5 Covariance
 

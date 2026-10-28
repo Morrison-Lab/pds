@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-27 10:52:35 (PDT)</p>
+  <p class="date">Last modified: 2026-10-28 13:11:09 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -472,7 +472,7 @@
 \end{aligned}
 \tag{1}\]</span></span></p>
 <p>so for mean-zero noise the average squared value <em>is</em> the variance.</p>
-<p>The identity looks slight and does a lot of work. <a href="#/eq-noise-second-moment" class="quarto-xref">Equation&nbsp;1</a> is the step that produces the irreducible error term in regression and statistical modeling: it converts a statement about the <em>spread</em> of the noise, which is what a model of the world gives you, into a statement about <em>squared error</em>, which is what the fitting objective measures.</p>
+<p>The identity looks slight and does a lot of work. <a href="#/eq-noise-second-moment" class="quarto-xref">Equation&nbsp;1</a> is the step that produces the <a href="https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error">residual variance</a> term in regression and statistical modeling: it converts a statement about the <em>spread</em> of the noise, which is what a model of the world gives you, into a statement about <em>squared error</em>, which is what the fitting objective measures.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1041,7 +1041,7 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 <p><span class="math display">\[
 {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(\varepsilon+ X\right)\mathclose{}}^{2}\right]\mathclose{}} = \sigma^2+ {\operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{}} + {\mathopen{}\left({\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2},
 \]</span></p>
-<p>where <span class="math inline">\(\sigma^2\)</span> is the irreducible error. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the <a href="https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition">bias, variance and noise decomposition</a>, with its exercise, worked example and <a href="https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error">irreducible error</a>.</p>
+<p>where <span class="math inline">\(\sigma^2\)</span> is the <a href="https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error">residual variance</a>. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the <a href="https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition">bias, variance and noise decomposition</a>, with its exercise, worked example and definition of the residual variance.</p>
 </div>
 </section>
 <section id="covariance" class="slide level2" data-number="5">
