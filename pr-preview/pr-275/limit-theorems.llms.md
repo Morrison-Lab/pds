@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-27 01:53:32 (PDT)
+Last modified: 2026-10-28 11:04:51 (PDT)
 
 ## 1 The Central Limit Theorem
 
@@ -296,42 +296,85 @@ Last modified: 2026-10-27 01:53:32 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 1 (How many cars to estimate mean fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with population mean \\\mu\\ and variance \\\sigma^2\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
+> **Exercise 1 (Chebyshev’s bound for the mean fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with population mean \\\mu\\ and variance \\\sigma^2\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
 >
-> 1.  Use [Theorem 2](#thm-sum-iid-moments) and [Theorem 4](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
+> Use [Theorem 2](#thm-sum-iid-moments) and [Theorem 4](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
 >
->     \\ {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{}} \le \frac{\sigma^2}{n\epsilon^2} \\
->
-> 2.  Compute \\\sigma^2\\ for the `mpg` column of [`data/auto.csv`](data/auto.csv), treating the 392 cars as the whole population. Find the smallest \\n\\ for which the bound in (a) guarantees \\{\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge 1\right)\mathclose{}} \le 0.05\\.
->
-> 3.  Simulate 10,000 samples of that size drawn with replacement, and count how many sample means miss \\\mu\\ by 1 or more. Why is the count so far below the 5% the bound allows?
+> \\ {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{}} \le \frac{\sigma^2}{n\epsilon^2} \\
 
 > **NOTE:**
 >
-> *Solution 1*.
+> *Solution 1*. By [Theorem 2](#thm-sum-iid-moments), \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\ for \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\{{\bar{X}}\_{n}} = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 4](#thm-chebyshev) to \\{{\bar{X}}\_{n}}\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
+
+> **NOTE:**
 >
-> 1.  By [Theorem 2](#thm-sum-iid-moments), \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\ for \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\{{\bar{X}}\_{n}} = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 4](#thm-chebyshev) to \\{{\bar{X}}\_{n}}\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
+> **Exercise 2 (Population variance of the fuel economy)** Compute \\\sigma^2\\ for the `mpg` column of [`data/auto.csv`](data/auto.csv), treating the 392 cars as the whole population.
+
+> **NOTE:**
 >
-> 2.  Setting \\\sigma^2/(n \cdot 1^2) \le 0.05\\ gives \\n \ge 20\sigma^2\\.
->
-> 3.  See the code below.
+> *Solution 2*.
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
 > mu <- mean(mpg)
 > sigma2 <- mean((mpg - mu)^2)
-> n_min <- ceiling(20 * sigma2)
+> sigma2
+> #> [1] 60.76274
+> ```
 >
+> The population [variance](variance-covariance.llms.md#def-variance) of `mpg` is 60.8.
+
+> **NOTE:**
+>
+> **Exercise 3 (Smallest sample size from Chebyshev’s bound)** With \\\sigma^2\\ from [Exercise 2](#exr-chebyshev-variance), find the smallest \\n\\ for which the bound in [Exercise 1](#exr-chebyshev-sample-size) guarantees \\{\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge 1\right)\mathclose{}} \le 0.05\\.
+
+> **NOTE:**
+>
+> *Solution 3*. Setting \\\sigma^2/(n \cdot 1^2) \le 0.05\\ gives \\n \ge 20\sigma^2\\.
+>
+> ``` r
+> n_min <- ceiling(20 * sigma2)
+> n_min
+> #> [1] 1216
+> ```
+>
+> With \\\sigma^2\\ from [Solution 2](#sol-chebyshev-variance), \\n = 1216\\ cars suffice.
+
+> **NOTE:**
+>
+> **Exercise 4 (Simulated misses of the sample mean)** Draw 10,000 samples of the size from [Exercise 3](#exr-chebyshev-min-n) with replacement, and report how many of the sample [means](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) \\{{\bar{X}}\_{n}}\\ miss \\\mu\\ by 1 or more.
+
+> **NOTE:**
+>
+> *Solution 4*.
+>
+> ``` r
+> # Uses mpg and mu from sol-chebyshev-variance,
+> # and n_min from sol-chebyshev-min-n.
 > set.seed(571)
 > xbar <- replicate(10000, mean(sample(mpg, n_min, replace = TRUE)))
 > misses <- sum(abs(xbar - mu) >= 1)
-> normal_approx <- 2 * pnorm(-1 / sqrt(sigma2 / n_min))
-> c(variance = sigma2, n = n_min, misses = misses, normal_approx = normal_approx)
-> #>      variance             n        misses normal_approx 
-> #>  6.076274e+01  1.216000e+03  0.000000e+00  7.694705e-06
+> misses
+> #> [1] 0
 > ```
 >
-> The population variance of `mpg` is 60.8, so \\n = 1216\\ cars suffice. Out of 10,000 samples of that size, 0 sample means missed \\\mu\\ by 1 or more, against the 5% (500 samples) the bound allows. The bound is loose because the sample mean of this many cars is nearly normal ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}; Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
+> Out of 10,000 samples of that size, 0 sample means missed \\\mu\\ by 1 or more, against the 5% (500 samples) the bound allows.
+
+> **NOTE:**
+>
+> **Exercise 5 (Why Chebyshev’s bound is loose here)** Explain why the count in [Exercise 4](#exr-chebyshev-simulation) is far below the 5% the bound allows.
+
+> **NOTE:**
+>
+> *Solution 5*.
+>
+> ``` r
+> normal_approx <- 2 * pnorm(-1 / sqrt(sigma2 / n_min))
+> normal_approx
+> #> [1] 7.694705e-06
+> ```
+>
+> In [Solution 4](#sol-chebyshev-simulation), the count is far below the 5% (500 samples) the bound allows. The bound is loose because the sample [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of this many cars is nearly [normal](random-variables.llms.md#def-normal) ([Theorem 1](#thm-clt)), and the normal approximation puts the chance of a miss at about 7.7^{-6}. Chebyshev’s inequality must hold for every distribution, as in [Example 3](#exm-chebyshev-auto).
 
 > **NOTE:**
 >
@@ -341,7 +384,7 @@ Last modified: 2026-10-27 01:53:32 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size) (a), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 4](#thm-chebyshev) to \\{{\bar{X}}\_{n}}\\, whose [variance](variance-covariance.llms.md#def-variance) is \\\sigma^2/n\\ by [Corollary 2](#cor-mean-iid-moments).
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 4](#thm-chebyshev) to \\{{\bar{X}}\_{n}}\\, whose [variance](variance-covariance.llms.md#def-variance) is \\\sigma^2/n\\ by [Corollary 2](#cor-mean-iid-moments).
 
 > **NOTE:**
 >
