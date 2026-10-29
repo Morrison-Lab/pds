@@ -1,0 +1,35 @@
+:::{#thm-normalizing-constant-formula}
+#### The normalizing constant makes the density integrate to 1
+
+If $g$ is a [kernel of a density](#def-kernel) $f$,
+its [normalizing constant](#def-normalizing-constant) is
+
+$$c = \frac{1}{\int_{-\infty}^{\infty} g(x)\,dx}.$$
+
+:::
+
+{{< slidebreak >}}
+
+::: {.content-hidden when-format="revealjs"}
+
+::: proof
+
+A [density](#def-pdf) integrates to 1 over the whole line, so
+
+$$
+\ba
+1
+&= \int_{-\infty}^{\infty} f(x)\,dx
+&& \text{(a density integrates to 1)} \\
+&= \int_{-\infty}^{\infty} c\, g(x)\,dx
+&& \text{(@def-normalizing-constant)} \\
+&= c \int_{-\infty}^{\infty} g(x)\,dx.
+&& \text{(constant factor out of the integral)}
+\ea
+$$
+
+Dividing by $\int g(x)\,dx$ gives the formula.
+
+:::
+
+:::

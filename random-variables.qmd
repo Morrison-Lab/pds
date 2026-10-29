@@ -50,6 +50,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-normalizing-constant-formula.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-mode.qmd >}}
 
 {{< slidebreak >}}

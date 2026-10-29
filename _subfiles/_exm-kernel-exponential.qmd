@@ -9,7 +9,7 @@ $$
 \ba
 c
 &= \frac{1}{\int_0^{\infty} \ef{-\rate t}\,dt}
-&& \text{(definition of the normalizing constant)} \\
+&& \text{(@thm-normalizing-constant-formula)} \\
 &= \frac{1}{1/\rate}
 && \text{(integrate)} \\
 &= \rate.
