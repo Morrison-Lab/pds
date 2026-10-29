@@ -119,6 +119,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-prediction-error.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_rem-prediction-error.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-squared-error-risk.qmd >}}
 
 {{< slidebreak >}}
