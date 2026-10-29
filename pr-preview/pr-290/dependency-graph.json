@@ -691,7 +691,7 @@
    "page": "expectation",
    "div": "def-irreducible-risk",
    "kind": "def",
-   "title": "Irreducible risk",
+   "title": "Residual risk (irreducible risk)",
    "external": false
   },
   {
@@ -890,6 +890,15 @@
    "div": "thm-fubini-tonelli-measure",
    "kind": "thm",
    "title": "Fubini--Tonelli theorem, measure-theoretic form",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-irreducible-risk-cond-variance",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-irreducible-risk-cond-variance",
+   "kind": "thm",
+   "title": "The residual risk is the expected conditional variance",
    "external": false
   },
   {
@@ -2509,6 +2518,10 @@
   ],
   [
    "pds/expectation#def-irreducible-risk",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#def-irreducible-risk",
    "pds/expectation#def-squared-error-risk"
   ],
   [
@@ -2682,6 +2695,18 @@
   [
    "pds/expectation#thm-fubini-tonelli-measure",
    "mds/measures#def-measure"
+  ],
+  [
+   "pds/expectation#thm-irreducible-risk-cond-variance",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-irreducible-risk-cond-variance",
+   "pds/expectation#def-irreducible-risk"
+  ],
+  [
+   "pds/expectation#thm-irreducible-risk-cond-variance",
+   "pds/expectation#thm-best-predictor"
   ],
   [
    "pds/expectation#thm-risk-decomposition",

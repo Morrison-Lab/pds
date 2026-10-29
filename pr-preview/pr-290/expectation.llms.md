@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:10:38 (PDT)
+Last modified: 2026-10-29 15:26:39 (PDT)
 
 > **NOTE:**
 >
@@ -1404,19 +1404,31 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Definition 19 (Irreducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the minimum [squared-error risk](#def-squared-error-risk)
+> **Definition 19 (Residual risk (irreducible risk))** The **residual risk** (also called the **irreducible risk**) is the [squared-error risk](#def-squared-error-risk) of the [conditional expectation function](#def-cond-expectation-function) \\\mu\\ of [Theorem 12](#thm-risk-decomposition):
 >
-> \\{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}}\\
->
-> is the **irreducible risk**.
+> \\{R\mathopen{}\left(\mu\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
 > **NOTE:**
 >
-> *Remark 7* (The irreducible risk does not depend on the prediction function). The irreducible risk depends only on the joint distribution of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk.
+> **Theorem 14 (The residual risk is the expected conditional variance)** Let \\X\\ and \\Y\\ be as in [Theorem 13](#thm-best-predictor). Then the [residual risk](#def-irreducible-risk) is the [expectation](#def-expectation) of the [conditional variance](#def-cond-variance) of \\Y\\ given \\X\\:
+>
+> \\ {R\mathopen{}\left(\mu\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}}. \tag{1}\\
 
 > **NOTE:**
 >
-> **Example 37 (Irreducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the irreducible risk is \\{\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
+> *Proof*. \\ \begin{aligned} {R\mathopen{}\left(\mu\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(definition of the residual risk)} \\ &= {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({\mu\mathopen{}\left(X\right)\mathclose{}} - Y\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(definition of the prediction error)} \\ &= {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(a square is unchanged by negation)} \\ &= {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} && \text{(definition of } \mu\text{)} \\ &= {\mathbb{E}\mathopen{}\left\[{{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\right)\mathclose{}}^{2} \mid X\right\]\mathclose{}}}\right\]\mathclose{}} && \text{(law of total expectation)} \\ &= {\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} && \text{(definition of conditional variance)} \end{aligned} \\
+
+> **NOTE:**
+>
+> *Remark 7* (The residual risk does not depend on the prediction function). The [residual risk](#def-irreducible-risk) depends only on the [joint distribution](random-variables.llms.md#def-joint-distribution) of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk. It is the minimum only among [prediction functions](#def-prediction) of the given \\X\\: the [outcome](#def-outcome) may also depend on variables that \\X\\ leaves out, and those variables are part of the unexplained variation \\Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\. Measuring one of them and adding it to the variables in \\X\\ can lower the residual risk, as in [Example 38](#exm-irreducible-risk-added-predictor). [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 makes the same point: the error term “may contain unmeasured variables that are useful in predicting \[\\Y\\\]”.
+
+> **NOTE:**
+>
+> **Example 37 (Residual risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the [residual risk](#def-irreducible-risk) is \\{\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
+
+> **NOTE:**
+>
+> **Example 38 (Adding a predictor lowers the residual risk)** Let \\X_1\\, \\X_2\\ and \\\varepsilon\\ be [independent](independence.llms.md#def-indpt), with \\{\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 1\\, and let \\Y= X_1 + X_2 + \varepsilon\\. A [prediction](#def-prediction) from \\X_1\\ alone has [conditional variance](#def-cond-variance) \\{\operatorname{Var}\mathopen{}\left(Y\mid X_1\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 2\\, so the [residual risk](#def-irreducible-risk) is \\2\\. A prediction from \\(X_1, X_2)\\ has conditional variance \\{\operatorname{Var}\mathopen{}\left(Y\mid X_1, X_2\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 1\\, so the residual risk is \\1\\.
 
 > **NOTE:**
 >
@@ -1428,11 +1440,13 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> *Remark 8* (When the reducible risk is zero). The reducible risk is zero if and only if \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\.
+> *Remark 8* (When the reducible risk is zero). The [reducible risk](#def-reducible-risk) is zero if and only if the [prediction function](#def-prediction) \\f\\ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1.
+>
+> \\ {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} = 0 \iff \mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1 \\
 
 > **NOTE:**
 >
-> **Example 38 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 39 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1440,7 +1454,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 >
 > \\{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} + {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 >
-> shows that the total squared-error risk is the sum of the irreducible risk ([Definition 19](#def-irreducible-risk)) and the reducible risk ([Definition 20](#def-reducible-risk)).
+> shows that the total squared-error risk is the sum of the residual risk ([Definition 19](#def-irreducible-risk)) and the reducible risk ([Definition 20](#def-reducible-risk)).
 
 > **NOTE:**
 >
@@ -1456,7 +1470,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Example 39 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
+> **Example 40 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 > **NOTE:**
 >
@@ -1470,7 +1484,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Example 40 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
+> **Example 41 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
 ## 4 Entropy and cross-entropy
 
@@ -1480,11 +1494,11 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 >
 > \\{s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).\\
 >
-> The surprisal is also called the **self-information** [\[15, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[16, p. 49\]](#ref-bishop2006prml) of \\x\\. With the natural logarithm, the surprisal is measured in nats, and with base 2 in bits. Evaluating \\{s\mathopen{}\left(\cdot\right)\mathclose{}}\\ at the [random variable](random-variables.llms.md#def-random-variable) \\X\\ itself gives the random variable \\{s\mathopen{}\left(X\right)\mathclose{}}\\, which equals \\{s\mathopen{}\left(x\right)\mathclose{}}\\ when \\X = x\\. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of \\X\\ implicit.
+> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of \\x\\. With the natural logarithm, the surprisal is measured in nats, and with base 2 in bits. Evaluating \\{s\mathopen{}\left(\cdot\right)\mathclose{}}\\ at the [random variable](random-variables.llms.md#def-random-variable) \\X\\ itself gives the random variable \\{s\mathopen{}\left(X\right)\mathclose{}}\\, which equals \\{s\mathopen{}\left(x\right)\mathclose{}}\\ when \\X = x\\. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of \\X\\ implicit.
 
 > **NOTE:**
 >
-> **Example 41 (Surprisal of the values of a biased coin flip)** Let \\X\\ be \\1\\ if one flip of a coin lands heads and \\0\\ if it lands tails, with \\\mathbb{P}(X=1) = \tfrac{1}{4}\\ and \\\mathbb{P}(X=0) = \tfrac{3}{4}\\. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value \\1\\ (heads) is \\{s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2\\ bits, and the surprisal of the value \\0\\ (tails) is \\{s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415\\ bits. For a fair coin, each value of \\X\\ has surprisal \\-\log_2 \tfrac{1}{2} = 1\\ bit.
+> **Example 42 (Surprisal of the values of a biased coin flip)** Let \\X\\ be \\1\\ if one flip of a coin lands heads and \\0\\ if it lands tails, with \\\mathbb{P}(X=1) = \tfrac{1}{4}\\ and \\\mathbb{P}(X=0) = \tfrac{3}{4}\\. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value \\1\\ (heads) is \\{s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2\\ bits, and the surprisal of the value \\0\\ (tails) is \\{s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415\\ bits. For a fair coin, each value of \\X\\ has surprisal \\-\log_2 \tfrac{1}{2} = 1\\ bit.
 
 > **NOTE:**
 >
@@ -1492,7 +1506,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Definition 22 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\ [\[17\]](#ref-wikipedia_entropy_information_theory):
+> **Definition 22 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\ [\[18\]](#ref-wikipedia_entropy_information_theory):
 >
 > \\{H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x)\\
 >
@@ -1504,7 +1518,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Example 42 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 43 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1520,11 +1534,11 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> *Remark 11* (Where the definition comes from). Murphy [\[18, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 11* (Where the definition comes from). Murphy [\[19, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
-> **Definition 23 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[19\]](#ref-wikipedia_cross_entropy) is
+> **Definition 23 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[20\]](#ref-wikipedia_cross_entropy) is
 >
 > \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
 >
@@ -1602,7 +1616,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 14 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Then the [cross-entropy](#def-cross-entropy) is the [expectation](#def-expectation) of \\-\log q_X\\:
+> **Theorem 15 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Then the [cross-entropy](#def-cross-entropy) is the [expectation](#def-expectation) of \\-\log q_X\\:
 >
 > \\{H\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}.\\
 
@@ -1648,7 +1662,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> *Solution 14*. By [Theorem 14](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p_X = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+> *Solution 14*. By [Theorem 15](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p_X = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -1658,11 +1672,11 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 14](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, the [random variable](random-variables.llms.md#def-random-variable) \\-\log p_X\\ is the [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+> *Proof*. By [Theorem 15](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, the [random variable](random-variables.llms.md#def-random-variable) \\-\log p_X\\ is the [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> *Remark 12* (Cross-entropy is an expected surprisal). By [Theorem 14](#thm-cross-entropy-expectation), the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q_k\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By [Theorem 15](#thm-cross-entropy-expectation), the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q_k\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -1676,7 +1690,7 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> **Example 43 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 44 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
@@ -1684,13 +1698,13 @@ Last modified: 2026-10-29 15:10:38 (PDT)
 
 > **NOTE:**
 >
-> *Remark 14* (Where the definitions come from). Murphy [\[18, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 14* (Where the definitions come from). Murphy [\[19, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## 5 Further reading
 
 > **TIP:**
 >
-> Lange’s textbook [\[20\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
+> Lange’s textbook [\[21\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
 
 ## References
 
@@ -1752,25 +1766,29 @@ Wikipedia contributors, “Risk function — Wikipedia, the free encyclopedia.�
 
 \[15\]
 
-I. Goodfellow, Y. Bengio, and A. Courville, *Deep learning*. Cambridge, MA: MIT Press, 2016. Available: <https://www.deeplearningbook.org/>
+G. James, D. Witten, T. Hastie, and R. Tibshirani, *An introduction to statistical learning: With applications in R*, 2nd ed. Springer, 2021. doi: [10.1007/978-1-0716-1418-1](https://doi.org/10.1007/978-1-0716-1418-1).
 
 \[16\]
 
-C. M. Bishop, *Pattern recognition and machine learning*. in Information science and statistics. New York: Springer, 2006.
+I. Goodfellow, Y. Bengio, and A. Courville, *Deep learning*. Cambridge, MA: MIT Press, 2016. Available: <https://www.deeplearningbook.org/>
 
 \[17\]
 
-Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
+C. M. Bishop, *Pattern recognition and machine learning*. in Information science and statistics. New York: Springer, 2006.
 
 \[18\]
 
-K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Entropy_(information_theory)>
 
 \[19\]
 
-Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
 
 \[20\]
+
+Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+
+\[21\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
 
