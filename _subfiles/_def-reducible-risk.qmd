@@ -2,7 +2,7 @@
 #### Reducible risk
 
 In the squared-error risk decomposition of @thm-risk-decomposition,
-the excess risk from choosing the [prediction function](#def-prediction-function) $\predfn$ instead of the conditional mean,
+the part of the [risk](#def-risk) that comes from choosing the [prediction function](#def-prediction-function) $\predfn$ instead of the [conditional mean](#def-cond-expectation-function),
 
 $$\E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}} \ge 0$$
 
