@@ -79,6 +79,8 @@ Several universities offer open-access courses with comparable or complementary 
 
 ### Textbooks and companion notes {.unnumbered}
 
+- @ross2019first, an undergraduate calculus-based [probability](probability-basics.qmd#def-probability) text
+- @gut2013, a graduate text on the measure-theoretic foundations of probability, as a companion to @billingsley1995probability
 - @problifesaver
 - @blitzstein2019introduction
 - @hastie2009elements
