@@ -1,7 +1,7 @@
 :::{#def-squared-error-risk}
 #### Squared-error risk (expected prediction error)
 
-The **squared-error risk** of a prediction function $\predfnf{\Predvar}$,
+The **squared-error risk** of a [prediction function](#def-prediction-function) $\predfnf{\Predvar}$,
 also called its **expected prediction error** [@hastie2009elements, p. 18],
 is the expected square of its [prediction error](#def-prediction-error):
 

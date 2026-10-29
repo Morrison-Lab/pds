@@ -103,6 +103,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_def-prediction-function.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-prediction-function.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-new-observation.qmd >}}
 
 {{< slidebreak >}}
