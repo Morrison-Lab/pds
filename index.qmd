@@ -79,8 +79,8 @@ Several universities offer open-access courses with comparable or complementary 
 
 ### Textbooks and companion notes {.unnumbered}
 
-- @ross2019first, an undergraduate calculus-based text that covers the same material as the pages here at a similar level, with many worked examples and exercises
-- @gut2013, a graduate text that proves the measure-theoretic results this site states without proof, as a gentler companion to @billingsley1995probability
+- @ross2019first, an undergraduate calculus-based probability text
+- @gut2013, a graduate text on the measure-theoretic foundations of probability, as a companion to @billingsley1995probability
 - @problifesaver
 - @blitzstein2019introduction
 - @hastie2009elements
