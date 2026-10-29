@@ -1,12 +1,12 @@
 :::{#def-mode}
-#### Mode of a random variable
+#### Mode of a density or mass function
 
 Let $X$ be a [random variable](#def-random-variable)
 with [density](#def-pdf) or [mass function](#def-pmf) $f$.
-The **modes** of $X$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
+The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
 
-$$\operatorname{mode}(X) = \argmax_{x \in \rangef{X}} f(x).$$
+$$\operatorname{mode}(f) = \argmax_{x \in \rangef{X}} f(x).$$
 
-A **mode** of $X$ is an element of $\operatorname{mode}(X)$.
+A **mode** of $f$ is an element of $\operatorname{mode}(f)$.
 
 :::
