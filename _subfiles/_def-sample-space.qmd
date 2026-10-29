@@ -65,7 +65,7 @@ The [sample space](#def-sample-space) $\samplespace$ is an [event](#def-event).
 
 The sample space is a subset of itself, $\samplespace \subseteq \samplespace$.
 When every subset of $\samplespace$ can be an event, that is enough.
-Otherwise the events are the sets in a
+Otherwise the events are the subsets in a
 [$\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) $\salg$ on $\samplespace$,
 and by its definition $\salg$ contains $\samplespace$ itself.
 
@@ -220,7 +220,7 @@ are a [partition](#def-partition) of the [sample space](#def-sample-space) $\sam
 
 The sample space $\samplespace$ is an event (@lem-sample-space-event),
 so a partition of it is defined.
-The complement $\neg A$ is the set difference $\samplespace \setminus A$,
+The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\samplespace \setminus A$,
 which is an event because the events are closed under complements in $\samplespace$.
 The events $A$ and $\neg A$ are mutually exclusive,
 because $\neg A$ contains only elements not in $A$.
