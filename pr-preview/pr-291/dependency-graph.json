@@ -2601,15 +2601,15 @@
   ],
   [
    "pds/expectation#def-reducible-risk",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-reducible-risk",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#def-reducible-risk",
    "pds/expectation#def-prediction-function"
-  ],
-  [
-   "pds/expectation#def-reducible-risk",
-   "pds/expectation#def-risk"
-  ],
-  [
-   "pds/expectation#def-reducible-risk",
-   "pds/expectation#thm-risk-decomposition"
   ],
   [
    "pds/expectation#def-risk",
