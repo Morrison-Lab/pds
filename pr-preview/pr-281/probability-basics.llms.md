@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 13:26:36 (PDT)
+Last modified: 2026-10-29 13:48:16 (PDT)
 
 ## 1 Defining probabilities
 
@@ -91,17 +91,29 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
+> **Lemma 1 (The sample space is an event)** [The sample space](#def-sample-space) \\\Omega\\ is an [event](#def-event).
+
+> **NOTE:**
+>
+> *Proof*. The sample space is a subset of itself, \\\Omega\subseteq \Omega\\. When every subset of \\\Omega\\ can be an event, that is enough. Otherwise the events are the subsets in a [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) \\\mathcal{S}\\ on \\\Omega\\, and by its definition \\\mathcal{S}\\ contains \\\Omega\\ itself.
+
+> **NOTE:**
+>
+> **Example 8 (The die roll’s sample space as an event)** In [Example 6](#exm-sample-space), every subset of \\\Omega= {\mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}}\\ can be an event, including \\\Omega\\ itself: the event “the roll is any of 1 through 6”, which always occurs.
+
+> **NOTE:**
+>
 > **Definition 7 (Occurrence of an event)** An [event](#def-event) \\A\\ **occurs** when the outcome of the experiment is in \\A\\, and does not occur when the outcome is not in \\A\\.
 
 > **NOTE:**
 >
-> **Example 8 (Rolling a 4)** In [Example 7](#exm-event), if the die shows 4, the event “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, occurs, because \\4 \in {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and the event “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, does not occur.
+> **Example 9 (Rolling a 4)** In [Example 7](#exm-event), if the die shows 4, the event “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, occurs, because \\4 \in {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and the event “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, does not occur.
 
 > **NOTE:**
 >
-> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements \\\omega\\ of the sample space \\\Omega\\ that are not in \\A\\, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) \\\Omega\setminus A\\:
+> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements \\\omega\\ of the sample space \\\Omega\\ that are not in \\A\\, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) \\{\Omega \setminus A}\\:
 >
-> \\ \begin{aligned} \neg A &\stackrel{\text{def}}{=}{\mathopen{}\left\\\omega \in \Omega: \omega \notin A\right\\\mathclose{}} \\ &= \Omega\setminus A \end{aligned} \\
+> \\ \begin{aligned} \neg A &\stackrel{\text{def}}{=}{{\mathopen{}\left\\\omega \in \Omega : \omega \notin A\right\\\mathclose{}}} \\ &= {\Omega \setminus A} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -109,7 +121,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 9 (Rolling an odd number)** In [Example 7](#exm-event), the complement of the event “the roll is even”, \\A = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, is the event “the roll is odd”, \\\neg A = {\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\.
+> **Example 10 (Rolling an odd number)** In [Example 7](#exm-event), the complement of the event “the roll is even”, \\A = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, is the event “the roll is odd”, \\\neg A = {\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\.
 
 > **NOTE:**
 >
@@ -123,7 +135,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 10 (Low and high rolls)** In [Example 6](#exm-sample-space), the events “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, and “the roll is at least 5”, \\{\mathopen{}\left\\5, 6\right\\\mathclose{}}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, are not mutually exclusive: a roll of 2 is in both.
+> **Example 11 (Low and high rolls)** In [Example 6](#exm-sample-space), the events “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, and “the roll is at least 5”, \\{\mathopen{}\left\\5, 6\right\\\mathclose{}}\\, are mutually exclusive: no roll is in both. The events “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and “the roll is at most 2”, \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\, are not mutually exclusive: a roll of 2 is in both.
 
 > **NOTE:**
 >
@@ -134,7 +146,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> *Remark 1* (A partition of the sample space). A partition of the [sample space](#def-sample-space) is the case \\A = \Omega\\.
+> *Remark 1* (A partition of the sample space). A partition of the [sample space](#def-sample-space) is the case \\A = \Omega\\, which is allowed because \\\Omega\\ is an event ([Lemma 1](#lem-sample-space-event)).
 
 > **NOTE:**
 >
@@ -142,7 +154,19 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 11 (Partitioning the die roll)** In [Example 6](#exm-sample-space), the events “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and “the roll is odd”, \\{\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\{\mathopen{}\left\\1\right\\\mathclose{}}, {\mathopen{}\left\\2\right\\\mathclose{}}, \ldots, {\mathopen{}\left\\6\right\\\mathclose{}}\\. The events \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\ and \\{\mathopen{}\left\\5, 6\right\\\mathclose{}}\\ from [Example 10](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
+> **Example 12 (Partitioning the die roll)** In [Example 6](#exm-sample-space), the events “the roll is even”, \\{\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\, and “the roll is odd”, \\{\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\, are mutually exclusive, and their union is \\\Omega\\, so they partition the sample space. So do the six single-outcome events \\{\mathopen{}\left\\1\right\\\mathclose{}}, {\mathopen{}\left\\2\right\\\mathclose{}}, \ldots, {\mathopen{}\left\\6\right\\\mathclose{}}\\. The events \\{\mathopen{}\left\\1, 2\right\\\mathclose{}}\\ and \\{\mathopen{}\left\\5, 6\right\\\mathclose{}}\\ from [Example 11](#exm-mutually-exclusive) do not partition \\\Omega\\: their union leaves out 3 and 4.
+
+> **NOTE:**
+>
+> **Proposition 1 (An event and its complement partition the sample space)** For any [event](#def-event) \\A\\, the events \\A\\ and its [complement](#def-complement) \\\neg A\\ are a [partition](#def-partition) of the [sample space](#def-sample-space) \\\Omega\\.
+
+> **NOTE:**
+>
+> *Proof*. The sample space \\\Omega\\ is an event ([Lemma 1](#lem-sample-space-event)), so a partition of it is defined. The complement \\\neg A\\ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) \\{\Omega \setminus A}\\, which is an event because the events are closed under complements in \\\Omega\\, by the complement requirement of a [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra). The events \\A\\ and \\\neg A\\ are mutually exclusive, because \\\neg A\\ contains only elements not in \\A\\. Their union is \\\Omega\\, because each element of \\\Omega\\ is either in \\A\\ or not in \\A\\.
+
+> **NOTE:**
+>
+> **Example 13 (Even and odd rolls)** In [Example 7](#exm-event) and [Example 10](#exm-complement), the event \\A = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\ and its complement \\\neg A = {\mathopen{}\left\\1, 3, 5\right\\\mathclose{}}\\ are mutually exclusive, and their union is \\\Omega= {\mathopen{}\left\\1, 2, 3, 4, 5, 6\right\\\mathclose{}}\\, so they partition \\\Omega\\.
 
 > **NOTE:**
 >
@@ -152,7 +176,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 12 (Probability measure for a fair die)** For the die roll in [Example 6](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the counting measure \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of \\\Omega\\, and it gives
+> **Example 14 (Probability measure for a fair die)** For the die roll in [Example 6](#exm-sample-space), define \\\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left\|A\right\|\mathclose{} / 6\\, where \\\mathopen{}\left\|A\right\|\mathclose{}\\ is the number of outcomes in \\A\\. This function is \\1/6\\ times the counting measure \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of \\\Omega\\, and it gives
 >
 > \\ \begin{aligned} \Pr(\Omega) &= 6/6 \\ &= 1. \end{aligned} \\
 >
@@ -262,7 +286,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 13 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi= 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
+> **Example 15 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability \\\pi= 1/6\\, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is \\1 - 1/6 = 5/6\\.
 
 > **NOTE:**
 >
@@ -270,7 +294,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 14 (Choosing at random from a finite set and from an interval)** For a finite set \\S\\, let \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#exm-measure). Then \\\Pr(A) = \mathopen{}\left\|A\right\|\mathclose{} / \mathopen{}\left\|S\right\|\mathclose{}\\, so every element of \\S\\ has the same probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\.
+> **Example 16 (Choosing at random from a finite set and from an interval)** For a finite set \\S\\, let \\\mu(A) = \mathopen{}\left\|A\right\|\mathclose{}\\ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#exm-measure). Then \\\Pr(A) = \mathopen{}\left\|A\right\|\mathclose{} / \mathopen{}\left\|S\right\|\mathclose{}\\, so every element of \\S\\ has the same probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\.
 >
 > For the interval \\S = \[0, 1\]\\, let \\\mu(A)\\ be the length of \\A\\. Then \\\Pr(A)\\ is the length of \\A\\, so the probability that the chosen number lies in \\\[0.2, 0.5\]\\ is \\0.3\\. The chosen number has the [\\\text{Uniform}(0, 1)\\ distribution](https://morrison-lab.github.io/pds/random-variables.html#def-uniform).
 >
@@ -278,7 +302,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 15 (Choosing a car at random from the Auto data)** The Auto data of [Example 5](#exm-random-experiment) have 392 car models. Let \\S\\ be the set of car models in the data. Choosing a car at random from \\S\\ ([Definition 12](#def-random-choice)), with the counting measure, gives each car probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\, so the probability that the car has four cylinders is the fraction of cars with four cylinders:
+> **Example 17 (Choosing a car at random from the Auto data)** The Auto data of [Example 5](#exm-random-experiment) have 392 car models. Let \\S\\ be the set of car models in the data. Choosing a car at random from \\S\\ ([Definition 12](#def-random-choice)), with the counting measure, gives each car probability \\1/\mathopen{}\left\|S\right\|\mathclose{}\\, so the probability that the car has four cylinders is the fraction of cars with four cylinders:
 >
 > ``` r
 > # read the local copy of the Auto data (one row per car model):
@@ -301,7 +325,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 16 (Odds that a car in the Auto data is American)** In the Auto data of [Example 5](#exm-random-experiment), let \\A\\ be the [event](#def-event) that a car [chosen at random](#def-random-choice) is American, which the data code as `origin == 1`. Its [probability](#def-probability) is the fraction of American cars, as in [Example 15](#exm-random-choice-auto), and its [odds](#def-odds) follow from [Definition 13](#def-odds):
+> **Example 18 (Odds that a car in the Auto data is American)** In the Auto data of [Example 5](#exm-random-experiment), let \\A\\ be the [event](#def-event) that a car [chosen at random](#def-random-choice) is American, which the data code as `origin == 1`. Its [probability](#def-probability) is the fraction of American cars, as in [Example 17](#exm-random-choice-auto), and its [odds](#def-odds) follow from [Definition 13](#def-odds):
 >
 > ``` r
 > auto <- read.csv("data/auto.csv")
@@ -321,7 +345,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 17 (Log-odds that a car in the Auto data is American)** For the [event](#def-event) \\A\\ of [Example 16](#exm-odds-auto), the [log-odds](#def-log-odds) of [Definition 14](#def-log-odds) are:
+> **Example 19 (Log-odds that a car in the Auto data is American)** For the [event](#def-event) \\A\\ of [Example 18](#exm-odds-auto), the [log-odds](#def-log-odds) of [Definition 14](#def-log-odds) are:
 >
 > ``` r
 > log(p_american / (1 - p_american))
@@ -344,7 +368,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 18 (Rolling a six, given an even roll)** For a fair die ([Example 12](#exm-probability)), let \\A = {\mathopen{}\left\\6\right\\\mathclose{}}\\ and \\B = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\. Then \\A \cap B = {\mathopen{}\left\\6\right\\\mathclose{}}\\, so:
+> **Example 20 (Rolling a six, given an even roll)** For a fair die ([Example 14](#exm-probability)), let \\A = {\mathopen{}\left\\6\right\\\mathclose{}}\\ and \\B = {\mathopen{}\left\\2, 4, 6\right\\\mathclose{}}\\. Then \\A \cap B = {\mathopen{}\left\\6\right\\\mathclose{}}\\, so:
 >
 > \\ \begin{aligned} \Pr(A \mid B) &= \frac{\Pr(A \cap B)}{\Pr(B)} && \text{(definition of conditional probability)} \\ &= \frac{1/6}{3/6} && \text{(substitute the probabilities)} \\ &= \frac{1}{3} && \text{(simplify)} \end{aligned} \\
 
@@ -362,7 +386,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 19 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
+> **Example 21 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly (\\\Pr(E) = 0.30\\), and among adults who exercise regularly, 60% have low blood pressure (\\\Pr(L \mid E) = 0.60\\).
 >
 > Then, by [Theorem 5](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
@@ -394,7 +418,7 @@ Last modified: 2026-10-29 13:26:36 (PDT)
 
 > **NOTE:**
 >
-> **Example 20 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 22 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let \\D\\ be the event “person has the disease” and \\{+}\\ be the event “test is positive”. Then:
 >

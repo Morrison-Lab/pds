@@ -1333,6 +1333,24 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#lem-sample-space-event",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "lem-sample-space-event",
+   "kind": "lem",
+   "title": "The sample space is an event",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#prp-complement-partition",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "prp-complement-partition",
+   "kind": "prp",
+   "title": "An event and its complement partition the sample space",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#thm-bayes",
    "site": "pds",
    "page": "probability-basics",
@@ -2880,6 +2898,30 @@
   [
    "pds/probability-basics#def-sample-space",
    "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/probability-basics#lem-sample-space-event",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#lem-sample-space-event",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-complement"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-sample-space"
   ],
   [
    "pds/probability-basics#thm-kolmogorov-axioms",
