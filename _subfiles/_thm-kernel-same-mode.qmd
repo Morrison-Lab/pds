@@ -1,0 +1,23 @@
+:::{#thm-kernel-same-mode}
+#### A density and its kernel have the same modes
+
+If $g$ is a [kernel of a density](#def-kernel) $f$,
+then $x^*$ is a [mode](#def-mode) of $f$ if and only if $g(x^*) \ge g(x)$ for every $x$.
+
+:::
+
+{{< slidebreak >}}
+
+::: {.content-hidden when-format="revealjs"}
+
+::: proof
+
+Write $f(x) = c\, g(x)$ with $c > 0$ (@def-kernel).
+For any $x$, multiplying both sides of $g(x^*) \ge g(x)$ by $c > 0$
+gives $f(x^*) \ge f(x)$,
+and dividing by $c$ reverses this.
+So $f(x^*) \ge f(x)$ for every $x$ exactly when $g(x^*) \ge g(x)$ for every $x$.
+
+:::
+
+:::

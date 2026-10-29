@@ -54,6 +54,37 @@ the event "the roll is even" is $A = \set{2, 4, 6}$.
 
 {{< slidebreak >}}
 
+:::{#lem-sample-space-event}
+#### The sample space is an event
+
+[The sample space](#def-sample-space) $\samplespace$ is an [event](#def-event).
+
+:::
+
+::: proof
+
+The sample space is a subset of itself, $\samplespace \subseteq \samplespace$.
+When every subset of $\samplespace$ can be an event,
+that is enough.
+Otherwise the events are the subsets in a
+[$\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) $\salg$ on $\samplespace$,
+and by its definition $\salg$ contains $\samplespace$ itself.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-sample-space-event}
+#### The die roll's sample space as an event
+
+In @exm-sample-space, every subset of $\samplespace = \set{1, 2, 3, 4, 5, 6}$ can be an event,
+including $\samplespace$ itself:
+the event "the roll is any of 1 through 6", which always occurs.
+
+:::
+
+{{< slidebreak >}}
+
 :::{#def-occurs}
 #### Occurrence of an event
 
@@ -82,9 +113,18 @@ and the event "the roll is at most 2", $\set{1, 2}$, does not occur.
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
 is the event that $A$ does not [occur](#def-occurs):
-the set of outcomes in the sample space $\samplespace$ that are not in $A$.
+the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\samplespace$ that are not in $A$,
+or equivalently,
+the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference)
+$\setdiff{\samplespace}{A}$:
 
-$$\neg A \eqdef \samplespace \setminus A$$
+$$
+\ba
+\neg A
+&\eqdef \setbuild{\omega \in \samplespace}{\omega \notin A} \\
+&= \setdiff{\samplespace}{A}
+\ea
+$$
 
 :::
 
@@ -159,7 +199,8 @@ that satisfies:
 ::: {#rem-partition-sample-space}
 #### A partition of the sample space
 
-A partition of the [sample space](#def-sample-space) is the case $A = \samplespace$.
+A partition of the [sample space](#def-sample-space) is the case $A = \samplespace$,
+which is allowed because $\samplespace$ is an event (@lem-sample-space-event).
 
 :::
 
@@ -182,5 +223,45 @@ so they partition the sample space.
 So do the six single-outcome events $\set{1}, \set{2}, \ldots, \set{6}$.
 The events $\set{1, 2}$ and $\set{5, 6}$ from @exm-mutually-exclusive
 do not partition $\samplespace$: their union leaves out 3 and 4.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#prp-complement-partition}
+#### An event and its complement partition the sample space
+
+For any [event](#def-event) $A$,
+the events $A$ and its [complement](#def-complement) $\neg A$
+are a [partition](#def-partition) of the [sample space](#def-sample-space) $\samplespace$.
+
+:::
+
+::: proof
+
+The sample space $\samplespace$ is an event (@lem-sample-space-event),
+so a partition of it is defined.
+The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\setdiff{\samplespace}{A}$,
+which is an event
+because the events are closed under complements in $\samplespace$,
+by the complement requirement of a
+[$\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra).
+The events $A$ and $\neg A$ are mutually exclusive,
+because $\neg A$ contains only elements not in $A$.
+Their union is $\samplespace$,
+because each element of $\samplespace$ is either in $A$ or not in $A$.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#exm-complement-partition}
+#### Even and odd rolls
+
+In @exm-event and @exm-complement,
+the event $A = \set{2, 4, 6}$ and its complement $\neg A = \set{1, 3, 5}$
+are mutually exclusive,
+and their union is $\samplespace = \set{1, 2, 3, 4, 5, 6}$,
+so they partition $\samplespace$.
 
 :::

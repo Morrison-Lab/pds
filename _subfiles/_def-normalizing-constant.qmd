@@ -1,0 +1,9 @@
+:::{#def-normalizing-constant}
+#### Normalizing constant of a density
+
+Let $g$ be a [kernel of a density](#def-kernel) $f$.
+The **normalizing constant** of $g$ is the constant $c > 0$ with
+
+$$f(x) = c\, g(x) \quad \text{for every } x.$$
+
+:::

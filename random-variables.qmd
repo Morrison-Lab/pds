@@ -40,6 +40,30 @@ format:
 
 {{< include pds/_subfiles/_sec-continuous-distributions.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-kernel.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-normalizing-constant.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-normalizing-constant-formula.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-mode.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-kernel-same-mode.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-kernel-exponential.qmd >}}
+
 
 ::: {.callout-tip title="Video lecture"}
 Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)
