@@ -8,5 +8,6 @@ $$\E{\sqf{\Outvar - \predfnf{\Predvar}}} = \E{\sqf{\Outvar - \E{\Outvar \mid \Pr
 shows that the total squared-error risk is the sum of the
 residual risk (@def-irreducible-risk)
 and the reducible risk (@def-reducible-risk).
+[@james2021islr2e, Section 2.1.1, p. 18] calls the squared difference between a prediction and the conditional mean the "reducible error".
 
 :::
