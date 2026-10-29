@@ -1,10 +1,10 @@
 :::{#thm-kernel-same-mode}
 #### A density and its kernel have the same modes
 
-If $g$ is a [kernel of a density](#def-kernel) $f$ with domain $A$,
-then the [modes](#def-mode) of $f$ are exactly the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$:
+If $g$ is a [kernel of the density](#def-kernel) $f$ of a random variable $X$,
+then the [modes](#def-mode) of $X$ are exactly the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$:
 
-$$x^* \text{ is a mode of } f \iff x^* \in \argmax_{x \in A} g(x).$$
+$$x^* \text{ is a mode of } X \iff x^* \in \argmax_{x \in \rangef{X}} g(x).$$
 
 :::
 
@@ -18,6 +18,6 @@ gives $f(x^*) \ge f(x)$,
 and dividing by $c$ reverses this.
 So $f(x^*) \ge f(x)$ for every $x$ exactly when $g(x^*) \ge g(x)$ for every $x$.
 By the definition of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax),
-these are the conditions $x^* \in \argmax_{x \in A} f(x)$ and $x^* \in \argmax_{x \in A} g(x)$.
+these are the conditions $x^* \in \argmax_{x \in \rangef{X}} f(x)$ and $x^* \in \argmax_{x \in \rangef{X}} g(x)$.
 
 :::
