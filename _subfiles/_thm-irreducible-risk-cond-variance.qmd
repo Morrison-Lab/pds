@@ -1,0 +1,33 @@
+:::{#thm-irreducible-risk-cond-variance}
+#### The residual risk is the expected conditional variance
+
+Let $\Predvar$ and $\Outvar$ be as in @thm-best-predictor.
+Then the [residual risk](#def-irreducible-risk) is the [expectation](#def-expectation) of the [conditional variance](#def-cond-variance) of $\Outvar$ given $\Predvar$:
+
+$$
+\popriskf{\truemean} = \E{\Var{\Outvar \mid \Predvar}}.
+$$ {#eq-irreducible-risk-cond-variance}
+
+:::
+
+::: proof
+
+$$
+\ba
+\popriskf{\truemean}
+&= \E{\sqf{\prederrf{\truemean}}}
+&& \text{(definition of the residual risk)} \\
+&= \E{\sqf{\truemeanf{\Predvar} - \Outvar}}
+&& \text{(definition of the prediction error)} \\
+&= \E{\sqf{\Outvar - \truemeanf{\Predvar}}}
+&& \text{(a square is unchanged by negation)} \\
+&= \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}
+&& \text{(definition of } \truemean \text{)} \\
+&= \E{\condE{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}{\Predvar}}
+&& \text{(law of total expectation)} \\
+&= \E{\Var{\Outvar \mid \Predvar}}
+&& \text{(definition of conditional variance)}
+\ea
+$$
+
+:::

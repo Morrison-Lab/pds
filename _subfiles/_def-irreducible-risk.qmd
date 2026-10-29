@@ -1,0 +1,9 @@
+:::{#def-irreducible-risk}
+#### Residual risk (irreducible risk)
+
+The **residual risk** (also called the **irreducible risk**)
+is the [squared-error risk](#def-squared-error-risk) of the [conditional expectation function](#def-cond-expectation-function) $\truemean$ of @thm-risk-decomposition:
+
+$$\popriskf{\truemean} = \E{\sqf{\prederrf{\truemean}}}$$
+
+:::

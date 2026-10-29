@@ -135,6 +135,40 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-best-predictor.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-irreducible-risk.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-irreducible-risk-cond-variance.qmd >}}
+
+{{< include pds/_subfiles/_rem-irreducible-risk.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-irreducible-risk.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-irreducible-risk-added-predictor.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-reducible-risk.qmd >}}
+
+{{< include pds/_subfiles/_rem-reducible-risk.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-reducible-risk.qmd >}}
+
+{{< include pds/_subfiles/_rem-reducible-risk-notes.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_cor-best-predictor-argmin.qmd >}}
 
 {{< slidebreak >}}
