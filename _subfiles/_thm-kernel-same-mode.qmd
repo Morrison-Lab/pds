@@ -1,7 +1,7 @@
 :::{#thm-kernel-same-mode}
 #### A density and its kernel have the same modes
 
-If $g$ is a [kernel](#def-kernel) of a [density](#def-pdf) $f$,
+If $g$ is a [kernel of a density](#def-kernel) $f$,
 then $x^*$ is a [mode](#def-mode) of $f$ if and only if $g(x^*) \ge g(x)$ for every $x$.
 
 :::

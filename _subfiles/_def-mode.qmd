@@ -1,8 +1,7 @@
 :::{#def-mode}
-#### Mode of a distribution
+#### Mode of a density or mass function
 
-A **mode** of a distribution
-with [density](#def-pdf) or [mass function](#def-pmf) $f$
+A **mode** of a [density](#def-pdf) or [mass function](#def-pmf) $f$
 is a value $x^*$ at which $f$ is largest:
 $f(x^*) \ge f(x)$ for every $x$.
 
