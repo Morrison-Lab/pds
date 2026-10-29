@@ -3,8 +3,10 @@
 
 Let $X$ be a [random variable](#def-random-variable)
 with [density](#def-pdf) or [mass function](#def-pmf) $f$.
-A **mode** of $X$ is an element of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
+The **modes** of $X$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
 
-$$x^* \in \argmax_{x \in \rangef{X}} f(x).$$
+$$\operatorname{mode}(X) = \argmax_{x \in \rangef{X}} f(x).$$
+
+A **mode** of $X$ is an element of $\operatorname{mode}(X)$.
 
 :::
