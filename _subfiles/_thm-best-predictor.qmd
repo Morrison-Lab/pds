@@ -94,7 +94,7 @@ $$
 ::: {#rem-irreducible-risk}
 #### The residual risk does not depend on the prediction function
 
-The residual risk depends only on the joint distribution of $(\Predvar, \Outvar)$
+The residual risk depends only on the [joint distribution](random-variables.qmd#def-joint-distribution) of $(\Predvar, \Outvar)$
 and not on the prediction function $\predfn$,
 so no choice of $\predfn$ can achieve a smaller risk.
 It is the minimum only among [prediction functions](#def-prediction) of the given $\Predvar$:
