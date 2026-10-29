@@ -1,0 +1,102 @@
+# Probability for Data Science
+
+Code
+
+Published
+
+Last modified: 2026-10-29 14:38:39 (PDT)
+
+## Welcome
+
+Probability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.
+
+These notes collect the probability that data science courses assume. Some key results are listed here, organized by topic:
+
+- [Notation](notation.llms.md)
+- [Probability basics](probability-basics.llms.md): sample spaces and events, probability axioms, conditional probability, and Bayes’ theorem
+- [Random variables](random-variables.llms.md): PMF, PDF, CDF, quantile function, and survival, hazard, and cumulative hazard functions
+- [Independence](independence.llms.md): independence, conditional independence, and (conditionally) IID random variables
+- [Expectation](expectation.llms.md): expectation, LOTUS, conditional expectation, Fubini-Tonelli, and the law of iterated expectations
+- [Variance and covariance](variance-covariance.llms.md): deviation, variance, conditional variance, homoskedasticity, and covariance
+- [Key distributions](distributions.llms.md): Bernoulli, binomial, Poisson, negative binomial, and Weibull distributions
+- [Limit theorems](limit-theorems.llms.md): the Central Limit Theorem
+
+Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202). These notes began as the probability chapter of the Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies them to regression and survival models (see [Additional resources](#sec-additional-resources)).
+
+## Using these notes in another site
+
+Course sites link to these pages by URL; they do not include this repository as a git submodule. A host site that keeps a copy of this repository at its root, named `pds`, can still include fragments with paths that start with `pds/`, for example `{{< include pds/_subfiles/_thm-bayes.qmd >}}`. This site includes its own fragments the same way, through a `pds` symlink that points at the repository root.
+
+Quarto resolves `@id` cross-references only within one rendered page, so a host site that links to a result here uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
+
+## Additional resources
+
+### Comparable courses
+
+Several universities offer open-access courses with comparable or complementary coverage of probability for data science, computer science, and statistics:
+
+- **Stanford University CS 109**: [*Probability for Computer Scientists*](https://web.stanford.edu/class/cs109/) (Chris Piech, Mehran Sahami, and David Varodayan) introduces counting, probability axioms, random variables, joint distributions, limit theorems, and machine learning applications.
+- **Stanford University STATS 116**: [*Theory of Probability*](https://web.stanford.edu/class/stats116/) (John Duchi) provides a rigorous mathematical treatment of probability spaces, conditioning, random variables, transform methods, and limit theorems (see also [lecture notes](https://adembo.su.domains/math-136/nnotes.pdf) by Amir Dembo).
+- **UC Berkeley Data 140 / Stat 140**: [*Probability for Data Science*](https://data140.org/textbook/) (Ani Adhikari and Jim Pitman) blends mathematical probability theory with Python simulations and computational data science applications.
+- **Stanford University EE 278**: [*Probability and Statistical Inference*](https://web.stanford.edu/class/ee278/) (Ayfer Özgür and Tsachy Weissman) builds on probability for hypothesis testing, empirical risk minimization, concentration inequalities (Markov, Chebyshev, Hoeffding), Gaussian random vectors and minimum mean-square error estimation; its [previous notes](http://web.stanford.edu/class/ee278/lectures.html) are handwritten lectures on these topics. The prerequisite probability course has open lecture notes by [David Tse](https://web.stanford.edu/~dntse/classes/ee178_278a.html) and [Abbas El Gamal](https://isl.stanford.edu/~abbas/aeglect178.php).
+- **Harvard University Stat 110**: [*Introduction to Probability*](https://www.youtube.com/playlist?list=PL2SOU6wwxF0uwwH80KTQ6ht66KWxbzTIo) (Joseph K. Blitzstein; companion textbook Blitzstein and Hwang [\[1\]](#ref-blitzstein2019introduction), online at [probabilitybook.net](https://www.probabilitybook.net)) covers conditioning, distributions, transform methods, and Markov chains with an emphasis on intuitive storytelling.
+- **MIT 18.05**: [*Introduction to Probability and Statistics*](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/) (Jeremy Orloff and Jonathan Bloom, MIT OpenCourseWare) bridges probability, discrete and continuous random variables, and both Bayesian and frequentist statistical inference.
+- **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
+- **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (Ross [\[2\]](#ref-ross-probsim)) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.
+
+### Textbooks and companion notes
+
+- Ross [\[3\]](#ref-ross2019first), an undergraduate calculus-based [probability](probability-basics.llms.md#def-probability) text
+- Gut [\[4\]](#ref-gut2013), a graduate text on the measure-theoretic foundations of probability, as a companion to Billingsley [\[5\]](#ref-billingsley1995probability)
+- Miller [\[6\]](#ref-problifesaver)
+- Blitzstein and Hwang [\[1\]](#ref-blitzstein2019introduction)
+- Hastie et al. [\[7\]](#ref-hastie2009elements)
+- James et al. [\[8\]](#ref-james2021islr2e)
+- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross [\[9\]](#ref-dembo-notes), Stanford MATH 136 / STAT 219)
+- Amir Dembo, [*Probability Theory*](https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf) lecture notes (Stanford STAT 310 / MATH 230, the measure-theoretic sequel to this material; used in STATS 310B)
+- John Duchi, [*Lecture Notes on Statistics and Information Theory*](https://web.stanford.edu/class/stats311/) (Stanford STATS 311), which develops entropy and divergences beyond the definitions here
+- Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
+
+### Video channels
+
+The DATA 571 (Machine Learning) course notes keep a curated list of [online video channels](https://morrison-lab.github.io/lds/chapters/channels.html), with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
+
+## References
+
+\[1\]
+
+J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman; Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
+
+\[2\]
+
+K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Available: <https://bookdown.org/kevin_davisross/probsim-book/>
+
+\[3\]
+
+S. M. Ross, *A first course in probability*, 10th ed. Hoboken, NJ: Pearson, 2019.
+
+\[4\]
+
+A. Gut, *Probability: A graduate course*, 2nd ed. in Springer texts in statistics. New York: Springer, 2013. doi: [10.1007/978-1-4614-4708-5](https://doi.org/10.1007/978-1-4614-4708-5).
+
+\[5\]
+
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
+
+\[6\]
+
+S. J. Miller, *The probability lifesaver: All the tools you need to understand chance*. in A princeton lifesaver study guide. Princeton: Princeton University Press, 2017. doi: [10.1515/9781400885381](https://doi.org/10.1515/9781400885381).
+
+\[7\]
+
+T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
+
+\[8\]
+
+G. James, D. Witten, T. Hastie, and R. Tibshirani, *An introduction to statistical learning: With applications in R*, 2nd ed. Springer, 2021. doi: [10.1007/978-1-0716-1418-1](https://doi.org/10.1007/978-1-0716-1418-1).
+
+\[9\]
+
+A. Dembo and K. Ross, “Stochastic processes.” Stanford University, 2021. Available: <https://adembo.su.domains/math-136/nnotes.pdf>
+
+Back to top
