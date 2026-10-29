@@ -5,7 +5,7 @@ Let $\Predvar_1$, $\Predvar_2$ and $\noise$ be [independent](independence.qmd#de
 and $\Var{\noise} = 1$,
 and let $\Outvar = \Predvar_1 + \Predvar_2 + \noise$.
 A [prediction](#def-prediction) from $\Predvar_1$ alone has [conditional variance](#def-cond-variance) $\Var{\Outvar \mid \Predvar_1} = \Var{\Predvar_2} + \Var{\noise} = 2$,
-so the residual risk is $2$.
+so the [residual risk](#def-irreducible-risk) is $2$.
 A prediction from $(\Predvar_1, \Predvar_2)$ has conditional variance $\Var{\Outvar \mid \Predvar_1, \Predvar_2} = \Var{\noise} = 1$,
 so the residual risk is $1$.
 
