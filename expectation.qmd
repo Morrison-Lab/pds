@@ -131,6 +131,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-squared-error-risk.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_rem-squared-error-risk-is-risk.qmd >}}
 
 {{< slidebreak >}}
@@ -139,11 +143,23 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-prediction-error-split.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_lem-cross-term-zero.qmd >}}
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-cross-term-zero.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-risk-decomposition.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-risk-decomposition.qmd >}}
 
 {{< slidebreak >}}
 
