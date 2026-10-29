@@ -64,6 +64,11 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 - **Lists of 3+ items**: use bullet lists rather than comma-separated prose. Always leave a blank line before a markdown bullet list (especially in `.qmd` files).
 - **Code chunks**: HTML output folds code by default: `_quarto-website.yml` sets `code-fold: true` (with `code-tools: true`, so readers can show all code at once), as rme does. Keep the default when the *output* (plot, table) is the point and the code is incidental. Set `#| code-fold: false` on tutorial code, short examples, code that is the main focus, and chunks where the console output is the main content.
 - **R style**: respect `.lintr.R`. Run `lintr::lint_dir()` before declaring R changes done.
+- **No nested calls in R**: `lint-changed-lines.yaml` lints the R code and R chunks that a PR adds or edits,
+  with `lms::default_linters(nested_calls = TRUE)`.
+  Its `nested_calls = TRUE` setting enforces the lab's [no-nested-calls rule](https://github.com/Morrison-Lab/ai-config/blob/main/shared/coding/avoid-nesting.md).
+  The linters also flag base R functions that have tidyverse replacements.
+  Run the same linters on a file before pushing with `lintr::lint("file.qmd", linters = lms::default_linters(nested_calls = TRUE))`.
 - **Definitions and results**: one term per `#def-` div, aliases ("also called") in the same div, in bold and in the title, and a second new term in its own div that links to the first; one result per theorem-type div. See "Definitions and results" in `.github/copilot-instructions.md`.
 - **Useful resources**: a course, book or video that covers a topic pds teaches goes in the Further reading section of the matching page,
   even when lds already lists it in a directory (Ezra, 2026-10-15).
