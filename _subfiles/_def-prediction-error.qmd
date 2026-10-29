@@ -9,16 +9,3 @@ The **prediction error** of $\predfn$ is the prediction minus that outcome:
 $$\prederrf{\predfn} \eqdef \predfnf{\Predvar} - \Outvar$$
 
 :::
-
-{{< slidebreak >}}
-
-:::{#exm-prediction-error}
-#### Prediction error in the best-predictor exercise
-
-In @exr-best-predictor,
-consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
-Its [prediction error](#def-prediction-error) is $\prederrf{\predfn_1} = 3 - \Outvar$.
-This is $3$ when $\Outvar = 0$.
-It is $-3$ when $\Outvar = 6$.
-
-:::
