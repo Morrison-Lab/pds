@@ -1,0 +1,19 @@
+{{< slidebreak >}}
+
+::: {#lem-second-moment-variance}
+
+#### The second moment is the variance plus the squared mean
+
+For any random variable $Z$ with $\E{Z^2} < \infty$:
+
+$$\E{Z^2} = \var{Z} + \sqf{\E{Z}}$$
+
+:::
+
+::: proof
+
+Add $\sqf{\E{Z}}$ to both sides of the
+[simplified expression for variance](#thm-variance),
+$\var{Z} = \E{Z^2} - \sqf{\E{Z}}$.
+
+:::
