@@ -113,9 +113,18 @@ and the event "the roll is at most 2", $\set{1, 2}$, does not occur.
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
 is the event that $A$ does not [occur](#def-occurs):
-the set of outcomes in the sample space $\samplespace$ that are not in $A$.
+the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\samplespace$ that are not in $A$,
+or equivalently,
+the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference)
+$\setdiff{\samplespace}{A}$:
 
-$$\neg A \eqdef \samplespace \setminus A$$
+$$
+\ba
+\neg A
+&\eqdef \setbuild{\omega \in \samplespace}{\omega \notin A} \\
+&= \setdiff{\samplespace}{A}
+\ea
+$$
 
 :::
 
@@ -232,7 +241,7 @@ are a [partition](#def-partition) of the [sample space](#def-sample-space) $\sam
 
 The sample space $\samplespace$ is an event (@lem-sample-space-event),
 so a partition of it is defined.
-The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\samplespace \setminus A$,
+The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\setdiff{\samplespace}{A}$,
 which is an event
 because the events are closed under complements in $\samplespace$,
 by the complement requirement of a
