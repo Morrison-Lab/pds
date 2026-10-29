@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 08:00:26 (PDT)
+Last modified: 2026-10-29 13:28:09 (PDT)
 
 ## Welcome
 
@@ -46,11 +46,13 @@ Several universities offer open-access courses with comparable or complementary 
 
 ### Textbooks and companion notes
 
-- Miller [\[3\]](#ref-problifesaver)
+- Ross [\[3\]](#ref-ross2019first), an undergraduate calculus-based [probability](probability-basics.llms.md#def-probability) text
+- Gut [\[4\]](#ref-gut2013), a graduate text on the measure-theoretic foundations of probability, as a companion to Billingsley [\[5\]](#ref-billingsley1995probability)
+- Miller [\[6\]](#ref-problifesaver)
 - Blitzstein and Hwang [\[1\]](#ref-blitzstein2019introduction)
-- Hastie et al. [\[4\]](#ref-hastie2009elements)
-- James et al. [\[5\]](#ref-james2021islr2e)
-- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross [\[6\]](#ref-dembo-notes), Stanford MATH 136 / STAT 219)
+- Hastie et al. [\[7\]](#ref-hastie2009elements)
+- James et al. [\[8\]](#ref-james2021islr2e)
+- Amir Dembo and Kevin Ross, [*Stochastic Processes*](https://adembo.su.domains/math-136/nnotes.pdf) lecture notes (Dembo and Ross [\[9\]](#ref-dembo-notes), Stanford MATH 136 / STAT 219)
 - Amir Dembo, [*Probability Theory*](https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf) lecture notes (Stanford STAT 310 / MATH 230, the measure-theoretic sequel to this material; used in STATS 310B)
 - John Duchi, [*Lecture Notes on Statistics and Information Theory*](https://web.stanford.edu/class/stats311/) (Stanford STATS 311), which develops entropy and divergences beyond the definitions here
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
@@ -71,17 +73,29 @@ K. Ross, “An introduction to probability and simulation.” Bookdown, 2022. Av
 
 \[3\]
 
-S. J. Miller, *The probability lifesaver: All the tools you need to understand chance*. in A princeton lifesaver study guide. Princeton: Princeton University Press, 2017. doi: [10.1515/9781400885381](https://doi.org/10.1515/9781400885381).
+S. M. Ross, *A first course in probability*, 10th ed. Hoboken, NJ: Pearson, 2019.
 
 \[4\]
 
-T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
+A. Gut, *Probability: A graduate course*, 2nd ed. in Springer texts in statistics. New York: Springer, 2013. doi: [10.1007/978-1-4614-4708-5](https://doi.org/10.1007/978-1-4614-4708-5).
 
 \[5\]
 
-G. James, D. Witten, T. Hastie, and R. Tibshirani, *An introduction to statistical learning: With applications in R*, 2nd ed. Springer, 2021. doi: [10.1007/978-1-0716-1418-1](https://doi.org/10.1007/978-1-0716-1418-1).
+P. Billingsley, *Probability and measure*, 3rd ed. in Wiley series in probability and mathematical statistics. New York: Wiley, 1995.
 
 \[6\]
+
+S. J. Miller, *The probability lifesaver: All the tools you need to understand chance*. in A princeton lifesaver study guide. Princeton: Princeton University Press, 2017. doi: [10.1515/9781400885381](https://doi.org/10.1515/9781400885381).
+
+\[7\]
+
+T. Hastie, R. Tibshirani, and J. Friedman, *The elements of statistical learning: Data mining, inference, and prediction*, 2nd ed. Springer, 2009. doi: [10.1007/978-0-387-84858-7](https://doi.org/10.1007/978-0-387-84858-7).
+
+\[8\]
+
+G. James, D. Witten, T. Hastie, and R. Tibshirani, *An introduction to statistical learning: With applications in R*, 2nd ed. Springer, 2021. doi: [10.1007/978-1-0716-1418-1](https://doi.org/10.1007/978-1-0716-1418-1).
+
+\[9\]
 
 A. Dembo and K. Ross, “Stochastic processes.” Stanford University, 2021. Available: <https://adembo.su.domains/math-136/nnotes.pdf>
 
