@@ -50,24 +50,24 @@ The inequality is strict because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Pr
 {{< slidebreak >}}
 
 :::{#def-irreducible-risk}
-#### Irreducible risk
+#### Residual risk (irreducible risk)
 
 In the squared-error risk decomposition of @thm-risk-decomposition,
 the minimum [squared-error risk](#def-squared-error-risk)
 
 $$\popriskf{\bestpredfn} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}$$
 
-is the **irreducible risk**.
+is the **residual risk** (also called the **irreducible risk**).
 
 :::
 
 {{< slidebreak >}}
 
 :::{#thm-irreducible-risk-cond-variance}
-#### The irreducible risk is the expected conditional variance
+#### The residual risk is the expected conditional variance
 
 Let $\Predvar$ and $\Outvar$ be as in @thm-best-predictor.
-Then the [irreducible risk](#def-irreducible-risk) is the [expectation](#def-expectation) of the [conditional variance](#def-cond-variance) of $\Outvar$ given $\Predvar$:
+Then the [residual risk](#def-irreducible-risk) is the [expectation](#def-expectation) of the [conditional variance](#def-cond-variance) of $\Outvar$ given $\Predvar$:
 
 $$
 \popriskf{\bestpredfn} = \E{\Var{\Outvar \mid \Predvar}}.
@@ -81,7 +81,7 @@ $$
 \ba
 \popriskf{\bestpredfn}
 &= \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}
-&& \text{(definition of the irreducible risk)} \\
+&& \text{(definition of the residual risk)} \\
 &= \E{\condE{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}{\Predvar}}
 && \text{(law of total expectation)} \\
 &= \E{\Var{\Outvar \mid \Predvar}}
@@ -92,15 +92,15 @@ $$
 :::
 
 ::: {#rem-irreducible-risk}
-#### The irreducible risk does not depend on the prediction function
+#### The residual risk does not depend on the prediction function
 
-The irreducible risk depends only on the joint distribution of $(\Predvar, \Outvar)$
+The residual risk depends only on the joint distribution of $(\Predvar, \Outvar)$
 and not on the prediction function $\predfn$,
 so no choice of $\predfn$ can achieve a smaller risk.
-It is irreducible only among [prediction functions](#def-prediction) of the given $\Predvar$:
+It is the minimum only among [prediction functions](#def-prediction) of the given $\Predvar$:
 the [outcome](#def-outcome) may also depend on variables that $\Predvar$ leaves out,
 and those variables are part of the unexplained variation $\Outvar - \E{\Outvar \mid \Predvar}$.
-Measuring one of them and adding it to the variables in $\Predvar$ can lower the irreducible risk,
+Measuring one of them and adding it to the variables in $\Predvar$ can lower the residual risk,
 as in @exm-irreducible-risk-added-predictor.
 [@james2021islr2e, Section 2.1.1, p. 18] makes the same point:
 the error term "may contain unmeasured variables that are useful in predicting [$\Outvar$]". <!-- check-term-links: allow -->
@@ -110,26 +110,26 @@ the error term "may contain unmeasured variables that are useful in predicting [
 {{< slidebreak >}}
 
 :::{#exm-irreducible-risk}
-#### Irreducible risk in the best-predictor exercise
+#### Residual risk in the best-predictor exercise
 
 In @exr-best-predictor,
 $\Var{\Outvar \mid \Predvar = 0} = 1$ and $\Var{\Outvar \mid \Predvar = 1} = 1$,
-so the irreducible risk is $\E{\Var{\Outvar \mid \Predvar}} = 1$.
+so the residual risk is $\E{\Var{\Outvar \mid \Predvar}} = 1$.
 
 :::
 
 {{< slidebreak >}}
 
 :::{#exm-irreducible-risk-added-predictor}
-#### Adding a predictor lowers the irreducible risk
+#### Adding a predictor lowers the residual risk
 
 Let $\Predvar_1$, $\Predvar_2$ and $\noise$ be [independent](independence.qmd#def-indpt), with $\Var{\Predvar_2} = 1$
 and $\Var{\noise} = 1$,
 and let $\Outvar = \Predvar_1 + \Predvar_2 + \noise$.
 A [prediction](#def-prediction) from $\Predvar_1$ alone has [conditional variance](#def-cond-variance) $\Var{\Outvar \mid \Predvar_1} = \Var{\Predvar_2} + \Var{\noise} = 2$,
-so the irreducible risk is $2$.
+so the residual risk is $2$.
 A prediction from $(\Predvar_1, \Predvar_2)$ has conditional variance $\Var{\Outvar \mid \Predvar_1, \Predvar_2} = \Var{\noise} = 1$,
-so the irreducible risk is $1$.
+so the residual risk is $1$.
 
 :::
 
@@ -173,7 +173,7 @@ The risk identity in @thm-risk-decomposition
 $$\E{\sqf{\Outvar - \predfnf{\Predvar}}} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} + \E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}}$$
 
 shows that the total squared-error risk is the sum of the
-irreducible risk (@def-irreducible-risk)
+residual risk (@def-irreducible-risk)
 and the reducible risk (@def-reducible-risk).
 
 :::
