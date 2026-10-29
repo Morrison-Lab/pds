@@ -1,6 +1,12 @@
 ::: {#rem-reducible-risk}
 #### When the reducible risk is zero
 
-The reducible risk is zero if and only if $\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1$.
+The reducible risk is zero if and only if the prediction function $\predfn$ equals the [conditional expectation function](#def-cond-expectation-function) with probability 1.
+
+$$
+\E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}} = 0
+\iff
+\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1
+$$
 
 :::
