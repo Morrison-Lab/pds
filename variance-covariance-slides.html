@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-29 14:22:58 (PDT)</p>
+  <p class="date">Last modified: 2026-10-29 14:37:42 (PDT)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -891,6 +891,31 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 \]</span></p>
 </div>
 </section>
+<section class="slide level2">
+
+<div id="lem-second-moment-variance" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (The second moment is the variance plus the squared mean)</strong></span> For any <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(Z\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Z\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}}\right)\mathclose{}}^{2}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Add <span class="math inline">\({\mathopen{}\left({\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}}\right)\mathclose{}}^{2}\)</span> to both sides of the <a href="#/thm-variance">simplified expression for variance</a>, <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Z\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}}\right)\mathclose{}}^{2}\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-second-moment-bernoulli" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 (The second moment of a Bernoulli random variable)</strong></span> Let <span class="math inline">\(Z\)</span> be a <a href="./random-variables.html#def-bernoulli">Bernoulli</a> <a href="./random-variables.html#def-random-variable">random variable</a> with success <a href="./probability-basics.html#def-probability">probability</a> <span class="math inline">\(\pi\)</span>, so <span class="math inline">\(Z \sim \operatorname{Ber}(\pi)\)</span>. Then <span class="math inline">\({\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} = \pi\)</span> directly, because <span class="math inline">\(Z^2 = Z\)</span> when <span class="math inline">\(Z\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>. The <a href="#/lem-second-moment-variance">lemma</a> gives the same value from the <a href="./expectation.html#def-expectation">mean</a> and the <a href="#/def-variance">variance</a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\operatorname{Var}\mathopen{}\left(Z\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}}\right)\mathclose{}}^{2}
+&amp;= \pi(1 - \pi) + {\mathopen{}\left(\pi\right)\mathclose{}}^{2}
+&amp;&amp; \text{(Bernoulli variance and mean)} \\
+&amp;= \pi
+&amp;&amp; \text{(expand and combine like terms)}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
 <section id="sec-best-constant-prediction" class="slide level2" data-number="3">
 <h2><span class="header-section-number">3</span> The best constant prediction</h2>
 <div id="thm-constant-prediction-decompose" class="theorem">
@@ -938,7 +963,7 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 <section class="slide level2">
 
 <div id="exm-best-constant-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (The best constant prediction of fuel economy)</strong></span> Take the 392 cars in the Auto data <a href="./limit-theorems.html#exm-clt-auto">described on the limit theorems page</a> as the whole population, and predict the fuel economy (<code>mpg</code>) of a car drawn at random with one number <span class="math inline">\(c\)</span>. The code below computes the expected squared error of three constants, and sets each beside the right side of <a href="#/eq-constant-prediction-decompose" class="quarto-xref">Equation&nbsp;2</a>.</p>
+<p><span class="theorem-title"><strong>Example 10 (The best constant prediction of fuel economy)</strong></span> Take the 392 cars in the Auto data <a href="./limit-theorems.html#exm-clt-auto">described on the limit theorems page</a> as the whole population, and predict the fuel economy (<code>mpg</code>) of a car drawn at random with one number <span class="math inline">\(c\)</span>. The code below computes the expected squared error of three constants, and sets each beside the right side of <a href="#/eq-constant-prediction-decompose" class="quarto-xref">Equation&nbsp;2</a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>mpg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/auto.csv"</span>)<span class="sc">$</span>mpg</span>
 <span id="cb3-2"><a aria-label="2"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(mpg)</span>
@@ -1075,7 +1100,7 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 <section class="slide level2">
 
 <div id="exm-alt-cov" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (Covariance of a binary exposure and outcome)</strong></span> For the joint PMF in <a href="#/exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
+<p><span class="theorem-title"><strong>Example 11 (Covariance of a binary exposure and outcome)</strong></span> For the joint PMF in <a href="#/exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>,</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\mathbb{E}\mathopen{}\left[XY\right]\mathclose{}} &amp;= \mathbb{P}(X = 1, Y = 1) \\
@@ -1149,7 +1174,7 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 <section class="slide level2">
 
 <div id="exm-indpt-uncorrelated" class="theorem example">
-<p><span class="theorem-title"><strong>Example 11 (Two independent coin flips)</strong></span> For the independent coin flips <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> of <a href="./independence.html#exm-indpt">the independence page’s example</a>, <span class="math inline">\(X_1 X_2 = 1\)</span> only when both flips are heads, so:</p>
+<p><span class="theorem-title"><strong>Example 12 (Two independent coin flips)</strong></span> For the independent coin flips <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> of <a href="./independence.html#exm-indpt">the independence page’s example</a>, <span class="math inline">\(X_1 X_2 = 1\)</span> only when both flips are heads, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\mathbb{E}\mathopen{}\left[X_1 X_2\right]\mathclose{}}
@@ -1169,7 +1194,7 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 <section class="slide level2">
 
 <div id="exm-uncorrelated-not-indpt" class="theorem example">
-<p><span class="theorem-title"><strong>Example 12 (Zero covariance without independence)</strong></span> The converse of <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a> is false. Let <span class="math inline">\(X\)</span> take the values <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/3\)</span> each, and let <span class="math inline">\(Y = X^2\)</span>. Then</p>
+<p><span class="theorem-title"><strong>Example 13 (Zero covariance without independence)</strong></span> The converse of <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a> is false. Let <span class="math inline">\(X\)</span> take the values <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/3\)</span> each, and let <span class="math inline">\(Y = X^2\)</span>. Then</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &amp;= (-1 + 0 + 1)/3 \\
@@ -1236,7 +1261,7 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="exm-correlation" class="theorem example">
-<p><span class="theorem-title"><strong>Example 13 (Correlation of a binary exposure and outcome)</strong></span> In <a href="#/exm-alt-cov" class="quarto-xref">Example&nbsp;10</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05\)</span>, where <span class="math inline">\(X \sim \operatorname{Ber}(0.5)\)</span> has <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 0.25\)</span> (<a href="#/exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>) and <span class="math inline">\(Y\)</span> has <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 0.21\)</span> (<a href="#/exm-total-variance" class="quarto-xref">Example&nbsp;7</a>), so:</p>
+<p><span class="theorem-title"><strong>Example 14 (Correlation of a binary exposure and outcome)</strong></span> In <a href="#/exm-alt-cov" class="quarto-xref">Example&nbsp;11</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05\)</span>, where <span class="math inline">\(X \sim \operatorname{Ber}(0.5)\)</span> has <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 0.25\)</span> (<a href="#/exm-variance-bernoulli" class="quarto-xref">Example&nbsp;3</a>) and <span class="math inline">\(Y\)</span> has <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 0.21\)</span> (<a href="#/exm-total-variance" class="quarto-xref">Example&nbsp;7</a>), so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}
@@ -1259,7 +1284,7 @@ XY &amp;= X^3 \\
 <p><span class="math display">\[{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a> says independent random variables are uncorrelated, and <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;12</a> shows the converse fails.</p>
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a> says independent random variables are uncorrelated, and <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;13</a> shows the converse fails.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1275,7 +1300,7 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="exm-uncorrelated" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14 (Correlated and uncorrelated pairs)</strong></span> In <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;12</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>, so <span class="math inline">\(X\)</span> and <span class="math inline">\(Y = X^2\)</span> are uncorrelated. In <a href="#/exm-alt-cov" class="quarto-xref">Example&nbsp;10</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0\)</span>, so the binary exposure and outcome are not uncorrelated.</p>
+<p><span class="theorem-title"><strong>Example 15 (Correlated and uncorrelated pairs)</strong></span> In <a href="#/exm-uncorrelated-not-indpt" class="quarto-xref">Example&nbsp;13</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>, so <span class="math inline">\(X\)</span> and <span class="math inline">\(Y = X^2\)</span> are uncorrelated. In <a href="#/exm-alt-cov" class="quarto-xref">Example&nbsp;11</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0\)</span>, so the binary exposure and outcome are not uncorrelated.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1298,7 +1323,7 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="exm-cond-cov" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15 (Conditional covariance of a variable with itself)</strong></span> Taking <span class="math inline">\(Z = Y\)</span> in <a href="#/def-cond-cov" class="quarto-xref">Definition&nbsp;12</a> gives the <a href="#/def-cond-variance">conditional variance</a>: <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}\)</span>. In <a href="#/exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, for example, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{}} = 0.24\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 16 (Conditional covariance of a variable with itself)</strong></span> Taking <span class="math inline">\(Z = Y\)</span> in <a href="#/def-cond-cov" class="quarto-xref">Definition&nbsp;12</a> gives the <a href="#/def-cond-variance">conditional variance</a>: <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}\)</span>. In <a href="#/exm-cond-variance" class="quarto-xref">Example&nbsp;4</a>, for example, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{}} = 0.24\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1368,7 +1393,7 @@ XY &amp;= X^3 \\
 <section class="slide level2">
 
 <div id="lem-cov-xx" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1 (The covariance of a variable with itself is its variance)</strong></span> For any random variable <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
+<p><span class="theorem-title"><strong>Lemma 2 (The covariance of a variable with itself is its variance)</strong></span> For any random variable <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
 <p><span class="math display">\[{\operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\]</span></p>
 </div>
 <div class="proof">
@@ -1466,7 +1491,7 @@ XY &amp;= X^3 \\
 <ul>
 <li>the step from the third to fourth line uses the <a href="./expectation.html#def-expectation-matrix">expectation of a random matrix</a>,</li>
 <li>the step from the fourth to fifth line uses <a href="#/def-cov" class="quarto-xref">Definition&nbsp;9</a>, and</li>
-<li>the last step uses <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>.</li>
+<li>the last step uses <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>.</li>
 </ul>
 </div>
 </section>
@@ -1665,7 +1690,7 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="exm-vcov-psd" class="theorem example">
-<p><span class="theorem-title"><strong>Example 16 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
+<p><span class="theorem-title"><strong>Example 17 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
 <p><span class="math display">\[D_1 = {\mathopen{}\left\{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)\right\}\mathclose{}},\]</span></p>
 <p>and let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}'\)</span> be equally likely to be each of the four points</p>
 <p><span class="math display">\[D_2 = {\mathopen{}\left\{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)\right\}\mathclose{}}.\]</span></p>
@@ -1736,7 +1761,7 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="exm-vcov-singular" class="theorem example">
-<p><span class="theorem-title"><strong>Example 17 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\)</span> (<a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>), so:</p>
+<p><span class="theorem-title"><strong>Example 18 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\)</span> (<a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>), so:</p>
 <p><span class="math display">\[
 {\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
 \]</span></p>
@@ -1762,7 +1787,7 @@ a &amp;= b \\
 <p>Then <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix">diagonal</a>, with diagonal elements <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}}, \ldots, {\operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;1</a>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1792,7 +1817,7 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="exm-cor-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 18 (Correlation of horsepower and fuel economy)</strong></span> The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
+<p><span class="theorem-title"><strong>Example 19 (Correlation of horsepower and fuel economy)</strong></span> The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
 <p>Choose one car at random, each with the same probability, and let <span class="math inline">\(X\)</span> be its horsepower and <span class="math inline">\(Y\)</span> its miles per gallon. Then <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span>, <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\)</span>, and <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}\)</span> are the averages over the cars in the data, and <a href="#/def-correlation" class="quarto-xref">Definition&nbsp;10</a> gives <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}\)</span>. The code below computes each part of the definition directly.</p>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Python</a></li><li><a href="#tabset-2-2">R</a></li></ul>

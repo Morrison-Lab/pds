@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 14:22:58 (PDT)
+Last modified: 2026-10-29 14:37:42 (PDT)
 
 ## 1 Deviation, error, and noise
 
@@ -319,6 +319,22 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > \\ \begin{aligned} {\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} &= \sqrt{1/4} \\ &= 1/2. \end{aligned} \\
 
+> **NOTE:**
+>
+> **Lemma 1 (The second moment is the variance plus the squared mean)** For any [random variable](random-variables.llms.md#def-random-variable) \\Z\\ with \\{\mathbb{E}\mathopen{}\left\[Z^2\right\]\mathclose{}} \< \infty\\:
+>
+> \\{\mathbb{E}\mathopen{}\left\[Z^2\right\]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Z\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Z\right\]\mathclose{}}\right)\mathclose{}}^{2}\\
+
+> **NOTE:**
+>
+> *Proof*. Add \\{\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Z\right\]\mathclose{}}\right)\mathclose{}}^{2}\\ to both sides of the [simplified expression for variance](#thm-variance), \\{\operatorname{Var}\mathopen{}\left(Z\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Z^2\right\]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Z\right\]\mathclose{}}\right)\mathclose{}}^{2}\\.
+
+> **NOTE:**
+>
+> **Example 9 (The second moment of a Bernoulli random variable)** Let \\Z\\ be a [Bernoulli](random-variables.llms.md#def-bernoulli) [random variable](random-variables.llms.md#def-random-variable) with success [probability](probability-basics.llms.md#def-probability) \\\pi\\, so \\Z \sim \operatorname{Ber}(\pi)\\. Then \\{\mathbb{E}\mathopen{}\left\[Z^2\right\]\mathclose{}} = \pi\\ directly, because \\Z^2 = Z\\ when \\Z\\ is \\0\\ or \\1\\. The [lemma](#lem-second-moment-variance) gives the same value from the [mean](expectation.llms.md#def-expectation) and the [variance](#def-variance):
+>
+> \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(Z\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Z\right\]\mathclose{}}\right)\mathclose{}}^{2} &= \pi(1 - \pi) + {\mathopen{}\left(\pi\right)\mathclose{}}^{2} && \text{(Bernoulli variance and mean)} \\ &= \pi && \text{(expand and combine like terms)} \end{aligned} \\
+
 ## 3 The best constant prediction
 
 > **NOTE:**
@@ -347,7 +363,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 9 (The best constant prediction of fuel economy)** Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.llms.md#exm-clt-auto) as the whole population, and predict the fuel economy (`mpg`) of a car drawn at random with one number \\c\\. The code below computes the expected squared error of three constants, and sets each beside the right side of [Equation 2](#eq-constant-prediction-decompose).
+> **Example 10 (The best constant prediction of fuel economy)** Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.llms.md#exm-clt-auto) as the whole population, and predict the fuel economy (`mpg`) of a car drawn at random with one number \\c\\. The code below computes the expected squared error of three constants, and sets each beside the right side of [Equation 2](#eq-constant-prediction-decompose).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -432,7 +448,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 10 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance),
+> **Example 11 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance),
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[XY\right\]\mathclose{}} &= \mathbb{P}(X = 1, Y = 1) \\ &= 0.4, \end{aligned} \\
 >
@@ -464,7 +480,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 11 (Two independent coin flips)** For the independent coin flips \\X_1\\ and \\X_2\\ of [the independence page’s example](independence.llms.md#exm-indpt), \\X_1 X_2 = 1\\ only when both flips are heads, so:
+> **Example 12 (Two independent coin flips)** For the independent coin flips \\X_1\\ and \\X_2\\ of [the independence page’s example](independence.llms.md#exm-indpt), \\X_1 X_2 = 1\\ only when both flips are heads, so:
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X_1 X_2\right\]\mathclose{}} &= \mathbb{P}(X_1 = 1, X_2 = 1) && \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\ &= \tfrac{1}{4} && \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\ &= \tfrac{1}{2} \cdot\tfrac{1}{2} && \text{(factor)} \\ &= {\mathbb{E}\mathopen{}\left\[X_1\right\]\mathclose{}}{\mathbb{E}\mathopen{}\left\[X_2\right\]\mathclose{}} && \text{(each flip is } \operatorname{Ber}(1/2) \text{)} \end{aligned} \\
 >
@@ -472,7 +488,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 12 (Zero covariance without independence)** The converse of [Theorem 8](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then
+> **Example 13 (Zero covariance without independence)** The converse of [Theorem 8](#thm-indpt-uncorrelated) is false. Let \\X\\ take the values \\-1\\, \\0\\, and \\1\\ with probability \\1/3\\ each, and let \\Y = X^2\\. Then
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} &= (-1 + 0 + 1)/3 \\ &= 0, \end{aligned} \\
 >
@@ -504,7 +520,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 13 (Correlation of a binary exposure and outcome)** In [Example 10](#exm-alt-cov), \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05\\, where \\X \sim \operatorname{Ber}(0.5)\\ has \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 0.25\\ ([Example 3](#exm-variance-bernoulli)) and \\Y\\ has \\{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 0.21\\ ([Example 7](#exm-total-variance)), so:
+> **Example 14 (Correlation of a binary exposure and outcome)** In [Example 11](#exm-alt-cov), \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05\\, where \\X \sim \operatorname{Ber}(0.5)\\ has \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 0.25\\ ([Example 3](#exm-variance-bernoulli)) and \\Y\\ has \\{\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 0.21\\ ([Example 7](#exm-total-variance)), so:
 >
 > \\ \begin{aligned} {\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} &= \frac{{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}}{{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\\{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}} && \text{(definition of correlation)} \\ &= \frac{0.05}{\sqrt{0.25} \cdot\sqrt{0.21}} && \text{(substitute; } {\operatorname{SD}\mathopen{}\left(\cdot\right)\mathclose{}} = \sqrt{{\operatorname{Var}\mathopen{}\left(\cdot\right)\mathclose{}}} \text{)} \\ &\approx \frac{0.05}{0.5 \cdot 0.458} && \text{(evaluate the square roots)} \\ &\approx 0.218 && \text{(divide)} \end{aligned} \\
 
@@ -516,11 +532,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 8](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 12](#exm-uncorrelated-not-indpt) shows the converse fails.
+> *Remark*. [Theorem 8](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 13](#exm-uncorrelated-not-indpt) shows the converse fails.
 
 > **NOTE:**
 >
-> **Example 14 (Correlated and uncorrelated pairs)** In [Example 12](#exm-uncorrelated-not-indpt), \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\\, so \\X\\ and \\Y = X^2\\ are uncorrelated. In [Example 10](#exm-alt-cov), \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0\\, so the binary exposure and outcome are not uncorrelated.
+> **Example 15 (Correlated and uncorrelated pairs)** In [Example 13](#exm-uncorrelated-not-indpt), \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\\, so \\X\\ and \\Y = X^2\\ are uncorrelated. In [Example 11](#exm-alt-cov), \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0\\, so the binary exposure and outcome are not uncorrelated.
 
 > **NOTE:**
 >
@@ -540,7 +556,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 15 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 12](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\{\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}\\. In [Example 4](#exm-cond-variance), for example, \\{\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{}} = 0.24\\.
+> **Example 16 (Conditional covariance of a variable with itself)** Taking \\Z = Y\\ in [Definition 12](#def-cond-cov) gives the [conditional variance](#def-cond-variance): \\{\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}\\. In [Example 4](#exm-cond-variance), for example, \\{\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{}} = 0.24\\.
 
 > **NOTE:**
 >
@@ -570,7 +586,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Lemma 1 (The covariance of a variable with itself is its variance)** For any random variable \\X\\ with \\{\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} \< \infty\\:
+> **Lemma 2 (The covariance of a variable with itself is its variance)** For any random variable \\X\\ with \\{\mathbb{E}\mathopen{}\left\[X^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{\operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\\
 
@@ -602,7 +618,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > - the step from the third to fourth line uses the [expectation of a random matrix](expectation.llms.md#def-expectation-matrix),
 > - the step from the fourth to fifth line uses [Definition 9](#def-cov), and
-> - the last step uses [Lemma 1](#lem-cov-xx).
+> - the last step uses [Lemma 2](#lem-cov-xx).
 
 > **NOTE:**
 >
@@ -684,7 +700,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 16 (Two variance matrices that differ only in sign)** Let \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
+> **Example 17 (Two variance matrices that differ only in sign)** Let \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\\ be equally likely to be each of the four points
 >
 > \\D_1 = {\mathopen{}\left\\(-5, 1),\\ (0, -1),\\ (0, 1),\\ (5, -1)\right\\\mathclose{}},\\
 >
@@ -722,7 +738,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 17 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\\ is \\{\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\\ ([Lemma 1](#lem-cov-xx)), so:
+> **Example 18 (A variance matrix that is not positive definite)** Let \\X_1\\ have variance \\\sigma^2\> 0\\, and let \\X_2 = X_1\\. Every covariance in \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\\ is \\{\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\\ ([Lemma 2](#lem-cov-xx)), so:
 >
 > \\ {\operatorname{Var}\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\right)\mathclose{}} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}. \\
 >
@@ -743,7 +759,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-vcov-elements), the \\(i,j)\\-th element of \\{\operatorname{Var}\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\right)\mathclose{}}\\ is \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\\ by [Theorem 8](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\ by [Lemma 1](#lem-cov-xx).
+> *Proof*. By [Theorem 10](#thm-vcov-elements), the \\(i,j)\\-th element of \\{\operatorname{Var}\mathopen{}\left(\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{X}}\vphantom{X}}\right)\mathclose{}}\\ is \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\\. For \\i \neq j\\, \\X_i\\ and \\X_j\\ are independent, so \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\\ by [Theorem 8](#thm-indpt-uncorrelated). The \\(i,i)\\-th element is \\{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\ by [Lemma 2](#lem-cov-xx).
 
 > **NOTE:**
 >
@@ -761,7 +777,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 18 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
+> **Example 19 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same probability, and let \\X\\ be its horsepower and \\Y\\ its miles per gallon. Then \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}\\, \\{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\\, and \\{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}\\ are the averages over the cars in the data, and [Definition 10](#def-correlation) gives \\{\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}\\. The code below computes each part of the definition directly.
 >
