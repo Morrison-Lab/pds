@@ -49,6 +49,10 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 {{< include pds/_subfiles/_def-variance.qmd >}}
 
+{{< include pds/_subfiles/_lem-second-moment-variance.qmd >}}
+
+{{< include pds/_subfiles/_exm-second-moment-variance.qmd >}}
+
 ## The best constant prediction {#sec-best-constant-prediction}
 
 {{< include pds/_subfiles/_thm-best-constant.qmd >}}
