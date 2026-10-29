@@ -153,6 +153,16 @@
    "url": "https://morrison-lab.github.io/mds/sets.html#def-set"
   },
   {
+   "id": "mds/sets#def-set-difference",
+   "site": "mds",
+   "page": "sets",
+   "div": "def-set-difference",
+   "kind": "def",
+   "title": "set difference",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/sets.html#def-set-difference"
+  },
+  {
    "id": "pds/distributions#cor-mvn-mahalanobis",
    "site": "pds",
    "page": "distributions",
@@ -2776,6 +2786,14 @@
   [
    "pds/probability-basics#cor-probability-finitely-additive",
    "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#def-complement",
+   "mds/sets#def-set"
+  ],
+  [
+   "pds/probability-basics#def-complement",
+   "mds/sets#def-set-difference"
   ],
   [
    "pds/probability-basics#def-complement",

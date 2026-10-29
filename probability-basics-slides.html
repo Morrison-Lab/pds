@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-10-29 13:42:11 (PDT)</p>
+  <p class="date">Last modified: 2026-10-29 13:56:59 (PDT)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -511,8 +511,14 @@
 <section class="slide level2">
 
 <div id="def-complement" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Complement of an event)</strong></span> The <strong>complement</strong> of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#/def-occurs">occur</a>: the set of outcomes in the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>.</p>
-<p><span class="math display">\[\neg A \stackrel{\text{def}}{=}\Omega\setminus A\]</span></p>
+<p><span class="theorem-title"><strong>Definition 8 (Complement of an event)</strong></span> The <strong>complement</strong> of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#/def-occurs">occur</a>: the <a href="https://morrison-lab.github.io/mds/sets.html#def-set">set</a> of elements <span class="math inline">\(\omega\)</span> of the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>, or equivalently, the <a href="https://morrison-lab.github.io/mds/sets.html#def-set-difference">set difference</a> <span class="math inline">\({\Omega \setminus A}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\neg A
+&amp;\stackrel{\text{def}}{=}{{\mathopen{}\left\{\omega \in \Omega : \omega \notin A\right\}\mathclose{}}} \\
+&amp;= {\Omega \setminus A}
+\end{aligned}
+\]</span></p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Other sources write <span class="math inline">\(A^c\)</span> or <span class="math inline">\(\bar{A}\)</span>.</p>
@@ -598,7 +604,7 @@
 <p><span class="theorem-title"><strong>Proposition 1 (An event and its complement partition the sample space)</strong></span> For any <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>, the events <span class="math inline">\(A\)</span> and its <a href="#/def-complement">complement</a> <span class="math inline">\(\neg A\)</span> are a <a href="#/def-partition">partition</a> of the <a href="#/def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The sample space <span class="math inline">\(\Omega\)</span> is an event (<a href="#/lem-sample-space-event" class="quarto-xref">Lemma&nbsp;1</a>), so a partition of it is defined. The complement <span class="math inline">\(\neg A\)</span> is the <a href="https://morrison-lab.github.io/mds/sets.html#def-set-difference">set difference</a> <span class="math inline">\(\Omega\setminus A\)</span>, which is an event because the events are closed under complements in <span class="math inline">\(\Omega\)</span>, by the complement requirement of a <a href="https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra"><span class="math inline">\(\sigma\)</span>-algebra</a>. The events <span class="math inline">\(A\)</span> and <span class="math inline">\(\neg A\)</span> are mutually exclusive, because <span class="math inline">\(\neg A\)</span> contains only elements not in <span class="math inline">\(A\)</span>. Their union is <span class="math inline">\(\Omega\)</span>, because each element of <span class="math inline">\(\Omega\)</span> is either in <span class="math inline">\(A\)</span> or not in <span class="math inline">\(A\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The sample space <span class="math inline">\(\Omega\)</span> is an event (<a href="#/lem-sample-space-event" class="quarto-xref">Lemma&nbsp;1</a>), so a partition of it is defined. The complement <span class="math inline">\(\neg A\)</span> is the <a href="https://morrison-lab.github.io/mds/sets.html#def-set-difference">set difference</a> <span class="math inline">\({\Omega \setminus A}\)</span>, which is an event because the events are closed under complements in <span class="math inline">\(\Omega\)</span>, by the complement requirement of a <a href="https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra"><span class="math inline">\(\sigma\)</span>-algebra</a>. The events <span class="math inline">\(A\)</span> and <span class="math inline">\(\neg A\)</span> are mutually exclusive, because <span class="math inline">\(\neg A\)</span> contains only elements not in <span class="math inline">\(A\)</span>. Their union is <span class="math inline">\(\Omega\)</span>, because each element of <span class="math inline">\(\Omega\)</span> is either in <span class="math inline">\(A\)</span> or not in <span class="math inline">\(A\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">

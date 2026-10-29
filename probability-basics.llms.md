@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 13:42:11 (PDT)
+Last modified: 2026-10-29 13:56:59 (PDT)
 
 ## 1 Defining probabilities
 
@@ -111,9 +111,9 @@ Last modified: 2026-10-29 13:42:11 (PDT)
 
 > **NOTE:**
 >
-> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the set of outcomes in the sample space \\\Omega\\ that are not in \\A\\.
+> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) \\A\\, denoted \\\neg A\\, is the event that \\A\\ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements \\\omega\\ of the sample space \\\Omega\\ that are not in \\A\\, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) \\{\Omega \setminus A}\\:
 >
-> \\\neg A \stackrel{\text{def}}{=}\Omega\setminus A\\
+> \\ \begin{aligned} \neg A &\stackrel{\text{def}}{=}{{\mathopen{}\left\\\omega \in \Omega : \omega \notin A\right\\\mathclose{}}} \\ &= {\Omega \setminus A} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -162,7 +162,7 @@ Last modified: 2026-10-29 13:42:11 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. The sample space \\\Omega\\ is an event ([Lemma 1](#lem-sample-space-event)), so a partition of it is defined. The complement \\\neg A\\ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) \\\Omega\setminus A\\, which is an event because the events are closed under complements in \\\Omega\\, by the complement requirement of a [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra). The events \\A\\ and \\\neg A\\ are mutually exclusive, because \\\neg A\\ contains only elements not in \\A\\. Their union is \\\Omega\\, because each element of \\\Omega\\ is either in \\A\\ or not in \\A\\.
+> *Proof*. The sample space \\\Omega\\ is an event ([Lemma 1](#lem-sample-space-event)), so a partition of it is defined. The complement \\\neg A\\ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) \\{\Omega \setminus A}\\, which is an event because the events are closed under complements in \\\Omega\\, by the complement requirement of a [\\\sigma\\-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra). The events \\A\\ and \\\neg A\\ are mutually exclusive, because \\\neg A\\ contains only elements not in \\A\\. Their union is \\\Omega\\, because each element of \\\Omega\\ is either in \\A\\ or not in \\A\\.
 
 > **NOTE:**
 >
