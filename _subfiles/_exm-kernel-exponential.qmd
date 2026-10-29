@@ -1,0 +1,22 @@
+:::{#exm-kernel-exponential}
+#### The kernel, normalizing constant, and mode of an exponential density
+
+The [exponential density](#def-exponential) with rate $\rate$ is $f(t) = \rate \ef{-\rate t}$ for $t \ge 0$.
+Its kernel is $g(t) = \ef{-\rate t}$ on $t \ge 0$,
+and the normalizing constant is
+
+$$
+\ba
+c
+&= \frac{1}{\int_0^{\infty} \ef{-\rate t}\,dt}
+&& \text{(definition of the normalizing constant)} \\
+&= \frac{1}{1/\rate}
+&& \text{(integrate)} \\
+&= \rate.
+&& \text{(simplify)}
+\ea
+$$
+
+The kernel is largest at $t = 0$, so by @thm-kernel-same-mode the mode of $f$ is $0$.
+
+:::

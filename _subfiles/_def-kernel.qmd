@@ -1,0 +1,8 @@
+:::{#def-kernel}
+#### Kernel of a density
+
+A **kernel** of a [density](#def-pdf) $f$
+is a function $g \ge 0$ such that $f(x) = c\, g(x)$ for every $x$,
+for some constant $c > 0$ that does not depend on $x$.
+
+:::

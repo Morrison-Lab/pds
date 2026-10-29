@@ -1,0 +1,11 @@
+:::{#def-normalizing-constant}
+#### Normalizing constant of a density
+
+Let $g$ be a [kernel](#def-kernel) of a [density](#def-pdf) $f$.
+The **normalizing constant** of $g$ is the constant $c$ with $f(x) = c\, g(x)$:
+
+$$c \eqdef \frac{1}{\int_{-\infty}^{\infty} g(x)\,dx}.$$
+
+It is the factor that makes the density integrate to 1.
+
+:::
