@@ -2080,6 +2080,15 @@
    "external": false
   },
   {
+   "id": "pds/variance-covariance#lem-second-moment-variance",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "lem-second-moment-variance",
+   "kind": "lem",
+   "title": "The second moment is the variance plus the squared mean",
+   "external": false
+  },
+  {
    "id": "pds/variance-covariance#thm-alt-cov",
    "site": "pds",
    "page": "variance-covariance",
@@ -3320,6 +3329,10 @@
   [
    "pds/variance-covariance#def-variance",
    "pds/variance-covariance#def-deviation-pop-mean"
+  ],
+  [
+   "pds/variance-covariance#lem-second-moment-variance",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#thm-cor-bounds",
