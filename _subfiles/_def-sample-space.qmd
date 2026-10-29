@@ -57,7 +57,7 @@ the event "the roll is even" is $A = \set{2, 4, 6}$.
 :::{#lem-sample-space-event}
 #### The sample space is an event
 
-The [sample space](#def-sample-space) $\samplespace$ is an [event](#def-event).
+Every [sample space](#def-sample-space) $\samplespace$ is an [event](#def-event).
 
 :::
 
