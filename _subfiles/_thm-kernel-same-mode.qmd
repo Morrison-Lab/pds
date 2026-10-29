@@ -10,8 +10,6 @@ $$x^* \text{ is a mode of } f \iff x^* \in \argmax_{x \in A} g(x).$$
 
 {{< slidebreak >}}
 
-::: {.content-hidden when-format="revealjs"}
-
 ::: proof
 
 Write $f(x) = c\, g(x)$ with $c > 0$ (@def-kernel).
@@ -21,7 +19,5 @@ and dividing by $c$ reverses this.
 So $f(x^*) \ge f(x)$ for every $x$ exactly when $g(x^*) \ge g(x)$ for every $x$.
 By the definition of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax),
 these are the conditions $x^* \in \argmax_{x \in A} f(x)$ and $x^* \in \argmax_{x \in A} g(x)$.
-
-:::
 
 :::
