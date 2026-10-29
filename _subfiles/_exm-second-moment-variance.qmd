@@ -1,0 +1,23 @@
+{{< slidebreak >}}
+
+::: {#exm-second-moment-bernoulli}
+
+#### The second moment of a Bernoulli random variable
+
+Let $Z \sim \Ber(\prob)$.
+Then $\E{Z^2} = \prob$ directly,
+because $Z^2 = Z$ when $Z$ is $0$ or $1$.
+The [lemma](#lem-second-moment-variance) gives the same value
+from the mean and the variance:
+
+$$
+\ba
+\var{Z} + \sqf{\E{Z}}
+&= \prob(1 - \prob) + \prob^2
+&& \text{(Bernoulli variance and mean)} \\
+&= \prob
+&& \text{(expand and combine like terms)}
+\ea
+$$
+
+:::
