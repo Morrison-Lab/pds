@@ -1,0 +1,12 @@
+::: {.remark .notes}
+
+This characterization of the best predictor under squared error loss follows @hastie2009elements [Section 2.4, eq. 2.11].
+The risk identity in @thm-risk-decomposition
+
+$$\E{\sqf{\Outvar - \predfnf{\Predvar}}} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} + \E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}}$$
+
+shows that the total squared-error risk is the sum of the
+residual risk (@def-irreducible-risk)
+and the reducible risk (@def-reducible-risk).
+
+:::

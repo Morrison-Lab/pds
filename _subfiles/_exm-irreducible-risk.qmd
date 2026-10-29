@@ -1,0 +1,8 @@
+:::{#exm-irreducible-risk}
+#### Residual risk in the best-predictor exercise
+
+In @exr-best-predictor,
+$\Var{\Outvar \mid \Predvar = 0} = 1$ and $\Var{\Outvar \mid \Predvar = 1} = 1$,
+so the residual risk is $\E{\Var{\Outvar \mid \Predvar}} = 1$.
+
+:::

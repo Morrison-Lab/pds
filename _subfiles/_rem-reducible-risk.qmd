@@ -1,0 +1,6 @@
+::: {#rem-reducible-risk}
+#### When the reducible risk is zero
+
+The reducible risk is zero if and only if $\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1$.
+
+:::

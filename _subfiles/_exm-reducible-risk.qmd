@@ -1,0 +1,8 @@
+:::{#exm-reducible-risk}
+#### Reducible risk in the best-predictor exercise
+
+In @exr-best-predictor,
+the constant prediction $\predfn_1\paren{\Predvar} = 3$ has reducible risk $5 - 1 = 4$,
+and the prediction $\predfn_2\paren{\Predvar} = 4\Predvar$ has reducible risk $2 - 1 = 1$.
+
+:::
