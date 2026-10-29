@@ -1,8 +1,13 @@
 :::{#rem-prediction-error}
 #### The prediction error of a prediction function
 
-A [prediction function](#def-prediction-function) $\predfn$ makes the [prediction](#def-prediction) $\predfnf{\Predvar}$ for the [outcome](#def-outcome) $\Outvar$ of a [new observation](#def-new-observation) with [input](#def-input) $\Predvar$.
-We write $\prederrf{\predfn}$ for the [prediction error](#def-prediction-error) of that prediction, $\prederrf{\predfn} = \predfnf{\Predvar} - \Outvar$.
+A [prediction function](#def-prediction-function) $\predfn$ makes the [prediction](#def-prediction) $\predfnf{\Predvar}$
+for the [outcome](#def-outcome) $\Outvar$ of a [new observation](#def-new-observation) with [input](#def-input) $\Predvar$.
+We write $\prederrf{\predfn}$ for the [prediction error](#def-prediction-error) of that prediction,
+meaning $\prederrf{\predfnf{\Predvar}}$,
+which is
+
+$$\prederrf{\predfn} = \predfnf{\Predvar} - \Outvar$$
 
 The reference value in a prediction error is the observed outcome $\Outvar$,
 not the [conditional mean](#def-cond-expectation-function) of that outcome.
