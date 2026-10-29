@@ -3121,6 +3121,14 @@
    "pds/random-variables#def-pmf"
   ],
   [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-range"
+  ],
+  [
    "pds/random-variables#def-normal",
    "pds/random-variables#def-pdf"
   ],
@@ -3231,6 +3239,14 @@
   [
    "pds/random-variables#thm-kernel-same-mode",
    "pds/random-variables#def-mode"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#thm-no-joint-density-diagonal",

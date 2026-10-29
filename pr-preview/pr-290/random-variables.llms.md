@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:26:39 (PDT)
+Last modified: 2026-10-29 15:45:27 (PDT)
 
 ## 1 Random variables
 
@@ -812,19 +812,21 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 24 (Mode of a density or mass function)** Let \\f\\ be a [density](#def-pdf) or [mass function](#def-pmf) with domain \\A\\. A **mode** of \\f\\ is an element of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of \\f\\ over \\A\\:
+> **Definition 24 (Mode of a density or mass function)** Let \\X\\ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) \\f\\. The **modes** of \\f\\ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of \\f\\ over the [range](#def-range) of \\X\\:
 >
-> \\x^\* \in \arg \max\_{x \in A} f(x).\\
+> \\\operatorname{mode}(f) = \arg \max\_{x \in \mathcal{R}(X)} f(x).\\
+>
+> A **mode** of \\f\\ is an element of \\\operatorname{mode}(f)\\.
 
 > **NOTE:**
 >
-> **Theorem 18 (A density and its kernel have the same modes)** If \\g\\ is a [kernel of a density](#def-kernel) \\f\\ with domain \\A\\, then the [modes](#def-mode) of \\f\\ are exactly the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of \\g\\:
+> **Theorem 18 (A density and its kernel have the same modes)** If \\g\\ is a [kernel of the density](#def-kernel) \\f\\ of a [random variable](#def-random-variable) \\X\\, then the [modes](#def-mode) of \\f\\ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of \\g\\ over the [range](#def-range) of \\X\\:
 >
-> \\x^\* \text{ is a mode of } f \iff x^\* \in \arg \max\_{x \in A} g(x).\\
+> \\\operatorname{mode}(f) = \arg \max\_{x \in \mathcal{R}(X)} g(x).\\
 
 > **NOTE:**
 >
-> *Proof*. Write \\f(x) = c\\ g(x)\\ with \\c \> 0\\ ([Definition 22](#def-kernel)). For any \\x\\, multiplying both sides of \\g(x^\*) \ge g(x)\\ by \\c \> 0\\ gives \\f(x^\*) \ge f(x)\\, and dividing by \\c\\ reverses this. So \\f(x^\*) \ge f(x)\\ for every \\x\\ exactly when \\g(x^\*) \ge g(x)\\ for every \\x\\. By the definition of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax), these are the conditions \\x^\* \in \arg \max\_{x \in A} f(x)\\ and \\x^\* \in \arg \max\_{x \in A} g(x)\\.
+> *Proof*. Write \\f(x) = c\\ g(x)\\ with \\c \> 0\\ ([Definition 22](#def-kernel)). For any \\x\\, multiplying both sides of \\g(x^\*) \ge g(x)\\ by \\c \> 0\\ gives \\f(x^\*) \ge f(x)\\, and dividing by \\c\\ reverses this. So \\f(x^\*) \ge f(x)\\ for every \\x\\ exactly when \\g(x^\*) \ge g(x)\\ for every \\x\\. By the definition of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax), these are the conditions \\x^\* \in \arg \max\_{x \in \mathcal{R}(X)} f(x)\\ and \\x^\* \in \arg \max\_{x \in \mathcal{R}(X)} g(x)\\.
 
 > **NOTE:**
 >
