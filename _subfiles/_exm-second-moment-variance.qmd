@@ -4,7 +4,8 @@
 
 #### The second moment of a Bernoulli random variable
 
-Let $Z \sim \Ber(\prob)$.
+Let $Z$ be a [Bernoulli](random-variables.qmd#def-bernoulli) random variable
+with success probability $\prob$, so $Z \sim \Ber(\prob)$.
 Then $\E{Z^2} = \prob$ directly,
 because $Z^2 = Z$ when $Z$ is $0$ or $1$.
 The [lemma](#lem-second-moment-variance) gives the same value
@@ -13,7 +14,7 @@ from the [mean](expectation.qmd#def-expectation) and the [variance](#def-varianc
 $$
 \ba
 \var{Z} + \sqf{\E{Z}}
-&= \prob(1 - \prob) + \prob^2
+&= \prob(1 - \prob) + \sqf{\prob}
 && \text{(Bernoulli variance and mean)} \\
 &= \prob
 && \text{(expand and combine like terms)}
