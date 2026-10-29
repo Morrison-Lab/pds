@@ -1,0 +1,3223 @@
+{
+ "site": "pds",
+ "meaning": "edge [A, B] means A uses B: B is a prerequisite of A, A a postrequisite of B",
+ "nodes": [
+  {
+   "id": "mds/algebra-basics#def-argmin",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-argmin",
+   "kind": "def",
+   "title": "argmin",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin"
+  },
+  {
+   "id": "mds/algebra-basics#def-global-minimizer",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-global-minimizer",
+   "kind": "def",
+   "title": "global minimizer",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer"
+  },
+  {
+   "id": "mds/functions#def-countable-set",
+   "site": "mds",
+   "page": "functions",
+   "div": "def-countable-set",
+   "kind": "def",
+   "title": "countable set",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/functions.html#def-countable-set"
+  },
+  {
+   "id": "mds/functions#def-function",
+   "site": "mds",
+   "page": "functions",
+   "div": "def-function",
+   "kind": "def",
+   "title": "function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/functions.html#def-function"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-determinant",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-determinant",
+   "kind": "def",
+   "title": "determinant",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-diagonal-matrix",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-diagonal-matrix",
+   "kind": "def",
+   "title": "diagonal matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-eigendecomposition",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-eigendecomposition",
+   "kind": "def",
+   "title": "eigendecomposition",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-matrix-inverse",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-matrix-inverse",
+   "kind": "def",
+   "title": "matrix inverse",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-positive-definite",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-positive-definite",
+   "kind": "def",
+   "title": "positive definite",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-positive-semidefinite",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-positive-semidefinite",
+   "kind": "def",
+   "title": "positive semidefinite",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#def-symmetric-matrix",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "def-symmetric-matrix",
+   "kind": "def",
+   "title": "symmetric matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix"
+  },
+  {
+   "id": "mds/measures#def-countable-additivity",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-countable-additivity",
+   "kind": "def",
+   "title": "countable additivity",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-countable-additivity"
+  },
+  {
+   "id": "mds/measures#def-finite-additivity",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-finite-additivity",
+   "kind": "def",
+   "title": "finite additivity",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-finite-additivity"
+  },
+  {
+   "id": "mds/measures#def-measure",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-measure",
+   "kind": "def",
+   "title": "measure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-measure"
+  },
+  {
+   "id": "mds/sets#def-set",
+   "site": "mds",
+   "page": "sets",
+   "div": "def-set",
+   "kind": "def",
+   "title": "set",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/sets.html#def-set"
+  },
+  {
+   "id": "pds/distributions#cor-mvn-mahalanobis",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-mvn-mahalanobis",
+   "kind": "cor",
+   "title": "The multivariate normal density decreases with Mahalanobis distance",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-mvn-uncorrelated-indpt",
+   "kind": "cor",
+   "title": "For a multivariate normal vector, uncorrelated components are independent",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-weibull-exponential",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-weibull-exponential",
+   "kind": "cor",
+   "title": "The Weibull with shape 1 is the exponential",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-weibull-hazard-monotone",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-weibull-hazard-monotone",
+   "kind": "cor",
+   "title": "The Weibull shape sets the direction of the hazard",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-binomial",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-binomial",
+   "kind": "def",
+   "title": "Binomial distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-event-rate",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-event-rate",
+   "kind": "def",
+   "title": "Event rate",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-exposure",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-exposure",
+   "kind": "def",
+   "title": "Exposure magnitude",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-laplace",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-laplace",
+   "kind": "def",
+   "title": "Laplace distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-mahalanobis",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-mahalanobis",
+   "kind": "def",
+   "title": "Mahalanobis distance",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-mixture",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-mixture",
+   "kind": "def",
+   "title": "Mixture density",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-mixture-component",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-mixture-component",
+   "kind": "def",
+   "title": "Mixture component",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-mvn",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-mvn",
+   "kind": "def",
+   "title": "Multivariate normal distribution (multivariate Gaussian distribution)",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-nb",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-nb",
+   "kind": "def",
+   "title": "Negative binomial distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-offset",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-offset",
+   "kind": "def",
+   "title": "Offset",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-poisson",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-poisson",
+   "kind": "def",
+   "title": "Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-responsibility",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-responsibility",
+   "kind": "def",
+   "title": "Responsibility of a mixture component",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-weibull",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-weibull",
+   "kind": "def",
+   "title": "Weibull distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#lem-mahalanobis-nonneg",
+   "site": "pds",
+   "page": "distributions",
+   "div": "lem-mahalanobis-nonneg",
+   "kind": "lem",
+   "title": "The quadratic form in the multivariate normal density is non-negative",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-binomial-moments",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-binomial-moments",
+   "kind": "thm",
+   "title": "Mean and variance of the binomial distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-binomial-sum-bernoulli",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-binomial-sum-bernoulli",
+   "kind": "thm",
+   "title": "A sum of IID Bernoulli variables is binomial",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-cdf-pois",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-cdf-pois",
+   "kind": "thm",
+   "title": "CDF of Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-exposure-log-scale",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-exposure-log-scale",
+   "kind": "thm",
+   "title": "Exposure is additive on the log scale",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-laplace-moments",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-laplace-moments",
+   "kind": "thm",
+   "title": "Mean and variance of the Laplace distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mahalanobis-eigen",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mahalanobis-eigen",
+   "kind": "thm",
+   "title": "Mahalanobis distance in eigenvector coordinates",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mean-vs-event-rate",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mean-vs-event-rate",
+   "kind": "thm",
+   "title": "Transformation function from event rate to mean",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mixture-mean",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mixture-mean",
+   "kind": "thm",
+   "title": "The mean of a mixture is the weighted mean of the component means",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mixture-posterior",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mixture-posterior",
+   "kind": "thm",
+   "title": "Which component did an observation come from?",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mixture-two-stage",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mixture-two-stage",
+   "kind": "thm",
+   "title": "A mixture is the density of a two-stage random variable",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mvn-density-integral",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-density-integral",
+   "kind": "thm",
+   "title": "The multivariate normal density integrates to 1",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mvn-diagonal-indpt",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-diagonal-indpt",
+   "kind": "thm",
+   "title": "A multivariate normal vector with diagonal variance has independent normal components",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mvn-moments",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-moments",
+   "kind": "thm",
+   "title": "The mean and variance of the multivariate normal distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-nb",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-nb",
+   "kind": "thm",
+   "title": "Mean and variance of the negative binomial distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-nb-poisson-limit",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-nb-poisson-limit",
+   "kind": "thm",
+   "title": "The negative binomial converges to the Poisson",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-non-exposed",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-non-exposed",
+   "kind": "thm",
+   "title": "No exposure means no expected events",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-poisson-mode",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-poisson-mode",
+   "kind": "thm",
+   "title": "Ratio of consecutive Poisson probabilities, and the mode",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-poisson-properties",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-poisson-properties",
+   "kind": "thm",
+   "title": "Mean and variance of the Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-sum-pois",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-sum-pois",
+   "kind": "thm",
+   "title": "Sum of independent Poisson random variables",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-weibull",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-weibull",
+   "kind": "thm",
+   "title": "Weibull density and hazard",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-weibull-mean",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-weibull-mean",
+   "kind": "thm",
+   "title": "Weibull mean",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#cor-best-predictor-argmin",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-best-predictor-argmin",
+   "kind": "cor",
+   "title": "Conditional mean as the minimizer of squared-error risk",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#cor-best-predictor-unique",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-best-predictor-unique",
+   "kind": "cor",
+   "title": "The minimizer of squared-error risk is unique up to probability-1 equality",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#cor-cond-expectation-general-y",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-cond-expectation-general-y",
+   "kind": "cor",
+   "title": "With $h(x, y) = y$, the general definition gives ${\\E{Y \\mid X = x}}$",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#cor-cross-entropy-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-cross-entropy-entropy",
+   "kind": "cor",
+   "title": "Entropy is the cross-entropy of a distribution with itself",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#cor-fubini-joint",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-fubini-joint",
+   "kind": "cor",
+   "title": "Joint-distribution form (without independence; corollary of Fubini--Tonelli)",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#cor-linearity-affine",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-linearity-affine",
+   "kind": "cor",
+   "title": "Expectation of a linear function of one random variable",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-absolute-error-loss",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-absolute-error-loss",
+   "kind": "def",
+   "title": "Absolute error loss",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cond-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cond-expectation",
+   "kind": "def",
+   "title": "Conditional expectation",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cond-expectation-function",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cond-expectation-function",
+   "kind": "def",
+   "title": "Conditional expectation function",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cond-expectation-general",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cond-expectation-general",
+   "kind": "def",
+   "title": "Conditional expectation of a function of $X$ and $Y$",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cond-mixed",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cond-mixed",
+   "kind": "def",
+   "title": "Conditional expectation: mixed case",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cond-pdf",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cond-pdf",
+   "kind": "def",
+   "title": "Conditional probability density function",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cond-pmf",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cond-pmf",
+   "kind": "def",
+   "title": "Conditional probability mass function",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-cross-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-cross-entropy",
+   "kind": "def",
+   "title": "Cross-entropy",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-entropy",
+   "kind": "def",
+   "title": "Entropy",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-expectation",
+   "kind": "def",
+   "title": "Expectation, expected value, population mean",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-expectation-matrix",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-expectation-matrix",
+   "kind": "def",
+   "title": "Expectation of a random matrix",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-input",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-input",
+   "kind": "def",
+   "title": "Input",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-irreducible-risk",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-irreducible-risk",
+   "kind": "def",
+   "title": "Irreducible risk",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-kl-divergence",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-kl-divergence",
+   "kind": "def",
+   "title": "Kullback--Leibler divergence (KL divergence, relative entropy)",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-loss-function",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-loss-function",
+   "kind": "def",
+   "title": "Loss function",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-new-observation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-new-observation",
+   "kind": "def",
+   "title": "New observation",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-outcome",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-outcome",
+   "kind": "def",
+   "title": "Outcome",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-prediction",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-prediction",
+   "kind": "def",
+   "title": "Prediction",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-prediction-error",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-prediction-error",
+   "kind": "def",
+   "title": "Prediction error",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-reducible-risk",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-reducible-risk",
+   "kind": "def",
+   "title": "Reducible risk",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-risk",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-risk",
+   "kind": "def",
+   "title": "Risk (expected loss)",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-squared-error-loss",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-squared-error-loss",
+   "kind": "def",
+   "title": "Squared error loss",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-squared-error-risk",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-squared-error-risk",
+   "kind": "def",
+   "title": "Squared-error risk (expected prediction error)",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-surprisal",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-surprisal",
+   "kind": "def",
+   "title": "Surprisal (**self-information**, **information content**)",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#lem-cross-term-zero",
+   "site": "pds",
+   "page": "expectation",
+   "div": "lem-cross-term-zero",
+   "kind": "lem",
+   "title": "The conditional mean's error is uncorrelated with any function of the input",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#lem-linearity-finite-sum",
+   "site": "pds",
+   "page": "expectation",
+   "div": "lem-linearity-finite-sum",
+   "kind": "lem",
+   "title": "Linearity of expectation for finite sums",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#lem-prediction-error-split",
+   "site": "pds",
+   "page": "expectation",
+   "div": "lem-prediction-error-split",
+   "kind": "lem",
+   "title": "Prediction error splits at the conditional mean",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-bernoulli-mean",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-bernoulli-mean",
+   "kind": "thm",
+   "title": "Expectation of the Bernoulli distribution",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-best-predictor",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-best-predictor",
+   "kind": "thm",
+   "title": "Conditional mean minimizes squared-error risk",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-cond-linearity",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cond-linearity",
+   "kind": "thm",
+   "title": "Linearity of conditional expectation",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-cond-lotus",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cond-lotus",
+   "kind": "thm",
+   "title": "Conditional LOTUS, discrete case",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-cond-pull-out",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cond-pull-out",
+   "kind": "thm",
+   "title": "A function of $X$ factors out of a conditional expectation given $X$",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-conditional-lie",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-conditional-lie",
+   "kind": "thm",
+   "title": "Conditional law of iterated expectations",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-cross-entropy-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cross-entropy-expectation",
+   "kind": "thm",
+   "title": "Cross-entropy as an expected negative log probability",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-fubini-tonelli-measure",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-fubini-tonelli-measure",
+   "kind": "thm",
+   "title": "Fubini--Tonelli theorem, measure-theoretic form",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-lie",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-lie",
+   "kind": "thm",
+   "title": "Law of iterated expectations",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-linearity-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-linearity-expectation",
+   "kind": "thm",
+   "title": "Linearity of expectation",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-lotus",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-lotus",
+   "kind": "thm",
+   "title": "Law of the Unconscious Statistician (LOTUS)",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-risk-decomposition",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-risk-decomposition",
+   "kind": "thm",
+   "title": "Squared-error risk decomposition",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-sample-mean-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-sample-mean-expectation",
+   "kind": "thm",
+   "title": "The expectation of a sample mean",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-surv-mean",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-surv-mean",
+   "kind": "thm",
+   "title": "Expectation of time-to-event variables",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-cident",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-cident",
+   "kind": "def",
+   "title": "Conditionally identically distributed",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-ciid",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-ciid",
+   "kind": "def",
+   "title": "Conditionally independent and identically distributed",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-cind",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-cind",
+   "kind": "def",
+   "title": "Conditional independence",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-ident",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-ident",
+   "kind": "def",
+   "title": "Identically distributed",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-iid",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-iid",
+   "kind": "def",
+   "title": "Independent and identically distributed",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-indpt",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-indpt",
+   "kind": "def",
+   "title": "Statistical independence",
+   "external": false
+  },
+  {
+   "id": "pds/independence#prp-cind-indpt-neither",
+   "site": "pds",
+   "page": "independence",
+   "div": "prp-cind-indpt-neither",
+   "kind": "prp",
+   "title": "Neither independence nor conditional independence implies the other",
+   "external": false
+  },
+  {
+   "id": "pds/independence#prp-cind-own-covariate",
+   "site": "pds",
+   "page": "independence",
+   "div": "prp-cind-own-covariate",
+   "kind": "prp",
+   "title": "Conditional independence when each $Y_i$ depends only on its own $X_i$",
+   "external": false
+  },
+  {
+   "id": "pds/independence#thm-ident-pmf",
+   "site": "pds",
+   "page": "independence",
+   "div": "thm-ident-pmf",
+   "kind": "thm",
+   "title": "Identically distributed discrete random variables have the same PMF",
+   "external": false
+  },
+  {
+   "id": "pds/independence#thm-indpt-density",
+   "site": "pds",
+   "page": "independence",
+   "div": "thm-indpt-density",
+   "kind": "thm",
+   "title": "Independence with densities: the joint density factors",
+   "external": false
+  },
+  {
+   "id": "pds/independence#thm-indpt-pmf",
+   "site": "pds",
+   "page": "independence",
+   "div": "thm-indpt-pmf",
+   "kind": "thm",
+   "title": "Independence of discrete random variables: the joint PMF factors",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#cor-clt-sum",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "cor-clt-sum",
+   "kind": "cor",
+   "title": "Central Limit Theorem for a sum",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#cor-hoeffding-two-sided",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "cor-hoeffding-two-sided",
+   "kind": "cor",
+   "title": "Hoeffding's inequality, two-sided",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#cor-mean-iid-moments",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "cor-mean-iid-moments",
+   "kind": "cor",
+   "title": "Mean and variance of a sample mean of IID random variables",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#def-convergence-in-probability",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "def-convergence-in-probability",
+   "kind": "def",
+   "title": "Convergence in probability",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#lem-hoeffding",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "lem-hoeffding",
+   "kind": "lem",
+   "title": "Hoeffding's lemma",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-chebyshev",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-chebyshev",
+   "kind": "thm",
+   "title": "Chebyshev's inequality",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-chebyshev-sample-mean",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-chebyshev-sample-mean",
+   "kind": "thm",
+   "title": "Chebyshev's inequality for a sample mean",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-clt",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-clt",
+   "kind": "thm",
+   "title": "Central Limit Theorem",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-hoeffding",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-hoeffding",
+   "kind": "thm",
+   "title": "Hoeffding's inequality",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-markov",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-markov",
+   "kind": "thm",
+   "title": "Markov's inequality",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-sum-iid-moments",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-sum-iid-moments",
+   "kind": "thm",
+   "title": "Mean and variance of a sum of IID random variables",
+   "external": false
+  },
+  {
+   "id": "pds/limit-theorems#thm-wlln",
+   "site": "pds",
+   "page": "limit-theorems",
+   "div": "thm-wlln",
+   "kind": "thm",
+   "title": "Weak law of large numbers",
+   "external": false
+  },
+  {
+   "id": "pds/notation#def-probabilistic",
+   "site": "pds",
+   "page": "notation",
+   "div": "def-probabilistic",
+   "kind": "def",
+   "title": "Probabilistic",
+   "external": false
+  },
+  {
+   "id": "pds/notation#def-random",
+   "site": "pds",
+   "page": "notation",
+   "div": "def-random",
+   "kind": "def",
+   "title": "Random",
+   "external": false
+  },
+  {
+   "id": "pds/notation#def-stochastic-process",
+   "site": "pds",
+   "page": "notation",
+   "div": "def-stochastic-process",
+   "kind": "def",
+   "title": "Stochastic process (random process)",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#cor-p-neg",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "cor-p-neg",
+   "kind": "cor",
+   "title": "Complement rule in probability ($\\prob$) notation",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#cor-p-neg0",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "cor-p-neg0",
+   "kind": "cor",
+   "title": "Complement rule",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#cor-probability-finitely-additive",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "cor-probability-finitely-additive",
+   "kind": "cor",
+   "title": "Probability measures are finitely additive",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-complement",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-complement",
+   "kind": "def",
+   "title": "Complement of an event",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-conditional-prob",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-conditional-prob",
+   "kind": "def",
+   "title": "Conditional probability",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-event",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-event",
+   "kind": "def",
+   "title": "Event",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-experiment-outcome",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-experiment-outcome",
+   "kind": "def",
+   "title": "Outcome",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-log-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-log-odds",
+   "kind": "def",
+   "title": "Log-odds (also called the logit)",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-mutually-exclusive",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-mutually-exclusive",
+   "kind": "def",
+   "title": "Mutually exclusive events (disjoint, pairwise disjoint, mutually disjoint)",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-occurs",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-occurs",
+   "kind": "def",
+   "title": "Occurrence of an event",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-odds",
+   "kind": "def",
+   "title": "Odds",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-partition",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-partition",
+   "kind": "def",
+   "title": "Partition of an event",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-probability",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-probability",
+   "kind": "def",
+   "title": "Probability measure (probability function)",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-procedure",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-procedure",
+   "kind": "def",
+   "title": "Procedure",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-random-choice",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-random-choice",
+   "kind": "def",
+   "title": "Choosing at random",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-random-experiment",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-random-experiment",
+   "kind": "def",
+   "title": "Random experiment",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-sample-space",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-sample-space",
+   "kind": "def",
+   "title": "Sample space",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#def-step",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "def-step",
+   "kind": "def",
+   "title": "Step",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#lem-sample-space-event",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "lem-sample-space-event",
+   "kind": "lem",
+   "title": "The sample space is an event",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#prp-complement-partition",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "prp-complement-partition",
+   "kind": "prp",
+   "title": "An event and its complement partition the sample space",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-bayes",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-bayes",
+   "kind": "thm",
+   "title": "Bayes' theorem",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-continuity-probability",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-continuity-probability",
+   "kind": "thm",
+   "title": "Continuity of probability",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-kolmogorov-axioms",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-kolmogorov-axioms",
+   "kind": "thm",
+   "title": "Kolmogorov axioms",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-law-conditional-prob",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-law-conditional-prob",
+   "kind": "thm",
+   "title": "Law of conditional probability",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-prob-subset",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-prob-subset",
+   "kind": "thm",
+   "title": "Probability of a subset's intersection",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-total-prob",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-total-prob",
+   "kind": "thm",
+   "title": "Law of total probability",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-total-prob-1",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-total-prob-1",
+   "kind": "thm",
+   "title": "An event and its complement sum to 1",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#cor-cdf-derivative-density-ae",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "cor-cdf-derivative-density-ae",
+   "kind": "cor",
+   "title": "A CDF has its density as derivative at all but finitely many points",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#cor-cuhaz-nonneg",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "cor-cuhaz-nonneg",
+   "kind": "cor",
+   "title": "Cumulative hazard of a non-negative random variable",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#cor-discrete-hazard-unit-interval",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "cor-discrete-hazard-unit-interval",
+   "kind": "cor",
+   "title": "A discrete-time hazard lies in ${[0, 1]}$",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#cor-joint-density-mass-marginal",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "cor-joint-density-mass-marginal",
+   "kind": "cor",
+   "title": "Marginal PMF from a joint density-mass function",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#cor-surv-int-haz",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "cor-surv-int-haz",
+   "kind": "cor",
+   "title": "Survival function from the cumulative hazard",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-bernoulli",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-bernoulli",
+   "kind": "def",
+   "title": "Bernoulli distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-cdf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-cdf",
+   "kind": "def",
+   "title": "Cumulative distribution function (CDF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-continuous-rv",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-continuous-rv",
+   "kind": "def",
+   "title": "Continuous random variable",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-cuhaz",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-cuhaz",
+   "kind": "def",
+   "title": "Cumulative hazard function",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-discrete-hazard",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-discrete-hazard",
+   "kind": "def",
+   "title": "Discrete-time hazard",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-discrete-rv",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-discrete-rv",
+   "kind": "def",
+   "title": "Discrete random variable",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-exponential",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-exponential",
+   "kind": "def",
+   "title": "Exponential distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-hazard",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-hazard",
+   "kind": "def",
+   "title": "Hazard function (hazard rate, hazard rate function)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-joint-density-mass",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-joint-density-mass",
+   "kind": "def",
+   "title": "Joint density-mass function",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-joint-distribution",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-joint-distribution",
+   "kind": "def",
+   "title": "Joint distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-joint-pdf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-joint-pdf",
+   "kind": "def",
+   "title": "Joint probability density function (joint density)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-joint-pmf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-joint-pmf",
+   "kind": "def",
+   "title": "Joint probability mass function (joint PMF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-jointly-distributed",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-jointly-distributed",
+   "kind": "def",
+   "title": "Jointly distributed random variables",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-marginal",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-marginal",
+   "kind": "def",
+   "title": "Marginal distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-normal",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-normal",
+   "kind": "def",
+   "title": "Normal distribution (Gaussian distribution)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-pdf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-pdf",
+   "kind": "def",
+   "title": "Probability density function (PDF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-pmf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-pmf",
+   "kind": "def",
+   "title": "Probability mass function (PMF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-quantile-function",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-quantile-function",
+   "kind": "def",
+   "title": "Quantile function (population inverse CDF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-random-variable",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-random-variable",
+   "kind": "def",
+   "title": "Random variable",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-range",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-range",
+   "kind": "def",
+   "title": "Range of a random variable",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-realization",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-realization",
+   "kind": "def",
+   "title": "Realization (observed value)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-std-normal",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-std-normal",
+   "kind": "def",
+   "title": "Standard normal distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-surv-fn",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-surv-fn",
+   "kind": "def",
+   "title": "Survival function (survivor function)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-uniform",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-uniform",
+   "kind": "def",
+   "title": "Uniform distribution on an interval",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-uniform-set",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-uniform-set",
+   "kind": "def",
+   "title": "Uniform distribution on a set",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#prp-density-limit-right-derivative",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "prp-density-limit-right-derivative",
+   "kind": "prp",
+   "title": "The density limit is the right derivative of the CDF",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-cdf-characterizes",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-cdf-characterizes",
+   "kind": "thm",
+   "title": "The CDF determines the distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-cdf-derivative-density",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-cdf-derivative-density",
+   "kind": "thm",
+   "title": "A piecewise-smooth CDF has its derivative as a density",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-cdf-derivative-is-density",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-cdf-derivative-is-density",
+   "kind": "thm",
+   "title": "The derivative of the CDF is the density where the density is continuous",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-cdf-properties",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-cdf-properties",
+   "kind": "thm",
+   "title": "Properties of a CDF",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-continuous-no-density",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-continuous-no-density",
+   "kind": "thm",
+   "title": "Some continuous random variables have no density",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-density-limit",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-density-limit",
+   "kind": "thm",
+   "title": "A density as a limit of interval probabilities",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-density-not-unique",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-density-not-unique",
+   "kind": "thm",
+   "title": "A density is not unique",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-density-sums-to-one",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-density-sums-to-one",
+   "kind": "thm",
+   "title": "Density functions integrate to 1",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-density-vs-CDF",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-density-vs-CDF",
+   "kind": "thm",
+   "title": "A density integrates to the CDF",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-hazard-dens-surv",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-hazard-dens-surv",
+   "kind": "thm",
+   "title": "Hazard equals density over survival",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-joint-distribution-rectangles",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-joint-distribution-rectangles",
+   "kind": "thm",
+   "title": "A joint distribution is determined by its rectangle probabilities",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-marginal-density",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-marginal-density",
+   "kind": "thm",
+   "title": "Marginal density from a joint density",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-marginal-pmf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-marginal-pmf",
+   "kind": "thm",
+   "title": "Marginal PMF from a joint PMF",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-no-joint-density-diagonal",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-no-joint-density-diagonal",
+   "kind": "thm",
+   "title": "Not every pair of continuous random variables has a joint density",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-normal-density",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-normal-density",
+   "kind": "thm",
+   "title": "The normal density integrates to 1",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-normal-moments",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-normal-moments",
+   "kind": "thm",
+   "title": "The mean and variance of the normal distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-survival-expressions-1",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-survival-expressions-1",
+   "kind": "thm",
+   "title": "Survival function and CDF",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-zero-point-prob",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-zero-point-prob",
+   "kind": "thm",
+   "title": "Points have zero probability in continuous distributions",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#cor-best-constant",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "cor-best-constant",
+   "kind": "cor",
+   "title": "The mean is the best constant prediction under squared error",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#cor-uncorrelated-cor-zero",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "cor-uncorrelated-cor-zero",
+   "kind": "cor",
+   "title": "Uncorrelated means zero correlation",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#cor-var-lincom2",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "cor-var-lincom2",
+   "kind": "cor",
+   "title": "Variance of a sum of two random variables",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#cor-var-sum-indpt",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "cor-var-sum-indpt",
+   "kind": "cor",
+   "title": "Variance of a sum of independent random variables",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "cor-vcov-indpt-diagonal",
+   "kind": "cor",
+   "title": "Independent components give a diagonal variance matrix",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-cond-cov",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-cond-cov",
+   "kind": "def",
+   "title": "Conditional covariance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-cond-variance",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-cond-variance",
+   "kind": "def",
+   "title": "Conditional variance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-correlation",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-correlation",
+   "kind": "def",
+   "title": "Correlation",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-cov",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-cov",
+   "kind": "def",
+   "title": "Covariance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-cov-vec-x",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-cov-vec-x",
+   "kind": "def",
+   "title": "Variance/covariance of a $p \\times 1$ random vector",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-deviation",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-deviation",
+   "kind": "def",
+   "title": "Deviation",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-deviation-pop-mean",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-deviation-pop-mean",
+   "kind": "def",
+   "title": "Deviation from a population or subpopulation mean",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-heterosked",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-heterosked",
+   "kind": "def",
+   "title": "Heteroskedasticity",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-homosked",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-homosked",
+   "kind": "def",
+   "title": "Homoskedasticity",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-precision",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-precision",
+   "kind": "def",
+   "title": "Precision",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-sd",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-sd",
+   "kind": "def",
+   "title": "Standard deviation",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-uncorrelated",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-uncorrelated",
+   "kind": "def",
+   "title": "Uncorrelated random variables",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-variance",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-variance",
+   "kind": "def",
+   "title": "Variance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#lem-cov-xx",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "lem-cov-xx",
+   "kind": "lem",
+   "title": "The covariance of a variable with itself is its variance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-alt-cov",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-alt-cov",
+   "kind": "thm",
+   "title": "Alternative formula for covariance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-constant-prediction-decompose",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-constant-prediction-decompose",
+   "kind": "thm",
+   "title": "Expected squared error of a constant prediction",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-cor-bounds",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-cor-bounds",
+   "kind": "thm",
+   "title": "Correlation lies between $-1$ and $1$",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-indpt-uncorrelated",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-indpt-uncorrelated",
+   "kind": "thm",
+   "title": "Independent random variables have zero covariance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-noise-second-moment",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-noise-second-moment",
+   "kind": "thm",
+   "title": "The second moment of mean-zero noise",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-second-moment-noise-sum",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-second-moment-noise-sum",
+   "kind": "thm",
+   "title": "The second moment of independent noise plus a random variable",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-total-cov",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-total-cov",
+   "kind": "thm",
+   "title": "Law of total covariance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-total-variance",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-total-variance",
+   "kind": "thm",
+   "title": "Law of total variance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-var-lincom",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-var-lincom",
+   "kind": "thm",
+   "title": "Variance of a linear combination",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-variance",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-variance",
+   "kind": "thm",
+   "title": "Simplified expression for variance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-variance-expanded",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-variance-expanded",
+   "kind": "thm",
+   "title": "Variance as expected squared deviation from the mean",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-vcov-elements",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-vcov-elements",
+   "kind": "thm",
+   "title": "Elements of the variance-covariance matrix are pairwise covariances",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-vcov-psd",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-vcov-psd",
+   "kind": "thm",
+   "title": "A variance matrix is symmetric and positive semidefinite",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-vcov-vec",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-vcov-vec",
+   "kind": "thm",
+   "title": "Alternate expression for variance of a random vector",
+   "external": false
+  },
+  {
+   "id": "sds/estimation#def-estimand",
+   "site": "sds",
+   "page": "estimation",
+   "div": "def-estimand",
+   "kind": "def",
+   "title": "estimand",
+   "external": true,
+   "url": "https://morrison-lab.github.io/sds/estimation.html#def-estimand"
+  }
+ ],
+ "edges": [
+  [
+   "pds/distributions#cor-mvn-mahalanobis",
+   "pds/distributions#def-mahalanobis"
+  ],
+  [
+   "pds/distributions#cor-weibull-exponential",
+   "pds/distributions#def-weibull"
+  ],
+  [
+   "pds/distributions#cor-weibull-exponential",
+   "pds/random-variables#def-exponential"
+  ],
+  [
+   "pds/distributions#cor-weibull-hazard-monotone",
+   "pds/distributions#def-weibull"
+  ],
+  [
+   "pds/distributions#def-binomial",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/distributions#def-event-rate",
+   "pds/distributions#def-exposure"
+  ],
+  [
+   "pds/distributions#def-laplace",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#def-mixture-component",
+   "pds/distributions#def-mixture"
+  ],
+  [
+   "pds/distributions#def-mvn",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#def-mvn",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#def-mvn",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#def-offset",
+   "pds/distributions#thm-exposure-log-scale"
+  ],
+  [
+   "pds/distributions#def-offset",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#def-responsibility",
+   "pds/distributions#thm-mixture-posterior"
+  ],
+  [
+   "pds/distributions#def-weibull",
+   "pds/random-variables#def-surv-fn"
+  ],
+  [
+   "pds/distributions#thm-binomial-sum-bernoulli",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/distributions#thm-laplace-moments",
+   "pds/distributions#def-laplace"
+  ],
+  [
+   "pds/distributions#thm-mahalanobis-eigen",
+   "mds/linear-algebra-special-matrices#def-eigendecomposition"
+  ],
+  [
+   "pds/distributions#thm-mixture-mean",
+   "pds/distributions#def-mixture"
+  ],
+  [
+   "pds/distributions#thm-mixture-posterior",
+   "pds/distributions#thm-mixture-two-stage"
+  ],
+  [
+   "pds/distributions#thm-mixture-two-stage",
+   "pds/distributions#def-mixture"
+  ],
+  [
+   "pds/distributions#thm-mixture-two-stage",
+   "pds/expectation#def-cond-mixed"
+  ],
+  [
+   "pds/distributions#thm-mixture-two-stage",
+   "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-integral",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-diagonal-indpt",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-mvn-diagonal-indpt",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-mvn-moments",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-moments",
+   "pds/expectation#def-expectation-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-moments",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/distributions#thm-nb-poisson-limit",
+   "pds/distributions#def-poisson"
+  ],
+  [
+   "pds/distributions#thm-nb-poisson-limit",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#thm-sum-pois",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "mds/algebra-basics#def-argmin"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "mds/algebra-basics#def-global-minimizer"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
+   "mds/algebra-basics#def-global-minimizer"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
+   "pds/expectation#cor-best-predictor-argmin"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
+   "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/expectation#cor-cond-expectation-general-y",
+   "pds/expectation#def-cond-expectation"
+  ],
+  [
+   "pds/expectation#cor-cond-expectation-general-y",
+   "pds/expectation#def-cond-expectation-general"
+  ],
+  [
+   "pds/expectation#cor-cond-expectation-general-y",
+   "pds/expectation#def-cond-mixed"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#cor-fubini-joint",
+   "pds/expectation#def-cond-mixed"
+  ],
+  [
+   "pds/expectation#cor-fubini-joint",
+   "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/expectation#def-absolute-error-loss",
+   "pds/expectation#def-loss-function"
+  ],
+  [
+   "pds/expectation#def-absolute-error-loss",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-cond-expectation",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/expectation#def-cond-expectation",
+   "pds/expectation#def-cond-pmf"
+  ],
+  [
+   "pds/expectation#def-cond-expectation-general",
+   "pds/expectation#def-cond-mixed"
+  ],
+  [
+   "pds/expectation#def-cond-expectation-general",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/expectation#def-cond-expectation-general",
+   "pds/expectation#def-cond-pmf"
+  ],
+  [
+   "pds/expectation#def-cond-mixed",
+   "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/expectation#def-cond-pdf",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/expectation#def-cond-pdf",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/expectation#def-cond-pmf",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-expectation",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#def-expectation",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-input",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#def-input",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-irreducible-risk",
+   "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#def-irreducible-risk",
+   "pds/expectation#thm-risk-decomposition"
+  ],
+  [
+   "pds/expectation#def-kl-divergence",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#def-loss-function",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-new-observation",
+   "pds/expectation#def-input"
+  ],
+  [
+   "pds/expectation#def-new-observation",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#def-new-observation",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/expectation#def-new-observation",
+   "pds/random-variables#def-joint-distribution"
+  ],
+  [
+   "pds/expectation#def-outcome",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-prediction-error",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#def-prediction-error",
+   "pds/expectation#def-input"
+  ],
+  [
+   "pds/expectation#def-prediction-error",
+   "pds/expectation#def-new-observation"
+  ],
+  [
+   "pds/expectation#def-prediction-error",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#def-prediction-error",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-prediction-error",
+   "sds/estimation#def-estimand"
+  ],
+  [
+   "pds/expectation#def-reducible-risk",
+   "pds/expectation#thm-risk-decomposition"
+  ],
+  [
+   "pds/expectation#def-risk",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-risk",
+   "pds/expectation#def-loss-function"
+  ],
+  [
+   "pds/expectation#def-risk",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-squared-error-loss",
+   "pds/expectation#def-loss-function"
+  ],
+  [
+   "pds/expectation#def-squared-error-loss",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#def-squared-error-risk",
+   "pds/expectation#def-prediction-error"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/expectation#lem-cross-term-zero",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#lem-cross-term-zero",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#lem-linearity-finite-sum",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#lem-linearity-finite-sum",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/expectation#lem-prediction-error-split",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#lem-prediction-error-split",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#lem-prediction-error-split",
+   "pds/expectation#def-prediction-error"
+  ],
+  [
+   "pds/expectation#thm-bernoulli-mean",
+   "pds/random-variables#def-bernoulli"
+  ],
+  [
+   "pds/expectation#thm-best-predictor",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#thm-best-predictor",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#thm-best-predictor",
+   "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#thm-best-predictor",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/expectation#thm-cond-lotus",
+   "pds/expectation#def-cond-expectation"
+  ],
+  [
+   "pds/expectation#thm-cond-lotus",
+   "pds/expectation#def-cond-expectation-general"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/expectation#thm-fubini-tonelli-measure",
+   "mds/measures#def-measure"
+  ],
+  [
+   "pds/expectation#thm-risk-decomposition",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#thm-risk-decomposition",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#thm-surv-mean",
+   "pds/random-variables#def-surv-fn"
+  ],
+  [
+   "pds/independence#def-ciid",
+   "pds/independence#def-cident"
+  ],
+  [
+   "pds/independence#def-ciid",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#def-cind",
+   "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/independence#def-cind",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/independence#def-ident",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/independence#def-iid",
+   "pds/independence#def-ident"
+  ],
+  [
+   "pds/independence#def-iid",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/independence#def-indpt",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/independence#prp-cind-indpt-neither",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#prp-cind-indpt-neither",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/independence#prp-cind-own-covariate",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#thm-ident-pmf",
+   "pds/independence#def-ident"
+  ],
+  [
+   "pds/independence#thm-ident-pmf",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/independence#thm-indpt-density",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/independence#thm-indpt-density",
+   "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/independence#thm-indpt-density",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/independence#thm-indpt-density",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/independence#thm-indpt-pmf",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/independence#thm-indpt-pmf",
+   "pds/random-variables#def-joint-pmf"
+  ],
+  [
+   "pds/limit-theorems#cor-clt-sum",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#cor-hoeffding-two-sided",
+   "pds/limit-theorems#thm-hoeffding"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev-sample-mean",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-clt",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-clt",
+   "pds/random-variables#def-std-normal"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/expectation#lem-linearity-finite-sum"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/variance-covariance#thm-var-lincom"
+  ],
+  [
+   "pds/limit-theorems#thm-wlln",
+   "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-wlln",
+   "pds/limit-theorems#def-convergence-in-probability"
+  ],
+  [
+   "pds/probability-basics#cor-probability-finitely-additive",
+   "mds/measures#def-finite-additivity"
+  ],
+  [
+   "pds/probability-basics#cor-probability-finitely-additive",
+   "pds/probability-basics#def-mutually-exclusive"
+  ],
+  [
+   "pds/probability-basics#cor-probability-finitely-additive",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#def-complement",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-complement",
+   "pds/probability-basics#def-occurs"
+  ],
+  [
+   "pds/probability-basics#def-event",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#def-experiment-outcome",
+   "pds/probability-basics#def-procedure"
+  ],
+  [
+   "pds/probability-basics#def-log-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-log-odds",
+   "pds/probability-basics#def-odds"
+  ],
+  [
+   "pds/probability-basics#def-log-odds",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#def-mutually-exclusive",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-occurs",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-odds",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#def-partition",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-partition",
+   "pds/probability-basics#def-mutually-exclusive"
+  ],
+  [
+   "pds/probability-basics#def-probability",
+   "mds/measures#def-measure"
+  ],
+  [
+   "pds/probability-basics#def-probability",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#def-probability",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#def-procedure",
+   "pds/probability-basics#def-step"
+  ],
+  [
+   "pds/probability-basics#def-random-choice",
+   "mds/measures#def-measure"
+  ],
+  [
+   "pds/probability-basics#def-random-choice",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#def-random-choice",
+   "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/probability-basics#def-random-choice",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#def-random-choice",
+   "pds/random-variables#def-uniform-set"
+  ],
+  [
+   "pds/probability-basics#def-random-experiment",
+   "pds/probability-basics#def-experiment-outcome"
+  ],
+  [
+   "pds/probability-basics#def-random-experiment",
+   "pds/probability-basics#def-procedure"
+  ],
+  [
+   "pds/probability-basics#def-sample-space",
+   "mds/sets#def-set"
+  ],
+  [
+   "pds/probability-basics#def-sample-space",
+   "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/probability-basics#lem-sample-space-event",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#lem-sample-space-event",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-complement"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "mds/measures#def-countable-additivity"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "pds/probability-basics#def-mutually-exclusive"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-1",
+   "pds/probability-basics#def-complement"
+  ],
+  [
+   "pds/random-variables#cor-discrete-hazard-unit-interval",
+   "pds/random-variables#def-discrete-hazard"
+  ],
+  [
+   "pds/random-variables#def-bernoulli",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/random-variables#def-cuhaz",
+   "pds/random-variables#def-hazard"
+  ],
+  [
+   "pds/random-variables#def-discrete-hazard",
+   "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/random-variables#def-discrete-hazard",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/random-variables#def-discrete-rv",
+   "mds/functions#def-countable-set"
+  ],
+  [
+   "pds/random-variables#def-discrete-rv",
+   "pds/random-variables#def-range"
+  ],
+  [
+   "pds/random-variables#def-exponential",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#def-hazard",
+   "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/random-variables#def-joint-density-mass",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/random-variables#def-joint-distribution",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/random-variables#def-joint-distribution",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/random-variables#def-joint-pdf",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/random-variables#def-joint-pmf",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/random-variables#def-jointly-distributed",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-marginal",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/random-variables#def-normal",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#def-pdf",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/random-variables#def-pdf",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/random-variables#def-pmf",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/random-variables#def-quantile-function",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#def-random-variable",
+   "mds/functions#def-function"
+  ],
+  [
+   "pds/random-variables#def-random-variable",
+   "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/random-variables#def-random-variable",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/random-variables#def-realization",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#def-std-normal",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/random-variables#def-uniform",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#def-uniform",
+   "pds/random-variables#def-uniform-set"
+  ],
+  [
+   "pds/random-variables#def-uniform-set",
+   "mds/measures#def-measure"
+  ],
+  [
+   "pds/random-variables#def-uniform-set",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/random-variables#thm-cdf-characterizes",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#thm-cdf-properties",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#thm-continuous-no-density",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-density-not-unique",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-hazard-dens-surv",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-hazard-dens-surv",
+   "pds/random-variables#def-surv-fn"
+  ],
+  [
+   "pds/random-variables#thm-joint-distribution-rectangles",
+   "pds/random-variables#def-joint-distribution"
+  ],
+  [
+   "pds/random-variables#thm-joint-distribution-rectangles",
+   "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/random-variables#thm-no-joint-density-diagonal",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/random-variables#thm-normal-density",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/random-variables#thm-normal-moments",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/random-variables#thm-normal-moments",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/random-variables#thm-normal-moments",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/random-variables#thm-survival-expressions-1",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#thm-survival-expressions-1",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/variance-covariance#cor-best-constant",
+   "mds/algebra-basics#def-argmin"
+  ],
+  [
+   "pds/variance-covariance#cor-best-constant",
+   "pds/variance-covariance#thm-constant-prediction-decompose"
+  ],
+  [
+   "pds/variance-covariance#cor-uncorrelated-cor-zero",
+   "pds/variance-covariance#def-uncorrelated"
+  ],
+  [
+   "pds/variance-covariance#cor-uncorrelated-cor-zero",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#cor-var-sum-indpt",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "mds/linear-algebra-special-matrices#def-diagonal-matrix"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/variance-covariance#def-correlation",
+   "pds/variance-covariance#def-cov"
+  ],
+  [
+   "pds/variance-covariance#def-correlation",
+   "pds/variance-covariance#def-sd"
+  ],
+  [
+   "pds/variance-covariance#def-correlation",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-deviation-pop-mean",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-deviation-pop-mean",
+   "pds/variance-covariance#def-deviation"
+  ],
+  [
+   "pds/variance-covariance#def-heterosked",
+   "pds/variance-covariance#def-homosked"
+  ],
+  [
+   "pds/variance-covariance#def-homosked",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/variance-covariance#def-precision",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-sd",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-uncorrelated",
+   "pds/variance-covariance#def-cov"
+  ],
+  [
+   "pds/variance-covariance#def-variance",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-variance",
+   "pds/variance-covariance#def-deviation-pop-mean"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#def-correlation"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "mds/linear-algebra-special-matrices#def-positive-semidefinite"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "mds/linear-algebra-special-matrices#def-symmetric-matrix"
+  ]
+ ],
+ "cycles": [],
+ "forwardReferences": []
+}
