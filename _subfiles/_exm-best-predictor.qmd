@@ -1,0 +1,11 @@
+:::{#exm-best-predictor}
+#### The best predictor in the best-predictor exercise
+
+In @exr-best-predictor,
+consider the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
+Its [squared-error risk](#def-squared-error-risk) is $\popriskf{\predfn_1} = 5$.
+The risk of the conditional mean is $\popriskf{\bestpredfn} = 1$.
+So $\predfn_1$ has the larger risk.
+The inequality is strict because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Predvar}$.
+
+:::
