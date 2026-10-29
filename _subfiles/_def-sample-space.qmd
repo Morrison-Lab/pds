@@ -82,9 +82,9 @@ and the event "the roll is at most 2", $\set{1, 2}$, does not occur.
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
 is the event that $A$ does not [occur](#def-occurs):
-the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\samplespace$ that are not in $A$.
-This set is also the
-[set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference)
+the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\samplespace$ that are not in $A$,
+or equivalently,
+the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference)
 $\samplespace \setminus A$:
 
 $$
