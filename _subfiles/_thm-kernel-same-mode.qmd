@@ -1,7 +1,7 @@
 :::{#thm-kernel-same-mode}
 #### A density and its kernel have the same modes
 
-If $g$ is a [kernel of the density](#def-kernel) $f$ of a random variable $X$,
+If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$,
 then the [modes](#def-mode) of $X$ are exactly the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$:
 
 $$x^* \text{ is a mode of } X \iff x^* \in \argmax_{x \in \rangef{X}} g(x).$$
