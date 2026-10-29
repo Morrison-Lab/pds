@@ -4,7 +4,7 @@
 If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$,
 then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
 
-$$\operatorname{mode}(f) = \argmax_{x \in \rangef{X}} g(x).$$
+$$\modef{f} = \argmax_{x \in \rangef{X}} g(x).$$
 
 :::
 
