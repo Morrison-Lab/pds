@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 13:56:59 (PDT)
+Last modified: 2026-10-29 14:22:58 (PDT)
 
 ## 1 Random variables
 
@@ -786,6 +786,50 @@ Every rule developed for discrete variables carries over to continuous variables
 
 \\\operatorname{p}(y) = \int\_{\mathcal{R}(X)} \operatorname{p}(x, y)\\\mathrm{d}x\\
 
+> **NOTE:**
+>
+> **Definition 22 (Kernel of a density)** A **kernel** of a [density](#def-pdf) \\f\\ is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) \\g \ge 0\\ such that \\f(x) = c\\ g(x)\\ for every \\x\\, for some constant \\c \> 0\\ that does not depend on \\x\\.
+
+> **NOTE:**
+>
+> **Definition 23 (Normalizing constant of a density)** Let \\g\\ be a [kernel of a density](#def-kernel) \\f\\. The **normalizing constant** of \\g\\ is the constant \\c \> 0\\ with
+>
+> \\f(x) = c\\ g(x) \quad \text{for every } x.\\
+
+> **NOTE:**
+>
+> **Theorem 17 (The normalizing constant makes the density integrate to 1)** If \\g\\ is a [kernel of a density](#def-kernel) \\f\\, its [normalizing constant](#def-normalizing-constant) is
+>
+> \\c = \frac{1}{\int\_{-\infty}^{\infty} g(x)\\dx}.\\
+
+> **NOTE:**
+>
+> *Proof*. A [density](#def-pdf) integrates to 1 over the whole line, so
+>
+> \\ \begin{aligned} 1 &= \int\_{-\infty}^{\infty} f(x)\\dx && \text{(a density integrates to 1)} \\ &= \int\_{-\infty}^{\infty} c\\ g(x)\\dx && \text{(@def-normalizing-constant)} \\ &= c \int\_{-\infty}^{\infty} g(x)\\dx. && \text{(constant factor out of the integral)} \end{aligned} \\
+>
+> Dividing by \\\int g(x)\\dx\\ gives the formula.
+
+> **NOTE:**
+>
+> **Definition 24 (Mode of a density or mass function)** A **mode** of a [density](#def-pdf) or [mass function](#def-pmf) \\f\\ is a value \\x^\*\\ at which \\f\\ is largest: \\f(x^\*) \ge f(x)\\ for every \\x\\.
+
+> **NOTE:**
+>
+> **Theorem 18 (A density and its kernel have the same modes)** If \\g\\ is a [kernel of a density](#def-kernel) \\f\\, then \\x^\*\\ is a [mode](#def-mode) of \\f\\ if and only if \\g(x^\*) \ge g(x)\\ for every \\x\\.
+
+> **NOTE:**
+>
+> *Proof*. Write \\f(x) = c\\ g(x)\\ with \\c \> 0\\ ([Definition 22](#def-kernel)). For any \\x\\, multiplying both sides of \\g(x^\*) \ge g(x)\\ by \\c \> 0\\ gives \\f(x^\*) \ge f(x)\\, and dividing by \\c\\ reverses this. So \\f(x^\*) \ge f(x)\\ for every \\x\\ exactly when \\g(x^\*) \ge g(x)\\ for every \\x\\.
+
+> **NOTE:**
+>
+> **Example 29 (The kernel, normalizing constant, and mode of an exponential density)** The [exponential density](#def-exponential) with rate \\{\lambda}\\ is \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\, and \\f(t) = 0\\ for \\t \< 0\\. Its [kernel](#def-kernel) is \\g(t) = \text{e}^{-{\lambda}t}\\ for \\t \ge 0\\, and \\g(t) = 0\\ for \\t \< 0\\, and the [normalizing constant](#def-normalizing-constant) is
+>
+> \\ \begin{aligned} c &= \frac{1}{\int_0^{\infty} \text{e}^{-{\lambda}t}\\dt} && \text{(@thm-normalizing-constant-formula)} \\ &= \frac{1}{\mathopen{}\left\[-\text{e}^{-{\lambda}t}/{\lambda}\right\]\mathclose{}\_0^{\infty}} && \text{(antiderivative of } \text{e}^{-{\lambda}t} \text{)} \\ &= \frac{1}{1/{\lambda}} && \text{(evaluate at } \infty \text{ and } 0 \text{)} \\ &= {\lambda}. && \text{(simplify)} \end{aligned} \\
+>
+> The kernel is largest at \\t = 0\\, so by [Theorem 18](#thm-kernel-same-mode) the [mode](#def-mode) of \\f\\ is \\0\\.
+
 > **TIP:**
 >
 > Hutchinson’s [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min) covers probability mass functions and probability density functions [\[16\]](#ref-hutchinson_wwu_ml_videos). The login for the video site is posted [on Canvas](https://wwu.instructure.com/courses/1906010/modules#module_3922392).
@@ -798,7 +842,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 22 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[18\]](#ref-wikipedia_survival_function):
+> **Definition 25 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable \\T\\, denoted \\\operatorname{S}(t)\\, is the probability that \\T\\ exceeds \\t\\ [\[18\]](#ref-wikipedia_survival_function):
 >
 > \\\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T \> t)\\
 
@@ -808,7 +852,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Theorem 17 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
+> **Theorem 19 (Survival function and CDF)** For any random variable \\T\\ with [CDF](#def-cdf) \\F(t)\\:
 >
 > \\\operatorname{S}(t) = 1 - F(t)\\
 >
@@ -828,7 +872,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 29 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 13](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 17](#thm-survival-expressions-1):
+> **Example 30 (Survival function of an exponential distribution)** Let \\T\\ be exponential with rate \\{\lambda}\> 0\\ ([Definition 13](#def-exponential)), so \\T\\ has density \\f(t) = {\lambda}\text{e}^{-{\lambda}t}\\ for \\t \ge 0\\. For \\t \ge 0\\, by [Theorem 19](#thm-survival-expressions-1):
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= \int\_{u=t}^{\infty} {\lambda}\text{e}^{-{\lambda}u}\\du && \text{(integral form of the survival function)} \\ &= \mathopen{}\left\[-\text{e}^{-{\lambda}u}\right\]\mathclose{}\_{u=t}^{\infty} && \text{(antiderivative of } {\lambda}\text{e}^{-{\lambda}u} \text{)} \\ &= 0 - \mathopen{}\left(-\text{e}^{-{\lambda}t}\right)\mathclose{} && \text{(evaluate at the bounds; } \text{e}^{-{\lambda}u} \to 0 \text{ as } u \to \infty \text{)} \\ &= \text{e}^{-{\lambda}t} && \text{(simplify)} \end{aligned} \\
 >
@@ -840,7 +884,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 23 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
+> **Definition 26 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\, typically denoted \\{\lambda}(t)\\ or \\\operatorname{h}(t)\\, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ falls in an interval starting at \\t\\, given \\T \ge t\\, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
 >
 > \\{\lambda}(t) \stackrel{\text{def}}{=}\lim\_{\Delta\downarrow 0} \frac{\Pr(t \le T \< t + \Delta\mid T \ge t)}{\Delta}\\
 
@@ -848,13 +892,13 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > *Remark*. Sources differ on the symbol: \\\operatorname{h}(t)\\ appears in Dobson and Barnett [\[20\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while \\\lambda(t)\\ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
 >
-> If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 23](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
+> If \\T\\ is the time at which an event occurs, then \\{\lambda}(t)\\ is a rate, not a probability: for a small interval width \\\Delta\> 0\\, \\{\lambda}(t) \cdot\Delta\\ is approximately the probability that the event occurs in \\\[t, t + \Delta)\\, given that it has not occurred before \\t\\. Many sources write the hazard as \\{\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)\\, reading it as the density of \\T\\ at \\t\\, conditional on the event \\T \ge t\\; that notation abbreviates the limit in [Definition 26](#def-hazard). For a discrete \\T\\, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
 > The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity \\{\lambda}(t)\\ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
 
 > **NOTE:**
 >
-> **Example 30 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 10](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 29](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so
+> **Example 31 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 10](#exm-normal)). Let \\T\\ be [exponential](#def-exponential) with rate \\{\lambda}= 2\\, so \\\operatorname{S}(t) = \text{e}^{-2t}\\ for \\t \ge 0\\ ([Example 30](#exm-exp-survfn)). Since \\T\\ is continuous, \\\Pr(T = s) = 0\\ for every \\s\\, so
 >
 > \\ \begin{aligned} \Pr(T \ge s) &= \Pr(T \> s) \\ &= \operatorname{S}(s). \end{aligned} \\
 >
@@ -870,13 +914,13 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Definition 24 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ equals \\t\\, given \\T \ge t\\:
+> **Definition 27 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable \\T\\ at a value \\t\\ with \\\Pr(T \ge t) \> 0\\ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that \\T\\ equals \\t\\, given \\T \ge t\\:
 >
 > \\\Pr(T = t \mid T \ge t)\\
 
 > **NOTE:**
 >
-> **Example 31 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
+> **Example 32 (Rolling until the first six)** Roll a fair die repeatedly, and let \\T\\ be the number of the roll that first shows a six. Then \\T \ge t\\ exactly when the first \\t - 1\\ rolls are not sixes, which has probability \\(5/6)^{t-1}\\, and \\T = t\\ when, in addition, roll \\t\\ is a six. So, for each \\t = 1, 2, \ldots\\:
 >
 > \\ \begin{aligned} \Pr(T = t \mid T \ge t) &= \frac{\Pr(T = t,\\ T \ge t)}{\Pr(T \ge t)} && \text{(definition of conditional probability)} \\ &= \frac{\Pr(T = t)}{\Pr(T \ge t)} && \text{(} T = t \text{ implies } T \ge t \text{)} \\ &= \frac{(5/6)^{t-1} \cdot(1/6)}{(5/6)^{t-1}} && \text{(rolls are independent)} \\ &= \frac{1}{6} && \text{(cancel)} \end{aligned} \\
 >
@@ -898,11 +942,11 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 30](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
+> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 31](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
 
 > **NOTE:**
 >
-> **Theorem 18 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
+> **Theorem 20 (Hazard equals density over survival)** If \\T\\ is a continuous random variable with [density](#def-pdf) \\f(t)\\ and [survival function](#def-surv-fn) \\\operatorname{S}(t)\\, then for every \\t\\ with \\\operatorname{S}(t) \> 0\\ at which \\f\\ is continuous:
 >
 > \\{\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}\\
 
@@ -918,21 +962,21 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 32 (Hazard function of an exponential distribution)** Continuing [Example 29](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
+> **Example 33 (Hazard function of an exponential distribution)** Continuing [Example 30](#exm-exp-survfn), for \\t \> 0\\, where \\f\\ is continuous:
 >
 > \\ \begin{aligned} {\lambda}(t) &= \frac{f(t)}{\operatorname{S}(t)} && \text{(hazard equals density over survival)} \\ &= \frac{{\lambda}\text{e}^{-{\lambda}t}}{\text{e}^{-{\lambda}t}} && \text{(substitute the exponential density and survival function)} \\ &= {\lambda} && \text{(cancel } \text{e}^{-{\lambda}t} \text{)} \end{aligned} \\
 >
-> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\{\lambda}\\, [Definition 23](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}\\ as \\\Delta\downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
+> At \\t = 0\\, where \\f\\ jumps from \\0\\ to \\{\lambda}\\, [Definition 26](#def-hazard) gives the same value directly: \\\Pr(0 \le T \< \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}\\ as \\\Delta\downarrow 0\\. So the exponential distribution has a constant hazard for \\t \ge 0\\, equal to its rate parameter; for \\t \< 0\\, \\f(t) = 0\\, so \\{\lambda}(t) = 0\\.
 
 > **NOTE:**
 >
-> **Definition 25 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
+> **Definition 28 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable \\T\\, often denoted \\{\Lambda}(t)\\ or \\\operatorname{H}(t)\\, is the integral of its [hazard function](#def-hazard) up to \\t\\:
 >
 > \\{\Lambda}(t) \stackrel{\text{def}}{=}\int\_{u=-\infty}^{t} {\lambda}(u)\\du\\
 
 > **NOTE:**
 >
-> **Example 33 (Cumulative hazard function of an exponential distribution)** Continuing [Example 32](#exm-exp-haz), the hazard is \\{\lambda}(u) = {\lambda}\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
+> **Example 34 (Cumulative hazard function of an exponential distribution)** Continuing [Example 33](#exm-exp-haz), the hazard is \\{\lambda}(u) = {\lambda}\\ for \\u \ge 0\\ and \\0\\ for \\u \< 0\\, so for \\t \ge 0\\:
 >
 > \\ \begin{aligned} {\Lambda}(t) &= \int\_{u=-\infty}^{0} 0\\du + \int\_{u=0}^{t} {\lambda}\\du && \text{(split the integral at } 0 \text{)} \\ &= 0 + {\lambda}t && \text{(integrate each piece)} \\ &= {\lambda}t && \text{(simplify)} \end{aligned} \\
 >
@@ -970,7 +1014,7 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 17](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 8](#thm-cdf-derivative-is-density)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
+> *Proof*. Since \\\operatorname{S}(t) = 1 - F(t)\\ ([Theorem 19](#thm-survival-expressions-1)) and \\F\\ has derivative \\f\\ wherever \\f\\ is continuous ([Theorem 8](#thm-cdf-derivative-is-density)), \\\operatorname{S}\\ has derivative \\-f\\ at those points. At each such \\u\\ with \\\operatorname{S}(u) \> 0\\:
 >
 > \\ \begin{aligned} \frac{d}{du}\mathopen{}\left(-{\operatorname{log}\mathopen{}\left\\\operatorname{S}(u)\right\\\mathclose{}}\right)\mathclose{} &= -\frac{1}{\operatorname{S}(u)} \cdot\frac{d}{du}\operatorname{S}(u) && \text{(chain rule)} \\ &= -\frac{1}{\operatorname{S}(u)} \cdot\mathopen{}\left(-f(u)\right)\mathclose{} && \text{(} \operatorname{S}' = -f \text{)} \\ &= \frac{f(u)}{\operatorname{S}(u)} && \text{(simplify)} \\ &= {\lambda}(u) && \text{(hazard equals density over survival)} \end{aligned} \\
 >
@@ -982,11 +1026,11 @@ Every rule developed for discrete variables carries over to continuous variables
 
 > **NOTE:**
 >
-> **Example 34 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 33](#exm-exp-cumhaz), for \\t \ge 0\\:
+> **Example 35 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 34](#exm-exp-cumhaz), for \\t \ge 0\\:
 >
 > \\ \begin{aligned} \operatorname{S}(t) &= {\operatorname{exp}\mathopen{}\left\\-{\Lambda}(t)\right\\\mathclose{}} && \text{(survival function from the cumulative hazard)} \\ &= {\operatorname{exp}\mathopen{}\left\\-{\lambda}t\right\\\mathclose{}} && \text{(substitute } {\Lambda}(t) = {\lambda}t \text{)} \end{aligned} \\
 >
-> which matches the survival function computed directly in [Example 29](#exm-exp-survfn).
+> which matches the survival function computed directly in [Example 30](#exm-exp-survfn).
 
 > **NOTE:**
 >
@@ -1005,8 +1049,8 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > *Remark*. For a continuous random variable \\T \ge 0\\ whose density is continuous at all but finitely many points, the following results connect the functions in [Table 2](#tbl-prob-dist-fns):
 >
-> - [Theorem 17](#thm-survival-expressions-1)
-> - [Theorem 18](#thm-hazard-dens-surv)
+> - [Theorem 19](#thm-survival-expressions-1)
+> - [Theorem 20](#thm-hazard-dens-surv)
 > - [Corollary 4](#cor-cuhaz-nonneg)
 > - [Corollary 5](#cor-surv-int-haz)
 >

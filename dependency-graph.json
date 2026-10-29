@@ -1576,6 +1576,15 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#def-kernel",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-kernel",
+   "kind": "def",
+   "title": "Kernel of a density",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#def-marginal",
    "site": "pds",
    "page": "random-variables",
@@ -1585,12 +1594,30 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#def-mode",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-mode",
+   "kind": "def",
+   "title": "Mode of a density or mass function",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#def-normal",
    "site": "pds",
    "page": "random-variables",
    "div": "def-normal",
    "kind": "def",
    "title": "Normal distribution (Gaussian distribution)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-normalizing-constant",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-normalizing-constant",
+   "kind": "def",
+   "title": "Normalizing constant of a density",
    "external": false
   },
   {
@@ -1792,6 +1819,15 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#thm-kernel-same-mode",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-kernel-same-mode",
+   "kind": "thm",
+   "title": "A density and its kernel have the same modes",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#thm-marginal-density",
    "site": "pds",
    "page": "random-variables",
@@ -1834,6 +1870,15 @@
    "div": "thm-normal-moments",
    "kind": "thm",
    "title": "The mean and variance of the normal distribution",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-normalizing-constant-formula",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-normalizing-constant-formula",
+   "kind": "thm",
+   "title": "The normalizing constant makes the density integrate to 1",
    "external": false
   },
   {
@@ -3008,12 +3053,32 @@
    "pds/probability-basics#def-sample-space"
   ],
   [
+   "pds/random-variables#def-kernel",
+   "mds/functions#def-function"
+  ],
+  [
+   "pds/random-variables#def-kernel",
+   "pds/random-variables#def-pdf"
+  ],
+  [
    "pds/random-variables#def-marginal",
    "pds/random-variables#def-jointly-distributed"
   ],
   [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-pmf"
+  ],
+  [
    "pds/random-variables#def-normal",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#def-normalizing-constant",
+   "pds/random-variables#def-kernel"
   ],
   [
    "pds/random-variables#def-pdf",
@@ -3108,6 +3173,14 @@
    "pds/random-variables#def-jointly-distributed"
   ],
   [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-kernel"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-mode"
+  ],
+  [
    "pds/random-variables#thm-no-joint-density-diagonal",
    "pds/random-variables#def-joint-pdf"
   ],
@@ -3126,6 +3199,14 @@
   [
    "pds/random-variables#thm-normal-moments",
    "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/random-variables#thm-normalizing-constant-formula",
+   "pds/random-variables#def-kernel"
+  ],
+  [
+   "pds/random-variables#thm-normalizing-constant-formula",
+   "pds/random-variables#def-normalizing-constant"
   ],
   [
    "pds/random-variables#thm-survival-expressions-1",
