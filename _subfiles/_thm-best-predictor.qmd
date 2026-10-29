@@ -52,12 +52,10 @@ The inequality is strict because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Pr
 :::{#def-irreducible-risk}
 #### Residual risk (irreducible risk)
 
-In the squared-error risk decomposition of @thm-risk-decomposition,
-the minimum [squared-error risk](#def-squared-error-risk)
+The **residual risk** (also called the **irreducible risk**)
+is the [squared-error risk](#def-squared-error-risk) of the [conditional expectation function](#def-cond-expectation-function) $\truemean$ of @thm-risk-decomposition:
 
-$$\popriskf{\bestpredfn} \eqdef \E{\sqf{\Outvar - \bestpredfnf{\Predvar}}}$$
-
-is the **residual risk** (also called the **irreducible risk**).
+$$\popriskf{\truemean} = \E{\sqf{\prederrf{\truemean}}}$$
 
 :::
 
@@ -70,7 +68,7 @@ Let $\Predvar$ and $\Outvar$ be as in @thm-best-predictor.
 Then the [residual risk](#def-irreducible-risk) is the [expectation](#def-expectation) of the [conditional variance](#def-cond-variance) of $\Outvar$ given $\Predvar$:
 
 $$
-\popriskf{\bestpredfn} = \E{\Var{\Outvar \mid \Predvar}}.
+\popriskf{\truemean} = \E{\Var{\Outvar \mid \Predvar}}.
 $$ {#eq-irreducible-risk-cond-variance}
 
 :::
@@ -79,11 +77,15 @@ $$ {#eq-irreducible-risk-cond-variance}
 
 $$
 \ba
-\popriskf{\bestpredfn}
-&= \E{\sqf{\Outvar - \bestpredfnf{\Predvar}}}
+\popriskf{\truemean}
+&= \E{\sqf{\prederrf{\truemean}}}
 && \text{(definition of the residual risk)} \\
+&= \E{\sqf{\truemeanf{\Predvar} - \Outvar}}
+&& \text{(definition of the prediction error)} \\
+&= \E{\sqf{\Outvar - \truemeanf{\Predvar}}}
+&& \text{(a square is unchanged by negation)} \\
 &= \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}
-&& \text{(definition of } \bestpredfn \text{)} \\
+&& \text{(definition of } \truemean \text{)} \\
 &= \E{\condE{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}{\Predvar}}
 && \text{(law of total expectation)} \\
 &= \E{\Var{\Outvar \mid \Predvar}}
