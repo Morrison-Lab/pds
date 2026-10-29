@@ -55,9 +55,39 @@ The inequality is strict because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Pr
 In the squared-error risk decomposition of @thm-risk-decomposition,
 the minimum [squared-error risk](#def-squared-error-risk)
 
-$$\E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}} = \E{\Var{\Outvar \mid \Predvar}}$$
+$$\popriskf{\bestpredfn} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}$$
 
 is the **irreducible risk**.
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-irreducible-risk-cond-variance}
+#### The irreducible risk is the expected conditional variance
+
+Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
+Then the [irreducible risk](#def-irreducible-risk) is the expectation of the [conditional variance](#def-cond-variance) of $\Outvar$ given $\Predvar$:
+
+$$
+\popriskf{\bestpredfn} = \E{\Var{\Outvar \mid \Predvar}}.
+$$ {#eq-irreducible-risk-cond-variance}
+
+:::
+
+::: proof
+
+$$
+\ba
+\popriskf{\bestpredfn}
+&= \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}
+&& \text{(definition of the irreducible risk)} \\
+&= \E{\condE{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}{\Predvar}}
+&& \text{(law of total expectation)} \\
+&= \E{\Var{\Outvar \mid \Predvar}}
+&& \text{(definition of conditional variance)}
+\ea
+$$
 
 :::
 
