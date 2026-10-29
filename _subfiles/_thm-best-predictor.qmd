@@ -67,12 +67,12 @@ is the **irreducible risk**.
 The irreducible risk depends only on the joint distribution of $(\Predvar, \Outvar)$
 and not on the prediction function $\predfn$,
 so no choice of $\predfn$ can achieve a smaller risk.
-It is irreducible only among prediction functions of the given $\Predvar$:
-the outcome may also depend on variables that $\Predvar$ leaves out, and those variables are part of the unexplained variation $\Outvar - \E{\Outvar \mid \Predvar}$.
-Measuring one of them and adding it to the predictors can lower the irreducible risk,
+It is irreducible only among [prediction functions](#def-prediction) of the given $\Predvar$:
+the [outcome](#def-outcome) may also depend on variables that $\Predvar$ leaves out, and those variables are part of the unexplained variation $\Outvar - \E{\Outvar \mid \Predvar}$.
+Measuring one of them and adding it to the variables in $\Predvar$ can lower the irreducible risk,
 as in @exm-irreducible-risk-added-predictor.
 [@james2021islr2e, Section 2.1.1, p. 18] makes the same point:
-the error term "may contain unmeasured variables that are useful in predicting $Y$".
+the error term "may contain unmeasured variables that are useful in predicting $Y$". <!-- check-term-links: allow -->
 
 :::
 
@@ -92,11 +92,11 @@ so the irreducible risk is $\E{\Var{\Outvar \mid \Predvar}} = 1$.
 :::{#exm-irreducible-risk-added-predictor}
 #### Adding a predictor lowers the irreducible risk
 
-Let $\Predvar_1$, $\Predvar_2$ and $\noise$ be independent, with $\Var{\Predvar_2} = 1$ and $\Var{\noise} = 1$,
+Let $\Predvar_1$, $\Predvar_2$ and $\noise$ be [independent](independence.qmd#def-indpt), with $\Var{\Predvar_2} = 1$ and $\Var{\noise} = 1$,
 and let $\Outvar = \Predvar_1 + \Predvar_2 + \noise$.
-Predicting from $\Predvar_1$ alone, the conditional variance is $\Var{\Outvar \mid \Predvar_1} = \Var{\Predvar_2} + \Var{\noise} = 2$,
+A [prediction](#def-prediction) from $\Predvar_1$ alone has [conditional variance](#def-cond-variance) $\Var{\Outvar \mid \Predvar_1} = \Var{\Predvar_2} + \Var{\noise} = 2$,
 so the irreducible risk is $2$.
-Predicting from $(\Predvar_1, \Predvar_2)$, the conditional variance is $\Var{\Outvar \mid \Predvar_1, \Predvar_2} = \Var{\noise} = 1$,
+A prediction from $(\Predvar_1, \Predvar_2)$ has conditional variance $\Var{\Outvar \mid \Predvar_1, \Predvar_2} = \Var{\noise} = 1$,
 so the irreducible risk is $1$.
 
 :::
