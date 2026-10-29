@@ -55,7 +55,7 @@ The inequality is strict because $\predfn_1\paren{\Predvar} \ne \bestpredfnf{\Pr
 In the squared-error risk decomposition of @thm-risk-decomposition,
 the minimum [squared-error risk](#def-squared-error-risk)
 
-$$\popriskf{\bestpredfn} = \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}$$
+$$\popriskf{\bestpredfn} \eqdef \E{\sqf{\Outvar - \bestpredfnf{\Predvar}}}$$
 
 is the **residual risk** (also called the **irreducible risk**).
 
@@ -80,8 +80,10 @@ $$ {#eq-irreducible-risk-cond-variance}
 $$
 \ba
 \popriskf{\bestpredfn}
-&= \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}
+&= \E{\sqf{\Outvar - \bestpredfnf{\Predvar}}}
 && \text{(definition of the residual risk)} \\
+&= \E{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}
+&& \text{(definition of } \bestpredfn \text{)} \\
 &= \E{\condE{\sqf{\Outvar - \E{\Outvar \mid \Predvar}}}{\Predvar}}
 && \text{(law of total expectation)} \\
 &= \E{\Var{\Outvar \mid \Predvar}}
