@@ -74,6 +74,9 @@ website:
     # Entries show each page's own title. There is no Home entry: the
     # navbar title already links to the home page.
     style: docked
+    # sections are collapsible and start folded; the current page's section
+    # stays open (collapse-level 1 folds every depth, default 2 opens depth 1)
+    collapse-level: 1
     search: false
     contents:
       - section: "Foundations"
