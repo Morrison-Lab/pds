@@ -8,7 +8,7 @@ and $\p(X=x) > 0$ is
 
 $$\surprisalf{x} \eqdef -\log \p(X=x).$$
 
-This extends the [surprisal](#def-surprisal) of a value of a discrete random variable,
-with the density in place of the probability.
+This extends the [surprisal](#def-surprisal) of a value of a [discrete random variable](random-variables.qmd#def-discrete-rv),
+with the [density](random-variables.qmd#def-pdf) in place of the [probability](probability-basics.qmd#def-probability).
 
 :::

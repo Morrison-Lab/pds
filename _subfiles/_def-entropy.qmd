@@ -1,14 +1,14 @@
 :::{#def-entropy}
 #### Entropy (**differential entropy**, for a continuous random variable)
 
-The **entropy** of a random variable $X$ is the [expectation](#def-expectation) of its surprisal
-([discrete](#def-surprisal) or [continuous](#def-surprisal-continuous))
+The **entropy** of a [random variable](random-variables.qmd#def-random-variable) $X$ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal)
+([discrete](random-variables.qmd#def-discrete-rv) or [continuous](#def-surprisal-continuous))
 [@wikipedia_entropy_information_theory; @cover2006elements, section 8.1],
 when that expectation exists:
 
 $$\entropyf{X} \eqdef \E{\surprisalf{X}}.$$
 
-For a continuous random variable, the entropy is also called the **differential entropy**.
+For a [continuous random variable](random-variables.qmd#def-continuous-rv), the entropy is also called the **differential entropy**.
 
 :::
 
