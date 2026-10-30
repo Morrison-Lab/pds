@@ -11,7 +11,7 @@ $$\crossentropyf{p}{p} = \entropyf{X}.$$
 ::: proof
 
 By the definition of [cross-entropy](#def-cross-entropy) with $q = p$, $\crossentropyf{p}{p} = \E{-\log p(X)}$.
-The random variable $-\log p(X)$ is the [surprisal](#def-surprisal) $\surprisalf{X}$.
+The [random variable](random-variables.qmd#def-random-variable) $-\log p(X)$ is the [surprisal](#def-surprisal) $\surprisalf{X}$.
 So $\crossentropyf{p}{p} = \E{\surprisalf{X}} = \entropyf{X}$ by the definition of [entropy](#def-entropy).
 
 :::

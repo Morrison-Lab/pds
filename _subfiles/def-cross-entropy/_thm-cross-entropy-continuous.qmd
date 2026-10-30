@@ -13,7 +13,7 @@ The integrand is taken to be $0$ where $p(x) = 0$.
 
 ::: proof
 
-Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with density $p$, and let $g(x) \eqdef -\log q(x)$, so that $-\log q(X) = g(X)$.
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [density](random-variables.qmd#def-pdf) $p$, and let $g(x) \eqdef -\log q(x)$, so that $-\log q(X) = g(X)$.
 Then [LOTUS](#thm-lotus) gives
 
 $$
