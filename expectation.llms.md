@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 18:15:34 (PDT)
+Last modified: 2026-10-30 00:09:55 (PDT)
 
 > **NOTE:**
 >
@@ -247,7 +247,7 @@ Last modified: 2026-10-29 18:15:34 (PDT)
 >
 > *Proof*. This is the solution to [Exercise 1](#exr-linearity-use), worked in [Solution 1](#sol-linearity-use). It follows from [Theorem 4](#thm-linearity-expectation), which needs no independence and applies because each \\\mathbb{E}\[X_i\] = \mu\\ is finite.
 
-## 1 Conditional distributions and expectations
+## 0.1 Conditional distributions and expectations
 
 > **NOTE:**
 >
@@ -690,7 +690,7 @@ Last modified: 2026-10-29 18:15:34 (PDT)
 >
 > There are only four \\(x,y)\\ pairs here, so summing them in any order — row by row, column by column, or any other listing — gives the same total by ordinary commutativity and associativity of addition; no result about interchanging summation order is needed. Once the support is countably infinite, exchanging the order of summation needs a justification, which the Fubini–Tonelli theorem provides.
 
-## 2 Fubini–Tonelli for expectations
+## 0.2 Fubini–Tonelli for expectations
 
 > **NOTE:**
 >
@@ -1148,7 +1148,7 @@ Last modified: 2026-10-29 18:15:34 (PDT)
 >
 > With \\q = 0.5\\, the truncated sum-of-integrals matches the closed form \\\frac{1}{2(1-q)} = 1\\.
 
-## 3 Loss and risk
+## 0.3 Loss and risk
 
 > **NOTE:**
 >
@@ -1486,7 +1486,7 @@ Last modified: 2026-10-29 18:15:34 (PDT)
 >
 > **Example 41 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
-## 4 Entropy and cross-entropy
+## 0.4 Entropy and cross-entropy
 
 > **NOTE:**
 >
@@ -1700,7 +1700,7 @@ Last modified: 2026-10-29 18:15:34 (PDT)
 >
 > *Remark 14* (Where the definitions come from). Murphy [\[19, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
-## 5 Further reading
+## 0.5 Further reading
 
 > **TIP:**
 >
@@ -1791,5 +1791,32 @@ Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.�
 \[21\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+# Definitions on this page
+
+- [Definition 1 (Expectation, expected value, population mean)](#def-expectation)
+- [Definition 2 (Expectation of a random matrix)](#def-expectation-matrix)
+- [Definition 3 (Conditional probability mass function)](#def-cond-pmf)
+- [Definition 4 (Conditional probability density function)](#def-cond-pdf)
+- [Definition 5 (Conditional expectation)](#def-cond-expectation)
+- [Definition 6 (Conditional expectation: mixed case)](#def-cond-mixed)
+- [Definition 7 (Conditional expectation function)](#def-cond-expectation-function)
+- [Definition 8 (Conditional expectation of a function of \\X\\ and \\Y\\)](#def-cond-expectation-general)
+- [Definition 9 (Prediction)](#def-prediction)
+- [Definition 10 (Loss function)](#def-loss-function)
+- [Definition 11 (Squared error loss)](#def-squared-error-loss)
+- [Definition 12 (Absolute error loss)](#def-absolute-error-loss)
+- [Definition 13 (Risk (expected loss))](#def-risk)
+- [Definition 14 (Outcome)](#def-outcome)
+- [Definition 15 (Input)](#def-input)
+- [Definition 16 (New observation)](#def-new-observation)
+- [Definition 17 (Prediction error)](#def-prediction-error)
+- [Definition 18 (Squared-error risk (expected prediction error))](#def-squared-error-risk)
+- [Definition 19 (Residual risk (irreducible risk))](#def-irreducible-risk)
+- [Definition 20 (Reducible risk)](#def-reducible-risk)
+- [Definition 21 (Surprisal (**self-information**, **information content**))](#def-surprisal)
+- [Definition 22 (Entropy)](#def-entropy)
+- [Definition 23 (Cross-entropy)](#def-cross-entropy)
+- [Definition 24 (Kullback–Leibler divergence (KL divergence, relative entropy))](#def-kl-divergence)
 
 Back to top
