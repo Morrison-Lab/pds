@@ -8,7 +8,7 @@ The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
 is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
 of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $\surprisal_q$ measured by $q$,
-where $\surprisal_q(x) \eqdef -\log q(x)$:
+where $\surprisal_q\paren{x} \eqdef -\log q\paren{x}$:
 
 $$\crossentropyf{p}{q} \eqdef \E{\surprisal_q\paren{X}}.$$
 
