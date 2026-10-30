@@ -3,6 +3,16 @@
  "meaning": "edge [A, B] means A uses B: B is a prerequisite of A, A a postrequisite of B",
  "nodes": [
   {
+   "id": "mds/algebra#def-argmax",
+   "site": "mds",
+   "page": "algebra",
+   "div": "def-argmax",
+   "kind": "def",
+   "title": "argmax",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra.html#def-argmax"
+  },
+  {
    "id": "mds/algebra-basics#def-argmin",
    "site": "mds",
    "page": "algebra-basics",
@@ -3100,11 +3110,23 @@
   ],
   [
    "pds/random-variables#def-mode",
+   "mds/algebra#def-argmax"
+  ],
+  [
+   "pds/random-variables#def-mode",
    "pds/random-variables#def-pdf"
   ],
   [
    "pds/random-variables#def-mode",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#def-normal",
@@ -3208,11 +3230,23 @@
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
+   "mds/algebra#def-argmax"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
    "pds/random-variables#def-kernel"
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
    "pds/random-variables#def-mode"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#thm-no-joint-density-diagonal",
