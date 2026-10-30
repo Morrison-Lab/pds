@@ -10,7 +10,7 @@ format:
     output-file: random-variables.docx
 ---
 
-## Random variables {#sec-random-variables}
+[]{#sec-random-variables}
 
 {{< include latex-macros/macros.qmd >}}
 
