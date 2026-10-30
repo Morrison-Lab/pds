@@ -1,0 +1,11 @@
+::: {#rem-cross-entropy-source}
+#### Where the definitions come from
+
+@murphy2012mlpp [section 2.8.2, pp. 57--58] defines the KL divergence
+and the cross-entropy as above,
+and gives the coding interpretation:
+the cross-entropy is the average number of bits needed
+to encode data from a source with distribution $p$
+using a code designed for $q$.
+
+:::
