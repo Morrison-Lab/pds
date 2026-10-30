@@ -31,11 +31,11 @@ $$
 
 Now suppose $\P(q(X) = 0) > 0$.
 Then $-\log q(X) \ge 0$,
-and $-\log q(X) = \infty$ with positive probability,
+and $-\log q(X) = \infty$ with positive [probability](probability-basics.qmd#def-probability),
 so $\crossentropyf{p}{q} = \infty$.
-The integrand $-p(x) \log q(x)$ is $\infty$ on the set where $q(x) = 0$ and $p(x) > 0$,
-which has positive integral of $p$,
+The integrand $-p(x) \log q(x)$ is $\infty$ wherever $q(x) = 0$ and $p(x) > 0$,
+which is a region of positive probability under $p$,
 and it is never $-\infty$,
-so the integral is also $\infty$.
+so the right side is also $\infty$.
 
 :::
