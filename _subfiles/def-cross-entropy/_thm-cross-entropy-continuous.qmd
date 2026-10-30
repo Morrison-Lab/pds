@@ -9,8 +9,8 @@ Then the [cross-entropy](#def-cross-entropy) is
 $$\crossentropyf{p}{q} = -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx.$$
 
 The integrand is taken to be $0$ where $p(x) = 0$.
-If instead $X$ takes a value with $q(x) = 0$ with positive [probability](probability-basics.qmd#def-probability),
-both sides are $\infty$, by the same argument as in @thm-cross-entropy-discrete.
+If instead $\P(q(X) = 0) > 0$,
+both sides are $\infty$.
 
 :::
 
@@ -28,5 +28,14 @@ $$
 &= -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx. && \text{(definition of } g \text{)}
 \ea
 $$
+
+Now suppose $\P(q(X) = 0) > 0$.
+Then $-\log q(X) \ge 0$,
+and $-\log q(X) = \infty$ with positive probability,
+so $\crossentropyf{p}{q} = \infty$.
+The integrand $-p(x) \log q(x)$ is $\infty$ on the set where $q(x) = 0$ and $p(x) > 0$,
+which has positive integral of $p$,
+and it is never $-\infty$,
+so the integral is also $\infty$.
 
 :::
