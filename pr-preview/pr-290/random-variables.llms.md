@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:45:27 (PDT)
+Last modified: 2026-10-29 16:59:54 (PDT)
 
 ## 1 Random variables
 
@@ -814,15 +814,15 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > **Definition 24 (Mode of a density or mass function)** Let \\X\\ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) \\f\\. The **modes** of \\f\\ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of \\f\\ over the [range](#def-range) of \\X\\:
 >
-> \\\operatorname{mode}(f) = \arg \max\_{x \in \mathcal{R}(X)} f(x).\\
+> \\{\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max\_{x \in \mathcal{R}(X)} f(x).\\
 >
-> A **mode** of \\f\\ is an element of \\\operatorname{mode}(f)\\.
+> A **mode** of \\f\\ is an element of \\{\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}\\.
 
 > **NOTE:**
 >
 > **Theorem 18 (A density and its kernel have the same modes)** If \\g\\ is a [kernel of the density](#def-kernel) \\f\\ of a [random variable](#def-random-variable) \\X\\, then the [modes](#def-mode) of \\f\\ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of \\g\\ over the [range](#def-range) of \\X\\:
 >
-> \\\operatorname{mode}(f) = \arg \max\_{x \in \mathcal{R}(X)} g(x).\\
+> \\{\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max\_{x \in \mathcal{R}(X)} g(x).\\
 
 > **NOTE:**
 >
