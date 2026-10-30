@@ -1,14 +1,14 @@
 :::{#thm-kernel-same-mode}
 #### A density and its kernel have the same modes
 
-If $g$ is a [kernel of a density](#def-kernel) $f$,
-then $x^*$ is a [mode](#def-mode) of $f$ if and only if $g(x^*) \ge g(x)$ for every $x$.
+If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$,
+then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
+
+$$\modef{f} = \argmax_{x \in \rangef{X}} g(x).$$
 
 :::
 
 {{< slidebreak >}}
-
-::: {.content-hidden when-format="revealjs"}
 
 ::: proof
 
@@ -17,7 +17,7 @@ For any $x$, multiplying both sides of $g(x^*) \ge g(x)$ by $c > 0$
 gives $f(x^*) \ge f(x)$,
 and dividing by $c$ reverses this.
 So $f(x^*) \ge f(x)$ for every $x$ exactly when $g(x^*) \ge g(x)$ for every $x$.
-
-:::
+By the definition of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax),
+these are the conditions $x^* \in \argmax_{x \in \rangef{X}} f(x)$ and $x^* \in \argmax_{x \in \rangef{X}} g(x)$.
 
 :::
