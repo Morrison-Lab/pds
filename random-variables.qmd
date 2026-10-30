@@ -14,7 +14,7 @@ format:
 
 {{< include latex-macros/macros.qmd >}}
 
-<!-- No slidebreak here: the heading shares its slide with the def-random-variable div. -->
+<!-- No slidebreak here: the first slide after the title slide holds the def-random-variable div. -->
 
 {{< include pds/_subfiles/_def-random-variable.qmd >}}
 
