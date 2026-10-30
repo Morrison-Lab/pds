@@ -1,0 +1,29 @@
+:::{#thm-entropy-discrete}
+#### Entropy of a discrete random variable
+
+Let $X$ be a [discrete random variable](random-variables.qmd#def-discrete-rv) with [probability mass function](random-variables.qmd#def-pmf) $\P(X=x)$.
+Then
+
+$$\entropyf{X} = -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x).$$
+
+A term with $\P(X=x) = 0$ is taken to be $0$,
+because $p \log p \to 0$ as $p \to 0$.
+
+:::
+
+::: proof
+
+Let $g(x) \eqdef \surprisalf{x} = -\log \P(X=x)$, which is finite for each value $x$ with $\P(X=x) > 0$.
+Then [LOTUS](#thm-lotus) gives
+
+$$
+\ba
+\entropyf{X}
+&= \E{\surprisalf{X}} && \text{(definition of entropy)} \\
+&= \E{g(X)} && \text{(definition of } g \text{)} \\
+&= \sum_{x \in \rangef{X}} g(x) \cd \P(X=x) && \text{(LOTUS)} \\
+&= -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x). && \text{(definition of } g \text{)}
+\ea
+$$
+
+:::

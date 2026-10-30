@@ -1,0 +1,8 @@
+::: {#rem-entropy-source}
+#### Where the discrete formula comes from
+
+@murphy2012mlpp [section 2.8.1, p. 56] gives the discrete formula of @thm-entropy-discrete as the definition,
+and notes that among distributions on $K$ outcomes
+it is largest, $\log K$, for the uniform distribution.
+
+:::
