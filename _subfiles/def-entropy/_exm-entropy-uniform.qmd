@@ -1,7 +1,7 @@
 :::{#exm-entropy-uniform}
 #### Entropy of a uniform random variable
 
-Let $X$ be uniformly distributed on the interval from $0$ to $a > 0$, as in @exm-surprisal-uniform.
+Let $X$ be [uniformly distributed](random-variables.qmd#def-uniform) on the interval from $0$ to $a > 0$, as in @exm-surprisal-uniform.
 By @thm-entropy-continuous,
 
 $$
@@ -12,7 +12,8 @@ $$
 \ea
 $$
 
-Every value has the same [surprisal](#def-surprisal-continuous) $\log a$, so its [expectation](#def-expectation) is also $\log a$.
+Every value has the same [surprisal](#def-surprisal-continuous) $\log a$,
+so its [expectation](#def-expectation) is also $\log a$.
 With $a = \tfrac{1}{2}$ and logarithms to base 2, the [entropy](#def-entropy) is $-1$ bit.
 The entropy of a [continuous random variable](random-variables.qmd#def-continuous-rv) can be negative [@cover2006elements, Example 8.1.1].
 
