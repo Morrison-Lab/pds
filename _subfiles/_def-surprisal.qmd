@@ -21,3 +21,11 @@ The notation leaves the [probability mass function](random-variables.qmd#def-pmf
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/def-surprisal/_rem-surprisal-rarity.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-surprisal/_def-surprisal-continuous.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-surprisal/_exm-surprisal-uniform.qmd >}}

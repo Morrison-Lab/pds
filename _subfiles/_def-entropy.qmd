@@ -1,72 +1,37 @@
 :::{#def-entropy}
-#### Entropy
+#### Entropy (differential entropy, for continuous random variables)
 
-The **entropy** of a *discrete* random variable $X$ with
-[probability mass function](random-variables.qmd#def-pmf) $\P(X=x)$
-is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) $\surprisalf{X}$
-[@wikipedia_entropy_information_theory]:
+The **entropy** of a [random variable](random-variables.qmd#def-random-variable) $X$ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal)
+([discrete](random-variables.qmd#def-discrete-rv) or [continuous](#def-surprisal-continuous))
+[@wikipedia_entropy_information_theory; @cover2006elements, section 8.1],
+when that expectation exists:
 
-$$\entropyf{X} \eqdef \E{\surprisalf{X}} = -\sum_{x \in \rangef{X}} \P(X=x) \log \P(X=x)$$
+$$\entropyf{X} \eqdef \E{\surprisalf{X}}.$$
 
-A term with $\P(X=x) = 0$ is taken to be $0$,
-because $p \log p \to 0$ as $p \to 0$.
-
-:::
-
-::: {#rem-entropy-units}
-#### The base of the logarithm is a unit
-
-With the natural logarithm, entropy is measured in *nats*.
-With base 2, it is measured in *bits*.
-Changing the base multiplies every entropy by the same positive constant.
-It does not change which distribution has the larger entropy.
+For a [continuous random variable](random-variables.qmd#def-continuous-rv), the entropy is also called the **differential entropy**.
 
 :::
 
 {{< slidebreak >}}
 
-:::{#exm-entropy-coin}
-#### Entropy of a coin flip
-
-Let $X$ be the result of one flip of a coin
-with $\P(X=1) = \prob$ and $\P(X=0) = 1 - \prob$
-([Bernoulli distribution](random-variables.qmd#def-bernoulli)).
-Using logarithms to base 2,
-
-$$H(X) = -\prob \log_2 \prob - (1 - \prob) \log_2 (1 - \prob).$$
-
-For a fair coin, $\prob = 1/2$, and
-
-$$
-\begin{aligned}
-H(X)
-&= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
-&= \tfrac{1}{2} + \tfrac{1}{2} \\
-&= 1 \text{ bit}.
-\end{aligned}
-$$
-
-For a coin that always lands heads, $\prob = 1$, and
-
-$$
-\begin{aligned}
-H(X) &= -1 \cdot \log_2 1 - 0 \\
-&= 0.
-\end{aligned}
-$$
-
-The outcome is known in advance, so there is no uncertainty to measure.
-An entropy of $0$ means that all of the probability is on one outcome.
-
-:::
+{{< include pds/_subfiles/def-entropy/_thm-entropy-discrete.qmd >}}
 
 {{< slidebreak >}}
 
-::: {#rem-entropy-source}
-#### Where the definition comes from
+{{< include pds/_subfiles/def-entropy/_thm-entropy-continuous.qmd >}}
 
-@murphy2012mlpp [section 2.8.1, p. 56] defines entropy this way,
-and notes that among distributions on $K$ outcomes
-it is largest, $\log K$, for the uniform distribution.
+{{< slidebreak >}}
 
-:::
+{{< include pds/_subfiles/def-entropy/_exm-entropy-uniform.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_rem-entropy-units.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_exm-entropy-coin.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_rem-entropy-source.qmd >}}

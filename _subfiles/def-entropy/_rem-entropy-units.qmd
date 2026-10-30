@@ -1,0 +1,9 @@
+::: {#rem-entropy-units}
+#### The base of the logarithm is a unit
+
+With the natural logarithm, entropy is measured in *nats*.
+With base 2, it is measured in *bits*.
+Changing the base multiplies every entropy by the same positive constant.
+It does not change which distribution has the larger entropy.
+
+:::
