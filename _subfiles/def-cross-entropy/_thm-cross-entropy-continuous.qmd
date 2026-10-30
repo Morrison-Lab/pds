@@ -9,8 +9,8 @@ Then the [cross-entropy](#def-cross-entropy) is
 $$\crossentropyf{p}{q} = -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx.$$
 
 The integrand is taken to be $0$ where $p(x) = 0$.
-If instead $q(x) = 0$ on a set to which $X$ belongs with positive [probability](probability-basics.qmd#def-probability),
-both sides are $\infty$, by the argument for mass functions in @thm-cross-entropy-discrete.
+If instead $X$ takes a value with $q(x) = 0$ with positive [probability](probability-basics.qmd#def-probability),
+both sides are $\infty$, by the same argument as in @thm-cross-entropy-discrete.
 
 :::
 

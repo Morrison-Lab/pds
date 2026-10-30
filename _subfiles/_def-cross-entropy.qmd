@@ -7,7 +7,7 @@ and let $q$ be a [mass function](random-variables.qmd#def-pmf) or density on the
 The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
 is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
-of the surprisal ([discrete](#def-surprisal) or [continuous](#def-surprisal-continuous)) measured by $q$:
+of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) measured by $q$:
 
 $$\crossentropyf{p}{q} \eqdef \E{-\log q(X)}.$$
 
