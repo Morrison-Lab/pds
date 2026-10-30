@@ -6,14 +6,16 @@ Let $X$ be a [random variable](random-variables.qmd#def-random-variable) with
 and let $q$ be a [mass function](random-variables.qmd#def-pmf) or density on the same values.
 The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
-is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.qmd#def-cdf) $p$, of the [surprisal](#def-surprisal) measured by $q$:
+is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
+of the surprisal ([discrete](#def-surprisal) or [continuous](#def-surprisal-continuous)) measured by $q$:
 
 $$\crossentropyf{p}{q} \eqdef \E{-\log q(X)}.$$
 
-We take $-\log 0 = \infty$, so when $q(x) = 0$ for a value $x$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability), the cross-entropy is infinite.
+We take $-\log 0 = \infty$,
+so when $q(x) = 0$ for a value $x$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability),
+the cross-entropy is infinite.
 
 :::
-
 
 {{< slidebreak >}}
 

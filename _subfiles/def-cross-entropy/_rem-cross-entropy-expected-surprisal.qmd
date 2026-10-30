@@ -2,7 +2,7 @@
 #### Cross-entropy is an expected surprisal
 
 By definition, the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$,
-with each surprisal measured by $q$ as $-\log q_k$.
+with each surprisal measured by $q$ as $-\log q(x)$.
 By @cor-cross-entropy-entropy, measuring with $p$ itself gives the [entropy](#def-entropy).
 
 :::

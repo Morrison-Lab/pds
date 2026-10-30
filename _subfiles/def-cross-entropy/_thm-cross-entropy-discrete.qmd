@@ -13,7 +13,9 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#th
 
 ::: proof
 
-Let $X$ have [mass function](random-variables.qmd#def-pmf) $p$, and let $g(k) \eqdef -\log q_k$, so that $-\log q(X) = g(X)$.
+Let $X$ have [mass function](random-variables.qmd#def-pmf) $p$,
+and let $g(k) \eqdef -\log q_k$,
+so that $-\log q(X) = g(X)$.
 First suppose $q_k > 0$ whenever $p_k > 0$.
 Then $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability),
 and [LOTUS](#thm-lotus) gives
@@ -29,8 +31,11 @@ $$
 $$
 
 Now suppose $q_k = 0$ for some $k$ with $p_k > 0$.
-Then $-\log q(X) \ge 0$, and $-\log q(X) = \infty$ with probability at least $p_k > 0$,
+Then $-\log q(X) \ge 0$,
+and $-\log q(X) = \infty$ with probability at least $p_k > 0$,
 so $\crossentropyf{p}{q} = \infty$.
-The right side is also $\infty$, because its term for $k$ is $-p_k \log 0 = \infty$ and its other terms are finite or $\infty$ but never $-\infty$.
+The right side is also $\infty$,
+because its term for $k$ is $-p_k \log 0 = \infty$
+and its other terms are finite or $\infty$ but never $-\infty$.
 
 :::

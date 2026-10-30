@@ -16,6 +16,7 @@ $$
 \ea
 $$
 
-The last line adds the terms with $p_k = 0$, which are $0$ by the convention in @thm-cross-entropy-discrete.
+The last line adds the terms with $p_k = 0$,
+which are $0$ by the convention in @thm-cross-entropy-discrete.
 
 :::
