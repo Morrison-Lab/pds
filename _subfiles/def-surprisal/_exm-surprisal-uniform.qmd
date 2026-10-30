@@ -8,7 +8,7 @@ Every value in the interval has [surprisal](#def-surprisal-continuous)
 $$\surprisalf{x} = -\log \tfrac{1}{a} = \log a.$$
 
 With $a = \tfrac{1}{2}$ and logarithms to base 2, the surprisal of every value is $\log_2 \tfrac{1}{2} = -1$ bit.
-A density value can exceed $1$, so unlike the surprisal of a discrete value, it can be negative.
+A density value can exceed $1$, so unlike the surprisal of a [discrete](random-variables.qmd#def-discrete-rv) value, it can be negative.
 
 <!-- no-figure: a single closed-form value -->
 
