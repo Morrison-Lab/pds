@@ -1,19 +1,19 @@
 :::{#def-cross-entropy}
 #### Cross-entropy
 
-Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf)
-on the same finite set of outcomes $\set{1, \ldots, K}$,
-with $p_k$ and $q_k$ the probabilities of outcome $k$.
+Let $X$ be a [random variable](random-variables.qmd#def-random-variable) with
+[probability mass function](random-variables.qmd#def-pmf) or [density](random-variables.qmd#def-pdf) $p$,
+and let $q$ be a mass function or density on the same values.
 The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
-is
+is the [expectation](#def-expectation), when $X$ has distribution $p$, of the [surprisal](#def-surprisal) measured by $q$:
 
-$$\crossentropyf{p}{q} \eqdef -\sumto{k}{K} p_k \log q_k.$$
+$$\crossentropyf{p}{q} \eqdef \E{-\log q(X)}.$$
 
-We take $-\log 0 = \infty$, so when $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
-A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#def-entropy).
+We take $-\log 0 = \infty$, so when $q(x) = 0$ for a value $x$ that $X$ takes with positive probability, the cross-entropy is infinite.
 
 :::
+
 
 {{< slidebreak >}}
 
@@ -49,11 +49,11 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-sum.qmd >}}
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-sum.qmd >}}
 
 {{< slidebreak >}}
 
@@ -73,7 +73,15 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-discrete.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-continuous.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exm-cross-entropy-continuous.qmd >}}
 
 {{< slidebreak >}}
 

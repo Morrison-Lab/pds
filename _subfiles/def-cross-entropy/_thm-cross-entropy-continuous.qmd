@@ -1,0 +1,28 @@
+:::{#thm-cross-entropy-continuous}
+#### Cross-entropy of two densities
+
+Let $p$ and $q$ be [probability density functions](random-variables.qmd#def-pdf) on the same [range](random-variables.qmd#def-range) $\rangef{X}$,
+with $q(x) > 0$ wherever $p(x) > 0$.
+Then the [cross-entropy](#def-cross-entropy) is
+
+$$\crossentropyf{p}{q} = -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx.$$
+
+The integrand is taken to be $0$ where $p(x) = 0$.
+
+:::
+
+::: proof
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with density $p$, and let $g(x) \eqdef -\log q(x)$, so that $-\log q(X) = g(X)$.
+Then [LOTUS](#thm-lotus) gives
+
+$$
+\ba
+\crossentropyf{p}{q}
+&= \E{g(X)} && \text{(definition)} \\
+&= \int_{x \in \rangef{X}} g(x) \cd p(x) \, dx && \text{(LOTUS)} \\
+&= -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx. && \text{(definition of } g \text{)}
+\ea
+$$
+
+:::
