@@ -1,5 +1,5 @@
 :::{#def-entropy}
-#### Entropy (**differential entropy**, for a continuous random variable)
+#### Entropy (differential entropy, for continuous random variables)
 
 The **entropy** of a [random variable](random-variables.qmd#def-random-variable) $X$ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal)
 ([discrete](random-variables.qmd#def-discrete-rv) or [continuous](#def-surprisal-continuous))
@@ -19,6 +19,10 @@ For a [continuous random variable](random-variables.qmd#def-continuous-rv), the 
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/def-entropy/_thm-entropy-continuous.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_exm-entropy-uniform.qmd >}}
 
 {{< slidebreak >}}
 

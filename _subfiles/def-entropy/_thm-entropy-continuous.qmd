@@ -6,6 +6,9 @@ Then
 
 $$\entropyf{X} = -\int_{x \in \rangef{X}} \p(X=x) \log \p(X=x) \, dx.$$
 
+The integrand is taken to be $0$ where $\p(X=x) = 0$,
+because $p \log p \to 0$ as $p \to 0$.
+
 :::
 
 ::: proof

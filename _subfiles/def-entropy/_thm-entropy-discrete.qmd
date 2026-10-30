@@ -13,7 +13,8 @@ because $p \log p \to 0$ as $p \to 0$.
 
 ::: proof
 
-Let $g(x) \eqdef \surprisalf{x} = -\log \P(X=x)$, which is finite for each value $x$ with $\P(X=x) > 0$.
+Let $g(x) \eqdef \surprisalf{x} = -\log \P(X=x)$,
+which is finite for each value $x$ with $\P(X=x) > 0$.
 Then [LOTUS](#thm-lotus) gives
 
 $$
