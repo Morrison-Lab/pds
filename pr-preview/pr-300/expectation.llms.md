@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 15:56:32 (PDT)
+Last modified: 2026-10-30 16:47:06 (PDT)
 
 > **NOTE:**
 >
@@ -1590,9 +1590,9 @@ Last modified: 2026-10-30 15:56:32 (PDT)
 
 > **NOTE:**
 >
-> **Definition 24 (Cross-entropy)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\, and let \\q\\ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when \\X\\ has [distribution](random-variables.llms.md#def-cdf) \\p\\, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) measured by \\q\\:
+> **Definition 24 (Cross-entropy)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\, and let \\q\\ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when \\X\\ has [distribution](random-variables.llms.md#def-cdf) \\p\\, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\s_q\\ measured by \\q\\, where \\s_q\mathopen{}\left(x\right)\mathclose{} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}\\:
 >
-> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[-\log q(X)\right\]\mathclose{}}.\\
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[s_q\mathopen{}\left(X\right)\mathclose{}\right\]\mathclose{}}.\\
 >
 > We take \\-\log 0 = \infty\\, so when \\\mathbb{P}(q(X) = 0) \> 0\\, the cross-entropy is infinite.
 
