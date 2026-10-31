@@ -947,6 +947,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#thm-kl-divergence-discrete",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-kl-divergence-discrete",
+   "kind": "thm",
+   "title": "KL divergence of two mass functions",
+   "external": false
+  },
+  {
    "id": "pds/expectation#thm-lie",
    "site": "pds",
    "page": "expectation",
@@ -2846,6 +2855,18 @@
   [
    "pds/expectation#thm-irreducible-risk-cond-variance",
    "pds/expectation#thm-best-predictor"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "pds/expectation#def-kl-divergence"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "pds/random-variables#def-pmf"
   ],
   [
    "pds/expectation#thm-risk-decomposition",

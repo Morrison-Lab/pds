@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 21:26:35 (PDT)
+Last modified: 2026-10-30 23:52:19 (PDT)
 
 > **NOTE:**
 >
@@ -1700,11 +1700,11 @@ Last modified: 2026-10-30 21:26:35 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 18 (Cross-entropy of two densities)** Let \\X\\ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) \\p\\ on its [range](random-variables.llms.md#def-range) \\\mathcal{R}(X)\\, and let \\q\\ be a density on \\\mathcal{R}(X)\\, with \\q(x) \> 0\\ wherever \\p(x) \> 0\\. Then the [cross-entropy](#def-cross-entropy) is
+> **Theorem 18 (Cross-entropy of two densities)** Let \\X\\ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) \\p\\ on its [range](random-variables.llms.md#def-range) \\\mathcal{R}(X)\\, and let \\q\\ be a density on \\\mathcal{R}(X)\\. Then the [cross-entropy](#def-cross-entropy) is
 >
 > \\{H\mathopen{}\left(p, q\right)\mathclose{}} = -\int\_{x \in \mathcal{R}(X)} p(x) \log q(x) \\ dx.\\
 >
-> The integrand is taken to be \\0\\ where \\p(x) = 0\\. Otherwise, if \\\mathbb{P}(q(X) = 0) \> 0\\, both sides are \\\infty\\.
+> The integrand is taken to be \\0\\ where \\p(x) = 0\\. If \\\mathbb{P}(q(X) = 0) \> 0\\, both sides are \\\infty\\.
 
 > **NOTE:**
 >
@@ -1774,7 +1774,21 @@ Last modified: 2026-10-30 21:26:35 (PDT)
 >
 > **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
-> \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.\\
+> \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}{H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.\\
+
+> **NOTE:**
+>
+> **Theorem 19 (KL divergence of two mass functions)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of [outcome](#def-outcome) \\k\\, and suppose \\q_k \> 0\\ whenever \\p_k \> 0\\. Then the [KL divergence](#def-kl-divergence) is
+>
+> \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} = \sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k}.\\
+>
+> A term with \\p_k = 0\\ is taken to be \\0\\.
+
+> **NOTE:**
+>
+> *Proof*. By [the discrete formula for cross-entropy](#thm-cross-entropy-discrete),
+>
+> \\ \begin{aligned} {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} && \text{(definition)} \\ &= -\sum\_{k=1}^{K} p_k \log q_k + \sum\_{k=1}^{K} p_k \log p_k && \text{(discrete formula, twice)} \\ &= \sum\_{k=1}^{K} p_k \mathopen{}\left(\log p_k - \log q_k\right)\mathclose{} && \text{(combine the sums)} \\ &= \sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k}. && \text{(difference of logarithms)} \end{aligned} \\
 
 > **NOTE:**
 >
