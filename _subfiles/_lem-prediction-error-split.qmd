@@ -4,7 +4,7 @@
 Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
 For any [prediction function](#def-prediction-function) $\predfn$,
 the [prediction error](#def-prediction-error) of $\predfn$ is the prediction error of $\truemean$
-plus the difference $\devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}$ between the prediction of $\predfn$ and the conditional mean
+plus the difference $\devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}$ between the [prediction](#def-prediction) of $\predfn$ and the [conditional mean](#def-cond-expectation-function)
 (the [deviation](variance-covariance.qmd#def-deviation) of the former from the latter, defined in a later chapter):
 
 $$\prederrf{\predfn} = \prederrf{\truemean} + \devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}$$
