@@ -1,0 +1,19 @@
+:::{#exm-cross-entropy-continuous}
+#### Cross-entropy of two densities on the unit interval
+
+Let $p(x) = 1$ and $q(x) = 2x$ for $0 < x < 1$ be [densities](random-variables.qmd#def-pdf).
+By @thm-cross-entropy-continuous, using the natural logarithm,
+
+$$
+\ba
+\crossentropyf{p}{q}
+&= -\int_0^1 \log (2x) \, dx \\
+&= -\log 2 - \int_0^1 \log x \, dx \\
+&= -\log 2 + 1 \\
+&\approx 0.307 \text{ nats}.
+\ea
+$$
+
+<!-- no-figure: a single closed-form value -->
+
+:::
