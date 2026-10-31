@@ -1,7 +1,7 @@
 :::{#def-prediction-error}
 #### Prediction error
 
-A [prediction function](#def-prediction-function) $\predfnf{\Predvar}$ has as its [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand)
+A [prediction function](#def-prediction-function) $\predfn$ has as its [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand)
 the observed [outcome](#def-outcome) $\Outvar$ of a [new observation](#def-new-observation) with [input](#def-input) $\Predvar$,
 not the [conditional mean](#def-cond-expectation-function) of that outcome.
 The **prediction error** of $\predfn$ is the prediction minus that outcome:
