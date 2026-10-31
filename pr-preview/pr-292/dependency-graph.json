@@ -2749,15 +2749,15 @@
   ],
   [
    "pds/expectation#lem-prediction-error-split",
+   "pds/expectation#def-prediction"
+  ],
+  [
+   "pds/expectation#lem-prediction-error-split",
    "pds/expectation#def-prediction-error"
   ],
   [
    "pds/expectation#lem-prediction-error-split",
    "pds/expectation#def-prediction-function"
-  ],
-  [
-   "pds/expectation#lem-prediction-error-split",
-   "pds/variance-covariance#def-deviation"
   ],
   [
    "pds/expectation#thm-bernoulli-mean",

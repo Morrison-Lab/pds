@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 18:14:22 (PDT)
+Last modified: 2026-10-30 18:31:53 (PDT)
 
 > **NOTE:**
 >
@@ -1328,7 +1328,7 @@ Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
-> *Remark 6* (The prediction error of a prediction function). A [prediction function](#def-prediction-function) \\f\\ makes the [prediction](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ for the [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\. We write \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\\ for the [prediction error](#def-prediction-error) of that prediction, meaning \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\, which is
+> *Remark 6* (The prediction error of a prediction function). A [prediction function](#def-prediction-function) \\f\\ makes the [prediction](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ for the [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\. We write \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\\ for the [prediction error](#def-prediction-error) of that prediction, meaning \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\. It is
 >
 > \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} = {f\mathopen{}\left(X\right)\mathclose{}} - Y\\
 >
@@ -1350,7 +1350,7 @@ Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
-> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\, the [prediction error](#def-prediction-error) of \\f\\ is the prediction error of \\\mu\\ plus the [deviation](variance-covariance.llms.md#def-deviation) of \\{f\mathopen{}\left(X\right)\mathclose{}}\\ from \\{\mu\mathopen{}\left(X\right)\mathclose{}}\\:
+> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\, the [prediction error](#def-prediction-error) of \\f\\ is the prediction error of \\\mu\\ plus the difference \\{\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\ between the [prediction](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ and \\{\mu\mathopen{}\left(X\right)\mathclose{}}\\:
 >
 > \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} = {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\
 
@@ -1362,7 +1362,7 @@ Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 34 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\{\mathopen{}\left(f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}}\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
+> **Example 34 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction function](#def-prediction-function) \\f_1\\, with \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\, has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\{\mathopen{}\left(f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}}\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
 
 > **NOTE:**
 >
@@ -1402,7 +1402,7 @@ Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. Write \\f^\*\stackrel{\text{def}}{=}\mu\\ for the [prediction function](#def-prediction-function) that uses it. Then for any [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. Write \\f^\*\stackrel{\text{def}}{=}\mu\\ for the [prediction function](#def-prediction-function) that uses it. Then for any prediction function \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} \ge {R\mathopen{}\left(f^\*\right)\mathclose{}}\\
 >
@@ -1462,7 +1462,7 @@ Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 40 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 40 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction function](#def-prediction-function) \\f_1\\, with \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\, has [reducible risk](#def-reducible-risk) \\5 - 1 = 4\\, and the prediction function \\f_2\\, with \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\, has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1486,11 +1486,11 @@ Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
-> **Example 41 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
+> **Example 41 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant [prediction function](#def-prediction-function) \\f_1\\, with \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\, has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 > **NOTE:**
 >
-> **Corollary 5 (The minimizer of squared-error risk is unique up to probability-1 equality)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Every [prediction function](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\ that is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk) (see [Corollary 4](#cor-best-predictor-argmin)) satisfies:
+> **Corollary 5 (The minimizer of squared-error risk is unique up to probability-1 equality)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Every [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\ that is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk) (see [Corollary 4](#cor-best-predictor-argmin)) satisfies:
 >
 > \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\
 
