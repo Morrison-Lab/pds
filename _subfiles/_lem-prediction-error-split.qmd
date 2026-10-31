@@ -2,8 +2,8 @@
 #### Prediction error splits at the conditional mean
 
 Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
-For any [prediction function](#def-prediction-function) $\predfnf{\Predvar}$,
-the [prediction error](#def-prediction-error) is the prediction error of $\truemean$
+For any [prediction function](#def-prediction-function) $\predfn$,
+the [prediction error](#def-prediction-error) of $\predfn$ is the prediction error of $\truemean$
 plus the [deviation](variance-covariance.qmd#def-deviation) of $\predfnf{\Predvar}$ from $\truemeanf{\Predvar}$:
 
 $$\prederrf{\predfn} = \prederrf{\truemean} + \devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}$$
@@ -12,15 +12,17 @@ $$\prederrf{\predfn} = \prederrf{\truemean} + \devof{\predfnf{\Predvar}}{\trueme
 
 ::: proof
 
+The notation $\prederrf{\predfn}$ is introduced in @rem-prediction-error.
+
 $$
 \ba
 \prederrf{\predfn}
 &= \predfnf{\Predvar} - \Outvar
-&& \text{(definition of } \prederrf{\predfn} \text{)} \\
+&& \text{(prediction error notation)} \\
 &= \paren{\truemeanf{\Predvar} - \Outvar} + \devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}
 && \text{(add and subtract } \truemeanf{\Predvar} \text{)} \\
 &= \prederrf{\truemean} + \devof{\predfnf{\Predvar}}{\truemeanf{\Predvar}}
-&& \text{(definition of } \prederrf{\truemean} \text{)}
+&& \text{(prediction error notation)}
 \ea
 $$
 
