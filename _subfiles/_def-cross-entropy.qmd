@@ -6,7 +6,8 @@ Let $X$ be a [random variable](random-variables.qmd#def-random-variable) with
 and let $q$ be a [mass function](random-variables.qmd#def-pmf) or density on the same values.
 The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
-is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
+is the [expectation](#def-expectation),
+when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
 of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $\surprisal_q$ measured by $q$,
 where $\surprisal_q\paren{x} \eqdef -\log q\paren{x}$:
 
@@ -129,6 +130,10 @@ the cross-entropy is infinite.
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/def-cross-entropy/_def-kl-divergence.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_thm-kl-divergence-discrete.qmd >}}
 
 {{< slidebreak >}}
 

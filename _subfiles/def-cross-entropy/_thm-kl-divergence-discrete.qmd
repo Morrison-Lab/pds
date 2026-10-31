@@ -1,0 +1,29 @@
+:::{#thm-kl-divergence-discrete}
+#### KL divergence of two mass functions
+
+Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$,
+with $p_k$ and $q_k$ the probabilities of outcome $k$,
+and suppose $q_k > 0$ whenever $p_k > 0$.
+Then the [KL divergence](#def-kl-divergence) is
+
+$$\kldivf{p}{q} = \sumto{k}{K} p_k \log \frac{p_k}{q_k}.$$
+
+A term with $p_k = 0$ is taken to be $0$.
+
+:::
+
+::: proof
+
+By [the discrete formula for cross-entropy](#thm-cross-entropy-discrete),
+
+$$
+\ba
+\kldivf{p}{q}
+&= \crossentropyf{p}{q} - \crossentropyf{p}{p} && \text{(definition)} \\
+&= -\sumto{k}{K} p_k \log q_k + \sumto{k}{K} p_k \log p_k && \text{(discrete formula, twice)} \\
+&= \sumto{k}{K} p_k \paren{\log p_k - \log q_k} && \text{(combine the sums)} \\
+&= \sumto{k}{K} p_k \log \frac{p_k}{q_k}. && \text{(difference of logarithms)}
+\ea
+$$
+
+:::
