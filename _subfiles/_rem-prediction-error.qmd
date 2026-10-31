@@ -4,8 +4,8 @@
 A [prediction function](#def-prediction-function) $\predfn$ makes the [prediction](#def-prediction) $\predfnf{\Predvar}$
 for the [outcome](#def-outcome) $\Outvar$ of a [new observation](#def-new-observation) with [input](#def-input) $\Predvar$.
 We write $\prederrf{\predfn}$ for the [prediction error](#def-prediction-error) of that prediction,
-meaning $\prederrf{\predfnf{\Predvar}}$,
-which is
+meaning $\prederrf{\predfnf{\Predvar}}$.
+It is
 
 $$\prederrf{\predfn} = \predfnf{\Predvar} - \Outvar$$
 
