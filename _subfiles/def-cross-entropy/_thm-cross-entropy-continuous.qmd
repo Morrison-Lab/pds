@@ -2,14 +2,14 @@
 #### Cross-entropy of two densities
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [density](random-variables.qmd#def-pdf) $p$ on its [range](random-variables.qmd#def-range) $\rangef{X}$,
-and let $q$ be a density on $\rangef{X}$,
-with $q(x) > 0$ wherever $p(x) > 0$.
+and let $q$ be a density on $\rangef{X}$.
 Then the [cross-entropy](#def-cross-entropy) is
 
 $$\crossentropyf{p}{q} = -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx.$$
 
-The integrand is taken to be $0$ where $p(x) = 0$.
-Otherwise, if $\P(q(X) = 0) > 0$,
+The integrand is taken to be $0$
+where $p(x) = 0$.
+If $\P(q(X) = 0) > 0$,
 both sides are $\infty$.
 
 :::

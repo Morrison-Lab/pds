@@ -5,6 +5,6 @@ For $p$ and $q$ as in @def-cross-entropy,
 the **Kullback--Leibler divergence** (**KL divergence**, or **relative entropy**)
 of $q$ from $p$ is
 
-$$\kldivf{p}{q} \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
+$$\kldivf{p}{q} \eqdef \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
 
 :::

@@ -7,7 +7,9 @@ Then the [cross-entropy](#def-cross-entropy) is
 
 $$\crossentropyf{p}{q} = -\sumto{k}{K} p_k \log q_k.$$
 
-A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#thm-entropy-discrete).
+A term with $p_k = 0$ is taken to be $0$
+whatever $q_k$ is,
+as for [entropy](#thm-entropy-discrete).
 
 :::
 
@@ -16,7 +18,8 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#th
 Let $X$ have [mass function](random-variables.qmd#def-pmf) $p$,
 and let $g(k) \eqdef -\log q_k$,
 so that $-\log q(X) = g(X)$.
-First suppose $q_k > 0$ whenever $p_k > 0$.
+First suppose $q_k > 0$
+whenever $p_k > 0$.
 Then $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability),
 and [LOTUS](#thm-lotus) gives
 
