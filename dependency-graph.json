@@ -749,6 +749,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#def-prediction-function",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-prediction-function",
+   "kind": "def",
+   "title": "Prediction function",
+   "external": false
+  },
+  {
    "id": "pds/expectation#def-reducible-risk",
    "site": "pds",
    "page": "expectation",
@@ -2414,7 +2423,7 @@
   ],
   [
    "pds/expectation#cor-best-predictor-argmin",
-   "pds/expectation#def-prediction"
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#cor-best-predictor-argmin",
@@ -2434,7 +2443,7 @@
   ],
   [
    "pds/expectation#cor-best-predictor-unique",
-   "pds/expectation#def-prediction"
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#cor-best-predictor-unique",
@@ -2646,15 +2655,43 @@
   ],
   [
    "pds/expectation#def-prediction-error",
-   "pds/expectation#def-prediction"
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#def-prediction-error",
    "sds/estimation#def-estimand"
   ],
   [
+   "pds/expectation#def-prediction-function",
+   "mds/functions#def-function"
+  ],
+  [
+   "pds/expectation#def-prediction-function",
+   "pds/expectation#def-input"
+  ],
+  [
+   "pds/expectation#def-prediction-function",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#def-prediction-function",
+   "pds/expectation#def-prediction"
+  ],
+  [
    "pds/expectation#def-reducible-risk",
-   "pds/expectation#thm-risk-decomposition"
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#def-reducible-risk",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-reducible-risk",
+   "pds/expectation#def-outcome"
+  ],
+  [
+   "pds/expectation#def-reducible-risk",
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#def-risk",
@@ -2679,6 +2716,10 @@
   [
    "pds/expectation#def-squared-error-risk",
    "pds/expectation#def-prediction-error"
+  ],
+  [
+   "pds/expectation#def-squared-error-risk",
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#def-surprisal",
@@ -2718,7 +2759,7 @@
   ],
   [
    "pds/expectation#lem-cross-term-zero",
-   "pds/expectation#def-prediction"
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#lem-linearity-finite-sum",
@@ -2750,7 +2791,7 @@
   ],
   [
    "pds/expectation#thm-best-predictor",
-   "pds/expectation#def-prediction"
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#thm-best-predictor",
@@ -2834,7 +2875,7 @@
   ],
   [
    "pds/expectation#thm-risk-decomposition",
-   "pds/expectation#def-prediction"
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#thm-surv-mean",

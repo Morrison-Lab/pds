@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 17:27:37 (PDT)
+Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
@@ -1302,31 +1302,39 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Definition 16 (New observation)** A **new observation** is an [input](#def-input) and [outcome](#def-outcome) pair \\(X, Y)\\ with the same [joint distribution](random-variables.llms.md#def-joint-distribution) as the observations used to choose the prediction, [statistically independent](independence.llms.md#def-indpt) of them, whose input is observed and whose outcome is not yet observed.
+> **Definition 16 (Prediction function)** A **prediction function** \\f\\ is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) that takes a value \\x\\ of the [input](#def-input) and returns a [prediction](#def-prediction) \\{f\mathopen{}\left(x\right)\mathclose{}}\\ of the [outcome](#def-outcome).
 
 > **NOTE:**
 >
-> **Example 30 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), suppose the new observation \\(X, Y)\\ satisfies the suppositions of its [definition](#def-new-observation), with the joint distribution given in the exercise as the population it is drawn from. Suppose also that its input is observed to be \\X= 1\\. Then its unobserved outcome is \\4\\ or \\6\\ with equal probability, and a [prediction](#def-prediction) of \\5\\ is a guess for that outcome.
+> **Example 30 (A constant prediction function)** In [Exercise 7](#exr-best-predictor), the [function](https://morrison-lab.github.io/mds/functions.html#def-function) \\f_1\mathopen{}\left(x\right)\mathclose{} = 3\\ is a [prediction function](#def-prediction-function): it returns the [prediction](#def-prediction) \\3\\ for every value of the [input](#def-input).
 
 > **NOTE:**
 >
-> **Definition 17 (Prediction error)** A [prediction function](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ has as its [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) the observed [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\, not the [conditional mean](#def-cond-expectation-function) of that outcome. The **prediction error** of \\f\\ is the prediction minus that outcome:
+> **Definition 17 (New observation)** A **new observation** is an [input](#def-input) and [outcome](#def-outcome) pair \\(X, Y)\\ with the same [joint distribution](random-variables.llms.md#def-joint-distribution) as the observations used to choose the prediction, [statistically independent](independence.llms.md#def-indpt) of them, whose input is observed and whose outcome is not yet observed.
+
+> **NOTE:**
+>
+> **Example 31 (A new observation in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), suppose the new observation \\(X, Y)\\ satisfies the suppositions of its [definition](#def-new-observation), with the joint distribution given in the exercise as the population it is drawn from. Suppose also that its input is observed to be \\X= 1\\. Then its unobserved outcome is \\4\\ or \\6\\ with equal probability, and a [prediction](#def-prediction) of \\5\\ is a guess for that outcome.
+
+> **NOTE:**
+>
+> **Definition 18 (Prediction error)** A [prediction function](#def-prediction-function) \\f\\ has as its [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) the observed [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\, not the [conditional mean](#def-cond-expectation-function) of that outcome. The **prediction error** of \\f\\ is the prediction minus that outcome:
 >
 > \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} \stackrel{\text{def}}{=}{f\mathopen{}\left(X\right)\mathclose{}} - Y\\
 
 > **NOTE:**
 >
-> **Example 31 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
+> **Example 32 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
 
 > **NOTE:**
 >
-> **Definition 18 (Squared-error risk (expected prediction error))** The **squared-error risk** of a prediction function \\{f\mathopen{}\left(X\right)\mathclose{}}\\, also called its **expected prediction error** [\[13, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
+> **Definition 19 (Squared-error risk (expected prediction error))** The **squared-error risk** of a [prediction function](#def-prediction-function) \\f\\, also called its **expected prediction error** [\[13, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
 > **NOTE:**
 >
-> **Example 32 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\.
+> **Example 33 (Squared-error risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\.
 
 > **NOTE:**
 >
@@ -1344,11 +1352,11 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 33 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
+> **Example 34 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
 
 > **NOTE:**
 >
-> **Lemma 3 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Lemma 3 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{\mathbb{E}\mathopen{}\left\[{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} \cdot\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\right\]\mathclose{}} = 0\\
 
@@ -1364,11 +1372,11 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 34 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1 - Y\\ is \\1\\ or \\-1\\ with equal [probability](#def-probability), so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
+> **Example 35 (The vanishing cross term in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), take the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. When \\X= 0\\, \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1 - Y\\ is \\1\\ or \\-1\\ with equal [probability](#def-probability), so the product has conditional mean \\0\\. The same cancellation happens when \\X= 1\\, so the expectation of the product is \\0\\.
 
 > **NOTE:**
 >
-> **Theorem 12 (Squared-error risk decomposition)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Theorem 12 (Squared-error risk decomposition)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} = {R\mathopen{}\left(\mu\right)\mathclose{}} + {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
@@ -1380,11 +1388,11 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 35 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\f_1\\.
+> **Example 36 (The risk decomposition in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [squared-error risk](#def-squared-error-risk) \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\, which [Theorem 12](#thm-risk-decomposition) splits as \\5 = 1 + 4\\: the risk \\1\\ of the [conditional expectation function](#def-cond-expectation-function) plus the excess \\4\\ from using \\f_1\\.
 
 > **NOTE:**
 >
-> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. Write \\f^\*\stackrel{\text{def}}{=}\mu\\ for the prediction function that uses it. Then for any [prediction function](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. Write \\f^\*\stackrel{\text{def}}{=}\mu\\ for the [prediction function](#def-prediction-function) that uses it. Then for any prediction function \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} \ge {R\mathopen{}\left(f^\*\right)\mathclose{}}\\
 >
@@ -1400,11 +1408,11 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 36 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\. The risk of the conditional mean is \\{R\mathopen{}\left(f^\*\right)\mathclose{}} = 1\\. So \\f_1\\ has the larger risk. The inequality is strict because \\f_1\mathopen{}\left(X\right)\mathclose{} \ne {f^\*\mathopen{}\left(X\right)\mathclose{}}\\.
+> **Example 37 (The best predictor in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [squared-error risk](#def-squared-error-risk) is \\{R\mathopen{}\left(f_1\right)\mathclose{}} = 5\\. The risk of the conditional mean is \\{R\mathopen{}\left(f^\*\right)\mathclose{}} = 1\\. So \\f_1\\ has the larger risk. The inequality is strict because \\f_1\mathopen{}\left(X\right)\mathclose{} \ne {f^\*\mathopen{}\left(X\right)\mathclose{}}\\.
 
 > **NOTE:**
 >
-> **Definition 19 (Residual risk (irreducible risk))** The **residual risk** (also called the **irreducible risk**) is the [squared-error risk](#def-squared-error-risk) of the [conditional expectation function](#def-cond-expectation-function) \\\mu\\ of [Theorem 12](#thm-risk-decomposition):
+> **Definition 20 (Residual risk (irreducible risk))** The **residual risk** (also called the **irreducible risk**) is the [squared-error risk](#def-squared-error-risk) of the [conditional expectation function](#def-cond-expectation-function) \\\mu\\ of [Theorem 12](#thm-risk-decomposition):
 >
 > \\{R\mathopen{}\left(\mu\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
@@ -1420,23 +1428,21 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> *Remark 7* (The residual risk does not depend on the prediction function). The [residual risk](#def-irreducible-risk) depends only on the [joint distribution](random-variables.llms.md#def-joint-distribution) of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk. It is the minimum only among [prediction functions](#def-prediction) of the given \\X\\: the [outcome](#def-outcome) may also depend on variables that \\X\\ leaves out, and those variables are part of the unexplained variation \\Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\. Measuring one of them and adding it to the variables in \\X\\ can lower the residual risk, as in [Example 38](#exm-irreducible-risk-added-predictor). [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 makes the same point: the error term “may contain unmeasured variables that are useful in predicting \[\\Y\\\]”.
+> *Remark 7* (The residual risk does not depend on the prediction function). The [residual risk](#def-irreducible-risk) depends only on the [joint distribution](random-variables.llms.md#def-joint-distribution) of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk. It is the minimum only among [prediction functions](#def-prediction) of the given \\X\\: the [outcome](#def-outcome) may also depend on variables that \\X\\ leaves out, and those variables are part of the unexplained variation \\Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\. Measuring one of them and adding it to the variables in \\X\\ can lower the residual risk, as in [Example 39](#exm-irreducible-risk-added-predictor). [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 makes the same point: the error term “may contain unmeasured variables that are useful in predicting \[\\Y\\\]”.
 
 > **NOTE:**
 >
-> **Example 37 (Residual risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the [residual risk](#def-irreducible-risk) is \\{\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
+> **Example 38 (Residual risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 0\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(Y\mid X= 1\right)\mathclose{}} = 1\\, so the [residual risk](#def-irreducible-risk) is \\{\mathbb{E}\mathopen{}\left\[{\operatorname{Var}\mathopen{}\left(Y\mid X\right)\mathclose{}}\right\]\mathclose{}} = 1\\.
 
 > **NOTE:**
 >
-> **Example 38 (Adding a predictor lowers the residual risk)** Let \\X_1\\, \\X_2\\ and \\\varepsilon\\ be [independent](independence.llms.md#def-indpt), with \\{\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 1\\, and let \\Y= X_1 + X_2 + \varepsilon\\. A [prediction](#def-prediction) from \\X_1\\ alone has [conditional variance](#def-cond-variance) \\{\operatorname{Var}\mathopen{}\left(Y\mid X_1\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 2\\, so the [residual risk](#def-irreducible-risk) is \\2\\. A prediction from \\(X_1, X_2)\\ has conditional variance \\{\operatorname{Var}\mathopen{}\left(Y\mid X_1, X_2\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 1\\, so the residual risk is \\1\\.
+> **Example 39 (Adding a predictor lowers the residual risk)** Let \\X_1\\, \\X_2\\ and \\\varepsilon\\ be [independent](independence.llms.md#def-indpt), with \\{\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} = 1\\ and \\{\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 1\\, and let \\Y= X_1 + X_2 + \varepsilon\\. A [prediction](#def-prediction) from \\X_1\\ alone has [conditional variance](#def-cond-variance) \\{\operatorname{Var}\mathopen{}\left(Y\mid X_1\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} + {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 2\\, so the [residual risk](#def-irreducible-risk) is \\2\\. A prediction from \\(X_1, X_2)\\ has conditional variance \\{\operatorname{Var}\mathopen{}\left(Y\mid X_1, X_2\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = 1\\, so the residual risk is \\1\\.
 
 > **NOTE:**
 >
-> **Definition 20 (Reducible risk)** In the squared-error risk decomposition of [Theorem 12](#thm-risk-decomposition), the excess risk from choosing the prediction function \\f\\ instead of the conditional mean,
+> **Definition 21 (Reducible risk)** The **reducible risk** of a [prediction function](#def-prediction-function) \\f\\ is the [expectation](#def-expectation) of the squared difference between \\{f\mathopen{}\left(X\right)\mathclose{}}\\ and the [conditional mean](#def-cond-expectation-function) \\{\mu\mathopen{}\left(X\right)\mathclose{}}\\ of the [outcome](#def-outcome):
 >
-> \\{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} \ge 0\\
->
-> is the **reducible risk**.
+> \\{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
 > **NOTE:**
 >
@@ -1446,7 +1452,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 39 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has reducible risk \\5 - 1 = 4\\, and the prediction \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has reducible risk \\2 - 1 = 1\\.
+> **Example 40 (Reducible risk in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the constant [prediction function](#def-prediction-function) \\f_1\\, with \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\, has [reducible risk](#def-reducible-risk) \\5 - 1 = 4\\, and the prediction function \\f_2\\, with \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\, has reducible risk \\2 - 1 = 1\\.
 
 > **NOTE:**
 >
@@ -1454,11 +1460,11 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 >
 > \\{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} + {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 >
-> shows that the total squared-error risk is the sum of the residual risk ([Definition 19](#def-irreducible-risk)) and the reducible risk ([Definition 20](#def-reducible-risk)).
+> shows that the total squared-error risk is the sum of the residual risk ([Definition 20](#def-irreducible-risk)) and the reducible risk ([Definition 21](#def-reducible-risk)). James et al. [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 calls the squared difference between a [prediction function](#def-prediction-function) and the [conditional mean](#def-cond-expectation-function) the “reducible error”.
 
 > **NOTE:**
 >
-> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Among [prediction functions](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\, the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Among [prediction functions](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\, the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
 >
 > \\{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} \in \arg \min\_{f} {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}},\\
 >
@@ -1466,15 +1472,15 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 13](#thm-best-predictor), \\{f^\*\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ has [risk](#def-risk) no larger than that of any [prediction function](#def-prediction) \\f\\, so it is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer).
+> *Proof*. By [Theorem 13](#thm-best-predictor), \\{f^\*\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ has [risk](#def-risk) no larger than that of any [prediction function](#def-prediction-function) \\f\\, so it is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer).
 
 > **NOTE:**
 >
-> **Example 40 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant prediction \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
+> **Example 41 (The minimizer in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), the [conditional expectation function](#def-cond-expectation-function) \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ has [risk](#def-risk) \\1\\. The constant [prediction function](#def-prediction-function) \\f_1\\, with \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\, has risk \\5\\ and \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ has risk \\2\\, both larger than \\1\\. So \\f^\*\\ is the [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) among the three.
 
 > **NOTE:**
 >
-> **Corollary 5 (The minimizer of squared-error risk is unique up to probability-1 equality)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Every [prediction function](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\ that is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk) (see [Corollary 4](#cor-best-predictor-argmin)) satisfies:
+> **Corollary 5 (The minimizer of squared-error risk is unique up to probability-1 equality)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Every [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\ that is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk) (see [Corollary 4](#cor-best-predictor-argmin)) satisfies:
 >
 > \\\mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1\\
 
@@ -1484,13 +1490,13 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 41 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
+> **Example 42 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
 ## 0.4 Entropy and cross-entropy
 
 > **NOTE:**
 >
-> **Definition 21 (Surprisal (**self-information**, **information content**))** The **surprisal** of a possible value \\x\\ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) \\X\\ with \\\mathbb{P}(X=x) \> 0\\ is
+> **Definition 22 (Surprisal (**self-information**, **information content**))** The **surprisal** of a possible value \\x\\ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) \\X\\ with \\\mathbb{P}(X=x) \> 0\\ is
 >
 > \\{s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).\\
 >
@@ -1498,7 +1504,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 42 (Surprisal of the values of a biased coin flip)** Let \\X\\ be \\1\\ if one flip of a coin lands heads and \\0\\ if it lands tails, with \\\mathbb{P}(X=1) = \tfrac{1}{4}\\ and \\\mathbb{P}(X=0) = \tfrac{3}{4}\\. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value \\1\\ (heads) is \\{s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2\\ bits, and the surprisal of the value \\0\\ (tails) is \\{s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415\\ bits. For a fair coin, each value of \\X\\ has surprisal \\-\log_2 \tfrac{1}{2} = 1\\ bit.
+> **Example 43 (Surprisal of the values of a biased coin flip)** Let \\X\\ be \\1\\ if one flip of a coin lands heads and \\0\\ if it lands tails, with \\\mathbb{P}(X=1) = \tfrac{1}{4}\\ and \\\mathbb{P}(X=0) = \tfrac{3}{4}\\. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value \\1\\ (heads) is \\{s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2\\ bits, and the surprisal of the value \\0\\ (tails) is \\{s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415\\ bits. For a fair coin, each value of \\X\\ has surprisal \\-\log_2 \tfrac{1}{2} = 1\\ bit.
 
 > **NOTE:**
 >
@@ -1506,7 +1512,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Definition 22 (Surprisal of a value of a continuous random variable)** The **surprisal** of a possible value \\x\\ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) \\X\\ with [probability density function](random-variables.llms.md#def-pdf) \\\operatorname{p}(X=x)\\ and \\\operatorname{p}(X=x) \> 0\\ is
+> **Definition 23 (Surprisal of a value of a continuous random variable)** The **surprisal** of a possible value \\x\\ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) \\X\\ with [probability density function](random-variables.llms.md#def-pdf) \\\operatorname{p}(X=x)\\ and \\\operatorname{p}(X=x) \> 0\\ is
 >
 > \\{s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \operatorname{p}(X=x).\\
 >
@@ -1514,7 +1520,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 43 (Surprisal of a value of a uniform random variable)** Let \\X\\ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from \\0\\ to \\a \> 0\\, so that its [density](random-variables.llms.md#def-pdf) is \\\operatorname{p}(X=x) = 1/a\\ for \\0 \< x \< a\\. Every value in the interval has [surprisal](#def-surprisal-continuous)
+> **Example 44 (Surprisal of a value of a uniform random variable)** Let \\X\\ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from \\0\\ to \\a \> 0\\, so that its [density](random-variables.llms.md#def-pdf) is \\\operatorname{p}(X=x) = 1/a\\ for \\0 \< x \< a\\. Every value in the interval has [surprisal](#def-surprisal-continuous)
 >
 > \\{s\mathopen{}\left(x\right)\mathclose{}} = -\log \tfrac{1}{a} = \log a.\\
 >
@@ -1522,7 +1528,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Definition 23 (Entropy (differential entropy, for continuous random variables))** The **entropy** of a [random variable](random-variables.llms.md#def-random-variable) \\X\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) ([discrete](random-variables.llms.md#def-discrete-rv) or [continuous](#def-surprisal-continuous)) [\[18\]](#ref-wikipedia_entropy_information_theory), [\[19, Sec. 8.1\]](#ref-cover2006elements), when that expectation exists:
+> **Definition 24 (Entropy (differential entropy, for continuous random variables))** The **entropy** of a [random variable](random-variables.llms.md#def-random-variable) \\X\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) ([discrete](random-variables.llms.md#def-discrete-rv) or [continuous](#def-surprisal-continuous)) [\[18\]](#ref-wikipedia_entropy_information_theory), [\[19, Sec. 8.1\]](#ref-cover2006elements), when that expectation exists:
 >
 > \\{H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}}.\\
 >
@@ -1558,7 +1564,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 44 (Entropy of a uniform random variable)** Let \\X\\ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from \\0\\ to \\a \> 0\\, as in [Example 43](#exm-surprisal-uniform). By [Theorem 16](#thm-entropy-continuous),
+> **Example 45 (Entropy of a uniform random variable)** Let \\X\\ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from \\0\\ to \\a \> 0\\, as in [Example 44](#exm-surprisal-uniform). By [Theorem 16](#thm-entropy-continuous),
 >
 > \\ \begin{aligned} {H\mathopen{}\left(X\right)\mathclose{}} &= -\int_0^a \tfrac{1}{a} \log \tfrac{1}{a} \\ dx \\ &= \log a. \end{aligned} \\
 >
@@ -1570,7 +1576,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 45 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). By [Theorem 15](#thm-entropy-discrete), using logarithms to base 2,
+> **Example 46 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). By [Theorem 15](#thm-entropy-discrete), using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1590,7 +1596,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Definition 24 (Cross-entropy)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\, and let \\q\\ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when \\X\\ has [distribution](random-variables.llms.md#def-cdf) \\p\\, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\s_q\\ measured by \\q\\, where \\s_q\mathopen{}\left(x\right)\mathclose{} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}\\:
+> **Definition 25 (Cross-entropy)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\, and let \\q\\ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when \\X\\ has [distribution](random-variables.llms.md#def-cdf) \\p\\, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\s_q\\ measured by \\q\\, where \\s_q\mathopen{}\left(x\right)\mathclose{} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}\\:
 >
 > \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[s_q\mathopen{}\left(X\right)\mathclose{}\right\]\mathclose{}}.\\
 >
@@ -1656,7 +1662,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> *Solution 9*. By [Definition 24](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\.
+> *Solution 9*. By [Definition 25](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\.
 
 > **NOTE:**
 >
@@ -1700,7 +1706,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 46 (Cross-entropy of two densities on the unit interval)** Let \\p(x) = 1\\ and \\q(x) = 2x\\ for \\0 \< x \< 1\\ be [densities](random-variables.llms.md#def-pdf). By [Theorem 18](#thm-cross-entropy-continuous), using the natural logarithm,
+> **Example 47 (Cross-entropy of two densities on the unit interval)** Let \\p(x) = 1\\ and \\q(x) = 2x\\ for \\0 \< x \< 1\\ be [densities](random-variables.llms.md#def-pdf). By [Theorem 18](#thm-cross-entropy-continuous), using the natural logarithm,
 >
 > \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\int_0^1 \log (2x) \\ dx \\ &= -\log 2 - \int_0^1 \log x \\ dx \\ &= -\log 2 + 1 \\ &\approx 0.307 \text{ nats}. \end{aligned} \\
 
@@ -1756,7 +1762,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Definition 25 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 24](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
+> **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.\\
 
@@ -1766,7 +1772,7 @@ Last modified: 2026-10-30 17:27:37 (PDT)
 
 > **NOTE:**
 >
-> **Example 47 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 48 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
@@ -1889,15 +1895,16 @@ K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Spring
 - [Definition 13 (Risk (expected loss))](#def-risk)
 - [Definition 14 (Outcome)](#def-outcome)
 - [Definition 15 (Input)](#def-input)
-- [Definition 16 (New observation)](#def-new-observation)
-- [Definition 17 (Prediction error)](#def-prediction-error)
-- [Definition 18 (Squared-error risk (expected prediction error))](#def-squared-error-risk)
-- [Definition 19 (Residual risk (irreducible risk))](#def-irreducible-risk)
-- [Definition 20 (Reducible risk)](#def-reducible-risk)
-- [Definition 21 (Surprisal (**self-information**, **information content**))](#def-surprisal)
-- [Definition 22 (Surprisal of a value of a continuous random variable)](#def-surprisal-continuous)
-- [Definition 23 (Entropy (differential entropy, for continuous random variables))](#def-entropy)
-- [Definition 24 (Cross-entropy)](#def-cross-entropy)
-- [Definition 25 (Kullback–Leibler divergence (KL divergence, relative entropy))](#def-kl-divergence)
+- [Definition 16 (Prediction function)](#def-prediction-function)
+- [Definition 17 (New observation)](#def-new-observation)
+- [Definition 18 (Prediction error)](#def-prediction-error)
+- [Definition 19 (Squared-error risk (expected prediction error))](#def-squared-error-risk)
+- [Definition 20 (Residual risk (irreducible risk))](#def-irreducible-risk)
+- [Definition 21 (Reducible risk)](#def-reducible-risk)
+- [Definition 22 (Surprisal (**self-information**, **information content**))](#def-surprisal)
+- [Definition 23 (Surprisal of a value of a continuous random variable)](#def-surprisal-continuous)
+- [Definition 24 (Entropy (differential entropy, for continuous random variables))](#def-entropy)
+- [Definition 25 (Cross-entropy)](#def-cross-entropy)
+- [Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))](#def-kl-divergence)
 
 Back to top
