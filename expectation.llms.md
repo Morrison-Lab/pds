@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 15:39:26 (PDT)
+Last modified: 2026-10-30 16:55:11 (PDT)
 
 > **NOTE:**
 >
@@ -1590,11 +1590,11 @@ Last modified: 2026-10-30 15:39:26 (PDT)
 
 > **NOTE:**
 >
-> **Definition 24 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is
+> **Definition 24 (Cross-entropy)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\, and let \\q\\ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when \\X\\ has [distribution](random-variables.llms.md#def-cdf) \\p\\, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\s_q\\ measured by \\q\\, where \\s_q\mathopen{}\left(x\right)\mathclose{} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}\\:
 >
-> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[s_q\mathopen{}\left(X\right)\mathclose{}\right\]\mathclose{}}.\\
 >
-> We take \\-\log 0 = \infty\\, so when \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite. A term with \\p_k = 0\\ is taken to be \\0\\ whatever \\q_k\\ is, as for [entropy](#def-entropy).
+> We take \\-\log 0 = \infty\\, so when \\\mathbb{P}(q(X) = 0) \> 0\\, the cross-entropy is infinite.
 
 > **NOTE:**
 >
@@ -1638,15 +1638,15 @@ Last modified: 2026-10-30 15:39:26 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 12 (Cross-entropy as an expectation when \\q\\ is positive where \\p\\ is)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Show that the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ equals the [expectation](#def-expectation) \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
+> **Exercise 12 (Cross-entropy as a sum when \\q\\ is positive where \\p\\ is)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Show that the [cross-entropy](#def-cross-entropy), the [expectation](#def-expectation) \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\, equals \\-\sum\_{k=1}^{K} p_k \log q_k\\.
 
 > **NOTE:**
 >
 > *Solution 8*. Let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q_X = g(X)\\. Since \\q_k \> 0\\ whenever \\p_k \> 0\\, \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability). By [LOTUS](#thm-lotus),
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k \\ &= -\sum\_{k=1}^{K} p_k \log q_k \\ &= {H\mathopen{}\left(p, q\right)\mathclose{}}. \end{aligned} \\
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} \\ &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k \\ &= -\sum\_{k=1}^{K} p_k \log q_k. \end{aligned} \\
 >
-> The fourth line adds the terms with \\p_k = 0\\, which are \\0\\ by the convention in the definition.
+> The last line adds the terms with \\p_k = 0\\, which are \\0\\ by the convention in [Theorem 17](#thm-cross-entropy-discrete).
 
 > **NOTE:**
 >
@@ -1668,17 +1668,41 @@ Last modified: 2026-10-30 15:39:26 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 17 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Then the [cross-entropy](#def-cross-entropy) is the [expectation](#def-expectation) of \\-\log q_X\\:
+> **Theorem 17 (Cross-entropy of two mass functions)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. Then the [cross-entropy](#def-cross-entropy) is
 >
-> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}.\\
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = -\sum\_{k=1}^{K} p_k \log q_k.\\
+>
+> A term with \\p_k = 0\\ is taken to be \\0\\ whatever \\q_k\\ is, as for [entropy](#thm-entropy-discrete).
 
 > **NOTE:**
 >
-> *Proof*. Let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q_X = g(X)\\. First suppose \\q_k \> 0\\ whenever \\p_k \> 0\\. Then \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability), and [LOTUS](#thm-lotus) gives
+> *Proof*. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q(X) = g(X)\\. First suppose \\q_k \> 0\\ whenever \\p_k \> 0\\. Then \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability), and [LOTUS](#thm-lotus) gives
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition of } g \text{)} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\ &= -\sum\_{k=1}^{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\ &= {H\mathopen{}\left(p, q\right)\mathclose{}}. && \text{(definition)} \end{aligned} \\
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition)} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\ &= -\sum\_{k=1}^{K} p_k \log q_k. && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \end{aligned} \\
 >
-> Now suppose \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Then \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\ by definition. Also \\-\log q_X \ge 0\\, and \\-\log q_X = \infty\\ with probability at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\.
+> Now suppose \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Then \\-\log q(X) \ge 0\\, and \\-\log q(X) = \infty\\ with probability at least \\p_k \> 0\\, so \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. The right side is also \\\infty\\, because its term for \\k\\ is \\-p_k \log 0 = \infty\\ and its other terms are finite or \\\infty\\ but never \\-\infty\\.
+
+> **NOTE:**
+>
+> **Theorem 18 (Cross-entropy of two densities)** Let \\X\\ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) \\p\\ on its [range](random-variables.llms.md#def-range) \\\mathcal{R}(X)\\, and let \\q\\ be a density on \\\mathcal{R}(X)\\, with \\q(x) \> 0\\ wherever \\p(x) \> 0\\. Then the [cross-entropy](#def-cross-entropy) is
+>
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = -\int\_{x \in \mathcal{R}(X)} p(x) \log q(x) \\ dx.\\
+>
+> The integrand is taken to be \\0\\ where \\p(x) = 0\\. Otherwise, if \\\mathbb{P}(q(X) = 0) \> 0\\, both sides are \\\infty\\.
+
+> **NOTE:**
+>
+> *Proof*. Let \\g(x) \stackrel{\text{def}}{=}-\log q(x)\\, so that \\-\log q(X) = g(X)\\. Then [LOTUS](#thm-lotus) gives
+>
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition)} \\ &= \int\_{x \in \mathcal{R}(X)} g(x) \cdot p(x) \\ dx && \text{(LOTUS)} \\ &= -\int\_{x \in \mathcal{R}(X)} p(x) \log q(x) \\ dx. && \text{(definition of } g \text{)} \end{aligned} \\
+>
+> Now suppose \\\mathbb{P}(q(X) = 0) \> 0\\. Then \\-\log q(X) \ge 0\\, and \\-\log q(X) = \infty\\ with positive [probability](probability-basics.llms.md#def-probability), so \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. The integrand \\-p(x) \log q(x)\\ is \\\infty\\ wherever \\q(x) = 0\\ and \\p(x) \> 0\\, which is a region of positive probability under \\p\\, and it is never \\-\infty\\, so the right side is also \\\infty\\.
+
+> **NOTE:**
+>
+> **Example 46 (Cross-entropy of two densities on the unit interval)** Let \\p(x) = 1\\ and \\q(x) = 2x\\ for \\0 \< x \< 1\\ be [densities](random-variables.llms.md#def-pdf). By [Theorem 18](#thm-cross-entropy-continuous), using the natural logarithm,
+>
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\int_0^1 \log (2x) \\ dx \\ &= -\log 2 - \int_0^1 \log x \\ dx \\ &= -\log 2 + 1 \\ &\approx 0.307 \text{ nats}. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -1714,21 +1738,21 @@ Last modified: 2026-10-30 15:39:26 (PDT)
 
 > **NOTE:**
 >
-> *Solution 14*. By [Theorem 17](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p_X = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+> *Solution 14*. By definition, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p(X)\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p(X) = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p\\ on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\. Then
+> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\. Then
 >
 > \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}.\\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 17](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, the [random variable](random-variables.llms.md#def-random-variable) \\-\log p_X\\ is the [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+> *Proof*. By the definition of [cross-entropy](#def-cross-entropy) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p(X)\right\]\mathclose{}}\\. The [random variable](random-variables.llms.md#def-random-variable) \\-\log p(X)\\ is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> *Remark 12* (Cross-entropy is an expected surprisal). By [Theorem 17](#thm-cross-entropy-expectation), the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q_k\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q(x)\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -1742,7 +1766,7 @@ Last modified: 2026-10-30 15:39:26 (PDT)
 
 > **NOTE:**
 >
-> **Example 46 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 47 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
