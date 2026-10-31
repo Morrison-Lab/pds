@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 21:19:41 (PDT)
+Last modified: 2026-10-30 21:26:35 (PDT)
 
 > **NOTE:**
 >
@@ -1318,13 +1318,21 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> **Definition 18 (Prediction error)** A [prediction function](#def-prediction-function) \\f\\ has as its [estimand](https://morrison-lab.github.io/sds/estimation.html#def-estimand) the observed [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\, not the [conditional mean](#def-cond-expectation-function) of that outcome. The **prediction error** of \\f\\ is the prediction minus that outcome:
+> **Definition 18 (Prediction error)** The **prediction error** of a [prediction](#def-prediction) \\\hat{Y}\\ of an [outcome](#def-outcome) \\Y\\ is the prediction minus the outcome:
 >
-> \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} \stackrel{\text{def}}{=}{f\mathopen{}\left(X\right)\mathclose{}} - Y\\
+> \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\hat{Y}\right)\mathclose{}} \stackrel{\text{def}}{=}\hat{Y} - Y\\
 
 > **NOTE:**
 >
 > **Example 32 (Prediction error in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), consider the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\. Its [prediction error](#def-prediction-error) is \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3 - Y\\. This is \\3\\ when \\Y= 0\\. It is \\-3\\ when \\Y= 6\\.
+
+> **NOTE:**
+>
+> *Remark 6* (The prediction error of a prediction function). A [prediction function](#def-prediction-function) \\f\\ makes the [prediction](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ for the [outcome](#def-outcome) \\Y\\ of a [new observation](#def-new-observation) with [input](#def-input) \\X\\. We write \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\\ for the [prediction error](#def-prediction-error) of that prediction, meaning \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\. It is
+>
+> \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} = {f\mathopen{}\left(X\right)\mathclose{}} - Y\\
+>
+> The reference value in a prediction error is the observed outcome \\Y\\, not the [conditional mean](#def-cond-expectation-function) of that outcome.
 
 > **NOTE:**
 >
@@ -1338,21 +1346,23 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 6* (The squared-error risk is a risk). The [squared-error risk](#def-squared-error-risk) is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
+> *Remark 7* (The squared-error risk is a risk). The [squared-error risk](#def-squared-error-risk) is the [risk](#def-risk) under [squared error loss](#def-squared-error-loss).
 
 > **NOTE:**
 >
-> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\, the [prediction error](#def-prediction-error) splits as:
+> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\, the [prediction error](#def-prediction-error) of \\f\\ is the prediction error of \\\mu\\ plus the difference \\{\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\ between the [prediction](#def-prediction) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ and \\{\mu\mathopen{}\left(X\right)\mathclose{}}\\:
 >
-> \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} = {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + \mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\\
+> \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} = {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} {{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} &= {f\mathopen{}\left(X\right)\mathclose{}} - Y && \text{(definition of } {{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} \text{)} \\ &= \mathopen{}\left({\mu\mathopen{}\left(X\right)\mathclose{}} - Y\right)\mathclose{} + \mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{} && \text{(add and subtract } {\mu\mathopen{}\left(X\right)\mathclose{}} \text{)} \\ &= {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + \mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{} && \text{(definition of } {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} \text{)} \end{aligned} \\
+> *Proof*. The notation \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\\ is introduced in [Remark 6](#rem-prediction-error).
+>
+> \\ \begin{aligned} {{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} &= {f\mathopen{}\left(X\right)\mathclose{}} - Y && \text{(prediction error notation)} \\ &= \mathopen{}\left({\mu\mathopen{}\left(X\right)\mathclose{}} - Y\right)\mathclose{} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}} && \text{(add and subtract } {\mu\mathopen{}\left(X\right)\mathclose{}} \text{)} \\ &= {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}} && \text{(prediction error notation)} \end{aligned} \\
 
 > **NOTE:**
 >
-> **Example 34 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction](#def-prediction) \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\ has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
+> **Example 34 (The split in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), when \\X= 0\\ and \\Y= 0\\, the constant [prediction function](#def-prediction-function) \\f_1\\, with \\f_1\mathopen{}\left(X\right)\mathclose{} = 3\\, has [prediction error](#def-prediction-error) \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f_1\right)\mathclose{}} = 3\\. The conditional mean is \\{\mu\mathopen{}\left(0\right)\mathclose{}} = 1\\, so \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} = 1\\ and \\{\mathopen{}\left(f_1\mathopen{}\left(0\right)\mathclose{} - {\mu\mathopen{}\left(0\right)\mathclose{}}\right)\mathclose{}} = 2\\, and \\3 = 1 + 2\\.
 
 > **NOTE:**
 >
@@ -1428,7 +1438,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 7* (The residual risk does not depend on the prediction function). The [residual risk](#def-irreducible-risk) depends only on the [joint distribution](random-variables.llms.md#def-joint-distribution) of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk. It is the minimum only among [prediction functions](#def-prediction) of the given \\X\\: the [outcome](#def-outcome) may also depend on variables that \\X\\ leaves out, and those variables are part of the unexplained variation \\Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\. Measuring one of them and adding it to the variables in \\X\\ can lower the residual risk, as in [Example 39](#exm-irreducible-risk-added-predictor). [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 makes the same point: the error term “may contain unmeasured variables that are useful in predicting \[\\Y\\\]”.
+> *Remark 8* (The residual risk does not depend on the prediction function). The [residual risk](#def-irreducible-risk) depends only on the [joint distribution](random-variables.llms.md#def-joint-distribution) of \\(X, Y)\\ and not on the prediction function \\f\\, so no choice of \\f\\ can achieve a smaller risk. It is the minimum only among [prediction functions](#def-prediction-function) of the given \\X\\: the [outcome](#def-outcome) may also depend on variables that \\X\\ leaves out, and those variables are part of the unexplained variation \\Y- {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\. Measuring one of them and adding it to the variables in \\X\\ can lower the residual risk, as in [Example 39](#exm-irreducible-risk-added-predictor). [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 makes the same point: the error term “may contain unmeasured variables that are useful in predicting \[\\Y\\\]”.
 
 > **NOTE:**
 >
@@ -1446,7 +1456,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 8* (When the reducible risk is zero). The [reducible risk](#def-reducible-risk) is zero if and only if the [prediction function](#def-prediction) \\f\\ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1.
+> *Remark 9* (When the reducible risk is zero). The [reducible risk](#def-reducible-risk) is zero if and only if the [prediction function](#def-prediction-function) \\f\\ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1.
 >
 > \\ {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}} = 0 \iff \mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}) = 1 \\
 
@@ -1508,7 +1518,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 9* (Rarer values are more surprising). A possible value \\x\\ with [probability](probability-basics.llms.md#def-probability) \\\mathbb{P}(X=x) = 1\\ has [surprisal](#def-surprisal) \\0\\, and the surprisal grows without bound as \\\mathbb{P}(X=x) \to 0\\.
+> *Remark 10* (Rarer values are more surprising). A possible value \\x\\ with [probability](probability-basics.llms.md#def-probability) \\\mathbb{P}(X=x) = 1\\ has [surprisal](#def-surprisal) \\0\\, and the surprisal grows without bound as \\\mathbb{P}(X=x) \to 0\\.
 
 > **NOTE:**
 >
@@ -1572,7 +1582,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 10* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 11* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
@@ -1592,7 +1602,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 11* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 12* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
@@ -1758,7 +1768,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q(x)\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
+> *Remark 13* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q(x)\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -1768,7 +1778,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 13* (The divergence is not symmetric). In general, \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \ne {{D\_{\mathrm{KL}}}\mathopen{}\left(q \\\Vert\\ p\right)\mathclose{}}\\, so KL divergence is not a distance between \\p\\ and \\q\\.
+> *Remark 14* (The divergence is not symmetric). In general, \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \ne {{D\_{\mathrm{KL}}}\mathopen{}\left(q \\\Vert\\ p\right)\mathclose{}}\\, so KL divergence is not a distance between \\p\\ and \\q\\.
 
 > **NOTE:**
 >
@@ -1780,7 +1790,7 @@ Last modified: 2026-10-30 21:19:41 (PDT)
 
 > **NOTE:**
 >
-> *Remark 14* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 15* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
 ## 0.5 Further reading
 

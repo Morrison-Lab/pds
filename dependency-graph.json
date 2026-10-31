@@ -2268,16 +2268,6 @@
    "kind": "thm",
    "title": "Alternate expression for variance of a random vector",
    "external": false
-  },
-  {
-   "id": "sds/estimation#def-estimand",
-   "site": "sds",
-   "page": "estimation",
-   "div": "def-estimand",
-   "kind": "def",
-   "title": "estimand",
-   "external": true,
-   "url": "https://morrison-lab.github.io/sds/estimation.html#def-estimand"
   }
  ],
  "edges": [
@@ -2639,27 +2629,11 @@
   ],
   [
    "pds/expectation#def-prediction-error",
-   "pds/expectation#def-cond-expectation-function"
-  ],
-  [
-   "pds/expectation#def-prediction-error",
-   "pds/expectation#def-input"
-  ],
-  [
-   "pds/expectation#def-prediction-error",
-   "pds/expectation#def-new-observation"
-  ],
-  [
-   "pds/expectation#def-prediction-error",
    "pds/expectation#def-outcome"
   ],
   [
    "pds/expectation#def-prediction-error",
-   "pds/expectation#def-prediction-function"
-  ],
-  [
-   "pds/expectation#def-prediction-error",
-   "sds/estimation#def-estimand"
+   "pds/expectation#def-prediction"
   ],
   [
    "pds/expectation#def-prediction-function",
@@ -2780,6 +2754,10 @@
   [
    "pds/expectation#lem-prediction-error-split",
    "pds/expectation#def-prediction-error"
+  ],
+  [
+   "pds/expectation#lem-prediction-error-split",
+   "pds/expectation#def-prediction-function"
   ],
   [
    "pds/expectation#thm-bernoulli-mean",
