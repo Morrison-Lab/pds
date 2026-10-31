@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-30 17:59:07 (PDT)
+Last modified: 2026-10-30 18:14:22 (PDT)
 
 > **NOTE:**
 >
@@ -1336,7 +1336,7 @@ Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
-> **Definition 19 (Squared-error risk (expected prediction error))** The **squared-error risk** of a [prediction function](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\, also called its **expected prediction error** [\[13, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
+> **Definition 19 (Squared-error risk (expected prediction error))** The **squared-error risk** of a [prediction function](#def-prediction-function) \\f\\, also called its **expected prediction error** [\[13, p. 18\]](#ref-hastie2009elements), is the expected square of its [prediction error](#def-prediction-error):
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
@@ -1350,13 +1350,15 @@ Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
-> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\, the [prediction error](#def-prediction-error) is the prediction error of \\\mu\\ plus the [deviation](variance-covariance.llms.md#def-deviation) of \\{f\mathopen{}\left(X\right)\mathclose{}}\\ from \\{\mu\mathopen{}\left(X\right)\mathclose{}}\\:
+> **Lemma 2 (Prediction error splits at the conditional mean)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\, the [prediction error](#def-prediction-error) of \\f\\ is the prediction error of \\\mu\\ plus the [deviation](variance-covariance.llms.md#def-deviation) of \\{f\mathopen{}\left(X\right)\mathclose{}}\\ from \\{\mu\mathopen{}\left(X\right)\mathclose{}}\\:
 >
 > \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} = {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}\\
 
 > **NOTE:**
 >
-> *Proof*. \\ \begin{aligned} {{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} &= {f\mathopen{}\left(X\right)\mathclose{}} - Y && \text{(definition of } {{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} \text{)} \\ &= \mathopen{}\left({\mu\mathopen{}\left(X\right)\mathclose{}} - Y\right)\mathclose{} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}} && \text{(add and subtract } {\mu\mathopen{}\left(X\right)\mathclose{}} \text{)} \\ &= {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}} && \text{(definition of } {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} \text{)} \end{aligned} \\
+> *Proof*. The notation \\{{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}}\\ is introduced in [Remark 6](#rem-prediction-error).
+>
+> \\ \begin{aligned} {{\varepsilon\_{\text{pred}}}\mathopen{}\left(f\right)\mathclose{}} &= {f\mathopen{}\left(X\right)\mathclose{}} - Y && \text{(prediction error notation)} \\ &= \mathopen{}\left({\mu\mathopen{}\left(X\right)\mathclose{}} - Y\right)\mathclose{} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}} && \text{(add and subtract } {\mu\mathopen{}\left(X\right)\mathclose{}} \text{)} \\ &= {{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} + {\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}} && \text{(prediction error notation)} \end{aligned} \\
 
 > **NOTE:**
 >
@@ -1364,7 +1366,7 @@ Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
-> **Lemma 3 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Lemma 3 (The conditional mean’s error is uncorrelated with any function of the input)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{\mathbb{E}\mathopen{}\left\[{{\varepsilon\_{\text{pred}}}\mathopen{}\left(\mu\right)\mathclose{}} \cdot\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}\right\]\mathclose{}} = 0\\
 
@@ -1384,7 +1386,7 @@ Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 12 (Squared-error risk decomposition)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Theorem 12 (Squared-error risk decomposition)** Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. For any [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} = {R\mathopen{}\left(\mu\right)\mathclose{}} + {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left({f\mathopen{}\left(X\right)\mathclose{}} - {\mu\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}}\\
 
@@ -1400,7 +1402,7 @@ Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. Write \\f^\*\stackrel{\text{def}}{=}\mu\\ for the prediction function that uses it. Then for any [prediction function](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
+> **Theorem 13 (Conditional mean minimizes squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Let \\{\mu\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}}\\ be the [conditional expectation function](#def-cond-expectation-function) of \\Y\\ given \\X\\. Write \\f^\*\stackrel{\text{def}}{=}\mu\\ for the [prediction function](#def-prediction-function) that uses it. Then for any [prediction function](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\:
 >
 > \\{R\mathopen{}\left(f\right)\mathclose{}} \ge {R\mathopen{}\left(f^\*\right)\mathclose{}}\\
 >
@@ -1472,7 +1474,7 @@ Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Among [prediction functions](#def-prediction-function) \\{f\mathopen{}\left(X\right)\mathclose{}}\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\, the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
+> **Corollary 4 (Conditional mean as the minimizer of squared-error risk)** Let \\X\\ and \\Y\\ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) random variables with \\{\mathbb{E}\mathopen{}\left\[Y^2\right\]\mathclose{}} \< \infty\\. Among [prediction functions](#def-prediction-function) \\f\\ with \\{\mathbb{E}\mathopen{}\left\[{f\mathopen{}\left(X\right)\mathclose{}}^2\right\]\mathclose{}} \< \infty\\, the [conditional expectation function](#def-cond-expectation-function) is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk):
 >
 > \\{\mathbb{E}\mathopen{}\left\[Y\mid X\right\]\mathclose{}} \in \arg \min\_{f} {\mathbb{E}\mathopen{}\left\[{\mathopen{}\left(Y- {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right\]\mathclose{}},\\
 >
