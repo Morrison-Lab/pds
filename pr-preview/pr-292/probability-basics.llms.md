@@ -14,9 +14,9 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:57:11 (PDT)
+Last modified: 2026-10-30 17:59:07 (PDT)
 
-## 1 Defining probabilities
+## 0.1 Defining probabilities
 
 > **NOTE:**
 >
@@ -315,7 +315,7 @@ Last modified: 2026-10-29 15:57:11 (PDT)
 > #> [1] 0.5076531
 > ```
 
-## 2 Odds
+## 0.2 Odds
 
 > **NOTE:**
 >
@@ -354,7 +354,7 @@ Last modified: 2026-10-29 15:57:11 (PDT)
 >
 > The log-odds are positive because the [odds](#def-odds) exceed 1: an American car is more likely than not.
 
-## 3 Conditional probability
+## 0.3 Conditional probability
 
 > **NOTE:**
 >
@@ -650,5 +650,23 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[17\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+# Definitions on this page
+
+- [Definition 1 (Step)](#def-step)
+- [Definition 2 (Procedure)](#def-procedure)
+- [Definition 3 (Outcome)](#def-experiment-outcome)
+- [Definition 4 (Random experiment)](#def-random-experiment)
+- [Definition 5 (Sample space)](#def-sample-space)
+- [Definition 6 (Event)](#def-event)
+- [Definition 7 (Occurrence of an event)](#def-occurs)
+- [Definition 8 (Complement of an event)](#def-complement)
+- [Definition 9 (Mutually exclusive events (disjoint, pairwise disjoint, mutually disjoint))](#def-mutually-exclusive)
+- [Definition 10 (Partition of an event)](#def-partition)
+- [Definition 11 (Probability measure (probability function))](#def-probability)
+- [Definition 12 (Choosing at random)](#def-random-choice)
+- [Definition 13 (Odds)](#def-odds)
+- [Definition 14 (Log-odds (also called the logit))](#def-log-odds)
+- [Definition 15 (Conditional probability)](#def-conditional-prob)
 
 Back to top

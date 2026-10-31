@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:57:11 (PDT)
+Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
@@ -50,13 +50,13 @@ Last modified: 2026-10-29 15:57:11 (PDT)
 >
 > Table 2: Distributions typically used for test statistics
 
-## 1 The Bernoulli distribution
+## 0.1 The Bernoulli distribution
 
 > **NOTE:**
 >
 > **Example 1 (A coin flip)** The [Bernoulli distribution](random-variables.llms.md#def-bernoulli) describes a binary outcome. The indicator of heads on one flip of a fair coin is \\\operatorname{Ber}(1/2)\\. By the [expectation of the Bernoulli distribution](expectation.llms.md#thm-bernoulli-mean), \\X \sim \operatorname{Ber}(\pi)\\ has mean \\\pi\\, and by the [variance of a Bernoulli random variable](variance-covariance.llms.md#exm-variance-bernoulli), it has variance \\\pi(1 - \pi)\\.
 
-## 2 The binomial distribution
+## 0.2 The binomial distribution
 
 > **NOTE:**
 >
@@ -135,7 +135,7 @@ Last modified: 2026-10-29 15:57:11 (PDT)
 >
 > On average, one of the five patients responds.
 
-## 3 The Poisson distribution
+## 0.3 The Poisson distribution
 
 > **NOTE:**
 >
@@ -430,7 +430,7 @@ print(plot2)
 >
 > \\ \begin{aligned} Z &\sim \operatorname{Pois}(\mu_X + \mu_Y) && (\text{sum of independent Poissons}) \\ &= \operatorname{Pois}(12 + 18) && (\text{substitute region means}) \\ &= \operatorname{Pois}(30) && (\text{evaluate sum}) \end{aligned} \\
 
-## 4 The Negative-Binomial distribution
+## 0.4 The Negative-Binomial distribution
 
 > **NOTE:**
 >
@@ -493,7 +493,7 @@ print(plot2)
 >
 > three times the variance of a \\\operatorname{Pois}(4)\\ count with the same mean.
 
-## 5 The Laplace distribution
+## 0.5 The Laplace distribution
 
 > **NOTE:**
 >
@@ -589,7 +589,7 @@ print(plot2)
 >
 > The Laplace distribution puts about 5.3 times as much probability beyond \\3\\ standard deviations as the normal distribution does.
 
-## 6 Weibull distribution
+## 0.6 Weibull distribution
 
 > **NOTE:**
 >
@@ -671,7 +671,7 @@ print(plot2)
 >
 > \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[T\right\]\mathclose{}} &= \Gamma(3/2) \\ &= \sqrt{\pi}/2 \\ &\approx 0.886. \end{aligned} \\
 
-## 7 The multivariate normal distribution
+## 0.7 The multivariate normal distribution
 
 > **NOTE:**
 >
@@ -884,7 +884,7 @@ print(plot2)
 > >
 > > Figure 4: The contours of the Mahalanobis distance at \\1\\ and \\2\\ for the example. The dots are the points \\\sqrt{3}\\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{q}}\vphantom{q}}\_1\\ and \\\mathord{\smash\[b\]{\underset{\raise.3ex\hbox{\$\scriptstyle\sim\$}}{q}}\vphantom{q}}\_2\\ of the example on the inner ellipse.
 
-## 8 Mixture distributions
+## 0.8 Mixture distributions
 
 > **NOTE:**
 >
@@ -1028,5 +1028,21 @@ Wikipedia contributors, “Mahalanobis distance — Wikipedia, the free encyclop
 \[9\]
 
 Wikipedia contributors, “Mixture distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Mixture_distribution>
+
+# Definitions on this page
+
+- [Definition 1 (Binomial distribution)](#def-binomial)
+- [Definition 2 (Poisson distribution)](#def-poisson)
+- [Definition 3 (Exposure magnitude)](#def-exposure)
+- [Definition 4 (Event rate)](#def-event-rate)
+- [Definition 5 (Offset)](#def-offset)
+- [Definition 6 (Negative binomial distribution)](#def-nb)
+- [Definition 7 (Laplace distribution)](#def-laplace)
+- [Definition 8 (Weibull distribution)](#def-weibull)
+- [Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))](#def-mvn)
+- [Definition 10 (Mahalanobis distance)](#def-mahalanobis)
+- [Definition 11 (Mixture density)](#def-mixture)
+- [Definition 12 (Mixture component)](#def-mixture-component)
+- [Definition 13 (Responsibility of a mixture component)](#def-responsibility)
 
 Back to top

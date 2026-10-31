@@ -3,6 +3,16 @@
  "meaning": "edge [A, B] means A uses B: B is a prerequisite of A, A a postrequisite of B",
  "nodes": [
   {
+   "id": "mds/algebra#def-argmax",
+   "site": "mds",
+   "page": "algebra",
+   "div": "def-argmax",
+   "kind": "def",
+   "title": "argmax",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra.html#def-argmax"
+  },
+  {
    "id": "mds/algebra-basics#def-argmin",
    "site": "mds",
    "page": "algebra-basics",
@@ -645,7 +655,7 @@
    "page": "expectation",
    "div": "def-entropy",
    "kind": "def",
-   "title": "Entropy",
+   "title": "Entropy (differential entropy, for continuous random variables)",
    "external": false
   },
   {
@@ -793,6 +803,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#def-surprisal-continuous",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-surprisal-continuous",
+   "kind": "def",
+   "title": "Surprisal of a value of a continuous random variable",
+   "external": false
+  },
+  {
    "id": "pds/expectation#lem-cross-term-zero",
    "site": "pds",
    "page": "expectation",
@@ -874,12 +893,39 @@
    "external": false
   },
   {
-   "id": "pds/expectation#thm-cross-entropy-expectation",
+   "id": "pds/expectation#thm-cross-entropy-continuous",
    "site": "pds",
    "page": "expectation",
-   "div": "thm-cross-entropy-expectation",
+   "div": "thm-cross-entropy-continuous",
    "kind": "thm",
-   "title": "Cross-entropy as an expected negative log probability",
+   "title": "Cross-entropy of two densities",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-cross-entropy-discrete",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-cross-entropy-discrete",
+   "kind": "thm",
+   "title": "Cross-entropy of two mass functions",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-entropy-continuous",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-entropy-continuous",
+   "kind": "thm",
+   "title": "Entropy of a continuous random variable",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-entropy-discrete",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-entropy-discrete",
+   "kind": "thm",
+   "title": "Entropy of a discrete random variable",
    "external": false
   },
   {
@@ -2411,11 +2457,15 @@
   ],
   [
    "pds/expectation#cor-cross-entropy-entropy",
-   "pds/random-variables#def-discrete-rv"
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/expectation#cor-cross-entropy-entropy",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#cor-fubini-joint",
@@ -2471,11 +2521,31 @@
   ],
   [
    "pds/expectation#def-cross-entropy",
-   "pds/expectation#def-entropy"
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/expectation#def-surprisal-continuous"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/expectation#def-cross-entropy",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-cross-entropy",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#def-entropy",
@@ -2487,7 +2557,19 @@
   ],
   [
    "pds/expectation#def-entropy",
-   "pds/random-variables#def-pmf"
+   "pds/expectation#def-surprisal-continuous"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#def-entropy",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#def-expectation",
@@ -2626,6 +2708,26 @@
    "pds/random-variables#def-random-variable"
   ],
   [
+   "pds/expectation#def-surprisal-continuous",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-surprisal-continuous",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#def-surprisal-continuous",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#def-surprisal-continuous",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#def-surprisal-continuous",
+   "pds/random-variables#def-pdf"
+  ],
+  [
    "pds/expectation#lem-cross-term-zero",
    "pds/expectation#def-cond-expectation-function"
   ],
@@ -2686,20 +2788,48 @@
    "pds/expectation#def-cond-expectation-general"
   ],
   [
-   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#thm-cross-entropy-continuous",
    "pds/expectation#def-cross-entropy"
   ],
   [
-   "pds/expectation#thm-cross-entropy-expectation",
-   "pds/expectation#def-expectation"
+   "pds/expectation#thm-cross-entropy-continuous",
+   "pds/random-variables#def-continuous-rv"
   ],
   [
-   "pds/expectation#thm-cross-entropy-expectation",
+   "pds/expectation#thm-cross-entropy-continuous",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-continuous",
+   "pds/random-variables#def-range"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-discrete",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-discrete",
+   "pds/expectation#thm-entropy-discrete"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-discrete",
    "pds/random-variables#def-pmf"
   ],
   [
-   "pds/expectation#thm-cross-entropy-expectation",
-   "pds/random-variables#def-random-variable"
+   "pds/expectation#thm-entropy-continuous",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-continuous",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete",
+   "pds/random-variables#def-pmf"
   ],
   [
    "pds/expectation#thm-fubini-tonelli-measure",
@@ -3119,11 +3249,23 @@
   ],
   [
    "pds/random-variables#def-mode",
+   "mds/algebra#def-argmax"
+  ],
+  [
+   "pds/random-variables#def-mode",
    "pds/random-variables#def-pdf"
   ],
   [
    "pds/random-variables#def-mode",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#def-mode",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#def-normal",
@@ -3227,11 +3369,23 @@
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
+   "mds/algebra#def-argmax"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
    "pds/random-variables#def-kernel"
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
    "pds/random-variables#def-mode"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/random-variables#thm-kernel-same-mode",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#thm-no-joint-density-diagonal",

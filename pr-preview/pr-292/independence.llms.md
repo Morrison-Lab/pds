@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:57:11 (PDT)
+Last modified: 2026-10-30 17:59:07 (PDT)
 
 > **NOTE:**
 >
@@ -259,5 +259,14 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[8\]
 
 5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
+
+# Definitions on this page
+
+- [Definition 1 (Statistical independence)](#def-indpt)
+- [Definition 2 (Conditional independence)](#def-cind)
+- [Definition 3 (Identically distributed)](#def-ident)
+- [Definition 4 (Conditionally identically distributed)](#def-cident)
+- [Definition 5 (Independent and identically distributed)](#def-iid)
+- [Definition 6 (Conditionally independent and identically distributed)](#def-ciid)
 
 Back to top

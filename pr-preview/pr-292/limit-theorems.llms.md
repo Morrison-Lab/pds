@@ -14,9 +14,9 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:57:11 (PDT)
+Last modified: 2026-10-30 17:59:07 (PDT)
 
-## 1 The Central Limit Theorem
+## 0.1 The Central Limit Theorem
 
 > **NOTE:**
 >
@@ -238,7 +238,7 @@ Last modified: 2026-10-29 15:57:11 (PDT)
 >
 > 5MinuteAI explains [limit theorems](https://www.youtube.com/watch?v=6sQv1o-ttCw) and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw), following the University of Washington’s CSE 312 [\[3\]](#ref-fiveminuteai_probstat).
 
-## 2 Tail bounds
+## 0.2 Tail bounds
 
 > **NOTE:**
 >
@@ -511,7 +511,7 @@ Last modified: 2026-10-29 15:57:11 (PDT)
 >
 > The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
 
-## 3 The law of large numbers
+## 0.3 The law of large numbers
 
 > **NOTE:**
 >
@@ -602,5 +602,9 @@ G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 200
 \[14\]
 
 Wikipedia contributors, “Law of large numbers — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_large_numbers>
+
+# Definitions on this page
+
+- [Definition 1 (Convergence in probability)](#def-convergence-in-probability)
 
 Back to top
