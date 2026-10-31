@@ -1,0 +1,7 @@
+::: {#rem-kl-asymmetric}
+#### The divergence is not symmetric
+
+In general, $\kldivf{p}{q} \ne \kldivf{q}{p}$,
+so KL divergence is not a distance between $p$ and $q$.
+
+:::

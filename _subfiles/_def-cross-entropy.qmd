@@ -1,17 +1,20 @@
 :::{#def-cross-entropy}
 #### Cross-entropy
 
-Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf)
-on the same finite set of outcomes $\set{1, \ldots, K}$,
-with $p_k$ and $q_k$ the probabilities of outcome $k$.
+Let $X$ be a [random variable](random-variables.qmd#def-random-variable) with
+[probability mass function](random-variables.qmd#def-pmf) or [density](random-variables.qmd#def-pdf) $p$,
+and let $q$ be a [mass function](random-variables.qmd#def-pmf) or density on the same values.
 The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
-is
+is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
+of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $\surprisal_q$ measured by $q$,
+where $\surprisal_q\paren{x} \eqdef -\log q\paren{x}$:
 
-$$\crossentropyf{p}{q} \eqdef -\sumto{k}{K} p_k \log q_k.$$
+$$\crossentropyf{p}{q} \eqdef \E{\surprisal_q\paren{X}}.$$
 
-We take $-\log 0 = \infty$, so when $q_k = 0$ for an outcome with $p_k > 0$, the cross-entropy is infinite.
-A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#def-entropy).
+We take $-\log 0 = \infty$,
+so when $\P(q(X) = 0) > 0$,
+the cross-entropy is infinite.
 
 :::
 
@@ -49,11 +52,11 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_exr-cross-entropy-general-sum.qmd >}}
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_sol-cross-entropy-general-sum.qmd >}}
 
 {{< slidebreak >}}
 
@@ -73,7 +76,15 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-expectation.qmd >}}
+{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-discrete.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_thm-cross-entropy-continuous.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exm-cross-entropy-continuous.qmd >}}
 
 {{< slidebreak >}}
 
@@ -117,60 +128,16 @@ A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#de
 
 {{< slidebreak >}}
 
-:::{#def-kl-divergence}
-#### Kullback--Leibler divergence (KL divergence, relative entropy)
-
-For $p$ and $q$ as in @def-cross-entropy,
-the **Kullback--Leibler divergence** (**KL divergence**, or **relative entropy**)
-of $q$ from $p$ is
-
-$$\kldivf{p}{q} \eqdef \sumto{k}{K} p_k \log \frac{p_k}{q_k} = \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
-
-:::
-
-::: {#rem-kl-asymmetric}
-#### The divergence is not symmetric
-
-In general, $\kldivf{p}{q} \ne \kldivf{q}{p}$,
-so KL divergence is not a distance between $p$ and $q$.
-
-:::
+{{< include pds/_subfiles/def-cross-entropy/_def-kl-divergence.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-cross-entropy}
-#### Cross-entropy and divergence for two coins
+{{< include pds/_subfiles/def-cross-entropy/_rem-kl-asymmetric.qmd >}}
 
-Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin
-and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome.
-Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$
-and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
+{{< slidebreak >}}
 
-$$
-\ba
-\crossentropyf{p}{q} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
-&= 1 + \tfrac{1}{2} \paren{2 - \log_2 3} \\
-&= 2 - \tfrac{1}{2} \log_2 3 \\
-&\approx 1.208, \\
-\crossentropyf{p}{p} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
-&= 1, \\
-\kldivf{p}{q} &= \crossentropyf{p}{q} - \crossentropyf{p}{p} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
-\ea
-$$
+{{< include pds/_subfiles/def-cross-entropy/_exm-cross-entropy.qmd >}}
 
-Here the cross-entropy is larger than the entropy of $p$,
-and the divergence is the difference.
+{{< slidebreak >}}
 
-:::
-
-::: {#rem-cross-entropy-source}
-#### Where the definitions come from
-
-@murphy2012mlpp [section 2.8.2, pp. 57--58] defines the KL divergence
-and the cross-entropy as above,
-and gives the coding interpretation:
-the cross-entropy is the average number of bits needed
-to encode data from a source with distribution $p$
-using a code designed for $q$.
-
-:::
+{{< include pds/_subfiles/def-cross-entropy/_rem-cross-entropy-source.qmd >}}

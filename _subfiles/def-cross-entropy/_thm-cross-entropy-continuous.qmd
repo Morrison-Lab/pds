@@ -1,0 +1,42 @@
+:::{#thm-cross-entropy-continuous}
+#### Cross-entropy of two densities
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [density](random-variables.qmd#def-pdf) $p$ on its [range](random-variables.qmd#def-range) $\rangef{X}$,
+and let $q$ be a density on $\rangef{X}$,
+with $q(x) > 0$ wherever $p(x) > 0$.
+Then the [cross-entropy](#def-cross-entropy) is
+
+$$\crossentropyf{p}{q} = -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx.$$
+
+The integrand is taken to be $0$ where $p(x) = 0$.
+Otherwise, if $\P(q(X) = 0) > 0$,
+both sides are $\infty$.
+
+:::
+
+::: proof
+
+Let $g(x) \eqdef -\log q(x)$,
+so that $-\log q(X) = g(X)$.
+Then [LOTUS](#thm-lotus) gives
+
+$$
+\ba
+\crossentropyf{p}{q}
+&= \E{g(X)} && \text{(definition)} \\
+&= \int_{x \in \rangef{X}} g(x) \cd p(x) \, dx && \text{(LOTUS)} \\
+&= -\int_{x \in \rangef{X}} p(x) \log q(x) \, dx. && \text{(definition of } g \text{)}
+\ea
+$$
+
+Now suppose $\P(q(X) = 0) > 0$.
+Then $-\log q(X) \ge 0$,
+and $-\log q(X) = \infty$ with positive [probability](probability-basics.qmd#def-probability),
+so $\crossentropyf{p}{q} = \infty$.
+The integrand $-p(x) \log q(x)$ is $\infty$
+wherever $q(x) = 0$ and $p(x) > 0$,
+which is a region of positive probability under $p$,
+and it is never $-\infty$,
+so the right side is also $\infty$.
+
+:::
