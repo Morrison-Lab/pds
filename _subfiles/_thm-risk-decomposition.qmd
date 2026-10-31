@@ -2,7 +2,7 @@
 #### Squared-error risk decomposition
 
 Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
-For any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
+For any [prediction function](#def-prediction-function) $\predfn$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
 $$\popriskf{\predfn} = \popriskf{\truemean} + \E{\sqf{\predfnf{\Predvar} - \truemeanf{\Predvar}}}$$
 
@@ -36,17 +36,5 @@ $$
 && \text{(definition of the squared-error risk of } \truemean \text{)}
 \ea
 $$
-
-:::
-
-{{< slidebreak >}}
-
-:::{#exm-risk-decomposition}
-#### The risk decomposition in the best-predictor exercise
-
-In @exr-best-predictor,
-the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$ has [squared-error risk](#def-squared-error-risk) $\popriskf{\predfn_1} = 5$,
-which @thm-risk-decomposition splits as $5 = 1 + 4$:
-the risk $1$ of the [conditional expectation function](#def-cond-expectation-function) plus the excess $4$ from using $\predfn_1$.
 
 :::

@@ -3,8 +3,8 @@
 
 Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
 Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
-Write $\bestpredfn \eqdef \truemean$ for the prediction function that uses it.
-Then for any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
+Write $\bestpredfn \eqdef \truemean$ for the [prediction function](#def-prediction-function) that uses it.
+Then for any prediction function $\predfn$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
 $$\popriskf{\predfn} \ge \popriskf{\bestpredfn}$$
 

@@ -1,0 +1,7 @@
+:::{#def-prediction-function}
+#### Prediction function
+
+A **prediction function** $\predfn$ is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) that takes a value $\predvar$ of the [input](#def-input)
+and returns a [prediction](#def-prediction) $\predfnf{\predvar}$ of the [outcome](#def-outcome).
+
+:::

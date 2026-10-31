@@ -1,0 +1,8 @@
+:::{#exm-prediction-function}
+#### A constant prediction function
+
+In @exr-best-predictor,
+the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $\predfn_1\paren{\predvar} = 3$ is a [prediction function](#def-prediction-function):
+it returns the [prediction](#def-prediction) $3$ for every value of the [input](#def-input).
+
+:::

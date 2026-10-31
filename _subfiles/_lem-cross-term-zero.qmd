@@ -2,7 +2,7 @@
 #### The conditional mean's error is uncorrelated with any function of the input
 
 Let $\truemeanf{\Predvar} \eqdef \E{\Outvar \mid \Predvar}$ be the [conditional expectation function](#def-cond-expectation-function) of $\Outvar$ given $\Predvar$.
-For any [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$:
+For any [prediction function](#def-prediction-function) $\predfn$ with $\E{\predfnf{\Predvar}^2} < \infty$:
 
 $$\E{\prederrf{\truemean} \cd \paren{\predfnf{\Predvar} - \truemeanf{\Predvar}}} = 0$$
 
@@ -42,19 +42,5 @@ $$
 && \text{(expectation of a constant)}
 \ea
 $$
-
-:::
-
-{{< slidebreak >}}
-
-:::{#exm-cross-term-zero}
-#### The vanishing cross term in the best-predictor exercise
-
-In @exr-best-predictor, take the constant [prediction](#def-prediction) $\predfn_1\paren{\Predvar} = 3$.
-When $\Predvar = 0$, $\truemeanf{0} = 1$, so $\predfn_1\paren{0} - \truemeanf{0} = 2$,
-and $\prederrf{\truemean} = 1 - \Outvar$ is $1$ or $-1$ with equal [probability](#def-probability),
-so the product has conditional mean $0$.
-The same cancellation happens when $\Predvar = 1$,
-so the expectation of the product is $0$.
 
 :::

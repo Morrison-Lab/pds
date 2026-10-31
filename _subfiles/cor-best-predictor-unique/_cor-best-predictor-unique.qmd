@@ -2,7 +2,7 @@
 #### The minimizer of squared-error risk is unique up to probability-1 equality
 
 Let $\Predvar$ and $\Outvar$ be [jointly distributed](random-variables.qmd#def-jointly-distributed) random variables with $\E{\Outvar^2} < \infty$.
-Every [prediction function](#def-prediction) $\predfnf{\Predvar}$ with $\E{\predfnf{\Predvar}^2} < \infty$
+Every [prediction function](#def-prediction-function) $\predfn$ with $\E{\predfnf{\Predvar}^2} < \infty$
 that is a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer) of the [squared-error risk](#def-squared-error-risk)
 (see @cor-best-predictor-argmin)
 satisfies:
