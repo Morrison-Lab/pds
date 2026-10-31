@@ -1,0 +1,11 @@
+:::{#exm-prediction-error-split}
+#### The split in the best-predictor exercise
+
+In @exr-best-predictor,
+when $\Predvar = 0$ and $\Outvar = 0$,
+the constant [prediction function](#def-prediction-function) $\predfn_1$, with $\predfn_1\paren{\Predvar} = 3$, has [prediction error](#def-prediction-error) $\prederrf{\predfn_1} = 3$.
+The conditional mean is $\truemeanf{0} = 1$,
+so $\prederrf{\truemean} = 1$ and $\devof{\predfn_1\paren{0}}{\truemeanf{0}} = 2$,
+and $3 = 1 + 2$.
+
+:::

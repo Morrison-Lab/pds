@@ -123,6 +123,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_rem-prediction-error.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-squared-error-risk.qmd >}}
 
 {{< slidebreak >}}
@@ -136,6 +140,10 @@ format:
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_lem-prediction-error-split.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-prediction-error-split.qmd >}}
 
 {{< slidebreak >}}
 

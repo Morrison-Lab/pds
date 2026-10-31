@@ -4,7 +4,7 @@
 The [residual risk](#def-irreducible-risk) depends only on the [joint distribution](random-variables.qmd#def-joint-distribution) of $(\Predvar, \Outvar)$
 and not on the prediction function $\predfn$,
 so no choice of $\predfn$ can achieve a smaller risk.
-It is the minimum only among [prediction functions](#def-prediction) of the given $\Predvar$:
+It is the minimum only among [prediction functions](#def-prediction-function) of the given $\Predvar$:
 the [outcome](#def-outcome) may also depend on variables that $\Predvar$ leaves out,
 and those variables are part of the unexplained variation $\Outvar - \E{\Outvar \mid \Predvar}$.
 Measuring one of them and adding it to the variables in $\Predvar$ can lower the residual risk,
