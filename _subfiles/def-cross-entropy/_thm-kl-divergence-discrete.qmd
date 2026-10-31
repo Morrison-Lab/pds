@@ -3,7 +3,8 @@
 
 Let $p$ and $q$ be [probability mass functions](random-variables.qmd#def-pmf) on $\set{1, \ldots, K}$,
 with $p_k$ and $q_k$ the probabilities of [outcome](#def-outcome) $k$,
-and suppose $q_k > 0$ whenever $p_k > 0$.
+and suppose $q_k > 0$
+whenever $p_k > 0$.
 Then the [KL divergence](#def-kl-divergence) is
 
 $$\kldivf{p}{q} = \sumto{k}{K} p_k \log \frac{p_k}{q_k}.$$
