@@ -200,6 +200,7 @@ format:
     # Replaces Quarto's two-way toggle with a Light / Off-white / Parchment / Dark dropdown.
     include-in-header: theme-picker.html
     include-after-body:
+      - tabset-code-in-tabs.html
       - anchor-landing.html
       - watch-anchors.html
       - table-roles.html
@@ -235,6 +236,7 @@ format:
     search: false # decks duplicate the HTML pages, so the search indexes only the HTML format
     theme: [simple, styles-reveal.scss]
     include-in-header: qwt-reveal-toggle.html
+    include-after-body: tabset-code-in-tabs.html
     slide-number: true
     chalkboard: false
     preview-links: auto
