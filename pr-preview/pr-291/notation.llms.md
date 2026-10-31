@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:56:46 (PDT)
+Last modified: 2026-10-30 17:58:59 (PDT)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
@@ -17,13 +17,13 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 - Other sources often use other symbols for these. The [notation choices page](https://morrison-lab.github.io/macros/notation-choices.html#sec-probability-notation) lists the alternatives; always check a new source’s own notation section before assuming ours.
 - The full macro list, with more notational variants, is in [`latex-macros`](https://github.com/Morrison-Lab/macros).
 
-## 1 Stochastic vs. probabilistic vs. random
+## 0.1 Stochastic vs. probabilistic vs. random
 
 > **NOTE:**
 >
 > *Remark*. The terms “stochastic”, “probabilistic”, and “random” are frequently used in statistics and probability theory, often interchangeably in everyday conversation, but they carry nuanced technical distinctions.
 
-### 1.1 Key distinction: modeling approach vs. phenomena
+### 0.1.1 Key distinction: modeling approach vs. phenomena
 
 > **NOTE:**
 >
@@ -67,7 +67,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 >
 > *Remark*. The model is probabilistic because of its error distribution, not because of the method used to fit it. The same model is probabilistic whether its parameters are estimated by maximum likelihood or by Bayesian inference. Bayesian inference additionally assigns a probability distribution to the parameters themselves, which makes the inference method probabilistic too.
 
-### 1.2 Summary of usage
+### 0.1.2 Summary of usage
 
 > **NOTE:**
 >
@@ -83,7 +83,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 >
 > *Remark*. While some sources treat “stochastic” and “random” as practically synonymous, a common convention is to use “random” for variables and events, and “stochastic” for processes, especially to highlight temporal or spatial structure in the modeling.
 
-### 1.3 Additional resources
+### 0.1.3 Additional resources
 
 > **NOTE:**
 >
@@ -107,5 +107,11 @@ D. Stirzaker, *Stochastic processes and models*. Oxford: Oxford University Press
 \[3\]
 
 O. Kallenberg, *Foundations of modern probability*, 2nd ed. New York: Springer, 2002. doi: [10.1007/978-1-4757-4015-8](https://doi.org/10.1007/978-1-4757-4015-8).
+
+# Definitions on this page
+
+- [Definition 1 (Random)](#def-random)
+- [Definition 2 (Stochastic process (random process))](#def-stochastic-process)
+- [Definition 3 (Probabilistic)](#def-probabilistic)
 
 Back to top

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-10-29 15:56:46 (PDT)
+Last modified: 2026-10-30 17:58:59 (PDT)
 
 > **NOTE:**
 >
@@ -247,7 +247,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 >
 > *Proof*. This is the solution to [Exercise 1](#exr-linearity-use), worked in [Solution 1](#sol-linearity-use). It follows from [Theorem 4](#thm-linearity-expectation), which needs no independence and applies because each \\\mathbb{E}\[X_i\] = \mu\\ is finite.
 
-## 1 Conditional distributions and expectations
+## 0.1 Conditional distributions and expectations
 
 > **NOTE:**
 >
@@ -690,7 +690,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 >
 > There are only four \\(x,y)\\ pairs here, so summing them in any order — row by row, column by column, or any other listing — gives the same total by ordinary commutativity and associativity of addition; no result about interchanging summation order is needed. Once the support is countably infinite, exchanging the order of summation needs a justification, which the Fubini–Tonelli theorem provides.
 
-## 2 Fubini–Tonelli for expectations
+## 0.2 Fubini–Tonelli for expectations
 
 > **NOTE:**
 >
@@ -1148,7 +1148,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 >
 > With \\q = 0.5\\, the truncated sum-of-integrals matches the closed form \\\frac{1}{2(1-q)} = 1\\.
 
-## 3 Loss and risk
+## 0.3 Loss and risk
 
 > **NOTE:**
 >
@@ -1492,7 +1492,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 >
 > **Example 42 (Uniqueness in the best-predictor exercise)** In [Exercise 7](#exr-best-predictor), \\f_2\mathopen{}\left(X\right)\mathclose{} = 4X\\ differs from \\{f^\*\mathopen{}\left(X\right)\mathclose{}}\\ when \\X= 0\\, which has probability \\0.5\\. So \\f_2\\ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) \\2\\ being larger than \\1\\.
 
-## 4 Entropy and cross-entropy
+## 0.4 Entropy and cross-entropy
 
 > **NOTE:**
 >
@@ -1512,11 +1512,63 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> **Definition 23 (Entropy)** The **entropy** of a *discrete* random variable \\X\\ with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\ [\[18\]](#ref-wikipedia_entropy_information_theory):
+> **Definition 23 (Surprisal of a value of a continuous random variable)** The **surprisal** of a possible value \\x\\ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) \\X\\ with [probability density function](random-variables.llms.md#def-pdf) \\\operatorname{p}(X=x)\\ and \\\operatorname{p}(X=x) \> 0\\ is
 >
-> \\{H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x)\\
+> \\{s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \operatorname{p}(X=x).\\
+>
+> This extends the [surprisal](#def-surprisal) of a value of a [discrete random variable](random-variables.llms.md#def-discrete-rv), with the [density](random-variables.llms.md#def-pdf) in place of the [probability](probability-basics.llms.md#def-probability).
+
+> **NOTE:**
+>
+> **Example 44 (Surprisal of a value of a uniform random variable)** Let \\X\\ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from \\0\\ to \\a \> 0\\, so that its [density](random-variables.llms.md#def-pdf) is \\\operatorname{p}(X=x) = 1/a\\ for \\0 \< x \< a\\. Every value in the interval has [surprisal](#def-surprisal-continuous)
+>
+> \\{s\mathopen{}\left(x\right)\mathclose{}} = -\log \tfrac{1}{a} = \log a.\\
+>
+> With \\a = \tfrac{1}{2}\\ and logarithms to base 2, the surprisal of every value is \\\log_2 \tfrac{1}{2} = -1\\ bit. A density value can exceed \\1\\, so unlike the surprisal of a [discrete](random-variables.llms.md#def-discrete-rv) value, it can be negative.
+
+> **NOTE:**
+>
+> **Definition 24 (Entropy (differential entropy, for continuous random variables))** The **entropy** of a [random variable](random-variables.llms.md#def-random-variable) \\X\\ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) ([discrete](random-variables.llms.md#def-discrete-rv) or [continuous](#def-surprisal-continuous)) [\[18\]](#ref-wikipedia_entropy_information_theory), [\[19, Sec. 8.1\]](#ref-cover2006elements), when that expectation exists:
+>
+> \\{H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}}.\\
+>
+> For a [continuous random variable](random-variables.llms.md#def-continuous-rv), the entropy is also called the **differential entropy**.
+
+> **NOTE:**
+>
+> **Theorem 15 (Entropy of a discrete random variable)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\\mathbb{P}(X=x)\\. Then
+>
+> \\{H\mathopen{}\left(X\right)\mathclose{}} = -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x).\\
 >
 > A term with \\\mathbb{P}(X=x) = 0\\ is taken to be \\0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
+
+> **NOTE:**
+>
+> *Proof*. Let \\g(x) \stackrel{\text{def}}{=}{s\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)\\, which is finite for each value \\x\\ with \\\mathbb{P}(X=x) \> 0\\. Then [LOTUS](#thm-lotus) gives
+>
+> \\ \begin{aligned} {H\mathopen{}\left(X\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} && \text{(definition of entropy)} \\ &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition of } g \text{)} \\ &= \sum\_{x \in \mathcal{R}(X)} g(x) \cdot\mathbb{P}(X=x) && \text{(LOTUS)} \\ &= -\sum\_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x). && \text{(definition of } g \text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Theorem 16 (Entropy of a continuous random variable)** Let \\X\\ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [probability density function](random-variables.llms.md#def-pdf) \\\operatorname{p}(X=x)\\. Then
+>
+> \\{H\mathopen{}\left(X\right)\mathclose{}} = -\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x) \log \operatorname{p}(X=x) \\ dx.\\
+>
+> The integrand is taken to be \\0\\ where \\\operatorname{p}(X=x) = 0\\, because \\p \log p \to 0\\ as \\p \to 0\\.
+
+> **NOTE:**
+>
+> *Proof*. Let \\g(x) \stackrel{\text{def}}{=}{s\mathopen{}\left(x\right)\mathclose{}} = -\log \operatorname{p}(X=x)\\. Then [LOTUS](#thm-lotus) gives
+>
+> \\ \begin{aligned} {H\mathopen{}\left(X\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} && \text{(definition of entropy)} \\ &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition of } g \text{)} \\ &= \int\_{x \in \mathcal{R}(X)} g(x) \cdot\operatorname{p}(X=x) \\ dx && \text{(LOTUS)} \\ &= -\int\_{x \in \mathcal{R}(X)} \operatorname{p}(X=x) \log \operatorname{p}(X=x) \\ dx. && \text{(definition of } g \text{)} \end{aligned} \\
+
+> **NOTE:**
+>
+> **Example 45 (Entropy of a uniform random variable)** Let \\X\\ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from \\0\\ to \\a \> 0\\, as in [Example 44](#exm-surprisal-uniform). By [Theorem 16](#thm-entropy-continuous),
+>
+> \\ \begin{aligned} {H\mathopen{}\left(X\right)\mathclose{}} &= -\int_0^a \tfrac{1}{a} \log \tfrac{1}{a} \\ dx \\ &= \log a. \end{aligned} \\
+>
+> Every value has the same [surprisal](#def-surprisal-continuous) \\\log a\\, so its [expectation](#def-expectation) is also \\\log a\\. With \\a = \tfrac{1}{2}\\ and logarithms to base 2, the [entropy](#def-entropy) is \\-1\\ bit. The entropy of a [continuous random variable](random-variables.llms.md#def-continuous-rv) can be negative [\[19\]](#ref-cover2006elements), Example 8.1.1.
 
 > **NOTE:**
 >
@@ -1524,7 +1576,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> **Example 44 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). Using logarithms to base 2,
+> **Example 46 (Entropy of a coin flip)** Let \\X\\ be the result of one flip of a coin with \\\mathbb{P}(X=1) = \pi\\ and \\\mathbb{P}(X=0) = 1 - \pi\\ ([Bernoulli distribution](random-variables.llms.md#def-bernoulli)). By [Theorem 15](#thm-entropy-discrete), using logarithms to base 2,
 >
 > \\H(X) = -\pi\log_2 \pi- (1 - \pi) \log_2 (1 - \pi).\\
 >
@@ -1540,15 +1592,15 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> *Remark 11* (Where the definition comes from). Murphy [\[19, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 defines entropy this way, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
+> *Remark 11* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on \\K\\ outcomes it is largest, \\\log K\\, for the uniform distribution.
 
 > **NOTE:**
 >
-> **Definition 24 (Cross-entropy)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on the same finite set of outcomes \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. The **cross-entropy** of \\q\\ relative to \\p\\ [\[20\]](#ref-wikipedia_cross_entropy) is
+> **Definition 25 (Cross-entropy)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\, and let \\q\\ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of \\q\\ relative to \\p\\ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when \\X\\ has [distribution](random-variables.llms.md#def-cdf) \\p\\, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\s_q\\ measured by \\q\\, where \\s_q\mathopen{}\left(x\right)\mathclose{} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}\\:
 >
-> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}-\sum\_{k=1}^{K} p_k \log q_k.\\
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left\[s_q\mathopen{}\left(X\right)\mathclose{}\right\]\mathclose{}}.\\
 >
-> We take \\-\log 0 = \infty\\, so when \\q_k = 0\\ for an outcome with \\p_k \> 0\\, the cross-entropy is infinite. A term with \\p_k = 0\\ is taken to be \\0\\ whatever \\q_k\\ is, as for [entropy](#def-entropy).
+> We take \\-\log 0 = \infty\\, so when \\\mathbb{P}(q(X) = 0) \> 0\\, the cross-entropy is infinite.
 
 > **NOTE:**
 >
@@ -1592,15 +1644,15 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 12 (Cross-entropy as an expectation when \\q\\ is positive where \\p\\ is)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Show that the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ equals the [expectation](#def-expectation) \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\.
+> **Exercise 12 (Cross-entropy as a sum when \\q\\ is positive where \\p\\ is)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\ with \\q_k \> 0\\ whenever \\p_k \> 0\\. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Show that the [cross-entropy](#def-cross-entropy), the [expectation](#def-expectation) \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}\\, equals \\-\sum\_{k=1}^{K} p_k \log q_k\\.
 
 > **NOTE:**
 >
 > *Solution 8*. Let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q_X = g(X)\\. Since \\q_k \> 0\\ whenever \\p_k \> 0\\, \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability). By [LOTUS](#thm-lotus),
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k \\ &= -\sum\_{k=1}^{K} p_k \log q_k \\ &= {H\mathopen{}\left(p, q\right)\mathclose{}}. \end{aligned} \\
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} \\ &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k \\ &= -\sum\_{k=1}^{K} p_k \log q_k. \end{aligned} \\
 >
-> The fourth line adds the terms with \\p_k = 0\\, which are \\0\\ by the convention in the definition.
+> The last line adds the terms with \\p_k = 0\\, which are \\0\\ by the convention in [Theorem 17](#thm-cross-entropy-discrete).
 
 > **NOTE:**
 >
@@ -1610,7 +1662,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> *Solution 9*. By [Definition 24](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\.
+> *Solution 9*. By [Definition 25](#def-cross-entropy), \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\.
 
 > **NOTE:**
 >
@@ -1622,17 +1674,41 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 15 (Cross-entropy as an expected negative log probability)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, and let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\. Write \\q_X\\ for the [random variable](random-variables.llms.md#def-random-variable) that equals \\q_k\\ when \\X = k\\. Then the [cross-entropy](#def-cross-entropy) is the [expectation](#def-expectation) of \\-\log q_X\\:
+> **Theorem 17 (Cross-entropy of two mass functions)** Let \\p\\ and \\q\\ be [probability mass functions](random-variables.llms.md#def-pmf) on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\, with \\p_k\\ and \\q_k\\ the probabilities of outcome \\k\\. Then the [cross-entropy](#def-cross-entropy) is
 >
-> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}}.\\
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = -\sum\_{k=1}^{K} p_k \log q_k.\\
+>
+> A term with \\p_k = 0\\ is taken to be \\0\\ whatever \\q_k\\ is, as for [entropy](#thm-entropy-discrete).
 
 > **NOTE:**
 >
-> *Proof*. Let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q_X = g(X)\\. First suppose \\q_k \> 0\\ whenever \\p_k \> 0\\. Then \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability), and [LOTUS](#thm-lotus) gives
+> *Proof*. Let \\X\\ have [mass function](random-variables.llms.md#def-pmf) \\p\\, and let \\g(k) \stackrel{\text{def}}{=}-\log q_k\\, so that \\-\log q(X) = g(X)\\. First suppose \\q_k \> 0\\ whenever \\p_k \> 0\\. Then \\g(k)\\ is finite for every value \\k\\ that \\X\\ takes with positive [probability](probability-basics.llms.md#def-probability), and [LOTUS](#thm-lotus) gives
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition of } g \text{)} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\ &= -\sum\_{k=1}^{K} p_k \log q_k && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \\ &= {H\mathopen{}\left(p, q\right)\mathclose{}}. && \text{(definition)} \end{aligned} \\
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition)} \\ &= \sum\_{k : p_k \> 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\ &= -\sum\_{k : p_k \> 0} p_k \log q_k && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\ &= -\sum\_{k=1}^{K} p_k \log q_k. && \text{(terms with } p_k = 0 \text{ are } 0 \text{)} \end{aligned} \\
 >
-> Now suppose \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Then \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\ by definition. Also \\-\log q_X \ge 0\\, and \\-\log q_X = \infty\\ with probability at least \\p_k \> 0\\, so \\{\mathbb{E}\mathopen{}\left\[-\log q_X\right\]\mathclose{}} = \infty\\.
+> Now suppose \\q_k = 0\\ for some \\k\\ with \\p_k \> 0\\. Then \\-\log q(X) \ge 0\\, and \\-\log q(X) = \infty\\ with probability at least \\p_k \> 0\\, so \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. The right side is also \\\infty\\, because its term for \\k\\ is \\-p_k \log 0 = \infty\\ and its other terms are finite or \\\infty\\ but never \\-\infty\\.
+
+> **NOTE:**
+>
+> **Theorem 18 (Cross-entropy of two densities)** Let \\X\\ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) \\p\\ on its [range](random-variables.llms.md#def-range) \\\mathcal{R}(X)\\, and let \\q\\ be a density on \\\mathcal{R}(X)\\, with \\q(x) \> 0\\ wherever \\p(x) \> 0\\. Then the [cross-entropy](#def-cross-entropy) is
+>
+> \\{H\mathopen{}\left(p, q\right)\mathclose{}} = -\int\_{x \in \mathcal{R}(X)} p(x) \log q(x) \\ dx.\\
+>
+> The integrand is taken to be \\0\\ where \\p(x) = 0\\. Otherwise, if \\\mathbb{P}(q(X) = 0) \> 0\\, both sides are \\\infty\\.
+
+> **NOTE:**
+>
+> *Proof*. Let \\g(x) \stackrel{\text{def}}{=}-\log q(x)\\, so that \\-\log q(X) = g(X)\\. Then [LOTUS](#thm-lotus) gives
+>
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[g(X)\right\]\mathclose{}} && \text{(definition)} \\ &= \int\_{x \in \mathcal{R}(X)} g(x) \cdot p(x) \\ dx && \text{(LOTUS)} \\ &= -\int\_{x \in \mathcal{R}(X)} p(x) \log q(x) \\ dx. && \text{(definition of } g \text{)} \end{aligned} \\
+>
+> Now suppose \\\mathbb{P}(q(X) = 0) \> 0\\. Then \\-\log q(X) \ge 0\\, and \\-\log q(X) = \infty\\ with positive [probability](probability-basics.llms.md#def-probability), so \\{H\mathopen{}\left(p, q\right)\mathclose{}} = \infty\\. The integrand \\-p(x) \log q(x)\\ is \\\infty\\ wherever \\q(x) = 0\\ and \\p(x) \> 0\\, which is a region of positive probability under \\p\\, and it is never \\-\infty\\, so the right side is also \\\infty\\.
+
+> **NOTE:**
+>
+> **Example 47 (Cross-entropy of two densities on the unit interval)** Let \\p(x) = 1\\ and \\q(x) = 2x\\ for \\0 \< x \< 1\\ be [densities](random-variables.llms.md#def-pdf). By [Theorem 18](#thm-cross-entropy-continuous), using the natural logarithm,
+>
+> \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\int_0^1 \log (2x) \\ dx \\ &= -\log 2 - \int_0^1 \log x \\ dx \\ &= -\log 2 + 1 \\ &\approx 0.307 \text{ nats}. \end{aligned} \\
 
 > **NOTE:**
 >
@@ -1668,25 +1744,25 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> *Solution 14*. By [Theorem 15](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p_X = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+> *Solution 14*. By definition, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p(X)\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, we have \\-\log p(X) = {s\mathopen{}\left(X\right)\mathclose{}}\\, the [surprisal](#def-surprisal) of \\X\\. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let \\X\\ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) \\p\\ on \\{\mathopen{}\left\\1, \ldots, K\right\\\mathclose{}}\\. Then
+> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let \\X\\ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) \\p\\. Then
 >
 > \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}.\\
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 15](#thm-cross-entropy-expectation) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p_X\right\]\mathclose{}}\\. Since \\\mathbb{P}(X = k) = p_k\\, the [random variable](random-variables.llms.md#def-random-variable) \\-\log p_X\\ is the [surprisal](#def-surprisal) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. The surprisal \\{s\mathopen{}\left(X\right)\mathclose{}}\\ is finite with [probability](probability-basics.llms.md#def-probability) 1, because \\X\\ takes only values with \\p_k \> 0\\, and the values with \\p_k = 0\\ contribute \\0\\ to both \\{H\mathopen{}\left(p, p\right)\mathclose{}}\\ and \\{H\mathopen{}\left(X\right)\mathclose{}}\\ by the convention in their definitions. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
+> *Proof*. By the definition of [cross-entropy](#def-cross-entropy) with \\q = p\\, \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[-\log p(X)\right\]\mathclose{}}\\. The [random variable](random-variables.llms.md#def-random-variable) \\-\log p(X)\\ is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) \\{s\mathopen{}\left(X\right)\mathclose{}}\\. So \\{H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[{s\mathopen{}\left(X\right)\mathclose{}}\right\]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}\\ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> *Remark 12* (Cross-entropy is an expected surprisal). By [Theorem 15](#thm-cross-entropy-expectation), the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q_k\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) \\{H\mathopen{}\left(p, q\right)\mathclose{}}\\ is the average [surprisal](#def-surprisal) of the values drawn from \\p\\, with each surprisal measured by \\q\\ as \\-\log q(x)\\. By [Corollary 6](#cor-cross-entropy-entropy), measuring with \\p\\ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> **Definition 25 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 24](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
+> **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For \\p\\ and \\q\\ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of \\q\\ from \\p\\ is
 >
 > \\{{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} \stackrel{\text{def}}{=}\sum\_{k=1}^{K} p_k \log \frac{p_k}{q_k} = {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.\\
 
@@ -1696,7 +1772,7 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> **Example 45 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
+> **Example 48 (Cross-entropy and divergence for two coins)** Let \\p = (\tfrac{1}{2}, \tfrac{1}{2})\\ be a fair coin and \\q = (\tfrac{1}{4}, \tfrac{3}{4})\\ a coin biased toward the second outcome. Using logarithms to base 2, \\\log_2 \tfrac{1}{4} = -2\\ and \\\log_2 \tfrac{3}{4} = \log_2 3 - 2\\, so
 >
 > \\ \begin{aligned} {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\ &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\ &= 2 - \tfrac{1}{2} \log_2 3 \\ &\approx 1.208, \\ {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\ &= 1, \\ {{D\_{\mathrm{KL}}}\mathopen{}\left(p \\\Vert\\ q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208. \end{aligned} \\
 >
@@ -1704,13 +1780,13 @@ Last modified: 2026-10-29 15:56:46 (PDT)
 
 > **NOTE:**
 >
-> *Remark 14* (Where the definitions come from). Murphy [\[19, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
+> *Remark 14* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution \\p\\ using a code designed for \\q\\.
 
-## 5 Further reading
+## 0.5 Further reading
 
 > **TIP:**
 >
-> Lange’s textbook [\[21\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
+> Lange’s textbook [\[22\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
 
 ## References
 
@@ -1788,14 +1864,47 @@ Wikipedia contributors, “Entropy (information theory) — Wikipedia, the free 
 
 \[19\]
 
-K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
+T. M. Cover and J. A. Thomas, *Elements of information theory*, 2nd ed. Wiley-Interscience, 2006. doi: [10.1002/047174882X](https://doi.org/10.1002/047174882X).
 
 \[20\]
 
-Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+K. P. Murphy, *Machine learning: A probabilistic perspective*. in Adaptive computation and machine learning. MIT Press, 2012.
 
 \[21\]
 
+Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Cross-entropy>
+
+\[22\]
+
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+# Definitions on this page
+
+- [Definition 1 (Expectation, expected value, population mean)](#def-expectation)
+- [Definition 2 (Expectation of a random matrix)](#def-expectation-matrix)
+- [Definition 3 (Conditional probability mass function)](#def-cond-pmf)
+- [Definition 4 (Conditional probability density function)](#def-cond-pdf)
+- [Definition 5 (Conditional expectation)](#def-cond-expectation)
+- [Definition 6 (Conditional expectation: mixed case)](#def-cond-mixed)
+- [Definition 7 (Conditional expectation function)](#def-cond-expectation-function)
+- [Definition 8 (Conditional expectation of a function of \\X\\ and \\Y\\)](#def-cond-expectation-general)
+- [Definition 9 (Prediction)](#def-prediction)
+- [Definition 10 (Loss function)](#def-loss-function)
+- [Definition 11 (Squared error loss)](#def-squared-error-loss)
+- [Definition 12 (Absolute error loss)](#def-absolute-error-loss)
+- [Definition 13 (Risk (expected loss))](#def-risk)
+- [Definition 14 (Outcome)](#def-outcome)
+- [Definition 15 (Input)](#def-input)
+- [Definition 16 (Prediction function)](#def-prediction-function)
+- [Definition 17 (New observation)](#def-new-observation)
+- [Definition 18 (Prediction error)](#def-prediction-error)
+- [Definition 19 (Squared-error risk (expected prediction error))](#def-squared-error-risk)
+- [Definition 20 (Residual risk (irreducible risk))](#def-irreducible-risk)
+- [Definition 21 (Reducible risk)](#def-reducible-risk)
+- [Definition 22 (Surprisal (**self-information**, **information content**))](#def-surprisal)
+- [Definition 23 (Surprisal of a value of a continuous random variable)](#def-surprisal-continuous)
+- [Definition 24 (Entropy (differential entropy, for continuous random variables))](#def-entropy)
+- [Definition 25 (Cross-entropy)](#def-cross-entropy)
+- [Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))](#def-kl-divergence)
 
 Back to top
