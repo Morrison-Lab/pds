@@ -4,9 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-10-31 07:22:32 (PDT)
-
-## 0.1 Random variables
+Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
@@ -102,7 +100,7 @@ Last modified: 2026-10-31 07:22:32 (PDT)
 >
 > **Example 6 (Realizations of the number of heads)** In [Example 1](#exm-random-variable), let \\X\\ be the number of heads in two fair coin flips. Run the experiment once and suppose it produces \\\omega= HT\\. Then the [realization](#def-realization) of \\X\\ is \\x = X(HT) = 1\\. Running the experiment again might produce \\TT\\, with realization \\x = 0\\. The variable \\X\\ is the same both times; only its realization changes.
 
-## 0.2 Characteristics of probability distributions
+## 0.1 Characteristics of probability distributions
 
 > **NOTE:**
 >
@@ -718,7 +716,7 @@ Last modified: 2026-10-31 07:22:32 (PDT)
 >
 > \\ \begin{aligned} \Pr(X = 1,\\ Y \le 1) &= \int_0^1 \tfrac{1}{4}\\dy \\ &= \tfrac{1}{4} \end{aligned} \\
 
-### 0.2.1 Joint distributions and marginalization
+### 0.1.1 Joint distributions and marginalization
 
 For a discrete random variable \\X\\ taking values in \\\mathbb{X}\\, a **probability mass function** (PMF) \\\mathbb{P}(x) : \mathbb{X} \to \[0, 1\]\\ gives the probability that \\X\\ takes the value \\x\\:
 
@@ -760,7 +758,7 @@ The resulting distributions \\\mathbb{P}(x)\\ and \\\mathbb{P}(y)\\ are the **ma
 >
 > Given that you are having a bad day, the probability of a meteorite hit is roughly 1 in 100,000. Bad days are common (\\\mathbb{P}(d=0) = 0.1\\), so having one is very weak evidence that an astronomical rarity occurred.
 
-### 0.2.2 Continuous distributions and densities
+### 0.1.2 Continuous distributions and densities
 
 When a random variable \\X\\ takes values in a continuous space \\\mathcal{R}(X) \subseteq \mathbb{R}\\, its behavior is described by a **probability density function** (PDF) \\\operatorname{p}(x) : \mathcal{R}(X) \to \mathbb{R}\_+\\ satisfying:
 
@@ -844,7 +842,7 @@ Every rule developed for discrete variables carries over to continuous variables
 >
 > 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 [\[17\]](#ref-fiveminuteai_probstat).
 
-## 0.3 Survival, hazard, and cumulative hazard functions
+## 0.2 Survival, hazard, and cumulative hazard functions
 
 > **NOTE:**
 >
