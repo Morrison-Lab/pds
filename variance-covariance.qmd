@@ -12,7 +12,7 @@ format:
     output-file: variance-covariance.docx
 ---
 
-## Deviation, error, and noise {#sec-deviation}
+# Deviation, error, and noise {#sec-deviation}
 
 {{< include latex-macros/macros.qmd >}}
 
@@ -38,7 +38,7 @@ format:
 
 {{< include pds/_subfiles/_thm-noise-second-moment.qmd >}}
 
-## Variance and related characteristics
+# Variance and related characteristics
 
 <!-- No slidebreak here: the heading shares its slide with the def-variance div. -->
 
@@ -53,18 +53,18 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 {{< include pds/_subfiles/_exm-second-moment-variance.qmd >}}
 
-## The best constant prediction {#sec-best-constant-prediction}
+# The best constant prediction {#sec-best-constant-prediction}
 
 {{< include pds/_subfiles/_thm-best-constant.qmd >}}
 
-## Independent noise plus a random variable {#sec-bias-variance-prediction}
+# Independent noise plus a random variable {#sec-bias-variance-prediction}
 
 <!-- The bias-variance decomposition of prediction error moved to the sds notes, which define
      training data and estimation; this section keeps the plain-probability result it rests on. -->
 
 {{< include pds/_subfiles/_thm-second-moment-noise-sum.qmd >}}
 
-## Covariance
+# Covariance
 
 <!-- No slidebreak here: the heading shares its slide with the def-cov div. -->
 
@@ -79,7 +79,7 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
 
-## References {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::

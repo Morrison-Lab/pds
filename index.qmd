@@ -10,7 +10,7 @@ format:
     output-file: index.docx
 ---
 
-## Welcome {.unnumbered}
+# Welcome {.unnumbered}
 
 Probability theory is the branch of mathematics concerned with
 formalizing and quantifying uncertainty.
@@ -48,7 +48,7 @@ These notes began as the probability chapter of the Morrison Lab's
 which applies them to regression and survival models
 (see [Additional resources](#sec-additional-resources)).
 
-## Using these notes in another site {.unnumbered}
+# Using these notes in another site {.unnumbered}
 
 Course sites link to these pages by URL;
 they do not include this repository as a git submodule.
@@ -62,9 +62,9 @@ Quarto resolves `@id` cross-references only within one rendered page,
 so a host site that links to a result here
 uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
 
-## Additional resources {#sec-additional-resources .unnumbered}
+# Additional resources {#sec-additional-resources .unnumbered}
 
-### Comparable courses {.unnumbered}
+## Comparable courses {.unnumbered}
 
 Several universities offer open-access courses with comparable or complementary coverage of probability for data science, computer science, and statistics:
 
@@ -77,7 +77,7 @@ Several universities offer open-access courses with comparable or complementary 
 - **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
 - **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (@ross-probsim) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as "slicing and renormalizing" and "taking out what is known" in conditional expectation.
 
-### Textbooks and companion notes {.unnumbered}
+## Textbooks and companion notes {.unnumbered}
 
 - @ross2019first, an undergraduate calculus-based [probability](probability-basics.qmd#def-probability) text
 - @gut2013, a graduate text on the measure-theoretic foundations of probability, as a companion to @billingsley1995probability
@@ -91,13 +91,13 @@ Several universities offer open-access courses with comparable or complementary 
 - Morrison Lab's [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/),
   which applies this material to regression and survival analysis
 
-### Video channels {.unnumbered}
+## Video channels {.unnumbered}
 
 The DATA 571 (Machine Learning) course notes keep a curated list of
 [online video channels](https://morrison-lab.github.io/lds/chapters/channels.html),
 with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
 
-## References {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::

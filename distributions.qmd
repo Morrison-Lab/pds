@@ -17,7 +17,7 @@ format:
 {{< include pds/_subfiles/_sec-distributions.qmd >}}
 
 
-## References {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::
