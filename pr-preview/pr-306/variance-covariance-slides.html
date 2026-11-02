@@ -365,12 +365,10 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-02 10:11:59 (PST)</p>
+  <p class="date">Last modified: 2026-11-02 10:47:40 (PST)</p>
 </section>
-<section>
-<section id="sec-deviation" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Deviation, error, and noise</h1>
-
+<section id="sec-deviation" class="slide level2" data-number="1">
+<h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
 </section>
 <section class="slide level2">
 
@@ -451,7 +449,7 @@
 </section>
 <section class="slide level2">
 
-<h3 id="sec-noise-model">Mean-zero noise model</h3>
+<h4 id="sec-noise-model">Mean-zero noise model</h4>
 <p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\varepsilon\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
 <div id="rem-mean-zero-parametrization" class="proof remark">
 <p><span class="proof-title"><em>Remark 1</em> (Mean zero is a parametrization choice). </span>Mean zero is a parametrization choice, not a substantive assumption. In <span class="math inline">\(Y = f(x) + \varepsilon\)</span>, moving a constant from <span class="math inline">\(\varepsilon\)</span> into <span class="math inline">\(f(x)\)</span> changes the split but not the distribution of <span class="math inline">\(Y\)</span>, so the data identify only the sum <span class="math inline">\(f(x) + {\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}}\)</span>, the mean of <span class="math inline">\(Y\)</span> at <span class="math inline">\(x\)</span>. Requiring <span class="math inline">\({\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}} = 0\)</span> picks the one split in which <span class="math inline">\(f(x)\)</span> is that mean. This loses no generality when the model for <span class="math inline">\(f\)</span> can absorb a constant, as any model with an intercept can. It restricts the model only when <span class="math inline">\(f\)</span> cannot absorb one, as in a regression through the origin.</p>
@@ -489,11 +487,9 @@
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>This is the solution to <a href="#/exr-noise-second-moment" class="quarto-xref">Exercise&nbsp;1</a>, worked in <a href="#/sol-noise-second-moment" class="quarto-xref">Solution&nbsp;1</a>. It rearranges <a href="#/thm-variance" class="quarto-xref">Theorem&nbsp;3</a>, using <span class="math inline">\(\mathbb{E}[\varepsilon] = 0\)</span>.</p>
 </div>
-</section></section>
-<section>
-<section id="variance-and-related-characteristics" class="title-slide slide level1 center" data-number="2">
-<h1><span class="header-section-number">2</span> Variance and related characteristics</h1>
-
+</section>
+<section id="variance-and-related-characteristics" class="slide level2" data-number="2">
+<h2><span class="header-section-number">2</span> Variance and related characteristics</h2>
 </section>
 <section class="slide level2">
 
@@ -925,11 +921,9 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 \end{aligned}
 \]</span></p>
 </div>
-</section></section>
-<section>
-<section id="sec-best-constant-prediction" class="title-slide slide level1 center" data-number="3">
-<h1><span class="header-section-number">3</span> The best constant prediction</h1>
-
+</section>
+<section id="sec-best-constant-prediction" class="slide level2" data-number="3">
+<h2><span class="header-section-number">3</span> The best constant prediction</h2>
 </section>
 <section class="slide level2">
 
@@ -1000,11 +994,9 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 </div>
 <p>The two columns agree, as <a href="#/thm-constant-prediction-decompose" class="quarto-xref">Theorem&nbsp;5</a> says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of <code>mpg</code> over these cars (divisor the number of cars, not one fewer), as <a href="#/cor-best-constant" class="quarto-xref">Corollary&nbsp;1</a> says; the median and <span class="math inline">\(c = 20\)</span> are each worse by <span class="math inline">\({\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}\)</span>.</p>
 </div>
-</section></section>
-<section>
-<section id="sec-bias-variance-prediction" class="title-slide slide level1 center" data-number="4">
-<h1><span class="header-section-number">4</span> Independent noise plus a random variable</h1>
-
+</section>
+<section id="sec-bias-variance-prediction" class="slide level2" data-number="4">
+<h2><span class="header-section-number">4</span> Independent noise plus a random variable</h2>
 </section>
 <section class="slide level2">
 
@@ -1088,11 +1080,9 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 \]</span></p>
 <p>where <span class="math inline">\(\sigma^2\)</span> is the <a href="https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error">residual variance</a>. The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the <a href="https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition">bias, variance and noise decomposition</a>, with its exercise, worked example and definition of the residual variance.</p>
 </div>
-</section></section>
-<section>
-<section id="covariance" class="title-slide slide level1 center" data-number="5">
-<h1><span class="header-section-number">5</span> Covariance</h1>
-
+</section>
+<section id="covariance" class="slide level2" data-number="5">
+<h2><span class="header-section-number">5</span> Covariance</h2>
 </section>
 <section class="slide level2">
 
@@ -1923,11 +1913,9 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 <div class="videos">
 <p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=5CT1DXPp2HY">variance</a> and <a href="https://www.youtube.com/watch?v=hiim8HlI81Y">covariance and correlation</a> in five minutes each, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span>.</p>
 </div>
-</section></section>
-<section>
-<section id="references" class="title-slide slide level1 unnumbered center">
-<h1>References</h1>
-
+</section>
+<section id="references" class="slide level2 unnumbered">
+<h2>References</h2>
 </section>
 <section class="slide level2 smaller scrollable" id="references">
 
@@ -2143,7 +2131,7 @@ window.addEventListener("load", alignEquationAnchorsWithDefault);
 })();
 </script>
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -374,7 +374,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-02 10:11:59 (PST)</p>
+  <p class="date">Last modified: 2026-11-02 10:47:40 (PST)</p>
 </section>
 <section class="slide level2">
 
@@ -502,14 +502,16 @@ Table&nbsp;2: Distributions typically used for test statistics
 </figure>
 </div>
 </section>
-<section id="sec-bern-dist" class="slide level2" data-number="0.1">
-<h2><span class="header-section-number">0.1</span> The Bernoulli distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.1" id="sec-bern-dist"><span class="header-section-number">0.1</span> The Bernoulli distribution</h3>
 <div id="exm-bernoulli" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1 (A coin flip)</strong></span> The <a href="./random-variables.html#def-bernoulli">Bernoulli distribution</a> describes a binary outcome. The indicator of heads on one flip of a fair coin is <span class="math inline">\(\operatorname{Ber}(1/2)\)</span>. By the <a href="./expectation.html#thm-bernoulli-mean">expectation of the Bernoulli distribution</a>, <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span> has mean <span class="math inline">\(\pi\)</span>, and by the <a href="./variance-covariance.html#exm-variance-bernoulli">variance of a Bernoulli random variable</a>, it has variance <span class="math inline">\(\pi(1 - \pi)\)</span>.</p>
 </div>
 </section>
-<section id="sec-binomial-dist" class="slide level2" data-number="0.2">
-<h2><span class="header-section-number">0.2</span> The binomial distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.2" id="sec-binomial-dist"><span class="header-section-number">0.2</span> The binomial distribution</h3>
 <div id="def-binomial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1 (Binomial distribution)</strong></span> A <a href="./random-variables.html#def-discrete-rv">discrete</a> random variable <span class="math inline">\(X\)</span> has the <strong>binomial distribution</strong> with number of trials <span class="math inline">\(n \in {\mathopen{}\left\{1, 2, \dots\right\}\mathclose{}}\)</span> and event probability <span class="math inline">\(\pi\in [0, 1]\)</span>, written <span class="math inline">\(X \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span> <span class="citation" data-cites="wikipedia_binomial_distribution"><a href="#/references" role="doc-biblioref" onclick="">[1]</a></span>, if:</p>
 <p><span id="eq-binom-pmf"><span class="math display">\[
@@ -688,8 +690,9 @@ Table&nbsp;2: Distributions typically used for test statistics
 <p>On average, one of the five patients responds.</p>
 </div>
 </section>
-<section id="sec-poisson-dist" class="slide level2" data-number="0.3">
-<h2><span class="header-section-number">0.3</span> The Poisson distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.3" id="sec-poisson-dist"><span class="header-section-number">0.3</span> The Poisson distribution</h3>
 <div id="def-poisson" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Poisson distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Poisson distribution</strong> with mean parameter <span class="math inline">\(\mu&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{Pois}(\mu)\)</span> <span class="citation" data-cites="wikipedia_poisson_distribution"><a href="#/references" role="doc-biblioref" onclick="">[3]</a></span>, if:</p>
 <p><span id="eq-pois-pmf"><span class="math display">\[\mathbb{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}} \tag{2}\]</span></span></p>
@@ -1215,8 +1218,9 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 \]</span></p>
 </div>
 </section>
-<section id="sec-nb-dist" class="slide level2" data-number="0.4">
-<h2><span class="header-section-number">0.4</span> The Negative-Binomial distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.4" id="sec-nb-dist"><span class="header-section-number">0.4</span> The Negative-Binomial distribution</h3>
 <div id="def-nb" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 6 (Negative binomial distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>negative binomial distribution</strong> with mean <span class="math inline">\(\mu&gt; 0\)</span> and overdispersion parameter <span class="math inline">\(\rho&gt; 0\)</span>, written <span class="math inline">\(Y \sim \operatorname{NegBin}(\mu, \rho)\)</span> <span class="citation" data-cites="wikipedia_negative_binomial_distribution"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span>, if, for <span class="math inline">\(y \in {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}}\)</span>:</p>
 <p><span class="math display">\[
@@ -1348,8 +1352,9 @@ Z &amp;\sim \operatorname{Pois}(\mu_X + \mu_Y) &amp;&amp; (\text{sum of independ
 <p>three times the variance of a <span class="math inline">\(\operatorname{Pois}(4)\)</span> count with the same mean.</p>
 </div>
 </section>
-<section id="sec-laplace" class="slide level2" data-number="0.5">
-<h2><span class="header-section-number">0.5</span> The Laplace distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.5" id="sec-laplace"><span class="header-section-number">0.5</span> The Laplace distribution</h3>
 <div id="def-laplace" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 7 (Laplace distribution)</strong></span> A random variable <span class="math inline">\(Y\)</span> has the <strong>Laplace distribution</strong> with location parameter <span class="math inline">\(\mu\in \mathbb{R}\)</span> and scale parameter <span class="math inline">\(b &gt; 0\)</span>, written <span class="math inline">\(Y \sim {\operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}}\)</span> <span class="citation" data-cites="wikipedia_laplace_distribution"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>, if <span class="math inline">\(Y\)</span> is continuous with <a href="./random-variables.html#def-pdf">density</a>:</p>
 <p><span id="eq-laplace-pdf"><span class="math display">\[\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left|y - \mu\right|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}\]</span></span></p>
@@ -1478,8 +1483,9 @@ Figure&nbsp;3: Laplace and standard normal densities with the same mean (0) and 
 <p>The Laplace distribution puts about 5.3 times as much probability beyond <span class="math inline">\(3\)</span> standard deviations as the normal distribution does.</p>
 </div>
 </section>
-<section id="sec-weibull" class="slide level2" data-number="0.6">
-<h2><span class="header-section-number">0.6</span> Weibull distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.6" id="sec-weibull"><span class="header-section-number">0.6</span> Weibull distribution</h3>
 <div id="def-weibull" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 8 (Weibull distribution)</strong></span> A non-negative random variable <span class="math inline">\(T\)</span> has the <strong>Weibull distribution</strong> with shape <span class="math inline">\(\alpha&gt; 0\)</span> and rate <span class="math inline">\({\lambda}&gt; 0\)</span> <span class="citation" data-cites="wikipedia_weibull_distribution"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span> if its <a href="./random-variables.html#def-surv-fn">survival function</a> is:</p>
 <p><span class="math display">\[\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0\]</span></p>
@@ -1635,8 +1641,9 @@ f(t)
 \]</span></p>
 </div>
 </section>
-<section id="sec-mvn" class="slide level2" data-number="0.7">
-<h2><span class="header-section-number">0.7</span> The multivariate normal distribution</h2>
+<section class="slide level2">
+
+<h3 data-number="0.7" id="sec-mvn"><span class="header-section-number">0.7</span> The multivariate normal distribution</h3>
 <div id="def-mvn" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))</strong></span> A <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> has the <strong>multivariate normal distribution</strong> (or <strong>multivariate Gaussian distribution</strong>) with mean parameter <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} \in \mathbb{R}^p\)</span> and variance parameter <span class="math inline">\(\mathbf{\Sigma}\)</span>, a <span class="math inline">\(p \times p\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> matrix, written <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}\)</span>, if <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> has joint density:</p>
 <p><span class="math display">\[
@@ -1958,8 +1965,9 @@ Figure&nbsp;4: The contours of the Mahalanobis distance at <span class="math inl
 </div>
 </div>
 </section>
-<section id="sec-mixture" class="slide level2" data-number="0.8">
-<h2><span class="header-section-number">0.8</span> Mixture distributions</h2>
+<section class="slide level2">
+
+<h3 data-number="0.8" id="sec-mixture"><span class="header-section-number">0.8</span> Mixture distributions</h3>
 <div id="def-mixture" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 11 (Mixture density)</strong></span> Let <span class="math inline">\({\operatorname{p}_1}, \ldots, {\operatorname{p}_K}\)</span> be densities on <span class="math inline">\(\mathbb{R}\)</span>, and let <span class="math inline">\(w_1, \ldots, w_K\)</span> be numbers with:</p>
 <ul>
@@ -2144,10 +2152,8 @@ Figure&nbsp;4: The contours of the Mahalanobis distance at <span class="math inl
 <p><span class="theorem-title"><strong>Example 21 (The negative binomial as a continuous mixture)</strong></span> The <a href="#/def-nb">negative binomial distribution</a> is a mixture of Poisson distributions with a continuum of components, one for each mean <span class="math inline">\({\lambda}&gt; 0\)</span>: its PMF is <span class="math inline">\(\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}\)</span>, where the gamma density <span class="math inline">\(g\)</span> plays the role of the mixing weights and the integral replaces the sum in <a href="#/def-mixture" class="quarto-xref">Definition&nbsp;11</a> (see the proof of <a href="#/thm-nb" class="quarto-xref">Theorem&nbsp;11</a>).</p>
 </div>
 </section>
-<section>
-<section id="references" class="title-slide slide level1 unnumbered center">
-<h1>References</h1>
-
+<section id="references" class="slide level2 unnumbered">
+<h2>References</h2>
 </section>
 <section class="slide level2 smaller scrollable" id="references">
 
@@ -2372,7 +2378,7 @@ window.addEventListener("load", alignEquationAnchorsWithDefault);
 })();
 </script>
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
