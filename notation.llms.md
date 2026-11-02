@@ -4,16 +4,16 @@ Code
 
 Published
 
-Last modified: 2026-11-01 01:55:55 (PDT)
+Last modified: 2026-11-02 10:03:06 (PST)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
-- **Random variables** are denoted with uppercase letters (\\X\\, \\Y\\, \\Z\\), and their realized (observed) values with the matching lowercase letters (\\x\\, \\y\\, \\z\\).
-- **Probability** is denoted \\\Pr()\\ or \\\mathbb{P}()\\ for the probability of an event, or for a probability mass function (PMF), and \\\operatorname{p}()\\ for a density.
-- **Expectation** is denoted \\{\mathbb{E}\mathopen{}\left\[\cdot\right\]\mathclose{}}\\, with square brackets.
-- **Independence** is denoted \\\perp\\\\\\\perp\\ (read “\\X \perp\\\\\\\perp Y\\” as “\\X\\ is independent of \\Y\\”).
-- **Complements** of events are denoted \\\neg A\\ (“not \\A\\”).
-- We write \\\stackrel{\text{def}}{=}\\ for an equality that holds **by definition**, to distinguish it from an equality that follows from other facts.
+- **Random variables** are denoted with uppercase letters ($X$, $Y$, $Z$), and their realized (observed) values with the matching lowercase letters ($x$, $y$, $z$).
+- **Probability** is denoted $\Pr()$ or $\mathbb{P}()$ for the probability of an event, or for a probability mass function (PMF), and $\operatorname{p}()$ for a density.
+- **Expectation** is denoted ${\mathbb{E}\mathopen{}\left[\cdot\right]\mathclose{}}$, with square brackets.
+- **Independence** is denoted $\perp\!\!\!\perp$ (read “$X \perp\!\!\!\perp Y$” as “$X$ is independent of $Y$”).
+- **Complements** of events are denoted $\neg A$ (“not $A$”).
+- We write $\stackrel{\text{def}}{=}$ for an equality that holds **by definition**, to distinguish it from an equality that follows from other facts.
 - Other sources often use other symbols for these. The [notation choices page](https://morrison-lab.github.io/macros/notation-choices.html#sec-probability-notation) lists the alternatives; always check a new source’s own notation section before assuming ours.
 - The full macro list, with more notational variants, is in [`latex-macros`](https://github.com/Morrison-Lab/macros).
 
@@ -41,7 +41,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Example 1 (A random variable)** The result of a single die roll is random: it cannot be predicted with certainty, only described by the probability \\1/6\\ for each face. We speak of a “random variable” and a “random event” for exactly this kind of single outcome.
+> **Example 1 (A random variable)** The result of a single die roll is random: it cannot be predicted with certainty, only described by the probability $1/6$ for each face. We speak of a “random variable” and a “random event” for exactly this kind of single outcome.
 
 > **NOTE:**
 >
@@ -49,7 +49,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> *Remark 1* (The word “stochastic”). The word “stochastic” comes from the Greek \\\sigma\tau\acute{o}\chi o\varsigma\\ (*stókhos*), meaning “aim” or “guess” (see [etymology](https://www.etymonline.com/search?q=stochastic)). The term is almost always used for processes or systems evolving in time or space under uncertain rules, rather than for a single variable or event.
+> *Remark 1* (The word “stochastic”). The word “stochastic” comes from the Greek $\sigma\tau\acute{o}\chi o\varsigma$ (*stókhos*), meaning “aim” or “guess” (see [etymology](https://www.etymonline.com/search?q=stochastic)). The term is almost always used for processes or systems evolving in time or space under uncertain rules, rather than for a single variable or event.
 
 > **NOTE:**
 >
@@ -61,7 +61,7 @@ This page follows the notation used throughout the [Morrison Lab’s course mate
 
 > **NOTE:**
 >
-> **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, \\Y = \beta\_{0} + \beta\_{1} x + \varepsilon\\ with \\\varepsilon\sim {\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}\\, is probabilistic: for each value of the covariate \\x\\, it assigns a probability distribution to the outcome \\Y\\. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
+> **Example 3 (A linear regression model)** A linear regression model with Gaussian errors, $Y = \beta_{0} + \beta_{1} x + \varepsilon$ with $\varepsilon\sim {\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$, is probabilistic: for each value of the covariate $x$, it assigns a probability distribution to the outcome $Y$. It is not a stochastic process, because it describes the outcome at a given covariate value rather than a process evolving in time.
 
 > **NOTE:**
 >

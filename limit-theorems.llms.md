@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-01 01:55:55 (PDT)
+Last modified: 2026-11-02 10:03:06 (PST)
 
 ## 0.1 The Central Limit Theorem
 
@@ -24,11 +24,11 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 1 (Central Limit Theorem)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\ [\[1\]](#ref-wikipedia_central_limit_theorem):
+> **Theorem 1 (Central Limit Theorem)** Let $X_1, X_2, \ldots$ be [IID](independence.llms.md#def-iid) random variables with population mean $\mu$ and finite variance $\sigma^2> 0$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$. Then for every real number $z$ [\[1\]](#ref-wikipedia_central_limit_theorem):
 >
-> \\ \lim\_{n \to \infty} {\Pr\mathopen{}\left(\frac{\sqrt{n}\\({{\bar{X}}\_{n}} - \mu)}{\sigma} \le z\right)\mathclose{}} = \Phi(z) \\
+> $$\lim_{n \to \infty} {\Pr\mathopen{}\left(\frac{\sqrt{n}\,({{\bar{X}}_{n}} - \mu)}{\sigma} \le z\right)\mathclose{}} = \Phi(z)$$
 >
-> where \\\Phi(z) \stackrel{\text{def}}{=}\int\_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\\du\\ is the CDF of the [standard normal distribution](random-variables.llms.md#def-std-normal) \\{\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}\\.
+> where $\Phi(z) \stackrel{\text{def}}{=}\int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \text{e}^{-u^2/2}\,du$ is the CDF of the [standard normal distribution](random-variables.llms.md#def-std-normal) ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$.
 
 > **NOTE:**
 >
@@ -36,55 +36,105 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Corollary 1 (Central Limit Theorem for a sum)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then for every real number \\z\\:
+> **Corollary 1 (Central Limit Theorem for a sum)** Let $X_1, X_2, \ldots$ be [IID](independence.llms.md#def-iid) random variables with population mean $\mu$ and finite variance $\sigma^2> 0$, and let $S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i$. Then for every real number $z$:
 >
-> \\ \lim\_{n \to \infty} {\Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{}} = \Phi(z) \\
+> $$\lim_{n \to \infty} {\Pr\mathopen{}\left(\frac{S_n - n\mu}{\sigma\sqrt{n}} \le z\right)\mathclose{}} = \Phi(z)$$
 
 > **NOTE:**
 >
-> *Proof*. Since \\S_n = n{{\bar{X}}\_{n}}\\,
+> *Proof*. Since $S_n = n{{\bar{X}}_{n}}$,
 >
-> \\ \frac{S_n - n\mu}{\sigma\sqrt{n}} = \frac{n({{\bar{X}}\_{n}} - \mu)}{\sigma\sqrt{n}} = \frac{\sqrt{n}\\({{\bar{X}}\_{n}} - \mu)}{\sigma}, \\
+> $$\frac{S_n - n\mu}{\sigma\sqrt{n}}
+> = \frac{n({{\bar{X}}_{n}} - \mu)}{\sigma\sqrt{n}}
+> = \frac{\sqrt{n}\,({{\bar{X}}_{n}} - \mu)}{\sigma},$$
 >
 > so the event in this corollary is the event in [Theorem 1](#thm-clt), and the limits agree.
 
 > **NOTE:**
 >
-> **Theorem 2 (Mean and variance of a sum of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with population mean \\\mu\\ and finite variance \\\sigma^2\\, and let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\. Then, by [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom):
+> **Theorem 2 (Mean and variance of a sum of IID random variables)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) random variables, each discrete or continuous, with population mean $\mu$ and finite variance $\sigma^2$, and let $S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i$. Then, by [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) and the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom):
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= n\mu\\ {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= n\sigma^2 \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[S_n\right]\mathclose{}} &= n\mu\\
+> {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= n\sigma^2
+> \end{aligned}$$
 
 > **NOTE:**
 >
-> *Proof*. For the mean, apply [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) with every \\a_i = 1\\:
+> *Proof*. For the mean, apply [linearity of expectation for finite sums](expectation.llms.md#lem-linearity-finite-sum) with every $a_i = 1$:
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[\sum\_{i=1}^n1 \cdot X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= \sum\_{i=1}^n1 \cdot{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(linearity of expectation for finite sums, all } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n{\mathbb{E}\mathopen{}\left\[X_i\right\]\mathclose{}} && \text{(} 1 \cdot v = v \text{)} \\ &= n\mu && \text{(each } X_i \text{ has mean } \mu\text{)} \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[S_n\right]\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[\sum_{i=1}^n1 \cdot X_i\right]\mathclose{}}
+> && \text{(} 1 \cdot v = v \text{)} \\
+> &= \sum_{i=1}^n1 \cdot{\mathbb{E}\mathopen{}\left[X_i\right]\mathclose{}}
+> && \text{(linearity of expectation for finite sums, all } a_i = 1 \text{)} \\
+> &= \sum_{i=1}^n{\mathbb{E}\mathopen{}\left[X_i\right]\mathclose{}}
+> && \text{(} 1 \cdot v = v \text{)} \\
+> &= n\mu
+> && \text{(each } X_i \text{ has mean } \mu\text{)}
+> \end{aligned}$$
 >
-> For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with every \\a_i = 1\\. For \\i \ne j\\, \\X_i\\ and \\X_j\\ are independent (take \\A_k = \mathbb{R}\\ for every other \\k\\ in the [definition of independence](independence.llms.md#def-indpt)), so \\{\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\\ for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated); and \\{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\\ ([covariance of a variable with itself](variance-covariance.llms.md#lem-cov-xx)):
+> For the variance, apply the [variance of a linear combination](variance-covariance.llms.md#thm-var-lincom) with every $a_i = 1$. For $i \ne j$, $X_i$ and $X_j$ are independent (take $A_k = \mathbb{R}$ for every other $k$ in the [definition of independence](independence.llms.md#def-indpt)), so ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ for [independent summands](variance-covariance.llms.md#thm-indpt-uncorrelated); and ${\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}$ ([covariance of a variable with itself](variance-covariance.llms.md#lem-cov-xx)):
 >
-> \\ \begin{aligned} {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} &= \sum\_{i=1}^n\sum\_{j=1}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} && \text{(variance of a linear combination, all } a_i = 1 \text{)} \\ &= \sum\_{i=1}^n{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} + \sum\_{\substack{i, j = 1 \\ i \ne j}}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} && \text{(split off the terms with } i = j \text{)} \\ &= \sum\_{i=1}^n{\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}} + 0 && \text{(covariance with itself; independent summands)} \\ &= n\sigma^2 && \text{(each } X_i \text{ has variance } \sigma^2\text{)} \end{aligned} \\
+> $$\begin{aligned}
+> {\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}}
+> &= \sum_{i=1}^n\sum_{j=1}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}
+> && \text{(variance of a linear combination, all } a_i = 1 \text{)} \\
+> &= \sum_{i=1}^n{\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} + \sum_{\substack{i, j = 1 \\ i \ne j}}^n {\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}
+> && \text{(split off the terms with } i = j \text{)} \\
+> &= \sum_{i=1}^n{\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}} + 0
+> && \text{(covariance with itself; independent summands)} \\
+> &= n\sigma^2
+> && \text{(each } X_i \text{ has variance } \sigma^2\text{)}
+> \end{aligned}$$
 
 > **NOTE:**
 >
-> **Corollary 2 (Mean and variance of a sample mean of IID random variables)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) [random variables](random-variables.llms.md#def-random-variable), each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with [population mean](expectation.llms.md#def-expectation) \\\mu\\ and finite [variance](variance-covariance.llms.md#def-variance) \\\sigma^2\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then:
+> **Corollary 2 (Mean and variance of a sample mean of IID random variables)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) [random variables](random-variables.llms.md#def-random-variable), each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with [population mean](expectation.llms.md#def-expectation) $\mu$ and finite [variance](variance-covariance.llms.md#def-variance) $\sigma^2$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$. Then:
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[{{\bar{X}}\_{n}}\right\]\mathclose{}} &= \mu\\ {\operatorname{Var}\mathopen{}\left({{\bar{X}}\_{n}}\right)\mathclose{}} &= \frac{\sigma^2}{n} \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[{{\bar{X}}_{n}}\right]\mathclose{}} &= \mu\\
+> {\operatorname{Var}\mathopen{}\left({{\bar{X}}_{n}}\right)\mathclose{}} &= \frac{\sigma^2}{n}
+> \end{aligned}$$
 
 > **NOTE:**
 >
-> *Proof*. Let \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\{{\bar{X}}\_{n}} = S_n / n\\. By [Theorem 2](#thm-sum-iid-moments), \\{\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} = n\mu\\ and \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\:
+> *Proof*. Let $S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i$, so ${{\bar{X}}_{n}} = S_n / n$. By [Theorem 2](#thm-sum-iid-moments), ${\mathbb{E}\mathopen{}\left[S_n\right]\mathclose{}} = n\mu$ and ${\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2$:
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[{{\bar{X}}\_{n}}\right\]\mathclose{}} &= {\mathbb{E}\mathopen{}\left\[\frac{S_n}{n}\right\]\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n}{\mathbb{E}\mathopen{}\left\[S_n\right\]\mathclose{}} && \text{(linearity of expectation)}\\ &= \frac{1}{n} \cdot n\mu && \text{(mean of a sum of IID variables)}\\ &= \mu && \text{(cancel \$n\$)}\\ {\operatorname{Var}\mathopen{}\left({{\bar{X}}\_{n}}\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}} && \text{(definition of sample mean)}\\ &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} && \text{(variance of a constant multiple)}\\ &= \frac{1}{n^2} \cdot n\sigma^2 && \text{(variance of a sum of IID variables)}\\ &= \frac{\sigma^2}{n} && \text{(cancel one factor of \$n\$)} \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[{{\bar{X}}_{n}}\right]\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[\frac{S_n}{n}\right]\mathclose{}}
+> && \text{(definition of sample mean)}\\
+> &= \frac{1}{n}{\mathbb{E}\mathopen{}\left[S_n\right]\mathclose{}}
+> && \text{(linearity of expectation)}\\
+> &= \frac{1}{n} \cdot n\mu
+> && \text{(mean of a sum of IID variables)}\\
+> &= \mu
+> && \text{(cancel $n$)}\\
+> {\operatorname{Var}\mathopen{}\left({{\bar{X}}_{n}}\right)\mathclose{}}
+> &= {\operatorname{Var}\mathopen{}\left(\frac{S_n}{n}\right)\mathclose{}}
+> && \text{(definition of sample mean)}\\
+> &= \frac{1}{n^2}{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}}
+> && \text{(variance of a constant multiple)}\\
+> &= \frac{1}{n^2} \cdot n\sigma^2
+> && \text{(variance of a sum of IID variables)}\\
+> &= \frac{\sigma^2}{n}
+> && \text{(cancel one factor of $n$)}
+> \end{aligned}$$
 
 > **NOTE:**
 >
-> *Remark*. In practice, [Theorem 1](#thm-clt) justifies approximating \\{{\bar{X}}\_{n}}\\ by a [normal distribution](random-variables.llms.md#def-normal) with [mean](expectation.llms.md#def-expectation) \\\mu\\ and [variance](variance-covariance.llms.md#def-variance) \\\sigma^2/n\\, and [Corollary 1](#cor-clt-sum) justifies approximating \\S_n\\ by a normal distribution with mean \\n\mu\\ and variance \\n\sigma^2\\. By [Theorem 2](#thm-sum-iid-moments), these are exactly the means and [variances](variance-covariance.llms.md#def-variance) of \\{{\bar{X}}\_{n}} = S_n/n\\ and \\S_n\\.
+> *Remark*. In practice, [Theorem 1](#thm-clt) justifies approximating ${{\bar{X}}_{n}}$ by a [normal distribution](random-variables.llms.md#def-normal) with [mean](expectation.llms.md#def-expectation) $\mu$ and [variance](variance-covariance.llms.md#def-variance) $\sigma^2/n$, and [Corollary 1](#cor-clt-sum) justifies approximating $S_n$ by a normal distribution with mean $n\mu$ and variance $n\sigma^2$. By [Theorem 2](#thm-sum-iid-moments), these are exactly the means and [variances](variance-covariance.llms.md#def-variance) of ${{\bar{X}}_{n}} = S_n/n$ and $S_n$.
 
 > **NOTE:**
 >
-> **Example 1 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on \\{\mathopen{}\left\\1, \ldots, 6\right\\\mathclose{}}\\, which is flat, not bell-shaped ([Figure 1](#fig-clt-1d6)). Its mean is \\\mu= 3.5\\, and its variance is
+> **Example 1 (The sum of five dice)** A single fair die roll has the discrete uniform distribution on ${\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}}$, which is flat, not bell-shaped ([Figure 1](#fig-clt-1d6)). Its mean is $\mu= 3.5$, and its variance is
 >
-> \\ \begin{aligned} \sigma^2&= \sum\_{x=1}^{6} (x - 3.5)^2 / 6 \\ &= 35/12. \end{aligned} \\
+> $$\begin{aligned}
+> \sigma^2&= \sum_{x=1}^{6} (x - 3.5)^2 / 6 \\
+> &= 35/12.
+> \end{aligned}$$
 >
 > Show code
 >
@@ -110,7 +160,7 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > >
 > > Figure 1: Distribution of the outcome of one die
 >
-> The sum of five independent rolls, \\S_5\\, is already close to bell-shaped ([Figure 2](#fig-clt-5d6)).
+> The sum of five independent rolls, $S_5$, is already close to bell-shaped ([Figure 2](#fig-clt-5d6)).
 >
 > Show code
 >
@@ -125,13 +175,13 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > >
 > > Figure 2: Distribution of the sum of five dice
 >
-> For example, the exact probability that five dice total at most 15 is \\\Pr(S_5 \le 15) = 0.3052\\. The normal approximation that [Corollary 1](#cor-clt-sum) suggests, with mean \\5 \cdot 3.5 = 17.5\\ and variance \\5 \cdot 35/12 \approx 14.58\\, evaluated at \\15.5\\ to account for \\S_5\\ taking only integer values, gives \\\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002\\.
+> For example, the exact probability that five dice total at most 15 is $\Pr(S_5 \le 15) = 0.3052$. The normal approximation that [Corollary 1](#cor-clt-sum) suggests, with mean $5 \cdot 3.5 = 17.5$ and variance $5 \cdot 35/12 \approx 14.58$, evaluated at $15.5$ to account for $S_5$ taking only integer values, gives $\Phi\mathopen{}\left((15.5 - 17.5)/\sqrt{14.58}\right)\mathclose{} \approx 0.3002$.
 
 > **NOTE:**
 >
 > **Example 2 (Sample means of car horsepower)** The Auto data record the horsepower and fuel economy of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
-> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation \\X_i\\, so that \\\mu\\ and \\\sigma^2\\ are the population mean and variance of the 392 horsepower values. The sample mean \\{{\bar{X}}\_{n}} = S_n/n\\, where \\S_n = \sum\_{i=1}^nX_i\\, has mean \\\mu\\ and standard deviation \\\sigma/\sqrt{n}\\, because \\S_n\\ has mean \\n\mu\\ and variance \\n\sigma^2\\ by [Theorem 2](#thm-sum-iid-moments). The code below draws 10,000 random samples of each size \\n \in {\mathopen{}\left\\1, 5, 30\right\\\mathclose{}}\\, with replacement, and computes each sample’s sample mean.
+> Horsepower is not bell-shaped: a few powerful cars give it a long right tail. To apply [Theorem 1](#thm-clt), treat each draw of one car at random as one IID observation $X_i$, so that $\mu$ and $\sigma^2$ are the population mean and variance of the 392 horsepower values. The sample mean ${{\bar{X}}_{n}} = S_n/n$, where $S_n = \sum_{i=1}^nX_i$, has mean $\mu$ and standard deviation $\sigma/\sqrt{n}$, because $S_n$ has mean $n\mu$ and variance $n\sigma^2$ by [Theorem 2](#thm-sum-iid-moments). The code below draws 10,000 random samples of each size $n \in {\mathopen{}\left\{1, 5, 30\right\}\mathclose{}}$, with replacement, and computes each sample’s sample mean.
 >
 > ## Python
 >
@@ -184,7 +234,7 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > )
 > ```
 >
-> [Figure 3](#fig-clt-auto) shows a histogram of the 10,000 sample means for each \\n\\, with the normal density \\{\operatorname{N}\mathopen{}\left(\mu, \sigma^2/n\right)\mathclose{}}\\ from [Theorem 1](#thm-clt) drawn over it.
+> [Figure 3](#fig-clt-auto) shows a histogram of the 10,000 sample means for each $n$, with the normal density ${\operatorname{N}\mathopen{}\left(\mu, \sigma^2/n\right)\mathclose{}}$ from [Theorem 1](#thm-clt) drawn over it.
 >
 > Show code
 >
@@ -232,7 +282,7 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > >
 > > Figure 3: Histograms of 10,000 sample means of horsepower, for samples of n = 1, 5 and 30 cars drawn with replacement from the Auto data. The curve is the normal density with mean mu and standard deviation sigma over the square root of n.
 >
-> The sample means for \\n = 1\\ are just single cars, so they are skewed. By \\n = 30\\ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of \\\sigma/\sqrt{n}\\ at every \\n\\, as [Theorem 2](#thm-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at \\n = 1\\ to 0.48 at \\n = 5\\ and 0.2 at \\n = 30\\.
+> The sample means for $n = 1$ are just single cars, so they are skewed. By $n = 30$ the histogram is close to the normal curve. The standard deviation of the sample means is within 1.2% of $\sigma/\sqrt{n}$ at every $n$, as [Theorem 2](#thm-sum-iid-moments) predicts. The skewness of the sample means, which is zero for a normal distribution, falls from 1.07 at $n = 1$ to 0.48 at $n = 5$ and 0.2 at $n = 30$.
 
 > **NOTE:**
 >
@@ -242,17 +292,19 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 3 (Markov’s inequality)** Let \\X\\ be a random variable with \\X \ge 0\\ and \\{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} \< \infty\\. Then for every \\a \> 0\\ [\[4\]](#ref-wikipedia_markovs_inequality):
+> **Theorem 3 (Markov’s inequality)** Let $X$ be a random variable with $X \ge 0$ and ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} < \infty$. Then for every $a > 0$ [\[4\]](#ref-wikipedia_markovs_inequality):
 >
-> \\ {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} \le \frac{{\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}}}{a} \\
+> $${\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} \le \frac{{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}}{a}$$
 
 > **NOTE:**
 >
-> *Proof*. Because \\X \ge 0\\, every outcome satisfies \\X \ge a \cdot \mathbb{1}\_{{\mathopen{}\left\\X \ge a\right\\\mathclose{}}}\\: when \\X \ge a\\ the right side is \\a \le X\\, and otherwise it is \\0 \le X\\. The expectation of a nonnegative random variable is nonnegative, so by [linearity of expectation](expectation.llms.md#thm-linearity-expectation), and because the expectation of an indicator is the probability of its event,
+> *Proof*. Because $X \ge 0$, every outcome satisfies $X \ge a \cdot \mathbb{1}_{{\mathopen{}\left\{X \ge a\right\}\mathclose{}}}$: when $X \ge a$ the right side is $a \le X$, and otherwise it is $0 \le X$. The expectation of a nonnegative random variable is nonnegative, so by [linearity of expectation](expectation.llms.md#thm-linearity-expectation), and because the expectation of an indicator is the probability of its event,
 >
-> \\ {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} - a \cdot {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left\[X - a \cdot \mathbb{1}\_{{\mathopen{}\left\\X \ge a\right\\\mathclose{}}}\right\]\mathclose{}} \ge 0 \\
+> $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} - a \cdot {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}}
+> = {\mathbb{E}\mathopen{}\left[X - a \cdot \mathbb{1}_{{\mathopen{}\left\{X \ge a\right\}\mathclose{}}}\right]\mathclose{}}
+> \ge 0$$
 >
-> and dividing by \\a \> 0\\ gives the claim.
+> and dividing by $a > 0$ gives the claim.
 
 > **NOTE:**
 >
@@ -260,19 +312,22 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 4 (Chebyshev’s inequality)** Let \\X\\ be a random variable with mean \\\mu\\ and finite variance \\\sigma^2\> 0\\. Then for every \\k \> 0\\ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
+> **Theorem 4 (Chebyshev’s inequality)** Let $X$ be a random variable with mean $\mu$ and finite variance $\sigma^2> 0$. Then for every $k > 0$ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
 >
-> \\ {\Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{}} \le \frac{1}{k^2} \\
+> $${\Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{}} \le \frac{1}{k^2}$$
 
 > **NOTE:**
 >
-> *Proof*. The random variable \\(X - \mu)^2\\ is nonnegative, and its expectation is \\\sigma^2\\. Because \\\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\\ exactly when \\(X - \mu)^2 \ge k^2\sigma^2\\, [Theorem 3](#thm-markov) gives
+> *Proof*. The random variable $(X - \mu)^2$ is nonnegative, and its expectation is $\sigma^2$. Because $\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma$ exactly when $(X - \mu)^2 \ge k^2\sigma^2$, [Theorem 3](#thm-markov) gives
 >
-> \\ {\Pr\mathopen{}\left(\mathopen{}\left\|X - \mu\right\|\mathclose{} \ge k\sigma\right)\mathclose{}} = {\Pr\mathopen{}\left((X - \mu)^2 \ge k^2\sigma^2\right)\mathclose{}} \le \frac{\sigma^2}{k^2\sigma^2} = \frac{1}{k^2} \\
+> $${\Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{}}
+> = {\Pr\mathopen{}\left((X - \mu)^2 \ge k^2\sigma^2\right)\mathclose{}}
+> \le \frac{\sigma^2}{k^2\sigma^2}
+> = \frac{1}{k^2}$$
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 4](#thm-chebyshev) needs only a mean and a variance, not a distribution, so it holds for every distribution that has them. That generality makes it loose: for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at \\k = 2\\ is 25%.
+> *Remark*. [Theorem 4](#thm-chebyshev) needs only a mean and a variance, not a distribution, so it holds for every distribution that has them. That generality makes it loose: for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at $k = 2$ is 25%.
 
 > **NOTE:**
 >
@@ -280,7 +335,7 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Example 3 (How loose is Chebyshev’s bound for car horsepower?)** Take the 392 horsepower values in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and draw one car at random. For each \\k\\, the code below counts the share of cars whose horsepower is at least \\k\\ standard deviations from the mean, and sets it beside the bound \\1/k^2\\ from [Theorem 4](#thm-chebyshev).
+> **Example 3 (How loose is Chebyshev’s bound for car horsepower?)** Take the 392 horsepower values in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and draw one car at random. For each $k$, the code below counts the share of cars whose horsepower is at least $k$ standard deviations from the mean, and sets it beside the bound $1/k^2$ from [Theorem 4](#thm-chebyshev).
 >
 > ``` r
 > hp <- read.csv("data/auto.csv")$horsepower
@@ -292,23 +347,23 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > data.frame(k = k, share_of_cars = share_beyond, chebyshev_bound = 1 / k^2)
 > ```
 >
-> The bound holds at every \\k\\, as [Theorem 4](#thm-chebyshev) guarantees. At \\k = 2\\ the share of cars is 4.3%, against a bound of 25%, and at \\k = 3\\ it is 1.3% against 11.1%. The bound is loose because it must hold for every distribution with this mean and variance.
+> The bound holds at every $k$, as [Theorem 4](#thm-chebyshev) guarantees. At $k = 2$ the share of cars is 4.3%, against a bound of 25%, and at $k = 3$ it is 1.3% against 11.1%. The bound is loose because it must hold for every distribution with this mean and variance.
 
 > **NOTE:**
 >
-> **Exercise 1 (Chebyshev’s bound for the mean fuel economy)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with population mean \\\mu\\ and variance \\\sigma^2\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\.
+> **Exercise 1 (Chebyshev’s bound for the mean fuel economy)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) draws of the fuel economy (`mpg`) of a car chosen at random from the Auto data, with population mean $\mu$ and variance $\sigma^2$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$.
 >
-> Use [Theorem 2](#thm-sum-iid-moments) and [Theorem 4](#thm-chebyshev) to show that for every \\\epsilon \> 0\\,
+> Use [Theorem 2](#thm-sum-iid-moments) and [Theorem 4](#thm-chebyshev) to show that for every $\epsilon > 0$,
 >
-> \\ {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{}} \le \frac{\sigma^2}{n\epsilon^2} \\
+> $${\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \epsilon\right)\mathclose{}} \le \frac{\sigma^2}{n\epsilon^2}$$
 
 > **NOTE:**
 >
-> *Solution 1*. By [Theorem 2](#thm-sum-iid-moments), \\{\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2\\ for \\S_n \stackrel{\text{def}}{=}\sum\_{i=1}^nX_i\\, so \\{{\bar{X}}\_{n}} = S_n/n\\ has mean \\\mu\\ and variance \\\sigma^2/n\\ (a constant factor \\c\\ scales a variance by \\c^2\\). Apply [Theorem 4](#thm-chebyshev) to \\{{\bar{X}}\_{n}}\\ with \\k\sigma/\sqrt{n} = \epsilon\\, that is, \\k = \epsilon\sqrt{n}/\sigma\\, so \\1/k^2 = \sigma^2/(n\epsilon^2)\\.
+> *Solution 1*. By [Theorem 2](#thm-sum-iid-moments), ${\operatorname{Var}\mathopen{}\left(S_n\right)\mathclose{}} = n\sigma^2$ for $S_n \stackrel{\text{def}}{=}\sum_{i=1}^nX_i$, so ${{\bar{X}}_{n}} = S_n/n$ has mean $\mu$ and variance $\sigma^2/n$ (a constant factor $c$ scales a variance by $c^2$). Apply [Theorem 4](#thm-chebyshev) to ${{\bar{X}}_{n}}$ with $k\sigma/\sqrt{n} = \epsilon$, that is, $k = \epsilon\sqrt{n}/\sigma$, so $1/k^2 = \sigma^2/(n\epsilon^2)$.
 
 > **NOTE:**
 >
-> **Exercise 2 (Population variance of the fuel economy)** Compute \\\sigma^2\\ for the `mpg` column of [`data/auto.csv`](data/auto.csv), treating the 392 cars as the whole population.
+> **Exercise 2 (Population variance of the fuel economy)** Compute $\sigma^2$ for the `mpg` column of [`data/auto.csv`](data/auto.csv), treating the 392 cars as the whole population.
 
 > **NOTE:**
 >
@@ -326,11 +381,11 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Exercise 3 (Smallest sample size from Chebyshev’s bound)** With \\\sigma^2\\ from [Exercise 2](#exr-chebyshev-variance), find the smallest \\n\\ for which the bound in [Exercise 1](#exr-chebyshev-sample-size) guarantees \\{\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge 1\right)\mathclose{}} \le 0.05\\.
+> **Exercise 3 (Smallest sample size from Chebyshev’s bound)** With $\sigma^2$ from [Exercise 2](#exr-chebyshev-variance), find the smallest $n$ for which the bound in [Exercise 1](#exr-chebyshev-sample-size) guarantees ${\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge 1\right)\mathclose{}} \le 0.05$.
 
 > **NOTE:**
 >
-> *Solution 3*. Setting \\\sigma^2/(n \cdot 1^2) \le 0.05\\ gives \\n \ge 20\sigma^2\\.
+> *Solution 3*. Setting $\sigma^2/(n \cdot 1^2) \le 0.05$ gives $n \ge 20\sigma^2$.
 >
 > ``` r
 > n_min <- ceiling(20 * sigma2)
@@ -338,11 +393,11 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > #> [1] 1216
 > ```
 >
-> With \\\sigma^2\\ from [Solution 2](#sol-chebyshev-variance), \\n = 1216\\ cars suffice.
+> With $\sigma^2$ from [Solution 2](#sol-chebyshev-variance), $n = 1216$ cars suffice.
 
 > **NOTE:**
 >
-> **Exercise 4 (Simulated misses of the sample mean)** Draw 10,000 samples of the size from [Exercise 3](#exr-chebyshev-min-n) with replacement, and report how many of the sample [means](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) \\{{\bar{X}}\_{n}}\\ miss \\\mu\\ by 1 or more.
+> **Exercise 4 (Simulated misses of the sample mean)** Draw 10,000 samples of the size from [Exercise 3](#exr-chebyshev-min-n) with replacement, and report how many of the sample [means](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) ${{\bar{X}}_{n}}$ miss $\mu$ by 1 or more.
 
 > **NOTE:**
 >
@@ -358,7 +413,7 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > #> [1] 0
 > ```
 >
-> Out of 10,000 samples of that size, 0 sample means missed \\\mu\\ by 1 or more, against the 5% (500 samples) the bound allows.
+> Out of 10,000 samples of that size, 0 sample means missed $\mu$ by 1 or more, against the 5% (500 samples) the bound allows.
 
 > **NOTE:**
 >
@@ -378,113 +433,203 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 5 (Chebyshev’s inequality for a sample mean)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\epsilon \> 0\\:
+> **Theorem 5 (Chebyshev’s inequality for a sample mean)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) random variables with population mean $\mu$ and finite variance $\sigma^2> 0$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$. Then for every $\epsilon > 0$:
 >
-> \\ {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \epsilon\right)\mathclose{}} \le \frac{\sigma^2}{n\epsilon^2} \\
+> $${\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \epsilon\right)\mathclose{}} \le \frac{\sigma^2}{n\epsilon^2}$$
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 4](#thm-chebyshev) to \\{{\bar{X}}\_{n}}\\, whose [variance](variance-covariance.llms.md#def-variance) is \\\sigma^2/n\\ by [Corollary 2](#cor-mean-iid-moments).
+> *Proof*. This is the solution to [Exercise 1](#exr-chebyshev-sample-size), worked in [Solution 1](#sol-chebyshev-sample-size). It applies [Theorem 4](#thm-chebyshev) to ${{\bar{X}}_{n}}$, whose [variance](variance-covariance.llms.md#def-variance) is $\sigma^2/n$ by [Corollary 2](#cor-mean-iid-moments).
 
 > **NOTE:**
 >
-> **Lemma 1 (Hoeffding’s lemma)** Let \\X\\ be a random variable with \\0 \le X \le 1\\ and mean \\\mu\\. Then for every real number \\s\\,
+> **Lemma 1 (Hoeffding’s lemma)** Let $X$ be a random variable with $0 \le X \le 1$ and mean $\mu$. Then for every real number $s$,
 >
-> \\ {\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} \le e^{s^2/8}. \\
+> $${\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}} \le e^{s^2/8}.$$
 
 > **NOTE:**
 >
-> *Proof*. First bound \\e^{sX}\\ by a line. The function \\x \mapsto e^{x}\\ is convex, and for \\0 \le X \le 1\\ the number \\sX\\ is the weighted average \\(1 - X) \cdot 0 + X \cdot s\\, so
+> *Proof*. First bound $e^{sX}$ by a line. The function $x \mapsto e^{x}$ is convex, and for $0 \le X \le 1$ the number $sX$ is the weighted average $(1 - X) \cdot 0 + X \cdot s$, so
 >
-> \\ \begin{aligned} e^{sX} &\le (1 - X) e^{0} + X e^{s} && \text{(convexity of the exponential)} \\ &= 1 - X + X e^{s} && \text{(} e^{0} = 1 \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> e^{sX}
+> &\le (1 - X) e^{0} + X e^{s}
+> && \text{(convexity of the exponential)} \\
+> &= 1 - X + X e^{s}
+> && \text{(} e^{0} = 1 \text{)}
+> \end{aligned}$$
 >
 > Take the expectation of both sides, which preserves the inequality:
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[e^{sX}\right\]\mathclose{}} &\le 1 - {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} + {\mathbb{E}\mathopen{}\left\[X\right\]\mathclose{}} e^{s} && \text{(linearity of expectation)} \\ &= 1 - \mu+ \mu e^{s} && \text{(definition of } \mu\text{)} \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[e^{sX}\right]\mathclose{}}
+> &\le 1 - {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} + {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} e^{s}
+> && \text{(linearity of expectation)} \\
+> &= 1 - \mu+ \mu e^{s}
+> && \text{(definition of } \mu\text{)}
+> \end{aligned}$$
 >
-> The number \\1 - \mu+ \mu e^{s}\\ is a weighted average of \\1\\ and \\e^{s}\\ with weights \\1 - \mu\\ and \\\mu\\, so it is positive. Multiply by the constant \\e^{-s\mu}\\ and write the result as an exponential:
+> The number $1 - \mu+ \mu e^{s}$ is a weighted average of $1$ and $e^{s}$ with weights $1 - \mu$ and $\mu$, so it is positive. Multiply by the constant $e^{-s\mu}$ and write the result as an exponential:
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} &= e^{-s\mu} {\mathbb{E}\mathopen{}\left\[e^{sX}\right\]\mathclose{}} && \text{(} e^{-s\mu} \text{ is a constant)} \\ &\le e^{-s\mu} \mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} && \text{(the bound above)} \\ &= e^{L(s)} && \text{(define } L(s) \stackrel{\text{def}}{=}-s\mu+ \log\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}}
+> &= e^{-s\mu} {\mathbb{E}\mathopen{}\left[e^{sX}\right]\mathclose{}}
+> && \text{(} e^{-s\mu} \text{ is a constant)} \\
+> &\le e^{-s\mu} \mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}
+> && \text{(the bound above)} \\
+> &= e^{L(s)}
+> && \text{(define } L(s) \stackrel{\text{def}}{=}-s\mu+ \log\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} \text{)}
+> \end{aligned}$$
 >
-> It remains to show \\L(s) \le s^2/8\\. Write
+> It remains to show $L(s) \le s^2/8$. Write
 >
-> \\ p(s) \stackrel{\text{def}}{=}\frac{\mu e^{s}}{1 - \mu+ \mu e^{s}}, \\
+> $$p(s) \stackrel{\text{def}}{=}\frac{\mu e^{s}}{1 - \mu+ \mu e^{s}},$$
 >
-> which lies in \\\[0, 1\]\\. The first derivative of \\L\\ is
+> which lies in $[0, 1]$. The first derivative of $L$ is
 >
-> \\ \begin{aligned} L'(s) &= -\mu+ \frac{\mu e^{s}}{1 - \mu+ \mu e^{s}} && \text{(chain rule for the logarithm)} \\ &= -\mu+ p(s) && \text{(definition of } p \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> L'(s)
+> &= -\mu+ \frac{\mu e^{s}}{1 - \mu+ \mu e^{s}}
+> && \text{(chain rule for the logarithm)} \\
+> &= -\mu+ p(s)
+> && \text{(definition of } p \text{)}
+> \end{aligned}$$
 >
-> The derivative of \\p\\ is
+> The derivative of $p$ is
 >
-> \\ \begin{aligned} p'(s) &= \frac{\mu e^{s}\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} - \mu e^{s} \cdot \mu e^{s}}{\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}^2} && \text{(quotient rule)} \\ &= \frac{\mu e^{s}\mathopen{}\left(1 - \mu\right)\mathclose{}}{\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}^2} && \text{(the } \mu^2 e^{2s} \text{ terms cancel)} \\ &= p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{} && \text{(} 1 - p(s) = \tfrac{1 - \mu}{1 - \mu+ \mu e^{s}} \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> p'(s)
+> &= \frac{\mu e^{s}\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{} - \mu e^{s} \cdot \mu e^{s}}{\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}^2}
+> && \text{(quotient rule)} \\
+> &= \frac{\mu e^{s}\mathopen{}\left(1 - \mu\right)\mathclose{}}{\mathopen{}\left(1 - \mu+ \mu e^{s}\right)\mathclose{}^2}
+> && \text{(the } \mu^2 e^{2s} \text{ terms cancel)} \\
+> &= p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}
+> && \text{(} 1 - p(s) = \tfrac{1 - \mu}{1 - \mu+ \mu e^{s}} \text{)}
+> \end{aligned}$$
 >
-> so \\L''(s) = p'(s) = p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}\\. Completing the square gives
+> so $L''(s) = p'(s) = p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}$. Completing the square gives
 >
-> \\ \begin{aligned} p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{} &= \frac{1}{4} - \mathopen{}\left(p(s) - \frac{1}{2}\right)\mathclose{}^2 && \text{(complete the square)} \\ &\le \frac{1}{4} && \text{(a square is not negative)} \end{aligned} \\
+> $$\begin{aligned}
+> p(s)\mathopen{}\left(1 - p(s)\right)\mathclose{}
+> &= \frac{1}{4} - \mathopen{}\left(p(s) - \frac{1}{2}\right)\mathclose{}^2
+> && \text{(complete the square)} \\
+> &\le \frac{1}{4}
+> && \text{(a square is not negative)}
+> \end{aligned}$$
 >
-> At \\s = 0\\, \\L(0) = 0 + \log 1 = 0\\ and \\L'(0) = -\mu+ \mu= 0\\. By Taylor’s theorem with the Lagrange remainder, there is a number \\\xi\\ between \\0\\ and \\s\\ with
+> At $s = 0$, $L(0) = 0 + \log 1 = 0$ and $L'(0) = -\mu+ \mu= 0$. By Taylor’s theorem with the Lagrange remainder, there is a number $\xi$ between $0$ and $s$ with
 >
-> \\ \begin{aligned} L(s) &= L(0) + L'(0)\\ s + \frac{L''(\xi)}{2} s^2 && \text{(Taylor's theorem)} \\ &= \frac{L''(\xi)}{2} s^2 && \text{(} L(0) = L'(0) = 0 \text{)} \\ &\le \frac{s^2}{8} && \text{(} L''(\xi) \le \tfrac{1}{4} \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> L(s)
+> &= L(0) + L'(0)\, s + \frac{L''(\xi)}{2} s^2
+> && \text{(Taylor's theorem)} \\
+> &= \frac{L''(\xi)}{2} s^2
+> && \text{(} L(0) = L'(0) = 0 \text{)} \\
+> &\le \frac{s^2}{8}
+> && \text{(} L''(\xi) \le \tfrac{1}{4} \text{)}
+> \end{aligned}$$
 >
-> Therefore \\{\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}} \le e^{L(s)} \le e^{s^2/8}\\.
+> Therefore ${\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}} \le e^{L(s)} \le e^{s^2/8}$.
 
 > **NOTE:**
 >
-> *Remark*. The bound on the moment generating function \\{\mathbb{E}\mathopen{}\left\[e^{s(X - \mu)}\right\]\mathclose{}}\\ is the step of Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
+> *Remark*. The bound on the moment generating function ${\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}}$ is the step of Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) that the literature calls Hoeffding’s lemma. The next result uses it to bound the tails of a sample mean.
 
 > **NOTE:**
 >
-> **Theorem 6 (Hoeffding’s inequality)** Let \\X_1, \ldots, X_n\\ be [IID](independence.llms.md#def-iid) random variables with \\0 \le X_i \le 1\\ and population mean \\\mu\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\. Then for every \\\varepsilon\> 0\\ [\[11\]](#ref-wikipedia_hoeffdings_inequality),
+> **Theorem 6 (Hoeffding’s inequality)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) random variables with $0 \le X_i \le 1$ and population mean $\mu$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$. Then for every $\varepsilon> 0$ [\[11\]](#ref-wikipedia_hoeffdings_inequality),
 >
-> \\ {\Pr\mathopen{}\left({{\bar{X}}\_{n}} - \mu\ge \varepsilon\right)\mathclose{}} \le e^{-2n\varepsilon^2}. \tag{1}\\
+> $${\Pr\mathopen{}\left({{\bar{X}}_{n}} - \mu\ge \varepsilon\right)\mathclose{}} \le e^{-2n\varepsilon^2}.
+> \tag{1}$$
 
 > **NOTE:**
 >
-> *Proof*. Let the free parameter be \\s \> 0\\. The event \\{\mathopen{}\left\\{{\bar{X}}\_{n}} - \mu\ge \varepsilon\right\\\mathclose{}}\\ is the event \\{\mathopen{}\left\\e^{sn({{\bar{X}}\_{n}} - \mu)} \ge e^{sn\varepsilon}\right\\\mathclose{}}\\, because the exponential is increasing and \\sn \> 0\\. The random variable \\e^{sn({{\bar{X}}\_{n}} - \mu)}\\ is positive, so [Markov’s inequality](#thm-markov) applies:
+> *Proof*. Let the free parameter be $s > 0$. The event ${\mathopen{}\left\{{{\bar{X}}_{n}} - \mu\ge \varepsilon\right\}\mathclose{}}$ is the event ${\mathopen{}\left\{e^{sn({{\bar{X}}_{n}} - \mu)} \ge e^{sn\varepsilon}\right\}\mathclose{}}$, because the exponential is increasing and $sn > 0$. The random variable $e^{sn({{\bar{X}}_{n}} - \mu)}$ is positive, so [Markov’s inequality](#thm-markov) applies:
 >
-> \\ \begin{aligned} {\Pr\mathopen{}\left({{\bar{X}}\_{n}} - \mu\ge \varepsilon\right)\mathclose{}} &= {\Pr\mathopen{}\left(e^{sn({{\bar{X}}\_{n}} - \mu)} \ge e^{sn\varepsilon}\right)\mathclose{}} && \text{(the exponential is increasing)} \\ &\le e^{-sn\varepsilon} {\mathbb{E}\mathopen{}\left\[e^{sn({{\bar{X}}\_{n}} - \mu)}\right\]\mathclose{}} && \text{(Markov's inequality)} \end{aligned} \\
+> $$\begin{aligned}
+> {\Pr\mathopen{}\left({{\bar{X}}_{n}} - \mu\ge \varepsilon\right)\mathclose{}}
+> &= {\Pr\mathopen{}\left(e^{sn({{\bar{X}}_{n}} - \mu)} \ge e^{sn\varepsilon}\right)\mathclose{}}
+> && \text{(the exponential is increasing)} \\
+> &\le e^{-sn\varepsilon} {\mathbb{E}\mathopen{}\left[e^{sn({{\bar{X}}_{n}} - \mu)}\right]\mathclose{}}
+> && \text{(Markov's inequality)}
+> \end{aligned}$$
 >
 > Rewrite the exponent as a sum, so that the exponential becomes a product:
 >
-> \\ \begin{aligned} e^{sn({{\bar{X}}\_{n}} - \mu)} &= e^{s\sum\_{i=1}^n(X_i - \mu)} && \text{(} n{{\bar{X}}\_{n}} = \sum\_{i=1}^nX_i \text{)} \\ &= \prod\_{i=1}^n e^{s(X_i - \mu)} && \text{(} e^{a + b} = e^{a} e^{b} \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> e^{sn({{\bar{X}}_{n}} - \mu)}
+> &= e^{s\sum_{i=1}^n(X_i - \mu)}
+> && \text{(} n{{\bar{X}}_{n}} = \sum_{i=1}^nX_i \text{)} \\
+> &= \prod_{i=1}^n e^{s(X_i - \mu)}
+> && \text{(} e^{a + b} = e^{a} e^{b} \text{)}
+> \end{aligned}$$
 >
 > The factors are functions of independent random variables, so they are independent, and the expectation of a product of independent random variables is the product of their expectations (the [expectation of a product of independent variables](variance-covariance.llms.md#thm-indpt-uncorrelated), applied one factor at a time). Then apply [Lemma 1](#lem-hoeffding) to each factor:
 >
-> \\ \begin{aligned} {\mathbb{E}\mathopen{}\left\[e^{sn({{\bar{X}}\_{n}} - \mu)}\right\]\mathclose{}} &= \prod\_{i=1}^n {\mathbb{E}\mathopen{}\left\[e^{s(X_i - \mu)}\right\]\mathclose{}} && \text{(independence)} \\ &\le \prod\_{i=1}^n e^{s^2/8} && \text{(Hoeffding's lemma)} \\ &= e^{ns^2/8} && \text{(} n \text{ equal factors)} \end{aligned} \\
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[e^{sn({{\bar{X}}_{n}} - \mu)}\right]\mathclose{}}
+> &= \prod_{i=1}^n {\mathbb{E}\mathopen{}\left[e^{s(X_i - \mu)}\right]\mathclose{}}
+> && \text{(independence)} \\
+> &\le \prod_{i=1}^n e^{s^2/8}
+> && \text{(Hoeffding's lemma)} \\
+> &= e^{ns^2/8}
+> && \text{(} n \text{ equal factors)}
+> \end{aligned}$$
 >
-> Combining the two displays, for every \\s \> 0\\,
+> Combining the two displays, for every $s > 0$,
 >
-> \\ {\Pr\mathopen{}\left({{\bar{X}}\_{n}} - \mu\ge \varepsilon\right)\mathclose{}} \le e^{-sn\varepsilon+ ns^2/8}. \\
+> $${\Pr\mathopen{}\left({{\bar{X}}_{n}} - \mu\ge \varepsilon\right)\mathclose{}} \le e^{-sn\varepsilon+ ns^2/8}.$$
 >
-> The right side is smallest where the exponent \\-sn\varepsilon+ ns^2/8\\ is smallest. The exponent is a quadratic in \\s\\ with a positive leading coefficient, so it has one minimum, where its derivative is zero. Its derivative in \\s\\ is \\-n\varepsilon+ ns/4\\, which is zero at \\s = 4\varepsilon\\, and \\4\varepsilon\> 0\\ is allowed. There the exponent is
+> The right side is smallest where the exponent $-sn\varepsilon+ ns^2/8$ is smallest. The exponent is a quadratic in $s$ with a positive leading coefficient, so it has one minimum, where its derivative is zero. Its derivative in $s$ is $-n\varepsilon+ ns/4$, which is zero at $s = 4\varepsilon$, and $4\varepsilon> 0$ is allowed. There the exponent is
 >
-> \\ \begin{aligned} -4\varepsilon\cdot n\varepsilon+ \frac{n(4\varepsilon)^2}{8} &= -4n\varepsilon^2 + 2n\varepsilon^2 && \text{(substitute } s = 4\varepsilon\text{)} \\ &= -2n\varepsilon^2 && \text{(combine like terms)} \end{aligned} \\
+> $$\begin{aligned}
+> -4\varepsilon\cdot n\varepsilon+ \frac{n(4\varepsilon)^2}{8}
+> &= -4n\varepsilon^2 + 2n\varepsilon^2
+> && \text{(substitute } s = 4\varepsilon\text{)} \\
+> &= -2n\varepsilon^2
+> && \text{(combine like terms)}
+> \end{aligned}$$
 >
 > which is the claim.
 
 > **NOTE:**
 >
-> **Corollary 3 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 6](#thm-hoeffding), for every \\\varepsilon\> 0\\,
+> **Corollary 3 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 6](#thm-hoeffding), for every $\varepsilon> 0$,
 >
-> \\ {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{}} \le 2e^{-2n\varepsilon^2}. \tag{2}\\
+> $${\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}} \le 2e^{-2n\varepsilon^2}.
+> \tag{2}$$
 
 > **NOTE:**
 >
-> *Proof*. The variables \\1 - X_1, \ldots, 1 - X_n\\ are IID, lie in \\\[0, 1\]\\, and have mean \\1 - \mu\\. Their sample mean is \\1 - {{\bar{X}}\_{n}}\\, so [Theorem 6](#thm-hoeffding) applied to them gives
+> *Proof*. The variables $1 - X_1, \ldots, 1 - X_n$ are IID, lie in $[0, 1]$, and have mean $1 - \mu$. Their sample mean is $1 - {{\bar{X}}_{n}}$, so [Theorem 6](#thm-hoeffding) applied to them gives
 >
-> \\ \begin{aligned} {\Pr\mathopen{}\left(\mu- {{\bar{X}}\_{n}} \ge \varepsilon\right)\mathclose{}} &= {\Pr\mathopen{}\left((1 - {{\bar{X}}\_{n}}) - (1 - \mu) \ge \varepsilon\right)\mathclose{}} && \text{(rearrange the event)} \\ &\le e^{-2n\varepsilon^2} && \text{(Hoeffding's inequality for } 1 - X_i \text{)} \end{aligned} \\
+> $$\begin{aligned}
+> {\Pr\mathopen{}\left(\mu- {{\bar{X}}_{n}} \ge \varepsilon\right)\mathclose{}}
+> &= {\Pr\mathopen{}\left((1 - {{\bar{X}}_{n}}) - (1 - \mu) \ge \varepsilon\right)\mathclose{}}
+> && \text{(rearrange the event)} \\
+> &\le e^{-2n\varepsilon^2}
+> && \text{(Hoeffding's inequality for } 1 - X_i \text{)}
+> \end{aligned}$$
 >
-> The event \\{\mathopen{}\left\\\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \varepsilon\right\\\mathclose{}}\\ is the union of \\{\mathopen{}\left\\{{\bar{X}}\_{n}} - \mu\ge \varepsilon\right\\\mathclose{}}\\ and \\{\mathopen{}\left\\\mu- {{\bar{X}}\_{n}} \ge \varepsilon\right\\\mathclose{}}\\. The probability of a union is at most the sum of the probabilities, so
+> The event ${\mathopen{}\left\{\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \varepsilon\right\}\mathclose{}}$ is the union of ${\mathopen{}\left\{{{\bar{X}}_{n}} - \mu\ge \varepsilon\right\}\mathclose{}}$ and ${\mathopen{}\left\{\mu- {{\bar{X}}_{n}} \ge \varepsilon\right\}\mathclose{}}$. The probability of a union is at most the sum of the probabilities, so
 >
-> \\ \begin{aligned} {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{}} &\le {\Pr\mathopen{}\left({{\bar{X}}\_{n}} - \mu\ge \varepsilon\right)\mathclose{}} + {\Pr\mathopen{}\left(\mu- {{\bar{X}}\_{n}} \ge \varepsilon\right)\mathclose{}} && \text{(union bound)} \\ &\le e^{-2n\varepsilon^2} + e^{-2n\varepsilon^2} && \text{(Hoeffding's inequality, twice)} \\ &= 2e^{-2n\varepsilon^2} && \text{(combine like terms)} \end{aligned} \\
+> $$\begin{aligned}
+> {\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}}
+> &\le {\Pr\mathopen{}\left({{\bar{X}}_{n}} - \mu\ge \varepsilon\right)\mathclose{}} + {\Pr\mathopen{}\left(\mu- {{\bar{X}}_{n}} \ge \varepsilon\right)\mathclose{}}
+> && \text{(union bound)} \\
+> &\le e^{-2n\varepsilon^2} + e^{-2n\varepsilon^2}
+> && \text{(Hoeffding's inequality, twice)} \\
+> &= 2e^{-2n\varepsilon^2}
+> && \text{(combine like terms)}
+> \end{aligned}$$
 
 > **NOTE:**
 >
-> *Remark*. Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term [\[10\]](#ref-hoeffding1963). This page states the case of the sample mean of IID variables in \\\[0, 1\]\\, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, \\\mu\\ is the probability of the event and \\{{\bar{X}}\_{n}}\\ is the share of the \\n\\ draws in which it occurs.
+> *Remark*. Hoeffding stated the inequality for sums of independent bounded random variables, with different bounds for each term [\[10\]](#ref-hoeffding1963). This page states the case of the sample mean of IID variables in $[0, 1]$, which is the case that bounds the gap between a sample proportion and the probability it estimates. For an indicator variable, $\mu$ is the probability of the event and ${{\bar{X}}_{n}}$ is the share of the $n$ draws in which it occurs.
 
 > **NOTE:**
 >
-> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above \\25\\. Let \\X_i = 1\\ if the \\i\\th car drawn at random is efficient and \\X_i = 0\\ otherwise, so \\\mu\\ is the share of efficient cars and \\{{\bar{X}}\_{n}}\\ is the share in a sample of \\n\\ draws. Each \\X_i\\ lies in \\\[0, 1\]\\, and the draws are made with replacement, so the \\X_i\\ are IID and [Corollary 3](#cor-hoeffding-two-sided) applies. The code below draws \\10{,}000\\ samples of each size, computes the proportion of samples whose share misses \\\mu\\ by at least \\\varepsilon= 0.1\\, and sets that proportion beside the bound \\2e^{-2n\varepsilon^2}\\ of [Equation 2](#eq-hoeffding) and the bound \\\sigma^2/(n\varepsilon^2)\\ that Chebyshev’s inequality gives ([Theorem 5](#thm-chebyshev-sample-mean)).
+> **Example 4 (How loose is Hoeffding’s bound for the share of efficient cars?)** Take the 392 cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population, and call a car efficient if its fuel economy (`mpg`) is above $25$. Let $X_i = 1$ if the $i$th car drawn at random is efficient and $X_i = 0$ otherwise, so $\mu$ is the share of efficient cars and ${{\bar{X}}_{n}}$ is the share in a sample of $n$ draws. Each $X_i$ lies in $[0, 1]$, and the draws are made with replacement, so the $X_i$ are IID and [Corollary 3](#cor-hoeffding-two-sided) applies. The code below draws $10{,}000$ samples of each size, computes the proportion of samples whose share misses $\mu$ by at least $\varepsilon= 0.1$, and sets that proportion beside the bound $2e^{-2n\varepsilon^2}$ of [Equation 2](#eq-hoeffding) and the bound $\sigma^2/(n\varepsilon^2)$ that Chebyshev’s inequality gives ([Theorem 5](#thm-chebyshev-sample-mean)).
 >
 > ``` r
 > mpg <- read.csv("data/auto.csv")$mpg
@@ -509,17 +654,17 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 > )
 > ```
 >
-> The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For \\n = 50\\ and \\n = 100\\ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in \\n\\ while the Chebyshev bound falls only like \\1/n\\, so at \\n = 200\\ and \\n = 400\\ Hoeffding’s is the smaller. At \\n = 400\\ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
+> The simulated proportions lie below both bounds at every sample size, as they should: the bounds apply to the true probabilities these proportions estimate. The share of efficient cars is 0.398. For $n = 50$ and $n = 100$ Chebyshev’s bound is the smaller of the two, but the Hoeffding bound falls exponentially in $n$ while the Chebyshev bound falls only like $1/n$, so at $n = 200$ and $n = 400$ Hoeffding’s is the smaller. At $n = 400$ the Hoeffding bound is 0.00067, against 0.06 for Chebyshev, and 0 of the 10,000 samples missed. Both bounds are loose because they must hold for every distribution of this kind, not only for this one.
 
 ## 0.3 The law of large numbers
 
 > **NOTE:**
 >
-> **Definition 1 (Convergence in probability)** A sequence of random variables \\Y_1, Y_2, \ldots\\ **converges in probability** to a constant \\c\\ [\[12\]](#ref-wikipedia_convergence_of_random_variables) if, for every distance \\\varepsilon \> 0\\, the probability that \\Y_n\\ lies at least \\\varepsilon\\ away from \\c\\ goes to zero as \\n\\ grows:
+> **Definition 1 (Convergence in probability)** A sequence of random variables $Y_1, Y_2, \ldots$ **converges in probability** to a constant $c$ [\[12\]](#ref-wikipedia_convergence_of_random_variables) if, for every distance $\varepsilon > 0$, the probability that $Y_n$ lies at least $\varepsilon$ away from $c$ goes to zero as $n$ grows:
 >
-> \\ \lim\_{n \to \infty} {\Pr\mathopen{}\left(\mathopen{}\left\|Y_n - c\right\|\mathclose{} \ge \varepsilon\right)\mathclose{}} = 0 \\
+> $$\lim_{n \to \infty} {\Pr\mathopen{}\left(\mathopen{}\left|Y_n - c\right|\mathclose{} \ge \varepsilon\right)\mathclose{}} = 0$$
 >
-> We write \\Y_n \overset{\scriptstyle p}{\longrightarrow}c\\.
+> We write $Y_n \overset{\scriptstyle p}{\longrightarrow}c$.
 >
 > > **NOTE:**
 > >
@@ -527,9 +672,9 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> **Theorem 7 (Weak law of large numbers)** Let \\X_1, X_2, \ldots\\ be [IID](independence.llms.md#def-iid) random variables with population mean \\\mu\\ and finite variance \\\sigma^2\> 0\\, and let \\{{\bar{X}}\_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum\_{i=1}^nX_i\\ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to \\\mu\\ [\[14\]](#ref-wikipedia_law_of_large_numbers):
+> **Theorem 7 (Weak law of large numbers)** Let $X_1, X_2, \ldots$ be [IID](independence.llms.md#def-iid) random variables with population mean $\mu$ and finite variance $\sigma^2> 0$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$ be the sample mean. Then the sample mean [converges in probability](#def-convergence-in-probability) to $\mu$ [\[14\]](#ref-wikipedia_law_of_large_numbers):
 >
-> \\ {{\bar{X}}\_{n}} \overset{\scriptstyle p}{\longrightarrow}\mu \\
+> $${{\bar{X}}_{n}} \overset{\scriptstyle p}{\longrightarrow}\mu$$
 >
 > > **NOTE:**
 > >
@@ -537,13 +682,21 @@ Last modified: 2026-11-01 01:55:55 (PDT)
 
 > **NOTE:**
 >
-> *Proof*. By [Corollary 2](#cor-mean-iid-moments), \\{\mathbb{E}\mathopen{}\left\[{{\bar{X}}\_{n}}\right\]\mathclose{}} = \mu\\ and \\{\operatorname{Var}\mathopen{}\left({{\bar{X}}\_{n}}\right)\mathclose{}} = \sigma^2/n\\.
+> *Proof*. By [Corollary 2](#cor-mean-iid-moments), ${\mathbb{E}\mathopen{}\left[{{\bar{X}}_{n}}\right]\mathclose{}} = \mu$ and ${\operatorname{Var}\mathopen{}\left({{\bar{X}}_{n}}\right)\mathclose{}} = \sigma^2/n$.
 >
-> Let the tolerance be \\\varepsilon \> 0\\ and let the multiplier be \\k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma\\, so that \\k \sigma/ \sqrt{n} = \varepsilon\\. [Chebyshev’s inequality](#thm-chebyshev) for \\{{\bar{X}}\_{n}}\\, whose standard deviation is \\\sigma/ \sqrt{n}\\, gives
+> Let the tolerance be $\varepsilon > 0$ and let the multiplier be $k \stackrel{\text{def}}{=}\varepsilon \sqrt{n} / \sigma$, so that $k \sigma/ \sqrt{n} = \varepsilon$. [Chebyshev’s inequality](#thm-chebyshev) for ${{\bar{X}}_{n}}$, whose standard deviation is $\sigma/ \sqrt{n}$, gives
 >
-> \\ \begin{aligned} 0 \le {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge \varepsilon\right)\mathclose{}} &= {\Pr\mathopen{}\left(\mathopen{}\left\|{{\bar{X}}\_{n}} - \mu\right\|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{}} && \text{(definition of \$k\$)}\\ &\le \frac{1}{k^2} && \text{(Chebyshev's inequality)}\\ &= \frac{\sigma^2}{n \varepsilon^2} && \text{(substitute \$k\$)} \end{aligned} \\
+> $$\begin{aligned}
+> 0 \le {\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}}
+> &= {\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge k \frac{\sigma}{\sqrt{n}}\right)\mathclose{}}
+> && \text{(definition of $k$)}\\
+> &\le \frac{1}{k^2}
+> && \text{(Chebyshev's inequality)}\\
+> &= \frac{\sigma^2}{n \varepsilon^2}
+> && \text{(substitute $k$)}
+> \end{aligned}$$
 >
-> The bound goes to zero as \\n \to \infty\\, so the probability, squeezed between zero and the bound, goes to zero. This holds for every \\\varepsilon \> 0\\.
+> The bound goes to zero as $n \to \infty$, so the probability, squeezed between zero and the bound, goes to zero. This holds for every $\varepsilon > 0$.
 
 ## References
 
