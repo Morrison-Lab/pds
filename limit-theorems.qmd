@@ -12,7 +12,7 @@ format:
     output-file: limit-theorems.docx
 ---
 
-## The Central Limit Theorem {#sec-clt}
+# The Central Limit Theorem {#sec-clt}
 
 {{< include latex-macros/macros.qmd >}}
 
@@ -31,7 +31,7 @@ and gives a [proof of the CLT](https://www.youtube.com/watch?v=-EI96KIYGWw),
 following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
-## Tail bounds {#sec-tail-bounds}
+# Tail bounds {#sec-tail-bounds}
 
 {{< include pds/_subfiles/_thm-markov.qmd >}}
 
@@ -89,7 +89,7 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_exm-hoeffding-auto.qmd >}}
 
-## The law of large numbers {#sec-lln}
+# The law of large numbers {#sec-lln}
 
 {{< include pds/_subfiles/_def-convergence-in-probability.qmd >}}
 
@@ -98,7 +98,7 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 {{< include pds/_subfiles/_thm-wlln.qmd >}}
 
 
-## References {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::

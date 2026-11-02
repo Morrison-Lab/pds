@@ -30,7 +30,7 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
 
-## References {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::

@@ -45,7 +45,7 @@ format:
 {{< include pds/_subfiles/_thm-sample-mean-expectation.qmd >}}
 
 
-## Conditional distributions and expectations
+# Conditional distributions and expectations
 
 <!-- No slidebreak here: the heading shares its slide with the def-cond-pmf div. -->
 
@@ -55,11 +55,11 @@ format:
 
 {{< include pds/_subfiles/_exr-fubini-joint-disc.qmd >}}
 
-## Fubini--Tonelli for expectations
+# Fubini--Tonelli for expectations
 
 {{< include pds/_subfiles/_fubini-tonelli-expectations.qmd >}}
 
-## Loss and risk {#sec-loss-risk}
+# Loss and risk {#sec-loss-risk}
 
 <!-- No slidebreak here: the heading shares its slide with the def-prediction div. -->
 
@@ -207,7 +207,7 @@ format:
 
 {{< include pds/_subfiles/_cor-best-predictor-unique.qmd >}}
 
-## Entropy and cross-entropy {#sec-entropy}
+# Entropy and cross-entropy {#sec-entropy}
 
 <!-- No slidebreak here: the heading shares its slide with the def-surprisal div. -->
 
@@ -222,7 +222,7 @@ format:
 {{< include pds/_subfiles/_def-cross-entropy.qmd >}}
 
 
-## Further reading
+# Further reading
 
 ::: {.callout-tip title="Another explanation"}
 Lange's textbook [@lange2024applied] covers conditioning as a tool for computing [expectations](#def-expectation)
@@ -230,7 +230,7 @@ in Section 2.3 and tail [probability](probability-basics.qmd#def-probability) me
 :::
 
 
-## References {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::
