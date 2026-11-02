@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-02 10:03:06 (PST)
+Last modified: 2026-11-02 11:09:43 (PST)
 
 > **NOTE:**
 >
@@ -1355,7 +1355,23 @@ print(plot2)
 >
 > **Example 21 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
-## References
+# Definitions on this page
+
+- [Definition 1 (Binomial distribution)](#def-binomial)
+- [Definition 2 (Poisson distribution)](#def-poisson)
+- [Definition 3 (Exposure magnitude)](#def-exposure)
+- [Definition 4 (Event rate)](#def-event-rate)
+- [Definition 5 (Offset)](#def-offset)
+- [Definition 6 (Negative binomial distribution)](#def-nb)
+- [Definition 7 (Laplace distribution)](#def-laplace)
+- [Definition 8 (Weibull distribution)](#def-weibull)
+- [Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))](#def-mvn)
+- [Definition 10 (Mahalanobis distance)](#def-mahalanobis)
+- [Definition 11 (Mixture density)](#def-mixture)
+- [Definition 12 (Mixture component)](#def-mixture-component)
+- [Definition 13 (Responsibility of a mixture component)](#def-responsibility)
+
+# References
 
 \[1\]
 
@@ -1392,21 +1408,5 @@ Wikipedia contributors, “Mahalanobis distance — Wikipedia, the free encyclop
 \[9\]
 
 Wikipedia contributors, “Mixture distribution — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Mixture_distribution>
-
-# Definitions on this page
-
-- [Definition 1 (Binomial distribution)](#def-binomial)
-- [Definition 2 (Poisson distribution)](#def-poisson)
-- [Definition 3 (Exposure magnitude)](#def-exposure)
-- [Definition 4 (Event rate)](#def-event-rate)
-- [Definition 5 (Offset)](#def-offset)
-- [Definition 6 (Negative binomial distribution)](#def-nb)
-- [Definition 7 (Laplace distribution)](#def-laplace)
-- [Definition 8 (Weibull distribution)](#def-weibull)
-- [Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))](#def-mvn)
-- [Definition 10 (Mahalanobis distance)](#def-mahalanobis)
-- [Definition 11 (Mixture density)](#def-mixture)
-- [Definition 12 (Mixture component)](#def-mixture-component)
-- [Definition 13 (Responsibility of a mixture component)](#def-responsibility)
 
 Back to top

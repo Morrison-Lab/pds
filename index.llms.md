@@ -4,9 +4,9 @@ Code
 
 Published
 
-Last modified: 2026-11-02 10:03:06 (PST)
+Last modified: 2026-11-02 11:09:43 (PST)
 
-## Welcome
+# Welcome
 
 Probability theory is the branch of mathematics concerned with formalizing and quantifying uncertainty. It is the foundation on which statistical inference is built: before we can reason about what data tell us about the world, we need a precise language for describing random phenomena.
 
@@ -23,15 +23,15 @@ These notes collect the probability that data science courses assume. Some key r
 
 Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202). These notes began as the probability chapter of the Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies them to regression and survival models (see [Additional resources](#sec-additional-resources)).
 
-## Using these notes in another site
+# Using these notes in another site
 
 Course sites link to these pages by URL; they do not include this repository as a git submodule. A host site that keeps a copy of this repository at its root, named `pds`, can still include fragments with paths that start with `pds/`, for example `{{< include pds/_subfiles/_thm-bayes.qmd >}}`. This site includes its own fragments the same way, through a `pds` symlink that points at the repository root.
 
 Quarto resolves `@id` cross-references only within one rendered page, so a host site that links to a result here uses an explicit link, `[text](expectation.qmd#thm-lotus)`.
 
-## Additional resources
+# Additional resources
 
-### Comparable courses
+## Comparable courses
 
 Several universities offer open-access courses with comparable or complementary coverage of probability for data science, computer science, and statistics:
 
@@ -44,7 +44,7 @@ Several universities offer open-access courses with comparable or complementary 
 - **MIT 6.041 / 6.431**: [*Probabilistic Systems Analysis and Applied Probability*](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/) (John Tsitsiklis, MIT OpenCourseWare) covers probability spaces, conditioning, independence, transform methods, and Bernoulli and Poisson processes.
 - **Cal Poly / Kevin Ross**: [*An Introduction to Probability and Simulation*](https://bookdown.org/kevin_davisross/probsim-book/) (Ross [\[2\]](#ref-ross-probsim)) develops probability concepts through simulation in R and Python, providing intuitive frameworks including conditioning as “slicing and renormalizing” and “taking out what is known” in conditional expectation.
 
-### Textbooks and companion notes
+## Textbooks and companion notes
 
 - Ross [\[3\]](#ref-ross2019first), an undergraduate calculus-based [probability](probability-basics.llms.md#def-probability) text
 - Gut [\[4\]](#ref-gut2013), a graduate text on the measure-theoretic foundations of probability, as a companion to Billingsley [\[5\]](#ref-billingsley1995probability)
@@ -57,11 +57,11 @@ Several universities offer open-access courses with comparable or complementary 
 - John Duchi, [*Lecture Notes on Statistics and Information Theory*](https://web.stanford.edu/class/stats311/) (Stanford STATS 311), which develops entropy and divergences beyond the definitions here
 - Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies this material to regression and survival analysis
 
-### Video channels
+## Video channels
 
 The DATA 571 (Machine Learning) course notes keep a curated list of [online video channels](https://morrison-lab.github.io/lds/chapters/channels.html), with levels, for probability and statistics as well as machine learning, AI, computer science and mathematics.
 
-## References
+# References
 
 \[1\]
 

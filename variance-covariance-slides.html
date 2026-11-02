@@ -365,10 +365,13 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-02 10:03:06 (PST)</p>
+  <p class="date">Last modified: 2026-11-02 11:09:43 (PST)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
+</section>
+<section class="slide level2">
+
 <p><span id="sec-variance-covariance"></span></p>
 <!-- No slidebreak here: the heading shares its slide with the def-deviation div. -->
 <div id="def-deviation" class="theorem definition">
@@ -446,7 +449,7 @@
 </section>
 <section class="slide level2">
 
-<h3 id="sec-noise-model">Mean-zero noise model</h3>
+<h4 id="sec-noise-model">Mean-zero noise model</h4>
 <p>Measurement noise is almost always modeled as a random variable <span class="math inline">\(\varepsilon\)</span> with <strong>mean zero</strong> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
 <div id="rem-mean-zero-parametrization" class="proof remark">
 <p><span class="proof-title"><em>Remark 1</em> (Mean zero is a parametrization choice). </span>Mean zero is a parametrization choice, not a substantive assumption. In <span class="math inline">\(Y = f(x) + \varepsilon\)</span>, moving a constant from <span class="math inline">\(\varepsilon\)</span> into <span class="math inline">\(f(x)\)</span> changes the split but not the distribution of <span class="math inline">\(Y\)</span>, so the data identify only the sum <span class="math inline">\(f(x) + {\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}}\)</span>, the mean of <span class="math inline">\(Y\)</span> at <span class="math inline">\(x\)</span>. Requiring <span class="math inline">\({\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}} = 0\)</span> picks the one split in which <span class="math inline">\(f(x)\)</span> is that mean. This loses no generality when the model for <span class="math inline">\(f\)</span> can absorb a constant, as any model with an intercept can. It restricts the model only when <span class="math inline">\(f\)</span> cannot absorb one, as in a regression through the origin.</p>
@@ -487,6 +490,9 @@
 </section>
 <section id="variance-and-related-characteristics" class="slide level2" data-number="2">
 <h2><span class="header-section-number">2</span> Variance and related characteristics</h2>
+</section>
+<section class="slide level2">
+
 <!-- No slidebreak here: the heading shares its slide with the def-variance div. -->
 <div id="def-variance" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 3 (Variance)</strong></span> The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span> is the <a href="./expectation.html#def-expectation">expectation</a> of the squared <a href="#/def-deviation-pop-mean">deviation from the mean</a> <span class="citation" data-cites="wikipedia_variance"><a href="#/references" role="doc-biblioref" onclick="">[2]</a></span>; that is:</p>
@@ -918,6 +924,9 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 </section>
 <section id="sec-best-constant-prediction" class="slide level2" data-number="3">
 <h2><span class="header-section-number">3</span> The best constant prediction</h2>
+</section>
+<section class="slide level2">
+
 <div id="thm-constant-prediction-decompose" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 5 (Expected squared error of a constant prediction)</strong></span> Let <span class="math inline">\(Y\)</span> be a random variable with mean <span class="math inline">\(\mu\)</span> and finite variance. Then for every number <span class="math inline">\(c\)</span>,</p>
 <p><span id="eq-constant-prediction-decompose"><span class="math display">\[
@@ -988,6 +997,9 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 </section>
 <section id="sec-bias-variance-prediction" class="slide level2" data-number="4">
 <h2><span class="header-section-number">4</span> Independent noise plus a random variable</h2>
+</section>
+<section class="slide level2">
+
 <!-- The bias-variance decomposition of prediction error moved to the sds notes, which define
      training data and estimation; this section keeps the plain-probability result it rests on. -->
 <div id="thm-second-moment-noise-sum" class="theorem">
@@ -1071,6 +1083,9 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
 </section>
 <section id="covariance" class="slide level2" data-number="5">
 <h2><span class="header-section-number">5</span> Covariance</h2>
+</section>
+<section class="slide level2">
+
 <!-- No slidebreak here: the heading shares its slide with the def-cov div. -->
 <div id="def-cov" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9 (Covariance)</strong></span> The <strong>covariance</strong> of two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} &lt; \infty\)</span> <span class="citation" data-cites="wikipedia_covariance"><a href="#/references" role="doc-biblioref" onclick="">[3]</a></span> is:</p>
@@ -1899,8 +1914,11 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 <p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=5CT1DXPp2HY">variance</a> and <a href="https://www.youtube.com/watch?v=hiim8HlI81Y">covariance and correlation</a> in five minutes each, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span>.</p>
 </div>
 </section>
-<section id="references" class="slide level2 unnumbered smaller scrollable">
+<section id="references" class="slide level2 unnumbered">
 <h2>References</h2>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
 <div id="ref-wikipedia_errors_and_residuals" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">Wikipedia contributors, <span>“Errors and residuals — <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> 2026. Available: <a href="https://en.wikipedia.org/wiki/Errors_and_residuals">https://en.wikipedia.org/wiki/Errors_and_residuals</a></div>

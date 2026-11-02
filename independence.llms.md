@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-02 10:03:06 (PST)
+Last modified: 2026-11-02 11:09:43 (PST)
 
 > **NOTE:**
 >
@@ -327,7 +327,16 @@ Last modified: 2026-11-02 10:03:06 (PST)
 >
 > 5MinuteAI explains [independence](https://www.youtube.com/watch?v=9t7u6pfgw0k) in five minutes, following the University of Washington’s CSE 312 [\[8\]](#ref-fiveminuteai_probstat).
 
-## References
+# Definitions on this page
+
+- [Definition 1 (Statistical independence)](#def-indpt)
+- [Definition 2 (Conditional independence)](#def-cind)
+- [Definition 3 (Identically distributed)](#def-ident)
+- [Definition 4 (Conditionally identically distributed)](#def-cident)
+- [Definition 5 (Independent and identically distributed)](#def-iid)
+- [Definition 6 (Conditionally independent and identically distributed)](#def-ciid)
+
+# References
 
 \[1\]
 
@@ -360,14 +369,5 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[8\]
 
 5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
-
-# Definitions on this page
-
-- [Definition 1 (Statistical independence)](#def-indpt)
-- [Definition 2 (Conditional independence)](#def-cind)
-- [Definition 3 (Identically distributed)](#def-ident)
-- [Definition 4 (Conditionally identically distributed)](#def-cident)
-- [Definition 5 (Independent and identically distributed)](#def-iid)
-- [Definition 6 (Conditionally independent and identically distributed)](#def-ciid)
 
 Back to top

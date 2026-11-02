@@ -14,9 +14,9 @@ Code
 
 Published
 
-Last modified: 2026-11-02 10:03:06 (PST)
+Last modified: 2026-11-02 11:09:43 (PST)
 
-## 0.1 Deviation, error, and noise
+# 1 Deviation, error, and noise
 
 > **NOTE:**
 >
@@ -72,7 +72,7 @@ Last modified: 2026-11-02 10:03:06 (PST)
 > &= -1.5.
 > \end{aligned}$$
 
-### 0.1.1 Mean-zero noise model
+### 1.0.1 Mean-zero noise model
 
 Measurement noise is almost always modeled as a random variable $\varepsilon$ with **mean zero** and variance $\sigma^2$.
 
@@ -113,7 +113,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment), worked in [Solution 1](#sol-noise-second-moment). It rearranges [Theorem 3](#thm-variance), using $\mathbb{E}[\varepsilon] = 0$.
 
-## 0.2 Variance and related characteristics
+# 2 Variance and related characteristics
 
 > **NOTE:**
 >
@@ -467,7 +467,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(expand and combine like terms)}
 > \end{aligned}$$
 
-## 0.3 The best constant prediction
+# 3 The best constant prediction
 
 > **NOTE:**
 >
@@ -529,7 +529,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > The two columns agree, as [Theorem 5](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
 
-## 0.4 Independent noise plus a random variable
+# 4 Independent noise plus a random variable
 
 > **NOTE:**
 >
@@ -615,7 +615,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > where $\sigma^2$ is the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error). The statistics notes define the bias of a prediction and the training data it depends on, and state this result for predictions as the [bias, variance and noise decomposition](https://morrison-lab.github.io/sds/model-validation.html#thm-epe-decomposition), with its exercise, worked example and definition of the residual variance.
 
-## 0.5 Covariance
+# 5 Covariance
 
 > **NOTE:**
 >
@@ -1345,7 +1345,23 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > 5MinuteAI explains [variance](https://www.youtube.com/watch?v=5CT1DXPp2HY) and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in five minutes each, following the University of Washington’s CSE 312 [\[6\]](#ref-fiveminuteai_probstat).
 
-## References
+# Definitions on this page
+
+- [Definition 1 (Deviation)](#def-deviation)
+- [Definition 2 (Deviation from a population or subpopulation mean)](#def-deviation-pop-mean)
+- [Definition 3 (Variance)](#def-variance)
+- [Definition 4 (Conditional variance)](#def-cond-variance)
+- [Definition 5 (Homoskedasticity)](#def-homosked)
+- [Definition 6 (Heteroskedasticity)](#def-heterosked)
+- [Definition 7 (Precision)](#def-precision)
+- [Definition 8 (Standard deviation)](#def-sd)
+- [Definition 9 (Covariance)](#def-cov)
+- [Definition 10 (Correlation)](#def-correlation)
+- [Definition 11 (Uncorrelated random variables)](#def-uncorrelated)
+- [Definition 12 (Conditional covariance)](#def-cond-cov)
+- [Definition 13 (Variance/covariance of a](#def-cov-vec-x) $p \times 1$ random vector)
+
+# References
 
 \[1\]
 
@@ -1370,21 +1386,5 @@ G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 200
 \[6\]
 
 5MinuteAI, “Probability & statistics.” Video playlist on YouTube. Accessed: Oct. 12, 2026. \[Online\]. Available: <https://www.youtube.com/playlist?list=PLeB45KifGiuHesi4PALNZSYZFhViVGQJK>
-
-# Definitions on this page
-
-- [Definition 1 (Deviation)](#def-deviation)
-- [Definition 2 (Deviation from a population or subpopulation mean)](#def-deviation-pop-mean)
-- [Definition 3 (Variance)](#def-variance)
-- [Definition 4 (Conditional variance)](#def-cond-variance)
-- [Definition 5 (Homoskedasticity)](#def-homosked)
-- [Definition 6 (Heteroskedasticity)](#def-heterosked)
-- [Definition 7 (Precision)](#def-precision)
-- [Definition 8 (Standard deviation)](#def-sd)
-- [Definition 9 (Covariance)](#def-cov)
-- [Definition 10 (Correlation)](#def-correlation)
-- [Definition 11 (Uncorrelated random variables)](#def-uncorrelated)
-- [Definition 12 (Conditional covariance)](#def-cond-cov)
-- [Definition 13 (Variance/covariance of a](#def-cov-vec-x) $p \times 1$ random vector)
 
 Back to top
