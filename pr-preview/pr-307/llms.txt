@@ -1,0 +1,15 @@
+# Probability for Data Science
+
+> Probability prerequisites for data science courses
+
+## Pages
+
+- [Variance and covariance](https://morrison-lab.github.io/pds/variance-covariance.llms.md)
+- [Probability basics](https://morrison-lab.github.io/pds/probability-basics.llms.md)
+- [Limit theorems](https://morrison-lab.github.io/pds/limit-theorems.llms.md)
+- [Independence](https://morrison-lab.github.io/pds/independence.llms.md)
+- [Key distributions](https://morrison-lab.github.io/pds/distributions.llms.md)
+- [Expectation](https://morrison-lab.github.io/pds/expectation.llms.md)
+- [Probability for Data Science](https://morrison-lab.github.io/pds/index.llms.md)
+- [Notation](https://morrison-lab.github.io/pds/notation.llms.md)
+- [Random variables](https://morrison-lab.github.io/pds/random-variables.llms.md)
