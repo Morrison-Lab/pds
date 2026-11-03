@@ -107,7 +107,7 @@ cat(
 ```
 
 The surface whose contours are in @fig-mahalanobis-eigen:
-the Mahalanobis distance, a cone whose horizontal slices are the ellipses.
+the [Mahalanobis distance](#def-mahalanobis), a cone whose horizontal slices are the ellipses.
 The red lines are the contours at $1$ and $2$,
 and the dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner one.
 :::
