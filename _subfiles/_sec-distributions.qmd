@@ -1609,6 +1609,8 @@ The contours of the Mahalanobis distance at $1$ and $2$ for the example.
 The dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner ellipse.
 :::
 
+{{< include pds/_subfiles/_fig-mahalanobis-eigen-3d.qmd >}}
+
 :::
 
 {{< slidebreak >}}
