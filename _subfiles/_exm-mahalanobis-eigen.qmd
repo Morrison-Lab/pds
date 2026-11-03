@@ -72,53 +72,70 @@ fig_alt_mahal_eigen <- paste(
 #| fig-alt: !expr fig_alt_mahal_eigen
 #| fig-height: 4.5
 #| fig-width: 5
-library(ggplot2)
-
 # The covariance matrix of the example and its eigendecomposition.
-covmat <- matrix(c(2, 1, 1, 2), nrow = 2)
-eig <- eigen(covmat)
-stopifnot(all.equal(eig$values, c(3, 1)))
+mh_entries <- c(2, 1, 1, 2)
+mh_covmat <- matrix(mh_entries, nrow = 2)
+mh_eig <- eigen(mh_covmat)
+mh_values <- mh_eig$values
+mh_expected <- c(3, 1)
+mh_matches <- all.equal(mh_values, mh_expected)
+stopifnot(mh_matches)
 
 # The Mahalanobis distance of each grid point from the mean zero.
-grid <- expand.grid(
-  x1 = seq(-3.5, 3.5, length.out = 200),
-  x2 = seq(-3.5, 3.5, length.out = 200)
-)
-grid_matrix <- as.matrix(grid)
-grid$mahal <- sqrt(rowSums((grid_matrix %*% solve(covmat)) * grid_matrix))
+mh_axis <- seq(-3.5, 3.5, length.out = 200)
+mh_grid <- tidyr::expand_grid(x1 = mh_axis, x2 = mh_axis)
+mh_points <- as.matrix(mh_grid)
+mh_inverse <- solve(mh_covmat)
+mh_quad <- (mh_points %*% mh_inverse) * mh_points
+mh_sums <- rowSums(mh_quad)
+mh_dist <- sqrt(mh_sums)
+mh_grid <- dplyr::mutate(mh_grid, mahal = mh_dist)
 
 # The points of the example: sqrt(3) q1 and q2, each at distance 1.
-q1 <- c(1, 1) / sqrt(2)
-q2 <- c(1, -1) / sqrt(2)
-examples <- data.frame(
-  x1 = c(sqrt(3) * q1[1], q2[1]),
-  x2 = c(sqrt(3) * q1[2], q2[2])
+mh_long <- sqrt(3 / 2)
+mh_short <- 1 / sqrt(2)
+mh_marks_x1 <- c(mh_long, mh_short)
+mh_marks_x2 <- c(mh_long, -mh_short)
+mh_marks <- tibble::tibble(x1 = mh_marks_x1, x2 = mh_marks_x2)
+
+mh_contour_aes <- ggplot2::aes(z = mahal, colour = ggplot2::after_stat(level))
+mh_breaks <- c(1, 2)
+mh_contours <- ggplot2::geom_contour(mh_contour_aes, breaks = mh_breaks)
+mh_dots <- ggplot2::geom_point(data = mh_marks, size = 2.5)
+mh_colours <- ggplot2::scale_colour_viridis_c(
+  name = "Mahalanobis distance",
+  end = 0.7,
+  breaks = mh_breaks,
+  guide = "legend"
 )
+mh_plot <- mh_grid |>
+  ggplot2::ggplot() +
+  ggplot2::aes(x1, x2) +
+  mh_contours +
+  mh_dots +
+  mh_colours +
+  ggplot2::coord_fixed(expand = FALSE) +
+  ggplot2::labs(x = "x1", y = "x2") +
+  ggplot2::theme(legend.position = "bottom")
 
-mahal_plot <- ggplot(grid) +
-  aes(x1, x2) +
-  geom_contour(
-    aes(z = mahal, colour = factor(after_stat(level))),
-    breaks = c(1, 2)
-  ) +
-  geom_point(data = examples, size = 2.5) +
-  scale_colour_viridis_d(name = "Mahalanobis distance", end = 0.7) +
-  coord_fixed(expand = FALSE) +
-  labs(x = "x1", y = "x2") +
-  theme(legend.position = "bottom")
-
-if (knitr::is_html_output()) {
+mh_is_html <- knitr::is_html_output()
+if (mh_is_html) {
+  mh_legend <- list(
+    orientation = "h",
+    x = 0.5,
+    xanchor = "center",
+    y = -0.25
+  )
+  mh_widget <- plotly::ggplotly(mh_plot) |>
+    plotly::layout(legend = mh_legend) |>
+    plotly::config(displaylogo = FALSE, responsive = TRUE)
   htmltools::div(
     role = "img",
     `aria-label` = fig_alt_mahal_eigen,
-    plotly::ggplotly(mahal_plot) |>
-      plotly::layout(
-        legend = list(orientation = "h", x = 0.5, xanchor = "center", y = -0.25)
-      ) |>
-      plotly::config(displaylogo = FALSE, responsive = TRUE)
+    mh_widget
   )
 } else {
-  mahal_plot
+  mh_plot
 }
 ```
 
