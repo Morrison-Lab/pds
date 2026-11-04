@@ -14,16 +14,6 @@
    "url": "https://morrison-lab.github.io/mds/algebra.html#def-argmax"
   },
   {
-   "id": "mds/algebra#def-mode",
-   "site": "mds",
-   "page": "algebra",
-   "div": "def-mode",
-   "kind": "def",
-   "title": "mode",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/algebra.html#def-mode"
-  },
-  {
    "id": "mds/algebra-basics#def-argmin",
    "site": "mds",
    "page": "algebra-basics",
@@ -3285,18 +3275,6 @@
   ],
   [
    "pds/random-variables#def-mode",
-   "mds/algebra#def-mode"
-  ],
-  [
-   "pds/random-variables#def-mode",
-   "mds/functions#def-function"
-  ],
-  [
-   "pds/random-variables#def-mode",
-   "mds/sets#def-set"
-  ],
-  [
-   "pds/random-variables#def-mode",
    "pds/random-variables#def-pdf"
   ],
   [
@@ -3413,11 +3391,7 @@
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
-   "mds/algebra#def-mode"
-  ],
-  [
-   "pds/random-variables#thm-kernel-same-mode",
-   "mds/functions#def-function"
+   "mds/algebra#def-argmax"
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
@@ -3429,11 +3403,11 @@
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
-   "pds/random-variables#def-pdf"
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
-   "pds/random-variables#def-random-variable"
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#thm-no-joint-density-diagonal",

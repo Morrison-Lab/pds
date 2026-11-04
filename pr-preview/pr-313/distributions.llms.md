@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-03 16:27:41 (PST)
+Last modified: 2026-11-03 16:57:09 (PST)
 
 > **NOTE:**
 >
@@ -1156,57 +1156,154 @@ print(plot2)
 > > Show code
 > >
 > > ``` r
-> > library(ggplot2)
-> >
 > > # The covariance matrix of the example and its eigendecomposition.
-> > covmat <- matrix(c(2, 1, 1, 2), nrow = 2)
-> > eig <- eigen(covmat)
-> > stopifnot(all.equal(eig$values, c(3, 1)))
+> > mh_entries <- c(2, 1, 1, 2)
+> > mh_covmat <- matrix(mh_entries, nrow = 2)
+> > mh_eig <- eigen(mh_covmat)
+> > mh_values <- mh_eig$values
+> > mh_expected <- c(3, 1)
+> > mh_matches <- all.equal(mh_values, mh_expected)
+> > stopifnot(mh_matches)
 > >
 > > # The Mahalanobis distance of each grid point from the mean zero.
-> > grid <- expand.grid(
-> >   x1 = seq(-3.5, 3.5, length.out = 200),
-> >   x2 = seq(-3.5, 3.5, length.out = 200)
-> > )
-> > grid_matrix <- as.matrix(grid)
-> > grid$mahal <- sqrt(rowSums((grid_matrix %*% solve(covmat)) * grid_matrix))
+> > mh_axis <- seq(-3.5, 3.5, length.out = 200)
+> > mh_grid <- tidyr::expand_grid(x1 = mh_axis, x2 = mh_axis)
+> > mh_points <- as.matrix(mh_grid)
+> > mh_inverse <- solve(mh_covmat)
+> > mh_quad <- (mh_points %*% mh_inverse) * mh_points
+> > mh_sums <- rowSums(mh_quad)
+> > mh_dist <- sqrt(mh_sums)
+> > mh_grid <- dplyr::mutate(mh_grid, mahal = mh_dist)
 > >
 > > # The points of the example: sqrt(3) q1 and q2, each at distance 1.
-> > q1 <- c(1, 1) / sqrt(2)
-> > q2 <- c(1, -1) / sqrt(2)
-> > examples <- data.frame(
-> >   x1 = c(sqrt(3) * q1[1], q2[1]),
-> >   x2 = c(sqrt(3) * q1[2], q2[2])
+> > mh_long <- sqrt(3 / 2)
+> > mh_short <- 1 / sqrt(2)
+> > mh_marks_x1 <- c(mh_long, mh_short)
+> > mh_marks_x2 <- c(mh_long, -mh_short)
+> > mh_marks <- tibble::tibble(x1 = mh_marks_x1, x2 = mh_marks_x2)
+> >
+> > mh_contour_aes <- ggplot2::aes(z = mahal, colour = ggplot2::after_stat(level))
+> > mh_breaks <- c(1, 2)
+> > mh_contours <- ggplot2::geom_contour(mh_contour_aes, breaks = mh_breaks)
+> > mh_dots <- ggplot2::geom_point(data = mh_marks, size = 2.5)
+> > mh_colours <- ggplot2::scale_colour_viridis_c(
+> >   name = "Mahalanobis distance",
+> >   end = 0.7,
+> >   breaks = mh_breaks,
+> >   guide = "legend"
 > > )
+> > mh_plot <- mh_grid |>
+> >   ggplot2::ggplot() +
+> >   ggplot2::aes(x1, x2) +
+> >   mh_contours +
+> >   mh_dots +
+> >   mh_colours +
+> >   ggplot2::coord_fixed(expand = FALSE) +
+> >   ggplot2::labs(x = "x1", y = "x2") +
+> >   ggplot2::theme(legend.position = "bottom")
 > >
-> > mahal_plot <- ggplot(grid) +
-> >   aes(x1, x2) +
-> >   geom_contour(
-> >     aes(z = mahal, colour = factor(after_stat(level))),
-> >     breaks = c(1, 2)
-> >   ) +
-> >   geom_point(data = examples, size = 2.5) +
-> >   scale_colour_viridis_d(name = "Mahalanobis distance", end = 0.7) +
-> >   coord_fixed(expand = FALSE) +
-> >   labs(x = "x1", y = "x2") +
-> >   theme(legend.position = "bottom")
-> >
-> > if (knitr::is_html_output()) {
+> > mh_is_html <- knitr::is_html_output()
+> > if (mh_is_html) {
+> >   mh_legend <- list(
+> >     orientation = "h",
+> >     x = 0.5,
+> >     xanchor = "center",
+> >     y = -0.25
+> >   )
+> >   mh_widget <- plotly::ggplotly(mh_plot) |>
+> >     plotly::layout(legend = mh_legend) |>
+> >     plotly::config(displaylogo = FALSE, responsive = TRUE)
 > >   htmltools::div(
 > >     role = "img",
 > >     `aria-label` = fig_alt_mahal_eigen,
-> >     plotly::ggplotly(mahal_plot) |>
-> >       plotly::layout(
-> >         legend = list(orientation = "h", x = 0.5, xanchor = "center", y = -0.25)
-> >       ) |>
-> >       plotly::config(displaylogo = FALSE, responsive = TRUE)
+> >     mh_widget
 > >   )
 > > } else {
-> >   mahal_plot
+> >   mh_plot
 > > }
 > > ```
 > >
 > > Figure 4: The contours of the Mahalanobis distance at $1$ and $2$ for the example. The dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner ellipse.
+>
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > mh3_entries <- c(2, 1, 1, 2)
+> > mh3_covmat <- matrix(mh3_entries, nrow = 2)
+> > mh3_inverse <- solve(mh3_covmat)
+> > mh3_x1 <- seq(-3.5, 3.5, length.out = 101)
+> > mh3_x2 <- seq(-3.5, 3.5, length.out = 101)
+> > mh3_grid <- tidyr::expand_grid(x1 = mh3_x1, x2 = mh3_x2)
+> > mh3_points <- as.matrix(mh3_grid)
+> > mh3_quad <- (mh3_points %*% mh3_inverse) * mh3_points
+> > mh3_sums <- rowSums(mh3_quad)
+> > mh3_dist <- sqrt(mh3_sums)
+> > mh3_n_x2 <- length(mh3_x2)
+> > mh3_z <- matrix(mh3_dist, nrow = mh3_n_x2)
+> >
+> > # The points of the example: sqrt(3) q1 and q2, each at distance 1.
+> > mh3_long <- sqrt(3 / 2)
+> > mh3_short <- 1 / sqrt(2)
+> > mh3_marks_x1 <- c(mh3_long, mh3_short)
+> > mh3_marks_x2 <- c(mh3_long, -mh3_short)
+> > mh3_marks_z <- c(1, 1)
+> > mh3_marks <- tibble::tibble(
+> >   x1 = mh3_marks_x1,
+> >   x2 = mh3_marks_x2,
+> >   z = mh3_marks_z
+> > )
+> > mh3_marker <- list(color = "black", size = 5)
+> > mh3_contours_z <- list(
+> >   show = TRUE,
+> >   start = 1,
+> >   end = 2,
+> >   size = 1,
+> >   color = "red"
+> > )
+> > mh3_contours <- list(z = mh3_contours_z)
+> > mh3_stops <- c(0, 1)
+> > mh3_cols <- c("#CCE0F0", "#0072B2")
+> > mh3_scale <- list(mh3_stops, mh3_cols)
+> > mh3_eye <- list(x = 1.6, y = -1.6, z = 0.9)
+> > mh3_camera <- list(eye = mh3_eye)
+> > mh3_xaxis <- list(title = "x1")
+> > mh3_yaxis <- list(title = "x2")
+> > mh3_zaxis <- list(title = "Mahalanobis distance")
+> > mh3_scene <- list(
+> >   xaxis = mh3_xaxis,
+> >   yaxis = mh3_yaxis,
+> >   zaxis = mh3_zaxis,
+> >   camera = mh3_camera
+> > )
+> > mh3_widget <- plotly::plot_ly() |>
+> >   plotly::add_surface(
+> >     x = mh3_x1,
+> >     y = mh3_x2,
+> >     z = mh3_z,
+> >     contours = mh3_contours,
+> >     colorscale = mh3_scale,
+> >     showscale = FALSE,
+> >     opacity = 0.8
+> >   ) |>
+> >   plotly::add_markers(
+> >     data = mh3_marks,
+> >     x = ~x1,
+> >     y = ~x2,
+> >     z = ~z,
+> >     showlegend = FALSE,
+> >     marker = mh3_marker
+> >   ) |>
+> >   plotly::layout(scene = mh3_scene)
+> > htmltools::div(
+> >   role = "img",
+> >   `aria-label` = fig_alt_mahal_surf,
+> >   mh3_widget
+> > )
+> > ```
+> >
+> > Figure 5: The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of [Figure 4](#fig-mahalanobis-eigen). The red lines are the contours at $1$ and $2$, and the dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner one.
 
 ## 0.8 Mixture distributions
 

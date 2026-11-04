@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-03 16:27:41 (PST)
+Last modified: 2026-11-03 16:57:09 (PST)
 
 > **NOTE:**
 >
@@ -1080,23 +1080,21 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Definition 24 (Mode of a density or mass function)** Let $X$ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) $f$. A **mode** of $f$ is an element of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$. The [set](https://morrison-lab.github.io/mds/sets.html#def-set) of modes of $f$ is
+> **Definition 24 (Mode of a density or mass function)** Let $X$ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) $f$. The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
 >
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} f(x).$$
 >
-> This is the [mode](https://morrison-lab.github.io/mds/algebra.html#def-mode) of the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $f$ on $\mathcal{R}(X)$.
+> A **mode** of $f$ is an element of ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$.
 
 > **NOTE:**
 >
-> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then $f$ and $g$ have the same [modes](#def-mode):
+> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
 >
-> $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = {\operatorname{mode}\mathopen{}\left(g\right)\mathclose{}}.$$
->
-> Here the modes of $g$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on $\mathcal{R}(X)$, since $g$ need not be a [density](#def-pdf).
+> $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} g(x).$$
 
 > **NOTE:**
 >
-> *Proof*. Write $f(x) = c\, g(x)$ with $c > 0$ ([Definition 22](#def-kernel)). By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra.html#thm-argmax-positive-multiple), $\arg \max_{x \in \mathcal{R}(X)} f(x) = \arg \max_{x \in \mathcal{R}(X)} g(x)$. The left side is ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$ by [Definition 24](#def-mode), and the right side is ${\operatorname{mode}\mathopen{}\left(g\right)\mathclose{}}$ by the definition of a [mode](https://morrison-lab.github.io/mds/algebra.html#def-mode) of a [function](https://morrison-lab.github.io/mds/functions.html#def-function).
+> *Proof*. Write $f(x) = c\, g(x)$ with $c > 0$ ([Definition 22](#def-kernel)). By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra.html#thm-argmax-positive-multiple), $\arg \max_{x \in \mathcal{R}(X)} f(x) = \arg \max_{x \in \mathcal{R}(X)} g(x)$. The left side is ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$ by [Definition 24](#def-mode).
 
 > **NOTE:**
 >
