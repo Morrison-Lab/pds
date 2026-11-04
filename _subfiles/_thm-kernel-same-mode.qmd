@@ -2,7 +2,7 @@
 #### A density and its kernel have the same modes
 
 If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$,
-then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
+then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
 
 $$\modef{f} = \argmax_{x \in \rangef{X}} g(x).$$
 
@@ -13,7 +13,7 @@ $$\modef{f} = \argmax_{x \in \rangef{X}} g(x).$$
 ::: proof
 
 Write $f(x) = c\, g(x)$ with $c > 0$ (@def-kernel).
-By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra.html#thm-argmax-positive-multiple),
+By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra-basics.html#thm-argmax-positive-multiple),
 $\argmax_{x \in \rangef{X}} f(x) = \argmax_{x \in \rangef{X}} g(x)$.
 The left side is $\modef{f}$ by @def-mode.
 
