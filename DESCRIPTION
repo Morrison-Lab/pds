@@ -24,6 +24,7 @@ Suggests:
     reticulate,
     rmarkdown,
     spelling,
+    tidyr,
     usethis,
     devtools
 VignetteBuilder: knitr

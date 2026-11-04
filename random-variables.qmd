@@ -58,6 +58,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_rem-mode-belongs-to-density.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-kernel-same-mode.qmd >}}
 
 {{< slidebreak >}}
