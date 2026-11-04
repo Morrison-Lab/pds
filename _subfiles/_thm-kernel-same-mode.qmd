@@ -6,7 +6,7 @@ then $f$ and $g$ have the same [modes](#def-mode):
 
 $$\modef{f} = \modef{g}.$$
 
-Here the modes of $g$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on $\rangef{X}$, since $g$ need not be a density.
+Here the modes of $g$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on $\rangef{X}$, since $g$ need not be a [density](#def-pdf).
 
 :::
 
@@ -18,6 +18,6 @@ Write $f(x) = c\, g(x)$ with $c > 0$ (@def-kernel).
 By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra.html#thm-argmax-positive-multiple),
 $\argmax_{x \in \rangef{X}} f(x) = \argmax_{x \in \rangef{X}} g(x)$.
 The left side is $\modef{f}$ by @def-mode,
-and the right side is $\modef{g}$ by the definition of the mode of a function.
+and the right side is $\modef{g}$ by the definition of a [mode](https://morrison-lab.github.io/mds/algebra.html#def-mode) of a [function](https://morrison-lab.github.io/mds/functions.html#def-function).
 
 :::
