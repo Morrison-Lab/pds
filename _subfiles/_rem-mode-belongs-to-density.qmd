@@ -1,0 +1,17 @@
+:::{#rem-mode-density}
+#### A mode belongs to a density, not to a random variable
+
+A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#def-pmf),
+so "the mode of $X$" is shorthand for the mode of a chosen density of $X$.
+
+Two [densities](#def-pdf) of the same [random variable](#def-random-variable)
+can differ on a [set](https://morrison-lab.github.io/mds/sets.html#def-set) of [probability](probability-basics.qmd#def-probability) zero,
+and then they can have different [modes](#def-mode).
+A change of variables also moves the mode,
+because the density of a transformed variable includes a Jacobian factor.
+
+The [expectation](expectation.qmd#def-expectation) of $X$ is different:
+it depends only on the [distribution](#def-cdf) of $X$,
+so every density of $X$ gives the same value.
+
+:::
