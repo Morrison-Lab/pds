@@ -3,11 +3,11 @@
 
 Let $X$ be a [random variable](#def-random-variable)
 with [density](#def-pdf) or [mass function](#def-pmf) $f$.
-The **modes** of $f$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on the [range](#def-range) of $X$,
-that is, the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over that range:
+A **mode** of $f$ is a [mode](https://morrison-lab.github.io/mds/algebra.html#def-mode) of the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $f$ on the [range](#def-range) of $X$,
+that is, an element of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over that range:
 
 $$\modef{f} = \argmax_{x \in \rangef{X}} f(x).$$
 
-A **mode** of $f$ is an element of $\modef{f}$.
+The set $\modef{f}$ holds the modes of $f$.
 
 :::
