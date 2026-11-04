@@ -1,0 +1,112 @@
+```{r}
+#| label: mahalanobis-eigen-3d-alt
+#| echo: false
+# The alt text, saved once for the figure and its interactive widget.
+fig_alt_mahal_surf <- paste(
+  "Surface plot of the Mahalanobis distance for a bivariate normal density",
+  "with variances 2 and covariance 1, over x1 and x2 from -3.5 to 3.5.",
+  "The surface is a cone with its tip at the origin,",
+  "stretched along the line x2 = x1 and squeezed along the line x2 = -x1,",
+  "so its horizontal slices are ellipses.",
+  "The slices at heights 1 and 2 are drawn as red contour lines.",
+  "Two dots on the inner contour, at height 1, mark the points",
+  "that are the square root of 3 along (1, 1) over the square root of 2",
+  "and 1 along (1, -1) over the square root of 2."
+)
+```
+
+:::{#fig-mahalanobis-eigen-3d}
+
+```{r}
+#| label: mahalanobis-eigen-3d-plot
+#| code-fold: true
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
+#| fig-alt: !expr fig_alt_mahal_surf
+mh3_entries <- c(2, 1, 1, 2)
+mh3_covmat <- matrix(mh3_entries, nrow = 2)
+mh3_inverse <- solve(mh3_covmat)
+mh3_x1 <- seq(-3.5, 3.5, length.out = 101)
+mh3_x2 <- seq(-3.5, 3.5, length.out = 101)
+mh3_grid <- tidyr::expand_grid(x1 = mh3_x1, x2 = mh3_x2)
+mh3_points <- as.matrix(mh3_grid)
+mh3_quad <- (mh3_points %*% mh3_inverse) * mh3_points
+mh3_sums <- rowSums(mh3_quad)
+mh3_dist <- sqrt(mh3_sums)
+mh3_n_x2 <- length(mh3_x2)
+mh3_z <- matrix(mh3_dist, nrow = mh3_n_x2)
+
+# The points of the example: sqrt(3) q1 and q2, each at distance 1.
+mh3_long <- sqrt(3 / 2)
+mh3_short <- 1 / sqrt(2)
+mh3_marks_x1 <- c(mh3_long, mh3_short)
+mh3_marks_x2 <- c(mh3_long, -mh3_short)
+mh3_marks_z <- c(1, 1)
+mh3_marks <- tibble::tibble(
+  x1 = mh3_marks_x1,
+  x2 = mh3_marks_x2,
+  z = mh3_marks_z
+)
+mh3_marker <- list(color = "black", size = 5)
+mh3_contours_z <- list(
+  show = TRUE,
+  start = 1,
+  end = 2,
+  size = 1,
+  color = "red"
+)
+mh3_contours <- list(z = mh3_contours_z)
+mh3_stops <- c(0, 1)
+mh3_cols <- c("#CCE0F0", "#0072B2")
+mh3_scale <- list(mh3_stops, mh3_cols)
+mh3_eye <- list(x = 1.6, y = -1.6, z = 0.9)
+mh3_camera <- list(eye = mh3_eye)
+mh3_xaxis <- list(title = "x1")
+mh3_yaxis <- list(title = "x2")
+mh3_zaxis <- list(title = "Mahalanobis distance")
+mh3_scene <- list(
+  xaxis = mh3_xaxis,
+  yaxis = mh3_yaxis,
+  zaxis = mh3_zaxis,
+  camera = mh3_camera
+)
+mh3_widget <- plotly::plot_ly() |>
+  plotly::add_surface(
+    x = mh3_x1,
+    y = mh3_x2,
+    z = mh3_z,
+    contours = mh3_contours,
+    colorscale = mh3_scale,
+    showscale = FALSE,
+    opacity = 0.8
+  ) |>
+  plotly::add_markers(
+    data = mh3_marks,
+    x = ~x1,
+    y = ~x2,
+    z = ~z,
+    showlegend = FALSE,
+    marker = mh3_marker
+  ) |>
+  plotly::layout(scene = mh3_scene)
+htmltools::div(
+  role = "img",
+  `aria-label` = fig_alt_mahal_surf,
+  mh3_widget
+)
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+cat(
+  "*(This 3D surface is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
+```
+
+The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of @fig-mahalanobis-eigen.
+The red lines are the contours at $1$ and $2$,
+and the dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner one.
+:::

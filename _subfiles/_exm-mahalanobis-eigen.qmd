@@ -1,0 +1,148 @@
+:::{#exm-mahalanobis-eigen}
+#### Elliptical contours of a bivariate normal density
+
+Let $\vecf{\mean} = \vzero$ and
+$\matr{\covmat} = \pmat{2 & 1 \\ 1 & 2}$,
+which has eigenvalues $3$ and $1$,
+with eigenvectors $\vecf{q}_1 = \frac{1}{\sqrt{2}}\tp{(1, 1)}$
+and $\vecf{q}_2 = \frac{1}{\sqrt{2}}\tp{(1, -1)}$
+([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)).
+By @thm-mahalanobis-eigen:
+
+$$
+\mahal(\vx)^2 = \frac{(x_1 + x_2)^2}{2 \cd 3} + \frac{(x_1 - x_2)^2}{2 \cd 1}
+$$
+
+The point
+
+$$
+\begin{aligned}
+\vx &= \sqrt{3}\,\vecf{q}_1 \\
+&= \sqrt{3/2}\,\tp{(1, 1)}
+\end{aligned}
+$$
+
+has $x_1 + x_2 = \sqrt{6}$ and $x_1 - x_2 = 0$, so
+
+$$
+\begin{aligned}
+\mahal(\vx)^2 &= 6/6 \\
+&= 1;
+\end{aligned}
+$$
+
+the point $\vx = \vecf{q}_2$
+has $x_1 + x_2 = 0$ and $x_1 - x_2 = \sqrt{2}$, so
+
+$$
+\begin{aligned}
+\mahal(\vx)^2 &= 2/2 \\
+&= 1.
+\end{aligned}
+$$
+
+So the contour $\mahal(\vx) = 1$ of the $\Normal_2\paren{\vzero, \matr{\covmat}}$ density
+is an ellipse stretched along $\tp{(1, 1)}$, with half-length $\sqrt{3}$,
+and squeezed along $\tp{(1, -1)}$, with half-length $1$:
+$X_1$ and $X_2$ are positively correlated (@fig-mahalanobis-eigen).
+
+```{r}
+#| label: mahalanobis-eigen-alt
+#| echo: false
+# The alt text, saved once for the figure and its interactive widget.
+fig_alt_mahal_eigen <- paste(
+  "Contour plot of the Mahalanobis distance for a bivariate normal density",
+  "with variances 2 and covariance 1, in the plane of x1 and x2.",
+  "The contours at distances 1 and 2 are nested ellipses",
+  "stretched along the line x2 = x1 and squeezed along the line x2 = -x1.",
+  "Two dots on the inner ellipse mark the points",
+  "that are the square root of 3 along (1, 1) over the square root of 2",
+  "and 1 along (1, -1) over the square root of 2."
+)
+```
+
+:::{#fig-mahalanobis-eigen}
+
+```{r}
+#| label: mahalanobis-eigen-plot
+#| code-fold: true
+#| echo: !expr knitr::is_html_output()
+#| message: false
+#| warning: false
+#| fig-alt: !expr fig_alt_mahal_eigen
+#| fig-height: 4.5
+#| fig-width: 5
+# The covariance matrix of the example and its eigendecomposition.
+mh_entries <- c(2, 1, 1, 2)
+mh_covmat <- matrix(mh_entries, nrow = 2)
+mh_eig <- eigen(mh_covmat)
+mh_values <- mh_eig$values
+mh_expected <- c(3, 1)
+mh_matches <- all.equal(mh_values, mh_expected)
+stopifnot(mh_matches)
+
+# The Mahalanobis distance of each grid point from the mean zero.
+mh_axis <- seq(-3.5, 3.5, length.out = 200)
+mh_grid <- tidyr::expand_grid(x1 = mh_axis, x2 = mh_axis)
+mh_points <- as.matrix(mh_grid)
+mh_inverse <- solve(mh_covmat)
+mh_quad <- (mh_points %*% mh_inverse) * mh_points
+mh_sums <- rowSums(mh_quad)
+mh_dist <- sqrt(mh_sums)
+mh_grid <- dplyr::mutate(mh_grid, mahal = mh_dist)
+
+# The points of the example: sqrt(3) q1 and q2, each at distance 1.
+mh_long <- sqrt(3 / 2)
+mh_short <- 1 / sqrt(2)
+mh_marks_x1 <- c(mh_long, mh_short)
+mh_marks_x2 <- c(mh_long, -mh_short)
+mh_marks <- tibble::tibble(x1 = mh_marks_x1, x2 = mh_marks_x2)
+
+mh_contour_aes <- ggplot2::aes(z = mahal, colour = ggplot2::after_stat(level))
+mh_breaks <- c(1, 2)
+mh_contours <- ggplot2::geom_contour(mh_contour_aes, breaks = mh_breaks)
+mh_dots <- ggplot2::geom_point(data = mh_marks, size = 2.5)
+mh_colours <- ggplot2::scale_colour_viridis_c(
+  name = "Mahalanobis distance",
+  end = 0.7,
+  breaks = mh_breaks,
+  guide = "legend"
+)
+mh_plot <- mh_grid |>
+  ggplot2::ggplot() +
+  ggplot2::aes(x1, x2) +
+  mh_contours +
+  mh_dots +
+  mh_colours +
+  ggplot2::coord_fixed(expand = FALSE) +
+  ggplot2::labs(x = "x1", y = "x2") +
+  ggplot2::theme(legend.position = "bottom")
+
+mh_is_html <- knitr::is_html_output()
+if (mh_is_html) {
+  mh_legend <- list(
+    orientation = "h",
+    x = 0.5,
+    xanchor = "center",
+    y = -0.25
+  )
+  mh_widget <- plotly::ggplotly(mh_plot) |>
+    plotly::layout(legend = mh_legend) |>
+    plotly::config(displaylogo = FALSE, responsive = TRUE)
+  htmltools::div(
+    role = "img",
+    `aria-label` = fig_alt_mahal_eigen,
+    mh_widget
+  )
+} else {
+  mh_plot
+}
+```
+
+The contours of the Mahalanobis distance at $1$ and $2$ for the example.
+The dots are the points $\sqrt{3}\,\vecf{q}_1$ and $\vecf{q}_2$ of the example on the inner ellipse.
+:::
+
+{{< include pds/_subfiles/_fig-mahalanobis-eigen-3d.qmd >}}
+
+:::
