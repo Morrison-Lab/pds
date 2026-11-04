@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-03 16:57:09 (PST)
+Last modified: 2026-11-03 19:04:09 (PST)
 
 > **NOTE:**
 >
@@ -1080,7 +1080,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Definition 24 (Mode of a density or mass function)** Let $X$ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) $f$. The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
+> **Definition 24 (Mode of a density or mass function)** Let $X$ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) $f$. The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
 >
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} f(x).$$
 >
@@ -1088,13 +1088,21 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
+> *Remark 1* (A mode belongs to a density, not to a random variable). A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#def-pmf), so “the mode of $X$” is shorthand for the mode of a chosen density of $X$.
+>
+> Two [densities](#def-pdf) of the same [random variable](#def-random-variable) can differ on a [set](https://morrison-lab.github.io/mds/sets.html#def-set) of [probability](probability-basics.llms.md#def-probability) zero, and then they can have different [modes](#def-mode). A change of variables also moves the mode, because the density of a transformed variable includes a Jacobian factor.
+>
+> The [expectation](expectation.llms.md#def-expectation) of $X$ is different: it depends only on the [distribution](#def-cdf) of $X$, so every density of $X$ gives the same value.
+
+> **NOTE:**
+>
+> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
 >
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} g(x).$$
 
 > **NOTE:**
 >
-> *Proof*. Write $f(x) = c\, g(x)$ with $c > 0$ ([Definition 22](#def-kernel)). By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra.html#thm-argmax-positive-multiple), $\arg \max_{x \in \mathcal{R}(X)} f(x) = \arg \max_{x \in \mathcal{R}(X)} g(x)$. The left side is ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$ by [Definition 24](#def-mode).
+> *Proof*. Write $f(x) = c\, g(x)$ with $c > 0$ ([Definition 22](#def-kernel)). By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra-basics.html#thm-argmax-positive-multiple), $\arg \max_{x \in \mathcal{R}(X)} f(x) = \arg \max_{x \in \mathcal{R}(X)} g(x)$. The left side is ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$ by [Definition 24](#def-mode).
 
 > **NOTE:**
 >

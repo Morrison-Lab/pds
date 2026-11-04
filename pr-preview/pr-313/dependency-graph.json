@@ -4,14 +4,14 @@
  "meaning": "edge [A, B] means A uses B: B is a prerequisite of A, A a postrequisite of B",
  "nodes": [
   {
-   "id": "mds/algebra#def-argmax",
+   "id": "mds/algebra-basics#def-argmax",
    "site": "mds",
-   "page": "algebra",
+   "page": "algebra-basics",
    "div": "def-argmax",
    "kind": "def",
    "title": "argmax",
    "external": true,
-   "url": "https://morrison-lab.github.io/mds/algebra.html#def-argmax"
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax"
   },
   {
    "id": "mds/algebra-basics#def-argmin",
@@ -3271,7 +3271,7 @@
   ],
   [
    "pds/random-variables#def-mode",
-   "mds/algebra#def-argmax"
+   "mds/algebra-basics#def-argmax"
   ],
   [
    "pds/random-variables#def-mode",
@@ -3391,7 +3391,7 @@
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
-   "mds/algebra#def-argmax"
+   "mds/algebra-basics#def-argmax"
   ],
   [
    "pds/random-variables#thm-kernel-same-mode",
