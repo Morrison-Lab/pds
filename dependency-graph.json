@@ -54,6 +54,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer"
   },
   {
+   "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
+   "site": "mds",
+   "page": "calculus-double-integrals",
+   "div": "thm-fubini-tonelli",
+   "kind": "thm",
+   "title": "fubini tonelli",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli"
+  },
+  {
    "id": "mds/functions#def-countable-set",
    "site": "mds",
    "page": "functions",
@@ -144,6 +154,36 @@
    "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix"
   },
   {
+   "id": "mds/linear-algebra-special-matrices#thm-det-diagonal",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "thm-det-diagonal",
+   "kind": "thm",
+   "title": "det diagonal",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal"
+  },
+  {
+   "id": "mds/linear-algebra-special-matrices#thm-pd-inverse",
+   "site": "mds",
+   "page": "linear-algebra-special-matrices",
+   "div": "thm-pd-inverse",
+   "kind": "thm",
+   "title": "pd inverse",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse"
+  },
+  {
+   "id": "mds/measures#cor-measure-finitely-additive",
+   "site": "mds",
+   "page": "measures",
+   "div": "cor-measure-finitely-additive",
+   "kind": "cor",
+   "title": "measure finitely additive",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#cor-measure-finitely-additive"
+  },
+  {
    "id": "mds/measures#def-countable-additivity",
    "site": "mds",
    "page": "measures",
@@ -152,6 +192,16 @@
    "title": "countable additivity",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#def-countable-additivity"
+  },
+  {
+   "id": "mds/measures#def-counting-measure",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-counting-measure",
+   "kind": "def",
+   "title": "counting measure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-counting-measure"
   },
   {
    "id": "mds/measures#def-finite-additivity",
@@ -172,6 +222,46 @@
    "title": "measure",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#def-measure"
+  },
+  {
+   "id": "mds/measures#def-sigma-algebra",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-sigma-algebra",
+   "kind": "def",
+   "title": "sigma algebra",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra"
+  },
+  {
+   "id": "mds/measures#lem-countable-additivity-empty",
+   "site": "mds",
+   "page": "measures",
+   "div": "lem-countable-additivity-empty",
+   "kind": "lem",
+   "title": "countable additivity empty",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#lem-countable-additivity-empty"
+  },
+  {
+   "id": "mds/measures#thm-sigma-algebra-closure",
+   "site": "mds",
+   "page": "measures",
+   "div": "thm-sigma-algebra-closure",
+   "kind": "thm",
+   "title": "sigma algebra closure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
+  },
+  {
+   "id": "mds/sets#def-extended-nonneg-reals",
+   "site": "mds",
+   "page": "sets",
+   "div": "def-extended-nonneg-reals",
+   "kind": "def",
+   "title": "extended nonneg reals",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/sets.html#def-extended-nonneg-reals"
   },
   {
    "id": "mds/sets#def-set",
@@ -2306,8 +2396,44 @@
    "pds/distributions#def-mahalanobis"
   ],
   [
+   "pds/distributions#cor-mvn-mahalanobis",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#cor-mvn-mahalanobis",
+   "pds/distributions#lem-mahalanobis-nonneg"
+  ],
+  [
+   "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "pds/distributions#thm-mvn-diagonal-indpt"
+  ],
+  [
+   "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "pds/distributions#thm-mvn-moments"
+  ],
+  [
+   "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "pds/variance-covariance#cor-vcov-indpt-diagonal"
+  ],
+  [
+   "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/distributions#cor-mvn-uncorrelated-indpt",
+   "pds/variance-covariance#thm-vcov-elements"
+  ],
+  [
    "pds/distributions#cor-weibull-exponential",
    "pds/distributions#def-weibull"
+  ],
+  [
+   "pds/distributions#cor-weibull-exponential",
+   "pds/distributions#thm-weibull"
   ],
   [
    "pds/distributions#cor-weibull-exponential",
@@ -2316,6 +2442,10 @@
   [
    "pds/distributions#cor-weibull-hazard-monotone",
    "pds/distributions#def-weibull"
+  ],
+  [
+   "pds/distributions#cor-weibull-hazard-monotone",
+   "pds/distributions#thm-weibull"
   ],
   [
    "pds/distributions#def-binomial",
@@ -2362,6 +2492,34 @@
    "pds/random-variables#def-surv-fn"
   ],
   [
+   "pds/distributions#lem-mahalanobis-nonneg",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#lem-mahalanobis-nonneg",
+   "mds/linear-algebra-special-matrices#thm-pd-inverse"
+  ],
+  [
+   "pds/distributions#thm-binomial-moments",
+   "pds/distributions#thm-binomial-sum-bernoulli"
+  ],
+  [
+   "pds/distributions#thm-binomial-moments",
+   "pds/expectation#thm-bernoulli-mean"
+  ],
+  [
+   "pds/distributions#thm-binomial-moments",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/distributions#thm-binomial-moments",
+   "pds/variance-covariance#cor-vcov-indpt-diagonal"
+  ],
+  [
+   "pds/distributions#thm-binomial-moments",
+   "pds/variance-covariance#thm-var-lincom"
+  ],
+  [
    "pds/distributions#thm-binomial-sum-bernoulli",
    "pds/independence#def-iid"
   ],
@@ -2374,12 +2532,28 @@
    "mds/linear-algebra-special-matrices#def-eigendecomposition"
   ],
   [
+   "pds/distributions#thm-mahalanobis-eigen",
+   "mds/linear-algebra-special-matrices#thm-pd-inverse"
+  ],
+  [
+   "pds/distributions#thm-mean-vs-event-rate",
+   "pds/distributions#def-event-rate"
+  ],
+  [
    "pds/distributions#thm-mixture-mean",
    "pds/distributions#def-mixture"
   ],
   [
+   "pds/distributions#thm-mixture-mean",
+   "pds/expectation#def-expectation"
+  ],
+  [
    "pds/distributions#thm-mixture-posterior",
    "pds/distributions#thm-mixture-two-stage"
+  ],
+  [
+   "pds/distributions#thm-mixture-posterior",
+   "pds/expectation#def-cond-mixed"
   ],
   [
    "pds/distributions#thm-mixture-two-stage",
@@ -2391,7 +2565,15 @@
   ],
   [
    "pds/distributions#thm-mixture-two-stage",
+   "pds/random-variables#cor-joint-density-mass-marginal"
+  ],
+  [
+   "pds/distributions#thm-mixture-two-stage",
    "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/distributions#thm-mixture-two-stage",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/distributions#thm-mvn-density-integral",
@@ -2399,11 +2581,27 @@
   ],
   [
    "pds/distributions#thm-mvn-diagonal-indpt",
+   "mds/linear-algebra-special-matrices#thm-det-diagonal"
+  ],
+  [
+   "pds/distributions#thm-mvn-diagonal-indpt",
    "pds/independence#def-indpt"
   ],
   [
    "pds/distributions#thm-mvn-diagonal-indpt",
+   "pds/independence#thm-indpt-density"
+  ],
+  [
+   "pds/distributions#thm-mvn-diagonal-indpt",
    "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-mvn-diagonal-indpt",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/distributions#thm-mvn-diagonal-indpt",
+   "pds/random-variables#thm-normal-density"
   ],
   [
    "pds/distributions#thm-mvn-moments",
@@ -2418,6 +2616,22 @@
    "pds/variance-covariance#def-cov-vec-x"
   ],
   [
+   "pds/distributions#thm-nb",
+   "pds/distributions#thm-poisson-properties"
+  ],
+  [
+   "pds/distributions#thm-nb",
+   "pds/expectation#thm-lie"
+  ],
+  [
+   "pds/distributions#thm-nb",
+   "pds/variance-covariance#thm-total-variance"
+  ],
+  [
+   "pds/distributions#thm-nb-poisson-limit",
+   "pds/distributions#def-nb"
+  ],
+  [
    "pds/distributions#thm-nb-poisson-limit",
    "pds/distributions#def-poisson"
   ],
@@ -2426,8 +2640,32 @@
    "pds/expectation#def-expectation"
   ],
   [
+   "pds/distributions#thm-poisson-properties",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/distributions#thm-poisson-properties",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
    "pds/distributions#thm-sum-pois",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-weibull",
+   "pds/random-variables#thm-cdf-derivative-density"
+  ],
+  [
+   "pds/distributions#thm-weibull",
+   "pds/random-variables#thm-hazard-dens-surv"
+  ],
+  [
+   "pds/distributions#thm-weibull",
+   "pds/random-variables#thm-survival-expressions-1"
+  ],
+  [
+   "pds/distributions#thm-weibull-mean",
+   "pds/expectation#thm-surv-mean"
   ],
   [
    "pds/expectation#cor-best-predictor-argmin",
@@ -2447,7 +2685,15 @@
   ],
   [
    "pds/expectation#cor-best-predictor-argmin",
+   "pds/expectation#def-risk"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
    "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-argmin",
+   "pds/expectation#thm-best-predictor"
   ],
   [
    "pds/expectation#cor-best-predictor-argmin",
@@ -2467,7 +2713,15 @@
   ],
   [
    "pds/expectation#cor-best-predictor-unique",
+   "pds/expectation#def-risk"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
    "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#cor-best-predictor-unique",
+   "pds/expectation#thm-best-predictor"
   ],
   [
    "pds/expectation#cor-best-predictor-unique",
@@ -2487,6 +2741,22 @@
   ],
   [
    "pds/expectation#cor-cross-entropy-entropy",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/expectation#def-surprisal-continuous"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
    "pds/random-variables#def-pdf"
   ],
   [
@@ -2503,7 +2773,19 @@
   ],
   [
    "pds/expectation#cor-fubini-joint",
+   "pds/expectation#thm-fubini-tonelli-measure"
+  ],
+  [
+   "pds/expectation#cor-fubini-joint",
    "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/expectation#cor-linearity-affine",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/expectation#cor-linearity-affine",
+   "pds/expectation#thm-lotus"
   ],
   [
    "pds/expectation#def-absolute-error-loss",
@@ -2767,6 +3049,10 @@
   ],
   [
    "pds/expectation#lem-cross-term-zero",
+   "pds/expectation#def-cond-expectation"
+  ],
+  [
+   "pds/expectation#lem-cross-term-zero",
    "pds/expectation#def-cond-expectation-function"
   ],
   [
@@ -2774,8 +3060,20 @@
    "pds/expectation#def-prediction-function"
   ],
   [
+   "pds/expectation#lem-cross-term-zero",
+   "pds/expectation#thm-cond-pull-out"
+  ],
+  [
+   "pds/expectation#lem-cross-term-zero",
+   "pds/expectation#thm-lie"
+  ],
+  [
    "pds/expectation#lem-linearity-finite-sum",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#lem-linearity-finite-sum",
+   "pds/expectation#thm-linearity-expectation"
   ],
   [
    "pds/expectation#lem-linearity-finite-sum",
@@ -2815,7 +3113,15 @@
   ],
   [
    "pds/expectation#thm-best-predictor",
+   "pds/expectation#thm-risk-decomposition"
+  ],
+  [
+   "pds/expectation#thm-best-predictor",
    "pds/random-variables#def-jointly-distributed"
+  ],
+  [
+   "pds/expectation#thm-cond-linearity",
+   "pds/expectation#thm-linearity-expectation"
   ],
   [
    "pds/expectation#thm-cond-lotus",
@@ -2826,8 +3132,24 @@
    "pds/expectation#def-cond-expectation-general"
   ],
   [
+   "pds/expectation#thm-cond-pull-out",
+   "pds/random-variables#def-joint-density-mass"
+  ],
+  [
+   "pds/expectation#thm-cond-pull-out",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
    "pds/expectation#thm-cross-entropy-continuous",
    "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-continuous",
+   "pds/expectation#thm-lotus"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-continuous",
+   "pds/probability-basics#def-probability"
   ],
   [
    "pds/expectation#thm-cross-entropy-continuous",
@@ -2851,7 +3173,19 @@
   ],
   [
    "pds/expectation#thm-cross-entropy-discrete",
+   "pds/expectation#thm-lotus"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-discrete",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#thm-cross-entropy-discrete",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-entropy-continuous",
+   "pds/expectation#thm-lotus"
   ],
   [
    "pds/expectation#thm-entropy-continuous",
@@ -2860,6 +3194,10 @@
   [
    "pds/expectation#thm-entropy-continuous",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete",
+   "pds/expectation#thm-lotus"
   ],
   [
    "pds/expectation#thm-entropy-discrete",
@@ -2895,7 +3233,15 @@
   ],
   [
    "pds/expectation#thm-kl-divergence-discrete",
+   "pds/expectation#thm-cross-entropy-discrete"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-linearity-expectation",
+   "pds/expectation#thm-lotus"
   ],
   [
    "pds/expectation#thm-risk-decomposition",
@@ -2904,6 +3250,26 @@
   [
    "pds/expectation#thm-risk-decomposition",
    "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#thm-risk-decomposition",
+   "pds/expectation#def-squared-error-risk"
+  ],
+  [
+   "pds/expectation#thm-risk-decomposition",
+   "pds/expectation#lem-cross-term-zero"
+  ],
+  [
+   "pds/expectation#thm-risk-decomposition",
+   "pds/expectation#lem-prediction-error-split"
+  ],
+  [
+   "pds/expectation#thm-risk-decomposition",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/expectation#thm-sample-mean-expectation",
+   "pds/expectation#thm-linearity-expectation"
   ],
   [
    "pds/expectation#thm-surv-mean",
@@ -2986,8 +3352,16 @@
    "pds/random-variables#def-joint-pmf"
   ],
   [
+   "pds/independence#thm-indpt-pmf",
+   "pds/random-variables#def-range"
+  ],
+  [
    "pds/limit-theorems#cor-clt-sum",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#cor-clt-sum",
+   "pds/limit-theorems#thm-clt"
   ],
   [
    "pds/limit-theorems#cor-hoeffding-two-sided",
@@ -3000,6 +3374,10 @@
   [
    "pds/limit-theorems#cor-mean-iid-moments",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#cor-mean-iid-moments",
+   "pds/limit-theorems#thm-sum-iid-moments"
   ],
   [
    "pds/limit-theorems#cor-mean-iid-moments",
@@ -3018,8 +3396,24 @@
    "pds/variance-covariance#def-variance"
   ],
   [
+   "pds/limit-theorems#thm-chebyshev",
+   "pds/limit-theorems#thm-markov"
+  ],
+  [
    "pds/limit-theorems#thm-chebyshev-sample-mean",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev-sample-mean",
+   "pds/limit-theorems#cor-mean-iid-moments"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev-sample-mean",
+   "pds/limit-theorems#thm-chebyshev"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev-sample-mean",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/limit-theorems#thm-clt",
@@ -3034,12 +3428,40 @@
    "pds/independence#def-iid"
   ],
   [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/limit-theorems#lem-hoeffding"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/limit-theorems#thm-markov"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/variance-covariance#thm-indpt-uncorrelated"
+  ],
+  [
+   "pds/limit-theorems#thm-markov",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
    "pds/limit-theorems#thm-sum-iid-moments",
    "pds/expectation#lem-linearity-finite-sum"
   ],
   [
    "pds/limit-theorems#thm-sum-iid-moments",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/variance-covariance#lem-cov-xx"
+  ],
+  [
+   "pds/limit-theorems#thm-sum-iid-moments",
+   "pds/variance-covariance#thm-indpt-uncorrelated"
   ],
   [
    "pds/limit-theorems#thm-sum-iid-moments",
@@ -3051,7 +3473,23 @@
   ],
   [
    "pds/limit-theorems#thm-wlln",
+   "pds/limit-theorems#cor-mean-iid-moments"
+  ],
+  [
+   "pds/limit-theorems#thm-wlln",
    "pds/limit-theorems#def-convergence-in-probability"
+  ],
+  [
+   "pds/limit-theorems#thm-wlln",
+   "pds/limit-theorems#thm-chebyshev"
+  ],
+  [
+   "pds/probability-basics#cor-p-neg0",
+   "pds/probability-basics#thm-total-prob-1"
+  ],
+  [
+   "pds/probability-basics#cor-probability-finitely-additive",
+   "mds/measures#cor-measure-finitely-additive"
   ],
   [
    "pds/probability-basics#cor-probability-finitely-additive",
@@ -3179,11 +3617,23 @@
   ],
   [
    "pds/probability-basics#lem-sample-space-event",
+   "mds/measures#def-sigma-algebra"
+  ],
+  [
+   "pds/probability-basics#lem-sample-space-event",
    "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#lem-sample-space-event",
    "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "mds/measures#def-sigma-algebra"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "mds/sets#def-set-difference"
   ],
   [
    "pds/probability-basics#prp-complement-partition",
@@ -3202,8 +3652,40 @@
    "pds/probability-basics#def-sample-space"
   ],
   [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#lem-sample-space-event"
+  ],
+  [
+   "pds/probability-basics#thm-bayes",
+   "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-bayes",
+   "pds/probability-basics#thm-law-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-continuity-probability",
+   "mds/measures#thm-sigma-algebra-closure"
+  ],
+  [
+   "pds/probability-basics#thm-continuity-probability",
+   "pds/probability-basics#cor-probability-finitely-additive"
+  ],
+  [
    "pds/probability-basics#thm-kolmogorov-axioms",
    "mds/measures#def-countable-additivity"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "mds/measures#def-measure"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "mds/measures#lem-countable-additivity-empty"
+  ],
+  [
+   "pds/probability-basics#thm-kolmogorov-axioms",
+   "mds/sets#def-extended-nonneg-reals"
   ],
   [
    "pds/probability-basics#thm-kolmogorov-axioms",
@@ -3218,16 +3700,40 @@
    "pds/probability-basics#def-probability"
   ],
   [
+   "pds/probability-basics#thm-law-conditional-prob",
+   "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob",
+   "mds/measures#def-countable-additivity"
+  ],
+  [
    "pds/probability-basics#thm-total-prob",
    "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob",
+   "pds/probability-basics#thm-law-conditional-prob"
   ],
   [
    "pds/probability-basics#thm-total-prob-1",
    "pds/probability-basics#def-complement"
   ],
   [
+   "pds/random-variables#cor-cdf-derivative-density-ae",
+   "pds/random-variables#thm-cdf-derivative-is-density"
+  ],
+  [
    "pds/random-variables#cor-discrete-hazard-unit-interval",
    "pds/random-variables#def-discrete-hazard"
+  ],
+  [
+   "pds/random-variables#cor-surv-int-haz",
+   "pds/random-variables#thm-cdf-derivative-is-density"
+  ],
+  [
+   "pds/random-variables#cor-surv-int-haz",
+   "pds/random-variables#thm-survival-expressions-1"
   ],
   [
    "pds/random-variables#def-bernoulli",
@@ -3386,8 +3892,32 @@
    "pds/probability-basics#def-probability"
   ],
   [
+   "pds/random-variables#prp-density-limit-right-derivative",
+   "pds/random-variables#thm-density-limit"
+  ],
+  [
    "pds/random-variables#thm-cdf-characterizes",
    "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#thm-cdf-derivative-density",
+   "pds/random-variables#thm-cdf-properties"
+  ],
+  [
+   "pds/random-variables#thm-cdf-derivative-is-density",
+   "pds/random-variables#thm-density-vs-CDF"
+  ],
+  [
+   "pds/random-variables#thm-cdf-properties",
+   "pds/probability-basics#cor-p-neg0"
+  ],
+  [
+   "pds/random-variables#thm-cdf-properties",
+   "pds/probability-basics#cor-probability-finitely-additive"
+  ],
+  [
+   "pds/random-variables#thm-cdf-properties",
+   "pds/probability-basics#thm-continuity-probability"
   ],
   [
    "pds/random-variables#thm-cdf-properties",
@@ -3398,8 +3928,24 @@
    "pds/random-variables#def-pdf"
   ],
   [
+   "pds/random-variables#thm-density-limit",
+   "pds/random-variables#thm-cdf-derivative-is-density"
+  ],
+  [
    "pds/random-variables#thm-density-not-unique",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-density-sums-to-one",
+   "pds/random-variables#thm-cdf-properties"
+  ],
+  [
+   "pds/random-variables#thm-density-vs-CDF",
+   "pds/random-variables#thm-cdf-properties"
+  ],
+  [
+   "pds/random-variables#thm-hazard-dens-surv",
+   "pds/probability-basics#thm-prob-subset"
   ],
   [
    "pds/random-variables#thm-hazard-dens-surv",
@@ -3408,6 +3954,10 @@
   [
    "pds/random-variables#thm-hazard-dens-surv",
    "pds/random-variables#def-surv-fn"
+  ],
+  [
+   "pds/random-variables#thm-hazard-dens-surv",
+   "pds/random-variables#thm-density-limit"
   ],
   [
    "pds/random-variables#thm-joint-distribution-rectangles",
@@ -3436,6 +3986,18 @@
   [
    "pds/random-variables#thm-kernel-same-mode",
    "pds/random-variables#def-range"
+  ],
+  [
+   "pds/random-variables#thm-marginal-density",
+   "mds/calculus-double-integrals#thm-fubini-tonelli"
+  ],
+  [
+   "pds/random-variables#thm-marginal-density",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-no-joint-density-diagonal",
+   "mds/calculus-double-integrals#thm-fubini-tonelli"
   ],
   [
    "pds/random-variables#thm-no-joint-density-diagonal",
@@ -3467,11 +4029,23 @@
   ],
   [
    "pds/random-variables#thm-survival-expressions-1",
+   "pds/probability-basics#cor-p-neg0"
+  ],
+  [
+   "pds/random-variables#thm-survival-expressions-1",
    "pds/random-variables#def-cdf"
   ],
   [
    "pds/random-variables#thm-survival-expressions-1",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-survival-expressions-1",
+   "pds/random-variables#thm-density-sums-to-one"
+  ],
+  [
+   "pds/random-variables#thm-survival-expressions-1",
+   "pds/random-variables#thm-density-vs-CDF"
   ],
   [
    "pds/variance-covariance#cor-best-constant",
@@ -3483,6 +4057,10 @@
   ],
   [
    "pds/variance-covariance#cor-uncorrelated-cor-zero",
+   "pds/variance-covariance#def-correlation"
+  ],
+  [
+   "pds/variance-covariance#cor-uncorrelated-cor-zero",
    "pds/variance-covariance#def-uncorrelated"
   ],
   [
@@ -3490,8 +4068,20 @@
    "pds/variance-covariance#def-variance"
   ],
   [
+   "pds/variance-covariance#cor-var-lincom2",
+   "pds/variance-covariance#thm-var-lincom"
+  ],
+  [
    "pds/variance-covariance#cor-var-sum-indpt",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#cor-var-sum-indpt",
+   "pds/variance-covariance#cor-var-lincom2"
+  ],
+  [
+   "pds/variance-covariance#cor-var-sum-indpt",
+   "pds/variance-covariance#thm-indpt-uncorrelated"
   ],
   [
    "pds/variance-covariance#cor-vcov-indpt-diagonal",
@@ -3500,6 +4090,18 @@
   [
    "pds/variance-covariance#cor-vcov-indpt-diagonal",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/variance-covariance#lem-cov-xx"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/variance-covariance#thm-indpt-uncorrelated"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/variance-covariance#thm-vcov-elements"
   ],
   [
    "pds/variance-covariance#def-cond-variance",
@@ -3554,8 +4156,32 @@
    "pds/variance-covariance#def-deviation-pop-mean"
   ],
   [
+   "pds/variance-covariance#lem-cov-xx",
+   "pds/variance-covariance#thm-alt-cov"
+  ],
+  [
    "pds/variance-covariance#lem-second-moment-variance",
    "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#lem-second-moment-variance",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-alt-cov",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-alt-cov",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-alt-cov",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#cor-var-lincom2"
   ],
   [
    "pds/variance-covariance#thm-cor-bounds",
@@ -3567,7 +4193,51 @@
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mds/measures#def-counting-measure"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/expectation#cor-fubini-joint"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/variance-covariance#thm-alt-cov"
+  ],
+  [
+   "pds/variance-covariance#thm-noise-second-moment",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/variance-covariance#thm-noise-second-moment"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-variance",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-variance",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-variance-expanded",
+   "pds/variance-covariance#def-deviation-pop-mean"
+  ],
+  [
+   "pds/variance-covariance#thm-variance-expanded",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#thm-vcov-psd",
@@ -3576,8 +4246,29 @@
   [
    "pds/variance-covariance#thm-vcov-psd",
    "mds/linear-algebra-special-matrices#def-symmetric-matrix"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "pds/variance-covariance#def-cov"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "pds/variance-covariance#thm-var-lincom"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "pds/variance-covariance#thm-vcov-elements"
   ]
  ],
  "cycles": [],
- "forwardReferences": []
+ "forwardReferences": [
+  [
+   "pds/variance-covariance#thm-noise-second-moment",
+   "pds/variance-covariance#thm-variance"
+  ]
+ ]
 }
