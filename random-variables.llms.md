@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-04 09:31:09 (PST)
+Last modified: 2026-11-04 09:43:24 (PST)
 
 > **NOTE:**
 >
@@ -198,7 +198,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 8 (Probability density function (PDF))** If $X$ is a [continuous random variable](#def-continuous-rv), a **probability density function** of $X$, denoted $f(x)$, $f_X(x)$, $\operatorname{p}(x)$, $\operatorname{p}_X(x)$, or $\operatorname{p}(X=x)$, is a function $f$ that satisfies [\[4\]](#ref-wikipedia_probability_density_function):
+> **Definition 8 (Probability density function (PDF))** If $X$ is a [continuous random variable](#def-continuous-rv), a **probability density function** of $X$, denoted $f(x)$, $f_X(x)$, $\mathbb{p}(x)$, $\mathbb{p}_X(x)$, or $\mathbb{p}(X=x)$, is a function $f$ that satisfies [\[4\]](#ref-wikipedia_probability_density_function):
 >
 > - $f(x) \ge 0$ for every $x$.
 > - The integral of $f$ over any interval is the [probability](probability-basics.llms.md#def-probability) that $X$ falls in that interval: $$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
@@ -272,14 +272,14 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Definition 11 (Normal distribution (Gaussian distribution))** A random variable $X$ has the **normal distribution** (or **Gaussian distribution**) with mean parameter $\mu\in \mathbb{R}$ and variance parameter $\sigma^2> 0$, written $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ [\[6\]](#ref-wikipedia_normal_distribution), if $X$ is continuous with [density](#def-pdf):
 >
-> $$\operatorname{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}$$
+> $$\mathbb{p}(X=x) \stackrel{\text{def}}{=}\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}$$
 
 > **NOTE:**
 >
 > **Example 10 (Normal densities at their centers)** For $X \sim {\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$, the density at $x = 0$ is:
 >
 > $$\begin{aligned}
-> \operatorname{p}(X=0)
+> \mathbb{p}(X=0)
 > &= \frac{1}{1 \cdot\sqrt{2\pi}} \text{e}^{-\frac{(0-0)^2}{2 \cdot 1}}
 > && \text{(normal density with } \mu= 0, \sigma^2= 1 \text{)} \\
 > &= \frac{1}{\sqrt{2\pi}}
@@ -288,7 +288,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > && \text{(evaluate)}
 > \end{aligned}$$
 >
-> For $X \sim {\operatorname{N}\mathopen{}\left(0, 0.1^2\right)\mathclose{}}$, the same steps give $\operatorname{p}(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99$, a density greater than 1.
+> For $X \sim {\operatorname{N}\mathopen{}\left(0, 0.1^2\right)\mathclose{}}$, the same steps give $\mathbb{p}(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99$, a density greater than 1.
 
 > **NOTE:**
 >
@@ -314,7 +314,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Example 11 (Half of a standard normal lies below 0)** If $Z$ has the standard normal distribution, its density $\operatorname{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}$ takes the same value at $z$ and $-z$, so $\Pr(Z \le 0) = \Pr(Z \ge 0)$. Those two probabilities sum to 1, because $\Pr(Z = 0) = 0$ for a continuous $Z$, so each is $\tfrac{1}{2}$.
+> **Example 11 (Half of a standard normal lies below 0)** If $Z$ has the standard normal distribution, its density $\mathbb{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}$ takes the same value at $z$ and $-z$, so $\Pr(Z \le 0) = \Pr(Z \ge 0)$. Those two probabilities sum to 1, because $\Pr(Z = 0) = 0$ for a continuous $Z$, so each is $\tfrac{1}{2}$.
 
 > **NOTE:**
 >
@@ -345,7 +345,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Definition 14 (Cumulative distribution function (CDF))** For a random variable $X$ (discrete or continuous), its **cumulative distribution function** [\[9\]](#ref-wikipedia_cumulative_distribution_function) is:
 >
-> $${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.$$
+> $${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \stackrel{\text{def}}{=}\Pr(X\le t), \quad t\in\mathbb{R}.$$
 
 > **NOTE:**
 >
@@ -355,7 +355,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Example 13 (CDF of the number of heads)** Summing the PMF in [Example 7](#exm-pmf) over values at or below $t$:
 >
-> $${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = \begin{cases}
+> $${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \begin{cases}
 > 0, & t < 0 \\
 > \tfrac{1}{4}, & 0 \le t < 1 \\
 > \tfrac{3}{4}, & 1 \le t < 2 \\
@@ -364,37 +364,37 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Theorem 5 (Properties of a CDF)** The [CDF](#def-cdf) $\operatorname{F}$ of any random variable $X$ is non-decreasing, and:
+> **Theorem 5 (Properties of a CDF)** The [CDF](#def-cdf) $\mathbb{F}$ of any random variable $X$ is non-decreasing, and:
 >
-> $$\lim_{t \to -\infty} {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 0, \qquad \lim_{t \to \infty} {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 1$$
+> $$\lim_{t \to -\infty} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 0, \qquad \lim_{t \to \infty} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 1$$
 
 > **NOTE:**
 >
 > *Proof*. *Non-decreasing.* For $s < t$, $\{X \le t\}$ is the disjoint union of $\{X \le s\}$ and $\{s < X \le t\}$, so [finite additivity](probability-basics.llms.md#cor-probability-finitely-additive) gives:
 >
 > $$\begin{aligned}
-> {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}}
+> {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}}
 > &= \Pr(X \le s) + \Pr(s < X \le t)
 > && \text{(additivity, and the definition of the CDF)} \\
 > &\ge \Pr(X \le s)
 > && \text{(probabilities are non-negative)} \\
-> &= {\operatorname{F}\mathopen{}\left(s\right)\mathclose{}}
+> &= {\mathbb{F}\mathopen{}\left(s\right)\mathclose{}}
 > && \text{(definition of the CDF)}
 > \end{aligned}$$
 >
-> *Limit at* $-\infty$. The events $A_n = \{X \le -n\}$, $n = 1, 2, \ldots$, are decreasing, and their intersection is empty, because every outcome $\omega$ has $X(\omega) > -n$ once $n > -X(\omega)$. By [continuity of probability](probability-basics.llms.md#thm-continuity-probability), ${\operatorname{F}\mathopen{}\left(-n\right)\mathclose{}} = \Pr(A_n) \to 0$. For $t \le -n$, $0 \le {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \le {\operatorname{F}\mathopen{}\left(-n\right)\mathclose{}}$, because $\operatorname{F}$ is non-decreasing, so ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \to 0$ as $t \to -\infty$.
+> *Limit at* $-\infty$. The events $A_n = \{X \le -n\}$, $n = 1, 2, \ldots$, are decreasing, and their intersection is empty, because every outcome $\omega$ has $X(\omega) > -n$ once $n > -X(\omega)$. By [continuity of probability](probability-basics.llms.md#thm-continuity-probability), ${\mathbb{F}\mathopen{}\left(-n\right)\mathclose{}} = \Pr(A_n) \to 0$. For $t \le -n$, $0 \le {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \le {\mathbb{F}\mathopen{}\left(-n\right)\mathclose{}}$, because $\mathbb{F}$ is non-decreasing, so ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \to 0$ as $t \to -\infty$.
 >
 > *Limit at* $\infty$. The events $B_n = \{X > n\}$ are decreasing, and their intersection is empty, because every outcome $\omega$ has $X(\omega) \le n$ once $n \ge X(\omega)$. By continuity of probability, $\Pr(B_n) \to 0$, so, by the [complement rule](probability-basics.llms.md#cor-p-neg0):
 >
 > $$\begin{aligned}
-> {\operatorname{F}\mathopen{}\left(n\right)\mathclose{}}
+> {\mathbb{F}\mathopen{}\left(n\right)\mathclose{}}
 > &= 1 - \Pr(X > n)
 > && \text{(complement rule)} \\
 > &\to 1 - 0
 > && \text{(} \Pr(B_n) \to 0 \text{)}
 > \end{aligned}$$
 >
-> For $t \ge n$, ${\operatorname{F}\mathopen{}\left(n\right)\mathclose{}} \le {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \le 1$, because $\operatorname{F}$ is non-decreasing, so ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \to 1$ as $t \to \infty$.
+> For $t \ge n$, ${\mathbb{F}\mathopen{}\left(n\right)\mathclose{}} \le {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \le 1$, because $\mathbb{F}$ is non-decreasing, so ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \to 1$ as $t \to \infty$.
 
 > **NOTE:**
 >
@@ -406,17 +406,17 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 15 (Quantile function (population inverse CDF))** For a random variable $X$ with [cumulative distribution function (CDF)](#def-cdf) $\operatorname{F}$, its population **quantile function** (generalized inverse of $\operatorname{F}$) is [\[11\]](#ref-wikipedia_quantile_function):
+> **Definition 15 (Quantile function (population inverse CDF))** For a random variable $X$ with [cumulative distribution function (CDF)](#def-cdf) $\mathbb{F}$, its population **quantile function** (generalized inverse of $\mathbb{F}$) is [\[11\]](#ref-wikipedia_quantile_function):
 >
-> $${\operatorname{Q}\mathopen{}\left(p\right)\mathclose{}} \stackrel{\text{def}}{=}\inf {\mathopen{}\left\{t : {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \ge p\right\}\mathclose{}}, \quad p \in (0, 1).$$
+> $${\mathbb{Q}\mathopen{}\left(p\right)\mathclose{}} \stackrel{\text{def}}{=}\inf {\mathopen{}\left\{t : {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \ge p\right\}\mathclose{}}, \quad p \in (0, 1).$$
 
 > **NOTE:**
 >
-> *Remark*. The restriction to $p \in (0, 1)$ keeps ${\operatorname{Q}\mathopen{}\left(p\right)\mathclose{}}$ finite: for $p = 1$, the set ${\mathopen{}\left\{t : {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \ge 1\right\}\mathclose{}}$ is empty whenever ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} < 1$ for every $t$, as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
+> *Remark*. The restriction to $p \in (0, 1)$ keeps ${\mathbb{Q}\mathopen{}\left(p\right)\mathclose{}}$ finite: for $p = 1$, the set ${\mathopen{}\left\{t : {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \ge 1\right\}\mathclose{}}$ is empty whenever ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} < 1$ for every $t$, as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
 
 > **NOTE:**
 >
-> **Example 14 (Median of the number of heads)** From [Example 13](#exm-cdf), ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} \ge 0.5$ first holds at $t = 1$, so the median of the number of heads is ${\operatorname{Q}\mathopen{}\left(0.5\right)\mathclose{}} = 1$.
+> **Example 14 (Median of the number of heads)** From [Example 13](#exm-cdf), ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \ge 0.5$ first holds at $t = 1$, so the median of the number of heads is ${\mathbb{Q}\mathopen{}\left(0.5\right)\mathclose{}} = 1$.
 
 > **NOTE:**
 >
@@ -529,43 +529,43 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Theorem 7 (A density integrates to the CDF)** If $X$ is a continuous random variable with density $f$ and CDF $\operatorname{F}$, then for every $t$:
+> **Theorem 7 (A density integrates to the CDF)** If $X$ is a continuous random variable with density $f$ and CDF $\mathbb{F}$, then for every $t$:
 >
-> $${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$$
+> $${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$$
 
 > **NOTE:**
 >
 > *Proof*. For any $a < t$, $\{X \le t\}$ is the disjoint union of $\{X \le a\}$ and $\{a < X \le t\}$, and $\Pr(X = a) = 0$ because $X$ is continuous. So:
 >
 > $$\begin{aligned}
-> {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}}
+> {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}}
 > &= \Pr(X \le a) + \Pr(a < X \le t)
 > && \text{(additivity, and the definition of the CDF)} \\
-> &= {\operatorname{F}\mathopen{}\left(a\right)\mathclose{}} + \Pr(a \le X \le t)
+> &= {\mathbb{F}\mathopen{}\left(a\right)\mathclose{}} + \Pr(a \le X \le t)
 > && \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\
-> &= {\operatorname{F}\mathopen{}\left(a\right)\mathclose{}} + \int_a^t f(x)\,dx
+> &= {\mathbb{F}\mathopen{}\left(a\right)\mathclose{}} + \int_a^t f(x)\,dx
 > && \text{(definition of the density)}
 > \end{aligned}$$
 >
-> Letting $a \to -\infty$, ${\operatorname{F}\mathopen{}\left(a\right)\mathclose{}} \to 0$ ([Theorem 5](#thm-cdf-properties)), which gives ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$.
+> Letting $a \to -\infty$, ${\mathbb{F}\mathopen{}\left(a\right)\mathclose{}} \to 0$ ([Theorem 5](#thm-cdf-properties)), which gives ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$.
 
 > **NOTE:**
 >
-> **Theorem 8 (The derivative of the CDF is the density where the density is continuous)** If $X$ is a continuous random variable with density $f$ and CDF $\operatorname{F}$, then at every $t$ where $f$ is continuous:
+> **Theorem 8 (The derivative of the CDF is the density where the density is continuous)** If $X$ is a continuous random variable with density $f$ and CDF $\mathbb{F}$, then at every $t$ where $f$ is continuous:
 >
-> $$f(t) = \frac{\partial}{\partial t} {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}}$$
+> $$f(t) = \frac{\partial}{\partial t} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}}$$
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 7](#thm-density-vs-CDF), ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$. The fundamental theorem of calculus then gives $\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)$ at every $t$ where $f$ is continuous.
+> *Proof*. By [Theorem 7](#thm-density-vs-CDF), ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$. The fundamental theorem of calculus then gives $\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)$ at every $t$ where $f$ is continuous.
 
 > **NOTE:**
 >
-> **Corollary 1 (A CDF has its density as derivative at all but finitely many points)** If $X$ is a continuous random variable with CDF $\operatorname{F}$ and a density $f$ that is continuous at all but finitely many points, then $\operatorname{F}$ is differentiable with $\operatorname{F}' = f$ at all but finitely many points.
+> **Corollary 1 (A CDF has its density as derivative at all but finitely many points)** If $X$ is a continuous random variable with CDF $\mathbb{F}$ and a density $f$ that is continuous at all but finitely many points, then $\mathbb{F}$ is differentiable with $\mathbb{F}' = f$ at all but finitely many points.
 
 > **NOTE:**
 >
-> *Proof*. At every point $t$ where $f$ is continuous, [Theorem 8](#thm-cdf-derivative-is-density) gives $\operatorname{F}'(t) = f(t)$, and by assumption those are all but finitely many points.
+> *Proof*. At every point $t$ where $f$ is continuous, [Theorem 8](#thm-cdf-derivative-is-density) gives $\mathbb{F}'(t) = f(t)$, and by assumption those are all but finitely many points.
 
 > **NOTE:**
 >
@@ -576,7 +576,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > **Example 15 (CDF and density of a uniform random variable)** For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of [Definition 10](#def-uniform), and $t \in [0, 1]$:
 >
 > $$\begin{aligned}
-> {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}}
+> {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}}
 > &= \int_{-\infty}^{t} f(x)\,dx
 > && \text{(the CDF is the integral of the density)} \\
 > &= \int_{-\infty}^{0} 0\,dx + \int_{0}^{t} 1\,dx
@@ -588,15 +588,15 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > For $t \in (0, 1)$, where $f$ is continuous,
 >
 > $$\begin{aligned}
-> \frac{\partial}{\partial t} {\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} &= 1 \\
+> \frac{\partial}{\partial t} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} &= 1 \\
 > &= f(t).
 > \end{aligned}$$
 >
-> At $t = 1$, $f$ jumps from 1 to 0, and $\operatorname{F}$ has no derivative: its slope is 1 on the left and 0 on the right.
+> At $t = 1$, $f$ jumps from 1 to 0, and $\mathbb{F}$ has no derivative: its slope is 1 on the left and 0 on the right.
 
 > **NOTE:**
 >
-> **Theorem 9 (A piecewise-smooth CDF has its derivative as a density)** If the CDF $\operatorname{F}$ of a random variable $X$ is continuous everywhere, and has a continuous derivative at all but finitely many points, then $X$ is continuous, and $\operatorname{F}'$ (given any values at the finitely many exceptional points) is a density of $X$.
+> **Theorem 9 (A piecewise-smooth CDF has its derivative as a density)** If the CDF $\mathbb{F}$ of a random variable $X$ is continuous everywhere, and has a continuous derivative at all but finitely many points, then $X$ is continuous, and $\mathbb{F}'$ (given any values at the finitely many exceptional points) is a density of $X$.
 
 > **NOTE:**
 >
@@ -608,27 +608,27 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > && \text{(probabilities are non-negative)} \\
 > &\le \Pr(x - \Delta< X \le x)
 > && \text{(} \{X = x\} \subseteq \{x - \Delta< X \le x\} \text{)} \\
-> &= {\operatorname{F}\mathopen{}\left(x\right)\mathclose{}} - {\operatorname{F}\mathopen{}\left(x - \Delta\right)\mathclose{}}
+> &= {\mathbb{F}\mathopen{}\left(x\right)\mathclose{}} - {\mathbb{F}\mathopen{}\left(x - \Delta\right)\mathclose{}}
 > && \text{(additivity, and the definition of the CDF)}
 > \end{aligned}$$
 >
-> and ${\operatorname{F}\mathopen{}\left(x\right)\mathclose{}} - {\operatorname{F}\mathopen{}\left(x - \Delta\right)\mathclose{}} \to 0$ as $\Delta\downarrow 0$, because $\operatorname{F}$ is continuous. So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous. Then, for $a \le b$:
+> and ${\mathbb{F}\mathopen{}\left(x\right)\mathclose{}} - {\mathbb{F}\mathopen{}\left(x - \Delta\right)\mathclose{}} \to 0$ as $\Delta\downarrow 0$, because $\mathbb{F}$ is continuous. So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous. Then, for $a \le b$:
 >
 > $$\begin{aligned}
 > \Pr(a \le X \le b)
 > &= \Pr(a < X \le b)
 > && \text{(} \Pr(X = a) = 0 \text{)} \\
-> &= {\operatorname{F}\mathopen{}\left(b\right)\mathclose{}} - {\operatorname{F}\mathopen{}\left(a\right)\mathclose{}}
+> &= {\mathbb{F}\mathopen{}\left(b\right)\mathclose{}} - {\mathbb{F}\mathopen{}\left(a\right)\mathclose{}}
 > && \text{(additivity, and the definition of the CDF)} \\
-> &= \int_a^b \operatorname{F}'(x)\,dx
+> &= \int_a^b \mathbb{F}'(x)\,dx
 > && \text{(fundamental theorem of calculus)}
 > \end{aligned}$$
 >
-> The last step applies the fundamental theorem of calculus on each piece of $[a, b]$ between exceptional points, where $\operatorname{F}'$ is continuous, and joins the pieces using the continuity of $\operatorname{F}$ at the exceptional points. Finally, $\operatorname{F}' \ge 0$ wherever it exists, because $\operatorname{F}$ is non-decreasing ([Theorem 5](#thm-cdf-properties)).
+> The last step applies the fundamental theorem of calculus on each piece of $[a, b]$ between exceptional points, where $\mathbb{F}'$ is continuous, and joins the pieces using the continuity of $\mathbb{F}$ at the exceptional points. Finally, $\mathbb{F}' \ge 0$ wherever it exists, because $\mathbb{F}$ is non-decreasing ([Theorem 5](#thm-cdf-properties)).
 
 > **NOTE:**
 >
-> **Example 16 (A density from a CDF with a corner)** Let $X$ have CDF ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 0$ for $t < 0$, ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = t^2$ for $0 \le t \le 1$, and ${\operatorname{F}\mathopen{}\left(t\right)\mathclose{}} = 1$ for $t > 1$. This $\operatorname{F}$ is continuous everywhere, and has a continuous derivative everywhere except $t = 1$, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), $X$ is continuous with density $f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise. As a check, $\int_0^1 2t\,dt = 1$.
+> **Example 16 (A density from a CDF with a corner)** Let $X$ have CDF ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 0$ for $t < 0$, ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = t^2$ for $0 \le t \le 1$, and ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 1$ for $t > 1$. This $\mathbb{F}$ is continuous everywhere, and has a continuous derivative everywhere except $t = 1$, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), $X$ is continuous with density $f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise. As a check, $\int_0^1 2t\,dt = 1$.
 
 > **NOTE:**
 >
@@ -644,11 +644,11 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > \frac{\Pr(x \le X < x + \Delta)}{\Delta}
 > &= \frac{\Pr(x < X \le x + \Delta)}{\Delta}
 > && \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \Delta) = 0 \text{)} \\
-> &= \frac{{\operatorname{F}\mathopen{}\left(x + \Delta\right)\mathclose{}} - {\operatorname{F}\mathopen{}\left(x\right)\mathclose{}}}{\Delta}
+> &= \frac{{\mathbb{F}\mathopen{}\left(x + \Delta\right)\mathclose{}} - {\mathbb{F}\mathopen{}\left(x\right)\mathclose{}}}{\Delta}
 > && \text{(additivity, and the definition of the CDF)}
 > \end{aligned}$$
 >
-> By [Theorem 8](#thm-cdf-derivative-is-density), $\operatorname{F}$ is differentiable at $x$ with $\operatorname{F}'(x) = f(x)$, so this difference quotient converges to $f(x)$ as $\Delta\downarrow 0$.
+> By [Theorem 8](#thm-cdf-derivative-is-density), $\mathbb{F}$ is differentiable at $x$ with $\mathbb{F}'(x) = f(x)$, so this difference quotient converges to $f(x)$ as $\Delta\downarrow 0$.
 
 > **NOTE:**
 >
@@ -670,12 +670,12 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Proposition 1 (The density limit is the right derivative of the CDF)** If $X$ is a continuous random variable with CDF $\operatorname{F}$, then for every $x$:
+> **Proposition 1 (The density limit is the right derivative of the CDF)** If $X$ is a continuous random variable with CDF $\mathbb{F}$, then for every $x$:
 >
 > $$\lim_{\Delta\downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}
-> = \lim_{\Delta\downarrow 0} \frac{{\operatorname{F}\mathopen{}\left(x + \Delta\right)\mathclose{}} - {\operatorname{F}\mathopen{}\left(x\right)\mathclose{}}}{\Delta}$$
+> = \lim_{\Delta\downarrow 0} \frac{{\mathbb{F}\mathopen{}\left(x + \Delta\right)\mathclose{}} - {\mathbb{F}\mathopen{}\left(x\right)\mathclose{}}}{\Delta}$$
 >
-> whenever either limit exists; the right-hand side is the right derivative of $\operatorname{F}$ at $x$.
+> whenever either limit exists; the right-hand side is the right derivative of $\mathbb{F}$ at $x$.
 
 > **NOTE:**
 >
@@ -695,7 +695,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > && \text{(} f = 0 \text{ on } (1, 1 + \Delta] \text{; one point does not change an integral)}
 > \end{aligned}$$
 >
-> So the limit of $\Pr(1 \le X < 1 + \Delta) / \Delta$ at $x = 1$ is 0, although $f(1) = 1$. By [Proposition 1](#prp-density-limit-right-derivative), 0 is also the right derivative of $\operatorname{F}$ at 1, matching the slope of 0 on the right in [Example 15](#exm-density-vs-CDF).
+> So the limit of $\Pr(1 \le X < 1 + \Delta) / \Delta$ at $x = 1$ is 0, although $f(1) = 1$. By [Proposition 1](#prp-density-limit-right-derivative), 0 is also the right derivative of $\mathbb{F}$ at 1, matching the slope of 0 on the right in [Example 15](#exm-density-vs-CDF).
 
 > **NOTE:**
 >
@@ -709,7 +709,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > \int_{-\infty}^{\infty} f(x)\, dx
 > &= \lim_{b \to \infty} \int_{-\infty}^{b} f(x)\, dx
 > && \text{(definition of an improper integral)} \\
-> &= \lim_{b \to \infty} {\operatorname{F}\mathopen{}\left(b\right)\mathclose{}}
+> &= \lim_{b \to \infty} {\mathbb{F}\mathopen{}\left(b\right)\mathclose{}}
 > && \text{(the CDF is the integral of the density)} \\
 > &= 1
 > && \text{(limit of a CDF)}
@@ -838,7 +838,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 20 (Joint probability density function (joint density))** For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$, a **joint probability density function** (**joint density**) of $X$ and $Y$, denoted $f_{X,Y}(x, y)$ or $\operatorname{p}(X = x,\, Y = y)$, is a function $f_{X,Y}$ on $\mathbb{R}^2$ that satisfies:
+> **Definition 20 (Joint probability density function (joint density))** For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$, a **joint probability density function** (**joint density**) of $X$ and $Y$, denoted $f_{X,Y}(x, y)$ or $\mathbb{p}(X = x,\, Y = y)$, is a function $f_{X,Y}$ on $\mathbb{R}^2$ that satisfies:
 >
 > - $f_{X,Y}(x, y) \ge 0$ for every $(x, y)$.
 > - The integral of $f_{X,Y}$ over any region $A \subseteq \mathbb{R}^2$ is the probability that the pair $(X, Y)$ falls in $A$: $$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
@@ -930,19 +930,19 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 21 (Joint density-mass function)** Let $X$ be a discrete random variable and $Y$ a continuous random variable, [jointly distributed](#def-jointly-distributed). A **joint density-mass function** of $X$ and $Y$, denoted $\operatorname{p}(X = x,\, Y = y)$, is a function $\operatorname{p}(X = x,\, Y = y) \ge 0$ that is a probability mass in $x$ and a probability density in $y$: for every $x$ and every set $B \subseteq \mathbb{R}$,
+> **Definition 21 (Joint density-mass function)** Let $X$ be a discrete random variable and $Y$ a continuous random variable, [jointly distributed](#def-jointly-distributed). A **joint density-mass function** of $X$ and $Y$, denoted $\mathbb{p}(X = x,\, Y = y)$, is a function $\mathbb{p}(X = x,\, Y = y) \ge 0$ that is a probability mass in $x$ and a probability density in $y$: for every $x$ and every set $B \subseteq \mathbb{R}$,
 >
-> $$\Pr(X = x,\, Y \in B) = \int_{B} \operatorname{p}(X = x,\, Y = y)\,dy$$
+> $$\Pr(X = x,\, Y \in B) = \int_{B} \mathbb{p}(X = x,\, Y = y)\,dy$$
 
 > **NOTE:**
 >
-> *Remark*. When $X$ is continuous and $Y$ is discrete, the roles swap: $\Pr(X \in B,\, Y = y) = \int_B \operatorname{p}(X = x,\, Y = y)\,dx$.
+> *Remark*. When $X$ is continuous and $Y$ is discrete, the roles swap: $\Pr(X \in B,\, Y = y) = \int_B \mathbb{p}(X = x,\, Y = y)\,dx$.
 
 > **NOTE:**
 >
-> **Corollary 2 (Marginal PMF from a joint density-mass function)** If $X$ and $Y$ have joint density-mass function $\operatorname{p}(X = x,\, Y = y)$, then for every $x$:
+> **Corollary 2 (Marginal PMF from a joint density-mass function)** If $X$ and $Y$ have joint density-mass function $\mathbb{p}(X = x,\, Y = y)$, then for every $x$:
 >
-> $$\mathbb{P}(X = x) = \int_{-\infty}^{\infty} \operatorname{p}(X = x,\, Y = y)\,dy$$
+> $$\mathbb{P}(X = x) = \int_{-\infty}^{\infty} \mathbb{p}(X = x,\, Y = y)\,dy$$
 
 > **NOTE:**
 >
@@ -954,13 +954,13 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > && \text{(} {\mathopen{}\left\{X = x\right\}\mathclose{}} \subseteq \Omega\text{)} \\
 > &= \Pr(X = x,\, Y \in \mathbb{R})
 > && \text{(} {\mathopen{}\left\{Y \in \mathbb{R}\right\}\mathclose{}} = \Omega\text{)} \\
-> &= \int_{-\infty}^{\infty} \operatorname{p}(X = x,\, Y = y)\,dy
+> &= \int_{-\infty}^{\infty} \mathbb{p}(X = x,\, Y = y)\,dy
 > && \text{(definition of a joint density-mass function, with } B = \mathbb{R}\text{)}
 > \end{aligned}$$
 
 > **NOTE:**
 >
-> **Example 27 (A coin flip and a waiting time)** Let $\operatorname{p}(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$, $\operatorname{p}(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$, and $0$ otherwise. Integrating over $y$ gives $\mathbb{P}(X = 0) = 1/2$ and $\mathbb{P}(X = 1) = 1/2$, which add to 1. For example, the probability that $X = 1$ and $Y \le 1$ is:
+> **Example 27 (A coin flip and a waiting time)** Let $\mathbb{p}(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$, $\mathbb{p}(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$, and $0$ otherwise. Integrating over $y$ gives $\mathbb{P}(X = 0) = 1/2$ and $\mathbb{P}(X = 1) = 1/2$, which add to 1. For example, the probability that $X = 1$ and $Y \le 1$ is:
 >
 > $$\begin{aligned}
 > \Pr(X = 1,\, Y \le 1)
@@ -1022,13 +1022,13 @@ The resulting distributions $\mathbb{P}(x)$ and $\mathbb{P}(y)$ are the **margin
 
 ### 1.0.2 Continuous distributions and densities
 
-When a random variable $X$ takes values in a continuous space $\mathcal{R}(X) \subseteq \mathbb{R}$, its behavior is described by a **probability density function** (PDF) $\operatorname{p}(x) : \mathcal{R}(X) \to \mathbb{R}_+$ satisfying:
+When a random variable $X$ takes values in a continuous space $\mathcal{R}(X) \subseteq \mathbb{R}$, its behavior is described by a **probability density function** (PDF) $\mathbb{p}(x) : \mathcal{R}(X) \to \mathbb{R}_+$ satisfying:
 
-$$\int_{\mathcal{R}(X)} \operatorname{p}(x)\,\mathrm{d}x = 1$$
+$$\int_{\mathcal{R}(X)} \mathbb{p}(x)\,\mathrm{d}x = 1$$
 
 Probabilities are assigned to subsets $A \subseteq \mathcal{R}(X)$ by integrating the density over that set:
 
-$$\Pr(X \in A) = \int_{A} \operatorname{p}(x)\,\mathrm{d}x$$
+$$\Pr(X \in A) = \int_{A} \mathbb{p}(x)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
@@ -1040,11 +1040,11 @@ Why? As Brian Hutchinson notes [\[15\]](#ref-hutchinson2024data471), what is the
 
 Non-zero probabilities attach to intervals or regions of non-zero width:
 
-$$\Pr(6 - \varepsilon\le X \le 6 + \varepsilon) = \int_{6-\varepsilon}^{6+\varepsilon} \operatorname{p}(x)\,\mathrm{d}x > 0 \qquad (\text{for } \varepsilon> 0)$$
+$$\Pr(6 - \varepsilon\le X \le 6 + \varepsilon) = \int_{6-\varepsilon}^{6+\varepsilon} \mathbb{p}(x)\,\mathrm{d}x > 0 \qquad (\text{for } \varepsilon> 0)$$
 
-Every rule developed for discrete variables carries over to continuous variables by replacing sums $\sum_{x \in \mathcal{R}(X)}$ with integrals $\int_{\mathcal{R}(X)} \mathrm{d}x$. For example, marginalizing out $X$ from a joint density $\operatorname{p}(x, y)$ to find the marginal density $\operatorname{p}(y)$ becomes:
+Every rule developed for discrete variables carries over to continuous variables by replacing sums $\sum_{x \in \mathcal{R}(X)}$ with integrals $\int_{\mathcal{R}(X)} \mathrm{d}x$. For example, marginalizing out $X$ from a joint density $\mathbb{p}(x, y)$ to find the marginal density $\mathbb{p}(y)$ becomes:
 
-$$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}x$$
+$$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
@@ -1134,30 +1134,30 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Definition 25 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable $T$, denoted $\operatorname{S}(t)$, is the probability that $T$ exceeds $t$ [\[18\]](#ref-wikipedia_survival_function):
+> **Definition 25 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable $T$, denoted $\mathbb{S}(t)$, is the probability that $T$ exceeds $t$ [\[18\]](#ref-wikipedia_survival_function):
 >
-> $$\operatorname{S}(t) \stackrel{\text{def}}{=}\Pr(T > t)$$
+> $$\mathbb{S}(t) \stackrel{\text{def}}{=}\Pr(T > t)$$
 
 > **NOTE:**
 >
-> *Remark*. The name comes from time-to-event analysis: if $T$ is the time at which a participant dies, then $\operatorname{S}(t)$ is the probability that the participant is still alive at time $t$. The definition itself applies to any random variable.
+> *Remark*. The name comes from time-to-event analysis: if $T$ is the time at which a participant dies, then $\mathbb{S}(t)$ is the probability that the participant is still alive at time $t$. The definition itself applies to any random variable.
 
 > **NOTE:**
 >
 > **Theorem 19 (Survival function and CDF)** For any random variable $T$ with [CDF](#def-cdf) $F(t)$:
 >
-> $$\operatorname{S}(t) = 1 - F(t)$$
+> $$\mathbb{S}(t) = 1 - F(t)$$
 >
 > If $T$ is continuous with [density](#def-pdf) $f(t)$, then also:
 >
-> $$\operatorname{S}(t) = \int_{u=t}^{\infty} f(u)\,du$$
+> $$\mathbb{S}(t) = \int_{u=t}^{\infty} f(u)\,du$$
 
 > **NOTE:**
 >
 > *Proof*. The event $\{T > t\}$ is the complement of the event $\{T \le t\}$, so the [complement rule](probability-basics.llms.md#cor-p-neg0) gives:
 >
 > $$\begin{aligned}
-> \operatorname{S}(t)
+> \mathbb{S}(t)
 > &\stackrel{\text{def}}{=}\Pr(T > t)
 > && \text{(definition of the survival function)} \\
 > &= 1 - \Pr(T \le t)
@@ -1181,7 +1181,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 > **Example 30 (Survival function of an exponential distribution)** Let $T$ be exponential with rate ${\lambda}> 0$ ([Definition 13](#def-exponential)), so $T$ has density $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$. For $t \ge 0$, by [Theorem 19](#thm-survival-expressions-1):
 >
 > $$\begin{aligned}
-> \operatorname{S}(t)
+> \mathbb{S}(t)
 > &= \int_{u=t}^{\infty} {\lambda}\text{e}^{-{\lambda}u}\,du
 > && \text{(integral form of the survival function)} \\
 > &= \mathopen{}\left[-\text{e}^{-{\lambda}u}\right]\mathclose{}_{u=t}^{\infty}
@@ -1195,33 +1195,33 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 > For $t < 0$,
 >
 > $$\begin{aligned}
-> \operatorname{S}(t) &= \Pr(T > t) \\
+> \mathbb{S}(t) &= \Pr(T > t) \\
 > &= 1,
 > \end{aligned}$$
 >
-> since $T \ge 0$. With ${\lambda}= 0.5$, for example, $\operatorname{S}(2) = \text{e}^{-1} \approx 0.368$.
+> since $T \ge 0$. With ${\lambda}= 0.5$, for example, $\mathbb{S}(2) = \text{e}^{-1} \approx 0.368$.
 
 > **NOTE:**
 >
-> **Definition 26 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$, typically denoted ${\lambda}(t)$ or $\operatorname{h}(t)$, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that $T$ falls in an interval starting at $t$, given $T \ge t$, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
+> **Definition 26 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$, typically denoted ${\lambda}(t)$ or $\mathbb{h}(t)$, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that $T$ falls in an interval starting at $t$, given $T \ge t$, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
 >
 > $${\lambda}(t) \stackrel{\text{def}}{=}\lim_{\Delta\downarrow 0} \frac{\Pr(t \le T < t + \Delta\mid T \ge t)}{\Delta}$$
 
 > **NOTE:**
 >
-> *Remark*. Sources differ on the symbol: $\operatorname{h}(t)$ appears in Dobson and Barnett [\[20\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while $\lambda(t)$ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
+> *Remark*. Sources differ on the symbol: $\mathbb{h}(t)$ appears in Dobson and Barnett [\[20\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while $\lambda(t)$ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
 >
-> If $T$ is the time at which an event occurs, then ${\lambda}(t)$ is a rate, not a probability: for a small interval width $\Delta> 0$, ${\lambda}(t) \cdot\Delta$ is approximately the probability that the event occurs in $[t, t + \Delta)$, given that it has not occurred before $t$. Many sources write the hazard as ${\lambda}(t) = \operatorname{p}(T = t \mid T \ge t)$, reading it as the density of $T$ at $t$, conditional on the event $T \ge t$; that notation abbreviates the limit in [Definition 26](#def-hazard). For a discrete $T$, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
+> If $T$ is the time at which an event occurs, then ${\lambda}(t)$ is a rate, not a probability: for a small interval width $\Delta> 0$, ${\lambda}(t) \cdot\Delta$ is approximately the probability that the event occurs in $[t, t + \Delta)$, given that it has not occurred before $t$. Many sources write the hazard as ${\lambda}(t) = \mathbb{p}(T = t \mid T \ge t)$, reading it as the density of $T$ at $t$, conditional on the event $T \ge t$; that notation abbreviates the limit in [Definition 26](#def-hazard). For a discrete $T$, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
 > The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity ${\lambda}(t)$ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
 
 > **NOTE:**
 >
-> **Example 31 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 10](#exm-normal)). Let $T$ be [exponential](#def-exponential) with rate ${\lambda}= 2$, so $\operatorname{S}(t) = \text{e}^{-2t}$ for $t \ge 0$ ([Example 30](#exm-exp-survfn)). Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$, so
+> **Example 31 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 10](#exm-normal)). Let $T$ be [exponential](#def-exponential) with rate ${\lambda}= 2$, so $\mathbb{S}(t) = \text{e}^{-2t}$ for $t \ge 0$ ([Example 30](#exm-exp-survfn)). Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$, so
 >
 > $$\begin{aligned}
 > \Pr(T \ge s) &= \Pr(T > s) \\
-> &= \operatorname{S}(s).
+> &= \mathbb{S}(s).
 > \end{aligned}$$
 >
 > For $t \ge 0$ and $\Delta> 0$, $\{T \ge t\}$ is the disjoint union of $\{t \le T < t + \Delta\}$ and $\{T \ge t + \Delta\}$, so:
@@ -1234,8 +1234,8 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 > && \text{(subset property)} \\
 > &= \frac{\Pr(T \ge t) - \Pr(T \ge t + \Delta)}{\Pr(T \ge t)}
 > && \text{(additivity)} \\
-> &= \frac{\operatorname{S}(t) - \operatorname{S}(t + \Delta)}{\operatorname{S}(t)}
-> && \text{(} \Pr(T \ge s) = \operatorname{S}(s) \text{)} \\
+> &= \frac{\mathbb{S}(t) - \mathbb{S}(t + \Delta)}{\mathbb{S}(t)}
+> && \text{(} \Pr(T \ge s) = \mathbb{S}(s) \text{)} \\
 > &= \frac{\text{e}^{-2t} - \text{e}^{-2(t + \Delta)}}{\text{e}^{-2t}}
 > && \text{(exponential survival function)} \\
 > &= 1 - \text{e}^{-2\Delta}
@@ -1308,9 +1308,9 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Theorem 20 (Hazard equals density over survival)** If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$ and [survival function](#def-surv-fn) $\operatorname{S}(t)$, then for every $t$ with $\operatorname{S}(t) > 0$ at which $f$ is continuous:
+> **Theorem 20 (Hazard equals density over survival)** If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$ and [survival function](#def-surv-fn) $\mathbb{S}(t)$, then for every $t$ with $\mathbb{S}(t) > 0$ at which $f$ is continuous:
 >
-> $${\lambda}(t) = \frac{f(t)}{\operatorname{S}(t)}$$
+> $${\lambda}(t) = \frac{f(t)}{\mathbb{S}(t)}$$
 
 > **NOTE:**
 >
@@ -1318,7 +1318,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 >
 > $$\begin{aligned}
 > \Pr(T \ge t) &= \Pr(T > t) \\
-> &= \operatorname{S}(t),
+> &= \mathbb{S}(t),
 > \end{aligned}$$
 >
 > which is positive. Third, because $f$ is continuous at $t$, [Theorem 10](#thm-density-limit) gives $f(t)$ as the limit of $\Pr(t \le T < t + \Delta) / \Delta$.
@@ -1335,7 +1335,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 > && \text{(} \Pr(T \ge t) \text{ does not depend on } \Delta\text{)} \\
 > &= \frac{f(t)}{\Pr(T \ge t)}
 > && \text{(density as a limit; } f \text{ is continuous at } t \text{)} \\
-> &= \frac{f(t)}{\operatorname{S}(t)}
+> &= \frac{f(t)}{\mathbb{S}(t)}
 > && \text{(} \Pr(T = t) = 0 \text{ for continuous } T \text{)}
 > \end{aligned}$$
 
@@ -1345,7 +1345,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 >
 > $$\begin{aligned}
 > {\lambda}(t)
-> &= \frac{f(t)}{\operatorname{S}(t)}
+> &= \frac{f(t)}{\mathbb{S}(t)}
 > && \text{(hazard equals density over survival)} \\
 > &= \frac{{\lambda}\text{e}^{-{\lambda}t}}{\text{e}^{-{\lambda}t}}
 > && \text{(substitute the exponential density and survival function)} \\
@@ -1357,7 +1357,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Definition 28 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable $T$, often denoted ${\Lambda}(t)$ or $\operatorname{H}(t)$, is the integral of its [hazard function](#def-hazard) up to $t$:
+> **Definition 28 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable $T$, often denoted ${\Lambda}(t)$ or $\mathbb{H}(t)$, is the integral of its [hazard function](#def-hazard) up to $t$:
 >
 > $${\Lambda}(t) \stackrel{\text{def}}{=}\int_{u=-\infty}^{t} {\lambda}(u)\,du$$
 
@@ -1421,52 +1421,52 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Corollary 5 (Survival function from the cumulative hazard)** If $T$ is a continuous random variable whose density $f$ is continuous at all but finitely many points, then for every $t$ with $\operatorname{S}(t) > 0$:
+> **Corollary 5 (Survival function from the cumulative hazard)** If $T$ is a continuous random variable whose density $f$ is continuous at all but finitely many points, then for every $t$ with $\mathbb{S}(t) > 0$:
 >
-> $${\Lambda}(t) = -{\operatorname{log}\mathopen{}\left\{\operatorname{S}(t)\right\}\mathclose{}}$$
+> $${\Lambda}(t) = -{\operatorname{log}\mathopen{}\left\{\mathbb{S}(t)\right\}\mathclose{}}$$
 >
 > and therefore:
 >
-> $$\operatorname{S}(t) = {\operatorname{exp}\mathopen{}\left\{-{\Lambda}(t)\right\}\mathclose{}} \tag{1}$$
+> $$\mathbb{S}(t) = {\operatorname{exp}\mathopen{}\left\{-{\Lambda}(t)\right\}\mathclose{}} \tag{1}$$
 
 > **NOTE:**
 >
-> *Proof*. Since $\operatorname{S}(t) = 1 - F(t)$ ([Theorem 19](#thm-survival-expressions-1)) and $F$ has derivative $f$ wherever $f$ is continuous ([Theorem 8](#thm-cdf-derivative-is-density)), $\operatorname{S}$ has derivative $-f$ at those points. At each such $u$ with $\operatorname{S}(u) > 0$:
+> *Proof*. Since $\mathbb{S}(t) = 1 - F(t)$ ([Theorem 19](#thm-survival-expressions-1)) and $F$ has derivative $f$ wherever $f$ is continuous ([Theorem 8](#thm-cdf-derivative-is-density)), $\mathbb{S}$ has derivative $-f$ at those points. At each such $u$ with $\mathbb{S}(u) > 0$:
 >
 > $$\begin{aligned}
-> \frac{d}{du}\mathopen{}\left(-{\operatorname{log}\mathopen{}\left\{\operatorname{S}(u)\right\}\mathclose{}}\right)\mathclose{}
-> &= -\frac{1}{\operatorname{S}(u)} \cdot\frac{d}{du}\operatorname{S}(u)
+> \frac{d}{du}\mathopen{}\left(-{\operatorname{log}\mathopen{}\left\{\mathbb{S}(u)\right\}\mathclose{}}\right)\mathclose{}
+> &= -\frac{1}{\mathbb{S}(u)} \cdot\frac{d}{du}\mathbb{S}(u)
 > && \text{(chain rule)} \\
-> &= -\frac{1}{\operatorname{S}(u)} \cdot\mathopen{}\left(-f(u)\right)\mathclose{}
-> && \text{(} \operatorname{S}' = -f \text{)} \\
-> &= \frac{f(u)}{\operatorname{S}(u)}
+> &= -\frac{1}{\mathbb{S}(u)} \cdot\mathopen{}\left(-f(u)\right)\mathclose{}
+> && \text{(} \mathbb{S}' = -f \text{)} \\
+> &= \frac{f(u)}{\mathbb{S}(u)}
 > && \text{(simplify)} \\
 > &= {\lambda}(u)
 > && \text{(hazard equals density over survival)}
 > \end{aligned}$$
 >
-> The function $-{\operatorname{log}\mathopen{}\left\{\operatorname{S}(u)\right\}\mathclose{}}$ is continuous, because $\operatorname{S}$ is continuous for a continuous $T$, and it has derivative ${\lambda}(u)$ at all but finitely many points, so it is an antiderivative of ${\lambda}$ for the fundamental theorem of calculus. As $u \to -\infty$, $\operatorname{S}(u) \to 1$, so $-{\operatorname{log}\mathopen{}\left\{\operatorname{S}(u)\right\}\mathclose{}} \to 0$. Therefore:
+> The function $-{\operatorname{log}\mathopen{}\left\{\mathbb{S}(u)\right\}\mathclose{}}$ is continuous, because $\mathbb{S}$ is continuous for a continuous $T$, and it has derivative ${\lambda}(u)$ at all but finitely many points, so it is an antiderivative of ${\lambda}$ for the fundamental theorem of calculus. As $u \to -\infty$, $\mathbb{S}(u) \to 1$, so $-{\operatorname{log}\mathopen{}\left\{\mathbb{S}(u)\right\}\mathclose{}} \to 0$. Therefore:
 >
 > $$\begin{aligned}
 > {\Lambda}(t)
 > &\stackrel{\text{def}}{=}\int_{u=-\infty}^{t} {\lambda}(u)\,du
 > && \text{(definition of the cumulative hazard)} \\
-> &= \mathopen{}\left[-{\operatorname{log}\mathopen{}\left\{\operatorname{S}(u)\right\}\mathclose{}}\right]\mathclose{}_{u=-\infty}^{t}
-> && \text{(} -\log \operatorname{S}\text{ is an antiderivative of } {\lambda}\text{)} \\
-> &= -{\operatorname{log}\mathopen{}\left\{\operatorname{S}(t)\right\}\mathclose{}} - 0
+> &= \mathopen{}\left[-{\operatorname{log}\mathopen{}\left\{\mathbb{S}(u)\right\}\mathclose{}}\right]\mathclose{}_{u=-\infty}^{t}
+> && \text{(} -\log \mathbb{S}\text{ is an antiderivative of } {\lambda}\text{)} \\
+> &= -{\operatorname{log}\mathopen{}\left\{\mathbb{S}(t)\right\}\mathclose{}} - 0
 > && \text{(evaluate at the bounds)} \\
-> &= -{\operatorname{log}\mathopen{}\left\{\operatorname{S}(t)\right\}\mathclose{}}
+> &= -{\operatorname{log}\mathopen{}\left\{\mathbb{S}(t)\right\}\mathclose{}}
 > && \text{(simplify)}
 > \end{aligned}$$
 >
-> Exponentiating both sides of $-{\Lambda}(t) = {\operatorname{log}\mathopen{}\left\{\operatorname{S}(t)\right\}\mathclose{}}$ gives [Equation 1](#eq-surv-int-haz).
+> Exponentiating both sides of $-{\Lambda}(t) = {\operatorname{log}\mathopen{}\left\{\mathbb{S}(t)\right\}\mathclose{}}$ gives [Equation 1](#eq-surv-int-haz).
 
 > **NOTE:**
 >
 > **Example 35 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 34](#exm-exp-cumhaz), for $t \ge 0$:
 >
 > $$\begin{aligned}
-> \operatorname{S}(t)
+> \mathbb{S}(t)
 > &= {\operatorname{exp}\mathopen{}\left\{-{\Lambda}(t)\right\}\mathclose{}}
 > && \text{(survival function from the cumulative hazard)} \\
 > &= {\operatorname{exp}\mathopen{}\left\{-{\lambda}t\right\}\mathclose{}}
@@ -1479,11 +1479,11 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 >
 > | Name | Symbols | Definition |
 > |:---|----|----|
-> | [Probability density function (PDF)](#def-pdf) | $f(t), \operatorname{p}(t)$ | $f \ge 0$ with $\int_a^b f(u)\,du = \Pr(a \le T \le b)$ |
+> | [Probability density function (PDF)](#def-pdf) | $f(t), \mathbb{p}(t)$ | $f \ge 0$ with $\int_a^b f(u)\,du = \Pr(a \le T \le b)$ |
 > | [Cumulative distribution function (CDF)](#def-cdf) | $F(t)$ | $\Pr(T\leq t)$ |
-> | [Survival function](#def-surv-fn) | $\operatorname{S}(t), \bar{F}(t)$ | $\Pr(T > t)$ |
-> | [Hazard function](#def-hazard) | ${\lambda}(t), \operatorname{h}(t)$ | $\lim_{\Delta\downarrow 0} \Pr(t \le T < t + \Delta\mid T \ge t) / \Delta$ |
-> | [Cumulative hazard function](#def-cuhaz) | ${\Lambda}(t), \operatorname{H}(t)$ | $\int_{u=-\infty}^t {\lambda}(u)\,du$ |
+> | [Survival function](#def-surv-fn) | $\mathbb{S}(t), \bar{F}(t)$ | $\Pr(T > t)$ |
+> | [Hazard function](#def-hazard) | ${\lambda}(t), \mathbb{h}(t)$ | $\lim_{\Delta\downarrow 0} \Pr(t \le T < t + \Delta\mid T \ge t) / \Delta$ |
+> | [Cumulative hazard function](#def-cuhaz) | ${\Lambda}(t), \mathbb{H}(t)$ | $\int_{u=-\infty}^t {\lambda}(u)\,du$ |
 > | Log-hazard function | $\eta(t)$ | ${\operatorname{log}\mathopen{}\left\{{\lambda}(t)\right\}\mathclose{}}$ |
 >
 > Table 2: Probability distribution functions of a continuous random variable $T$
@@ -1500,8 +1500,8 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 > Each arrow in the following diagram converts one function into the next:
 >
 > $$f(t)
-> \xleftarrow[\operatorname{S}(t){\lambda}(t)]{-\operatorname{S}'(t)}
-> \operatorname{S}(t)
+> \xleftarrow[\mathbb{S}(t){\lambda}(t)]{-\mathbb{S}'(t)}
+> \mathbb{S}(t)
 > \xleftarrow[]{{\operatorname{exp}\mathopen{}\left\{-{\Lambda}(t)\right\}\mathclose{}}}
 > {\Lambda}(t)
 > \xleftarrow[]{\int_{u=0}^t {\lambda}(u)\,du}
@@ -1511,8 +1511,8 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 >
 > $$f(t)
 > \xrightarrow[\int_{u=t}^\infty f(u)\,du]{f(t)/{\lambda}(t)}
-> \operatorname{S}(t)
-> \xrightarrow[-{\operatorname{log}\mathopen{}\left\{\operatorname{S}(t)\right\}\mathclose{}}]{}
+> \mathbb{S}(t)
+> \xrightarrow[-{\operatorname{log}\mathopen{}\left\{\mathbb{S}(t)\right\}\mathclose{}}]{}
 > {\Lambda}(t)
 > \xrightarrow[{\Lambda}'(t)]{}
 > {\lambda}(t)

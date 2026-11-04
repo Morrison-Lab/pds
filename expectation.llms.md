@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-04 09:31:09 (PST)
+Last modified: 2026-11-04 09:43:24 (PST)
 
 > **NOTE:**
 >
@@ -22,9 +22,9 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} \stackrel{\text{def}}{=}\sum_{x \in \mathcal{R}(X)} x \cdot \mathbb{P}(X=x)$$
 >
-> The **expectation** of a *continuous* random variable $X$ with [probability density function](random-variables.llms.md#def-pdf) $\operatorname{p}(X=x)$ is the mean of $X$’s possible values, weighted by that density:
+> The **expectation** of a *continuous* random variable $X$ with [probability density function](random-variables.llms.md#def-pdf) $\mathbb{p}(X=x)$ is the mean of $X$’s possible values, weighted by that density:
 >
-> $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{x\in \mathcal{R}(X)} x \cdot \operatorname{p}(X=x)\,dx$$
+> $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{x\in \mathcal{R}(X)} x \cdot \mathbb{p}(X=x)\,dx$$
 >
 > In both cases, the expectation is defined only when the sum or integral converges absolutely, that is, when it is finite with $\mathopen{}\left|x\right|\mathclose{}$ in place of $x$.
 
@@ -33,7 +33,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > *Remark 1* (Expectation is a probability-weighted average). The [expectation](#def-expectation) of a [random variable](random-variables.llms.md#def-random-variable) $X$ is a [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) of the values of $X$, and the probabilities are the [weights](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weight).
 >
 > - A [discrete random variable](random-variables.llms.md#def-discrete-rv) has a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over its possible values. Each value $x$ is multiplied by its weight $\mathbb{P}(X=x)$, and the products are added. The weights are non-negative and add to $1$.
-> - A [continuous random variable](random-variables.llms.md#def-continuous-rv) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over its possible values. Each value $x$ is multiplied by its weight, the [density](random-variables.llms.md#def-pdf) $\operatorname{p}(X=x)$, and the products are accumulated. The density is non-negative and integrates to $1$.
+> - A [continuous random variable](random-variables.llms.md#def-continuous-rv) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over its possible values. Each value $x$ is multiplied by its weight, the [density](random-variables.llms.md#def-pdf) $\mathbb{p}(X=x)$, and the products are accumulated. The density is non-negative and integrates to $1$.
 >
 > The [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of $n$ numbers $y_1, \ldots, y_n$ is the special case with every weight equal to $1/n$:
 >
@@ -71,7 +71,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Example 2 (The standard Cauchy distribution has no expectation)** A random variable whose expectation is not defined is not exotic. Let $X$ have the standard Cauchy distribution, with density $\operatorname{p}(X=x) = \frac{1}{\pi(1 + x^2)}$ for every real $x$. For $x \ge 0$, $\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of $\mathopen{}\left|x\right|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{x}{\pi(1 + x^2)}$, and for $x \le 0$, $-\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of $\mathopen{}\left|x\right|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{-x}{\pi(1 + x^2)}$. So, integrating over each half-line:
+> **Example 2 (The standard Cauchy distribution has no expectation)** A random variable whose expectation is not defined is not exotic. Let $X$ have the standard Cauchy distribution, with density $\mathbb{p}(X=x) = \frac{1}{\pi(1 + x^2)}$ for every real $x$. For $x \ge 0$, $\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of $\mathopen{}\left|x\right|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{x}{\pi(1 + x^2)}$, and for $x \le 0$, $-\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of $\mathopen{}\left|x\right|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)} = \frac{-x}{\pi(1 + x^2)}$. So, integrating over each half-line:
 >
 > $$\begin{aligned}
 > \int_{0}^{\infty} \mathopen{}\left|x\right|\mathclose{} \cdot\frac{1}{\pi(1 + x^2)}\,dx
@@ -115,41 +115,41 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Theorem 2 (Expectation of time-to-event variables)** If $T$ is a non-negative random variable with [survival function](random-variables.llms.md#def-surv-fn) $\operatorname{S}(t)$ and a defined expectation, then:
+> **Theorem 2 (Expectation of time-to-event variables)** If $T$ is a non-negative random variable with [survival function](random-variables.llms.md#def-surv-fn) $\mathbb{S}(t)$ and a defined expectation, then:
 >
-> $${\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} = \int_{t=0}^{\infty} \operatorname{S}(t)\,dt$$
+> $${\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} = \int_{t=0}^{\infty} \mathbb{S}(t)\,dt$$
 
 > **NOTE:**
 >
-> *Proof*. We prove the continuous case, in which $T$ has a density $\operatorname{f}$. The integrand $\operatorname{f}(u) \cdot{\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}}$ is non-negative on $[0, \infty) \times [0, \infty)$, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[2\]](#ref-billingsley1995probability), Theorem 18.3) lets us exchange the order of integration:
+> *Proof*. We prove the continuous case, in which $T$ has a density $\mathbb{f}$. The integrand $\mathbb{f}(u) \cdot{\mathbb{1}\mathopen{}\left(0 \le t \le u\right)\mathclose{}}$ is non-negative on $[0, \infty) \times [0, \infty)$, so Tonelli’s theorem (the non-negative case of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli); Billingsley [\[2\]](#ref-billingsley1995probability), Theorem 18.3) lets us exchange the order of integration:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}
-> &= \int_{u=0}^{\infty} u\,\operatorname{f}(u)\,du
+> &= \int_{u=0}^{\infty} u\,\mathbb{f}(u)\,du
 > && \text{(definition of expectation; } T \ge 0 \text{)}\\
-> &= \int_{u=0}^{\infty}\mathopen{}\left(\int_{t=0}^{u} 1\,dt\right)\mathclose{}\operatorname{f}(u)\,du
+> &= \int_{u=0}^{\infty}\mathopen{}\left(\int_{t=0}^{u} 1\,dt\right)\mathclose{}\mathbb{f}(u)\,du
 > && \text{(} u = \textstyle\int_0^u 1\,dt \text{)}\\
-> &= \int_{u=0}^{\infty}\int_{t=0}^{u} \operatorname{f}(u)\,dt\,du
-> && \text{(move } \operatorname{f}(u) \text{ inside the inner integral)}\\
-> &= \int_{t=0}^{\infty}\int_{u=t}^{\infty} \operatorname{f}(u)\,du\,dt
+> &= \int_{u=0}^{\infty}\int_{t=0}^{u} \mathbb{f}(u)\,dt\,du
+> && \text{(move } \mathbb{f}(u) \text{ inside the inner integral)}\\
+> &= \int_{t=0}^{\infty}\int_{u=t}^{\infty} \mathbb{f}(u)\,du\,dt
 > && \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\
 > &= \int_{t=0}^{\infty}\Pr(T>t)\,dt
 > && \text{(integrate the density over } (t, \infty) \text{)}\\
-> &= \int_{t=0}^{\infty}\operatorname{S}(t)\,dt
+> &= \int_{t=0}^{\infty}\mathbb{S}(t)\,dt
 > && \text{(definition of the survival function)}
 > \end{aligned}$$
 >
-> Every step also holds when $\int_{u=0}^{\infty} u\,\operatorname{f}(u)\,du$ is infinite, because Tonelli’s theorem needs only a non-negative integrand; so $\int_{t=0}^{\infty} \operatorname{S}(t)\,dt$ is finite exactly when ${\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}$ is defined.
+> Every step also holds when $\int_{u=0}^{\infty} u\,\mathbb{f}(u)\,du$ is infinite, because Tonelli’s theorem needs only a non-negative integrand; so $\int_{t=0}^{\infty} \mathbb{S}(t)\,dt$ is finite exactly when ${\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}$ is defined.
 >
 > See [\[3\]](#ref-statproofbook:mean-nnrvar) for an alternative presentation of this proof.
 
 > **NOTE:**
 >
-> **Example 3 (Mean of an exponential random variable via survival function)** Let $T$ be [exponential](random-variables.llms.md#def-exponential) with rate ${\lambda}> 0$, so $\operatorname{S}(t) = \text{e}^{-{\lambda}t}$ for $t \ge 0$, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
+> **Example 3 (Mean of an exponential random variable via survival function)** Let $T$ be [exponential](random-variables.llms.md#def-exponential) with rate ${\lambda}> 0$, so $\mathbb{S}(t) = \text{e}^{-{\lambda}t}$ for $t \ge 0$, as computed on the [random variables page](random-variables.llms.md#exm-exp-survfn). By [Theorem 2](#thm-surv-mean):
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}
-> &= \int_0^\infty \operatorname{S}(t)\,dt
+> &= \int_0^\infty \mathbb{S}(t)\,dt
 > && \text{(expectation via the survival function)}\\
 > &= \int_0^\infty \text{e}^{-{\lambda}t}\,dt
 > && \text{(substitute the survival function)}\\
@@ -190,9 +190,9 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} = \sum_{x \in \mathcal{R}(X)} g(x) \cdot\mathbb{P}(X=x)$$
 >
-> **Continuous case.** For any function $g$ of a *continuous* random variable $X$ with density $\operatorname{p}(X=x)$:
+> **Continuous case.** For any function $g$ of a *continuous* random variable $X$ with density $\mathbb{p}(X=x)$:
 >
-> $${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} = \int_{x \in \mathcal{R}(X)} g(x) \cdot\operatorname{p}(X=x)\, dx$$
+> $${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} = \int_{x \in \mathcal{R}(X)} g(x) \cdot\mathbb{p}(X=x)\, dx$$
 
 > **NOTE:**
 >
@@ -234,14 +234,14 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Example 6 (Expected value of** $X^2$ for a Uniform(0,1) variable) Let $X \sim \text{Uniform}(0,1)$ ([uniform distribution](random-variables.llms.md#def-uniform)), so $\operatorname{p}(X=x) = 1$ for $x \in [0,1]$. By LOTUS ([Theorem 3](#thm-lotus), continuous case):
+> **Example 6 (Expected value of** $X^2$ for a Uniform(0,1) variable) Let $X \sim \text{Uniform}(0,1)$ ([uniform distribution](random-variables.llms.md#def-uniform)), so $\mathbb{p}(X=x) = 1$ for $x \in [0,1]$. By LOTUS ([Theorem 3](#thm-lotus), continuous case):
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}
-> &= \int_0^1 x^2 \cdot\operatorname{p}(X=x)\,dx
+> &= \int_0^1 x^2 \cdot\mathbb{p}(X=x)\,dx
 > && \text{(LOTUS, continuous case)}
 > \\&= \int_0^1 x^2 \cdot 1\,dx
-> && \text{(}\operatorname{p}(X=x) = 1\text{ on } [0,1]\text{)}
+> && \text{(}\mathbb{p}(X=x) = 1\text{ on } [0,1]\text{)}
 > \\&= \mathopen{}\left[\frac{x^3}{3}\right]\mathclose{}_0^1
 > && \text{(antiderivative of } x^2\text{)}
 > \\&= \frac{1}{3}.
@@ -315,16 +315,16 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> *Proof*. For discrete $X$, this identity is [Theorem 4](#thm-linearity-expectation) with $b = 0$. For continuous $X$ with density $\operatorname{p}(X=x)$, apply [Theorem 3](#thm-lotus) with $g(x) = ax + c$:
+> *Proof*. For discrete $X$, this identity is [Theorem 4](#thm-linearity-expectation) with $b = 0$. For continuous $X$ with density $\mathbb{p}(X=x)$, apply [Theorem 3](#thm-lotus) with $g(x) = ax + c$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[aX + c\right]\mathclose{}}
-> &= \int_{x \in \mathcal{R}(X)} (ax + c) \cdot\operatorname{p}(X=x)\,dx
+> &= \int_{x \in \mathcal{R}(X)} (ax + c) \cdot\mathbb{p}(X=x)\,dx
 > && \text{(LOTUS, continuous case)} \\
-> &= a\int_{x \in \mathcal{R}(X)} x \cdot\operatorname{p}(X=x)\,dx
-> + c\int_{x \in \mathcal{R}(X)} \operatorname{p}(X=x)\,dx
+> &= a\int_{x \in \mathcal{R}(X)} x \cdot\mathbb{p}(X=x)\,dx
+> + c\int_{x \in \mathcal{R}(X)} \mathbb{p}(X=x)\,dx
 > && \text{(linearity of the integral)} \\
-> &= a{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} + c\int_{x \in \mathcal{R}(X)} \operatorname{p}(X=x)\,dx
+> &= a{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} + c\int_{x \in \mathcal{R}(X)} \mathbb{p}(X=x)\,dx
 > && \text{(definition of expectation)} \\
 > &= a{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} + c \cdot 1
 > && \text{(a density integrates to 1)} \\
@@ -514,9 +514,9 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 4 (Conditional probability density function)** Let $X$ and $Y$ be jointly distributed continuous random variables with [joint density](random-variables.llms.md#def-joint-pdf) $\operatorname{p}(X = x,\, Y = y)$ and [marginal density](random-variables.llms.md#thm-marginal-density) $\operatorname{p}(X = x)$. The **conditional probability density function** of $Y$ given $X = x$ (for values of $x$ with $\operatorname{p}(X = x) > 0$) is:
+> **Definition 4 (Conditional probability density function)** Let $X$ and $Y$ be jointly distributed continuous random variables with [joint density](random-variables.llms.md#def-joint-pdf) $\mathbb{p}(X = x,\, Y = y)$ and [marginal density](random-variables.llms.md#thm-marginal-density) $\mathbb{p}(X = x)$. The **conditional probability density function** of $Y$ given $X = x$ (for values of $x$ with $\mathbb{p}(X = x) > 0$) is:
 >
-> $$\operatorname{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\, Y = y)}{\operatorname{p}(X = x)}$$
+> $$\mathbb{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\mathbb{p}(X = x,\, Y = y)}{\mathbb{p}(X = x)}$$
 
 > **NOTE:**
 >
@@ -559,7 +559,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > Modeling $(X, Y)$ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here): $\mu_X$ and $\mu_Y$ are the means of $X$ and $Y$, $\sigma^2_X$ and $\sigma^2_Y$ their [variances](variance-covariance.llms.md#def-variance), and $\rho$ their [correlation](variance-covariance.llms.md#def-correlation) (the next page defines the last two). The joint density is (a standard result; e.g. Casella and Berger [\[6\]](#ref-CaseBerg01)):
 >
-> $$\operatorname{p}(X=x,\,Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}}
+> $$\mathbb{p}(X=x,\,Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}}
 > \text{e}^{-\frac{1}{2(1-\rho^2)}
 > \mathopen{}\left[\frac{(x-\mu_X)^2}{\sigma^2_X}
 > - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y}
@@ -568,7 +568,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > A further standard fact about the bivariate normal (Casella and Berger [\[6\]](#ref-CaseBerg01)) is that the marginal distribution of $X$ is [normal](random-variables.llms.md#def-normal), $X \sim {\operatorname{N}\mathopen{}\left(\mu_X, \sigma^2_X\right)\mathclose{}}$. At $x = 40$ weeks (a full-term pregnancy), $\mu_X = 38.5417$ and $\sigma_X = 1.8173$, so:
 >
 > $$\begin{aligned}
-> \operatorname{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}}
+> \mathbb{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}}
 >   \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma^2_X}}
 > && \text{(normal density at } x = 40 \text{)}
 > \\&= \frac{1}{1.8173\sqrt{2\pi}}
@@ -581,7 +581,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > By [Definition 4](#def-cond-pdf), dividing the joint density by this marginal density and simplifying the exponent (completing the square in $y$; Casella and Berger [\[6\]](#ref-CaseBerg01)) gives the conditional PDF of $Y$ given $X = 40$, which is itself normal with mean shifted along the regression line and variance reduced by a factor of $1-\rho^2$:
 >
 > $$\begin{aligned}
-> \operatorname{p}(Y=y \mid X=40) &= \frac{\operatorname{p}(X=40,\,Y=y)}{\operatorname{p}(X=40)}
+> \mathbb{p}(Y=y \mid X=40) &= \frac{\mathbb{p}(X=40,\,Y=y)}{\mathbb{p}(X=40)}
 > && \text{(definition of the conditional PDF)}
 > \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
 >   \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left[\frac{(40-\mu_X)^2}{\sigma^2_X}
@@ -626,7 +626,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Continuous case.** Let $X$ and $Y$ be jointly distributed continuous random variables. The **conditional expectation** of $Y$ given $X = x$, using [Definition 4](#def-cond-pdf), is:
 >
-> $${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y = y \mid X = x)\, dy$$
+> $${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(Y = y \mid X = x)\, dy$$
 
 > **NOTE:**
 >
@@ -658,7 +658,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[Y \mid X = 40\right]\mathclose{}}
-> &= \int_{-\infty}^{\infty} y \cdot\operatorname{p}(Y=y \mid X=40)\,dy
+> &= \int_{-\infty}^{\infty} y \cdot\mathbb{p}(Y=y \mid X=40)\,dy
 > && \text{(definition of conditional expectation)}
 > \\&= 3136.15 \text{ g}
 > && \text{(the mean of a normal distribution is its location parameter)}
@@ -668,19 +668,19 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 6 (Conditional expectation: mixed case)** Suppose exactly one of $X, Y$ is discrete and the other is continuous, with [joint density-mass function](random-variables.llms.md#def-joint-density-mass) $\operatorname{p}(X = x,\, Y = y)$.
+> **Definition 6 (Conditional expectation: mixed case)** Suppose exactly one of $X, Y$ is discrete and the other is continuous, with [joint density-mass function](random-variables.llms.md#def-joint-density-mass) $\mathbb{p}(X = x,\, Y = y)$.
 >
-> $X$ discrete, $Y$ continuous. Here $\operatorname{p}(X=x,\,Y=y)$ is, for each fixed $x$, a probability density in $y$, with $\int_{y \in \mathcal{R}(Y)} \operatorname{p}(X=x,\,Y=y)\,dy = \mathbb{P}(X=x)$. The conditional PDF of $Y$ given $X = x$ (for values of $x$ with $\mathbb{P}(X = x) > 0$) is:
+> $X$ discrete, $Y$ continuous. Here $\mathbb{p}(X=x,\,Y=y)$ is, for each fixed $x$, a probability density in $y$, with $\int_{y \in \mathcal{R}(Y)} \mathbb{p}(X=x,\,Y=y)\,dy = \mathbb{P}(X=x)$. The conditional PDF of $Y$ given $X = x$ (for values of $x$ with $\mathbb{P}(X = x) > 0$) is:
 >
-> $$\operatorname{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\, Y = y)}{\mathbb{P}(X = x)}$$
+> $$\mathbb{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\mathbb{p}(X = x,\, Y = y)}{\mathbb{P}(X = x)}$$
 >
 > and the conditional expectation of $Y$ given $X = x$ is:
 >
-> $${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y = y \mid X = x)\, dy$$
+> $${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(Y = y \mid X = x)\, dy$$
 >
-> $X$ continuous, $Y$ discrete. Here $\operatorname{p}(X=x,\,Y=y)$ is, for each fixed $y$, a probability density in $x$, and $\sum_{y \in \mathcal{R}(Y)} \operatorname{p}(X=x,\,Y=y) = \operatorname{p}(X=x)$ is a density of $X$. The conditional PMF of $Y$ given $X = x$ (for values of $x$ with $\operatorname{p}(X = x) > 0$) is:
+> $X$ continuous, $Y$ discrete. Here $\mathbb{p}(X=x,\,Y=y)$ is, for each fixed $y$, a probability density in $x$, and $\sum_{y \in \mathcal{R}(Y)} \mathbb{p}(X=x,\,Y=y) = \mathbb{p}(X=x)$ is a density of $X$. The conditional PMF of $Y$ given $X = x$ (for values of $x$ with $\mathbb{p}(X = x) > 0$) is:
 >
-> $$\mathbb{P}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\operatorname{p}(X = x,\, Y = y)}{\operatorname{p}(X = x)}$$
+> $$\mathbb{P}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\mathbb{p}(X = x,\, Y = y)}{\mathbb{p}(X = x)}$$
 >
 > and the conditional expectation of $Y$ given $X = x$ is:
 >
@@ -800,7 +800,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > and for continuous $Y$:
 >
-> $${\mathbb{E}\mathopen{}\left[h(X, Y) \mid X = x\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{y \in \mathcal{R}(Y)} h(x, y) \cdot\operatorname{p}(Y = y \mid X = x)\,dy$$
+> $${\mathbb{E}\mathopen{}\left[h(X, Y) \mid X = x\right]\mathclose{}} \stackrel{\text{def}}{=}\int_{y \in \mathcal{R}(Y)} h(x, y) \cdot\mathbb{p}(Y = y \mid X = x)\,dy$$
 >
 > when the sum or integral converges absolutely. Evaluating this function of $x$ at $X$ gives the random variable ${\mathbb{E}\mathopen{}\left[h(X, Y) \mid X\right]\mathclose{}}$.
 
@@ -838,7 +838,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > && \text{(conditional expectation, discrete } Y \text{)}
 > \end{aligned}$$
 >
-> The last step is [Definition 5](#def-cond-expectation) when $X$ is discrete and [Definition 6](#def-cond-mixed) when $X$ is continuous. For continuous $Y$, the same steps hold with integrals over $y$ in place of the sums and $\operatorname{p}(Y = y \mid X = x)$ in place of $\mathbb{P}(Y = y \mid X = x)$.
+> The last step is [Definition 5](#def-cond-expectation) when $X$ is discrete and [Definition 6](#def-cond-mixed) when $X$ is continuous. For continuous $Y$, the same steps hold with integrals over $y$ in place of the sums and $\mathbb{p}(Y = y \mid X = x)$ in place of $\mathbb{P}(Y = y \mid X = x)$.
 
 > **NOTE:**
 >
@@ -1344,47 +1344,47 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}
-> &= \int_{x \in \mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x\right]\mathclose{}} \cdot\operatorname{p}(X=x)\, dx
+> &= \int_{x \in \mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x\right]\mathclose{}} \cdot\mathbb{p}(X=x)\, dx
 > && \text{(LOTUS)}
-> \\&= \int_{x \in \mathcal{R}(X)} \mathopen{}\left(\int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x)\, dy\right)\mathclose{} \cdot\operatorname{p}(X=x)\, dx
+> \\&= \int_{x \in \mathcal{R}(X)} \mathopen{}\left(\int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(Y=y \mid X=x)\, dy\right)\mathclose{} \cdot\mathbb{p}(X=x)\, dx
 > && \text{(definition of conditional expectation)}
-> \\&= \int_{x \in \mathcal{R}(X)} \int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(X=x, Y=y)\, dy\, dx
-> && \text{(definition of conditional density: } \operatorname{p}(Y=y \mid X=x)\,\operatorname{p}(X=x) = \operatorname{p}(X=x, Y=y) \text{)}
-> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int_{x \in \mathcal{R}(X)} \operatorname{p}(X=x, Y=y)\, dx\right)\mathclose{}\, dy
+> \\&= \int_{x \in \mathcal{R}(X)} \int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(X=x, Y=y)\, dy\, dx
+> && \text{(definition of conditional density: } \mathbb{p}(Y=y \mid X=x)\,\mathbb{p}(X=x) = \mathbb{p}(X=x, Y=y) \text{)}
+> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int_{x \in \mathcal{R}(X)} \mathbb{p}(X=x, Y=y)\, dx\right)\mathclose{}\, dy
 > && \text{(Fubini's theorem, since } {\mathbb{E}\mathopen{}\left[\mathopen{}\left|Y\right|\mathclose{}\right]\mathclose{}} < \infty \text{)}
-> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y)\, dy
+> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(Y=y)\, dy
 > && \text{(marginal density from a joint density)}
 > \\&= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}
 > && \text{(definition of expectation)}
 > \end{aligned}$$
 >
-> **Mixed case,** $X$ discrete and $Y$ continuous. With the [joint density-mass function](random-variables.llms.md#def-joint-density-mass) $\operatorname{p}(X = x,\, Y = y)$, [Corollary 3](#cor-fubini-joint) applies with $h(x, y) = y$, counting measure for $X$, and Lebesgue measure for $Y$; its condition (b) holds because ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|Y\right|\mathclose{}\right]\mathclose{}} < \infty$. The sum runs over the $x$ with $\mathbb{P}(X = x) > 0$, where [Definition 6](#def-cond-mixed) defines ${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}$:
+> **Mixed case,** $X$ discrete and $Y$ continuous. With the [joint density-mass function](random-variables.llms.md#def-joint-density-mass) $\mathbb{p}(X = x,\, Y = y)$, [Corollary 3](#cor-fubini-joint) applies with $h(x, y) = y$, counting measure for $X$, and Lebesgue measure for $Y$; its condition (b) holds because ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|Y\right|\mathclose{}\right]\mathclose{}} < \infty$. The sum runs over the $x$ with $\mathbb{P}(X = x) > 0$, where [Definition 6](#def-cond-mixed) defines ${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}
 > &= \sum_{x \in \mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x\right]\mathclose{}} \cdot\mathbb{P}(X=x)
 > && \text{(LOTUS, discrete case)}
-> \\&= \sum_{x \in \mathcal{R}(X)} \mathopen{}\left(\int_{\mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x)\,dy\right)\mathclose{} \cdot\mathbb{P}(X=x)
+> \\&= \sum_{x \in \mathcal{R}(X)} \mathopen{}\left(\int_{\mathcal{R}(Y)} y \cdot\mathbb{p}(Y=y \mid X=x)\,dy\right)\mathclose{} \cdot\mathbb{P}(X=x)
 > && \text{(definition of conditional expectation, mixed case)}
-> \\&= \sum_{x \in \mathcal{R}(X)} \int_{\mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x) \cdot\mathbb{P}(X=x)\,dy
+> \\&= \sum_{x \in \mathcal{R}(X)} \int_{\mathcal{R}(Y)} y \cdot\mathbb{p}(Y=y \mid X=x) \cdot\mathbb{P}(X=x)\,dy
 > && \text{(move the constant } \mathbb{P}(X=x) \text{ inside the integral)}
-> \\&= \sum_{x \in \mathcal{R}(X)} \int_{\mathcal{R}(Y)} y \cdot\operatorname{p}(X=x,\, Y=y)\,dy
+> \\&= \sum_{x \in \mathcal{R}(X)} \int_{\mathcal{R}(Y)} y \cdot\mathbb{p}(X=x,\, Y=y)\,dy
 > && \text{(definition of the conditional density, mixed case)}
 > \\&= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}
 > && \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)}
 > \end{aligned}$$
 >
-> **Mixed case,** $X$ continuous and $Y$ discrete. The same steps apply with the integral and the sum swapped, over the $x$ with $\operatorname{p}(X = x) > 0$; at any other $x$, $\operatorname{p}(X = x,\, Y = y) = 0$ for every $y$, because these non-negative terms sum to $\operatorname{p}(X = x)$:
+> **Mixed case,** $X$ continuous and $Y$ discrete. The same steps apply with the integral and the sum swapped, over the $x$ with $\mathbb{p}(X = x) > 0$; at any other $x$, $\mathbb{p}(X = x,\, Y = y) = 0$ for every $y$, because these non-negative terms sum to $\mathbb{p}(X = x)$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}
-> &= \int_{\mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x\right]\mathclose{}} \cdot\operatorname{p}(X=x)\,dx
+> &= \int_{\mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x\right]\mathclose{}} \cdot\mathbb{p}(X=x)\,dx
 > && \text{(LOTUS, continuous case)}
-> \\&= \int_{\mathcal{R}(X)} \mathopen{}\left(\sum_{y \in \mathcal{R}(Y)} y \cdot\mathbb{P}(Y=y \mid X=x)\right)\mathclose{} \cdot\operatorname{p}(X=x)\,dx
+> \\&= \int_{\mathcal{R}(X)} \mathopen{}\left(\sum_{y \in \mathcal{R}(Y)} y \cdot\mathbb{P}(Y=y \mid X=x)\right)\mathclose{} \cdot\mathbb{p}(X=x)\,dx
 > && \text{(definition of conditional expectation, mixed case)}
-> \\&= \int_{\mathcal{R}(X)} \sum_{y \in \mathcal{R}(Y)} y \cdot\mathbb{P}(Y=y \mid X=x) \cdot\operatorname{p}(X=x)\,dx
-> && \text{(move the constant } \operatorname{p}(X=x) \text{ inside the sum)}
-> \\&= \int_{\mathcal{R}(X)} \sum_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(X=x,\, Y=y)\,dx
+> \\&= \int_{\mathcal{R}(X)} \sum_{y \in \mathcal{R}(Y)} y \cdot\mathbb{P}(Y=y \mid X=x) \cdot\mathbb{p}(X=x)\,dx
+> && \text{(move the constant } \mathbb{p}(X=x) \text{ inside the sum)}
+> \\&= \int_{\mathcal{R}(X)} \sum_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(X=x,\, Y=y)\,dx
 > && \text{(definition of the conditional PMF, mixed case)}
 > \\&= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}
 > && \text{(joint-distribution form of Fubini--Tonelli, with } h(x, y) = y \text{)}
@@ -1473,15 +1473,15 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X,Z\right]\mathclose{}} \mid Z=z\right]\mathclose{}}
-> &= \int_{x \in \mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x,Z=z\right]\mathclose{}} \cdot\operatorname{p}(X=x \mid Z=z)\, dx
+> &= \int_{x \in \mathcal{R}(X)} {\mathbb{E}\mathopen{}\left[Y \mid X=x,Z=z\right]\mathclose{}} \cdot\mathbb{p}(X=x \mid Z=z)\, dx
 > && \text{(expectation given } Z=z \text{)}
-> \\&= \int_{x \in \mathcal{R}(X)} \mathopen{}\left(\int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid X=x,Z=z)\, dy\right)\mathclose{} \cdot\operatorname{p}(X=x \mid Z=z)\, dx
+> \\&= \int_{x \in \mathcal{R}(X)} \mathopen{}\left(\int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(Y=y \mid X=x,Z=z)\, dy\right)\mathclose{} \cdot\mathbb{p}(X=x \mid Z=z)\, dx
 > && \text{(definition of } {\mathbb{E}\mathopen{}\left[Y \mid X=x,Z=z\right]\mathclose{}} \text{)}
-> \\&= \int_{x \in \mathcal{R}(X)} \int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(X=x, Y=y \mid Z=z)\, dy\, dx
+> \\&= \int_{x \in \mathcal{R}(X)} \int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(X=x, Y=y \mid Z=z)\, dy\, dx
 > && \text{(product of conditional densities is the joint conditional density)}
-> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int_{x \in \mathcal{R}(X)} \operatorname{p}(X=x, Y=y \mid Z=z)\, dx\right)\mathclose{}\, dy
+> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\mathopen{}\left(\int_{x \in \mathcal{R}(X)} \mathbb{p}(X=x, Y=y \mid Z=z)\, dx\right)\mathclose{}\, dy
 > && \text{(Fubini's theorem)}
-> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\operatorname{p}(Y=y \mid Z=z)\, dy
+> \\&= \int_{y \in \mathcal{R}(Y)} y \cdot\mathbb{p}(Y=y \mid Z=z)\, dy
 > && \text{(marginalize over } x \text{)}
 > \\&= {\mathbb{E}\mathopen{}\left[Y \mid Z=z\right]\mathclose{}}
 > && \text{(definition of conditional expectation given } Z=z \text{)}
@@ -2313,13 +2313,13 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Definition 22 (Surprisal (**self-information**, **information content**))** The **surprisal** of a possible value $x$ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) $X$ with $\mathbb{P}(X=x) > 0$ is
 >
-> $${s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).$$
+> $${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).$$
 >
-> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of $x$. With the natural logarithm, the surprisal is measured in [nats](https://morrison-lab.github.io/ids/entropy.html#def-nat), and with base 2 in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit). Evaluating ${s\mathopen{}\left(\cdot\right)\mathclose{}}$ at the [random variable](random-variables.llms.md#def-random-variable) $X$ itself gives the random variable ${s\mathopen{}\left(X\right)\mathclose{}}$, which equals ${s\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of $X$ implicit.
+> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of $x$. With the natural logarithm, the surprisal is measured in [nats](https://morrison-lab.github.io/ids/entropy.html#def-nat), and with base 2 in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit). Evaluating ${\mathbb{s}\mathopen{}\left(\cdot\right)\mathclose{}}$ at the [random variable](random-variables.llms.md#def-random-variable) $X$ itself gives the random variable ${\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$, which equals ${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of $X$ implicit.
 
 > **NOTE:**
 >
-> **Example 43 (Surprisal of the values of a biased coin flip)** Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\mathbb{P}(X=1) = \tfrac{1}{4}$ and $\mathbb{P}(X=0) = \tfrac{3}{4}$. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), the surprisal of the value $1$ (heads) is ${s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2$ bits, and the surprisal of the value $0$ (tails) is ${s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits. For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
+> **Example 43 (Surprisal of the values of a biased coin flip)** Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\mathbb{P}(X=1) = \tfrac{1}{4}$ and $\mathbb{P}(X=0) = \tfrac{3}{4}$. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), the surprisal of the value $1$ (heads) is ${\mathbb{s}\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2$ bits, and the surprisal of the value $0$ (tails) is ${\mathbb{s}\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits. For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
 
 > **NOTE:**
 >
@@ -2327,17 +2327,17 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 23 (Surprisal of a value of a continuous random variable)** The **surprisal** of a possible value $x$ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ with [probability density function](random-variables.llms.md#def-pdf) $\operatorname{p}(X=x)$ and $\operatorname{p}(X=x) > 0$ is
+> **Definition 23 (Surprisal of a value of a continuous random variable)** The **surprisal** of a possible value $x$ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ with [probability density function](random-variables.llms.md#def-pdf) $\mathbb{p}(X=x)$ and $\mathbb{p}(X=x) > 0$ is
 >
-> $${s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \operatorname{p}(X=x).$$
+> $${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{p}(X=x).$$
 >
 > This extends the [surprisal](#def-surprisal) of a value of a [discrete random variable](random-variables.llms.md#def-discrete-rv), with the [density](random-variables.llms.md#def-pdf) in place of the [probability](probability-basics.llms.md#def-probability).
 
 > **NOTE:**
 >
-> **Example 44 (Surprisal of a value of a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from $0$ to $a > 0$, so that its [density](random-variables.llms.md#def-pdf) is $\operatorname{p}(X=x) = 1/a$ for $0 < x < a$. Every value in the interval has [surprisal](#def-surprisal-continuous)
+> **Example 44 (Surprisal of a value of a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from $0$ to $a > 0$, so that its [density](random-variables.llms.md#def-pdf) is $\mathbb{p}(X=x) = 1/a$ for $0 < x < a$. Every value in the interval has [surprisal](#def-surprisal-continuous)
 >
-> $${s\mathopen{}\left(x\right)\mathclose{}} = -\log \tfrac{1}{a} = \log a.$$
+> $${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \tfrac{1}{a} = \log a.$$
 >
 > With $a = \tfrac{1}{2}$ and logarithms to base 2, the surprisal of every value is $\log_2 \tfrac{1}{2} = -1$ bit. A density value can exceed $1$, so unlike the surprisal of a [discrete](random-variables.llms.md#def-discrete-rv) value, it can be negative.
 
@@ -2345,7 +2345,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Definition 24 (Entropy (differential entropy, for continuous random variables))** The **entropy** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) ([discrete](random-variables.llms.md#def-discrete-rv) or [continuous](#def-surprisal-continuous)) [\[18\]](#ref-wikipedia_entropy_information_theory), [\[19, Sec. 8.1\]](#ref-cover2006elements), when that expectation exists:
 >
-> $${H\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{s\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
 >
 > For a [continuous random variable](random-variables.llms.md#def-continuous-rv), the entropy is also called the **differential entropy**.
 
@@ -2353,17 +2353,17 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Theorem 15 (Entropy of a discrete random variable)** Let $X$ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) $\mathbb{P}(X=x)$. Then
 >
-> $${H\mathopen{}\left(X\right)\mathclose{}} = -\sum_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x).$$
+> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = -\sum_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x).$$
 >
 > A term with $\mathbb{P}(X=x) = 0$ is taken to be $0$, because $p \log p \to 0$ as $p \to 0$.
 
 > **NOTE:**
 >
-> *Proof*. Let $g(x) \stackrel{\text{def}}{=}{s\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$, which is finite for each value $x$ with $\mathbb{P}(X=x) > 0$. Then [LOTUS](#thm-lotus) gives
+> *Proof*. Let $g(x) \stackrel{\text{def}}{=}{\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$, which is finite for each value $x$ with $\mathbb{P}(X=x) > 0$. Then [LOTUS](#thm-lotus) gives
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(X\right)\mathclose{}}
-> &= {\mathbb{E}\mathopen{}\left[{s\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
+> {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
 > &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} && \text{(definition of } g \text{)} \\
 > &= \sum_{x \in \mathcal{R}(X)} g(x) \cdot\mathbb{P}(X=x) && \text{(LOTUS)} \\
 > &= -\sum_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x). && \text{(definition of } g \text{)}
@@ -2371,22 +2371,22 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Theorem 16 (Entropy of a continuous random variable)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [probability density function](random-variables.llms.md#def-pdf) $\operatorname{p}(X=x)$. Then
+> **Theorem 16 (Entropy of a continuous random variable)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [probability density function](random-variables.llms.md#def-pdf) $\mathbb{p}(X=x)$. Then
 >
-> $${H\mathopen{}\left(X\right)\mathclose{}} = -\int_{x \in \mathcal{R}(X)} \operatorname{p}(X=x) \log \operatorname{p}(X=x) \, dx.$$
+> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = -\int_{x \in \mathcal{R}(X)} \mathbb{p}(X=x) \log \mathbb{p}(X=x) \, dx.$$
 >
-> The integrand is taken to be $0$ where $\operatorname{p}(X=x) = 0$, because $p \log p \to 0$ as $p \to 0$.
+> The integrand is taken to be $0$ where $\mathbb{p}(X=x) = 0$, because $p \log p \to 0$ as $p \to 0$.
 
 > **NOTE:**
 >
-> *Proof*. Let $g(x) \stackrel{\text{def}}{=}{s\mathopen{}\left(x\right)\mathclose{}} = -\log \operatorname{p}(X=x)$. Then [LOTUS](#thm-lotus) gives
+> *Proof*. Let $g(x) \stackrel{\text{def}}{=}{\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{p}(X=x)$. Then [LOTUS](#thm-lotus) gives
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(X\right)\mathclose{}}
-> &= {\mathbb{E}\mathopen{}\left[{s\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
+> {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
 > &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} && \text{(definition of } g \text{)} \\
-> &= \int_{x \in \mathcal{R}(X)} g(x) \cdot\operatorname{p}(X=x) \, dx && \text{(LOTUS)} \\
-> &= -\int_{x \in \mathcal{R}(X)} \operatorname{p}(X=x) \log \operatorname{p}(X=x) \, dx. && \text{(definition of } g \text{)}
+> &= \int_{x \in \mathcal{R}(X)} g(x) \cdot\mathbb{p}(X=x) \, dx && \text{(LOTUS)} \\
+> &= -\int_{x \in \mathcal{R}(X)} \mathbb{p}(X=x) \log \mathbb{p}(X=x) \, dx. && \text{(definition of } g \text{)}
 > \end{aligned}$$
 
 > **NOTE:**
@@ -2394,7 +2394,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > **Example 45 (Entropy of a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from $0$ to $a > 0$, as in [Example 44](#exm-surprisal-uniform). By [Theorem 16](#thm-entropy-continuous),
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(X\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}
 > &= -\int_0^a \tfrac{1}{a} \log \tfrac{1}{a} \, dx \\
 > &= \log a.
 > \end{aligned}$$
@@ -2435,9 +2435,9 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 25 (Cross-entropy)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$, and let $q$ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of $q$ relative to $p$ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $s_q$ measured by $q$, where ${s_{q}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}$:
+> **Definition 25 (Cross-entropy)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$, and let $q$ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of $q$ relative to $p$ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $\mathbb{s}_q$ measured by $q$, where ${\mathbb{s}_{q}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}$:
 >
-> $${H\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{s_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+> $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
 >
 > We take $-\log 0 = \infty$, so when $\mathbb{P}(q(X) = 0) > 0$, the cross-entropy is infinite.
 
@@ -2469,14 +2469,14 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Exercise 10 (Cross-entropy of two mass functions from the definition)** Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ and $q = (\tfrac{1}{4}, \tfrac{1}{2}, \tfrac{1}{4})$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, 2, 3\right\}\mathclose{}}$.
 >
-> Compute the [cross-entropy](#def-cross-entropy) ${H\mathopen{}\left(p, q\right)\mathclose{}}$ in bits from its definition.
+> Compute the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ in bits from its definition.
 
 > **NOTE:**
 >
 > *Solution 6*. From the definition,
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(p, q\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
 > &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
 > &= \tfrac{1}{2} \cdot 2 + \tfrac{1}{4} \cdot 1 + \tfrac{1}{4} \cdot 2 \\
 > &= \tfrac{7}{4}.
@@ -2484,7 +2484,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Exercise 11 (Cross-entropy and the expected negative log probability)** Compare your value of ${H\mathopen{}\left(p, q\right)\mathclose{}}$ from [Exercise 10](#exr-cross-entropy-numeric-definition) with your value of ${\mathbb{E}\mathopen{}\left[-\log_2 q_X\right]\mathclose{}}$ from [Exercise 9](#exr-cross-entropy-numeric-expectation), where $X$ has [probability mass function](random-variables.llms.md#def-pmf) $p$.
+> **Exercise 11 (Cross-entropy and the expected negative log probability)** Compare your value of ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ from [Exercise 10](#exr-cross-entropy-numeric-definition) with your value of ${\mathbb{E}\mathopen{}\left[-\log_2 q_X\right]\mathclose{}}$ from [Exercise 9](#exr-cross-entropy-numeric-expectation), where $X$ has [probability mass function](random-variables.llms.md#def-pmf) $p$.
 
 > **NOTE:**
 >
@@ -2499,7 +2499,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > *Solution 8*. Let $g(k) \stackrel{\text{def}}{=}-\log q_k$, so that $-\log q_X = g(X)$. Since $q_k > 0$ whenever $p_k > 0$, $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.llms.md#def-probability). By [LOTUS](#thm-lotus),
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(p, q\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
 > &= {\mathbb{E}\mathopen{}\left[-\log q_X\right]\mathclose{}} \\
 > &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} \\
 > &= \sum_{k : p_k > 0} g(k) \cdot\mathbb{P}(X = k) \\
@@ -2513,11 +2513,11 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Exercise 13 (Cross-entropy when** $q$ gives zero probability to a possible outcome) Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$ with $q_k = 0$ for some $k$ with $p_k > 0$. Let $X$ have [mass function](random-variables.llms.md#def-pmf) $p$, and write $q_X$ for the [random variable](random-variables.llms.md#def-random-variable) that equals $q_k$ when $X = k$.
 >
-> Find the [cross-entropy](#def-cross-entropy) ${H\mathopen{}\left(p, q\right)\mathclose{}}$.
+> Find the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$.
 
 > **NOTE:**
 >
-> *Solution 9*. By [Definition 25](#def-cross-entropy), ${H\mathopen{}\left(p, q\right)\mathclose{}} = \infty$.
+> *Solution 9*. By [Definition 25](#def-cross-entropy), ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = \infty$.
 
 > **NOTE:**
 >
@@ -2531,7 +2531,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Theorem 17 (Cross-entropy of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of outcome $k$. Then the [cross-entropy](#def-cross-entropy) is
 >
-> $${H\mathopen{}\left(p, q\right)\mathclose{}} = -\sum_{k=1}^{K} p_k \log q_k.$$
+> $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = -\sum_{k=1}^{K} p_k \log q_k.$$
 >
 > A term with $p_k = 0$ is taken to be $0$ whatever $q_k$ is, as for [entropy](#thm-entropy-discrete).
 
@@ -2540,20 +2540,20 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > *Proof*. Let $X$ have [mass function](random-variables.llms.md#def-pmf) $p$, and let $g(k) \stackrel{\text{def}}{=}-\log q_k$, so that $-\log q(X) = g(X)$. First suppose $q_k > 0$ whenever $p_k > 0$. Then $g(k)$ is finite for every value $k$ that $X$ takes with positive [probability](probability-basics.llms.md#def-probability), and [LOTUS](#thm-lotus) gives
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(p, q\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
 > &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} && \text{(definition)} \\
 > &= \sum_{k : p_k > 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\
 > &= -\sum_{k : p_k > 0} p_k \log q_k && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\
 > &= -\sum_{k=1}^{K} p_k \log q_k. && \text{(terms with } p_k = 0 \text{ are } 0 \text{)}
 > \end{aligned}$$
 >
-> Now suppose $q_k = 0$ for some $k$ with $p_k > 0$. Then $-\log q(X) \ge 0$, and $-\log q(X) = \infty$ with probability at least $p_k > 0$, so ${H\mathopen{}\left(p, q\right)\mathclose{}} = \infty$. The right side is also $\infty$, because its term for $k$ is $-p_k \log 0 = \infty$ and its other terms are finite or $\infty$ but never $-\infty$.
+> Now suppose $q_k = 0$ for some $k$ with $p_k > 0$. Then $-\log q(X) \ge 0$, and $-\log q(X) = \infty$ with probability at least $p_k > 0$, so ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = \infty$. The right side is also $\infty$, because its term for $k$ is $-p_k \log 0 = \infty$ and its other terms are finite or $\infty$ but never $-\infty$.
 
 > **NOTE:**
 >
 > **Theorem 18 (Cross-entropy of two densities)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) $p$ on its [range](random-variables.llms.md#def-range) $\mathcal{R}(X)$, and let $q$ be a density on $\mathcal{R}(X)$. Then the [cross-entropy](#def-cross-entropy) is
 >
-> $${H\mathopen{}\left(p, q\right)\mathclose{}} = -\int_{x \in \mathcal{R}(X)} p(x) \log q(x) \, dx.$$
+> $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = -\int_{x \in \mathcal{R}(X)} p(x) \log q(x) \, dx.$$
 >
 > The integrand is taken to be $0$ where $p(x) = 0$. If $\mathbb{P}(q(X) = 0) > 0$, both sides are $\infty$.
 
@@ -2562,20 +2562,20 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > *Proof*. Let $g(x) \stackrel{\text{def}}{=}-\log q(x)$, so that $-\log q(X) = g(X)$. Then [LOTUS](#thm-lotus) gives
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(p, q\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
 > &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} && \text{(definition)} \\
 > &= \int_{x \in \mathcal{R}(X)} g(x) \cdot p(x) \, dx && \text{(LOTUS)} \\
 > &= -\int_{x \in \mathcal{R}(X)} p(x) \log q(x) \, dx. && \text{(definition of } g \text{)}
 > \end{aligned}$$
 >
-> Now suppose $\mathbb{P}(q(X) = 0) > 0$. Then $-\log q(X) \ge 0$, and $-\log q(X) = \infty$ with positive [probability](probability-basics.llms.md#def-probability), so ${H\mathopen{}\left(p, q\right)\mathclose{}} = \infty$. The integrand $-p(x) \log q(x)$ is $\infty$ wherever $q(x) = 0$ and $p(x) > 0$, which is a region of positive probability under $p$, and it is never $-\infty$, so the right side is also $\infty$.
+> Now suppose $\mathbb{P}(q(X) = 0) > 0$. Then $-\log q(X) \ge 0$, and $-\log q(X) = \infty$ with positive [probability](probability-basics.llms.md#def-probability), so ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = \infty$. The integrand $-p(x) \log q(x)$ is $\infty$ wherever $q(x) = 0$ and $p(x) > 0$, which is a region of positive probability under $p$, and it is never $-\infty$, so the right side is also $\infty$.
 
 > **NOTE:**
 >
 > **Example 47 (Cross-entropy of two densities on the unit interval)** Let $p(x) = 1$ and $q(x) = 2x$ for $0 < x < 1$ be [densities](random-variables.llms.md#def-pdf). By [Theorem 18](#thm-cross-entropy-continuous), using the natural logarithm,
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(p, q\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
 > &= -\int_0^1 \log (2x) \, dx \\
 > &= -\log 2 - \int_0^1 \log x \, dx \\
 > &= -\log 2 + 1 \\
@@ -2584,12 +2584,12 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Exercise 15 (Cross-entropy of a mass function with itself)** Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ be a [probability mass function](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, 2, 3\right\}\mathclose{}}$. Compute the [cross-entropy](#def-cross-entropy) ${H\mathopen{}\left(p, p\right)\mathclose{}}$ in bits.
+> **Exercise 15 (Cross-entropy of a mass function with itself)** Let $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ be a [probability mass function](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, 2, 3\right\}\mathclose{}}$. Compute the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}$ in bits.
 
 > **NOTE:**
 >
 > *Solution 11*. $$\begin{aligned}
-> {H\mathopen{}\left(p, p\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}
 > &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
 > &= \tfrac{1}{2} \cdot 1 + \tfrac{1}{4} \cdot 2 + \tfrac{1}{4} \cdot 2 \\
 > &= \tfrac{3}{2} \text{ bits}.
@@ -2599,14 +2599,14 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > **Exercise 16 (Entropy of a random variable with a given mass function)** Let $X$ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) $p = (\tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{4})$ on ${\mathopen{}\left\{1, 2, 3\right\}\mathclose{}}$.
 >
-> Compute the [entropy](#def-entropy) ${H\mathopen{}\left(X\right)\mathclose{}}$ in bits from its definition.
+> Compute the [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ in bits from its definition.
 
 > **NOTE:**
 >
 > *Solution 12*. The [range](random-variables.llms.md#def-range) of $X$ is ${\mathopen{}\left\{1, 2, 3\right\}\mathclose{}}$, and $\mathbb{P}(X = k) = p_k$, so
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(X\right)\mathclose{}}
+> {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}
 > &= -\sum_{k \in \mathcal{R}(X)} \mathbb{P}(X = k) \log_2 \mathbb{P}(X = k) \\
 > &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{4} \log_2 \tfrac{1}{4} - \tfrac{1}{4} \log_2 \tfrac{1}{4} \\
 > &= \tfrac{3}{2} \text{ bits}.
@@ -2614,39 +2614,39 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Exercise 17 (Entropy and the cross-entropy of a mass function with itself)** Compare your value of ${H\mathopen{}\left(X\right)\mathclose{}}$ from [Exercise 16](#exr-cross-entropy-numeric-entropy) with your value of ${H\mathopen{}\left(p, p\right)\mathclose{}}$ from [Exercise 15](#exr-cross-entropy-numeric-self).
+> **Exercise 17 (Entropy and the cross-entropy of a mass function with itself)** Compare your value of ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ from [Exercise 16](#exr-cross-entropy-numeric-entropy) with your value of ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}$ from [Exercise 15](#exr-cross-entropy-numeric-self).
 
 > **NOTE:**
 >
-> *Solution 13*. The [entropy](#def-entropy) equals ${H\mathopen{}\left(p, p\right)\mathclose{}}$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
+> *Solution 13*. The [entropy](#def-entropy) equals ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}$, because the two [sums](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) have the same terms.
 
 > **NOTE:**
 >
-> **Exercise 18 (Entropy as a cross-entropy, for any mass function)** Let $X$ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) $p$ on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$. Show that ${H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}$.
+> **Exercise 18 (Entropy as a cross-entropy, for any mass function)** Let $X$ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) with [probability mass function](random-variables.llms.md#def-pmf) $p$ on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$. Show that ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$.
 
 > **NOTE:**
 >
-> *Solution 14*. By definition, ${H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. Since $\mathbb{P}(X = k) = p_k$, we have $-\log p(X) = {s\mathopen{}\left(X\right)\mathclose{}}$, the [surprisal](#def-surprisal) of $X$. So ${H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{s\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
+> *Solution 14*. By definition, ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. Since $\mathbb{P}(X = k) = p_k$, we have $-\log p(X) = {\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$, the [surprisal](#def-surprisal) of $X$. So ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
 > **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$. Then
 >
-> $${H\mathopen{}\left(p, p\right)\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}.$$
+> $${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}.$$
 
 > **NOTE:**
 >
-> *Proof*. By the definition of [cross-entropy](#def-cross-entropy) with $q = p$, ${H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. The [random variable](random-variables.llms.md#def-random-variable) $-\log p(X)$ is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) ${s\mathopen{}\left(X\right)\mathclose{}}$. So ${H\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{s\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {H\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
+> *Proof*. By the definition of [cross-entropy](#def-cross-entropy) with $q = p$, ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. The [random variable](random-variables.llms.md#def-random-variable) $-\log p(X)$ is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) ${\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$. So ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> *Remark 13* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${H\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
+> *Remark 13* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
 > **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For $p$ and $q$ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of $q$ from $p$ is
 >
-> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \stackrel{\text{def}}{=}{H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}}.$$
+> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}.$$
 
 > **NOTE:**
 >
@@ -2662,7 +2662,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $$\begin{aligned}
 > {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}}
-> &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} && \text{(definition)} \\
+> &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} && \text{(definition)} \\
 > &= -\sum_{k=1}^{K} p_k \log q_k + \sum_{k=1}^{K} p_k \log p_k && \text{(discrete formula, twice)} \\
 > &= \sum_{k=1}^{K} p_k \mathopen{}\left(\log p_k - \log q_k\right)\mathclose{} && \text{(combine the sums)} \\
 > &= \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k}. && \text{(difference of logarithms)}
@@ -2677,13 +2677,13 @@ Last modified: 2026-11-04 09:31:09 (PST)
 > **Example 48 (Cross-entropy and divergence for two coins)** Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome. Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 >
 > $$\begin{aligned}
-> {H\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
+> {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
 > &= 1 + \tfrac{1}{2} \mathopen{}\left(2 - \log_2 3\right)\mathclose{} \\
 > &= 2 - \tfrac{1}{2} \log_2 3 \\
 > &\approx 1.208, \\
-> {H\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
+> {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{2} - \tfrac{1}{2} \log_2 \tfrac{1}{2} \\
 > &= 1, \\
-> {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} &= {H\mathopen{}\left(p, q\right)\mathclose{}} - {H\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
+> {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 > \end{aligned}$$
 >
 > Here the cross-entropy is larger than the entropy of $p$, and the divergence is the difference.

@@ -4,12 +4,12 @@ Code
 
 Published
 
-Last modified: 2026-11-04 09:31:09 (PST)
+Last modified: 2026-11-04 09:43:24 (PST)
 
 This page follows the notation used throughout the [Morrison Lab’s course materials](https://morrison-lab.github.io/rme/), summarized here.
 
 - **Random variables** are denoted with uppercase letters ($X$, $Y$, $Z$), and their realized (observed) values with the matching lowercase letters ($x$, $y$, $z$).
-- **Probability** is denoted $\Pr()$ or $\mathbb{P}()$ for the probability of an event, or for a probability mass function (PMF), and $\operatorname{p}()$ for a density.
+- **Probability** is denoted $\Pr()$ or $\mathbb{P}()$ for the probability of an event, or for a probability mass function (PMF), and $\mathbb{p}()$ for a density.
 - **Expectation** is denoted ${\mathbb{E}\mathopen{}\left[\cdot\right]\mathclose{}}$, with square brackets.
 - **Independence** is denoted $\perp\!\!\!\perp$ (read “$X \perp\!\!\!\perp Y$” as “$X$ is independent of $Y$”).
 - **Complements** of events are denoted $\neg A$ (“not $A$”).

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-04 09:31:09 (PST)
+Last modified: 2026-11-04 09:43:24 (PST)
 
 > **NOTE:**
 >
@@ -719,7 +719,7 @@ print(plot2)
 >
 > **Definition 7 (Laplace distribution)** A random variable $Y$ has the **Laplace distribution** with location parameter $\mu\in \mathbb{R}$ and scale parameter $b > 0$, written $Y \sim {\operatorname{Laplace}\mathopen{}\left(\mu, b\right)\mathclose{}}$ [\[5\]](#ref-wikipedia_laplace_distribution), if $Y$ is continuous with [density](random-variables.llms.md#def-pdf):
 >
-> $$\operatorname{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left|y - \mu\right|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}$$
+> $$\mathbb{p}(Y=y) \stackrel{\text{def}}{=}\frac{1}{2b} \text{e}^{-\frac{\mathopen{}\left|y - \mu\right|\mathclose{}}{b}}, \quad y \in \mathbb{R} \tag{6}$$
 
 > **NOTE:**
 >
@@ -836,7 +836,7 @@ print(plot2)
 >
 > **Definition 8 (Weibull distribution)** A non-negative random variable $T$ has the **Weibull distribution** with shape $\alpha> 0$ and rate ${\lambda}> 0$ [\[6\]](#ref-wikipedia_weibull_distribution) if its [survival function](random-variables.llms.md#def-surv-fn) is:
 >
-> $$\operatorname{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0$$
+> $$\mathbb{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0$$
 
 > **NOTE:**
 >
@@ -844,27 +844,27 @@ print(plot2)
 >
 > $$\begin{aligned}
 > f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\
-> \operatorname{h}(t) &= \alpha{\lambda}t^{\alpha-1}
+> \mathbb{h}(t) &= \alpha{\lambda}t^{\alpha-1}
 > \end{aligned}$$
 
 > **NOTE:**
 >
-> *Proof*. The CDF of $T$ is $F(t) = 1 - \operatorname{S}(t)$ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is $0$ for $t < 0$ and $1 - \text{e}^{-{\lambda}t^\alpha}$ for $t \ge 0$. This $F$ is continuous everywhere, with a continuous derivative everywhere except possibly $t = 0$, so
+> *Proof*. The CDF of $T$ is $F(t) = 1 - \mathbb{S}(t)$ ([survival function and CDF](random-variables.llms.md#thm-survival-expressions-1)), which is $0$ for $t < 0$ and $1 - \text{e}^{-{\lambda}t^\alpha}$ for $t \ge 0$. This $F$ is continuous everywhere, with a continuous derivative everywhere except possibly $t = 0$, so
 >
 > $$\begin{aligned}
 > f &= F' \\
-> &= -\operatorname{S}'
+> &= -\mathbb{S}'
 > \end{aligned}$$
 >
-> is a density of $T$ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every $t > 0$, so there the hazard is $f(t)/\operatorname{S}(t)$ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
+> is a density of $T$ ([a piecewise-smooth CDF has its derivative as a density](random-variables.llms.md#thm-cdf-derivative-density)). This density is continuous at every $t > 0$, so there the hazard is $f(t)/\mathbb{S}(t)$ ([hazard equals density over survival](random-variables.llms.md#thm-hazard-dens-surv)):
 >
 > $$\begin{aligned}
 > f(t)
 > &= -\frac{d}{dt}\text{e}^{-{\lambda}t^\alpha}
-> && (f = -\operatorname{S}') \\
+> && (f = -\mathbb{S}') \\
 > &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}
 > && (\text{chain rule}) \\
-> \operatorname{h}(t)
+> \mathbb{h}(t)
 > &= \frac{\alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}}{\text{e}^{-{\lambda}t^\alpha}}
 > && (\text{hazard is density over survival}) \\
 > &= \alpha{\lambda}t^{\alpha-1}
@@ -873,7 +873,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. The hazard is written $\operatorname{h}(t)$ here, rather than ${\lambda}(t)$, because the Weibull rate parameter is also called ${\lambda}$.
+> *Remark*. The hazard is written $\mathbb{h}(t)$ here, rather than ${\lambda}(t)$, because the Weibull rate parameter is also called ${\lambda}$.
 
 > **NOTE:**
 >
@@ -919,7 +919,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Corollary 2 (The Weibull shape sets the direction of the hazard)** If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha$ and rate ${\lambda}$, then on $t > 0$ its hazard $\operatorname{h}(t)$ is:
+> **Corollary 2 (The Weibull shape sets the direction of the hazard)** If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha$ and rate ${\lambda}$, then on $t > 0$ its hazard $\mathbb{h}(t)$ is:
 >
 > - strictly increasing if $\alpha> 1$
 > - constant if $\alpha= 1$
@@ -927,17 +927,17 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 13](#thm-weibull), $\operatorname{h}(t) = \alpha{\lambda}t^{\alpha-1}$ for $t > 0$, so:
+> *Proof*. By [Theorem 13](#thm-weibull), $\mathbb{h}(t) = \alpha{\lambda}t^{\alpha-1}$ for $t > 0$, so:
 >
 > $$\begin{aligned}
-> \frac{d}{dt}\operatorname{h}(t)
+> \frac{d}{dt}\mathbb{h}(t)
 > &= \frac{d}{dt} \alpha{\lambda}t^{\alpha-1}
 > && (\text{Weibull hazard}) \\
 > &= \alpha(\alpha- 1){\lambda}t^{\alpha-2}
 > && (\text{power rule})
 > \end{aligned}$$
 >
-> For $t > 0$, the factors $\alpha$, ${\lambda}$, and $t^{\alpha-2}$ are all positive, so $\frac{d}{dt}\operatorname{h}(t)$ has the sign of $\alpha- 1$: positive for $\alpha> 1$, zero for $\alpha= 1$, and negative for $\alpha< 1$. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.
+> For $t > 0$, the factors $\alpha$, ${\lambda}$, and $t^{\alpha-2}$ are all positive, so $\frac{d}{dt}\mathbb{h}(t)$ has the sign of $\alpha- 1$: positive for $\alpha> 1$, zero for $\alpha= 1$, and negative for $\alpha< 1$. A function with a positive (negative) derivative on an interval is strictly increasing (decreasing) there, and one with a zero derivative is constant.
 
 > **NOTE:**
 >
@@ -945,14 +945,14 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 16 (Exponential as a special case)** With $\alpha= 1$, [Theorem 13](#thm-weibull) gives $\operatorname{h}(t) = {\lambda}$ and
+> **Example 16 (Exponential as a special case)** With $\alpha= 1$, [Theorem 13](#thm-weibull) gives $\mathbb{h}(t) = {\lambda}$ and
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} &= \Gamma(2){\lambda}^{-1} \\
 > &= 1/{\lambda},
 > \end{aligned}$$
 >
-> matching the exponential distribution’s constant hazard and mean. With $\alpha= 2$ and ${\lambda}= 1$, $\operatorname{h}(t) = 2t$ increases with $t$, and
+> matching the exponential distribution’s constant hazard and mean. With $\alpha= 2$ and ${\lambda}= 1$, $\mathbb{h}(t) = 2t$ increases with $t$, and
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} &= \Gamma(3/2) \\
@@ -966,7 +966,7 @@ print(plot2)
 >
 > **Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))** A $p \times 1$ random vector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} \in \mathbb{R}^p$ and variance parameter $\mathbf{\Sigma}$, a $p \times p$ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, if $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has joint density:
 >
-> $$\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) \stackrel{\text{def}}{=}
+> $$\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) \stackrel{\text{def}}{=}
 > \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}}
 > \text{e}^{-\frac{1}{2} {(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}})}^{\top} \mathbf{\Sigma}^{-1} (\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}})},
 > \quad \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\in \mathbb{R}^p$$
@@ -999,7 +999,7 @@ print(plot2)
 > **Example 17 (The univariate normal is the case** $p = 1$) With $p = 1$, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = (\mu)$, and $\mathbf{\Sigma} = (\sigma^2)$ for $\sigma^2> 0$, $\det(\mathbf{\Sigma}) = \sigma^2$ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$) and $\mathbf{\Sigma}^{-1} = (1/\sigma^2)$, so:
 >
 > $$\begin{aligned}
-> \operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
+> \mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
 > &= \frac{1}{(2\pi)^{1/2} (\sigma^2)^{1/2}}
 > \text{e}^{-\frac{1}{2} (x - \mu) \frac{1}{\sigma^2} (x - \mu)}
 > && \text{(substitute into the multivariate normal density)} \\
@@ -1035,7 +1035,7 @@ print(plot2)
 >
 > **Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, then:
 >
-> $$\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2}{2}}$$
+> $$\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2}{2}}$$
 >
 > where $\Delta$ is the Mahalanobis distance to $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ with respect to $\mathbf{\Sigma}$ ([Definition 10](#def-mahalanobis)). So the density is highest at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, decreases as $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})$ increases, and is the same at every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with the same $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})$.
 
@@ -1069,7 +1069,7 @@ print(plot2)
 > *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), $\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i$, so $\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i$. Using [Example 18](#exm-mahalanobis-special) for the quadratic form:
 >
 > $$\begin{aligned}
-> \operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
+> \mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
 > &= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sigma_i}
 > \text{e}^{-\frac{1}{2} \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}}
 > && \text{(substitute)} \\
@@ -1309,45 +1309,45 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 11 (Mixture density)** Let ${\operatorname{p}_1}, \ldots, {\operatorname{p}_K}$ be densities on $\mathbb{R}$, and let $w_1, \ldots, w_K$ be numbers with:
+> **Definition 11 (Mixture density)** Let ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ be densities on $\mathbb{R}$, and let $w_1, \ldots, w_K$ be numbers with:
 >
 > - $w_c \ge 0$ for every $c$, and
 > - $\sum_{c=1}^{K} w_c = 1$.
 >
-> The **mixture** of ${\operatorname{p}_1}, \ldots, {\operatorname{p}_K}$ with **mixing weights** $w_1, \ldots, w_K$ is the function [\[9\]](#ref-wikipedia_mixture_distribution):
+> The **mixture** of ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ with **mixing weights** $w_1, \ldots, w_K$ is the function [\[9\]](#ref-wikipedia_mixture_distribution):
 >
-> $${\operatorname{p}_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x), \quad x \in \mathbb{R}$$
+> $${\mathbb{p}_{\text{mix}}}(x) \stackrel{\text{def}}{=}\sum_{c=1}^{K} w_c \, {\mathbb{p}_c}(x), \quad x \in \mathbb{R}$$
 
 > **NOTE:**
 >
-> **Definition 12 (Mixture component)** The densities ${\operatorname{p}_1}, \ldots, {\operatorname{p}_K}$ in a mixture ([Definition 11](#def-mixture)) are its **components**.
+> **Definition 12 (Mixture component)** The densities ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ in a mixture ([Definition 11](#def-mixture)) are its **components**.
 
 > **NOTE:**
 >
 > **Theorem 19 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
 >
-> $$\operatorname{p}(C = c,\, X = x) = w_c \, {\operatorname{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},$$
+> $$\mathbb{p}(C = c,\, X = x) = w_c \, {\mathbb{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},$$
 >
-> with ${\operatorname{p}_c}$ and $w_c$ as in [Definition 11](#def-mixture). Then:
+> with ${\mathbb{p}_c}$ and $w_c$ as in [Definition 11](#def-mixture). Then:
 >
 > - $\mathbb{P}(C = c) = w_c$,
-> - for each $c$ with $w_c > 0$, the [conditional density](expectation.llms.md#def-cond-mixed) of $X$ given $C = c$ is ${\operatorname{p}_c}$, and
-> - the mixture ${\operatorname{p}_{\text{mix}}}$ is a density of $X$.
+> - for each $c$ with $w_c > 0$, the [conditional density](expectation.llms.md#def-cond-mixed) of $X$ given $C = c$ is ${\mathbb{p}_c}$, and
+> - the mixture ${\mathbb{p}_{\text{mix}}}$ is a density of $X$.
 
 > **NOTE:**
 >
 > *Proof*. By the [marginal PMF from a joint density-mass function](random-variables.llms.md#cor-joint-density-mass-marginal),
 >
 > $$\begin{aligned}
-> \mathbb{P}(C = c) &= \int_{-\infty}^{\infty} w_c \, {\operatorname{p}_c}(x)\,dx \\
+> \mathbb{P}(C = c) &= \int_{-\infty}^{\infty} w_c \, {\mathbb{p}_c}(x)\,dx \\
 > &= w_c,
 > \end{aligned}$$
 >
-> because ${\operatorname{p}_c}$ is a density and so integrates to 1. Then, by the [definition of the conditional density](expectation.llms.md#def-cond-mixed),
+> because ${\mathbb{p}_c}$ is a density and so integrates to 1. Then, by the [definition of the conditional density](expectation.llms.md#def-cond-mixed),
 >
 > $$\begin{aligned}
-> \operatorname{p}(X = x \mid C = c) &= w_c \, {\operatorname{p}_c}(x) / w_c \\
-> &= {\operatorname{p}_c}(x).
+> \mathbb{p}(X = x \mid C = c) &= w_c \, {\mathbb{p}_c}(x) / w_c \\
+> &= {\mathbb{p}_c}(x).
 > \end{aligned}$$
 >
 > For the last claim, the events ${\mathopen{}\left\{C = 1\right\}\mathclose{}}, \ldots, {\mathopen{}\left\{C = K\right\}\mathclose{}}$ are mutually exclusive, and their union is the whole sample space. So for any interval $B$:
@@ -1356,37 +1356,37 @@ print(plot2)
 > \Pr(X \in B)
 > &= \sum_{c=1}^{K} \Pr(C = c,\, X \in B)
 > && \text{(additivity over the events } {\mathopen{}\left\{C = c\right\}\mathclose{}} \text{)} \\
-> &= \sum_{c=1}^{K} \int_B w_c \, {\operatorname{p}_c}(x)\,dx
+> &= \sum_{c=1}^{K} \int_B w_c \, {\mathbb{p}_c}(x)\,dx
 > && \text{(definition of a joint density-mass function)} \\
-> &= \int_B \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
+> &= \int_B \sum_{c=1}^{K} w_c \, {\mathbb{p}_c}(x)\,dx
 > && \text{(a finite sum of integrals is the integral of the sum)} \\
-> &= \int_B {\operatorname{p}_{\text{mix}}}(x)\,dx
+> &= \int_B {\mathbb{p}_{\text{mix}}}(x)\,dx
 > && \text{(definition of a mixture)}
 > \end{aligned}$$
 >
-> And ${\operatorname{p}_{\text{mix}}} \ge 0$, as a sum of non-negative terms, so ${\operatorname{p}_{\text{mix}}}$ is a [density](random-variables.llms.md#def-pdf) of $X$.
+> And ${\mathbb{p}_{\text{mix}}} \ge 0$, as a sum of non-negative terms, so ${\mathbb{p}_{\text{mix}}}$ is a [density](random-variables.llms.md#def-pdf) of $X$.
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 19](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\operatorname{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
+> *Remark*. [Theorem 19](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
 
 > **NOTE:**
 >
-> **Theorem 20 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\operatorname{p}_{\text{mix}}}$ ([Definition 11](#def-mixture)), and each component ${\operatorname{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\operatorname{p}_c}(x)\,dx$, then:
+> **Theorem 20 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 11](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
 >
 > $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c$$
 
 > **NOTE:**
 >
-> *Proof*. The integral defining ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$ converges absolutely, because $\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\operatorname{p}_c}(x)\,dx$, a finite sum of finite numbers. Then:
+> *Proof*. The integral defining ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$ converges absolutely, because $\int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\mathbb{p}_{\text{mix}}}(x)\,dx = \sum_{c=1}^{K} w_c \int_{-\infty}^\infty \mathopen{}\left|x\right|\mathclose{} \, {\mathbb{p}_c}(x)\,dx$, a finite sum of finite numbers. Then:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}
-> &= \int_{-\infty}^{\infty} x \, {\operatorname{p}_{\text{mix}}}(x)\,dx
+> &= \int_{-\infty}^{\infty} x \, {\mathbb{p}_{\text{mix}}}(x)\,dx
 > && \text{(definition of expectation)} \\
-> &= \int_{-\infty}^{\infty} x \sum_{c=1}^{K} w_c \, {\operatorname{p}_c}(x)\,dx
+> &= \int_{-\infty}^{\infty} x \sum_{c=1}^{K} w_c \, {\mathbb{p}_c}(x)\,dx
 > && \text{(definition of a mixture)} \\
-> &= \sum_{c=1}^{K} w_c \int_{-\infty}^{\infty} x \, {\operatorname{p}_c}(x)\,dx
+> &= \sum_{c=1}^{K} w_c \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx
 > && \text{(a finite sum of integrals is the integral of the sum)} \\
 > &= \sum_{c=1}^{K} w_c \, \mu_c
 > && \text{(definition of } \mu_c \text{)}
@@ -1396,25 +1396,25 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 21 (Which component did an observation come from?)** Under the conditions of [Theorem 19](#thm-mixture-two-stage), for each $x$ with ${\operatorname{p}_{\text{mix}}}(x) > 0$:
+> **Theorem 21 (Which component did an observation come from?)** Under the conditions of [Theorem 19](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
 >
-> $$\mathbb{P}(C = c \mid X = x) = \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}$$
+> $$\mathbb{P}(C = c \mid X = x) = \frac{w_c \, {\mathbb{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\mathbb{p}_k}(x)}$$
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 19](#thm-mixture-two-stage), ${\operatorname{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
+> *Proof*. By [Theorem 19](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
 >
 > $$\begin{aligned}
 > \mathbb{P}(C = c \mid X = x)
-> &= \frac{\operatorname{p}(C = c,\, X = x)}{\operatorname{p}(X = x)}
+> &= \frac{\mathbb{p}(C = c,\, X = x)}{\mathbb{p}(X = x)}
 > && \text{(definition of the conditional PMF)} \\
-> &= \frac{w_c \, {\operatorname{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\operatorname{p}_k}(x)}
-> && \text{(substitute the joint density-mass function and } {\operatorname{p}_{\text{mix}}} \text{)}
+> &= \frac{w_c \, {\mathbb{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\mathbb{p}_k}(x)}
+> && \text{(substitute the joint density-mass function and } {\mathbb{p}_{\text{mix}}} \text{)}
 > \end{aligned}$$
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 21](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\operatorname{p}_c}(x)$ at the observation and divided by the overall density ${\operatorname{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
+> *Remark*. [Theorem 21](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
 
 > **NOTE:**
 >
@@ -1422,7 +1422,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 20 (A two-component normal mixture)** Let ${\operatorname{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\operatorname{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\operatorname{p}_{\text{mix}}} = 0.3\,{\operatorname{p}_1} + 0.7\,{\operatorname{p}_2}$.
+> **Example 20 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
 >
 > - **Mean.** By [Theorem 20](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
@@ -1431,13 +1431,13 @@ print(plot2)
 >   &= 4.2.
 >   \end{aligned}$$
 >
-> - **Density.** ${\operatorname{p}_{\text{mix}}}$ has peaks near the two component means, ${\operatorname{p}_{\text{mix}}}(0) \approx 0.120$ and ${\operatorname{p}_{\text{mix}}}(6) \approx 0.279$, with a trough between them, ${\operatorname{p}_{\text{mix}}}(3) \approx 0.004$. The density at the mean, ${\operatorname{p}_{\text{mix}}}(4.2) \approx 0.055$, is less than half its value at either peak.
+> - **Density.** ${\mathbb{p}_{\text{mix}}}$ has peaks near the two component means, ${\mathbb{p}_{\text{mix}}}(0) \approx 0.120$ and ${\mathbb{p}_{\text{mix}}}(6) \approx 0.279$, with a trough between them, ${\mathbb{p}_{\text{mix}}}(3) \approx 0.004$. The density at the mean, ${\mathbb{p}_{\text{mix}}}(4.2) \approx 0.055$, is less than half its value at either peak.
 >
-> - **Responsibilities.** By [Theorem 21](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\operatorname{p}_1}(3) = {\operatorname{p}_2}(3)$ by the symmetry of the normal density, so:
+> - **Responsibilities.** By [Theorem 21](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
 >
 >   $$\begin{aligned}
 >   \mathbb{P}(C = 2 \mid X = 3)
->   &= \frac{0.7\,{\operatorname{p}_2}(3)}{0.3\,{\operatorname{p}_1}(3) + 0.7\,{\operatorname{p}_2}(3)} \\
+>   &= \frac{0.7\,{\mathbb{p}_2}(3)}{0.3\,{\mathbb{p}_1}(3) + 0.7\,{\mathbb{p}_2}(3)} \\
 >   &= \frac{0.7}{0.3 + 0.7} \\
 >   &= 0.7,
 >   \end{aligned}$$

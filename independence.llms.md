@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-04 09:31:09 (PST)
+Last modified: 2026-11-04 09:43:24 (PST)
 
 > **NOTE:**
 >
@@ -60,9 +60,9 @@ Last modified: 2026-11-04 09:31:09 (PST)
 
 > **NOTE:**
 >
-> **Theorem 2 (Independence with densities: the joint density factors)** **Continuous case.** Continuous random variables $X$ and $Y$ with [densities](random-variables.llms.md#def-pdf) $\operatorname{p}(X = x)$ and $\operatorname{p}(Y = y)$ are [statistically independent](#def-indpt) if and only if the product $\operatorname{p}(X = x)\,\operatorname{p}(Y = y)$ is a [joint density](random-variables.llms.md#def-joint-pdf) of $X$ and $Y$.
+> **Theorem 2 (Independence with densities: the joint density factors)** **Continuous case.** Continuous random variables $X$ and $Y$ with [densities](random-variables.llms.md#def-pdf) $\mathbb{p}(X = x)$ and $\mathbb{p}(Y = y)$ are [statistically independent](#def-indpt) if and only if the product $\mathbb{p}(X = x)\,\mathbb{p}(Y = y)$ is a [joint density](random-variables.llms.md#def-joint-pdf) of $X$ and $Y$.
 >
-> **Mixed case.** A discrete random variable $X$ and a continuous random variable $Y$ with density $\operatorname{p}(Y = y)$ are statistically independent if and only if the product $\mathbb{P}(X = x)\,\operatorname{p}(Y = y)$ is a [joint density-mass function](random-variables.llms.md#def-joint-density-mass) of $X$ and $Y$.
+> **Mixed case.** A discrete random variable $X$ and a continuous random variable $Y$ with density $\mathbb{p}(Y = y)$ are statistically independent if and only if the product $\mathbb{P}(X = x)\,\mathbb{p}(Y = y)$ is a [joint density-mass function](random-variables.llms.md#def-joint-density-mass) of $X$ and $Y$.
 
 > **NOTE:**
 >
@@ -102,11 +102,11 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}$$
 >
-> When $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ is continuous, every event $\{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\}$ has probability 0, so the condition is stated with densities instead: for every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all $y_1, \ldots, y_n$,
+> When $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ is continuous, every event $\{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\}$ has probability 0, so the condition is stated with densities instead: for every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all $y_1, \ldots, y_n$,
 >
-> $$\frac{\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})} = \prod_{i=1}^n{\frac{\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_i = y_i)}{\operatorname{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}}$$
+> $$\frac{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})} = \prod_{i=1}^n{\frac{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_i = y_i)}{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}}$$
 >
-> where each $\operatorname{p}(\cdot)$ is a [joint density](random-variables.llms.md#def-joint-pdf) (with probability masses in place of densities for any discrete $Y_i$, as in a [joint density-mass function](random-variables.llms.md#def-joint-density-mass)).
+> where each $\mathbb{p}(\cdot)$ is a [joint density](random-variables.llms.md#def-joint-pdf) (with probability masses in place of densities for any discrete $Y_i$, as in a [joint density-mass function](random-variables.llms.md#def-joint-density-mass)).
 
 > **NOTE:**
 >
@@ -286,7 +286,7 @@ Last modified: 2026-11-04 09:31:09 (PST)
 >
 > $$\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)$$
 >
-> When $X_i$ is continuous, the condition applies at every $x$ with $\operatorname{p}(X_i = x) > 0$, with $\Pr(Y_i \le y \mid X_i = x)$ computed from densities: the integral of $\operatorname{p}(X_i = x, Y_i = u) / \operatorname{p}(X_i = x)$ over $u \le y$ (a sum over values $u \le y$ when $Y_i$ is discrete).
+> When $X_i$ is continuous, the condition applies at every $x$ with $\mathbb{p}(X_i = x) > 0$, with $\Pr(Y_i \le y \mid X_i = x)$ computed from densities: the integral of $\mathbb{p}(X_i = x, Y_i = u) / \mathbb{p}(X_i = x)$ over $u \le y$ (a sum over values $u \le y$ when $Y_i$ is discrete).
 
 > **NOTE:**
 >
