@@ -3,7 +3,8 @@
 
 Let $X$ be a [random variable](#def-random-variable)
 with [density](#def-pdf) or [mass function](#def-pmf) $f$.
-The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
+The **modes** of $f$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on the [range](#def-range) of $X$,
+that is, the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over that range:
 
 $$\modef{f} = \argmax_{x \in \rangef{X}} f(x).$$
 
