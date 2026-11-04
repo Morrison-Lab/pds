@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-03 19:13:58 (PST)
+Last modified: 2026-11-04 09:21:34 (PST)
 
 > **NOTE:**
 >
@@ -2315,11 +2315,11 @@ Last modified: 2026-11-03 19:13:58 (PST)
 >
 > $${s\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).$$
 >
-> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of $x$. With the natural logarithm, the surprisal is measured in nats, and with base 2 in bits. Evaluating ${s\mathopen{}\left(\cdot\right)\mathclose{}}$ at the [random variable](random-variables.llms.md#def-random-variable) $X$ itself gives the random variable ${s\mathopen{}\left(X\right)\mathclose{}}$, which equals ${s\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of $X$ implicit.
+> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of $x$. With the natural logarithm, the surprisal is measured in [nats](https://morrison-lab.github.io/ids/entropy.html#def-nat), and with base 2 in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit). Evaluating ${s\mathopen{}\left(\cdot\right)\mathclose{}}$ at the [random variable](random-variables.llms.md#def-random-variable) $X$ itself gives the random variable ${s\mathopen{}\left(X\right)\mathclose{}}$, which equals ${s\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of $X$ implicit.
 
 > **NOTE:**
 >
-> **Example 43 (Surprisal of the values of a biased coin flip)** Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\mathbb{P}(X=1) = \tfrac{1}{4}$ and $\mathbb{P}(X=0) = \tfrac{3}{4}$. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in bits, the surprisal of the value $1$ (heads) is ${s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2$ bits, and the surprisal of the value $0$ (tails) is ${s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits. For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
+> **Example 43 (Surprisal of the values of a biased coin flip)** Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\mathbb{P}(X=1) = \tfrac{1}{4}$ and $\mathbb{P}(X=0) = \tfrac{3}{4}$. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), the surprisal of the value $1$ (heads) is ${s\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2$ bits, and the surprisal of the value $0$ (tails) is ${s\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits. For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
 
 > **NOTE:**
 >
@@ -2403,7 +2403,7 @@ Last modified: 2026-11-03 19:13:58 (PST)
 
 > **NOTE:**
 >
-> *Remark 11* (The base of the logarithm is a unit). With the natural logarithm, entropy is measured in *nats*. With base 2, it is measured in *bits*. Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 11* (The base of the logarithm is a unit). With the natural logarithm, [entropy](#def-entropy) is measured in [*nats*](https://morrison-lab.github.io/ids/entropy.html#def-nat). With base 2, it is measured in [*bits*](https://morrison-lab.github.io/ids/entropy.html#def-bit). Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >

@@ -4,6 +4,26 @@
  "meaning": "edge [A, B] means A uses B: B is a prerequisite of A, A a postrequisite of B",
  "nodes": [
   {
+   "id": "ids/entropy#def-bit",
+   "site": "ids",
+   "page": "entropy",
+   "div": "def-bit",
+   "kind": "def",
+   "title": "bit",
+   "external": true,
+   "url": "https://morrison-lab.github.io/ids/entropy.html#def-bit"
+  },
+  {
+   "id": "ids/entropy#def-nat",
+   "site": "ids",
+   "page": "entropy",
+   "div": "def-nat",
+   "kind": "def",
+   "title": "nat",
+   "external": true,
+   "url": "https://morrison-lab.github.io/ids/entropy.html#def-nat"
+  },
+  {
    "id": "mds/algebra-basics#def-argmax",
    "site": "mds",
    "page": "algebra-basics",
@@ -2704,6 +2724,14 @@
   [
    "pds/expectation#def-squared-error-risk",
    "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "ids/entropy#def-bit"
+  ],
+  [
+   "pds/expectation#def-surprisal",
+   "ids/entropy#def-nat"
   ],
   [
    "pds/expectation#def-surprisal",
