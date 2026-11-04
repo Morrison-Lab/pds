@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-03 16:53:49 (PST)
+Last modified: 2026-11-03 17:16:59 (PST)
 
 > **NOTE:**
 >
@@ -1085,6 +1085,14 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} f(x).$$
 >
 > A **mode** of $f$ is an element of ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$.
+
+> **NOTE:**
+>
+> *Remark 1* (A mode belongs to a density, not to a random variable). A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#def-pmf), so “the mode of $X$” is shorthand for the mode of a chosen density of $X$.
+>
+> Two [densities](#def-pdf) of the same [random variable](#def-random-variable) can differ on a [set](https://morrison-lab.github.io/mds/sets.html#def-set) of [probability](probability-basics.llms.md#def-probability) zero, and then they can have different [modes](#def-mode). A change of variables also moves the mode, because the density of a transformed variable includes a Jacobian factor.
+>
+> The [expectation](expectation.llms.md#def-expectation) of $X$ is different: it depends only on the [distribution](#def-cdf) of $X$, so every density of $X$ gives the same value.
 
 > **NOTE:**
 >
