@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-03 17:16:59 (PST)
+Last modified: 2026-11-03 19:13:58 (PST)
 
 > **NOTE:**
 >
@@ -1080,7 +1080,7 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Definition 24 (Mode of a density or mass function)** Let $X$ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) $f$. The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
+> **Definition 24 (Mode of a density or mass function)** Let $X$ be a [random variable](#def-random-variable) with [density](#def-pdf) or [mass function](#def-pmf) $f$. The **modes** of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $f$ over the [range](#def-range) of $X$:
 >
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} f(x).$$
 >
@@ -1096,13 +1096,13 @@ $$\operatorname{p}(y) = \int_{\mathcal{R}(X)} \operatorname{p}(x, y)\,\mathrm{d}
 
 > **NOTE:**
 >
-> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
+> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
 >
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} g(x).$$
 
 > **NOTE:**
 >
-> *Proof*. Write $f(x) = c\, g(x)$ with $c > 0$ ([Definition 22](#def-kernel)). For any $x$, multiplying both sides of $g(x^*) \ge g(x)$ by $c > 0$ gives $f(x^*) \ge f(x)$, and dividing by $c$ reverses this. So $f(x^*) \ge f(x)$ for every $x$ exactly when $g(x^*) \ge g(x)$ for every $x$. By the definition of the [argmax](https://morrison-lab.github.io/mds/algebra.html#def-argmax), these are the conditions $x^* \in \arg \max_{x \in \mathcal{R}(X)} f(x)$ and $x^* \in \arg \max_{x \in \mathcal{R}(X)} g(x)$.
+> *Proof*. Write $f(x) = c\, g(x)$ with $c > 0$ ([Definition 22](#def-kernel)). By [the theorem that a positive multiple has the same argmax](https://morrison-lab.github.io/mds/algebra-basics.html#thm-argmax-positive-multiple), $\arg \max_{x \in \mathcal{R}(X)} f(x) = \arg \max_{x \in \mathcal{R}(X)} g(x)$. The left side is ${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}}$ by [Definition 24](#def-mode).
 
 > **NOTE:**
 >
