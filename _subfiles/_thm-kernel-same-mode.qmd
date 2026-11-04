@@ -6,7 +6,8 @@ then $f$ and $g$ have the same [modes](#def-mode):
 
 $$\modef{f} = \modef{g}.$$
 
-Here the modes of $g$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on $\rangef{X}$, since $g$ need not be a [density](#def-pdf).
+Here the modes of $g$ are its [modes](https://morrison-lab.github.io/mds/algebra.html#def-mode) as a [function](https://morrison-lab.github.io/mds/functions.html#def-function) on $\rangef{X}$,
+since $g$ need not be a [density](#def-pdf).
 
 :::
 
