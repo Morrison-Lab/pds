@@ -8,6 +8,6 @@ that is, an element of the [argmax](https://morrison-lab.github.io/mds/algebra.h
 
 $$\modef{f} = \argmax_{x \in \rangef{X}} f(x).$$
 
-The set $\modef{f}$ holds the modes of $f$.
+The [set](https://morrison-lab.github.io/mds/sets.html#def-set) $\modef{f}$ holds the modes of $f$.
 
 :::
