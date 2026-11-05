@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-04 17:24:55 (PST)
+Last modified: 2026-11-05 02:46:02 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -1345,6 +1345,177 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > 5MinuteAI explains [variance](https://www.youtube.com/watch?v=5CT1DXPp2HY) and [covariance and correlation](https://www.youtube.com/watch?v=hiim8HlI81Y) in five minutes each, following the University of Washington’s CSE 312 [\[6\]](#ref-fiveminuteai_probstat).
 
+# 6 Moments and moment generating functions
+
+> **NOTE:**
+>
+> **Definition 14 (Raw moment)** The $k$-th raw moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of $X^k$:
+>
+> $${\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}$$
+
+> **NOTE:**
+>
+> **Example 20 (Raw moments of a die roll)** Let $X$ be the number shown by one roll of a fair six-sided die, so that $\mathbb{P}(X = x) = 1/6$ for each $x \in {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. The first [raw moment](#def-moment) is the [expectation](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, and the second is ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}$:
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}
+> &= \sum_{x=1}^{6} x \cdot\frac{1}{6}
+> && \text{(definition of expectation)} \\
+> &= \frac{21}{6}
+> && \text{(} 1 + 2 + 3 + 4 + 5 + 6 = 21 \text{)} \\
+> &= \frac{7}{2}
+> && \text{(simplify)} \\
+> {\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}
+> &= \sum_{x=1}^{6} x^2 \cdot\frac{1}{6}
+> && \text{(expectation of a function of a discrete random variable)} \\
+> &= \frac{91}{6}
+> && \text{(} 1 + 4 + 9 + 16 + 25 + 36 = 91 \text{)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Definition 15 (Central moment)** The $k$-th central moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of the [deviation from the mean](#def-deviation-pop-mean) raised to the [power](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer) $k$:
+>
+> $${\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^k\right]\mathclose{}}$$
+
+> **NOTE:**
+>
+> **Example 21 (The third central moment of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \pi$ and $\mathbb{d}(X) = X - \pi$. The third [central moment](#def-central-moment) is:
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^3\right]\mathclose{}}
+> &= \sum_{x \in {\mathopen{}\left\{0,1\right\}\mathclose{}}} (x - \pi)^3 \cdot\mathbb{P}(X = x)
+> && \text{(expectation of a function of a discrete random variable)} \\
+> &= (0 - \pi)^3 (1 - \pi) + (1 - \pi)^3 \pi
+> && \text{(substitute the Bernoulli probabilities)} \\
+> &= \pi(1 - \pi)\mathopen{}\left((1 - \pi)^2 - \pi^2\right)\mathclose{}
+> && \text{(factor out } \pi(1 - \pi) \text{)} \\
+> &= \pi(1 - \pi)(1 - 2\pi)
+> && \text{(difference of squares: } (1-\pi)^2 - \pi^2 = 1 - 2\pi\text{)}
+> \end{aligned}$$
+>
+> For a fair coin ($\pi= 1/2$), the third central moment is $0$.
+
+> **NOTE:**
+>
+> **Theorem 15 (The second central moment is the variance)** If ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$, then the second [central moment](#def-central-moment) of $X$ is ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$.
+
+> **NOTE:**
+>
+> *Proof*. The second [central moment](#def-central-moment) is ${\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^2\right]\mathclose{}}$ by [Definition 15](#def-central-moment), which is ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$ by [Definition 3](#def-variance).
+
+> **NOTE:**
+>
+> **Example 22 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 20](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 3](#thm-variance) gives as:
+>
+> $$\begin{aligned}
+> {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2}
+> && \text{(simplified expression for variance)} \\
+> &= \frac{91}{6} - \mathopen{}\left(\frac{7}{2}\right)\mathclose{}^2
+> && \text{(substitute the raw moments)} \\
+> &= \frac{182}{12} - \frac{147}{12}
+> && \text{(common denominator)} \\
+> &= \frac{35}{12}
+> && \text{(subtract)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Definition 16 (Moment generating function)** The **moment generating function** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $M_X$ of a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers) $t$ that gives the [expectation](expectation.llms.md#def-expectation) of $\text{e}^{tX}$, defined at every $t$ with ${\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}} < \infty$:
+>
+> $$M_X(t) \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}}$$
+
+> **NOTE:**
+>
+> **Example 23 (Moment generating function of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so $\mathbb{P}(X = 1) = \pi$ and $\mathbb{P}(X = 0) = 1 - \pi$. For every $t$:
+>
+> $$\begin{aligned}
+> M_X(t)
+> &= {\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}}
+> && \text{(definition of the moment generating function)} \\
+> &= \sum_{x \in {\mathopen{}\left\{0,1\right\}\mathclose{}}} \text{e}^{tx} \cdot\mathbb{P}(X = x)
+> && \text{(expectation of a function of a discrete random variable)} \\
+> &= \text{e}^{0} \cdot(1 - \pi) + \text{e}^{t} \cdot\pi
+> && \text{(substitute the Bernoulli probabilities)} \\
+> &= 1 - \pi+ \pi\,\text{e}^{t}
+> && \text{(} \text{e}^{0} = 1 \text{)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 16 (Moments from the moment generating function)** If $M_X(t)$ is defined at every $t$ in some [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) around $0$, then for every [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$, the $k$-th [raw moment](#def-moment) of $X$ is the $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $M_X$ at $0$:
+>
+> $${\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}} = M_X^{(k)}(0)$$
+
+> **NOTE:**
+>
+> *Proof*. Let $h > 0$ be such that $M_X(t)$ is defined for every $\mathopen{}\left|t\right|\mathclose{} < h$. For any such $t$, the [series](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum) of the [exponential](random-variables.llms.md#def-exponential) gives:
+>
+> $$\text{e}^{tX} = \sum_{k=0}^{\infty} \frac{t^k X^k}{k!}$$
+>
+> The [absolute value](https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value) of each summand is at most the matching summand of $\text{e}^{\mathopen{}\left|tX\right|\mathclose{}}$. Also, $\text{e}^{\mathopen{}\left|tX\right|\mathclose{}} \le \text{e}^{tX} + \text{e}^{-tX}$, and $M_X(t)$ and $M_X(-t)$ are both defined, so ${\mathbb{E}\mathopen{}\left[\text{e}^{\mathopen{}\left|tX\right|\mathclose{}}\right]\mathclose{}} < \infty$. This domination lets the [expectation](expectation.llms.md#def-expectation) pass through the series, by the [Fubini–Tonelli](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli) exchange:
+>
+> $$\begin{aligned}
+> M_X(t)
+> &= {\mathbb{E}\mathopen{}\left[\sum_{k=0}^{\infty} \frac{t^k X^k}{k!}\right]\mathclose{}}
+> && \text{(power series of the exponential)} \\
+> &= \sum_{k=0}^{\infty} \frac{t^k}{k!}{\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}
+> && \text{(pass the expectation through the sum; linearity of expectation)}
+> \end{aligned}$$
+>
+> A [Taylor series](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series) can be differentiated one summand at a time inside the [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) where it [converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series). The $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) at $0$ keeps only the summand with $t^k$, and that summand’s coefficient is multiplied by $k!$. So $M_X^{(k)}(0) = k! \cdot\frac{{\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}}{k!} = {\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}$.
+
+> **NOTE:**
+>
+> **Example 24 (Moments of a Bernoulli random variable from its moment generating function)** For $X \sim \operatorname{Ber}(\pi)$, [Example 23](#exm-mgf-bernoulli) gives $M_X(t) = 1 - \pi+ \pi\,\text{e}^{t}$ for every $t$, so $M_X^{(k)}(t) = \pi\,\text{e}^{t}$ for every $k \ge 1$. By [Theorem 16](#thm-mgf-moments), for every $k \ge 1$:
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}
+> &= M_X^{(k)}(0)
+> && \text{(moments from the moment generating function)} \\
+> &= \pi\,\text{e}^{0}
+> && \text{(} M_X^{(k)}(t) = \pi\,\text{e}^{t} \text{)} \\
+> &= \pi
+> && \text{(} \text{e}^{0} = 1 \text{)}
+> \end{aligned}$$
+>
+> This agrees with the direct computation of ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}$ for a [Bernoulli](random-variables.llms.md#def-bernoulli) variable on the [expectation page](expectation.llms.md#exm-lotus).
+
+> **NOTE:**
+>
+> **Theorem 17 (Moment generating function of a sum of independent random variables)** If $X$ and $Y$ are [independent](independence.llms.md#def-indpt), and $M_X(t)$ and $M_Y(t)$ are defined at a number $t$, then:
+>
+> $$M_{X+Y}(t) = M_X(t)\,M_Y(t)$$
+
+> **NOTE:**
+>
+> *Proof*. [Functions](https://morrison-lab.github.io/mds/functions.html#def-function) of [independent](independence.llms.md#def-indpt) variables are independent, so $\text{e}^{tX}$ and $\text{e}^{tY}$ are independent. [Independent variables](variance-covariance.llms.md#thm-indpt-uncorrelated) $A$ and $B$ satisfy ${\mathbb{E}\mathopen{}\left[AB\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[A\right]\mathclose{}}\,{\mathbb{E}\mathopen{}\left[B\right]\mathclose{}}$, so:
+>
+> $$\begin{aligned}
+> M_{X+Y}(t)
+> &= {\mathbb{E}\mathopen{}\left[\text{e}^{t(X+Y)}\right]\mathclose{}}
+> && \text{(definition of the moment generating function)} \\
+> &= {\mathbb{E}\mathopen{}\left[\text{e}^{tX}\,\text{e}^{tY}\right]\mathclose{}}
+> && \text{(} \text{e}^{a+b} = \text{e}^{a}\,\text{e}^{b} \text{)} \\
+> &= {\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}}\,{\mathbb{E}\mathopen{}\left[\text{e}^{tY}\right]\mathclose{}}
+> && \text{(expectation of a product of independent variables)} \\
+> &= M_X(t)\,M_Y(t)
+> && \text{(definition of the moment generating function)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Example 25 (Moment generating function of a binomial random variable)** By the [sum of Bernoulli variables](distributions.llms.md#thm-binomial-sum-bernoulli), a [binomial](random-variables.llms.md#def-binomial) [random variable](random-variables.llms.md#def-random-variable) $S \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}$ is a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) $S = \sum_{i=1}^n X_i$ of $n$ [independent](independence.llms.md#def-indpt) $\operatorname{Ber}(\pi)$ variables. Each has [moment generating function](#def-mgf) $1 - \pi+ \pi\,\text{e}^{t}$ ([Example 23](#exm-mgf-bernoulli)). Applying [Theorem 17](#thm-mgf-sum) one summand at a time:
+>
+> $$\begin{aligned}
+> M_S(t)
+> &= \prod_{i=1}^{n} M_{X_i}(t)
+> && \text{(moment generating function of a sum of independent random variables)} \\
+> &= \mathopen{}\left(1 - \pi+ \pi\,\text{e}^{t}\right)\mathclose{}^n
+> && \text{(each factor is the Bernoulli moment generating function)}
+> \end{aligned}$$
+
 # Definitions on this page
 
 - [Definition 1 (Deviation)](#def-deviation)
@@ -1360,6 +1531,9 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 - [Definition 11 (Uncorrelated random variables)](#def-uncorrelated)
 - [Definition 12 (Conditional covariance)](#def-cond-cov)
 - [Definition 13 (Variance/covariance of a](#def-cov-vec-x) $p \times 1$ random vector)
+- [Definition 14 (Raw moment)](#def-moment)
+- [Definition 15 (Central moment)](#def-central-moment)
+- [Definition 16 (Moment generating function)](#def-mgf)
 
 # References
 

@@ -24,6 +24,16 @@
    "url": "https://morrison-lab.github.io/ids/entropy.html#def-nat"
   },
   {
+   "id": "mds/algebra-basics#def-absolute-value",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-absolute-value",
+   "kind": "def",
+   "title": "absolute value",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value"
+  },
+  {
    "id": "mds/algebra-basics#def-argmax",
    "site": "mds",
    "page": "algebra-basics",
@@ -54,6 +64,36 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer"
   },
   {
+   "id": "mds/algebra-basics#def-power-integer",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-power-integer",
+   "kind": "def",
+   "title": "power integer",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer"
+  },
+  {
+   "id": "mds/algebra-exponentials#def-infinite-sum",
+   "site": "mds",
+   "page": "algebra-exponentials",
+   "div": "def-infinite-sum",
+   "kind": "def",
+   "title": "infinite sum",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum"
+  },
+  {
+   "id": "mds/calculus-derivatives#def-derivative",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "def-derivative",
+   "kind": "def",
+   "title": "derivative",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative"
+  },
+  {
    "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
    "site": "mds",
    "page": "calculus-double-integrals",
@@ -62,6 +102,16 @@
    "title": "fubini tonelli",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli"
+  },
+  {
+   "id": "mds/calculus-taylor-series#def-taylor-series",
+   "site": "mds",
+   "page": "calculus-taylor-series",
+   "div": "def-taylor-series",
+   "kind": "def",
+   "title": "taylor series",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series"
   },
   {
    "id": "mds/functions#def-countable-set",
@@ -254,6 +304,26 @@
    "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
   },
   {
+   "id": "mds/number-systems#def-positive-integer",
+   "site": "mds",
+   "page": "number-systems",
+   "div": "def-positive-integer",
+   "kind": "def",
+   "title": "positive integer",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer"
+  },
+  {
+   "id": "mds/number-systems#def-real-numbers",
+   "site": "mds",
+   "page": "number-systems",
+   "div": "def-real-numbers",
+   "kind": "def",
+   "title": "real numbers",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers"
+  },
+  {
    "id": "mds/sets#def-extended-nonneg-reals",
    "site": "mds",
    "page": "sets",
@@ -262,6 +332,16 @@
    "title": "extended nonneg reals",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/sets.html#def-extended-nonneg-reals"
+  },
+  {
+   "id": "mds/sets#def-open-interval",
+   "site": "mds",
+   "page": "sets",
+   "div": "def-open-interval",
+   "kind": "def",
+   "title": "open interval",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/sets.html#def-open-interval"
   },
   {
    "id": "mds/sets#def-set",
@@ -2129,6 +2209,15 @@
    "external": false
   },
   {
+   "id": "pds/variance-covariance#def-central-moment",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-central-moment",
+   "kind": "def",
+   "title": "Central moment",
+   "external": false
+  },
+  {
    "id": "pds/variance-covariance#def-cond-cov",
    "site": "pds",
    "page": "variance-covariance",
@@ -2207,6 +2296,24 @@
    "div": "def-homosked",
    "kind": "def",
    "title": "Homoskedasticity",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-mgf",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-mgf",
+   "kind": "def",
+   "title": "Moment generating function",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#def-moment",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "def-moment",
+   "kind": "def",
+   "title": "Raw moment",
    "external": false
   },
   {
@@ -2297,6 +2404,33 @@
    "div": "thm-indpt-uncorrelated",
    "kind": "thm",
    "title": "Independent random variables have zero covariance",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-mgf-moments",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-mgf-moments",
+   "kind": "thm",
+   "title": "Moments from the moment generating function",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-mgf-sum",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-mgf-sum",
+   "kind": "thm",
+   "title": "Moment generating function of a sum of independent random variables",
+   "external": false
+  },
+  {
+   "id": "pds/variance-covariance#thm-moments-low-order",
+   "site": "pds",
+   "page": "variance-covariance",
+   "div": "thm-moments-low-order",
+   "kind": "thm",
+   "title": "The second central moment is the variance",
    "external": false
   },
   {
@@ -4104,6 +4238,26 @@
    "pds/variance-covariance#thm-vcov-elements"
   ],
   [
+   "pds/variance-covariance#def-central-moment",
+   "mds/algebra-basics#def-power-integer"
+  ],
+  [
+   "pds/variance-covariance#def-central-moment",
+   "mds/number-systems#def-positive-integer"
+  ],
+  [
+   "pds/variance-covariance#def-central-moment",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-central-moment",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-central-moment",
+   "pds/variance-covariance#def-deviation-pop-mean"
+  ],
+  [
    "pds/variance-covariance#def-cond-variance",
    "pds/expectation#def-cond-expectation-function"
   ],
@@ -4134,6 +4288,34 @@
   [
    "pds/variance-covariance#def-homosked",
    "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/variance-covariance#def-mgf",
+   "mds/functions#def-function"
+  ],
+  [
+   "pds/variance-covariance#def-mgf",
+   "mds/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/variance-covariance#def-mgf",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-mgf",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-moment",
+   "mds/number-systems#def-positive-integer"
+  ],
+  [
+   "pds/variance-covariance#def-moment",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-moment",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-precision",
@@ -4206,6 +4388,66 @@
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
    "pds/variance-covariance#thm-alt-cov"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/algebra-basics#def-absolute-value"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/algebra-exponentials#def-infinite-sum"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/calculus-derivatives#def-derivative"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/calculus-double-integrals#thm-fubini-tonelli"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/calculus-taylor-series#def-taylor-series"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/number-systems#def-positive-integer"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mds/sets#def-open-interval"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "pds/random-variables#def-exponential"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "pds/variance-covariance#def-moment"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-sum",
+   "mds/functions#def-function"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-sum",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-sum",
+   "pds/variance-covariance#thm-indpt-uncorrelated"
+  ],
+  [
+   "pds/variance-covariance#thm-moments-low-order",
+   "pds/variance-covariance#def-central-moment"
+  ],
+  [
+   "pds/variance-covariance#thm-moments-low-order",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#thm-noise-second-moment",
