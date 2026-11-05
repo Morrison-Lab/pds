@@ -39,8 +39,8 @@ $$
 
 A [Taylor series](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series)
 can be differentiated one summand at a time
-inside the [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) where it
-[converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series).
+inside the [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval)
+where it [converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series).
 The $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) at $0$ keeps only the summand with $t^k$,
 and that summand's coefficient is multiplied by $k!$.
 So $M_X^{(k)}(0) = k! \cd \frac{\E{X^k}}{k!} = \E{X^k}$.
