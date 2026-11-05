@@ -1,0 +1,32 @@
+:::{#thm-mgf-sum}
+#### Moment generating function of a sum of independent random variables
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+and $M_X(t)$ and $M_Y(t)$ are defined at a number $t$, then:
+
+$$M_{X+Y}(t) = M_X(t)\,M_Y(t)$$
+
+:::
+
+::: proof
+
+[Functions](https://morrison-lab.github.io/mds/functions.html#def-function) of
+[independent](independence.qmd#def-indpt) variables are independent,
+so $\ef{tX}$ and $\ef{tY}$ are independent.
+Independent variables $A$ and $B$ satisfy $\E{AB} = \E{A}\,\E{B}$ (@thm-indpt-uncorrelated), so:
+
+$$
+\ba
+M_{X+Y}(t)
+&= \E{\ef{t(X+Y)}}
+&& \text{(definition of the moment generating function)} \\
+&= \E{\ef{tX}\,\ef{tY}}
+&& \text{(} \ef{a+b} = \ef{a}\,\ef{b} \text{)} \\
+&= \E{\ef{tX}}\,\E{\ef{tY}}
+&& \text{(expectation of a product of independent variables)} \\
+&= M_X(t)\,M_Y(t)
+&& \text{(definition of the moment generating function)}
+\ea
+$$
+
+:::

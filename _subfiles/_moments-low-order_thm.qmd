@@ -1,0 +1,15 @@
+:::{#thm-moments-low-order}
+#### The first raw moment and the second central moment
+
+If $\E{X^2} < \infty$, then the first [raw moment](#def-moment) of $X$ is $\E{X}$,
+and the second [central moment](#def-central-moment) of $X$ is $\Var{X}$.
+
+:::
+
+::: proof
+
+The first [raw moment](#def-moment) is $\E{X^1} = \E{X}$ by @def-moment.
+The second [central moment](#def-central-moment) is $\E{[\devn(X)]^2}$ by @def-central-moment,
+which is $\Var{X}$ by @def-variance.
+
+:::

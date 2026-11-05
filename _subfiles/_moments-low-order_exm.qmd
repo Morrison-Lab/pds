@@ -1,0 +1,25 @@
+:::{#exm-moments-low-order-die}
+#### The variance of a die roll as a central moment
+
+For the die roll $X$ of @exm-moment-die, $\E{X} = 7/2$ and $\E{X^2} = 91/6$.
+By @thm-moments-low-order, the second [central moment](#def-central-moment) of $X$
+is the [variance](#def-variance) $\Var{X}$,
+which @thm-variance gives as:
+
+$$
+\ba
+\Var{X}
+&= \E{X^2} - \sqf{\E{X}}
+&& \text{(simplified expression for variance)} \\
+&= \frac{91}{6} - \paren{\frac{7}{2}}^2
+&& \text{(substitute the raw moments)} \\
+&= \frac{182}{12} - \frac{147}{12}
+&& \text{(common denominator)} \\
+&= \frac{35}{12}
+&& \text{(subtract)}
+\ea
+$$
+
+<!-- no-figure: the example computes single numbers, not data -->
+
+:::

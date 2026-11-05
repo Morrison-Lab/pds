@@ -1,0 +1,24 @@
+:::{#exm-mgf-bernoulli}
+#### Moment generating function of a Bernoulli random variable
+
+Let $X \sim \Ber(\prob)$,
+so $\P(X = 1) = \prob$ and $\P(X = 0) = 1 - \prob$.
+For every $t$:
+
+$$
+\ba
+M_X(t)
+&= \E{\ef{tX}}
+&& \text{(definition of the moment generating function)} \\
+&= \sum_{x \in \set{0,1}} \ef{tx} \cd \P(X = x)
+&& \text{(expectation of a function of a discrete random variable)} \\
+&= \ef{0} \cd (1 - \prob) + \ef{t} \cd \prob
+&& \text{(substitute the Bernoulli probabilities)} \\
+&= 1 - \prob + \prob\,\ef{t}
+&& \text{(} \ef{0} = 1 \text{)}
+\ea
+$$
+
+<!-- no-figure: the example computes a formula, not data -->
+
+:::
