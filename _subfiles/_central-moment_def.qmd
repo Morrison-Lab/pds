@@ -2,7 +2,7 @@
 #### Central moment
 
 The **$k$-th central moment** of a [random variable](random-variables.qmd#def-random-variable) $X$,
-for a [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$
+for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$
 with $\E{\abs{X}^k} < \infty$,
 is the [expectation](expectation.qmd#def-expectation) of the [deviation from the mean](#def-deviation-pop-mean)
 raised to the [power](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer) $k$:

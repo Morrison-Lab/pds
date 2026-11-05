@@ -2,8 +2,8 @@
 #### Moment generating function
 
 The **moment generating function** of a [random variable](random-variables.qmd#def-random-variable) $X$
-is the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $M_X$
-of a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers) $t$
+is the [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $M_X$
+of a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers) $t$
 that gives the [expectation](expectation.qmd#def-expectation) of $\ef{tX}$,
 defined at every $t$ with $\E{\ef{tX}} < \infty$:
 

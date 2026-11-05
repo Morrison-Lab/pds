@@ -2,8 +2,8 @@
 #### Moments from the moment generating function
 
 If $M_X(t)$ is defined at every $t$ in some
-[open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) around $0$,
-then for every [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$,
+[open interval](https://morrison-lab.github.io/mcs/sets.html#def-open-interval) around $0$,
+then for every [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$,
 the $k$-th [raw moment](#def-moment) of $X$ is the $k$-th
 [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $M_X$ at $0$:
 
@@ -39,7 +39,7 @@ $$
 
 A [Taylor series](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series)
 can be differentiated one summand at a time
-inside the [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval)
+inside the [open interval](https://morrison-lab.github.io/mcs/sets.html#def-open-interval)
 where it [converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series).
 The $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) at $0$ keeps only the summand with $t^k$,
 and that summand's coefficient is multiplied by $k!$.

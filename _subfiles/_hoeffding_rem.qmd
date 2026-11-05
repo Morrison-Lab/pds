@@ -1,6 +1,6 @@
 ::: {.remark .notes}
 
 Hoeffding's 1963 paper [@hoeffding1963] controls the [moment generating function](variance-covariance.qmd#def-mgf) $\E{e^{s(X - \mean)}}$
-in a step that the literature calls Hoeffding's [lemma](https://morrison-lab.github.io/mds/proof-writing.html#def-lemma).
+in a step that the literature calls Hoeffding's [lemma](https://morrison-lab.github.io/mcs/proof-writing.html#def-lemma).
 
 :::

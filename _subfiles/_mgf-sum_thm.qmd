@@ -10,7 +10,7 @@ $$M_{X+Y}(t) = M_X(t)\,M_Y(t)$$
 
 ::: proof
 
-[Functions](https://morrison-lab.github.io/mds/functions.html#def-function) of
+[Functions](https://morrison-lab.github.io/mcs/functions.html#def-function) of
 [independent](independence.qmd#def-indpt) variables are independent,
 so $\ef{tX}$ and $\ef{tY}$ are independent.
 [Independent variables $A$ and $B$ satisfy $\E{AB} = \E{A}\,\E{B}$](variance-covariance.qmd#thm-indpt-uncorrelated),
