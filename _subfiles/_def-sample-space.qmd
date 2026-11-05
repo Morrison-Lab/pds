@@ -2,7 +2,7 @@
 #### Sample space
 
 The **sample space** of a [random experiment](#def-random-experiment), denoted $\samplespace$,
-is the [set](https://morrison-lab.github.io/mcs/sets.html#def-set) of all of its possible [outcomes](#def-experiment-outcome)
+is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes
 [@wikipedia_sample_space].
 
 :::
@@ -34,7 +34,7 @@ only the subsets in a designated [$\sigma$-algebra](https://morrison-lab.github.
 count as events
 (some sources call a $\sigma$-algebra a **Borel field** [@CaseBerg01, Def. 1.2.1]);
 every set that arises in these notes is in $\mathscr{S}$.
-When $\samplespace$ is finite or [countably infinite](https://morrison-lab.github.io/mcs/functions.html#def-countably-infinite),
+When $\samplespace$ is finite or [countably infinite](https://morrison-lab.github.io/mds/functions.html#def-countably-infinite),
 every subset of $\samplespace$ can be an event,
 because the collection of all subsets of $\samplespace$ is a $\sigma$-algebra
 ([all subsets form a $\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra)),
@@ -113,9 +113,9 @@ and the event "the roll is at most 2", $\set{1, 2}$, does not occur.
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
 is the event that $A$ does not [occur](#def-occurs):
-the [set](https://morrison-lab.github.io/mcs/sets.html#def-set) of elements $\omega$ of the sample space $\samplespace$ that are not in $A$,
+the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\samplespace$ that are not in $A$,
 or equivalently,
-the [set difference](https://morrison-lab.github.io/mcs/sets.html#def-set-difference)
+the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference)
 $\setdiff{\samplespace}{A}$:
 
 $$
@@ -163,7 +163,7 @@ $$A_i \cap A_j = \emptyset \quad \text{for all } i \neq j$$
 ::: {.remark .notes}
 
 The math notes define the same property for sets in general,
-as [pairwise disjoint](https://morrison-lab.github.io/mcs/sets.html#def-pairwise-disjoint).
+as [pairwise disjoint](https://morrison-lab.github.io/mds/sets.html#def-pairwise-disjoint).
 
 :::
 
@@ -241,7 +241,7 @@ are a [partition](#def-partition) of the [sample space](#def-sample-space) $\sam
 
 The sample space $\samplespace$ is an event (@lem-sample-space-event),
 so a partition of it is defined.
-The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mcs/sets.html#def-set-difference) $\setdiff{\samplespace}{A}$,
+The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\setdiff{\samplespace}{A}$,
 which is an event
 because the events are closed under complements in $\samplespace$,
 by the complement requirement of a
