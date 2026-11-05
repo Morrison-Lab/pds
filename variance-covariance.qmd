@@ -79,6 +79,16 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 :::
 
 
+# Moments and moment generating functions {#sec-moments}
+
+<!-- No slidebreak here: the heading shares its slide with the def-moment div. -->
+
+{{< include pds/_subfiles/_def-moment.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-mgf.qmd >}}
+
 # References {.unnumbered}
 
 ::: {#refs}

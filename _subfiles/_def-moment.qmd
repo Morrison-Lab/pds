@@ -1,0 +1,45 @@
+:::{#def-moment}
+#### Raw moment
+
+The **$k$-th raw moment** of a random variable $X$, for a positive integer $k$ with $\E{\abs{X}^k} < \infty$,
+is the [expectation](expectation.qmd#def-expectation) of $X^k$:
+
+$$\E{X^k}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#def-central-moment}
+#### Central moment
+
+The **$k$-th central moment** of a random variable $X$, for a positive integer $k$ with $\E{\abs{X}^k} < \infty$,
+is the [expectation](expectation.qmd#def-expectation) of the $k$-th power of the [deviation from the mean](#def-deviation-pop-mean):
+
+$$\E{[\devn(X)]^k}$$
+
+:::
+
+{{< slidebreak >}}
+
+:::{#thm-moments-low-order}
+#### The first raw moment and the second central moment
+
+If $\E{X^2} < \infty$, then:
+
+$$
+\ba
+\E{X} &= \text{the first raw moment of } X \\
+\Var{X} &= \text{the second central moment of } X
+\ea
+$$
+
+:::
+
+::: proof
+
+The first raw moment is $\E{X^1} = \E{X}$ by @def-moment.
+The second central moment is $\E{[\devn(X)]^2}$ by @def-central-moment,
+which is $\Var{X}$ by @def-variance.
+
+:::
