@@ -1,7 +1,8 @@
 :::{#def-mgf}
 #### Moment generating function
 
-The **moment generating function** of a random variable $X$ is the function $M_X$ of a real number $t$
+The **moment generating function** of a [random variable](random-variables.qmd#def-random-variable) $X$
+is the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $M_X$ of a real number $t$
 that gives the [expectation](expectation.qmd#def-expectation) of $\ef{tX}$,
 defined at every $t$ for which that expectation is finite:
 
@@ -39,7 +40,7 @@ $$
 #### Moments from the moment generating function
 
 If the moment generating function $M_X(t)$ is finite for every $t$ in some open interval around $0$,
-then for every positive integer $k$, the $k$-th raw moment of $X$ is the $k$-th derivative of $M_X$ at $0$:
+then for every positive integer $k$, the $k$-th [raw moment](#def-moment) of $X$ is the $k$-th derivative of $M_X$ at $0$:
 
 $$\E{X^k} = M_X^{(k)}(0)$$
 
@@ -48,10 +49,12 @@ $$\E{X^k} = M_X^{(k)}(0)$$
 ::: proof
 
 Let $h > 0$ be such that $M_X(t)$ is finite for every $\abs{t} < h$.
-For any such $t$, the power series of the exponential gives $\ef{tX} = \sum_{k=0}^{\infty} \frac{t^k X^k}{k!}$.
-The terms are bounded in absolute value by those of $\ef{\abs{tX}}$, a series with finite expectation,
+For any such $t$, the power series of the [exponential](random-variables.qmd#def-exponential) function gives
+$\ef{tX} = \sum_{k=0}^{\infty} \frac{t^k X^k}{k!}$.
+The terms are bounded in absolute value by those of $\ef{\abs{tX}}$,
+a series with finite [expectation](expectation.qmd#def-expectation),
 because $\ef{\abs{tX}} \le \ef{tX} + \ef{-tX}$ and both of those have finite expectations.
-So the expectation may be exchanged with the sum
+So the expectation may be exchanged with the [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation)
 (the Fubini--Tonelli theorem for sums):
 
 $$
@@ -91,7 +94,7 @@ $$
 \ea
 $$
 
-This agrees with the direct computation of $\E{X}$ and $\E{X^2}$ for a Bernoulli random variable
+This agrees with the direct computation of $\E{X}$ and $\E{X^2}$ for a [Bernoulli](random-variables.qmd#def-bernoulli) [random variable](random-variables.qmd#def-random-variable)
 on the [expectation page](expectation.qmd#exm-lotus).
 
 :::
@@ -110,7 +113,9 @@ $$M_{X+Y}(t) = M_X(t)\,M_Y(t)$$
 
 ::: proof
 
-Functions of independent random variables are independent,
+[Functions](https://morrison-lab.github.io/mds/functions.html#def-function) of
+[independent](independence.qmd#def-indpt) [random variables](random-variables.qmd#def-random-variable)
+are independent,
 so $\ef{tX}$ and $\ef{tY}$ are independent.
 By @thm-indpt-uncorrelated:
 
