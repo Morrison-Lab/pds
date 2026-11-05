@@ -85,6 +85,8 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_lem-hoeffding.qmd >}}
 
+{{< include pds/_subfiles/_hoeffding_rem.qmd >}}
+
 {{< include pds/_subfiles/_thm-hoeffding.qmd >}}
 
 {{< include pds/_subfiles/_exm-hoeffding-auto.qmd >}}
