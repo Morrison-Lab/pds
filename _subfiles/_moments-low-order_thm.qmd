@@ -1,0 +1,14 @@
+:::{#thm-moments-low-order}
+#### The second central moment is the variance
+
+If $\E{X^2} < \infty$,
+then the second [central moment](#def-central-moment) of $X$ is $\Var{X}$.
+
+:::
+
+::: proof
+
+The second [central moment](#def-central-moment) is $\E{[\devn(X)]^2}$ by @def-central-moment,
+which is $\Var{X}$ by @def-variance.
+
+:::

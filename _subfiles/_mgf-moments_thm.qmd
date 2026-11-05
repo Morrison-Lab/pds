@@ -1,0 +1,48 @@
+:::{#thm-mgf-moments}
+#### Moments from the moment generating function
+
+If $M_X(t)$ is defined at every $t$ in some
+[open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) around $0$,
+then for every [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$,
+the $k$-th [raw moment](#def-moment) of $X$ is the $k$-th
+[derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $M_X$ at $0$:
+
+$$\E{X^k} = M_X^{(k)}(0)$$
+
+:::
+
+::: proof
+
+Let $h > 0$ be such that $M_X(t)$ is defined for every $\abs{t} < h$.
+For any such $t$, the [series](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum)
+of the [exponential](random-variables.qmd#def-exponential) gives:
+
+$$\ef{tX} = \sum_{k=0}^{\infty} \frac{t^k X^k}{k!}$$
+
+The [absolute value](https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value) of each summand
+is at most the matching summand of $\ef{\abs{tX}}$.
+Also, $\ef{\abs{tX}} \le \ef{tX} + \ef{-tX}$,
+and $M_X(t)$ and $M_X(-t)$ are both defined,
+so $\E{\ef{\abs{tX}}} < \infty$.
+This domination lets the [expectation](expectation.qmd#def-expectation) pass through the series,
+by the [Fubini--Tonelli](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli) exchange:
+
+$$
+\ba
+M_X(t)
+&= \E{\sum_{k=0}^{\infty} \frac{t^k X^k}{k!}}
+&& \text{(power series of the exponential)} \\
+&= \sum_{k=0}^{\infty} \frac{t^k}{k!}\E{X^k}
+&& \text{(pass the expectation through the sum; linearity of expectation)}
+\ea
+$$
+
+A [Taylor series](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series)
+can be differentiated one summand at a time
+inside the [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval)
+where it [converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series).
+The $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) at $0$ keeps only the summand with $t^k$,
+and that summand's coefficient is multiplied by $k!$.
+So $M_X^{(k)}(0) = k! \cd \frac{\E{X^k}}{k!} = \E{X^k}$.
+
+:::

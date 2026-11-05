@@ -1,0 +1,25 @@
+:::{#exm-mgf-bernoulli-moments}
+#### Moments of a Bernoulli random variable from its moment generating function
+
+For $X \sim \Ber(\prob)$, @exm-mgf-bernoulli gives $M_X(t) = 1 - \prob + \prob\,\ef{t}$ for every $t$,
+so $M_X^{(k)}(t) = \prob\,\ef{t}$ for every $k \ge 1$.
+By @thm-mgf-moments, for every $k \ge 1$:
+
+$$
+\ba
+\E{X^k}
+&= M_X^{(k)}(0)
+&& \text{(moments from the moment generating function)} \\
+&= \prob\,\ef{0}
+&& \text{(} M_X^{(k)}(t) = \prob\,\ef{t} \text{)} \\
+&= \prob
+&& \text{(} \ef{0} = 1 \text{)}
+\ea
+$$
+
+This agrees with the direct computation of $\E{X^2}$ for a [Bernoulli](random-variables.qmd#def-bernoulli)
+variable on the [expectation page](expectation.qmd#exm-lotus).
+
+<!-- no-figure: the example computes a formula, not data -->
+
+:::

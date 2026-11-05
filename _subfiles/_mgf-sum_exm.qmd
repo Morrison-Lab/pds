@@ -1,0 +1,24 @@
+:::{#exm-mgf-binomial}
+#### Moment generating function of a binomial random variable
+
+By the [sum of Bernoulli variables](distributions.qmd#thm-binomial-sum-bernoulli),
+a [binomial](random-variables.qmd#def-binomial)
+[random variable](random-variables.qmd#def-random-variable) $S \sim \dBinf{n, \prob}$
+is a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) $S = \sum_{i=1}^n X_i$
+of $n$ [independent](independence.qmd#def-indpt) $\Ber(\prob)$ variables.
+Each has [moment generating function](#def-mgf) $1 - \prob + \prob\,\ef{t}$ (@exm-mgf-bernoulli).
+Applying @thm-mgf-sum one summand at a time:
+
+$$
+\ba
+M_S(t)
+&= \prod_{i=1}^{n} M_{X_i}(t)
+&& \text{(moment generating function of a sum of independent random variables)} \\
+&= \paren{1 - \prob + \prob\,\ef{t}}^n
+&& \text{(each factor is the Bernoulli moment generating function)}
+\ea
+$$
+
+<!-- no-figure: the example computes a formula, not data -->
+
+:::
