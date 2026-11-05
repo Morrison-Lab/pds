@@ -49,13 +49,13 @@ $$\E{X^k} = M_X^{(k)}(0)$$
 ::: proof
 
 Let $h > 0$ be such that $M_X(t)$ is finite for every $\abs{t} < h$.
-For any such $t$, the power series of the [exponential](random-variables.qmd#def-exponential) function gives
+For any such $t$, the power series of the [exponential](random-variables.qmd#def-exponential) gives
 $\ef{tX} = \sum_{k=0}^{\infty} \frac{t^k X^k}{k!}$.
 The terms are bounded in absolute value by those of $\ef{\abs{tX}}$,
 a series with finite [expectation](expectation.qmd#def-expectation),
-because $\ef{\abs{tX}} \le \ef{tX} + \ef{-tX}$ and both of those have finite expectations.
+because $\ef{\abs{tX}} \le \ef{tX} + \ef{-tX}$ and $M_X(t)$ and $M_X(-t)$ are both finite.
 So the expectation may be exchanged with the [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation)
-(the Fubini--Tonelli theorem for sums):
+(the Fubini--Tonelli theorem for series):
 
 $$
 \ba
