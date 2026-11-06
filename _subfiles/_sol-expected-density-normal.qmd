@@ -1,6 +1,6 @@
 :::{#sol-expected-density-normal}
 
-The density is $\p(X=x) = \frac{1}{\sqrt{2\pi\ss}}\exp\paren{-\frac{(x-\mean)^2}{2\ss}}$:
+The [density](random-variables.qmd#def-pdf) is $\p(X=x) = \frac{1}{\sqrt{2\pi\ss}}\exp\paren{-\frac{(x-\mean)^2}{2\ss}}$:
 
 $$
 \ba
