@@ -93,8 +93,6 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 {{< include pds/_subfiles/_thm-total-variance.qmd >}}
 
-{{< include pds/_subfiles/_rem-total-variance.qmd >}}
-
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exm-total-variance.qmd >}}
@@ -215,8 +213,6 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_thm-total-cov.qmd >}}
-
-{{< include pds/_subfiles/_rem-total-cov.qmd >}}
 
 {{< slidebreak >}}
 
