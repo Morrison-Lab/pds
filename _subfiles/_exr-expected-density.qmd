@@ -2,10 +2,10 @@
 
 #### Expected value of a density
 
-Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with density $\p(X=x)$.
-The density evaluated at the random value $X$ is itself a random variable, $\p(X=X)$.
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [density](random-variables.qmd#def-pdf) $\p(X=x)$.
+The density evaluated at the random value $X$ is itself a [random variable](random-variables.qmd#def-random-variable), $\p(X=X)$.
 
-1. Use @thm-lotus to write $\E{\p(X=X)}$ as an integral.
+1. Use @thm-lotus to write $\E{\p(X=X)}$ as an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral).
 2. Evaluate it when $X \sim \text{Uniform}(a, b)$ ([uniform distribution](random-variables.qmd#def-uniform)).
 3. Evaluate it when $X \sim \ndist{\mean, \ss}$ ([normal distribution](random-variables.qmd#def-normal)).
 

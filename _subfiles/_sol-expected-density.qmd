@@ -1,7 +1,7 @@
 :::{#sol-expected-density}
 
 **Part 1.**
-Apply @thm-lotus, continuous case, with $g(x) = \p(X=x)$:
+Apply @thm-lotus to a [continuous](random-variables.qmd#def-continuous-rv) random variable, with $g(x) = \p(X=x)$:
 
 $$
 \ba
@@ -13,7 +13,7 @@ $$
 \ea
 $$
 
-The expectation of the density is the integral of the squared density.
+The [expectation](#def-expectation) of the [density](random-variables.qmd#def-pdf) is the [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) of the squared density.
 It is large when the density is concentrated,
 because then $X$ tends to land where the density is high.
 
@@ -26,7 +26,7 @@ $$
 &= \int_a^b \paren{\frac{1}{b-a}}^2\,dx
 && \text{(Part 1; the density is } 0 \text{ outside } [a, b] \text{)}
 \\&= \frac{1}{(b-a)^2} \cd (b-a)
-&& \text{(the integrand is constant on an interval of length } b-a \text{)}
+&& \text{(the integrand does not depend on } x \text{, so the integral is the integrand times the interval length } b-a \text{)}
 \\&= \frac{1}{b-a}.
 && \text{(cancel one factor of } b-a \text{)}
 \ea
@@ -51,6 +51,6 @@ $$
 \ea
 $$
 
-A larger [standard deviation](#def-sd) $\sigma$ spreads the density out and lowers its expected value.
+A larger [standard deviation](#def-sd) $\sigma$ spreads the density out and lowers its [expected value](#def-expectation).
 
 :::
