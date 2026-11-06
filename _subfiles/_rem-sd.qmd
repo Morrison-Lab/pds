@@ -1,7 +1,7 @@
 ::: {.remark .notes}
 
-The standard deviation is on the same scale as $X$ itself
-(unlike the variance, which is on the scale of $X$'s square),
+The [standard deviation](#def-sd) is on the same scale as $X$ itself
+(unlike the [variance](#def-variance), which is on the scale of $X$'s square), <!-- check-term-links: allow -->
 which is why it is often the preferred measure of spread when reporting results.
 
 :::

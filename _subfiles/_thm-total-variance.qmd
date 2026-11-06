@@ -1,7 +1,7 @@
 :::{#thm-total-variance}
-#### Law of total variance
+#### Law of total variance (conditional variance formula, Eve's law, variance decomposition formula)
 
-For random variables $X$ and $Y$ with $\E{Y^2} < \infty$:
+For [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$ with $\E{Y^2} < \infty$:
 
 $$\Var{Y} = \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}$$
 
@@ -31,7 +31,7 @@ The three terms are handled separately,
 each using the [law of iterated expectations](expectation.qmd#thm-lie),
 applied to a function of $X$ and $Y$
 ([conditional expectation of a function](expectation.qmd#def-cond-expectation-general)).
-The third term also uses two facts about conditional expectations:
+The third [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) also uses two facts about [conditional expectations](expectation.qmd#def-cond-expectation):
 a [function of $X$ factors out of a conditional expectation given $X$](expectation.qmd#thm-cond-pull-out),
 and [conditional expectation is linear](expectation.qmd#thm-cond-linearity).
 
@@ -47,7 +47,7 @@ $$
 \ea
 $$
 
-Second term: by the law of iterated expectations,
+Second term: by the [law of iterated expectations](expectation.qmd#thm-lie),
 
 $$
 \begin{aligned}
