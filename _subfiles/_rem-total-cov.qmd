@@ -1,7 +1,0 @@
-::: {.remark .notes}
-
-Alternate names include:
-the **covariance decomposition formula**
-and the **conditional covariance formula**.
-
-:::

@@ -216,8 +216,6 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 {{< include pds/_subfiles/_thm-total-cov.qmd >}}
 
-{{< include pds/_subfiles/_rem-total-cov.qmd >}}
-
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_lem-cov-xx.qmd >}}
