@@ -3,7 +3,8 @@
 
 The **deviation from the mean** of a [random variable](random-variables.qmd#def-random-variable) $Y$
 is its [deviation](#def-deviation)
-from its [expectation](expectation.qmd#def-expectation):
+from its [expectation](expectation.qmd#def-expectation),
+also called its **error** or **noise term**:
 
 $$\devn(Y) \eqdef Y - \E{Y}$$
 
