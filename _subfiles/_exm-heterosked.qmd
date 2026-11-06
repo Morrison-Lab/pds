@@ -1,0 +1,19 @@
+:::{#exm-heterosked}
+#### A heteroskedastic binary outcome
+
+In @exm-cond-variance,
+
+$$
+\begin{aligned}
+\Var{Y \mid X = 0} &= 0.24 \\
+&\ne 0.16 \\
+&= \Var{Y \mid X = 1},
+\end{aligned}
+$$
+
+so $Y$ is heteroskedastic with respect to $X$.
+More generally, a binary outcome with $\P(Y = 1 \mid X = x) = \prob(x)$
+has conditional variance $\prob(x)(1 - \prob(x))$,
+so it is homoskedastic only if $\prob(x)$ takes at most two values, $\prob$ and $1 - \prob$, for some $\prob$.
+
+:::

@@ -1,0 +1,9 @@
+::: {#def-precision}
+#### Precision
+
+The **precision** of a random variable $X$, often denoted $\tau(X)$, $\tau_X$, or shorthanded as $\tau$, is
+the inverse of that random variable's [variance](#def-variance)
+(for $\Var{X} > 0$); that is:
+
+$$\precision(X) \eqdef \inv{\Var{X}}$$
+:::

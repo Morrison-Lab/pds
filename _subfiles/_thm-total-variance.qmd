@@ -1,0 +1,105 @@
+:::{#thm-total-variance}
+#### Law of total variance
+
+For random variables $X$ and $Y$ with $\E{Y^2} < \infty$:
+
+$$\Var{Y} = \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+Write $\mean \eqdef \E{Y}$ and $m(X) \eqdef \E{Y \mid X}$.
+Adding and subtracting $m(X)$ inside the deviation and expanding the square:
+
+$$
+\ba
+\Var{Y}
+&= \E{\paren{Y - \mean}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{\sb{Y - m(X)} + \sb{m(X) - \mean}}^2}
+&& \text{(add and subtract } m(X) \text{)} \\
+&= \E{\sqf{Y - m(X)}} + \E{\sqf{m(X) - \mean}}
+  + 2\E{\sb{Y - m(X)}\sb{m(X) - \mean}}
+&& \text{(expand the square; linearity of expectation)}
+\ea
+$$
+
+The three terms are handled separately,
+each using the [law of iterated expectations](expectation.qmd#thm-lie),
+applied to a function of $X$ and $Y$
+([conditional expectation of a function](expectation.qmd#def-cond-expectation-general)).
+The third term also uses two facts about conditional expectations:
+a [function of $X$ factors out of a conditional expectation given $X$](expectation.qmd#thm-cond-pull-out),
+and [conditional expectation is linear](expectation.qmd#thm-cond-linearity).
+
+First term:
+
+$$
+\ba
+\E{\sqf{Y - m(X)}}
+&= \E{\E{\sqf{Y - m(X)} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\Var{Y \mid X}}
+&& \text{(definition of conditional variance)}
+\ea
+$$
+
+Second term: by the law of iterated expectations,
+
+$$
+\begin{aligned}
+\E{m(X)} &= \E{\E{Y \mid X}} \\
+&= \mean,
+\end{aligned}
+$$
+
+so:
+
+$$
+\ba
+\E{\sqf{m(X) - \mean}}
+&= \E{\sqf{m(X) - \E{m(X)}}}
+&& \text{(} \mean = \E{m(X)} \text{)} \\
+&= \Var{m(X)}
+&& \text{(definition of variance)} \\
+&= \Var{\E{Y \mid X}}
+&& \text{(definition of } m(X) \text{)}
+\ea
+$$
+
+Third term:
+
+$$
+\ba
+\E{\sb{Y - m(X)}\sb{m(X) - \mean}}
+&= \E{\E{\sb{Y - m(X)}\sb{m(X) - \mean} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\sb{m(X) - \mean} \cd \E{Y - m(X) \mid X}}
+&& \text{(a function of } X \text{ factors out, with } g(X) = m(X) - \mean \text{)} \\
+&= \E{\sb{m(X) - \mean} \cd \sb{\E{Y \mid X} - \E{m(X) \mid X}}}
+&& \text{(linearity of conditional expectation)} \\
+&= \E{\sb{m(X) - \mean} \cd \sb{\E{Y \mid X} - m(X)}}
+&& \text{(} \E{g(X) \mid X} = g(X) \text{, with } g = m \text{)} \\
+&= \E{\sb{m(X) - \mean} \cd 0}
+&& \text{(} \E{Y \mid X} = m(X) \text{)} \\
+&= 0
+&& \text{(expectation of a constant)}
+\ea
+$$
+
+Substituting the three terms:
+
+$$
+\ba
+\Var{Y}
+&= \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}} + 2 \cd 0
+&& \text{(substitute the three terms)} \\
+&= \E{\Var{Y \mid X}} + \Var{\E{Y \mid X}}
+&& \text{(simplify)}
+\ea
+$$
+
+:::

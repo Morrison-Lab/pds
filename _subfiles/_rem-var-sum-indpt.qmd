@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+@cor-var-lincom2 is why two variables' covariance matters for combining them:
+the covariance term is what separates the variance of their sum
+from the sum of their variances,
+and @cor-var-sum-indpt is the case where that term is 0.
+
+:::

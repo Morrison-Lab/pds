@@ -1,0 +1,17 @@
+:::{#thm-variance-expanded}
+#### Variance as expected squared deviation from the mean
+
+$$\Var{X} = \E{(X - \E{X})^2}$$
+
+:::
+
+::: proof
+
+Substituting the definition of $\devn(X)$ from @def-deviation-pop-mean
+into @def-variance:
+
+$$
+\Var{X} \eqdef \E{[\devn(X)]^2} = \E{(X - \E{X})^2}.
+$$
+
+:::

@@ -1,0 +1,23 @@
+:::{#exm-variance-bernoulli}
+#### Variance of a Bernoulli random variable
+
+Let $X \sim \Ber(\prob)$.
+Then $\E{X} = \prob$ and $\E{X^2} = \prob$
+(both computed on the [expectation page](expectation.qmd#exm-lotus)), so:
+
+$$
+\ba
+\Var{X}
+&= \E{X^2} - \sqf{\E{X}}
+&& \text{(simplified expression for variance)} \\
+&= \prob - \prob^2
+&& \text{(substitute)} \\
+&= \prob(1 - \prob)
+&& \text{(factor)}
+\ea
+$$
+
+For a fair coin ($\prob = 1/2$), $\Var{X} = 1/4$.
+@fig-bernoulli-variance graphs $\Var{X}$ against $\prob$.
+
+:::

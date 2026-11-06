@@ -1,0 +1,27 @@
+:::{#exm-alt-cov}
+#### Covariance of a binary exposure and outcome
+
+For the joint PMF in @exm-cond-variance,
+
+$$
+\begin{aligned}
+\E{XY} &= \P(X = 1, Y = 1) \\
+&= 0.4,
+\end{aligned}
+$$
+
+$\E{X} = 0.5$, and $\E{Y} = 0.7$, so:
+
+$$
+\ba
+\Cov{X,Y}
+&= \E{XY} - \E{X}\E{Y}
+&& \text{(alternative formula for covariance)} \\
+&= 0.4 - 0.5 \cd 0.7
+&& \text{(substitute)} \\
+&= 0.05
+&& \text{(evaluate)}
+\ea
+$$
+
+:::

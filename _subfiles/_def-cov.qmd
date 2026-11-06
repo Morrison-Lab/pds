@@ -1,0 +1,11 @@
+:::{#def-cov}
+#### Covariance
+
+The **covariance** of two random variables $X$ and $Y$
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
+[@wikipedia_covariance]
+is:
+
+$$\Cov{X,Y} \eqdef \E{(X - \E X)(Y - \E Y)}$$
+
+:::

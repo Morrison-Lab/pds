@@ -1,0 +1,22 @@
+:::{#exm-correlation}
+#### Correlation of a binary exposure and outcome
+
+In @exm-alt-cov, $\Cov{X,Y} = 0.05$,
+where $X \sim \Ber(0.5)$ has $\Var{X} = 0.25$ (@exm-variance-bernoulli)
+and $Y$ has $\Var{Y} = 0.21$ (@exm-total-variance), so:
+
+$$
+\ba
+\Cor{X,Y}
+&= \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}
+&& \text{(definition of correlation)} \\
+&= \frac{0.05}{\sqrt{0.25} \cd \sqrt{0.21}}
+&& \text{(substitute; } \SD{\cdot} = \sqrt{\Var{\cdot}} \text{)} \\
+&\approx \frac{0.05}{0.5 \cd 0.458}
+&& \text{(evaluate the square roots)} \\
+&\approx 0.218
+&& \text{(divide)}
+\ea
+$$
+
+:::

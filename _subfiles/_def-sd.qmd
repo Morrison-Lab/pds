@@ -1,0 +1,9 @@
+:::{#def-sd}
+#### Standard deviation
+
+The **standard deviation** of a random variable $X$
+is the square root of the [variance](#def-variance) of $X$:
+
+$$\SD{X} \eqdef \sqrt{\Var{X}}$$
+
+:::

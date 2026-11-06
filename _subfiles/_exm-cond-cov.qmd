@@ -1,0 +1,9 @@
+:::{#exm-cond-cov}
+#### Conditional covariance of a variable with itself
+
+Taking $Z = Y$ in @def-cond-cov gives the
+[conditional variance](#def-cond-variance):
+$\Cov{Y,Y \mid X = x} = \Var{Y \mid X = x}$.
+In @exm-cond-variance, for example, $\Cov{Y,Y \mid X = 0} = 0.24$.
+
+:::

@@ -1,0 +1,37 @@
+:::{#thm-constant-prediction-decompose}
+#### Expected squared error of a constant prediction
+
+Let $Y$ be a random variable with mean $\mean$ and finite variance.
+Then for every number $c$,
+
+$$
+\E{\sqf{Y - c}} = \Var{Y} + \sqf{\mean - c}.
+$$ {#eq-constant-prediction-decompose}
+
+:::
+
+::: proof
+
+Add and subtract $\mean$ inside the square,
+expand it,
+and take the expectation term by term:
+
+$$
+\ba
+\E{\sqf{Y - c}}
+&= \E{\sqf{(Y - \mean) + (\mean - c)}}
+&& \text{(add and subtract } \mean \text{)} \\
+&= \E{\sqf{Y - \mean} + 2(\mean - c)(Y - \mean) + \sqf{\mean - c}}
+&& \text{(expand the square of a sum)} \\
+&= \E{\sqf{Y - \mean}} + 2(\mean - c)\E{Y - \mean} + \sqf{\mean - c}
+&& \text{(linearity of expectation; } \mean \text{ and } c \text{ are constants)} \\
+&= \Var{Y} + 2(\mean - c)\E{Y - \mean} + \sqf{\mean - c}
+&& \text{(variance as expected squared deviation)} \\
+&= \Var{Y} + 2(\mean - c) \cdot 0 + \sqf{\mean - c}
+&& \text{(} \E{Y - \mean} = \E{Y} - \mean = 0 \text{)} \\
+&= \Var{Y} + \sqf{\mean - c}
+&& \text{(zero times a number)}
+\ea
+$$
+
+:::

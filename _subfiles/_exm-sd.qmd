@@ -1,0 +1,23 @@
+:::{#exm-sd}
+#### Precision and standard deviation of a fair coin flip
+
+In @exm-variance-bernoulli, a fair coin flip has $\Var{X} = 1/4$,
+so its precision is
+
+$$
+\begin{aligned}
+\precision(X) &= 1 / (1/4) \\
+&= 4
+\end{aligned}
+$$
+
+and its standard deviation is
+
+$$
+\begin{aligned}
+\SD{X} &= \sqrt{1/4} \\
+&= 1/2.
+\end{aligned}
+$$
+
+:::

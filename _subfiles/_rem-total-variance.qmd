@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+Alternate names include:
+the **conditional variance formula**,
+**Eve's law**,
+and the **variance decomposition formula**.
+
+:::

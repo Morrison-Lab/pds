@@ -1,0 +1,7 @@
+:::{#exm-deviation}
+#### Deviation from a reference weight
+
+A newborn weighing 3,200 g deviates from a reference weight of 3,500 g
+by $3200 - 3500 = -300$ g.
+
+:::

@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+@thm-indpt-uncorrelated says independent random variables are uncorrelated,
+and @exm-uncorrelated-not-indpt shows the converse fails.
+
+:::

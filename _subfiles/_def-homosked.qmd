@@ -1,0 +1,13 @@
+:::{#def-homosked}
+#### Homoskedasticity
+
+A random variable $Y$ is **homoskedastic**
+with respect to a random variable (or vector) $X$
+if the [conditional variance](#def-cond-variance) of $Y$ given $X = x$
+is the same for every $x$:
+
+$$\Var{Y \mid X = x} = \ss \quad \text{for all } x$$
+
+for some constant $\ss$.
+
+:::

@@ -1,0 +1,52 @@
+:::{#thm-var-lincom}
+#### Variance of a linear combination
+
+For any vector of random variables $\vX = (\dsn{X})$
+and corresponding vector of constants $\va = (\dsn{a})$,
+the variance of their linear combination is:
+
+$$
+\ba
+\Var{\va \cdot \vX}
+&= \Var{\sumin a_i X_i}
+\\ &= \tp{\va} \Varf{\vX} \va
+\\ &= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
+\ea
+$$
+
+:::
+
+::: proof
+
+Treat $\va$ and $\vX$ as $n \times 1$ column vectors,
+so
+
+$$
+\begin{aligned}
+\va \cdot \vX &= \tp{\va}\vX \\
+&= \sumin a_i X_i,
+\end{aligned}
+$$
+
+a scalar.
+By linearity of expectation, $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
+
+$$
+\ba
+\Var{\tp{\va}\vX}
+&= \E{\paren{\tp{\va}\vX - \tp{\va}\Expp\vX}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{\tp{\va}\paren{\vX - \Expp\vX}}^2}
+&& \text{(factor out } \tp{\va} \text{)} \\
+&= \E{\tp{\va}\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}\va}
+&& \text{(a scalar equals its transpose, so } s^2 = s\,\tp{s} \text{)} \\
+&= \tp{\va}\,\Expf{\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}}\,\va
+&& \text{(linearity of expectation, element-wise)} \\
+&= \tp{\va} \Varf{\vX} \va
+&& \text{(variance of a random vector)} \\
+&= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
+&& \text{(expand the quadratic form, using the elements of } \Varf{\vX} \text{)}
+\ea
+$$
+
+:::

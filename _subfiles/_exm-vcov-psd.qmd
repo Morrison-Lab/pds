@@ -1,0 +1,79 @@
+:::{#exm-vcov-psd}
+#### Two variance matrices that differ only in sign
+
+Let $\vX = \tp{(X_1, X_2)}$ be equally likely to be each of the four points
+
+$$D_1 = \set{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)},$$
+
+and let $\vX'$ be equally likely to be each of the four points
+
+$$D_2 = \set{(5, 1),\ (0, -1),\ (0, 1),\ (-5, -1)}.$$
+
+Both sets have first coordinates $\set{-5, 0, 0, 5}$
+and second coordinates $\set{1, -1, 1, -1}$,
+so
+
+$$
+\begin{aligned}
+\E{X_1} &= \E{X_2} \\
+&= 0,
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\E{X_1^2} &= (25 + 0 + 0 + 25)/4 \\
+&= 12.5,
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\E{X_2^2} &= (1 + 1 + 1 + 1)/4 \\
+&= 1,
+\end{aligned}
+$$
+
+and likewise for $\vX'$.
+They differ in the products of the coordinates:
+
+$$
+\ba
+\E{X_1 X_2} &= \frac{(-5)(1) + (0)(-1) + (0)(1) + (5)(-1)}{4} \\
+&= -2.5, \\
+\E{X_1' X_2'} &= \frac{(5)(1) + (0)(-1) + (0)(1) + (-5)(-1)}{4} \\
+&= 2.5.
+\ea
+$$
+
+Since the means are 0, @thm-vcov-elements and @thm-alt-cov give:
+
+$$
+\Varf{\vX} = \pmat{12.5 & -2.5 \\ -2.5 & 1},
+\qquad
+\Varf{\vX'} = \pmat{12.5 & 2.5 \\ 2.5 & 1}.
+$$
+
+Both are symmetric.
+@thm-var-lincom with $\va = \tp{(1, 1)}$ and $\va = \tp{(1, -1)}$ gives:
+
+$$
+\ba
+\Var{X_1 + X_2} &= 12.5 + 1 + 2(-2.5) &
+\Var{X_1 - X_2} &= 12.5 + 1 - 2(-2.5) \\
+&= 8.5, &
+&= 18.5, \\
+\Var{X_1' + X_2'} &= 12.5 + 1 + 2(2.5) &
+\Var{X_1' - X_2'} &= 12.5 + 1 - 2(2.5) \\
+&= 18.5, &
+&= 8.5.
+\ea
+$$
+
+As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$,
+each with probability $1/4$,
+so its mean is 0 and its variance is $(16 + 1 + 1 + 16)/4 = 8.5$.
+
+:::

@@ -1,0 +1,26 @@
+:::{#thm-variance}
+#### Simplified expression for variance
+
+$$\Var{X}=\E{X^2} - \sqf{\E{X}}$$
+
+:::
+
+::: proof
+
+Let $\mean = \E{X}$ be the [population mean](expectation.qmd#def-expectation) of $X$.
+It is a constant, so [linearity of expectation](expectation.qmd#thm-linearity-expectation) applies with $\mean$ as a coefficient:
+
+$$
+\ba
+\Var{X}
+&\eqdef \E{[\devn(X)]^2} && \text{(definition of variance)} \\
+&= \E{(X-\mean)^2} && \text{(definition of deviation from the population mean } \mean \text{)} \\
+&=\E{X^2 - 2X\mean + \sqf{\mean}} && \text{(expand binomial square)} \\
+&=\E{X^2} - 2\mean\E{X} + \sqf{\mean} && \text{(linearity of expectation; } \mean \text{ is a constant)} \\
+&=\E{X^2} - 2\sqf{\mean} + \sqf{\mean} && \text{(} \E{X} = \mean \text{)} \\
+&=\E{X^2} - \sqf{\mean} && \text{(combine like terms)} \\
+&=\E{X^2} - \sqf{\E{X}} && \text{(} \mean = \E{X} \text{)}
+\ea
+$$
+
+:::
