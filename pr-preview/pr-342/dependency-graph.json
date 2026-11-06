@@ -54,6 +54,16 @@
    "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers"
   },
   {
+   "id": "mcs/proof-writing#def-iff",
+   "site": "mcs",
+   "page": "proof-writing",
+   "div": "def-iff",
+   "kind": "def",
+   "title": "iff",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/proof-writing.html#def-iff"
+  },
+  {
    "id": "mcs/sets#def-open-interval",
    "site": "mcs",
    "page": "sets",
@@ -114,6 +124,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer"
   },
   {
+   "id": "mds/algebra-basics#def-square-root",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-square-root",
+   "kind": "def",
+   "title": "square root",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root"
+  },
+  {
    "id": "mds/algebra-exponentials#def-infinite-sum",
    "site": "mds",
    "page": "algebra-exponentials",
@@ -122,6 +142,26 @@
    "title": "infinite sum",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum"
+  },
+  {
+   "id": "mds/algebra-sums#def-summation",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-summation",
+   "kind": "def",
+   "title": "summation",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-summation"
+  },
+  {
+   "id": "mds/algebra-sums#def-term",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-term",
+   "kind": "def",
+   "title": "term",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-term"
   },
   {
    "id": "mds/calculus-derivatives#def-derivative",
@@ -264,6 +304,36 @@
    "url": "https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse"
   },
   {
+   "id": "mds/linear-algebra-vectors#def-column-vector",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-column-vector",
+   "kind": "def",
+   "title": "column vector",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector"
+  },
+  {
+   "id": "mds/linear-algebra-vectors#def-linear-combination",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-linear-combination",
+   "kind": "def",
+   "title": "linear combination",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination"
+  },
+  {
+   "id": "mds/linear-algebra-vectors#def-scalar",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-scalar",
+   "kind": "def",
+   "title": "scalar",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar"
+  },
+  {
    "id": "mds/measures#cor-measure-finitely-additive",
    "site": "mds",
    "page": "measures",
@@ -302,6 +372,16 @@
    "title": "finite additivity",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#def-finite-additivity"
+  },
+  {
+   "id": "mds/measures#def-lebesgue-measure",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-lebesgue-measure",
+   "kind": "def",
+   "title": "lebesgue measure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-lebesgue-measure"
   },
   {
    "id": "mds/measures#def-measure",
@@ -2287,7 +2367,7 @@
    "page": "variance-covariance",
    "div": "def-deviation-pop-mean",
    "kind": "def",
-   "title": "Deviation from a population or subpopulation mean",
+   "title": "Deviation from a population or subpopulation mean (error, noise term)",
    "external": false
   },
   {
@@ -2467,7 +2547,7 @@
    "page": "variance-covariance",
    "div": "thm-total-cov",
    "kind": "thm",
-   "title": "Law of total covariance",
+   "title": "Law of total covariance (covariance decomposition formula, conditional covariance formula)",
    "external": false
   },
   {
@@ -2476,7 +2556,7 @@
    "page": "variance-covariance",
    "div": "thm-total-variance",
    "kind": "thm",
-   "title": "Law of total variance",
+   "title": "Law of total variance (conditional variance formula, Eve's law, variance decomposition formula)",
    "external": false
   },
   {
@@ -2532,6 +2612,16 @@
    "kind": "thm",
    "title": "Alternate expression for variance of a random vector",
    "external": false
+  },
+  {
+   "id": "sds/exploratory-descriptive#def-observation",
+   "site": "sds",
+   "page": "exploratory-descriptive",
+   "div": "def-observation",
+   "kind": "def",
+   "title": "observation",
+   "external": true,
+   "url": "https://morrison-lab.github.io/sds/exploratory-descriptive.html#def-observation"
   }
  ],
  "edges": [
@@ -4201,6 +4291,10 @@
   ],
   [
    "pds/variance-covariance#cor-uncorrelated-cor-zero",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/variance-covariance#cor-uncorrelated-cor-zero",
    "pds/variance-covariance#def-correlation"
   ],
   [
@@ -4213,11 +4307,31 @@
   ],
   [
    "pds/variance-covariance#cor-var-lincom2",
+   "mds/linear-algebra-vectors#def-scalar"
+  ],
+  [
+   "pds/variance-covariance#cor-var-lincom2",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#cor-var-lincom2",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#cor-var-lincom2",
    "pds/variance-covariance#thm-var-lincom"
   ],
   [
    "pds/variance-covariance#cor-var-sum-indpt",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#cor-var-sum-indpt",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/variance-covariance#cor-var-sum-indpt",
+   "pds/random-variables#def-discrete-rv"
   ],
   [
    "pds/variance-covariance#cor-var-sum-indpt",
@@ -4268,8 +4382,36 @@
    "pds/variance-covariance#def-deviation-pop-mean"
   ],
   [
+   "pds/variance-covariance#def-cond-cov",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/variance-covariance#def-cond-cov",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-cond-cov",
+   "pds/variance-covariance#def-cov"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
+   "mcs/functions#def-function"
+  ],
+  [
    "pds/variance-covariance#def-cond-variance",
    "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-correlation",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-correlation",
@@ -4284,16 +4426,36 @@
    "pds/variance-covariance#def-variance"
   ],
   [
+   "pds/variance-covariance#def-cov",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/variance-covariance#def-deviation-pop-mean",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-deviation-pop-mean",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-deviation-pop-mean",
    "pds/variance-covariance#def-deviation"
   ],
   [
+   "pds/variance-covariance#def-deviation-pop-mean",
+   "sds/exploratory-descriptive#def-observation"
+  ],
+  [
+   "pds/variance-covariance#def-heterosked",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/variance-covariance#def-heterosked",
    "pds/variance-covariance#def-homosked"
+  ],
+  [
+   "pds/variance-covariance#def-homosked",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-homosked",
@@ -4329,11 +4491,27 @@
   ],
   [
    "pds/variance-covariance#def-precision",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-precision",
    "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#def-sd",
+   "mds/algebra-basics#def-square-root"
+  ],
+  [
+   "pds/variance-covariance#def-sd",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-sd",
    "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-uncorrelated",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-uncorrelated",
@@ -4345,7 +4523,15 @@
   ],
   [
    "pds/variance-covariance#def-variance",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-variance",
    "pds/variance-covariance#def-deviation-pop-mean"
+  ],
+  [
+   "pds/variance-covariance#lem-cov-xx",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#lem-cov-xx",
@@ -4372,6 +4558,22 @@
    "pds/variance-covariance#thm-variance"
   ],
   [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "mds/algebra-sums#def-term"
+  ],
+  [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
    "pds/variance-covariance#thm-cor-bounds",
    "pds/variance-covariance#cor-var-lincom2"
   ],
@@ -4385,7 +4587,19 @@
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mds/algebra-basics#def-absolute-value"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
    "mds/measures#def-counting-measure"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mds/measures#def-lebesgue-measure"
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
@@ -4393,7 +4607,27 @@
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-joint-pmf"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
@@ -4461,11 +4695,31 @@
   ],
   [
    "pds/variance-covariance#thm-noise-second-moment",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-noise-second-moment",
    "pds/variance-covariance#thm-variance"
   ],
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
+   "mds/algebra-sums#def-summation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
    "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
@@ -4474,6 +4728,38 @@
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
    "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-total-cov",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-total-variance",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-var-lincom",
+   "mds/linear-algebra-vectors#def-column-vector"
+  ],
+  [
+   "pds/variance-covariance#thm-var-lincom",
+   "mds/linear-algebra-vectors#def-linear-combination"
+  ],
+  [
+   "pds/variance-covariance#thm-var-lincom",
+   "mds/linear-algebra-vectors#def-scalar"
+  ],
+  [
+   "pds/variance-covariance#thm-var-lincom",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-var-lincom",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-var-lincom",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#thm-variance",
@@ -4505,6 +4791,18 @@
   ],
   [
    "pds/variance-covariance#thm-vcov-psd",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-psd",
    "pds/variance-covariance#def-cov"
   ],
   [
@@ -4517,10 +4815,5 @@
   ]
  ],
  "cycles": [],
- "forwardReferences": [
-  [
-   "pds/variance-covariance#thm-noise-second-moment",
-   "pds/variance-covariance#thm-variance"
-  ]
- ]
+ "forwardReferences": []
 }
