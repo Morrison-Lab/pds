@@ -234,65 +234,15 @@ cookieconsent.run({
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <style>
-div.callout-fig.callout {
-  border-left-color: #757575;
+div.callout-proof.callout {
+  border-left-color: #37474F;
 }
-div.callout-fig.callout-style-default .callout-header {
-  background-color: rgba(117, 117, 117, 0.13);
+div.callout-proof.callout-style-default .callout-header {
+  background-color: rgba(55, 71, 79, 0.13);
 }
-div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cor.callout {
-  border-left-color: #00838F;
-}
-div.callout-cor.callout-style-default .callout-header {
-  background-color: rgba(0, 131, 143, 0.13);
-}
-div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-exm.callout {
-  border-left-color: #6A1B9A;
-}
-div.callout-exm.callout-style-default .callout-header {
-  background-color: rgba(106, 27, 154, 0.13);
-}
-div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-solution.callout {
-  border-left-color: #4E342E;
-}
-div.callout-solution.callout-style-default .callout-header {
-  background-color: rgba(78, 52, 46, 0.13);
-}
-div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-cnj.callout {
-  border-left-color: #558B2F;
-}
-div.callout-cnj.callout-style-default .callout-header {
-  background-color: rgba(85, 139, 47, 0.13);
-}
-div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-remark.callout {
-  border-left-color: #AD1457;
-}
-div.callout-remark.callout-style-default .callout-header {
-  background-color: rgba(173, 20, 87, 0.13);
-}
-div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-def.callout {
   border-left-color: #1B5E20;
@@ -303,6 +253,16 @@ div.callout-def.callout-style-default .callout-header {
 div.callout-def .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-def.callout-style-default .callout-icon::before, div.callout-def.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exr.callout {
+  border-left-color: #FFA500;
+}
+div.callout-exr.callout-style-default .callout-header {
+  background-color: rgba(255, 165, 0, 0.13);
+}
+div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-videos.callout {
   border-left-color: #283593;
@@ -318,16 +278,6 @@ div.callout-videos.callout-style-default .callout-icon::before, div.callout-vide
   content: '\f144' !important;
   background-image: none;
 }
-div.callout-exr.callout {
-  border-left-color: #FFA500;
-}
-div.callout-exr.callout-style-default .callout-header {
-  background-color: rgba(255, 165, 0, 0.13);
-}
-div.callout-exr .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exr.callout-style-default .callout-icon::before, div.callout-exr.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-lem.callout {
   border-left-color: #1565C0;
 }
@@ -337,6 +287,16 @@ div.callout-lem.callout-style-default .callout-header {
 div.callout-lem .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-lem.callout-style-default .callout-icon::before, div.callout-lem.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-exm.callout {
+  border-left-color: #6A1B9A;
+}
+div.callout-exm.callout-style-default .callout-header {
+  background-color: rgba(106, 27, 154, 0.13);
+}
+div.callout-exm .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exm.callout-style-default .callout-icon::before, div.callout-exm.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-prp.callout {
   border-left-color: #827717;
@@ -348,6 +308,56 @@ div.callout-prp .callout-toggle::before {  background-image: url('data:image/svg
 div.callout-prp.callout-style-default .callout-icon::before, div.callout-prp.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-fig.callout {
+  border-left-color: #757575;
+}
+div.callout-fig.callout-style-default .callout-header {
+  background-color: rgba(117, 117, 117, 0.13);
+}
+div.callout-fig .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-fig.callout-style-default .callout-icon::before, div.callout-fig.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-remark.callout {
+  border-left-color: #AD1457;
+}
+div.callout-remark.callout-style-default .callout-header {
+  background-color: rgba(173, 20, 87, 0.13);
+}
+div.callout-remark .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-remark.callout-style-default .callout-icon::before, div.callout-remark.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cnj.callout {
+  border-left-color: #558B2F;
+}
+div.callout-cnj.callout-style-default .callout-header {
+  background-color: rgba(85, 139, 47, 0.13);
+}
+div.callout-cnj .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cnj.callout-style-default .callout-icon::before, div.callout-cnj.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-cor.callout {
+  border-left-color: #00838F;
+}
+div.callout-cor.callout-style-default .callout-header {
+  background-color: rgba(0, 131, 143, 0.13);
+}
+div.callout-cor .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cor.callout-style-default .callout-icon::before, div.callout-cor.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-solution.callout {
+  border-left-color: #4E342E;
+}
+div.callout-solution.callout-style-default .callout-header {
+  background-color: rgba(78, 52, 46, 0.13);
+}
+div.callout-solution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-solution.callout-style-default .callout-icon::before, div.callout-solution.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-tbl.callout {
   border-left-color: #757575;
 }
@@ -357,16 +367,6 @@ div.callout-tbl.callout-style-default .callout-header {
 div.callout-tbl .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-tbl.callout-style-default .callout-icon::before, div.callout-tbl.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23757575" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-proof.callout {
-  border-left-color: #37474F;
-}
-div.callout-proof.callout-style-default .callout-header {
-  background-color: rgba(55, 71, 79, 0.13);
-}
-div.callout-proof .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-proof.callout-style-default .callout-icon::before, div.callout-proof.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -817,7 +817,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-11-06 01:59:20 (PST)</p>
+      <p class="date">Last modified: 2026-11-06 02:08:09 (PST)</p>
     </div>
   </div>
   
@@ -865,7 +865,7 @@ window.Quarto = {
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>In probability and statistics, “deviation” usually means deviation from a <a href="./expectation.html#def-expectation">population mean</a>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>In <a href="./probability-basics.html#def-probability">probability</a> and statistics, <!-- check-term-links: allow --> “deviation” usually means deviation from a <a href="./expectation.html#def-expectation">population mean</a>.</p>
 <p>See: <a href="https://en.wikipedia.org/wiki/Deviation_(statistics)">Wikipedia: Deviation (statistics)</a></p>
 </div>
 </div>
@@ -895,16 +895,16 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Def</span><a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a> (Deviation from a population or subpopulation mean)
+<span class="screen-reader-only">Def</span><a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a> (Deviation from a population or subpopulation mean (error, noise term))
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-deviation-pop-mean" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Deviation from a population or subpopulation mean)</strong></span> The <strong>deviation from the mean</strong> of a random variable <span class="math inline">\(Y\)</span> is its <a href="#def-deviation">deviation</a> from its <a href="./expectation.html#def-expectation">expectation</a>:</p>
+<p><span class="theorem-title"><strong>Definition 2 (Deviation from a population or subpopulation mean (error, noise term))</strong></span> The <strong>deviation from the mean</strong> of a <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(Y\)</span> is its <a href="#def-deviation">deviation</a> from its <a href="./expectation.html#def-expectation">expectation</a>, also called its <strong>error</strong> or <strong>noise term</strong>:</p>
 <p><span class="math display">\[\mathbb{d}(Y) \stackrel{\text{def}}{=}Y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}\]</span></p>
-<p>For a realized observation <span class="math inline">\(y\)</span>:</p>
+<p>For a realized <a href="https://morrison-lab.github.io/sds/exploratory-descriptive.html#def-observation">observation</a> <span class="math inline">\(y\)</span>:</p>
 <p><span class="math display">\[\mathbb{d}(y) \stackrel{\text{def}}{=}y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}\]</span></p>
 </div>
 </div>
@@ -924,7 +924,7 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>Other sources often call this quantity an <strong>error</strong> or <strong>noise term</strong> <span class="citation" data-cites="wikipedia_errors_and_residuals"><a href="#ref-wikipedia_errors_and_residuals" role="doc-biblioref">[1]</a></span>. In regression settings, the reference mean is often conditional on covariates: <span class="math inline">\(\mathbb{d}(y_i) \stackrel{\text{def}}{=}y_i - {\mathbb{E}\mathopen{}\left[Y_i \mid X_i = x_i\right]\mathclose{}}\)</span>.</p>
-<p>These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their <a href="https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted">Linear regression chapter</a>) for deviations from fitted values, write <span class="math inline">\(\mathbb{d}(\cdot)\)</span> for these model/data deviations, and reserve <span class="math inline">\({\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}}\)</span> for estimator-to-estimand deviations (see <a href="https://morrison-lab.github.io/sds/estimation.html#def-estimation-error">Estimation</a>).</p>
+<p>These notes prefer “<a href="#def-deviation">deviation</a>” for the quantity just defined. The Morrison Lab’s regression notes use “residual” (defined in their <a href="https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted">Linear regression chapter</a>) for deviations from fitted values, write <span class="math inline">\(\mathbb{d}(\cdot)\)</span> for these model/data deviations, and reserve <span class="math inline">\({\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}}\)</span> for estimator-to-estimand deviations (see <a href="https://morrison-lab.github.io/sds/estimation.html#def-estimation-error">Estimation</a>).</p>
 <p>See:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Errors_and_residuals">Wikipedia: Errors and residuals</a></li>
@@ -983,7 +983,7 @@ window.Quarto = {
 <div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 (Variance)</strong></span> The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span> is the <a href="./expectation.html#def-expectation">expectation</a> of the squared <a href="#def-deviation-pop-mean">deviation from the mean</a> <span class="citation" data-cites="wikipedia_variance"><a href="#ref-wikipedia_variance" role="doc-biblioref">[2]</a></span>; that is:</p>
+<p><span class="theorem-title"><strong>Definition 3 (Variance)</strong></span> The <strong>variance</strong> of a <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span> is the <a href="./expectation.html#def-expectation">expectation</a> of the squared <a href="#def-deviation-pop-mean">deviation from the mean</a> <span class="citation" data-cites="wikipedia_variance"><a href="#ref-wikipedia_variance" role="doc-biblioref">[2]</a></span>; that is:</p>
 <p><span class="math display">\[{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^2\right]\mathclose{}}\]</span></p>
 </div>
 </div>
@@ -1041,7 +1041,7 @@ window.Quarto = {
 <div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep <span class="math inline">\(\mathbb{d}(X)\)</span> as the definition’s single building block, matching the notation of <a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The expanded form is the more commonly seen definition of the <a href="#def-variance">variance</a>, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep <span class="math inline">\(\mathbb{d}(X)\)</span> as the definition’s single building block, matching the notation of <a href="#def-deviation-pop-mean" class="quarto-xref">Definition&nbsp;2</a>.</p>
 </div>
 </div>
 </div>
@@ -1205,9 +1205,9 @@ Figure&nbsp;1: The <a href="#def-variance">variance</a> <span class="math inline
 <div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cond-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Conditional variance)</strong></span> The <strong>conditional variance</strong> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = x\)</span> is the variance of <span class="math inline">\(Y\)</span> under its conditional distribution given <span class="math inline">\(X = x\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 4 (Conditional variance)</strong></span> The <strong>conditional variance</strong> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = x\)</span> is the <a href="#def-variance">variance</a> of <span class="math inline">\(Y\)</span> under its conditional distribution given <span class="math inline">\(X = x\)</span>: <!-- check-term-links: allow --></p>
 <p><span class="math display">\[{\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\mathopen{}\left(Y - {\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}\right)\mathclose{}^2 \mid X = x\right]\mathclose{}}\]</span></p>
-<p>Evaluating this function of <span class="math inline">\(x\)</span> at <span class="math inline">\(X\)</span> gives the random variable <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}\)</span>, just as the <a href="./expectation.html#def-cond-expectation-function">conditional expectation function</a> <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\)</span> comes from <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}\)</span>.</p>
+<p>Evaluating this <a href="https://morrison-lab.github.io/mcs/functions.html#def-function">function</a> of <span class="math inline">\(x\)</span> at <span class="math inline">\(X\)</span> gives the <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}\)</span>, just as the <a href="./expectation.html#def-cond-expectation-function">conditional expectation function</a> <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\)</span> comes from <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1225,7 +1225,7 @@ Figure&nbsp;1: The <a href="#def-variance">variance</a> <span class="math inline
 <div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-cond-variance" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (Conditional variance of a binary outcome)</strong></span> Let <span class="math inline">\((X, Y)\)</span> have the joint PMF <span class="math inline">\(\mathbb{P}(X=0, Y=0) = 0.2\)</span>, <span class="math inline">\(\mathbb{P}(X=0, Y=1) = 0.3\)</span>, <span class="math inline">\(\mathbb{P}(X=1, Y=0) = 0.1\)</span>, <span class="math inline">\(\mathbb{P}(X=1, Y=1) = 0.4\)</span> (the table in the <a href="./expectation.html#exr-fubini-joint-disc">expectation page’s exercise</a>). Given <span class="math inline">\(X = 0\)</span>, <span class="math inline">\(Y\)</span> is binary with</p>
+<p><span class="theorem-title"><strong>Example 4 (Conditional variance of a binary outcome)</strong></span> Let <span class="math inline">\((X, Y)\)</span> have the <a href="./random-variables.html#def-joint-pmf">joint PMF</a> <span class="math inline">\(\mathbb{P}(X=0, Y=0) = 0.2\)</span>, <span class="math inline">\(\mathbb{P}(X=0, Y=1) = 0.3\)</span>, <span class="math inline">\(\mathbb{P}(X=1, Y=0) = 0.1\)</span>, <span class="math inline">\(\mathbb{P}(X=1, Y=1) = 0.4\)</span> (the table in the <a href="./expectation.html#exr-fubini-joint-disc">expectation page’s exercise</a>). Given <span class="math inline">\(X = 0\)</span>, <span class="math inline">\(Y\)</span> is binary with</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathbb{P}(Y = 1 \mid X = 0) &amp;= 0.3/0.5 \\
@@ -1275,7 +1275,7 @@ Figure&nbsp;1: The <a href="#def-variance">variance</a> <span class="math inline
 <div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-homosked" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Homoskedasticity)</strong></span> A random variable <span class="math inline">\(Y\)</span> is <strong>homoskedastic</strong> with respect to a random variable (or vector) <span class="math inline">\(X\)</span> if the <a href="#def-cond-variance">conditional variance</a> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = x\)</span> is the same for every <span class="math inline">\(x\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 5 (Homoskedasticity)</strong></span> A <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(Y\)</span> is <strong>homoskedastic</strong> with respect to a random variable (or vector) <span class="math inline">\(X\)</span> if the <a href="#def-cond-variance">conditional variance</a> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = x\)</span> is the same for every <span class="math inline">\(x\)</span>:</p>
 <p><span class="math display">\[{\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}} = \sigma^2\quad \text{for all } x\]</span></p>
 <p>for some constant <span class="math inline">\(\sigma^2\)</span>.</p>
 </div>
@@ -1295,7 +1295,7 @@ Figure&nbsp;1: The <a href="#def-variance">variance</a> <span class="math inline
 <div id="callout-17" class="callout-17-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-homosked" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (A homoskedastic total)</strong></span> Flip two fair coins, let <span class="math inline">\(X_1\)</span> indicate heads on the first, and let <span class="math inline">\(Y\)</span> be the total number of heads. Given <span class="math inline">\(X_1 = 0\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each; given <span class="math inline">\(X_1 = 1\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span> with probability <span class="math inline">\(1/2\)</span> each. Either way, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1/2\)</span> away from its conditional mean with probability 1, so</p>
+<p><span class="theorem-title"><strong>Example 5 (A homoskedastic total)</strong></span> Flip two fair coins, let <span class="math inline">\(X_1\)</span> indicate heads on the first, and let <span class="math inline">\(Y\)</span> be the total number of heads. Given <span class="math inline">\(X_1 = 0\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> with <a href="./probability-basics.html#def-probability">probability</a> <span class="math inline">\(1/2\)</span> each; given <span class="math inline">\(X_1 = 1\)</span>, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1\)</span> or <span class="math inline">\(2\)</span> with probability <span class="math inline">\(1/2\)</span> each. Either way, <span class="math inline">\(Y\)</span> is <span class="math inline">\(1/2\)</span> away from its conditional mean with probability 1, so</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 0\right)\mathclose{}} &amp;= {\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 1\right)\mathclose{}} \\
@@ -1320,7 +1320,7 @@ Figure&nbsp;1: The <a href="#def-variance">variance</a> <span class="math inline
 <div id="callout-18" class="callout-18-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-heterosked" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Heteroskedasticity)</strong></span> A random variable <span class="math inline">\(Y\)</span> is <strong>heteroskedastic</strong> with respect to <span class="math inline">\(X\)</span> if it is not <a href="#def-homosked">homoskedastic</a> with respect to <span class="math inline">\(X\)</span>: that is, if <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}\)</span> differs between some values of <span class="math inline">\(x\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 6 (Heteroskedasticity)</strong></span> A <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(Y\)</span> is <strong>heteroskedastic</strong> with respect to <span class="math inline">\(X\)</span> if it is not <a href="#def-homosked">homoskedastic</a> with respect to <span class="math inline">\(X\)</span>: that is, if <span class="math inline">\({\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}\)</span> differs between some values of <span class="math inline">\(x\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2476,7 +2476,7 @@ XY &amp;= X^3 \\
 <div id="callout-58" class="callout-58-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-uncorrelated-cor-zero" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 2 (Uncorrelated means zero correlation)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#def-variance">variances</a>, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="#def-uncorrelated">uncorrelated</a> if and only if <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Corollary 2 (Uncorrelated means zero correlation)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#def-variance">variances</a>, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="#def-uncorrelated">uncorrelated</a> <a href="https://morrison-lab.github.io/mcs/proof-writing.html#def-iff">if and only if</a> <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2494,7 +2494,7 @@ XY &amp;= X^3 \\
 <div id="callout-59" class="callout-59-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#def-correlation" class="quarto-xref">Definition&nbsp;10</a>, <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} / \mathopen{}\left({\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\right)\mathclose{}\)</span>, and <span class="math inline">\({\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} &gt; 0\)</span> because both variances are positive, so <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span> if and only if <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>, which is <a href="#def-uncorrelated" class="quarto-xref">Definition&nbsp;11</a>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#def-correlation" class="quarto-xref">Definition&nbsp;10</a>, <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} / \mathopen{}\left({\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\right)\mathclose{}\)</span>, and <span class="math inline">\({\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} &gt; 0\)</span> because both <a href="#def-variance">variances</a> are positive, <!-- check-term-links: allow --> so <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span> <a href="https://morrison-lab.github.io/mcs/proof-writing.html#def-iff">if and only if</a> <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>, which is <a href="#def-uncorrelated" class="quarto-xref">Definition&nbsp;11</a>.</p>
 </div>
 </div>
 </div>
@@ -2512,9 +2512,9 @@ XY &amp;= X^3 \\
 <div id="callout-60" class="callout-60-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cond-cov" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 12 (Conditional covariance)</strong></span> The <strong>conditional covariance</strong> of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> given <span class="math inline">\(X = x\)</span> is their covariance under their conditional distribution given <span class="math inline">\(X = x\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 12 (Conditional covariance)</strong></span> The <strong>conditional covariance</strong> of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> given <span class="math inline">\(X = x\)</span> is their <a href="#def-cov">covariance</a> under their conditional distribution given <span class="math inline">\(X = x\)</span>: <!-- check-term-links: allow --></p>
 <p><span class="math display">\[{\operatorname{Cov}\mathopen{}\left(Y,Z \mid X = x\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\mathopen{}\left(Y-{\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}\right)\mathclose{}\mathopen{}\left(Z-{\mathbb{E}\mathopen{}\left[Z \mid X = x\right]\mathclose{}}\right)\mathclose{} \mid X = x\right]\mathclose{}}\]</span></p>
-<p>Evaluating this function of <span class="math inline">\(x\)</span> at <span class="math inline">\(X\)</span> gives the random variable <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}}\)</span>.</p>
+<p>Evaluating this <a href="https://morrison-lab.github.io/mcs/functions.html#def-function">function</a> of <span class="math inline">\(x\)</span> at <span class="math inline">\(X\)</span> gives the <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2543,14 +2543,14 @@ XY &amp;= X^3 \\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Lem</span><a href="#thm-total-cov" class="quarto-xref">Theorem&nbsp;9</a> (Law of total covariance)
+<span class="screen-reader-only">Lem</span><a href="#thm-total-cov" class="quarto-xref">Theorem&nbsp;9</a> (Law of total covariance (covariance decomposition formula, conditional covariance formula))
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-62" class="callout-62-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-total-cov" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 9 (Law of total covariance)</strong></span> For random variables <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} &lt; \infty\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 9 (Law of total covariance (covariance decomposition formula, conditional covariance formula))</strong></span> For <a href="./random-variables.html#def-random-variable">random variables</a> <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} &lt; \infty\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
 <p><span class="math display">\[{\operatorname{Cov}\mathopen{}\left(Y,Z\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Cov}\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}, {\mathbb{E}\mathopen{}\left[Z \mid X\right]\mathclose{}}\right)\mathclose{}}\]</span></p>
 </div>
 </div>
@@ -2595,7 +2595,7 @@ XY &amp;= X^3 \\
 &amp;&amp; \text{(definition of conditional covariance)}
 \end{aligned}
 \]</span></p>
-<p>For the last term, the law of iterated expectations gives <span class="math inline">\({\mathbb{E}\mathopen{}\left[m_Y(X)\right]\mathclose{}} = \mu_Y\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[m_Z(X)\right]\mathclose{}} = \mu_Z\)</span>, so:</p>
+<p>For the last term, the <a href="./expectation.html#thm-lie">law of iterated expectations</a> gives <span class="math inline">\({\mathbb{E}\mathopen{}\left[m_Y(X)\right]\mathclose{}} = \mu_Y\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[m_Z(X)\right]\mathclose{}} = \mu_Z\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\mathbb{E}\mathopen{}\left[\mathopen{}\left[m_Y(X) - \mu_Y\right]\mathclose{}\mathopen{}\left[m_Z(X) - \mu_Z\right]\mathclose{}\right]\mathclose{}}
@@ -2612,26 +2612,8 @@ XY &amp;= X^3 \\
 </div>
 </div>
 </div>
-<div class="callouty-titled callout callout-style-default callout-remark callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Remark</span>Remark
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-64" class="callout-64-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>Alternate names include: the <strong>covariance decomposition formula</strong> and the <strong>conditional covariance formula</strong>.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2640,17 +2622,17 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-65" class="callout-65-contents callout-collapse collapse show">
+<div id="callout-64" class="callout-64-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="lem-cov-xx" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 2 (The covariance of a variable with itself is its variance)</strong></span> For any random variable <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
+<p><span class="theorem-title"><strong>Lemma 2 (The covariance of a variable with itself is its variance)</strong></span> For any <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(X\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span>:</p>
 <p><span class="math display">\[{\operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\]</span></p>
 </div>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2659,7 +2641,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-66" class="callout-66-contents callout-collapse collapse">
+<div id="callout-65" class="callout-65-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By the <a href="#thm-alt-cov">alternative formula for covariance</a>:</p>
@@ -2679,7 +2661,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-def callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2688,7 +2670,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-67" class="callout-67-contents callout-collapse collapse show">
+<div id="callout-66" class="callout-66-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-cov-vec-x" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 13 (Variance/covariance of a <span class="math inline">\(p \times 1\)</span> random vector)</strong></span> For a <span class="math inline">\(p \times 1\)</span> dimensional random vector <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span>,</p>
@@ -2705,7 +2687,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2714,7 +2696,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-68" class="callout-68-contents callout-collapse collapse show">
+<div id="callout-67" class="callout-67-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-vcov-elements" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 10 (Elements of the variance-covariance matrix are pairwise covariances)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>:</p>
@@ -2732,7 +2714,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2741,7 +2723,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-69" class="callout-69-contents callout-collapse collapse">
+<div id="callout-68" class="callout-68-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mu_i = {\mathbb{E}\mathopen{}\left[X_i\right]\mathclose{}}\)</span> for <span class="math inline">\(i = 1, \ldots, p\)</span>, so <span class="math inline">\(\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(\mu_1, \ldots, \mu_p)}^{\top}\)</span>. By <a href="#def-cov-vec-x" class="quarto-xref">Definition&nbsp;13</a>:</p>
@@ -2799,7 +2781,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2808,7 +2790,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-70" class="callout-70-contents callout-collapse collapse show">
+<div id="callout-69" class="callout-69-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-vcov-vec" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 11 (Alternate expression for variance of a random vector)</strong></span> <span class="math display">\[
@@ -2822,7 +2804,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2831,7 +2813,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-71" class="callout-71-contents callout-collapse collapse">
+<div id="callout-70" class="callout-70-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
@@ -2867,7 +2849,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2876,10 +2858,10 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-72" class="callout-72-contents callout-collapse collapse show">
+<div id="callout-71" class="callout-71-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-var-lincom" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 12 (Variance of a linear combination)</strong></span> For any vector of random variables <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= (X_1, \ldots, X_n)\)</span> and corresponding vector of constants <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}= (a_1, \ldots, a_n)\)</span>, the variance of their linear combination is:</p>
+<p><span class="theorem-title"><strong>Theorem 12 (Variance of a linear combination)</strong></span> For any vector of <a href="./random-variables.html#def-random-variable">random variables</a> <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= (X_1, \ldots, X_n)\)</span> and corresponding vector of constants <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}= (a_1, \ldots, a_n)\)</span>, the <a href="#def-variance">variance</a> of their <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination">linear combination</a> is:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\cdot \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}
@@ -2893,7 +2875,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2902,17 +2884,17 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-73" class="callout-73-contents callout-collapse collapse">
+<div id="callout-72" class="callout-72-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\)</span> and <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> as <span class="math inline">\(n \times 1\)</span> column vectors, so</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Treat <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\)</span> and <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> as <span class="math inline">\(n \times 1\)</span> <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector">column vectors</a>, so</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\cdot \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}&amp;= {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\\
 &amp;= \sum_{i=1}^na_i X_i,
 \end{aligned}
 \]</span></p>
-<p>a scalar. By linearity of expectation, <span class="math inline">\({\mathbb{E}\mathopen{}\left[{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right]\mathclose{}} = {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\,\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span>, so:</p>
+<p>a <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar">scalar</a>. By <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>, <span class="math inline">\({\mathbb{E}\mathopen{}\left[{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right]\mathclose{}} = {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\,\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{Var}\mathopen{}\left({\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}
@@ -2935,7 +2917,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-cor callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2944,17 +2926,17 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-74" class="callout-74-contents callout-collapse collapse show">
+<div id="callout-73" class="callout-73-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-var-lincom2" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 3 (Variance of a sum of two random variables)</strong></span> For any two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and scalars <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
+<p><span class="theorem-title"><strong>Corollary 3 (Variance of a sum of two random variables)</strong></span> For any two <a href="./random-variables.html#def-random-variable">random variables</a> <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar">scalars</a> <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
 <p><span class="math display">\[{\operatorname{Var}\mathopen{}\left(aX + bY\right)\mathclose{}} = a^2 {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + b^2 {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + 2(a \cdot b) {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}\]</span></p>
 </div>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2963,7 +2945,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-75" class="callout-75-contents callout-collapse collapse">
+<div id="callout-74" class="callout-74-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Apply <a href="#thm-var-lincom" class="quarto-xref">Theorem&nbsp;12</a> with <span class="math inline">\(n=2\)</span>, <span class="math inline">\(X_1 = X\)</span>, and <span class="math inline">\(X_2 = Y\)</span>:</p>
@@ -2973,7 +2955,7 @@ XY &amp;= X^3 \\
 &amp;= a^2 {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + b^2 {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + 2ab {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}
 \end{aligned}
 \]</span></p>
-<p>Alternatively, by linearity of expectation:</p>
+<p>Alternatively, by <a href="./expectation.html#thm-linearity-expectation">linearity of expectation</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 {\operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{}}
@@ -2994,7 +2976,7 @@ XY &amp;= X^3 \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-cor callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3003,17 +2985,17 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-76" class="callout-76-contents callout-collapse collapse show">
+<div id="callout-75" class="callout-75-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-var-sum-indpt" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 4 (Variance of a sum of independent random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, each discrete or continuous, with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} &lt; \infty\)</span>, then:</p>
+<p><span class="theorem-title"><strong>Corollary 4 (Variance of a sum of independent random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, each <a href="./random-variables.html#def-discrete-rv">discrete</a> or <a href="./random-variables.html#def-continuous-rv">continuous</a>, with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} &lt; \infty\)</span>, then:</p>
 <p><span class="math display">\[{\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}\]</span></p>
 </div>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3022,7 +3004,7 @@ XY &amp;= X^3 \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-77" class="callout-77-contents callout-collapse collapse">
+<div id="callout-76" class="callout-76-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>, <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0\)</span>. Applying <a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;3</a> with</p>
@@ -3048,7 +3030,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-remark callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3057,16 +3039,16 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-78" class="callout-78-contents callout-collapse collapse show">
+<div id="callout-77" class="callout-77-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span><a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;3</a> is why two variables’ covariance matters for combining them: the covariance term is what separates the variance of their sum from the sum of their variances, and <a href="#cor-var-sum-indpt" class="quarto-xref">Corollary&nbsp;4</a> is the case where that term is 0.</p>
+<p><span class="proof-title"><em>Remark</em>. </span><a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;3</a> is why two variables’ <a href="#def-cov">covariance</a> matters for combining them: the covariance <a href="https://morrison-lab.github.io/mds/algebra-sums.html#def-term">term</a> is what separates the <a href="#def-variance">variance</a> of their <a href="https://morrison-lab.github.io/mds/algebra-sums.html#def-summation">sum</a> from the sum of their variances, and <a href="#cor-var-sum-indpt" class="quarto-xref">Corollary&nbsp;4</a> is the case where that term is 0.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3075,7 +3057,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-79" class="callout-79-contents callout-collapse collapse show">
+<div id="callout-78" class="callout-78-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-vcov-psd" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 13 (A variance matrix is symmetric and positive semidefinite)</strong></span> For a <span class="math inline">\(p \times 1\)</span> random vector <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-symmetric-matrix">symmetric</a> and <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite">positive semidefinite</a>: for every <span class="math inline">\(p \times 1\)</span> vector of constants <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\)</span>,</p>
@@ -3085,7 +3067,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3094,7 +3076,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-80" class="callout-80-contents callout-collapse collapse">
+<div id="callout-79" class="callout-79-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>, and by <a href="#def-cov" class="quarto-xref">Definition&nbsp;9</a>, with <span class="math inline">\(\mu_i = {\mathbb{E}\mathopen{}\left[X_i\right]\mathclose{}}\)</span>:</p>
@@ -3122,13 +3104,13 @@ a &amp;= b \\
 &amp;&amp; \text{(} (Y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}})^2 \ge 0 \text{)}
 \end{aligned}
 \]</span></p>
-<p>The first step is <a href="#thm-var-lincom" class="quarto-xref">Theorem&nbsp;12</a>. The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the <a href="./expectation.html#def-expectation">definition of expectation</a>, every term of the sum, or the integrand, is non-negative (for the general case, see <span class="citation" data-cites="billingsley1995probability">Billingsley <a href="#ref-billingsley1995probability" role="doc-biblioref">[4]</a></span>).</p>
+<p>The first step is <a href="#thm-var-lincom" class="quarto-xref">Theorem&nbsp;12</a>. The last step holds because a <a href="./random-variables.html#def-random-variable">random variable</a> that is never negative <!-- check-term-links: allow --> has a non-negative <a href="./expectation.html#def-expectation">expectation</a>: in the <a href="./random-variables.html#def-discrete-rv">discrete</a> and <a href="./random-variables.html#def-continuous-rv">continuous</a> cases of the <!-- check-term-links: allow --> <a href="./expectation.html#def-expectation">definition of expectation</a>, every term of the sum, or the integrand, is non-negative (for the general case, see <span class="citation" data-cites="billingsley1995probability">Billingsley <a href="#ref-billingsley1995probability" role="doc-biblioref">[4]</a></span>).</p>
 </div>
 </div>
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3137,7 +3119,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-81" class="callout-81-contents callout-collapse collapse show">
+<div id="callout-80" class="callout-80-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-vcov-psd" class="theorem example">
 <p><span class="theorem-title"><strong>Example 17 (Two variance matrices that differ only in sign)</strong></span> Let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> be equally likely to be each of the four points</p>
@@ -3198,7 +3180,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-remark callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3207,7 +3189,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-82" class="callout-82-contents callout-collapse collapse show">
+<div id="callout-81" class="callout-81-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, <span class="math inline">\({(1, 1)}^{\top}\)</span> or <span class="math inline">\({(1, -1)}^{\top}\)</span>, has the larger spread.</p>
@@ -3216,7 +3198,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3225,7 +3207,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-83" class="callout-83-contents callout-collapse collapse show">
+<div id="callout-82" class="callout-82-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-vcov-singular" class="theorem example">
 <p><span class="theorem-title"><strong>Example 18 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\)</span> (<a href="#lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>), so:</p>
@@ -3246,7 +3228,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-cor callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3255,7 +3237,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-84" class="callout-84-contents callout-collapse collapse show">
+<div id="callout-83" class="callout-83-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="cor-vcov-indpt-diagonal" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 5 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each discrete or continuous, with:</p>
@@ -3269,7 +3251,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3278,7 +3260,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-85" class="callout-85-contents callout-collapse collapse">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By <a href="#thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\)</span> by <a href="#thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span> by <a href="#lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>.</p>
@@ -3287,7 +3269,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3296,7 +3278,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-86" class="callout-86-contents callout-collapse collapse show">
+<div id="callout-85" class="callout-85-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-cor-bounds" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 14 (Correlation lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have finite, positive <a href="#def-variance">variances</a>, then their <a href="#def-correlation">correlation</a> lies in <span class="math inline">\([-1, 1]\)</span> <span class="citation" data-cites="CaseBerg01"><a href="#ref-CaseBerg01" role="doc-biblioref">[5]</a></span>:</p>
@@ -3306,7 +3288,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-87-contents" aria-controls="callout-87" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3315,7 +3297,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-87" class="callout-87-contents callout-collapse collapse">
+<div id="callout-86" class="callout-86-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} &gt; 0\)</span> and <span class="math inline">\(\sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} &gt; 0\)</span>, and take either sign <span class="math inline">\(\pm\)</span> throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying <a href="#cor-var-lincom2" class="quarto-xref">Corollary&nbsp;3</a> with <span class="math inline">\(a = 1/\sigma_X\)</span> and <span class="math inline">\(b = \pm 1/\sigma_Y\)</span>:</p>
@@ -3338,7 +3320,7 @@ a &amp;= b \\
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-88-contents" aria-controls="callout-88" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-87-contents" aria-controls="callout-87" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3347,7 +3329,7 @@ a &amp;= b \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-88" class="callout-88-contents callout-collapse collapse show">
+<div id="callout-87" class="callout-87-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-cor-auto" class="theorem example">
 <p><span class="theorem-title"><strong>Example 19 (Correlation of horsepower and fuel economy)</strong></span> The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
@@ -3442,7 +3424,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div id="watch-variance" class="watch-anchor">
 <div class="callout callout-style-default callout-videos callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-89-contents" aria-controls="callout-89" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-88-contents" aria-controls="callout-88" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3451,7 +3433,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-89" class="callout-89-contents callout-collapse collapse show">
+<div id="callout-88" class="callout-88-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=5CT1DXPp2HY">variance</a> and <a href="https://www.youtube.com/watch?v=hiim8HlI81Y">covariance and correlation</a> in five minutes each, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat"><a href="#ref-fiveminuteai_probstat" role="doc-biblioref">[6]</a></span>.</p>
 </div>
@@ -3463,7 +3445,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 <h1 data-number="6"><span class="header-section-number">6</span> Moments and moment generating functions</h1>
 <!-- No slidebreak here: the heading shares its slide with the def-moment div. -->
 <div class="callouty-titled callout callout-style-default callout-def callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-90-contents" aria-controls="callout-90" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-89-contents" aria-controls="callout-89" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3472,7 +3454,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-90" class="callout-90-contents callout-collapse collapse show">
+<div id="callout-89" class="callout-89-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-moment" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 14 (Raw moment)</strong></span> The <strong><span class="math inline">\(k\)</span>-th raw moment</strong> of a <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(X\)</span>, for a <a href="https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer">positive integer</a> <span class="math inline">\(k\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} &lt; \infty\)</span>, is the <a href="./expectation.html#def-expectation">expectation</a> of <span class="math inline">\(X^k\)</span>:</p>
@@ -3482,7 +3464,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-91-contents" aria-controls="callout-91" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-90-contents" aria-controls="callout-90" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3491,7 +3473,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-91" class="callout-91-contents callout-collapse collapse show">
+<div id="callout-90" class="callout-90-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-moment-die" class="theorem example">
 <p><span class="theorem-title"><strong>Example 20 (Raw moments of a die roll)</strong></span> Let <span class="math inline">\(X\)</span> be the number shown by one roll of a fair six-sided die, so that <span class="math inline">\(\mathbb{P}(X = x) = 1/6\)</span> for each <span class="math inline">\(x \in {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}\)</span>. The first <a href="#def-moment">raw moment</a> is the <a href="./expectation.html#def-expectation">expectation</a> <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span>, and the second is <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}\)</span>:</p>
@@ -3517,7 +3499,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-def callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-92-contents" aria-controls="callout-92" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-91-contents" aria-controls="callout-91" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3526,7 +3508,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-92" class="callout-92-contents callout-collapse collapse show">
+<div id="callout-91" class="callout-91-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-central-moment" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 15 (Central moment)</strong></span> The <strong><span class="math inline">\(k\)</span>-th central moment</strong> of a <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(X\)</span>, for a <a href="https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer">positive integer</a> <span class="math inline">\(k\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} &lt; \infty\)</span>, is the <a href="./expectation.html#def-expectation">expectation</a> of the <a href="#def-deviation-pop-mean">deviation from the mean</a> raised to the <a href="https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer">power</a> <span class="math inline">\(k\)</span>:</p>
@@ -3536,7 +3518,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-93-contents" aria-controls="callout-93" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-92-contents" aria-controls="callout-92" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3545,7 +3527,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-93" class="callout-93-contents callout-collapse collapse show">
+<div id="callout-92" class="callout-92-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-central-moment-bernoulli" class="theorem example">
 <p><span class="theorem-title"><strong>Example 21 (The third central moment of a Bernoulli random variable)</strong></span> Let <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span>, so <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \pi\)</span> and <span class="math inline">\(\mathbb{d}(X) = X - \pi\)</span>. The third <a href="#def-central-moment">central moment</a> is:</p>
@@ -3569,7 +3551,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-94-contents" aria-controls="callout-94" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-93-contents" aria-controls="callout-93" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3578,7 +3560,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-94" class="callout-94-contents callout-collapse collapse show">
+<div id="callout-93" class="callout-93-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-moments-low-order" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 15 (The second central moment is the variance)</strong></span> If <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} &lt; \infty\)</span>, then the second <a href="#def-central-moment">central moment</a> of <span class="math inline">\(X\)</span> is <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\)</span>.</p>
@@ -3587,7 +3569,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-95-contents" aria-controls="callout-95" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-94-contents" aria-controls="callout-94" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3596,7 +3578,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-95" class="callout-95-contents callout-collapse collapse">
+<div id="callout-94" class="callout-94-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>The second <a href="#def-central-moment">central moment</a> is <span class="math inline">\({\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^2\right]\mathclose{}}\)</span> by <a href="#def-central-moment" class="quarto-xref">Definition&nbsp;15</a>, which is <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\)</span> by <a href="#def-variance" class="quarto-xref">Definition&nbsp;3</a>.</p>
@@ -3605,7 +3587,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-96-contents" aria-controls="callout-96" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-95-contents" aria-controls="callout-95" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3614,7 +3596,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-96" class="callout-96-contents callout-collapse collapse show">
+<div id="callout-95" class="callout-95-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-moments-low-order-die" class="theorem example">
 <p><span class="theorem-title"><strong>Example 22 (The variance of a die roll as a central moment)</strong></span> For the die roll <span class="math inline">\(X\)</span> of <a href="#exm-moment-die" class="quarto-xref">Example&nbsp;20</a>, <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6\)</span>. By <a href="#thm-moments-low-order" class="quarto-xref">Theorem&nbsp;15</a>, the second <a href="#def-central-moment">central moment</a> of <span class="math inline">\(X\)</span> is the <a href="#def-variance">variance</a> <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\)</span>, which <a href="#thm-variance" class="quarto-xref">Theorem&nbsp;2</a> gives as:</p>
@@ -3637,7 +3619,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-def callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-97-contents" aria-controls="callout-97" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-96-contents" aria-controls="callout-96" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3646,7 +3628,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-97" class="callout-97-contents callout-collapse collapse show">
+<div id="callout-96" class="callout-96-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="def-mgf" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 16 (Moment generating function)</strong></span> The <strong>moment generating function</strong> of a <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(X\)</span> is the <a href="https://morrison-lab.github.io/mcs/functions.html#def-function">function</a> <span class="math inline">\(M_X\)</span> of a <a href="https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers">real number</a> <span class="math inline">\(t\)</span> that gives the <a href="./expectation.html#def-expectation">expectation</a> of <span class="math inline">\(\text{e}^{tX}\)</span>, defined at every <span class="math inline">\(t\)</span> with <span class="math inline">\({\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}} &lt; \infty\)</span>:</p>
@@ -3656,7 +3638,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-98-contents" aria-controls="callout-98" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-97-contents" aria-controls="callout-97" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3665,7 +3647,7 @@ Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-98" class="callout-98-contents callout-collapse collapse show">
+<div id="callout-97" class="callout-97-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-mgf-bernoulli" class="theorem example">
 <p><span class="theorem-title"><strong>Example 23 (Moment generating function of a Bernoulli random variable)</strong></span> Let <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span>, so <span class="math inline">\(\mathbb{P}(X = 1) = \pi\)</span> and <span class="math inline">\(\mathbb{P}(X = 0) = 1 - \pi\)</span>. For every <span class="math inline">\(t\)</span>:</p>
@@ -3688,7 +3670,7 @@ M_X(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-99-contents" aria-controls="callout-99" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-98-contents" aria-controls="callout-98" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3697,7 +3679,7 @@ M_X(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-99" class="callout-99-contents callout-collapse collapse show">
+<div id="callout-98" class="callout-98-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mgf-moments" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 16 (Moments from the moment generating function)</strong></span> If <span class="math inline">\(M_X(t)\)</span> is defined at every <span class="math inline">\(t\)</span> in some <a href="https://morrison-lab.github.io/mcs/sets.html#def-open-interval">open interval</a> around <span class="math inline">\(0\)</span>, then for every <a href="https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer">positive integer</a> <span class="math inline">\(k\)</span>, the <span class="math inline">\(k\)</span>-th <a href="#def-moment">raw moment</a> of <span class="math inline">\(X\)</span> is the <span class="math inline">\(k\)</span>-th <a href="https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative">derivative</a> of <span class="math inline">\(M_X\)</span> at <span class="math inline">\(0\)</span>:</p>
@@ -3707,7 +3689,7 @@ M_X(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-100-contents" aria-controls="callout-100" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-99-contents" aria-controls="callout-99" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3716,7 +3698,7 @@ M_X(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-100" class="callout-100-contents callout-collapse collapse">
+<div id="callout-99" class="callout-99-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(h &gt; 0\)</span> be such that <span class="math inline">\(M_X(t)\)</span> is defined for every <span class="math inline">\(\mathopen{}\left|t\right|\mathclose{} &lt; h\)</span>. For any such <span class="math inline">\(t\)</span>, the <a href="https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum">series</a> of the <a href="./random-variables.html#def-exponential">exponential</a> gives:</p>
@@ -3737,7 +3719,7 @@ M_X(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-101-contents" aria-controls="callout-101" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-100-contents" aria-controls="callout-100" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3746,7 +3728,7 @@ M_X(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-101" class="callout-101-contents callout-collapse collapse show">
+<div id="callout-100" class="callout-100-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-mgf-bernoulli-moments" class="theorem example">
 <p><span class="theorem-title"><strong>Example 24 (Moments of a Bernoulli random variable from its moment generating function)</strong></span> For <span class="math inline">\(X \sim \operatorname{Ber}(\pi)\)</span>, <a href="#exm-mgf-bernoulli" class="quarto-xref">Example&nbsp;23</a> gives <span class="math inline">\(M_X(t) = 1 - \pi+ \pi\,\text{e}^{t}\)</span> for every <span class="math inline">\(t\)</span>, so <span class="math inline">\(M_X^{(k)}(t) = \pi\,\text{e}^{t}\)</span> for every <span class="math inline">\(k \ge 1\)</span>. By <a href="#thm-mgf-moments" class="quarto-xref">Theorem&nbsp;16</a>, for every <span class="math inline">\(k \ge 1\)</span>:</p>
@@ -3768,7 +3750,7 @@ M_X(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-lem callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-102-contents" aria-controls="callout-102" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-101-contents" aria-controls="callout-101" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3777,7 +3759,7 @@ M_X(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-102" class="callout-102-contents callout-collapse collapse show">
+<div id="callout-101" class="callout-101-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="thm-mgf-sum" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 17 (Moment generating function of a sum of independent random variables)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <a href="./independence.html#def-indpt">independent</a>, and <span class="math inline">\(M_X(t)\)</span> and <span class="math inline">\(M_Y(t)\)</span> are defined at a number <span class="math inline">\(t\)</span>, then:</p>
@@ -3787,7 +3769,7 @@ M_X(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-proof callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-103-contents" aria-controls="callout-103" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-102-contents" aria-controls="callout-102" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3796,7 +3778,7 @@ M_X(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-103" class="callout-103-contents callout-collapse collapse">
+<div id="callout-102" class="callout-102-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><a href="https://morrison-lab.github.io/mcs/functions.html#def-function">Functions</a> of <a href="./independence.html#def-indpt">independent</a> variables are independent, so <span class="math inline">\(\text{e}^{tX}\)</span> and <span class="math inline">\(\text{e}^{tY}\)</span> are independent. <a href="./variance-covariance.html#thm-indpt-uncorrelated">Independent variables <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> satisfy <span class="math inline">\({\mathbb{E}\mathopen{}\left[AB\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[A\right]\mathclose{}}\,{\mathbb{E}\mathopen{}\left[B\right]\mathclose{}}\)</span></a>, so:</p>
@@ -3818,7 +3800,7 @@ M_{X+Y}(t)
 </div>
 </div>
 <div class="callouty-titled callout callout-style-default callout-exm callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-104-contents" aria-controls="callout-104" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-103-contents" aria-controls="callout-103" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3827,7 +3809,7 @@ M_{X+Y}(t)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-104" class="callout-104-contents callout-collapse collapse show">
+<div id="callout-103" class="callout-103-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div id="exm-mgf-binomial" class="theorem example">
 <p><span class="theorem-title"><strong>Example 25 (Moment generating function of a binomial random variable)</strong></span> By the <a href="./distributions.html#thm-binomial-sum-bernoulli">sum of Bernoulli variables</a>, a <a href="./random-variables.html#def-binomial">binomial</a> <a href="./random-variables.html#def-random-variable">random variable</a> <span class="math inline">\(S \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}\)</span> is a <a href="https://morrison-lab.github.io/mds/algebra-sums.html#def-summation">sum</a> <span class="math inline">\(S = \sum_{i=1}^n X_i\)</span> of <span class="math inline">\(n\)</span> <a href="./independence.html#def-indpt">independent</a> <span class="math inline">\(\operatorname{Ber}(\pi)\)</span> variables. Each has <a href="#def-mgf">moment generating function</a> <span class="math inline">\(1 - \pi+ \pi\,\text{e}^{t}\)</span> (<a href="#exm-mgf-bernoulli" class="quarto-xref">Example&nbsp;23</a>). Applying <a href="#thm-mgf-sum" class="quarto-xref">Theorem&nbsp;17</a> one summand at a time:</p>
@@ -3850,7 +3832,7 @@ M_S(t)
 <h1 class="unnumbered">Definitions on this page</h1>
 <ul>
 <li><a href="#def-deviation"><span class="quarto-xref">Definition&nbsp;1</span> (Deviation)</a></li>
-<li><a href="#def-deviation-pop-mean"><span class="quarto-xref">Definition&nbsp;2</span> (Deviation from a population or subpopulation mean)</a></li>
+<li><a href="#def-deviation-pop-mean"><span class="quarto-xref">Definition&nbsp;2</span> (Deviation from a population or subpopulation mean (error, noise term))</a></li>
 <li><a href="#def-variance"><span class="quarto-xref">Definition&nbsp;3</span> (Variance)</a></li>
 <li><a href="#def-cond-variance"><span class="quarto-xref">Definition&nbsp;4</span> (Conditional variance)</a></li>
 <li><a href="#def-homosked"><span class="quarto-xref">Definition&nbsp;5</span> (Homoskedasticity)</a></li>
@@ -5172,123 +5154,121 @@ document.querySelectorAll("main table").forEach(function (t) {
 <span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-total-cov.qmd &gt;}}</span>
 <span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_rem-total-cov.qmd &gt;}}</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_lem-cov-xx.qmd &gt;}}</span>
 <span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_lem-cov-xx.qmd &gt;}}</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_def-cov-vec-x.qmd &gt;}}</span>
 <span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_def-cov-vec-x.qmd &gt;}}</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-vcov-elements.qmd &gt;}}</span>
 <span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-vcov-elements.qmd &gt;}}</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-vcov-vec.qmd &gt;}}</span>
 <span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-vcov-vec.qmd &gt;}}</span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-var-lincom.qmd &gt;}}</span>
 <span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-var-lincom.qmd &gt;}}</span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_cor-var-lincom2.qmd &gt;}}</span>
 <span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_cor-var-lincom2.qmd &gt;}}</span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_cor-var-sum-indpt.qmd &gt;}}</span>
 <span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_cor-var-sum-indpt.qmd &gt;}}</span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_rem-var-sum-indpt.qmd &gt;}}</span>
 <span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_rem-var-sum-indpt.qmd &gt;}}</span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-vcov-psd.qmd &gt;}}</span>
 <span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-vcov-psd.qmd &gt;}}</span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-vcov-psd.qmd &gt;}}</span>
 <span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-vcov-psd.qmd &gt;}}</span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_rem-vcov-psd.qmd &gt;}}</span>
 <span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_rem-vcov-psd.qmd &gt;}}</span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-vcov-singular.qmd &gt;}}</span>
 <span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-vcov-singular.qmd &gt;}}</span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_cor-vcov-indpt-diagonal.qmd &gt;}}</span>
 <span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_cor-vcov-indpt-diagonal.qmd &gt;}}</span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-cor-bounds.qmd &gt;}}</span>
 <span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_thm-cor-bounds.qmd &gt;}}</span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-cor-auto.qmd &gt;}}</span>
 <span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_exm-cor-auto.qmd &gt;}}</span>
-<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a>::: {.videos}</span>
-<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>5MinuteAI explains <span class="co">[</span><span class="ot">variance</span><span class="co">](https://www.youtube.com/watch?v=5CT1DXPp2HY)</span></span>
-<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a>and <span class="co">[</span><span class="ot">covariance and correlation</span><span class="co">](https://www.youtube.com/watch?v=hiim8HlI81Y)</span> in five minutes each,</span>
-<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a>following the University of Washington's CSE 312 <span class="co">[</span><span class="ot">@fiveminuteai_probstat</span><span class="co">]</span>.</span>
-<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a>::: {.videos}</span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>5MinuteAI explains <span class="co">[</span><span class="ot">variance</span><span class="co">](https://www.youtube.com/watch?v=5CT1DXPp2HY)</span></span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a>and <span class="co">[</span><span class="ot">covariance and correlation</span><span class="co">](https://www.youtube.com/watch?v=hiim8HlI81Y)</span> in five minutes each,</span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>following the University of Washington's CSE 312 <span class="co">[</span><span class="ot">@fiveminuteai_probstat</span><span class="co">]</span>.</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a><span class="fu"># Moments and moment generating functions {#sec-moments}</span></span>
 <span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a><span class="fu"># Moments and moment generating functions {#sec-moments}</span></span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- No slidebreak here: the heading shares its slide with the def-moment div. --&gt;</span></span>
 <span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- No slidebreak here: the heading shares its slide with the def-moment div. --&gt;</span></span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moment_def.qmd &gt;}}</span>
 <span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moment_def.qmd &gt;}}</span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moment_exm.qmd &gt;}}</span>
 <span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moment_exm.qmd &gt;}}</span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_central-moment_def.qmd &gt;}}</span>
 <span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_central-moment_def.qmd &gt;}}</span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_central-moment_exm.qmd &gt;}}</span>
 <span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_central-moment_exm.qmd &gt;}}</span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moments-low-order_thm.qmd &gt;}}</span>
 <span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moments-low-order_thm.qmd &gt;}}</span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moments-low-order_exm.qmd &gt;}}</span>
 <span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_moments-low-order_exm.qmd &gt;}}</span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf_def.qmd &gt;}}</span>
 <span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf_def.qmd &gt;}}</span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf_exm.qmd &gt;}}</span>
 <span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf_exm.qmd &gt;}}</span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-moments_thm.qmd &gt;}}</span>
 <span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-moments_thm.qmd &gt;}}</span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-moments_exm.qmd &gt;}}</span>
 <span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-moments_exm.qmd &gt;}}</span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-sum_thm.qmd &gt;}}</span>
 <span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-sum_thm.qmd &gt;}}</span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
 <span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a>{{&lt; slidebreak &gt;}}</span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-sum_exm.qmd &gt;}}</span>
 <span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a>{{&lt; include pds/_subfiles/_mgf-sum_exm.qmd &gt;}}</span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
 <span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
-<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

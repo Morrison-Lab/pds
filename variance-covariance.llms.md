@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-06 01:59:20 (PST)
+Last modified: 2026-11-06 02:08:09 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -26,7 +26,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> *Remark*. In probability and statistics, “deviation” usually means deviation from a [population mean](expectation.llms.md#def-expectation).
+> *Remark*. In [probability](probability-basics.llms.md#def-probability) and statistics, “deviation” usually means deviation from a [population mean](expectation.llms.md#def-expectation).
 >
 > See: [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
 
@@ -36,11 +36,11 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> **Definition 2 (Deviation from a population or subpopulation mean)** The **deviation from the mean** of a random variable $Y$ is its [deviation](#def-deviation) from its [expectation](expectation.llms.md#def-expectation):
+> **Definition 2 (Deviation from a population or subpopulation mean (error, noise term))** The **deviation from the mean** of a [random variable](random-variables.llms.md#def-random-variable) $Y$ is its [deviation](#def-deviation) from its [expectation](expectation.llms.md#def-expectation), also called its **error** or **noise term**:
 >
 > $$\mathbb{d}(Y) \stackrel{\text{def}}{=}Y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$$
 >
-> For a realized observation $y$:
+> For a realized [observation](https://morrison-lab.github.io/sds/exploratory-descriptive.html#def-observation) $y$:
 >
 > $$\mathbb{d}(y) \stackrel{\text{def}}{=}y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$$
 
@@ -48,7 +48,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 >
 > *Remark*. Other sources often call this quantity an **error** or **noise term** [\[1\]](#ref-wikipedia_errors_and_residuals). In regression settings, the reference mean is often conditional on covariates: $\mathbb{d}(y_i) \stackrel{\text{def}}{=}y_i - {\mathbb{E}\mathopen{}\left[Y_i \mid X_i = x_i\right]\mathclose{}}$.
 >
-> These notes prefer “deviation” for this mean-deviation quantity; “error” and “noise” are common aliases. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write $\mathbb{d}(\cdot)$ for these model/data deviations, and reserve ${\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}}$ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
+> These notes prefer “[deviation](#def-deviation)” for the quantity just defined. The Morrison Lab’s regression notes use “residual” (defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted)) for deviations from fitted values, write $\mathbb{d}(\cdot)$ for these model/data deviations, and reserve ${\varepsilon\mathopen{}\left(\cdot\right)\mathclose{}}$ for estimator-to-estimand deviations (see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
 >
 > See:
 >
@@ -76,7 +76,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> **Definition 3 (Variance)** The **variance** of a random variable $X$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean) [\[2\]](#ref-wikipedia_variance); that is:
+> **Definition 3 (Variance)** The **variance** of a [random variable](random-variables.llms.md#def-random-variable) $X$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ is the [expectation](expectation.llms.md#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean) [\[2\]](#ref-wikipedia_variance); that is:
 >
 > $${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^2\right]\mathclose{}}$$
 
@@ -92,7 +92,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> *Remark*. This is the more commonly seen form of the variance definition, and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep $\mathbb{d}(X)$ as the definition’s single building block, matching the notation of [Definition 2](#def-deviation-pop-mean).
+> *Remark*. The expanded form is the more commonly seen definition of the [variance](#def-variance), and the canonical starting point in most treatments; it’s given here as a theorem rather than the primary definition to keep $\mathbb{d}(X)$ as the definition’s single building block, matching the notation of [Definition 2](#def-deviation-pop-mean).
 
 > **NOTE:**
 >
@@ -172,15 +172,15 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> **Definition 4 (Conditional variance)** The **conditional variance** of $Y$ given $X = x$ is the variance of $Y$ under its conditional distribution given $X = x$:
+> **Definition 4 (Conditional variance)** The **conditional variance** of $Y$ given $X = x$ is the [variance](#def-variance) of $Y$ under its conditional distribution given $X = x$:
 >
 > $${\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\mathopen{}\left(Y - {\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}\right)\mathclose{}^2 \mid X = x\right]\mathclose{}}$$
 >
-> Evaluating this function of $x$ at $X$ gives the random variable ${\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}$, just as the [conditional expectation function](expectation.llms.md#def-cond-expectation-function) ${\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}$ comes from ${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}$.
+> Evaluating this [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $x$ at $X$ gives the [random variable](random-variables.llms.md#def-random-variable) ${\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}$, just as the [conditional expectation function](expectation.llms.md#def-cond-expectation-function) ${\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}$ comes from ${\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}$.
 
 > **NOTE:**
 >
-> **Example 4 (Conditional variance of a binary outcome)** Let $(X, Y)$ have the joint PMF $\mathbb{P}(X=0, Y=0) = 0.2$, $\mathbb{P}(X=0, Y=1) = 0.3$, $\mathbb{P}(X=1, Y=0) = 0.1$, $\mathbb{P}(X=1, Y=1) = 0.4$ (the table in the [expectation page’s exercise](expectation.llms.md#exr-fubini-joint-disc)). Given $X = 0$, $Y$ is binary with
+> **Example 4 (Conditional variance of a binary outcome)** Let $(X, Y)$ have the [joint PMF](random-variables.llms.md#def-joint-pmf) $\mathbb{P}(X=0, Y=0) = 0.2$, $\mathbb{P}(X=0, Y=1) = 0.3$, $\mathbb{P}(X=1, Y=0) = 0.1$, $\mathbb{P}(X=1, Y=1) = 0.4$ (the table in the [expectation page’s exercise](expectation.llms.md#exr-fubini-joint-disc)). Given $X = 0$, $Y$ is binary with
 >
 > $$\begin{aligned}
 > \mathbb{P}(Y = 1 \mid X = 0) &= 0.3/0.5 \\
@@ -215,7 +215,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> **Definition 5 (Homoskedasticity)** A random variable $Y$ is **homoskedastic** with respect to a random variable (or vector) $X$ if the [conditional variance](#def-cond-variance) of $Y$ given $X = x$ is the same for every $x$:
+> **Definition 5 (Homoskedasticity)** A [random variable](random-variables.llms.md#def-random-variable) $Y$ is **homoskedastic** with respect to a random variable (or vector) $X$ if the [conditional variance](#def-cond-variance) of $Y$ given $X = x$ is the same for every $x$:
 >
 > $${\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}} = \sigma^2\quad \text{for all } x$$
 >
@@ -223,7 +223,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> **Example 5 (A homoskedastic total)** Flip two fair coins, let $X_1$ indicate heads on the first, and let $Y$ be the total number of heads. Given $X_1 = 0$, $Y$ is $0$ or $1$ with probability $1/2$ each; given $X_1 = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each. Either way, $Y$ is $1/2$ away from its conditional mean with probability 1, so
+> **Example 5 (A homoskedastic total)** Flip two fair coins, let $X_1$ indicate heads on the first, and let $Y$ be the total number of heads. Given $X_1 = 0$, $Y$ is $0$ or $1$ with [probability](probability-basics.llms.md#def-probability) $1/2$ each; given $X_1 = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each. Either way, $Y$ is $1/2$ away from its conditional mean with probability 1, so
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 0\right)\mathclose{}} &= {\operatorname{Var}\mathopen{}\left(Y \mid X_1 = 1\right)\mathclose{}} \\
@@ -234,7 +234,7 @@ Last modified: 2026-11-06 01:59:20 (PST)
 
 > **NOTE:**
 >
-> **Definition 6 (Heteroskedasticity)** A random variable $Y$ is **heteroskedastic** with respect to $X$ if it is not [homoskedastic](#def-homosked) with respect to $X$: that is, if ${\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}$ differs between some values of $x$.
+> **Definition 6 (Heteroskedasticity)** A [random variable](random-variables.llms.md#def-random-variable) $Y$ is **heteroskedastic** with respect to $X$ if it is not [homoskedastic](#def-homosked) with respect to $X$: that is, if ${\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}$ differs between some values of $x$.
 
 > **NOTE:**
 >
@@ -827,19 +827,19 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Corollary 2 (Uncorrelated means zero correlation)** If $X$ and $Y$ have finite, positive [variances](#def-variance), then $X$ and $Y$ are [uncorrelated](#def-uncorrelated) if and only if ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$.
+> **Corollary 2 (Uncorrelated means zero correlation)** If $X$ and $Y$ have finite, positive [variances](#def-variance), then $X$ and $Y$ are [uncorrelated](#def-uncorrelated) [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$.
 
 > **NOTE:**
 >
-> *Proof*. By [Definition 10](#def-correlation), ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} / \mathopen{}\left({\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\right)\mathclose{}$, and ${\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} > 0$ because both variances are positive, so ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$ if and only if ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$, which is [Definition 11](#def-uncorrelated).
+> *Proof*. By [Definition 10](#def-correlation), ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} / \mathopen{}\left({\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}\right)\mathclose{}$, and ${\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} > 0$ because both [variances](#def-variance) are positive, so ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$ [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$, which is [Definition 11](#def-uncorrelated).
 
 > **NOTE:**
 >
-> **Definition 12 (Conditional covariance)** The **conditional covariance** of $Y$ and $Z$ given $X = x$ is their covariance under their conditional distribution given $X = x$:
+> **Definition 12 (Conditional covariance)** The **conditional covariance** of $Y$ and $Z$ given $X = x$ is their [covariance](#def-cov) under their conditional distribution given $X = x$:
 >
 > $${\operatorname{Cov}\mathopen{}\left(Y,Z \mid X = x\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\mathopen{}\left(Y-{\mathbb{E}\mathopen{}\left[Y \mid X = x\right]\mathclose{}}\right)\mathclose{}\mathopen{}\left(Z-{\mathbb{E}\mathopen{}\left[Z \mid X = x\right]\mathclose{}}\right)\mathclose{} \mid X = x\right]\mathclose{}}$$
 >
-> Evaluating this function of $x$ at $X$ gives the random variable ${\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}}$.
+> Evaluating this [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $x$ at $X$ gives the [random variable](random-variables.llms.md#def-random-variable) ${\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}}$.
 
 > **NOTE:**
 >
@@ -847,7 +847,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 9 (Law of total covariance)** For random variables $X$, $Y$, and $Z$ with ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} < \infty$:
+> **Theorem 9 (Law of total covariance (covariance decomposition formula, conditional covariance formula))** For [random variables](random-variables.llms.md#def-random-variable) $X$, $Y$, and $Z$ with ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Z^2\right]\mathclose{}} < \infty$:
 >
 > $${\operatorname{Cov}\mathopen{}\left(Y,Z\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\operatorname{Cov}\mathopen{}\left(Y,Z \mid X\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Cov}\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}, {\mathbb{E}\mathopen{}\left[Z \mid X\right]\mathclose{}}\right)\mathclose{}}$$
 
@@ -879,7 +879,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(definition of conditional covariance)}
 > \end{aligned}$$
 >
-> For the last term, the law of iterated expectations gives ${\mathbb{E}\mathopen{}\left[m_Y(X)\right]\mathclose{}} = \mu_Y$ and ${\mathbb{E}\mathopen{}\left[m_Z(X)\right]\mathclose{}} = \mu_Z$, so:
+> For the last term, the [law of iterated expectations](expectation.llms.md#thm-lie) gives ${\mathbb{E}\mathopen{}\left[m_Y(X)\right]\mathclose{}} = \mu_Y$ and ${\mathbb{E}\mathopen{}\left[m_Z(X)\right]\mathclose{}} = \mu_Z$, so:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[\mathopen{}\left[m_Y(X) - \mu_Y\right]\mathclose{}\mathopen{}\left[m_Z(X) - \mu_Z\right]\mathclose{}\right]\mathclose{}}
@@ -895,11 +895,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark*. Alternate names include: the **covariance decomposition formula** and the **conditional covariance formula**.
-
-> **NOTE:**
->
-> **Lemma 2 (The covariance of a variable with itself is its variance)** For any random variable $X$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$:
+> **Lemma 2 (The covariance of a variable with itself is its variance)** For any [random variable](random-variables.llms.md#def-random-variable) $X$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$:
 >
 > $${\operatorname{Cov}\mathopen{}\left(X,X\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$$
 
@@ -1030,7 +1026,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 12 (Variance of a linear combination)** For any vector of random variables $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= (X_1, \ldots, X_n)$ and corresponding vector of constants $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}= (a_1, \ldots, a_n)$, the variance of their linear combination is:
+> **Theorem 12 (Variance of a linear combination)** For any vector of [random variables](random-variables.llms.md#def-random-variable) $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= (X_1, \ldots, X_n)$ and corresponding vector of constants $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}= (a_1, \ldots, a_n)$, the [variance](#def-variance) of their [linear combination](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination) is:
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\cdot \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}
@@ -1041,14 +1037,14 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. Treat $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ as $n \times 1$ column vectors, so
+> *Proof*. Treat $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ as $n \times 1$ [column vectors](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector), so
 >
 > $$\begin{aligned}
 > \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}\cdot \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}&= {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\\
 > &= \sum_{i=1}^na_i X_i,
 > \end{aligned}$$
 >
-> a scalar. By linearity of expectation, ${\mathbb{E}\mathopen{}\left[{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right]\mathclose{}} = {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\,\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$, so:
+> a [scalar](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar). By [linearity of expectation](expectation.llms.md#thm-linearity-expectation), ${\mathbb{E}\mathopen{}\left[{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right]\mathclose{}} = {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\,\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$, so:
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left({\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{a}}\vphantom{a}}}^{\top}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}
@@ -1068,7 +1064,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Corollary 3 (Variance of a sum of two random variables)** For any two random variables $X$ and $Y$ and scalars $a$ and $b$:
+> **Corollary 3 (Variance of a sum of two random variables)** For any two [random variables](random-variables.llms.md#def-random-variable) $X$ and $Y$ and [scalars](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar) $a$ and $b$:
 >
 > $${\operatorname{Var}\mathopen{}\left(aX + bY\right)\mathclose{}} = a^2 {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + b^2 {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + 2(a \cdot b) {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}$$
 
@@ -1081,7 +1077,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > &= a^2 {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + b^2 {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + 2ab {\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}
 > \end{aligned}$$
 >
-> Alternatively, by linearity of expectation:
+> Alternatively, by [linearity of expectation](expectation.llms.md#thm-linearity-expectation):
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(aX+bY\right)\mathclose{}}
@@ -1099,7 +1095,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Corollary 4 (Variance of a sum of independent random variables)** If $X$ and $Y$ are [independent](independence.llms.md#def-indpt), each discrete or continuous, with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$, then:
+> **Corollary 4 (Variance of a sum of independent random variables)** If $X$ and $Y$ are [independent](independence.llms.md#def-indpt), each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$, then:
 >
 > $${\operatorname{Var}\mathopen{}\left(X + Y\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$$
 
@@ -1124,7 +1120,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark*. [Corollary 3](#cor-var-lincom2) is why two variables’ covariance matters for combining them: the covariance term is what separates the variance of their sum from the sum of their variances, and [Corollary 4](#cor-var-sum-indpt) is the case where that term is 0.
+> *Remark*. [Corollary 3](#cor-var-lincom2) is why two variables’ [covariance](#def-cov) matters for combining them: the covariance [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) is what separates the [variance](#def-variance) of their [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) from the sum of their variances, and [Corollary 4](#cor-var-sum-indpt) is the case where that term is 0.
 
 > **NOTE:**
 >
@@ -1160,7 +1156,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(} (Y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}})^2 \ge 0 \text{)}
 > \end{aligned}$$
 >
-> The first step is [Theorem 12](#thm-var-lincom). The last step holds because a random variable that is never negative has a non-negative expectation: in the discrete and continuous cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley [\[4\]](#ref-billingsley1995probability)).
+> The first step is [Theorem 12](#thm-var-lincom). The last step holds because a [random variable](random-variables.llms.md#def-random-variable) that is never negative has a non-negative [expectation](expectation.llms.md#def-expectation): in the [discrete](random-variables.llms.md#def-discrete-rv) and [continuous](random-variables.llms.md#def-continuous-rv) cases of the [definition of expectation](expectation.llms.md#def-expectation), every term of the sum, or the integrand, is non-negative (for the general case, see Billingsley [\[4\]](#ref-billingsley1995probability)).
 
 > **NOTE:**
 >
@@ -1530,7 +1526,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 # Definitions on this page
 
 - [Definition 1 (Deviation)](#def-deviation)
-- [Definition 2 (Deviation from a population or subpopulation mean)](#def-deviation-pop-mean)
+- [Definition 2 (Deviation from a population or subpopulation mean (error, noise term))](#def-deviation-pop-mean)
 - [Definition 3 (Variance)](#def-variance)
 - [Definition 4 (Conditional variance)](#def-cond-variance)
 - [Definition 5 (Homoskedasticity)](#def-homosked)
