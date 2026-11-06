@@ -73,7 +73,7 @@ $$
 $$
 
 As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$,
-each with probability $1/4$,
-so its mean is 0 and its variance is $(16 + 1 + 1 + 16)/4 = 8.5$.
+each with [probability](probability-basics.qmd#def-probability) $1/4$,
+so its [mean](expectation.qmd#def-expectation) is 0 and its [variance](#def-variance) is $(16 + 1 + 1 + 16)/4 = 8.5$.
 
 :::

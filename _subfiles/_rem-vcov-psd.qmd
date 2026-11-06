@@ -1,8 +1,8 @@
 ::: {.remark .notes}
 
 The two sets of points have the same spread along each coordinate axis,
-so the diagonals of their variance matrices agree.
-The sign of the covariance says which diagonal direction,
+so the diagonals of their [variance matrices](#def-cov-vec-x) agree. <!-- check-term-links: allow -->
+The sign of the [covariance](#def-cov) says which diagonal direction, <!-- check-term-links: allow -->
 $\tp{(1, 1)}$ or $\tp{(1, -1)}$,
 has the larger spread.
 
