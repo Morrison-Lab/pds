@@ -1,7 +1,6 @@
 :::{#sol-expected-density}
 
-**Part 1.**
-Apply @thm-lotus to a [continuous](random-variables.qmd#def-continuous-rv) random variable, with $g(x) = \p(X=x)$:
+Apply @thm-lotus to a [continuous random variable](random-variables.qmd#def-continuous-rv), with $g(x) = \p(X=x)$:
 
 $$
 \ba
@@ -16,41 +15,5 @@ $$
 The [expectation](#def-expectation) of the [density](random-variables.qmd#def-pdf) is the [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) of the squared density.
 It is large when the density is concentrated,
 because then $X$ tends to land where the density is high.
-
-**Part 2.**
-The density is $\p(X=x) = \tfrac{1}{b-a}$ on $[a, b]$ and $0$ elsewhere:
-
-$$
-\ba
-\E{\p(X=X)}
-&= \int_a^b \paren{\frac{1}{b-a}}^2\,dx
-&& \text{(Part 1; the density is } 0 \text{ outside } [a, b] \text{)}
-\\&= \frac{1}{(b-a)^2} \cd (b-a)
-&& \text{(the integrand does not depend on } x \text{, so the integral is the integrand times the interval length } b-a \text{)}
-\\&= \frac{1}{b-a}.
-&& \text{(cancel one factor of } b-a \text{)}
-\ea
-$$
-
-Here the density is constant, so $\p(X=X) = \tfrac{1}{b-a}$ with certainty, and its expectation is the same value.
-
-**Part 3.**
-The density is $\p(X=x) = \frac{1}{\sqrt{2\pi\ss}}\exp\paren{-\frac{(x-\mean)^2}{2\ss}}$:
-
-$$
-\ba
-\E{\p(X=X)}
-&= \int_{-\infty}^{\infty} \frac{1}{2\pi\ss}\exp\paren{-\frac{(x-\mean)^2}{\ss}}\,dx
-&& \text{(Part 1; square the density)}
-\\&= \frac{1}{2\pi\ss} \int_{-\infty}^{\infty} e^{-u^2}\,\sigma\,du
-&& \text{(substitute } u = (x-\mean)/\sigma \text{, so } dx = \sigma\,du \text{)}
-\\&= \frac{\sigma\sqrt{\pi}}{2\pi\ss}
-&& \text{(the given integral)}
-\\&= \frac{1}{2\sigma\sqrt{\pi}}.
-&& \text{(simplify, using } \ss = \sigma^2 \text{)}
-\ea
-$$
-
-A larger [standard deviation](#def-sd) $\sigma$ spreads the density out and lowers its [expected value](#def-expectation).
 
 :::

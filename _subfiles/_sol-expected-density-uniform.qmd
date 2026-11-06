@@ -1,0 +1,19 @@
+:::{#sol-expected-density-uniform}
+
+The density is $\p(X=x) = \tfrac{1}{b-a}$ on $[a, b]$ and $0$ elsewhere:
+
+$$
+\ba
+\E{\p(X=X)}
+&= \int_a^b \paren{\frac{1}{b-a}}^2\,dx
+&& \text{(integral of the squared density; the density is } 0 \text{ outside } [a, b] \text{)}
+\\&= \frac{1}{(b-a)^2} \cd (b-a)
+&& \text{(the integrand does not depend on } x \text{, so the integral is the integrand times the interval length } b-a \text{)}
+\\&= \frac{1}{b-a}.
+&& \text{(cancel one factor of } b-a \text{)}
+\ea
+$$
+
+The density takes the single value $\tfrac{1}{b-a}$ on $[a, b]$, so its expectation is that same value.
+
+:::
