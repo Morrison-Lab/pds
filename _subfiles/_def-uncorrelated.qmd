@@ -1,7 +1,7 @@
 :::{#def-uncorrelated}
 #### Uncorrelated random variables
 
-Random variables $X$ and $Y$
+[Random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
 with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
 are **uncorrelated** when their [covariance](#def-cov) is 0:
 

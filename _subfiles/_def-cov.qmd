@@ -1,7 +1,7 @@
 :::{#def-cov}
 #### Covariance
 
-The **covariance** of two random variables $X$ and $Y$
+The **covariance** of two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
 with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
 [@wikipedia_covariance]
 is:
