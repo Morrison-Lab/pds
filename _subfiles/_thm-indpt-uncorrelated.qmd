@@ -39,7 +39,7 @@ $$
 $$
 
 which is finite, because $X$ and $Y$ have defined [expectations](expectation.qmd#def-expectation). <!-- check-term-links: allow -->
-So condition (b) holds,
+So condition (b) holds for $h(x, y) = xy$,
 and the same steps without the [absolute values](https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value) give: <!-- check-term-links: allow -->
 
 $$
