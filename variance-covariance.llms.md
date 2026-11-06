@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-06 01:45:25 (PST)
+Last modified: 2026-11-06 01:59:20 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -72,47 +72,6 @@ Last modified: 2026-11-06 01:45:25 (PST)
 > &= -1.5.
 > \end{aligned}$$
 
-### 1.0.1 Mean-zero noise model
-
-Measurement noise is almost always modeled as a random variable $\varepsilon$ with **mean zero** and variance $\sigma^2$.
-
-> **NOTE:**
->
-> *Remark 1* (Mean zero is a parametrization choice). Mean zero is a parametrization choice, not a substantive assumption. In $Y = f(x) + \varepsilon$, moving a constant from $\varepsilon$ into $f(x)$ changes the split but not the distribution of $Y$, so the data identify only the sum $f(x) + {\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}}$, the mean of $Y$ at $x$. Requiring ${\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}} = 0$ picks the one split in which $f(x)$ is that mean. This loses no generality when the model for $f$ can absorb a constant, as any model with an intercept can. It restricts the model only when $f$ cannot absorb one, as in a regression through the origin.
-
-Mean zero gives one identity, used repeatedly across statistical modeling and machine learning.
-
-> **NOTE:**
->
-> **Exercise 1 (The average squared error of pure noise)** Let $\varepsilon$ be a random variable with $\mathbb{E}[\varepsilon] = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$.
->
-> Find $\mathbb{E}[\varepsilon^2]$ in terms of $\sigma^2$, and say which earlier result you used.
-
-> **NOTE:**
->
-> *Solution 1*. [Theorem 3](#thm-variance) says ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$. Taking $X = \varepsilon$ and substituting $\mathbb{E}[\varepsilon] = 0$,
->
-> $$\begin{aligned}
-> \mathbb{E}[\varepsilon^2]
-> &= {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} + 0^2 \\
-> &= \sigma^2
-> \end{aligned}
-> \tag{1}$$
->
-> so for mean-zero noise the average squared value *is* the variance.
->
-> The identity looks slight and does a lot of work. [Equation 1](#eq-noise-second-moment) is the step that produces the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error) term in regression and statistical modeling: it converts a statement about the *spread* of the noise, which is what a model of the world gives you, into a statement about *squared error*, which is what the fitting objective measures.
-
-> **NOTE:**
->
-> **Theorem 1 (The second moment of mean-zero noise)** Let $\varepsilon$ be a random variable with $\mathbb{E}[\varepsilon] = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$. Then
->
-> $$\mathbb{E}[\varepsilon^2] = \sigma^2$$
-
-> **NOTE:**
->
-> *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment), worked in [Solution 1](#sol-noise-second-moment). It rearranges [Theorem 3](#thm-variance), using $\mathbb{E}[\varepsilon] = 0$.
-
 # 2 Variance and related characteristics
 
 > **NOTE:**
@@ -123,7 +82,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 2 (Variance as expected squared deviation from the mean)** $${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[(X - {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}})^2\right]\mathclose{}}$$
+> **Theorem 1 (Variance as expected squared deviation from the mean)** $${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[(X - {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}})^2\right]\mathclose{}}$$
 
 > **NOTE:**
 >
@@ -137,7 +96,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 3 (Simplified expression for variance)** $${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}={\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2}$$
+> **Theorem 2 (Simplified expression for variance)** $${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}={\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2}$$
 
 > **NOTE:**
 >
@@ -291,7 +250,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 4 (Law of total variance)** For random variables $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$:
+> **Theorem 3 (Law of total variance)** For random variables $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$:
 >
 > $${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right)\mathclose{}}$$
 
@@ -382,7 +341,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > &= 0.5,
 > \end{aligned}$$
 >
-> ${\mathbb{E}\mathopen{}\left[Y \mid X = 0\right]\mathclose{}} = 0.6$, and ${\mathbb{E}\mathopen{}\left[Y \mid X = 1\right]\mathclose{}} = 0.8$, so ${\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}} = 0.7$, and by [Theorem 4](#thm-total-variance):
+> ${\mathbb{E}\mathopen{}\left[Y \mid X = 0\right]\mathclose{}} = 0.6$, and ${\mathbb{E}\mathopen{}\left[Y \mid X = 1\right]\mathclose{}} = 0.8$, so ${\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}} = 0.7$, and by [Theorem 3](#thm-total-variance):
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}\right]\mathclose{}}
@@ -471,10 +430,10 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 5 (Expected squared error of a constant prediction)** Let $Y$ be a random variable with mean $\mu$ and finite variance. Then for every number $c$,
+> **Theorem 4 (Expected squared error of a constant prediction)** Let $Y$ be a random variable with mean $\mu$ and finite variance. Then for every number $c$,
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}.
-> \tag{2}$$
+> \tag{1}$$
 
 > **NOTE:**
 >
@@ -498,7 +457,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Corollary 1 (The mean is the best constant prediction under squared error)** Under the assumptions of [Theorem 5](#thm-constant-prediction-decompose),
+> **Corollary 1 (The mean is the best constant prediction under squared error)** Under the assumptions of [Theorem 4](#thm-constant-prediction-decompose),
 >
 > $$\arg \min_{c \in \mathbb{R}} {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}} = {\mathopen{}\left\{\mu\right\}\mathclose{}}
 > \quad \text{and} \quad
@@ -508,11 +467,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. In [Equation 2](#eq-constant-prediction-decompose) the first term, ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$, does not depend on $c$. The second term, ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$, is a square, so it is never negative, and it is zero exactly when $c = \mu$. So $c = \mu$ minimizes the expected squared error and no other number does, and at $c = \mu$ the expected squared error is ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$.
+> *Proof*. In [Equation 1](#eq-constant-prediction-decompose) the first term, ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$, does not depend on $c$. The second term, ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$, is a square, so it is never negative, and it is zero exactly when $c = \mu$. So $c = \mu$ minimizes the expected squared error and no other number does, and at $c = \mu$ the expected squared error is ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$.
 
 > **NOTE:**
 >
-> **Example 10 (The best constant prediction of fuel economy)** Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.llms.md#exm-clt-auto) as the whole population, and predict the fuel economy (`mpg`) of a car drawn at random with one number $c$. The code below computes the expected squared error of three constants, and sets each beside the right side of [Equation 2](#eq-constant-prediction-decompose).
+> **Example 10 (The best constant prediction of fuel economy)** Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.llms.md#exm-clt-auto) as the whole population, and predict the fuel economy (`mpg`) of a car drawn at random with one number $c$. The code below computes the expected squared error of three constants, and sets each beside the right side of [Equation 1](#eq-constant-prediction-decompose).
 >
 > ``` r
 > auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
@@ -538,19 +497,60 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > )
 > ```
 >
-> The two columns agree, as [Theorem 5](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
+> The two columns agree, as [Theorem 4](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
 
 # 4 Independent noise plus a random variable
 
+## 4.1 Mean-zero noise model
+
+Measurement [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) is almost always modeled as a [random variable](random-variables.llms.md#def-random-variable) $\varepsilon$ with **[mean](expectation.llms.md#def-expectation) zero** and [variance](#def-variance) $\sigma^2$.
+
 > **NOTE:**
 >
-> **Theorem 6 (The second moment of independent noise plus a random variable)** Let $\varepsilon$ be a random variable with ${\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}} = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$. Let $X$ be a random variable with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ that is independent of $\varepsilon$. Then
+> *Remark 1* (Mean zero is a parametrization choice). Mean zero is a parametrization choice, not a substantive assumption. In $Y = f(x) + \varepsilon$, moving a constant from $\varepsilon$ into $f(x)$ changes the split but not the distribution of $Y$, so the data identify only the sum $f(x) + {\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}}$, the mean of $Y$ at $x$. Requiring ${\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}} = 0$ picks the one split in which $f(x)$ is that mean. This loses no generality when the model for $f$ can absorb a constant, as any model with an [intercept](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-intercept) can. It restricts the model only when $f$ cannot absorb one, as in a regression through the origin.
+
+Mean zero gives one identity, used repeatedly across statistical modeling and machine learning.
+
+> **NOTE:**
+>
+> **Exercise 1 (The average squared error of pure noise)** Let $\varepsilon$ be a [random variable](random-variables.llms.md#def-random-variable) with $\mathbb{E}[\varepsilon] = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$.
+>
+> Find $\mathbb{E}[\varepsilon^2]$ in terms of $\sigma^2$, and say which earlier result you used.
+
+> **NOTE:**
+>
+> *Solution 1*. [Theorem 2](#thm-variance) says ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$. Taking $X = \varepsilon$ and substituting $\mathbb{E}[\varepsilon] = 0$,
+>
+> $$\begin{aligned}
+> \mathbb{E}[\varepsilon^2]
+> &= {\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} + 0^2 \\
+> &= \sigma^2
+> \end{aligned}
+> \tag{2}$$
+>
+> so for mean-zero [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) the average squared value *is* the [variance](#def-variance).
+>
+> The identity looks slight and does a lot of work. [Equation 2](#eq-noise-second-moment) is the step that produces the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error) term in regression and statistical modeling: it converts a statement about the *spread* of the noise, which is what a model of the world gives you, into a statement about *squared error*, which is what the fitting objective measures.
+
+> **NOTE:**
+>
+> **Theorem 5 (The second moment of mean-zero noise)** Let $\varepsilon$ be a [random variable](random-variables.llms.md#def-random-variable) with $\mathbb{E}[\varepsilon] = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$. Then
+>
+> $$\mathbb{E}[\varepsilon^2] = \sigma^2$$
+
+> **NOTE:**
+>
+> *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment), worked in [Solution 1](#sol-noise-second-moment). It rearranges [Theorem 2](#thm-variance), using $\mathbb{E}[\varepsilon] = 0$.
+
+> **NOTE:**
+>
+> **Theorem 6 (The second moment of independent noise plus a random variable)** Let $\varepsilon$ be a [random variable](random-variables.llms.md#def-random-variable) with ${\mathbb{E}\mathopen{}\left[\varepsilon\right]\mathclose{}} = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$. Let $X$ be a random variable with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ that is [independent](independence.llms.md#def-indpt) of $\varepsilon$. Then
 >
 > $${\mathbb{E}\mathopen{}\left[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right]\mathclose{}} = \sigma^2+ {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2}$$
 
 > **NOTE:**
 >
-> *Proof*. Expanding the square and using [linearity of expectation](expectation.llms.md#thm-linearity-expectation), first for the expectation of a sum and then for a constant factor,
+> *Proof*. Expanding the square and using [linearity of expectation](expectation.llms.md#thm-linearity-expectation), first for the [expectation](expectation.llms.md#def-expectation) of a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) and then for a constant factor,
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[\mathopen{}\left(\varepsilon+ X\right)\mathclose{}^2\right]\mathclose{}}
@@ -564,9 +564,9 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > Each of the three terms is evaluated in turn.
 >
-> - ${\mathbb{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{}} = \sigma^2$, by [Theorem 1](#thm-noise-second-moment).
+> - ${\mathbb{E}\mathopen{}\left[\varepsilon^2\right]\mathclose{}} = \sigma^2$, by [Theorem 5](#thm-noise-second-moment).
 >
-> - Because $\varepsilon$ and $X$ are independent, the expectation of the product is the product of the expectations:
+> - Because $\varepsilon$ and $X$ are [independent](independence.llms.md#def-indpt), the expectation of the product is the product of the expectations:
 >
 >   $$\begin{aligned}
 >   {\mathbb{E}\mathopen{}\left[\varepsilon X\right]\mathclose{}}
@@ -578,7 +578,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >   && \text{(zero times a number)}
 >   \end{aligned}$$
 >
-> - ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2}$, by [Theorem 3](#thm-variance).
+> - ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} + {\mathopen{}\left({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\right)\mathclose{}}^{2}$, by [Theorem 2](#thm-variance).
 >
 > Substituting the three terms gives
 >
@@ -592,7 +592,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark* (Use in statistics and machine learning). Let $\varepsilon$ be the noise in a new outcome $Y$, and let $X$ be the difference between the true mean $\mu= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$ and a prediction $\hat{y}$:
+> *Remark* (Use in statistics and machine learning). Let $\varepsilon$ be the [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) in a new outcome $Y$, and let $X$ be the difference between the true mean $\mu= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$ and a prediction $\hat{y}$:
 >
 > $$X\stackrel{\text{def}}{=}\mu- \hat{y}$$
 >
@@ -610,7 +610,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(definition of bias)}
 > \end{aligned}$$
 >
-> The variance of $X$ is the variance of the prediction:
+> The [variance](#def-variance) of $X$ is the variance of the prediction:
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}
@@ -620,7 +620,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(a constant shifts a variable without changing its variance, and a sign flip does not change it either)}
 > \end{aligned}$$
 >
-> Substituting these two results into the theorem, with ${\mathopen{}\left(-{\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2} = {\mathopen{}\left({\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2}$, gives the squared prediction error of the new outcome as
+> Substituting these two results into the theorem, with ${\mathopen{}\left(-{\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2} = {\mathopen{}\left({\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2}$, gives the squared [prediction error](expectation.llms.md#def-prediction-error) of the new outcome as
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(\varepsilon+ X\right)\mathclose{}}^{2}\right]\mathclose{}} = \sigma^2+ {\operatorname{Var}\mathopen{}\left(\hat{y}\right)\mathclose{}} + {\mathopen{}\left({\operatorname{Bias}\mathopen{}\left(\hat{y}\right)\mathclose{}}\right)\mathclose{}}^{2},$$
 >
@@ -869,7 +869,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(expand the product; linearity of expectation)}
 > \end{aligned}$$
 >
-> The two middle terms are 0, by the same steps as the cross term in the proof of [Theorem 4](#thm-total-variance): condition on $X$ by the [law of iterated expectations](expectation.llms.md#thm-lie), factor out the function of $X$ ([pull-out property](expectation.llms.md#thm-cond-pull-out)), and use ${\mathbb{E}\mathopen{}\left[Y - m_Y(X) \mid X\right]\mathclose{}} = 0$ (or ${\mathbb{E}\mathopen{}\left[Z - m_Z(X) \mid X\right]\mathclose{}} = 0$), which follows from [linearity of conditional expectation](expectation.llms.md#thm-cond-linearity). For the first term:
+> The two middle terms are 0, by the same steps as the cross term in the proof of [Theorem 3](#thm-total-variance): condition on $X$ by the [law of iterated expectations](expectation.llms.md#thm-lie), factor out the function of $X$ ([pull-out property](expectation.llms.md#thm-cond-pull-out)), and use ${\mathbb{E}\mathopen{}\left[Y - m_Y(X) \mid X\right]\mathclose{}} = 0$ (or ${\mathbb{E}\mathopen{}\left[Z - m_Z(X) \mid X\right]\mathclose{}} = 0$), which follows from [linearity of conditional expectation](expectation.llms.md#thm-cond-linearity). For the first term:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[\mathopen{}\left[Y - m_Y(X)\right]\mathclose{}\mathopen{}\left[Z - m_Z(X)\right]\mathclose{}\right]\mathclose{}}
@@ -1417,7 +1417,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 22 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 20](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 3](#thm-variance) gives as:
+> **Example 22 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 20](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 2](#thm-variance) gives as:
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}

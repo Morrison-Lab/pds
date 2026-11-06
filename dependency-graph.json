@@ -124,6 +124,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum"
   },
   {
+   "id": "mds/algebra-sums#def-summation",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-summation",
+   "kind": "def",
+   "title": "summation",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-summation"
+  },
+  {
    "id": "mds/calculus-derivatives#def-derivative",
    "site": "mds",
    "page": "calculus-derivatives",
@@ -4461,11 +4471,31 @@
   ],
   [
    "pds/variance-covariance#thm-noise-second-moment",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-noise-second-moment",
    "pds/variance-covariance#thm-variance"
   ],
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
+   "mds/algebra-sums#def-summation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
    "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
@@ -4517,10 +4547,5 @@
   ]
  ],
  "cycles": [],
- "forwardReferences": [
-  [
-   "pds/variance-covariance#thm-noise-second-moment",
-   "pds/variance-covariance#thm-variance"
-  ]
- ]
+ "forwardReferences": []
 }
