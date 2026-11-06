@@ -124,6 +124,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer"
   },
   {
+   "id": "mds/algebra-basics#def-square-root",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-square-root",
+   "kind": "def",
+   "title": "square root",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root"
+  },
+  {
    "id": "mds/algebra-exponentials#def-infinite-sum",
    "site": "mds",
    "page": "algebra-exponentials",
@@ -142,6 +152,16 @@
    "title": "summation",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-summation"
+  },
+  {
+   "id": "mds/algebra-sums#def-term",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-term",
+   "kind": "def",
+   "title": "term",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-term"
   },
   {
    "id": "mds/calculus-derivatives#def-derivative",
@@ -352,6 +372,16 @@
    "title": "finite additivity",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#def-finite-additivity"
+  },
+  {
+   "id": "mds/measures#def-lebesgue-measure",
+   "site": "mds",
+   "page": "measures",
+   "div": "def-lebesgue-measure",
+   "kind": "def",
+   "title": "lebesgue measure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures.html#def-lebesgue-measure"
   },
   {
    "id": "mds/measures#def-measure",
@@ -2526,7 +2556,7 @@
    "page": "variance-covariance",
    "div": "thm-total-variance",
    "kind": "thm",
-   "title": "Law of total variance",
+   "title": "Law of total variance (conditional variance formula, Eve's law, variance decomposition formula)",
    "external": false
   },
   {
@@ -4321,6 +4351,14 @@
   ],
   [
    "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
    "pds/variance-covariance#lem-cov-xx"
   ],
   [
@@ -4381,6 +4419,10 @@
   ],
   [
    "pds/variance-covariance#def-correlation",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-correlation",
    "pds/variance-covariance#def-cov"
   ],
   [
@@ -4390,6 +4432,10 @@
   [
    "pds/variance-covariance#def-correlation",
    "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-cov",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-deviation-pop-mean",
@@ -4453,11 +4499,27 @@
   ],
   [
    "pds/variance-covariance#def-precision",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-precision",
    "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#def-sd",
+   "mds/algebra-basics#def-square-root"
+  ],
+  [
+   "pds/variance-covariance#def-sd",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-sd",
    "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#def-uncorrelated",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-uncorrelated",
@@ -4504,6 +4566,30 @@
    "pds/variance-covariance#thm-variance"
   ],
   [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "mds/algebra-sums#def-term"
+  ],
+  [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-constant-prediction-decompose",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/variance-covariance#thm-cor-bounds",
    "pds/variance-covariance#cor-var-lincom2"
   ],
@@ -4513,7 +4599,23 @@
   ],
   [
    "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#def-deviation"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#def-sd"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
    "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mds/algebra-basics#def-absolute-value"
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
@@ -4521,11 +4623,35 @@
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
+   "mds/measures#def-lebesgue-measure"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
    "pds/expectation#cor-fubini-joint"
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-joint-pmf"
+  ],
+  [
+   "pds/variance-covariance#thm-indpt-uncorrelated",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/variance-covariance#thm-indpt-uncorrelated",
@@ -4629,6 +4755,10 @@
   ],
   [
    "pds/variance-covariance#thm-total-cov",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-total-variance",
    "pds/random-variables#def-random-variable"
   ],
   [

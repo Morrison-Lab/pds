@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-06 02:08:09 (PST)
+Last modified: 2026-11-06 02:16:57 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -246,11 +246,11 @@ Last modified: 2026-11-06 02:08:09 (PST)
 > &= {\operatorname{Var}\mathopen{}\left(Y \mid X = 1\right)\mathclose{}},
 > \end{aligned}$$
 >
-> so $Y$ is heteroskedastic with respect to $X$. More generally, a binary outcome with $\mathbb{P}(Y = 1 \mid X = x) = \pi(x)$ has conditional variance $\pi(x)(1 - \pi(x))$, so it is homoskedastic only if $\pi(x)$ takes at most two values, $\pi$ and $1 - \pi$, for some $\pi$.
+> so $Y$ is heteroskedastic with respect to $X$. More generally, a binary outcome with $\mathbb{P}(Y = 1 \mid X = x) = \pi(x)$ has [conditional variance](#def-cond-variance) $\pi(x)(1 - \pi(x))$, so it is homoskedastic only if $\pi(x)$ takes at most two values, $\pi$ and $1 - \pi$, for some $\pi$.
 
 > **NOTE:**
 >
-> **Theorem 3 (Law of total variance)** For random variables $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$:
+> **Theorem 3 (Law of total variance (conditional variance formula, Eve’s law, variance decomposition formula))** For [random variables](random-variables.llms.md#def-random-variable) $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$:
 >
 > $${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\operatorname{Var}\mathopen{}\left(Y \mid X\right)\mathclose{}}\right]\mathclose{}} + {\operatorname{Var}\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right)\mathclose{}}$$
 
@@ -269,7 +269,7 @@ Last modified: 2026-11-06 02:08:09 (PST)
 > && \text{(expand the square; linearity of expectation)}
 > \end{aligned}$$
 >
-> The three terms are handled separately, each using the [law of iterated expectations](expectation.llms.md#thm-lie), applied to a function of $X$ and $Y$ ([conditional expectation of a function](expectation.llms.md#def-cond-expectation-general)). The third term also uses two facts about conditional expectations: a [function of](expectation.llms.md#thm-cond-pull-out) $X$ factors out of a conditional expectation given $X$, and [conditional expectation is linear](expectation.llms.md#thm-cond-linearity).
+> The three terms are handled separately, each using the [law of iterated expectations](expectation.llms.md#thm-lie), applied to a function of $X$ and $Y$ ([conditional expectation of a function](expectation.llms.md#def-cond-expectation-general)). The third [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) also uses two facts about [conditional expectations](expectation.llms.md#def-cond-expectation): a [function of](expectation.llms.md#thm-cond-pull-out) $X$ factors out of a conditional expectation given $X$, and [conditional expectation is linear](expectation.llms.md#thm-cond-linearity).
 >
 > First term:
 >
@@ -281,7 +281,7 @@ Last modified: 2026-11-06 02:08:09 (PST)
 > && \text{(definition of conditional variance)}
 > \end{aligned}$$
 >
-> Second term: by the law of iterated expectations,
+> Second term: by the [law of iterated expectations](expectation.llms.md#thm-lie),
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[m(X)\right]\mathclose{}} &= {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}} \\
@@ -330,10 +330,6 @@ Last modified: 2026-11-06 02:08:09 (PST)
 
 > **NOTE:**
 >
-> *Remark*. Alternate names include: the **conditional variance formula**, **Eve’s law**, and the **variance decomposition formula**.
-
-> **NOTE:**
->
 > **Example 7 (Decomposing the variance of a binary outcome)** Continuing [Example 4](#exm-cond-variance),
 >
 > $$\begin{aligned}
@@ -358,7 +354,7 @@ Last modified: 2026-11-06 02:08:09 (PST)
 > &= 0.21
 > \end{aligned}$$
 >
-> As a check, $Y$ is Bernoulli with
+> As a check, $Y$ is [Bernoulli](random-variables.llms.md#def-bernoulli) with
 >
 > $$\begin{aligned}
 > \mathbb{P}(Y = 1) &= 0.3 + 0.4 \\
@@ -374,19 +370,19 @@ Last modified: 2026-11-06 02:08:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 7 (Precision)** The **precision** of a random variable $X$, often denoted $\tau(X)$, $\tau_X$, or shorthanded as $\tau$, is the inverse of that random variable’s [variance](#def-variance) (for ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} > 0$); that is:
+> **Definition 7 (Precision)** The **precision** of a [random variable](random-variables.llms.md#def-random-variable) $X$, often denoted $\tau(X)$, $\tau_X$, or shorthanded as $\tau$, is the inverse of that random variable’s [variance](#def-variance) (for ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} > 0$); that is:
 >
 > $$\tau(X) \stackrel{\text{def}}{=}{\mathopen{}\left({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{-1}$$
 
 > **NOTE:**
 >
-> **Definition 8 (Standard deviation)** The **standard deviation** of a random variable $X$ is the square root of the [variance](#def-variance) of $X$:
+> **Definition 8 (Standard deviation)** The **standard deviation** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [square root](https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root) of the [variance](#def-variance) of $X$:
 >
 > $${\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}\sqrt{{\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}}$$
 
 > **NOTE:**
 >
-> *Remark*. The standard deviation is on the same scale as $X$ itself (unlike the variance, which is on the scale of $X$’s square), which is why it is often the preferred measure of spread when reporting results.
+> *Remark*. The [standard deviation](#def-sd) is on the same scale as $X$ itself (unlike the [variance](#def-variance), which is on the scale of $X$’s square), which is why it is often the preferred measure of spread when reporting results.
 
 > **NOTE:**
 >
@@ -397,7 +393,7 @@ Last modified: 2026-11-06 02:08:09 (PST)
 > &= 4
 > \end{aligned}$$
 >
-> and its standard deviation is
+> and its [standard deviation](#def-sd) is
 >
 > $$\begin{aligned}
 > {\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} &= \sqrt{1/4} \\
@@ -430,14 +426,14 @@ Last modified: 2026-11-06 02:08:09 (PST)
 
 > **NOTE:**
 >
-> **Theorem 4 (Expected squared error of a constant prediction)** Let $Y$ be a random variable with mean $\mu$ and finite variance. Then for every number $c$,
+> **Theorem 4 (Expected squared error of a constant prediction)** Let $Y$ be a [random variable](random-variables.llms.md#def-random-variable) with [mean](expectation.llms.md#def-expectation) $\mu$ and finite [variance](#def-variance). Then for every number $c$,
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}.
 > \tag{1}$$
 
 > **NOTE:**
 >
-> *Proof*. Add and subtract $\mu$ inside the square, expand it, and take the expectation term by term:
+> *Proof*. Add and subtract $\mu$ inside the square, expand it, and take the [expectation](expectation.llms.md#def-expectation) [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) by term:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}
@@ -630,7 +626,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 9 (Covariance)** The **covariance** of two random variables $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$ [\[3\]](#ref-wikipedia_covariance) is:
+> **Definition 9 (Covariance)** The **covariance** of two [random variables](random-variables.llms.md#def-random-variable) $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$ [\[3\]](#ref-wikipedia_covariance) is:
 >
 > $${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[(X - {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}})(Y - {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}})\right]\mathclose{}}$$
 
@@ -654,7 +650,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 11 (Covariance of a binary exposure and outcome)** For the joint PMF in [Example 4](#exm-cond-variance),
+> **Example 11 (Covariance of a binary exposure and outcome)** For the [joint PMF](random-variables.llms.md#def-joint-pmf) in [Example 4](#exm-cond-variance),
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[XY\right]\mathclose{}} &= \mathbb{P}(X = 1, Y = 1) \\
@@ -675,7 +671,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 8 (Independent random variables have zero covariance)** If $X$ and $Y$ are [independent](independence.llms.md#def-indpt), each discrete or continuous, with defined expectations, then:
+> **Theorem 8 (Independent random variables have zero covariance)** If $X$ and $Y$ are [independent](independence.llms.md#def-indpt), each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with defined [expectations](expectation.llms.md#def-expectation), then:
 >
 > $${\mathbb{E}\mathopen{}\left[XY\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}{\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$$
 >
@@ -683,7 +679,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$, with reference measures $\mu_X$ and $\mu_Y$ as in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) ([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a discrete variable, Lebesgue measure for a continuous one). Because $X$ and $Y$ are independent, $f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their joint PMF, density, or density-mass function (the factorization in the notes to the [definition of independence](independence.llms.md#def-indpt)). First, with $h(x, y) = \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{} \ge 0$ (condition (a)):
+> *Proof*. Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$, with reference measures $\mu_X$ and $\mu_Y$ as in the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) ([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a [discrete variable](random-variables.llms.md#def-discrete-rv), [Lebesgue measure](https://morrison-lab.github.io/mds/measures.html#def-lebesgue-measure) for a [continuous](random-variables.llms.md#def-continuous-rv) one). Because $X$ and $Y$ are [independent](independence.llms.md#def-indpt), $f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their [joint PMF](random-variables.llms.md#def-joint-pmf), [density](random-variables.llms.md#def-pdf), or density-mass [function](https://morrison-lab.github.io/mcs/functions.html#def-function) (the factorization in the notes to the [definition of independence](independence.llms.md#def-indpt)). First, with $h(x, y) = \mathopen{}\left|x\right|\mathclose{}\mathopen{}\left|y\right|\mathclose{} \ge 0$ (condition (a)):
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[\mathopen{}\left|XY\right|\mathclose{}\right]\mathclose{}}
@@ -697,7 +693,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(LOTUS for } \mathopen{}\left|X\right|\mathclose{} \text{)}
 > \end{aligned}$$
 >
-> which is finite, because $X$ and $Y$ have defined expectations. So condition (b) holds for $h(x, y) = xy$, and the same steps without the absolute values give:
+> which is finite, because $X$ and $Y$ have defined [expectations](expectation.llms.md#def-expectation). So condition (b) holds for $h(x, y) = xy$, and the same steps without the [absolute values](https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value) give:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[XY\right]\mathclose{}}
@@ -725,7 +721,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 12 (Two independent coin flips)** For the independent coin flips $X_1$ and $X_2$ of [the independence page’s example](independence.llms.md#exm-indpt), $X_1 X_2 = 1$ only when both flips are heads, so:
+> **Example 12 (Two independent coin flips)** For the [independent](independence.llms.md#def-indpt) coin flips $X_1$ and $X_2$ of [the independence page’s example](independence.llms.md#exm-indpt), $X_1 X_2 = 1$ only when both flips are heads, so:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X_1 X_2\right]\mathclose{}}
@@ -743,7 +739,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 13 (Zero covariance without independence)** The converse of [Theorem 8](#thm-indpt-uncorrelated) is false. Let $X$ take the values $-1$, $0$, and $1$ with probability $1/3$ each, and let $Y = X^2$. Then
+> **Example 13 (Zero covariance without independence)** The [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) of [Theorem 8](#thm-indpt-uncorrelated) is false. Let $X$ take the values $-1$, $0$, and $1$ with [probability](probability-basics.llms.md#def-probability) $1/3$ each, and let $Y = X^2$. Then
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &= (-1 + 0 + 1)/3 \\
@@ -771,7 +767,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(multiply)}
 > \end{aligned}$$
 >
-> But $X$ and $Y$ are not independent: $Y$ is a function of $X$, and
+> But $X$ and $Y$ are not [independent](independence.llms.md#def-indpt): $Y$ is a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $X$, and
 >
 > $$\begin{aligned}
 > \mathbb{P}(X = 0, Y = 0) &= \mathbb{P}(X = 0) \\
@@ -787,13 +783,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 10 (Correlation)** The **correlation** of two random variables $X$ and $Y$ with finite, positive [variances](#def-variance) is their [covariance](#def-cov) divided by the product of their [standard deviations](#def-sd):
+> **Definition 10 (Correlation)** The **correlation** of two [random variables](random-variables.llms.md#def-random-variable) $X$ and $Y$ with finite, positive [variances](#def-variance) is their [covariance](#def-cov) divided by the product of their [standard deviations](#def-sd):
 >
 > $${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} \stackrel{\text{def}}{=}\frac{{\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}}{{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}}\,{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}}}$$
 
 > **NOTE:**
 >
-> *Remark*. Dividing by the standard deviations removes the units of $X$ and $Y$. This population correlation is a property of a joint distribution; the sample (Pearson) correlation coefficient computed from data estimates it.
+> *Remark*. Dividing by the [standard deviations](#def-sd) removes the units of $X$ and $Y$. This [population correlation](#def-correlation) is a property of a [joint distribution](random-variables.llms.md#def-joint-distribution); the sample (Pearson) correlation coefficient computed from data estimates it.
 
 > **NOTE:**
 >
@@ -813,17 +809,17 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 11 (Uncorrelated random variables)** Random variables $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$ are **uncorrelated** when their [covariance](#def-cov) is 0:
+> **Definition 11 (Uncorrelated random variables)** [Random variables](random-variables.llms.md#def-random-variable) $X$ and $Y$ with ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} < \infty$ and ${\mathbb{E}\mathopen{}\left[Y^2\right]\mathclose{}} < \infty$ are **uncorrelated** when their [covariance](#def-cov) is 0:
 >
 > $${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$$
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 8](#thm-indpt-uncorrelated) says independent random variables are uncorrelated, and [Example 13](#exm-uncorrelated-not-indpt) shows the converse fails.
+> *Remark*. [Theorem 8](#thm-indpt-uncorrelated) says [independent](independence.llms.md#def-indpt) [random variables](random-variables.llms.md#def-random-variable) are [uncorrelated](#def-uncorrelated), and [Example 13](#exm-uncorrelated-not-indpt) shows the [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) fails.
 
 > **NOTE:**
 >
-> **Example 15 (Correlated and uncorrelated pairs)** In [Example 13](#exm-uncorrelated-not-indpt), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$, so $X$ and $Y = X^2$ are uncorrelated. In [Example 11](#exm-alt-cov), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0$, so the binary exposure and outcome are not uncorrelated.
+> **Example 15 (Correlated and uncorrelated pairs)** In [Example 13](#exm-uncorrelated-not-indpt), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$, so $X$ and $Y = X^2$ are [uncorrelated](#def-uncorrelated). In [Example 11](#exm-alt-cov), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0$, so the binary exposure and outcome are not uncorrelated.
 
 > **NOTE:**
 >
@@ -1215,15 +1211,15 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > &= 8.5.
 > \end{aligned}$$
 >
-> As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$, each with probability $1/4$, so its mean is 0 and its variance is $(16 + 1 + 1 + 16)/4 = 8.5$.
+> As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$, each with [probability](probability-basics.llms.md#def-probability) $1/4$, so its [mean](expectation.llms.md#def-expectation) is 0 and its [variance](#def-variance) is $(16 + 1 + 1 + 16)/4 = 8.5$.
 
 > **NOTE:**
 >
-> *Remark*. The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, ${(1, 1)}^{\top}$ or ${(1, -1)}^{\top}$, has the larger spread.
+> *Remark*. The two sets of points have the same spread along each coordinate axis, so the diagonals of their [variance matrices](#def-cov-vec-x) agree. The sign of the [covariance](#def-cov) says which diagonal direction, ${(1, 1)}^{\top}$ or ${(1, -1)}^{\top}$, has the larger spread.
 
 > **NOTE:**
 >
-> **Example 18 (A variance matrix that is not positive definite)** Let $X_1$ have variance $\sigma^2> 0$, and let $X_2 = X_1$. Every covariance in $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ is ${\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2$ ([Lemma 2](#lem-cov-xx)), so:
+> **Example 18 (A variance matrix that is not positive definite)** Let $X_1$ have [variance](#def-variance) $\sigma^2> 0$, and let $X_2 = X_1$. Every [covariance](#def-cov) in $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ is ${\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2$ by [Lemma 2](#lem-cov-xx), so:
 >
 > $${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}.$$
 >
@@ -1235,11 +1231,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > &= 0,
 > \end{aligned}$$
 >
-> so ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)). If $X_1$ is continuous, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
+> so ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)). If $X_1$ is [continuous](random-variables.llms.md#def-continuous-rv), $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
 
 > **NOTE:**
 >
-> **Corollary 5 (Independent components give a diagonal variance matrix)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ be a random vector whose components are each discrete or continuous, with:
+> **Corollary 5 (Independent components give a diagonal variance matrix)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ be a random vector whose components are each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with:
 >
 > - ${\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} < \infty$ for every $i$, and
 > - $X_i$ and $X_j$ [independent](independence.llms.md#def-indpt) for every $i \neq j$.
@@ -1248,7 +1244,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-vcov-elements), the $(i,j)$-th element of ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}$. For $i \neq j$, $X_i$ and $X_j$ are independent, so ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ by [Theorem 8](#thm-indpt-uncorrelated). The $(i,i)$-th element is ${\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}$ by [Lemma 2](#lem-cov-xx).
+> *Proof*. By [Theorem 10](#thm-vcov-elements), the $(i,j)$-th element of ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}$. For $i \neq j$, $X_i$ and $X_j$ are [independent](independence.llms.md#def-indpt), so ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ by [Theorem 8](#thm-indpt-uncorrelated). The $(i,i)$-th element is ${\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}$ by [Lemma 2](#lem-cov-xx).
 
 > **NOTE:**
 >
@@ -1258,7 +1254,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. Write $\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} > 0$ and $\sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} > 0$, and take either sign $\pm$ throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying [Corollary 3](#cor-var-lincom2) with $a = 1/\sigma_X$ and $b = \pm 1/\sigma_Y$:
+> *Proof*. Write $\sigma_X$ and $\sigma_Y$ for the [standard deviations](#def-sd),
+>
+> $$\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} > 0, \qquad \sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} > 0,$$
+>
+> and take either sign $\pm$ throughout. A [variance](#def-variance) is the [expectation](expectation.llms.md#def-expectation) of a squared [deviation](#def-deviation), a non-negative [random variable](random-variables.llms.md#def-random-variable), so it is non-negative. Applying [Corollary 3](#cor-var-lincom2) with $a = 1/\sigma_X$ and $b = \pm 1/\sigma_Y$:
 >
 > $$\begin{aligned}
 > 0
@@ -1278,7 +1278,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > **Example 19 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
-> Choose one car at random, each with the same probability, and let $X$ be its horsepower and $Y$ its miles per gallon. Then ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, and ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}$ are the averages over the cars in the data, and [Definition 10](#def-correlation) gives ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}$. The code below computes each part of the definition directly.
+> Choose one car at random, each with the same [probability](probability-basics.llms.md#def-probability), and let $X$ be its horsepower and $Y$ its miles per gallon. Then each [expectation](expectation.llms.md#def-expectation) in the definitions of the [variance](#def-variance) and the [covariance](#def-cov) is an average over the cars in the data, and [Definition 10](#def-correlation) gives their [correlation](#def-correlation). The code below computes each part of the definition directly.
 >
 > ## Python
 >
@@ -1346,7 +1346,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > >
 > > Figure 2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 >
-> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between $-1$ and $1$ as [Theorem 14](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
+> The [covariance](#def-cov) is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two [standard deviations](#def-sd), 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a [correlation](#def-correlation) of -0.78, which lies between $-1$ and $1$ as [Theorem 14](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
 
 > **NOTE:**
 >
