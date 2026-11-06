@@ -21,7 +21,6 @@ Suggests:
     pander,
     plotly,
     qnp,
-    readr,
     reticulate,
     rmarkdown,
     spelling,
@@ -31,6 +30,7 @@ Suggests:
 VignetteBuilder: knitr
 Imports: 
     dplyr,
+    readr,
     tibble
 Remotes:
     Morrison-Lab/qnp
