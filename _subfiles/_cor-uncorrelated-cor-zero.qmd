@@ -1,0 +1,17 @@
+:::{#cor-uncorrelated-cor-zero}
+#### Uncorrelated means zero correlation
+
+If $X$ and $Y$ have finite, positive [variances](#def-variance),
+then $X$ and $Y$ are [uncorrelated](#def-uncorrelated)
+if and only if $\Cor{X,Y} = 0$.
+
+:::
+
+::: proof
+
+By @def-correlation, $\Cor{X,Y} = \Cov{X,Y} / \paren{\SD{X}\,\SD{Y}}$,
+and $\SD{X}\,\SD{Y} > 0$ because both variances are positive,
+so $\Cor{X,Y} = 0$ if and only if $\Cov{X,Y} = 0$,
+which is @def-uncorrelated.
+
+:::

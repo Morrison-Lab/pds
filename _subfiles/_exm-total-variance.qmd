@@ -1,0 +1,51 @@
+:::{#exm-total-variance}
+#### Decomposing the variance of a binary outcome
+
+Continuing @exm-cond-variance,
+
+$$
+\begin{aligned}
+\P(X = 0) &= \P(X = 1) \\
+&= 0.5,
+\end{aligned}
+$$
+
+$\E{Y \mid X = 0} = 0.6$, and $\E{Y \mid X = 1} = 0.8$,
+so $\E{\E{Y \mid X}} = 0.7$, and by @thm-total-variance:
+
+$$
+\ba
+\E{\Var{Y \mid X}}
+&= 0.5 \cd 0.24 + 0.5 \cd 0.16
+&& \text{(average the conditional variances)} \\
+&= 0.20 \\
+\Var{\E{Y \mid X}}
+&= 0.5 \cd (0.6 - 0.7)^2 + 0.5 \cd (0.8 - 0.7)^2
+&& \text{(variance of the conditional means)} \\
+&= 0.01 \\
+\Var{Y}
+&= 0.20 + 0.01
+&& \text{(law of total variance)} \\
+&= 0.21
+\ea
+$$
+
+As a check, $Y$ is Bernoulli with
+
+$$
+\begin{aligned}
+\P(Y = 1) &= 0.3 + 0.4 \\
+&= 0.7,
+\end{aligned}
+$$
+
+so by @exm-variance-bernoulli,
+
+$$
+\begin{aligned}
+\Var{Y} &= 0.7 \cd 0.3 \\
+&= 0.21.
+\end{aligned}
+$$
+
+:::

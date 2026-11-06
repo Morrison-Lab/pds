@@ -1,0 +1,11 @@
+:::{#def-correlation}
+#### Correlation
+
+The **correlation** of two random variables $X$ and $Y$
+with finite, positive [variances](#def-variance)
+is their [covariance](#def-cov)
+divided by the product of their [standard deviations](#def-sd):
+
+$$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
+
+:::

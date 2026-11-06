@@ -1,0 +1,26 @@
+:::{#thm-alt-cov}
+#### Alternative formula for covariance
+
+$$\Cov{X,Y}= \E{XY} - \E{X} \E{Y}$$
+
+:::
+
+::: proof
+
+Let $\mean_X = \E{X}$ and $\mean_Y = \E{Y}$ be the [population means](expectation.qmd#def-expectation) of $X$ and $Y$.
+They are constants, so [linearity of expectation](expectation.qmd#thm-linearity-expectation) applies with them as coefficients,
+analogous to the proof of the [simplified expression for variance](#thm-variance):
+
+$$
+\ba
+\Cov{X,Y}
+&\eqdef \E{(X-\mean_X)(Y-\mean_Y)} && \text{(definition of covariance, with population means } \mean_X, \mean_Y \text{)} \\
+&= \E{XY - X\mean_Y - Y\mean_X + \mean_X\mean_Y} && \text{(expand the product)} \\
+&= \E{XY} - \mean_Y\E{X} - \mean_X\E{Y} + \mean_X\mean_Y && \text{(linearity of expectation; } \mean_X, \mean_Y \text{ are constants)} \\
+&= \E{XY} - \mean_Y\mean_X - \mean_X\mean_Y + \mean_X\mean_Y && \text{(} \E{X} = \mean_X \text{ and } \E{Y} = \mean_Y \text{)} \\
+&= \E{XY} - \mean_X\mean_Y && \text{(combine like terms)} \\
+&= \E{XY} - \E{X}\E{Y} && \text{(} \mean_X = \E{X} \text{ and } \mean_Y = \E{Y} \text{)}
+\ea
+$$
+
+:::

@@ -1,0 +1,49 @@
+:::{#exm-cond-variance}
+#### Conditional variance of a binary outcome
+
+Let $(X, Y)$ have the joint PMF
+$\P(X=0, Y=0) = 0.2$, $\P(X=0, Y=1) = 0.3$,
+$\P(X=1, Y=0) = 0.1$, $\P(X=1, Y=1) = 0.4$
+(the table in the [expectation page's exercise](expectation.qmd#exr-fubini-joint-disc)).
+Given $X = 0$, $Y$ is binary with
+
+$$
+\begin{aligned}
+\P(Y = 1 \mid X = 0) &= 0.3/0.5 \\
+&= 0.6,
+\end{aligned}
+$$
+
+so $\E{Y \mid X = 0} = 0.6$, and by @def-cond-variance:
+
+$$
+\ba
+\Var{Y \mid X = 0}
+&= (0 - 0.6)^2 \cd 0.4 + (1 - 0.6)^2 \cd 0.6
+&& \text{(definition of conditional variance)} \\
+&= 0.144 + 0.096
+&& \text{(multiply)} \\
+&= 0.24
+&& \text{(add)}
+\ea
+$$
+
+The same steps with
+
+$$
+\begin{aligned}
+\P(Y = 1 \mid X = 1) &= 0.4/0.5 \\
+&= 0.8
+\end{aligned}
+$$
+
+give
+
+$$
+\begin{aligned}
+\Var{Y \mid X = 1} &= (0.2)^2 \cd 0.8 + (0.8)^2 \cd 0.2 \\
+&= 0.16.
+\end{aligned}
+$$
+
+:::

@@ -1,0 +1,24 @@
+:::{#cor-best-constant}
+#### The mean is the best constant prediction under squared error
+
+Under the assumptions of @thm-constant-prediction-decompose,
+
+$$
+\argmin_{c \in \reals} \E{\sqf{Y - c}} = \set{\mean}
+\quad \text{and} \quad
+\min_{c \in \reals} \E{\sqf{Y - c}} = \Var{Y},
+$$
+
+where $\argmin$ is the [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin).
+
+:::
+
+::: proof
+
+In @eq-constant-prediction-decompose the first term, $\Var{Y}$, does not depend on $c$.
+The second term, $\sqf{\mean - c}$, is a square, so it is never negative,
+and it is zero exactly when $c = \mean$.
+So $c = \mean$ minimizes the expected squared error and no other number does,
+and at $c = \mean$ the expected squared error is $\Var{Y}$.
+
+:::

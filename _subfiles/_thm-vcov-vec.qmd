@@ -1,0 +1,46 @@
+:::{#thm-vcov-vec}
+
+#### Alternate expression for variance of a random vector
+
+$$
+\ba
+\Varf{\vX}
+&= \Expf{\vX \tp{\vX}} - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+\ea
+$$
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+$$
+\ba
+\Varf{\vX}
+&= \Expf{
+    \paren{\vX - \Expp\vX}
+    \tp{\paren{\vX - \Expp\vX}}
+  }
+&& \text{(definition)}
+\\
+&= \Expf{
+    \vX \tp{\vX}
+    - \vX \tp{\paren{\Expp\vX}}
+    - \paren{\Expp\vX} \tp{\vX}
+    + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+  }
+&& \text{(expand the product)}
+\\
+&= \Expf{\vX \tp{\vX}}
+  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+  + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&& \text{(linearity, element-wise; } \Expp\vX \text{ is constant)}
+\\
+&= \Expf{\vX \tp{\vX}}
+  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&& \text{(combine like terms)}
+\ea
+$$
+
+:::

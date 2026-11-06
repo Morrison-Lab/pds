@@ -1,0 +1,36 @@
+:::{#cor-var-sum-indpt}
+#### Variance of a sum of independent random variables
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+each discrete or continuous,
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then:
+
+$$\Var{X + Y} = \Var{X} + \Var{Y}$$
+
+:::
+
+::: proof
+
+By @thm-indpt-uncorrelated, $\Cov{X,Y} = 0$.
+Applying @cor-var-lincom2 with
+
+$$
+\begin{aligned}
+a &= b \\
+&= 1:
+\end{aligned}
+$$
+
+$$
+\ba
+\Var{X + Y}
+&= 1^2 \Var{X} + 1^2 \Var{Y} + 2(1 \cd 1) \Cov{X,Y}
+&& \text{(variance of a sum of two random variables)} \\
+&= \Var{X} + \Var{Y} + 2 \Cov{X,Y}
+&& \text{(simplify)} \\
+&= \Var{X} + \Var{Y}
+&& \text{(} \Cov{X,Y} = 0 \text{)}
+\ea
+$$
+
+:::

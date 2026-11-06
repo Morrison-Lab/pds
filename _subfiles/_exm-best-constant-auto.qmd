@@ -1,0 +1,60 @@
+:::{#exm-best-constant-auto}
+#### The best constant prediction of fuel economy
+
+Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.qmd#exm-clt-auto) as the whole population,
+and predict the fuel economy (`mpg`) of a car drawn at random with one number $c$.
+The code below computes the expected squared error of three constants,
+and sets each beside the right side of @eq-constant-prediction-decompose.
+
+```{r}
+#| label: best-constant-auto
+#| code-fold: false
+auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+mpg <- auto$mpg
+mu <- mean(mpg)
+squared_deviations <- (mpg - mu)^2
+sigma2 <- mean(squared_deviations)
+
+median_mpg <- median(mpg)
+c_values <- c(mean = mu, median = median_mpg, twenty = 20)
+constants <- names(c_values)
+
+errors_by_car <- outer(mpg, c_values, "-")
+squared_errors <- errors_by_car^2
+errors <- colMeans(squared_errors)
+shift_squared <- (mu - c_values)^2
+
+tibble::tibble(
+  constant = constants,
+  c = c_values,
+  expected_squared_error = errors,
+  decomposition = sigma2 + shift_squared
+)
+```
+
+```{r}
+#| include: false
+# The prose claims 392 cars, that the two columns agree,
+# and that the mean is best.
+n_cars <- length(mpg)
+decomposition <- sigma2 + shift_squared
+columns_agree <- all.equal(errors, decomposition)
+best_index <- which.min(errors)
+mean_error <- errors[["mean"]]
+mean_error_matches <- all.equal(mean_error, sigma2)
+stopifnot(
+  n_cars == 392L,
+  !anyNA(mpg),
+  columns_agree,
+  best_index == 1,
+  mean_error_matches
+)
+```
+
+The two columns agree, as @thm-constant-prediction-decompose says.
+The mean, `{r} round(mu, 2)`, has the smallest expected squared error, `{r} round(sigma2, 2)`,
+which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer),
+as @cor-best-constant says;
+the median and $c = 20$ are each worse by $\sqf{\mean - c}$.
+
+:::

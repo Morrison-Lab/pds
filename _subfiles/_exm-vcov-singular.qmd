@@ -1,0 +1,27 @@
+:::{#exm-vcov-singular}
+#### A variance matrix that is not positive definite
+
+Let $X_1$ have variance $\ss > 0$, and let $X_2 = X_1$.
+Every covariance in $\vX = \tp{(X_1, X_2)}$ is $\Covs{X_1}{X_1} = \ss$ (@lem-cov-xx), so:
+
+$$
+\Varf{\vX} = \ss \pmat{1 & 1 \\ 1 & 1}.
+$$
+
+With $\va = \tp{(1, -1)}$,
+
+$$
+\begin{aligned}
+\tp{\va}\Varf{\vX}\va &= \Var{X_1 - X_2} \\
+&= \Var{0} \\
+&= 0,
+\end{aligned}
+$$
+
+so $\Varf{\vX}$ is positive semidefinite
+but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
+(compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)).
+If $X_1$ is continuous,
+$\vX$ has no [joint density](random-variables.qmd#thm-no-joint-density-diagonal).
+
+:::

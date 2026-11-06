@@ -1,0 +1,37 @@
+:::{#thm-cor-bounds}
+#### Correlation lies between $-1$ and $1$
+
+If $X$ and $Y$ have finite, positive [variances](#def-variance),
+then their [correlation](#def-correlation) lies in $[-1, 1]$ [@CaseBerg01]:
+
+$$-1 \le \Cor{X,Y} \le 1$$
+
+:::
+
+::: proof
+
+Write $\sdpar_X \eqdef \SD{X} > 0$ and $\sdpar_Y \eqdef \SD{Y} > 0$,
+and take either sign $\pm$ throughout.
+A variance is the expectation of a squared deviation,
+a non-negative random variable,
+so it is non-negative.
+Applying @cor-var-lincom2 with $a = 1/\sdpar_X$ and $b = \pm 1/\sdpar_Y$:
+
+$$
+\ba
+0
+&\le \Var{\frac{X}{\sdpar_X} \pm \frac{Y}{\sdpar_Y}}
+&& \text{(a variance is non-negative)} \\
+&= \frac{\Var{X}}{\sdpar_X^2} + \frac{\Var{Y}}{\sdpar_Y^2} \pm \frac{2 \Cov{X,Y}}{\sdpar_X \sdpar_Y}
+&& \text{(variance of a sum of two random variables)} \\
+&= 1 + 1 \pm \frac{2 \Cov{X,Y}}{\sdpar_X \sdpar_Y}
+&& \text{(definition of standard deviation: } \varpar_X = \Var{X} \text{, } \varpar_Y = \Var{Y} \text{)} \\
+&= 2 \pm 2 \Cor{X,Y}
+&& \text{(definition of correlation)}
+\ea
+$$
+
+With the $+$ sign, $0 \le 2 + 2 \Cor{X,Y}$ gives $\Cor{X,Y} \ge -1$.
+With the $-$ sign, $0 \le 2 - 2 \Cor{X,Y}$ gives $\Cor{X,Y} \le 1$.
+
+:::

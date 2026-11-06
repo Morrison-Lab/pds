@@ -1,0 +1,24 @@
+::: {.remark .notes}
+
+Other sources often call this quantity an **error** or **noise term** [@wikipedia_errors_and_residuals].
+In regression settings,
+the reference mean is often conditional on covariates:
+$\devn(y_i) \eqdef y_i - \E{Y_i \mid X_i = x_i}$.
+
+These notes prefer "deviation"
+for this mean-deviation quantity;
+"error" and "noise" are common aliases.
+The Morrison Lab's regression notes use "residual"
+(defined in their [Linear regression chapter](https://morrison-lab.github.io/rme/chapters/Linear-models-overview.html#def-resid-fitted))
+for deviations from fitted values,
+write $\devn(\cdot)$ for these model/data deviations,
+and reserve $\erf{\cdot}$ for estimator-to-estimand deviations
+(see [Estimation](https://morrison-lab.github.io/sds/estimation.html#def-estimation-error)).
+
+See:
+
+- [Wikipedia: Errors and residuals](https://en.wikipedia.org/wiki/Errors_and_residuals)
+- [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))
+- [Wikipedia: Linear regression --- Notation and terminology](https://en.wikipedia.org/wiki/Linear_regression#Notation_and_terminology)
+
+:::
