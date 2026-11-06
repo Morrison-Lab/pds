@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-05 02:46:02 (PST)
+Last modified: 2026-11-05 17:57:35 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -1349,7 +1349,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 14 (Raw moment)** The $k$-th raw moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of $X^k$:
+> **Definition 14 (Raw moment)** The $k$-th raw moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of $X^k$:
 >
 > $${\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}$$
 
@@ -1374,7 +1374,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 15 (Central moment)** The $k$-th central moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of the [deviation from the mean](#def-deviation-pop-mean) raised to the [power](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer) $k$:
+> **Definition 15 (Central moment)** The $k$-th central moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of the [deviation from the mean](#def-deviation-pop-mean) raised to the [power](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer) $k$:
 >
 > $${\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^k\right]\mathclose{}}$$
 
@@ -1422,7 +1422,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 16 (Moment generating function)** The **moment generating function** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $M_X$ of a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers) $t$ that gives the [expectation](expectation.llms.md#def-expectation) of $\text{e}^{tX}$, defined at every $t$ with ${\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}} < \infty$:
+> **Definition 16 (Moment generating function)** The **moment generating function** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $M_X$ of a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers) $t$ that gives the [expectation](expectation.llms.md#def-expectation) of $\text{e}^{tX}$, defined at every $t$ with ${\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}} < \infty$:
 >
 > $$M_X(t) \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}}$$
 
@@ -1444,7 +1444,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Theorem 16 (Moments from the moment generating function)** If $M_X(t)$ is defined at every $t$ in some [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) around $0$, then for every [positive integer](https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer) $k$, the $k$-th [raw moment](#def-moment) of $X$ is the $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $M_X$ at $0$:
+> **Theorem 16 (Moments from the moment generating function)** If $M_X(t)$ is defined at every $t$ in some [open interval](https://morrison-lab.github.io/mcs/sets.html#def-open-interval) around $0$, then for every [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$, the $k$-th [raw moment](#def-moment) of $X$ is the $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $M_X$ at $0$:
 >
 > $${\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}} = M_X^{(k)}(0)$$
 
@@ -1464,7 +1464,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > && \text{(pass the expectation through the sum; linearity of expectation)}
 > \end{aligned}$$
 >
-> A [Taylor series](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series) can be differentiated one summand at a time inside the [open interval](https://morrison-lab.github.io/mds/sets.html#def-open-interval) where it [converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series). The $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) at $0$ keeps only the summand with $t^k$, and that summand’s coefficient is multiplied by $k!$. So $M_X^{(k)}(0) = k! \cdot\frac{{\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}}{k!} = {\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}$.
+> A [Taylor series](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series) can be differentiated one summand at a time inside the [open interval](https://morrison-lab.github.io/mcs/sets.html#def-open-interval) where it [converges](https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series). The $k$-th [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) at $0$ keeps only the summand with $t^k$, and that summand’s coefficient is multiplied by $k!$. So $M_X^{(k)}(0) = k! \cdot\frac{{\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}}{k!} = {\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}$.
 
 > **NOTE:**
 >
@@ -1490,7 +1490,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. [Functions](https://morrison-lab.github.io/mds/functions.html#def-function) of [independent](independence.llms.md#def-indpt) variables are independent, so $\text{e}^{tX}$ and $\text{e}^{tY}$ are independent. [Independent variables](variance-covariance.llms.md#thm-indpt-uncorrelated) $A$ and $B$ satisfy ${\mathbb{E}\mathopen{}\left[AB\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[A\right]\mathclose{}}\,{\mathbb{E}\mathopen{}\left[B\right]\mathclose{}}$, so:
+> *Proof*. [Functions](https://morrison-lab.github.io/mcs/functions.html#def-function) of [independent](independence.llms.md#def-indpt) variables are independent, so $\text{e}^{tX}$ and $\text{e}^{tY}$ are independent. [Independent variables](variance-covariance.llms.md#thm-indpt-uncorrelated) $A$ and $B$ satisfy ${\mathbb{E}\mathopen{}\left[AB\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[A\right]\mathclose{}}\,{\mathbb{E}\mathopen{}\left[B\right]\mathclose{}}$, so:
 >
 > $$\begin{aligned}
 > M_{X+Y}(t)

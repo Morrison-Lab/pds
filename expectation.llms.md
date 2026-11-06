@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-05 02:46:02 (PST)
+Last modified: 2026-11-05 17:57:35 (PST)
 
 > **NOTE:**
 >
@@ -2039,11 +2039,11 @@ Last modified: 2026-11-05 02:46:02 (PST)
 
 > **NOTE:**
 >
-> **Definition 16 (Prediction function)** A **prediction function** $f$ is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) that takes a value $x$ of the [input](#def-input) and returns a [prediction](#def-prediction) ${f\mathopen{}\left(x\right)\mathclose{}}$ of the [outcome](#def-outcome).
+> **Definition 16 (Prediction function)** A **prediction function** $f$ is a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) that takes a value $x$ of the [input](#def-input) and returns a [prediction](#def-prediction) ${f\mathopen{}\left(x\right)\mathclose{}}$ of the [outcome](#def-outcome).
 
 > **NOTE:**
 >
-> **Example 30 (A constant prediction function)** In [Exercise 7](#exr-best-predictor), the [function](https://morrison-lab.github.io/mds/functions.html#def-function) $f_1\mathopen{}\left(x\right)\mathclose{} = 3$ is a [prediction function](#def-prediction-function): it returns the [prediction](#def-prediction) $3$ for every value of the [input](#def-input).
+> **Example 30 (A constant prediction function)** In [Exercise 7](#exr-best-predictor), the [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $f_1\mathopen{}\left(x\right)\mathclose{} = 3$ is a [prediction function](#def-prediction-function): it returns the [prediction](#def-prediction) $3$ for every value of the [input](#def-input).
 
 > **NOTE:**
 >

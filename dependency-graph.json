@@ -24,6 +24,46 @@
    "url": "https://morrison-lab.github.io/ids/entropy.html#def-nat"
   },
   {
+   "id": "mcs/functions#def-function",
+   "site": "mcs",
+   "page": "functions",
+   "div": "def-function",
+   "kind": "def",
+   "title": "function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/functions.html#def-function"
+  },
+  {
+   "id": "mcs/number-systems#def-positive-integer",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-positive-integer",
+   "kind": "def",
+   "title": "positive integer",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer"
+  },
+  {
+   "id": "mcs/number-systems#def-real-numbers",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-real-numbers",
+   "kind": "def",
+   "title": "real numbers",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers"
+  },
+  {
+   "id": "mcs/sets#def-open-interval",
+   "site": "mcs",
+   "page": "sets",
+   "div": "def-open-interval",
+   "kind": "def",
+   "title": "open interval",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/sets.html#def-open-interval"
+  },
+  {
    "id": "mds/algebra-basics#def-absolute-value",
    "site": "mds",
    "page": "algebra-basics",
@@ -304,26 +344,6 @@
    "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
   },
   {
-   "id": "mds/number-systems#def-positive-integer",
-   "site": "mds",
-   "page": "number-systems",
-   "div": "def-positive-integer",
-   "kind": "def",
-   "title": "positive integer",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/number-systems.html#def-positive-integer"
-  },
-  {
-   "id": "mds/number-systems#def-real-numbers",
-   "site": "mds",
-   "page": "number-systems",
-   "div": "def-real-numbers",
-   "kind": "def",
-   "title": "real numbers",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers"
-  },
-  {
    "id": "mds/sets#def-extended-nonneg-reals",
    "site": "mds",
    "page": "sets",
@@ -332,16 +352,6 @@
    "title": "extended nonneg reals",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/sets.html#def-extended-nonneg-reals"
-  },
-  {
-   "id": "mds/sets#def-open-interval",
-   "site": "mds",
-   "page": "sets",
-   "div": "def-open-interval",
-   "kind": "def",
-   "title": "open interval",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/sets.html#def-open-interval"
   },
   {
    "id": "mds/sets#def-set",
@@ -3083,7 +3093,7 @@
   ],
   [
    "pds/expectation#def-prediction-function",
-   "mds/functions#def-function"
+   "mcs/functions#def-function"
   ],
   [
    "pds/expectation#def-prediction-function",
@@ -3927,7 +3937,7 @@
   ],
   [
    "pds/random-variables#def-kernel",
-   "mds/functions#def-function"
+   "mcs/functions#def-function"
   ],
   [
    "pds/random-variables#def-kernel",
@@ -4239,11 +4249,11 @@
   ],
   [
    "pds/variance-covariance#def-central-moment",
-   "mds/algebra-basics#def-power-integer"
+   "mcs/number-systems#def-positive-integer"
   ],
   [
    "pds/variance-covariance#def-central-moment",
-   "mds/number-systems#def-positive-integer"
+   "mds/algebra-basics#def-power-integer"
   ],
   [
    "pds/variance-covariance#def-central-moment",
@@ -4291,11 +4301,11 @@
   ],
   [
    "pds/variance-covariance#def-mgf",
-   "mds/functions#def-function"
+   "mcs/functions#def-function"
   ],
   [
    "pds/variance-covariance#def-mgf",
-   "mds/number-systems#def-real-numbers"
+   "mcs/number-systems#def-real-numbers"
   ],
   [
    "pds/variance-covariance#def-mgf",
@@ -4307,7 +4317,7 @@
   ],
   [
    "pds/variance-covariance#def-moment",
-   "mds/number-systems#def-positive-integer"
+   "mcs/number-systems#def-positive-integer"
   ],
   [
    "pds/variance-covariance#def-moment",
@@ -4391,6 +4401,14 @@
   ],
   [
    "pds/variance-covariance#thm-mgf-moments",
+   "mcs/number-systems#def-positive-integer"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
+   "mcs/sets#def-open-interval"
+  ],
+  [
+   "pds/variance-covariance#thm-mgf-moments",
    "mds/algebra-basics#def-absolute-value"
   ],
   [
@@ -4411,14 +4429,6 @@
   ],
   [
    "pds/variance-covariance#thm-mgf-moments",
-   "mds/number-systems#def-positive-integer"
-  ],
-  [
-   "pds/variance-covariance#thm-mgf-moments",
-   "mds/sets#def-open-interval"
-  ],
-  [
-   "pds/variance-covariance#thm-mgf-moments",
    "pds/expectation#def-expectation"
   ],
   [
@@ -4431,7 +4441,7 @@
   ],
   [
    "pds/variance-covariance#thm-mgf-sum",
-   "mds/functions#def-function"
+   "mcs/functions#def-function"
   ],
   [
    "pds/variance-covariance#thm-mgf-sum",

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-05 02:46:02 (PST)
+Last modified: 2026-11-05 17:57:35 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -533,7 +533,7 @@ Last modified: 2026-11-05 02:46:02 (PST)
 
 > **NOTE:**
 >
-> *Remark*. Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) controls the [moment generating function](variance-covariance.llms.md#def-mgf) ${\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}}$ in a step that the literature calls Hoeffding’s [lemma](https://morrison-lab.github.io/mds/proof-writing.html#def-lemma).
+> *Remark*. Hoeffding’s 1963 paper [\[10\]](#ref-hoeffding1963) controls the [moment generating function](variance-covariance.llms.md#def-mgf) ${\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}}$ in a step that the literature calls Hoeffding’s [lemma](https://morrison-lab.github.io/mcs/proof-writing.html#def-lemma).
 
 > **NOTE:**
 >

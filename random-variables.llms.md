@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-05 02:46:02 (PST)
+Last modified: 2026-11-05 17:57:35 (PST)
 
 > **NOTE:**
 >
@@ -1048,7 +1048,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Definition 22 (Kernel of a density)** A **kernel** of a [density](#def-pdf) $f$ is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) $g \ge 0$ such that $f(x) = c\, g(x)$ for every $x$, for some constant $c > 0$ that does not depend on $x$.
+> **Definition 22 (Kernel of a density)** A **kernel** of a [density](#def-pdf) $f$ is a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $g \ge 0$ such that $f(x) = c\, g(x)$ for every $x$, for some constant $c > 0$ that does not depend on $x$.
 
 > **NOTE:**
 >
@@ -1090,7 +1090,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 >
 > *Remark 1* (A mode belongs to a density, not to a random variable). A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#def-pmf), so “the mode of $X$” is shorthand for the mode of a chosen density of $X$.
 >
-> Two [densities](#def-pdf) of the same [random variable](#def-random-variable) can differ on a [set](https://morrison-lab.github.io/mds/sets.html#def-set) of [probability](probability-basics.llms.md#def-probability) zero, and then they can have different [modes](#def-mode). A change of variables also moves the mode, because the density of a transformed variable includes a Jacobian factor.
+> Two [densities](#def-pdf) of the same [random variable](#def-random-variable) can differ on a [set](https://morrison-lab.github.io/mcs/sets.html#def-set) of [probability](probability-basics.llms.md#def-probability) zero, and then they can have different [modes](#def-mode). A change of variables also moves the mode, because the density of a transformed variable includes a Jacobian factor.
 >
 > The [expectation](expectation.llms.md#def-expectation) of $X$ is different: it depends only on the [distribution](#def-cdf) of $X$, so every density of $X$ gives the same value.
 
