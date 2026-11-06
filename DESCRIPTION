@@ -30,6 +30,7 @@ Suggests:
 VignetteBuilder: knitr
 Imports: 
     dplyr,
+    readr,
     tibble
 Remotes:
     Morrison-Lab/qnp
