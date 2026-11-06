@@ -38,22 +38,6 @@ format:
 
 {{< include pds/_subfiles/_exm-deviation-pop-mean.qmd >}}
 
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_sec-noise-model.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_exr-noise-second-moment.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_sol-noise-second-moment.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_thm-noise-second-moment.qmd >}}
-
 # Variance and related characteristics
 
 <!-- No slidebreak here: the heading shares its slide with the def-variance div. -->
@@ -109,8 +93,6 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 {{< include pds/_subfiles/_thm-total-variance.qmd >}}
 
-{{< include pds/_subfiles/_rem-total-variance.qmd >}}
-
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exm-total-variance.qmd >}}
@@ -149,6 +131,22 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 <!-- The bias-variance decomposition of prediction error moved to the sds notes, which define
      training data and estimation; this section keeps the plain-probability result it rests on. -->
+
+{{< include pds/_subfiles/_sec-noise-model.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-noise-second-moment.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-noise-second-moment.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-noise-second-moment.qmd >}}
+
+{{< slidebreak >}}
 
 {{< include pds/_subfiles/_thm-second-moment-noise-sum.qmd >}}
 
@@ -215,8 +213,6 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_thm-total-cov.qmd >}}
-
-{{< include pds/_subfiles/_rem-total-cov.qmd >}}
 
 {{< slidebreak >}}
 

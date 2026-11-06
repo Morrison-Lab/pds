@@ -2,7 +2,7 @@
 
 #### The average squared error of pure noise
 
-Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and
+Let $\noise$ be a [random variable](random-variables.qmd#def-random-variable) with $\Ep[\noise] = 0$ and
 $\Var{\noise} = \varpar$.
 
 Find $\Ep[\noise^2]$ in terms of $\varpar$,
