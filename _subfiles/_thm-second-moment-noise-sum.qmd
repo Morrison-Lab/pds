@@ -2,8 +2,8 @@
 
 #### The second moment of independent noise plus a random variable
 
-Let $\noise$ be a random variable with $\E{\noise} = 0$ and $\Var{\noise} = \varpar$.
-Let $\Rvar$ be a random variable with $\E{\Rvar^2} < \infty$ that is independent of $\noise$.
+Let $\noise$ be a [random variable](random-variables.qmd#def-random-variable) with $\E{\noise} = 0$ and $\Var{\noise} = \varpar$.
+Let $\Rvar$ be a random variable with $\E{\Rvar^2} < \infty$ that is [independent](independence.qmd#def-indpt) of $\noise$.
 Then
 
 $$\E{\paren{\noise + \Rvar}^2} = \varpar + \Var{\Rvar} + \sqf{\E{\Rvar}}$$
@@ -14,7 +14,7 @@ $$\E{\paren{\noise + \Rvar}^2} = \varpar + \Var{\Rvar} + \sqf{\E{\Rvar}}$$
 
 Expanding the square and using
 [linearity of expectation](expectation.qmd#thm-linearity-expectation),
-first for the expectation of a sum and then for a constant factor,
+first for the [expectation](expectation.qmd#def-expectation) of a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) and then for a constant factor, <!-- check-term-links: allow -->
 
 $$
 \ba
@@ -31,7 +31,7 @@ $$
 Each of the three terms is evaluated in turn.
 
 - $\E{\noise^2} = \varpar$, by @thm-noise-second-moment.
-- Because $\noise$ and $\Rvar$ are independent,
+- Because $\noise$ and $\Rvar$ are [independent](independence.qmd#def-indpt),
   the expectation of the product is the product of the expectations:
 
   $$
@@ -66,7 +66,7 @@ $$
 
 #### Use in statistics and machine learning
 
-Let $\noise$ be the noise in a new outcome $\Outvar$,
+Let $\noise$ be the [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) in a new outcome $\Outvar$, <!-- check-term-links: allow -->
 and let $\Rvar$ be the difference between the true mean $\mean = \E{\Outvar}$ and a prediction $\eoutvar$:
 
 $$\Rvar \eqdef \mean - \eoutvar$$
@@ -87,7 +87,7 @@ $$
 \ea
 $$
 
-The variance of $\Rvar$ is the variance of the prediction:
+The [variance](#def-variance) of $\Rvar$ is the variance of the prediction:
 
 $$
 \ba
@@ -101,7 +101,7 @@ $$
 
 Substituting these two results into the theorem,
 with $\sqf{-\bias{\eoutvar}} = \sqf{\bias{\eoutvar}}$,
-gives the squared prediction error of the new outcome as
+gives the squared [prediction error](expectation.qmd#def-prediction-error) of the new outcome as
 
 $$
 \E{\sqf{\noise + \Rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
