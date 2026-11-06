@@ -51,6 +51,52 @@ stopifnot(
 )
 ```
 
+@fig-best-constant-auto plots the expected squared error of every constant from 10 to 40 against $c$,
+and marks the three constants in the table.
+
+```{r}
+#| label: fig-best-constant-auto
+#| fig-cap: >-
+#|   Expected squared error of a constant prediction c of fuel economy
+#|   for the 392 cars in the Auto data, for c from 10 to 40 miles per gallon.
+#|   The points mark the mean, the median and c = 20.
+#| fig-alt: >-
+#|   A U-shaped curve of expected squared error against the constant c,
+#|   lowest at about 23.4 miles per gallon.
+#|   Points on the curve mark the mean, which is at the bottom,
+#|   the median, which sits just to the left of it,
+#|   and c = 20, which sits higher on the left arm.
+#| fig-height: 3
+#| fig-width: 6
+#| code-fold: true
+c_grid <- seq(10, 40, length.out = 301)
+grid_deviations <- outer(mpg, c_grid, "-")
+grid_squared <- grid_deviations^2
+grid_errors <- colMeans(grid_squared)
+curve <- tibble::tibble(c = c_grid, expected_squared_error = grid_errors)
+marked <- tibble::tibble(
+  constant = constants,
+  c = c_values,
+  expected_squared_error = errors,
+  label_hjust = c(0.5, 0.5, 1),
+  label_vjust = c(2.5, -2.5, -1)
+)
+
+ggplot2::ggplot(curve, ggplot2::aes(x = c, y = expected_squared_error)) +
+  ggplot2::geom_line() +
+  ggplot2::geom_point(data = marked, size = 3) +
+  ggplot2::geom_text(
+    ggplot2::aes(label = constant, hjust = label_hjust, vjust = label_vjust),
+    data = marked
+  ) +
+  ggplot2::labs(
+    x = "constant prediction c (miles per gallon)",
+    y = "expected squared error"
+  ) +
+  ggplot2::expand_limits(y = 0) +
+  ggplot2::theme_minimal()
+```
+
 The two columns agree, as @thm-constant-prediction-decompose says.
 The mean, `{r} round(mu, 2)`, has the smallest expected squared error, `{r} round(sigma2, 2)`,
 which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer),
