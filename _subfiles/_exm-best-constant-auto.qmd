@@ -15,17 +15,17 @@ mu <- mean(mpg)
 squared_deviations <- (mpg - mu)^2
 sigma2 <- mean(squared_deviations)
 
-c_values <- c(mean = mu, median = median(mpg), twenty = 20)
+median_mpg <- median(mpg)
+c_values <- c(mean = mu, median = median_mpg, twenty = 20)
+constants <- names(c_values)
 
-expected_squared_error <- function(cc) {
-  squared_errors <- (mpg - cc)^2
-  mean(squared_errors)
-}
-errors <- purrr::map_dbl(c_values, expected_squared_error)
+errors_by_car <- outer(mpg, c_values, "-")
+squared_errors <- errors_by_car^2
+errors <- colMeans(squared_errors)
 shift_squared <- (mu - c_values)^2
 
 tibble::tibble(
-  constant = names(c_values),
+  constant = constants,
   c = c_values,
   expected_squared_error = errors,
   decomposition = sigma2 + shift_squared
@@ -37,12 +37,11 @@ tibble::tibble(
 # The prose claims 392 cars, that the two columns agree,
 # and that the mean is best.
 n_cars <- length(mpg)
-columns_agree <- all.equal(
-  unname(errors),
-  unname(sigma2 + shift_squared)
-)
+decomposition <- sigma2 + shift_squared
+columns_agree <- all.equal(errors, decomposition)
 best_index <- which.min(errors)
-mean_error_matches <- all.equal(unname(errors[1]), sigma2)
+mean_error <- errors[["mean"]]
+mean_error_matches <- all.equal(mean_error, sigma2)
 stopifnot(
   n_cars == 392L,
   !anyNA(mpg),
