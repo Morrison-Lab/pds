@@ -91,7 +91,9 @@ label_aes <- ggplot2::aes(
   vjust = label_vjust
 )
 
-ggplot2::ggplot(curve, curve_aes) +
+curve |>
+  ggplot2::ggplot() +
+  curve_aes +
   ggplot2::geom_line() +
   ggplot2::geom_point(data = marked, size = 3) +
   ggplot2::geom_text(label_aes, data = marked) +
