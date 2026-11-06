@@ -1,7 +1,7 @@
 :::{#def-cov}
 #### Covariance
 
-The **covariance** of two random variables $X$ and $Y$
+The **covariance** of two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
 with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
 [@wikipedia_covariance]
 is:
@@ -44,7 +44,7 @@ $$
 :::{#exm-alt-cov}
 #### Covariance of a binary exposure and outcome
 
-For the joint PMF in @exm-cond-variance,
+For the [joint PMF](random-variables.qmd#def-joint-pmf) in @exm-cond-variance,
 
 $$
 \begin{aligned}
@@ -75,8 +75,8 @@ $$
 #### Independent random variables have zero covariance
 
 If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
-each discrete or continuous,
-with defined expectations,
+each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv),
+with defined [expectations](expectation.qmd#def-expectation),
 then:
 
 $$\E{XY} = \E{X}\E{Y}$$
@@ -90,10 +90,10 @@ If also $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then $\Cov{X,Y} = 0$.
 Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$,
 with reference measures $\measure_X$ and $\measure_Y$ as in
 the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
-([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a discrete variable,
-Lebesgue measure for a continuous one).
-Because $X$ and $Y$ are independent,
-$f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their joint PMF, density, or density-mass function
+([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a [discrete variable](random-variables.qmd#def-discrete-rv),
+[Lebesgue measure](https://morrison-lab.github.io/mds/measures.html#def-lebesgue-measure) for a [continuous](random-variables.qmd#def-continuous-rv) one).
+Because $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+$f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their [joint PMF](random-variables.qmd#def-joint-pmf), [density](random-variables.qmd#def-pdf), or density-mass [function](https://morrison-lab.github.io/mcs/functions.html#def-function)
 (the factorization in the notes to the [definition of independence](independence.qmd#def-indpt)).
 First, with $h(x, y) = \abs{x}\abs{y} \ge 0$ (condition (a)):
 
@@ -111,9 +111,9 @@ $$
 \ea
 $$
 
-which is finite, because $X$ and $Y$ have defined expectations.
-So condition (b) holds for $h(x, y) = xy$,
-and the same steps without the absolute values give:
+which is finite, because $X$ and $Y$ have defined [expectations](expectation.qmd#def-expectation). <!-- check-term-links: allow -->
+So condition (b) holds,
+and the same steps without the [absolute values](https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value) give: <!-- check-term-links: allow -->
 
 $$
 \ba
@@ -150,7 +150,7 @@ $$
 :::{#exm-indpt-uncorrelated}
 #### Two independent coin flips
 
-For the independent coin flips $X_1$ and $X_2$ of
+For the [independent](independence.qmd#def-indpt) coin flips $X_1$ and $X_2$ of
 [the independence page's example](independence.qmd#exm-indpt),
 $X_1 X_2 = 1$ only when both flips are heads, so:
 
@@ -177,8 +177,8 @@ so $\Cov{X_1, X_2} = 0$, as @thm-indpt-uncorrelated requires.
 :::{#exm-uncorrelated-not-indpt}
 #### Zero covariance without independence
 
-The converse of @thm-indpt-uncorrelated is false.
-Let $X$ take the values $-1$, $0$, and $1$ with probability $1/3$ each,
+The [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) of @thm-indpt-uncorrelated is false.
+Let $X$ take the values $-1$, $0$, and $1$ with [probability](probability-basics.qmd#def-probability) $1/3$ each,
 and let $Y = X^2$.
 Then
 
@@ -214,7 +214,7 @@ $$
 \ea
 $$
 
-But $X$ and $Y$ are not independent: $Y$ is a function of $X$, and
+But $X$ and $Y$ are not [independent](independence.qmd#def-indpt): $Y$ is a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $X$, and
 
 $$
 \begin{aligned}
@@ -239,7 +239,7 @@ $$
 :::{#def-correlation}
 #### Correlation
 
-The **correlation** of two random variables $X$ and $Y$
+The **correlation** of two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
 with finite, positive [variances](#def-variance)
 is their [covariance](#def-cov)
 divided by the product of their [standard deviations](#def-sd):
@@ -250,8 +250,8 @@ $$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
 
 ::: {.remark .notes}
 
-Dividing by the standard deviations removes the units of $X$ and $Y$.
-This population correlation is a property of a joint distribution;
+Dividing by the [standard deviations](#def-sd) removes the units of $X$ and $Y$.
+This [population correlation](#def-correlation) is a property of a [joint distribution](random-variables.qmd#def-joint-distribution);
 the sample (Pearson) correlation coefficient computed from data estimates it.
 
 :::
@@ -286,7 +286,7 @@ $$
 :::{#def-uncorrelated}
 #### Uncorrelated random variables
 
-Random variables $X$ and $Y$
+[Random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
 with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
 are **uncorrelated** when their [covariance](#def-cov) is 0:
 
@@ -296,8 +296,8 @@ $$\Cov{X,Y} = 0$$
 
 ::: {.remark .notes}
 
-@thm-indpt-uncorrelated says independent random variables are uncorrelated,
-and @exm-uncorrelated-not-indpt shows the converse fails.
+@thm-indpt-uncorrelated says [independent](independence.qmd#def-indpt) [random variables](random-variables.qmd#def-random-variable) are [uncorrelated](#def-uncorrelated),
+and @exm-uncorrelated-not-indpt shows the [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) fails.
 
 :::
 
@@ -307,7 +307,7 @@ and @exm-uncorrelated-not-indpt shows the converse fails.
 #### Correlated and uncorrelated pairs
 
 In @exm-uncorrelated-not-indpt, $\Cov{X,Y} = 0$,
-so $X$ and $Y = X^2$ are uncorrelated.
+so $X$ and $Y = X^2$ are [uncorrelated](#def-uncorrelated).
 In @exm-alt-cov, $\Cov{X,Y} = 0.05 \neq 0$,
 so the binary exposure and outcome are not uncorrelated.
 
@@ -320,15 +320,15 @@ so the binary exposure and outcome are not uncorrelated.
 
 If $X$ and $Y$ have finite, positive [variances](#def-variance),
 then $X$ and $Y$ are [uncorrelated](#def-uncorrelated)
-if and only if $\Cor{X,Y} = 0$.
+[if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) $\Cor{X,Y} = 0$.
 
 :::
 
 ::: proof
 
 By @def-correlation, $\Cor{X,Y} = \Cov{X,Y} / \paren{\SD{X}\,\SD{Y}}$,
-and $\SD{X}\,\SD{Y} > 0$ because both variances are positive,
-so $\Cor{X,Y} = 0$ if and only if $\Cov{X,Y} = 0$,
+and $\SD{X}\,\SD{Y} > 0$ because both [variances](#def-variance) are positive, <!-- check-term-links: allow -->
+so $\Cor{X,Y} = 0$ [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) $\Cov{X,Y} = 0$,
 which is @def-uncorrelated.
 
 :::
@@ -339,11 +339,11 @@ which is @def-uncorrelated.
 #### Conditional covariance
 
 The **conditional covariance** of $Y$ and $Z$ given $X = x$
-is their covariance under their conditional distribution given $X = x$:
+is their [covariance](#def-cov) under their conditional distribution given $X = x$: <!-- check-term-links: allow -->
 
 $$\Cov{Y,Z \mid X = x} \eqdef \E{\paren{Y-\E{Y \mid X = x}}\paren{Z-\E{Z \mid X = x}} \mid X = x}$$
 
-Evaluating this function of $x$ at $X$ gives the random variable $\Cov{Y,Z \mid X}$.
+Evaluating this [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $x$ at $X$ gives the [random variable](random-variables.qmd#def-random-variable) $\Cov{Y,Z \mid X}$.
 
 :::
 
@@ -364,7 +364,7 @@ In @exm-cond-variance, for example, $\Cov{Y,Y \mid X = 0} = 0.24$.
 :::{#thm-total-cov}
 #### Law of total covariance
 
-For random variables $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
+For [random variables](random-variables.qmd#def-random-variable) $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
 
 $$\Cov{Y,Z} = \E{\Cov{Y,Z \mid X}} + \Cov{\E{Y \mid X}, \E{Z \mid X}}$$
 
@@ -414,7 +414,7 @@ $$
 \ea
 $$
 
-For the last term, the law of iterated expectations gives
+For the last term, the law of iterated [expectations](expectation.qmd#def-expectation) gives
 $\E{m_Y(X)} = \mean_Y$ and $\E{m_Z(X)} = \mean_Z$, so:
 
 $$
@@ -446,7 +446,7 @@ and the **conditional covariance formula**.
 :::{#lem-cov-xx}
 #### The covariance of a variable with itself is its variance
 
-For any random variable $X$ with $\E{X^2} < \infty$:
+For any [random variable](random-variables.qmd#def-random-variable) $X$ with $\E{X^2} < \infty$:
 
 $$\Cov{X,X} = \Var{X}$$
 
@@ -624,9 +624,9 @@ $$
 :::{#thm-var-lincom}
 #### Variance of a linear combination
 
-For any vector of random variables $\vX = (\dsn{X})$
+For any vector of [random variables](random-variables.qmd#def-random-variable) $\vX = (\dsn{X})$
 and corresponding vector of constants $\va = (\dsn{a})$,
-the variance of their linear combination is:
+the [variance](#def-variance) of their [linear combination](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination) is:
 
 $$
 \ba
@@ -641,7 +641,7 @@ $$
 
 ::: proof
 
-Treat $\va$ and $\vX$ as $n \times 1$ column vectors,
+Treat $\va$ and $\vX$ as $n \times 1$ [column vectors](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector),
 so
 
 $$
@@ -651,8 +651,8 @@ $$
 \end{aligned}
 $$
 
-a scalar.
-By linearity of expectation, $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
+a [scalar](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar).
+By linearity of [expectation](expectation.qmd#def-expectation), $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
 
 $$
 \ba
@@ -679,7 +679,7 @@ $$
 :::{#cor-var-lincom2}
 #### Variance of a sum of two random variables
 
-For any two random variables $X$ and $Y$ and scalars $a$ and $b$:
+For any two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$ and [scalars](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar) $a$ and $b$:
 
 $$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
 
@@ -696,7 +696,7 @@ $$
 \ea
 $$
 
-Alternatively, by linearity of expectation:
+Alternatively, by linearity of [expectation](expectation.qmd#def-expectation):
 
 $$
 \ba
@@ -722,7 +722,7 @@ $$
 #### Variance of a sum of independent random variables
 
 If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
-each discrete or continuous,
+each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv),
 with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then:
 
 $$\Var{X + Y} = \Var{X} + \Var{Y}$$
@@ -757,8 +757,8 @@ $$
 
 ::: {.remark .notes}
 
-@cor-var-lincom2 is why two variables' covariance matters for combining them:
-the covariance term is what separates the variance of their sum
+@cor-var-lincom2 is why two variables' [covariance](#def-cov) matters for combining them:
+the covariance [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) is what separates the [variance](#def-variance) of their [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation)
 from the sum of their variances,
 and @cor-var-sum-indpt is the case where that term is 0.
 
@@ -816,9 +816,9 @@ $$
 $$
 
 The first step is @thm-var-lincom.
-The last step holds because a random variable that is never negative
-has a non-negative expectation:
-in the discrete and continuous cases of the
+The last step holds because a [random variable](random-variables.qmd#def-random-variable) that is never negative <!-- check-term-links: allow -->
+has a non-negative [expectation](expectation.qmd#def-expectation):
+in the [discrete](random-variables.qmd#def-discrete-rv) and [continuous](random-variables.qmd#def-continuous-rv) cases of the <!-- check-term-links: allow -->
 [definition of expectation](expectation.qmd#def-expectation),
 every term of the sum, or the integrand, is non-negative
 (for the general case, see @billingsley1995probability).
@@ -902,16 +902,16 @@ $$
 $$
 
 As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$,
-each with probability $1/4$,
-so its mean is 0 and its variance is $(16 + 1 + 1 + 16)/4 = 8.5$.
+each with [probability](probability-basics.qmd#def-probability) $1/4$,
+so its [mean](expectation.qmd#def-expectation) is 0 and its [variance](#def-variance) is $(16 + 1 + 1 + 16)/4 = 8.5$.
 
 :::
 
 ::: {.remark .notes}
 
 The two sets of points have the same spread along each coordinate axis,
-so the diagonals of their variance matrices agree.
-The sign of the covariance says which diagonal direction,
+so the diagonals of their [variance](#def-variance) matrices agree. <!-- check-term-links: allow -->
+The sign of the [covariance](#def-cov) says which diagonal direction, <!-- check-term-links: allow -->
 $\tp{(1, 1)}$ or $\tp{(1, -1)}$,
 has the larger spread.
 
@@ -922,8 +922,8 @@ has the larger spread.
 :::{#exm-vcov-singular}
 #### A variance matrix that is not positive definite
 
-Let $X_1$ have variance $\ss > 0$, and let $X_2 = X_1$.
-Every covariance in $\vX = \tp{(X_1, X_2)}$ is $\Covs{X_1}{X_1} = \ss$ (@lem-cov-xx), so:
+Let $X_1$ have [variance](#def-variance) $\ss > 0$, and let $X_2 = X_1$.
+Every [covariance](#def-cov) in $\vX = \tp{(X_1, X_2)}$ is $\Covs{X_1}{X_1} = \ss$ (@lem-cov-xx), so:
 
 $$
 \Varf{\vX} = \ss \pmat{1 & 1 \\ 1 & 1}.
@@ -942,7 +942,7 @@ $$
 so $\Varf{\vX}$ is positive semidefinite
 but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
 (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)).
-If $X_1$ is continuous,
+If $X_1$ is [continuous](random-variables.qmd#def-continuous-rv),
 $\vX$ has no [joint density](random-variables.qmd#thm-no-joint-density-diagonal).
 
 :::
@@ -953,7 +953,7 @@ $\vX$ has no [joint density](random-variables.qmd#thm-no-joint-density-diagonal)
 #### Independent components give a diagonal variance matrix
 
 Let $\vX = \tp{(X_1, \ldots, X_p)}$ be a random vector
-whose components are each discrete or continuous,
+whose components are each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv), <!-- check-term-links: allow -->
 with:
 
 - $\E{X_i^2} < \infty$ for every $i$, and
@@ -968,7 +968,7 @@ with diagonal elements $\Var{X_1}, \ldots, \Var{X_p}$.
 ::: proof
 
 By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$.
-For $i \neq j$, $X_i$ and $X_j$ are independent,
+For $i \neq j$, $X_i$ and $X_j$ are [independent](independence.qmd#def-indpt),
 so $\Covs{X_i}{X_j} = 0$ by @thm-indpt-uncorrelated.
 The $(i,i)$-th element is $\Covs{X_i}{X_i} = \Var{X_i}$ by @lem-cov-xx.
 
@@ -988,10 +988,13 @@ $$-1 \le \Cor{X,Y} \le 1$$
 
 ::: proof
 
-Write $\sdpar_X \eqdef \SD{X} > 0$ and $\sdpar_Y \eqdef \SD{Y} > 0$,
+Write $\sdpar_X$ and $\sdpar_Y$ for the [standard deviations](#def-sd),
+
+$$\sdpar_X \eqdef \SD{X} > 0, \qquad \sdpar_Y \eqdef \SD{Y} > 0,$$
+
 and take either sign $\pm$ throughout.
-A variance is the expectation of a squared deviation,
-a non-negative random variable,
+A [variance](#def-variance) is the [expectation](expectation.qmd#def-expectation) of a squared [deviation](#def-deviation),
+a non-negative [random variable](random-variables.qmd#def-random-variable),
 so it is non-negative.
 Applying @cor-var-lincom2 with $a = 1/\sdpar_X$ and $b = \pm 1/\sdpar_Y$:
 
