@@ -14,6 +14,7 @@ $$
 \ea
 $$
 
-The density takes the single value $\tfrac{1}{b-a}$ on $[a, b]$, so its [expectation](#def-expectation) is that same value.
+The density takes the single value $\tfrac{1}{b-a}$ on $[a, b]$,
+so its [expectation](#def-expectation) is that same value.
 
 :::
