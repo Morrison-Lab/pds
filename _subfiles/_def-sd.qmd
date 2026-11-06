@@ -1,8 +1,8 @@
 :::{#def-sd}
 #### Standard deviation
 
-The **standard deviation** of a random variable $X$
-is the square root of the [variance](#def-variance) of $X$:
+The **standard deviation** of a [random variable](random-variables.qmd#def-random-variable) $X$
+is the [square root](https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root) of the [variance](#def-variance) of $X$:
 
 $$\SD{X} \eqdef \sqrt{\Var{X}}$$
 

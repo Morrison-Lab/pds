@@ -1,7 +1,7 @@
 :::{#thm-constant-prediction-decompose}
 #### Expected squared error of a constant prediction
 
-Let $Y$ be a random variable with mean $\mean$ and finite variance.
+Let $Y$ be a [random variable](random-variables.qmd#def-random-variable) with [mean](expectation.qmd#def-expectation) $\mean$ and finite [variance](#def-variance). <!-- check-term-links: allow -->
 Then for every number $c$,
 
 $$
@@ -14,7 +14,7 @@ $$ {#eq-constant-prediction-decompose}
 
 Add and subtract $\mean$ inside the square,
 expand it,
-and take the expectation term by term:
+and take the [expectation](expectation.qmd#def-expectation) [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) by term:
 
 $$
 \ba

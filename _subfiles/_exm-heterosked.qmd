@@ -13,7 +13,7 @@ $$
 
 so $Y$ is heteroskedastic with respect to $X$.
 More generally, a binary outcome with $\P(Y = 1 \mid X = x) = \prob(x)$
-has conditional variance $\prob(x)(1 - \prob(x))$,
+has [conditional variance](#def-cond-variance) $\prob(x)(1 - \prob(x))$,
 so it is homoskedastic only if $\prob(x)$ takes at most two values, $\prob$ and $1 - \prob$, for some $\prob$.
 
 :::
