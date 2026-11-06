@@ -5,7 +5,7 @@ A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#d
 so "the mode of $X$" is shorthand for the mode of a chosen density of $X$.
 
 Two [densities](#def-pdf) of the same [random variable](#def-random-variable)
-can differ on a [set](https://morrison-lab.github.io/mds/sets.html#def-set) of [probability](probability-basics.qmd#def-probability) zero,
+can differ on a [set](https://morrison-lab.github.io/mcs/sets.html#def-set) of [probability](probability-basics.qmd#def-probability) zero,
 and then they can have different [modes](#def-mode).
 A change of variables also moves the mode,
 because the density of a transformed variable includes a Jacobian factor.
