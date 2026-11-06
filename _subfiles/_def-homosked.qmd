@@ -1,7 +1,7 @@
 :::{#def-homosked}
 #### Homoskedasticity
 
-A random variable $Y$ is **homoskedastic**
+A [random variable](random-variables.qmd#def-random-variable) $Y$ is **homoskedastic**
 with respect to a random variable (or vector) $X$
 if the [conditional variance](#def-cond-variance) of $Y$ given $X = x$
 is the same for every $x$:
