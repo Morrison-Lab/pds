@@ -237,7 +237,7 @@ so it is homoskedastic only if $\prob(x)$ takes at most two values, $\prob$ and 
 {{< slidebreak >}}
 
 :::{#thm-total-variance}
-#### Law of total variance
+#### Law of total variance (conditional variance formula, Eve's law, variance decomposition formula)
 
 For [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$ with $\E{Y^2} < \infty$:
 
@@ -339,15 +339,6 @@ $$
 && \text{(simplify)}
 \ea
 $$
-
-:::
-
-::: {.remark .notes}
-
-Alternate names include:
-the **conditional variance formula**,
-**Eve's law**,
-and the **variance decomposition formula**.
 
 :::
 

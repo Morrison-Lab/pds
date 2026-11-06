@@ -362,7 +362,7 @@ In @exm-cond-variance, for example, $\Cov{Y,Y \mid X = 0} = 0.24$.
 {{< slidebreak >}}
 
 :::{#thm-total-cov}
-#### Law of total covariance
+#### Law of total covariance (covariance decomposition formula, conditional covariance formula)
 
 For [random variables](random-variables.qmd#def-random-variable) $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
 
@@ -430,14 +430,6 @@ $$
 $$
 
 Adding the four terms gives the result.
-
-:::
-
-::: {.remark .notes}
-
-Alternate names include:
-the **covariance decomposition formula**
-and the **conditional covariance formula**.
 
 :::
 

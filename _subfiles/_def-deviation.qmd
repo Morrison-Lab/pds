@@ -30,7 +30,7 @@ by $3200 - 3500 = -300$ g.
 {{< slidebreak >}}
 
 :::{#def-deviation-pop-mean}
-#### Deviation from a population or subpopulation mean
+#### Deviation from a population or subpopulation mean (error, noise term)
 
 The **deviation from the mean** of a [random variable](random-variables.qmd#def-random-variable) $Y$
 is its [deviation](#def-deviation)
