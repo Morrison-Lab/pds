@@ -1,7 +1,7 @@
 :::{#def-correlation}
 #### Correlation
 
-The **correlation** of two random variables $X$ and $Y$
+The **correlation** of two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
 with finite, positive [variances](#def-variance)
 is their [covariance](#def-cov)
 divided by the product of their [standard deviations](#def-sd):

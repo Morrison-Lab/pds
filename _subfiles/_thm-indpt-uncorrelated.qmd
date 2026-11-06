@@ -2,8 +2,8 @@
 #### Independent random variables have zero covariance
 
 If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
-each discrete or continuous,
-with defined expectations,
+each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv),
+with defined [expectations](expectation.qmd#def-expectation),
 then:
 
 $$\E{XY} = \E{X}\E{Y}$$
@@ -17,10 +17,10 @@ If also $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then $\Cov{X,Y} = 0$.
 Write $f_X$ and $f_Y$ for the PMFs or densities of $X$ and $Y$,
 with reference measures $\measure_X$ and $\measure_Y$ as in
 the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
-([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a discrete variable,
-Lebesgue measure for a continuous one).
-Because $X$ and $Y$ are independent,
-$f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their joint PMF, density, or density-mass function
+([counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) for a [discrete variable](random-variables.qmd#def-discrete-rv),
+[Lebesgue measure](https://morrison-lab.github.io/mds/measures.html#def-lebesgue-measure) for a [continuous](random-variables.qmd#def-continuous-rv) one).
+Because $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+$f_{X,Y}(x, y) = f_X(x)\,f_Y(y)$ is their [joint PMF](random-variables.qmd#def-joint-pmf), [density](random-variables.qmd#def-pdf), or density-mass [function](https://morrison-lab.github.io/mcs/functions.html#def-function)
 (the factorization in the notes to the [definition of independence](independence.qmd#def-indpt)).
 First, with $h(x, y) = \abs{x}\abs{y} \ge 0$ (condition (a)):
 
@@ -38,9 +38,9 @@ $$
 \ea
 $$
 
-which is finite, because $X$ and $Y$ have defined expectations.
-So condition (b) holds for $h(x, y) = xy$,
-and the same steps without the absolute values give:
+which is finite, because $X$ and $Y$ have defined [expectations](expectation.qmd#def-expectation). <!-- check-term-links: allow -->
+So condition (b) holds,
+and the same steps without the [absolute values](https://morrison-lab.github.io/mds/algebra-basics.html#def-absolute-value) give: <!-- check-term-links: allow -->
 
 $$
 \ba
