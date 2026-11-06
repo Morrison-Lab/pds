@@ -1,7 +1,7 @@
 ::: {.remark .notes}
 
-This is the more commonly seen form of the variance definition, and
-the canonical starting point in most treatments; it's given here as a
+The expanded form is the more commonly seen definition of the [variance](#def-variance),
+and the canonical starting point in most treatments; it's given here as a
 theorem rather than the primary definition to keep $\devn(X)$ as the
 definition's single building block, matching the notation of @def-deviation-pop-mean.
 
