@@ -51,6 +51,6 @@ $$
 \ea
 $$
 
-A larger standard deviation $\sigma$ spreads the density out and lowers its expected value.
+A larger [standard deviation](#def-sd) $\sigma$ spreads the density out and lowers its expected value.
 
 :::
