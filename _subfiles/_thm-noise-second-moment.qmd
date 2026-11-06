@@ -2,7 +2,7 @@
 
 #### The second moment of mean-zero noise
 
-Let $\noise$ be a random variable with $\Ep[\noise] = 0$ and $\Var{\noise} = \varpar$.
+Let $\noise$ be a [random variable](random-variables.qmd#def-random-variable) with $\Ep[\noise] = 0$ and $\Var{\noise} = \varpar$.
 Then
 
 $$\Ep[\noise^2] = \varpar$$

@@ -2,7 +2,7 @@
 
 #### Use in statistics and machine learning
 
-Let $\noise$ be the noise in a new outcome $\Outvar$,
+Let $\noise$ be the [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) in a new outcome $\Outvar$, <!-- check-term-links: allow -->
 and let $\Rvar$ be the difference between the true mean $\mean = \E{\Outvar}$ and a prediction $\eoutvar$:
 
 $$\Rvar \eqdef \mean - \eoutvar$$
@@ -23,7 +23,7 @@ $$
 \ea
 $$
 
-The variance of $\Rvar$ is the variance of the prediction:
+The [variance](#def-variance) of $\Rvar$ is the variance of the prediction:
 
 $$
 \ba
@@ -37,7 +37,7 @@ $$
 
 Substituting these two results into the theorem,
 with $\sqf{-\bias{\eoutvar}} = \sqf{\bias{\eoutvar}}$,
-gives the squared prediction error of the new outcome as
+gives the squared [prediction error](expectation.qmd#def-prediction-error) of the new outcome as
 
 $$
 \E{\sqf{\noise + \Rvar}} = \varpar + \Var{\eoutvar} + \sqf{\bias{\eoutvar}},
