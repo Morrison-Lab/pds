@@ -30,7 +30,7 @@ $$
 \ea
 $$
 
-As a check, $Y$ is Bernoulli with
+As a check, $Y$ is [Bernoulli](random-variables.qmd#def-bernoulli) with
 
 $$
 \begin{aligned}

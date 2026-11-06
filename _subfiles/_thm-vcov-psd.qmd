@@ -48,9 +48,10 @@ $$
 $$
 
 The first step is @thm-var-lincom.
-The last step holds because a random variable that is never negative
-has a non-negative expectation:
-in the discrete and continuous cases of the
+The last step holds
+because a [random variable](random-variables.qmd#def-random-variable) that is never negative <!-- check-term-links: allow -->
+has a non-negative [expectation](expectation.qmd#def-expectation):
+in the [discrete](random-variables.qmd#def-discrete-rv) and [continuous](random-variables.qmd#def-continuous-rv) cases of the <!-- check-term-links: allow -->
 [definition of expectation](expectation.qmd#def-expectation),
 every term of the sum, or the integrand, is non-negative
 (for the general case, see @billingsley1995probability).

@@ -1,7 +1,7 @@
 :::{#exm-alt-cov}
 #### Covariance of a binary exposure and outcome
 
-For the joint PMF in @exm-cond-variance,
+For the [joint PMF](random-variables.qmd#def-joint-pmf) in @exm-cond-variance,
 
 $$
 \begin{aligned}

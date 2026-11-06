@@ -12,7 +12,7 @@ $$
 \end{aligned}
 $$ {#eq-noise-second-moment}
 
-so for mean-zero noise the average squared value *is* the variance.
+so for mean-zero [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) the average squared value *is* the [variance](#def-variance). <!-- check-term-links: allow -->
 
 The identity looks slight and does a lot of work.
 @eq-noise-second-moment is the step that produces the [residual variance](https://morrison-lab.github.io/sds/model-validation.html#def-irreducible-error) term

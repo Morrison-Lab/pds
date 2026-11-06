@@ -1,7 +1,7 @@
 ::: {.remark .notes}
 
-Dividing by the standard deviations removes the units of $X$ and $Y$.
-This population correlation is a property of a joint distribution;
+Dividing by the [standard deviations](#def-sd) removes the units of $X$ and $Y$.
+This [population correlation](#def-correlation) is a property of a [joint distribution](random-variables.qmd#def-joint-distribution);
 the sample (Pearson) correlation coefficient computed from data estimates it.
 
 :::

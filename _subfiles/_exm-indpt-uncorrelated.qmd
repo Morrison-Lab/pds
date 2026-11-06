@@ -1,7 +1,7 @@
 :::{#exm-indpt-uncorrelated}
 #### Two independent coin flips
 
-For the independent coin flips $X_1$ and $X_2$ of
+For the [independent](independence.qmd#def-indpt) coin flips $X_1$ and $X_2$ of
 [the independence page's example](independence.qmd#exm-indpt),
 $X_1 X_2 = 1$ only when both flips are heads, so:
 

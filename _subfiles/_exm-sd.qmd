@@ -11,7 +11,7 @@ $$
 \end{aligned}
 $$
 
-and its standard deviation is
+and its [standard deviation](#def-sd) is
 
 $$
 \begin{aligned}

@@ -1,6 +1,6 @@
 ::: {.remark .notes}
 
-@thm-indpt-uncorrelated says independent random variables are uncorrelated,
-and @exm-uncorrelated-not-indpt shows the converse fails.
+@thm-indpt-uncorrelated says [independent](independence.qmd#def-indpt) [random variables](random-variables.qmd#def-random-variable) are [uncorrelated](#def-uncorrelated),
+and @exm-uncorrelated-not-indpt shows the [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) fails.
 
 :::

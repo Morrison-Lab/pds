@@ -1,8 +1,8 @@
 :::{#exm-uncorrelated-not-indpt}
 #### Zero covariance without independence
 
-The converse of @thm-indpt-uncorrelated is false.
-Let $X$ take the values $-1$, $0$, and $1$ with probability $1/3$ each,
+The [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) of @thm-indpt-uncorrelated is false.
+Let $X$ take the values $-1$, $0$, and $1$ with [probability](probability-basics.qmd#def-probability) $1/3$ each,
 and let $Y = X^2$.
 Then
 
@@ -38,7 +38,7 @@ $$
 \ea
 $$
 
-But $X$ and $Y$ are not independent: $Y$ is a function of $X$, and
+But $X$ and $Y$ are not [independent](independence.qmd#def-indpt): $Y$ is a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $X$, and
 
 $$
 \begin{aligned}

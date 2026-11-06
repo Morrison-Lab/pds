@@ -1,7 +1,7 @@
 :::{#def-heterosked}
 #### Heteroskedasticity
 
-A random variable $Y$ is **heteroskedastic** with respect to $X$
+A [random variable](random-variables.qmd#def-random-variable) $Y$ is **heteroskedastic** with respect to $X$
 if it is not [homoskedastic](#def-homosked) with respect to $X$:
 that is, if $\Var{Y \mid X = x}$ differs between some values of $x$.
 
