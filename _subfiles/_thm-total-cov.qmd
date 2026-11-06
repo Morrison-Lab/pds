@@ -1,0 +1,71 @@
+:::{#thm-total-cov}
+#### Law of total covariance (covariance decomposition formula, conditional covariance formula)
+
+For [random variables](random-variables.qmd#def-random-variable) $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
+
+$$\Cov{Y,Z} = \E{\Cov{Y,Z \mid X}} + \Cov{\E{Y \mid X}, \E{Z \mid X}}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+The proof follows the proof of the [law of total variance](#thm-total-variance),
+which is the special case $Z = Y$.
+Write $m_Y(X) \eqdef \E{Y \mid X}$, $m_Z(X) \eqdef \E{Z \mid X}$,
+$\mean_Y \eqdef \E{Y}$, and $\mean_Z \eqdef \E{Z}$.
+Adding and subtracting $m_Y(X)$ and $m_Z(X)$ inside the deviations:
+
+$$
+\ba
+\Cov{Y,Z}
+&= \E{\paren{Y - \mean_Y}\paren{Z - \mean_Z}}
+&& \text{(definition of covariance)} \\
+&= \E{\paren{\sb{Y - m_Y(X)} + \sb{m_Y(X) - \mean_Y}}\paren{\sb{Z - m_Z(X)} + \sb{m_Z(X) - \mean_Z}}}
+&& \text{(add and subtract)} \\
+&= \E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
++ \E{\sb{Y - m_Y(X)}\sb{m_Z(X) - \mean_Z}}
+\\&\quad
++ \E{\sb{m_Y(X) - \mean_Y}\sb{Z - m_Z(X)}}
++ \E{\sb{m_Y(X) - \mean_Y}\sb{m_Z(X) - \mean_Z}}
+&& \text{(expand the product; linearity of expectation)}
+\ea
+$$
+
+The two middle terms are 0,
+by the same steps as the cross term in the proof of @thm-total-variance:
+condition on $X$ by the [law of iterated expectations](expectation.qmd#thm-lie),
+factor out the function of $X$ ([pull-out property](expectation.qmd#thm-cond-pull-out)),
+and use $\E{Y - m_Y(X) \mid X} = 0$ (or $\E{Z - m_Z(X) \mid X} = 0$),
+which follows from [linearity of conditional expectation](expectation.qmd#thm-cond-linearity).
+For the first term:
+
+$$
+\ba
+\E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)}}
+&= \E{\E{\sb{Y - m_Y(X)}\sb{Z - m_Z(X)} \mid X}}
+&& \text{(law of iterated expectations)} \\
+&= \E{\Cov{Y,Z \mid X}}
+&& \text{(definition of conditional covariance)}
+\ea
+$$
+
+For the last term, the law of iterated [expectations](expectation.qmd#def-expectation) gives
+$\E{m_Y(X)} = \mean_Y$ and $\E{m_Z(X)} = \mean_Z$, so:
+
+$$
+\ba
+\E{\sb{m_Y(X) - \mean_Y}\sb{m_Z(X) - \mean_Z}}
+&= \E{\sb{m_Y(X) - \E{m_Y(X)}}\sb{m_Z(X) - \E{m_Z(X)}}}
+&& \text{(substitute the means)} \\
+&= \Cov{m_Y(X), m_Z(X)}
+&& \text{(definition of covariance)} \\
+&= \Cov{\E{Y \mid X}, \E{Z \mid X}}
+&& \text{(definitions of } m_Y, m_Z \text{)}
+\ea
+$$
+
+Adding the four terms gives the result.
+
+:::

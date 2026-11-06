@@ -1,0 +1,9 @@
+:::{#exm-uncorrelated}
+#### Correlated and uncorrelated pairs
+
+In @exm-uncorrelated-not-indpt, $\Cov{X,Y} = 0$,
+so $X$ and $Y = X^2$ are [uncorrelated](#def-uncorrelated).
+In @exm-alt-cov, $\Cov{X,Y} = 0.05 \neq 0$,
+so the binary exposure and outcome are not uncorrelated.
+
+:::

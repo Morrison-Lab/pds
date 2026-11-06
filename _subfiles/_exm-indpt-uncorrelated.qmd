@@ -1,0 +1,24 @@
+:::{#exm-indpt-uncorrelated}
+#### Two independent coin flips
+
+For the [independent](independence.qmd#def-indpt) coin flips $X_1$ and $X_2$ of
+[the independence page's example](independence.qmd#exm-indpt),
+$X_1 X_2 = 1$ only when both flips are heads, so:
+
+$$
+\ba
+\E{X_1 X_2}
+&= \P(X_1 = 1, X_2 = 1)
+&& \text{(} X_1 X_2 \text{ is the indicator of two heads)} \\
+&= \tfrac{1}{4}
+&& \text{(each outcome has probability } \tfrac{1}{4} \text{)} \\
+&= \tfrac{1}{2} \cd \tfrac{1}{2}
+&& \text{(factor)} \\
+&= \E{X_1}\E{X_2}
+&& \text{(each flip is } \Ber(1/2) \text{)}
+\ea
+$$
+
+so $\Cov{X_1, X_2} = 0$, as @thm-indpt-uncorrelated requires.
+
+:::

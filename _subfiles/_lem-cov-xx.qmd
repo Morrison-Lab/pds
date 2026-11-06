@@ -1,0 +1,26 @@
+:::{#lem-cov-xx}
+#### The covariance of a variable with itself is its variance
+
+For any [random variable](random-variables.qmd#def-random-variable) $X$ with $\E{X^2} < \infty$:
+
+$$\Cov{X,X} = \Var{X}$$
+
+:::
+
+::: proof
+
+By the [alternative formula for covariance](#thm-alt-cov):
+
+$$
+\ba
+\Cov{X,X}
+&= \E{XX} - \E{X}\E{X}
+&& \text{(alternative formula for covariance, with } Y = X \text{)}
+\\&= \E{X^2} - \sqf{\E{X}}
+&& \text{(} XX = X^2 \text{)}
+\\&= \Var{X}
+&& \text{(simplified expression for variance)}
+\ea
+$$
+
+:::

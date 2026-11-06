@@ -1,0 +1,24 @@
+:::{#cor-vcov-indpt-diagonal}
+#### Independent components give a diagonal variance matrix
+
+Let $\vX = \tp{(X_1, \ldots, X_p)}$ be a random vector
+whose components are each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv), <!-- check-term-links: allow -->
+with:
+
+- $\E{X_i^2} < \infty$ for every $i$, and
+- $X_i$ and $X_j$ [independent](independence.qmd#def-indpt) for every $i \neq j$.
+
+Then $\Varf{\vX}$ is
+[diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix),
+with diagonal elements $\Var{X_1}, \ldots, \Var{X_p}$.
+
+:::
+
+::: proof
+
+By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$.
+For $i \neq j$, $X_i$ and $X_j$ are [independent](independence.qmd#def-indpt),
+so $\Covs{X_i}{X_j} = 0$ by @thm-indpt-uncorrelated.
+The $(i,i)$-th element is $\Covs{X_i}{X_i} = \Var{X_i}$ by @lem-cov-xx.
+
+:::

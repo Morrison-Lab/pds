@@ -1,0 +1,39 @@
+:::{#cor-var-lincom2}
+#### Variance of a sum of two random variables
+
+For any two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$ and [scalars](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar) $a$ and $b$:
+
+$$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
+
+:::
+
+::: proof
+
+Apply @thm-var-lincom with $n=2$, $X_1 = X$, and $X_2 = Y$:
+
+$$
+\ba
+\Var{aX+bY}
+&= a^2 \Var{X} + b^2 \Var{Y} + 2ab \Cov{X,Y}
+\ea
+$$
+
+Alternatively, by linearity of [expectation](expectation.qmd#def-expectation):
+
+$$
+\ba
+\Var{aX+bY}
+&\eqdef \E{\paren{aX+bY - \E{aX+bY}}^2}
+&& \text{(definition of variance)} \\
+&= \E{\paren{a(X-\mean_X) + b(Y-\mean_Y)}^2}
+&& \text{(linearity of expectation, with population means } \mean_X = \E{X}, \mean_Y = \E{Y} \text{)} \\
+&= \E{a^2(X-\mean_X)^2 + 2(a \cd b)(X-\mean_X)(Y-\mean_Y) + b^2(Y-\mean_Y)^2}
+&& \text{(expand the square)} \\
+&= a^2\E{(X-\mean_X)^2} + 2(a \cd b)\E{(X-\mean_X)(Y-\mean_Y)} + b^2\E{(Y-\mean_Y)^2}
+&& \text{(linearity of expectation)} \\
+&= a^2 \Var{X} + 2(a \cd b) \Cov{X,Y} + b^2 \Var{Y}
+&& \text{(definitions of variance and covariance)}
+\ea
+$$
+
+:::

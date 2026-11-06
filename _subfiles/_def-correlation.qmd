@@ -1,0 +1,19 @@
+:::{#def-correlation}
+#### Correlation
+
+The **correlation** of two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
+with finite, positive [variances](#def-variance)
+is their [covariance](#def-cov)
+divided by the product of their [standard deviations](#def-sd):
+
+$$\Cor{X,Y} \eqdef \frac{\Cov{X,Y}}{\SD{X}\,\SD{Y}}$$
+
+:::
+
+::: {.remark .notes}
+
+Dividing by the [standard deviations](#def-sd) removes the units of $X$ and $Y$.
+This [population correlation](#def-correlation) is a property of a [joint distribution](random-variables.qmd#def-joint-distribution);
+the sample (Pearson) correlation coefficient computed from data estimates it.
+
+:::

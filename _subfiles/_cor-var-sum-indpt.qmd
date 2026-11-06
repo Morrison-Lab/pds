@@ -1,0 +1,45 @@
+:::{#cor-var-sum-indpt}
+#### Variance of a sum of independent random variables
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
+each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv),
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then:
+
+$$\Var{X + Y} = \Var{X} + \Var{Y}$$
+
+:::
+
+::: proof
+
+By @thm-indpt-uncorrelated, $\Cov{X,Y} = 0$.
+Applying @cor-var-lincom2 with
+
+$$
+\begin{aligned}
+a &= b \\
+&= 1:
+\end{aligned}
+$$
+
+$$
+\ba
+\Var{X + Y}
+&= 1^2 \Var{X} + 1^2 \Var{Y} + 2(1 \cd 1) \Cov{X,Y}
+&& \text{(variance of a sum of two random variables)} \\
+&= \Var{X} + \Var{Y} + 2 \Cov{X,Y}
+&& \text{(simplify)} \\
+&= \Var{X} + \Var{Y}
+&& \text{(} \Cov{X,Y} = 0 \text{)}
+\ea
+$$
+
+:::
+
+::: {.remark .notes}
+
+@cor-var-lincom2 is why two variables' [covariance](#def-cov) matters for combining them:
+the covariance [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) is what separates the [variance](#def-variance) of their [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation)
+from the sum of their variances,
+and @cor-var-sum-indpt is the case where that term is 0.
+
+:::

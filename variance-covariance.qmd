@@ -68,7 +68,107 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 <!-- No slidebreak here: the heading shares its slide with the def-cov div. -->
 
-{{< include pds/_subfiles/_def-covariance.qmd >}}
+{{< include pds/_subfiles/_def-cov.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-alt-cov.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-alt-cov.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-indpt-uncorrelated.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-indpt-uncorrelated.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-uncorrelated-not-indpt.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-correlation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-correlation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-uncorrelated.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-uncorrelated.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-uncorrelated-cor-zero.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-cond-cov.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-cond-cov.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-total-cov.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_lem-cov-xx.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-cov-vec-x.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-vcov-elements.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-vcov-vec.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-var-lincom.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-var-lincom2.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-var-sum-indpt.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-vcov-psd.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-vcov-psd.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-vcov-singular.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-vcov-indpt-diagonal.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-cor-bounds.qmd >}}
 
 {{< include pds/_subfiles/_exm-cor-auto.qmd >}}
 

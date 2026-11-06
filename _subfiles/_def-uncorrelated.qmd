@@ -1,0 +1,17 @@
+:::{#def-uncorrelated}
+#### Uncorrelated random variables
+
+[Random variables](random-variables.qmd#def-random-variable) $X$ and $Y$
+with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$
+are **uncorrelated** when their [covariance](#def-cov) is 0:
+
+$$\Cov{X,Y} = 0$$
+
+:::
+
+::: {.remark .notes}
+
+@thm-indpt-uncorrelated says [independent](independence.qmd#def-indpt) [random variables](random-variables.qmd#def-random-variable) are [uncorrelated](#def-uncorrelated),
+and @exm-uncorrelated-not-indpt shows the [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) fails.
+
+:::

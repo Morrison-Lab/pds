@@ -1,0 +1,11 @@
+:::{#def-cond-cov}
+#### Conditional covariance
+
+The **conditional covariance** of $Y$ and $Z$ given $X = x$
+is their [covariance](#def-cov) under their conditional distribution given $X = x$: <!-- check-term-links: allow -->
+
+$$\Cov{Y,Z \mid X = x} \eqdef \E{\paren{Y-\E{Y \mid X = x}}\paren{Z-\E{Z \mid X = x}} \mid X = x}$$
+
+Evaluating this [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $x$ at $X$ gives the [random variable](random-variables.qmd#def-random-variable) $\Cov{Y,Z \mid X}$.
+
+:::
