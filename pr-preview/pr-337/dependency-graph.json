@@ -134,6 +134,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum"
   },
   {
+   "id": "mds/algebra-sums#def-summation",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-summation",
+   "kind": "def",
+   "title": "summation",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-summation"
+  },
+  {
    "id": "mds/algebra-sums#def-term",
    "site": "mds",
    "page": "algebra-sums",
@@ -2307,7 +2317,7 @@
    "page": "variance-covariance",
    "div": "def-deviation-pop-mean",
    "kind": "def",
-   "title": "Deviation from a population or subpopulation mean",
+   "title": "Deviation from a population or subpopulation mean (error, noise term)",
    "external": false
   },
   {
@@ -2552,6 +2562,16 @@
    "kind": "thm",
    "title": "Alternate expression for variance of a random vector",
    "external": false
+  },
+  {
+   "id": "sds/exploratory-descriptive#def-observation",
+   "site": "sds",
+   "page": "exploratory-descriptive",
+   "div": "def-observation",
+   "kind": "def",
+   "title": "observation",
+   "external": true,
+   "url": "https://morrison-lab.github.io/sds/exploratory-descriptive.html#def-observation"
   }
  ],
  "edges": [
@@ -4289,7 +4309,19 @@
   ],
   [
    "pds/variance-covariance#def-cond-variance",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
    "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-cond-variance",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#def-correlation",
@@ -4309,11 +4341,27 @@
   ],
   [
    "pds/variance-covariance#def-deviation-pop-mean",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#def-deviation-pop-mean",
    "pds/variance-covariance#def-deviation"
+  ],
+  [
+   "pds/variance-covariance#def-deviation-pop-mean",
+   "sds/exploratory-descriptive#def-observation"
+  ],
+  [
+   "pds/variance-covariance#def-heterosked",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-heterosked",
    "pds/variance-covariance#def-homosked"
+  ],
+  [
+   "pds/variance-covariance#def-homosked",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-homosked",
@@ -4374,6 +4422,10 @@
   [
    "pds/variance-covariance#def-variance",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#def-variance",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#def-variance",
@@ -4509,11 +4561,31 @@
   ],
   [
    "pds/variance-covariance#thm-noise-second-moment",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-noise-second-moment",
    "pds/variance-covariance#thm-variance"
   ],
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
+   "mds/algebra-sums#def-summation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
    "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/variance-covariance#thm-second-moment-noise-sum",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/variance-covariance#thm-second-moment-noise-sum",
@@ -4569,10 +4641,5 @@
   ]
  ],
  "cycles": [],
- "forwardReferences": [
-  [
-   "pds/variance-covariance#thm-noise-second-moment",
-   "pds/variance-covariance#thm-variance"
-  ]
- ]
+ "forwardReferences": []
 }
