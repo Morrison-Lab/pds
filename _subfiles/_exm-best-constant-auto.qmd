@@ -74,21 +74,27 @@ grid_deviations <- outer(mpg, c_grid, "-")
 grid_squared <- grid_deviations^2
 grid_errors <- colMeans(grid_squared)
 curve <- tibble::tibble(c = c_grid, expected_squared_error = grid_errors)
+point_labels <- c("mean", "median", "c = 20")
+label_hjust <- c(0.5, 0.5, 1)
+label_vjust <- c(2.5, -2.5, -2)
 marked <- tibble::tibble(
-  constant = constants,
+  point_label = point_labels,
   c = c_values,
   expected_squared_error = errors,
-  label_hjust = c(0.5, 0.5, 1),
-  label_vjust = c(2.5, -2.5, -1)
+  label_hjust = label_hjust,
+  label_vjust = label_vjust
+)
+curve_aes <- ggplot2::aes(x = c, y = expected_squared_error)
+label_aes <- ggplot2::aes(
+  label = point_label,
+  hjust = label_hjust,
+  vjust = label_vjust
 )
 
-ggplot2::ggplot(curve, ggplot2::aes(x = c, y = expected_squared_error)) +
+ggplot2::ggplot(curve, curve_aes) +
   ggplot2::geom_line() +
   ggplot2::geom_point(data = marked, size = 3) +
-  ggplot2::geom_text(
-    ggplot2::aes(label = constant, hjust = label_hjust, vjust = label_vjust),
-    data = marked
-  ) +
+  ggplot2::geom_text(label_aes, data = marked) +
   ggplot2::labs(
     x = "constant prediction c (miles per gallon)",
     y = "expected squared error"
