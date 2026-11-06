@@ -2,11 +2,11 @@
 #### Conditional variance
 
 The **conditional variance** of $Y$ given $X = x$
-is the variance of $Y$ under its conditional distribution given $X = x$:
+is the [variance](#def-variance) of $Y$ under its conditional distribution given $X = x$: <!-- check-term-links: allow -->
 
 $$\Var{Y \mid X = x} \eqdef \E{\paren{Y - \E{Y \mid X = x}}^2 \mid X = x}$$
 
-Evaluating this function of $x$ at $X$ gives the random variable $\Var{Y \mid X}$,
+Evaluating this [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $x$ at $X$ gives the [random variable](random-variables.qmd#def-random-variable) $\Var{Y \mid X}$,
 just as the [conditional expectation function](expectation.qmd#def-cond-expectation-function)
 $\E{Y \mid X}$ comes from $\E{Y \mid X = x}$.
 

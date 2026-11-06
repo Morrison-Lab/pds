@@ -1,7 +1,7 @@
 :::{#exm-cond-variance}
 #### Conditional variance of a binary outcome
 
-Let $(X, Y)$ have the joint PMF
+Let $(X, Y)$ have the [joint PMF](random-variables.qmd#def-joint-pmf)
 $\P(X=0, Y=0) = 0.2$, $\P(X=0, Y=1) = 0.3$,
 $\P(X=1, Y=0) = 0.1$, $\P(X=1, Y=1) = 0.4$
 (the table in the [expectation page's exercise](expectation.qmd#exr-fubini-joint-disc)).

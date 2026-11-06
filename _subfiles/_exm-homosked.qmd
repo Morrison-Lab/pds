@@ -3,7 +3,7 @@
 
 Flip two fair coins, let $X_1$ indicate heads on the first,
 and let $Y$ be the total number of heads.
-Given $X_1 = 0$, $Y$ is $0$ or $1$ with probability $1/2$ each;
+Given $X_1 = 0$, $Y$ is $0$ or $1$ with [probability](probability-basics.qmd#def-probability) $1/2$ each;
 given $X_1 = 1$, $Y$ is $1$ or $2$ with probability $1/2$ each.
 Either way, $Y$ is $1/2$ away from its conditional mean with probability 1,
 so

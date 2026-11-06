@@ -32,6 +32,7 @@ jobs:
         any::pander
         any::plotly
         Morrison-Lab/qnp
+        any::readr
         any::reticulate
         any::rmarkdown
         any::tibble

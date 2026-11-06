@@ -1,13 +1,14 @@
 :::{#def-deviation-pop-mean}
-#### Deviation from a population or subpopulation mean
+#### Deviation from a population or subpopulation mean (error, noise term)
 
-The **deviation from the mean** of a random variable $Y$
+The **deviation from the mean** of a [random variable](random-variables.qmd#def-random-variable) $Y$
 is its [deviation](#def-deviation)
-from its [expectation](expectation.qmd#def-expectation):
+from its [expectation](expectation.qmd#def-expectation),
+also called its **error** or **noise term**:
 
 $$\devn(Y) \eqdef Y - \E{Y}$$
 
-For a realized observation $y$:
+For a realized [observation](https://morrison-lab.github.io/sds/exploratory-descriptive.html#def-observation) $y$:
 
 $$\devn(y) \eqdef y - \E{Y}$$
 

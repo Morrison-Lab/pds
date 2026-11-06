@@ -1,6 +1,6 @@
 ::: {.remark .notes}
 
-In probability and statistics,
+In [probability](probability-basics.qmd#def-probability) and statistics, <!-- check-term-links: allow -->
 "deviation" usually means deviation from a [population mean](expectation.qmd#def-expectation).
 
 See: [Wikipedia: Deviation (statistics)](https://en.wikipedia.org/wiki/Deviation_(statistics))

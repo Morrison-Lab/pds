@@ -1,7 +1,7 @@
-### Mean-zero noise model {#sec-noise-model}
+## Mean-zero noise model {#sec-noise-model}
 
-Measurement noise is almost always modeled as a random variable
-$\noise$ with **mean zero** and variance $\varpar$.
+Measurement [noise](https://morrison-lab.github.io/sds/model-validation.html#def-noise) is almost always modeled as a [random variable](random-variables.qmd#def-random-variable)
+$\noise$ with **[mean](expectation.qmd#def-expectation) zero** and [variance](#def-variance) $\varpar$. <!-- check-term-links: allow -->
 
 ::: {#rem-mean-zero-parametrization}
 #### Mean zero is a parametrization choice
@@ -12,7 +12,7 @@ changes the split but not the distribution of $Y$,
 so the data identify only the sum $f(x) + \E{\noise}$, the mean of $Y$ at $x$.
 Requiring $\E{\noise} = 0$ picks the one split in which $f(x)$ is that mean.
 This loses no generality when the model for $f$ can absorb a constant,
-as any model with an intercept can.
+as any model with an [intercept](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-intercept) can.
 It restricts the model only when $f$ cannot absorb one,
 as in a regression through the origin.
 

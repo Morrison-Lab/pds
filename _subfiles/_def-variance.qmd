@@ -1,7 +1,7 @@
 :::{#def-variance}
 #### Variance
 
-The **variance** of a random variable $X$ with $\E{X^2} < \infty$ is the [expectation](expectation.qmd#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean)
+The **variance** of a [random variable](random-variables.qmd#def-random-variable) $X$ with $\E{X^2} < \infty$ is the [expectation](expectation.qmd#def-expectation) of the squared [deviation from the mean](#def-deviation-pop-mean)
 [@wikipedia_variance]; that is:
 
 $$\Var{X} \eqdef \E{[\devn(X)]^2}$$
