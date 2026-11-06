@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-06 00:07:48 (PST)
+Last modified: 2026-11-06 01:22:14 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -515,19 +515,30 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > **Example 10 (The best constant prediction of fuel economy)** Take the 392 cars in the Auto data [described on the limit theorems page](limit-theorems.llms.md#exm-clt-auto) as the whole population, and predict the fuel economy (`mpg`) of a car drawn at random with one number $c$. The code below computes the expected squared error of three constants, and sets each beside the right side of [Equation 2](#eq-constant-prediction-decompose).
 >
 > ``` r
-> mpg <- read.csv("data/auto.csv")$mpg
+> auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+> mpg <- auto$mpg
 > mu <- mean(mpg)
-> sigma2 <- mean((mpg - mu)^2)
+> squared_deviations <- (mpg - mu)^2
+> sigma2 <- mean(squared_deviations)
 >
-> c_values <- c(mean = mu, median = median(mpg), twenty = 20)
-> data.frame(
+> median_mpg <- median(mpg)
+> c_values <- c(mean = mu, median = median_mpg, twenty = 20)
+> constants <- names(c_values)
+>
+> errors_by_car <- outer(mpg, c_values, "-")
+> squared_errors <- errors_by_car^2
+> errors <- colMeans(squared_errors)
+> shift_squared <- (mu - c_values)^2
+>
+> tibble::tibble(
+>   constant = constants,
 >   c = c_values,
->   expected_squared_error = sapply(c_values, function(cc) mean((mpg - cc)^2)),
->   decomposition = sigma2 + (mu - c_values)^2
+>   expected_squared_error = errors,
+>   decomposition = sigma2 + shift_squared
 > )
 > ```
 >
-> The two columns agree, as [Theorem 5](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the variance of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
+> The two columns agree, as [Theorem 5](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
 
 # 4 Independent noise plus a random variable
 
