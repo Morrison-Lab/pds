@@ -6,6 +6,6 @@ By @sol-expected-density,
 the [expectation](#def-expectation) of the [density](random-variables.qmd#def-pdf) of a [continuous random variable](random-variables.qmd#def-continuous-rv) $X$ is $\int \sb{\p(X=x)}^2\,dx$.
 
 Evaluate $\E{\p(X=X)}$ when $X \sim \ndist{\mean, \ss}$ ([normal distribution](random-variables.qmd#def-normal)),
-using the [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) $\int_{-\infty}^{\infty} e^{-u^2}\,du = \sqrt{\pi}$.
+using the [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) $\int_{-\infty}^{\infty} \expf{-u^2}\,du = \sqrt{\pi}$.
 
 :::

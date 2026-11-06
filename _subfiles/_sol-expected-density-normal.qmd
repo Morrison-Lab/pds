@@ -1,13 +1,13 @@
 :::{#sol-expected-density-normal}
 
-The [density](random-variables.qmd#def-pdf) is $\p(X=x) = \frac{1}{\sqrt{2\pi\ss}}\exp\paren{-\frac{(x-\mean)^2}{2\ss}}$:
+The [density](random-variables.qmd#def-pdf) is $\p(X=x) = \frac{1}{\sqrt{2\pi\ss}}\expf{-\frac{(x-\mean)^2}{2\ss}}$:
 
 $$
 \ba
 \E{\p(X=X)}
-&= \int_{-\infty}^{\infty} \frac{1}{2\pi\ss}\exp\paren{-\frac{(x-\mean)^2}{\ss}}\,dx
+&= \int_{-\infty}^{\infty} \frac{1}{2\pi\ss}\expf{-\frac{(x-\mean)^2}{\ss}}\,dx
 && \text{(integral of the squared density; square the density)}
-\\&= \frac{1}{2\pi\ss} \int_{-\infty}^{\infty} e^{-u^2}\,\sigma\,du
+\\&= \frac{1}{2\pi\ss} \int_{-\infty}^{\infty} \expf{-u^2}\,\sigma\,du
 && \text{(substitute } u = (x-\mean)/\sigma \text{, so } dx = \sigma\,du \text{)}
 \\&= \frac{\sigma\sqrt{\pi}}{2\pi\ss}
 && \text{(the given integral)}
