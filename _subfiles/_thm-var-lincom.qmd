@@ -1,9 +1,9 @@
 :::{#thm-var-lincom}
 #### Variance of a linear combination
 
-For any vector of random variables $\vX = (\dsn{X})$
+For any vector of [random variables](random-variables.qmd#def-random-variable) $\vX = (\dsn{X})$
 and corresponding vector of constants $\va = (\dsn{a})$,
-the variance of their linear combination is:
+the [variance](#def-variance) of their [linear combination](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination) is:
 
 $$
 \ba
@@ -18,7 +18,7 @@ $$
 
 ::: proof
 
-Treat $\va$ and $\vX$ as $n \times 1$ column vectors,
+Treat $\va$ and $\vX$ as $n \times 1$ [column vectors](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector),
 so
 
 $$
@@ -28,8 +28,8 @@ $$
 \end{aligned}
 $$
 
-a scalar.
-By linearity of expectation, $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
+a [scalar](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar).
+By [linearity of expectation](expectation.qmd#thm-linearity-expectation), $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
 
 $$
 \ba

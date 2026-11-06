@@ -2,7 +2,7 @@
 #### Variance of a sum of independent random variables
 
 If $X$ and $Y$ are [independent](independence.qmd#def-indpt),
-each discrete or continuous,
+each [discrete](random-variables.qmd#def-discrete-rv) or [continuous](random-variables.qmd#def-continuous-rv),
 with $\E{X^2} < \infty$ and $\E{Y^2} < \infty$, then:
 
 $$\Var{X + Y} = \Var{X} + \Var{Y}$$

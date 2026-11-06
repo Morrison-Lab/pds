@@ -1,7 +1,8 @@
 ::: {.remark .notes}
 
-@cor-var-lincom2 is why two variables' covariance matters for combining them:
-the covariance term is what separates the variance of their sum
+@cor-var-lincom2 is why two variables' [covariance](#def-cov) matters for combining them:
+the covariance [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) is what separates
+the [variance](#def-variance) of their [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation)
 from the sum of their variances,
 and @cor-var-sum-indpt is the case where that term is 0.
 

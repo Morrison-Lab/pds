@@ -1,7 +1,7 @@
 :::{#lem-cov-xx}
 #### The covariance of a variable with itself is its variance
 
-For any random variable $X$ with $\E{X^2} < \infty$:
+For any [random variable](random-variables.qmd#def-random-variable) $X$ with $\E{X^2} < \infty$:
 
 $$\Cov{X,X} = \Var{X}$$
 

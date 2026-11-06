@@ -1,7 +1,7 @@
 :::{#thm-total-cov}
-#### Law of total covariance
+#### Law of total covariance (covariance decomposition formula, conditional covariance formula)
 
-For random variables $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
+For [random variables](random-variables.qmd#def-random-variable) $X$, $Y$, and $Z$ with $\E{Y^2} < \infty$ and $\E{Z^2} < \infty$:
 
 $$\Cov{Y,Z} = \E{\Cov{Y,Z \mid X}} + \Cov{\E{Y \mid X}, \E{Z \mid X}}$$
 
@@ -51,7 +51,7 @@ $$
 \ea
 $$
 
-For the last term, the law of iterated expectations gives
+For the last term, the [law of iterated expectations](expectation.qmd#thm-lie) gives
 $\E{m_Y(X)} = \mean_Y$ and $\E{m_Z(X)} = \mean_Z$, so:
 
 $$

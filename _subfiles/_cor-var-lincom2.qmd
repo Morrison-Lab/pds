@@ -1,7 +1,7 @@
 :::{#cor-var-lincom2}
 #### Variance of a sum of two random variables
 
-For any two random variables $X$ and $Y$ and scalars $a$ and $b$:
+For any two [random variables](random-variables.qmd#def-random-variable) $X$ and $Y$ and [scalars](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar) $a$ and $b$:
 
 $$\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y} + 2(a \cd b) \Cov{X,Y}$$
 
@@ -18,7 +18,7 @@ $$
 \ea
 $$
 
-Alternatively, by linearity of expectation:
+Alternatively, by [linearity of expectation](expectation.qmd#thm-linearity-expectation):
 
 $$
 \ba
