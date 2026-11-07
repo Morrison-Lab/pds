@@ -23,11 +23,13 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 By the choice of $x_i$,
 the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.
 By @thm-entropy-discrete,
+with each sum over the bins of positive probability
+(a bin of probability $0$ adds nothing to the entropy),
 
 $$
 \ba
 \entropyf{X^\Delta}
-&= -\sum_i \p(X=x_i)\,\Delta \log \paren{\p(X=x_i)\,\Delta} && \text{(@thm-entropy-discrete)} \\
+&= -\sum_i \p(X=x_i)\,\Delta \log \paren{\p(X=x_i)\,\Delta} \\
 &= -\sum_i \Delta\, \p(X=x_i) \log \p(X=x_i) - \sum_i \p(X=x_i)\,\Delta \log \Delta && \text{(log of a product)} \\
 &= -\sum_i \Delta\, \p(X=x_i) \log \p(X=x_i) - \log \Delta. && \text{(the masses sum to } 1 \text{)}
 \ea
