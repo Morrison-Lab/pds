@@ -1,5 +1,5 @@
 :::{#thm-entropy-scaling}
-#### Rescaling changes differential entropy by the log of the scale
+#### Rescaling changes entropy by the log of the scale
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [entropy](#def-entropy) $\entropyf{X}$,
 and let $a \ne 0$ be a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers).
@@ -18,19 +18,19 @@ The [density](random-variables.qmd#def-pdf) of $Y$ is
 
 $$\p(Y=y) = \frac{1}{\abs{a}} \pf{X = \frac{y}{a}}.$$
 
-Evaluated at $Y = aX$, the density of $Y$ is
+At the value $y = ax$, the density of $Y$ is therefore $1/\abs{a}$ times the density of $X$ at $x$.
+Taking $-\log$ of both sides turns this relation into one between [surprisals](#def-surprisal):
 
-$$\p(Y=aX) = \frac{1}{\abs{a}} \p(X=X).$$
+$$\surprisalf{aX} = \surprisalf{X} + \log \abs{a}.$$
 
-Therefore
+Hence
 
 $$
 \ba
 \entropyf{aX}
-&= \E{-\log \p(Y=Y)} && \text{(definition of entropy)} \\
-&= \E{-\log \p(Y=aX)} && \text{(} Y = aX \text{)} \\
-&= \E{-\log \p(X=X) + \log \abs{a}} && \text{(density of } Y \text{)} \\
-&= \E{-\log \p(X=X)} + \log \abs{a} && \text{(linearity of expectation)} \\
+&= \E{\surprisalf{aX}} && \text{(definition of entropy)} \\
+&= \E{\surprisalf{X} + \log \abs{a}} && \text{(surprisal of } aX \text{)} \\
+&= \E{\surprisalf{X}} + \log \abs{a} && \text{(linearity of expectation)} \\
 &= \entropyf{X} + \log \abs{a}. && \text{(definition of entropy)}
 \ea
 $$

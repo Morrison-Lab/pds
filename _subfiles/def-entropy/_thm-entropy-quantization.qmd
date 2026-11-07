@@ -9,7 +9,6 @@ let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discre
 $X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$,
 where $x_i$ is a point of that bin
 with $\p(X=x_i)\,\Delta = \P(i\Delta \le X < (i+1)\Delta)$.
-The density being continuous makes such a point available in every bin.
 Then
 
 $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to 0.$$
@@ -20,6 +19,8 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 
 ::: proof
 
+A continuous density attains the average of its values over each bin,
+so a point $x_i$ with the stated property exists in every bin.
 By the choice of $x_i$,
 the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.
 By @thm-entropy-discrete,

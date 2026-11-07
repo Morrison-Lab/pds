@@ -10,11 +10,14 @@ $$\entropyf{X^\Delta} \to \infty \quad \text{as } \Delta \to 0.$$
 ::: proof
 
 By @thm-entropy-quantization,
-$\entropyf{X^\Delta} = \entropyf{X} - \log \Delta + o(1)$.
-Since $-\log \Delta \to \infty$ as $\Delta \to 0$,
-and $\entropyf{X}$ does not depend on $\Delta$,
-$\entropyf{X^\Delta} \to \infty$.
-The value $\infty$ differs from the [differential entropy](#def-entropy) $\entropyf{X}$,
-so the differential entropy is not the [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of the [entropy](#def-entropy) of its quantizations.
+$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X}$ as $\Delta \to 0$,
+so the sum $\entropyf{X^\Delta} + \log \Delta$ stays bounded.
+Hence
+
+$$\entropyf{X^\Delta} = \paren{\entropyf{X^\Delta} + \log \Delta} - \log \Delta.$$
+
+The first term on the right stays bounded,
+and $-\log \Delta \to \infty$ as $\Delta \to 0$,
+so $\entropyf{X^\Delta} \to \infty$.
 
 :::
