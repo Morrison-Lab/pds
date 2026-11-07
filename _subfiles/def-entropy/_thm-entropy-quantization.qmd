@@ -23,8 +23,8 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 By the choice of $x_i$,
 the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.
 By @thm-entropy-discrete,
-with each sum over the bins of positive probability
-(a bin of probability $0$ adds nothing to the entropy),
+with each [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over the bins of positive [probability](probability-basics.qmd#def-probability)
+(a bin of probability $0$ adds nothing to the [entropy](#def-entropy)),
 
 $$
 \ba
