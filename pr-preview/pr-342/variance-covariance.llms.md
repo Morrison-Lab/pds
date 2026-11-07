@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-06 02:13:05 (PST)
+Last modified: 2026-11-07 04:59:05 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -1258,15 +1258,15 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > &= 8.5.
 > \end{aligned}$$
 >
-> As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$, each with probability $1/4$, so its mean is 0 and its variance is $(16 + 1 + 1 + 16)/4 = 8.5$.
+> As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$, each with [probability](probability-basics.llms.md#def-probability) $1/4$, so its [mean](expectation.llms.md#def-expectation) is 0 and its [variance](#def-variance) is $(16 + 1 + 1 + 16)/4 = 8.5$.
 
 > **NOTE:**
 >
-> *Remark*. The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, ${(1, 1)}^{\top}$ or ${(1, -1)}^{\top}$, has the larger spread.
+> *Remark*. The two sets of points have the same spread along each coordinate axis, so the diagonals of their [variance matrices](#def-cov-vec-x) agree. The sign of the [covariance](#def-cov) says which diagonal direction, ${(1, 1)}^{\top}$ or ${(1, -1)}^{\top}$, has the larger spread.
 
 > **NOTE:**
 >
-> **Example 18 (A variance matrix that is not positive definite)** Let $X_1$ have variance $\sigma^2> 0$, and let $X_2 = X_1$. Every covariance in $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ is ${\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2$ ([Lemma 2](#lem-cov-xx)), so:
+> **Example 18 (A variance matrix that is not positive definite)** Let $X_1$ have [variance](#def-variance) $\sigma^2> 0$, and let $X_2 = X_1$. Every [covariance](#def-cov) in $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ is ${\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2$ by [Lemma 2](#lem-cov-xx), so:
 >
 > $${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}.$$
 >
@@ -1278,11 +1278,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > &= 0,
 > \end{aligned}$$
 >
-> so ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)). If $X_1$ is continuous, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
+> so ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is positive semidefinite but not [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) (compare [this example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite)). If $X_1$ is [continuous](random-variables.llms.md#def-continuous-rv), $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has no [joint density](random-variables.llms.md#thm-no-joint-density-diagonal).
 
 > **NOTE:**
 >
-> **Corollary 5 (Independent components give a diagonal variance matrix)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ be a random vector whose components are each discrete or continuous, with:
+> **Corollary 5 (Independent components give a diagonal variance matrix)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ be a random vector whose components are each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with:
 >
 > - ${\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} < \infty$ for every $i$, and
 > - $X_i$ and $X_j$ [independent](independence.llms.md#def-indpt) for every $i \neq j$.
@@ -1291,7 +1291,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 10](#thm-vcov-elements), the $(i,j)$-th element of ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}$. For $i \neq j$, $X_i$ and $X_j$ are independent, so ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ by [Theorem 8](#thm-indpt-uncorrelated). The $(i,i)$-th element is ${\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}$ by [Lemma 2](#lem-cov-xx).
+> *Proof*. By [Theorem 10](#thm-vcov-elements), the $(i,j)$-th element of ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}$. For $i \neq j$, $X_i$ and $X_j$ are [independent](independence.llms.md#def-indpt), so ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ by [Theorem 8](#thm-indpt-uncorrelated). The $(i,i)$-th element is ${\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}$ by [Lemma 2](#lem-cov-xx).
 
 > **NOTE:**
 >
@@ -1301,7 +1301,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. Write $\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} > 0$ and $\sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} > 0$, and take either sign $\pm$ throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying [Corollary 3](#cor-var-lincom2) with $a = 1/\sigma_X$ and $b = \pm 1/\sigma_Y$:
+> *Proof*. Write $\sigma_X$ and $\sigma_Y$ for the [standard deviations](#def-sd),
+>
+> $$\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} > 0, \qquad \sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} > 0,$$
+>
+> and take either sign $\pm$ throughout. A [variance](#def-variance) is the [expectation](expectation.llms.md#def-expectation) of a squared [deviation](#def-deviation), a non-negative [random variable](random-variables.llms.md#def-random-variable), so it is non-negative. Applying [Corollary 3](#cor-var-lincom2) with $a = 1/\sigma_X$ and $b = \pm 1/\sigma_Y$:
 >
 > $$\begin{aligned}
 > 0
@@ -1321,7 +1325,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > **Example 19 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
-> Choose one car at random, each with the same probability, and let $X$ be its horsepower and $Y$ its miles per gallon. Then ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, and ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}$ are the averages over the cars in the data, and [Definition 10](#def-correlation) gives ${\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}$. The code below computes each part of the definition directly.
+> Choose one car at random, each with the same [probability](probability-basics.llms.md#def-probability), and let $X$ be its horsepower and $Y$ its miles per gallon. Then each [expectation](expectation.llms.md#def-expectation) in the definitions of the [variance](#def-variance) and the [covariance](#def-cov) is an average over the cars in the data, and [Definition 10](#def-correlation) gives their [correlation](#def-correlation). The code below computes each part of the definition directly.
 >
 > ## Python
 >
@@ -1389,7 +1393,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > >
 > > Figure 3: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 >
-> The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between $-1$ and $1$ as [Theorem 14](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
+> The [covariance](#def-cov) is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two [standard deviations](#def-sd), 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a [correlation](#def-correlation) of -0.78, which lies between $-1$ and $1$ as [Theorem 14](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
 
 > **NOTE:**
 >

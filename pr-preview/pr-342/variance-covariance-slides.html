@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-06 02:13:05 (PST)</p>
+  <p class="date">Last modified: 2026-11-07 04:59:05 (PST)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -1794,10 +1794,10 @@ a &amp;= b \\
 &amp;= 8.5.
 \end{aligned}
 \]</span></p>
-<p>As a check, <span class="math inline">\(X_1 + X_2\)</span> takes the values <span class="math inline">\(-4, -1, 1, 4\)</span>, each with probability <span class="math inline">\(1/4\)</span>, so its mean is 0 and its variance is <span class="math inline">\((16 + 1 + 1 + 16)/4 = 8.5\)</span>.</p>
+<p>As a check, <span class="math inline">\(X_1 + X_2\)</span> takes the values <span class="math inline">\(-4, -1, 1, 4\)</span>, each with <a href="./probability-basics.html#def-probability">probability</a> <span class="math inline">\(1/4\)</span>, so its <a href="./expectation.html#def-expectation">mean</a> is 0 and its <a href="#/def-variance">variance</a> is <span class="math inline">\((16 + 1 + 1 + 16)/4 = 8.5\)</span>.</p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>The two sets of points have the same spread along each coordinate axis, so the diagonals of their variance matrices agree. The sign of the covariance says which diagonal direction, <span class="math inline">\({(1, 1)}^{\top}\)</span> or <span class="math inline">\({(1, -1)}^{\top}\)</span>, has the larger spread.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>The two sets of points have the same spread along each coordinate axis, so the diagonals of their <a href="#/def-cov-vec-x">variance matrices</a> agree. <!-- check-term-links: allow --> The sign of the <a href="#/def-cov">covariance</a> says which diagonal direction, <!-- check-term-links: allow --> <span class="math inline">\({(1, 1)}^{\top}\)</span> or <span class="math inline">\({(1, -1)}^{\top}\)</span>, has the larger spread.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1813,7 +1813,7 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="exm-vcov-singular" class="theorem example">
-<p><span class="theorem-title"><strong>Example 18 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have variance <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every covariance in <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\)</span> (<a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>), so:</p>
+<p><span class="theorem-title"><strong>Example 18 (A variance matrix that is not positive definite)</strong></span> Let <span class="math inline">\(X_1\)</span> have <a href="#/def-variance">variance</a> <span class="math inline">\(\sigma^2&gt; 0\)</span>, and let <span class="math inline">\(X_2 = X_1\)</span>. Every <a href="#/def-cov">covariance</a> in <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>, so:</p>
 <p><span class="math display">\[
 {\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \sigma^2\begin{pmatrix}1 &amp; 1 \\ 1 &amp; 1\end{pmatrix}.
 \]</span></p>
@@ -1825,13 +1825,13 @@ a &amp;= b \\
 &amp;= 0,
 \end{aligned}
 \]</span></p>
-<p>so <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is continuous, <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
+<p>so <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is positive semidefinite but not <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> (compare <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-positive-semidefinite">this example</a>). If <span class="math inline">\(X_1\)</span> is <a href="./random-variables.html#def-continuous-rv">continuous</a>, <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> has no <a href="./random-variables.html#thm-no-joint-density-diagonal">joint density</a>.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="cor-vcov-indpt-diagonal" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 5 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each discrete or continuous, with:</p>
+<p><span class="theorem-title"><strong>Corollary 5 (Independent components give a diagonal variance matrix)</strong></span> Let <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}\)</span> be a random vector whose components are each <a href="./random-variables.html#def-discrete-rv">discrete</a> or <a href="./random-variables.html#def-continuous-rv">continuous</a>, <!-- check-term-links: allow --> with:</p>
 <ul>
 <li><span class="math inline">\({\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} &lt; \infty\)</span> for every <span class="math inline">\(i\)</span>, and</li>
 <li><span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> <a href="./independence.html#def-indpt">independent</a> for every <span class="math inline">\(i \neq j\)</span>.</li>
@@ -1839,7 +1839,7 @@ a &amp;= b \\
 <p>Then <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix">diagonal</a>, with diagonal elements <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}}, \ldots, {\operatorname{Var}\mathopen{}\left(X_p\right)\mathclose{}}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are independent, so <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/thm-vcov-elements" class="quarto-xref">Theorem&nbsp;10</a>, the <span class="math inline">\((i,j)\)</span>-th element of <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}\)</span>. For <span class="math inline">\(i \neq j\)</span>, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are <a href="./independence.html#def-indpt">independent</a>, so <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0\)</span> by <a href="#/thm-indpt-uncorrelated" class="quarto-xref">Theorem&nbsp;8</a>. The <span class="math inline">\((i,i)\)</span>-th element is <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X_i, X_i\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_i\right)\mathclose{}}\)</span> by <a href="#/lem-cov-xx" class="quarto-xref">Lemma&nbsp;2</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1849,7 +1849,9 @@ a &amp;= b \\
 <p><span class="math display">\[-1 \le {\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}} \le 1\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} &gt; 0\)</span> and <span class="math inline">\(\sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} &gt; 0\)</span>, and take either sign <span class="math inline">\(\pm\)</span> throughout. A variance is the expectation of a squared deviation, a non-negative random variable, so it is non-negative. Applying <a href="#/cor-var-lincom2" class="quarto-xref">Corollary&nbsp;3</a> with <span class="math inline">\(a = 1/\sigma_X\)</span> and <span class="math inline">\(b = \pm 1/\sigma_Y\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Write <span class="math inline">\(\sigma_X\)</span> and <span class="math inline">\(\sigma_Y\)</span> for the <a href="#/def-sd">standard deviations</a>,</p>
+<p><span class="math display">\[\sigma_X \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(X\right)\mathclose{}} &gt; 0, \qquad \sigma_Y \stackrel{\text{def}}{=}{\operatorname{SD}\mathopen{}\left(Y\right)\mathclose{}} &gt; 0,\]</span></p>
+<p>and take either sign <span class="math inline">\(\pm\)</span> throughout. A <a href="#/def-variance">variance</a> is the <a href="./expectation.html#def-expectation">expectation</a> of a squared <a href="#/def-deviation">deviation</a>, a non-negative <a href="./random-variables.html#def-random-variable">random variable</a>, so it is non-negative. Applying <a href="#/cor-var-lincom2" class="quarto-xref">Corollary&nbsp;3</a> with <span class="math inline">\(a = 1/\sigma_X\)</span> and <span class="math inline">\(b = \pm 1/\sigma_Y\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 0
@@ -1870,7 +1872,7 @@ a &amp;= b \\
 
 <div id="exm-cor-auto" class="theorem example">
 <p><span class="theorem-title"><strong>Example 19 (Correlation of horsepower and fuel economy)</strong></span> The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book <em>An Introduction to Statistical Learning</em>, in the Python package <a href="https://islp.readthedocs.io/"><code>ISLP</code></a> (<code>ISLP.load_data("Auto")</code>) and the R package <a href="https://cran.r-project.org/package=ISLR2"><code>ISLR2</code></a> (<code>ISLR2::Auto</code>). This site has a copy at <a href="data/auto.csv"><code>data/auto.csv</code></a>, and both code tabs below read that file.</p>
-<p>Choose one car at random, each with the same probability, and let <span class="math inline">\(X\)</span> be its horsepower and <span class="math inline">\(Y\)</span> its miles per gallon. Then <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span>, <span class="math inline">\({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\)</span>, and <span class="math inline">\({\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}}\)</span> are the averages over the cars in the data, and <a href="#/def-correlation" class="quarto-xref">Definition&nbsp;10</a> gives <span class="math inline">\({\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}\)</span>. The code below computes each part of the definition directly.</p>
+<p>Choose one car at random, each with the same <a href="./probability-basics.html#def-probability">probability</a>, <!-- check-term-links: allow --> and let <span class="math inline">\(X\)</span> be its horsepower and <span class="math inline">\(Y\)</span> its miles per gallon. Then each <a href="./expectation.html#def-expectation">expectation</a> in the definitions of the <a href="#/def-variance">variance</a> and the <a href="#/def-cov">covariance</a> is an average over the cars in the data, <!-- check-term-links: allow --> and <a href="#/def-correlation" class="quarto-xref">Definition&nbsp;10</a> gives their <a href="#/def-correlation">correlation</a>. The code below computes each part of the definition directly.</p>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Python</a></li><li><a href="#tabset-2-2">R</a></li></ul>
 <div class="tab-content">
@@ -1945,7 +1947,7 @@ Figure&nbsp;3: Miles per gallon against horsepower for the cars in the Auto data
 </div>
 </div>
 </div>
-<p>The covariance is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two standard deviations, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a correlation of -0.78, which lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> as <a href="#/thm-cor-bounds" class="quarto-xref">Theorem&nbsp;14</a> requires. The same value comes from R’s built-in <code>cor(x, y)</code>, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.</p>
+<p>The <a href="#/def-cov">covariance</a> is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two <a href="#/def-sd">standard deviations</a>, 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a <a href="#/def-correlation">correlation</a> of -0.78, which lies between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> as <a href="#/thm-cor-bounds" class="quarto-xref">Theorem&nbsp;14</a> requires. The same value comes from R’s built-in <code>cor(x, y)</code>, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.</p>
 </div>
 <div class="videos">
 <p>5MinuteAI explains <a href="https://www.youtube.com/watch?v=5CT1DXPp2HY">variance</a> and <a href="https://www.youtube.com/watch?v=hiim8HlI81Y">covariance and correlation</a> in five minutes each, following the University of Washington’s CSE 312 <span class="citation" data-cites="fiveminuteai_probstat"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span>.</p>

@@ -4351,6 +4351,14 @@
   ],
   [
    "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/variance-covariance#cor-vcov-indpt-diagonal",
    "pds/variance-covariance#lem-cov-xx"
   ],
   [
@@ -4575,11 +4583,27 @@
   ],
   [
    "pds/variance-covariance#thm-cor-bounds",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
    "pds/variance-covariance#cor-var-lincom2"
   ],
   [
    "pds/variance-covariance#thm-cor-bounds",
    "pds/variance-covariance#def-correlation"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#def-deviation"
+  ],
+  [
+   "pds/variance-covariance#thm-cor-bounds",
+   "pds/variance-covariance#def-sd"
   ],
   [
    "pds/variance-covariance#thm-cor-bounds",
