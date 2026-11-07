@@ -9,9 +9,12 @@ so by @thm-entropy-discrete, its [entropy](#def-entropy) is
 $$\entropyf{X^\Delta} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log \Delta.$$
 
 Hence $\entropyf{X^\Delta} + \log \Delta = 0$,
-which is $\entropyf{X} = 0$, as @thm-entropy-quantization states.
-Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$, the entropy is $k$,
-and it tends to $\infty$ as $k$ grows, as @cor-entropy-quantization-diverges states
+which is $\entropyf{X} = 0$,
+as @thm-entropy-quantization states.
+Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$,
+the entropy is $k$.
+It tends to $\infty$ as $k$ grows,
+as @cor-entropy-quantization-diverges states
 [@cover2006elements, Example 8.3.1].
 
 <!-- no-figure: closed-form values -->
