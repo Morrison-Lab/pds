@@ -18,7 +18,7 @@ The [density](random-variables.qmd#def-pdf) of $Y$ is
 
 $$\p(Y=y) = \p(X=y-c).$$
 
-Evaluated at $Y = X + c$, this gives
+Evaluated at $Y = X + c$, the density of $Y$ is
 
 $$\p(Y=X+c) = \p(X=X).$$
 

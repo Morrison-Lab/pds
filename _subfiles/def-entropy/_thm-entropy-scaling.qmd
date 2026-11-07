@@ -16,9 +16,9 @@ $$\entropyf{aX} = \entropyf{X} + \log \abs{a}.$$
 Let $Y \eqdef aX$.
 The [density](random-variables.qmd#def-pdf) of $Y$ is
 
-$$\p(Y=y) = \frac{1}{\abs{a}} \p\paren{X = \frac{y}{a}}.$$
+$$\p(Y=y) = \frac{1}{\abs{a}} \pf{X = \frac{y}{a}}.$$
 
-Evaluated at $Y = aX$, this gives
+Evaluated at $Y = aX$, the density of $Y$ is
 
 $$\p(Y=aX) = \frac{1}{\abs{a}} \p(X=X).$$
 

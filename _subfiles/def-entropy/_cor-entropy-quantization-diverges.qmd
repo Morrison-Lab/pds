@@ -5,8 +5,6 @@ Under the conditions of @thm-entropy-quantization,
 
 $$\entropyf{X^\Delta} \to \infty \quad \text{as } \Delta \to 0.$$
 
-So the [differential entropy](#def-entropy) of $X$ is not the [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of the [entropy](#def-entropy) of its quantizations.
-
 :::
 
 ::: proof
@@ -16,5 +14,7 @@ $\entropyf{X^\Delta} = \entropyf{X} - \log \Delta + o(1)$.
 Since $-\log \Delta \to \infty$ as $\Delta \to 0$,
 and $\entropyf{X}$ does not depend on $\Delta$,
 $\entropyf{X^\Delta} \to \infty$.
+This differs from the finite [differential entropy](#def-entropy) of $X$,
+so the differential entropy is not the [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of the [entropy](#def-entropy) of its quantizations.
 
 :::
