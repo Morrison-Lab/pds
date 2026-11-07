@@ -1,0 +1,22 @@
+:::{#cor-entropy-quantization-diverges}
+#### Entropy of a quantized random variable grows without bound
+
+In the setting of @thm-entropy-quantization,
+
+$$\entropyf{X^\Delta} \to \infty \quad \text{as } \Delta \to 0.$$
+
+:::
+
+::: proof
+
+By @thm-entropy-quantization,
+$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X}$ as $\Delta \to 0$.
+Moving $\log \Delta$ to the other side,
+
+$$\entropyf{X^\Delta} = \paren{\entropyf{X^\Delta} + \log \Delta} - \log \Delta.$$
+
+The first quantity on the right tends to $\entropyf{X}$,
+and $-\log \Delta \to \infty$ as $\Delta \to 0$,
+so $\entropyf{X^\Delta} \to \infty$.
+
+:::

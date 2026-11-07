@@ -1,0 +1,26 @@
+:::{#exm-entropy-quantized-uniform}
+#### Quantizing a uniform random variable
+
+Let $X$ be [uniformly distributed](random-variables.qmd#def-uniform) between $0$ and $1$,
+and let the bin width be $\Delta = 1/n$ for a positive whole number $n$.
+Then $X^\Delta$ takes each of $n$ values with [probability](probability-basics.qmd#def-probability) $1/n$,
+so by @thm-entropy-discrete, its [entropy](#def-entropy) is
+
+$$\entropyf{X^\Delta} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log \Delta.$$
+
+Hence $\entropyf{X^\Delta} + \log \Delta = 0$,
+which is $\entropyf{X} = 0$.
+The [density](random-variables.qmd#def-pdf) of $X$ jumps at $0$ and $1$,
+so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
+and @thm-entropy-quantization does not apply as stated.
+Its conclusion still holds here,
+because the density takes one value on every bin.
+Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$,
+the entropy is $k$.
+It tends to $\infty$ as $k$ grows,
+which agrees with @cor-entropy-quantization-diverges
+[@cover2006elements, Example 8.3.1].
+
+<!-- no-figure: closed-form values -->
+
+:::

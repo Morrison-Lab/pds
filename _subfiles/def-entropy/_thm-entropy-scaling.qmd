@@ -1,0 +1,38 @@
+:::{#thm-entropy-scaling}
+#### Rescaling changes entropy by the log of the scale
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [entropy](#def-entropy) $\entropyf{X}$,
+and let $a \ne 0$ be a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers).
+Then
+
+$$\entropyf{aX} = \entropyf{X} + \log \abs{a}.$$
+
+[@cover2006elements, Theorem 8.6.4]
+
+:::
+
+::: proof
+
+Let $Y \eqdef aX$.
+The [density](random-variables.qmd#def-pdf) of $Y$ is
+
+$$\p(Y=y) = \frac{1}{\abs{a}} \pf{X = \frac{y}{a}}.$$
+
+At the value $y = ax$, the density of $Y$ is therefore $1/\abs{a}$ times the density of $X$ at $x$.
+Taking $-\log$ of both sides turns this relation into one between [surprisals](#def-surprisal):
+
+$$\surprisalf{aX} = \surprisalf{X} + \log \abs{a}.$$
+
+Hence
+
+$$
+\ba
+\entropyf{aX}
+&= \E{\surprisalf{aX}} && \text{(definition of entropy)} \\
+&= \E{\surprisalf{X} + \log \abs{a}} && \text{(surprisal of } aX \text{)} \\
+&= \E{\surprisalf{X}} + \log \abs{a} && \text{(linearity of expectation)} \\
+&= \entropyf{X} + \log \abs{a}. && \text{(definition of entropy)}
+\ea
+$$
+
+:::
