@@ -1,7 +1,7 @@
 :::{#cor-entropy-quantization-diverges}
 #### Entropy of a quantized random variable grows without bound
 
-Under the conditions of @thm-entropy-quantization,
+In the setting of @thm-entropy-quantization,
 
 $$\entropyf{X^\Delta} \to \infty \quad \text{as } \Delta \to 0.$$
 

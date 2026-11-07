@@ -1,0 +1,18 @@
+:::{#exm-entropy-rescaled-uniform}
+#### Rescaling and shifting a uniform random variable
+
+Let $X$ be [uniformly distributed](random-variables.qmd#def-uniform) on the interval from $0$ to $1$.
+By @exm-entropy-uniform with $a = 1$, $\entropyf{X} = \log 1 = 0$.
+
+For a number $a > 0$, the random variable $aX$ is uniformly distributed on the interval from $0$ to $a$,
+so @exm-entropy-uniform gives $\entropyf{aX} = \log a$.
+This matches @thm-entropy-scaling, which gives $\entropyf{aX} = \entropyf{X} + \log a = 0 + \log a$.
+
+For a number $c$, the random variable $X + c$ is uniformly distributed on the interval from $c$ to $c + 1$.
+Its [density](random-variables.qmd#def-pdf) is $1$ on that interval,
+so its entropy is $-\int_c^{c+1} 1 \cdot \log 1 \, dx = 0 = \entropyf{X}$,
+as @thm-entropy-shift states.
+
+<!-- no-figure: closed-form values -->
+
+:::

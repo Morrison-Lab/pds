@@ -1,0 +1,14 @@
+:::{#exm-entropy-degenerate}
+#### Entropy of a random variable that is not random
+
+Let $X$ be a [discrete random variable](random-variables.qmd#def-discrete-rv) that takes one value $x_0$ with [probability](probability-basics.qmd#def-probability) $1$.
+By @thm-entropy-discrete,
+
+$$\entropyf{X} = -1 \cdot \log 1 = 0.$$
+
+This value is the lower bound in @thm-entropy-discrete-nonnegative,
+and the fair coin in @exm-entropy-coin has a larger entropy.
+
+<!-- no-figure: a single closed-form value -->
+
+:::
