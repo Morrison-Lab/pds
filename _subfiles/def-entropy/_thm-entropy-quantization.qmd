@@ -19,8 +19,9 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 
 ::: proof
 
-A continuous density attains the average of its values over each bin,
-so a point $x_i$ with the stated property exists in every bin.
+Because the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
+in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point.
+That point is the $x_i$ of the stated choice.
 By the choice of $x_i$,
 the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.
 By @thm-entropy-discrete,

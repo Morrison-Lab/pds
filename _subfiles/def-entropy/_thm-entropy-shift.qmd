@@ -18,8 +18,8 @@ The [density](random-variables.qmd#def-pdf) of $Y$ is
 
 $$\p(Y=y) = \p(X=y-c).$$
 
-At the value $y = x + c$, the density of $Y$ therefore equals the density of $X$ at $x$.
-So the [surprisal](#def-surprisal) of $X + c$ equals the surprisal of $X$:
+At the value $y = x + c$, the density of $Y$ therefore matches the density of $X$ at $x$.
+So the [surprisal](#def-surprisal) of $X + c$ matches the surprisal of $X$:
 
 $$\surprisalf{X + c} = \surprisalf{X}.$$
 

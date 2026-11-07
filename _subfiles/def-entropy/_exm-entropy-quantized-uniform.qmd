@@ -10,10 +10,10 @@ $$\entropyf{X^\Delta} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log
 
 Hence $\entropyf{X^\Delta} + \log \Delta = 0$,
 which is $\entropyf{X} = 0$.
-The density of $X$ jumps at $0$ and $1$, so it is not continuous,
+The [density](random-variables.qmd#def-pdf) of $X$ jumps at $0$ and $1$, so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
 and @thm-entropy-quantization does not apply as stated.
 Its conclusion still holds here,
-because the density is constant on every bin.
+because the density takes one value on every bin.
 Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$,
 the entropy is $k$.
 It tends to $\infty$ as $k$ grows,
