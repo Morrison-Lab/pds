@@ -14,7 +14,7 @@ So the [differential entropy](#def-entropy) of $X$ is not the [limit](https://mo
 By @thm-entropy-quantization,
 $\entropyf{X^\Delta} = \entropyf{X} - \log \Delta + o(1)$.
 Since $-\log \Delta \to \infty$ as $\Delta \to 0$,
-and $\entropyf{X}$ is a fixed real number,
+and $\entropyf{X}$ does not depend on $\Delta$,
 $\entropyf{X^\Delta} \to \infty$.
 
 :::

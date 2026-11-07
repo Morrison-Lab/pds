@@ -1,8 +1,8 @@
 :::{#thm-entropy-shift}
 #### Shifting does not change differential entropy
 
-Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) whose [entropy](#def-entropy) exists,
-and let $c$ be a real number.
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [entropy](#def-entropy) $\entropyf{X}$,
+and let $c$ be a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers).
 Then
 
 $$\entropyf{X + c} = \entropyf{X}.$$
