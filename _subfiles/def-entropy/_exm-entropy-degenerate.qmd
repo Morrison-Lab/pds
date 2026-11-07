@@ -6,7 +6,7 @@ By @thm-entropy-discrete, the [entropy](#def-entropy) of $X$ is
 
 $$\entropyf{X} = -1 \cdot \log 1 = 0.$$
 
-This is the smallest value @thm-entropy-discrete-nonnegative allows,
+The value $0$ is the smallest that @thm-entropy-discrete-nonnegative allows,
 and the fair coin in @exm-entropy-coin has a larger entropy.
 
 <!-- no-figure: a single closed-form value -->
