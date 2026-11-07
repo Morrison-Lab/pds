@@ -1,0 +1,10 @@
+:::{#exr-expected-density}
+
+#### Expected value of a density
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [density](random-variables.qmd#def-pdf) $\p(X=x)$.
+The density evaluated at $X$ is itself a [random variable](random-variables.qmd#def-random-variable), $\p(X=X)$.
+
+Use @thm-lotus to write $\E{\p(X=X)}$ as an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) of the density.
+
+:::

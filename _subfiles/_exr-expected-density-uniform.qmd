@@ -1,0 +1,10 @@
+:::{#exr-expected-density-uniform}
+
+#### Expected value of a uniform density
+
+By @sol-expected-density,
+the [expectation](#def-expectation) of the [density](random-variables.qmd#def-pdf) of a [continuous random variable](random-variables.qmd#def-continuous-rv) $X$ is $\int_{x \in \rangef{X}} \sb{\p(X=x)}^2\,dx$.
+
+Evaluate $\E{\p(X=X)}$ when $X \sim \text{Uniform}(a, b)$ ([uniform distribution](random-variables.qmd#def-uniform)).
+
+:::

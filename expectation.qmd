@@ -26,6 +26,30 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exr-expected-density.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-expected-density.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-expected-density-uniform.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-expected-density-uniform.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-expected-density-normal.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-expected-density-normal.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_lem-linearity-finite-sum.qmd >}}
 
 {{< slidebreak >}}

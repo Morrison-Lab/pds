@@ -1,0 +1,19 @@
+:::{#sol-expected-density}
+
+Apply @thm-lotus to a [continuous random variable](random-variables.qmd#def-continuous-rv), with $g(x) = \p(X=x)$:
+
+$$
+\ba
+\E{\p(X=X)}
+&= \int_{x \in \rangef{X}} \p(X=x) \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case, with } g(x) = \p(X=x) \text{)}
+\\&= \int_{x \in \rangef{X}} \sb{\p(X=x)}^2\,dx.
+&& \text{(combine the two factors)}
+\ea
+$$
+
+The [expectation](#def-expectation) of the [density](random-variables.qmd#def-pdf) is the [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) of the squared density.
+It is large when the density is concentrated,
+because then $X$ tends to land where the density is high.
+
+:::

@@ -10,10 +10,13 @@ $$-1 \le \Cor{X,Y} \le 1$$
 
 ::: proof
 
-Write $\sdpar_X \eqdef \SD{X} > 0$ and $\sdpar_Y \eqdef \SD{Y} > 0$,
+Write $\sdpar_X$ and $\sdpar_Y$ for the [standard deviations](#def-sd),
+
+$$\sdpar_X \eqdef \SD{X} > 0, \qquad \sdpar_Y \eqdef \SD{Y} > 0,$$
+
 and take either sign $\pm$ throughout.
-A variance is the expectation of a squared deviation,
-a non-negative random variable,
+A [variance](#def-variance) is the [expectation](expectation.qmd#def-expectation) of a squared [deviation](#def-deviation),
+a non-negative [random variable](random-variables.qmd#def-random-variable),
 so it is non-negative.
 Applying @cor-var-lincom2 with $a = 1/\sdpar_X$ and $b = \pm 1/\sdpar_Y$:
 
