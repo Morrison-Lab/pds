@@ -1,0 +1,38 @@
+:::{#thm-entropy-quantization}
+#### Entropy of a quantized random variable
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) whose density is continuous
+and whose [entropy](#def-entropy) is finite and equal to a Riemann integral.
+For a bin width $\Delta > 0$,
+let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that records the bin of $X$:
+$X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$,
+where $x_i$ is a point of that bin chosen by the mean value theorem so that $\p(X=x_i)\,\Delta = \P(i\Delta \le X < (i+1)\Delta)$.
+Then
+
+$$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to 0.$$
+
+[@cover2006elements, Theorem 8.3.1]
+
+:::
+
+::: proof
+
+By the choice of $x_i$,
+the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.
+By @thm-entropy-discrete,
+
+$$
+\ba
+\entropyf{X^\Delta}
+&= -\sum_i \p(X=x_i)\,\Delta \log \paren{\p(X=x_i)\,\Delta} && \text{(@thm-entropy-discrete)} \\
+&= -\sum_i \Delta\, \p(X=x_i) \log \p(X=x_i) - \sum_i \p(X=x_i)\,\Delta \log \Delta && \text{(log of a product)} \\
+&= -\sum_i \Delta\, \p(X=x_i) \log \p(X=x_i) - \log \Delta. && \text{(the masses sum to } 1 \text{)}
+\ea
+$$
+
+Adding $\log \Delta$ to both sides leaves the first sum,
+which is a Riemann sum for $-\int \p(X=x) \log \p(X=x)\, dx$.
+It converges to that integral as $\Delta \to 0$,
+which equals $\entropyf{X}$ by @thm-entropy-continuous.
+
+:::

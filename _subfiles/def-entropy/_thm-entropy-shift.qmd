@@ -1,0 +1,37 @@
+:::{#thm-entropy-shift}
+#### Shifting does not change differential entropy
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with finite [entropy](#def-entropy),
+and let $c$ be a constant.
+Then
+
+$$\entropyf{X + c} = \entropyf{X}.$$
+
+[@cover2006elements, Theorem 8.6.3]
+
+:::
+
+::: proof
+
+Let $Y \eqdef X + c$.
+The [density](random-variables.qmd#def-pdf) of $Y$ is
+
+$$\p(Y=y) = \p(X=y-c).$$
+
+Evaluated at $Y = X + c$, this gives
+
+$$\p(Y=X+c) = \p(X=X).$$
+
+Therefore
+
+$$
+\ba
+\entropyf{X + c}
+&= \E{-\log \p(Y=Y)} && \text{(definition of entropy)} \\
+&= \E{-\log \p(Y=X+c)} && \text{(} Y = X + c \text{)} \\
+&= \E{-\log \p(X=X)} && \text{(density of } Y \text{)} \\
+&= \entropyf{X}. && \text{(definition of entropy)}
+\ea
+$$
+
+:::

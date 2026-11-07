@@ -1,0 +1,38 @@
+:::{#thm-entropy-scaling}
+#### Rescaling changes differential entropy by the log of the scale
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with finite [entropy](#def-entropy),
+and let $a \ne 0$ be a constant.
+Then
+
+$$\entropyf{aX} = \entropyf{X} + \log \abs{a}.$$
+
+[@cover2006elements, Theorem 8.6.4]
+
+:::
+
+::: proof
+
+Let $Y \eqdef aX$.
+The [density](random-variables.qmd#def-pdf) of $Y$ is
+
+$$\p(Y=y) = \frac{1}{\abs{a}} \p\paren{X = \frac{y}{a}}.$$
+
+Evaluated at $Y = aX$, this gives
+
+$$\p(Y=aX) = \frac{1}{\abs{a}} \p(X=X).$$
+
+Therefore
+
+$$
+\ba
+\entropyf{aX}
+&= \E{-\log \p(Y=Y)} && \text{(definition of entropy)} \\
+&= \E{-\log \p(Y=aX)} && \text{(} Y = aX \text{)} \\
+&= \E{-\log \p(X=X) + \log \abs{a}} && \text{(density of } Y \text{)} \\
+&= \E{-\log \p(X=X)} + \log \abs{a} && \text{(linearity of expectation)} \\
+&= \entropyf{X} + \log \abs{a}. && \text{(definition of entropy)}
+\ea
+$$
+
+:::

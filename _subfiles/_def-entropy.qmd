@@ -34,4 +34,24 @@ For a [continuous random variable](random-variables.qmd#def-continuous-rv), the 
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-entropy/_thm-entropy-discrete-nonnegative.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_thm-entropy-scaling.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_thm-entropy-shift.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_thm-entropy-quantization.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-entropy/_cor-entropy-quantization-diverges.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-entropy/_rem-entropy-source.qmd >}}

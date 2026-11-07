@@ -1,0 +1,20 @@
+:::{#thm-entropy-discrete-nonnegative}
+#### Entropy of a discrete random variable is nonnegative
+
+Let $X$ be a [discrete random variable](random-variables.qmd#def-discrete-rv).
+Then
+
+$$\entropyf{X} \ge 0.$$
+
+:::
+
+::: proof
+
+For each value $x$ with $\P(X=x) > 0$,
+the probability satisfies $\P(X=x) \le 1$,
+so $\log \P(X=x) \le 0$.
+Hence the [surprisal](#def-surprisal) $\surprisalf{x} = -\log \P(X=x)$ is nonnegative.
+The [expectation](#def-expectation) of a nonnegative random variable is nonnegative,
+so $\entropyf{X} = \E{\surprisalf{X}} \ge 0$.
+
+:::
