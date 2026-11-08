@@ -3,7 +3,7 @@
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv)
 whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
-and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) with a finite value
+and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) whose value is not $\pm\infty$
 (an improper one if the support of the density is unbounded,
 with infinitely many bins).
 For a bin width $\Delta > 0$,
