@@ -114,6 +114,26 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer"
   },
   {
+   "id": "mds/algebra-basics#def-maximum",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-maximum",
+   "kind": "def",
+   "title": "maximum",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum"
+  },
+  {
+   "id": "mds/algebra-basics#def-minimum",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-minimum",
+   "kind": "def",
+   "title": "minimum",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum"
+  },
+  {
    "id": "mds/algebra-basics#def-power-integer",
    "site": "mds",
    "page": "algebra-basics",
@@ -134,6 +154,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root"
   },
   {
+   "id": "mds/algebra-exponentials#def-constant-function",
+   "site": "mds",
+   "page": "algebra-exponentials",
+   "div": "def-constant-function",
+   "kind": "def",
+   "title": "constant function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function"
+  },
+  {
    "id": "mds/algebra-exponentials#def-infinite-sum",
    "site": "mds",
    "page": "algebra-exponentials",
@@ -142,6 +172,16 @@
    "title": "infinite sum",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum"
+  },
+  {
+   "id": "mds/algebra-exponentials#def-logarithm",
+   "site": "mds",
+   "page": "algebra-exponentials",
+   "div": "def-logarithm",
+   "kind": "def",
+   "title": "logarithm",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
   },
   {
    "id": "mds/algebra-sums#def-summation",
@@ -462,6 +502,16 @@
    "title": "sigma algebra closure",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
+  },
+  {
+   "id": "mds/optimization-convexity#cor-log-below-tangent",
+   "site": "mds",
+   "page": "optimization-convexity",
+   "div": "cor-log-below-tangent",
+   "kind": "cor",
+   "title": "log below tangent",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent"
   },
   {
    "id": "mds/sets#def-extended-nonneg-reals",
@@ -1328,6 +1378,15 @@
    "div": "thm-kl-divergence-discrete",
    "kind": "thm",
    "title": "KL divergence of two mass functions",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-kl-divergence-nonnegative",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-kl-divergence-nonnegative",
+   "kind": "thm",
+   "title": "Gibbs' inequality: the divergence is nonnegative",
    "external": false
   },
   {
@@ -3573,6 +3632,18 @@
   ],
   [
    "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-basics#def-maximum"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-basics#def-minimum"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-exponentials#def-constant-function"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
    "mds/algebra-sums#def-summation"
   ],
   [
@@ -3738,6 +3809,30 @@
   [
    "pds/expectation#thm-kl-divergence-discrete",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/algebra-exponentials#def-logarithm"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/algebra-sums#def-summation"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/algebra-sums#def-term"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/optimization-convexity#cor-log-below-tangent"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "pds/expectation#def-kl-divergence"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "pds/expectation#thm-kl-divergence-discrete"
   ],
   [
    "pds/expectation#thm-linearity-expectation",

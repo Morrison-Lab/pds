@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 07:43:10 (PST)
+Last modified: 2026-11-08 11:49:29 (PST)
 
 > **NOTE:**
 >
@@ -2341,7 +2341,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y- {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}} + {\mathbb{E}\mathopen{}\left[{\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}}$$
 >
-> shows that the total squared-error risk is the sum of the residual risk ([Definition 20](#def-irreducible-risk)) and the reducible risk ([Definition 21](#def-reducible-risk)). James et al. [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 calls the squared difference between a [prediction function](#def-prediction-function) and the [conditional mean](#def-cond-expectation-function) the “reducible error”.
+> shows that the total squared-error risk is the sum of the residual risk ([Definition 20](#def-irreducible-risk)) and the reducible risk ([Definition 21](#def-reducible-risk)). James et al. [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), pp. 18–19 calls the squared difference between a [prediction function](#def-prediction-function) and the [conditional mean](#def-cond-expectation-function) the “reducible error”.
 
 > **NOTE:**
 >
@@ -2527,7 +2527,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 >
 > $$\mathbb{p}(Y=y) = \frac{1}{\mathopen{}\left|a\right|\mathclose{}} {\mathbb{p}\mathopen{}\left(X = \frac{y}{a}\right)\mathclose{}}.$$
 >
-> At the value $y = ax$, the density of $Y$ is therefore $1/\mathopen{}\left|a\right|\mathclose{}$ times the density of $X$ at $x$. Taking $-\log$ of both sides turns this relation into one between [surprisals](#def-surprisal):
+> At the value $y = ax$, the density of $Y$ is therefore $1/\mathopen{}\left|a\right|\mathclose{}$ times the density of $X$ at $x$. That relation holds at every value $x$, so it holds between the [random variables](random-variables.llms.md#def-random-variable). Taking $-\log$ of both sides turns this relation into one between [surprisals](#def-surprisal):
 >
 > $${\mathbb{s}\mathopen{}\left(aX\right)\mathclose{}} = {\mathbb{s}\mathopen{}\left(X\right)\mathclose{}} + \log \mathopen{}\left|a\right|\mathclose{}.$$
 >
@@ -2555,7 +2555,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 >
 > $$\mathbb{p}(Y=y) = \mathbb{p}(X=y-c).$$
 >
-> At the value $y = x + c$, the density of $Y$ therefore matches the density of $X$ at $x$. So the [surprisal](#def-surprisal) of $X + c$ matches the surprisal of $X$:
+> At the value $y = x + c$, the density of $Y$ therefore matches the density of $X$ at $x$. That relation holds at every value $x$, so it holds between the [random variables](random-variables.llms.md#def-random-variable). So the [surprisal](#def-surprisal) of $X + c$ matches the surprisal of $X$:
 >
 > $${\mathbb{s}\mathopen{}\left(X + c\right)\mathclose{}} = {\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}.$$
 >
@@ -2578,7 +2578,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 
 > **NOTE:**
 >
-> **Theorem 20 (Entropy of a quantized random variable)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) whose [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral). For a bin width $\Delta > 0$, let $X^\Delta$ be the [discrete random variable](random-variables.llms.md#def-discrete-rv) that records the bin of $X$: $X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$, where $x_i$ is a point of that bin with $\mathbb{p}(X=x_i)\,\Delta = \mathbb{P}(i\Delta \le X < (i+1)\Delta)$. Then
+> **Theorem 20 (Entropy of a quantized random variable)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) whose [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) whose value is not $\pm\infty$ (an improper one if the support of the density is unbounded). For a bin width $\Delta > 0$, let $X^\Delta$ be the [discrete random variable](random-variables.llms.md#def-discrete-rv) that records the bin of $X$: $X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$, for $i \in \mathbb{Z}$, so that every $\Delta$ has infinitely many bins, where $x_i$ is a point of that bin with $\mathbb{p}(X=x_i)\,\Delta = \mathbb{P}(i\Delta \le X < (i+1)\Delta)$. Then
 >
 > $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta \to {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} \quad \text{as } \Delta \to 0.$$
 >
@@ -2586,7 +2586,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 
 > **NOTE:**
 >
-> *Proof*. Because the [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), in every bin it takes the value $\mathbb{P}(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point. That point is the $x_i$ of the stated choice. By the choice of $x_i$, the [probability mass](random-variables.llms.md#def-pmf) of $X^\Delta$ at $x_i$ is $\mathbb{P}(X^\Delta = x_i) = \mathbb{p}(X=x_i)\,\Delta$. By [Theorem 15](#thm-entropy-discrete), with each [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over the bins of positive [probability](probability-basics.llms.md#def-probability) (a bin of probability $0$ adds nothing to the [entropy](#def-entropy)),
+> *Proof*. Because the [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), in every bin it takes the value $\mathbb{P}(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point of that bin. If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin, any point of the bin takes that value. Otherwise the value lies strictly between the [minimum](https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum) and the [maximum](https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum) of the density on the closed bin, so by [continuity](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) the density takes it at a point strictly between the two, which is inside the bin. That point is the $x_i$ of the stated choice. By the choice of $x_i$, the [probability mass](random-variables.llms.md#def-pmf) of $X^\Delta$ at $x_i$ is $\mathbb{P}(X^\Delta = x_i) = \mathbb{p}(X=x_i)\,\Delta$. By [Theorem 15](#thm-entropy-discrete), with each [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over the bins of positive [probability](probability-basics.llms.md#def-probability) (a bin of probability $0$ adds nothing to the [entropy](#def-entropy)),
 >
 > $$\begin{aligned}
 > {\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}}
@@ -2595,7 +2595,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 > &= -\sum_i \Delta\, \mathbb{p}(X=x_i) \log \mathbb{p}(X=x_i) - \log \Delta. && \text{(the masses sum to } 1 \text{)}
 > \end{aligned}$$
 >
-> Adding $\log \Delta$ to both sides leaves the first [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation), which is a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \mathbb{p}(X=x) \log \mathbb{p}(X=x)\, dx$. By [Theorem 16](#thm-entropy-continuous), its value is ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$.
+> Adding $\log \Delta$ to both sides leaves the first [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation), which is a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \mathbb{p}(X=x) \log \mathbb{p}(X=x)\, dx$. By [Theorem 16](#thm-entropy-continuous), its value is ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$. When the support is unbounded, the hypothesis includes that these [Riemann sums](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) converge to the entropy.
 
 > **NOTE:**
 >
@@ -2609,7 +2609,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 >
 > $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} = \mathopen{}\left({\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta\right)\mathclose{} - \log \Delta.$$
 >
-> The first quantity on the right tends to ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, and $-\log \Delta \to \infty$ as $\Delta \to 0$, so ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} \to \infty$.
+> The first quantity on the right tends to ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, which is not $-\infty$ by the hypothesis of [Theorem 20](#thm-entropy-quantization), and $-\log \Delta \to \infty$ as $\Delta \to 0$, so ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} \to \infty$.
 
 > **NOTE:**
 >
@@ -2617,7 +2617,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 >
 > $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log \Delta.$$
 >
-> Hence ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta = 0$, which is ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = 0$. The [density](random-variables.llms.md#def-pdf) of $X$ jumps at $0$ and $1$, so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and [Theorem 20](#thm-entropy-quantization) does not apply as stated. Its conclusion still holds here, because the density takes one value on every bin. Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$, the entropy is $k$. It tends to $\infty$ as $k$ grows, which agrees with [Corollary 6](#cor-entropy-quantization-diverges).
+> Hence ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta = 0$, which equals ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = 0$. The [density](random-variables.llms.md#def-pdf) of $X$ jumps at $0$ and $1$, so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and [Theorem 20](#thm-entropy-quantization) does not apply as stated. Its conclusion still holds here, because the density takes one value on every bin. Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$, the entropy is $k$. It tends to $\infty$ as $k$ grows, which agrees with [Corollary 6](#cor-entropy-quantization-diverges).
 
 > **NOTE:**
 >
@@ -2882,6 +2882,36 @@ Last modified: 2026-11-08 07:43:10 (PST)
 
 > **NOTE:**
 >
+> **Theorem 25 (Gibbs’ inequality: the divergence is nonnegative)** For $p$ and $q$ as in [Theorem 24](#thm-kl-divergence-discrete), the [KL divergence](#def-kl-divergence) satisfies
+>
+> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ge 0,$$
+>
+> with ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = 0$ exactly when $p_k = q_k$ for every $k$. The [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) is natural here. Any other logarithm multiplies the divergence by a positive number.
+
+> **NOTE:**
+>
+> *Proof*. Every [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) below runs over the $k$ with $p_k > 0$. By [Theorem 24](#thm-kl-divergence-discrete), ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = \sum_k p_k \log \frac{p_k}{q_k}
+> = -\sum_k p_k \log \frac{q_k}{p_k}$.
+>
+> By [the bound on the logarithm](https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent), $\log t \le t - 1$ for every $t > 0$, with equality exactly when $t = 1$. Take $t = q_k / p_k$, and multiply by $p_k > 0$:
+>
+> $$p_k \log \frac{q_k}{p_k} \le q_k - p_k,$$
+>
+> with equality exactly when $q_k = p_k$. Summing over $k$ gives
+>
+> $$\begin{aligned}
+> \sum_k p_k \log \frac{q_k}{p_k}
+> &\le \sum_k q_k - \sum_k p_k && \text{(sum the bound over } k \text{)} \\
+> &= \sum_k q_k - 1 && \text{(} p \text{ sums to one)} \\
+> &\le 0. && \text{(} q \text{ sums to at most one)}
+> \end{aligned}$$
+>
+> Hence ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = -\sum_k p_k \log \frac{q_k}{p_k} \ge 0$.
+>
+> Suppose ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = 0$. Then both relations above hold with equality. Equality in the first forces $q_k = p_k$ whenever $p_k > 0$. Equality in the second then gives $\sum_k q_k = 1$, so $q_k = 0$ whenever $p_k = 0$. Hence $q_k = p_k$ for every $k$. Conversely, if $q_k = p_k$ for every $k$, every [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) $p_k \log \frac{p_k}{q_k}$ is $0$.
+
+> **NOTE:**
+>
 > *Remark 14* (The divergence is not symmetric). In general, ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ne {{D_{\mathrm{KL}}}\mathopen{}\left(q \,\Vert\, p\right)\mathclose{}}$, so KL divergence is not a distance between $p$ and $q$.
 
 > **NOTE:**
@@ -2900,7 +2930,7 @@ Last modified: 2026-11-08 07:43:10 (PST)
 > {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 > \end{aligned}$$
 >
-> Here the cross-entropy is larger than the entropy of $p$, and by [Theorem 23](#thm-kl-divergence-cross-entropy) the divergence is the difference.
+> Here the cross-entropy is larger than the entropy of $p$, and by [Theorem 23](#thm-kl-divergence-cross-entropy) the divergence is the difference. It is positive, as [Theorem 25](#thm-kl-divergence-nonnegative) requires for $p \ne q$.
 
 > **NOTE:**
 >
