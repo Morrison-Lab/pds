@@ -19,7 +19,8 @@ Let $X$ have [mass function](random-variables.qmd#def-pmf) $p$,
 and let $g(k) \eqdef -\log q_k + \log p_k$ for each $k$ with $p_k > 0$,
 so that $\surprisalunderf{q}{X} - \surprisalunderf{p}{X} = g(X)$.
 Since $q_k > 0$ whenever $p_k > 0$,
-$g(k)$ is a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers) for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability).
+$g(k)$ is a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers)
+for every value $k$ that $X$ takes with positive [probability](probability-basics.qmd#def-probability).
 By [LOTUS](#thm-lotus),
 
 $$

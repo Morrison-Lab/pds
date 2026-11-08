@@ -2,10 +2,16 @@
 #### KL divergence is cross-entropy minus entropy
 
 For $X$, $p$ and $q$ as in @def-cross-entropy,
-suppose the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ and the [entropy](#def-entropy) $\entropyf{X}$ are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers).
+suppose the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$
+and the [entropy](#def-entropy) $\entropyf{X}$
+are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers).
 Then the [KL divergence](#def-kl-divergence) is
 
-$$\kldivf{p}{q} = \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
+$$\kldivf{p}{q} = \crossentropyf{p}{q} - \entropyf{X}.$$
+
+When $\P(q(X) = 0) > 0$,
+the cross-entropy is not a real number,
+so this result does not apply.
 
 :::
 
@@ -15,7 +21,7 @@ By the definition of [cross-entropy](#def-cross-entropy),
 $\crossentropyf{p}{q} = \E{\surprisalunderf{q}{X}}$.
 By @cor-cross-entropy-entropy,
 $\crossentropyf{p}{p} = \entropyf{X} = \E{\surprisalunderf{p}{X}}$.
-Both [expectations](expectation.qmd#def-expectation) are real numbers by assumption, <!-- check-term-links: allow -->
+By assumption, both of these [expectations](#def-expectation) exist,
 so [linearity of expectation](expectation.qmd#thm-linearity-expectation) applies:
 
 $$
@@ -23,7 +29,7 @@ $$
 \kldivf{p}{q}
 &= \E{\surprisalunderf{q}{X} - \surprisalunderf{p}{X}} && \text{(definition)} \\
 &= \E{\surprisalunderf{q}{X}} - \E{\surprisalunderf{p}{X}} && \text{(linearity of expectation)} \\
-&= \crossentropyf{p}{q} - \crossentropyf{p}{p}. && \text{(the two expectations above)}
+&= \crossentropyf{p}{q} - \entropyf{X}. && \text{(the two expectations above)}
 \ea
 $$
 
