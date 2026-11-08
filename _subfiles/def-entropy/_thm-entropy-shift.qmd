@@ -2,7 +2,7 @@
 #### Shifting does not change entropy
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [entropy](#def-entropy) $\entropyf{X}$,
-and let $c$ be a [real number](https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers).
+and let $c$ be a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers).
 Then
 
 $$\entropyf{X + c} = \entropyf{X}.$$
