@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 11:36:31 (PST)
+Last modified: 2026-11-08 15:27:52 (PST)
 
 # 1 Defining probabilities
 
@@ -330,6 +330,10 @@ Last modified: 2026-11-08 11:36:31 (PST)
 > **NOTE:**
 >
 > **Example 15 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability $\pi= 1/6$, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is $1 - 1/6 = 5/6$.
+
+> **NOTE:**
+>
+> *Remark 2* (The probability space). The [sample space](#def-sample-space), its [events](#def-event) and the [probability measure](#def-probability) together form a [probability space](https://morrison-lab.github.io/mds/measures.html#def-probability-space).
 
 > **NOTE:**
 >
