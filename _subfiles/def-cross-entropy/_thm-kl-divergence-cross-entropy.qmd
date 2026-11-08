@@ -9,9 +9,8 @@ Then the [KL divergence](#def-kl-divergence) is
 
 $$\kldivf{p}{q} = \crossentropyf{p}{q} - \entropyf{X}.$$
 
-When $\P(q(X) = 0) > 0$,
-the cross-entropy is $\infty$,
-so this result does not apply.
+This result does not cover the case $\P(q(X) = 0) > 0$,
+in which the cross-entropy is $\infty$.
 
 :::
 
