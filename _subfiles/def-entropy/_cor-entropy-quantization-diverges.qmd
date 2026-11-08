@@ -16,6 +16,7 @@ Moving $\log \Delta$ to the other side,
 $$\entropyf{X^\Delta} = \paren{\entropyf{X^\Delta} + \log \Delta} - \log \Delta.$$
 
 The first quantity on the right tends to $\entropyf{X}$,
+which is a finite real number by the hypothesis of that theorem,
 and $-\log \Delta \to \infty$ as $\Delta \to 0$,
 so $\entropyf{X^\Delta} \to \infty$.
 

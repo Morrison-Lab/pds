@@ -3,7 +3,9 @@
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv)
 whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
-and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral).
+and whose [entropy](#def-entropy) is a finite [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral)
+(an improper one if the support of the density is unbounded,
+and then the sums over the bins below are infinite series).
 For a bin width $\Delta > 0$,
 let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that records the bin of $X$:
 $X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$,
@@ -41,5 +43,8 @@ Adding $\log \Delta$ to both sides leaves the first [sum](https://morrison-lab.g
 which is a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \p(X=x) \log \p(X=x)\, dx$.
 By @thm-entropy-continuous, its value is $\entropyf{X}$,
 and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$.
+When the support is unbounded,
+the hypothesis is that these sums converge to the improper integral,
+which is how the entropy is evaluated in that case.
 
 :::
