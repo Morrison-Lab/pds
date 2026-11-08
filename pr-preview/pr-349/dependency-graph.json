@@ -3644,6 +3644,10 @@
    "pds/random-variables#def-pdf"
   ],
   [
+   "pds/expectation#thm-entropy-scaling",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/expectation#thm-entropy-shift",
    "mcs/number-systems#def-real-numbers"
   ],
@@ -3662,6 +3666,10 @@
   [
    "pds/expectation#thm-entropy-shift",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#thm-fubini-tonelli-measure",
