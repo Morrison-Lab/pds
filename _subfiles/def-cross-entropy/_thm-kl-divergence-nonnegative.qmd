@@ -7,8 +7,8 @@ the [KL divergence](#def-kl-divergence) satisfies
 $$\kldivf{p}{q} \ge 0,$$
 
 with $\kldivf{p}{q} = 0$ exactly when $p_k = q_k$ for every $k$.
-The logarithm is natural here.
-Any other logarithm multiplies the divergence by a positive constant.
+The [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) is natural here,
+and any other logarithm multiplies the divergence by a positive number.
 
 :::
 
@@ -47,6 +47,6 @@ Equality in the second then gives $\sum_k q_k = 1$,
 so $q_k = 0$ whenever $p_k = 0$.
 Hence $q_k = p_k$ for every $k$.
 Conversely, if $q_k = p_k$ for every $k$,
-every term $p_k \log \frac{p_k}{q_k}$ is $0$.
+every [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) $p_k \log \frac{p_k}{q_k}$ is $0$.
 
 :::
