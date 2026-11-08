@@ -4,11 +4,11 @@
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv)
 whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
 and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) whose value is not $\pm\infty$
-(an improper one if the support of the density is unbounded,
-with infinitely many bins).
+(an improper one if the support of the density is unbounded).
 For a bin width $\Delta > 0$,
 let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that records the bin of $X$:
 $X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$,
+for $i \in \bbZ$, so that every $\Delta$ has infinitely many bins,
 where $x_i$ is a point of that bin
 with $\p(X=x_i)\,\Delta = \P(i\Delta \le X < (i+1)\Delta)$.
 Then
@@ -22,7 +22,11 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 ::: proof
 
 Because the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
-in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point.
+in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point of that bin.
+If the density is constant on the bin, any point of the bin takes that value.
+Otherwise the value lies strictly between the minimum and the maximum of the density on the closed bin,
+so by continuity the density takes it at a point strictly between the two,
+which is inside the bin.
 That point is the $x_i$ of the stated choice.
 By the choice of $x_i$,
 the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.

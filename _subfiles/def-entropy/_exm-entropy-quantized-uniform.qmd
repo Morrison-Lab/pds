@@ -9,7 +9,7 @@ so by @thm-entropy-discrete, its [entropy](#def-entropy) is
 $$\entropyf{X^\Delta} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log \Delta.$$
 
 Hence $\entropyf{X^\Delta} + \log \Delta = 0$,
-which is $\entropyf{X} = 0$.
+which equals $\entropyf{X} = 0$.
 The [density](random-variables.qmd#def-pdf) of $X$ jumps at $0$ and $1$,
 so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
 and @thm-entropy-quantization does not apply as stated.
