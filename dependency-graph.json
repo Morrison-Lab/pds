@@ -144,6 +144,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-infinite-sum"
   },
   {
+   "id": "mds/algebra-exponentials#def-logarithm",
+   "site": "mds",
+   "page": "algebra-exponentials",
+   "div": "def-logarithm",
+   "kind": "def",
+   "title": "logarithm",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
+  },
+  {
    "id": "mds/algebra-sums#def-summation",
    "site": "mds",
    "page": "algebra-sums",
@@ -422,6 +432,16 @@
    "title": "sigma algebra closure",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
+  },
+  {
+   "id": "mds/optimization-convexity#cor-log-below-tangent",
+   "site": "mds",
+   "page": "optimization-convexity",
+   "div": "cor-log-below-tangent",
+   "kind": "cor",
+   "title": "log below tangent",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent"
   },
   {
    "id": "mds/sets#def-extended-nonneg-reals",
@@ -1228,12 +1248,30 @@
    "external": false
   },
   {
+   "id": "pds/expectation#thm-kl-divergence-cross-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-kl-divergence-cross-entropy",
+   "kind": "thm",
+   "title": "KL divergence is cross-entropy minus entropy",
+   "external": false
+  },
+  {
    "id": "pds/expectation#thm-kl-divergence-discrete",
    "site": "pds",
    "page": "expectation",
    "div": "thm-kl-divergence-discrete",
    "kind": "thm",
    "title": "KL divergence of two mass functions",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-kl-divergence-nonnegative",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-kl-divergence-nonnegative",
+   "kind": "thm",
+   "title": "Gibbs' inequality: the divergence is nonnegative",
    "external": false
   },
   {
@@ -3150,6 +3188,18 @@
    "pds/expectation#def-cross-entropy"
   ],
   [
+   "pds/expectation#def-kl-divergence",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-kl-divergence",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-kl-divergence",
+   "pds/random-variables#def-cdf"
+  ],
+  [
    "pds/expectation#def-loss-function",
    "pds/expectation#def-prediction"
   ],
@@ -3458,6 +3508,38 @@
    "pds/expectation#thm-best-predictor"
   ],
   [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#cor-cross-entropy-entropy"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-kl-divergence"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
    "pds/expectation#thm-kl-divergence-discrete",
    "pds/expectation#def-kl-divergence"
   ],
@@ -3467,11 +3549,39 @@
   ],
   [
    "pds/expectation#thm-kl-divergence-discrete",
-   "pds/expectation#thm-cross-entropy-discrete"
+   "pds/expectation#thm-lotus"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "pds/probability-basics#def-probability"
   ],
   [
    "pds/expectation#thm-kl-divergence-discrete",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/algebra-exponentials#def-logarithm"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/algebra-sums#def-summation"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/algebra-sums#def-term"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "mds/optimization-convexity#cor-log-below-tangent"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "pds/expectation#def-kl-divergence"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-nonnegative",
+   "pds/expectation#thm-kl-divergence-discrete"
   ],
   [
    "pds/expectation#thm-linearity-expectation",

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-07 22:33:23 (PST)
+Last modified: 2026-11-08 08:52:29 (PST)
 
 > **NOTE:**
 >
@@ -2710,13 +2710,34 @@ Last modified: 2026-11-07 22:33:23 (PST)
 
 > **NOTE:**
 >
-> **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For $p$ and $q$ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of $q$ from $p$ is
+> **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For $X$, $p$ and $q$ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of $q$ from $p$ is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the amount by which the [surprisal](#def-surprisal) measured by $q$ exceeds the surprisal measured by $p$:
 >
-> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}.$$
+> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}} - {\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+>
+> As for [cross-entropy](#def-cross-entropy), we take $-\log 0 = \infty$, so when $\mathbb{P}(q(X) = 0) > 0$, the divergence is infinite.
 
 > **NOTE:**
 >
-> **Theorem 19 (KL divergence of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of [outcome](#def-outcome) $k$, and suppose $q_k > 0$ whenever $p_k > 0$. Then the [KL divergence](#def-kl-divergence) is
+> **Theorem 19 (KL divergence is cross-entropy minus entropy)** For $X$, $p$ and $q$ as in [Definition 25](#def-cross-entropy), suppose the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ and the [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then the [KL divergence](#def-kl-divergence) is
+>
+> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}.$$
+>
+> This result does not cover the case $\mathbb{P}(q(X) = 0) > 0$, in which the cross-entropy is $\infty$.
+
+> **NOTE:**
+>
+> *Proof*. By the definition of [cross-entropy](#def-cross-entropy), ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}$. By [Corollary 6](#cor-cross-entropy-entropy), ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}$. By assumption, both of these [expectations](#def-expectation) exist, so [linearity of expectation](expectation.llms.md#thm-linearity-expectation) applies:
+>
+> $$\begin{aligned}
+> {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}} - {\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition)} \\
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} - {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(linearity of expectation)} \\
+> &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}. && \text{(the two expectations above)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 20 (KL divergence of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of [outcome](#def-outcome) $k$, and suppose $q_k > 0$ whenever $p_k > 0$. Then the [KL divergence](#def-kl-divergence) is
 >
 > $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k}.$$
 >
@@ -2724,15 +2745,46 @@ Last modified: 2026-11-07 22:33:23 (PST)
 
 > **NOTE:**
 >
-> *Proof*. By [the discrete formula for cross-entropy](#thm-cross-entropy-discrete),
+> *Proof*. Let $X$ have [mass function](random-variables.llms.md#def-pmf) $p$, and let $g(k) \stackrel{\text{def}}{=}-\log q_k + \log p_k$ for each $k$ with $p_k > 0$, so that ${\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}} - {\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}} = g(X)$. Since $q_k > 0$ whenever $p_k > 0$, $g(k)$ is a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers) for every value $k$ that $X$ takes with positive [probability](probability-basics.llms.md#def-probability). By [LOTUS](#thm-lotus),
 >
 > $$\begin{aligned}
 > {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}}
-> &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} && \text{(definition)} \\
-> &= -\sum_{k=1}^{K} p_k \log q_k + \sum_{k=1}^{K} p_k \log p_k && \text{(discrete formula, twice)} \\
-> &= \sum_{k=1}^{K} p_k \mathopen{}\left(\log p_k - \log q_k\right)\mathclose{} && \text{(combine the sums)} \\
-> &= \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k}. && \text{(difference of logarithms)}
+> &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} && \text{(definition)} \\
+> &= \sum_{k : p_k > 0} g(k) \cdot\mathbb{P}(X = k) && \text{(LOTUS)} \\
+> &= \sum_{k : p_k > 0} p_k \mathopen{}\left(\log p_k - \log q_k\right)\mathclose{} && \text{(definition of } g \text{ and } \mathbb{P}(X = k) = p_k \text{)} \\
+> &= \sum_{k : p_k > 0} p_k \log \frac{p_k}{q_k} && \text{(difference of logarithms)} \\
+> &= \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k}. && \text{(terms with } p_k = 0 \text{ are } 0 \text{)}
 > \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 21 (Gibbs’ inequality: the divergence is nonnegative)** For $p$ and $q$ as in [Theorem 20](#thm-kl-divergence-discrete), the [KL divergence](#def-kl-divergence) satisfies
+>
+> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ge 0,$$
+>
+> with ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = 0$ exactly when $p_k = q_k$ for every $k$. The [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) is natural here. Any other logarithm multiplies the divergence by a positive number.
+
+> **NOTE:**
+>
+> *Proof*. Every [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) below runs over the $k$ with $p_k > 0$. By [Theorem 20](#thm-kl-divergence-discrete), ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = \sum_k p_k \log \frac{p_k}{q_k}
+> = -\sum_k p_k \log \frac{q_k}{p_k}$.
+>
+> By [the bound on the logarithm](https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent), $\log t \le t - 1$ for every $t > 0$, with equality exactly when $t = 1$. Take $t = q_k / p_k$, and multiply by $p_k > 0$:
+>
+> $$p_k \log \frac{q_k}{p_k} \le q_k - p_k,$$
+>
+> with equality exactly when $q_k = p_k$. Summing over $k$ gives
+>
+> $$\begin{aligned}
+> \sum_k p_k \log \frac{q_k}{p_k}
+> &\le \sum_k q_k - \sum_k p_k && \text{(sum the bound over } k \text{)} \\
+> &= \sum_k q_k - 1 && \text{(} p \text{ sums to one)} \\
+> &\le 0. && \text{(} q \text{ sums to at most one)}
+> \end{aligned}$$
+>
+> Hence ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = -\sum_k p_k \log \frac{q_k}{p_k} \ge 0$.
+>
+> Suppose ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = 0$. Then both relations above hold with equality. Equality in the first forces $q_k = p_k$ whenever $p_k > 0$. Equality in the second then gives $\sum_k q_k = 1$, so $q_k = 0$ whenever $p_k = 0$. Hence $q_k = p_k$ for every $k$. Conversely, if $q_k = p_k$ for every $k$, every [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) $p_k \log \frac{p_k}{q_k}$ is $0$.
 
 > **NOTE:**
 >
@@ -2740,7 +2792,9 @@ Last modified: 2026-11-07 22:33:23 (PST)
 
 > **NOTE:**
 >
-> **Example 48 (Cross-entropy and divergence for two coins)** Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome. Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
+> **Example 48 (Cross-entropy and divergence for two coins)**  
+>
+> Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome. Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 >
 > $$\begin{aligned}
 > {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} &= -\tfrac{1}{2} \log_2 \tfrac{1}{4} - \tfrac{1}{2} \log_2 \tfrac{3}{4} \\
@@ -2752,7 +2806,7 @@ Last modified: 2026-11-07 22:33:23 (PST)
 > {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 > \end{aligned}$$
 >
-> Here the cross-entropy is larger than the entropy of $p$, and the divergence is the difference.
+> Here the cross-entropy is larger than the entropy of $p$, and by [Theorem 19](#thm-kl-divergence-cross-entropy) the divergence is the difference. It is positive, as [Theorem 21](#thm-kl-divergence-nonnegative) requires for $p \ne q$.
 
 > **NOTE:**
 >
