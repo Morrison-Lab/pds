@@ -3,9 +3,9 @@
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv)
 whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
-and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) that converges to a number
+and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) with a finite value
 (an improper one if the support of the density is unbounded,
-and then every bin sum below has infinitely many terms).
+with infinitely many bins).
 For a bin width $\Delta > 0$,
 let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that records the bin of $X$:
 $X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$,
