@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-07 01:48:17 (PST)</p>
+  <p class="date">Last modified: 2026-11-08 05:08:12 (PST)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -946,6 +946,58 @@ Figure&nbsp;1: The <a href="#/def-variance">variance</a> <span class="math inlin
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["constant"],"name":[1],"type":["chr"],"align":["left"]},{"label":["c"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["expected_squared_error"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["decomposition"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"mean","2":"23.44592","3":"60.76274","4":"60.76274"},{"1":"median","2":"22.75000","3":"61.24704","4":"61.24704"},{"1":"twenty","2":"20.00000","3":"72.63709","4":"72.63709"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
+</div>
+</div>
+</div>
+<p><a href="#/fig-best-constant-auto" class="quarto-xref">Figure&nbsp;2</a> plots the expected squared error of every constant from 10 to 40 against <span class="math inline">\(c\)</span>, and marks the three constants in the table.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>[Code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>c_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">40</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb4-2"><a aria-label="2"></a>grid_deviations <span class="ot">&lt;-</span> <span class="fu">outer</span>(mpg, c_grid, <span class="st">"-"</span>)</span>
+<span id="cb4-3"><a aria-label="3"></a>grid_squared <span class="ot">&lt;-</span> grid_deviations<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-4"><a aria-label="4"></a>grid_errors <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(grid_squared)</span>
+<span id="cb4-5"><a aria-label="5"></a>curve <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">c =</span> c_grid, <span class="at">expected_squared_error =</span> grid_errors)</span>
+<span id="cb4-6"><a aria-label="6"></a>point_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mean"</span>, <span class="st">"median"</span>, <span class="st">"c = 20"</span>)</span>
+<span id="cb4-7"><a aria-label="7"></a>label_hjust <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span>
+<span id="cb4-8"><a aria-label="8"></a>label_vjust <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="sc">-</span><span class="fl">2.5</span>, <span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb4-9"><a aria-label="9"></a>marked <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb4-10"><a aria-label="10"></a>  <span class="at">point_label =</span> point_labels,</span>
+<span id="cb4-11"><a aria-label="11"></a>  <span class="at">c =</span> c_values,</span>
+<span id="cb4-12"><a aria-label="12"></a>  <span class="at">expected_squared_error =</span> errors,</span>
+<span id="cb4-13"><a aria-label="13"></a>  <span class="at">label_hjust =</span> label_hjust,</span>
+<span id="cb4-14"><a aria-label="14"></a>  <span class="at">label_vjust =</span> label_vjust</span>
+<span id="cb4-15"><a aria-label="15"></a>)</span>
+<span id="cb4-16"><a aria-label="16"></a>curve_aes <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> c, <span class="at">y =</span> expected_squared_error)</span>
+<span id="cb4-17"><a aria-label="17"></a>label_aes <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb4-18"><a aria-label="18"></a>  <span class="at">label =</span> point_label,</span>
+<span id="cb4-19"><a aria-label="19"></a>  <span class="at">hjust =</span> label_hjust,</span>
+<span id="cb4-20"><a aria-label="20"></a>  <span class="at">vjust =</span> label_vjust</span>
+<span id="cb4-21"><a aria-label="21"></a>)</span>
+<span id="cb4-22"><a aria-label="22"></a></span>
+<span id="cb4-23"><a aria-label="23"></a>curve <span class="sc">|&gt;</span></span>
+<span id="cb4-24"><a aria-label="24"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb4-25"><a aria-label="25"></a>  curve_aes <span class="sc">+</span></span>
+<span id="cb4-26"><a aria-label="26"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-27"><a aria-label="27"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">data =</span> marked, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-28"><a aria-label="28"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_text</span>(label_aes, <span class="at">data =</span> marked) <span class="sc">+</span></span>
+<span id="cb4-29"><a aria-label="29"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb4-30"><a aria-label="30"></a>    <span class="at">x =</span> <span class="st">"constant prediction c (miles per gallon)"</span>,</span>
+<span id="cb4-31"><a aria-label="31"></a>    <span class="at">y =</span> <span class="st">"expected squared error"</span></span>
+<span id="cb4-32"><a aria-label="32"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-33"><a aria-label="33"></a>  ggplot2<span class="sc">::</span><span class="fu">expand_limits</span>(<span class="at">y =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb4-34"><a aria-label="34"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-best-constant-auto" class="quarto-float quarto-figure quarto-figure-center" alt="A U-shaped curve of expected squared error against the constant c, lowest at about 23.4 miles per gallon. Points on the curve mark the mean, which is at the bottom, the median, which sits just to the left of it, and c = 20, which sits higher on the left arm.">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-best-constant-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Expected squared error of a constant prediction c of fuel economy for the 392 cars in the Auto data, for c from 10 to 40 miles per gallon. The points mark the mean, the median and c = 20.
+</figcaption>
+<div aria-describedby="fig-best-constant-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="variance-covariance_files/figure-html/fig-best-constant-auto-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Expected squared error of a constant prediction c of fuel economy for the 392 cars in the Auto data, for c from 10 to 40 miles per gallon. The points mark the mean, the median and c = 20."><img data-src="variance-covariance_files/figure-html/fig-best-constant-auto-1.png" alt="A U-shaped curve of expected squared error against the constant c, lowest at about 23.4 miles per gallon. Points on the curve mark the mean, which is at the bottom, the median, which sits just to the left of it, and c = 20, which sits higher on the left arm." width="576"></a>
+</div>
+</figure>
 </div>
 </div>
 </div>
@@ -1826,70 +1878,70 @@ a &amp;= b \\
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a aria-label="2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-3"><a aria-label="3"></a></span>
-<span id="cb4-4"><a aria-label="4"></a>auto <span class="op">=</span> pd.read_csv(<span class="st">"data/auto.csv"</span>)</span>
-<span id="cb4-5"><a aria-label="5"></a>x <span class="op">=</span> auto[<span class="st">"horsepower"</span>].to_numpy(dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb4-6"><a aria-label="6"></a>y <span class="op">=</span> auto[<span class="st">"mpg"</span>].to_numpy(dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb4-7"><a aria-label="7"></a></span>
-<span id="cb4-8"><a aria-label="8"></a>cov_xy <span class="op">=</span> np.mean((x <span class="op">-</span> x.mean()) <span class="op">*</span> (y <span class="op">-</span> y.mean()))</span>
-<span id="cb4-9"><a aria-label="9"></a>sd_x <span class="op">=</span> np.sqrt(np.mean((x <span class="op">-</span> x.mean()) <span class="op">**</span> <span class="dv">2</span>))</span>
-<span id="cb4-10"><a aria-label="10"></a>sd_y <span class="op">=</span> np.sqrt(np.mean((y <span class="op">-</span> y.mean()) <span class="op">**</span> <span class="dv">2</span>))</span>
-<span id="cb4-11"><a aria-label="11"></a></span>
-<span id="cb4-12"><a aria-label="12"></a>pd.Series({</span>
-<span id="cb4-13"><a aria-label="13"></a>    <span class="st">"Cov(X, Y)"</span>: cov_xy,</span>
-<span id="cb4-14"><a aria-label="14"></a>    <span class="st">"SD(X)"</span>: sd_x,</span>
-<span id="cb4-15"><a aria-label="15"></a>    <span class="st">"SD(Y)"</span>: sd_y,</span>
-<span id="cb4-16"><a aria-label="16"></a>    <span class="st">"Cor(X, Y)"</span>: cov_xy <span class="op">/</span> (sd_x <span class="op">*</span> sd_y),</span>
-<span id="cb4-17"><a aria-label="17"></a>})</span>
-<span id="cb4-18"><a aria-label="18"></a><span class="co">#&gt; Cov(X, Y)   -233.261349</span></span>
-<span id="cb4-19"><a aria-label="19"></a><span class="co">#&gt; SD(X)         38.442033</span></span>
-<span id="cb4-20"><a aria-label="20"></a><span class="co">#&gt; SD(Y)          7.795046</span></span>
-<span id="cb4-21"><a aria-label="21"></a><span class="co">#&gt; Cor(X, Y)     -0.778427</span></span>
-<span id="cb4-22"><a aria-label="22"></a><span class="co">#&gt; dtype: float64</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a aria-label="2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a aria-label="3"></a></span>
+<span id="cb5-4"><a aria-label="4"></a>auto <span class="op">=</span> pd.read_csv(<span class="st">"data/auto.csv"</span>)</span>
+<span id="cb5-5"><a aria-label="5"></a>x <span class="op">=</span> auto[<span class="st">"horsepower"</span>].to_numpy(dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb5-6"><a aria-label="6"></a>y <span class="op">=</span> auto[<span class="st">"mpg"</span>].to_numpy(dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb5-7"><a aria-label="7"></a></span>
+<span id="cb5-8"><a aria-label="8"></a>cov_xy <span class="op">=</span> np.mean((x <span class="op">-</span> x.mean()) <span class="op">*</span> (y <span class="op">-</span> y.mean()))</span>
+<span id="cb5-9"><a aria-label="9"></a>sd_x <span class="op">=</span> np.sqrt(np.mean((x <span class="op">-</span> x.mean()) <span class="op">**</span> <span class="dv">2</span>))</span>
+<span id="cb5-10"><a aria-label="10"></a>sd_y <span class="op">=</span> np.sqrt(np.mean((y <span class="op">-</span> y.mean()) <span class="op">**</span> <span class="dv">2</span>))</span>
+<span id="cb5-11"><a aria-label="11"></a></span>
+<span id="cb5-12"><a aria-label="12"></a>pd.Series({</span>
+<span id="cb5-13"><a aria-label="13"></a>    <span class="st">"Cov(X, Y)"</span>: cov_xy,</span>
+<span id="cb5-14"><a aria-label="14"></a>    <span class="st">"SD(X)"</span>: sd_x,</span>
+<span id="cb5-15"><a aria-label="15"></a>    <span class="st">"SD(Y)"</span>: sd_y,</span>
+<span id="cb5-16"><a aria-label="16"></a>    <span class="st">"Cor(X, Y)"</span>: cov_xy <span class="op">/</span> (sd_x <span class="op">*</span> sd_y),</span>
+<span id="cb5-17"><a aria-label="17"></a>})</span>
+<span id="cb5-18"><a aria-label="18"></a><span class="co">#&gt; Cov(X, Y)   -233.261349</span></span>
+<span id="cb5-19"><a aria-label="19"></a><span class="co">#&gt; SD(X)         38.442033</span></span>
+<span id="cb5-20"><a aria-label="20"></a><span class="co">#&gt; SD(Y)          7.795046</span></span>
+<span id="cb5-21"><a aria-label="21"></a><span class="co">#&gt; Cor(X, Y)     -0.778427</span></span>
+<span id="cb5-22"><a aria-label="22"></a><span class="co">#&gt; dtype: float64</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>auto <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/auto.csv"</span>)</span>
-<span id="cb5-2"><a aria-label="2"></a>x <span class="ot">&lt;-</span> auto<span class="sc">$</span>horsepower</span>
-<span id="cb5-3"><a aria-label="3"></a>y <span class="ot">&lt;-</span> auto<span class="sc">$</span>mpg</span>
-<span id="cb5-4"><a aria-label="4"></a></span>
-<span id="cb5-5"><a aria-label="5"></a>cov_xy <span class="ot">&lt;-</span> <span class="fu">mean</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">*</span> (y <span class="sc">-</span> <span class="fu">mean</span>(y)))</span>
-<span id="cb5-6"><a aria-label="6"></a>sd_x <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb5-7"><a aria-label="7"></a>sd_y <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> <span class="fu">mean</span>(y))<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb5-8"><a aria-label="8"></a></span>
-<span id="cb5-9"><a aria-label="9"></a><span class="fu">c</span>(</span>
-<span id="cb5-10"><a aria-label="10"></a>  <span class="st">"Cov(X, Y)"</span> <span class="ot">=</span> cov_xy,</span>
-<span id="cb5-11"><a aria-label="11"></a>  <span class="st">"SD(X)"</span> <span class="ot">=</span> sd_x,</span>
-<span id="cb5-12"><a aria-label="12"></a>  <span class="st">"SD(Y)"</span> <span class="ot">=</span> sd_y,</span>
-<span id="cb5-13"><a aria-label="13"></a>  <span class="st">"Cor(X, Y)"</span> <span class="ot">=</span> cov_xy <span class="sc">/</span> (sd_x <span class="sc">*</span> sd_y)</span>
-<span id="cb5-14"><a aria-label="14"></a>)</span>
-<span id="cb5-15"><a aria-label="15"></a><span class="co">#&gt;    Cov(X, Y)        SD(X)        SD(Y)    Cor(X, Y) </span></span>
-<span id="cb5-16"><a aria-label="16"></a><span class="co">#&gt; -233.2613494   38.4420327    7.7950458   -0.7784268</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>auto <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/auto.csv"</span>)</span>
+<span id="cb6-2"><a aria-label="2"></a>x <span class="ot">&lt;-</span> auto<span class="sc">$</span>horsepower</span>
+<span id="cb6-3"><a aria-label="3"></a>y <span class="ot">&lt;-</span> auto<span class="sc">$</span>mpg</span>
+<span id="cb6-4"><a aria-label="4"></a></span>
+<span id="cb6-5"><a aria-label="5"></a>cov_xy <span class="ot">&lt;-</span> <span class="fu">mean</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">*</span> (y <span class="sc">-</span> <span class="fu">mean</span>(y)))</span>
+<span id="cb6-6"><a aria-label="6"></a>sd_x <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb6-7"><a aria-label="7"></a>sd_y <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> <span class="fu">mean</span>(y))<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb6-8"><a aria-label="8"></a></span>
+<span id="cb6-9"><a aria-label="9"></a><span class="fu">c</span>(</span>
+<span id="cb6-10"><a aria-label="10"></a>  <span class="st">"Cov(X, Y)"</span> <span class="ot">=</span> cov_xy,</span>
+<span id="cb6-11"><a aria-label="11"></a>  <span class="st">"SD(X)"</span> <span class="ot">=</span> sd_x,</span>
+<span id="cb6-12"><a aria-label="12"></a>  <span class="st">"SD(Y)"</span> <span class="ot">=</span> sd_y,</span>
+<span id="cb6-13"><a aria-label="13"></a>  <span class="st">"Cor(X, Y)"</span> <span class="ot">=</span> cov_xy <span class="sc">/</span> (sd_x <span class="sc">*</span> sd_y)</span>
+<span id="cb6-14"><a aria-label="14"></a>)</span>
+<span id="cb6-15"><a aria-label="15"></a><span class="co">#&gt;    Cov(X, Y)        SD(X)        SD(Y)    Cor(X, Y) </span></span>
+<span id="cb6-16"><a aria-label="16"></a><span class="co">#&gt; -233.2613494   38.4420327    7.7950458   -0.7784268</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
-<p><a href="#/fig-cor-auto" class="quarto-xref">Figure&nbsp;2</a> plots each car’s miles per gallon against its horsepower.</p>
+<p><a href="#/fig-cor-auto" class="quarto-xref">Figure&nbsp;3</a> plots each car’s miles per gallon against its horsepower.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x, y) <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a aria-label="2"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb6-3"><a aria-label="3"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb6-4"><a aria-label="4"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"horsepower"</span>, <span class="at">y =</span> <span class="st">"miles per gallon"</span>) <span class="sc">+</span></span>
-<span id="cb6-5"><a aria-label="5"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x, y) <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a aria-label="2"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb7-3"><a aria-label="3"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a aria-label="4"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"horsepower"</span>, <span class="at">y =</span> <span class="st">"miles per gallon"</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a aria-label="5"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-cor-auto" class="quarto-float quarto-figure quarto-figure-center" alt="A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.">
 <figure class="quarto-float quarto-float-fig">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-cor-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
+Figure&nbsp;3: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 </figcaption>
 <div aria-describedby="fig-cor-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="variance-covariance_files/figure-html/fig-cor-auto-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy."><img data-src="variance-covariance_files/figure-html/fig-cor-auto-1.png" alt="A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor." width="480"></a>
+<a href="variance-covariance_files/figure-html/fig-cor-auto-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy."><img data-src="variance-covariance_files/figure-html/fig-cor-auto-1.png" alt="A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor." width="480"></a>
 </div>
 </figure>
 </div>

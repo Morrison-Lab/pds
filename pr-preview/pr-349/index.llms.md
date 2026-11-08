@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-07 01:48:17 (PST)
+Last modified: 2026-11-08 05:08:12 (PST)
 
 # Welcome
 
@@ -65,7 +65,7 @@ The DATA 571 (Machine Learning) course notes keep a curated list of [online vide
 
 \[1\]
 
-J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman; Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
+J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman and Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
 
 \[2\]
 

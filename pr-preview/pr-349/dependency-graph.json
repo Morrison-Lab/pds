@@ -464,16 +464,6 @@
    "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
   },
   {
-   "id": "mds/number-systems#def-real-numbers",
-   "site": "mds",
-   "page": "number-systems",
-   "div": "def-real-numbers",
-   "kind": "def",
-   "title": "real numbers",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/number-systems.html#def-real-numbers"
-  },
-  {
    "id": "mds/sets#def-extended-nonneg-reals",
    "site": "mds",
    "page": "sets",
@@ -1320,6 +1310,15 @@
    "div": "thm-irreducible-risk-cond-variance",
    "kind": "thm",
    "title": "The residual risk is the expected conditional variance",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-kl-divergence-cross-entropy",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-kl-divergence-cross-entropy",
+   "kind": "thm",
+   "title": "KL divergence is cross-entropy minus entropy",
    "external": false
   },
   {
@@ -3249,6 +3248,18 @@
    "pds/expectation#def-cross-entropy"
   ],
   [
+   "pds/expectation#def-kl-divergence",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#def-kl-divergence",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-kl-divergence",
+   "pds/random-variables#def-cdf"
+  ],
+  [
    "pds/expectation#def-loss-function",
    "pds/expectation#def-prediction"
   ],
@@ -3614,7 +3625,7 @@
   ],
   [
    "pds/expectation#thm-entropy-scaling",
-   "mds/number-systems#def-real-numbers"
+   "mcs/number-systems#def-real-numbers"
   ],
   [
    "pds/expectation#thm-entropy-scaling",
@@ -3634,7 +3645,7 @@
   ],
   [
    "pds/expectation#thm-entropy-shift",
-   "mds/number-systems#def-real-numbers"
+   "mcs/number-systems#def-real-numbers"
   ],
   [
    "pds/expectation#thm-entropy-shift",
@@ -3669,6 +3680,38 @@
    "pds/expectation#thm-best-predictor"
   ],
   [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#cor-cross-entropy-entropy"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-cross-entropy"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#def-kl-divergence"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-cross-entropy",
+   "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
    "pds/expectation#thm-kl-divergence-discrete",
    "pds/expectation#def-kl-divergence"
   ],
@@ -3678,7 +3721,11 @@
   ],
   [
    "pds/expectation#thm-kl-divergence-discrete",
-   "pds/expectation#thm-cross-entropy-discrete"
+   "pds/expectation#thm-lotus"
+  ],
+  [
+   "pds/expectation#thm-kl-divergence-discrete",
+   "pds/probability-basics#def-probability"
   ],
   [
    "pds/expectation#thm-kl-divergence-discrete",

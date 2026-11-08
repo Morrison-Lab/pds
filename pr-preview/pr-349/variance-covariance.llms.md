@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-07 01:48:17 (PST)
+Last modified: 2026-11-08 05:08:12 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -492,6 +492,53 @@ Last modified: 2026-11-07 01:48:17 (PST)
 >   decomposition = sigma2 + shift_squared
 > )
 > ```
+>
+> [Figure 2](#fig-best-constant-auto) plots the expected squared error of every constant from 10 to 40 against $c$, and marks the three constants in the table.
+>
+> Show code
+>
+> ``` r
+> c_grid <- seq(10, 40, length.out = 301)
+> grid_deviations <- outer(mpg, c_grid, "-")
+> grid_squared <- grid_deviations^2
+> grid_errors <- colMeans(grid_squared)
+> curve <- tibble::tibble(c = c_grid, expected_squared_error = grid_errors)
+> point_labels <- c("mean", "median", "c = 20")
+> label_hjust <- c(0.5, 0.5, 1)
+> label_vjust <- c(2.5, -2.5, -2)
+> marked <- tibble::tibble(
+>   point_label = point_labels,
+>   c = c_values,
+>   expected_squared_error = errors,
+>   label_hjust = label_hjust,
+>   label_vjust = label_vjust
+> )
+> curve_aes <- ggplot2::aes(x = c, y = expected_squared_error)
+> label_aes <- ggplot2::aes(
+>   label = point_label,
+>   hjust = label_hjust,
+>   vjust = label_vjust
+> )
+>
+> curve |>
+>   ggplot2::ggplot() +
+>   curve_aes +
+>   ggplot2::geom_line() +
+>   ggplot2::geom_point(data = marked, size = 3) +
+>   ggplot2::geom_text(label_aes, data = marked) +
+>   ggplot2::labs(
+>     x = "constant prediction c (miles per gallon)",
+>     y = "expected squared error"
+>   ) +
+>   ggplot2::expand_limits(y = 0) +
+>   ggplot2::theme_minimal()
+> ```
+>
+> > **NOTE:**
+> >
+> > [![A U-shaped curve of expected squared error against the constant c, lowest at about 23.4 miles per gallon. Points on the curve mark the mean, which is at the bottom, the median, which sits just to the left of it, and c = 20, which sits higher on the left arm.](variance-covariance_files/figure-html/fig-best-constant-auto-1.png)](variance-covariance_files/figure-html/fig-best-constant-auto-1.png "Figure 2: Expected squared error of a constant prediction c of fuel economy for the 392 cars in the Auto data, for c from 10 to 40 miles per gallon. The points mark the mean, the median and c = 20.")
+> >
+> > Figure 2: Expected squared error of a constant prediction c of fuel economy for the 392 cars in the Auto data, for c from 10 to 40 miles per gallon. The points mark the mean, the median and c = 20.
 >
 > The two columns agree, as [Theorem 4](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
 
@@ -1328,7 +1375,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > #> -233.2613494   38.4420327    7.7950458   -0.7784268
 > ```
 >
-> [Figure 2](#fig-cor-auto) plots each car’s miles per gallon against its horsepower.
+> [Figure 3](#fig-cor-auto) plots each car’s miles per gallon against its horsepower.
 >
 > Show code
 >
@@ -1342,9 +1389,9 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 >
 > > **NOTE:**
 > >
-> > [![A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.](variance-covariance_files/figure-html/fig-cor-auto-1.png)](variance-covariance_files/figure-html/fig-cor-auto-1.png "Figure 2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.")
+> > [![A scatter plot of miles per gallon on the vertical axis against horsepower on the horizontal axis. The points slope downward from the upper left to the lower right and curve toward a flat floor.](variance-covariance_files/figure-html/fig-cor-auto-1.png)](variance-covariance_files/figure-html/fig-cor-auto-1.png "Figure 3: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.")
 > >
-> > Figure 2: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
+> > Figure 3: Miles per gallon against horsepower for the cars in the Auto data. Cars with more horsepower tend to have lower fuel economy.
 >
 > The [covariance](#def-cov) is -233.3, in units of horsepower times miles per gallon. It is negative, so cars with more horsepower than average tend to have lower fuel economy than average. Dividing by the two [standard deviations](#def-sd), 38.4 horsepower and 7.8 miles per gallon, removes the units and gives a [correlation](#def-correlation) of -0.78, which lies between $-1$ and $1$ as [Theorem 14](#thm-cor-bounds) requires. The same value comes from R’s built-in `cor(x, y)`, because the correlation computed from the data divides the covariance and both standard deviations by the same count, which cancels.
 
