@@ -22,7 +22,8 @@ $\kldivf{p}{q} = \sum_k p_k \log \frac{p_k}{q_k}
 By [the bound on the logarithm](https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent),
 $\log t \le t - 1$ for every $t > 0$,
 with equality exactly when $t = 1$.
-Take $t = q_k / p_k$, and multiply by $p_k > 0$:
+Take $t = q_k / p_k$,
+and multiply by $p_k > 0$:
 
 $$p_k \log \frac{q_k}{p_k} \le q_k - p_k,$$
 

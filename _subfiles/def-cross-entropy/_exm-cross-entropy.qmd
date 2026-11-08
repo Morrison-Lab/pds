@@ -22,6 +22,7 @@ $$
 
 Here the cross-entropy is larger than the entropy of $p$,
 and by @thm-kl-divergence-cross-entropy the divergence is the difference.
-It is positive, as @thm-kl-divergence-nonnegative requires for $p \ne q$.
+It is positive,
+as @thm-kl-divergence-nonnegative requires for $p \ne q$.
 
 :::
