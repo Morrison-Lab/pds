@@ -19,6 +19,6 @@ $$
 $$
 
 Here the cross-entropy is larger than the entropy of $p$,
-and the divergence is the difference.
+and by @thm-kl-divergence-cross-entropy the divergence is the difference.
 
 :::

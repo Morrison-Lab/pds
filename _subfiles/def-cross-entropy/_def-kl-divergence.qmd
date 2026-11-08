@@ -1,10 +1,16 @@
 :::{#def-kl-divergence}
 #### Kullback--Leibler divergence (KL divergence, relative entropy)
 
-For $p$ and $q$ as in @def-cross-entropy,
+For $X$, $p$ and $q$ as in @def-cross-entropy,
 the **Kullback--Leibler divergence** (**KL divergence**, or **relative entropy**)
-of $q$ from $p$ is
+of $q$ from $p$ is the [expectation](#def-expectation),
+when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
+of the amount by which the [surprisal](#def-surprisal) measured by $q$ exceeds the surprisal measured by $p$:
 
-$$\kldivf{p}{q} \eqdef \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
+$$\kldivf{p}{q} \eqdef \E{\surprisalunderf{q}{X} - \surprisalunderf{p}{X}}.$$
+
+As for cross-entropy, $-\log 0 = \infty$,
+so when $\P(q(X) = 0) > 0$,
+the divergence is infinite.
 
 :::
