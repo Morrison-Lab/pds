@@ -1,0 +1,16 @@
+:::{#cor-probability-finitely-additive}
+#### Probability measures are finitely additive
+
+Every [probability measure](#def-probability) is [finitely additive](https://morrison-lab.github.io/mds/measures.html#def-finite-additivity):
+for any [mutually exclusive](#def-mutually-exclusive) events $\dsn{A}$,
+
+$$\Pr(A_1 \cup \cdots \cup A_n) = \sumin \Pr(A_i)$$
+
+:::
+
+::: proof
+
+A probability measure is a measure (@def-probability),
+so [measures are finitely additive](https://morrison-lab.github.io/mds/measures.html#cor-measure-finitely-additive) applies to it.
+
+:::

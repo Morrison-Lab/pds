@@ -1,0 +1,22 @@
+:::{#cor-p-neg}
+#### Complement rule in probability ($\prob$) notation
+
+If the probability of an event $A$ is $\Pr(A)=\prob$,
+then the probability that $A$ does not occur is:
+
+$$\Pr(\neg A)= 1 - \prob$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\Pr(\neg A) &= 1 - \Pr(A)
+&& \text{(complement rule)} \\
+&= 1 - \prob
+&& \text{(substitute } \Pr(A) = \prob \text{)}
+\ea
+$$
+
+:::

@@ -1,0 +1,7 @@
+:::{#exm-p-neg}
+#### Probability of not rolling a six
+
+For a fair die, the event "the roll is a six" has probability $\prob = 1/6$,
+so by @cor-p-neg the probability of not rolling a six is $1 - 1/6 = 5/6$.
+
+:::
