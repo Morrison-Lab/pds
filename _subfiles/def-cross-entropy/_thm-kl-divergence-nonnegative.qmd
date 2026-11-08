@@ -7,8 +7,8 @@ the [KL divergence](#def-kl-divergence) satisfies
 $$\kldivf{p}{q} \ge 0,$$
 
 with $\kldivf{p}{q} = 0$ exactly when $p_k = q_k$ for every $k$.
-The [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) is natural here,
-and any other logarithm multiplies the divergence by a positive number.
+The [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) is natural here.
+Any other logarithm multiplies the divergence by a positive number.
 
 :::
 
