@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 00:22:59 (PST)
+Last modified: 2026-11-08 02:57:28 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -734,7 +734,7 @@ E. Seneta, “A tricentenary history of the law of large numbers,” *Bernoulli*
 
 \[8\]
 
-J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman; Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
+J. K. Blitzstein and J. Hwang, *Introduction to probability*, 2nd ed. Chapman and Hall/CRC, 2019. doi: [10.1201/9780429428357](https://doi.org/10.1201/9780429428357).
 
 \[9\]
 
