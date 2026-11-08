@@ -1,0 +1,35 @@
+:::{#thm-kl-divergence-cross-entropy}
+#### KL divergence is cross-entropy minus entropy
+
+For $X$, $p$ and $q$ as in @def-cross-entropy,
+suppose the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$
+and the [entropy](#def-entropy) $\entropyf{X}$
+are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers).
+Then the [KL divergence](#def-kl-divergence) is
+
+$$\kldivf{p}{q} = \crossentropyf{p}{q} - \entropyf{X}.$$
+
+This result does not cover the case $\P(q(X) = 0) > 0$,
+in which the cross-entropy is $\infty$.
+
+:::
+
+::: proof
+
+By the definition of [cross-entropy](#def-cross-entropy),
+$\crossentropyf{p}{q} = \E{\surprisalunderf{q}{X}}$.
+By @cor-cross-entropy-entropy,
+$\crossentropyf{p}{p} = \entropyf{X} = \E{\surprisalunderf{p}{X}}$.
+By assumption, both of these [expectations](#def-expectation) exist,
+so [linearity of expectation](expectation.qmd#thm-linearity-expectation) applies:
+
+$$
+\ba
+\kldivf{p}{q}
+&= \E{\surprisalunderf{q}{X} - \surprisalunderf{p}{X}} && \text{(definition)} \\
+&= \E{\surprisalunderf{q}{X}} - \E{\surprisalunderf{p}{X}} && \text{(linearity of expectation)} \\
+&= \crossentropyf{p}{q} - \entropyf{X}. && \text{(the two expectations above)}
+\ea
+$$
+
+:::
