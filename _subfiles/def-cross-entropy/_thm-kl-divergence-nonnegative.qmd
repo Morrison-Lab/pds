@@ -1,0 +1,53 @@
+:::{#thm-kl-divergence-nonnegative}
+#### Gibbs' inequality: the divergence is nonnegative
+
+For $p$ and $q$ as in @thm-kl-divergence-discrete,
+the [KL divergence](#def-kl-divergence) satisfies
+
+$$\kldivf{p}{q} \ge 0,$$
+
+with $\kldivf{p}{q} = 0$ exactly when $p_k = q_k$ for every $k$.
+The [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) is natural here.
+Any other logarithm multiplies the divergence by a positive number.
+
+:::
+
+::: proof
+
+Every [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) below runs over the $k$ with $p_k > 0$.
+By @thm-kl-divergence-discrete,
+$\kldivf{p}{q} = \sum_k p_k \log \frac{p_k}{q_k}
+= -\sum_k p_k \log \frac{q_k}{p_k}$.
+
+By [the bound on the logarithm](https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent),
+$\log t \le t - 1$ for every $t > 0$,
+with equality exactly when $t = 1$.
+Take $t = q_k / p_k$,
+and multiply by $p_k > 0$:
+
+$$p_k \log \frac{q_k}{p_k} \le q_k - p_k,$$
+
+with equality exactly when $q_k = p_k$.
+Summing over $k$ gives
+
+$$
+\ba
+\sum_k p_k \log \frac{q_k}{p_k}
+&\le \sum_k q_k - \sum_k p_k && \text{(sum the bound over } k \text{)} \\
+&= \sum_k q_k - 1 && \text{(} p \text{ sums to one)} \\
+&\le 0. && \text{(} q \text{ sums to at most one)}
+\ea
+$$
+
+Hence $\kldivf{p}{q} = -\sum_k p_k \log \frac{q_k}{p_k} \ge 0$.
+
+Suppose $\kldivf{p}{q} = 0$.
+Then both relations above hold with equality.
+Equality in the first forces $q_k = p_k$ whenever $p_k > 0$.
+Equality in the second then gives $\sum_k q_k = 1$,
+so $q_k = 0$ whenever $p_k = 0$.
+Hence $q_k = p_k$ for every $k$.
+Conversely, if $q_k = p_k$ for every $k$,
+every [term](https://morrison-lab.github.io/mds/algebra-sums.html#def-term) $p_k \log \frac{p_k}{q_k}$ is $0$.
+
+:::
