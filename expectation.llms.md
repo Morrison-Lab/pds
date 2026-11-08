@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 09:27:33 (PST)
+Last modified: 2026-11-08 11:36:31 (PST)
 
 > **NOTE:**
 >
@@ -2341,7 +2341,7 @@ Last modified: 2026-11-08 09:27:33 (PST)
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y- {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y- {\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}} + {\mathbb{E}\mathopen{}\left[{\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}}$$
 >
-> shows that the total squared-error risk is the sum of the residual risk ([Definition 20](#def-irreducible-risk)) and the reducible risk ([Definition 21](#def-reducible-risk)). James et al. [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), p. 18 calls the squared difference between a [prediction function](#def-prediction-function) and the [conditional mean](#def-cond-expectation-function) the “reducible error”.
+> shows that the total squared-error risk is the sum of the residual risk ([Definition 20](#def-irreducible-risk)) and the reducible risk ([Definition 21](#def-reducible-risk)). James et al. [\[15, Sec. 2.1.1\]](#ref-james2021islr2e), pp. 18–19 calls the squared difference between a [prediction function](#def-prediction-function) and the [conditional mean](#def-cond-expectation-function) the “reducible error”.
 
 > **NOTE:**
 >
