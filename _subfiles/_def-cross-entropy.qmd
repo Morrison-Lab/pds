@@ -141,6 +141,10 @@ the cross-entropy is infinite.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-cross-entropy/_thm-kl-divergence-nonnegative.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-cross-entropy/_rem-kl-asymmetric.qmd >}}
 
 {{< slidebreak >}}
