@@ -19,8 +19,8 @@ The [density](random-variables.qmd#def-pdf) of $Y$ is
 $$\p(Y=y) = \frac{1}{\abs{a}} \pf{X = \frac{y}{a}}.$$
 
 At the value $y = ax$, the density of $Y$ is therefore $1/\abs{a}$ times the density of $X$ at $x$.
-This holds at every value $x$,
-so it holds for the random variables.
+That relation holds at every value $x$,
+so it holds between the [random variables](random-variables.qmd#def-random-variable).
 Taking $-\log$ of both sides turns this relation into one between [surprisals](#def-surprisal):
 
 $$\surprisalf{aX} = \surprisalf{X} + \log \abs{a}.$$
