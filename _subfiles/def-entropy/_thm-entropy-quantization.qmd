@@ -23,7 +23,8 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 
 Because the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
 in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point of that bin.
-If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin, any point of the bin takes that value.
+If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin,
+any point of the bin takes that value.
 Otherwise the value lies strictly between the [minimum](https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum) and the [maximum](https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum) of the density on the closed bin,
 so by [continuity](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) the density takes it at a point strictly between the two,
 which is inside the bin.
