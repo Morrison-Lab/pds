@@ -12,9 +12,6 @@ that gives the whole sample space probability 1
 
 $$\Pr(\samplespace) = 1$$
 
-The sample space, its events and the probability measure together form a
-[probability space](https://morrison-lab.github.io/mds/measures.html#def-probability-space).
-
 :::
 
 {{< slidebreak >}}

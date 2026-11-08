@@ -64,6 +64,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_rem-probability-space.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-random-choice.qmd >}}
 
 {{< slidebreak >}}
