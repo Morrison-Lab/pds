@@ -2,7 +2,7 @@
 #### KL divergence is cross-entropy minus entropy
 
 For $X$, $p$ and $q$ as in @def-cross-entropy,
-suppose the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ and the [entropy](#def-entropy) $\entropyf{X}$ are finite.
+suppose the [cross-entropy](#def-cross-entropy) $\crossentropyf{p}{q}$ and the [entropy](#def-entropy) $\entropyf{X}$ are real numbers.
 Then the [KL divergence](#def-kl-divergence) is
 
 $$\kldivf{p}{q} = \crossentropyf{p}{q} - \crossentropyf{p}{p}.$$
@@ -15,7 +15,7 @@ By the definition of [cross-entropy](#def-cross-entropy),
 $\crossentropyf{p}{q} = \E{\surprisalunderf{q}{X}}$.
 By @cor-cross-entropy-entropy,
 $\crossentropyf{p}{p} = \entropyf{X} = \E{\surprisalunderf{p}{X}}$.
-Both expectations are finite by assumption,
+Both [expectations](expectation.qmd#def-expectation) are real numbers by assumption,
 so [linearity of expectation](expectation.qmd#thm-linearity-expectation) applies:
 
 $$

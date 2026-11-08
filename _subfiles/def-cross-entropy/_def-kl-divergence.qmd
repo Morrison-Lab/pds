@@ -9,7 +9,7 @@ of the amount by which the [surprisal](#def-surprisal) measured by $q$ exceeds t
 
 $$\kldivf{p}{q} \eqdef \E{\surprisalunderf{q}{X} - \surprisalunderf{p}{X}}.$$
 
-As for cross-entropy, $-\log 0 = \infty$,
+As for [cross-entropy](#def-cross-entropy),$-\log 0 = \infty$,
 so when $\P(q(X) = 0) > 0$,
 the divergence is infinite.
 
