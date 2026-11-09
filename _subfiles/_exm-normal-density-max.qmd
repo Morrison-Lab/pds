@@ -1,8 +1,8 @@
 :::{#exm-normal-density-max}
 #### The peak of the normal density grows as the standard deviation shrinks
 
-By @thm-normal-density-max, the peak of the density of $\ndist{0, \sigma^2}$ is $1 / (\sigma\sqrt{2\pi})$.
-@fig-normal-density-max marks each peak for standard deviations $0.5$, $1$ and $2$.
+By @thm-normal-density-max, the peak of the [density](random-variables.qmd#def-pdf) of $\ndist{0, \sigma^2}$ is $1 / (\sigma\sqrt{2\pi})$.
+@fig-normal-density-max marks each peak for [standard deviations](random-variables.qmd#def-sd) $0.5$, $1$ and $2$.
 
 ```{r}
 #| label: fig-normal-density-max
@@ -45,6 +45,7 @@ normal_plot <-
 print(normal_plot)
 ```
 
-As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows without bound, so a density can exceed $1$.
+As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows without limit,
+so a density can exceed $1$.
 
 :::
