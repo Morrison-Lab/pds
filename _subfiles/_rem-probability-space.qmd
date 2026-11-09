@@ -1,0 +1,7 @@
+::: {#rem-probability-space .remark}
+#### The probability space
+
+The [sample space](#def-sample-space), its [events](#def-event) and the [probability measure](#def-probability) together form a
+[probability space](https://morrison-lab.github.io/mds/measures.html#def-probability-space).
+
+:::
