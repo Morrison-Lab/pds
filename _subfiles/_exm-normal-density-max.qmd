@@ -45,7 +45,7 @@ normal_plot <-
 print(normal_plot)
 ```
 
-As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows without limit,
+As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows indefinitely,
 so a density can exceed $1$.
 
 :::
