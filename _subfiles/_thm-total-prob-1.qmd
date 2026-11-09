@@ -9,7 +9,8 @@ $$\Pr(A) + \Pr(\neg A) = 1$$
 
 ::: proof
 
-The events $A$ and $\neg A$ are disjoint, and their union is $\samplespace$.
+The events $A$ and $\neg A$ are a [partition](#def-partition) of $\samplespace$ (@prp-complement-partition),
+so they are disjoint, and their union is $\samplespace$.
 
 $$
 \ba
