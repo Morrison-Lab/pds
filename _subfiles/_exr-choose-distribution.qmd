@@ -1,0 +1,9 @@
+::: {#exr-choose-distribution}
+
+#### Choosing a distribution for a research question
+
+A clinic wants to describe the number of emergency visits it receives each week.
+Which distribution from this page fits this research question,
+and what feature of the outcome supports your choice?
+
+:::

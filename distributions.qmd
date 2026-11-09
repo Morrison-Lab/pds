@@ -20,6 +20,14 @@ format:
 
 {{< include pds/_subfiles/_sec-distributions-2.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-choose-distribution.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-choose-distribution.qmd >}}
+
 
 # References {.unnumbered}
 

@@ -1,0 +1,13 @@
+::: {#sol-choose-distribution}
+
+The outcome is a count: a non-negative whole number with no fixed upper limit.
+The [Poisson distribution](#def-poisson) is a natural first choice for such an outcome,
+because its values are $0, 1, 2, \ldots$.
+A [Bernoulli](#def-bernoulli) outcome has only two values,
+and a [Gaussian](#def-normal) outcome can be negative or fractional,
+so neither matches the weekly count.
+
+If the weekly counts vary more than a Poisson distribution allows,
+the [negative binomial distribution](#def-nb) is the next candidate.
+
+:::
