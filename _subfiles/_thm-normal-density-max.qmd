@@ -1,7 +1,7 @@
 :::{#thm-normal-density-max}
-#### The maximum of the normal density
+#### The maximum of the Gaussian density
 
-If $X \sim \ndist{\mean, \ss}$ ([normal distribution](random-variables.qmd#def-normal)),
+If $X \sim \ndist{\mean, \ss}$ ([Gaussian distribution](random-variables.qmd#def-normal)),
 then its [density](random-variables.qmd#def-pdf) is largest at $x = \mean$,
 where it equals:
 
@@ -34,7 +34,7 @@ $$
 \ba
 \p(X=x)
 &= \frac{1}{\sdpar\sqrt{2\pi}} \ef{-u(x)}
-&& \text{(normal density)} \\
+&& \text{(Gaussian density)} \\
 &\le \frac{1}{\sdpar\sqrt{2\pi}}
 && \text{(} \ef{-u(x)} \le 1 \text{)}
 \ea

@@ -1,12 +1,12 @@
 :::{#exm-normal-density-max}
-#### The peak of the normal density grows as the standard deviation shrinks
+#### The peak of the Gaussian density grows as the standard deviation shrinks
 
 By @thm-normal-density-max, the peak of the [density](random-variables.qmd#def-pdf) of $\ndist{0, \sigma^2}$ is $1 / (\sigma\sqrt{2\pi})$.
 @fig-normal-density-max marks each peak for [standard deviations](random-variables.qmd#def-sd) $0.5$, $1$ and $2$.
 
 ```{r}
 #| label: fig-normal-density-max
-#| fig-cap: "Normal densities with mean 0 and standard deviation $\\sigma$, with each peak marked"
+#| fig-cap: "Gaussian densities with mean 0 and standard deviation $\\sigma$, with each peak marked"
 #| fig-alt: "Three bell curves centered at zero. The narrowest curve has the tallest peak, near 0.8, and the widest has the lowest, near 0.2."
 #| code-fold: true
 
