@@ -1,25 +1,29 @@
 :::{#exm-random-variable}
 #### Number of heads in two coin flips
 
+<!-- no-figure: the four-outcome sample space is listed in full below -->
+
 Flip a fair coin twice.
 The sample space is $\samplespace = \set{HH, HT, TH, TT}$,
 each outcome with probability $1/4$.
-Let $X$ be the number of heads:
+Let $\Rvar_1$ equal $1$ if the first flip lands heads and $0$ otherwise,
+and let $\Rvar_2$ be the same for the second flip.
+Let $\Sumsym = \Rvar_1 + \Rvar_2$ be the number of heads:
 
 $$
 \begin{aligned}
-X(HH) &= 2, \\
-X(HT) &= 1, \\
-X(TH) &= 1, \\
-X(TT) &= 0
+\Sumsym(HH) &= 2, \\
+\Sumsym(HT) &= 1, \\
+\Sumsym(TH) &= 1, \\
+\Sumsym(TT) &= 0
 \end{aligned}
 $$
 
-Then $\{X = 1\} = \set{HT, TH}$, so
+Then $\{\Sumsym = 1\} = \set{HT, TH}$, so
 
 $$
 \begin{aligned}
-\Pr(X = 1) &= 1/4 + 1/4 \\
+\Pr(\Sumsym = 1) &= 1/4 + 1/4 \\
 &= 1/2.
 \end{aligned}
 $$

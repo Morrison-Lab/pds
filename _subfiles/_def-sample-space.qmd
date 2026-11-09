@@ -49,6 +49,14 @@ is the [set](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set) of a
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_prp-complement-set-difference.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-complement-set-difference.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-mutually-exclusive.qmd >}}
 
 {{< include pds/_subfiles/_rem-mutually-exclusive-notes.qmd >}}
