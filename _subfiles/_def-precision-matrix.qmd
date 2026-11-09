@@ -2,14 +2,14 @@
 
 #### Precision of a random vector (precision matrix)
 
-The **precision** (or **precision matrix**) of a $p \times 1$ [random](random-variables.qmd#def-random-variable) vector $\vX$
-extends the [precision](#def-precision) of a random variable
+The **precision matrix** of a $p \times 1$ [random](random-variables.qmd#def-random-variable) vector $\vX$
+extends the [precision](#def-precision) of a [random variable](random-variables.qmd#def-random-variable)
 to a vector:
-it is the inverse of the [variance matrix](#def-cov-vec-x) of $\vX$,
-just as the precision of a random variable is the inverse of its [variance](#def-variance).
+it is the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)
+of the [variance matrix](#def-cov-vec-x) of $\vX$,
+just as the precision of a random variable is the reciprocal of its [variance](#def-variance).
 It is defined when $\Varf{\vX}$ is
-[positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite),
-so the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) exists:
+[positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite):
 
 $$\precision(\vX) \eqdef \inv{\Varf{\vX}}.$$
 
