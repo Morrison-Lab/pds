@@ -1,4 +1,4 @@
-R names its distribution functions by a prefix that says what the function computes,
+R names its [function](https://morrison-lab.github.io/mcs/functions.html#def-function)s for a [distribution](random-variables.qmd#def-cdf) by a prefix that says what the function computes,
 followed by a short name for the family (@tbl-r-prefixes and @tbl-r-families).
 
 | Prefix | Computes | Example |
@@ -6,11 +6,11 @@ followed by a short name for the family (@tbl-r-prefixes and @tbl-r-families).
 | `d` | the [mass function](#def-pmf) or [density](#def-pdf) | `dnorm()` |
 | `p` | the [cumulative distribution function](#def-cdf) | `pnorm()` |
 | `q` | the [quantile function](#def-quantile-function) | `qnorm()` |
-| `r` | random draws | `rnorm()` |
+| `r` | [random](notation.qmd#def-random) draws | `rnorm()` |
 
-: Prefixes of R's distribution functions, with the Gaussian family as the example. {#tbl-r-prefixes}
+: Prefixes of R's [function](https://morrison-lab.github.io/mcs/functions.html#def-function) names, with the [Gaussian](#def-normal) family as the example. {#tbl-r-prefixes}
 
-| Family | R name | Parameters, in R's argument order |
+| Family | R name | Parameters, in R's order |
 |:--|:--|:--|
 | [Bernoulli](#def-bernoulli) | `binom` with `size = 1` | `prob` |
 | [Binomial](#def-binomial) | `binom` | `size`, `prob` |
@@ -21,10 +21,10 @@ followed by a short name for the family (@tbl-r-prefixes and @tbl-r-families).
 
 : R names for some families in this chapter. {#tbl-r-families}
 
-R has no separate Bernoulli family:
-use the binomial functions with `size = 1`.
-The next chunk evaluates each prefix for the standard Gaussian distribution
-and for a binomial distribution with three trials (@tbl-r-calls).
+R has no separate [Bernoulli](#def-bernoulli) family:
+use the [binomial](#def-binomial) [function](https://morrison-lab.github.io/mcs/functions.html#def-function)s with `size = 1`.
+The next chunk evaluates each prefix for the standard [Gaussian distribution](#def-normal)
+and for a [binomial distribution](#def-binomial) with three trials (@tbl-r-calls).
 
 ```{r}
 #| label: tbl-r-calls
