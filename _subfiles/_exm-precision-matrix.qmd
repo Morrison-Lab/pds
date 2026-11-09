@@ -1,0 +1,27 @@
+:::{#exm-precision-matrix}
+
+#### The precision matrix of two correlated variables
+
+<!-- no-figure: a single 2 x 2 matrix and its algebraic inverse; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2)}$ have $\Var{X_1} = \Var{X_2} = 1$
+and $\Cov{X_1, X_2} = \rho$, with $\abs{\rho} < 1$.
+Then
+
+$$
+\Varf{\vX} = \pmat{1 & \rho \\ \rho & 1},
+$$
+
+and the inverse of a $2 \times 2$ matrix gives
+
+$$
+\precision(\vX) = \frac{1}{1 - \rho^2} \pmat{1 & -\rho \\ -\rho & 1}.
+$$
+
+The off-diagonal entries have the opposite sign of $\rho$.
+Each diagonal entry, $1 / (1 - \rho^2)$, is at least the [precision](#def-precision) $1 / \Var{X_1} = 1$ of $X_1$ alone,
+and it grows without bound as $\abs{\rho} \to 1$.
+If $\rho = 0$, then $\precision(\vX)$ is the identity matrix, which is diagonal like $\Varf{\vX}$
+(compare @cor-vcov-indpt-diagonal).
+
+:::
