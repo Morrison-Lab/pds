@@ -12,7 +12,7 @@ The density is $0$ at $t = 0$, rises to a peak at $t = 1/\rate$, and then decays
 ```{r}
 #| label: fig-gamma-density
 #| fig-cap: "Gamma densities with shape 2, by rate $\\rate$"
-#| fig-alt: "Three curves of the gamma density with shape 2. Each starts at zero, peaks at one over its rate, and decays. The curve with rate 2 peaks earliest and highest."
+#| fig-alt: "Gamma densities with shape 2 rise from zero, peak, then decay."
 #| code-fold: true
 
 gamma_densities <-
