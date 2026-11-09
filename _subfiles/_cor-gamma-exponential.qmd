@@ -23,6 +23,6 @@ f(t)
 $$
 
 and $f(t) = 0$ for $t \le 0$.
-This is the [exponential density](random-variables.qmd#def-exponential) with rate $\rate$.
+This is the [exponential density](random-variables.qmd#def-exponential) with [rate](#def-event-rate) $\rate$.
 
 :::
