@@ -1,0 +1,75 @@
+:::{#cor-fubini-joint}
+
+#### Joint-distribution form (without independence; corollary of Fubini--Tonelli)
+
+Let $(X, Y)$ be jointly distributed random variables
+whose joint distribution has a density $f_{X,Y}$
+with respect to a product of $\sigma$-finite reference measures
+$\measure_X \otimes \measure_Y$ on $\rangef{X} \times \rangef{Y}$,
+and let $h : \rangef{X} \times \rangef{Y} \to \reals$ be measurable.
+If either
+
+(a) $h(X, Y) \ge 0$ almost surely, or
+
+(b) $\E{\abs{h(X, Y)}} < \infty$,
+
+then the expectation of $h(X, Y)$ can be written as an iterated integral
+against $f_{X,Y}$, with the order of integration exchangeable:
+
+$$
+\ba
+\E{h(X, Y)}
+&= \int_{\rangef{X}}\paren{\int_{\rangef{Y}} h(x, y)\,f_{X,Y}(x, y)\,d\measure_Y(y)}\,d\measure_X(x)
+\\&= \int_{\rangef{Y}}\paren{\int_{\rangef{X}} h(x, y)\,f_{X,Y}(x, y)\,d\measure_X(x)}\,d\measure_Y(y).
+\ea
+$$
+
+The choice of reference measures covers three cases:
+
+- **Both continuous:**
+
+  $$
+  \begin{aligned}
+  \measure_X &= \measure_Y \\
+  &= \text{Lebesgue measure};
+  \end{aligned}
+  $$
+
+  $f_{X,Y}$ is the joint probability density function (PDF),
+  and $\int_{\rangef{X}} g(x)\,d\measure_X(x) = \int_{\rangef{X}} g(x)\,dx$.
+- **Both discrete:**
+
+  $$
+  \begin{aligned}
+  \measure_X &= \measure_Y \\
+  &= \text{counting measure};
+  \end{aligned}
+  $$
+
+  $f_{X,Y}(x,y) = \P(X = x,\, Y = y)$ is the joint probability mass function (PMF),
+  and $\int_{\rangef{X}} g(x)\,d\measure_X(x) = \sum_{x \in \rangef{X}} g(x)$.
+- **Mixed** (one continuous, one discrete):
+  one reference measure is Lebesgue and the other is counting;
+  $f_{X,Y}$ is the [joint density-mass function](random-variables.qmd#def-joint-density-mass),
+  $f_{X,Y}(x,y) = f_{X \mid Y}(x \mid y)\,\P(Y = y)$
+  (or $\P(X = x \mid Y = y)\,f_Y(y)$ if $X$ is discrete and $Y$ continuous),
+  and the iterated integrals combine an ordinary integral with a sum.
+  The conditional densities/PMFs here are defined the same way as in
+  @def-cond-mixed, just conditioning on $Y$ instead of $X$.
+
+:::
+
+::: proof
+Apply @thm-fubini-tonelli-measure with
+$\measure_1 = \measure_X$ and $\measure_2 = \measure_Y$ to the integrand
+$h(x,y)\,f_{X,Y}(x,y)$ on $\rangef{X} \times \rangef{Y}$.
+Lebesgue measure and counting measure on a countable set are each
+$\sigma$-finite, so $\measure_X \otimes \measure_Y$ is $\sigma$-finite in all three cases.
+The relevant condition is (a) when $h \ge 0$ and
+(b) when $\E{\abs{h(X, Y)}} < \infty$.
+Independence is not required.
+When $X$ and $Y$ are independent,
+$f_{X,Y}(x,y) = f_X(x)\,f_Y(y)$
+(or $\P(X=x,Y=y) = \P(X=x)\,\P(Y=y)$ in the discrete case),
+and the iterated integrals factor into separate integrals over the marginals.
+:::

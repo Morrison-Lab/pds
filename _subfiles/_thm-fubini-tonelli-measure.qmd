@@ -1,0 +1,28 @@
+:::{#thm-fubini-tonelli-measure}
+
+#### Fubini--Tonelli theorem, measure-theoretic form
+
+Let $\measure_1$ and $\measure_2$ be $\sigma$-finite [measures](https://morrison-lab.github.io/mds/measures.html#def-measure)
+on $\sigma$-algebras of subsets of sets $S_1$ and $S_2$,
+and let $f$ be a measurable function on $S_1 \times S_2$.
+If either
+
+(a) $f \ge 0$ (Tonelli), or
+
+(b) $\int_{S_1 \times S_2} \abs{f}\,d(\measure_1 \otimes \measure_2) < \infty$ (Fubini),
+
+then the integral of $f$ against the product measure $\measure_1 \otimes \measure_2$
+equals both iterated integrals:
+
+$$
+\ba
+\int_{S_1 \times S_2} f\,d(\measure_1 \otimes \measure_2)
+&= \int_{S_1}\paren{\int_{S_2} f(s_1, s_2)\,d\measure_2(s_2)}\,d\measure_1(s_1)
+\\&= \int_{S_2}\paren{\int_{S_1} f(s_1, s_2)\,d\measure_1(s_1)}\,d\measure_2(s_2).
+\ea
+$$
+
+In case (b), each inner integral is finite
+except on a set of measure $0$, which does not affect the outer integral.
+
+:::

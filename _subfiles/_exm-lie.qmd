@@ -1,0 +1,29 @@
+:::{#exm-lie}
+
+#### Marginal expectation from conditional expectations
+
+Suppose $X$ is a binary random variable indicating treatment assignment ($X=1$ treated, $X=0$ control),
+with $\P(X=1) = 0.5$,
+and suppose the outcome $Y$ has conditional expectations:
+
+$$\E{Y \mid X=1} = 10, \quad \E{Y \mid X=0} = 6$$
+
+By the law of iterated expectations (@thm-lie):
+
+$$
+\ba
+\E{Y}
+&= \E{\E{Y \mid X}}
+&& \text{(law of iterated expectations)}
+\\&= \E{Y \mid X=1} \cd \P(X=1) + \E{Y \mid X=0} \cd \P(X=0)
+&& \text{(LOTUS over the two values of } X \text{)}
+\\&= 10 \cd 0.5 + 6 \cd 0.5
+&& \text{(substitute)}
+\\&= 5 + 3
+&& \text{(multiply)}
+\\&= 8
+&& \text{(add)}
+\ea
+$$
+
+:::

@@ -1,0 +1,140 @@
+::::{#exm-fubini-prob-fail}
+
+#### When independence fails: a counterexample
+
+Correctly applying @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$
+--- not the product of marginals $f_X(x)\,f_Y(y)$,
+which is valid only when $X$ and $Y$ are independent.
+Using the wrong joint density gives the wrong answer.
+
+Let $X \sim \mathrm{Uniform}(0, 1)$ and set $Y = X$
+(so $X$ and $Y$ are perfectly correlated and **not** independent).
+
+**True expectation:**
+
+$$
+\ba
+\E{XY}
+&= \E{X \cd X}
+&& \text{(} Y = X \text{)}
+\\&= \E{X^2}
+&& \text{(} X \cd X = X^2 \text{)}
+\\&= \int_0^1 x^2\,dx
+&& \text{(LOTUS, with the uniform density } 1 \text{ on } [0, 1] \text{)}
+\\&= \frac{1}{3}
+&& \text{(integrate)}
+\ea
+$$
+
+**Erroneously applying the product-measure formula:**
+
+Note that Fubini--Tonelli's own conditions still hold here ($h(x,y) = xy$
+is nonnegative and integrable), so the error is not a failure of
+[Fubini--Tonelli](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli) itself.
+Rather, the error is using the *wrong measure*: the joint distribution
+of $(X, X)$ is concentrated on the diagonal
+$\{(x, x) : x \in [0, 1]\} \subset [0, 1]^2$,
+which has Lebesgue measure zero in $\reals^2$.
+The joint distribution is therefore **not** absolutely continuous with
+respect to two-dimensional Lebesgue measure, so **no joint density
+$f_{X,Y}$ on $[0, 1]^2$ exists**, which is the reference density
+@cor-fubini-joint requires.
+
+The following calculation is what someone would *erroneously* write
+if they assumed independence and used $f_X(x)\,f_Y(y)$ as a "joint density"
+--- a function that does not in fact correspond to the joint distribution of $(X, X)$.
+The marginals $X \sim \mathrm{Uniform}(0,1)$ and $Y \sim \mathrm{Uniform}(0,1)$
+do have densities
+
+$$
+\begin{aligned}
+f_X &= f_Y \\
+&= 1,
+\end{aligned}
+$$
+
+but the *product* $f_X(x)\,f_Y(y) = 1$ on $[0, 1]^2$
+is the density of an *independent* pair, not of $(X, X)$:
+
+$$
+\ba
+\int_0^1\!\int_0^1 xy \cd f_X(x) \cd f_Y(y)\,dy\,dx
+&= \int_0^1\!\int_0^1 xy\,dy\,dx
+&& \text{(} f_X(x)\,f_Y(y) = 1 \text{ on } [0, 1]^2 \text{)}
+\\&= \int_0^1 x\paren{\int_0^1 y\,dy}\,dx
+&& \text{(factor } x \text{ out of the inner integral)}
+\\&= \int_0^1 x \cd \frac{1}{2}\,dx
+&& \text{(} \textstyle\int_0^1 y\,dy = \tfrac{1}{2} \text{)}
+\\&= \frac{1}{4}
+&& \text{(} \textstyle\int_0^1 \tfrac{x}{2}\,dx = \tfrac{1}{4} \text{)}
+\ea
+$$
+
+This calculation recovers $\E{XY}$ for *independent* uniforms ($\tfrac{1}{4}$),
+not $\E{XX}$ for the perfectly correlated pair ($\tfrac{1}{3}$).
+The lesson is that @cor-fubini-joint requires the *actual* joint density $f_{X,Y}$.
+For independent $(X, Y)$, this density factors as $f_X(x)\,f_Y(y)$;
+for dependent $(X, Y)$, $f_{X,Y}$ need not factor
+--- and for $(X, X)$, no joint density on $\reals^2$ exists at all,
+so @cor-fubini-joint simply does not apply.
+
+:::{#fig-fubini-prob-fail}
+
+```{r}
+#| code-fold: true
+#| message: false
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
+set.seed(204)
+n <- 400
+x_dep <- runif(n)
+y_dep <- x_dep
+x_ind <- runif(n)
+y_ind <- runif(n)
+
+unit_range <- c(0, 1)
+x_axis <- list(title = "Value of X", range = unit_range, scaleanchor = "y")
+y_axis <- list(title = "Value of Y", range = unit_range)
+legend_below <- list(orientation = "h", y = -0.2)
+ind_marker <- list(size = 5, color = "#999999", opacity = 0.5)
+dep_marker <- list(size = 6, color = "#b40426")
+
+plotly::plot_ly() |>
+  plotly::add_trace(
+    type = "scatter", mode = "markers",
+    x = x_ind, y = y_ind,
+    name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
+    marker = ind_marker
+  ) |>
+  plotly::add_trace(
+    type = "scatter", mode = "markers",
+    x = x_dep, y = y_dep,
+    name = "Actual (X, X) on diagonal",
+    marker = dep_marker
+  ) |>
+  plotly::layout(xaxis = x_axis, yaxis = y_axis, legend = legend_below)
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+
+cat(
+  "*(This scatter plot is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
+```
+
+Samples from the joint distribution of $(X, X)$ (red, on the diagonal)
+versus an independent pair $(X_1, X_2)$ with the same marginals
+(grey, scattered over $[0, 1]^2$).
+The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal
+--- a set of Lebesgue measure zero in $\reals^2$ ---
+so no joint density on $[0, 1]^2$ exists,
+and the "$f_X(x)\,f_Y(y) = 1$" calculation integrates against the wrong measure
+(the grey distribution).
+
+:::
+
+::::
