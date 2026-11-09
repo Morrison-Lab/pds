@@ -1,0 +1,53 @@
+:::{#thm-normal-density-max}
+#### The maximum of the normal density
+
+If $X \sim \ndist{\mean, \ss}$ ([normal distribution](random-variables.qmd#def-normal)),
+then its density is largest at $x = \mean$,
+where it equals:
+
+$$\max_x \p(X=x) = \frac{1}{\sdpar\sqrt{2\pi}}$$
+
+:::
+
+::: proof
+
+For every real $x$, the exponent in the density is at most $0$:
+
+$$
+\ba
+-\frac{(x-\mean)^2}{2\ss}
+&\le 0
+&& \text{(a square is non-negative, and } 2\ss > 0 \text{)}
+\ea
+$$
+
+The exponential function is increasing,
+so the exponential factor is at most $1$,
+with equality only when the exponent is $0$:
+
+$$
+\ba
+\ef{-\frac{(x-\mean)^2}{2\ss}}
+&\le \ef{0}
+&& \text{(the exponential function is increasing)} \\
+&= 1
+&& \text{(} \text{e}^0 = 1 \text{)}
+\ea
+$$
+
+The exponent is $0$ exactly when $x = \mean$.
+Multiplying by the positive constant $1 / (\sdpar\sqrt{2\pi})$ preserves the inequality:
+
+$$
+\ba
+\p(X=x)
+&= \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}
+&& \text{(normal density)} \\
+&\le \frac{1}{\sdpar\sqrt{2\pi}}
+&& \text{(the exponential factor is at most } 1 \text{)}
+\ea
+$$
+
+Equality holds at $x = \mean$, so that value is the maximum.
+
+:::
