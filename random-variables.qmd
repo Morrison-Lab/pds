@@ -93,6 +93,10 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-hazard-nonnegative.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-hazard-dens-surv.qmd >}}
 
 {{< slidebreak >}}

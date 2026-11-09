@@ -1,0 +1,37 @@
+:::{#thm-hazard-nonnegative}
+#### A hazard is non-negative
+
+If $\haz(t)$ is the [hazard function](#def-hazard) of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$,
+then:
+
+$$\haz(t) \ge 0$$
+
+:::
+
+::: proof
+
+For each $\change > 0$,
+the ratio in the definition of the hazard is non-negative:
+
+$$
+\ba
+\frac{\Pr(t \le T < t + \change \mid T \ge t)}{\change}
+&\ge 0
+&& \text{(a conditional probability is non-negative, and } \change > 0 \text{)}
+\ea
+$$
+
+A [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of non-negative values is non-negative,
+so $\haz(t) \ge 0$.
+
+:::
+
+::: {.remark .notes}
+
+A hazard has no upper bound: @exm-hazard-exceeds-one has $\haz(t) = 2$,
+and an exponential with a larger rate has a larger hazard.
+Together with @thm-hazard-nonnegative,
+the hazards of a continuous random variable range over $[0, \infty)$,
+unlike the discrete-time hazard, which lies in $[0, 1]$ (@cor-discrete-hazard-unit-interval).
+
+:::
