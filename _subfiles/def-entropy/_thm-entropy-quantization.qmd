@@ -27,7 +27,7 @@ in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some
 If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin,
 any point of the bin takes that value.
 Otherwise $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ equals $\frac{1}{\Delta}\int_{i\Delta}^{(i+1)\Delta} \p(X=x)\,dx$,
-the density's integral over the bin divided by the bin's width,
+the density's [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over the bin divided by the bin's width,
 so the value lies strictly between the [minimum](https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum) and the [maximum](https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum) of the density on the closed bin,
 so by [continuity](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) the density takes it at a point strictly between the two,
 which is inside the bin.
