@@ -12,7 +12,7 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
 - **Shorthand for a distribution evaluated at an observed value:**
   we write $\P(y) \eqdef \P(Y = y)$ for a probability mass function,
   and $\p(y)$ for the density of $Y$ evaluated at $y$.
-  The argument's lowercase letter names the random variable,
+  The lowercase letter in the parentheses names the random variable,
   so $\P(y)$ is the probability mass function of $Y$,
   not of any other random variable.
 - **Expectation** is denoted $\E{\cdot}$, with square brackets.
