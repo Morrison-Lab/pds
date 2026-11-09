@@ -40,20 +40,17 @@ n_grid <- 51
 x_seq <- seq(0, 1, length.out = n_grid)
 y_seq <- seq(0, 1, length.out = n_grid)
 
-density_at <- function(x, y) {
-  z <- rep(2, length(x))
-  z[x > y] <- NA
-  z
-}
-z_mat <- outer(x_seq, y_seq, density_at)
+above_diagonal <- outer(x_seq, y_seq, ">")
+z_mat <- matrix(2, nrow = n_grid, ncol = n_grid)
+z_mat[above_diagonal] <- NA
 z_plot <- t(z_mat)
+z_range <- c(0, 2.5)
+x_axis <- list(title = "Value of X")
+y_axis <- list(title = "Value of Y")
+z_axis <- list(title = "Joint density, f(x, y)", range = z_range)
 camera_eye <- list(x = 1.6, y = -1.6, z = 0.8)
-scene <- list(
-  xaxis = list(title = "Value of X"),
-  yaxis = list(title = "Value of Y"),
-  zaxis = list(title = "Joint density, f(x, y)", range = c(0, 2.5)),
-  camera = list(eye = camera_eye)
-)
+camera <- list(eye = camera_eye)
+scene <- list(xaxis = x_axis, yaxis = y_axis, zaxis = z_axis, camera = camera)
 
 plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~z_plot) |>
   plotly::add_surface(showscale = FALSE) |>
