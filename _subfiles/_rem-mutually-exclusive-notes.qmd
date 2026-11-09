@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+The math notes define the same property for sets in general,
+as [pairwise disjoint](https://morrison-lab.github.io/mds/sets.html#def-pairwise-disjoint).
+
+:::

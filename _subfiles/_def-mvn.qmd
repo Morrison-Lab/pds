@@ -1,0 +1,28 @@
+:::{#def-mvn}
+#### Multivariate normal distribution (multivariate Gaussian distribution)
+
+A $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$
+has the **multivariate normal distribution**
+(or **multivariate Gaussian distribution**)
+with mean parameter $\vecf{\mean} \in \reals^p$
+and variance parameter $\matr{\covmat}$,
+a $p \times p$
+[positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
+matrix,
+written $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
+if $\vX$ has joint density:
+
+$$
+\p(\vX = \vx) \eqdef
+\frac{1}{(2\pi)^{p/2} \det(\matr{\covmat})^{1/2}}
+\ef{-\frac{1}{2} \tp{(\vx - \vecf{\mean})} \matr{\covmat}^{-1} (\vx - \vecf{\mean})},
+\quad \vx \in \reals^p
+$$
+
+where $\det(\matr{\covmat})$ is the
+[determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant)
+of $\matr{\covmat}$
+and $\matr{\covmat}^{-1}$ is its
+[inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse).
+
+:::

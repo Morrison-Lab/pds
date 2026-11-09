@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+The exponential distribution's hazard is constant,
+so the Weibull's choice of an increasing, constant, or decreasing hazard
+(@cor-weibull-hazard-monotone)
+provides more flexibility than the exponential.
+
+:::

@@ -1,0 +1,37 @@
+:::{#thm-poisson-mode}
+#### Ratio of consecutive Poisson probabilities, and the mode
+
+If $X \sim \Pois(\mean)$, then:
+
+* $\P(X=x) = \frac{\mean}{x} \P(X = x-1)$ for $x \in \set{1, 2, \dots}$
+* For $x \in \set{1, 2, \dots}$ with $x < \mean$, $\P(X=x) > \P(X = x-1)$
+* For $x = \mean$ (possible only when $\mean$ is an integer), $\P(X=x) = \P(X = x-1)$
+* For $x \in \set{1, 2, \dots}$ with $x > \mean$, $\P(X=x) < \P(X = x-1)$
+* If $\mean$ is not an integer, $\argmax_{x} \P(X=x) = \floor{\mean}$;
+  if $\mean$ is an integer, the maximum is attained at both $x = \mean - 1$ and $x = \mean$
+
+:::
+
+::: proof
+
+**Ratio of consecutive probabilities.**
+For $x \in \set{1, 2, \dots}$:
+
+$$
+\ba
+\frac{\P(X = x)}{\P(X = x - 1)}
+&= \frac{\mean^x e^{-\mean} / x!}{\mean^{x-1} e^{-\mean} / (x-1)!} && (\text{substitute Poisson PMF}) \\
+&= \frac{\mean}{x} && (\text{cancel } \mean^{x-1} e^{-\mean} \text{ and } (x-1)!)
+\ea
+$$
+
+This ratio is greater than, equal to, or less than 1
+as $x$ is less than, equal to, or greater than $\mean$,
+which gives the three comparisons.
+So $\P(X = x)$ increases while $x < \mean$ and decreases once $x > \mean$.
+If $\mean$ is not an integer, the last increase is at $x = \floor{\mean}$,
+which is therefore the unique mode.
+If $\mean$ is an integer, $\P(X = \mean) = \P(X = \mean - 1)$,
+and both are modes.
+
+:::

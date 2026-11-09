@@ -1,0 +1,10 @@
+::: {.remark .notes}
+
+In general, uncorrelated random variables need not be independent
+([an example](variance-covariance.qmd#exm-uncorrelated-not-indpt)).
+@cor-mvn-uncorrelated-indpt needs the whole vector to be multivariate normal:
+two random variables that are each normal and uncorrelated
+can still be dependent
+(<https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent>).
+
+:::

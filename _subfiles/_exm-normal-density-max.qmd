@@ -1,0 +1,52 @@
+:::{#exm-normal-density-max}
+#### The peak of the Gaussian density grows as the standard deviation shrinks
+
+By @thm-normal-density-max,
+the peak of the [density](random-variables.qmd#def-pdf) of $\ndist{0, \sigma^2}$ is $1 / (\sigma\sqrt{2\pi})$.
+@fig-normal-density-max marks each peak for [standard deviations](variance-covariance.qmd#def-sd) $0.5$, $1$ and $2$.
+
+```{r}
+#| label: fig-normal-density-max
+#| fig-cap: "Gaussian densities, with each peak marked"
+#| fig-alt: "Three Gaussian curves; narrower ones peak higher."
+#| code-fold: true
+
+sds <- c(0.5, 1, 2)
+x_grid <- seq(-6, 6, length.out = 400)
+sd_label <- latex2exp::TeX("$\\sigma$")
+density_label <- latex2exp::TeX("$f(x)$")
+
+normal_curves <-
+  dplyr::tibble(sd = sds) |>
+  dplyr::reframe(.by = sd, x = x_grid) |>
+  dplyr::mutate(
+    density = dnorm(x, mean = 0, sd = sd),
+    sd = factor(sd)
+  )
+
+normal_peaks <-
+  dplyr::tibble(sd = sds) |>
+  dplyr::mutate(
+    peak = 1 / (sd * sqrt(2 * pi)),
+    sd = factor(sd)
+  )
+
+normal_plot <-
+  normal_curves |>
+  ggplot2::ggplot() +
+  ggplot2::aes(x = x, y = density, col = sd) +
+  ggplot2::geom_line() +
+  ggplot2::geom_point(
+    data = normal_peaks,
+    ggplot2::aes(x = 0, y = peak)
+  ) +
+  ggplot2::labs(col = sd_label, y = density_label) +
+  ggplot2::theme(legend.position = "bottom")
+
+print(normal_plot)
+```
+
+As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows indefinitely,
+so a density can exceed $1$.
+
+:::

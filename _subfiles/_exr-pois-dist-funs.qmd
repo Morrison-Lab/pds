@@ -1,0 +1,18 @@
+:::{#exr-pois-dist-funs}
+#### Poisson distribution functions
+
+```{r}
+#| label: def-mu-exr-pois
+#| include: false
+mu <- 3.75
+```
+
+Let $X \sim \Pois(\mean = `r mu`)$.
+
+Compute:
+
+- $\P(X = 4)$
+- $\P(X \le 7)$
+- $\P(X > 5)$
+
+:::

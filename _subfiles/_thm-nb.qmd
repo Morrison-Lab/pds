@@ -1,0 +1,74 @@
+:::{#thm-nb}
+#### Mean and variance of the negative binomial distribution
+
+If $Y \sim \NegBin(\mean, \overdisp)$, then:
+
+- $\Expp[Y] = \mean$
+- $\Var{Y} = \mean + \frac{\mean^2}{\overdisp} > \mean$
+
+:::
+
+::: proof
+
+The negative binomial distribution is a gamma mixture of Poisson distributions:
+if $\rvrate$ has the gamma density
+$g(\rate) = \frac{(\overdisp/\mean)^\overdisp}{\gammafn(\overdisp)} \rate^{\overdisp - 1} e^{-\overdisp\rate/\mean}$
+for $\rate > 0$,
+which has mean $\mean$ and variance $\mean^2/\overdisp$ [@CaseBerg01],
+and $Y \mid \rvrate = \rate \sim \Pois(\rate)$,
+then $Y \sim \NegBin(\mean, \overdisp)$.
+To check this, integrate the joint density over $\rate$:
+
+$$
+\ba
+\P(Y = y)
+&= \int_0^\infty \frac{\rate^y e^{-\rate}}{y!} \cd \frac{(\overdisp/\mean)^\overdisp}{\gammafn(\overdisp)} \rate^{\overdisp - 1} e^{-\overdisp\rate/\mean}\,d\rate
+&& (\text{marginalize over } \rvrate) \\
+&= \frac{(\overdisp/\mean)^\overdisp}{y!\,\gammafn(\overdisp)} \int_0^\infty \rate^{y + \overdisp - 1} e^{-\rate(1 + \overdisp/\mean)}\,d\rate
+&& (\text{collect powers of } \rate \text{ and exponents}) \\
+&= \frac{(\overdisp/\mean)^\overdisp}{y!\,\gammafn(\overdisp)} \cd \frac{\gammafn(y + \overdisp)}{(1 + \overdisp/\mean)^{y + \overdisp}}
+&& (\textstyle\int_0^\infty \rate^{a-1} e^{-b\rate}\,d\rate = \gammafn(a)/b^a) \\
+&= \frac{\gammafn(y + \overdisp)}{y!\,\gammafn(\overdisp)} \paren{\frac{\overdisp}{\mean}}^\overdisp \paren{\frac{\mean}{\mean + \overdisp}}^{y + \overdisp}
+&& (1 + \overdisp/\mean = (\mean + \overdisp)/\mean) \\
+&= \frac{\gammafn(y + \overdisp)}{y!\,\gammafn(\overdisp)} \paren{\frac{\overdisp}{\mean + \overdisp}}^{\overdisp} \paren{\frac{\mean}{\mean + \overdisp}}^{y}
+&& (\text{combine the } \mean^\overdisp \text{ factors}) \\
+&= \frac{\mean^y}{y!} \cd \frac{\gammafn(\overdisp + y)}{\gammafn(\overdisp)\,(\overdisp + \mean)^y} \cd \paren{1 + \frac{\mean}{\overdisp}}^{-\overdisp}
+&& (\text{rearrange into the form of the definition})
+\ea
+$$
+
+Then, by the [law of iterated expectations](expectation.qmd#thm-lie)
+and the [law of total variance](variance-covariance.qmd#thm-total-variance),
+using
+
+$$
+\begin{aligned}
+\E{Y \mid \rvrate} &= \Varr(Y \mid \rvrate) \\
+&= \rvrate
+\end{aligned}
+$$
+
+(@thm-poisson-properties):
+
+$$
+\ba
+\Expp[Y]
+&= \E{\E{Y \mid \rvrate}}
+&& (\text{law of iterated expectations}) \\
+&= \E{\rvrate}
+&& (\E{Y \mid \rvrate} = \rvrate) \\
+&= \mean
+&& (\text{mean of the gamma distribution}) \\
+\Var{Y}
+&= \E{\Var{Y \mid \rvrate}} + \Var{\E{Y \mid \rvrate}}
+&& (\text{law of total variance}) \\
+&= \E{\rvrate} + \Var{\rvrate}
+&& (\Var{Y \mid \rvrate} = \rvrate \text{ and } \E{Y \mid \rvrate} = \rvrate) \\
+&= \mean + \frac{\mean^2}{\overdisp}
+&& (\text{mean and variance of the gamma distribution})
+\ea
+$$
+
+and $\mean^2/\overdisp > 0$ gives $\Var{Y} > \mean$.
+
+:::

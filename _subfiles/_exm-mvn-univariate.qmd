@@ -1,0 +1,22 @@
+:::{#exm-mvn-univariate}
+#### The univariate normal is the case $p = 1$
+
+With $p = 1$, $\vecf{\mean} = (\mean)$, and $\matr{\covmat} = (\ss)$ for $\ss > 0$,
+$\det(\matr{\covmat}) = \ss$
+([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$)
+and $\matr{\covmat}^{-1} = (1/\ss)$, so:
+
+$$
+\ba
+\p(\vX = \vx)
+&= \frac{1}{(2\pi)^{1/2} (\ss)^{1/2}}
+\ef{-\frac{1}{2} (x - \mean) \frac{1}{\ss} (x - \mean)}
+&& \text{(substitute into the multivariate normal density)} \\
+&= \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x - \mean)^2}{2\ss}}
+&& \text{(simplify)}
+\ea
+$$
+
+which is the [normal density](random-variables.qmd#def-normal) $\ndist{\mean, \ss}$.
+
+:::

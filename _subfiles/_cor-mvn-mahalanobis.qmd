@@ -1,0 +1,23 @@
+:::{#cor-mvn-mahalanobis}
+#### The multivariate normal density decreases with Mahalanobis distance
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$, then:
+
+$$
+\p(\vX = \vx) = \frac{1}{(2\pi)^{p/2} \det(\matr{\covmat})^{1/2}} \ef{-\frac{\mahal(\vx)^2}{2}}
+$$
+
+where $\mahal$ is the Mahalanobis distance to $\vecf{\mean}$ with respect to $\matr{\covmat}$ (@def-mahalanobis).
+So the density is highest at $\vx = \vecf{\mean}$,
+decreases as $\mahal(\vx)$ increases,
+and is the same at every $\vx$ with the same $\mahal(\vx)$.
+
+:::
+
+::: proof
+
+Substitute @def-mahalanobis into @def-mvn.
+The function $\mahaldist \mapsto \ef{-\mahaldist^2/2}$ decreases on $\mahaldist \ge 0$,
+and by @lem-mahalanobis-nonneg, $\mahal(\vx) = 0$ only at $\vx = \vecf{\mean}$.
+
+:::

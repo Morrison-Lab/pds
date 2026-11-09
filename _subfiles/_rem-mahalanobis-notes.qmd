@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+The square root is defined by @lem-mahalanobis-nonneg.
+See also [@wikipedia_mahalanobis_distance].
+
+:::

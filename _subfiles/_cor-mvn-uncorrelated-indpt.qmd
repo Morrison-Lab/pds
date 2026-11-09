@@ -1,0 +1,33 @@
+:::{#cor-mvn-uncorrelated-indpt}
+#### For a multivariate normal vector, uncorrelated components are independent
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
+then $X_1, \ldots, X_p$ are independent
+if and only if $\matr{\covmat}$ is diagonal,
+that is, if and only if $\Covs{X_i}{X_j} = 0$ for every $i \neq j$.
+
+:::
+
+::: proof
+
+By @thm-mvn-moments, $\Varf{\vX} = \matr{\covmat}$,
+whose $(i,j)$-th element is $\Covs{X_i}{X_j}$
+([elements of the variance matrix](variance-covariance.qmd#thm-vcov-elements)).
+If $\matr{\covmat}$ is diagonal,
+the components are independent by @thm-mvn-diagonal-indpt.
+If the components are independent, then:
+
+- each pair $X_i, X_j$ with $i \neq j$ is independent,
+- each $X_i$ is continuous, with the density left
+  after integrating out the other coordinates of the joint density
+  ([marginal density from a joint density](random-variables.qmd#thm-marginal-density),
+  with $p$ variables), and
+- $\E{X_i^2} < \infty$,
+  because $\Var{X_i}$, the $(i,i)$-th element of $\matr{\covmat}$, is defined,
+  and a [variance](variance-covariance.qmd#def-variance) is defined
+  only when $\E{X_i^2} < \infty$.
+
+So $\matr{\covmat}$ is diagonal by
+[independent components give a diagonal variance matrix](variance-covariance.qmd#cor-vcov-indpt-diagonal).
+
+:::

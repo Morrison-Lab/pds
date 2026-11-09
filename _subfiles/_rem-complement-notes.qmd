@@ -1,0 +1,5 @@
+::: {.remark .notes}
+
+Other sources write $A^c$ or $\bar{A}$.
+
+:::

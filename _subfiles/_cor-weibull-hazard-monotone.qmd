@@ -1,0 +1,34 @@
+:::{#cor-weibull-hazard-monotone}
+#### The Weibull shape sets the direction of the hazard
+
+If $T$ has the [Weibull distribution](#def-weibull) with shape $\shape$ and rate $\rate$,
+then on $t > 0$ its hazard $\h(t)$ is:
+
+- strictly increasing if $\shape > 1$
+- constant if $\shape = 1$
+- strictly decreasing if $\shape < 1$
+
+:::
+
+::: proof
+
+By @thm-weibull, $\h(t) = \shape\rate t^{\shape-1}$ for $t > 0$, so:
+
+$$
+\ba
+\frac{d}{dt}\h(t)
+&= \frac{d}{dt} \shape\rate t^{\shape-1}
+&& (\text{Weibull hazard}) \\
+&= \shape(\shape - 1)\rate t^{\shape-2}
+&& (\text{power rule})
+\ea
+$$
+
+For $t > 0$, the factors $\shape$, $\rate$, and $t^{\shape-2}$ are all positive,
+so $\frac{d}{dt}\h(t)$ has the sign of $\shape - 1$:
+positive for $\shape > 1$, zero for $\shape = 1$, and negative for $\shape < 1$.
+A function with a positive (negative) derivative on an interval
+is strictly increasing (decreasing) there,
+and one with a zero derivative is constant.
+
+:::
