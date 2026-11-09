@@ -1,0 +1,55 @@
+:::{#thm-conditional-lie}
+#### Conditional law of iterated expectations
+
+For random variables $X$, $Y$, and $Z$ with $\E{\abs{Y}} < \infty$:
+
+$$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$$
+
+:::
+
+{{< slidebreak >}}
+
+::: proof
+
+Choose a value $z$ with positive [probability](probability-basics.qmd#def-probability) ([discrete](random-variables.qmd#def-discrete-rv) case) or positive [density](random-variables.qmd#def-pdf) ([continuous](random-variables.qmd#def-continuous-rv) case).
+Conditioning every probability on $Z = z$ gives a probability measure,
+and the proof of @thm-lie goes through under it, line by line.
+
+**Discrete case.**
+
+$$
+\ba
+\E{\E{Y \mid X,Z} \mid Z=z}
+&= \sum_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \P(X=x \mid Z=z) && \text{(expectation given } Z=z \text{)}
+\\&= \sum_{x \in \rangef{X}} \paren{\sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid X=x,Z=z)} \cd \P(X=x \mid Z=z) && \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \sum_{x \in \rangef{X}} \P(Y=y \mid X=x,Z=z) \cd \P(X=x \mid Z=z) && \text{(exchange order of summation)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \P(Y=y \mid Z=z) && \text{(law of total probability given } Z=z \text{)}
+\\&= \E{Y \mid Z=z} && \text{(definition of conditional expectation given } Z=z \text{)}
+\ea
+$$
+
+**Continuous case.**
+
+$$
+\ba
+\E{\E{Y \mid X,Z} \mid Z=z}
+&= \int_{x \in \rangef{X}} \E{Y \mid X=x,Z=z} \cd \p(X=x \mid Z=z)\, dx
+&& \text{(expectation given } Z=z \text{)}
+\\&= \int_{x \in \rangef{X}} \paren{\int_{y \in \rangef{Y}} y \cd \p(Y=y \mid X=x,Z=z)\, dy} \cd \p(X=x \mid Z=z)\, dx
+&& \text{(definition of } \E{Y \mid X=x,Z=z} \text{)}
+\\&= \int_{x \in \rangef{X}} \int_{y \in \rangef{Y}} y \cd \p(X=x, Y=y \mid Z=z)\, dy\, dx
+&& \text{(product of conditional densities is the joint conditional density)}
+\\&= \int_{y \in \rangef{Y}} y \cd \paren{\int_{x \in \rangef{X}} \p(X=x, Y=y \mid Z=z)\, dx}\, dy
+&& \text{(Fubini's theorem)}
+\\&= \int_{y \in \rangef{Y}} y \cd \p(Y=y \mid Z=z)\, dy
+&& \text{(marginalize over } x \text{)}
+\\&= \E{Y \mid Z=z}
+&& \text{(definition of conditional expectation given } Z=z \text{)}
+\ea
+$$
+
+Since the two sides agree at every such $z$,
+they agree as random variables (functions of $Z$):
+$\E{Y \mid Z} = \E{\E{Y \mid X,Z} \mid Z}$.
+
+:::

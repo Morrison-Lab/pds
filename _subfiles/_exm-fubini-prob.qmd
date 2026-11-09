@@ -1,0 +1,50 @@
+:::{#exm-fubini-prob}
+
+#### Expectation of a product of independent variables
+
+Let $X \sim \mathrm{Uniform}(0, 1)$ and $Y \sim \mathrm{Uniform}(0, 2)$,
+independently distributed.
+Compute $\E{XY}$.
+
+We apply @cor-fubini-joint (both-continuous case) with $h(x, y) = xy$.
+Since $X$ and $Y$ are independent with densities $f_X(x) = 1$ on $[0,1]$
+and $f_Y(y) = \tfrac{1}{2}$ on $[0,2]$,
+the joint density factors as
+
+$$
+\begin{aligned}
+f_{X,Y}(x,y) &= f_X(x)\,f_Y(y) \\
+&= \tfrac{1}{2},
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\measure_X &= \measure_Y \\
+&= \text{Lebesgue measure}:
+\end{aligned}
+$$
+
+$$
+\ba
+\E{XY}
+&= \int_0^1 \paren{\int_0^2 xy \cd \tfrac{1}{2}\,dy}\,dx
+&& \text{(joint-distribution form of Fubini--Tonelli)}
+\\&= \int_0^1 x\paren{\frac{1}{2}\int_0^2 y\,dy}\,dx
+&& \text{(factor constants out of the inner integral)}
+\\&= \int_0^1 x \cd \frac{1}{2} \cd \sb{\frac{y^2}{2}}_0^2\,dx
+&& \text{(antiderivative of } y \text{)}
+\\&= \int_0^1 x \cd \frac{1}{2} \cd 2\,dx
+&& \text{(evaluate at the bounds)}
+\\&= \int_0^1 x\,dx
+&& \text{(simplify)}
+\\&= \frac{1}{2}
+&& \text{(integrate)}
+\ea
+$$
+
+As a check: $\E{X} = \tfrac{1}{2}$, $\E{Y} = 1$, and $\E{X}\E{Y} = \tfrac{1}{2}$.
+
+:::
