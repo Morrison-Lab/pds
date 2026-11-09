@@ -98,7 +98,7 @@ if:
 $$\P(Y = y) \eqdef \frac{\mean^{y} e^{-\mean}}{y!} \, \1{y \in \Nat}, \quad y \in \reals$$ {#eq-pois-pmf}
 
 where $\Nat = \set{0, 1, 2, \dots}$,
-and the indicator sets the mass to $0$ outside $\Nat$,
+and the [indicator](https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function) makes the mass $0$ outside $\Nat$,
 where $y!$ is undefined.
 
 :::
