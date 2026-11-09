@@ -1,0 +1,72 @@
+R names its distribution functions by a prefix that says what the function computes,
+followed by a short name for the family (@tbl-r-prefixes and @tbl-r-families).
+
+| Prefix | Computes | Example |
+|:--|:--|:--|
+| `d` | the [mass function](#def-pmf) or [density](#def-pdf) | `dnorm()` |
+| `p` | the [cumulative distribution function](#def-cdf) | `pnorm()` |
+| `q` | the [quantile function](#def-quantile-function) | `qnorm()` |
+| `r` | random draws | `rnorm()` |
+
+: Prefixes of R's distribution functions, with the Gaussian family as the example. {#tbl-r-prefixes}
+
+| Family | R name | Parameters, in R's argument order |
+|:--|:--|:--|
+| [Bernoulli](#def-bernoulli) | `binom` with `size = 1` | `prob` |
+| [Binomial](#def-binomial) | `binom` | `size`, `prob` |
+| [Poisson](#def-poisson) | `pois` | `lambda` |
+| [Uniform](#def-uniform) | `unif` | `min`, `max` |
+| [Gaussian](#def-normal) | `norm` | `mean`, `sd` |
+| [Exponential](#def-exponential) | `exp` | `rate` |
+
+: R names for some families in this chapter. {#tbl-r-families}
+
+R has no separate Bernoulli family:
+use the binomial functions with `size = 1`.
+The next chunk evaluates each prefix for the standard Gaussian distribution
+and for a binomial distribution with three trials (@tbl-r-calls).
+
+```{r}
+#| label: tbl-r-calls
+#| tbl-cap: "The four prefixes applied to two families"
+#| code-fold: false
+
+set.seed(1)
+gaussian_density <- dnorm(0)
+gaussian_cdf <- pnorm(1.96)
+gaussian_quantile <- qnorm(0.975)
+gaussian_draw <- rnorm(1)
+binomial_mass <- dbinom(2, size = 3, prob = 1 / 2)
+binomial_cdf <- pbinom(2, size = 3, prob = 1 / 2)
+binomial_quantile <- qbinom(0.5, size = 3, prob = 1 / 2)
+binomial_draw <- rbinom(1, size = 3, prob = 1 / 2)
+
+call_text <- c(
+  "dnorm(0)",
+  "pnorm(1.96)",
+  "qnorm(0.975)",
+  "rnorm(1)",
+  "dbinom(2, size = 3, prob = 1 / 2)",
+  "pbinom(2, size = 3, prob = 1 / 2)",
+  "qbinom(0.5, size = 3, prob = 1 / 2)",
+  "rbinom(1, size = 3, prob = 1 / 2)"
+)
+
+call_values <- c(
+  gaussian_density,
+  gaussian_cdf,
+  gaussian_quantile,
+  gaussian_draw,
+  binomial_mass,
+  binomial_cdf,
+  binomial_quantile,
+  binomial_draw
+)
+
+calls <- dplyr::tibble(call = call_text, value = call_values)
+
+knitr::kable(calls, digits = 4)
+```
+
+The value of `dbinom(2, size = 3, prob = 1 / 2)` is $3/8 = 0.375$,
+which matches the hand calculation for two heads in three flips.
