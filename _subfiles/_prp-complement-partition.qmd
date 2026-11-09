@@ -11,7 +11,8 @@ are a [partition](#def-partition) of the [sample space](#def-sample-space) $\sam
 
 The sample space $\samplespace$ is an event (@lem-sample-space-event),
 so a partition of it is defined.
-The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\setdiff{\samplespace}{A}$,
+By @prp-complement-set-difference,
+the complement $\neg A$ is the set difference $\setdiff{\samplespace}{A}$,
 which is an event
 because the events are closed under complements in $\samplespace$,
 by the complement requirement of a
