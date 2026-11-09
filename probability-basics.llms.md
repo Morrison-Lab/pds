@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 21:09:39 (PST)
+Last modified: 2026-11-08 21:38:26 (PST)
 
 # 1 Defining probabilities
 
@@ -294,7 +294,7 @@ Last modified: 2026-11-08 21:09:39 (PST)
 
 > **NOTE:**
 >
-> *Proof*. The events $A$ and $\neg A$ are disjoint, and their union is $\Omega$.
+> *Proof*. By [Proposition 1](#prp-complement-partition), the [events](#def-event) $A$ and $\neg A$ are a [partition](#def-partition) of $\Omega$, so they are disjoint, and their [union](https://morrison-lab.github.io/mcs/sets.html#def-union) is $\Omega$.
 >
 > $$\begin{aligned}
 > \Pr(A) + \Pr(\neg A)
