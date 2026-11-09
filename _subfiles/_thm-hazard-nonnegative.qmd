@@ -25,13 +25,3 @@ A [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit
 so $\haz(t) \ge 0$.
 
 :::
-
-::: {.remark .notes}
-
-A hazard has no upper bound: @exm-hazard-exceeds-one has $\haz(t) = 2$,
-and an exponential with a larger rate has a larger hazard.
-Together with @thm-hazard-nonnegative,
-the hazards of a continuous random variable range over $[0, \infty)$,
-unlike the discrete-time hazard, which lies in $[0, 1]$ (@cor-discrete-hazard-unit-interval).
-
-:::
