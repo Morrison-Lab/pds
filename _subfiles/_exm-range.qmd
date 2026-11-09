@@ -1,0 +1,6 @@
+:::{#exm-range}
+#### Range of the number of heads
+
+In @exm-random-variable, $\rangef{X} = \set{0, 1, 2}$.
+
+:::

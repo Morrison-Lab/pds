@@ -1,0 +1,11 @@
+::: {.remark .notes}
+
+Many sources define a probability measure by these three axioms instead;
+the theorem shows that the two definitions agree.
+The axioms are named for Kolmogorov,
+who introduced them in 1933
+[@wikipedia_probability_axioms].
+The axiom form does not list $\Pr(\emptyset) = 0$;
+the proof above derives it.
+
+:::

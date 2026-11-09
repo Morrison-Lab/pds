@@ -1,0 +1,9 @@
+:::{#exm-occurs}
+#### Rolling a 4
+
+In @exm-event, if the die shows 4,
+the event "the roll is even", $\set{2, 4, 6}$, occurs,
+because $4 \in \set{2, 4, 6}$,
+and the event "the roll is at most 2", $\set{1, 2}$, does not occur.
+
+:::

@@ -1,0 +1,9 @@
+::: {.remark .notes}
+
+Alternate names for this identity include:
+the **tower rule**,
+the **tower property**,
+the **law of total expectation**,
+and the **smoothing theorem**.
+
+:::

@@ -1,0 +1,25 @@
+:::{#thm-cdf-pois}
+#### CDF of Poisson distribution
+
+If $Y \sim \Pois(\mean)$, then for every real number $y$:
+
+$$\P(Y \le y) = e^{-\mean} \sum_{j=0}^{\floor{y}}\frac{\mean^j}{j!}$$ {#eq-pois-cdf}
+
+:::
+
+::: proof
+For $y < 0$, both sides are $0$ (the sum is empty).
+For any $y \ge 0$,
+the event $\{Y \le y\}$ is the disjoint union of events $\{Y = j\}$
+for all non-negative integers $j \le \floor{y}$.
+Applying the Poisson PMF (@eq-pois-pmf) and factoring out the common term $e^{-\mean}$:
+
+$$
+\ba
+\P(Y \le y)
+&= \sum_{j=0}^{\floor{y}} \P(Y = j) && (\text{disjoint union of events } Y = j) \\
+&= \sum_{j=0}^{\floor{y}} \frac{\mean^j e^{-\mean}}{j!} && (\text{definition of Poisson PMF}) \\
+&= e^{-\mean} \sum_{j=0}^{\floor{y}} \frac{\mean^j}{j!} && (\text{factoring out } e^{-\mean} \text{ constant wrt } j)
+\ea
+$$
+:::

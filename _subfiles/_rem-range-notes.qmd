@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+The range of $X$ is the [image](https://morrison-lab.github.io/mds/functions.html#def-image) of $X$ as a function on $\samplespace$.
+For a general function, these notes say "image",
+because some sources use "range" for the codomain instead;
+for a random variable, "range" is the standard term.
+
+:::

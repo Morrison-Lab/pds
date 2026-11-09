@@ -1,0 +1,7 @@
+::: {.remark .notes}
+
+Requiring countable additivity, not just finite additivity,
+enables results such as @thm-continuity-probability,
+and it is what makes sums over countably infinite [partitions](#def-partition) valid.
+
+:::

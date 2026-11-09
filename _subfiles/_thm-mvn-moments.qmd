@@ -1,0 +1,10 @@
+:::{#thm-mvn-moments}
+#### The mean and variance of the multivariate normal distribution
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
+then $\Expp\vX = \vecf{\mean}$
+(the [expectation of a random vector](expectation.qmd#def-expectation-matrix)),
+and $\Varf{\vX} = \matr{\covmat}$
+(the [variance of a random vector](variance-covariance.qmd#def-cov-vec-x)).
+
+:::

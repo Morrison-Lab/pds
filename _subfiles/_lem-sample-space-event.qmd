@@ -1,0 +1,17 @@
+:::{#lem-sample-space-event}
+#### The sample space is an event
+
+[The sample space](#def-sample-space) $\samplespace$ is an [event](#def-event).
+
+:::
+
+::: proof
+
+The sample space is a subset of itself, $\samplespace \subseteq \samplespace$.
+When every subset of $\samplespace$ can be an event,
+that is enough.
+Otherwise the events are the subsets in a
+[$\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra) $\salg$ on $\samplespace$,
+and by its definition $\salg$ contains $\samplespace$ itself.
+
+:::

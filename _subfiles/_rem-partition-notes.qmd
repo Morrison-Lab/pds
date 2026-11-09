@@ -1,0 +1,5 @@
+::: {.remark .notes}
+
+Some sources also require each piece $A_i$ to contain at least one outcome.
+
+:::

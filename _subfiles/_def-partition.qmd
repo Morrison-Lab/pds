@@ -1,0 +1,11 @@
+:::{#def-partition}
+#### Partition of an event
+
+A **partition** of an [event](#def-event) $A$
+is a finite or countably infinite collection of events $A_1, A_2, \ldots$
+that satisfies:
+
+- The events $A_1, A_2, \ldots$ are [mutually exclusive](#def-mutually-exclusive).
+- Their union is $A$: $\bigcup_{i} A_i = A$.
+
+:::

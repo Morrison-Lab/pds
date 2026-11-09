@@ -18,7 +18,19 @@ format:
 
 {{< include pds/_subfiles/_exm-mahalanobis-eigen.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-normal-density-max.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-normal-density-max.qmd >}}
+
 {{< include pds/_subfiles/_sec-distributions-2.qmd >}}
+
+# Distribution functions in R {#sec-r-distribution-functions}
+
+{{< include pds/_subfiles/_sec-r-distribution-functions.qmd >}}
 
 
 # References {.unnumbered}

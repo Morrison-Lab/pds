@@ -1,0 +1,16 @@
+:::{#exm-cdf-pois}
+#### Computing Poisson cumulative probabilities
+
+For a Poisson random variable $X \sim \Pois(\mean = 2)$,
+the probability of observing at most 2 events is computed as:
+
+$$
+\ba
+\P(X \le 2)
+&= e^{-2} \sum_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mean = 2, y = 2) \\
+&= e^{-2} \paren{\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}} && (\text{expand terms for } j = 0, 1, 2) \\
+&= e^{-2} \paren{1 + 2 + 2} && (\text{simplify factorials and powers}) \\
+&= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value})
+\ea
+$$
+:::

@@ -1,0 +1,8 @@
+:::{#def-event}
+#### Event
+
+An **event** is a subset of the [sample space](#def-sample-space) $\samplespace$
+[@wikipedia_event_probability_theory]:
+a set of outcomes.
+
+:::

@@ -1,0 +1,83 @@
+:::{#thm-continuity-probability}
+#### Continuity of probability
+
+If $A_1 \supseteq A_2 \supseteq \cdots$ are events
+with $\bigcap_{i=1}^{\infty} A_i = \emptyset$,
+then:
+
+$$\lim_{n \to \infty} \Pr(A_n) = 0$$
+
+:::
+
+::: proof
+
+For each $i$, let $B_i \eqdef A_i \setminus A_{i+1}$,
+the outcomes in $A_i$ but not in $A_{i+1}$.
+Each $B_i = A_i \cap (\samplespace \setminus A_{i+1})$ is an event,
+by [closure properties of a $\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure).
+
+*The $B_i$ are pairwise disjoint.*
+For $i < j$,
+$B_j \subseteq A_j \subseteq A_{i+1}$,
+while $B_i$ has no outcomes in $A_{i+1}$,
+so $B_i \cap B_j = \emptyset$.
+
+*$A_n = \bigcup_{i=n}^{\infty} B_i$ for each $n$.*
+For $i \ge n$, $B_i \subseteq A_i \subseteq A_n$,
+so the union is contained in $A_n$.
+Conversely, let $\outcome \in A_n$.
+Since $\bigcap_{i} A_i = \emptyset$,
+$\outcome$ is not in every $A_i$;
+since the $A_i$ are nested,
+the indices $i$ with $\outcome \in A_i$ are $1, \ldots, m$ for some $m \ge n$.
+Then $\outcome \in A_m$ and $\outcome \notin A_{m+1}$,
+so $\outcome \in B_m$.
+
+*$\Pr(A_1)$ is finite.*
+The events $A_1$ and $\samplespace \setminus A_1$ are disjoint with union $\samplespace$,
+so @cor-probability-finitely-additive applies to them:
+
+$$
+\ba
+\Pr(A_1)
+&\le \Pr(A_1) + \Pr(\samplespace \setminus A_1)
+&& \text{(} \Pr(\samplespace \setminus A_1) \ge 0 \text{)} \\
+&= \Pr(\samplespace)
+&& \text{(finite additivity of } \Pr \text{)} \\
+&= 1
+&& \text{(definition of a probability measure)}
+\ea
+$$
+
+*The limit.*
+For each $n$:
+
+$$
+\ba
+\Pr(A_n)
+&= \Prf{\bigcup_{i=n}^{\infty} B_i}
+&& \text{(} A_n = \bigcup_{i=n}^{\infty} B_i \text{)} \\
+&= \sum_{i=n}^{\infty} \Pr(B_i)
+&& \text{(countable additivity; the } B_i \text{ are pairwise disjoint)}
+\ea
+$$
+
+With $n = 1$, this says the series $\sumto{i}{\infty} \Pr(B_i)$
+has the finite total $\Pr(A_1)$.
+So, for $n \ge 2$:
+
+$$
+\ba
+\Pr(A_n)
+&= \sumto{i}{\infty} \Pr(B_i) - \sumto{i}{n-1} \Pr(B_i)
+&& \text{(split off the first } n - 1 \text{ terms; the total is finite)} \\
+&= \Pr(A_1) - \sumto{i}{n-1} \Pr(B_i)
+&& \text{(the case } n = 1 \text{)}
+\ea
+$$
+
+As $n \to \infty$,
+the partial sums $\sumto{i}{n-1} \Pr(B_i)$ converge to the total $\Pr(A_1)$,
+so $\Pr(A_n) \to \Pr(A_1) - \Pr(A_1) = 0$.
+
+:::

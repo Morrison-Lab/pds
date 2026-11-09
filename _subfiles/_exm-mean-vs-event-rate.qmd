@@ -1,0 +1,15 @@
+:::{#exm-mean-vs-event-rate}
+#### Calculating expected counts from event rates
+
+Suppose a city records a disease event rate of $\rate = 0.05$ cases per person-year.
+For a subpopulation with an exposure magnitude of $t = 100$ person-years,
+the expected count of cases is, by @thm-mean-vs-event-rate:
+
+$$
+\ba
+\mean &= \rate \cdot t && (\text{transformation from event rate to mean}) \\
+&= 0.05 \times 100 && (\text{substitute } \rate = 0.05 \text{ and } t = 100) \\
+&= 5 \text{ cases} && (\text{evaluate expected count})
+\ea
+$$
+:::

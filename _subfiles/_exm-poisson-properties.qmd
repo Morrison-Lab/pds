@@ -1,0 +1,12 @@
+:::{#exm-poisson-properties}
+#### Mode of a Poisson distribution
+
+For $X \sim \Pois(2.5)$,
+$\P(X = 2) = \frac{2.5}{2}\P(X = 1) > \P(X = 1)$
+and $\P(X = 3) = \frac{2.5}{3}\P(X = 2) < \P(X = 2)$,
+so the mode is $\floor{2.5} = 2$.
+For $X \sim \Pois(2)$, $\P(X = 2) = \frac{2}{2}\P(X = 1)$,
+so $1$ and $2$ are both modes,
+each with probability $2 e^{-2} \approx 0.271$.
+
+:::

@@ -9,6 +9,12 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
 - **Probability** is denoted $\Pr()$ or $\P()$ for the probability of an event,
   or for a probability mass function (PMF),
   and $\p()$ for a density.
+- **Shorthand for a [mass function](random-variables.qmd#def-pmf) or density evaluated at a [realization](random-variables.qmd#def-realization):**
+  we write $\P(y) \eqdef \P(Y = y)$ for a probability mass function,
+  and $\p(y)$ for the density of $Y$ evaluated at $y$.
+  The lowercase letter in the parentheses names the random variable,
+  so $\P(y)$ is the probability mass function of $Y$,
+  not of any other random variable.
 - **Expectation** is denoted $\E{\cdot}$, with square brackets.
 - **Independence** is denoted $\ind$
   (read "$X \ind Y$" as "$X$ is independent of $Y$").

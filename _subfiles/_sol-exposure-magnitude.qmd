@@ -1,0 +1,12 @@
+::: {.solution .smaller}
+
+outcome                      | exposure units
+-----------------------------| -------------
+disease incidence            | number of individuals exposed; time at risk
+car accidents                | miles driven
+worksite accidents           | person-hours worked
+population size              | size of habitat
+
+: Examples of exposure units {#tbl-exposure-units}
+
+:::

@@ -1,0 +1,15 @@
+:::{#exm-nb}
+#### Overdispersion relative to the Poisson
+
+With $\mean = 4$ and $\overdisp = 2$,
+
+$$
+\begin{aligned}
+\Var{Y} &= 4 + 16/2 \\
+&= 12,
+\end{aligned}
+$$
+
+three times the variance of a $\Pois(4)$ count with the same mean.
+
+:::

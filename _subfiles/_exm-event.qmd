@@ -1,0 +1,7 @@
+:::{#exm-event}
+#### Rolling an even number
+
+In @exm-sample-space,
+the event "the roll is even" is $A = \set{2, 4, 6}$.
+
+:::

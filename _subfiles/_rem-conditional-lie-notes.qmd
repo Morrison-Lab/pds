@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+This identity is the tower rule
+applied conditionally on $Z$.
+
+:::

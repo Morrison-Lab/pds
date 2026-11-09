@@ -1,0 +1,7 @@
+::: solution
+
+- $\P(X=4) = `r dpois(x = 4, lambda = mu)`$
+- $\P(X\le 7) = `r ppois(q = 7, lambda = mu)`$
+- $\P(X > 5) = `r ppois(q = 5, lambda = mu, lower.tail = FALSE)`$
+
+:::
