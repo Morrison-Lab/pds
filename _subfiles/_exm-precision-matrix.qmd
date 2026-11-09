@@ -21,7 +21,7 @@ $$
 The off-diagonal entries have the opposite sign of $\rho$.
 Each diagonal entry, $1 / (1 - \rho^2)$, is at least the [precision](#def-precision) $1 / \Var{X_1} = 1$ of $X_1$ alone,
 and it grows without bound as $\abs{\rho} \to 1$.
-If $\rho = 0$, then $\precision(\vX)$ is the identity matrix, which is diagonal like $\Varf{\vX}$
+If $\rho = 0$, then $\precision(\vX)$ is the [identity matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-identity-matrix), which is diagonal like $\Varf{\vX}$
 (compare @cor-vcov-indpt-diagonal).
 
 :::
