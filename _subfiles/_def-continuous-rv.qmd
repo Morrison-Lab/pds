@@ -1,0 +1,7 @@
+:::{#def-continuous-rv}
+#### Continuous random variable
+
+A random variable $X$ is **continuous**
+if $\Pr(X = x) = 0$ for every $x \in \reals$.
+
+:::

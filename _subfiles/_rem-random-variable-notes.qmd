@@ -1,0 +1,11 @@
+::: {.remark .notes}
+
+We use uppercase letters ($X$, $Y$, $Z$, ...) for random variables,
+and lowercase letters ($x$, $y$, $z$, ...) for their realized (observed) values.
+We write $\{X = x\}$ for the event $\{\outcome \in \samplespace : X(\outcome) = x\}$,
+and similarly for $\{X \le x\}$ and other conditions on $X$.
+A fully rigorous definition also requires the function to be *measurable*,
+so that every such set is an event with a probability;
+that requirement never binds in these notes.
+
+:::

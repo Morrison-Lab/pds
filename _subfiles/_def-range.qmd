@@ -1,0 +1,9 @@
+:::{#def-range}
+#### Range of a random variable
+
+The **range** of a random variable $X$, denoted $\rangef{X}$,
+is the set of values $X$ can take:
+
+$$\rangef{X} \eqdef \set{X(\outcome) : \outcome \in \samplespace}$$
+
+:::
