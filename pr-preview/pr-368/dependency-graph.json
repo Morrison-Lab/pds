@@ -1753,15 +1753,6 @@
    "external": false
   },
   {
-   "id": "pds/probability-basics#prp-complement-set-difference",
-   "site": "pds",
-   "page": "probability-basics",
-   "div": "prp-complement-set-difference",
-   "kind": "prp",
-   "title": "The complement of an event is a set difference",
-   "external": false
-  },
-  {
    "id": "pds/probability-basics#thm-bayes",
    "site": "pds",
    "page": "probability-basics",
@@ -3872,15 +3863,15 @@
   ],
   [
    "pds/probability-basics#def-complement",
+   "mds/sets#def-set-difference"
+  ],
+  [
+   "pds/probability-basics#def-complement",
    "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#def-complement",
    "pds/probability-basics#def-occurs"
-  ],
-  [
-   "pds/probability-basics#def-complement",
-   "pds/probability-basics#def-sample-space"
   ],
   [
    "pds/probability-basics#def-event",
@@ -4017,22 +4008,6 @@
   [
    "pds/probability-basics#prp-complement-partition",
    "pds/probability-basics#lem-sample-space-event"
-  ],
-  [
-   "pds/probability-basics#prp-complement-partition",
-   "pds/probability-basics#prp-complement-set-difference"
-  ],
-  [
-   "pds/probability-basics#prp-complement-set-difference",
-   "mds/sets#def-set-difference"
-  ],
-  [
-   "pds/probability-basics#prp-complement-set-difference",
-   "pds/probability-basics#def-complement"
-  ],
-  [
-   "pds/probability-basics#prp-complement-set-difference",
-   "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#thm-bayes",
