@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 15:27:52 (PST)
+Last modified: 2026-11-08 19:54:14 (PST)
 
 # 1 Defining probabilities
 
@@ -180,6 +180,10 @@ Last modified: 2026-11-08 15:27:52 (PST)
 
 > **NOTE:**
 >
+> *Remark 2* (The probability space). The [sample space](#def-sample-space), its [events](#def-event) and the [probability measure](#def-probability) together form a [probability space](https://morrison-lab.github.io/mds/measures.html#def-probability-space).
+
+> **NOTE:**
+>
 > **Example 14 (Probability measure for a fair die)** For the die roll in [Example 6](#exm-sample-space), define $\Pr(A) \stackrel{\text{def}}{=}\mathopen{}\left|A\right|\mathclose{} / 6$, where $\mathopen{}\left|A\right|\mathclose{}$ is the number of outcomes in $A$. This function is $1/6$ times the counting measure $\mu(A) = \mathopen{}\left|A\right|\mathclose{}$ on the die rolls ([counting elements is a measure](https://morrison-lab.github.io/mds/measures.html#exm-measure)), so it is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the events of $\Omega$, and it gives
 >
 > $$\begin{aligned}
@@ -330,10 +334,6 @@ Last modified: 2026-11-08 15:27:52 (PST)
 > **NOTE:**
 >
 > **Example 15 (Probability of not rolling a six)** For a fair die, the event “the roll is a six” has probability $\pi= 1/6$, so by [Corollary 3](#cor-p-neg) the probability of not rolling a six is $1 - 1/6 = 5/6$.
-
-> **NOTE:**
->
-> *Remark 2* (The probability space). The [sample space](#def-sample-space), its [events](#def-event) and the [probability measure](#def-probability) together form a [probability space](https://morrison-lab.github.io/mds/measures.html#def-probability-space).
 
 > **NOTE:**
 >
