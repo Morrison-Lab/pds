@@ -1,0 +1,13 @@
+::: {#sol-choose-distribution}
+
+A weekly visit count is a non-negative whole number with no largest value.
+The [Poisson distribution](#def-poisson) is a natural first choice for such a count,
+because its values are $0, 1, 2, \ldots$.
+A [Bernoulli](#def-bernoulli) variable takes only the values $0$ and $1$,
+and a [Gaussian](#def-normal) count can be negative or fractional,
+so neither matches the weekly count.
+
+If the weekly counts vary more than a [Poisson](#def-poisson) count allows,
+the [negative binomial distribution](#def-nb) is the next candidate.
+
+:::
