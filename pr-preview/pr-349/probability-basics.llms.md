@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 11:49:29 (PST)
+Last modified: 2026-11-09 10:44:15 (PST)
 
 # 1 Defining probabilities
 
@@ -111,7 +111,9 @@ Last modified: 2026-11-08 11:49:29 (PST)
 
 > **NOTE:**
 >
-> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) $A$, denoted $\neg A$, is the event that $A$ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\Omega$ that are not in $A$, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) ${\Omega \setminus A}$:
+> **Definition 8 (Complement of an event)**  
+>
+> The **complement** of an [event](#def-event) $A$, denoted $\neg A$, is the event that $A$ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\Omega$ that are not in $A$, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) ${\Omega \setminus A}$:
 >
 > $$\begin{aligned}
 > \neg A
@@ -177,6 +179,10 @@ Last modified: 2026-11-08 11:49:29 (PST)
 > **Definition 11 (Probability measure (probability function))** A **probability measure** (also called a **probability function** [\[4\]](#ref-CaseBerg01), Definition 1.2.4) on a [sample space](#def-sample-space) $\Omega$, often denoted $\Pr()$ or $\mathbb{P}()$, is a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on the [events](#def-event) of $\Omega$ that gives the whole sample space probability 1 [\[5\]](#ref-wikipedia_probability_space):
 >
 > $$\Pr(\Omega) = 1$$
+
+> **NOTE:**
+>
+> *Remark 2* (The probability space). The [sample space](#def-sample-space), its [events](#def-event) and the [probability measure](#def-probability) together form a [probability space](https://morrison-lab.github.io/mds/measures.html#def-probability-space).
 
 > **NOTE:**
 >
@@ -290,7 +296,7 @@ Last modified: 2026-11-08 11:49:29 (PST)
 
 > **NOTE:**
 >
-> *Proof*. The events $A$ and $\neg A$ are disjoint, and their union is $\Omega$.
+> *Proof*. By [Proposition 1](#prp-complement-partition), the [events](#def-event) $A$ and $\neg A$ are a [partition](#def-partition) of $\Omega$, so they are disjoint, and their [union](https://morrison-lab.github.io/mcs/sets.html#def-union) is $\Omega$.
 >
 > $$\begin{aligned}
 > \Pr(A) + \Pr(\neg A)

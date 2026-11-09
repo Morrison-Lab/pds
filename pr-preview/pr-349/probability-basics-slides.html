@@ -364,7 +364,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-08 11:49:29 (PST)</p>
+  <p class="date">Last modified: 2026-11-09 10:44:15 (PST)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -514,7 +514,9 @@
 <section class="slide level2">
 
 <div id="def-complement" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Complement of an event)</strong></span> The <strong>complement</strong> of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#/def-occurs">occur</a>: the <a href="https://morrison-lab.github.io/mds/sets.html#def-set">set</a> of elements <span class="math inline">\(\omega\)</span> of the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>, or equivalently, the <a href="https://morrison-lab.github.io/mds/sets.html#def-set-difference">set difference</a> <span class="math inline">\({\Omega \setminus A}\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 8 (Complement of an event)</strong></span> &nbsp;</p>
+<!-- def-equiv-ok: unchanged text moved by a mechanical split; the equality moves to its own proposition in the follow-up PR -->
+<p>The <strong>complement</strong> of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\neg A\)</span>, is the event that <span class="math inline">\(A\)</span> does not <a href="#/def-occurs">occur</a>: the <a href="https://morrison-lab.github.io/mds/sets.html#def-set">set</a> of elements <span class="math inline">\(\omega\)</span> of the sample space <span class="math inline">\(\Omega\)</span> that are not in <span class="math inline">\(A\)</span>, or equivalently, the <a href="https://morrison-lab.github.io/mds/sets.html#def-set-difference">set difference</a> <span class="math inline">\({\Omega \setminus A}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \neg A
@@ -621,6 +623,12 @@
 <div id="def-probability" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 11 (Probability measure (probability function))</strong></span> A <strong>probability measure</strong> (also called a <strong>probability function</strong> <span class="citation" data-cites="CaseBerg01"><a href="#/references" role="doc-biblioref" onclick="">[4]</a>, Definition 1.2.4</span>) on a <a href="#/def-sample-space">sample space</a> <span class="math inline">\(\Omega\)</span>, often denoted <span class="math inline">\(\Pr()\)</span> or <span class="math inline">\(\mathbb{P}()\)</span>, is a <a href="https://morrison-lab.github.io/mds/measures.html#def-measure">measure</a> on the <a href="#/def-event">events</a> of <span class="math inline">\(\Omega\)</span> that gives the whole sample space probability 1 <span class="citation" data-cites="wikipedia_probability_space"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>:</p>
 <p><span class="math display">\[\Pr(\Omega) = 1\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="rem-probability-space" class="proof remark">
+<p><span class="proof-title"><em>Remark 2</em> (The probability space). </span>The <a href="#/def-sample-space">sample space</a>, its <a href="#/def-event">events</a> and the <a href="#/def-probability">probability measure</a> together form a <a href="https://morrison-lab.github.io/mds/measures.html#def-probability-space">probability space</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -754,7 +762,7 @@
 <p><span class="math display">\[\Pr(A) + \Pr(\neg A) = 1\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The events <span class="math inline">\(A\)</span> and <span class="math inline">\(\neg A\)</span> are disjoint, and their union is <span class="math inline">\(\Omega\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By <a href="#/prp-complement-partition" class="quarto-xref">Proposition&nbsp;1</a>, the <a href="#/def-event">events</a> <span class="math inline">\(A\)</span> and <span class="math inline">\(\neg A\)</span> are a <a href="#/def-partition">partition</a> of <span class="math inline">\(\Omega\)</span>, so they are disjoint, and their <a href="https://morrison-lab.github.io/mcs/sets.html#def-union">union</a> is <span class="math inline">\(\Omega\)</span>.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(A) + \Pr(\neg A)

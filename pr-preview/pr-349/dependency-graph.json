@@ -74,6 +74,16 @@
    "url": "https://morrison-lab.github.io/mcs/sets.html#def-open-interval"
   },
   {
+   "id": "mcs/sets#def-union",
+   "site": "mcs",
+   "page": "sets",
+   "div": "def-union",
+   "kind": "def",
+   "title": "union",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/sets.html#def-union"
+  },
+  {
    "id": "mds/algebra-basics#def-absolute-value",
    "site": "mds",
    "page": "algebra-basics",
@@ -847,6 +857,15 @@
    "div": "thm-non-exposed",
    "kind": "thm",
    "title": "No exposure means no expected events",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-normal-density-max",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-normal-density-max",
+   "kind": "thm",
+   "title": "The maximum of the Gaussian density",
    "external": false
   },
   {
@@ -3027,6 +3046,14 @@
    "pds/expectation#def-expectation"
   ],
   [
+   "pds/distributions#thm-normal-density-max",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-normal-density-max",
+   "pds/random-variables#def-pdf"
+  ],
+  [
    "pds/distributions#thm-poisson-properties",
    "pds/expectation#thm-linearity-expectation"
   ],
@@ -4312,7 +4339,23 @@
   ],
   [
    "pds/probability-basics#thm-total-prob-1",
+   "mcs/sets#def-union"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-1",
    "pds/probability-basics#def-complement"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-1",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-1",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-1",
+   "pds/probability-basics#prp-complement-partition"
   ],
   [
    "pds/random-variables#cor-cdf-derivative-density-ae",
