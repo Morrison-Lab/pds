@@ -75,6 +75,6 @@ cat(
 )
 ```
 
-The density of the $\Normal_2\paren{\vzero, \matr{\covmat}}$ distribution of the example, with variances $1$ and covariance $0.8$.
+The [density](random-variables.qmd#def-pdf) of $\Normal_2\paren{\vzero, \matr{\covmat}}$ in the example, with [variances](variance-covariance.qmd#def-variance) $1$ and [covariance](variance-covariance.qmd#def-cov) $0.8$.
 Its horizontal slices are ellipses stretched along $x_2 = x_1$.
 :::
