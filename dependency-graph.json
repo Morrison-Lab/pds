@@ -34,6 +34,26 @@
    "url": "https://morrison-lab.github.io/mcs/functions.html#def-function"
   },
   {
+   "id": "mcs/number-systems#def-integers",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-integers",
+   "kind": "def",
+   "title": "integers",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-integers"
+  },
+  {
+   "id": "mcs/number-systems#def-nonnegative-integers",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-nonnegative-integers",
+   "kind": "def",
+   "title": "nonnegative integers",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-nonnegative-integers"
+  },
+  {
    "id": "mcs/number-systems#def-positive-integer",
    "site": "mcs",
    "page": "number-systems",
@@ -242,6 +262,16 @@
    "title": "function",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/functions.html#def-function"
+  },
+  {
+   "id": "mds/indicator-functions#def-indicator-function",
+   "site": "mds",
+   "page": "indicator-functions",
+   "div": "def-indicator-function",
+   "kind": "def",
+   "title": "indicator function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function"
   },
   {
    "id": "mds/linear-algebra-special-matrices#def-determinant",
@@ -494,6 +524,33 @@
    "url": "https://morrison-lab.github.io/mds/sets.html#def-set-difference"
   },
   {
+   "id": "pds/distributions#cor-gamma-exponential",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-gamma-exponential",
+   "kind": "cor",
+   "title": "The gamma distribution with shape 1 is the exponential",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-gamma-mean",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-gamma-mean",
+   "kind": "cor",
+   "title": "Mean of the gamma distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-gamma-variance",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-gamma-variance",
+   "kind": "cor",
+   "title": "Variance of the gamma distribution",
+   "external": false
+  },
+  {
    "id": "pds/distributions#cor-mvn-mahalanobis",
    "site": "pds",
    "page": "distributions",
@@ -554,6 +611,24 @@
    "div": "def-exposure",
    "kind": "def",
    "title": "Exposure magnitude",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-gamma",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-gamma",
+   "kind": "def",
+   "title": "Gamma distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-gamma-function",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-gamma-function",
+   "kind": "def",
+   "title": "Gamma function",
    "external": false
   },
   {
@@ -689,6 +764,15 @@
    "div": "thm-exposure-log-scale",
    "kind": "thm",
    "title": "Exposure is additive on the log scale",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-gamma-moments",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-gamma-moments",
+   "kind": "thm",
+   "title": "Moments of the gamma distribution",
    "external": false
   },
   {
@@ -1772,6 +1856,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#prp-complement-set-difference",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "prp-complement-set-difference",
+   "kind": "prp",
+   "title": "The complement of an event is a set difference",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#thm-bayes",
    "site": "pds",
    "page": "probability-basics",
@@ -2702,6 +2795,34 @@
  ],
  "edges": [
   [
+   "pds/distributions#cor-gamma-exponential",
+   "pds/distributions#def-event-rate"
+  ],
+  [
+   "pds/distributions#cor-gamma-exponential",
+   "pds/random-variables#def-exponential"
+  ],
+  [
+   "pds/distributions#cor-gamma-exponential",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#cor-gamma-mean",
+   "pds/distributions#thm-gamma-moments"
+  ],
+  [
+   "pds/distributions#cor-gamma-variance",
+   "pds/distributions#cor-gamma-mean"
+  ],
+  [
+   "pds/distributions#cor-gamma-variance",
+   "pds/distributions#thm-gamma-moments"
+  ],
+  [
+   "pds/distributions#cor-gamma-variance",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
    "pds/distributions#cor-mvn-mahalanobis",
    "pds/distributions#def-mahalanobis"
   ],
@@ -2766,6 +2887,26 @@
    "pds/distributions#def-exposure"
   ],
   [
+   "pds/distributions#def-gamma",
+   "pds/distributions#def-event-rate"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/distributions#def-gamma-function"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/distributions#def-laplace",
    "pds/random-variables#def-pdf"
   ],
@@ -2792,6 +2933,18 @@
   [
    "pds/distributions#def-offset",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#def-poisson",
+   "mcs/number-systems#def-nonnegative-integers"
+  ],
+  [
+   "pds/distributions#def-poisson",
+   "mds/indicator-functions#def-indicator-function"
+  ],
+  [
+   "pds/distributions#def-poisson",
+   "mds/sets#def-set"
   ],
   [
    "pds/distributions#def-responsibility",
@@ -2832,6 +2985,18 @@
   [
    "pds/distributions#thm-binomial-sum-bernoulli",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/distributions#thm-gamma-moments",
+   "mcs/number-systems#def-integers"
+  ],
+  [
+   "pds/distributions#thm-gamma-moments",
+   "pds/distributions#def-gamma-function"
+  ],
+  [
+   "pds/distributions#thm-gamma-moments",
+   "pds/expectation#def-expectation"
   ],
   [
    "pds/distributions#thm-laplace-moments",
@@ -3899,15 +4064,15 @@
   ],
   [
    "pds/probability-basics#def-complement",
-   "mds/sets#def-set-difference"
-  ],
-  [
-   "pds/probability-basics#def-complement",
    "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#def-complement",
    "pds/probability-basics#def-occurs"
+  ],
+  [
+   "pds/probability-basics#def-complement",
+   "pds/probability-basics#def-sample-space"
   ],
   [
    "pds/probability-basics#def-event",
@@ -4044,6 +4209,22 @@
   [
    "pds/probability-basics#prp-complement-partition",
    "pds/probability-basics#lem-sample-space-event"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#prp-complement-set-difference"
+  ],
+  [
+   "pds/probability-basics#prp-complement-set-difference",
+   "mds/sets#def-set-difference"
+  ],
+  [
+   "pds/probability-basics#prp-complement-set-difference",
+   "pds/probability-basics#def-complement"
+  ],
+  [
+   "pds/probability-basics#prp-complement-set-difference",
+   "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#thm-bayes",

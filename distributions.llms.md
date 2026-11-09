@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 12:16:49 (PST)
+Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
@@ -33,7 +33,7 @@ Last modified: 2026-11-09 12:16:49 (PST)
 > | [Multivariate normal](#sec-mvn) | Vectors of continuous outcomes |
 > | [Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations |
 > | [Exponential](random-variables.llms.md#def-exponential) | Time to event outcomes |
-> | Gamma | Time to event outcomes |
+> | [Gamma](#def-gamma) | Time to event outcomes |
 > | Weibull | Time to event outcomes |
 > | Log-normal | Time to event outcomes |
 >
@@ -220,7 +220,9 @@ Last modified: 2026-11-09 12:16:49 (PST)
 >
 > **Definition 2 (Poisson distribution)** A random variable $Y$ has the **Poisson distribution** with mean parameter $\mu> 0$, written $Y \sim \operatorname{Pois}(\mu)$ [\[3\]](#ref-wikipedia_poisson_distribution), if:
 >
-> $$\mathbb{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} e^{-\mu}}{y!}, \quad y \in \mathbb{N}= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}} \tag{2}$$
+> $$\mathbb{P}(Y = y) \stackrel{\text{def}}{=}\frac{\mu^{y} \text{e}^{-\mu}}{y!} \, \text{1}_{y \in \mathbb{N}}, \quad y \in \mathbb{R} \tag{2}$$
+>
+> where $\mathbb{N}= {\mathopen{}\left\{0, 1, 2, \dots\right\}\mathclose{}}$ is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of [non-negative integers](https://morrison-lab.github.io/mcs/number-systems.html#def-nonnegative-integers). The [indicator](https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function) makes the mass $0$ outside $\mathbb{N}$, where $y!$ is undefined.
 
 > **NOTE:**
 >
@@ -830,17 +832,173 @@ print(plot2)
 >
 > The Laplace distribution puts about 5.3 times as much probability beyond $3$ standard deviations as the normal distribution does.
 
-## 0.6 Weibull distribution
+## 0.6 The gamma distribution
 
 > **NOTE:**
 >
-> **Definition 8 (Weibull distribution)** A non-negative random variable $T$ has the **Weibull distribution** with shape $\alpha> 0$ and rate ${\lambda}> 0$ [\[6\]](#ref-wikipedia_weibull_distribution) if its [survival function](random-variables.llms.md#def-surv-fn) is:
+> **Definition 8 (Gamma function)** The **gamma function** $\Gamma$ is defined for each $s > 0$ by:
+>
+> $$\Gamma(s) \stackrel{\text{def}}{=}\int_0^\infty u^{s - 1} \text{e}^{-u} \, du$$
+
+> **NOTE:**
+>
+> **Definition 9 (Gamma distribution)** A non-negative [random variable](random-variables.llms.md#def-random-variable) $T$ has the **gamma distribution** with shape $\alpha> 0$ and [rate](#def-event-rate) ${\lambda}> 0$, written $T \sim {\operatorname{Gam}\mathopen{}\left(\alpha, {\lambda}\right)\mathclose{}}$, if $T$ is [continuous](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf):
+>
+> $$f(t) \stackrel{\text{def}}{=}\begin{cases}
+> \frac{{\lambda}^{\alpha}}{\Gamma(\alpha)} \, t^{\alpha- 1} \text{e}^{-{\lambda}t}, & t > 0 \\
+> 0, & t \le 0
+> \end{cases}$$
+>
+> where $\Gamma$ is the [gamma function](#def-gamma-function).
+
+> **NOTE:**
+>
+> **Example 16 (Gamma density with shape 2)** If $T \sim {\operatorname{Gam}\mathopen{}\left(2, {\lambda}\right)\mathclose{}}$, then $\Gamma(2) = 1$, so the [density](#def-gamma) is:
+>
+> $$f(t) = {\lambda}^2 \, t \, \text{e}^{-{\lambda}t}, \quad t > 0$$
+>
+> The density is $0$ at $t = 0$, rises to a peak at $t = 1/{\lambda}$, and then decays ([Figure 4](#fig-gamma-density)).
+>
+> Show code
+>
+> ``` r
+> rates <- c(0.5, 1, 2)
+> t_grid <- seq(0, 8, length.out = 400)
+> rate_label <- latex2exp::TeX("$\\lambda$")
+> density_label <- latex2exp::TeX("$f(t)$")
+>
+> gamma_densities <-
+>   dplyr::tibble(rate = rates) |>
+>   dplyr::reframe(.by = rate, t = t_grid) |>
+>   dplyr::mutate(
+>     density = dgamma(t, shape = 2, rate = rate),
+>     rate = factor(rate)
+>   )
+>
+> gamma_plot <-
+>   gamma_densities |>
+>   ggplot2::ggplot() +
+>   ggplot2::aes(x = t, y = density, col = rate) +
+>   ggplot2::geom_line() +
+>   ggplot2::labs(col = rate_label, y = density_label) +
+>   ggplot2::theme(legend.position = "bottom")
+>
+> print(gamma_plot)
+> ```
+>
+> > **NOTE:**
+> >
+> > [![Gamma densities with shape 2 rise from zero, peak, then decay.](distributions_files/figure-html/fig-gamma-density-1.png)](distributions_files/figure-html/fig-gamma-density-1.png "Figure 4: Gamma densities with shape 2, by rate {\lambda}")
+> >
+> > Figure 4: Gamma densities with shape 2, by rate ${\lambda}$
+
+> **NOTE:**
+>
+> **Theorem 13 (Moments of the gamma distribution)** If $T \sim {\operatorname{Gam}\mathopen{}\left(\alpha, {\lambda}\right)\mathclose{}}$, then for every [integer](https://morrison-lab.github.io/mcs/number-systems.html#def-integers) $k \ge 0$:
+>
+> $${\mathbb{E}\mathopen{}\left[T^k\right]\mathclose{}} = \frac{\Gamma(\alpha+ k)}{\Gamma(\alpha) \, {\lambda}^k}$$
+
+> **NOTE:**
+>
+> *Proof*. The substitution below reduces the [expectation](expectation.llms.md#def-expectation) to the [gamma function](#def-gamma-function):
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[T^k\right]\mathclose{}}
+> &= \int_0^\infty t^k \, \frac{{\lambda}^{\alpha}}{\Gamma(\alpha)} \, t^{\alpha- 1} \text{e}^{-{\lambda}t} \, dt
+> && (\text{definition of expectation, with the gamma density}) \\
+> &= \frac{{\lambda}^{\alpha}}{\Gamma(\alpha)} \int_0^\infty t^{\alpha+ k - 1} \text{e}^{-{\lambda}t} \, dt
+> && (t^k \cdot t^{\alpha- 1} = t^{\alpha+ k - 1}) \\
+> &= \frac{{\lambda}^{\alpha}}{\Gamma(\alpha)} \cdot \frac{1}{{\lambda}^{\alpha+ k}} \int_0^\infty u^{\alpha+ k - 1} \text{e}^{-u} \, du
+> && (\text{substitute } u = {\lambda}t) \\
+> &= \frac{{\lambda}^{\alpha}}{\Gamma(\alpha)} \cdot \frac{\Gamma(\alpha+ k)}{{\lambda}^{\alpha+ k}}
+> && (\text{definition of } \Gamma) \\
+> &= \frac{\Gamma(\alpha+ k)}{\Gamma(\alpha) \, {\lambda}^k}
+> && ({\lambda}^{\alpha} / {\lambda}^{\alpha+ k} = {\lambda}^{-k})
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Corollary 1 (Mean of the gamma distribution)** If $T \sim {\operatorname{Gam}\mathopen{}\left(\alpha, {\lambda}\right)\mathclose{}}$, then ${\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} = \alpha/ {\lambda}$.
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 13](#thm-gamma-moments) with $k = 1$:
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}
+> &= \frac{\Gamma(\alpha+ 1)}{\Gamma(\alpha) \, {\lambda}}
+> && (\text{moment formula with } k = 1) \\
+> &= \frac{\alpha\, \Gamma(\alpha)}{\Gamma(\alpha) \, {\lambda}}
+> && (\Gamma(\alpha+ 1) = \alpha\, \Gamma(\alpha)) \\
+> &= \frac{\alpha}{{\lambda}}
+> && (\text{cancel } \Gamma(\alpha))
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Corollary 2 (Variance of the gamma distribution)** If $T \sim {\operatorname{Gam}\mathopen{}\left(\alpha, {\lambda}\right)\mathclose{}}$, then ${\operatorname{Var}\mathopen{}\left(T\right)\mathclose{}} = \alpha/ {\lambda}^2$.
+
+> **NOTE:**
+>
+> *Proof*. First, the second moment, by [Theorem 13](#thm-gamma-moments) with $k = 2$:
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[T^2\right]\mathclose{}}
+> &= \frac{\Gamma(\alpha+ 2)}{\Gamma(\alpha) \, {\lambda}^2}
+> && (\text{moment formula with } k = 2) \\
+> &= \frac{(\alpha+ 1) \, \Gamma(\alpha+ 1)}{\Gamma(\alpha) \, {\lambda}^2}
+> && (\Gamma(\alpha+ 2) = (\alpha+ 1) \, \Gamma(\alpha+ 1)) \\
+> &= \frac{(\alpha+ 1) \, \alpha\, \Gamma(\alpha)}{\Gamma(\alpha) \, {\lambda}^2}
+> && (\Gamma(\alpha+ 1) = \alpha\, \Gamma(\alpha)) \\
+> &= \frac{\alpha(\alpha+ 1)}{{\lambda}^2}
+> && (\text{cancel } \Gamma(\alpha))
+> \end{aligned}$$
+>
+> Then, by the [simplified expression for variance](variance-covariance.llms.md#thm-variance) and [Corollary 1](#cor-gamma-mean):
+>
+> $$\begin{aligned}
+> {\operatorname{Var}\mathopen{}\left(T\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[T^2\right]\mathclose{}} - {\mathopen{}\left({\mathbb{E}\mathopen{}\left[T\right]\mathclose{}}\right)\mathclose{}}^{2}
+> && (\text{simplified expression for variance}) \\
+> &= \frac{\alpha(\alpha+ 1)}{{\lambda}^2} - \frac{\alpha^2}{{\lambda}^2}
+> && (\text{mean of the gamma distribution}) \\
+> &= \frac{\alpha^2 + \alpha- \alpha^2}{{\lambda}^2}
+> && (\text{expand } \alpha(\alpha+ 1) \text{ and combine fractions}) \\
+> &= \frac{\alpha}{{\lambda}^2}
+> && (\alpha^2 - \alpha^2 = 0)
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Corollary 3 (The gamma distribution with shape 1 is the exponential)** If $T \sim {\operatorname{Gam}\mathopen{}\left(1, {\lambda}\right)\mathclose{}}$, then $T$ has the [exponential distribution](random-variables.llms.md#def-exponential) with [rate](#def-event-rate) ${\lambda}$.
+
+> **NOTE:**
+>
+> *Proof*. For $t > 0$:
+>
+> $$\begin{aligned}
+> f(t)
+> &= \frac{{\lambda}^{1}}{\Gamma(1)} \, t^{1 - 1} \text{e}^{-{\lambda}t}
+> && (\text{gamma density with } \alpha= 1) \\
+> &= {\lambda}\, t^{0} \text{e}^{-{\lambda}t}
+> && (\Gamma(1) = 1 \text{ and } 1 - 1 = 0) \\
+> &= {\lambda}\text{e}^{-{\lambda}t}
+> && (t^0 = 1)
+> \end{aligned}$$
+>
+> and $f(t) = 0$ for $t \le 0$. This [density](random-variables.llms.md#def-pdf) is the [exponential density](random-variables.llms.md#def-exponential) with [rate](#def-event-rate) ${\lambda}$.
+
+## 0.7 Weibull distribution
+
+> **NOTE:**
+>
+> **Definition 10 (Weibull distribution)** A non-negative random variable $T$ has the **Weibull distribution** with shape $\alpha> 0$ and rate ${\lambda}> 0$ [\[6\]](#ref-wikipedia_weibull_distribution) if its [survival function](random-variables.llms.md#def-surv-fn) is:
 >
 > $$\mathbb{S}(t) \stackrel{\text{def}}{=}\text{e}^{-{\lambda}t^\alpha}, \quad t \ge 0$$
 
 > **NOTE:**
 >
-> **Theorem 13 (Weibull density and hazard)** If $T$ has the Weibull distribution with shape $\alpha$ and rate ${\lambda}$, then for $t > 0$:
+> **Theorem 14 (Weibull density and hazard)** If $T$ has the Weibull distribution with shape $\alpha$ and rate ${\lambda}$, then for $t > 0$:
 >
 > $$\begin{aligned}
 > f(t) &= \alpha{\lambda}t^{\alpha-1}\text{e}^{-{\lambda}t^\alpha}\\
@@ -877,7 +1035,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 14 (Weibull mean)** If $T$ has the Weibull distribution with shape $\alpha$ and rate ${\lambda}$, then:
+> **Theorem 15 (Weibull mean)** If $T$ has the Weibull distribution with shape $\alpha$ and rate ${\lambda}$, then:
 >
 > $${\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} = \Gamma(1+1/\alpha)\cdot {\lambda}^{-1/\alpha}$$
 
@@ -899,11 +1057,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Corollary 1 (The Weibull with shape 1 is the exponential)** If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha= 1$ and rate ${\lambda}$, then $T$ has the [exponential distribution](random-variables.llms.md#def-exponential) with rate ${\lambda}$.
+> **Corollary 4 (The Weibull with shape 1 is the exponential)** If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha= 1$ and rate ${\lambda}$, then $T$ has the [exponential distribution](random-variables.llms.md#def-exponential) with rate ${\lambda}$.
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 13](#thm-weibull) with $\alpha= 1$, for $t > 0$:
+> *Proof*. By [Theorem 14](#thm-weibull) with $\alpha= 1$, for $t > 0$:
 >
 > $$\begin{aligned}
 > f(t)
@@ -919,7 +1077,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Corollary 2 (The Weibull shape sets the direction of the hazard)** If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha$ and rate ${\lambda}$, then on $t > 0$ its hazard $\mathbb{h}(t)$ is:
+> **Corollary 5 (The Weibull shape sets the direction of the hazard)** If $T$ has the [Weibull distribution](#def-weibull) with shape $\alpha$ and rate ${\lambda}$, then on $t > 0$ its hazard $\mathbb{h}(t)$ is:
 >
 > - strictly increasing if $\alpha> 1$
 > - constant if $\alpha= 1$
@@ -927,7 +1085,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 13](#thm-weibull), $\mathbb{h}(t) = \alpha{\lambda}t^{\alpha-1}$ for $t > 0$, so:
+> *Proof*. By [Theorem 14](#thm-weibull), $\mathbb{h}(t) = \alpha{\lambda}t^{\alpha-1}$ for $t > 0$, so:
 >
 > $$\begin{aligned}
 > \frac{d}{dt}\mathbb{h}(t)
@@ -941,11 +1099,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. The exponential distribution’s hazard is constant, so the Weibull’s choice of an increasing, constant, or decreasing hazard ([Corollary 2](#cor-weibull-hazard-monotone)) provides more flexibility than the exponential.
+> *Remark*. The exponential distribution’s hazard is constant, so the Weibull’s choice of an increasing, constant, or decreasing hazard ([Corollary 5](#cor-weibull-hazard-monotone)) provides more flexibility than the exponential.
 
 > **NOTE:**
 >
-> **Example 16 (Exponential as a special case)** With $\alpha= 1$, [Theorem 13](#thm-weibull) gives $\mathbb{h}(t) = {\lambda}$ and
+> **Example 17 (Exponential as a special case)** With $\alpha= 1$, [Theorem 14](#thm-weibull) gives $\mathbb{h}(t) = {\lambda}$ and
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[T\right]\mathclose{}} &= \Gamma(2){\lambda}^{-1} \\
@@ -960,11 +1118,11 @@ print(plot2)
 > &\approx 0.886.
 > \end{aligned}$$
 
-## 0.7 The multivariate normal distribution
+## 0.8 The multivariate normal distribution
 
 > **NOTE:**
 >
-> **Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))** A $p \times 1$ random vector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} \in \mathbb{R}^p$ and variance parameter $\mathbf{\Sigma}$, a $p \times p$ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, if $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has joint density:
+> **Definition 11 (Multivariate normal distribution (multivariate Gaussian distribution))** A $p \times 1$ random vector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ has the **multivariate normal distribution** (or **multivariate Gaussian distribution**) with mean parameter $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} \in \mathbb{R}^p$ and variance parameter $\mathbf{\Sigma}$, a $p \times p$ [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) matrix, written $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, if $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has joint density:
 >
 > $$\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) \stackrel{\text{def}}{=}
 > \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}}
@@ -984,11 +1142,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 15 (The multivariate normal density integrates to 1)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$ ([Definition 9](#def-mvn)), then the density in [Definition 9](#def-mvn) integrates to 1 over $\mathbb{R}^p$.
+> **Theorem 16 (The multivariate normal density integrates to 1)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$ ([Definition 11](#def-mvn)), then the density in [Definition 11](#def-mvn) integrates to 1 over $\mathbb{R}^p$.
 
 > **NOTE:**
 >
-> **Theorem 16 (The mean and variance of the multivariate normal distribution)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$ ([Definition 9](#def-mvn)), then $\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}$ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
+> **Theorem 17 (The mean and variance of the multivariate normal distribution)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$ ([Definition 11](#def-mvn)), then $\mathbb{E}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ (the [expectation of a random vector](expectation.llms.md#def-expectation-matrix)), and ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}$ (the [variance of a random vector](variance-covariance.llms.md#def-cov-vec-x)).
 
 > **NOTE:**
 >
@@ -996,7 +1154,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 17 (The univariate normal is the case** $p = 1$) With $p = 1$, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = (\mu)$, and $\mathbf{\Sigma} = (\sigma^2)$ for $\sigma^2> 0$, $\det(\mathbf{\Sigma}) = \sigma^2$ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$) and $\mathbf{\Sigma}^{-1} = (1/\sigma^2)$, so:
+> **Example 18 (The univariate normal is the case** $p = 1$) With $p = 1$, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = (\mu)$, and $\mathbf{\Sigma} = (\sigma^2)$ for $\sigma^2> 0$, $\det(\mathbf{\Sigma}) = \sigma^2$ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$) and $\mathbf{\Sigma}^{-1} = (1/\sigma^2)$, so:
 >
 > $$\begin{aligned}
 > \mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
@@ -1023,7 +1181,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 10 (Mahalanobis distance)** For a $p \times p$ positive definite matrix $\mathbf{\Sigma}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} \in \mathbb{R}^p$, the **Mahalanobis distance** from $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ to $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ with respect to $\mathbf{\Sigma}$ is:
+> **Definition 12 (Mahalanobis distance)** For a $p \times p$ positive definite matrix $\mathbf{\Sigma}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} \in \mathbb{R}^p$, the **Mahalanobis distance** from $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ to $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ with respect to $\mathbf{\Sigma}$ is:
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) \stackrel{\text{def}}{=}\sqrt{{(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}})}^{\top} \mathbf{\Sigma}^{-1} (\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}})}$$
 
@@ -1033,19 +1191,19 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Corollary 3 (The multivariate normal density decreases with Mahalanobis distance)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, then:
+> **Corollary 6 (The multivariate normal density decreases with Mahalanobis distance)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, then:
 >
 > $$\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \frac{1}{(2\pi)^{p/2} \det(\mathbf{\Sigma})^{1/2}} \text{e}^{-\frac{\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2}{2}}$$
 >
-> where $\Delta$ is the Mahalanobis distance to $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ with respect to $\mathbf{\Sigma}$ ([Definition 10](#def-mahalanobis)). So the density is highest at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, decreases as $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})$ increases, and is the same at every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with the same $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})$.
+> where $\Delta$ is the Mahalanobis distance to $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ with respect to $\mathbf{\Sigma}$ ([Definition 12](#def-mahalanobis)). So the density is highest at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, decreases as $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})$ increases, and is the same at every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with the same $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})$.
 
 > **NOTE:**
 >
-> *Proof*. Substitute [Definition 10](#def-mahalanobis) into [Definition 9](#def-mvn). The function $\delta\mapsto \text{e}^{-\delta^2/2}$ decreases on $\delta\ge 0$, and by [Lemma 1](#lem-mahalanobis-nonneg), $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = 0$ only at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$.
+> *Proof*. Substitute [Definition 12](#def-mahalanobis) into [Definition 11](#def-mvn). The function $\delta\mapsto \text{e}^{-\delta^2/2}$ decreases on $\delta\ge 0$, and by [Lemma 1](#lem-mahalanobis-nonneg), $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = 0$ only at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$.
 
 > **NOTE:**
 >
-> **Example 18 (Mahalanobis distance for diagonal variance matrices)** If $\mathbf{\Sigma}$ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements $\sigma^2_1, \ldots, \sigma^2_p$, all positive, then $\mathbf{\Sigma}^{-1}$ is diagonal with diagonal elements $1/\sigma^2_1, \ldots, 1/\sigma^2_p$ (multiplying the two gives $\mathbf{I}_p$; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
+> **Example 19 (Mahalanobis distance for diagonal variance matrices)** If $\mathbf{\Sigma}$ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements $\sigma^2_1, \ldots, \sigma^2_p$, all positive, then $\mathbf{\Sigma}^{-1}$ is diagonal with diagonal elements $1/\sigma^2_1, \ldots, 1/\sigma^2_p$ (multiplying the two gives $\mathbf{I}_p$; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}$$
 >
@@ -1058,7 +1216,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 17 (A multivariate normal vector with diagonal variance has independent normal components)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$ and $\mathbf{\Sigma}$ is diagonal with diagonal elements $\sigma^2_1, \ldots, \sigma^2_p$, then:
+> **Theorem 18 (A multivariate normal vector with diagonal variance has independent normal components)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$ and $\mathbf{\Sigma}$ is diagonal with diagonal elements $\sigma^2_1, \ldots, \sigma^2_p$, then:
 >
 > - the joint density of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ is the product of the [normal densities](random-variables.llms.md#def-normal) ${\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}}$, $i = 1, \ldots, p$,
 > - each $X_i \sim {\operatorname{N}\mathopen{}\left(\mu_i, \sigma^2_i\right)\mathclose{}}$, and
@@ -1066,7 +1224,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), $\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i$, so $\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i$. Using [Example 18](#exm-mahalanobis-special) for the quadratic form:
+> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), $\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i$, so $\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i$. Using [Example 19](#exm-mahalanobis-special) for the quadratic form:
 >
 > $$\begin{aligned}
 > \mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
@@ -1082,11 +1240,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Corollary 4 (For a multivariate normal vector, uncorrelated components are independent)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, then $X_1, \ldots, X_p$ are independent if and only if $\mathbf{\Sigma}$ is diagonal, that is, if and only if ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ for every $i \neq j$.
+> **Corollary 7 (For a multivariate normal vector, uncorrelated components are independent)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, then $X_1, \ldots, X_p$ are independent if and only if $\mathbf{\Sigma}$ is diagonal, that is, if and only if ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}} = 0$ for every $i \neq j$.
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 16](#thm-mvn-moments), ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}$, whose $(i,j)$-th element is ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}$ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If $\mathbf{\Sigma}$ is diagonal, the components are independent by [Theorem 17](#thm-mvn-diagonal-indpt). If the components are independent, then:
+> *Proof*. By [Theorem 17](#thm-mvn-moments), ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \mathbf{\Sigma}$, whose $(i,j)$-th element is ${\operatorname{Cov}\mathopen{}\left(X_i, X_j\right)\mathclose{}}$ ([elements of the variance matrix](variance-covariance.llms.md#thm-vcov-elements)). If $\mathbf{\Sigma}$ is diagonal, the components are independent by [Theorem 18](#thm-mvn-diagonal-indpt). If the components are independent, then:
 >
 > - each pair $X_i, X_j$ with $i \neq j$ is independent,
 > - each $X_i$ is continuous, with the density left after integrating out the other coordinates of the joint density ([marginal density from a joint density](random-variables.llms.md#thm-marginal-density), with $p$ variables), and
@@ -1096,11 +1254,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. In general, uncorrelated random variables need not be independent ([an example](variance-covariance.llms.md#exm-uncorrelated-not-indpt)). [Corollary 4](#cor-mvn-uncorrelated-indpt) needs the whole vector to be multivariate normal: two random variables that are each normal and uncorrelated can still be dependent (<https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent>).
+> *Remark*. In general, uncorrelated random variables need not be independent ([an example](variance-covariance.llms.md#exm-uncorrelated-not-indpt)). [Corollary 7](#cor-mvn-uncorrelated-indpt) needs the whole vector to be multivariate normal: two random variables that are each normal and uncorrelated can still be dependent (<https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent>).
 
 > **NOTE:**
 >
-> **Theorem 18 (Mahalanobis distance in eigenvector coordinates)** Let $\mathbf{\Sigma}$ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) $\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}$, where $\mathbf{Q}$ has columns $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1, \ldots, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_p$ and $\mathbf{\Lambda}$ has diagonal elements $\lambda_1, \ldots, \lambda_p$. Then:
+> **Theorem 19 (Mahalanobis distance in eigenvector coordinates)** Let $\mathbf{\Sigma}$ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) $\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}$, where $\mathbf{Q}$ has columns $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1, \ldots, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_p$ and $\mathbf{\Lambda}$ has diagonal elements $\lambda_1, \ldots, \lambda_p$. Then:
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \sum_{i=1}^p\frac{\mathopen{}\left({\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_i}^{\top}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}})\right)\mathclose{}^2}{\lambda_i}$$
 
@@ -1120,11 +1278,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. $y_i$ is the coordinate of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ along the eigenvector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_i$. So the set of points at Mahalanobis distance $\delta$ from $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, where the multivariate normal density is constant ([Corollary 3](#cor-mvn-mahalanobis)), is an ellipse ($p = 2$) or ellipsoid centered at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, with axes along the eigenvectors of $\mathbf{\Sigma}$ and half-length $\delta\sqrt{\lambda_i}$ along $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_i$.
+> *Remark*. $y_i$ is the coordinate of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$ along the eigenvector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_i$. So the set of points at Mahalanobis distance $\delta$ from $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, where the multivariate normal density is constant ([Corollary 6](#cor-mvn-mahalanobis)), is an ellipse ($p = 2$) or ellipsoid centered at $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}$, with axes along the eigenvectors of $\mathbf{\Sigma}$ and half-length $\delta\sqrt{\lambda_i}$ along $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_i$.
 
 > **NOTE:**
 >
-> **Example 19 (Elliptical contours of a bivariate normal density)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$ and $\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$, which has eigenvalues $3$ and $1$, with eigenvectors $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}$ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 18](#thm-mahalanobis-eigen):
+> **Example 20 (Elliptical contours of a bivariate normal density)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$ and $\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$, which has eigenvalues $3$ and $1$, with eigenvectors $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}$ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 19](#thm-mahalanobis-eigen):
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}$$
 >
@@ -1149,7 +1307,7 @@ print(plot2)
 > &= 1.
 > \end{aligned}$$
 >
-> So the contour $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = 1$ of the $\operatorname{N}_2\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}$ density is an ellipse stretched along ${(1, 1)}^{\top}$, with half-length $\sqrt{3}$, and squeezed along ${(1, -1)}^{\top}$, with half-length $1$: $X_1$ and $X_2$ are positively correlated ([Figure 4](#fig-mahalanobis-eigen)).
+> So the contour $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = 1$ of the $\operatorname{N}_2\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}$ density is an ellipse stretched along ${(1, 1)}^{\top}$, with half-length $\sqrt{3}$, and squeezed along ${(1, -1)}^{\top}$, with half-length $1$: $X_1$ and $X_2$ are positively correlated ([Figure 5](#fig-mahalanobis-eigen)).
 >
 > > **NOTE:**
 > >
@@ -1223,7 +1381,7 @@ print(plot2)
 > > }
 > > ```
 > >
-> > Figure 4: The contours of the Mahalanobis distance at $1$ and $2$ for the example. The dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner ellipse.
+> > Figure 5: The contours of the Mahalanobis distance at $1$ and $2$ for the example. The dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner ellipse.
 >
 > > **NOTE:**
 > >
@@ -1303,11 +1461,11 @@ print(plot2)
 > > )
 > > ```
 > >
-> > Figure 5: The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of [Figure 4](#fig-mahalanobis-eigen). The red lines are the contours at $1$ and $2$, and the dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner one.
+> > Figure 6: The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of [Figure 5](#fig-mahalanobis-eigen). The red lines are the contours at $1$ and $2$, and the dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner one.
 
 > **NOTE:**
 >
-> **Theorem 19 (The maximum of the Gaussian density)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ ([Gaussian distribution](random-variables.llms.md#def-normal)), then its [density](random-variables.llms.md#def-pdf) is largest at $x = \mu$, where it equals:
+> **Theorem 20 (The maximum of the Gaussian density)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ ([Gaussian distribution](random-variables.llms.md#def-normal)), then its [density](random-variables.llms.md#def-pdf) is largest at $x = \mu$, where it equals:
 >
 > $$\max_x \mathbb{p}(X=x) = \frac{1}{\sigma\sqrt{2\pi}}$$
 
@@ -1340,7 +1498,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 20 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 19](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 6](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
+> **Example 21 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 20](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 7](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
 >
 > Show code
 >
@@ -1382,17 +1540,17 @@ print(plot2)
 >
 > > **NOTE:**
 > >
-> > [![Three Gaussian curves; narrower ones peak higher.](distributions_files/figure-html/fig-normal-density-max-1.png)](distributions_files/figure-html/fig-normal-density-max-1.png "Figure 6: Gaussian densities, with each peak marked")
+> > [![Three Gaussian curves; narrower ones peak higher.](distributions_files/figure-html/fig-normal-density-max-1.png)](distributions_files/figure-html/fig-normal-density-max-1.png "Figure 7: Gaussian densities, with each peak marked")
 > >
-> > Figure 6: Gaussian densities, with each peak marked
+> > Figure 7: Gaussian densities, with each peak marked
 >
 > As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows indefinitely, so a density can exceed $1$.
 
-## 0.8 Mixture distributions
+## 0.9 Mixture distributions
 
 > **NOTE:**
 >
-> **Definition 11 (Mixture density)** Let ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ be densities on $\mathbb{R}$, and let $w_1, \ldots, w_K$ be numbers with:
+> **Definition 13 (Mixture density)** Let ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ be densities on $\mathbb{R}$, and let $w_1, \ldots, w_K$ be numbers with:
 >
 > - $w_c \ge 0$ for every $c$, and
 > - $\sum_{c=1}^{K} w_c = 1$.
@@ -1403,15 +1561,15 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 12 (Mixture component)** The densities ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ in a mixture ([Definition 11](#def-mixture)) are its **components**.
+> **Definition 14 (Mixture component)** The densities ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ in a mixture ([Definition 13](#def-mixture)) are its **components**.
 
 > **NOTE:**
 >
-> **Theorem 20 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
+> **Theorem 21 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
 >
 > $$\mathbb{p}(C = c,\, X = x) = w_c \, {\mathbb{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},$$
 >
-> with ${\mathbb{p}_c}$ and $w_c$ as in [Definition 11](#def-mixture). Then:
+> with ${\mathbb{p}_c}$ and $w_c$ as in [Definition 13](#def-mixture). Then:
 >
 > - $\mathbb{P}(C = c) = w_c$,
 > - for each $c$ with $w_c > 0$, the [conditional density](expectation.llms.md#def-cond-mixed) of $X$ given $C = c$ is ${\mathbb{p}_c}$, and
@@ -1451,11 +1609,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 20](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
+> *Remark*. [Theorem 21](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
 
 > **NOTE:**
 >
-> **Theorem 21 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 11](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
+> **Theorem 22 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 13](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
 >
 > $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c$$
 
@@ -1479,13 +1637,13 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 22 (Which component did an observation come from?)** Under the conditions of [Theorem 20](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
+> **Theorem 23 (Which component did an observation come from?)** Under the conditions of [Theorem 21](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
 >
 > $$\mathbb{P}(C = c \mid X = x) = \frac{w_c \, {\mathbb{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\mathbb{p}_k}(x)}$$
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 20](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
+> *Proof*. By [Theorem 21](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
 >
 > $$\begin{aligned}
 > \mathbb{P}(C = c \mid X = x)
@@ -1497,17 +1655,17 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 22](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
+> *Remark*. [Theorem 23](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
 
 > **NOTE:**
 >
-> **Definition 13 (Responsibility of a mixture component)** In the setting of [Theorem 22](#thm-mixture-posterior), the conditional probability $\mathbb{P}(C = c \mid X = x)$ is called, in machine learning, the **responsibility** of component $c$ for $x$.
+> **Definition 15 (Responsibility of a mixture component)** In the setting of [Theorem 23](#thm-mixture-posterior), the conditional probability $\mathbb{P}(C = c \mid X = x)$ is called, in machine learning, the **responsibility** of component $c$ for $x$.
 
 > **NOTE:**
 >
-> **Example 21 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
+> **Example 22 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
 >
-> - **Mean.** By [Theorem 21](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
+> - **Mean.** By [Theorem 22](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
 >   $$\begin{aligned}
 >   {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\
@@ -1516,7 +1674,7 @@ print(plot2)
 >
 > - **Density.** ${\mathbb{p}_{\text{mix}}}$ has peaks near the two component means, ${\mathbb{p}_{\text{mix}}}(0) \approx 0.120$ and ${\mathbb{p}_{\text{mix}}}(6) \approx 0.279$, with a trough between them, ${\mathbb{p}_{\text{mix}}}(3) \approx 0.004$. The density at the mean, ${\mathbb{p}_{\text{mix}}}(4.2) \approx 0.055$, is less than half its value at either peak.
 >
-> - **Responsibilities.** By [Theorem 22](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
+> - **Responsibilities.** By [Theorem 23](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
 >
 >   $$\begin{aligned}
 >   \mathbb{P}(C = 2 \mid X = 3)
@@ -1529,11 +1687,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Example 21](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
+> *Remark*. [Example 22](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
 
 > **NOTE:**
 >
-> **Example 22 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
+> **Example 23 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 13](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
 > **NOTE:**
 >
@@ -1639,12 +1797,14 @@ The value of `dbinom(2, size = 3, prob = 1 / 2)` is $3/8 = 0.375$, which matches
 - [Definition 5 (Offset)](#def-offset)
 - [Definition 6 (Negative binomial distribution)](#def-nb)
 - [Definition 7 (Laplace distribution)](#def-laplace)
-- [Definition 8 (Weibull distribution)](#def-weibull)
-- [Definition 9 (Multivariate normal distribution (multivariate Gaussian distribution))](#def-mvn)
-- [Definition 10 (Mahalanobis distance)](#def-mahalanobis)
-- [Definition 11 (Mixture density)](#def-mixture)
-- [Definition 12 (Mixture component)](#def-mixture-component)
-- [Definition 13 (Responsibility of a mixture component)](#def-responsibility)
+- [Definition 8 (Gamma function)](#def-gamma-function)
+- [Definition 9 (Gamma distribution)](#def-gamma)
+- [Definition 10 (Weibull distribution)](#def-weibull)
+- [Definition 11 (Multivariate normal distribution (multivariate Gaussian distribution))](#def-mvn)
+- [Definition 12 (Mahalanobis distance)](#def-mahalanobis)
+- [Definition 13 (Mixture density)](#def-mixture)
+- [Definition 14 (Mixture component)](#def-mixture-component)
+- [Definition 15 (Responsibility of a mixture component)](#def-responsibility)
 
 # References
 
