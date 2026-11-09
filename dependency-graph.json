@@ -244,26 +244,6 @@
    "url": "https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series"
   },
   {
-   "id": "mds/functions#def-countable-set",
-   "site": "mds",
-   "page": "functions",
-   "div": "def-countable-set",
-   "kind": "def",
-   "title": "countable set",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/functions.html#def-countable-set"
-  },
-  {
-   "id": "mds/functions#def-function",
-   "site": "mds",
-   "page": "functions",
-   "div": "def-function",
-   "kind": "def",
-   "title": "function",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/functions.html#def-function"
-  },
-  {
    "id": "mds/indicator-functions#def-indicator-function",
    "site": "mds",
    "page": "indicator-functions",
@@ -512,16 +492,6 @@
    "title": "set",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/sets.html#def-set"
-  },
-  {
-   "id": "mds/sets#def-set-difference",
-   "site": "mds",
-   "page": "sets",
-   "div": "def-set-difference",
-   "kind": "def",
-   "title": "set difference",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/sets.html#def-set-difference"
   },
   {
    "id": "pds/distributions#cor-gamma-exponential",
@@ -4060,10 +4030,6 @@
   ],
   [
    "pds/probability-basics#def-complement",
-   "mds/sets#def-set"
-  ],
-  [
-   "pds/probability-basics#def-complement",
    "pds/probability-basics#def-event"
   ],
   [
@@ -4164,7 +4130,7 @@
   ],
   [
    "pds/probability-basics#def-sample-space",
-   "mds/sets#def-set"
+   "pds/probability-basics#def-experiment-outcome"
   ],
   [
    "pds/probability-basics#def-sample-space",
@@ -4185,10 +4151,6 @@
   [
    "pds/probability-basics#prp-complement-partition",
    "mds/measures#def-sigma-algebra"
-  ],
-  [
-   "pds/probability-basics#prp-complement-partition",
-   "mds/sets#def-set-difference"
   ],
   [
    "pds/probability-basics#prp-complement-partition",
@@ -4213,10 +4175,6 @@
   [
    "pds/probability-basics#prp-complement-partition",
    "pds/probability-basics#prp-complement-set-difference"
-  ],
-  [
-   "pds/probability-basics#prp-complement-set-difference",
-   "mds/sets#def-set-difference"
   ],
   [
    "pds/probability-basics#prp-complement-set-difference",
@@ -4344,10 +4302,6 @@
   ],
   [
    "pds/random-variables#def-discrete-rv",
-   "mds/functions#def-countable-set"
-  ],
-  [
-   "pds/random-variables#def-discrete-rv",
    "pds/random-variables#def-range"
   ],
   [
@@ -4437,10 +4391,6 @@
   [
    "pds/random-variables#def-quantile-function",
    "pds/random-variables#def-cdf"
-  ],
-  [
-   "pds/random-variables#def-random-variable",
-   "mds/functions#def-function"
   ],
   [
    "pds/random-variables#def-random-variable",

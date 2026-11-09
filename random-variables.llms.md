@@ -4,11 +4,11 @@ Code
 
 Published
 
-Last modified: 2026-11-09 12:24:43 (PST)
+Last modified: 2026-11-09 13:11:43 (PST)
 
 > **NOTE:**
 >
-> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mds/functions.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) $\Omega$ to the real numbers $\mathbb{R}$ [\[1\]](#ref-wikipedia_random_variable): it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
+> **Definition 1 (Random variable)** A **random variable** is a [function](https://morrison-lab.github.io/mcs/chapters/functional-programming.html#def-function) from a [sample space](probability-basics.llms.md#def-sample-space) $\Omega$ to the real numbers $\mathbb{R}$ [\[1\]](#ref-wikipedia_random_variable): it assigns a number to each possible outcome of a [random experiment](probability-basics.llms.md#def-random-experiment).
 
 > **NOTE:**
 >
@@ -16,19 +16,21 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> **Example 1 (Number of heads in two coin flips)** Flip a fair coin twice. The sample space is $\Omega= {\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}}$, each outcome with probability $1/4$. Let $X$ be the number of heads:
+> **Example 1 (Number of heads in two coin flips)**  
+>
+> Flip a fair coin twice. The sample space is $\Omega= {\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}}$, each outcome with probability $1/4$. Let $X_1$ equal $1$ if the first flip lands heads and $0$ otherwise, and let $X_2$ be the same for the second flip. Let $S= X_1 + X_2$ be the number of heads:
 >
 > $$\begin{aligned}
-> X(HH) &= 2, \\
-> X(HT) &= 1, \\
-> X(TH) &= 1, \\
-> X(TT) &= 0
+> S(HH) &= 2, \\
+> S(HT) &= 1, \\
+> S(TH) &= 1, \\
+> S(TT) &= 0
 > \end{aligned}$$
 >
-> Then $\{X = 1\} = {\mathopen{}\left\{HT, TH\right\}\mathclose{}}$, so
+> Then $\{S= 1\} = {\mathopen{}\left\{HT, TH\right\}\mathclose{}}$, so
 >
 > $$\begin{aligned}
-> \Pr(X = 1) &= 1/4 + 1/4 \\
+> \Pr(S= 1) &= 1/4 + 1/4 \\
 > &= 1/2.
 > \end{aligned}$$
 
@@ -40,7 +42,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> *Remark*. The range of $X$ is the [image](https://morrison-lab.github.io/mds/functions.html#def-image) of $X$ as a function on $\Omega$. For a general function, these notes say “image”, because some sources use “range” for the codomain instead; for a random variable, “range” is the standard term.
+> *Remark*. The [range](#def-range) of $X$ is the [image](https://morrison-lab.github.io/mcs/chapters/relations.html#def-image) of $X$ as a [function](https://morrison-lab.github.io/mcs/chapters/functional-programming.html#def-function) on $\Omega$. For a general function, these notes say “image”, because some sources use “range” for the codomain instead; for a random variable, “range” is the standard term.
 
 > **NOTE:**
 >
@@ -48,7 +50,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> **Definition 3 (Discrete random variable)** A random variable $X$ is **discrete** if its [range](#def-range) $\mathcal{R}(X)$ is [countable](https://morrison-lab.github.io/mds/functions.html#def-countable-set).
+> **Definition 3 (Discrete random variable)** A random variable $X$ is **discrete** if its [range](#def-range) $\mathcal{R}(X)$ is [countable](https://morrison-lab.github.io/mcs/chapters/sets.html#def-countable-set).
 
 > **NOTE:**
 >

@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 12:24:43 (PST)
+Last modified: 2026-11-09 13:11:43 (PST)
 
 # 1 Defining probabilities
 
@@ -71,7 +71,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted $\Omega$, is the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of all of its possible outcomes [\[2\]](#ref-wikipedia_sample_space).
+> **Definition 5 (Sample space)** The **sample space** of a [random experiment](#def-random-experiment), denoted $\Omega$, is the [set](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set) of all of its possible [outcomes](#def-experiment-outcome) [\[2\]](#ref-wikipedia_sample_space).
 
 > **NOTE:**
 >
@@ -83,7 +83,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> *Remark*. When $\Omega$ is uncountable, such as an interval of real numbers, only the subsets in a designated $\sigma$-algebra $\mathcal{S}$ on $\Omega$ count as events (some sources call a $\sigma$-algebra a **Borel field** [\[4\]](#ref-CaseBerg01), Def. 1.2.1); every set that arises in these notes is in $\mathcal{S}$. When $\Omega$ is finite or [countably infinite](https://morrison-lab.github.io/mds/functions.html#def-countably-infinite), every subset of $\Omega$ can be an event, because the collection of all subsets of $\Omega$ is a $\sigma$-algebra ([all subsets form a](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra) $\sigma$-algebra), as in $\sigma$-algebras for die rolls.
+> *Remark*. When $\Omega$ is uncountable, such as an interval of real numbers, only the subsets in a designated $\sigma$-algebra $\mathcal{S}$ on $\Omega$ count as events (some sources call a $\sigma$-algebra a **Borel field** [\[4\]](#ref-CaseBerg01), Def. 1.2.1); every set that arises in these notes is in $\mathcal{S}$. When $\Omega$ is [finite](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) or [countably infinite](https://morrison-lab.github.io/mcs/chapters/sets.html#def-countably-infinite), every subset of $\Omega$ can be an event, because the collection of all subsets of $\Omega$ is a $\sigma$-algebra ([all subsets form a](https://morrison-lab.github.io/mds/measures.html#thm-power-set-sigma-algebra) $\sigma$-algebra), as in $\sigma$-algebras for die rolls.
 
 > **NOTE:**
 >
@@ -111,7 +111,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) $A$, denoted $\neg A$, is the event that $A$ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the [sample space](#def-sample-space) $\Omega$ that are not in $A$:
+> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) $A$, denoted $\neg A$, is the event that $A$ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set) of elements $\omega$ of the [sample space](#def-sample-space) $\Omega$ that are not in $A$:
 >
 > $$\neg A \stackrel{\text{def}}{=}{{\mathopen{}\left\{\omega \in \Omega : \omega \notin A\right\}\mathclose{}}}$$
 
@@ -125,7 +125,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> **Proposition 1 (The complement of an event is a set difference)** For any [event](#def-event) $A$, its [complement](#def-complement) $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) ${\Omega \setminus A}$:
+> **Proposition 1 (The complement of an event is a set difference)** For any [event](#def-event) $A$, its [complement](#def-complement) $\neg A$ is the [set difference](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set-difference) ${\Omega \setminus A}$:
 >
 > $$\neg A = {\Omega \setminus A}$$
 
@@ -141,7 +141,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> **Example 11 (A complement as a set difference)** For the fair die in [Example 6](#exm-sample-space), the [sample space](#def-sample-space) is $\Omega= {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. For the [event](#def-event) $A = {\mathopen{}\left\{2, 4, 6\right\}\mathclose{}}$ in [Example 7](#exm-event), the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) is ${\Omega \setminus A} = {\mathopen{}\left\{1, 3, 5\right\}\mathclose{}}$, which is the [complement](#def-complement) $\neg A$ in [Example 10](#exm-complement).
+> **Example 11 (A complement as a set difference)** For the fair die in [Example 6](#exm-sample-space), the [sample space](#def-sample-space) is $\Omega= {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. For the [event](#def-event) $A = {\mathopen{}\left\{2, 4, 6\right\}\mathclose{}}$ in [Example 7](#exm-event), the [set difference](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set-difference) is ${\Omega \setminus A} = {\mathopen{}\left\{1, 3, 5\right\}\mathclose{}}$, which is the [complement](#def-complement) $\neg A$ in [Example 10](#exm-complement).
 
 > **NOTE:**
 >
@@ -182,7 +182,7 @@ Last modified: 2026-11-09 12:24:43 (PST)
 
 > **NOTE:**
 >
-> *Proof*. The sample space $\Omega$ is an event ([Lemma 1](#lem-sample-space-event)), so a partition of it is defined. By [Proposition 1](#prp-complement-set-difference), the [complement](#def-complement) $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) ${\Omega \setminus A}$, which is an event because the events are closed under complements in $\Omega$, by the complement requirement of a $\sigma$-algebra. The events $A$ and $\neg A$ are mutually exclusive, because $\neg A$ contains only elements not in $A$. Their union is $\Omega$, because each element of $\Omega$ is either in $A$ or not in $A$.
+> *Proof*. The sample space $\Omega$ is an event ([Lemma 1](#lem-sample-space-event)), so a partition of it is defined. By [Proposition 1](#prp-complement-set-difference), the [complement](#def-complement) $\neg A$ is the [set difference](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set-difference) ${\Omega \setminus A}$, which is an event because the events are closed under complements in $\Omega$, by the complement requirement of a $\sigma$-algebra. The events $A$ and $\neg A$ are mutually exclusive, because $\neg A$ contains only elements not in $A$. Their union is $\Omega$, because each element of $\Omega$ is either in $A$ or not in $A$.
 
 > **NOTE:**
 >
