@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 10:48:52 (PST)
+Last modified: 2026-11-09 11:18:20 (PST)
 
 > **NOTE:**
 >
@@ -1534,6 +1534,16 @@ print(plot2)
 > **NOTE:**
 >
 > **Example 22 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 11](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
+
+> **NOTE:**
+>
+> **Exercise 4 (Choosing a family for a research question)** A clinic wants to describe the number of emergency visits it receives each week. Which of the families named on this page fits this research question, and why?
+
+> **NOTE:**
+>
+> *Solution 2*. A weekly visit count is a non-negative whole number with no largest value. The [Poisson distribution](#def-poisson) is a natural first choice for such a count, because its values are $0, 1, 2, \ldots$. A [Bernoulli](#def-bernoulli) variable takes only the values $0$ and $1$, and a [Gaussian](#def-normal) count can be negative or fractional, so neither matches the weekly count.
+>
+> If the weekly counts vary more than a [Poisson](#def-poisson) count allows, the [negative binomial distribution](#def-nb) is the next candidate.
 
 # 1 Distribution functions in R
 
