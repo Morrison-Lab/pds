@@ -7,7 +7,7 @@ A [Bernoulli](#def-bernoulli) count has only two values,
 and a [Gaussian](#def-normal) count can be negative or fractional,
 so neither matches the weekly count.
 
-If the weekly counts vary more than a Poisson count allows,
+If the weekly counts vary more than a [Poisson](#def-poisson) count allows,
 the [negative binomial distribution](#def-nb) is the next candidate.
 
 :::
