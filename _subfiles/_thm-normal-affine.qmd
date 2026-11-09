@@ -22,7 +22,7 @@ There are two cases, by the sign of $a$.
   $$
   \ba
   \cdf_Y\paren{y}
-  &= \Pr\paren{X \le \frac{y-b}{a}}
+  &= \Prf{X \le \frac{y-b}{a}}
   && \text{(} aX + b \le y \iff X \le (y-b)/a \text{)} \\
   &= \cdf_X\paren{\frac{y-b}{a}}
   && \text{(definition of the CDF)}
@@ -44,7 +44,7 @@ There are two cases, by the sign of $a$.
   $$
   \ba
   \cdf_Y\paren{y}
-  &= \Pr\paren{X \ge \frac{y-b}{a}}
+  &= \Prf{X \ge \frac{y-b}{a}}
   && \text{(} aX + b \le y \iff X \ge (y-b)/a \text{)} \\
   &= 1 - \cdf_X\paren{\frac{y-b}{a}}
   && \text{(complement, and } \Pr(X = (y-b)/a) = 0 \text{)}
@@ -77,6 +77,6 @@ $$
 \ea
 $$
 
-This is the density of $\ndist{a\mean + b, a^2\ss}$ because $a^2\ss > 0$.
+The last line is the density of $\ndist{a\mean + b, a^2\ss}$ because $a^2\ss > 0$.
 
 :::
