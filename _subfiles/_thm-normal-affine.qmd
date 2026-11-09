@@ -11,13 +11,13 @@ If $X \sim \ndist{\mean, \ss}$ and $a \ne 0$, then $aX + b \sim \ndist{a\mean + 
 Let $Y = aX + b$ and let $f$ be the [density](random-variables.qmd#def-pdf) of $X$.
 The [CDF](random-variables.qmd#def-cdf) of $Y$ is
 $\cdf_Y\paren{y} = \Pr(aX + b \le y)$.
-The density $f$ is continuous everywhere, so at every $y$ the derivative of $\cdf_Y\paren{y}$ is the density of $Y$ by
+The density $f$ is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) everywhere, so at every $y$ the [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $\cdf_Y\paren{y}$ is the density of $Y$ by
 [the derivative of the CDF is the density](random-variables.qmd#thm-cdf-derivative-is-density),
 once $\cdf_Y\paren{y}$ is written through the CDF $\cdf_X$ of $X$.
 There are two cases, by the sign of $a$.
 
 - **Case $a > 0$.**
-  Dividing by $a > 0$ keeps the order of an inequality, so:
+  Dividing by $a > 0$ keeps the direction of $\le$, so:
 
   $$
   \ba
@@ -39,7 +39,7 @@ There are two cases, by the sign of $a$.
   $$
 
 - **Case $a < 0$.**
-  Dividing by $a < 0$ reverses the order of an inequality, and $\Pr(X = x) = 0$ for a continuous $X$, so:
+  Dividing by $a < 0$ reverses the direction of $\le$, and $\Pr(X = x) = 0$ for a [continuous](random-variables.qmd#def-continuous-rv) random variable $X$, so:
 
   $$
   \ba
@@ -61,7 +61,7 @@ There are two cases, by the sign of $a$.
   $$
 
 In both cases, $Y$ has density $\p(Y=y) = f\paren{(y-b)/a} / \abs{a}$.
-Substitute the Gaussian density of $X$:
+Substitute the [Gaussian](random-variables.qmd#def-normal) density of $X$:
 
 $$
 \ba
@@ -77,6 +77,6 @@ $$
 \ea
 $$
 
-This is the density of $\ndist{a\mean + b, a^2\ss}$ with mean parameter $a\mean + b$ and variance parameter $a^2\ss > 0$.
+This is the density of $\ndist{a\mean + b, a^2\ss}$ because $a^2\ss > 0$.
 
 :::
