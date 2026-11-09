@@ -9,7 +9,7 @@ course materials](https://morrison-lab.github.io/rme/), summarized here.
 - **Probability** is denoted $\Pr()$ or $\P()$ for the probability of an event,
   or for a probability mass function (PMF),
   and $\p()$ for a density.
-- **Shorthand for a mass function or density evaluated at a [realization](random-variables.qmd#def-realization):**
+- **Shorthand for a [mass function](random-variables.qmd#def-pmf) or density evaluated at a [realization](random-variables.qmd#def-realization):**
   we write $\P(y) \eqdef \P(Y = y)$ for a probability mass function,
   and $\p(y)$ for the density of $Y$ evaluated at $y$.
   The lowercase letter in the parentheses names the random variable,
