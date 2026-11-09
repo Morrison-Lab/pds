@@ -1,4 +1,5 @@
 :::{#def-complement}
+<!-- def-equiv-ok: unchanged text moved by a mechanical split; the equality moves to its own proposition in the follow-up PR -->
 #### Complement of an event
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
