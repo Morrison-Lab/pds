@@ -1,0 +1,80 @@
+```{r}
+#| label: mvn-bivariate-3d-alt
+#| echo: false
+# The alt text, saved once for the figure and its interactive widget.
+fig_alt_mvn_biv <- paste(
+  "Surface plot of a bivariate Gaussian density with mean zero,",
+  "variances 1 and covariance 0.8, over x1 and x2 from -3 to 3.",
+  "The surface is a single bell-shaped peak of height about 0.265",
+  "at the origin, stretched along the line x2 = x1",
+  "and squeezed along the line x2 = -x1."
+)
+```
+
+:::{#fig-mvn-bivariate-3d}
+
+```{r}
+#| label: mvn-bivariate-3d-plot
+#| code-fold: true
+#| echo: !expr knitr::is_html_output()
+#| eval: !expr knitr::is_html_output()
+#| fig-alt: !expr fig_alt_mvn_biv
+mb_entries <- c(1, 0.8, 0.8, 1)
+mb_covmat <- matrix(mb_entries, nrow = 2)
+mb_inverse <- solve(mb_covmat)
+mb_det <- det(mb_covmat)
+mb_const <- 1 / (2 * pi * sqrt(mb_det))
+mb_x1 <- seq(-3, 3, length.out = 101)
+mb_x2 <- seq(-3, 3, length.out = 101)
+mb_grid <- tidyr::expand_grid(x1 = mb_x1, x2 = mb_x2)
+mb_points <- as.matrix(mb_grid)
+mb_quad <- (mb_points %*% mb_inverse) * mb_points
+mb_sums <- rowSums(mb_quad)
+mb_dens <- mb_const * exp(-mb_sums / 2)
+mb_n_x2 <- length(mb_x2)
+mb_z <- matrix(mb_dens, nrow = mb_n_x2)
+
+mb_stops <- c(0, 1)
+mb_cols <- c("#CCE0F0", "#0072B2")
+mb_scale <- list(mb_stops, mb_cols)
+mb_eye <- list(x = 1.6, y = -1.6, z = 0.9)
+mb_camera <- list(eye = mb_eye)
+mb_xaxis <- list(title = "x1")
+mb_yaxis <- list(title = "x2")
+mb_zaxis <- list(title = "density")
+mb_scene <- list(
+  xaxis = mb_xaxis,
+  yaxis = mb_yaxis,
+  zaxis = mb_zaxis,
+  camera = mb_camera
+)
+mb_widget <- plotly::plot_ly() |>
+  plotly::add_surface(
+    x = mb_x1,
+    y = mb_x2,
+    z = mb_z,
+    colorscale = mb_scale,
+    showscale = FALSE,
+    opacity = 0.9
+  ) |>
+  plotly::layout(scene = mb_scene)
+htmltools::div(
+  role = "img",
+  `aria-label` = fig_alt_mvn_biv,
+  mb_widget
+)
+```
+
+```{r}
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| results: asis
+cat(
+  "*(This 3D surface is interactive; see the HTML or slide version",
+  "of this page to view it.)*"
+)
+```
+
+The density of the $\Normal_2\paren{\vzero, \matr{\covmat}}$ distribution of the example, with variances $1$ and covariance $0.8$.
+Its horizontal slices are ellipses stretched along $x_2 = x_1$.
+:::

@@ -315,6 +315,10 @@ print(plot2)
 
 {{< include pds/_subfiles/_def-mvn.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-mvn-bivariate.qmd >}}
+
 {{< include pds/_subfiles/_rem-mvn-notes.qmd >}}
 
 {{< slidebreak >}}
