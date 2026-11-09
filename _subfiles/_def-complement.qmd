@@ -3,7 +3,7 @@
 
 The **complement** of an [event](#def-event) $A$, denoted $\neg A$,
 is the event that $A$ does not [occur](#def-occurs):
-the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the [sample space](#def-sample-space) $\samplespace$ that are not in $A$:
+the [set](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set) of elements $\omega$ of the [sample space](#def-sample-space) $\samplespace$ that are not in $A$:
 
 $$\neg A \eqdef \setbuild{\omega \in \samplespace}{\omega \notin A}$$
 

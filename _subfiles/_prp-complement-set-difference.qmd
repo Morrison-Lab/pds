@@ -3,7 +3,7 @@
 
 For any [event](#def-event) $A$,
 its [complement](#def-complement) $\neg A$ is the
-[set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference)
+[set difference](https://morrison-lab.github.io/mcs/chapters/sets.html#def-set-difference)
 $\setdiff{\samplespace}{A}$:
 
 $$\neg A = \setdiff{\samplespace}{A}$$
