@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 19:54:14 (PST)
+Last modified: 2026-11-08 20:03:22 (PST)
 
 > **NOTE:**
 >
@@ -1314,24 +1314,27 @@ Last modified: 2026-11-08 19:54:14 (PST)
 > > x_ind <- runif(n)
 > > y_ind <- runif(n)
 > >
+> > unit_range <- c(0, 1)
+> > x_axis <- list(title = "Value of X", range = unit_range, scaleanchor = "y")
+> > y_axis <- list(title = "Value of Y", range = unit_range)
+> > legend_below <- list(orientation = "h", y = -0.2)
+> > ind_marker <- list(size = 5, color = "#999999", opacity = 0.5)
+> > dep_marker <- list(size = 6, color = "#b40426")
+> >
 > > plotly::plot_ly() |>
 > >   plotly::add_trace(
 > >     type = "scatter", mode = "markers",
 > >     x = x_ind, y = y_ind,
 > >     name = "Assumed independent (X<sub>1</sub>, X<sub>2</sub>)",
-> >     marker = list(size = 5, color = "#999999", opacity = 0.5)
+> >     marker = ind_marker
 > >   ) |>
 > >   plotly::add_trace(
 > >     type = "scatter", mode = "markers",
 > >     x = x_dep, y = y_dep,
 > >     name = "Actual (X, X) on diagonal",
-> >     marker = list(size = 6, color = "#b40426")
+> >     marker = dep_marker
 > >   ) |>
-> >   plotly::layout(
-> >     xaxis = list(title = "Value of X", range = c(0, 1), scaleanchor = "y"),
-> >     yaxis = list(title = "Value of Y", range = c(0, 1)),
-> >     legend = list(orientation = "h", y = -0.2)
-> >   )
+> >   plotly::layout(xaxis = x_axis, yaxis = y_axis, legend = legend_below)
 > > ```
 > >
 > > Figure 2: Samples from the joint distribution of $(X, X)$ (red, on the diagonal) versus an independent pair $(X_1, X_2)$ with the same marginals (grey, scattered over $[0, 1]^2$). The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in $\mathbb{R}^2$ — so no joint density on $[0, 1]^2$ exists, and the “$f_X(x)\,f_Y(y) = 1$” calculation integrates against the wrong measure (the grey distribution).
@@ -1369,20 +1372,21 @@ Last modified: 2026-11-08 19:54:14 (PST)
 > > x_seq <- seq(0, 1, length.out = n_grid)
 > > y_seq <- seq(0, 1, length.out = n_grid)
 > >
-> > z_mat <- outer(x_seq, y_seq, function(x, y) {
-> >   z <- rep(2, length(x))
-> >   z[x > y] <- NA
-> >   z
-> > })
+> > above_diagonal <- outer(x_seq, y_seq, ">")
+> > z_mat <- matrix(2, nrow = n_grid, ncol = n_grid)
+> > z_mat[above_diagonal] <- NA
+> > z_plot <- t(z_mat)
+> > z_range <- c(0, 2.5)
+> > x_axis <- list(title = "Value of X")
+> > y_axis <- list(title = "Value of Y")
+> > z_axis <- list(title = "Joint density, f(x, y)", range = z_range)
+> > camera_eye <- list(x = 1.6, y = -1.6, z = 0.8)
+> > camera <- list(eye = camera_eye)
+> > scene <- list(xaxis = x_axis, yaxis = y_axis, zaxis = z_axis, camera = camera)
 > >
-> > plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~t(z_mat)) |>
+> > plotly::plot_ly(x = ~x_seq, y = ~y_seq, z = ~z_plot) |>
 > >   plotly::add_surface(showscale = FALSE) |>
-> >   plotly::layout(scene = list(
-> >     xaxis = list(title = "Value of X"),
-> >     yaxis = list(title = "Value of Y"),
-> >     zaxis = list(title = "Joint density, f(x, y)", range = c(0, 2.5)),
-> >     camera = list(eye = list(x = 1.6, y = -1.6, z = 0.8))
-> >   ))
+> >   plotly::layout(scene = scene)
 > > ```
 > >
 > > Figure 3: Joint density $f_{X,Y}(x, y) = 2$ on the triangular support $\{(x, y) : 0 \le x \le y \le 1\}$, and zero elsewhere. The total “volume” under the density is $2 \cdot \tfrac{1}{2} = 1$, as required.
