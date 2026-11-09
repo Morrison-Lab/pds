@@ -9,7 +9,7 @@ $$\E{T^k} = \frac{\gammafn(\shape + k)}{\gammafn(\shape) \, \rate^k}$$
 
 ::: proof
 
-The substitution below turns the integrand into the one that defines the [gamma function](#def-gamma-function):
+The substitution below reduces the expectation to the [gamma function](#def-gamma-function):
 
 $$
 \ba
