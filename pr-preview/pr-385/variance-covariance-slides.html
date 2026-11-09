@@ -365,7 +365,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-09 13:16:35 (PST)</p>
+  <p class="date">Last modified: 2026-11-09 13:49:08 (PST)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -1831,8 +1831,9 @@ a &amp;= b \\
 <section class="slide level2">
 
 <div id="def-precision-matrix" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14 (Precision matrix)</strong></span> The <strong>precision matrix</strong> of a <span class="math inline">\(p \times 1\)</span> <a href="./random-variables.html#def-random-variable">random</a> vector <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> whose <a href="#/def-cov-vec-x">variance matrix</a> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a> is the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse">matrix inverse</a> of that variance matrix:</p>
+<p><span class="theorem-title"><strong>Definition 14 (Precision of a random vector (precision matrix))</strong></span> The <strong>precision matrix</strong> of a <span class="math inline">\(p \times 1\)</span> <a href="./random-variables.html#def-random-variable">random</a> vector <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> extends the <a href="#/def-precision">precision</a> of a <a href="./random-variables.html#def-random-variable">random variable</a> to a vector: it is the <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse">matrix inverse</a> of the <a href="#/def-cov-vec-x">variance matrix</a> of <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span>, just as the precision of a random variable is the reciprocal of its <a href="#/def-variance">variance</a>. It is defined when <span class="math inline">\({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\)</span> is <a href="https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite">positive definite</a>:</p>
 <p><span class="math display">\[\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) \stackrel{\text{def}}{=}{\mathopen{}\left({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\right)\mathclose{}}^{-1}.\]</span></p>
+<p>For <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})\)</span> is the precision <span class="math inline">\({\mathopen{}\left({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{-1}\)</span> of the single variable <span class="math inline">\(X\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">

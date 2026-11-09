@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 13:16:35 (PST)
+Last modified: 2026-11-09 13:49:08 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -1282,9 +1282,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 14 (Precision matrix)** The **precision matrix** of a $p \times 1$ [random](random-variables.llms.md#def-random-variable) vector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ whose [variance matrix](#def-cov-vec-x) is [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite) is the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of that variance matrix:
+> **Definition 14 (Precision of a random vector (precision matrix))** The **precision matrix** of a $p \times 1$ [random](random-variables.llms.md#def-random-variable) vector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ extends the [precision](#def-precision) of a [random variable](random-variables.llms.md#def-random-variable) to a vector: it is the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of the [variance matrix](#def-cov-vec-x) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$, just as the precision of a random variable is the reciprocal of its [variance](#def-variance). It is defined when ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite):
 >
 > $$\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) \stackrel{\text{def}}{=}{\mathopen{}\left({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\right)\mathclose{}}^{-1}.$$
+>
+> For $p = 1$, $\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})$ is the precision ${\mathopen{}\left({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{-1}$ of the single variable $X$.
 
 > **NOTE:**
 >
@@ -1605,7 +1607,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 - [Definition 11 (Uncorrelated random variables)](#def-uncorrelated)
 - [Definition 12 (Conditional covariance)](#def-cond-cov)
 - [Definition 13 (Variance/covariance of a](#def-cov-vec-x) $p \times 1$ random vector)
-- [Definition 14 (Precision matrix)](#def-precision-matrix)
+- [Definition 14 (Precision of a random vector (precision matrix))](#def-precision-matrix)
 - [Definition 15 (Raw moment)](#def-moment)
 - [Definition 16 (Central moment)](#def-central-moment)
 - [Definition 17 (Moment generating function)](#def-mgf)

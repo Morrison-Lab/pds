@@ -2560,7 +2560,7 @@
    "page": "variance-covariance",
    "div": "def-precision-matrix",
    "kind": "def",
-   "title": "Precision matrix",
+   "title": "Precision of a random vector (precision matrix)",
    "external": false
   },
   {
@@ -4848,6 +4848,14 @@
   [
    "pds/variance-covariance#def-precision-matrix",
    "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/variance-covariance#def-precision-matrix",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
+   "pds/variance-covariance#def-precision-matrix",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/variance-covariance#def-sd",
