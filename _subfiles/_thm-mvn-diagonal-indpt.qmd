@@ -1,0 +1,47 @@
+:::{#thm-mvn-diagonal-indpt}
+#### A multivariate normal vector with diagonal variance has independent normal components
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$
+and $\matr{\covmat}$ is diagonal with diagonal elements $\varpar_1, \ldots, \varpar_p$,
+then:
+
+- the joint density of $\vX$ is the product of the
+  [normal densities](random-variables.qmd#def-normal)
+  $\ndist{\mean_i, \varpar_i}$, $i = 1, \ldots, p$,
+- each $X_i \sim \ndist{\mean_i, \varpar_i}$, and
+- $X_1, \ldots, X_p$ are [independent](independence.qmd#def-indpt).
+
+:::
+
+::: proof
+
+By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal),
+$\det(\matr{\covmat}) = \prod_{i=1}^p \varpar_i$,
+so $\det(\matr{\covmat})^{1/2} = \prod_{i=1}^p \sdpar_i$.
+Using @exm-mahalanobis-special for the quadratic form:
+
+$$
+\ba
+\p(\vX = \vx)
+&= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sdpar_i}
+\ef{-\frac{1}{2} \sumip \frac{(x_i - \mean_i)^2}{\varpar_i}}
+&& \text{(substitute)} \\
+&= \prod_{i=1}^p \frac{1}{\sdpar_i \sqrt{2\pi}}
+\ef{-\frac{(x_i - \mean_i)^2}{2\varpar_i}}
+&& \text{(} \ef{a + b} = \ef{a}\ef{b} \text{)}
+\ea
+$$
+
+which is the product of the $\ndist{\mean_i, \varpar_i}$ densities.
+Integrating out every coordinate except $x_i$,
+each other factor integrates to 1
+([the normal density integrates to 1](random-variables.qmd#thm-normal-density)),
+leaving the $\ndist{\mean_i, \varpar_i}$ density as the density of $X_i$
+([marginal density from a joint density](random-variables.qmd#thm-marginal-density),
+with $p$ variables).
+So the joint density is the product of the marginal densities,
+and the components are independent by
+[the factorization theorem for densities](independence.qmd#thm-indpt-density),
+extended to $p$ variables as its remark describes.
+
+:::

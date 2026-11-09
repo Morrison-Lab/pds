@@ -1,0 +1,3 @@
+:::{#exr-exposure-magnitude}
+What are some examples of exposure magnitudes?
+:::

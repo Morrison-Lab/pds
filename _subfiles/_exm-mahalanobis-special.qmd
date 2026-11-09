@@ -1,0 +1,27 @@
+:::{#exm-mahalanobis-special}
+#### Mahalanobis distance for diagonal variance matrices
+
+If $\matr{\covmat}$ is
+[diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix)
+with diagonal elements $\varpar_1, \ldots, \varpar_p$, all positive,
+then $\matr{\covmat}^{-1}$ is diagonal with diagonal elements
+$1/\varpar_1, \ldots, 1/\varpar_p$
+(multiplying the two gives $\matr{I}_p$;
+[matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
+
+$$
+\mahal(\vx)^2 = \sumip \frac{(x_i - \mean_i)^2}{\varpar_i}
+$$
+
+Two special cases:
+
+- If $\matr{\covmat} = \matr{I}_p$,
+  then $\mahal(\vx)^2 = \sumip (x_i - \mean_i)^2$,
+  so the Mahalanobis distance is the ordinary (Euclidean) distance.
+- If $\matr{\covmat} = \ss \matr{I}_p$,
+  then $\mahal(\vx)$ is the Euclidean distance divided by $\sdpar$.
+
+In general, each coordinate's difference is measured
+in units of that coordinate's standard deviation.
+
+:::

@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+Some distributions are typically used for outcome models (@tbl-outcome-distns);
+other distributions are typically used for test statistics (@tbl-test-stat-distns).
+
+:::

@@ -1,0 +1,10 @@
+:::{#def-event-rate}
+#### Event rate
+
+For a count $Y$ observed over a fixed, known [exposure magnitude](#def-exposure) $t > 0$,
+the **event rate**, denoted $\rate$,
+is the mean of $Y$ divided by the exposure magnitude:
+
+$$\rate \eqdef \frac{\E{Y}}{t}$$ {#eq-def-event-rate}
+
+:::

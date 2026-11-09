@@ -1,0 +1,71 @@
+:::{#thm-nb-poisson-limit}
+#### The negative binomial converges to the Poisson
+
+Let the population [mean](expectation.qmd#def-expectation) be $\mean > 0$, and let $Y_\overdisp \sim \NegBin(\mean, \overdisp)$.
+Then for each $y \in \set{0, 1, 2, \dots}$,
+as $\overdisp \rightarrow \infty$,
+the negative binomial PMF converges to the [Poisson](#def-poisson) PMF (@eq-pois-pmf):
+
+$$\lim_{\overdisp \rightarrow \infty} \P(Y_\overdisp = y) = \frac{\mean^{y} e^{-\mean}}{y!}$$
+
+:::
+
+::: proof
+
+Choose a value $y$ of $Y_\overdisp$.
+In @def-nb, the first factor $\mean^y / y!$ does not depend on $\overdisp$.
+For the second factor,
+$\gammafn(\overdisp + y) = \gammafn(\overdisp) \prod_{k=0}^{y-1} (\overdisp + k)$,
+by applying $\gammafn(x + 1) = x\,\gammafn(x)$ $y$ times
+(for $y = 0$, the product is empty and equals 1), so:
+
+$$
+\ba
+\frac{\gammafn(\overdisp + y)}{\gammafn(\overdisp) \cdot (\overdisp + \mean)^y}
+&= \frac{\gammafn(\overdisp) \prod_{k=0}^{y-1} (\overdisp + k)}{\gammafn(\overdisp) \cdot (\overdisp + \mean)^y}
+&& (\gammafn(x + 1) = x\,\gammafn(x) \text{, applied } y \text{ times}) \\
+&= \prod_{k=0}^{y-1} \frac{\overdisp + k}{\overdisp + \mean}
+&& (\text{cancel } \gammafn(\overdisp) \text{; one factor of } \overdisp + \mean \text{ per } k) \\
+&= \prod_{k=0}^{y-1} \frac{1 + k/\overdisp}{1 + \mean/\overdisp}
+&& (\text{divide each numerator and denominator by } \overdisp) \\
+&\rightarrow \prod_{k=0}^{y-1} \frac{1 + 0}{1 + 0}
+&& (k/\overdisp \rightarrow 0 \text{ and } \mean/\overdisp \rightarrow 0 \text{; finitely many factors}) \\
+&= 1
+&& (\text{simplify})
+\ea
+$$
+
+For the third factor, write $x \eqdef \mean/\overdisp$,
+so $x \rightarrow 0$ as $\overdisp \rightarrow \infty$, and $\overdisp = \mean/x$:
+
+$$
+\ba
+\log\paren{\paren{1 + \frac{\mean}{\overdisp}}^{-\overdisp}}
+&= -\overdisp \log\paren{1 + \frac{\mean}{\overdisp}}
+&& (\text{log of a power}) \\
+&= -\mean \cdot \frac{\log(1 + x)}{x}
+&& (\text{substitute } \overdisp = \mean/x) \\
+&\rightarrow -\mean \cdot 1
+&& (\textstyle\lim_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\
+&= -\mean
+&& (\text{simplify})
+\ea
+$$
+
+so, since the exponential function is continuous,
+$\paren{1 + \mean/\overdisp}^{-\overdisp} \rightarrow \expf{-\mean}$.
+Each of the three factors has a limit, so their product does too:
+
+$$
+\ba
+\lim_{\overdisp \rightarrow \infty} \P(Y_\overdisp = y)
+&= \frac{\mean^y}{y!} \cdot 1 \cdot \expf{-\mean}
+&& (\text{limit of a product of convergent factors}) \\
+&= \frac{\mean^{y} e^{-\mean}}{y!}
+&& (\text{rearrange})
+\ea
+$$
+
+which is the $\Pois(\mean)$ PMF.
+
+:::

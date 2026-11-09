@@ -1,0 +1,31 @@
+:::{#cor-weibull-exponential}
+#### The Weibull with shape 1 is the exponential
+
+If $T$ has the [Weibull distribution](#def-weibull) with shape $\shape = 1$ and rate $\rate$,
+then $T$ has the [exponential distribution](random-variables.qmd#def-exponential) with rate $\rate$.
+
+:::
+
+::: proof
+
+By @thm-weibull with $\shape = 1$, for $t > 0$:
+
+$$
+\ba
+f(t)
+&= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}
+&& (\text{Weibull density}) \\
+&= 1 \cdot \rate t^{0}\text{e}^{-\rate t^1}
+&& (\text{substitute } \shape = 1) \\
+&= \rate \text{e}^{-\rate t}
+&& (t^0 = 1 \text{ and } t^1 = t)
+\ea
+$$
+
+and $f(t) = 0$ for $t < 0$, since $T$ is non-negative.
+This density matches the exponential density at every $t \ne 0$.
+Changing a density at the single point $t = 0$
+does not change its integral over any set,
+so $T$ has the exponential distribution with rate $\rate$.
+
+:::

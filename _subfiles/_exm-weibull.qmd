@@ -1,0 +1,27 @@
+:::{#exm-weibull}
+#### Exponential as a special case
+
+With $\shape = 1$, @thm-weibull gives $\h(t) = \rate$ and
+
+$$
+\begin{aligned}
+\E{T} &= \gammafn(2)\rate^{-1} \\
+&= 1/\rate,
+\end{aligned}
+$$
+
+matching the exponential distribution's constant hazard
+and mean.
+With $\shape = 2$ and $\rate = 1$,
+$\h(t) = 2t$ increases with $t$,
+and
+
+$$
+\begin{aligned}
+\E{T} &= \gammafn(3/2) \\
+&= \sqrt{\pi}/2 \\
+&\approx 0.886.
+\end{aligned}
+$$
+
+:::

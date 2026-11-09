@@ -1,0 +1,12 @@
+:::{#def-mahalanobis}
+#### Mahalanobis distance
+
+For a $p \times p$ positive definite matrix $\matr{\covmat}$
+and $\vx, \vecf{\mean} \in \reals^p$,
+the **Mahalanobis distance** from $\vx$ to $\vecf{\mean}$ with respect to $\matr{\covmat}$ is:
+
+$$
+\mahal(\vx) \eqdef \sqrt{\tp{(\vx - \vecf{\mean})} \matr{\covmat}^{-1} (\vx - \vecf{\mean})}
+$$
+
+:::

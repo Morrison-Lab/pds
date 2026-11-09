@@ -1,0 +1,30 @@
+:::{#thm-weibull-mean}
+#### Weibull mean
+
+If $T$ has the Weibull distribution with shape $\shape$ and rate $\rate$, then:
+
+$$\E{T} = \gammafn(1+1/\shape)\cdot \rate^{-1/\shape}$$
+
+:::
+
+::: proof
+
+For the mean, use the [survival-function formula for the mean](expectation.qmd#thm-surv-mean)
+and substitute $u = \rate t^\shape$,
+so that $t = (u/\rate)^{1/\shape}$ and $dt = \frac{1}{\shape}\rate^{-1/\shape} u^{1/\shape - 1}\,du$:
+
+$$
+\ba
+\E{T}
+&= \int_0^\infty \text{e}^{-\rate t^\shape}\,dt
+&& (\text{expectation via the survival function}) \\
+&= \frac{1}{\shape}\rate^{-1/\shape} \int_0^\infty u^{1/\shape - 1} \text{e}^{-u}\,du
+&& (\text{substitute } u = \rate t^\shape) \\
+&= \frac{1}{\shape}\rate^{-1/\shape}\,\gammafn(1/\shape)
+&& (\text{definition of the gamma function}) \\
+&= \gammafn(1 + 1/\shape)\,\rate^{-1/\shape}
+&& (\gammafn(1 + a) = a\,\gammafn(a))
+\ea
+$$
+
+:::

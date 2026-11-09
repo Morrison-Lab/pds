@@ -1,0 +1,8 @@
+:::{#exm-non-exposed}
+#### Zero exposure time
+
+If a subject is observed for $t = 0$ person-years,
+no follow-up time has elapsed,
+so under a constant-rate model
+the expected number of incident events is $\E{Y_0} = 0$.
+:::

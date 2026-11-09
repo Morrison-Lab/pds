@@ -1,0 +1,18 @@
+:::{#thm-exposure-log-scale}
+#### Exposure is additive on the log scale
+
+If $\mean = \rate\cdot t$ with $\rate > 0$ and $t > 0$, then:
+
+$$\log{\mean} = \log{\rate} + \log{t}$$
+
+:::
+
+::: proof
+$$
+\ba
+\log{\mean}
+&= \log(\rate \cdot t) && (\text{substitute } \mean = \rate \cdot t) \\
+&= \log{\rate} + \log{t} && (\text{logarithm product rule})
+\ea
+$$
+:::

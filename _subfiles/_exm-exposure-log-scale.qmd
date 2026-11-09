@@ -1,0 +1,16 @@
+:::{#exm-exposure-log-scale}
+#### Log-linear representation of expected counts
+
+If a clinic sees an event rate of $\rate = 0.02$ events/day and $t = 30$ days of observation:
+
+$$
+\ba
+\log{\mean}
+&= \log(0.02) + \log(30) && (\text{apply log-scale formula}) \\
+&= -3.912 + 3.401 && (\text{evaluate natural logarithms}) \\
+&= -0.511 && (\text{sum terms})
+\ea
+$$
+
+Exponentiating yields $\mean = \expf{-0.511} \approx 0.60$ expected events.
+:::
