@@ -12,7 +12,8 @@ $$\max_x \p(X=x) = \frac{1}{\sdpar\sqrt{2\pi}}$$
 ::: proof
 
 For each $x \in \reals$, the quantity $u(x) \eqdef (x-\mean)^2 / (2\ss)$ is at least $0$,
-and it equals $0$ only at $x = \mean$.
+and it equals $0$
+only at $x = \mean$.
 The factor $\ef{-u(x)}$ of the [density](random-variables.qmd#def-pdf) is at most $1$:
 
 $$
@@ -22,9 +23,9 @@ $$
 && \text{(a square is non-negative, and } 2\ss > 0 \text{)} \\
 \ef{-u(x)}
 &\le \ef{0}
-&& \text{(} \text{e}^t \text{ is increasing in } t \text{)} \\
+&& \text{(} \euler^t \text{ is increasing in } t \text{)} \\
 &= 1
-&& \text{(} \text{e}^0 = 1 \text{)}
+&& \text{(} \euler^0 = 1 \text{)}
 \ea
 $$
 
@@ -40,6 +41,8 @@ $$
 \ea
 $$
 
-Equality holds at $x = \mean$, where $u(x) = 0$, so the density peaks there.
+Equality holds at $x = \mean$,
+where $u(x) = 0$,
+so the density peaks there.
 
 :::
