@@ -1,0 +1,8 @@
+:::{#def-gamma-function}
+#### Gamma function
+
+The **gamma function** $\gammafn$ maps each $s > 0$ to:
+
+$$\gammafn(s) \eqdef \int_0^\infty u^{s - 1} \ef{-u} \, du$$
+
+:::

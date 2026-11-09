@@ -253,6 +253,10 @@ print(plot2)
 
 ## The gamma distribution {#sec-gamma-dist}
 
+{{< include pds/_subfiles/_def-gamma-function.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-gamma.qmd >}}
 
 {{< slidebreak >}}

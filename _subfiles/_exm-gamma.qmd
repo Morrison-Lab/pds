@@ -1,7 +1,9 @@
 :::{#exm-gamma}
 #### Gamma density with shape 2
 
-If $T \sim \dGamf{2, \rate}$, then $\gammafn(2) = 1$, so the [density](#def-gamma) is:
+If $T \sim \dGamf{2, \rate}$,
+then $\gammafn(2) = 1$,
+so the [density](#def-gamma) is:
 
 $$
 f(t) = \rate^2 \, t \, \ef{-\rate t}, \quad t > 0
