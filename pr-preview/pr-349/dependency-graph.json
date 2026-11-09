@@ -34,6 +34,26 @@
    "url": "https://morrison-lab.github.io/mcs/functions.html#def-function"
   },
   {
+   "id": "mcs/number-systems#def-integers",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-integers",
+   "kind": "def",
+   "title": "integers",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-integers"
+  },
+  {
+   "id": "mcs/number-systems#def-nonnegative-integers",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-nonnegative-integers",
+   "kind": "def",
+   "title": "nonnegative integers",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-nonnegative-integers"
+  },
+  {
    "id": "mcs/number-systems#def-positive-integer",
    "site": "mcs",
    "page": "number-systems",
@@ -224,6 +244,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative"
   },
   {
+   "id": "mds/calculus-derivatives#def-limit",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "def-limit",
+   "kind": "def",
+   "title": "limit",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit"
+  },
+  {
    "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
    "site": "mds",
    "page": "calculus-double-integrals",
@@ -284,24 +314,14 @@
    "url": "https://morrison-lab.github.io/mds/calculus-taylor-series.html#def-taylor-series"
   },
   {
-   "id": "mds/functions#def-countable-set",
+   "id": "mds/indicator-functions#def-indicator-function",
    "site": "mds",
-   "page": "functions",
-   "div": "def-countable-set",
+   "page": "indicator-functions",
+   "div": "def-indicator-function",
    "kind": "def",
-   "title": "countable set",
+   "title": "indicator function",
    "external": true,
-   "url": "https://morrison-lab.github.io/mds/functions.html#def-countable-set"
-  },
-  {
-   "id": "mds/functions#def-function",
-   "site": "mds",
-   "page": "functions",
-   "div": "def-function",
-   "kind": "def",
-   "title": "function",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/functions.html#def-function"
+   "url": "https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function"
   },
   {
    "id": "mds/linear-algebra-special-matrices#def-determinant",
@@ -544,14 +564,31 @@
    "url": "https://morrison-lab.github.io/mds/sets.html#def-set"
   },
   {
-   "id": "mds/sets#def-set-difference",
-   "site": "mds",
-   "page": "sets",
-   "div": "def-set-difference",
-   "kind": "def",
-   "title": "set difference",
-   "external": true,
-   "url": "https://morrison-lab.github.io/mds/sets.html#def-set-difference"
+   "id": "pds/distributions#cor-gamma-exponential",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-gamma-exponential",
+   "kind": "cor",
+   "title": "The gamma distribution with shape 1 is the exponential",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-gamma-mean",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-gamma-mean",
+   "kind": "cor",
+   "title": "Mean of the gamma distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#cor-gamma-variance",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-gamma-variance",
+   "kind": "cor",
+   "title": "Variance of the gamma distribution",
+   "external": false
   },
   {
    "id": "pds/distributions#cor-mvn-mahalanobis",
@@ -614,6 +651,24 @@
    "div": "def-exposure",
    "kind": "def",
    "title": "Exposure magnitude",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-gamma",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-gamma",
+   "kind": "def",
+   "title": "Gamma distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-gamma-function",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-gamma-function",
+   "kind": "def",
+   "title": "Gamma function",
    "external": false
   },
   {
@@ -749,6 +804,15 @@
    "div": "thm-exposure-log-scale",
    "kind": "thm",
    "title": "Exposure is additive on the log scale",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-gamma-moments",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-gamma-moments",
+   "kind": "thm",
+   "title": "Moments of the gamma distribution",
    "external": false
   },
   {
@@ -1877,6 +1941,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#prp-complement-set-difference",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "prp-complement-set-difference",
+   "kind": "prp",
+   "title": "The complement of an event is a set difference",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#thm-bayes",
    "site": "pds",
    "page": "probability-basics",
@@ -1909,7 +1982,7 @@
    "page": "probability-basics",
    "div": "thm-law-conditional-prob",
    "kind": "thm",
-   "title": "Law of conditional probability",
+   "title": "Law of conditional probability (probability chain rule, general product rule)",
    "external": false
   },
   {
@@ -2333,6 +2406,15 @@
    "div": "thm-hazard-dens-surv",
    "kind": "thm",
    "title": "Hazard equals density over survival",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-hazard-nonnegative",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-hazard-nonnegative",
+   "kind": "thm",
+   "title": "A hazard is non-negative",
    "external": false
   },
   {
@@ -2798,6 +2880,34 @@
  ],
  "edges": [
   [
+   "pds/distributions#cor-gamma-exponential",
+   "pds/distributions#def-event-rate"
+  ],
+  [
+   "pds/distributions#cor-gamma-exponential",
+   "pds/random-variables#def-exponential"
+  ],
+  [
+   "pds/distributions#cor-gamma-exponential",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#cor-gamma-mean",
+   "pds/distributions#thm-gamma-moments"
+  ],
+  [
+   "pds/distributions#cor-gamma-variance",
+   "pds/distributions#cor-gamma-mean"
+  ],
+  [
+   "pds/distributions#cor-gamma-variance",
+   "pds/distributions#thm-gamma-moments"
+  ],
+  [
+   "pds/distributions#cor-gamma-variance",
+   "pds/variance-covariance#thm-variance"
+  ],
+  [
    "pds/distributions#cor-mvn-mahalanobis",
    "pds/distributions#def-mahalanobis"
   ],
@@ -2862,6 +2972,26 @@
    "pds/distributions#def-exposure"
   ],
   [
+   "pds/distributions#def-gamma",
+   "pds/distributions#def-event-rate"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/distributions#def-gamma-function"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#def-gamma",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/distributions#def-laplace",
    "pds/random-variables#def-pdf"
   ],
@@ -2888,6 +3018,18 @@
   [
    "pds/distributions#def-offset",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#def-poisson",
+   "mcs/number-systems#def-nonnegative-integers"
+  ],
+  [
+   "pds/distributions#def-poisson",
+   "mds/indicator-functions#def-indicator-function"
+  ],
+  [
+   "pds/distributions#def-poisson",
+   "mds/sets#def-set"
   ],
   [
    "pds/distributions#def-responsibility",
@@ -2928,6 +3070,18 @@
   [
    "pds/distributions#thm-binomial-sum-bernoulli",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/distributions#thm-gamma-moments",
+   "mcs/number-systems#def-integers"
+  ],
+  [
+   "pds/distributions#thm-gamma-moments",
+   "pds/distributions#def-gamma-function"
+  ],
+  [
+   "pds/distributions#thm-gamma-moments",
+   "pds/expectation#def-expectation"
   ],
   [
    "pds/distributions#thm-laplace-moments",
@@ -4127,19 +4281,15 @@
   ],
   [
    "pds/probability-basics#def-complement",
-   "mds/sets#def-set"
-  ],
-  [
-   "pds/probability-basics#def-complement",
-   "mds/sets#def-set-difference"
-  ],
-  [
-   "pds/probability-basics#def-complement",
    "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#def-complement",
    "pds/probability-basics#def-occurs"
+  ],
+  [
+   "pds/probability-basics#def-complement",
+   "pds/probability-basics#def-sample-space"
   ],
   [
    "pds/probability-basics#def-event",
@@ -4231,7 +4381,7 @@
   ],
   [
    "pds/probability-basics#def-sample-space",
-   "mds/sets#def-set"
+   "pds/probability-basics#def-experiment-outcome"
   ],
   [
    "pds/probability-basics#def-sample-space",
@@ -4255,10 +4405,6 @@
   ],
   [
    "pds/probability-basics#prp-complement-partition",
-   "mds/sets#def-set-difference"
-  ],
-  [
-   "pds/probability-basics#prp-complement-partition",
    "pds/probability-basics#def-complement"
   ],
   [
@@ -4276,6 +4422,18 @@
   [
    "pds/probability-basics#prp-complement-partition",
    "pds/probability-basics#lem-sample-space-event"
+  ],
+  [
+   "pds/probability-basics#prp-complement-partition",
+   "pds/probability-basics#prp-complement-set-difference"
+  ],
+  [
+   "pds/probability-basics#prp-complement-set-difference",
+   "pds/probability-basics#def-complement"
+  ],
+  [
+   "pds/probability-basics#prp-complement-set-difference",
+   "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#thm-bayes",
@@ -4324,6 +4482,10 @@
   [
    "pds/probability-basics#thm-law-conditional-prob",
    "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-law-conditional-prob",
+   "pds/probability-basics#def-event"
   ],
   [
    "pds/probability-basics#thm-total-prob",
@@ -4388,10 +4550,6 @@
   [
    "pds/random-variables#def-discrete-hazard",
    "pds/random-variables#def-discrete-rv"
-  ],
-  [
-   "pds/random-variables#def-discrete-rv",
-   "mds/functions#def-countable-set"
   ],
   [
    "pds/random-variables#def-discrete-rv",
@@ -4484,10 +4642,6 @@
   [
    "pds/random-variables#def-quantile-function",
    "pds/random-variables#def-cdf"
-  ],
-  [
-   "pds/random-variables#def-random-variable",
-   "mds/functions#def-function"
   ],
   [
    "pds/random-variables#def-random-variable",
@@ -4596,6 +4750,18 @@
   [
    "pds/random-variables#thm-hazard-dens-surv",
    "pds/random-variables#thm-density-limit"
+  ],
+  [
+   "pds/random-variables#thm-hazard-nonnegative",
+   "mds/calculus-derivatives#def-limit"
+  ],
+  [
+   "pds/random-variables#thm-hazard-nonnegative",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/random-variables#thm-hazard-nonnegative",
+   "pds/random-variables#def-hazard"
   ],
   [
    "pds/random-variables#thm-joint-distribution-rectangles",
