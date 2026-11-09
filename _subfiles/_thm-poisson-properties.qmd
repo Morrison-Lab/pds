@@ -1,0 +1,59 @@
+:::{#thm-poisson-properties}
+#### Mean and variance of the Poisson distribution
+
+If $X \sim \Pois(\mean)$, then:
+
+* $\Expp[X] = \mean$
+* $\Varr(X) = \mean$
+
+:::
+
+::: proof
+
+**Mean.**
+
+$$
+\ba
+\Expp[X]
+&= \sum_{x=0}^\infty x \cdot \P(X=x) && (\text{definition of expected value}) \\
+&= 0 \cdot \P(X=0) + \sumto{x}{\infty} x \cdot \P(X=x) && (\text{separate } x=0 \text{ term}) \\
+&= \sumto{x}{\infty} x \cdot \frac{\mean^x e^{-\mean}}{x!} && (\text{substitute Poisson PMF}) \\
+&= \sumto{x}{\infty} x \cdot \frac{\mean^x e^{-\mean}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\
+&= \sumto{x}{\infty} \frac{\mean^x e^{-\mean}}{(x-1)!} && (\text{cancel factor of } x) \\
+&= \mean \cdot \sumto{x}{\infty} \frac{\mean^{x-1} e^{-\mean}}{(x-1)!} && (\text{factor out one power of } \mean) \\
+&= \mean \cdot \sum_{y=0}^\infty \frac{\mean^y e^{-\mean}}{y!} && (\text{change index variable } y \eqdef x-1) \\
+&= \mean \cdot 1 && (\text{PMF sums to 1 over state space}) \\
+&= \mean && (\text{simplify})
+\ea
+$$
+
+**Variance.**
+The same steps, canceling two factors instead of one, give $\E{X(X-1)}$:
+
+$$
+\ba
+\E{X(X-1)}
+&= \sum_{x=2}^\infty x(x-1) \cdot \frac{\mean^x e^{-\mean}}{x!} && (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\
+&= \sum_{x=2}^\infty \frac{\mean^x e^{-\mean}}{(x-2)!} && (\text{cancel } x(x-1) \text{ against } x!) \\
+&= \mean^2 \cdot \sum_{y=0}^\infty \frac{\mean^y e^{-\mean}}{y!} && (\text{factor out } \mean^2 \text{; } y \eqdef x - 2) \\
+&= \mean^2 && (\text{PMF sums to 1})
+\ea
+$$
+
+Then, by the [simplified expression for variance](variance-covariance.qmd#thm-variance)
+and [linearity of expectation](expectation.qmd#thm-linearity-expectation):
+
+$$
+\ba
+\Varr(X)
+&= \E{X^2} - \sqf{\E{X}} && (\text{simplified expression for variance}) \\
+&= \E{X(X-1)} + \E{X} - \sqf{\E{X}} && (X^2 = X(X-1) + X \text{; linearity}) \\
+&= \mean^2 + \mean - \mean^2 && (\text{substitute}) \\
+&= \mean && (\text{simplify})
+\ea
+$$
+
+See also <https://statproofbook.github.io/P/poiss-mean>
+and <https://statproofbook.github.io/P/poiss-var>.
+
+:::

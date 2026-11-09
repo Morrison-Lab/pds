@@ -1,0 +1,11 @@
+:::{#exm-bernoulli}
+#### A coin flip
+
+The [Bernoulli distribution](random-variables.qmd#def-bernoulli) describes a binary outcome.
+The indicator of heads on one flip of a fair coin is $\Ber(1/2)$.
+By the [expectation of the Bernoulli distribution](expectation.qmd#thm-bernoulli-mean),
+$X \sim \Ber(\prob)$ has mean $\prob$,
+and by the [variance of a Bernoulli random variable](variance-covariance.qmd#exm-variance-bernoulli),
+it has variance $\prob(1 - \prob)$.
+
+:::

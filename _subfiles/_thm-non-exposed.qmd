@@ -1,0 +1,22 @@
+:::{#thm-non-exposed}
+#### No exposure means no expected events
+
+For each exposure magnitude $t \ge 0$,
+let $Y_t$ be the count observed over exposure $t$.
+If the mean count is proportional to the exposure magnitude,
+$\E{Y_t} = \rate \cdot t$ for all $t \ge 0$ with one finite rate $\rate$,
+then there are no expected events without exposure:
+
+$$\E{Y_0} = 0$$
+
+:::
+
+::: proof
+$$
+\ba
+\E{Y_0}
+&= \rate \cdot 0 && (\text{evaluate } \E{Y_t} = \rate t \text{ at } t = 0) \\
+&= 0 && (\text{multiplication by zero; } \rate \text{ is finite})
+\ea
+$$
+:::

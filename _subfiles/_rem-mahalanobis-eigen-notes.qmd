@@ -1,0 +1,11 @@
+::: {.remark .notes}
+
+$y_i$ is the coordinate of $\vx - \vecf{\mean}$ along the eigenvector $\vecf{q}_i$.
+So the set of points at Mahalanobis distance $\mahaldist$ from $\vecf{\mean}$,
+where the multivariate normal density is constant (@cor-mvn-mahalanobis),
+is an ellipse ($p = 2$) or ellipsoid
+centered at $\vecf{\mean}$,
+with axes along the eigenvectors of $\matr{\covmat}$
+and half-length $\mahaldist\sqrt{\eigval_i}$ along $\vecf{q}_i$.
+
+:::

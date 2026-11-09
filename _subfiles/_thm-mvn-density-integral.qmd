@@ -1,0 +1,7 @@
+:::{#thm-mvn-density-integral}
+#### The multivariate normal density integrates to 1
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
+then the density in @def-mvn integrates to 1 over $\reals^p$.
+
+:::

@@ -1,0 +1,52 @@
+:::{#thm-weibull}
+#### Weibull density and hazard
+
+If $T$ has the Weibull distribution with shape $\shape$ and rate $\rate$, then for $t > 0$:
+
+$$
+\begin{aligned}
+f(t) &= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}\\
+\h(t) &= \shape\rate t^{\shape-1}
+\end{aligned}
+$$
+
+:::
+
+::: proof
+
+The CDF of $T$ is $F(t) = 1 - \surv(t)$
+([survival function and CDF](random-variables.qmd#thm-survival-expressions-1)),
+which is $0$ for $t < 0$ and $1 - \text{e}^{-\rate t^\shape}$ for $t \ge 0$.
+This $F$ is continuous everywhere,
+with a continuous derivative everywhere except possibly $t = 0$,
+so
+
+$$
+\begin{aligned}
+f &= F' \\
+&= -\surv'
+\end{aligned}
+$$
+
+is a density of $T$
+([a piecewise-smooth CDF has its derivative as a density](random-variables.qmd#thm-cdf-derivative-density)).
+This density is continuous at every $t > 0$,
+so there the hazard is $f(t)/\surv(t)$
+([hazard equals density over survival](random-variables.qmd#thm-hazard-dens-surv)):
+
+$$
+\ba
+f(t)
+&= -\frac{d}{dt}\text{e}^{-\rate t^\shape}
+&& (f = -\surv') \\
+&= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}
+&& (\text{chain rule}) \\
+\h(t)
+&= \frac{\shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}}{\text{e}^{-\rate t^\shape}}
+&& (\text{hazard is density over survival}) \\
+&= \shape\rate t^{\shape-1}
+&& (\text{cancel})
+\ea
+$$
+
+:::

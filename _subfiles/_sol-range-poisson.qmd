@@ -1,0 +1,9 @@
+:::{#sol-range-poisson}
+$$
+\begin{aligned}
+\rangef{Y}
+&= \set{0, 1, 2, \dots} \\
+&= \Nat
+\end{aligned}
+$$
+:::

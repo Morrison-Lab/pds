@@ -1,0 +1,15 @@
+:::{#exm-sum-pois}
+#### Aggregating independent region counts
+
+Suppose Region A records $X \sim \Pois(\mean_X = 12)$ cases
+and Region B records $Y \sim \Pois(\mean_Y = 18)$ cases independently.
+By @thm-sum-pois, the combined total count $Z = X + Y$ follows a Poisson distribution:
+
+$$
+\ba
+Z &\sim \Pois(\mean_X + \mean_Y) && (\text{sum of independent Poissons}) \\
+&= \Pois(12 + 18) && (\text{substitute region means}) \\
+&= \Pois(30) && (\text{evaluate sum})
+\ea
+$$
+:::

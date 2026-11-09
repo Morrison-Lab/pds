@@ -1,0 +1,9 @@
+::: {.remark .notes}
+
+The hypothesis carries the content here.
+@def-event-rate alone cannot give $\E{Y_0} = 0$,
+since $\rate = \E{Y}/t$ is undefined at $t = 0$;
+the result holds for a model that assumes one rate $\rate$
+shared across exposure magnitudes, including $t = 0$.
+
+:::

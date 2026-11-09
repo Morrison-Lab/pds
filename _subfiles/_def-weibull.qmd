@@ -1,0 +1,12 @@
+:::{#def-weibull}
+#### Weibull distribution
+
+A non-negative random variable $T$ has the **Weibull distribution**
+with shape $\shape > 0$ and rate $\rate > 0$
+[@wikipedia_weibull_distribution]
+if its
+[survival function](random-variables.qmd#def-surv-fn) is:
+
+$$\surv(t) \eqdef \text{e}^{-\rate t^\shape}, \quad t \ge 0$$
+
+:::

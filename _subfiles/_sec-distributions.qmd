@@ -1,57 +1,16 @@
-::: {.remark .notes}
+{{< include pds/_subfiles/_rem-distribution-tables-notes.qmd >}}
 
-Some distributions are typically used for outcome models (@tbl-outcome-distns);
-other distributions are typically used for test statistics (@tbl-test-stat-distns).
-
-:::
-
-:::{#tbl-outcome-distns}
-Distribution | Uses
------------- | ---
-[Bernoulli](random-variables.qmd#def-bernoulli) | Binary outcomes
-[Binomial](#def-binomial) | Sums of Bernoulli outcomes
-Poisson | Unbounded count outcomes
-Geometric | Counts of non-events before an event occurs
-Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs
-[Normal (Gaussian)](random-variables.qmd#def-normal) | Continuous outcomes without a more specific distribution
-[Multivariate normal](#sec-mvn) | Vectors of continuous outcomes
-[Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations
-[Exponential](random-variables.qmd#def-exponential) | Time to event outcomes
-Gamma | Time to event outcomes
-Weibull | Time to event outcomes
-Log-normal | Time to event outcomes
-
-Distributions typically used for outcome models
-:::
+{{< include pds/_subfiles/_tbl-outcome-distns.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#tbl-test-stat-distns}
-Distribution | Uses
------------- | ----
-$\chi^2$ | Regression comparisons (asymptotic), contingency table independence tests, goodness-of-fit tests
-$F$ | Gaussian model comparisons (exact)
-$Z$ (standard normal) | Proportions, means, regression coefficients (asymptotic)
-$t$ (Student's) | Means, regression coefficients in Gaussian outcome models (exact)
-
-Distributions typically used for test statistics
-:::
+{{< include pds/_subfiles/_tbl-test-stat-distns.qmd >}}
 
 {{< slidebreak >}}
 
 ## The Bernoulli distribution {#sec-bern-dist}
 
-:::{#exm-bernoulli}
-#### A coin flip
-
-The [Bernoulli distribution](random-variables.qmd#def-bernoulli) describes a binary outcome.
-The indicator of heads on one flip of a fair coin is $\Ber(1/2)$.
-By the [expectation of the Bernoulli distribution](expectation.qmd#thm-bernoulli-mean),
-$X \sim \Ber(\prob)$ has mean $\prob$,
-and by the [variance of a Bernoulli random variable](variance-covariance.qmd#exm-variance-bernoulli),
-it has variance $\prob(1 - \prob)$.
-
-:::
+{{< include pds/_subfiles/_exm-bernoulli.qmd >}}
 
 {{< slidebreak >}}
 
@@ -87,94 +46,27 @@ it has variance $\prob(1 - \prob)$.
 
 ## The Poisson distribution {#sec-poisson-dist}
 
-:::{#def-poisson}
-#### Poisson distribution
+{{< include pds/_subfiles/_def-poisson.qmd >}}
 
-A random variable $Y$ has the **Poisson distribution** with mean parameter $\mean > 0$,
-written $Y \sim \Pois(\mean)$
-[@wikipedia_poisson_distribution],
-if:
-
-$$\P(Y = y) \eqdef \frac{\mean^{y} e^{-\mean}}{y!} \, \1{y \in \Nat}, \quad y \in \reals$$ {#eq-pois-pmf}
-
-where $\Nat = \set{0, 1, 2, \dots}$,
-and the [indicator](https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function) makes the mass $0$ outside $\Nat$,
-where $y!$ is undefined.
-
-:::
-
-::: {.remark .notes}
-(see @fig-pois-pmf)
-:::
+{{< include pds/_subfiles/_rem-poisson-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exr-range-poisson}
-What is the range of possible values for a Poisson distribution?
-:::
+{{< include pds/_subfiles/_exr-range-poisson.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#sol-range-poisson}
-$$
-\begin{aligned}
-\rangef{Y}
-&= \set{0, 1, 2, \dots} \\
-&= \Nat
-\end{aligned}
-$$
-:::
+{{< include pds/_subfiles/_sol-range-poisson.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-cdf-pois}
-#### CDF of Poisson distribution
-
-If $Y \sim \Pois(\mean)$, then for every real number $y$:
-
-$$\P(Y \le y) = e^{-\mean} \sum_{j=0}^{\floor{y}}\frac{\mean^j}{j!}$$ {#eq-pois-cdf}
-
-:::
-
-::: proof
-For $y < 0$, both sides are $0$ (the sum is empty).
-For any $y \ge 0$,
-the event $\{Y \le y\}$ is the disjoint union of events $\{Y = j\}$
-for all non-negative integers $j \le \floor{y}$.
-Applying the Poisson PMF (@eq-pois-pmf) and factoring out the common term $e^{-\mean}$:
-
-$$
-\ba
-\P(Y \le y)
-&= \sum_{j=0}^{\floor{y}} \P(Y = j) && (\text{disjoint union of events } Y = j) \\
-&= \sum_{j=0}^{\floor{y}} \frac{\mean^j e^{-\mean}}{j!} && (\text{definition of Poisson PMF}) \\
-&= e^{-\mean} \sum_{j=0}^{\floor{y}} \frac{\mean^j}{j!} && (\text{factoring out } e^{-\mean} \text{ constant wrt } j)
-\ea
-$$
-:::
+{{< include pds/_subfiles/_thm-cdf-pois.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-cdf-pois}
-#### Computing Poisson cumulative probabilities
+{{< include pds/_subfiles/_exm-cdf-pois.qmd >}}
 
-For a Poisson random variable $X \sim \Pois(\mean = 2)$,
-the probability of observing at most 2 events is computed as:
-
-$$
-\ba
-\P(X \le 2)
-&= e^{-2} \sum_{j=0}^{2} \frac{2^j}{j!} && (\text{apply CDF formula with } \mean = 2, y = 2) \\
-&= e^{-2} \paren{\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}} && (\text{expand terms for } j = 0, 1, 2) \\
-&= e^{-2} \paren{1 + 2 + 2} && (\text{simplify factorials and powers}) \\
-&= 5 e^{-2} \approx 0.677 && (\text{evaluate numerical value})
-\ea
-$$
-:::
-
-::: {.remark .notes}
-(see @fig-pois-cdfs)
-:::
+{{< include pds/_subfiles/_rem-cdf-pois-notes.qmd >}}
 
 {{< slidebreak >}}
 
@@ -235,646 +127,109 @@ print(plot2)
 
 {{< slidebreak >}}
 
-:::{#exr-pois-dist-funs}
-#### Poisson distribution functions
-
-```{r}
-#| label: def-mu-exr-pois
-#| include: false
-mu <- 3.75
-```
-
-Let $X \sim \Pois(\mean = `r mu`)$.
-
-Compute:
-
-- $\P(X = 4)$
-- $\P(X \le 7)$
-- $\P(X > 5)$
-
-:::
+{{< include pds/_subfiles/_exr-pois-dist-funs.qmd >}}
 
 {{< slidebreak >}}
 
-::: solution
-
-- $\P(X=4) = `r dpois(x = 4, lambda = mu)`$
-- $\P(X\le 7) = `r ppois(q = 7, lambda = mu)`$
-- $\P(X > 5) = `r ppois(q = 5, lambda = mu, lower.tail = FALSE)`$
-
-:::
+{{< include pds/_subfiles/_sol-pois-dist-funs.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-poisson-properties}
-#### Mean and variance of the Poisson distribution
-
-If $X \sim \Pois(\mean)$, then:
-
-* $\Expp[X] = \mean$
-* $\Varr(X) = \mean$
-
-:::
-
-::: proof
-
-**Mean.**
-
-$$
-\ba
-\Expp[X]
-&= \sum_{x=0}^\infty x \cdot \P(X=x) && (\text{definition of expected value}) \\
-&= 0 \cdot \P(X=0) + \sumto{x}{\infty} x \cdot \P(X=x) && (\text{separate } x=0 \text{ term}) \\
-&= \sumto{x}{\infty} x \cdot \frac{\mean^x e^{-\mean}}{x!} && (\text{substitute Poisson PMF}) \\
-&= \sumto{x}{\infty} x \cdot \frac{\mean^x e^{-\mean}}{x \cdot (x-1)!} && (\text{definition of factorial } x!) \\
-&= \sumto{x}{\infty} \frac{\mean^x e^{-\mean}}{(x-1)!} && (\text{cancel factor of } x) \\
-&= \mean \cdot \sumto{x}{\infty} \frac{\mean^{x-1} e^{-\mean}}{(x-1)!} && (\text{factor out one power of } \mean) \\
-&= \mean \cdot \sum_{y=0}^\infty \frac{\mean^y e^{-\mean}}{y!} && (\text{change index variable } y \eqdef x-1) \\
-&= \mean \cdot 1 && (\text{PMF sums to 1 over state space}) \\
-&= \mean && (\text{simplify})
-\ea
-$$
-
-**Variance.**
-The same steps, canceling two factors instead of one, give $\E{X(X-1)}$:
-
-$$
-\ba
-\E{X(X-1)}
-&= \sum_{x=2}^\infty x(x-1) \cdot \frac{\mean^x e^{-\mean}}{x!} && (\text{LOTUS; the } x = 0, 1 \text{ terms are } 0) \\
-&= \sum_{x=2}^\infty \frac{\mean^x e^{-\mean}}{(x-2)!} && (\text{cancel } x(x-1) \text{ against } x!) \\
-&= \mean^2 \cdot \sum_{y=0}^\infty \frac{\mean^y e^{-\mean}}{y!} && (\text{factor out } \mean^2 \text{; } y \eqdef x - 2) \\
-&= \mean^2 && (\text{PMF sums to 1})
-\ea
-$$
-
-Then, by the [simplified expression for variance](variance-covariance.qmd#thm-variance)
-and [linearity of expectation](expectation.qmd#thm-linearity-expectation):
-
-$$
-\ba
-\Varr(X)
-&= \E{X^2} - \sqf{\E{X}} && (\text{simplified expression for variance}) \\
-&= \E{X(X-1)} + \E{X} - \sqf{\E{X}} && (X^2 = X(X-1) + X \text{; linearity}) \\
-&= \mean^2 + \mean - \mean^2 && (\text{substitute}) \\
-&= \mean && (\text{simplify})
-\ea
-$$
-
-See also <https://statproofbook.github.io/P/poiss-mean>
-and <https://statproofbook.github.io/P/poiss-var>.
-
-:::
+{{< include pds/_subfiles/_thm-poisson-properties.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-poisson-mode}
-#### Ratio of consecutive Poisson probabilities, and the mode
-
-If $X \sim \Pois(\mean)$, then:
-
-* $\P(X=x) = \frac{\mean}{x} \P(X = x-1)$ for $x \in \set{1, 2, \dots}$
-* For $x \in \set{1, 2, \dots}$ with $x < \mean$, $\P(X=x) > \P(X = x-1)$
-* For $x = \mean$ (possible only when $\mean$ is an integer), $\P(X=x) = \P(X = x-1)$
-* For $x \in \set{1, 2, \dots}$ with $x > \mean$, $\P(X=x) < \P(X = x-1)$
-* If $\mean$ is not an integer, $\argmax_{x} \P(X=x) = \floor{\mean}$;
-  if $\mean$ is an integer, the maximum is attained at both $x = \mean - 1$ and $x = \mean$
-
-:::
-
-::: proof
-
-**Ratio of consecutive probabilities.**
-For $x \in \set{1, 2, \dots}$:
-
-$$
-\ba
-\frac{\P(X = x)}{\P(X = x - 1)}
-&= \frac{\mean^x e^{-\mean} / x!}{\mean^{x-1} e^{-\mean} / (x-1)!} && (\text{substitute Poisson PMF}) \\
-&= \frac{\mean}{x} && (\text{cancel } \mean^{x-1} e^{-\mean} \text{ and } (x-1)!)
-\ea
-$$
-
-This ratio is greater than, equal to, or less than 1
-as $x$ is less than, equal to, or greater than $\mean$,
-which gives the three comparisons.
-So $\P(X = x)$ increases while $x < \mean$ and decreases once $x > \mean$.
-If $\mean$ is not an integer, the last increase is at $x = \floor{\mean}$,
-which is therefore the unique mode.
-If $\mean$ is an integer, $\P(X = \mean) = \P(X = \mean - 1)$,
-and both are modes.
-
-:::
+{{< include pds/_subfiles/_thm-poisson-mode.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-poisson-properties}
-#### Mode of a Poisson distribution
-
-For $X \sim \Pois(2.5)$,
-$\P(X = 2) = \frac{2.5}{2}\P(X = 1) > \P(X = 1)$
-and $\P(X = 3) = \frac{2.5}{3}\P(X = 2) < \P(X = 2)$,
-so the mode is $\floor{2.5} = 2$.
-For $X \sim \Pois(2)$, $\P(X = 2) = \frac{2}{2}\P(X = 1)$,
-so $1$ and $2$ are both modes,
-each with probability $2 e^{-2} \approx 0.271$.
-
-:::
+{{< include pds/_subfiles/_exm-poisson-properties.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#def-exposure}
-#### Exposure magnitude
-
-For many count outcomes,
-there is some sense of
-an **exposure magnitude**,
-such as
-population size or
-duration of observation,
-which multiplicatively rescales
-the expected (mean) count.
-
-:::
+{{< include pds/_subfiles/_def-exposure.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exr-exposure-magnitude}
-What are some examples of exposure magnitudes?
-:::
+{{< include pds/_subfiles/_exr-exposure-magnitude.qmd >}}
 
 {{< slidebreak >}}
 
-::: {.solution .smaller}
+{{< include pds/_subfiles/_sol-exposure-magnitude.qmd >}}
 
-outcome                      | exposure units
------------------------------| -------------
-disease incidence            | number of individuals exposed; time at risk
-car accidents                | miles driven
-worksite accidents           | person-hours worked
-population size              | size of habitat
-
-: Examples of exposure units {#tbl-exposure-units}
-
-:::
-
-:::: {.remark .notes}
-Exposure units are similar to
-the number of trials in a binomial distribution,
-but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
-
-We can use $t$ to represent continuous-valued exposures/observation durations,
-and $n$ to represent discrete-valued exposures.
-
-::::
+{{< include pds/_subfiles/_rem-exposure-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#def-event-rate}
-#### Event rate
+{{< include pds/_subfiles/_def-event-rate.qmd >}}
 
-For a count $Y$ observed over a fixed, known [exposure magnitude](#def-exposure) $t > 0$,
-the **event rate**, denoted $\rate$,
-is the mean of $Y$ divided by the exposure magnitude:
-
-$$\rate \eqdef \frac{\E{Y}}{t}$$ {#eq-def-event-rate}
-
-:::
-
-::: {.remark .notes}
-The event rate is a transformation of the mean:
-it removes the exposure magnitude from the mean,
-so counts observed over different exposures can be compared on one scale.
-Regression models for counts use the same decomposition,
-with the rate depending on covariates and the exposure magnitude known
-(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
-:::
+{{< include pds/_subfiles/_rem-event-rate-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-mean-vs-event-rate}
-#### Transformation function from event rate to mean
-
-If a count $Y$ is observed over exposure magnitude $t > 0$ with event rate $\rate$,
-then its mean $\mean \eqdef \E{Y}$ is:
-
-$$\mean = \rate \cdot t$$ {#eq-lambda-to-mu}
-
-:::
-
-::: proof
-By @def-event-rate:
-
-$$
-\ba
-\rate &\eqdef \frac{\E{Y}}{t} && (\text{definition of event rate}) \\
-\E{Y} &= \rate \cdot t && (\text{multiply both sides by } t > 0) \\
-\mean &= \rate \cdot t && (\mean \eqdef \E{Y})
-\ea
-$$
-:::
+{{< include pds/_subfiles/_thm-mean-vs-event-rate.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-mean-vs-event-rate}
-#### Calculating expected counts from event rates
-
-Suppose a city records a disease event rate of $\rate = 0.05$ cases per person-year.
-For a subpopulation with an exposure magnitude of $t = 100$ person-years,
-the expected count of cases is, by @thm-mean-vs-event-rate:
-
-$$
-\ba
-\mean &= \rate \cdot t && (\text{transformation from event rate to mean}) \\
-&= 0.05 \times 100 && (\text{substitute } \rate = 0.05 \text{ and } t = 100) \\
-&= 5 \text{ cases} && (\text{evaluate expected count})
-\ea
-$$
-:::
+{{< include pds/_subfiles/_exm-mean-vs-event-rate.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-non-exposed}
-#### No exposure means no expected events
+{{< include pds/_subfiles/_thm-non-exposed.qmd >}}
 
-For each exposure magnitude $t \ge 0$,
-let $Y_t$ be the count observed over exposure $t$.
-If the mean count is proportional to the exposure magnitude,
-$\E{Y_t} = \rate \cdot t$ for all $t \ge 0$ with one finite rate $\rate$,
-then there are no expected events without exposure:
-
-$$\E{Y_0} = 0$$
-
-:::
-
-::: proof
-$$
-\ba
-\E{Y_0}
-&= \rate \cdot 0 && (\text{evaluate } \E{Y_t} = \rate t \text{ at } t = 0) \\
-&= 0 && (\text{multiplication by zero; } \rate \text{ is finite})
-\ea
-$$
-:::
-
-::: {.remark .notes}
-
-The hypothesis carries the content here.
-@def-event-rate alone cannot give $\E{Y_0} = 0$,
-since $\rate = \E{Y}/t$ is undefined at $t = 0$;
-the result holds for a model that assumes one rate $\rate$
-shared across exposure magnitudes, including $t = 0$.
-
-:::
+{{< include pds/_subfiles/_rem-non-exposed-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-non-exposed}
-#### Zero exposure time
-
-If a subject is observed for $t = 0$ person-years,
-no follow-up time has elapsed,
-so under a constant-rate model
-the expected number of incident events is $\E{Y_0} = 0$.
-:::
+{{< include pds/_subfiles/_exm-non-exposed.qmd >}}
 
 {{< slidebreak >}}
 
-:::{.callout-important}
-
-A mean proportional to exposure, $\E{Y_t} = \rate t$,
-has no term that stays nonzero at $t = 0$:
-a model of this form says that with no exposure, no events are expected.
-A mean with an added constant, such as $\E{Y_t} = c + \rate t$ with $c > 0$,
-would expect $c$ events even with no exposure.
-Regression models for counts keep the proportional form when they add covariates
-(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
-
-:::
+{{< include pds/_subfiles/_callout-zero-exposure.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-exposure-log-scale}
-#### Exposure is additive on the log scale
-
-If $\mean = \rate\cdot t$ with $\rate > 0$ and $t > 0$, then:
-
-$$\log{\mean} = \log{\rate} + \log{t}$$
-
-:::
-
-::: proof
-$$
-\ba
-\log{\mean}
-&= \log(\rate \cdot t) && (\text{substitute } \mean = \rate \cdot t) \\
-&= \log{\rate} + \log{t} && (\text{logarithm product rule})
-\ea
-$$
-:::
+{{< include pds/_subfiles/_thm-exposure-log-scale.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-exposure-log-scale}
-#### Log-linear representation of expected counts
-
-If a clinic sees an event rate of $\rate = 0.02$ events/day and $t = 30$ days of observation:
-
-$$
-\ba
-\log{\mean}
-&= \log(0.02) + \log(30) && (\text{apply log-scale formula}) \\
-&= -3.912 + 3.401 && (\text{evaluate natural logarithms}) \\
-&= -0.511 && (\text{sum terms})
-\ea
-$$
-
-Exponentiating yields $\mean = \expf{-0.511} \approx 0.60$ expected events.
-:::
+{{< include pds/_subfiles/_exm-exposure-log-scale.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#def-offset}
-#### Offset
+{{< include pds/_subfiles/_def-offset.qmd >}}
 
-In a model whose linear component contains a term with no unknown coefficient,
-that term is called an **offset**:
-it shifts the linear component by a known amount.
-In a count model with exposure magnitude $t$,
-the offset is the known term $\log{t}$ in the log-scale decomposition of the [mean](expectation.qmd#def-expectation)
-([@thm-exposure-log-scale]),
-
-$$\log{\mean} = \log{\rate} + \log{t}.$$
-
-:::
-
-::: {.remark .notes}
-The offset needs no covariates:
-with a single exposure $t$ and an unknown rate $\rate$,
-$\log{t}$ is already an offset.
-Regression models for counts keep the same term
-and add covariate terms beside it
-(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
-
-:::
+{{< include pds/_subfiles/_rem-offset-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-offset}
-#### The offset for a clinic's event count
-
-In @exm-exposure-log-scale,
-the clinic was observed for $t = 30$ days,
-so the offset is $\log{30} \approx 3.401$.
-Only $\log{\rate}$ is unknown before the data are seen;
-the offset is fixed by the length of observation.
-A clinic observed for $t = 60$ days has offset $\log{60} \approx 4.094$,
-which raises $\log{\mean}$ by $\log{2} \approx 0.693$ at the same event rate.
-:::
+{{< include pds/_subfiles/_exm-offset.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-sum-pois}
-#### Sum of independent Poisson random variables
-
-If $X$ and $Y$ are [independent](independence.qmd#def-indpt) Poisson random variables with means
-$\mean_X$ and $\mean_Y$, their sum, $Z=X+Y$, is also a Poisson random variable, with mean 
-$\mean_Z = \mean_X + \mean_Y$.
-
-:::
-
-::: proof
-The event $\{Z = z\}$ is the disjoint union of the events $\{X = k, Y = z - k\}$
-for $k = 0, 1, \ldots, z$
-(since $X$ and $Y$ are non-negative integers), so:
-
-$$
-\ba
-\P(Z = z)
-&= \sum_{k=0}^z \P(X = k,\, Y = z - k) && (\text{countable additivity}) \\
-&= \sum_{k=0}^z \P(X = k) \P(Y = z - k) && (\text{independence}) \\
-&= \sum_{k=0}^z \frac{\mean_X^k e^{-\mean_X}}{k!} \frac{\mean_Y^{z-k} e^{-\mean_Y}}{(z-k)!} && (\text{substitute Poisson PMFs}) \\
-&= e^{-(\mean_X + \mean_Y)} \sum_{k=0}^z \frac{\mean_X^k \mean_Y^{z-k}}{k!(z-k)!} && (\text{factor out } e^{-\mean_X} e^{-\mean_Y}) \\
-&= \frac{e^{-(\mean_X + \mean_Y)}}{z!} \sum_{k=0}^z \frac{z!}{k!(z-k)!} \mean_X^k \mean_Y^{z-k} && (\text{multiply and divide by } z!) \\
-&= \frac{e^{-(\mean_X + \mean_Y)}}{z!} (\mean_X + \mean_Y)^z && (\text{binomial theorem})
-\ea
-$$
-
-This probability expression matches the PMF of a $\Pois(\mean_X + \mean_Y)$ random variable
-(see also <https://web.stanford.edu/class/archive/cs/cs109/cs109.1206/lectureNotes/LN12_independent_rvs.pdf>, Example 3).
-:::
+{{< include pds/_subfiles/_thm-sum-pois.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-sum-pois}
-#### Aggregating independent region counts
-
-Suppose Region A records $X \sim \Pois(\mean_X = 12)$ cases
-and Region B records $Y \sim \Pois(\mean_Y = 18)$ cases independently.
-By @thm-sum-pois, the combined total count $Z = X + Y$ follows a Poisson distribution:
-
-$$
-\ba
-Z &\sim \Pois(\mean_X + \mean_Y) && (\text{sum of independent Poissons}) \\
-&= \Pois(12 + 18) && (\text{substitute region means}) \\
-&= \Pois(30) && (\text{evaluate sum})
-\ea
-$$
-:::
+{{< include pds/_subfiles/_exm-sum-pois.qmd >}}
 
 {{< slidebreak >}}
 
 ## The Negative-Binomial distribution {#sec-nb-dist}
 
-:::{#def-nb}
-#### Negative binomial distribution
-
-A random variable $Y$ has the **negative binomial distribution**
-with mean $\mean > 0$ and overdispersion parameter $\overdisp > 0$,
-written $Y \sim \NegBin(\mean, \overdisp)$
-[@wikipedia_negative_binomial_distribution],
-if, for $y \in \set{0, 1, 2, \dots}$:
-
-$$
-\P(Y=y)
-\eqdef \frac{\mean^y}{y!}
-\cdot \frac{\gammafn(\overdisp + y)}{\gammafn(\overdisp) \cdot (\overdisp + \mean)^y}
-\cdot \paren{1+\frac{\mean}{\overdisp}}^{-\overdisp}
-$$
-
-where $\gammafn$ is the gamma function,
-which satisfies $\gammafn(x) = (x-1)!$ for positive integers $x$.
-
-:::
+{{< include pds/_subfiles/_def-nb.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-nb-poisson-limit}
-#### The negative binomial converges to the Poisson
-
-Let the population [mean](expectation.qmd#def-expectation) be $\mean > 0$, and let $Y_\overdisp \sim \NegBin(\mean, \overdisp)$.
-Then for each $y \in \set{0, 1, 2, \dots}$,
-as $\overdisp \rightarrow \infty$,
-the negative binomial PMF converges to the [Poisson](#def-poisson) PMF (@eq-pois-pmf):
-
-$$\lim_{\overdisp \rightarrow \infty} \P(Y_\overdisp = y) = \frac{\mean^{y} e^{-\mean}}{y!}$$
-
-:::
-
-::: proof
-
-Choose a value $y$ of $Y_\overdisp$.
-In @def-nb, the first factor $\mean^y / y!$ does not depend on $\overdisp$.
-For the second factor,
-$\gammafn(\overdisp + y) = \gammafn(\overdisp) \prod_{k=0}^{y-1} (\overdisp + k)$,
-by applying $\gammafn(x + 1) = x\,\gammafn(x)$ $y$ times
-(for $y = 0$, the product is empty and equals 1), so:
-
-$$
-\ba
-\frac{\gammafn(\overdisp + y)}{\gammafn(\overdisp) \cdot (\overdisp + \mean)^y}
-&= \frac{\gammafn(\overdisp) \prod_{k=0}^{y-1} (\overdisp + k)}{\gammafn(\overdisp) \cdot (\overdisp + \mean)^y}
-&& (\gammafn(x + 1) = x\,\gammafn(x) \text{, applied } y \text{ times}) \\
-&= \prod_{k=0}^{y-1} \frac{\overdisp + k}{\overdisp + \mean}
-&& (\text{cancel } \gammafn(\overdisp) \text{; one factor of } \overdisp + \mean \text{ per } k) \\
-&= \prod_{k=0}^{y-1} \frac{1 + k/\overdisp}{1 + \mean/\overdisp}
-&& (\text{divide each numerator and denominator by } \overdisp) \\
-&\rightarrow \prod_{k=0}^{y-1} \frac{1 + 0}{1 + 0}
-&& (k/\overdisp \rightarrow 0 \text{ and } \mean/\overdisp \rightarrow 0 \text{; finitely many factors}) \\
-&= 1
-&& (\text{simplify})
-\ea
-$$
-
-For the third factor, write $x \eqdef \mean/\overdisp$,
-so $x \rightarrow 0$ as $\overdisp \rightarrow \infty$, and $\overdisp = \mean/x$:
-
-$$
-\ba
-\log\paren{\paren{1 + \frac{\mean}{\overdisp}}^{-\overdisp}}
-&= -\overdisp \log\paren{1 + \frac{\mean}{\overdisp}}
-&& (\text{log of a power}) \\
-&= -\mean \cdot \frac{\log(1 + x)}{x}
-&& (\text{substitute } \overdisp = \mean/x) \\
-&\rightarrow -\mean \cdot 1
-&& (\textstyle\lim_{x \rightarrow 0} \log(1 + x)/x = 1 \text{, the derivative of } \log(1 + x) \text{ at } x = 0) \\
-&= -\mean
-&& (\text{simplify})
-\ea
-$$
-
-so, since the exponential function is continuous,
-$\paren{1 + \mean/\overdisp}^{-\overdisp} \rightarrow \expf{-\mean}$.
-Each of the three factors has a limit, so their product does too:
-
-$$
-\ba
-\lim_{\overdisp \rightarrow \infty} \P(Y_\overdisp = y)
-&= \frac{\mean^y}{y!} \cdot 1 \cdot \expf{-\mean}
-&& (\text{limit of a product of convergent factors}) \\
-&= \frac{\mean^{y} e^{-\mean}}{y!}
-&& (\text{rearrange})
-\ea
-$$
-
-which is the $\Pois(\mean)$ PMF.
-
-:::
+{{< include pds/_subfiles/_thm-nb-poisson-limit.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-nb}
-#### Mean and variance of the negative binomial distribution
-
-If $Y \sim \NegBin(\mean, \overdisp)$, then:
-
-- $\Expp[Y] = \mean$
-- $\Var{Y} = \mean + \frac{\mean^2}{\overdisp} > \mean$
-
-:::
-
-::: proof
-
-The negative binomial distribution is a gamma mixture of Poisson distributions:
-if $\rvrate$ has the gamma density
-$g(\rate) = \frac{(\overdisp/\mean)^\overdisp}{\gammafn(\overdisp)} \rate^{\overdisp - 1} e^{-\overdisp\rate/\mean}$
-for $\rate > 0$,
-which has mean $\mean$ and variance $\mean^2/\overdisp$ [@CaseBerg01],
-and $Y \mid \rvrate = \rate \sim \Pois(\rate)$,
-then $Y \sim \NegBin(\mean, \overdisp)$.
-To check this, integrate the joint density over $\rate$:
-
-$$
-\ba
-\P(Y = y)
-&= \int_0^\infty \frac{\rate^y e^{-\rate}}{y!} \cd \frac{(\overdisp/\mean)^\overdisp}{\gammafn(\overdisp)} \rate^{\overdisp - 1} e^{-\overdisp\rate/\mean}\,d\rate
-&& (\text{marginalize over } \rvrate) \\
-&= \frac{(\overdisp/\mean)^\overdisp}{y!\,\gammafn(\overdisp)} \int_0^\infty \rate^{y + \overdisp - 1} e^{-\rate(1 + \overdisp/\mean)}\,d\rate
-&& (\text{collect powers of } \rate \text{ and exponents}) \\
-&= \frac{(\overdisp/\mean)^\overdisp}{y!\,\gammafn(\overdisp)} \cd \frac{\gammafn(y + \overdisp)}{(1 + \overdisp/\mean)^{y + \overdisp}}
-&& (\textstyle\int_0^\infty \rate^{a-1} e^{-b\rate}\,d\rate = \gammafn(a)/b^a) \\
-&= \frac{\gammafn(y + \overdisp)}{y!\,\gammafn(\overdisp)} \paren{\frac{\overdisp}{\mean}}^\overdisp \paren{\frac{\mean}{\mean + \overdisp}}^{y + \overdisp}
-&& (1 + \overdisp/\mean = (\mean + \overdisp)/\mean) \\
-&= \frac{\gammafn(y + \overdisp)}{y!\,\gammafn(\overdisp)} \paren{\frac{\overdisp}{\mean + \overdisp}}^{\overdisp} \paren{\frac{\mean}{\mean + \overdisp}}^{y}
-&& (\text{combine the } \mean^\overdisp \text{ factors}) \\
-&= \frac{\mean^y}{y!} \cd \frac{\gammafn(\overdisp + y)}{\gammafn(\overdisp)\,(\overdisp + \mean)^y} \cd \paren{1 + \frac{\mean}{\overdisp}}^{-\overdisp}
-&& (\text{rearrange into the form of the definition})
-\ea
-$$
-
-Then, by the [law of iterated expectations](expectation.qmd#thm-lie)
-and the [law of total variance](variance-covariance.qmd#thm-total-variance),
-using
-
-$$
-\begin{aligned}
-\E{Y \mid \rvrate} &= \Varr(Y \mid \rvrate) \\
-&= \rvrate
-\end{aligned}
-$$
-
-(@thm-poisson-properties):
-
-$$
-\ba
-\Expp[Y]
-&= \E{\E{Y \mid \rvrate}}
-&& (\text{law of iterated expectations}) \\
-&= \E{\rvrate}
-&& (\E{Y \mid \rvrate} = \rvrate) \\
-&= \mean
-&& (\text{mean of the gamma distribution}) \\
-\Var{Y}
-&= \E{\Var{Y \mid \rvrate}} + \Var{\E{Y \mid \rvrate}}
-&& (\text{law of total variance}) \\
-&= \E{\rvrate} + \Var{\rvrate}
-&& (\Var{Y \mid \rvrate} = \rvrate \text{ and } \E{Y \mid \rvrate} = \rvrate) \\
-&= \mean + \frac{\mean^2}{\overdisp}
-&& (\text{mean and variance of the gamma distribution})
-\ea
-$$
-
-and $\mean^2/\overdisp > 0$ gives $\Var{Y} > \mean$.
-
-:::
+{{< include pds/_subfiles/_thm-nb.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-nb}
-#### Overdispersion relative to the Poisson
-
-With $\mean = 4$ and $\overdisp = 2$,
-
-$$
-\begin{aligned}
-\Var{Y} &= 4 + 16/2 \\
-&= 12,
-\end{aligned}
-$$
-
-three times the variance of a $\Pois(4)$ count with the same mean.
-
-:::
+{{< include pds/_subfiles/_exm-nb.qmd >}}
 
 {{< slidebreak >}}
 
@@ -898,590 +253,87 @@ three times the variance of a $\Pois(4)$ count with the same mean.
 
 ## Weibull distribution {#sec-weibull}
 
-:::{#def-weibull}
-#### Weibull distribution
-
-A non-negative random variable $T$ has the **Weibull distribution**
-with shape $\shape > 0$ and rate $\rate > 0$
-[@wikipedia_weibull_distribution]
-if its
-[survival function](random-variables.qmd#def-surv-fn) is:
-
-$$\surv(t) \eqdef \text{e}^{-\rate t^\shape}, \quad t \ge 0$$
-
-:::
+{{< include pds/_subfiles/_def-weibull.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-weibull}
-#### Weibull density and hazard
+{{< include pds/_subfiles/_thm-weibull.qmd >}}
 
-If $T$ has the Weibull distribution with shape $\shape$ and rate $\rate$, then for $t > 0$:
-
-$$
-\begin{aligned}
-f(t) &= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}\\
-\h(t) &= \shape\rate t^{\shape-1}
-\end{aligned}
-$$
-
-:::
-
-::: proof
-
-The CDF of $T$ is $F(t) = 1 - \surv(t)$
-([survival function and CDF](random-variables.qmd#thm-survival-expressions-1)),
-which is $0$ for $t < 0$ and $1 - \text{e}^{-\rate t^\shape}$ for $t \ge 0$.
-This $F$ is continuous everywhere,
-with a continuous derivative everywhere except possibly $t = 0$,
-so
-
-$$
-\begin{aligned}
-f &= F' \\
-&= -\surv'
-\end{aligned}
-$$
-
-is a density of $T$
-([a piecewise-smooth CDF has its derivative as a density](random-variables.qmd#thm-cdf-derivative-density)).
-This density is continuous at every $t > 0$,
-so there the hazard is $f(t)/\surv(t)$
-([hazard equals density over survival](random-variables.qmd#thm-hazard-dens-surv)):
-
-$$
-\ba
-f(t)
-&= -\frac{d}{dt}\text{e}^{-\rate t^\shape}
-&& (f = -\surv') \\
-&= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}
-&& (\text{chain rule}) \\
-\h(t)
-&= \frac{\shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}}{\text{e}^{-\rate t^\shape}}
-&& (\text{hazard is density over survival}) \\
-&= \shape\rate t^{\shape-1}
-&& (\text{cancel})
-\ea
-$$
-
-:::
-
-::: {.remark .notes}
-
-The hazard is written $\h(t)$ here, rather than $\haz(t)$,
-because the Weibull rate parameter is also called $\rate$.
-
-:::
+{{< include pds/_subfiles/_rem-weibull-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-weibull-mean}
-#### Weibull mean
-
-If $T$ has the Weibull distribution with shape $\shape$ and rate $\rate$, then:
-
-$$\E{T} = \gammafn(1+1/\shape)\cdot \rate^{-1/\shape}$$
-
-:::
-
-::: proof
-
-For the mean, use the [survival-function formula for the mean](expectation.qmd#thm-surv-mean)
-and substitute $u = \rate t^\shape$,
-so that $t = (u/\rate)^{1/\shape}$ and $dt = \frac{1}{\shape}\rate^{-1/\shape} u^{1/\shape - 1}\,du$:
-
-$$
-\ba
-\E{T}
-&= \int_0^\infty \text{e}^{-\rate t^\shape}\,dt
-&& (\text{expectation via the survival function}) \\
-&= \frac{1}{\shape}\rate^{-1/\shape} \int_0^\infty u^{1/\shape - 1} \text{e}^{-u}\,du
-&& (\text{substitute } u = \rate t^\shape) \\
-&= \frac{1}{\shape}\rate^{-1/\shape}\,\gammafn(1/\shape)
-&& (\text{definition of the gamma function}) \\
-&= \gammafn(1 + 1/\shape)\,\rate^{-1/\shape}
-&& (\gammafn(1 + a) = a\,\gammafn(a))
-\ea
-$$
-
-:::
+{{< include pds/_subfiles/_thm-weibull-mean.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#cor-weibull-exponential}
-#### The Weibull with shape 1 is the exponential
-
-If $T$ has the [Weibull distribution](#def-weibull) with shape $\shape = 1$ and rate $\rate$,
-then $T$ has the [exponential distribution](random-variables.qmd#def-exponential) with rate $\rate$.
-
-:::
-
-::: proof
-
-By @thm-weibull with $\shape = 1$, for $t > 0$:
-
-$$
-\ba
-f(t)
-&= \shape\rate t^{\shape-1}\text{e}^{-\rate t^\shape}
-&& (\text{Weibull density}) \\
-&= 1 \cdot \rate t^{0}\text{e}^{-\rate t^1}
-&& (\text{substitute } \shape = 1) \\
-&= \rate \text{e}^{-\rate t}
-&& (t^0 = 1 \text{ and } t^1 = t)
-\ea
-$$
-
-and $f(t) = 0$ for $t < 0$, since $T$ is non-negative.
-This density matches the exponential density at every $t \ne 0$.
-Changing a density at the single point $t = 0$
-does not change its integral over any set,
-so $T$ has the exponential distribution with rate $\rate$.
-
-:::
+{{< include pds/_subfiles/_cor-weibull-exponential.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#cor-weibull-hazard-monotone}
-#### The Weibull shape sets the direction of the hazard
+{{< include pds/_subfiles/_cor-weibull-hazard-monotone.qmd >}}
 
-If $T$ has the [Weibull distribution](#def-weibull) with shape $\shape$ and rate $\rate$,
-then on $t > 0$ its hazard $\h(t)$ is:
-
-- strictly increasing if $\shape > 1$
-- constant if $\shape = 1$
-- strictly decreasing if $\shape < 1$
-
-:::
-
-::: proof
-
-By @thm-weibull, $\h(t) = \shape\rate t^{\shape-1}$ for $t > 0$, so:
-
-$$
-\ba
-\frac{d}{dt}\h(t)
-&= \frac{d}{dt} \shape\rate t^{\shape-1}
-&& (\text{Weibull hazard}) \\
-&= \shape(\shape - 1)\rate t^{\shape-2}
-&& (\text{power rule})
-\ea
-$$
-
-For $t > 0$, the factors $\shape$, $\rate$, and $t^{\shape-2}$ are all positive,
-so $\frac{d}{dt}\h(t)$ has the sign of $\shape - 1$:
-positive for $\shape > 1$, zero for $\shape = 1$, and negative for $\shape < 1$.
-A function with a positive (negative) derivative on an interval
-is strictly increasing (decreasing) there,
-and one with a zero derivative is constant.
-
-:::
-
-::: {.remark .notes}
-
-The exponential distribution's hazard is constant,
-so the Weibull's choice of an increasing, constant, or decreasing hazard
-(@cor-weibull-hazard-monotone)
-provides more flexibility than the exponential.
-
-:::
+{{< include pds/_subfiles/_rem-weibull-hazard-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-weibull}
-#### Exponential as a special case
-
-With $\shape = 1$, @thm-weibull gives $\h(t) = \rate$ and
-
-$$
-\begin{aligned}
-\E{T} &= \gammafn(2)\rate^{-1} \\
-&= 1/\rate,
-\end{aligned}
-$$
-
-matching the exponential distribution's constant hazard
-and mean.
-With $\shape = 2$ and $\rate = 1$,
-$\h(t) = 2t$ increases with $t$,
-and
-
-$$
-\begin{aligned}
-\E{T} &= \gammafn(3/2) \\
-&= \sqrt{\pi}/2 \\
-&\approx 0.886.
-\end{aligned}
-$$
-
-:::
+{{< include pds/_subfiles/_exm-weibull.qmd >}}
 
 {{< slidebreak >}}
 
 ## The multivariate normal distribution {#sec-mvn}
 
-:::{#def-mvn}
-#### Multivariate normal distribution (multivariate Gaussian distribution)
+{{< include pds/_subfiles/_def-mvn.qmd >}}
 
-A $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$
-has the **multivariate normal distribution**
-(or **multivariate Gaussian distribution**)
-with mean parameter $\vecf{\mean} \in \reals^p$
-and variance parameter $\matr{\covmat}$,
-a $p \times p$
-[positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
-matrix,
-written $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
-if $\vX$ has joint density:
-
-$$
-\p(\vX = \vx) \eqdef
-\frac{1}{(2\pi)^{p/2} \det(\matr{\covmat})^{1/2}}
-\ef{-\frac{1}{2} \tp{(\vx - \vecf{\mean})} \matr{\covmat}^{-1} (\vx - \vecf{\mean})},
-\quad \vx \in \reals^p
-$$
-
-where $\det(\matr{\covmat})$ is the
-[determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant)
-of $\matr{\covmat}$
-and $\matr{\covmat}^{-1}$ is its
-[inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse).
-
-:::
-
-::: {.remark .notes}
-
-A joint density of $p$ random variables is the $p$-variable analogue of a
-[joint density](random-variables.qmd#def-joint-pdf) of two:
-a non-negative function on $\reals^p$
-whose integral over any region $A \subseteq \reals^p$
-is $\Pr(\vX \in A)$.
-
-The density is well defined because $\matr{\covmat}$ is positive definite:
-
-- $\matr{\covmat}^{-1}$ exists
-  ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)), and
-- $\det(\matr{\covmat}) > 0$
-  ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#cor-det-pd)),
-  so its square root is a positive number.
-
-:::
+{{< include pds/_subfiles/_rem-mvn-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-mvn-density-integral}
-#### The multivariate normal density integrates to 1
-
-If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
-then the density in @def-mvn integrates to 1 over $\reals^p$.
-
-:::
+{{< include pds/_subfiles/_thm-mvn-density-integral.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-mvn-moments}
-#### The mean and variance of the multivariate normal distribution
+{{< include pds/_subfiles/_thm-mvn-moments.qmd >}}
 
-If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
-then $\Expp\vX = \vecf{\mean}$
-(the [expectation of a random vector](expectation.qmd#def-expectation-matrix)),
-and $\Varf{\vX} = \matr{\covmat}$
-(the [variance of a random vector](variance-covariance.qmd#def-cov-vec-x)).
-
-:::
-
-::: {.remark .notes}
-
-The proof changes variables in a $p$-dimensional integral,
-which these notes do not develop;
-see [@wikipedia_multivariate_normal_distribution].
-As with the univariate [normal distribution](random-variables.qmd#thm-normal-moments),
-these facts are where the parameters' names come from.
-They also show why $\matr{\covmat}$ must at least be
-[positive semidefinite](variance-covariance.qmd#thm-vcov-psd);
-requiring it to be positive definite rules out cases like
-[a variance matrix that is not positive definite](variance-covariance.qmd#exm-vcov-singular),
-which has no joint density.
-
-:::
+{{< include pds/_subfiles/_rem-mvn-moments-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-mvn-univariate}
-#### The univariate normal is the case $p = 1$
-
-With $p = 1$, $\vecf{\mean} = (\mean)$, and $\matr{\covmat} = (\ss)$ for $\ss > 0$,
-$\det(\matr{\covmat}) = \ss$
-([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$)
-and $\matr{\covmat}^{-1} = (1/\ss)$, so:
-
-$$
-\ba
-\p(\vX = \vx)
-&= \frac{1}{(2\pi)^{1/2} (\ss)^{1/2}}
-\ef{-\frac{1}{2} (x - \mean) \frac{1}{\ss} (x - \mean)}
-&& \text{(substitute into the multivariate normal density)} \\
-&= \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x - \mean)^2}{2\ss}}
-&& \text{(simplify)}
-\ea
-$$
-
-which is the [normal density](random-variables.qmd#def-normal) $\ndist{\mean, \ss}$.
-
-:::
+{{< include pds/_subfiles/_exm-mvn-univariate.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#lem-mahalanobis-nonneg}
-#### The quadratic form in the multivariate normal density is non-negative
-
-If $\matr{\covmat}$ is a $p \times p$ positive definite matrix
-and $\vx, \vecf{\mean} \in \reals^p$, then
-
-$$\tp{(\vx - \vecf{\mean})} \matr{\covmat}^{-1} (\vx - \vecf{\mean}) \ge 0,$$
-
-with equality if and only if $\vx = \vecf{\mean}$.
-
-:::
-
-::: proof
-
-$\matr{\covmat}^{-1}$ is positive definite
-([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)).
-If $\vx \neq \vecf{\mean}$, then $\vx - \vecf{\mean} \neq \vzero$,
-so the quadratic form is positive by the
-[definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite).
-If $\vx = \vecf{\mean}$, then $\vx - \vecf{\mean} = \vzero$,
-and the quadratic form is $0$.
-
-:::
+{{< include pds/_subfiles/_lem-mahalanobis-nonneg.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#def-mahalanobis}
-#### Mahalanobis distance
+{{< include pds/_subfiles/_def-mahalanobis.qmd >}}
 
-For a $p \times p$ positive definite matrix $\matr{\covmat}$
-and $\vx, \vecf{\mean} \in \reals^p$,
-the **Mahalanobis distance** from $\vx$ to $\vecf{\mean}$ with respect to $\matr{\covmat}$ is:
-
-$$
-\mahal(\vx) \eqdef \sqrt{\tp{(\vx - \vecf{\mean})} \matr{\covmat}^{-1} (\vx - \vecf{\mean})}
-$$
-
-:::
-
-::: {.remark .notes}
-
-The square root is defined by @lem-mahalanobis-nonneg.
-See also [@wikipedia_mahalanobis_distance].
-
-:::
+{{< include pds/_subfiles/_rem-mahalanobis-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#cor-mvn-mahalanobis}
-#### The multivariate normal density decreases with Mahalanobis distance
-
-If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$, then:
-
-$$
-\p(\vX = \vx) = \frac{1}{(2\pi)^{p/2} \det(\matr{\covmat})^{1/2}} \ef{-\frac{\mahal(\vx)^2}{2}}
-$$
-
-where $\mahal$ is the Mahalanobis distance to $\vecf{\mean}$ with respect to $\matr{\covmat}$ (@def-mahalanobis).
-So the density is highest at $\vx = \vecf{\mean}$,
-decreases as $\mahal(\vx)$ increases,
-and is the same at every $\vx$ with the same $\mahal(\vx)$.
-
-:::
-
-::: proof
-
-Substitute @def-mahalanobis into @def-mvn.
-The function $\mahaldist \mapsto \ef{-\mahaldist^2/2}$ decreases on $\mahaldist \ge 0$,
-and by @lem-mahalanobis-nonneg, $\mahal(\vx) = 0$ only at $\vx = \vecf{\mean}$.
-
-:::
+{{< include pds/_subfiles/_cor-mvn-mahalanobis.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#exm-mahalanobis-special}
-#### Mahalanobis distance for diagonal variance matrices
-
-If $\matr{\covmat}$ is
-[diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix)
-with diagonal elements $\varpar_1, \ldots, \varpar_p$, all positive,
-then $\matr{\covmat}^{-1}$ is diagonal with diagonal elements
-$1/\varpar_1, \ldots, 1/\varpar_p$
-(multiplying the two gives $\matr{I}_p$;
-[matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
-
-$$
-\mahal(\vx)^2 = \sumip \frac{(x_i - \mean_i)^2}{\varpar_i}
-$$
-
-Two special cases:
-
-- If $\matr{\covmat} = \matr{I}_p$,
-  then $\mahal(\vx)^2 = \sumip (x_i - \mean_i)^2$,
-  so the Mahalanobis distance is the ordinary (Euclidean) distance.
-- If $\matr{\covmat} = \ss \matr{I}_p$,
-  then $\mahal(\vx)$ is the Euclidean distance divided by $\sdpar$.
-
-In general, each coordinate's difference is measured
-in units of that coordinate's standard deviation.
-
-:::
+{{< include pds/_subfiles/_exm-mahalanobis-special.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-mvn-diagonal-indpt}
-#### A multivariate normal vector with diagonal variance has independent normal components
-
-If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$
-and $\matr{\covmat}$ is diagonal with diagonal elements $\varpar_1, \ldots, \varpar_p$,
-then:
-
-- the joint density of $\vX$ is the product of the
-  [normal densities](random-variables.qmd#def-normal)
-  $\ndist{\mean_i, \varpar_i}$, $i = 1, \ldots, p$,
-- each $X_i \sim \ndist{\mean_i, \varpar_i}$, and
-- $X_1, \ldots, X_p$ are [independent](independence.qmd#def-indpt).
-
-:::
-
-::: proof
-
-By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal),
-$\det(\matr{\covmat}) = \prod_{i=1}^p \varpar_i$,
-so $\det(\matr{\covmat})^{1/2} = \prod_{i=1}^p \sdpar_i$.
-Using @exm-mahalanobis-special for the quadratic form:
-
-$$
-\ba
-\p(\vX = \vx)
-&= \frac{1}{(2\pi)^{p/2} \prod_{i=1}^p \sdpar_i}
-\ef{-\frac{1}{2} \sumip \frac{(x_i - \mean_i)^2}{\varpar_i}}
-&& \text{(substitute)} \\
-&= \prod_{i=1}^p \frac{1}{\sdpar_i \sqrt{2\pi}}
-\ef{-\frac{(x_i - \mean_i)^2}{2\varpar_i}}
-&& \text{(} \ef{a + b} = \ef{a}\ef{b} \text{)}
-\ea
-$$
-
-which is the product of the $\ndist{\mean_i, \varpar_i}$ densities.
-Integrating out every coordinate except $x_i$,
-each other factor integrates to 1
-([the normal density integrates to 1](random-variables.qmd#thm-normal-density)),
-leaving the $\ndist{\mean_i, \varpar_i}$ density as the density of $X_i$
-([marginal density from a joint density](random-variables.qmd#thm-marginal-density),
-with $p$ variables).
-So the joint density is the product of the marginal densities,
-and the components are independent by
-[the factorization theorem for densities](independence.qmd#thm-indpt-density),
-extended to $p$ variables as its remark describes.
-
-:::
+{{< include pds/_subfiles/_thm-mvn-diagonal-indpt.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#cor-mvn-uncorrelated-indpt}
-#### For a multivariate normal vector, uncorrelated components are independent
+{{< include pds/_subfiles/_cor-mvn-uncorrelated-indpt.qmd >}}
 
-If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
-then $X_1, \ldots, X_p$ are independent
-if and only if $\matr{\covmat}$ is diagonal,
-that is, if and only if $\Covs{X_i}{X_j} = 0$ for every $i \neq j$.
-
-:::
-
-::: proof
-
-By @thm-mvn-moments, $\Varf{\vX} = \matr{\covmat}$,
-whose $(i,j)$-th element is $\Covs{X_i}{X_j}$
-([elements of the variance matrix](variance-covariance.qmd#thm-vcov-elements)).
-If $\matr{\covmat}$ is diagonal,
-the components are independent by @thm-mvn-diagonal-indpt.
-If the components are independent, then:
-
-- each pair $X_i, X_j$ with $i \neq j$ is independent,
-- each $X_i$ is continuous, with the density left
-  after integrating out the other coordinates of the joint density
-  ([marginal density from a joint density](random-variables.qmd#thm-marginal-density),
-  with $p$ variables), and
-- $\E{X_i^2} < \infty$,
-  because $\Var{X_i}$, the $(i,i)$-th element of $\matr{\covmat}$, is defined,
-  and a [variance](variance-covariance.qmd#def-variance) is defined
-  only when $\E{X_i^2} < \infty$.
-
-So $\matr{\covmat}$ is diagonal by
-[independent components give a diagonal variance matrix](variance-covariance.qmd#cor-vcov-indpt-diagonal).
-
-:::
-
-::: {.remark .notes}
-
-In general, uncorrelated random variables need not be independent
-([an example](variance-covariance.qmd#exm-uncorrelated-not-indpt)).
-@cor-mvn-uncorrelated-indpt needs the whole vector to be multivariate normal:
-two random variables that are each normal and uncorrelated
-can still be dependent
-(<https://en.wikipedia.org/wiki/Normally_distributed_and_uncorrelated_does_not_imply_independent>).
-
-:::
+{{< include pds/_subfiles/_rem-mvn-uncorrelated-notes.qmd >}}
 
 {{< slidebreak >}}
 
-:::{#thm-mahalanobis-eigen}
-#### Mahalanobis distance in eigenvector coordinates
+{{< include pds/_subfiles/_thm-mahalanobis-eigen.qmd >}}
 
-Let $\matr{\covmat}$ be positive definite, with
-[eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition)
-$\matr{\covmat} = \matr{Q}\matr{\Eigvals}\tp{\matr{Q}}$,
-where $\matr{Q}$ has columns $\vecf{q}_1, \ldots, \vecf{q}_p$
-and $\matr{\Eigvals}$ has diagonal elements $\eigval_1, \ldots, \eigval_p$.
-Then:
-
-$$
-\mahal(\vx)^2 = \sumip \frac{\paren{\tp{\vecf{q}_i}(\vx - \vecf{\mean})}^2}{\eigval_i}
-$$
-
-:::
-
-::: proof
-
-Let $\vecf{y} = \tp{\matr{Q}}(\vx - \vecf{\mean})$,
-whose $i$-th element is $y_i = \tp{\vecf{q}_i}(\vx - \vecf{\mean})$.
-By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse),
-$\matr{\covmat}^{-1} = \matr{Q}\matr{\Eigvals}^{-1}\tp{\matr{Q}}$,
-with every $\eigval_i > 0$. So:
-
-$$
-\ba
-\mahal(\vx)^2
-&= \tp{(\vx - \vecf{\mean})} \matr{Q}\matr{\Eigvals}^{-1}\tp{\matr{Q}} (\vx - \vecf{\mean})
-&& \text{(definition; substitute } \matr{\covmat}^{-1} \text{)} \\
-&= \tp{\vecf{y}} \matr{\Eigvals}^{-1} \vecf{y}
-&& \text{(} \tp{(\vx - \vecf{\mean})}\matr{Q} = \tp{\vecf{y}} \text{)} \\
-&= \sumip \frac{y_i^2}{\eigval_i}
-&& \text{(} \matr{\Eigvals}^{-1} \text{ is diagonal)}
-\ea
-$$
-
-:::
-
-::: {.remark .notes}
-
-$y_i$ is the coordinate of $\vx - \vecf{\mean}$ along the eigenvector $\vecf{q}_i$.
-So the set of points at Mahalanobis distance $\mahaldist$ from $\vecf{\mean}$,
-where the multivariate normal density is constant (@cor-mvn-mahalanobis),
-is an ellipse ($p = 2$) or ellipsoid
-centered at $\vecf{\mean}$,
-with axes along the eigenvectors of $\matr{\covmat}$
-and half-length $\mahaldist\sqrt{\eigval_i}$ along $\vecf{q}_i$.
-
-:::
+{{< include pds/_subfiles/_rem-mahalanobis-eigen-notes.qmd >}}
 
 {{< slidebreak >}}
 

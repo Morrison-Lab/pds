@@ -1,0 +1,15 @@
+:::{#def-poisson}
+#### Poisson distribution
+
+A random variable $Y$ has the **Poisson distribution** with mean parameter $\mean > 0$,
+written $Y \sim \Pois(\mean)$
+[@wikipedia_poisson_distribution],
+if:
+
+$$\P(Y = y) \eqdef \frac{\mean^{y} \euler^{-\mean}}{y!} \, \1{y \in \Nat}, \quad y \in \reals$$ {#eq-pois-pmf}
+
+where $\Nat = \set{0, 1, 2, \dots}$ is the set of non-negative integers.
+The [indicator](https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function) makes the mass $0$ outside $\Nat$,
+where $y!$ is undefined.
+
+:::

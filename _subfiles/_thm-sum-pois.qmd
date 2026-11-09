@@ -1,0 +1,29 @@
+:::{#thm-sum-pois}
+#### Sum of independent Poisson random variables
+
+If $X$ and $Y$ are [independent](independence.qmd#def-indpt) Poisson random variables with means
+$\mean_X$ and $\mean_Y$, their sum, $Z=X+Y$, is also a Poisson random variable, with mean 
+$\mean_Z = \mean_X + \mean_Y$.
+
+:::
+
+::: proof
+The event $\{Z = z\}$ is the disjoint union of the events $\{X = k, Y = z - k\}$
+for $k = 0, 1, \ldots, z$
+(since $X$ and $Y$ are non-negative integers), so:
+
+$$
+\ba
+\P(Z = z)
+&= \sum_{k=0}^z \P(X = k,\, Y = z - k) && (\text{countable additivity}) \\
+&= \sum_{k=0}^z \P(X = k) \P(Y = z - k) && (\text{independence}) \\
+&= \sum_{k=0}^z \frac{\mean_X^k e^{-\mean_X}}{k!} \frac{\mean_Y^{z-k} e^{-\mean_Y}}{(z-k)!} && (\text{substitute Poisson PMFs}) \\
+&= e^{-(\mean_X + \mean_Y)} \sum_{k=0}^z \frac{\mean_X^k \mean_Y^{z-k}}{k!(z-k)!} && (\text{factor out } e^{-\mean_X} e^{-\mean_Y}) \\
+&= \frac{e^{-(\mean_X + \mean_Y)}}{z!} \sum_{k=0}^z \frac{z!}{k!(z-k)!} \mean_X^k \mean_Y^{z-k} && (\text{multiply and divide by } z!) \\
+&= \frac{e^{-(\mean_X + \mean_Y)}}{z!} (\mean_X + \mean_Y)^z && (\text{binomial theorem})
+\ea
+$$
+
+This probability expression matches the PMF of a $\Pois(\mean_X + \mean_Y)$ random variable
+(see also <https://web.stanford.edu/class/archive/cs/cs109/cs109.1206/lectureNotes/LN12_independent_rvs.pdf>, Example 3).
+:::
