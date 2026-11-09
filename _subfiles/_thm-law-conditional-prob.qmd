@@ -1,7 +1,9 @@
 :::{#thm-law-conditional-prob}
-#### Law of conditional probability
+#### Law of conditional probability (probability chain rule, general product rule)
 
-For any two events $A$ and $B$ with $\Pr(B) > 0$:
+The **law of conditional probability** is also called the **probability chain rule**
+or the **general product rule**.
+It states that for any two events $A$ and $B$ with $\Pr(B) > 0$:
 
 $$\Pr(A \cap B) = \Pr(A \mid B) \cd \Pr(B)$$
 
