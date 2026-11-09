@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 10:40:56 (PST)
+Last modified: 2026-11-09 10:48:52 (PST)
 
 > **NOTE:**
 >
@@ -1308,7 +1308,29 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Theorem 20 (Hazard equals density over survival)** If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$ and [survival function](#def-surv-fn) $\mathbb{S}(t)$, then for every $t$ with $\mathbb{S}(t) > 0$ at which $f$ is continuous:
+> **Theorem 20 (A hazard is non-negative)** If ${\lambda}(t)$ is the [hazard function](#def-hazard) of a [continuous random variable](#def-continuous-rv) $T$ at a value $t$ with $\Pr(T \ge t) > 0$, then:
+>
+> $${\lambda}(t) \ge 0$$
+
+> **NOTE:**
+>
+> *Proof*. For each $\Delta> 0$, the quantity that defines the hazard is non-negative:
+>
+> $$\begin{aligned}
+> \frac{\Pr(t \le T < t + \Delta\mid T \ge t)}{\Delta}
+> &\ge 0
+> && \text{(a conditional probability is non-negative, and } \Delta> 0 \text{)}
+> \end{aligned}$$
+>
+> A [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of non-negative values is non-negative, so ${\lambda}(t) \ge 0$.
+
+> **NOTE:**
+>
+> *Remark 2* (The range of a hazard). A hazard can exceed $1$: [Example 31](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 20](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
+
+> **NOTE:**
+>
+> **Theorem 21 (Hazard equals density over survival)** If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$ and [survival function](#def-surv-fn) $\mathbb{S}(t)$, then for every $t$ with $\mathbb{S}(t) > 0$ at which $f$ is continuous:
 >
 > $${\lambda}(t) = \frac{f(t)}{\mathbb{S}(t)}$$
 
@@ -1493,7 +1515,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > *Remark*. For a continuous random variable $T \ge 0$ whose density is continuous at all but finitely many points, the following results connect the functions in [Table 2](#tbl-prob-dist-fns):
 >
 > - [Theorem 19](#thm-survival-expressions-1)
-> - [Theorem 20](#thm-hazard-dens-surv)
+> - [Theorem 21](#thm-hazard-dens-surv)
 > - [Corollary 4](#cor-cuhaz-nonneg)
 > - [Corollary 5](#cor-surv-int-haz)
 >

@@ -194,6 +194,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative"
   },
   {
+   "id": "mds/calculus-derivatives#def-limit",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "def-limit",
+   "kind": "def",
+   "title": "limit",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit"
+  },
+  {
    "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
    "site": "mds",
    "page": "calculus-double-integrals",
@@ -787,6 +797,15 @@
    "div": "thm-non-exposed",
    "kind": "thm",
    "title": "No exposure means no expected events",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-normal-density-max",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-normal-density-max",
+   "kind": "thm",
+   "title": "The maximum of the Gaussian density",
    "external": false
   },
   {
@@ -1785,7 +1804,7 @@
    "page": "probability-basics",
    "div": "thm-law-conditional-prob",
    "kind": "thm",
-   "title": "Law of conditional probability",
+   "title": "Law of conditional probability (probability chain rule, general product rule)",
    "external": false
   },
   {
@@ -2209,6 +2228,15 @@
    "div": "thm-hazard-dens-surv",
    "kind": "thm",
    "title": "Hazard equals density over survival",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-hazard-nonnegative",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-hazard-nonnegative",
+   "kind": "thm",
+   "title": "A hazard is non-negative",
    "external": false
   },
   {
@@ -2920,6 +2948,14 @@
   [
    "pds/distributions#thm-nb-poisson-limit",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#thm-normal-density-max",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-normal-density-max",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/distributions#thm-poisson-properties",
@@ -4058,6 +4094,10 @@
    "pds/probability-basics#def-conditional-prob"
   ],
   [
+   "pds/probability-basics#thm-law-conditional-prob",
+   "pds/probability-basics#def-event"
+  ],
+  [
    "pds/probability-basics#thm-total-prob",
    "mds/measures#def-countable-additivity"
   ],
@@ -4328,6 +4368,18 @@
   [
    "pds/random-variables#thm-hazard-dens-surv",
    "pds/random-variables#thm-density-limit"
+  ],
+  [
+   "pds/random-variables#thm-hazard-nonnegative",
+   "mds/calculus-derivatives#def-limit"
+  ],
+  [
+   "pds/random-variables#thm-hazard-nonnegative",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/random-variables#thm-hazard-nonnegative",
+   "pds/random-variables#def-hazard"
   ],
   [
    "pds/random-variables#thm-joint-distribution-rectangles",

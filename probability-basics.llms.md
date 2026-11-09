@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 10:40:56 (PST)
+Last modified: 2026-11-09 10:48:52 (PST)
 
 # 1 Defining probabilities
 
@@ -431,7 +431,7 @@ Last modified: 2026-11-09 10:40:56 (PST)
 
 > **NOTE:**
 >
-> **Theorem 5 (Law of conditional probability)** For any two events $A$ and $B$ with $\Pr(B) > 0$:
+> **Theorem 5 (Law of conditional probability (probability chain rule, general product rule))** For any two [events](#def-event) $A$ and $B$ with $\Pr(B) > 0$:
 >
 > $$\Pr(A \cap B) = \Pr(A \mid B) \cdot\Pr(B)$$
 
