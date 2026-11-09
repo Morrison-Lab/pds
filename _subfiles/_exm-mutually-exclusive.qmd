@@ -1,0 +1,12 @@
+:::{#exm-mutually-exclusive}
+#### Low and high rolls
+
+In @exm-sample-space,
+the events "the roll is at most 2", $\set{1, 2}$,
+and "the roll is at least 5", $\set{5, 6}$,
+are mutually exclusive: no roll is in both.
+The events "the roll is even", $\set{2, 4, 6}$,
+and "the roll is at most 2", $\set{1, 2}$,
+are not mutually exclusive: a roll of 2 is in both.
+
+:::

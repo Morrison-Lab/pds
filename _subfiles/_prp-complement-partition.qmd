@@ -1,0 +1,24 @@
+:::{#prp-complement-partition}
+#### An event and its complement partition the sample space
+
+For any [event](#def-event) $A$,
+the events $A$ and its [complement](#def-complement) $\neg A$
+are a [partition](#def-partition) of the [sample space](#def-sample-space) $\samplespace$.
+
+:::
+
+::: proof
+
+The sample space $\samplespace$ is an event (@lem-sample-space-event),
+so a partition of it is defined.
+The complement $\neg A$ is the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) $\setdiff{\samplespace}{A}$,
+which is an event
+because the events are closed under complements in $\samplespace$,
+by the complement requirement of a
+[$\sigma$-algebra](https://morrison-lab.github.io/mds/measures.html#def-sigma-algebra).
+The events $A$ and $\neg A$ are mutually exclusive,
+because $\neg A$ contains only elements not in $A$.
+Their union is $\samplespace$,
+because each element of $\samplespace$ is either in $A$ or not in $A$.
+
+:::

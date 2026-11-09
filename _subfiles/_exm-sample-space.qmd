@@ -1,0 +1,6 @@
+:::{#exm-sample-space}
+#### Sample space of a die roll
+
+Rolling a six-sided die once has sample space $\samplespace = \set{1, 2, 3, 4, 5, 6}$.
+
+:::
