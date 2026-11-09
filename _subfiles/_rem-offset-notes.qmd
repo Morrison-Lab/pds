@@ -1,0 +1,9 @@
+::: {.remark .notes}
+The offset needs no covariates:
+with a single exposure $t$ and an unknown rate $\rate$,
+$\log{t}$ is already an offset.
+Regression models for counts keep the same term
+and add covariate terms beside it
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+
+:::

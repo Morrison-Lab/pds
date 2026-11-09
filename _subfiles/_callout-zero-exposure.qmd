@@ -1,0 +1,11 @@
+:::{.callout-important}
+
+A mean proportional to exposure, $\E{Y_t} = \rate t$,
+has no term that stays nonzero at $t = 0$:
+a model of this form says that with no exposure, no events are expected.
+A mean with an added constant, such as $\E{Y_t} = c + \rate t$ with $c > 0$,
+would expect $c$ events even with no exposure.
+Regression models for counts keep the proportional form when they add covariates
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+
+:::

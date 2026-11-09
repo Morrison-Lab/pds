@@ -1,0 +1,8 @@
+::: {.remark .notes}
+The event rate is a transformation of the mean:
+it removes the exposure magnitude from the mean,
+so counts observed over different exposures can be compared on one scale.
+Regression models for counts use the same decomposition,
+with the rate depending on covariates and the exposure magnitude known
+(see [rme's count-regression chapter](https://morrison-lab.github.io/rme/chapters/count-regression.html)).
+:::

@@ -1,0 +1,37 @@
+:::{#thm-mahalanobis-eigen}
+#### Mahalanobis distance in eigenvector coordinates
+
+Let $\matr{\covmat}$ be positive definite, with
+[eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition)
+$\matr{\covmat} = \matr{Q}\matr{\Eigvals}\tp{\matr{Q}}$,
+where $\matr{Q}$ has columns $\vecf{q}_1, \ldots, \vecf{q}_p$
+and $\matr{\Eigvals}$ has diagonal elements $\eigval_1, \ldots, \eigval_p$.
+Then:
+
+$$
+\mahal(\vx)^2 = \sumip \frac{\paren{\tp{\vecf{q}_i}(\vx - \vecf{\mean})}^2}{\eigval_i}
+$$
+
+:::
+
+::: proof
+
+Let $\vecf{y} = \tp{\matr{Q}}(\vx - \vecf{\mean})$,
+whose $i$-th element is $y_i = \tp{\vecf{q}_i}(\vx - \vecf{\mean})$.
+By the [inverse of a positive definite matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse),
+$\matr{\covmat}^{-1} = \matr{Q}\matr{\Eigvals}^{-1}\tp{\matr{Q}}$,
+with every $\eigval_i > 0$. So:
+
+$$
+\ba
+\mahal(\vx)^2
+&= \tp{(\vx - \vecf{\mean})} \matr{Q}\matr{\Eigvals}^{-1}\tp{\matr{Q}} (\vx - \vecf{\mean})
+&& \text{(definition; substitute } \matr{\covmat}^{-1} \text{)} \\
+&= \tp{\vecf{y}} \matr{\Eigvals}^{-1} \vecf{y}
+&& \text{(} \tp{(\vx - \vecf{\mean})}\matr{Q} = \tp{\vecf{y}} \text{)} \\
+&= \sumip \frac{y_i^2}{\eigval_i}
+&& \text{(} \matr{\Eigvals}^{-1} \text{ is diagonal)}
+\ea
+$$
+
+:::

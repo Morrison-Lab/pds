@@ -1,0 +1,14 @@
+::: {.remark .notes}
+
+The proof changes variables in a $p$-dimensional integral,
+which these notes do not develop;
+see [@wikipedia_multivariate_normal_distribution].
+As with the univariate [normal distribution](random-variables.qmd#thm-normal-moments),
+these facts are where the parameters' names come from.
+They also show why $\matr{\covmat}$ must at least be
+[positive semidefinite](variance-covariance.qmd#thm-vcov-psd);
+requiring it to be positive definite rules out cases like
+[a variance matrix that is not positive definite](variance-covariance.qmd#exm-vcov-singular),
+which has no joint density.
+
+:::

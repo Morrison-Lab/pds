@@ -1,0 +1,17 @@
+::: {.remark .notes}
+
+A joint density of $p$ random variables is the $p$-variable analogue of a
+[joint density](random-variables.qmd#def-joint-pdf) of two:
+a non-negative function on $\reals^p$
+whose integral over any region $A \subseteq \reals^p$
+is $\Pr(\vX \in A)$.
+
+The density is well defined because $\matr{\covmat}$ is positive definite:
+
+- $\matr{\covmat}^{-1}$ exists
+  ([positive definite matrices have positive definite inverses](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)), and
+- $\det(\matr{\covmat}) > 0$
+  ([positive definite matrices have positive determinants](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#cor-det-pd)),
+  so its square root is a positive number.
+
+:::

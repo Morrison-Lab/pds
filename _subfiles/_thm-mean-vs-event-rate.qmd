@@ -1,0 +1,21 @@
+:::{#thm-mean-vs-event-rate}
+#### Transformation function from event rate to mean
+
+If a count $Y$ is observed over exposure magnitude $t > 0$ with event rate $\rate$,
+then its mean $\mean \eqdef \E{Y}$ is:
+
+$$\mean = \rate \cdot t$$ {#eq-lambda-to-mu}
+
+:::
+
+::: proof
+By @def-event-rate:
+
+$$
+\ba
+\rate &\eqdef \frac{\E{Y}}{t} && (\text{definition of event rate}) \\
+\E{Y} &= \rate \cdot t && (\text{multiply both sides by } t > 0) \\
+\mean &= \rate \cdot t && (\mean \eqdef \E{Y})
+\ea
+$$
+:::

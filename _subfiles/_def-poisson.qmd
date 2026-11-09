@@ -1,0 +1,11 @@
+:::{#def-poisson}
+#### Poisson distribution
+
+A random variable $Y$ has the **Poisson distribution** with mean parameter $\mean > 0$,
+written $Y \sim \Pois(\mean)$
+[@wikipedia_poisson_distribution],
+if:
+
+$$\P(Y = y) \eqdef \frac{\mean^{y} e^{-\mean}}{y!}, \quad y \in \Nat = \set{0, 1, 2, \dots}$$ {#eq-pois-pmf}
+
+:::

@@ -1,0 +1,9 @@
+:::: {.remark .notes}
+Exposure units are similar to
+the number of trials in a binomial distribution,
+but **in non-binomial count outcomes, there can be more than one event per unit of exposure**.
+
+We can use $t$ to represent continuous-valued exposures/observation durations,
+and $n$ to represent discrete-valued exposures.
+
+::::

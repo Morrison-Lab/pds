@@ -1,0 +1,13 @@
+:::{#def-exposure}
+#### Exposure magnitude
+
+For many count outcomes,
+there is some sense of
+an **exposure magnitude**,
+such as
+population size or
+duration of observation,
+which multiplicatively rescales
+the expected (mean) count.
+
+:::

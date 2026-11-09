@@ -1,0 +1,11 @@
+:::{#exm-offset}
+#### The offset for a clinic's event count
+
+In @exm-exposure-log-scale,
+the clinic was observed for $t = 30$ days,
+so the offset is $\log{30} \approx 3.401$.
+Only $\log{\rate}$ is unknown before the data are seen;
+the offset is fixed by the length of observation.
+A clinic observed for $t = 60$ days has offset $\log{60} \approx 4.094$,
+which raises $\log{\mean}$ by $\log{2} \approx 0.693$ at the same event rate.
+:::

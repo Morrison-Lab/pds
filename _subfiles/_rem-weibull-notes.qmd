@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+The hazard is written $\h(t)$ here, rather than $\haz(t)$,
+because the Weibull rate parameter is also called $\rate$.
+
+:::

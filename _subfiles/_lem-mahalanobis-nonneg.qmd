@@ -1,0 +1,23 @@
+:::{#lem-mahalanobis-nonneg}
+#### The quadratic form in the multivariate normal density is non-negative
+
+If $\matr{\covmat}$ is a $p \times p$ positive definite matrix
+and $\vx, \vecf{\mean} \in \reals^p$, then
+
+$$\tp{(\vx - \vecf{\mean})} \matr{\covmat}^{-1} (\vx - \vecf{\mean}) \ge 0,$$
+
+with equality if and only if $\vx = \vecf{\mean}$.
+
+:::
+
+::: proof
+
+$\matr{\covmat}^{-1}$ is positive definite
+([positive definite inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-pd-inverse)).
+If $\vx \neq \vecf{\mean}$, then $\vx - \vecf{\mean} \neq \vzero$,
+so the quadratic form is positive by the
+[definition of positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite).
+If $\vx = \vecf{\mean}$, then $\vx - \vecf{\mean} = \vzero$,
+and the quadratic form is $0$.
+
+:::
