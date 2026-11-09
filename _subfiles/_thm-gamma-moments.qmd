@@ -9,7 +9,7 @@ $$\E{T^k} = \frac{\gammafn(\shape + k)}{\gammafn(\shape) \, \rate^k}$$
 
 ::: proof
 
-The last integral is the value $\gammafn(\shape + k)$ of the [gamma function](#def-gamma-function):
+The substitution below turns the integrand into the one that defines the [gamma function](#def-gamma-function):
 
 $$
 \ba

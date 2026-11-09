@@ -1,7 +1,7 @@
 :::{#def-gamma-function}
 #### Gamma function
 
-The **gamma function** $\gammafn$ maps each $s > 0$ to:
+The **gamma function** $\gammafn$ is defined for each $s > 0$ by:
 
 $$\gammafn(s) \eqdef \int_0^\infty u^{s - 1} \ef{-u} \, du$$
 
