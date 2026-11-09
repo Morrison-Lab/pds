@@ -17,7 +17,7 @@ once $\cdf_Y\paren{y}$ is written through the CDF $\cdf_X$ of $X$.
 There are two cases, by the sign of $a$.
 
 - **Case $a > 0$.**
-  Dividing by $a > 0$ keeps the direction of $\le$, so:
+  Dividing by $a > 0$ leaves $\le$ as $\le$, so:
 
   $$
   \ba
@@ -39,7 +39,7 @@ There are two cases, by the sign of $a$.
   $$
 
 - **Case $a < 0$.**
-  Dividing by $a < 0$ reverses the direction of $\le$, and $\Pr(X = x) = 0$ for a [continuous](random-variables.qmd#def-continuous-rv) random variable $X$, so:
+  Dividing by $a < 0$ turns $\le$ into $\ge$, and $\Pr(X = x) = 0$ for a [continuous random variable](random-variables.qmd#def-continuous-rv) $X$, so:
 
   $$
   \ba
