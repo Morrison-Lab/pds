@@ -3,7 +3,6 @@
 #### Choosing a family for a research question
 
 A clinic wants to describe the number of emergency visits it receives each week.
-Which of the families named on this page fits this research question,
-and what feature of the weekly count supports your choice?
+Which of the families named on this page fits this research question, and why?
 
 :::
