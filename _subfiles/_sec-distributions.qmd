@@ -251,6 +251,32 @@ print(plot2)
 
 {{< slidebreak >}}
 
+## The gamma distribution {#sec-gamma-dist}
+
+{{< include pds/_subfiles/_def-gamma.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-gamma.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-gamma-moments.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-gamma-mean.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-gamma-variance.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-gamma-exponential.qmd >}}
+
+{{< slidebreak >}}
+
 ## Weibull distribution {#sec-weibull}
 
 {{< include pds/_subfiles/_def-weibull.qmd >}}

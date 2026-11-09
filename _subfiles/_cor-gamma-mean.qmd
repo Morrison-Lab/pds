@@ -1,0 +1,22 @@
+:::{#cor-gamma-mean}
+#### Mean of the gamma distribution
+
+If $T \sim \dGamf{\shape, \rate}$, then $\E{T} = \shape / \rate$.
+
+:::
+
+::: proof
+
+$$
+\ba
+\E{T}
+&= \frac{\gammafn(\shape + 1)}{\gammafn(\shape) \, \rate}
+&& (\text{@thm-gamma-moments with } k = 1) \\
+&= \frac{\shape \, \gammafn(\shape)}{\gammafn(\shape) \, \rate}
+&& (\gammafn(\shape + 1) = \shape \, \gammafn(\shape)) \\
+&= \frac{\shape}{\rate}
+&& (\text{cancel } \gammafn(\shape))
+\ea
+$$
+
+:::

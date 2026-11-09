@@ -1,0 +1,28 @@
+:::{#cor-gamma-exponential}
+#### The gamma distribution with shape 1 is the exponential
+
+If $T \sim \dGamf{1, \rate}$,
+then $T$ has the [exponential distribution](random-variables.qmd#def-exponential) with rate $\rate$.
+
+:::
+
+::: proof
+
+For $t > 0$:
+
+$$
+\ba
+f(t)
+&= \frac{\rate^{1}}{\gammafn(1)} \, t^{1 - 1} \ef{-\rate t}
+&& (\text{gamma density with } \shape = 1) \\
+&= \rate \, t^{0} \ef{-\rate t}
+&& (\gammafn(1) = 1 \text{ and } 1 - 1 = 0) \\
+&= \rate \ef{-\rate t}
+&& (t^0 = 1)
+\ea
+$$
+
+and $f(t) = 0$ for $t \le 0$.
+This is the exponential density with rate $\rate$.
+
+:::

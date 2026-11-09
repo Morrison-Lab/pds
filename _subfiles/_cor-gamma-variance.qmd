@@ -1,0 +1,42 @@
+:::{#cor-gamma-variance}
+#### Variance of the gamma distribution
+
+If $T \sim \dGamf{\shape, \rate}$, then $\Var{T} = \shape / \rate^2$.
+
+:::
+
+::: proof
+
+First, the second moment:
+
+$$
+\ba
+\E{T^2}
+&= \frac{\gammafn(\shape + 2)}{\gammafn(\shape) \, \rate^2}
+&& (\text{@thm-gamma-moments with } k = 2) \\
+&= \frac{(\shape + 1) \, \gammafn(\shape + 1)}{\gammafn(\shape) \, \rate^2}
+&& (\gammafn(\shape + 2) = (\shape + 1) \, \gammafn(\shape + 1)) \\
+&= \frac{(\shape + 1) \, \shape \, \gammafn(\shape)}{\gammafn(\shape) \, \rate^2}
+&& (\gammafn(\shape + 1) = \shape \, \gammafn(\shape)) \\
+&= \frac{\shape (\shape + 1)}{\rate^2}
+&& (\text{cancel } \gammafn(\shape))
+\ea
+$$
+
+Then:
+
+$$
+\ba
+\Var{T}
+&= \E{T^2} - \sqf{\E{T}}
+&& (\text{@thm-variance}) \\
+&= \frac{\shape (\shape + 1)}{\rate^2} - \frac{\shape^2}{\rate^2}
+&& (\text{@cor-gamma-mean}) \\
+&= \frac{\shape^2 + \shape - \shape^2}{\rate^2}
+&& (\text{expand } \shape (\shape + 1) \text{ and combine fractions}) \\
+&= \frac{\shape}{\rate^2}
+&& (\shape^2 - \shape^2 = 0)
+\ea
+$$
+
+:::

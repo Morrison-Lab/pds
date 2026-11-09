@@ -1,0 +1,40 @@
+:::{#exm-gamma}
+#### Gamma density with shape 2
+
+If $T \sim \dGamf{2, \rate}$, then $\gammafn(2) = 1$, so the [density](#def-gamma) is:
+
+$$
+f(t) = \rate^2 \, t \, \ef{-\rate t}, \quad t > 0
+$$
+
+The density is $0$ at $t = 0$, rises to a peak at $t = 1/\rate$, and then decays (@fig-gamma-density).
+
+```{r}
+#| label: fig-gamma-density
+#| fig-cap: "Gamma densities with shape 2, by rate $\\rate$"
+#| fig-alt: "Three curves of the gamma density with shape 2. Each starts at zero, peaks at one over its rate, and decays. The curve with rate 2 peaks earliest and highest."
+#| code-fold: true
+
+gamma_densities <-
+  dplyr::tibble(rate = c(0.5, 1, 2)) |>
+  dplyr::reframe(.by = rate, t = seq(0, 8, length.out = 400)) |>
+  dplyr::mutate(
+    density = dgamma(t, shape = 2, rate = rate),
+    rate = factor(rate)
+  )
+
+gamma_plot <-
+  gamma_densities |>
+  ggplot2::ggplot() +
+  ggplot2::aes(x = t, y = density, col = rate) +
+  ggplot2::geom_line() +
+  ggplot2::labs(
+    col = latex2exp::TeX("$\\lambda$"),
+    y = latex2exp::TeX("$f(t)$")
+  ) +
+  ggplot2::theme(legend.position = "bottom")
+
+print(gamma_plot)
+```
+
+:::

@@ -10,7 +10,7 @@ Negative binomial | Mixtures of Poisson distributions, counts of non-events unti
 [Multivariate normal](#sec-mvn) | Vectors of continuous outcomes
 [Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations
 [Exponential](random-variables.qmd#def-exponential) | Time to event outcomes
-Gamma | Time to event outcomes
+[Gamma](#def-gamma) | Time to event outcomes
 Weibull | Time to event outcomes
 Log-normal | Time to event outcomes
 
