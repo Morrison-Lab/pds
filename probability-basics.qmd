@@ -68,6 +68,46 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-probability.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-probability-finitely-additive.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-continuity-probability.qmd >}}
+
+{{< include pds/_subfiles/_rem-continuity-probability-notes.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-kolmogorov-axioms.qmd >}}
+
+{{< include pds/_subfiles/_rem-kolmogorov-axioms-notes.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-prob-subset.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-total-prob-1.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-p-neg0.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-p-neg.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-p-neg.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-random-choice.qmd >}}
 
 {{< slidebreak >}}

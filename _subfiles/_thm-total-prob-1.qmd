@@ -1,0 +1,26 @@
+:::{#thm-total-prob-1}
+#### An event and its complement sum to 1
+
+For any event $A$ and its [complement](#def-complement) $\neg A$:
+
+$$\Pr(A) + \Pr(\neg A) = 1$$
+
+:::
+
+::: proof
+
+The events $A$ and $\neg A$ are disjoint, and their union is $\samplespace$.
+
+$$
+\ba
+\Pr(A) + \Pr(\neg A)
+&= \Pr(A \cup \neg A)
+&& \text{(additivity of probability for disjoint events)} \\
+&= \Pr(\samplespace)
+&& \text{(} A \cup \neg A = \samplespace \text{)} \\
+&= 1
+&& \text{(probability of the sample space is 1)}
+\ea
+$$
+
+:::

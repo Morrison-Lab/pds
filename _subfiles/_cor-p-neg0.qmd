@@ -1,0 +1,12 @@
+:::{#cor-p-neg0}
+#### Complement rule
+
+For any event $A$:
+
+$$\Pr(\neg A) = 1 - \Pr(A)$$
+
+:::
+
+::: proof
+Subtract $\Pr(A)$ from both sides of @thm-total-prob-1.
+:::

@@ -1,0 +1,11 @@
+:::{#thm-prob-subset}
+#### Probability of a subset's intersection
+
+If $A$ and $B$ are events and $A\subseteq B$, then $\Pr(A \cap B) = \Pr(A)$.
+
+:::
+
+::: proof
+Since $A \subseteq B$, every outcome in $A$ is also in $B$, so $A \cap B = A$,
+and therefore $\Pr(A \cap B) = \Pr(A)$.
+:::
