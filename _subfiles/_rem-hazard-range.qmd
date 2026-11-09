@@ -4,7 +4,7 @@
 A hazard can exceed $1$:
 @exm-hazard-exceeds-one has $\haz(t) = 2$.
 Together with @thm-hazard-nonnegative,
-the hazards of a [continuous](#def-continuous-rv) [random variable](#def-random-variable) take values in $[0, \infty)$.
+the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$.
 The [discrete-time hazard](#def-discrete-hazard) differs:
 it lies in $[0, 1]$ by @cor-discrete-hazard-unit-interval.
 

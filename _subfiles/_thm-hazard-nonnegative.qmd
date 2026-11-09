@@ -11,7 +11,7 @@ $$\haz(t) \ge 0$$
 ::: proof
 
 For each $\change > 0$,
-the expression in the definition of the hazard is non-negative:
+the quantity that defines the hazard is non-negative:
 
 $$
 \ba
