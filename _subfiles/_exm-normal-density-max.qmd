@@ -6,8 +6,8 @@ By @thm-normal-density-max, the peak of the [density](random-variables.qmd#def-p
 
 ```{r}
 #| label: fig-normal-density-max
-#| fig-cap: "Gaussian densities with mean 0 and standard deviation $\\sigma$, with each peak marked"
-#| fig-alt: "Three bell curves centered at zero. The narrowest curve has the tallest peak, near 0.8, and the widest has the lowest, near 0.2."
+#| fig-cap: "Gaussian densities, with each peak marked"
+#| fig-alt: "Three Gaussian curves; narrower ones peak higher."
 #| code-fold: true
 
 sds <- c(0.5, 1, 2)
