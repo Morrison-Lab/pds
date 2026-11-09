@@ -89,6 +89,12 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 ## Pull request expectations
 
 - Keep PRs scoped --- bug fixes shouldn't smuggle in refactors.
+- **A mechanical split of a multi-div subfile stays a pure move** (Ezra, 2026-11-09; pds#368, pds#369).
+  Mechanical, content-identical PRs are exempt from the 10-file, 300-line cap, so the body says "mechanical, content-identical".
+  New content that a check forces (a result div, an example) is not a move and loses the exemption:
+  put it in a small stacked PR, and exempt the moved text from the check with `<!-- def-equiv-ok: reason -->`, listed in the body.
+  Put that comment below the `####` title line, never above it: above it, the div renders with no title.
+  Touching a subfile re-checks its old text, so expect `check-term-links` and `check-definition-equations` to flag lines you only moved.
 - Write commit messages and PR descriptions explaining the *why*, not just the *what*.
 - Don't bypass CI failures (spell check, link check, lint, bibliography DOIs, non-standard chars) --- fix the underlying issue.
 - Don't commit `_site/` or `_freeze/` changes unless that is genuinely the intent of the PR.
