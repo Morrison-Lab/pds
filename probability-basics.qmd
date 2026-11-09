@@ -148,6 +148,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-law-conditional-prob.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-total-prob.qmd >}}
 
 {{< slidebreak >}}

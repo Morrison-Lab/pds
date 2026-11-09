@@ -2,6 +2,6 @@
 #### Discrete random variable
 
 A random variable $X$ is **discrete**
-if its [range](#def-range) $\rangef{X}$ is [countable](https://morrison-lab.github.io/mds/functions.html#def-countable-set).
+if its [range](#def-range) $\rangef{X}$ is [countable](https://morrison-lab.github.io/mcs/chapters/sets.html#def-countable-set).
 
 :::
