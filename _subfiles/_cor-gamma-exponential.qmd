@@ -2,7 +2,7 @@
 #### The gamma distribution with shape 1 is the exponential
 
 If $T \sim \dGamf{1, \rate}$,
-then $T$ has the [exponential distribution](random-variables.qmd#def-exponential) with rate $\rate$.
+then $T$ has the [exponential distribution](random-variables.qmd#def-exponential) with [rate](#def-event-rate) $\rate$.
 
 :::
 
@@ -23,6 +23,6 @@ f(t)
 $$
 
 and $f(t) = 0$ for $t \le 0$.
-This is the exponential density with rate $\rate$.
+This is the [exponential density](random-variables.qmd#def-exponential) with rate $\rate$.
 
 :::

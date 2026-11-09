@@ -1,7 +1,7 @@
 :::{#thm-gamma-moments}
 #### Moments of the gamma distribution
 
-If $T \sim \dGamf{\shape, \rate}$, then for every integer $k \ge 0$:
+If $T \sim \dGamf{\shape, \rate}$, then for every [integer](https://morrison-lab.github.io/mcs/number-systems.html#def-integers) $k \ge 0$:
 
 $$\E{T^k} = \frac{\gammafn(\shape + k)}{\gammafn(\shape) \, \rate^k}$$
 
