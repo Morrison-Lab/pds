@@ -89,7 +89,8 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 ## Pull request expectations
 
 - Keep PRs scoped --- bug fixes shouldn't smuggle in refactors.
-- **A mechanical split of a multi-div subfile stays a pure move** (Ezra, 2026-11-09; pds#368, pds#369).
+- **A mechanical split of a multi-div subfile stays a pure move**
+  (Ezra, 2026-11-09, pds#368 and pds#369).
   Mechanical, content-identical PRs are exempt from the 10-file, 300-line cap, so the body says "mechanical, content-identical".
   New content that a check forces (a result div, an example) is not a move and loses the exemption:
   put it in a small stacked PR, and exempt the moved text from the check with `<!-- def-equiv-ok: reason -->`, listed in the body.
