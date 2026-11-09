@@ -26,6 +26,10 @@ format:
 
 {{< include pds/_subfiles/_exm-normal-density-max.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-normal-affine.qmd >}}
+
 {{< include pds/_subfiles/_sec-distributions-2.qmd >}}
 
 {{< slidebreak >}}

@@ -1,0 +1,82 @@
+:::{#thm-normal-affine}
+
+#### Gaussian distributions are closed under affine transformations
+
+If $X \sim \ndist{\mean, \ss}$ and $a \ne 0$, then $aX + b \sim \ndist{a\mean + b, a^2\ss}$.
+
+:::
+
+::: proof
+
+Let $Y = aX + b$ and let $f$ be the [density](random-variables.qmd#def-pdf) of $X$.
+The [CDF](random-variables.qmd#def-cdf) of $Y$ is
+$\cdf_Y\paren{y} = \Pr(aX + b \le y)$.
+The density $f$ is continuous everywhere, so at every $y$ the derivative of $\cdf_Y\paren{y}$ is the density of $Y$ by
+[the derivative of the CDF is the density](random-variables.qmd#thm-cdf-derivative-is-density),
+once $\cdf_Y\paren{y}$ is written through the CDF $\cdf_X$ of $X$.
+There are two cases, by the sign of $a$.
+
+- **Case $a > 0$.**
+  Dividing by $a > 0$ keeps the order of an inequality, so:
+
+  $$
+  \ba
+  \cdf_Y\paren{y}
+  &= \Pr\paren{X \le \frac{y-b}{a}}
+  && \text{(} aX + b \le y \iff X \le (y-b)/a \text{)} \\
+  &= \cdf_X\paren{\frac{y-b}{a}}
+  && \text{(definition of the CDF)}
+  \ea
+  $$
+
+  The [chain rule](https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule) gives the derivative:
+
+  $$
+  \deriv{y} \cdf_Y\paren{y}
+  = \frac{1}{a} f\paren{\frac{y-b}{a}}
+  = \frac{1}{\abs{a}} f\paren{\frac{y-b}{a}}
+  \quad \text{(} \abs{a} = a \text{)}
+  $$
+
+- **Case $a < 0$.**
+  Dividing by $a < 0$ reverses the order of an inequality, and $\Pr(X = x) = 0$ for a continuous $X$, so:
+
+  $$
+  \ba
+  \cdf_Y\paren{y}
+  &= \Pr\paren{X \ge \frac{y-b}{a}}
+  && \text{(} aX + b \le y \iff X \ge (y-b)/a \text{)} \\
+  &= 1 - \cdf_X\paren{\frac{y-b}{a}}
+  && \text{(complement, and } \Pr(X = (y-b)/a) = 0 \text{)}
+  \ea
+  $$
+
+  The chain rule gives the derivative:
+
+  $$
+  \deriv{y} \cdf_Y\paren{y}
+  = -\frac{1}{a} f\paren{\frac{y-b}{a}}
+  = \frac{1}{\abs{a}} f\paren{\frac{y-b}{a}}
+  \quad \text{(} \abs{a} = -a \text{)}
+  $$
+
+In both cases, $Y$ has density $\p(Y=y) = f\paren{(y-b)/a} / \abs{a}$.
+Substitute the Gaussian density of $X$:
+
+$$
+\ba
+\p(Y=y)
+&= \frac{1}{\abs{a}} \cd \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{\paren{(y-b)/a - \mean}^2}{2\ss}}
+&& \text{(Gaussian density of } X \text{)} \\
+&= \frac{1}{\abs{a}\sdpar\sqrt{2\pi}} \ef{-\frac{\paren{(y-b-a\mean)/a}^2}{2\ss}}
+&& \text{(common denominator } a \text{)} \\
+&= \frac{1}{\abs{a}\sdpar\sqrt{2\pi}} \ef{-\frac{(y-(a\mean+b))^2}{2a^2\ss}}
+&& \text{(} (u/a)^2 = u^2/a^2 \text{)} \\
+&= \frac{1}{\sqrt{a^2\ss}\sqrt{2\pi}} \ef{-\frac{(y-(a\mean+b))^2}{2a^2\ss}}
+&& \text{(} \abs{a}\sdpar = \sqrt{a^2\ss} \text{)}
+\ea
+$$
+
+This is the density of $\ndist{a\mean + b, a^2\ss}$ with mean parameter $a\mean + b$ and variance parameter $a^2\ss > 0$.
+
+:::
