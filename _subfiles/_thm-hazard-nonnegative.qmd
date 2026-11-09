@@ -1,0 +1,27 @@
+:::{#thm-hazard-nonnegative}
+#### A hazard is non-negative
+
+If $\haz(t)$ is the [hazard function](#def-hazard) of a [continuous random variable](#def-continuous-rv) $T$ at a value $t$ with $\Pr(T \ge t) > 0$,
+then:
+
+$$\haz(t) \ge 0$$
+
+:::
+
+::: proof
+
+For each $\change > 0$,
+the quantity that defines the hazard is non-negative:
+
+$$
+\ba
+\frac{\Pr(t \le T < t + \change \mid T \ge t)}{\change}
+&\ge 0
+&& \text{(a conditional probability is non-negative, and } \change > 0 \text{)}
+\ea
+$$
+
+A [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of non-negative values is non-negative,
+so $\haz(t) \ge 0$.
+
+:::
