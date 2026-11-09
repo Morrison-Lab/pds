@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-08 21:38:26 (PST)
+Last modified: 2026-11-09 10:40:56 (PST)
 
 # 1 Defining probabilities
 
@@ -111,7 +111,9 @@ Last modified: 2026-11-08 21:38:26 (PST)
 
 > **NOTE:**
 >
-> **Definition 8 (Complement of an event)** The **complement** of an [event](#def-event) $A$, denoted $\neg A$, is the event that $A$ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\Omega$ that are not in $A$, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) ${\Omega \setminus A}$:
+> **Definition 8 (Complement of an event)**  
+>
+> The **complement** of an [event](#def-event) $A$, denoted $\neg A$, is the event that $A$ does not [occur](#def-occurs): the [set](https://morrison-lab.github.io/mds/sets.html#def-set) of elements $\omega$ of the sample space $\Omega$ that are not in $A$, or equivalently, the [set difference](https://morrison-lab.github.io/mds/sets.html#def-set-difference) ${\Omega \setminus A}$:
 >
 > $$\begin{aligned}
 > \neg A
