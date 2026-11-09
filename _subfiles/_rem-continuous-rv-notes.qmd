@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+Every continuous random variable in these notes also has a
+[probability density function](#def-pdf).
+Continuous random variables without a density exist,
+but they do not arise in applications.
+
+:::

@@ -1,0 +1,9 @@
+:::{#exm-discrete-rv}
+#### Discrete random variables
+
+The number of heads in @exm-random-variable is discrete,
+with a finite range.
+A count with no upper bound, such as the number of emergency-department visits in a day,
+is discrete with a countably infinite range, $\set{0, 1, 2, \dots}$.
+
+:::
