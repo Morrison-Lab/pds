@@ -1,0 +1,12 @@
+:::{#def-mutually-exclusive}
+#### Mutually exclusive events (disjoint, pairwise disjoint, mutually disjoint)
+
+Finitely or countably many sets $A_1, A_2, \ldots$,
+such as [events](#def-event),
+are **mutually exclusive**
+(also called **disjoint**, **pairwise disjoint**, or **mutually disjoint**)
+when no two of them share an element:
+
+$$A_i \cap A_j = \emptyset \quad \text{for all } i \neq j$$
+
+:::

@@ -1,0 +1,13 @@
+:::{#exm-partition}
+#### Partitioning the die roll
+
+In @exm-sample-space,
+the events "the roll is even", $\set{2, 4, 6}$,
+and "the roll is odd", $\set{1, 3, 5}$,
+are mutually exclusive, and their union is $\samplespace$,
+so they partition the sample space.
+So do the six single-outcome events $\set{1}, \set{2}, \ldots, \set{6}$.
+The events $\set{1, 2}$ and $\set{5, 6}$ from @exm-mutually-exclusive
+do not partition $\samplespace$: their union leaves out 3 and 4.
+
+:::

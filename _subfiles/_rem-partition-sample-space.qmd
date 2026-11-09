@@ -1,0 +1,7 @@
+::: {#rem-partition-sample-space}
+#### A partition of the sample space
+
+A partition of the [sample space](#def-sample-space) is the case $A = \samplespace$,
+which is allowed because $\samplespace$ is an event (@lem-sample-space-event).
+
+:::

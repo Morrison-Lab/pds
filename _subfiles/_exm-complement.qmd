@@ -1,0 +1,8 @@
+:::{#exm-complement}
+#### Rolling an odd number
+
+In @exm-event,
+the complement of the event "the roll is even", $A = \set{2, 4, 6}$,
+is the event "the roll is odd", $\neg A = \set{1, 3, 5}$.
+
+:::

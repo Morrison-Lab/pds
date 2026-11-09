@@ -1,0 +1,8 @@
+:::{#exm-sample-space-event}
+#### The die roll's sample space as an event
+
+In @exm-sample-space, every subset of $\samplespace = \set{1, 2, 3, 4, 5, 6}$ can be an event,
+including $\samplespace$ itself:
+the event "the roll is any of 1 through 6", which always occurs.
+
+:::

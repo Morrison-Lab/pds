@@ -1,0 +1,10 @@
+:::{#exm-complement-partition}
+#### Even and odd rolls
+
+In @exm-event and @exm-complement,
+the event $A = \set{2, 4, 6}$ and its complement $\neg A = \set{1, 3, 5}$
+are mutually exclusive,
+and their union is $\samplespace = \set{1, 2, 3, 4, 5, 6}$,
+so they partition $\samplespace$.
+
+:::

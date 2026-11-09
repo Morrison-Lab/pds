@@ -1,0 +1,8 @@
+:::{#def-occurs}
+#### Occurrence of an event
+
+An [event](#def-event) $A$ **occurs**
+when the outcome of the experiment is in $A$,
+and does not occur when the outcome is not in $A$.
+
+:::
