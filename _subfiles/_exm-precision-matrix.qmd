@@ -12,16 +12,18 @@ $$
 \Varf{\vX} = \pmat{1 & \rho \\ \rho & 1},
 $$
 
-and the inverse of a $2 \times 2$ matrix gives
+and the formula for the [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of a $2 \times 2$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) gives
 
 $$
 \precision(\vX) = \frac{1}{1 - \rho^2} \pmat{1 & -\rho \\ -\rho & 1}.
 $$
 
-The off-diagonal entries have the opposite sign of $\rho$.
-Each diagonal entry, $1 / (1 - \rho^2)$, is at least the [precision](#def-precision) $1 / \Var{X_1} = 1$ of $X_1$ alone,
-and it grows without bound as $\abs{\rho} \to 1$.
-If $\rho = 0$, then $\precision(\vX)$ is the [identity matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-identity-matrix), which is diagonal like $\Varf{\vX}$
+The [off-diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-off-diagonal-entry) have the opposite sign of $\rho$.
+Each [diagonal entry](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry), $1 / (1 - \rho^2)$,
+is at least the [precision](#def-precision) $1 / \Var{X_1} = 1$ of $X_1$ alone,
+and it grows indefinitely as $\abs{\rho} \to 1$.
+If $\rho = 0$, then $\precision(\vX)$ is the [identity matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-identity-matrix),
+which is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) like $\Varf{\vX}$
 (compare @cor-vcov-indpt-diagonal).
 
 :::

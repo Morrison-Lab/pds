@@ -2,9 +2,9 @@
 
 #### Precision matrix
 
-The **precision matrix** of a $p \times 1$ random vector $\vX$ whose [variance matrix](#def-cov-vec-x) is
+The **precision matrix** of a $p \times 1$ [random](random-variables.qmd#def-random-variable) vector $\vX$ whose [variance matrix](#def-cov-vec-x) is
 [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite)
-is the matrix inverse of that variance matrix:
+is the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of that variance matrix:
 
 $$\precision(\vX) \eqdef \inv{\Varf{\vX}}.$$
 
