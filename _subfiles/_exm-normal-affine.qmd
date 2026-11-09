@@ -6,7 +6,7 @@
 
 Let $X \sim \ndist{\mean, \ss}$ with $\sdpar > 0$, and let $Z = (X - \mean) / \sdpar$.
 Then $Z = aX + b$ with $a = 1 / \sdpar$ and $b = -\mean / \sdpar$, and $a \ne 0$.
-By @thm-normal-affine, $Z$ is Gaussian with parameters:
+By @thm-normal-affine, $Z$ is [Gaussian](random-variables.qmd#def-normal) with parameters:
 
 $$
 \ba
