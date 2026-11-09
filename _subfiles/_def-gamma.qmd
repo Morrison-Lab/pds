@@ -1,0 +1,19 @@
+:::{#def-gamma}
+#### Gamma distribution
+
+A non-negative [random variable](random-variables.qmd#def-random-variable) $T$ has the **gamma distribution**
+with shape $\shape > 0$ and [rate](#def-event-rate) $\rate > 0$,
+written $T \sim \dGamf{\shape, \rate}$,
+if $T$ is [continuous](random-variables.qmd#def-continuous-rv)
+with [density](random-variables.qmd#def-pdf):
+
+$$
+f(t) \eqdef \begin{cases}
+\frac{\rate^{\shape}}{\gammafn(\shape)} \, t^{\shape - 1} \ef{-\rate t}, & t > 0 \\
+0, & t \le 0
+\end{cases}
+$$
+
+where $\gammafn$ is the [gamma function](#def-gamma-function).
+
+:::

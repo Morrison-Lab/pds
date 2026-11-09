@@ -1,0 +1,30 @@
+:::{#thm-gamma-moments}
+#### Moments of the gamma distribution
+
+If $T \sim \dGamf{\shape, \rate}$, then for every [integer](https://morrison-lab.github.io/mcs/number-systems.html#def-integers) $k \ge 0$:
+
+$$\E{T^k} = \frac{\gammafn(\shape + k)}{\gammafn(\shape) \, \rate^k}$$
+
+:::
+
+::: proof
+
+The substitution below reduces the [expectation](expectation.qmd#def-expectation) to the [gamma function](#def-gamma-function):
+
+$$
+\ba
+\E{T^k}
+&= \int_0^\infty t^k \, \frac{\rate^{\shape}}{\gammafn(\shape)} \, t^{\shape - 1} \ef{-\rate t} \, dt
+&& (\text{definition of expectation, with the gamma density}) \\
+&= \frac{\rate^{\shape}}{\gammafn(\shape)} \int_0^\infty t^{\shape + k - 1} \ef{-\rate t} \, dt
+&& (t^k \cdot t^{\shape - 1} = t^{\shape + k - 1}) \\
+&= \frac{\rate^{\shape}}{\gammafn(\shape)} \cdot \frac{1}{\rate^{\shape + k}} \int_0^\infty u^{\shape + k - 1} \ef{-u} \, du
+&& (\text{substitute } u = \rate t) \\
+&= \frac{\rate^{\shape}}{\gammafn(\shape)} \cdot \frac{\gammafn(\shape + k)}{\rate^{\shape + k}}
+&& (\text{definition of } \gammafn) \\
+&= \frac{\gammafn(\shape + k)}{\gammafn(\shape) \, \rate^k}
+&& (\rate^{\shape} / \rate^{\shape + k} = \rate^{-k})
+\ea
+$$
+
+:::
