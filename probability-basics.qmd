@@ -156,6 +156,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-total-prob-conditional.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-bayes.qmd >}}
 
 {{< slidebreak >}}
