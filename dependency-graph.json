@@ -194,6 +194,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
   },
   {
+   "id": "mds/algebra-sums#def-convex-function",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-convex-function",
+   "kind": "def",
+   "title": "convex function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-convex-function"
+  },
+  {
    "id": "mds/algebra-sums#def-summation",
    "site": "mds",
    "page": "algebra-sums",
@@ -482,6 +492,16 @@
    "title": "scalar",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar"
+  },
+  {
+   "id": "mds/linear-algebra-vectors#def-weighted-average",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-weighted-average",
+   "kind": "def",
+   "title": "weighted average",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average"
   },
   {
    "id": "mds/measures#cor-measure-finitely-additive",
@@ -4438,6 +4458,22 @@
    "pds/variance-covariance#def-variance"
   ],
   [
+   "pds/limit-theorems#lem-hoeffding",
+   "mds/algebra-sums#def-convex-function"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "mds/linear-algebra-vectors#def-weighted-average"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/limit-theorems#thm-chebyshev",
    "pds/limit-theorems#thm-markov"
   ],
@@ -4467,6 +4503,10 @@
   ],
   [
    "pds/limit-theorems#thm-hoeffding",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
    "pds/independence#def-iid"
   ],
   [
@@ -4476,6 +4516,10 @@
   [
    "pds/limit-theorems#thm-hoeffding",
    "pds/limit-theorems#thm-markov"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/limit-theorems#thm-hoeffding",
