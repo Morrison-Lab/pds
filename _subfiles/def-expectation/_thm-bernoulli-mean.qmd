@@ -5,7 +5,9 @@ If $X \sim \Ber(\prob)$ ([Bernoulli distribution](random-variables.qmd#def-berno
 that is, $\P(X = 1) = \prob$ and $\P(X = 0) = 1 - \prob$, then:
 
 $$\E{X} = \prob$$
-:::{{< slidebreak >}}
+:::
+
+{{< slidebreak >}}
 
 ::: proof
 

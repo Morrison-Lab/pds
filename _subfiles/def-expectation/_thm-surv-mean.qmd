@@ -7,7 +7,9 @@ and a defined expectation, then:
 
 $$\E{T} = \int_{t=0}^{\infty} \surv(t)\,dt$$
 
-:::{{< slidebreak >}}
+:::
+
+{{< slidebreak >}}
 
 ::: proof
 
