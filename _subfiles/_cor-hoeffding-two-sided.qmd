@@ -1,0 +1,48 @@
+{{< slidebreak >}}
+
+:::{#cor-hoeffding-two-sided}
+#### Hoeffding's inequality, two-sided
+<!-- check-result-definition-links: allow: moved unchanged from _thm-hoeffding.qmd; the corollary uses only the theorem's own terms, which that theorem links -->
+
+Under the assumptions of @thm-hoeffding, for every $\tolout > 0$,
+
+$$
+\Prf{\abs{\samplemean{X}{n} - \mean} \ge \tolout} \le 2e^{-2n\tolout^2}.
+$$ {#eq-hoeffding}
+
+:::
+
+::: proof
+
+The variables $1 - X_1, \ldots, 1 - X_n$ are IID, lie in $[0, 1]$, and have mean $1 - \mean$.
+Their sample mean is $1 - \samplemean{X}{n}$,
+so @thm-hoeffding applied to them gives
+
+$$
+\ba
+\Prf{\mean - \samplemean{X}{n} \ge \tolout}
+&= \Prf{(1 - \samplemean{X}{n}) - (1 - \mean) \ge \tolout}
+&& \text{(rearrange the event)} \\
+&\le e^{-2n\tolout^2}
+&& \text{(Hoeffding's inequality for } 1 - X_i \text{)}
+\ea
+$$
+
+The event $\set{\abs{\samplemean{X}{n} - \mean} \ge \tolout}$ is the union of $\set{\samplemean{X}{n} - \mean \ge \tolout}$ and $\set{\mean - \samplemean{X}{n} \ge \tolout}$.
+The probability of a union is at most the sum of the probabilities,
+so
+
+$$
+\ba
+\Prf{\abs{\samplemean{X}{n} - \mean} \ge \tolout}
+&\le \Prf{\samplemean{X}{n} - \mean \ge \tolout} + \Prf{\mean - \samplemean{X}{n} \ge \tolout}
+&& \text{(union bound)} \\
+&\le e^{-2n\tolout^2} + e^{-2n\tolout^2}
+&& \text{(Hoeffding's inequality, twice)} \\
+&= 2e^{-2n\tolout^2}
+&& \text{(combine like terms)}
+\ea
+$$
+
+:::
+

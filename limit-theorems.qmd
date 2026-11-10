@@ -89,6 +89,10 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_thm-hoeffding.qmd >}}
 
+{{< include pds/_subfiles/_cor-hoeffding-two-sided.qmd >}}
+
+{{< include pds/_subfiles/_rem-hoeffding-sources.qmd >}}
+
 {{< include pds/_subfiles/_exm-hoeffding-auto.qmd >}}
 
 # The law of large numbers {#sec-lln}
