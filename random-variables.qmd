@@ -134,7 +134,7 @@ Each arrow in the following diagram converts one function into the next:
 # Further reading
 
 ::: {.callout-tip title="Another explanation"}
-Evans and Rosenthal's free textbook [@evans2010probability] covers [random variables](#def-random-variable) and distributions in Chapter 2.
+Evans and Rosenthal's free textbook [@evans2010probability] covers [random variables](#def-random-variable) in Chapter 2.
 :::
 
 
