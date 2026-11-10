@@ -1,0 +1,34 @@
+:::{#thm-precision-zero-cind}
+#### A zero off-diagonal element of the precision matrix means conditional independence
+
+Let $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ with $p \ge 2$,
+and let $i \ne j$.
+The $(i, j)$ element of the [precision matrix](#def-precision-matrix) $\precision(\vX)$ is zero
+if and only if $X_i$ and $X_j$ are [conditionally independent given the continuous random vector](independence.qmd#def-cind-continuous) $\vX_{-ij}$,
+that is, $\vX$ without its $i$th and $j$th elements.
+
+:::
+
+::: proof
+
+By @thm-precision-matrix-inverse, the $(i, j)$ element of $\precision(\vX)$ is the [coprecision](#def-coprecision) of $X_i$ and $X_j$ given $\vX_{-ij} = \vx_{-ij}$.
+Write $v_i$ and $v_j$ for the [conditional variances](variance-covariance.qmd#def-cond-variance) of $X_i$ and $X_j$ given $\vX_{-ij} = \vx_{-ij}$,
+and $c_{ij}$ for their [conditional covariance](variance-covariance.qmd#def-cond-cov).
+By @thm-mvn-conditional, given $\vX_{-ij} = \vx_{-ij}$,
+$\tp{(X_i, X_j)}$ has a bivariate Gaussian distribution whose [variance matrix](variance-covariance.qmd#def-cov-vec-x) $\matr{S}$ is positive definite,
+with diagonal elements $v_i$ and $v_j$ and off-diagonal element $c_{ij}$,
+and $\matr{S}$ does not depend on $\vx_{-ij}$.
+Since $\matr{S}$ is positive definite, its determinant $v_i v_j - c_{ij}^2$ is positive,
+so the coprecision $-c_{ij} / (v_i v_j - c_{ij}^2)$ is zero if and only if $c_{ij} = 0$.
+
+If $c_{ij} = 0$,
+then $\matr{S}$ is diagonal,
+so by @cor-mvn-uncorrelated-indpt $X_i$ and $X_j$ are independent given $\vX_{-ij} = \vx_{-ij}$,
+for every $\vx_{-ij}$.
+That is, the conditional density of $\tp{(X_i, X_j)}$ is the product of its [marginal](random-variables.qmd#def-marginal) conditional densities,
+which is the factorization in the definition of conditional independence.
+Conversely, if $X_i$ and $X_j$ are conditionally independent,
+then they are independent given each $\vX_{-ij} = \vx_{-ij}$,
+so by @cor-mvn-uncorrelated-indpt $c_{ij} = 0$.
+
+:::
