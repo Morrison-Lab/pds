@@ -26,6 +26,30 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-lotus.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-lotus-continuous.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-linearity-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-linearity-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-linearity-affine.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-linearity-affine.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exr-expected-density.qmd >}}
 
 {{< slidebreak >}}

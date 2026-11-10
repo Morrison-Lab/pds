@@ -1,0 +1,38 @@
+:::{#cor-linearity-affine}
+#### Expectation of a linear function of one random variable
+
+For a random variable $X$ with a defined expectation,
+and constants $a$ and $c$:
+
+$$\E{aX + c} = a\E{X} + c$$
+
+:::
+
+::: proof
+
+For discrete $X$, this identity is @thm-linearity-expectation with $b = 0$.
+For continuous $X$ with density $\p(X=x)$,
+apply @thm-lotus with $g(x) = ax + c$:
+
+$$
+\ba
+\E{aX + c}
+&= \int_{x \in \rangef{X}} (ax + c) \cd \p(X=x)\,dx
+&& \text{(LOTUS, continuous case)} \\
+&= a\int_{x \in \rangef{X}} x \cd \p(X=x)\,dx
+ + c\int_{x \in \rangef{X}} \p(X=x)\,dx
+&& \text{(linearity of the integral)} \\
+&= a\E{X} + c\int_{x \in \rangef{X}} \p(X=x)\,dx
+&& \text{(definition of expectation)} \\
+&= a\E{X} + c \cd 1
+&& \text{(a density integrates to 1)} \\
+&= a\E{X} + c
+&& \text{(simplify)}
+\ea
+$$
+
+Splitting the integral is valid because both pieces converge absolutely:
+the first because $\E{X}$ is defined,
+and the second because its integrand is a non-negative density.
+
+:::
