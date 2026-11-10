@@ -361,6 +361,14 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-mvn-conditional.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-mvn-conditional.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-mahalanobis-eigen.qmd >}}
 
 {{< include pds/_subfiles/_rem-mahalanobis-eigen-notes.qmd >}}
