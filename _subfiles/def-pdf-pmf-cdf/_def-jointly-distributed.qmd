@@ -1,0 +1,10 @@
+:::{#def-jointly-distributed}
+#### Jointly distributed random variables
+
+Random variables $\Xin$ are **jointly distributed**
+when they are defined on the same [sample space](probability-basics.qmd#def-sample-space) $\samplespace$,
+so that an event about several of them at once,
+such as $\{X_1 \le x_1\} \cap \{X_2 \le x_2\}$,
+has a probability.
+
+:::

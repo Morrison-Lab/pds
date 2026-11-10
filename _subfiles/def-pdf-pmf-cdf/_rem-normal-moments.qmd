@@ -1,0 +1,9 @@
+::: {.remark .notes}
+
+The proofs of these two theorems evaluate three integrals by calculus:
+the total of the density, the mean integral and the variance integral.
+The total is the Gaussian integral.
+This page omits the proofs [@CaseBerg01].
+These facts are where the parameters' names come from.
+
+:::

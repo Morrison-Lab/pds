@@ -1,0 +1,27 @@
+:::{#exm-pdf}
+#### Subinterval probabilities of a uniform random variable
+
+For $X \sim \text{Uniform}(\lowend, \highend)$ (@def-uniform)
+and any subinterval $[a, b] \subseteq [\lowend, \highend]$ (so $\lowend \le a \le b \le \highend$):
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \int_a^b f(x)\,dx
+&& \text{(definition of a probability density function)} \\
+&= \int_a^b \frac{1}{\highend - \lowend}\,dx
+&& \text{(} f(x) = \tfrac{1}{\highend - \lowend} \text{ on } [\lowend, \highend] \text{)} \\
+&= \frac{b - a}{\highend - \lowend}
+&& \text{(integrate)}
+\ea
+$$
+
+In particular, the probability that $X$ falls in any subinterval
+is proportional to that subinterval's length.
+For the standard uniform distribution on $[0, 1]$,
+$f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise,
+giving $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$.
+An interval reaching outside $[\lowend, \highend]$ adds nothing to the probability,
+because $f = 0$ there.
+
+:::

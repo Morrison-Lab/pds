@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+The word "marginal" only says that the other variables are being set aside;
+the marginal distribution of $X$ is the same object as the distribution of $X$.
+
+:::

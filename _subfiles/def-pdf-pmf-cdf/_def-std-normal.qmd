@@ -1,0 +1,7 @@
+:::{#def-std-normal}
+#### Standard normal distribution
+
+The **standard normal distribution** is the [normal distribution](#def-normal)
+with mean parameter 0 and variance parameter 1, $\ndist{0, 1}$.
+
+:::

@@ -1,0 +1,19 @@
+:::{#exm-joint-pdf}
+#### A joint density on a triangle
+
+Let $f_{X,Y}(x, y) = 2$ for $0 \le x \le y \le 1$, and $0$ otherwise.
+The triangle $\{(x, y) : 0 \le x \le y \le 1\}$ has area $1/2$,
+so $f_{X,Y}$ gives the whole plane probability $2 \cd \tfrac{1}{2} = 1$,
+and it is the joint density of a pair $(X, Y)$ with $X \le Y$ always.
+For example, the probability that both are at most $1/2$
+is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
+
+$$
+\begin{aligned}
+\Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2})
+&= 2 \cd \tfrac{1}{8} \\
+&= \tfrac{1}{4}
+\end{aligned}
+$$
+
+:::

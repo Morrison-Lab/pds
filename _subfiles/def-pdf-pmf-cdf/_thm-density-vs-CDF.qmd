@@ -1,0 +1,33 @@
+:::{#thm-density-vs-CDF}
+#### A density integrates to the CDF
+
+If $X$ is a continuous random variable with density $f$ and CDF $\cdf$,
+then for every $t$:
+
+$$\cdff{t} = \int_{-\infty}^{t} f(x)\,dx$$
+
+:::
+
+::: proof
+
+For any $a < t$,
+$\{X \le t\}$ is the disjoint union of $\{X \le a\}$ and $\{a < X \le t\}$,
+and $\Pr(X = a) = 0$ because $X$ is continuous.
+So:
+
+$$
+\ba
+\cdff{t}
+&= \Pr(X \le a) + \Pr(a < X \le t)
+&& \text{(additivity, and the definition of the CDF)} \\
+&= \cdff{a} + \Pr(a \le X \le t)
+&& \text{(definition of the CDF; } \Pr(X = a) = 0 \text{)} \\
+&= \cdff{a} + \int_a^t f(x)\,dx
+&& \text{(definition of the density)}
+\ea
+$$
+
+Letting $a \to -\infty$, $\cdff{a} \to 0$ (@thm-cdf-properties),
+which gives $\cdff{t} = \int_{-\infty}^{t} f(x)\,dx$.
+
+:::

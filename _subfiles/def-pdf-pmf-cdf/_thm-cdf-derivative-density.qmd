@@ -1,0 +1,54 @@
+:::{#thm-cdf-derivative-density}
+#### A piecewise-smooth CDF has its derivative as a density
+
+If the CDF $\cdf$ of a random variable $X$ is continuous everywhere,
+and has a continuous derivative at all but finitely many points,
+then $X$ is continuous,
+and $\cdf'$ (given any values at the finitely many exceptional points)
+is a density of $X$.
+
+:::
+
+::: proof
+
+For events $A \subseteq B$,
+$B$ is the disjoint union of $A$ and $B \setminus A$,
+so additivity gives $\Pr(A) \le \Pr(B)$.
+For any $x$ and $\change > 0$,
+$\{X = x\} \subseteq \{x - \change < X \le x\}$, so:
+
+$$
+\ba
+0
+&\le \Pr(X = x)
+&& \text{(probabilities are non-negative)} \\
+&\le \Pr(x - \change < X \le x)
+&& \text{(} \{X = x\} \subseteq \{x - \change < X \le x\} \text{)} \\
+&= \cdff{x} - \cdff{x - \change}
+&& \text{(additivity, and the definition of the CDF)}
+\ea
+$$
+
+and $\cdff{x} - \cdff{x - \change} \to 0$ as $\change \downarrow 0$, because $\cdf$ is continuous.
+So $\Pr(X = x) = 0$ for every $x$, and $X$ is continuous.
+Then, for $a \le b$:
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \Pr(a < X \le b)
+&& \text{(} \Pr(X = a) = 0 \text{)} \\
+&= \cdff{b} - \cdff{a}
+&& \text{(additivity, and the definition of the CDF)} \\
+&= \int_a^b \cdf'(x)\,dx
+&& \text{(fundamental theorem of calculus)}
+\ea
+$$
+
+The last step applies the fundamental theorem of calculus
+on each piece of $[a, b]$ between exceptional points,
+where $\cdf'$ is continuous,
+and joins the pieces using the continuity of $\cdf$ at the exceptional points.
+Finally, $\cdf' \ge 0$ wherever it exists, because $\cdf$ is non-decreasing (@thm-cdf-properties).
+
+:::

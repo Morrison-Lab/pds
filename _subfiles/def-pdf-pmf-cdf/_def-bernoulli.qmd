@@ -1,0 +1,19 @@
+:::{#def-bernoulli}
+#### Bernoulli distribution
+
+A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\prob \in [0, 1]$,
+written $X \sim \Ber(\prob)$
+[@wikipedia_bernoulli_distribution],
+if:
+
+$$
+\ba
+\Pr(X=x) &\eqdef \1{x\in \set{0,1}}\prob^x(1-\prob)^{1-x}\\
+&= \begin{cases}
+\prob, & x=1\\
+1-\prob, & x=0
+\end{cases}
+\ea
+$$
+
+:::

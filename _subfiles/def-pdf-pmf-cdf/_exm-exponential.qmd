@@ -1,0 +1,21 @@
+:::{#exm-exponential}
+#### Probability of an event within one time unit
+
+Let $T$ be exponential with rate $\rate$.
+The probability that $T$ falls in $[0, 1]$ is:
+
+$$
+\ba
+\Pr(0 \le T \le 1)
+&= \int_0^1 \rate \ef{-\rate t}\,dt
+&& \text{(definition of a density)} \\
+&= \sb{-\ef{-\rate t}}_{t=0}^{1}
+&& \text{(antiderivative of } \rate \ef{-\rate t} \text{)} \\
+&= 1 - \ef{-\rate}
+&& \text{(evaluate at the bounds)}
+\ea
+$$
+
+With $\rate = 0.5$, for example, $\Pr(0 \le T \le 1) = 1 - \ef{-0.5} \approx 0.393$.
+
+:::

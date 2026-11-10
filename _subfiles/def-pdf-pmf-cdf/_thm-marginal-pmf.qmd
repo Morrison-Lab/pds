@@ -1,0 +1,28 @@
+:::{#thm-marginal-pmf}
+#### Marginal PMF from a joint PMF
+
+If $X$ and $Y$ are jointly distributed discrete random variables,
+then for every $x$:
+
+$$\P(X = x) = \sum_{y \in \rangef{Y}} \P(X = x,\, Y = y)$$
+
+:::
+
+::: proof
+
+The event $\{X = x\}$ is the disjoint union of the events $\{X = x\} \cap \{Y = y\}$
+over the countably many values $y \in \rangef{Y}$, so:
+
+$$
+\ba
+\P(X = x)
+&= \Prf{\bigcup_{y \in \rangef{Y}} \paren{\{X = x\} \cap \{Y = y\}}}
+&& \text{(the events partition } \{X = x\} \text{)} \\
+&= \sum_{y \in \rangef{Y}} \Pr(\{X = x\} \cap \{Y = y\})
+&& \text{(countable additivity)} \\
+&= \sum_{y \in \rangef{Y}} \P(X = x,\, Y = y)
+&& \text{(definition of the joint PMF)}
+\ea
+$$
+
+:::

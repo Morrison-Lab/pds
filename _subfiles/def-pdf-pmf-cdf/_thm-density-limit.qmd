@@ -1,0 +1,31 @@
+:::{#thm-density-limit}
+#### A density as a limit of interval probabilities
+
+If $X$ is a continuous random variable with density $f$,
+and $f$ is continuous at $x$,
+then $f(x)$ is the limit of the probability that $X$ falls in an interval starting at $x$,
+divided by the width of that interval,
+as that width shrinks to 0:
+
+$$f(x) = \lim_{\change \downarrow 0} \frac{\Pr(x \le X < x + \change)}{\change}$$
+
+:::
+
+::: proof
+
+For $\change > 0$:
+
+$$
+\ba
+\frac{\Pr(x \le X < x + \change)}{\change}
+&= \frac{\Pr(x < X \le x + \change)}{\change}
+&& \text{(} \Pr(X = x) = 0 \text{ and } \Pr(X = x + \change) = 0 \text{)} \\
+&= \frac{\cdff{x + \change} - \cdff{x}}{\change}
+&& \text{(additivity, and the definition of the CDF)}
+\ea
+$$
+
+By @thm-cdf-derivative-is-density, $\cdf$ is differentiable at $x$ with $\cdf'(x) = f(x)$,
+so this difference quotient converges to $f(x)$ as $\change \downarrow 0$.
+
+:::

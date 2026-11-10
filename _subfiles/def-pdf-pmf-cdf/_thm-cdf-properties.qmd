@@ -1,0 +1,58 @@
+:::{#thm-cdf-properties}
+#### Properties of a CDF
+
+The [CDF](#def-cdf) $\cdf$ of any random variable $X$ is non-decreasing,
+and:
+
+$$\lim_{t \to -\infty} \cdff{t} = 0, \qquad \lim_{t \to \infty} \cdff{t} = 1$$
+
+:::
+
+::: proof
+
+*Non-decreasing.*
+For $s < t$, $\{X \le t\}$ is the disjoint union of $\{X \le s\}$ and $\{s < X \le t\}$,
+so [finite additivity](probability-basics.qmd#cor-probability-finitely-additive) gives:
+
+$$
+\ba
+\cdff{t}
+&= \Pr(X \le s) + \Pr(s < X \le t)
+&& \text{(additivity, and the definition of the CDF)} \\
+&\ge \Pr(X \le s)
+&& \text{(probabilities are non-negative)} \\
+&= \cdff{s}
+&& \text{(definition of the CDF)}
+\ea
+$$
+
+*Limit at $-\infty$.*
+The events $A_n = \{X \le -n\}$, $n = 1, 2, \ldots$, are decreasing,
+and their intersection is empty,
+because every outcome $\outcome$ has $X(\outcome) > -n$ once $n > -X(\outcome)$.
+By [continuity of probability](probability-basics.qmd#thm-continuity-probability),
+$\cdff{-n} = \Pr(A_n) \to 0$.
+For $t \le -n$, $0 \le \cdff{t} \le \cdff{-n}$, because $\cdf$ is non-decreasing,
+so $\cdff{t} \to 0$ as $t \to -\infty$.
+
+*Limit at $\infty$.*
+The events $B_n = \{X > n\}$ are decreasing,
+and their intersection is empty,
+because every outcome $\outcome$ has $X(\outcome) \le n$ once $n \ge X(\outcome)$.
+By continuity of probability, $\Pr(B_n) \to 0$,
+so, by the [complement rule](probability-basics.qmd#cor-p-neg0):
+
+$$
+\ba
+\cdff{n}
+&= 1 - \Pr(X > n)
+&& \text{(complement rule)} \\
+&\to 1 - 0
+&& \text{(} \Pr(B_n) \to 0 \text{)}
+\ea
+$$
+
+For $t \ge n$, $\cdff{n} \le \cdff{t} \le 1$, because $\cdf$ is non-decreasing,
+so $\cdff{t} \to 1$ as $t \to \infty$.
+
+:::

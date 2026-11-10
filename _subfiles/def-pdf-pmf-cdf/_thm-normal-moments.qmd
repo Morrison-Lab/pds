@@ -1,0 +1,8 @@
+:::{#thm-normal-moments}
+#### The mean and variance of the normal distribution
+
+If $X \sim \ndist{\mean, \ss}$ (@def-normal),
+then $X$ has [mean](expectation.qmd#def-expectation) $\E{X} = \mean$
+and [variance](variance-covariance.qmd#def-variance) $\Var{X} = \ss$.
+
+:::

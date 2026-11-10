@@ -1,0 +1,19 @@
+:::{#exm-joint-density-mass}
+#### A coin flip and a waiting time
+
+Let $\p(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$,
+$\p(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$,
+and $0$ otherwise.
+Integrating over $y$ gives $\P(X = 0) = 1/2$ and $\P(X = 1) = 1/2$,
+which add to 1.
+For example, the probability that $X = 1$ and $Y \le 1$ is:
+
+$$
+\begin{aligned}
+\Pr(X = 1,\, Y \le 1)
+&= \int_0^1 \tfrac{1}{4}\,dy \\
+&= \tfrac{1}{4}
+\end{aligned}
+$$
+
+:::
