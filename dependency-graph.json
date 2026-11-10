@@ -224,6 +224,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit"
   },
   {
+   "id": "mds/calculus-derivatives#thm-chain-rule",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "thm-chain-rule",
+   "kind": "thm",
+   "title": "chain rule",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule"
+  },
+  {
    "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
    "site": "mds",
    "page": "calculus-double-integrals",
@@ -232,6 +242,16 @@
    "title": "fubini tonelli",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli"
+  },
+  {
+   "id": "mds/calculus-integration#def-continuous",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-continuous",
+   "kind": "def",
+   "title": "continuous",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous"
   },
   {
    "id": "mds/calculus-taylor-series#def-taylor-series",
@@ -851,6 +871,15 @@
    "div": "thm-non-exposed",
    "kind": "thm",
    "title": "No exposure means no expected events",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-normal-affine",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-normal-affine",
+   "kind": "thm",
+   "title": "Gaussian distributions are closed under affine transformations",
    "external": false
   },
   {
@@ -3083,6 +3112,38 @@
   [
    "pds/distributions#thm-nb-poisson-limit",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-derivatives#def-derivative"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-derivatives#thm-chain-rule"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#thm-cdf-derivative-is-density"
   ],
   [
    "pds/distributions#thm-normal-density-max",
