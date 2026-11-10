@@ -1,0 +1,53 @@
+::: {#prp-reducible-risk-zero}
+#### The reducible risk is zero only for the conditional mean
+
+The [reducible risk](#def-reducible-risk) is zero if and only if the [prediction function](#def-prediction-function) $\predfn$ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.qmd#def-probability) 1:
+
+$$
+\E{\sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}} = 0
+\iff
+\P(\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}) = 1
+$$
+
+:::
+
+::: proof
+
+Write $Z = \sqf{\E{\Outvar \mid \Predvar} - \predfnf{\Predvar}}$.
+Then $Z \ge 0$, because a square is never negative,
+and $Z = 0$ exactly when $\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}$,
+because a real number has square zero only if it is zero.
+
+**($\Leftarrow$)** If $\P(Z = 0) = 1$, then $Z$ takes the value 0 with probability 1, so $\E{Z} = 0$ by the [definition of expectation](#def-expectation).
+
+**($\Rightarrow$)** Suppose $\E{Z} = 0$, and fix $a > 0$.
+Since $Z \ge 0$, and $Z \ge a$ on the event $\set{Z \ge a}$:
+
+$$
+\ba
+Z &\ge a \cd \1{Z \ge a}
+&& \text{(on } \set{Z \ge a} \text{ the right side is } a \le Z \text{; elsewhere it is } 0 \le Z \text{)}
+\\ \E{Z} &\ge \E{a \cd \1{Z \ge a}}
+&& \text{(expectation preserves inequalities)}
+\\ &= a \cd \P(Z \ge a)
+&& \text{(the expectation of an indicator is the probability of its event)}
+\ea
+$$
+
+With $\E{Z} = 0$ this gives $a \cd \P(Z \ge a) \le 0$, so $\P(Z \ge a) = 0$.
+The events $\set{Z \ge 1/n}$ for $n = 1, 2, \ldots$ increase to the event $\set{Z > 0}$,
+so by the [continuity of probability](probability-basics.qmd#thm-continuity-probability):
+
+$$
+\ba
+\P(Z > 0)
+&= \lim_{n \to \infty} \P(Z \ge 1/n)
+&& \text{(continuity of probability)}
+\\ &= 0
+&& \text{(each term is 0, taking } a = 1/n \text{)}
+\ea
+$$
+
+Hence $\P(Z = 0) = 1 - \P(Z > 0) = 1$.
+
+:::
