@@ -21,7 +21,7 @@ and $Z = 0$ exactly when $\predfnf{\Predvar} = \E{\Outvar \mid \Predvar}$.
 **($\Leftarrow$)** If $\P(Z = 0) = 1$, then $Z$ takes the value 0 with [probability](probability-basics.qmd#def-probability) 1, so $\E{Z} = 0$ by the [definition of expectation](#def-expectation).
 
 **($\Rightarrow$)** Suppose $\E{Z} = 0$, and fix $a > 0$.
-Since $Z \ge 0$, and $Z \ge a$ on the [event](#def-event) $\set{Z \ge a}$:
+Since $Z \ge 0$, and $Z \ge a$ on the [event](probability-basics.qmd#def-event) $\set{Z \ge a}$:
 
 $$
 \ba
