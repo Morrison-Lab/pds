@@ -99,10 +99,6 @@ $$
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_exm-indpt-auto.qmd >}}
-
-{{< slidebreak >}}
-
 :::{#thm-indpt-density}
 #### Independence with densities: the joint density factors
 

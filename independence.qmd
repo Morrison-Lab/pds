@@ -18,6 +18,10 @@ format:
 
 {{< include pds/_subfiles/_def-independence.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-indpt-auto.qmd >}}
+
 ::: {.callout-tip title="Video lecture"}
 Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)
 covers independence [@hutchinson_wwu_ml_videos].
