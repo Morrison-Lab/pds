@@ -18,7 +18,7 @@ $$
 which one can check by multiplying the two matrices to get $\matr{I}_3$.
 So $\Covs{X_1}{X_3} = 1/4 \ne 0$, and $X_1$ and $X_3$ are not [independent](independence.qmd#def-indpt).
 But the $(1, 3)$ element of the precision matrix is 0,
-so by @thm-precision-zero-cind, $X_1$ and $X_3$ are [conditionally independent](independence.qmd#def-cind-continuous) given $X_2$:
+so by @thm-precision-zero-cind, $X_1$ and $X_3$ are [conditionally independent given](independence.qmd#def-cind-continuous) $X_2$:
 once $X_2$ is known, $X_1$ carries no further information about $X_3$.
 
 :::
