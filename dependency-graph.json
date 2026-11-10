@@ -1045,6 +1045,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-precision-zero-cind",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-precision-zero-cind",
+   "kind": "thm",
+   "title": "A zero off-diagonal element of the precision matrix means conditional independence",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-sum-pois",
    "site": "pds",
    "page": "distributions",
@@ -3458,6 +3467,62 @@
   ],
   [
    "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#cor-mvn-uncorrelated-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/independence#def-cind-continuous"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
    "pds/variance-covariance#def-cov-vec-x"
   ],
   [
