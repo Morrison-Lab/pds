@@ -30,6 +30,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-indpt-auto.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-indpt-density.qmd >}}
 
 {{< include pds/_subfiles/_rem-indpt-density-proof.qmd >}}
