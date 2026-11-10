@@ -2,9 +2,9 @@
 #### Two measurements of the same continuous quantity
 <!-- no-figure: algebraic derivation, no data to plot -->
 
-Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with density $\p(X = x)$,
-and suppose that, given $X = x$, the measurements $Y_1$ and $Y_2$ are independent, each with density $\p(Y_i = y_i \mid X = x)$.
-Then $Y_1$ and $Y_2$ are conditionally independent given $X$ (@def-cind-continuous):
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [density](random-variables.qmd#def-pdf) $\p(X = x)$,
+and suppose that, given $X = x$, the measurements $Y_1$ and $Y_2$ are [independent](#def-indpt), each with density $\p(Y_i = y_i \mid X = x)$.
+Then $Y_1$ and $Y_2$ are [conditionally independent given a continuous random vector](#def-cind-continuous) $X$:
 
 $$
 \ba
