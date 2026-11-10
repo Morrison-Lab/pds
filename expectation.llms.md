@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 22:33:06 (PST)
+Last modified: 2026-11-09 22:49:40 (PST)
 
 > **NOTE:**
 >
@@ -1411,7 +1411,7 @@ Last modified: 2026-11-09 22:33:06 (PST)
 
 > **NOTE:**
 >
-> *Proof*. **Discrete case.** When $X$ and $Y$ are discrete, applying [Definition 1](#def-expectation) to ${\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}$ and then the [law of total probability](probability-basics.llms.md#thm-total-prob) applied to the countable partition $\{X = x : x \in \mathcal{R}(X)\}$:
+> *Proof*. **Discrete case.** When $X$ and $Y$ are discrete, applying [Definition 1](#def-expectation) to ${\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}$ and then the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional) applied to the countable partition $\{X = x : x \in \mathcal{R}(X)\}$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}
