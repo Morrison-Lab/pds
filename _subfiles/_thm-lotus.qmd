@@ -38,7 +38,7 @@ The last step regroups a possibly infinite sum,
 which is valid because $\E{g(X)}$ is defined only when the sum converges absolutely.
 
 We prove the continuous case for a function $g$ that is strictly increasing
-and continuously differentiable on $\rangef{X}$,
+and continuously [differentiable](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable) on $\rangef{X}$,
 with inverse $h = \inv{g}$.
 Let $Y = g(X)$.
 Because $g$ is strictly increasing,
@@ -61,20 +61,5 @@ Each integral runs over the range of its variable,
 and $g$ maps $\rangef{X}$ onto $\rangef{Y}$.
 For a strictly decreasing $g$, the same steps hold
 with $\Pr(Y \le y) = \Pr(X \ge h(y))$ and $\abs{h'(y)}$ in place of $h'(y)$.
-
-:::
-
-::: {.remark .notes}
-
-LOTUS says that to compute $\E{g(X)}$,
-we do not need to first find the distribution of $g(X)$;
-we can compute the expectation directly using the distribution of $X$.
-The continuous case is the density-weighted analogue of this argument.
-The proof above covers a strictly monotone, continuously differentiable $g$;
-a fully general proof needs the change-of-variables
-theorem for integrals against a pushforward measure --- approximating
-$g$ by simple functions and passing to the limit --- which is beyond
-this page's scope
-[@billingsley1995probability; @gut2013; @CaseBerg01; @wp:lotus].
 
 :::
