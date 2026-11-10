@@ -36,7 +36,7 @@ format:
 
 {{< slidebreak >}}
 
-## Mixture distributions {#sec-mixture}
+# Mixture distributions {#sec-mixture}
 
 {{< include pds/_subfiles/_def-mixture.qmd >}}
 
