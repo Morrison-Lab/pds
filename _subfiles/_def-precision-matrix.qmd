@@ -1,0 +1,9 @@
+:::{#def-precision-matrix}
+#### Precision matrix
+
+Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector.
+The **precision matrix** $\precision(\vX)$ of $\vX$ is the $p \times p$ matrix
+whose $i$th diagonal element is the [conditional precision](#def-conditional-precision) of $X_i$ given $\vX_{-i}$,
+and whose $(i, j)$ element, for $i \ne j$, is the [coprecision](#def-coprecision) of $X_i$ and $X_j$ given $\vX_{-ij}$.
+
+:::

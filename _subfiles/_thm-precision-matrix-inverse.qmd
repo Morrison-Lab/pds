@@ -1,0 +1,42 @@
+:::{#thm-precision-matrix-inverse}
+#### The precision matrix is the inverse of the variance matrix
+
+If $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
+then $\precision(\vX) = \matr{\covmat}^{-1}$.
+
+:::
+
+::: proof
+
+Let $\matr{\Omega} = \matr{\covmat}^{-1}$.
+Reordering the elements of $\vX$ reorders the rows and columns of $\matr{\covmat}$ and of $\matr{\Omega}$ in the same way,
+so for each $i$ and $j$ we may take $X_i$ and $X_j$ to be the last two elements.
+
+Cut $\matr{\covmat}$ into blocks with the first $p - 2$ elements in the first block.
+By [the inverse of a positive definite block matrix](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse),
+the last $2 \times 2$ block of $\matr{\Omega}$ is $\matr{S}^{-1}$,
+where $\matr{S}$ is the Schur complement of the first block of $\matr{\covmat}$.
+By @thm-mvn-conditional,
+$\matr{S}$ is the variance matrix of $\tp{(X_i, X_j)}$ given $\vX_{-ij} = \vx_{-ij}$,
+so $\matr{S}$ has diagonal elements $v_i$ and $v_j$ and off-diagonal elements $c_{ij}$ as in @def-coprecision.
+The inverse of a $2 \times 2$ matrix gives the off-diagonal element of $\matr{\Omega}$:
+
+$$
+\ba
+\matr{\Omega}_{ij}
+&= \paren{\inv{\matr{S}}}_{12}
+&& \text{(last block of } \matr{\Omega} \text{)} \\
+&= \frac{-c_{ij}}{v_i v_j - c_{ij}^2}
+&& \text{(inverse of a } 2 \times 2 \text{ matrix)}
+\ea
+$$
+
+which is the coprecision of $X_i$ and $X_j$.
+
+Taking $X_i$ alone as the last element,
+the last $1 \times 1$ block of $\matr{\Omega}$ is $\matr{S}^{-1}$,
+where by @thm-mvn-conditional $\matr{S}$ is the conditional variance of $X_i$ given $\vX_{-i} = \vx_{-i}$.
+So $\matr{\Omega}_{ii}$ is the inverse of that conditional variance,
+which is the conditional precision of $X_i$.
+
+:::
