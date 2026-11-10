@@ -1,0 +1,13 @@
+:::{#def-normal}
+#### Normal distribution (Gaussian distribution)
+
+A random variable $X$ has the **normal distribution**
+(or **Gaussian distribution**)
+with mean parameter $\mean \in \reals$ and variance parameter $\ss > 0$,
+written $X \sim \ndist{\mean, \ss}$
+[@wikipedia_normal_distribution],
+if $X$ is continuous with [density](#def-pdf):
+
+$$\p(X=x) \eqdef \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}, \quad x \in \reals$$
+
+:::

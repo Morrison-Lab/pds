@@ -1,0 +1,30 @@
+:::{#exm-marginal-density}
+#### Marginal densities on the triangle
+
+For the joint density of @exm-joint-pdf and $x \in [0, 1]$,
+$f_{X,Y}(x, y) = 2$ exactly when $x \le y \le 1$, so:
+
+$$
+\ba
+f_X(x)
+&= \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy
+&& \text{(marginal density from a joint density)} \\
+&= \int_x^1 2\,dy
+&& \text{(} f_{X,Y}(x, y) = 2 \text{ for } x \le y \le 1 \text{, else } 0 \text{)} \\
+&= 2(1 - x)
+&& \text{(integrate)}
+\ea
+$$
+
+The same steps with the roles swapped give
+
+$$
+\begin{aligned}
+f_Y(y) &= \int_0^y 2\,dx \\
+&= 2y
+\end{aligned}
+$$
+
+for $y \in [0, 1]$.
+
+:::

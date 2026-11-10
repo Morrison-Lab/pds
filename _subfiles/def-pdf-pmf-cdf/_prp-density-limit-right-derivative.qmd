@@ -1,0 +1,23 @@
+:::{#prp-density-limit-right-derivative}
+#### The density limit is the right derivative of the CDF
+
+If $X$ is a continuous random variable with CDF $\cdf$,
+then for every $x$:
+
+$$\lim_{\change \downarrow 0} \frac{\Pr(x \le X < x + \change)}{\change}
+= \lim_{\change \downarrow 0} \frac{\cdff{x + \change} - \cdff{x}}{\change}$$
+
+whenever either limit exists;
+the right-hand side is the right derivative of $\cdf$ at $x$.
+
+:::
+
+::: proof
+
+The first two lines of the proof of @thm-density-limit
+use only that $X$ is continuous,
+so for every $\change > 0$ the two quotients are equal.
+Equal functions of $\change$ have the same limit as $\change \downarrow 0$,
+or both have none.
+
+:::

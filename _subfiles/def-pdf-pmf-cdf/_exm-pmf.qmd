@@ -1,0 +1,9 @@
+:::{#exm-pmf}
+#### PMF of the number of heads
+
+For the number of heads $X$ in two fair coin flips
+(@exm-random-variable):
+
+$$\P(X = 0) = \tfrac{1}{4}, \quad \P(X = 1) = \tfrac{1}{2}, \quad \P(X = 2) = \tfrac{1}{4}$$
+
+:::

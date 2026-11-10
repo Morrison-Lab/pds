@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+We write $\Pr(X \in A, Y \in B)$ for $\Pr(\{X \in A\} \cap \{Y \in B\})$,
+and similarly for more variables.
+
+:::

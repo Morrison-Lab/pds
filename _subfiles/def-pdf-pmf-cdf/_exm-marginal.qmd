@@ -1,0 +1,8 @@
+:::{#exm-marginal}
+#### Marginal distribution of the total
+
+In @exm-joint-pmf,
+the marginal distribution of the total $X$ is the PMF of @exm-pmf:
+$\P(X = 0) = 1/4$, $\P(X = 1) = 1/2$, $\P(X = 2) = 1/4$.
+
+:::
