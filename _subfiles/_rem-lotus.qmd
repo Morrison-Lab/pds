@@ -3,7 +3,8 @@
 LOTUS says that to compute $\E{g(X)}$,
 we do not need to first find the distribution of $g(X)$;
 we can compute the expectation directly using the distribution of $X$.
-The continuous case is the density-weighted analogue of this argument.
+The proof for a [continuous random variable](random-variables.qmd#def-continuous-rv) follows the same plan,
+weighted by its [density](random-variables.qmd#def-pdf).
 The proof above covers a strictly monotone, continuously [differentiable](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable) $g$;
 a fully general proof needs the change-of-variables
 theorem for integrals against a pushforward measure --- approximating
