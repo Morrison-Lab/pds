@@ -1,0 +1,92 @@
+:::{#thm-normal-affine}
+
+#### Gaussian distributions are closed under affine transformations
+
+If $X \sim \ndist{\mean, \ss}$ and $a \ne 0$, then $aX + b \sim \ndist{a\mean + b, a^2\ss}$.
+
+:::
+
+::: proof
+
+Let $Y = aX + b$.
+Let $f$ be the [density](random-variables.qmd#def-pdf) of $X$.
+The [CDF](random-variables.qmd#def-cdf) of $Y$ is
+$\cdf_Y\paren{y} = \Pr(aX + b \le y)$.
+The density $f$ is
+[continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous)
+everywhere.
+So at every $y$,
+the [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative)
+of $\cdf_Y\paren{y}$ is the density of $Y$,
+by [the derivative of the CDF is the density](random-variables.qmd#thm-cdf-derivative-is-density).
+To differentiate $\cdf_Y\paren{y}$, write it through the CDF $\cdf_X$ of $X$.
+There are two cases, by the sign of $a$.
+
+- **Case $a > 0$.**
+  Dividing by $a > 0$ leaves $\le$ as $\le$,
+  so:
+
+  $$
+  \ba
+  \cdf_Y\paren{y}
+  &= \Prf{X \le \frac{y-b}{a}}
+  && \text{(} aX + b \le y \iff X \le (y-b)/a \text{)} \\
+  &= \cdf_X\paren{\frac{y-b}{a}}
+  && \text{(definition of the CDF)}
+  \ea
+  $$
+
+  The [chain rule](https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule) gives the derivative:
+
+  $$
+  \deriv{y} \cdf_Y\paren{y}
+  = \frac{1}{a} f\paren{\frac{y-b}{a}}
+  = \frac{1}{\abs{a}} f\paren{\frac{y-b}{a}}
+  \quad \text{(} \abs{a} = a \text{)}
+  $$
+
+- **Case $a < 0$.**
+  Dividing by $a < 0$ turns $\le$ into $\ge$,
+  and $\Pr(X = x) = 0$ for a [continuous random variable](random-variables.qmd#def-continuous-rv) $X$,
+  so:
+
+  $$
+  \ba
+  \cdf_Y\paren{y}
+  &= \Prf{X \ge \frac{y-b}{a}}
+  && \text{(} aX + b \le y \iff X \ge (y-b)/a \text{)} \\
+  &= 1 - \cdf_X\paren{\frac{y-b}{a}}
+  && \text{(complement, and } \Pr(X = (y-b)/a) = 0 \text{)}
+  \ea
+  $$
+
+  The chain rule gives the derivative:
+
+  $$
+  \deriv{y} \cdf_Y\paren{y}
+  = -\frac{1}{a} f\paren{\frac{y-b}{a}}
+  = \frac{1}{\abs{a}} f\paren{\frac{y-b}{a}}
+  \quad \text{(} \abs{a} = -a \text{)}
+  $$
+
+In both cases,
+$Y$ has density $\p(Y=y) = f\paren{(y-b)/a} / \abs{a}$.
+Substitute the [Gaussian](random-variables.qmd#def-normal) density of $X$:
+
+$$
+\ba
+\p(Y=y)
+&= \frac{1}{\abs{a}} \cd \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{\paren{(y-b)/a - \mean}^2}{2\ss}}
+&& \text{(Gaussian density of } X \text{)} \\
+&= \frac{1}{\abs{a}\sdpar\sqrt{2\pi}} \ef{-\frac{\paren{(y-b-a\mean)/a}^2}{2\ss}}
+&& \text{(common denominator } a \text{)} \\
+&= \frac{1}{\abs{a}\sdpar\sqrt{2\pi}} \ef{-\frac{(y-(a\mean+b))^2}{2a^2\ss}}
+&& \text{(} (u/a)^2 = u^2/a^2 \text{)} \\
+&= \frac{1}{\sqrt{a^2\ss}\sqrt{2\pi}} \ef{-\frac{(y-(a\mean+b))^2}{2a^2\ss}}
+&& \text{(} \abs{a}\sdpar = \sqrt{a^2\ss} \text{)}
+\ea
+$$
+
+The last line is the density of $\ndist{a\mean + b, a^2\ss}$ because $a^2\ss > 0$.
+
+:::
