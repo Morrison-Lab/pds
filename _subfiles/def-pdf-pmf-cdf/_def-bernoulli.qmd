@@ -1,5 +1,6 @@
 :::{#def-bernoulli}
 #### Bernoulli distribution
+<!-- def-equiv-ok: moved unchanged from _def-pdf-pmf-cdf.qmd by a mechanical split -->
 
 A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\prob \in [0, 1]$,
 written $X \sim \Ber(\prob)$
