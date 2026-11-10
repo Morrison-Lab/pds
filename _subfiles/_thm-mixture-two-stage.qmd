@@ -1,0 +1,62 @@
+:::{#thm-mixture-two-stage}
+#### A mixture is the density of a two-stage random variable
+
+Let $C$ be a discrete random variable
+and $X$ a continuous random variable
+with [joint density-mass function](random-variables.qmd#def-joint-density-mass)
+
+$$\p(C = c,\, X = x) = w_c \, {\p_c}(x), \quad c \in \set{1, \ldots, K},$$
+
+with ${\p_c}$ and $w_c$ as in @def-mixture.
+Then:
+
+- $\P(C = c) = w_c$,
+- for each $c$ with $w_c > 0$,
+  the [conditional density](expectation.qmd#def-cond-mixed) of $X$ given $C = c$ is ${\p_c}$, and
+- the mixture ${\p_{\text{mix}}}$ is a density of $X$.
+
+:::
+
+::: proof
+
+By the [marginal PMF from a joint density-mass function](random-variables.qmd#cor-joint-density-mass-marginal),
+
+$$
+\begin{aligned}
+\P(C = c) &= \int_{-\infty}^{\infty} w_c \, {\p_c}(x)\,dx \\
+&= w_c,
+\end{aligned}
+$$
+
+because ${\p_c}$ is a density and so integrates to 1.
+Then, by the [definition of the conditional density](expectation.qmd#def-cond-mixed),
+
+$$
+\begin{aligned}
+\p(X = x \mid C = c) &= w_c \, {\p_c}(x) / w_c \\
+&= {\p_c}(x).
+\end{aligned}
+$$
+
+For the last claim, the events $\set{C = 1}, \ldots, \set{C = K}$
+are mutually exclusive, and their union is the whole sample space.
+So for any interval $B$:
+
+$$
+\ba
+\Pr(X \in B)
+&= \sumto{c}{K} \Pr(C = c,\, X \in B)
+&& \text{(additivity over the events } \set{C = c} \text{)} \\
+&= \sumto{c}{K} \int_B w_c \, {\p_c}(x)\,dx
+&& \text{(definition of a joint density-mass function)} \\
+&= \int_B \sumto{c}{K} w_c \, {\p_c}(x)\,dx
+&& \text{(a finite sum of integrals is the integral of the sum)} \\
+&= \int_B {\p_{\text{mix}}}(x)\,dx
+&& \text{(definition of a mixture)}
+\ea
+$$
+
+And ${\p_{\text{mix}}} \ge 0$, as a sum of non-negative terms,
+so ${\p_{\text{mix}}}$ is a [density](random-variables.qmd#def-pdf) of $X$.
+
+:::

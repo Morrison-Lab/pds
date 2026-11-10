@@ -1,0 +1,9 @@
+:::{#def-responsibility}
+#### Responsibility of a mixture component
+
+In the setting of @thm-mixture-posterior,
+the conditional probability $\P(C = c \mid X = x)$ is called,
+in machine learning,
+the **responsibility** of component $c$ for $x$.
+
+:::
