@@ -13,8 +13,8 @@ $$
 X_2 \mid X_1 = x_1 \sim \ndist{\rho x_1, 1 - \rho^2}.
 $$
 
-At $\rho = 0$ the conditional distribution is $\ndist{0, 1}$ for every $x_1$,
-the [marginal distribution](random-variables.qmd#def-marginal) of $X_2$,
+At $\rho = 0$ the conditional law of $X_2$ is $\ndist{0, 1}$ for every $x_1$,
+which is the [marginal distribution](random-variables.qmd#def-marginal) of $X_2$,
 as it must be for [independent](independence.qmd#def-indpt) elements
 (@thm-mvn-diagonal-indpt).
 
