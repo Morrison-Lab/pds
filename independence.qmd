@@ -16,7 +16,98 @@ format:
 
 <!-- No slidebreak here: the heading shares its slide with the def-indpt div. -->
 
-{{< include pds/_subfiles/_def-independence.qmd >}}
+{{< include pds/_subfiles/_def-indpt.qmd >}}
+
+{{< include pds/_subfiles/_rem-indpt-notation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-indpt-pmf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-indpt.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-indpt-density.qmd >}}
+
+{{< include pds/_subfiles/_rem-indpt-density-proof.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-indpt-pmf-fails.qmd >}}
+
+{{< slidebreak >}}
+
+[]{#sec-conditional-independence}
+
+{{< include pds/_subfiles/_def-cind.qmd >}}
+
+{{< include pds/_subfiles/_rem-cind-notation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-cind.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-indpt-not-cind.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_prp-cind-indpt-neither.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-umbrellas-rain.qmd >}}
+
+{{< slidebreak >}}
+
+
+{{< include pds/_subfiles/_prp-cind-own-covariate.qmd >}}
+
+{{< include pds/_subfiles/_rem-cind-own-covariate.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-ident.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-ident-pmf.qmd >}}
+
+{{< include pds/_subfiles/_rem-ident-pmf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-ident.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-cident.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-cident.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-iid.qmd >}}
+
+{{< include pds/_subfiles/_rem-iid.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-iid.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-ciid.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-ciid.qmd >}}
 
 ::: {.callout-tip title="Video lecture"}
 Hutchinson's [Probability Refresher](https://facultyweb.cs.wwu.edu/~hutchib2/video_lectures/data371/#probability_refresher) (27 min)

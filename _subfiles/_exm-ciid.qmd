@@ -1,0 +1,11 @@
+:::{#exm-ciid}
+#### The usual regression assumption
+
+In @exm-cident, if the $Y_i$ are also conditionally independent given all the doses,
+and each $Y_i$ depends on the doses only through its own $X_i$,
+then $Y_i \mid X_i\ \ciid$,
+and the joint conditional PMF is
+$\prodin{\prob(x_i)^{y_i}\paren{1 - \prob(x_i)}^{1 - y_i}}$:
+one shared function evaluated at each $(x_i, y_i)$.
+
+:::
