@@ -1,0 +1,42 @@
+:::{#exm-indpt-not-cind}
+#### Two coins, given their total
+
+Let $Y_1$ and $Y_2$ indicate heads on two fair coin flips,
+which are independent (@exm-indpt),
+and let $X = Y_1 + Y_2$ be the number of heads.
+Given $X = 1$, which has probability $1/2$,
+exactly one coin is heads, so:
+
+$$
+\ba
+\Pr(Y_1 = 1, Y_2 = 1 \mid X = 1)
+&= \frac{\Pr(Y_1 = 1, Y_2 = 1, X = 1)}{\Pr(X = 1)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{0}{1/2}
+&& \text{(two heads make } X = 2 \text{, not } 1 \text{)} \\
+&= 0
+&& \text{(divide)}
+\ea
+$$
+
+but
+
+$$
+\ba
+\Pr(Y_1 = 1 \mid X = 1)
+&= \frac{\Pr(Y_1 = 1, X = 1)}{\Pr(X = 1)}
+&& \text{(definition of conditional probability)} \\
+&= \frac{\Pr(Y_1 = 1, Y_2 = 0)}{\Pr(X = 1)}
+&& \text{(} Y_1 = 1 \text{ and } X = 1 \text{ means } Y_2 = 0 \text{)} \\
+&= \frac{1/4}{1/2}
+&& \text{(substitute)} \\
+&= \tfrac{1}{2}
+&& \text{(divide)}
+\ea
+$$
+
+and likewise $\Pr(Y_2 = 1 \mid X = 1) = 1/2$,
+so the product of the conditional probabilities is $1/4 \ne 0$:
+$Y_1$ and $Y_2$ are independent, but not conditionally independent given $X$.
+
+:::

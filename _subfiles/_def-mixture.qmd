@@ -1,0 +1,17 @@
+:::{#def-mixture}
+#### Mixture density
+
+Let ${\p_1}, \ldots, {\p_K}$ be densities on $\reals$,
+and let $w_1, \ldots, w_K$ be numbers with:
+
+- $w_c \ge 0$ for every $c$, and
+- $\sumto{c}{K} w_c = 1$.
+
+The **mixture** of ${\p_1}, \ldots, {\p_K}$
+with **mixing weights** $w_1, \ldots, w_K$ is the function [@wikipedia_mixture_distribution]:
+
+$$
+{\p_{\text{mix}}}(x) \eqdef \sumto{c}{K} w_c \, {\p_c}(x), \quad x \in \reals
+$$
+
+:::

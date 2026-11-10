@@ -1,0 +1,18 @@
+:::{#prp-cind-indpt-neither}
+#### Neither independence nor conditional independence implies the other
+
+There are random variables $Y_1$, $Y_2$, and $X$
+such that $Y_1$ and $Y_2$ are [conditionally independent](#def-cind) given $X$
+but not [independent](#def-indpt),
+and there are random variables $Y_1$, $Y_2$, and $X$
+such that $Y_1$ and $Y_2$ are independent
+but not conditionally independent given $X$.
+
+:::
+
+::: proof
+
+@exm-cind gives the first case,
+and @exm-indpt-not-cind gives the second.
+
+:::

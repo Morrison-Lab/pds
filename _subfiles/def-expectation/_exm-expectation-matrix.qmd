@@ -1,0 +1,11 @@
+:::{#exm-expectation-matrix}
+#### Expectation of a random vector of coin flips
+
+For the two fair coin flips in [the independence page's example](independence.qmd#exm-indpt),
+the random vector $\vX = \tp{(X_1, X_2)}$ is a $2 \times 1$ random matrix, and:
+
+$$\Expp\vX = \pmat{\E{X_1} \\ \E{X_2}} = \pmat{1/2 \\ 1/2}$$
+
+since each $X_i$ is Bernoulli with $\prob = 1/2$ (@thm-bernoulli-mean).
+
+:::

@@ -1,0 +1,13 @@
+:::{#def-indpt}
+#### Statistical independence
+
+Random variables $\Xin$ are **statistically independent**
+[@wikipedia_independence_probability_theory]
+if, for all sets of real numbers $\dsn{A}$,
+the [probability](probability-basics.qmd#def-probability)
+that every $X_i$ falls in its set
+is the product of the individual probabilities:
+
+$$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \prodin{\Pr(X_i \in A_i)}$$
+
+:::

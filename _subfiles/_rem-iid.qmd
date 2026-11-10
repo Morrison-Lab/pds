@@ -1,0 +1,7 @@
+::: {.remark .notes}
+
+The IID assumption is one of the most common assumptions in introductory
+statistics: it says a sample $\dsn{X}$ can be treated as $n$
+independent draws from a single shared distribution.
+
+:::

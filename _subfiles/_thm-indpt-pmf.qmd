@@ -1,0 +1,42 @@
+:::{#thm-indpt-pmf}
+#### Independence of discrete random variables: the joint PMF factors
+
+Discrete random variables $\Xin$ are [statistically independent](#def-indpt)
+if and only if their [joint PMF](random-variables.qmd#def-joint-pmf) factors
+into the product of their PMFs:
+for all real numbers $\dsn{x}$,
+
+$$\P(\Xxin) = \prodin{\P(X_i=x_i)}$$
+
+:::
+
+::: proof
+
+**Only if.**
+Take $A_i = \set{x_i}$ for each $i$ in @def-indpt.
+
+**If.**
+Let $\dsn{A}$ be sets of real numbers,
+and let $C$ be the set of tuples $(\dsn{x})$
+with each $x_i \in A_i \cap \rangef{X_i}$.
+Each [range](random-variables.qmd#def-range) $\rangef{X_i}$ is countable,
+so $C$ is countable.
+Each $X_i$ takes its values in $\rangef{X_i}$,
+so the event $\set{X_1 \in A_1, \ldots, X_n \in A_n}$
+is the disjoint union of the events $\set{\Xxin}$ over $(\dsn{x}) \in C$:
+
+$$
+\ba
+\Pr(X_1 \in A_1, \ldots, X_n \in A_n)
+&= \sum_{(\dsn{x}) \in C} \P(\Xxin)
+&& \text{(countable additivity over the disjoint events } \set{\Xxin} \text{)} \\
+&= \sum_{(\dsn{x}) \in C} \prodin{\P(X_i = x_i)}
+&& \text{(the joint PMF factors)} \\
+&= \prodin{\sum_{x_i \in A_i \cap \rangef{X_i}} \P(X_i = x_i)}
+&& \text{(a sum over the product set } C \text{ of non-negative products factors)} \\
+&= \prodin{\Pr(X_i \in A_i)}
+&& \text{(countable additivity over the disjoint events } \set{X_i = x_i} \text{)}
+\ea
+$$
+
+:::
