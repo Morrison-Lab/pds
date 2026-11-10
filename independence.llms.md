@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 21:00:11 (PST)
+Last modified: 2026-11-09 21:12:46 (PST)
 
 > **NOTE:**
 >
@@ -98,7 +98,9 @@ Last modified: 2026-11-09 21:00:11 (PST)
 
 > **NOTE:**
 >
-> **Definition 2 (Conditional independence)** Random variables $Y_1, \ldots, Y_n$ are **conditionally independent** [\[4\]](#ref-wikipedia_conditional_independence) given a discrete random variable (or vector) $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ if, for every value $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all sets of real numbers $A_1, \ldots, A_n$, the conditional probability that every $Y_i$ falls in its set is the product of the individual conditional probabilities:
+> **Definition 2 (Conditional independence)**  
+>
+> Random variables $Y_1, \ldots, Y_n$ are **conditionally independent** [\[4\]](#ref-wikipedia_conditional_independence) given a discrete random variable (or vector) $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ if, for every value $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all sets of real numbers $A_1, \ldots, A_n$, the conditional probability that every $Y_i$ falls in its set is the product of the individual conditional probabilities:
 >
 > $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}$$
 >
