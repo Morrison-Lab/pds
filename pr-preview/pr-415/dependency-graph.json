@@ -434,6 +434,16 @@
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination"
   },
   {
+   "id": "mds/linear-algebra-vectors#def-mean",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-mean",
+   "kind": "def",
+   "title": "mean",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean"
+  },
+  {
    "id": "mds/linear-algebra-vectors#def-scalar",
    "site": "mds",
    "page": "linear-algebra-vectors",
@@ -1311,6 +1321,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#prp-mean-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-mean-expectation",
+   "kind": "prp",
+   "title": "The mean of numbers is the expectation of one chosen at random",
+   "external": false
+  },
+  {
    "id": "pds/expectation#prp-reducible-risk-zero",
    "site": "pds",
    "page": "expectation",
@@ -1533,6 +1552,15 @@
    "div": "def-cind",
    "kind": "def",
    "title": "Conditional independence",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-cind-continuous",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-cind-continuous",
+   "kind": "def",
+   "title": "Conditional independence given a continuous random vector",
    "external": false
   },
   {
@@ -3731,6 +3759,22 @@
    "pds/expectation#def-prediction-function"
   ],
   [
+   "pds/expectation#prp-mean-expectation",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "mds/linear-algebra-vectors#def-mean"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/probability-basics#def-random-choice"
+  ],
+  [
    "pds/expectation#prp-reducible-risk-zero",
    "mcs/proof-writing#def-iff"
   ],
@@ -4047,12 +4091,20 @@
    "pds/independence#def-cind"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-density-mass"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/independence#def-ident",
