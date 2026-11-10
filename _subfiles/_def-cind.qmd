@@ -1,0 +1,24 @@
+:::{#def-cind}
+#### Conditional independence
+
+Random variables $\dsn{Y}$ are **conditionally independent**
+[@wikipedia_conditional_independence]
+given a discrete random variable (or vector) $\vX$
+if, for every value $\vx$ with $\Pr(\vX = \vx) > 0$
+and all sets of real numbers $\dsn{A}$,
+the conditional probability that every $Y_i$ falls in its set
+is the product of the individual conditional probabilities:
+
+$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodin{\Pr(Y_i \in A_i \mid \vX = \vx)}$$
+
+When $\vX$ is continuous, every event $\{\vX = \vx\}$ has probability 0,
+so the condition is stated with densities instead:
+for every $\vx$ with $\p(\vX = \vx) > 0$ and all $\dsn{y}$,
+
+$$\frac{\p(\vX = \vx, Y_1 = y_1, \ldots, Y_n = y_n)}{\p(\vX = \vx)} = \prodin{\frac{\p(\vX = \vx, Y_i = y_i)}{\p(\vX = \vx)}}$$
+
+where each $\p(\cdot)$ is a [joint density](random-variables.qmd#def-joint-pdf)
+(with probability masses in place of densities for any discrete $Y_i$,
+as in a [joint density-mass function](random-variables.qmd#def-joint-density-mass)).
+
+:::

@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+In regression, $\vX$ is usually the full set of covariates $(\dsn{X})$,
+and a model usually also assumes, as @prp-cind-own-covariate does,
+that each $Y_i$ depends on the covariates only through its own $X_i$.
+That second assumption is a separate one, not part of conditional independence.
+
+:::
