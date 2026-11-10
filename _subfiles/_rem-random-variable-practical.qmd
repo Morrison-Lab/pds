@@ -5,7 +5,8 @@ In practice, a [random variable](#def-random-variable) is a quantity
 whose value we cannot deduce precisely from the information available to us at a given time.
 The number of heads in two coin flips is a random variable before the flips,
 because nothing we know fixes it.
-Once we see the flips, we know its value,
+Once we see the flips,
+we know its value,
 and for us it is no longer uncertain.
 
 :::
