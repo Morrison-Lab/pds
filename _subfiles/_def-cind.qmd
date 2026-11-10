@@ -1,5 +1,6 @@
 :::{#def-cind}
 #### Conditional independence
+<!-- def-equiv-ok: moved unchanged from _def-independence.qmd; rewriting the definition is a separate content change -->
 
 Random variables $\dsn{Y}$ are **conditionally independent**
 [@wikipedia_conditional_independence]
