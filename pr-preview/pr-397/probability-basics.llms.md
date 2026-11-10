@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 18:12:45 (PST)
+Last modified: 2026-11-10 00:58:25 (PST)
 
 # 1 Defining probabilities
 
@@ -475,23 +475,39 @@ Last modified: 2026-11-09 18:12:45 (PST)
 
 > **NOTE:**
 >
-> **Theorem 6 (Law of total probability)** If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space, with $\Pr(B_i) > 0$ for every $i$, then for any event $A$ [\[11\]](#ref-wikipedia_law_of_total_probability):
+> **Theorem 6 (Law of total probability)** If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space, then for any event $A$ [\[11\]](#ref-wikipedia_law_of_total_probability):
+>
+> $$\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \cap B_i)$$
+
+> **NOTE:**
+>
+> *Proof*. Since $B_1, B_2, \ldots$ partition the sample space, the events $A \cap B_1, A \cap B_2, \ldots$ are mutually exclusive and their union is $A$. By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity):
+>
+> $$\begin{aligned}
+> \Pr(A)
+> &= {\Pr\mathopen{}\left(\bigcup_{i=1}^{\infty} (A \cap B_i)\right)\mathclose{}} && \text{(the union of the events } A \cap B_i \text{ is } A \text{)}
+> \\&= \sum_{i=1}^{\infty} \Pr(A \cap B_i) && \text{(countable additivity for the mutually exclusive events } A \cap B_i \text{)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 7 (Law of total probability with conditional probabilities)** If $B_1, B_2, \ldots$ is a [partition of](#def-partition) the [sample space](#def-sample-space) with $\Pr(B_i) > 0$ for every $i$, then for any [event](#def-event) $A$:
 >
 > $$\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)$$
 
 > **NOTE:**
 >
-> *Proof*. Since $B_1, B_2, \ldots$ partition the sample space, the events $A \cap B_1, A \cap B_2, \ldots$ are mutually exclusive and their union is $A$. By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity), and then by [Theorem 5](#thm-law-conditional-prob):
+> *Proof*. Apply [Theorem 5](#thm-law-conditional-prob) to each summand of [Theorem 6](#thm-total-prob), which needs $\Pr(B_i) > 0$:
 >
 > $$\begin{aligned}
 > \Pr(A)
-> &= \sum_{i=1}^{\infty} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)}
+> &= \sum_{i=1}^{\infty} \Pr(A \cap B_i) && \text{(law of total probability)}
 > \\&= \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) > 0 \text{)}
 > \end{aligned}$$
 
 > **NOTE:**
 >
-> **Theorem 7 (Bayes’ theorem)** For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$ [\[12\]](#ref-wikipedia_bayes_theorem):
+> **Theorem 8 (Bayes’ theorem)** For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$ [\[12\]](#ref-wikipedia_bayes_theorem):
 >
 > $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}$$
 
@@ -526,7 +542,7 @@ Last modified: 2026-11-09 18:12:45 (PST)
 >
 > - $\Pr(D) = 0.07$ (prevalence)
 >
-> By [Theorem 7](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob) over the partition $\{D, \neg D\}$:
+> By [Theorem 8](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob-conditional) over the [partition](#def-partition) $\{D, \neg D\}$:
 >
 > $$\begin{aligned}
 > \Pr(D \mid {+})
@@ -560,7 +576,7 @@ Last modified: 2026-11-09 18:12:45 (PST)
 > \qquad
 > \Pr(A \cap B) = \Pr(B \mid A)\,\Pr(A)$$
 >
-> The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by $\Pr(B)$ gives **Bayes’ rule** ([Theorem 7](#thm-bayes)):
+> The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by $\Pr(B)$ gives **Bayes’ rule** ([Theorem 8](#thm-bayes)):
 >
 > $$\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)} \tag{1}$$
 >
@@ -587,7 +603,7 @@ Last modified: 2026-11-09 18:12:45 (PST)
 >
 > $$\Pr({+}\mid S) = 0.99, \qquad \Pr({+}\mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001$$
 >
-> [Equation 1](#eq-bayes) needs $\Pr({+})$, the overall chance of a positive result. Assemble it with [Theorem 6](#thm-total-prob), splitting on whether the person is sick:
+> [Equation 1](#eq-bayes) needs $\Pr({+})$, the overall chance of a positive result. Assemble it with [Theorem 7](#thm-total-prob-conditional), splitting on whether the person is sick:
 >
 > $$\begin{aligned}
 > \Pr({+}) &= \Pr({+}\mid S)\Pr(S) + \Pr({+}\mid \text{not } S)\Pr(\text{not } S) \\
@@ -703,6 +719,12 @@ brFP = (brN - brSick) * (1 - brSpec)
 >
 > Lange’s textbook [\[17\]](#ref-lange2024applied) reviews [probability](#def-probability) and [expectation](expectation.llms.md#def-expectation) in Section 1.2 and [conditional probability](#def-conditional-prob) in Section 1.3.
 
+# 4 Further reading
+
+> **TIP:**
+>
+> Evans and Rosenthal’s free textbook [\[18\]](#ref-evans2010probability) covers [probability](#def-probability) models, [conditional probability](#def-conditional-prob) and independence in Chapter 1.
+
 # Definitions on this page
 
 - [Definition 1 (Step)](#def-step)
@@ -790,5 +812,9 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[17\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+\[18\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top
