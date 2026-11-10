@@ -18,8 +18,8 @@ the last $2 \times 2$ block of $\matr{\Omega}$ is $\matr{S}^{-1}$,
 where $\matr{S}$ is the [Schur complement](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-schur-complement) of the first block of $\matr{\covmat}$.
 By @thm-mvn-conditional,
 $\matr{S}$ is the [variance matrix](variance-covariance.qmd#def-cov-vec-x) of $\tp{(X_i, X_j)}$ given $\vX_{-ij} = \vx_{-ij}$,
-so the diagonal elements $v_i$ and $v_j$ of $\matr{S}$ are the conditional variances of $X_i$ and $X_j$,
-and its off-diagonal element $c_{ij}$ is their conditional covariance.
+so the [diagonal](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry) elements $v_i$ and $v_j$ of $\matr{S}$ are the [conditional variances](variance-covariance.qmd#def-cond-variance) of $X_i$ and $X_j$,
+and its off-diagonal element $c_{ij}$ is their [conditional covariance](variance-covariance.qmd#def-cond-cov).
 The [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of a $2 \times 2$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) gives the off-diagonal element of $\matr{\Omega}$:
 
 $$
