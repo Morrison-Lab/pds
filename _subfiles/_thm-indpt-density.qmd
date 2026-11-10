@@ -1,0 +1,18 @@
+:::{#thm-indpt-density}
+#### Independence with densities: the joint density factors
+
+**Continuous case.**
+Continuous random variables $X$ and $Y$
+with [densities](random-variables.qmd#def-pdf) $\p(X = x)$ and $\p(Y = y)$
+are [statistically independent](#def-indpt)
+if and only if the product $\p(X = x)\,\p(Y = y)$
+is a [joint density](random-variables.qmd#def-joint-pdf) of $X$ and $Y$.
+
+**Mixed case.**
+A discrete random variable $X$
+and a continuous random variable $Y$ with density $\p(Y = y)$
+are statistically independent
+if and only if the product $\P(X = x)\,\p(Y = y)$
+is a [joint density-mass function](random-variables.qmd#def-joint-density-mass) of $X$ and $Y$.
+
+:::

@@ -1,0 +1,13 @@
+::: {.remark .notes}
+
+@thm-mixture-two-stage describes how to generate a draw from a mixture:
+first draw a component label $C$ with $\P(C = c) = w_c$,
+then draw $X$ from the component density ${\p_C}$.
+In applications, $C$ is often an unobserved subpopulation,
+such as a disease subtype.
+Mixtures of multivariate densities,
+such as mixtures of [multivariate normal densities](#def-mvn)
+(Gaussian mixture models),
+work the same way, with $p$-variable densities in place of densities on $\reals$.
+
+:::

@@ -1,0 +1,12 @@
+:::{#def-iid}
+#### Independent and identically distributed
+
+Random variables $\dsn{X}$ are **independent and identically
+distributed** (shorthand: "$X_i\ \iid$")
+[@wikipedia_iid]
+if they are:
+
+- [statistically independent](#def-indpt), and
+- [identically distributed](#def-ident).
+
+:::

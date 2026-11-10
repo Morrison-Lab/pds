@@ -16,13 +16,13 @@ $$
 \end{bmatrix}.
 $$
 
-Let $\matr{S} = \matr{\covmat}_{22} - \matr{\covmat}_{21}\matr{\covmat}_{11}^{-1}\matr{\covmat}_{12}$.
+Let $\matr{S} = \matr{\covmat}_{22} - \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\matr{\covmat}_{12}$.
 Then, given $\vX_1 = \vx_1$,
 
 $$
 \vX_2 \mid \vX_1 = \vx_1
 \sim \Normal_m\paren{
-\vecf{\mean}_2 + \matr{\covmat}_{21}\matr{\covmat}_{11}^{-1}(\vx_1 - \vecf{\mean}_1),
+\vecf{\mean}_2 + \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}(\vx_1 - \vecf{\mean}_1),
 \matr{S}}.
 $$
 
@@ -33,19 +33,19 @@ $$
 [$\matr{\covmat}$ is positive definite](#def-mvn),
 so by [the inverse of a positive definite block matrix](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse),
 $\matr{S}$ is positive definite,
-and $\matr{\covmat}^{-1}$ has [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) $\matr{\Omega}_{ij}$ with
+and $\inv{\matr{\covmat}}$ has [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) $\matr{\Omega}_{ij}$ with
 
 $$
-\matr{\Omega}_{22} = \matr{S}^{-1},
+\matr{\Omega}_{22} = \inv{\matr{S}},
 \quad
-\matr{\Omega}_{21} = -\matr{S}^{-1}\matr{\covmat}_{21}\matr{\covmat}_{11}^{-1}.
+\matr{\Omega}_{21} = -\inv{\matr{S}}\matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}.
 $$
 
 Write $\vecf{d}_1 = \vx_1 - \vecf{\mean}_1$ and $\vecf{d}_2 = \vx_2 - \vecf{\mean}_2$.
 The [conditional density](expectation.qmd#def-cond-pdf) of $\vX_2$ given $\vX_1 = \vx_1$ is the [joint density](random-variables.qmd#def-joint-pdf) divided by the [marginal density](random-variables.qmd#def-marginal) of $\vx_1$,
 and the marginal density does not depend on $\vx_2$.
 So as a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $\vx_2$, the conditional density equals the joint density times a factor that does not change with $\vx_2$,
-and the joint density is a factor that does not change with $\vx_2$ times $\ef{\cdot}$ of
+and the joint density is a factor that does not change with $\vx_2$ times $e$ raised to
 
 $$
 \ba
@@ -64,12 +64,12 @@ $$
 \ba
 2\tp{\vecf{d}_2}\matr{\Omega}_{21}\vecf{d}_1
 + \tp{\vecf{d}_2}\matr{\Omega}_{22}\vecf{d}_2
-&= \tp{\vecf{d}_2}\matr{S}^{-1}\vecf{d}_2
-- 2\tp{\vecf{d}_2}\matr{S}^{-1}\matr{\covmat}_{21}\matr{\covmat}_{11}^{-1}\vecf{d}_1
+&= \tp{\vecf{d}_2}\inv{\matr{S}}\vecf{d}_2
+- 2\tp{\vecf{d}_2}\inv{\matr{S}}\matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\vecf{d}_1
 && \text{(substitute)} \\
-&= \tp{\paren{\vecf{d}_2 - \vecf{c}}}\matr{S}^{-1}\paren{\vecf{d}_2 - \vecf{c}}
-- \tp{\vecf{c}}\matr{S}^{-1}\vecf{c}
-&& \text{(complete the square, with } \vecf{c} = \matr{\covmat}_{21}\matr{\covmat}_{11}^{-1}\vecf{d}_1 \text{)}
+&= \tp{\paren{\vecf{d}_2 - \vecf{c}}}\inv{\matr{S}}\paren{\vecf{d}_2 - \vecf{c}}
+- \tp{\vecf{c}}\inv{\matr{S}}\vecf{c}
+&& \text{(complete the square, with } \vecf{c} = \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\vecf{d}_1 \text{)}
 \ea
 $$
 
@@ -81,7 +81,7 @@ times
 $$
 \ef{-\frac{1}{2}
 \tp{\paren{\vx_2 - \paren{\vecf{\mean}_2 + \vecf{c}}}}
-\matr{S}^{-1}
+\inv{\matr{S}}
 \paren{\vx_2 - \paren{\vecf{\mean}_2 + \vecf{c}}}},
 $$
 

@@ -1,0 +1,27 @@
+:::{#exm-linearity-affine}
+#### Expectation of a rescaled uniform variable
+
+Let $X \sim \text{Uniform}(0,1)$, so
+
+$$
+\begin{aligned}
+\E{X} &= \int_0^1 x\,dx \\
+&= \tfrac{1}{2}.
+\end{aligned}
+$$
+
+By @cor-linearity-affine with $a = 2$ and $c = 1$:
+
+$$
+\ba
+\E{2X + 1}
+&= 2\E{X} + 1
+&& \text{(expectation of a linear function)} \\
+&= 2 \cd \tfrac{1}{2} + 1
+&& \text{(substitute } \E{X} = \tfrac{1}{2} \text{)} \\
+&= 2
+&& \text{(evaluate)}
+\ea
+$$
+
+:::
