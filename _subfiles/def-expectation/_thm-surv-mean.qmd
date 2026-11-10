@@ -1,0 +1,47 @@
+:::{#thm-surv-mean}
+#### Expectation of time-to-event variables
+
+If $T$ is a non-negative random variable
+with [survival function](random-variables.qmd#def-surv-fn) $\surv(t)$
+and a defined expectation, then:
+
+$$\E{T} = \int_{t=0}^{\infty} \surv(t)\,dt$$
+
+:::{{< slidebreak >}}
+
+::: proof
+
+We prove the continuous case, in which $T$ has a density $\pdf$.
+The integrand $\pdf(u) \cd \indicp{0 \le t \le u}$ is non-negative
+on $[0, \infty) \times [0, \infty)$,
+so Tonelli's theorem
+(the non-negative case of the
+[Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3)
+lets us exchange the order of integration:
+
+$$
+\ba
+\E{T}
+&= \int_{u=0}^{\infty} u\,\pdf(u)\,du
+&& \text{(definition of expectation; } T \ge 0 \text{)}\\
+&= \int_{u=0}^{\infty}\paren{\int_{t=0}^{u} 1\,dt}\pdf(u)\,du
+&& \text{(} u = \textstyle\int_0^u 1\,dt \text{)}\\
+&= \int_{u=0}^{\infty}\int_{t=0}^{u} \pdf(u)\,dt\,du
+&& \text{(move } \pdf(u) \text{ inside the inner integral)}\\
+&= \int_{t=0}^{\infty}\int_{u=t}^{\infty} \pdf(u)\,du\,dt
+&& \text{(Tonelli: exchange the order over } 0 \le t \le u \text{)}\\
+&= \int_{t=0}^{\infty}\Pr(T>t)\,dt
+&& \text{(integrate the density over } (t, \infty) \text{)}\\
+&= \int_{t=0}^{\infty}\surv(t)\,dt
+&& \text{(definition of the survival function)}
+\ea
+$$
+
+Every step also holds when $\int_{u=0}^{\infty} u\,\pdf(u)\,du$ is infinite,
+because Tonelli's theorem needs only a non-negative integrand;
+so $\int_{t=0}^{\infty} \surv(t)\,dt$ is finite exactly when $\E{T}$ is defined.
+
+See [@statproofbook:mean-nnrvar] for an alternative presentation of this proof.
+
+:::

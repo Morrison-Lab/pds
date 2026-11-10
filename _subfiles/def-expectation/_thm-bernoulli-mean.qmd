@@ -1,0 +1,24 @@
+:::{#thm-bernoulli-mean}
+#### Expectation of the Bernoulli distribution
+
+If $X \sim \Ber(\prob)$ ([Bernoulli distribution](random-variables.qmd#def-bernoulli)),
+that is, $\P(X = 1) = \prob$ and $\P(X = 0) = 1 - \prob$, then:
+
+$$\E{X} = \prob$$
+:::{{< slidebreak >}}
+
+::: proof
+
+$$
+\ba
+\E{X}
+&= \sum_{x\in \rangef{X}} x \cd \P(X=x) && \text{(definition of expectation for discrete r.v.)}
+\\&= \sum_{x\in \set{0,1}} x \cd \P(X=x) && \text{(range of Bernoulli r.v. is } \{0, 1\} \text{)}
+\\&= \paren{0 \cd \P(X=0)} + \paren{1 \cd \P(X=1)} && \text{(expand sum over } x = 0 \text{ and } x = 1 \text{)}
+\\&= \paren{0 \cd (1-\prob)} + \paren{1 \cd \prob} && \text{(substitute Bernoulli PMF values)}
+\\&= 0 + \prob && \text{(multiplication by 0 and 1)}
+\\&= \prob && \text{(addition of 0)}
+\ea
+$$
+
+:::
