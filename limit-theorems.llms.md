@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 16:48:50 (PST)
+Last modified: 2026-11-09 21:00:11 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -698,6 +698,12 @@ Last modified: 2026-11-09 16:48:50 (PST)
 >
 > The bound goes to zero as $n \to \infty$, so the probability, squeezed between zero and the bound, goes to zero. This holds for every $\varepsilon > 0$.
 
+# 4 Further reading
+
+> **TIP:**
+>
+> Evans and Rosenthal’s free textbook [\[15\]](#ref-evans2010probability) covers sampling, the [law of large numbers](#thm-wlln) and the [central limit theorem](#thm-clt) in Chapter 4.
+
 # Definitions on this page
 
 - [Definition 1 (Convergence in probability)](#def-convergence-in-probability)
@@ -759,5 +765,9 @@ G. Casella and R. Berger, *Statistical inference*, 2nd ed. Cengage Learning, 200
 \[14\]
 
 Wikipedia contributors, “Law of large numbers — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Law_of_large_numbers>
+
+\[15\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top

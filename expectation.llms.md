@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 16:48:50 (PST)
+Last modified: 2026-11-09 21:00:11 (PST)
 
 > **NOTE:**
 >
@@ -1175,7 +1175,7 @@ Last modified: 2026-11-09 16:48:50 (PST)
 
 > **NOTE:**
 >
-> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of $\sigma$-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope [\[2\]](#ref-billingsley1995probability), Theorem 18.3. Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both $\sigma$-finite, which gives the theorem a form stated in terms of a joint distribution.
+> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a [product](https://morrison-lab.github.io/mcs/sets.html#def-cartesian-product) of $\sigma$-finite [measure spaces](https://morrison-lab.github.io/mds/measures.html#def-measure-space), provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope [\[2\]](#ref-billingsley1995probability), Theorem 18.3. Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both $\sigma$-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
@@ -2820,7 +2820,7 @@ Last modified: 2026-11-09 16:48:50 (PST)
 
 > **TIP:**
 >
-> Lange’s textbook [\[22\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
+> Lange’s textbook [\[22\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5. Evans and Rosenthal’s free textbook [\[23\]](#ref-evans2010probability) covers expectation in Chapter 3.
 
 # Definitions on this page
 
@@ -2940,5 +2940,9 @@ Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.�
 \[22\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+\[23\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top
