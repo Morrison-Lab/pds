@@ -6,7 +6,7 @@ The three given numbers are
 $$\Pr(\posclass \mid S) = 0.99, \qquad \Pr(\posclass \mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001$$
 
 @eq-bayes needs $\Pr(\posclass)$, the overall chance of a positive result.
-Assemble it with @thm-total-prob, splitting on whether the person is
+Assemble it with @thm-total-prob-conditional, splitting on whether the person is
 sick:
 
 $$\begin{aligned}
