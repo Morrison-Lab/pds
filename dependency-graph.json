@@ -304,6 +304,26 @@
    "url": "https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function"
   },
   {
+   "id": "mds/linear-algebra-diagonalization#def-block-matrix",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "def-block-matrix",
+   "kind": "def",
+   "title": "block matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix"
+  },
+  {
+   "id": "mds/linear-algebra-diagonalization#thm-block-inverse",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "thm-block-inverse",
+   "kind": "thm",
+   "title": "block inverse",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse"
+  },
+  {
    "id": "mds/linear-algebra-special-matrices#def-determinant",
    "site": "mds",
    "page": "linear-algebra-special-matrices",
@@ -847,6 +867,15 @@
    "div": "thm-mixture-two-stage",
    "kind": "thm",
    "title": "A mixture is the density of a two-stage random variable",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mvn-conditional",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-conditional",
+   "kind": "thm",
+   "title": "The conditional distribution of a block of a multivariate Gaussian vector",
    "external": false
   },
   {
@@ -3095,6 +3124,38 @@
   ],
   [
    "pds/distributions#thm-mixture-two-stage",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-marginal"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
    "pds/random-variables#def-pdf"
   ],
   [
