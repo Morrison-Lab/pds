@@ -1536,6 +1536,15 @@
    "external": false
   },
   {
+   "id": "pds/independence#def-cind-continuous",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-cind-continuous",
+   "kind": "def",
+   "title": "Conditional independence given a continuous random vector",
+   "external": false
+  },
+  {
    "id": "pds/independence#def-ident",
    "site": "pds",
    "page": "independence",
@@ -4047,12 +4056,20 @@
    "pds/independence#def-cind"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-density-mass"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/independence#def-ident",
