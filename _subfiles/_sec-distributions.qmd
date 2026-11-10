@@ -373,6 +373,10 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-conditional-precision.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-coprecision.qmd >}}
 
 {{< slidebreak >}}
