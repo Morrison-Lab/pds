@@ -164,6 +164,10 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_exm-bayes.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exr-bayes.qmd >}}
 
 {{< slidebreak >}}
