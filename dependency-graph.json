@@ -646,6 +646,24 @@
    "external": false
   },
   {
+   "id": "pds/distributions#def-conditional-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-conditional-precision",
+   "kind": "def",
+   "title": "Conditional precision",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-coprecision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-coprecision",
+   "kind": "def",
+   "title": "Coprecision",
+   "external": false
+  },
+  {
    "id": "pds/distributions#def-event-rate",
    "site": "pds",
    "page": "distributions",
@@ -2985,6 +3003,30 @@
   [
    "pds/distributions#def-binomial",
    "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/variance-covariance#def-cond-variance"
   ],
   [
    "pds/distributions#def-event-rate",
