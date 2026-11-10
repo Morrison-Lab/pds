@@ -153,3 +153,13 @@ body.qwt-dark .reveal {
   color: var(--qwt-muted);
   background-color: transparent;
 }
+
+/* In a narrow panel column the number box beside a slider shrank to 56px,
+   which cut a value like -0.05 short. Keep it wide enough to read. The floor
+   takes width from the slider, so it applies only on screens wide enough to
+   spare it; on a phone it would leave the slider about 20px wide. */
+@media (min-width: 768px) {
+  .widget-panel input[type="number"] {
+    min-width: 4.5em;
+  }
+}
