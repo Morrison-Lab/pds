@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 22:04:16 (PST)
+Last modified: 2026-11-09 22:25:12 (PST)
 
 > **NOTE:**
 >
@@ -2341,11 +2341,40 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 9* (When the reducible risk is zero). The [reducible risk](#def-reducible-risk) is zero if and only if the [prediction function](#def-prediction-function) $f$ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1.
+> **Proposition 1 (The reducible risk is zero only for the conditional mean)** The [reducible risk](#def-reducible-risk) is zero [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) the [prediction function](#def-prediction-function) $f$ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1:
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}} = 0
 > \iff
 > \mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}}) = 1$$
+
+> **NOTE:**
+>
+> *Proof*. Write $Z = {\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}$. Since $x^2 \ge 0$ for every $x$, with $x^2 = 0$ only at $x = 0$, $Z \ge 0$, and $Z = 0$ exactly when ${f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}}$.
+>
+> **(**$\Leftarrow$) If $\mathbb{P}(Z = 0) = 1$, then $Z$ takes the value 0 with [probability](probability-basics.llms.md#def-probability) 1, so ${\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} = 0$ by the [definition of expectation](#def-expectation).
+>
+> **(**$\Rightarrow$) Suppose ${\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} = 0$, and fix $a > 0$. Since $Z \ge 0$, and $Z \ge a$ on the [event](probability-basics.llms.md#def-event) ${\mathopen{}\left\{Z \ge a\right\}\mathclose{}}$:
+>
+> $$\begin{aligned}
+> Z &\ge a \cdot\text{1}_{Z \ge a}
+> && \text{(on } {\mathopen{}\left\{Z \ge a\right\}\mathclose{}} \text{ the right side is } a \le Z \text{; elsewhere it is } 0 \le Z \text{)}
+> \\ {\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} &\ge {\mathbb{E}\mathopen{}\left[a \cdot\text{1}_{Z \ge a}\right]\mathclose{}}
+> && \text{(expectation preserves inequalities)}
+> \\ &= a \cdot\mathbb{P}(Z \ge a)
+> && \text{(the expectation of an indicator is the probability of its event)}
+> \end{aligned}$$
+>
+> With ${\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} = 0$, the displayed chain gives $a \cdot\mathbb{P}(Z \ge a) \le 0$, so $\mathbb{P}(Z \ge a) = 0$. The events ${\mathopen{}\left\{Z \ge 1/n\right\}\mathclose{}}$ for $n = 1, 2, \ldots$ increase to the event ${\mathopen{}\left\{Z > 0\right\}\mathclose{}}$, so by the [continuity of probability](probability-basics.llms.md#thm-continuity-probability):
+>
+> $$\begin{aligned}
+> \mathbb{P}(Z > 0)
+> &= \lim_{n \to \infty} \mathbb{P}(Z \ge 1/n)
+> && \text{(continuity of probability)}
+> \\ &= 0
+> && \text{(each term is 0, taking } a = 1/n \text{)}
+> \end{aligned}$$
+>
+> Hence $\mathbb{P}(Z = 0) = 1 - \mathbb{P}(Z > 0) = 1$.
 
 > **NOTE:**
 >
@@ -2405,7 +2434,7 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 10* (Rarer values are more surprising). A possible value $x$ with [probability](probability-basics.llms.md#def-probability) $\mathbb{P}(X=x) = 1$ has [surprisal](#def-surprisal) $0$, and the surprisal grows without bound as $\mathbb{P}(X=x) \to 0$.
+> *Remark 9* (Rarer values are more surprising). A possible value $x$ with [probability](probability-basics.llms.md#def-probability) $\mathbb{P}(X=x) = 1$ has [surprisal](#def-surprisal) $0$, and the surprisal grows without bound as $\mathbb{P}(X=x) \to 0$.
 
 > **NOTE:**
 >
@@ -2485,7 +2514,7 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 11* (The base of the logarithm is a unit). With the natural logarithm, [entropy](#def-entropy) is measured in [*nats*](https://morrison-lab.github.io/ids/entropy.html#def-nat). With base 2, it is measured in [*bits*](https://morrison-lab.github.io/ids/entropy.html#def-bit). Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 10* (The base of the logarithm is a unit). With the natural logarithm, [entropy](#def-entropy) is measured in [*nats*](https://morrison-lab.github.io/ids/entropy.html#def-nat). With base 2, it is measured in [*bits*](https://morrison-lab.github.io/ids/entropy.html#def-bit). Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
@@ -2513,7 +2542,7 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 12* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on $K$ outcomes it is largest, $\log K$, for the uniform distribution.
+> *Remark 11* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on $K$ outcomes it is largest, $\log K$, for the uniform distribution.
 
 > **NOTE:**
 >
@@ -2722,7 +2751,7 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 13* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -2804,7 +2833,7 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 14* (The divergence is not symmetric). In general, ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ne {{D_{\mathrm{KL}}}\mathopen{}\left(q \,\Vert\, p\right)\mathclose{}}$, so KL divergence is not a distance between $p$ and $q$.
+> *Remark 13* (The divergence is not symmetric). In general, ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ne {{D_{\mathrm{KL}}}\mathopen{}\left(q \,\Vert\, p\right)\mathclose{}}$, so KL divergence is not a distance between $p$ and $q$.
 
 > **NOTE:**
 >
@@ -2826,7 +2855,7 @@ Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
-> *Remark 15* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution $p$ using a code designed for $q$.
+> *Remark 14* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution $p$ using a code designed for $q$.
 
 # 5 Further reading
 

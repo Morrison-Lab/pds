@@ -1282,6 +1282,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#prp-reducible-risk-zero",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-reducible-risk-zero",
+   "kind": "prp",
+   "title": "The reducible risk is zero only for the conditional mean",
+   "external": false
+  },
+  {
    "id": "pds/expectation#thm-bernoulli-mean",
    "site": "pds",
    "page": "expectation",
@@ -3650,6 +3659,38 @@
   [
    "pds/expectation#lem-prediction-error-split",
    "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-reducible-risk"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#thm-continuity-probability"
   ],
   [
    "pds/expectation#thm-bernoulli-mean",
