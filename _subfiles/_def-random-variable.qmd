@@ -13,6 +13,10 @@ it assigns a number to each possible outcome of a [random experiment](probabilit
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_rem-random-variable-practical.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_exm-random-variable.qmd >}}
 
 {{< slidebreak >}}
