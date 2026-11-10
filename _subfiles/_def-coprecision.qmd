@@ -5,8 +5,8 @@ Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector with $p \ge
 let $i \ne j$,
 and let $\vX_{-ij}$ be $\vX$ without its $i$th and $j$th elements.
 The **coprecision** of $X_i$ and $X_j$ given $\vX_{-ij} = \vx_{-ij}$
-is built from their [conditional covariance](variance-covariance.qmd#def-cond-cov)
-and their [conditional variances](variance-covariance.qmd#def-cond-variance):
+is defined through their [conditional covariance](variance-covariance.qmd#def-cond-cov)
+and their [conditional variances](variance-covariance.qmd#def-cond-variance) as
 
 $$
 \frac{-\condCov{X_i}{X_j}{\vX_{-ij} = \vx_{-ij}}}
