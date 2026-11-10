@@ -1,7 +1,6 @@
 :::{#exm-cauchy-no-mean}
 #### The standard Cauchy distribution has no expectation
 
-A random variable whose expectation is not defined is not exotic.
 Let $X$ have the standard Cauchy distribution,
 with density $\p(X=x) = \frac{1}{\pi(1 + x^2)}$ for every real $x$.
 For $x \ge 0$, $\frac{1}{2\pi}\log(1 + x^2)$ is an antiderivative of
