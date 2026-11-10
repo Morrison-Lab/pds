@@ -251,6 +251,7 @@ format:
 ::: {.callout-tip title="Another explanation"}
 Lange's textbook [@lange2024applied] covers conditioning as a tool for computing [expectations](#def-expectation)
 in Section 2.3 and tail [probability](probability-basics.qmd#def-probability) methods in Section 2.5.
+Evans and Rosenthal's free textbook [@evans2024probability] covers expectation in Chapter 3.
 :::
 
 

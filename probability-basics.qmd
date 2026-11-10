@@ -206,6 +206,13 @@ and [conditional probability](#def-conditional-prob) in Section 1.3.
 :::
 
 
+# Further reading
+
+::: {.callout-tip title="Another explanation"}
+Evans and Rosenthal's free textbook [@evans2024probability] covers probability models, conditional probability and independence in Chapter 1.
+:::
+
+
 # References {.unnumbered}
 
 ::: {#refs}

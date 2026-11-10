@@ -100,6 +100,13 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 {{< include pds/_subfiles/_thm-wlln.qmd >}}
 
 
+# Further reading
+
+::: {.callout-tip title="Another explanation"}
+Evans and Rosenthal's free textbook [@evans2024probability] covers sampling distributions, the law of large numbers and the central limit theorem in Chapter 4.
+:::
+
+
 # References {.unnumbered}
 
 ::: {#refs}
