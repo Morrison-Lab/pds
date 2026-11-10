@@ -16,7 +16,7 @@ $$\E{g(X)} = \int_{x \in \rangef{X}} g(x) \cd \p(X=x)\, dx$$
 
 ::: proof
 
-We prove the discrete case.
+We prove the discrete case first.
 Let $Y = g(X)$.
 For each $y \in \rangef{Y}$, the event $\{Y = y\}$ is the disjoint union
 of the events $\{X = x\}$ over the values $x$ with $g(x) = y$,
@@ -37,6 +37,31 @@ $$
 The last step regroups a possibly infinite sum,
 which is valid because $\E{g(X)}$ is defined only when the sum converges absolutely.
 
+We prove the continuous case for a function $g$ that is strictly increasing
+and continuously differentiable on $\rangef{X}$,
+with inverse $h = \inv{g}$.
+Let $Y = g(X)$.
+Because $g$ is strictly increasing,
+$\{Y \le y\} = \{X \le h(y)\}$,
+so the [CDF](random-variables.qmd#def-cdf) of $Y$ is $\Pr(Y \le y) = \Pr(X \le h(y))$.
+Differentiating with the chain rule gives the density of $Y$:
+$\p(Y=y) = \p(X=h(y)) \cd h'(y)$.
+
+$$
+\ba
+\E{g(X)}
+&= \E{Y} && \text{(substitution } Y = g(X) \text{)}
+\\&= \int y \cd \p(Y=y)\,dy && \text{(definition of expectation for continuous r.v.)}
+\\&= \int y \cd \p(X=h(y)) \cd h'(y)\,dy && \text{(density of } Y \text{)}
+\\&= \int g(x) \cd \p(X=x)\,dx && \text{(substitute } y = g(x) \text{, so } h(y) = x \text{ and } h'(y)\,dy = dx \text{)}
+\ea
+$$
+
+Each integral runs over the range of its variable,
+and $g$ maps $\rangef{X}$ onto $\rangef{Y}$.
+For a strictly decreasing $g$, the same steps hold
+with $\Pr(Y \le y) = \Pr(X \ge h(y))$ and $\abs{h'(y)}$ in place of $h'(y)$.
+
 :::
 
 ::: {.remark .notes}
@@ -44,8 +69,9 @@ which is valid because $\E{g(X)}$ is defined only when the sum converges absolut
 LOTUS says that to compute $\E{g(X)}$,
 we do not need to first find the distribution of $g(X)$;
 we can compute the expectation directly using the distribution of $X$.
-The continuous case is the density-weighted analogue of this argument,
-but a fully rigorous proof needs the general change-of-variables
+The continuous case is the density-weighted analogue of this argument.
+The proof above covers a strictly monotone, continuously differentiable $g$;
+a fully general proof needs the change-of-variables
 theorem for integrals against a pushforward measure --- approximating
 $g$ by simple functions and passing to the limit --- which is beyond
 this page's scope
