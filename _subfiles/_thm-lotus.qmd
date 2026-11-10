@@ -58,7 +58,7 @@ $$
 \ea
 $$
 
-Each [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) runs over the [range](random-variables.qmd#def-range) of its variable,
+Each [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) runs over the [range of](random-variables.qmd#def-range) its variable,
 and $g$ carries $\rangef{X}$ onto $\rangef{Y}$.
 For a strictly decreasing $g$, the same calculation holds
 with $\Pr(Y \le y) = \Pr(X \ge h(y))$ and $\abs{h'(y)}$ in place of $h'(y)$.
