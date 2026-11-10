@@ -1,0 +1,7 @@
+::: {.remark .notes}
+
+As with independence (@exm-indpt-pmf-fails),
+the PMF form would not work as a definition in general:
+every continuous random variable has $\Pr(X_i = x) = 0$ at every $x$.
+
+:::

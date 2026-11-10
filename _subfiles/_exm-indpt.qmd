@@ -1,0 +1,29 @@
+:::{#exm-indpt}
+#### Two fair coin flips
+
+Flip two fair coins, and let $X_1$ and $X_2$ indicate heads on the first and second flip.
+Each of the four outcomes has probability $1/4$, so for example:
+
+$$
+\begin{aligned}
+\P(X_1 = 1, X_2 = 1)
+&= \tfrac{1}{4} \\
+&= \tfrac{1}{2} \cd \tfrac{1}{2} \\
+&= \P(X_1 = 1)\,\P(X_2 = 1)
+\end{aligned}
+$$
+
+and the same factorization holds for the other three pairs of values,
+so $X_1 \ind X_2$ by @thm-indpt-pmf.
+In contrast, $X_1$ and the total number of heads, $X_1 + X_2$, are not independent:
+$\P(X_1 = 0, X_1 + X_2 = 2) = 0$,
+but
+
+$$
+\begin{aligned}
+\P(X_1 = 0)\,\P(X_1 + X_2 = 2) &= \tfrac{1}{2} \cd \tfrac{1}{4} \\
+&= \tfrac{1}{8}.
+\end{aligned}
+$$
+
+:::

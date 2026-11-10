@@ -1,0 +1,42 @@
+:::{#exm-mixture-gaussian}
+#### A two-component normal mixture
+
+Let ${\p_1}$ be the $\ndist{0, 1}$ density and ${\p_2}$ the $\ndist{6, 1}$ density,
+with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$,
+and let $X$ have density ${\p_{\text{mix}}} = 0.3\,{\p_1} + 0.7\,{\p_2}$.
+
+- **Mean.**
+  By @thm-mixture-mean and the [normal means](random-variables.qmd#thm-normal-moments),
+
+  $$
+  \begin{aligned}
+  \E{X} &= 0.3 \cd 0 + 0.7 \cd 6 \\
+  &= 4.2.
+  \end{aligned}
+  $$
+
+- **Density.**
+  ${\p_{\text{mix}}}$ has peaks near the two component means,
+  ${\p_{\text{mix}}}(0) \approx 0.120$ and ${\p_{\text{mix}}}(6) \approx 0.279$,
+  with a trough between them, ${\p_{\text{mix}}}(3) \approx 0.004$.
+  The density at the mean, ${\p_{\text{mix}}}(4.2) \approx 0.055$,
+  is less than half its value at either peak.
+- **Responsibilities.**
+  By @thm-mixture-posterior,
+  at $x = 3$, halfway between the component means,
+  ${\p_1}(3) = {\p_2}(3)$ by the symmetry of the normal density, so:
+
+  $$
+  \begin{aligned}
+  \P(C = 2 \mid X = 3)
+  &= \frac{0.7\,{\p_2}(3)}{0.3\,{\p_1}(3) + 0.7\,{\p_2}(3)} \\
+  &= \frac{0.7}{0.3 + 0.7} \\
+  &= 0.7,
+  \end{aligned}
+  $$
+
+  the prior weight: an observation equally far from both components
+  carries no information about which component it came from.
+  At $x = 4.2$, the same formula gives $\P(C = 2 \mid X = 4.2) \approx 0.9997$.
+
+:::
