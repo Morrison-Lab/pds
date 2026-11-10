@@ -1,0 +1,33 @@
+:::{#prp-cind-own-covariate}
+#### Conditional independence when each $Y_i$ depends only on its own $X_i$
+
+Let $\vX = (\Xin)$ be a discrete random vector,
+and let $\dsn{Y}$ be [conditionally independent](#def-cind) given $\vX$.
+Suppose also that each $Y_i$ depends on $\vX$ only through $X_i$:
+for every $\vx = (\dsn{x})$ with $\Pr(\vX = \vx) > 0$
+and every set of real numbers $A_i$,
+
+$$\Pr(Y_i \in A_i \mid \vX = \vx) = \Pr(Y_i \in A_i \mid X_i = x_i)$$
+
+Then, for every such $\vx$ and all sets of real numbers $\dsn{A}$:
+
+$$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx) = \prodin{\Pr(Y_i \in A_i \mid X_i = x_i)}$$
+
+:::
+
+::: proof
+
+Each conditional probability given $X_i = x_i$ is defined,
+because $\Pr(X_i = x_i) \ge \Pr(\vX = \vx) > 0$. So:
+
+$$
+\ba
+\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \vX = \vx)
+&= \prodin{\Pr(Y_i \in A_i \mid \vX = \vx)}
+&& \text{(conditional independence given } \vX \text{)} \\
+&= \prodin{\Pr(Y_i \in A_i \mid X_i = x_i)}
+&& \text{(each } Y_i \text{ depends on } \vX \text{ only through } X_i \text{)}
+\ea
+$$
+
+:::

@@ -1,0 +1,17 @@
+:::{#def-cident}
+#### Conditionally identically distributed
+
+Random variables $\dsn{Y}$ are **conditionally identically distributed**
+given random variables $\Xin$
+if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function $G(y \mid x)$ of $y$ and $x$:
+for every $i \in \set{1, \ldots, n}$, every $y$,
+and every $x$ with $\Pr(X_i = x) > 0$,
+
+$$\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)$$
+
+When $X_i$ is continuous, the condition applies at every $x$ with $\p(X_i = x) > 0$,
+with $\Pr(Y_i \le y \mid X_i = x)$ computed from densities:
+the integral of $\p(X_i = x, Y_i = u) / \p(X_i = x)$ over $u \le y$
+(a sum over values $u \le y$ when $Y_i$ is discrete).
+
+:::

@@ -1,0 +1,13 @@
+:::{#def-ciid}
+#### Conditionally independent and identically distributed
+
+Random variables $\dsn{Y}$ are **conditionally independent and identically distributed**
+given $\dsn{X}$
+(shorthand: "$Y_i \mid X_i\ \ciid$" or just "$Y_i \mid X_i\ \iid$")
+if:
+
+- $\dsn{Y}$ are [conditionally independent](#def-cind) given $(\Xin)$,
+- each $Y_i$ depends on $(\Xin)$ only through $X_i$, and
+- $\dsn{Y}$ are [conditionally identically distributed](#def-cident) given $\Xin$.
+
+:::

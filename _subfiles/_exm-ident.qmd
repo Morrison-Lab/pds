@@ -1,0 +1,9 @@
+:::{#exm-ident}
+#### Identically distributed but not independent
+
+In @exm-indpt, $X_1$ and $1 - X_1$ (the indicator of tails on the first flip)
+both take the values $0$ and $1$ with probability $1/2$ each,
+so they are identically distributed (@thm-ident-pmf).
+They are not independent: knowing one determines the other.
+
+:::

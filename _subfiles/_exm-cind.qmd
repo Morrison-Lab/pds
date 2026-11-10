@@ -1,0 +1,35 @@
+:::{#exm-cind}
+#### Two tests of the same patient
+
+Let $X$ indicate whether a patient has a disease,
+and let $Y_1$ and $Y_2$ indicate positive results on two tests
+whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$.
+Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$
+and with probability $0.1$ if $X = 0$.
+Then, by the [law of total probability](probability-basics.qmd#thm-total-prob):
+
+$$
+\ba
+\Pr(Y_1 = 1, Y_2 = 1)
+&= (0.9)(0.9)(0.1) + (0.1)(0.1)(0.9)
+&& \text{(condition on } X \text{; factor given } X \text{)} \\
+&= 0.081 + 0.009
+&& \text{(multiply)} \\
+&= 0.09
+&& \text{(add)}
+\ea
+$$
+
+but
+
+$$
+\begin{aligned}
+\Pr(Y_1 = 1) &= (0.9)(0.1) + (0.1)(0.9) \\
+&= 0.18,
+\end{aligned}
+$$
+
+so $\Pr(Y_1 = 1)\,\Pr(Y_2 = 1) = 0.0324 \ne 0.09$:
+the tests are conditionally independent given $X$, but not independent.
+
+:::

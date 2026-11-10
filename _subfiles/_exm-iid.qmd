@@ -1,0 +1,8 @@
+:::{#exm-iid}
+#### Repeated die rolls
+
+The results of $n$ rolls of the same fair die are IID:
+the rolls are independent,
+and each is uniform on $\set{1, \ldots, 6}$.
+
+:::
