@@ -1,5 +1,5 @@
 :::{#thm-mvn-conditional}
-#### The conditional distribution of a block of a multivariate normal vector
+#### The conditional distribution of a block of a multivariate Gaussian vector
 
 Let $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
 cut into $\vX = \begin{bmatrix} \vX_1 \\ \vX_2 \end{bmatrix}$

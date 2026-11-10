@@ -1,5 +1,5 @@
 :::{#exm-mvn-conditional}
-#### The conditional distribution of one component of a bivariate normal vector
+#### The conditional distribution of one element of a bivariate Gaussian vector
 
 <!-- no-figure: one scalar formula checked against its special case; nothing to plot -->
 
