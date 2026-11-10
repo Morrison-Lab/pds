@@ -2,8 +2,8 @@
 #### Precision matrix
 
 Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector.
-The **precision matrix** $\precision(\vX)$ of $\vX$ is the $p \times p$ matrix
-whose $i$th diagonal element is the [conditional precision](#def-conditional-precision) of $X_i$ given $\vX_{-i}$,
+The **precision matrix** $\precision(\vX)$ of $\vX$ is the $p \times p$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix)
+whose $i$th [diagonal](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry) element is the [conditional precision](#def-conditional-precision) of $X_i$ given $\vX_{-i}$,
 and whose $(i, j)$ element, for $i \ne j$, is the [coprecision](#def-coprecision) of $X_i$ and $X_j$ given $\vX_{-ij}$.
 
 :::
