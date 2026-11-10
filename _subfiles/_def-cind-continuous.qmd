@@ -1,8 +1,8 @@
 :::{#def-cind-continuous}
 #### Conditional independence given a continuous random vector
 
-Random variables $\dsn{Y}$ are **conditionally independent** given a continuous random vector $\vX$
-(the continuous counterpart of [conditional independence given a discrete random vector](#def-cind))
+[Random variables](random-variables.qmd#def-random-variable) $\dsn{Y}$ are **conditionally independent** given a vector $\vX$ of [continuous random variables](random-variables.qmd#def-continuous-rv)
+(compare [conditional independence given a discrete random vector](#def-cind))
 if, for every $\vx$ with $\p(\vX = \vx) > 0$ and all $\dsn{y}$:
 
 $$\frac{\p(\vX = \vx, Y_1 = y_1, \ldots, Y_n = y_n)}{\p(\vX = \vx)} = \prodin{\frac{\p(\vX = \vx, Y_i = y_i)}{\p(\vX = \vx)}}$$
