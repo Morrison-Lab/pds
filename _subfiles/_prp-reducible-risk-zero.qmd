@@ -34,7 +34,7 @@ Z &\ge a \cd \1{Z \ge a}
 \ea
 $$
 
-With $\E{Z} = 0$ this gives $a \cd \P(Z \ge a) \le 0$, so $\P(Z \ge a) = 0$.
+With $\E{Z} = 0$, the chain of inequalities gives $a \cd \P(Z \ge a) \le 0$, so $\P(Z \ge a) = 0$.
 The events $\set{Z \ge 1/n}$ for $n = 1, 2, \ldots$ increase to the event $\set{Z > 0}$,
 so by the [continuity of probability](probability-basics.qmd#thm-continuity-probability):
 
