@@ -4,12 +4,14 @@
 Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector with $p \ge 2$,
 let $i \ne j$,
 and let $\vX_{-ij}$ be $\vX$ without its $i$th and $j$th elements.
-Write $v_i$ and $v_j$ for the [conditional variances](variance-covariance.qmd#def-cond-variance) of $X_i$ and $X_j$ given $\vX_{-ij} = \vx_{-ij}$,
-and $c_{ij}$ for their [conditional covariance](variance-covariance.qmd#def-cond-cov).
-The **coprecision** of $X_i$ and $X_j$ given $\vX_{-ij} = \vx_{-ij}$ is
+The **coprecision** of $X_i$ and $X_j$ given $\vX_{-ij} = \vx_{-ij}$
+is built from their [conditional covariance](variance-covariance.qmd#def-cond-cov)
+and their [conditional variances](variance-covariance.qmd#def-cond-variance):
 
 $$
-\frac{-c_{ij}}{v_i v_j - c_{ij}^2}.
+\frac{-\condCov{X_i}{X_j}{\vX_{-ij} = \vx_{-ij}}}
+{\condVar{X_i}{\vX_{-ij} = \vx_{-ij}}\condVar{X_j}{\vX_{-ij} = \vx_{-ij}}
+- \paren{\condCov{X_i}{X_j}{\vX_{-ij} = \vx_{-ij}}}^2}.
 $$
 
 :::
