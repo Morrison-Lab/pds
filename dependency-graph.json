@@ -1966,6 +1966,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#thm-total-prob-conditional",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-total-prob-conditional",
+   "kind": "thm",
+   "title": "Law of total probability with conditional probabilities",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#cor-cdf-derivative-density-ae",
    "site": "pds",
    "page": "random-variables",
@@ -4413,10 +4422,6 @@
    "pds/probability-basics#def-partition"
   ],
   [
-   "pds/probability-basics#thm-total-prob",
-   "pds/probability-basics#thm-law-conditional-prob"
-  ],
-  [
    "pds/probability-basics#thm-total-prob-1",
    "mcs/sets#def-union"
   ],
@@ -4435,6 +4440,26 @@
   [
    "pds/probability-basics#thm-total-prob-1",
    "pds/probability-basics#prp-complement-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#thm-law-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#thm-total-prob"
   ],
   [
    "pds/random-variables#cor-cdf-derivative-density-ae",

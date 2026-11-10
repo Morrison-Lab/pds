@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 22:25:12 (PST)
+Last modified: 2026-11-09 22:33:06 (PST)
 
 > **NOTE:**
 >
@@ -1735,7 +1735,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 24](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
+> *Remark*. [Theorem 24](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional).
 
 > **NOTE:**
 >

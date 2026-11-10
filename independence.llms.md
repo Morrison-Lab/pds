@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 22:25:12 (PST)
+Last modified: 2026-11-09 22:33:06 (PST)
 
 > **NOTE:**
 >
@@ -165,7 +165,7 @@ Last modified: 2026-11-09 22:25:12 (PST)
 
 > **NOTE:**
 >
-> **Example 4 (Two tests of the same patient)** Let $X$ indicate whether a patient has a disease, and let $Y_1$ and $Y_2$ indicate positive results on two tests whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$. Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$ and with probability $0.1$ if $X = 0$. Then, by the [law of total probability](probability-basics.llms.md#thm-total-prob):
+> **Example 4 (Two tests of the same patient)** Let $X$ indicate whether a patient has a disease, and let $Y_1$ and $Y_2$ indicate positive results on two tests whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$. Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$ and with probability $0.1$ if $X = 0$. Then, by the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional):
 >
 > $$\begin{aligned}
 > \Pr(Y_1 = 1, Y_2 = 1)
