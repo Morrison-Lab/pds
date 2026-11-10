@@ -1,0 +1,21 @@
+::: {#exm-mean-expectation}
+#### Expectation of one of four numbers chosen at random
+
+Let $Y$ be one of the four distinct numbers $2, 3, 5, 10$, [chosen at random](probability-basics.qmd#def-random-choice).
+By @prp-mean-expectation, the [expectation](#def-expectation) of $Y$ is the [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the four numbers:
+
+$$
+\ba
+\E{Y}
+&= \frac{1}{4} \cd \paren{2 + 3 + 5 + 10}
+&& \text{(the mean of four numbers)}\\
+&= \frac{20}{4}
+&& \text{(add)}\\
+&= 5
+&& \text{(divide)}
+\ea
+$$
+
+<!-- no-figure: arithmetic example, no data to plot -->
+
+:::
