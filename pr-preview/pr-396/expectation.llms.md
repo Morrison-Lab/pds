@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 18:03:07 (PST)
+Last modified: 2026-11-09 22:49:36 (PST)
 
 > **NOTE:**
 >
@@ -196,7 +196,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Proof*. We prove the discrete case. Let $Y = g(X)$. For each $y \in \mathcal{R}(Y)$, the event $\{Y = y\}$ is the disjoint union of the events $\{X = x\}$ over the values $x$ with $g(x) = y$, and each $x \in \mathcal{R}(X)$ belongs to exactly one such group.
+> *Proof*. We prove the case of a [discrete random variable](random-variables.llms.md#def-discrete-rv) first. Let $Y = g(X)$. For each $y \in \mathcal{R}(Y)$, the event $\{Y = y\}$ is the disjoint union of the events $\{X = x\}$ over the values $x$ with $g(x) = y$, and each $x \in \mathcal{R}(X)$ belongs to exactly one such group.
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}
@@ -209,10 +209,22 @@ Last modified: 2026-11-09 18:03:07 (PST)
 > \end{aligned}$$
 >
 > The last step regroups a possibly infinite sum, which is valid because ${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}$ is defined only when the sum converges absolutely.
+>
+> We prove the case of a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ and a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $g$ that is strictly increasing and continuously [differentiable on](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable) $\mathcal{R}(X)$, with [inverse function](https://morrison-lab.github.io/mcs/functions.html#def-inverse-function) $h = {\mathopen{}\left(g\right)\mathclose{}}^{-1}$. Let $Y = g(X)$. Because $g$ is strictly increasing, $\{Y \le y\} = \{X \le h(y)\}$, so the [CDF](random-variables.llms.md#def-cdf) of $Y$ is $\Pr(Y \le y) = \Pr(X \le h(y))$. Differentiating with the chain rule gives the [density](random-variables.llms.md#def-pdf) of $Y$: $\mathbb{p}(Y=y) = \mathbb{p}(X=h(y)) \cdot h'(y)$.
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}} && \text{(substitution } Y = g(X) \text{)}
+> \\&= \int y \cdot\mathbb{p}(Y=y)\,dy && \text{(definition of expectation for continuous r.v.)}
+> \\&= \int y \cdot\mathbb{p}(X=h(y)) \cdot h'(y)\,dy && \text{(density of } Y \text{)}
+> \\&= \int g(x) \cdot\mathbb{p}(X=x)\,dx && \text{(substitute } y = g(x) \text{, so } h(y) = x \text{ and } h'(y)\,dy = dx \text{)}
+> \end{aligned}$$
+>
+> Each [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) runs over the [range of](random-variables.llms.md#def-range) its variable, and $g$ carries $\mathcal{R}(X)$ onto $\mathcal{R}(Y)$. For a strictly decreasing $g$, the same calculation holds with $\Pr(Y \le y) = \Pr(X \ge h(y))$ and $\mathopen{}\left|h'(y)\right|\mathclose{}$ in place of $h'(y)$.
 
 > **NOTE:**
 >
-> *Remark*. LOTUS says that to compute ${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}$, we do not need to first find the distribution of $g(X)$; we can compute the expectation directly using the distribution of $X$. The continuous case is the density-weighted analogue of this argument, but a fully rigorous proof needs the general change-of-variables theorem for integrals against a pushforward measure — approximating $g$ by simple functions and passing to the limit — which is beyond this page’s scope [\[2\]](#ref-billingsley1995probability), [\[5\]](#ref-gut2013), [\[6\]](#ref-CaseBerg01), [\[7\]](#ref-wp:lotus).
+> *Remark*. LOTUS says that to compute ${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}$, we do not need to first find the distribution of $g(X)$; we can compute the expectation directly using the distribution of $X$. The proof for a [continuous random variable](random-variables.llms.md#def-continuous-rv) follows the same plan, weighted by its [density](random-variables.llms.md#def-pdf). The proof above covers a strictly monotone, continuously [differentiable](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable) $g$; a fully general proof needs the change-of-variables theorem for integrals against a pushforward measure — approximating $g$ by simple functions and passing to the limit — which is beyond this page’s scope [\[2\]](#ref-billingsley1995probability), [\[5\]](#ref-gut2013), [\[6\]](#ref-CaseBerg01), [\[7\]](#ref-wp:lotus).
 
 > **NOTE:**
 >
@@ -1175,7 +1187,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a product of $\sigma$-finite measure spaces, provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope [\[2\]](#ref-billingsley1995probability), Theorem 18.3. Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both $\sigma$-finite, which gives the theorem a form stated in terms of a joint distribution.
+> *Remark*. For expectations, we use this measure-theoretic form of the [Fubini–Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli), which lets us exchange the order of integration (or summation) over a [product](https://morrison-lab.github.io/mcs/sets.html#def-cartesian-product) of $\sigma$-finite [measure spaces](https://morrison-lab.github.io/mds/measures.html#def-measure-space), provided the integrand is non-negative (Tonelli) or absolutely integrable (Fubini). Its proof is beyond these notes’ scope [\[2\]](#ref-billingsley1995probability), Theorem 18.3. Lebesgue measure on the real line and [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on a countable set are both $\sigma$-finite, which gives the theorem a form stated in terms of a joint distribution.
 
 > **NOTE:**
 >
@@ -1399,7 +1411,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Proof*. **Discrete case.** When $X$ and $Y$ are discrete, applying [Definition 1](#def-expectation) to ${\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}$ and then the [law of total probability](probability-basics.llms.md#thm-total-prob) applied to the countable partition $\{X = x : x \in \mathcal{R}(X)\}$:
+> *Proof*. **Discrete case.** When $X$ and $Y$ are discrete, applying [Definition 1](#def-expectation) to ${\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}$ and then the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional) applied to the countable partition $\{X = x : x \in \mathcal{R}(X)\}$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[{\mathbb{E}\mathopen{}\left[Y \mid X\right]\mathclose{}}\right]\mathclose{}}
@@ -2329,11 +2341,40 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 9* (When the reducible risk is zero). The [reducible risk](#def-reducible-risk) is zero if and only if the [prediction function](#def-prediction-function) $f$ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1.
+> **Proposition 1 (The reducible risk is zero only for the conditional mean)** The [reducible risk](#def-reducible-risk) is zero [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) the [prediction function](#def-prediction-function) $f$ equals the [conditional expectation function](#def-cond-expectation-function) with [probability](probability-basics.llms.md#def-probability) 1:
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}\right]\mathclose{}} = 0
 > \iff
 > \mathbb{P}({f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}}) = 1$$
+
+> **NOTE:**
+>
+> *Proof*. Write $Z = {\mathopen{}\left({\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}} - {f\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{2}$. Since $x^2 \ge 0$ for every $x$, with $x^2 = 0$ only at $x = 0$, $Z \ge 0$, and $Z = 0$ exactly when ${f\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y\mid X\right]\mathclose{}}$.
+>
+> **(**$\Leftarrow$) If $\mathbb{P}(Z = 0) = 1$, then $Z$ takes the value 0 with [probability](probability-basics.llms.md#def-probability) 1, so ${\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} = 0$ by the [definition of expectation](#def-expectation).
+>
+> **(**$\Rightarrow$) Suppose ${\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} = 0$, and fix $a > 0$. Since $Z \ge 0$, and $Z \ge a$ on the [event](probability-basics.llms.md#def-event) ${\mathopen{}\left\{Z \ge a\right\}\mathclose{}}$:
+>
+> $$\begin{aligned}
+> Z &\ge a \cdot\text{1}_{Z \ge a}
+> && \text{(on } {\mathopen{}\left\{Z \ge a\right\}\mathclose{}} \text{ the right side is } a \le Z \text{; elsewhere it is } 0 \le Z \text{)}
+> \\ {\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} &\ge {\mathbb{E}\mathopen{}\left[a \cdot\text{1}_{Z \ge a}\right]\mathclose{}}
+> && \text{(expectation preserves inequalities)}
+> \\ &= a \cdot\mathbb{P}(Z \ge a)
+> && \text{(the expectation of an indicator is the probability of its event)}
+> \end{aligned}$$
+>
+> With ${\mathbb{E}\mathopen{}\left[Z\right]\mathclose{}} = 0$, the displayed chain gives $a \cdot\mathbb{P}(Z \ge a) \le 0$, so $\mathbb{P}(Z \ge a) = 0$. The events ${\mathopen{}\left\{Z \ge 1/n\right\}\mathclose{}}$ for $n = 1, 2, \ldots$ increase to the event ${\mathopen{}\left\{Z > 0\right\}\mathclose{}}$, so by the [continuity of probability](probability-basics.llms.md#thm-continuity-probability):
+>
+> $$\begin{aligned}
+> \mathbb{P}(Z > 0)
+> &= \lim_{n \to \infty} \mathbb{P}(Z \ge 1/n)
+> && \text{(continuity of probability)}
+> \\ &= 0
+> && \text{(each term is 0, taking } a = 1/n \text{)}
+> \end{aligned}$$
+>
+> Hence $\mathbb{P}(Z = 0) = 1 - \mathbb{P}(Z > 0) = 1$.
 
 > **NOTE:**
 >
@@ -2393,7 +2434,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 10* (Rarer values are more surprising). A possible value $x$ with [probability](probability-basics.llms.md#def-probability) $\mathbb{P}(X=x) = 1$ has [surprisal](#def-surprisal) $0$, and the surprisal grows without bound as $\mathbb{P}(X=x) \to 0$.
+> *Remark 9* (Rarer values are more surprising). A possible value $x$ with [probability](probability-basics.llms.md#def-probability) $\mathbb{P}(X=x) = 1$ has [surprisal](#def-surprisal) $0$, and the surprisal grows without bound as $\mathbb{P}(X=x) \to 0$.
 
 > **NOTE:**
 >
@@ -2473,7 +2514,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 11* (The base of the logarithm is a unit). With the natural logarithm, [entropy](#def-entropy) is measured in [*nats*](https://morrison-lab.github.io/ids/entropy.html#def-nat). With base 2, it is measured in [*bits*](https://morrison-lab.github.io/ids/entropy.html#def-bit). Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
+> *Remark 10* (The base of the logarithm is a unit). With the natural logarithm, [entropy](#def-entropy) is measured in [*nats*](https://morrison-lab.github.io/ids/entropy.html#def-nat). With base 2, it is measured in [*bits*](https://morrison-lab.github.io/ids/entropy.html#def-bit). Changing the base multiplies every entropy by the same positive constant. It does not change which distribution has the larger entropy.
 
 > **NOTE:**
 >
@@ -2501,7 +2542,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 12* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on $K$ outcomes it is largest, $\log K$, for the uniform distribution.
+> *Remark 11* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on $K$ outcomes it is largest, $\log K$, for the uniform distribution.
 
 > **NOTE:**
 >
@@ -2710,7 +2751,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 13* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -2792,7 +2833,7 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 14* (The divergence is not symmetric). In general, ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ne {{D_{\mathrm{KL}}}\mathopen{}\left(q \,\Vert\, p\right)\mathclose{}}$, so KL divergence is not a distance between $p$ and $q$.
+> *Remark 13* (The divergence is not symmetric). In general, ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ne {{D_{\mathrm{KL}}}\mathopen{}\left(q \,\Vert\, p\right)\mathclose{}}$, so KL divergence is not a distance between $p$ and $q$.
 
 > **NOTE:**
 >
@@ -2814,13 +2855,13 @@ Last modified: 2026-11-09 18:03:07 (PST)
 
 > **NOTE:**
 >
-> *Remark 15* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution $p$ using a code designed for $q$.
+> *Remark 14* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution $p$ using a code designed for $q$.
 
 # 5 Further reading
 
 > **TIP:**
 >
-> Lange’s textbook [\[22\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5.
+> Lange’s textbook [\[22\]](#ref-lange2024applied) covers conditioning as a tool for computing [expectations](#def-expectation) in Section 2.3 and tail [probability](probability-basics.llms.md#def-probability) methods in Section 2.5. Evans and Rosenthal’s free textbook [\[23\]](#ref-evans2010probability) covers expectation in Chapter 3.
 
 # Definitions on this page
 
@@ -2940,5 +2981,9 @@ Wikipedia contributors, “Cross-entropy — Wikipedia, the free encyclopedia.�
 \[22\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+\[23\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top

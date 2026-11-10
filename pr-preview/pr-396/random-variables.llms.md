@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 18:03:07 (PST)
+Last modified: 2026-11-09 22:49:36 (PST)
 
 > **NOTE:**
 >
@@ -1543,6 +1543,12 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > \xrightarrow[{\operatorname{log}\mathopen{}\left\{{\lambda}(t)\right\}\mathclose{}}]{}
 > \eta(t)$$
 
+# 3 Further reading
+
+> **TIP:**
+>
+> Evans and Rosenthal’s free textbook [\[25\]](#ref-evans2010probability) covers [random variables](#def-random-variable) in Chapter 2.
+
 # Definitions on this page
 
 - [Definition 1 (Random variable)](#def-random-variable)
@@ -1671,5 +1677,9 @@ D. G. Kleinbaum and M. Klein, *Survival analysis: A self-learning text*, 3rd ed.
 \[24\]
 
 J. D. Kalbfleisch and R. L. Prentice, *The statistical analysis of failure time data*. John Wiley & Sons, 2011.
+
+\[25\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top

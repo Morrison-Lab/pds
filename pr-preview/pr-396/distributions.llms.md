@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 18:03:07 (PST)
+Last modified: 2026-11-09 22:49:36 (PST)
 
 > **NOTE:**
 >
@@ -1268,22 +1268,22 @@ print(plot2)
 > \mathbf{\Sigma}_{21} & \mathbf{\Sigma}_{22}
 > \end{bmatrix}.$$
 >
-> Let $\mathbf{S} = \mathbf{\Sigma}_{22} - \mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}\mathbf{\Sigma}_{12}$. Then, given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1$,
+> Let $\mathbf{S} = \mathbf{\Sigma}_{22} - \mathbf{\Sigma}_{21}{\mathopen{}\left(\mathbf{\Sigma}_{11}\right)\mathclose{}}^{-1}\mathbf{\Sigma}_{12}$. Then, given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1$,
 >
 > $$\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_2 \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1
 > \sim \operatorname{N}_m\mathopen{}\left(
-> \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2 + \mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_1),
+> \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2 + \mathbf{\Sigma}_{21}{\mathopen{}\left(\mathbf{\Sigma}_{11}\right)\mathclose{}}^{-1}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_1),
 > \mathbf{S}\right)\mathclose{}.$$
 
 > **NOTE:**
 >
-> *Proof*. $\mathbf{\Sigma}$ is positive definite, so by [the inverse of a positive definite block matrix](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse), $\mathbf{S}$ is positive definite, and $\mathbf{\Sigma}^{-1}$ has [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) $\mathbf{\Omega}_{ij}$ with
+> *Proof*. $\mathbf{\Sigma}$ is positive definite, so by [the inverse of a positive definite block matrix](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse), $\mathbf{S}$ is positive definite, and ${\mathopen{}\left(\mathbf{\Sigma}\right)\mathclose{}}^{-1}$ has [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) $\mathbf{\Omega}_{ij}$ with
 >
-> $$\mathbf{\Omega}_{22} = \mathbf{S}^{-1},
+> $$\mathbf{\Omega}_{22} = {\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1},
 > \quad
-> \mathbf{\Omega}_{21} = -\mathbf{S}^{-1}\mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}.$$
+> \mathbf{\Omega}_{21} = -{\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}\mathbf{\Sigma}_{21}{\mathopen{}\left(\mathbf{\Sigma}_{11}\right)\mathclose{}}^{-1}.$$
 >
-> Write $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2$. The [conditional density](expectation.llms.md#def-cond-pdf) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_2$ given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1$ is the [joint density](random-variables.llms.md#def-joint-pdf) divided by the [marginal density](random-variables.llms.md#def-marginal) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1$, and the marginal density does not depend on $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$. So as a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$, the conditional density equals the joint density times a factor that does not change with $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$, and the joint density is a factor that does not change with $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$ times $\text{e}^{\cdot}$ of
+> Write $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2$. The [conditional density](expectation.llms.md#def-cond-pdf) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_2$ given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_1 = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1$ is the [joint density](random-variables.llms.md#def-joint-pdf) divided by the [marginal density](random-variables.llms.md#def-marginal) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_1$, and the marginal density does not depend on $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$. So as a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$, the conditional density equals the joint density times a factor that does not change with $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$, and the joint density is a factor that does not change with $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$ times $e$ raised to
 >
 > $$\begin{aligned}
 > -\frac{1}{2}\mathopen{}\left(
@@ -1297,19 +1297,19 @@ print(plot2)
 > $$\begin{aligned}
 > 2{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2}^{\top}\mathbf{\Omega}_{21}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1
 > + {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2}^{\top}\mathbf{\Omega}_{22}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2
-> &= {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2}^{\top}\mathbf{S}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2
-> - 2{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2}^{\top}\mathbf{S}^{-1}\mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1
+> &= {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2}^{\top}{\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2
+> - 2{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2}^{\top}{\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}\mathbf{\Sigma}_{21}{\mathopen{}\left(\mathbf{\Sigma}_{11}\right)\mathclose{}}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1
 > && \text{(substitute)} \\
-> &= {\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}}^{\top}\mathbf{S}^{-1}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}
-> - {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}}^{\top}\mathbf{S}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}
-> && \text{(complete the square, with } \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}} = \mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1 \text{)}
+> &= {\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}}^{\top}{\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}
+> - {\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}}^{\top}{\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}
+> && \text{(complete the square, with } \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}} = \mathbf{\Sigma}_{21}{\mathopen{}\left(\mathbf{\Sigma}_{11}\right)\mathclose{}}^{-1}\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_1 \text{)}
 > \end{aligned}$$
 >
 > The last summand does not involve $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$ either. Since $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{d}}\vphantom{d}}_2 - \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2 - \mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2 + \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}$, the conditional density of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_2$ equals a factor that does not change with $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$, times
 >
 > $$\text{e}^{-\frac{1}{2}
 > {\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2 - \mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2 + \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}\right)\mathclose{}}^{\top}
-> \mathbf{S}^{-1}
+> {\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}
 > \mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2 - \mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2 + \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}\right)\mathclose{}\right)\mathclose{}},$$
 >
 > which has the form of the $\operatorname{N}_m\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}_2 + \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{c}}\vphantom{c}}, \mathbf{S}\right)\mathclose{}$ [density](random-variables.llms.md#def-pdf). A conditional density integrates to 1, so the factor that does not change with $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_2$ must be the normalizing factor of that density.
@@ -1803,7 +1803,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 25](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob).
+> *Remark*. [Theorem 25](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional).
 
 > **NOTE:**
 >
