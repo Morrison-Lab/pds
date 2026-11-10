@@ -2,6 +2,7 @@
 
 :::{#cor-hoeffding-two-sided}
 #### Hoeffding's inequality, two-sided
+<!-- check-result-definition-links: allow: moved unchanged from _thm-hoeffding.qmd; the corollary uses only the theorem's own terms, which that theorem links -->
 
 Under the assumptions of @thm-hoeffding, for every $\tolout > 0$,
 
