@@ -385,6 +385,18 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_def-precision-matrix.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-precision-matrix-inverse.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-precision-matrix.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-mahalanobis-eigen.qmd >}}
 
 {{< include pds/_subfiles/_rem-mahalanobis-eigen-notes.qmd >}}
