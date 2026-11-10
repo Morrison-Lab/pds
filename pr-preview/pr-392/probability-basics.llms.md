@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 17:06:40 (PST)
+Last modified: 2026-11-09 21:00:50 (PST)
 
 # 1 Defining probabilities
 
@@ -703,6 +703,12 @@ brFP = (brN - brSick) * (1 - brSpec)
 >
 > Lange’s textbook [\[17\]](#ref-lange2024applied) reviews [probability](#def-probability) and [expectation](expectation.llms.md#def-expectation) in Section 1.2 and [conditional probability](#def-conditional-prob) in Section 1.3.
 
+# 4 Further reading
+
+> **TIP:**
+>
+> Evans and Rosenthal’s free textbook [\[18\]](#ref-evans2010probability) covers [probability](#def-probability) models, [conditional probability](#def-conditional-prob) and independence in Chapter 1.
+
 # Definitions on this page
 
 - [Definition 1 (Step)](#def-step)
@@ -790,5 +796,9 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[17\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+\[18\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top
