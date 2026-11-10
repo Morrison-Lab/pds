@@ -434,6 +434,16 @@
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination"
   },
   {
+   "id": "mds/linear-algebra-vectors#def-mean",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-mean",
+   "kind": "def",
+   "title": "mean",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean"
+  },
+  {
    "id": "mds/linear-algebra-vectors#def-scalar",
    "site": "mds",
    "page": "linear-algebra-vectors",
@@ -1308,6 +1318,15 @@
    "div": "lem-prediction-error-split",
    "kind": "lem",
    "title": "Prediction error splits at the conditional mean",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#prp-mean-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-mean-expectation",
+   "kind": "prp",
+   "title": "The mean of numbers is the expectation of one chosen at random",
    "external": false
   },
   {
@@ -3738,6 +3757,22 @@
   [
    "pds/expectation#lem-prediction-error-split",
    "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "mds/linear-algebra-vectors#def-mean"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/probability-basics#def-random-choice"
   ],
   [
    "pds/expectation#prp-reducible-risk-zero",
