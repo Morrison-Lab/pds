@@ -6,7 +6,7 @@ and let $Y_1$ and $Y_2$ indicate positive results on two tests
 whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$.
 Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$
 and with probability $0.1$ if $X = 0$.
-Then, by the [law of total probability](probability-basics.qmd#thm-total-prob):
+Then, by the [law of total probability](probability-basics.qmd#thm-total-prob-conditional):
 
 $$
 \ba
