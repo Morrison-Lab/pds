@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+@exm-mixture-gaussian shows that the mean of a mixture
+can fall where observations are rare,
+so a single normal distribution fitted to such data
+would describe them poorly.
+
+:::

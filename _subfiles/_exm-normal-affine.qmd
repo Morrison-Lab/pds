@@ -1,0 +1,29 @@
+:::{#exm-normal-affine}
+
+#### Standardizing a Gaussian random variable
+
+<!-- no-figure: two parameter values computed by substitution; nothing to plot -->
+
+Let $X \sim \ndist{\mean, \ss}$ with $\sdpar > 0$, and let $Z = (X - \mean) / \sdpar$.
+Then $Z = aX + b$ with $a = 1 / \sdpar$ and $b = -\mean / \sdpar$, and $a \ne 0$.
+By @thm-normal-affine, $Z$ is [Gaussian](random-variables.qmd#def-normal) with parameters:
+
+$$
+\ba
+a\mean + b
+&= \frac{\mean}{\sdpar} - \frac{\mean}{\sdpar}
+&& \text{(substitute } a \text{ and } b \text{)} \\
+&= 0
+&& \text{(} u - u = 0 \text{)}
+\\
+a^2\ss
+&= \frac{\ss}{\ss}
+&& \text{(} a^2 = 1/\ss \text{)} \\
+&= 1
+&& \text{(} u/u = 1 \text{)}
+\ea
+$$
+
+So $Z \sim \ndist{0, 1}$.
+
+:::

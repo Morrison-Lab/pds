@@ -1,0 +1,49 @@
+:::{#exm-indpt-pmf-fails}
+#### The PMF form fails for continuous random variables
+
+The factorization in @thm-indpt-pmf does not work as a definition of independence
+for continuous random variables:
+there, both sides are $0$ at every point,
+so it would call every pair of continuous random variables independent.
+For instance,
+let $X \sim \text{Uniform}(0, 1)$ ([uniform distribution](random-variables.qmd#def-uniform)),
+whose density is $1$ on $[0, 1]$,
+and let $Y = X$.
+For all real numbers $x$ and $y$,
+the event $\set{X = x,\, Y = y}$ is $\set{X = x}$ if $y = x$ and empty otherwise,
+so it has probability $0$,
+because $\Pr(X = x) = 0$ for the [continuous](random-variables.qmd#def-continuous-rv) $X$.
+Likewise
+
+$$
+\begin{aligned}
+\Pr(X = x)\,\Pr(Y = y) &= 0 \cd 0 \\
+&= 0,
+\end{aligned}
+$$
+
+so the PMF form holds.
+But $X$ and $Y$ are not independent:
+
+$$
+\ba
+\Pr(X \in [0, \tfrac{1}{2}],\, Y \in [0, \tfrac{1}{2}])
+&= \Pr(X \in [0, \tfrac{1}{2}])
+&& \text{(} Y = X \text{)} \\
+&= \int_0^{1/2} 1\,dx
+&& \text{(the density of } X \text{ is } 1 \text{ on } [0, 1] \text{)} \\
+&= \tfrac{1}{2}
+&& \text{(integrate)}
+\ea
+$$
+
+while
+
+$$
+\begin{aligned}
+\Pr(X \in [0, \tfrac{1}{2}])\,\Pr(Y \in [0, \tfrac{1}{2}]) &= \tfrac{1}{2} \cd \tfrac{1}{2} \\
+&= \tfrac{1}{4}.
+\end{aligned}
+$$
+
+:::

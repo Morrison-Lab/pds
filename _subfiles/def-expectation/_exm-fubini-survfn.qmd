@@ -1,0 +1,26 @@
+:::{#exm-fubini-survfn}
+
+#### Mean of an exponential random variable via survival function
+
+Let $T$ be [exponential](random-variables.qmd#def-exponential) with rate $\rate > 0$, so $\surv(t) = \ef{-\rate t}$
+for $t \ge 0$,
+as computed on the [random variables page](random-variables.qmd#exm-exp-survfn).
+By @thm-surv-mean:
+
+$$
+\ba
+\E{T}
+&= \int_0^\infty \surv(t)\,dt
+&& \text{(expectation via the survival function)}\\
+&= \int_0^\infty \ef{-\rate t}\,dt
+&& \text{(substitute the survival function)}\\
+&= \sb{-\frac{1}{\rate}\ef{-\rate t}}_0^\infty
+&& \text{(antiderivative)}\\
+&= 0 - \paren{-\frac{1}{\rate}}
+&& \text{(evaluate at the bounds)}\\
+&= \frac{1}{\rate}
+&& \text{(simplify)}
+\ea
+$$
+
+:::

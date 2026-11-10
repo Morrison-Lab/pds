@@ -2,11 +2,10 @@
 #### Law of total probability
 
 If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space,
-with $\Pr(B_i) > 0$ for every $i$,
 then for any event $A$
 [@wikipedia_law_of_total_probability]:
 
-$$\Pr(A) = \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i)$$
+$$\Pr(A) = \sumto{i}{\infty} \Pr(A \cap B_i)$$
 
 :::
 
@@ -15,14 +14,13 @@ $$\Pr(A) = \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i)$$
 Since $B_1, B_2, \ldots$ partition the sample space,
 the events $A \cap B_1, A \cap B_2, \ldots$ are mutually exclusive and their
 union is $A$.
-By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity),
-and then by @thm-law-conditional-prob:
+By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity):
 
 $$
 \ba
 \Pr(A)
-&= \sumto{i}{\infty} \Pr(A \cap B_i) && \text{(countable additivity for partition of } A \text{)}
-\\&= \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i) && \text{(law of conditional probability; } \Pr(B_i) > 0 \text{)}
+&= \Prf{\bigcup_{i=1}^{\infty} (A \cap B_i)} && \text{(the union of the events } A \cap B_i \text{ is } A \text{)}
+\\&= \sumto{i}{\infty} \Pr(A \cap B_i) && \text{(countable additivity for the mutually exclusive events } A \cap B_i \text{)}
 \ea
 $$
 
