@@ -1,0 +1,21 @@
+:::{#exm-cind-continuous}
+#### Two measurements of the same continuous quantity
+<!-- no-figure: algebraic derivation, no data to plot -->
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with density $\p(X = x)$,
+and suppose that, given $X = x$, the measurements $Y_1$ and $Y_2$ are independent, each with density $\p(Y_i = y_i \mid X = x)$.
+Then $Y_1$ and $Y_2$ are conditionally independent given $X$ (@def-cind-continuous):
+
+$$
+\ba
+\frac{\p(X = x, Y_1 = y_1, Y_2 = y_2)}{\p(X = x)}
+&= \p(Y_1 = y_1, Y_2 = y_2 \mid X = x)
+&& \text{(definition of a conditional density)} \\
+&= \p(Y_1 = y_1 \mid X = x) \cd \p(Y_2 = y_2 \mid X = x)
+&& \text{(independence given } X = x \text{)} \\
+&= \frac{\p(X = x, Y_1 = y_1)}{\p(X = x)} \cd \frac{\p(X = x, Y_2 = y_2)}{\p(X = x)}
+&& \text{(definition of a conditional density)}
+\ea
+$$
+
+:::
