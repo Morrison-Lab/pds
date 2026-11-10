@@ -23,6 +23,10 @@ that is, when it is finite with $\abs{x}$ in place of $x$.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-expectation/_prp-mean-expectation.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-expectation/_rem-expectation-weighted-average.qmd >}}
 
 {{< slidebreak >}}

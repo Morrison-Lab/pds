@@ -11,10 +11,8 @@ and the probabilities are the [weights](https://morrison-lab.github.io/mds/linea
   Each value $x$ is multiplied by its weight, the [density](random-variables.qmd#def-pdf) $\p(X=x)$, and the products are accumulated.
   The density is non-negative and integrates to $1$.
 
-The [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of $n$ numbers $\dsn{y}$ is the special case
-with every weight equal to $1/n$:
-
-$$\avgin y_i = \sumin y_i \cd \frac{1}{n}$$
+The [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of $n$ numbers is the special case
+with every weight equal to $1/n$ (@prp-mean-expectation).
 
 A value with a larger [probability](probability-basics.qmd#def-probability) counts for more in the expectation.
 The expectation is the balance point of the possible values:

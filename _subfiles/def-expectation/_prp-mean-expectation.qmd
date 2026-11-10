@@ -1,0 +1,27 @@
+:::{#prp-mean-expectation}
+#### The mean of numbers is the expectation of one chosen at random
+
+Let $\dsn{a}$ be distinct real numbers,
+and let $Y$ be one of them [chosen at random](probability-basics.qmd#def-random-choice).
+Then the [expectation](#def-expectation) of $Y$ is the
+[mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the numbers:
+
+$$\E{Y} = \avgin a_i$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\E{Y}
+&= \sumin a_i \cd \P(Y = a_i)
+&& \text{(definition of expectation; the range of } Y \text{ is } \set{\dsn{a}} \text{)}
+\\&= \sumin a_i \cd \frac{1}{n}
+&& \text{(each of the } n \text{ numbers is chosen with probability } 1/n \text{)}
+\\&= \avgin a_i
+&& \text{(definition of the mean)}
+\ea
+$$
+
+:::
