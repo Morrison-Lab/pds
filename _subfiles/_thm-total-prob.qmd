@@ -19,7 +19,7 @@ By [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-c
 $$
 \ba
 \Pr(A)
-&= \Pr\paren{\bigcup_{i=1}^{\infty} (A \cap B_i)} && \text{(the union of the events } A \cap B_i \text{ is } A \text{)}
+&= \Prf{\bigcup_{i=1}^{\infty} (A \cap B_i)} && \text{(the union of the events } A \cap B_i \text{ is } A \text{)}
 \\&= \sumto{i}{\infty} \Pr(A \cap B_i) && \text{(countable additivity for the mutually exclusive events } A \cap B_i \text{)}
 \ea
 $$
