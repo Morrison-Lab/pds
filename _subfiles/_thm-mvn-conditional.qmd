@@ -1,7 +1,7 @@
 :::{#thm-mvn-conditional}
 #### The conditional distribution of a block of a multivariate Gaussian vector
 
-Let $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ (@def-mvn),
+Let $\vX$ have the [multivariate normal distribution](#def-mvn) $\Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
 cut into $\vX = \begin{bmatrix} \vX_1 \\ \vX_2 \end{bmatrix}$
 with $k$ and $m$ elements,
 and cut $\vecf{\mean}$ and $\matr{\covmat}$ to match:
@@ -85,7 +85,7 @@ $$
 \paren{\vx_2 - \paren{\vecf{\mean}_2 + \vecf{c}}}},
 $$
 
-which has the form of the $\Normal_m\paren{\vecf{\mean}_2 + \vecf{c}, \matr{S}}$ [density](random-variables.qmd#def-pdf) (@def-mvn).
+which has the form of the $\Normal_m\paren{\vecf{\mean}_2 + \vecf{c}, \matr{S}}$ [density](random-variables.qmd#def-pdf).
 A conditional density integrates to 1,
 so the factor that does not change with $\vx_2$ must be the normalizing factor of that density.
 
