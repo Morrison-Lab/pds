@@ -1,9 +1,9 @@
 :::{#thm-total-prob-conditional}
 #### Law of total probability with conditional probabilities
 
-If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space
+If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the [sample space](#def-sample-space)
 with $\Pr(B_i) > 0$ for every $i$,
-then for any event $A$:
+then for any [event](#def-event) $A$:
 
 $$\Pr(A) = \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i)$$
 
@@ -11,7 +11,7 @@ $$\Pr(A) = \sumto{i}{\infty} \Pr(A \mid B_i) \cd \Pr(B_i)$$
 
 ::: proof
 
-Apply @thm-law-conditional-prob to each term of @thm-total-prob,
+Apply @thm-law-conditional-prob to each summand of @thm-total-prob,
 which needs $\Pr(B_i) > 0$:
 
 $$

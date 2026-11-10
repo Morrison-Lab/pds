@@ -52,7 +52,8 @@ Then:
 - $\Pr(D) = 0.07$ (prevalence)
 
 By @thm-bayes, with the denominator expanded by the
-[law of total probability](#thm-total-prob-conditional) over the partition $\{D, \neg D\}$:
+[law of total probability](#thm-total-prob-conditional) over the
+[partition](#def-partition) $\{D, \neg D\}$:
 
 $$
 \ba
