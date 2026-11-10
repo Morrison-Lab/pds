@@ -1,0 +1,14 @@
+:::{#def-conditional-precision}
+#### Conditional precision
+
+Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector,
+and let $\vX_{-i}$ be $\vX$ without its $i$th element.
+The **conditional precision** of $X_i$ given $\vX_{-i} = \vx_{-i}$
+is the [precision](variance-covariance.qmd#def-precision) of $X_i$ under its conditional distribution given $\vX_{-i} = \vx_{-i}$:
+
+$$
+\precision\paren{X_i \mid \vX_{-i} = \vx_{-i}}
+\eqdef \inv{\Var{X_i \mid \vX_{-i} = \vx_{-i}}}.
+$$
+
+:::

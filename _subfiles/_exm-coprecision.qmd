@@ -1,0 +1,23 @@
+:::{#exm-coprecision}
+#### The conditional precision and coprecision of a bivariate Gaussian vector
+
+<!-- no-figure: scalar formulas for one 2 x 2 case; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2)} \sim \Normal_2\paren{\matr{0}, \pmat{1 & \rho \\ \rho & 1}}$
+with $\abs{\rho} < 1$ (@exm-mvn-conditional).
+With no other elements to condition on,
+the conditional variances are $v_1 = v_2 = 1$ and the conditional covariance is $c_{12} = \rho$,
+so the coprecision of $X_1$ and $X_2$ is
+
+$$
+\frac{-\rho}{1 - \rho^2}.
+$$
+
+By @exm-mvn-conditional, $X_1$ given $X_2 = x_2$ has variance $1 - \rho^2$,
+so the conditional precision of $X_1$ given $X_2 = x_2$ is
+
+$$
+\frac{1}{1 - \rho^2}.
+$$
+
+:::
