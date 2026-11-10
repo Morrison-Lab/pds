@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 13:23:48 (PST)
+Last modified: 2026-11-10 05:03:25 (PST)
 
 > **NOTE:**
 >
@@ -13,6 +13,10 @@ Last modified: 2026-11-09 13:23:48 (PST)
 > **NOTE:**
 >
 > *Remark*. We use uppercase letters ($X$, $Y$, $Z$, …) for random variables, and lowercase letters ($x$, $y$, $z$, …) for their realized (observed) values. We write $\{X = x\}$ for the event $\{\omega\in \Omega: X(\omega) = x\}$, and similarly for $\{X \le x\}$ and other conditions on $X$. A fully rigorous definition also requires the function to be *measurable*, so that every such set is an event with a probability; that requirement never binds in these notes.
+
+> **NOTE:**
+>
+> *Remark 1* (A random variable as an uncertain quantity). In practice, a [random variable](#def-random-variable) is a quantity whose value we cannot deduce precisely from the information available to us at a given time. The number of heads in two coin flips is a random variable before the flips, because nothing we know fixes it. Once we see the flips, we know its value, and for us it is no longer uncertain.
 
 > **NOTE:**
 >
@@ -1090,7 +1094,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Remark 1* (A mode belongs to a density, not to a random variable). A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#def-pmf), so “the mode of $X$” is shorthand for the mode of a chosen density of $X$.
+> *Remark 2* (A mode belongs to a density, not to a random variable). A [mode](#def-mode) is a property of a [density](#def-pdf) or [mass function](#def-pmf), so “the mode of $X$” is shorthand for the mode of a chosen density of $X$.
 >
 > Two [densities](#def-pdf) of the same [random variable](#def-random-variable) can differ on a [set](https://morrison-lab.github.io/mcs/sets.html#def-set) of [probability](probability-basics.llms.md#def-probability) zero, and then they can have different [modes](#def-mode). A change of variables also moves the mode, because the density of a transformed variable includes a Jacobian factor.
 >
@@ -1328,7 +1332,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Remark 2* (The range of a hazard). A hazard can exceed $1$: [Example 31](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 20](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
+> *Remark 3* (The range of a hazard). A hazard can exceed $1$: [Example 31](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 20](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
 
 > **NOTE:**
 >
@@ -1543,6 +1547,12 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > \xrightarrow[{\operatorname{log}\mathopen{}\left\{{\lambda}(t)\right\}\mathclose{}}]{}
 > \eta(t)$$
 
+# 3 Further reading
+
+> **TIP:**
+>
+> Evans and Rosenthal’s free textbook [\[25\]](#ref-evans2010probability) covers [random variables](#def-random-variable) in Chapter 2.
+
 # Definitions on this page
 
 - [Definition 1 (Random variable)](#def-random-variable)
@@ -1671,5 +1681,9 @@ D. G. Kleinbaum and M. Klein, *Survival analysis: A self-learning text*, 3rd ed.
 \[24\]
 
 J. D. Kalbfleisch and R. L. Prentice, *The statistical analysis of failure time data*. John Wiley & Sons, 2011.
+
+\[25\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top

@@ -34,6 +34,16 @@
    "url": "https://morrison-lab.github.io/mcs/functions.html#def-function"
   },
   {
+   "id": "mcs/functions#def-inverse-function",
+   "site": "mcs",
+   "page": "functions",
+   "div": "def-inverse-function",
+   "kind": "def",
+   "title": "inverse function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/functions.html#def-inverse-function"
+  },
+  {
    "id": "mcs/number-systems#def-integers",
    "site": "mcs",
    "page": "number-systems",
@@ -244,6 +254,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative"
   },
   {
+   "id": "mds/calculus-derivatives#def-differentiable",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "def-differentiable",
+   "kind": "def",
+   "title": "differentiable",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable"
+  },
+  {
    "id": "mds/calculus-derivatives#def-limit",
    "site": "mds",
    "page": "calculus-derivatives",
@@ -252,6 +272,16 @@
    "title": "limit",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit"
+  },
+  {
+   "id": "mds/calculus-derivatives#thm-chain-rule",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "thm-chain-rule",
+   "kind": "thm",
+   "title": "chain rule",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule"
   },
   {
    "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
@@ -322,6 +352,26 @@
    "title": "indicator function",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function"
+  },
+  {
+   "id": "mds/linear-algebra-diagonalization#def-block-matrix",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "def-block-matrix",
+   "kind": "def",
+   "title": "block matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix"
+  },
+  {
+   "id": "mds/linear-algebra-diagonalization#thm-block-inverse",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "thm-block-inverse",
+   "kind": "thm",
+   "title": "block inverse",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse"
   },
   {
    "id": "mds/linear-algebra-special-matrices#def-determinant",
@@ -432,6 +482,16 @@
    "title": "linear combination",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination"
+  },
+  {
+   "id": "mds/linear-algebra-vectors#def-mean",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-mean",
+   "kind": "def",
+   "title": "mean",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean"
   },
   {
    "id": "mds/linear-algebra-vectors#def-scalar",
@@ -633,6 +693,24 @@
    "div": "def-binomial",
    "kind": "def",
    "title": "Binomial distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-conditional-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-conditional-precision",
+   "kind": "def",
+   "title": "Conditional precision",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-coprecision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-coprecision",
+   "kind": "def",
+   "title": "Coprecision",
    "external": false
   },
   {
@@ -870,6 +948,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-mvn-conditional",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-conditional",
+   "kind": "thm",
+   "title": "The conditional distribution of a block of a multivariate Gaussian vector",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-mvn-density-integral",
    "site": "pds",
    "page": "distributions",
@@ -921,6 +1008,15 @@
    "div": "thm-non-exposed",
    "kind": "thm",
    "title": "No exposure means no expected events",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-normal-affine",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-normal-affine",
+   "kind": "thm",
+   "title": "Gaussian distributions are closed under affine transformations",
    "external": false
   },
   {
@@ -1302,6 +1398,24 @@
    "external": false
   },
   {
+   "id": "pds/expectation#prp-mean-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-mean-expectation",
+   "kind": "prp",
+   "title": "The mean of numbers is the expectation of one chosen at random",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#prp-reducible-risk-zero",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-reducible-risk-zero",
+   "kind": "prp",
+   "title": "The reducible risk is zero only for the conditional mean",
+   "external": false
+  },
+  {
    "id": "pds/expectation#thm-bernoulli-mean",
    "site": "pds",
    "page": "expectation",
@@ -1551,6 +1665,15 @@
    "div": "def-cind",
    "kind": "def",
    "title": "Conditional independence",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-cind-continuous",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-cind-continuous",
+   "kind": "def",
+   "title": "Conditional independence given a continuous random vector",
    "external": false
   },
   {
@@ -2010,6 +2133,15 @@
    "div": "thm-total-prob-1",
    "kind": "thm",
    "title": "An event and its complement sum to 1",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-total-prob-conditional",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-total-prob-conditional",
+   "kind": "thm",
+   "title": "Law of total probability with conditional probabilities",
    "external": false
   },
   {
@@ -2968,6 +3100,30 @@
    "pds/random-variables#def-discrete-rv"
   ],
   [
+   "pds/distributions#def-conditional-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
    "pds/distributions#def-event-rate",
    "pds/distributions#def-exposure"
   ],
@@ -3136,6 +3292,38 @@
    "pds/random-variables#def-pdf"
   ],
   [
+   "pds/distributions#thm-mvn-conditional",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-marginal"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-pdf"
+  ],
+  [
    "pds/distributions#thm-mvn-density-integral",
    "pds/distributions#def-mvn"
   ],
@@ -3198,6 +3386,38 @@
   [
    "pds/distributions#thm-nb-poisson-limit",
    "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-derivatives#def-derivative"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-derivatives#thm-chain-rule"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#thm-cdf-derivative-is-density"
   ],
   [
    "pds/distributions#thm-normal-density-max",
@@ -3680,6 +3900,54 @@
    "pds/expectation#def-prediction-function"
   ],
   [
+   "pds/expectation#prp-mean-expectation",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "mds/linear-algebra-vectors#def-mean"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/probability-basics#def-random-choice"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-reducible-risk"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#thm-continuity-probability"
+  ],
+  [
    "pds/expectation#thm-bernoulli-mean",
    "pds/random-variables#def-bernoulli"
   ],
@@ -4020,6 +4288,42 @@
    "pds/expectation#thm-lotus"
   ],
   [
+   "pds/expectation#thm-lotus",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mcs/functions#def-inverse-function"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mds/calculus-derivatives#def-differentiable"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-range"
+  ],
+  [
    "pds/expectation#thm-risk-decomposition",
    "pds/expectation#def-cond-expectation-function"
   ],
@@ -4060,12 +4364,20 @@
    "pds/independence#def-cind"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-density-mass"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/independence#def-ident",
@@ -4496,10 +4808,6 @@
    "pds/probability-basics#def-partition"
   ],
   [
-   "pds/probability-basics#thm-total-prob",
-   "pds/probability-basics#thm-law-conditional-prob"
-  ],
-  [
    "pds/probability-basics#thm-total-prob-1",
    "mcs/sets#def-union"
   ],
@@ -4518,6 +4826,26 @@
   [
    "pds/probability-basics#thm-total-prob-1",
    "pds/probability-basics#prp-complement-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#thm-law-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#thm-total-prob"
   ],
   [
    "pds/random-variables#cor-cdf-derivative-density-ae",

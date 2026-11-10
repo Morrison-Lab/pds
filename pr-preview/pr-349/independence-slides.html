@@ -36,6 +36,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -283,6 +349,17 @@
     }
   })();
   </script>
+  <link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+  <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.12.1/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+  <script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+  <script src="site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+  <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+  <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -294,7 +371,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-09 13:23:48 (PST)</p>
+  <p class="date">Last modified: 2026-11-10 05:03:25 (PST)</p>
 </section>
 <section class="slide level2">
 
@@ -365,6 +442,55 @@
 </section>
 <section class="slide level2">
 
+<div id="exm-indpt-auto" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (Origin and cylinder count in the Auto data)</strong></span> In the Auto data of <a href="./probability-basics.html#exm-random-experiment">the random experiment</a>, pick a car model <a href="./probability-basics.html#def-random-choice">at random</a>, and let <span class="math inline">\(X_1\)</span> indicate that it is American (<code>origin == 1</code> in the data) and <span class="math inline">\(X_2\)</span> indicate that it has four cylinders. By <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a>, <span class="math inline">\(X_1 \perp\!\!\!\perp X_2\)</span> <a href="https://morrison-lab.github.io/mcs/proof-writing.html#def-iff">if and only if</a> the <a href="./random-variables.html#def-joint-pmf">joint PMF</a> factors: <span class="math inline">\(\mathbb{P}(X_1 = x_1, X_2 = x_2) = \mathbb{P}(X_1 = x_1)\,\mathbb{P}(X_2 = x_2)\)</span> for every pair of values <span class="math inline">\((x_1, x_2)\)</span>. Here are the two sides of that equation for the pair of values <span class="math inline">\((1, 1)\)</span>, with the factors on the right being <a href="./random-variables.html#def-marginal">marginal</a> <a href="./random-variables.html#def-pmf">PMFs</a>:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>[Code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>auto <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/auto.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a aria-label="2"></a>is_american <span class="ot">&lt;-</span> auto<span class="sc">$</span>origin <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb1-3"><a aria-label="3"></a>has_four <span class="ot">&lt;-</span> auto<span class="sc">$</span>cylinders <span class="sc">==</span> <span class="dv">4</span></span>
+<span id="cb1-4"><a aria-label="4"></a>p_joint <span class="ot">&lt;-</span> <span class="fu">mean</span>(is_american <span class="sc">&amp;</span> has_four)</span>
+<span id="cb1-5"><a aria-label="5"></a>p_american <span class="ot">&lt;-</span> <span class="fu">mean</span>(is_american)</span>
+<span id="cb1-6"><a aria-label="6"></a>p_four <span class="ot">&lt;-</span> <span class="fu">mean</span>(has_four)</span>
+<span id="cb1-7"><a aria-label="7"></a><span class="fu">c</span>(<span class="at">left_side =</span> p_joint, <span class="at">right_side =</span> p_american <span class="sc">*</span> p_four)</span>
+<span id="cb1-8"><a aria-label="8"></a><span class="co">#&gt;  left_side right_side </span></span>
+<span id="cb1-9"><a aria-label="9"></a><span class="co">#&gt;  0.1760204  0.3172832</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>The left side, the <a href="./probability-basics.html#def-probability">probability</a> of an American car with four cylinders, is 0.176, but the right side is 0.317. The factorization fails at <span class="math inline">\((1, 1)\)</span>, so <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are not <a href="#/def-indpt">independent</a>: learning that a car is American changes the probability that it has four cylinders (<a href="#/fig-indpt-auto" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>[Code]</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>by_origin <span class="ot">&lt;-</span> auto <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a aria-label="2"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">american =</span> origin <span class="sc">==</span> <span class="dv">1</span>, <span class="at">four =</span> cylinders <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a aria-label="3"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">fraction_four =</span> <span class="fu">mean</span>(four), <span class="at">.by =</span> american)</span>
+<span id="cb2-4"><a aria-label="4"></a>indpt_plot <span class="ot">&lt;-</span> by_origin <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a aria-label="5"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a aria-label="6"></a>  ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> american, <span class="at">y =</span> fraction_four) <span class="sc">+</span></span>
+<span id="cb2-7"><a aria-label="7"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#1f77b4"</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a aria-label="8"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_hline</span>(<span class="at">yintercept =</span> p_four, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a aria-label="9"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"American"</span>, <span class="at">y =</span> <span class="st">"Fraction with four cylinders"</span>)</span>
+<span id="cb2-10"><a aria-label="10"></a>qnp<span class="sc">::</span><span class="fu">interactive_plot</span>(<span class="at">plot =</span> indpt_plot, <span class="at">alt =</span> fig_alt_indpt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="fig-indpt-auto" class="cell-output-display quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-indpt-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The fraction of car models with four cylinders, among American and non-American cars. The dashed line is the fraction among all cars, which both bars would match if <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> were independent.
+</figcaption>
+<div aria-describedby="fig-indpt-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div role="img" aria-label="Bar chart of the fraction of car models with four cylinders. The bar for American cars is far below the bar for non-American cars, and the dashed line for all cars lies between them.">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6266a634c1f38b14d8c9" style="width:100%;height:400px;"></div>
+<script type="application/json" data-for="htmlwidget-6266a634c1f38b14d8c9">{"x":{"data":[{"orientation":"v","width":[0.90000000000000013,0.89999999999999991],"base":[0,0],"x":[2,1],"y":[0.28163265306122448,0.88435374149659862],"text":["american:  TRUE<br />fraction_four: 0.2816327","american: FALSE<br />fraction_four: 0.8843537"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(31,119,180,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.40000000000000002,2.6000000000000001],"y":[0.50765306122448983,0.50765306122448983],"text":"yintercept: 0.5076531","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":37.260273972602747,"l":48.949771689497723},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,2.6000000000000001],"tickmode":"array","ticktext":["FALSE","TRUE"],"tickvals":[1,2],"categoryorder":"array","categoryarray":["FALSE","TRUE"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"American","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.044217687074829932,0.9285714285714286],"tickmode":"array","ticktext":["0.00","0.25","0.50","0.75"],"tickvals":[0,0.25,0.5,0.75],"categoryorder":"array","categoryarray":["0.00","0.25","0.50","0.75"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Fraction with four cylinders","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"responsive":true},"source":"A","attrs":{"38b87d5470b6":{"x":{},"y":{},"type":"bar"},"38b82ff7e5f1":{"yintercept":{}}},"cur_data":"38b87d5470b6","visdat":{"38b87d5470b6":["function (y) ","x"],"38b82ff7e5f1":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
 <div id="thm-indpt-density" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 2 (Independence with densities: the joint density factors)</strong></span> <strong>Continuous case.</strong> Continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <a href="./random-variables.html#def-pdf">densities</a> <span class="math inline">\(\mathbb{p}(X = x)\)</span> and <span class="math inline">\(\mathbb{p}(Y = y)\)</span> are <a href="#/def-indpt">statistically independent</a> if and only if the product <span class="math inline">\(\mathbb{p}(X = x)\,\mathbb{p}(Y = y)\)</span> is a <a href="./random-variables.html#def-joint-pdf">joint density</a> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
 <p><strong>Mixed case.</strong> A discrete random variable <span class="math inline">\(X\)</span> and a continuous random variable <span class="math inline">\(Y\)</span> with density <span class="math inline">\(\mathbb{p}(Y = y)\)</span> are statistically independent if and only if the product <span class="math inline">\(\mathbb{P}(X = x)\,\mathbb{p}(Y = y)\)</span> is a <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
@@ -386,7 +512,7 @@
 <section class="slide level2">
 
 <div id="exm-indpt-pmf-fails" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\({\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}}\)</span> is <span class="math inline">\({\mathopen{}\left\{X = x\right\}\mathclose{}}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise</p>
+<p><span class="theorem-title"><strong>Example 3 (The PMF form fails for continuous random variables)</strong></span> The factorization in <a href="#/thm-indpt-pmf" class="quarto-xref">Theorem&nbsp;1</a> does not work as a definition of independence for continuous random variables: there, both sides are <span class="math inline">\(0\)</span> at every point, so it would call every pair of continuous random variables independent. For instance, let <span class="math inline">\(X \sim \text{Uniform}(0, 1)\)</span> (<a href="./random-variables.html#def-uniform">uniform distribution</a>), whose density is <span class="math inline">\(1\)</span> on <span class="math inline">\([0, 1]\)</span>, and let <span class="math inline">\(Y = X\)</span>. For all real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the event <span class="math inline">\({\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}}\)</span> is <span class="math inline">\({\mathopen{}\left\{X = x\right\}\mathclose{}}\)</span> if <span class="math inline">\(y = x\)</span> and empty otherwise, so it has probability <span class="math inline">\(0\)</span>, because <span class="math inline">\(\Pr(X = x) = 0\)</span> for the <a href="./random-variables.html#def-continuous-rv">continuous</a> <span class="math inline">\(X\)</span>. Likewise</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X = x)\,\Pr(Y = y) &amp;= 0 \cdot 0 \\
@@ -420,9 +546,30 @@
 <div id="def-cind" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Conditional independence)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent</strong> <span class="citation" data-cites="wikipedia_conditional_independence"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span> given a discrete random variable (or vector) <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> if, for every value <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\)</span> with <span class="math inline">\(\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) &gt; 0\)</span> and all sets of real numbers <span class="math inline">\(A_1, \ldots, A_n\)</span>, the conditional probability that every <span class="math inline">\(Y_i\)</span> falls in its set is the product of the individual conditional probabilities:</p>
 <p><span class="math display">\[\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}\]</span></p>
-<p>When <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> is continuous, every event <span class="math inline">\(\{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\}\)</span> has probability 0, so the condition is stated with densities instead: for every <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\)</span> with <span class="math inline">\(\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) &gt; 0\)</span> and all <span class="math inline">\(y_1, \ldots, y_n\)</span>,</p>
+</div>
+<div id="def-cind-continuous" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Conditional independence given a continuous random vector)</strong></span> <a href="./random-variables.html#def-random-variable">Random variables</a> <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent given a continuous random vector</strong> <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span> <!-- check-term-links: allow: the bold phrase is the defined term itself --> (compare <a href="#/def-cind">conditional independence given a discrete random vector</a>) if, for every <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\)</span> with <span class="math inline">\(\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) &gt; 0\)</span> and all <span class="math inline">\(y_1, \ldots, y_n\)</span>:</p>
 <p><span class="math display">\[\frac{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})} = \prod_{i=1}^n{\frac{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_i = y_i)}{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}}\]</span></p>
 <p>where each <span class="math inline">\(\mathbb{p}(\cdot)\)</span> is a <a href="./random-variables.html#def-joint-pdf">joint density</a> (with probability masses in place of densities for any discrete <span class="math inline">\(Y_i\)</span>, as in a <a href="./random-variables.html#def-joint-density-mass">joint density-mass function</a>).</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-cind-continuous" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 (Two measurements of the same continuous quantity)</strong></span> &nbsp;</p>
+<!-- no-figure: algebraic derivation, no data to plot -->
+<p>Let <span class="math inline">\(X\)</span> be a <a href="./random-variables.html#def-continuous-rv">continuous random variable</a> with <a href="./random-variables.html#def-pdf">density</a> <span class="math inline">\(\mathbb{p}(X = x)\)</span>, and suppose that, given <span class="math inline">\(X = x\)</span>, the measurements <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are <a href="#/def-indpt">independent</a>, each with density <span class="math inline">\(\mathbb{p}(Y_i = y_i \mid X = x)\)</span>. Then <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are <a href="#/def-cind-continuous">conditionally independent given a continuous random vector</a> <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\mathbb{p}(X = x, Y_1 = y_1, Y_2 = y_2)}{\mathbb{p}(X = x)}
+&amp;= \mathbb{p}(Y_1 = y_1, Y_2 = y_2 \mid X = x)
+&amp;&amp; \text{(definition of a conditional density)} \\
+&amp;= \mathbb{p}(Y_1 = y_1 \mid X = x) \cdot\mathbb{p}(Y_2 = y_2 \mid X = x)
+&amp;&amp; \text{(independence given } X = x \text{)} \\
+&amp;= \frac{\mathbb{p}(X = x, Y_1 = y_1)}{\mathbb{p}(X = x)} \cdot\frac{\mathbb{p}(X = x, Y_2 = y_2)}{\mathbb{p}(X = x)}
+&amp;&amp; \text{(definition of a conditional density)}
+\end{aligned}
+\]</span></p>
 </div>
 <aside class="notes proof remark">
 <p><span class="proof-title"><em>Remark</em>. </span>For continuous <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\)</span>, each ratio in the density form is the density of the <span class="math inline">\(Y\)</span>’s under their conditional distribution given <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\)</span>, so both forms say the same thing: given <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\)</span>, the <span class="math inline">\(Y_i\)</span>’s joint distribution factors.</p>
@@ -441,7 +588,7 @@
 <section class="slide level2">
 
 <div id="exm-cind" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (Two tests of the same patient)</strong></span> Let <span class="math inline">\(X\)</span> indicate whether a patient has a disease, and let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate positive results on two tests whose errors are unrelated, so that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are conditionally independent given <span class="math inline">\(X\)</span>. Suppose <span class="math inline">\(\Pr(X = 1) = 0.1\)</span>, each test is positive with probability <span class="math inline">\(0.9\)</span> if <span class="math inline">\(X = 1\)</span> and with probability <span class="math inline">\(0.1\)</span> if <span class="math inline">\(X = 0\)</span>. Then, by the <a href="./probability-basics.html#thm-total-prob">law of total probability</a>:</p>
+<p><span class="theorem-title"><strong>Example 5 (Two tests of the same patient)</strong></span> Let <span class="math inline">\(X\)</span> indicate whether a patient has a disease, and let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate positive results on two tests whose errors are unrelated, so that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are conditionally independent given <span class="math inline">\(X\)</span>. Suppose <span class="math inline">\(\Pr(X = 1) = 0.1\)</span>, each test is positive with probability <span class="math inline">\(0.9\)</span> if <span class="math inline">\(X = 1\)</span> and with probability <span class="math inline">\(0.1\)</span> if <span class="math inline">\(X = 0\)</span>. Then, by the <a href="./probability-basics.html#thm-total-prob-conditional">law of total probability</a>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(Y_1 = 1, Y_2 = 1)
@@ -466,7 +613,7 @@
 <section class="slide level2">
 
 <div id="exm-indpt-not-cind" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (Two coins, given their total)</strong></span> Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate heads on two fair coin flips, which are independent (<a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>), and let <span class="math inline">\(X = Y_1 + Y_2\)</span> be the number of heads. Given <span class="math inline">\(X = 1\)</span>, which has probability <span class="math inline">\(1/2\)</span>, exactly one coin is heads, so:</p>
+<p><span class="theorem-title"><strong>Example 6 (Two coins, given their total)</strong></span> Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> indicate heads on two fair coin flips, which are independent (<a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>), and let <span class="math inline">\(X = Y_1 + Y_2\)</span> be the number of heads. Given <span class="math inline">\(X = 1\)</span>, which has probability <span class="math inline">\(1/2\)</span>, exactly one coin is heads, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(Y_1 = 1, Y_2 = 1 \mid X = 1)
@@ -501,13 +648,13 @@
 <p><span class="theorem-title"><strong>Proposition 1 (Neither independence nor conditional independence implies the other)</strong></span> There are random variables <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>, and <span class="math inline">\(X\)</span> such that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\(X\)</span> but not <a href="#/def-indpt">independent</a>, and there are random variables <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>, and <span class="math inline">\(X\)</span> such that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent but not conditionally independent given <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#/exm-cind" class="quarto-xref">Example&nbsp;3</a> gives the first case, and <a href="#/exm-indpt-not-cind" class="quarto-xref">Example&nbsp;4</a> gives the second.</p>
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#/exm-cind" class="quarto-xref">Example&nbsp;5</a> gives the first case, and <a href="#/exm-indpt-not-cind" class="quarto-xref">Example&nbsp;6</a> gives the second.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="exm-umbrellas-rain" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (Wet roads, umbrellas, and rain)</strong></span> Consider Brian Hutchinson’s intuitive illustration of conditional independence <span class="citation" data-cites="hutchinson2024data471"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>:</p>
+<p><span class="theorem-title"><strong>Example 7 (Wet roads, umbrellas, and rain)</strong></span> Consider Brian Hutchinson’s intuitive illustration of conditional independence <span class="citation" data-cites="hutchinson2024data471"><a href="#/references" role="doc-biblioref" onclick="">[5]</a></span>:</p>
 <p>Let <span class="math inline">\(w\)</span> denote wet roads, <span class="math inline">\(u\)</span> denote people carrying umbrellas, and <span class="math inline">\(r\)</span> denote rain.</p>
 <ul>
 <li><strong>Marginally, wet roads and umbrellas are not independent (<span class="math inline">\(w \not\perp u\)</span>).</strong> If you look out a window and see people holding open umbrellas, that increases the probability that the pavement outside is wet.</li>
@@ -553,7 +700,7 @@
 <section class="slide level2">
 
 <div id="def-ident" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 (Identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>identically distributed</strong> if they all have the same <a href="./random-variables.html#def-cdf">CDF</a>:</p>
+<p><span class="theorem-title"><strong>Definition 4 (Identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>identically distributed</strong> if they all have the same <a href="./random-variables.html#def-cdf">CDF</a>:</p>
 <p><span class="math display">\[\forall i\in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)\]</span></p>
 </div>
 </section>
@@ -613,7 +760,7 @@ F_i(t)
 \]</span></p>
 </div>
 <aside class="notes proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>As with independence (<a href="#/exm-indpt-pmf-fails" class="quarto-xref">Example&nbsp;2</a>), the PMF form would not work as a definition in general: every continuous random variable has <span class="math inline">\(\Pr(X_i = x) = 0\)</span> at every <span class="math inline">\(x\)</span>.</p>
+<p><span class="proof-title"><em>Remark</em>. </span>As with independence (<a href="#/exm-indpt-pmf-fails" class="quarto-xref">Example&nbsp;3</a>), the PMF form would not work as a definition in general: every continuous random variable has <span class="math inline">\(\Pr(X_i = x) = 0\)</span> at every <span class="math inline">\(x\)</span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -629,13 +776,13 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-ident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (Identically distributed but not independent)</strong></span> In <a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed (<a href="#/thm-ident-pmf" class="quarto-xref">Theorem&nbsp;3</a>). They are not independent: knowing one determines the other.</p>
+<p><span class="theorem-title"><strong>Example 8 (Identically distributed but not independent)</strong></span> In <a href="#/exm-indpt" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(1 - X_1\)</span> (the indicator of tails on the first flip) both take the values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> with probability <span class="math inline">\(1/2\)</span> each, so they are identically distributed (<a href="#/thm-ident-pmf" class="quarto-xref">Theorem&nbsp;3</a>). They are not independent: knowing one determines the other.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="def-cident" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function <span class="math inline">\(G(y \mid x)\)</span> of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>: for every <span class="math inline">\(i \in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}\)</span>, every <span class="math inline">\(y\)</span>, and every <span class="math inline">\(x\)</span> with <span class="math inline">\(\Pr(X_i = x) &gt; 0\)</span>,</p>
+<p><span class="theorem-title"><strong>Definition 5 (Conditionally identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally identically distributed</strong> given random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> if the conditional CDF of each <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i = x\)</span> is one shared function <span class="math inline">\(G(y \mid x)\)</span> of <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>: for every <span class="math inline">\(i \in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}\)</span>, every <span class="math inline">\(y\)</span>, and every <span class="math inline">\(x\)</span> with <span class="math inline">\(\Pr(X_i = x) &gt; 0\)</span>,</p>
 <p><span class="math display">\[\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)\]</span></p>
 <p>When <span class="math inline">\(X_i\)</span> is continuous, the condition applies at every <span class="math inline">\(x\)</span> with <span class="math inline">\(\mathbb{p}(X_i = x) &gt; 0\)</span>, with <span class="math inline">\(\Pr(Y_i \le y \mid X_i = x)\)</span> computed from densities: the integral of <span class="math inline">\(\mathbb{p}(X_i = x, Y_i = u) / \mathbb{p}(X_i = x)\)</span> over <span class="math inline">\(u \le y\)</span> (a sum over values <span class="math inline">\(u \le y\)</span> when <span class="math inline">\(Y_i\)</span> is discrete).</p>
 </div>
@@ -643,13 +790,13 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-cident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>, with <span class="math inline">\(G(y \mid x) = 1 - \pi(x)\)</span> for <span class="math inline">\(0 \le y &lt; 1\)</span> (and <span class="math inline">\(0\)</span> for <span class="math inline">\(y &lt; 0\)</span>, <span class="math inline">\(1\)</span> for <span class="math inline">\(y \ge 1\)</span>). Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 9 (A shared regression model)</strong></span> Suppose each <span class="math inline">\(Y_i\)</span> is binary, with <span class="math inline">\(\Pr(Y_i = 1 \mid X_i = x) = \pi(x)\)</span> for one function <span class="math inline">\(\pi\)</span> shared by every <span class="math inline">\(i\)</span> (for instance, <span class="math inline">\(\pi(x) = x / (1 + x)\)</span> for a dose <span class="math inline">\(x \ge 0\)</span>). Then <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are conditionally identically distributed given <span class="math inline">\(X_1, \ldots, X_n\)</span>, with <span class="math inline">\(G(y \mid x) = 1 - \pi(x)\)</span> for <span class="math inline">\(0 \le y &lt; 1\)</span> (and <span class="math inline">\(0\)</span> for <span class="math inline">\(y &lt; 0\)</span>, <span class="math inline">\(1\)</span> for <span class="math inline">\(y \ge 1\)</span>). Their marginal distributions can still differ: if participant 1 always receives dose <span class="math inline">\(0\)</span> and participant 2 always receives dose <span class="math inline">\(1\)</span>, then <span class="math inline">\(\Pr(Y_1 = 1) = 0\)</span> but <span class="math inline">\(\Pr(Y_2 = 1) = 1/2\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Independent and identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>independent and identically distributed</strong> (shorthand: “<span class="math inline">\(X_i\ \operatorname{iid}\)</span>”) <span class="citation" data-cites="wikipedia_iid"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span> if they are:</p>
+<p><span class="theorem-title"><strong>Definition 6 (Independent and identically distributed)</strong></span> Random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> are <strong>independent and identically distributed</strong> (shorthand: “<span class="math inline">\(X_i\ \operatorname{iid}\)</span>”) <span class="citation" data-cites="wikipedia_iid"><a href="#/references" role="doc-biblioref" onclick="">[6]</a></span> if they are:</p>
 <ul>
 <li><a href="#/def-indpt">statistically independent</a>, and</li>
 <li><a href="#/def-ident">identically distributed</a>.</li>
@@ -672,13 +819,13 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-iid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\({\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}}\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 10 (Repeated die rolls)</strong></span> The results of <span class="math inline">\(n\)</span> rolls of the same fair die are IID: the rolls are independent, and each is uniform on <span class="math inline">\({\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}}\)</span>.</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="def-ciid" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Conditionally independent and identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent and identically distributed</strong> given <span class="math inline">\(X_1, \ldots, X_n\)</span> (shorthand: “<span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>” or just “<span class="math inline">\(Y_i \mid X_i\ \operatorname{iid}\)</span>”) if:</p>
+<p><span class="theorem-title"><strong>Definition 7 (Conditionally independent and identically distributed)</strong></span> Random variables <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <strong>conditionally independent and identically distributed</strong> given <span class="math inline">\(X_1, \ldots, X_n\)</span> (shorthand: “<span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>” or just “<span class="math inline">\(Y_i \mid X_i\ \operatorname{iid}\)</span>”) if:</p>
 <ul>
 <li><span class="math inline">\(Y_1, \ldots, Y_n\)</span> are <a href="#/def-cind">conditionally independent</a> given <span class="math inline">\((X_1, \ldots, X_n)\)</span>,</li>
 <li>each <span class="math inline">\(Y_i\)</span> depends on <span class="math inline">\((X_1, \ldots, X_n)\)</span> only through <span class="math inline">\(X_i\)</span>, and</li>
@@ -689,7 +836,7 @@ F_i(t)
 <section class="slide level2">
 
 <div id="exm-ciid" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (The usual regression assumption)</strong></span> In <a href="#/exm-cident" class="quarto-xref">Example&nbsp;7</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 11 (The usual regression assumption)</strong></span> In <a href="#/exm-cident" class="quarto-xref">Example&nbsp;9</a>, if the <span class="math inline">\(Y_i\)</span> are also conditionally independent given all the doses, and each <span class="math inline">\(Y_i\)</span> depends on the doses only through its own <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Y_i \mid X_i\ \operatorname{ciid}\)</span>, and the joint conditional PMF is <span class="math inline">\(\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}\)</span>: one shared function evaluated at each <span class="math inline">\((x_i, y_i)\)</span>.</p>
 </div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
