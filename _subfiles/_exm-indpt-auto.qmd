@@ -7,11 +7,14 @@ and let $X_1$ indicate that it is American
 (`origin == 1` in the data)
 and $X_2$ indicate that it has four cylinders.
 By @thm-indpt-pmf,
-$X_1 \ind X_2$ if and only if
+$X_1 \ind X_2$
+[if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff)
+the [joint PMF](random-variables.qmd#def-joint-pmf) factors:
 $\P(X_1 = x_1, X_2 = x_2) = \P(X_1 = x_1)\,\P(X_2 = x_2)$
 for every pair of values $(x_1, x_2)$.
-Here is the joint PMF next to the product of the marginal PMFs
-for the pair of values $(1, 1)$:
+Here are the two sides of that equation for the pair of values $(1, 1)$,
+with the factors on the right being [marginal](random-variables.qmd#def-marginal)
+[PMFs](random-variables.qmd#def-pmf):
 
 ```{r}
 #| label: exm-indpt-auto-pmf
@@ -21,15 +24,16 @@ has_four <- auto$cylinders == 4
 p_joint <- mean(is_american & has_four)
 p_american <- mean(is_american)
 p_four <- mean(has_four)
-c(joint = p_joint, product = p_american * p_four)
+c(left_side = p_joint, right_side = p_american * p_four)
 ```
 
-The joint probability of an American car with four cylinders is
+The left side, the [probability](probability-basics.qmd#def-probability)
+of an American car with four cylinders, is
 `{r} round(p_joint, 3)`,
-but the product of the marginal probabilities is
+but the right side is
 `{r} round(p_american * p_four, 3)`.
 The factorization fails at $(1, 1)$,
-so $X_1$ and $X_2$ are not independent:
+so $X_1$ and $X_2$ are not [independent](#def-indpt):
 learning that a car is American changes the probability that it has four cylinders
 (@fig-indpt-auto).
 
