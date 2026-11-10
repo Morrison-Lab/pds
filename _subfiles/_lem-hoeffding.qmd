@@ -15,7 +15,8 @@ $$
 ::: proof
 
 First bound $e^{sX}$ by a line.
-The function $x \mapsto e^{x}$ is [convex](https://morrison-lab.github.io/mds/algebra-sums.html#def-convex-function), and for $X \in [0, 1]$ the number $sX$ is the [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) $(1 - X) \cdot 0 + X \cdot s$,
+The function $x \mapsto e^{x}$ is [convex](https://morrison-lab.github.io/mds/algebra-sums.html#def-convex-function),
+and for $X \in [0, 1]$ the number $sX$ is the [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) $(1 - X) \cdot 0 + X \cdot s$,
 so
 
 $$
