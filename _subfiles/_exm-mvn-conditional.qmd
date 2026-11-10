@@ -1,0 +1,21 @@
+:::{#exm-mvn-conditional}
+#### The conditional distribution of one component of a bivariate normal vector
+
+<!-- no-figure: one scalar formula checked against its special case; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2)} \sim \Normal_2\paren{\matr{0}, \pmat{1 & \rho \\ \rho & 1}}$
+with $\abs{\rho} < 1$.
+Here $\matr{\covmat}_{11} = [1]$, $\matr{\covmat}_{21} = [\rho]$ and $\matr{\covmat}_{22} = [1]$,
+so $\matr{S} = [1 - \rho^2]$.
+By @thm-mvn-conditional:
+
+$$
+X_2 \mid X_1 = x_1 \sim \ndist{\rho x_1, 1 - \rho^2}.
+$$
+
+At $\rho = 0$ this is $\ndist{0, 1}$ for every $x_1$,
+the marginal distribution of $X_2$,
+as it must be for [independent](independence.qmd#def-indpt) components
+(@thm-mvn-diagonal-indpt).
+
+:::
