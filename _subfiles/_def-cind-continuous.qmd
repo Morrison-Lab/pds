@@ -1,7 +1,7 @@
 :::{#def-cind-continuous}
 #### Conditional independence given a continuous random vector
 
-[Random variables](random-variables.qmd#def-random-variable) $\dsn{Y}$ are **conditionally independent given a continuous random vector** $\vX$ <!-- check-term-links: allow -->
+[Random variables](random-variables.qmd#def-random-variable) $\dsn{Y}$ are **conditionally independent given a continuous random vector** $\vX$ <!-- check-term-links: allow: the bold phrase is the defined term itself -->
 (compare [conditional independence given a discrete random vector](#def-cind))
 if, for every $\vx$ with $\p(\vX = \vx) > 0$ and all $\dsn{y}$:
 
