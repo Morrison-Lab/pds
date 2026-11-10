@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 03:13:23 (PST)
+Last modified: 2026-11-10 09:26:40 (PST)
 
 > **NOTE:**
 >
@@ -1358,7 +1358,49 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 20 (Mahalanobis distance in eigenvector coordinates)** Let $\mathbf{\Sigma}$ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) $\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}$, where $\mathbf{Q}$ has columns $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1, \ldots, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_p$ and $\mathbf{\Lambda}$ has diagonal elements $\lambda_1, \ldots, \lambda_p$. Then:
+> **Definition 15 (Precision matrix)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector. The **precision matrix** $\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})$ of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ is the $p \times p$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) whose $i$th [diagonal](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry) element is the [conditional precision](#def-conditional-precision) of $X_i$ given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_{-i}$, and whose $(i, j)$ element, for $i \ne j$, is the [coprecision](#def-coprecision) of $X_i$ and $X_j$ given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_{-ij}$.
+
+> **NOTE:**
+>
+> **Theorem 20 (The precision matrix is the inverse of the variance matrix)** If $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ has the [multivariate normal distribution](#def-mvn) $\operatorname{N}_p\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}}, \mathbf{\Sigma}\right)\mathclose{}$, then $\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) = {\mathopen{}\left(\mathbf{\Sigma}\right)\mathclose{}}^{-1}$.
+
+> **NOTE:**
+>
+> *Proof*. Let $\mathbf{\Omega} = {\mathopen{}\left(\mathbf{\Sigma}\right)\mathclose{}}^{-1}$. Reordering the elements of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ reorders the [rows](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) and [columns](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) of $\mathbf{\Sigma}$ and of $\mathbf{\Omega}$ in the same way, so for each $i$ and $j$ we may take $X_i$ and $X_j$ to be the last two elements.
+>
+> Cut $\mathbf{\Sigma}$ into [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) with the first $p - 2$ elements in the first block. By [the inverse of a positive definite block matrix](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse), the last $2 \times 2$ block of $\mathbf{\Omega}$ is ${\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}$, where $\mathbf{S}$ is the [Schur complement](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-schur-complement) of the first block of $\mathbf{\Sigma}$. By [Theorem 19](#thm-mvn-conditional), $\mathbf{S}$ is the [variance matrix](variance-covariance.llms.md#def-cov-vec-x) of ${(X_i, X_j)}^{\top}$ given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_{-ij} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_{-ij}$, so the [diagonal](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry) elements $v_i$ and $v_j$ of $\mathbf{S}$ are the [conditional variances](variance-covariance.llms.md#def-cond-variance) of $X_i$ and $X_j$, and its off-diagonal element $c_{ij}$ is their [conditional covariance](variance-covariance.llms.md#def-cond-cov). The [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of a $2 \times 2$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) gives the off-diagonal element of $\mathbf{\Omega}$:
+>
+> $$\begin{aligned}
+> \mathbf{\Omega}_{ij}
+> &= \mathopen{}\left({\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}\right)\mathclose{}_{12}
+> && \text{(last block of } \mathbf{\Omega} \text{)} \\
+> &= \frac{-c_{ij}}{v_i v_j - c_{ij}^2}
+> && \text{(inverse of a } 2 \times 2 \text{ matrix)}
+> \end{aligned}$$
+>
+> which is the [coprecision](#def-coprecision) of $X_i$ and $X_j$.
+>
+> Taking $X_i$ alone as the last element, the last $1 \times 1$ block of $\mathbf{\Omega}$ is ${\mathopen{}\left(\mathbf{S}\right)\mathclose{}}^{-1}$, where by [Theorem 19](#thm-mvn-conditional) $\mathbf{S}$ is the [conditional variance](variance-covariance.llms.md#def-cond-variance) of $X_i$ given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}_{-i} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}_{-i}$. So $\mathbf{\Omega}_{ii}$ is the inverse of that conditional variance, which is the [conditional precision](#def-conditional-precision) of $X_i$.
+
+> **NOTE:**
+>
+> **Example 23 (The precision matrix of a bivariate Gaussian vector)**  
+>
+> Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. By [Example 21](#exm-conditional-precision) and [Example 22](#exm-coprecision), the [conditional precision](#def-conditional-precision) of each element is $1 / (1 - \rho^2)$, and the [coprecision](#def-coprecision) of $X_1$ and $X_2$ is $-\rho / (1 - \rho^2)$, so
+>
+> $$\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) = \frac{1}{1 - \rho^2} \begin{pmatrix}1 & -\rho \\ -\rho & 1\end{pmatrix}.$$
+>
+> This [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) is the [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of $\begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}$, as [the precision matrix is the inverse of the variance matrix](#thm-precision-matrix-inverse) says, because
+>
+> $$\begin{aligned}
+> \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix} \cdot \frac{1}{1 - \rho^2} \begin{pmatrix}1 & -\rho \\ -\rho & 1\end{pmatrix}
+> &= \frac{1}{1 - \rho^2} \begin{pmatrix}1 - \rho^2 & -\rho + \rho \\ \rho - \rho & -\rho^2 + 1\end{pmatrix} \\
+> &= \mathbf{I}_2.
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 21 (Mahalanobis distance in eigenvector coordinates)** Let $\mathbf{\Sigma}$ be positive definite, with [eigendecomposition](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-eigendecomposition) $\mathbf{\Sigma} = \mathbf{Q}\mathbf{\Lambda}{\mathbf{Q}}^{\top}$, where $\mathbf{Q}$ has columns $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1, \ldots, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_p$ and $\mathbf{\Lambda}$ has diagonal elements $\lambda_1, \ldots, \lambda_p$. Then:
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \sum_{i=1}^p\frac{\mathopen{}\left({\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_i}^{\top}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}- \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}})\right)\mathclose{}^2}{\lambda_i}$$
 
@@ -1382,7 +1424,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 23 (Elliptical contours of a bivariate normal density)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$ and $\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$, which has eigenvalues $3$ and $1$, with eigenvectors $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}$ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 20](#thm-mahalanobis-eigen):
+> **Example 24 (Elliptical contours of a bivariate normal density)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$ and $\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$, which has eigenvalues $3$ and $1$, with eigenvectors $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}$ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 21](#thm-mahalanobis-eigen):
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}$$
 >
@@ -1565,7 +1607,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 21 (The maximum of the Gaussian density)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ ([Gaussian distribution](random-variables.llms.md#def-normal)), then its [density](random-variables.llms.md#def-pdf) is largest at $x = \mu$, where it equals:
+> **Theorem 22 (The maximum of the Gaussian density)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ ([Gaussian distribution](random-variables.llms.md#def-normal)), then its [density](random-variables.llms.md#def-pdf) is largest at $x = \mu$, where it equals:
 >
 > $$\max_x \mathbb{p}(X=x) = \frac{1}{\sigma\sqrt{2\pi}}$$
 
@@ -1598,7 +1640,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 24 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 21](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 7](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
+> **Example 25 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 22](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 7](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
 >
 > Show code
 >
@@ -1648,7 +1690,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 22 (Gaussian distributions are closed under affine transformations)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ and $a \ne 0$, then $aX + b \sim {\operatorname{N}\mathopen{}\left(a\mu+ b, a^2\sigma^2\right)\mathclose{}}$.
+> **Theorem 23 (Gaussian distributions are closed under affine transformations)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ and $a \ne 0$, then $aX + b \sim {\operatorname{N}\mathopen{}\left(a\mu+ b, a^2\sigma^2\right)\mathclose{}}$.
 
 > **NOTE:**
 >
@@ -1706,9 +1748,9 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 25 (Standardizing a Gaussian random variable)**  
+> **Example 26 (Standardizing a Gaussian random variable)**  
 >
-> Let $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ with $\sigma> 0$, and let $Z = (X - \mu) / \sigma$. Then $Z = aX + b$ with $a = 1 / \sigma$ and $b = -\mu/ \sigma$, and $a \ne 0$. By [Theorem 22](#thm-normal-affine), $Z$ is [Gaussian](random-variables.llms.md#def-normal) with parameters:
+> Let $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ with $\sigma> 0$, and let $Z = (X - \mu) / \sigma$. Then $Z = aX + b$ with $a = 1 / \sigma$ and $b = -\mu/ \sigma$, and $a \ne 0$. By [Theorem 23](#thm-normal-affine), $Z$ is [Gaussian](random-variables.llms.md#def-normal) with parameters:
 >
 > $$\begin{aligned}
 > a\mu+ b
@@ -1730,7 +1772,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 15 (Mixture density)** Let ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ be densities on $\mathbb{R}$, and let $w_1, \ldots, w_K$ be numbers with:
+> **Definition 16 (Mixture density)** Let ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ be densities on $\mathbb{R}$, and let $w_1, \ldots, w_K$ be numbers with:
 >
 > - $w_c \ge 0$ for every $c$, and
 > - $\sum_{c=1}^{K} w_c = 1$.
@@ -1741,15 +1783,15 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Definition 16 (Mixture component)** The densities ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ in a mixture ([Definition 15](#def-mixture)) are its **components**.
+> **Definition 17 (Mixture component)** The densities ${\mathbb{p}_1}, \ldots, {\mathbb{p}_K}$ in a mixture ([Definition 16](#def-mixture)) are its **components**.
 
 > **NOTE:**
 >
-> **Theorem 23 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
+> **Theorem 24 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
 >
 > $$\mathbb{p}(C = c,\, X = x) = w_c \, {\mathbb{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},$$
 >
-> with ${\mathbb{p}_c}$ and $w_c$ as in [Definition 15](#def-mixture). Then:
+> with ${\mathbb{p}_c}$ and $w_c$ as in [Definition 16](#def-mixture). Then:
 >
 > - $\mathbb{P}(C = c) = w_c$,
 > - for each $c$ with $w_c > 0$, the [conditional density](expectation.llms.md#def-cond-mixed) of $X$ given $C = c$ is ${\mathbb{p}_c}$, and
@@ -1789,11 +1831,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 23](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
+> *Remark*. [Theorem 24](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
 
 > **NOTE:**
 >
-> **Theorem 24 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 15](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
+> **Theorem 25 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 16](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
 >
 > $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c$$
 
@@ -1817,13 +1859,13 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 25 (Which component did an observation come from?)** Under the conditions of [Theorem 23](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
+> **Theorem 26 (Which component did an observation come from?)** Under the conditions of [Theorem 24](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
 >
 > $$\mathbb{P}(C = c \mid X = x) = \frac{w_c \, {\mathbb{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\mathbb{p}_k}(x)}$$
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 23](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
+> *Proof*. By [Theorem 24](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
 >
 > $$\begin{aligned}
 > \mathbb{P}(C = c \mid X = x)
@@ -1835,17 +1877,17 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 25](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional).
+> *Remark*. [Theorem 26](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional).
 
 > **NOTE:**
 >
-> **Definition 17 (Responsibility of a mixture component)** In the setting of [Theorem 25](#thm-mixture-posterior), the conditional probability $\mathbb{P}(C = c \mid X = x)$ is called, in machine learning, the **responsibility** of component $c$ for $x$.
+> **Definition 18 (Responsibility of a mixture component)** In the setting of [Theorem 26](#thm-mixture-posterior), the conditional probability $\mathbb{P}(C = c \mid X = x)$ is called, in machine learning, the **responsibility** of component $c$ for $x$.
 
 > **NOTE:**
 >
-> **Example 26 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
+> **Example 27 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
 >
-> - **Mean.** By [Theorem 24](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
+> - **Mean.** By [Theorem 25](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
 >   $$\begin{aligned}
 >   {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\
@@ -1854,7 +1896,7 @@ print(plot2)
 >
 > - **Density.** ${\mathbb{p}_{\text{mix}}}$ has peaks near the two component means, ${\mathbb{p}_{\text{mix}}}(0) \approx 0.120$ and ${\mathbb{p}_{\text{mix}}}(6) \approx 0.279$, with a trough between them, ${\mathbb{p}_{\text{mix}}}(3) \approx 0.004$. The density at the mean, ${\mathbb{p}_{\text{mix}}}(4.2) \approx 0.055$, is less than half its value at either peak.
 >
-> - **Responsibilities.** By [Theorem 25](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
+> - **Responsibilities.** By [Theorem 26](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
 >
 >   $$\begin{aligned}
 >   \mathbb{P}(C = 2 \mid X = 3)
@@ -1867,11 +1909,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Example 26](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
+> *Remark*. [Example 27](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
 
 > **NOTE:**
 >
-> **Example 27 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 15](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
+> **Example 28 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 16](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
 > **NOTE:**
 >
@@ -1984,9 +2026,10 @@ The value of `dbinom(2, size = 3, prob = 1 / 2)` is $3/8 = 0.375$, which matches
 - [Definition 12 (Mahalanobis distance)](#def-mahalanobis)
 - [Definition 13 (Conditional precision)](#def-conditional-precision)
 - [Definition 14 (Coprecision)](#def-coprecision)
-- [Definition 15 (Mixture density)](#def-mixture)
-- [Definition 16 (Mixture component)](#def-mixture-component)
-- [Definition 17 (Responsibility of a mixture component)](#def-responsibility)
+- [Definition 15 (Precision matrix)](#def-precision-matrix)
+- [Definition 16 (Mixture density)](#def-mixture)
+- [Definition 17 (Mixture component)](#def-mixture-component)
+- [Definition 18 (Responsibility of a mixture component)](#def-responsibility)
 
 # References
 

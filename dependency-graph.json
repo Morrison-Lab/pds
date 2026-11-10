@@ -314,6 +314,16 @@
    "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix"
   },
   {
+   "id": "mds/linear-algebra-diagonalization#def-schur-complement",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "def-schur-complement",
+   "kind": "def",
+   "title": "schur complement",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-schur-complement"
+  },
+  {
    "id": "mds/linear-algebra-diagonalization#thm-block-inverse",
    "site": "mds",
    "page": "linear-algebra-diagonalization",
@@ -322,6 +332,26 @@
    "title": "block inverse",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse"
+  },
+  {
+   "id": "mds/linear-algebra-matrices#def-diagonal-entry",
+   "site": "mds",
+   "page": "linear-algebra-matrices",
+   "div": "def-diagonal-entry",
+   "kind": "def",
+   "title": "diagonal entry",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry"
+  },
+  {
+   "id": "mds/linear-algebra-matrices#def-matrix",
+   "site": "mds",
+   "page": "linear-algebra-matrices",
+   "div": "def-matrix",
+   "kind": "def",
+   "title": "matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix"
   },
   {
    "id": "mds/linear-algebra-special-matrices#def-determinant",
@@ -772,6 +802,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#def-precision-matrix",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-precision-matrix",
+   "kind": "def",
+   "title": "Precision matrix",
+   "external": false
+  },
+  {
    "id": "pds/distributions#def-responsibility",
    "site": "pds",
    "page": "distributions",
@@ -994,6 +1033,15 @@
    "div": "thm-poisson-properties",
    "kind": "thm",
    "title": "Mean and variance of the Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-precision-matrix-inverse",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-precision-matrix-inverse",
+   "kind": "thm",
+   "title": "The precision matrix is the inverse of the variance matrix",
    "external": false
   },
   {
@@ -3093,6 +3141,26 @@
    "mds/sets#def-set"
   ],
   [
+   "pds/distributions#def-precision-matrix",
+   "mds/linear-algebra-matrices#def-diagonal-entry"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "pds/distributions#def-conditional-precision"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "pds/distributions#def-mvn"
+  ],
+  [
    "pds/distributions#def-responsibility",
    "pds/distributions#thm-mixture-posterior"
   ],
@@ -3339,6 +3407,58 @@
   [
    "pds/distributions#thm-poisson-properties",
    "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#def-schur-complement"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-matrices#def-diagonal-entry"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#def-conditional-precision"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cov-vec-x"
   ],
   [
    "pds/distributions#thm-sum-pois",
