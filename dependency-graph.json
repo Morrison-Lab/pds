@@ -34,6 +34,16 @@
    "url": "https://morrison-lab.github.io/mcs/functions.html#def-function"
   },
   {
+   "id": "mcs/functions#def-inverse-function",
+   "site": "mcs",
+   "page": "functions",
+   "div": "def-inverse-function",
+   "kind": "def",
+   "title": "inverse function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/functions.html#def-inverse-function"
+  },
+  {
    "id": "mcs/number-systems#def-integers",
    "site": "mcs",
    "page": "number-systems",
@@ -214,6 +224,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative"
   },
   {
+   "id": "mds/calculus-derivatives#def-differentiable",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "def-differentiable",
+   "kind": "def",
+   "title": "differentiable",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable"
+  },
+  {
    "id": "mds/calculus-derivatives#def-limit",
    "site": "mds",
    "page": "calculus-derivatives",
@@ -252,6 +272,16 @@
    "title": "continuous",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous"
+  },
+  {
+   "id": "mds/calculus-integration#def-riemann-integral",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-riemann-integral",
+   "kind": "def",
+   "title": "riemann integral",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral"
   },
   {
    "id": "mds/calculus-taylor-series#def-taylor-series",
@@ -3828,6 +3858,42 @@
   [
    "pds/expectation#thm-linearity-expectation",
    "pds/expectation#thm-lotus"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mcs/functions#def-inverse-function"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mds/calculus-derivatives#def-differentiable"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/expectation#thm-risk-decomposition",

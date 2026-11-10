@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 21:51:25 (PST)
+Last modified: 2026-11-09 22:04:16 (PST)
 
 > **NOTE:**
 >
@@ -196,7 +196,7 @@ Last modified: 2026-11-09 21:51:25 (PST)
 
 > **NOTE:**
 >
-> *Proof*. We prove the discrete case. Let $Y = g(X)$. For each $y \in \mathcal{R}(Y)$, the event $\{Y = y\}$ is the disjoint union of the events $\{X = x\}$ over the values $x$ with $g(x) = y$, and each $x \in \mathcal{R}(X)$ belongs to exactly one such group.
+> *Proof*. We prove the case of a [discrete random variable](random-variables.llms.md#def-discrete-rv) first. Let $Y = g(X)$. For each $y \in \mathcal{R}(Y)$, the event $\{Y = y\}$ is the disjoint union of the events $\{X = x\}$ over the values $x$ with $g(x) = y$, and each $x \in \mathcal{R}(X)$ belongs to exactly one such group.
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}
@@ -209,10 +209,22 @@ Last modified: 2026-11-09 21:51:25 (PST)
 > \end{aligned}$$
 >
 > The last step regroups a possibly infinite sum, which is valid because ${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}$ is defined only when the sum converges absolutely.
+>
+> We prove the case of a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ and a [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $g$ that is strictly increasing and continuously [differentiable on](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable) $\mathcal{R}(X)$, with [inverse function](https://morrison-lab.github.io/mcs/functions.html#def-inverse-function) $h = {\mathopen{}\left(g\right)\mathclose{}}^{-1}$. Let $Y = g(X)$. Because $g$ is strictly increasing, $\{Y \le y\} = \{X \le h(y)\}$, so the [CDF](random-variables.llms.md#def-cdf) of $Y$ is $\Pr(Y \le y) = \Pr(X \le h(y))$. Differentiating with the chain rule gives the [density](random-variables.llms.md#def-pdf) of $Y$: $\mathbb{p}(Y=y) = \mathbb{p}(X=h(y)) \cdot h'(y)$.
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}} && \text{(substitution } Y = g(X) \text{)}
+> \\&= \int y \cdot\mathbb{p}(Y=y)\,dy && \text{(definition of expectation for continuous r.v.)}
+> \\&= \int y \cdot\mathbb{p}(X=h(y)) \cdot h'(y)\,dy && \text{(density of } Y \text{)}
+> \\&= \int g(x) \cdot\mathbb{p}(X=x)\,dx && \text{(substitute } y = g(x) \text{, so } h(y) = x \text{ and } h'(y)\,dy = dx \text{)}
+> \end{aligned}$$
+>
+> Each [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) runs over the [range of](random-variables.llms.md#def-range) its variable, and $g$ carries $\mathcal{R}(X)$ onto $\mathcal{R}(Y)$. For a strictly decreasing $g$, the same calculation holds with $\Pr(Y \le y) = \Pr(X \ge h(y))$ and $\mathopen{}\left|h'(y)\right|\mathclose{}$ in place of $h'(y)$.
 
 > **NOTE:**
 >
-> *Remark*. LOTUS says that to compute ${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}$, we do not need to first find the distribution of $g(X)$; we can compute the expectation directly using the distribution of $X$. The continuous case is the density-weighted analogue of this argument, but a fully rigorous proof needs the general change-of-variables theorem for integrals against a pushforward measure — approximating $g$ by simple functions and passing to the limit — which is beyond this page’s scope [\[2\]](#ref-billingsley1995probability), [\[5\]](#ref-gut2013), [\[6\]](#ref-CaseBerg01), [\[7\]](#ref-wp:lotus).
+> *Remark*. LOTUS says that to compute ${\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}}$, we do not need to first find the distribution of $g(X)$; we can compute the expectation directly using the distribution of $X$. The proof for a [continuous random variable](random-variables.llms.md#def-continuous-rv) follows the same plan, weighted by its [density](random-variables.llms.md#def-pdf). The proof above covers a strictly monotone, continuously [differentiable](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable) $g$; a fully general proof needs the change-of-variables theorem for integrals against a pushforward measure — approximating $g$ by simple functions and passing to the limit — which is beyond this page’s scope [\[2\]](#ref-billingsley1995probability), [\[5\]](#ref-gut2013), [\[6\]](#ref-CaseBerg01), [\[7\]](#ref-wp:lotus).
 
 > **NOTE:**
 >
