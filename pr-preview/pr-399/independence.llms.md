@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 19:01:24 (PST)
+Last modified: 2026-11-09 21:51:46 (PST)
 
 > **NOTE:**
 >
@@ -98,7 +98,9 @@ Last modified: 2026-11-09 19:01:24 (PST)
 
 > **NOTE:**
 >
-> **Definition 2 (Conditional independence)** Random variables $Y_1, \ldots, Y_n$ are **conditionally independent** [\[4\]](#ref-wikipedia_conditional_independence) given a discrete random variable (or vector) $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ if, for every value $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all sets of real numbers $A_1, \ldots, A_n$, the conditional probability that every $Y_i$ falls in its set is the product of the individual conditional probabilities:
+> **Definition 2 (Conditional independence)**  
+>
+> Random variables $Y_1, \ldots, Y_n$ are **conditionally independent** [\[4\]](#ref-wikipedia_conditional_independence) given a discrete random variable (or vector) $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ if, for every value $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all sets of real numbers $A_1, \ldots, A_n$, the conditional probability that every $Y_i$ falls in its set is the product of the individual conditional probabilities:
 >
 > $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}$$
 >
@@ -114,7 +116,7 @@ Last modified: 2026-11-09 19:01:24 (PST)
 
 > **NOTE:**
 >
-> **Example 3 (Two tests of the same patient)** Let $X$ indicate whether a patient has a disease, and let $Y_1$ and $Y_2$ indicate positive results on two tests whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$. Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$ and with probability $0.1$ if $X = 0$. Then, by the [law of total probability](probability-basics.llms.md#thm-total-prob):
+> **Example 3 (Two tests of the same patient)** Let $X$ indicate whether a patient has a disease, and let $Y_1$ and $Y_2$ indicate positive results on two tests whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$. Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$ and with probability $0.1$ if $X = 0$. Then, by the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional):
 >
 > $$\begin{aligned}
 > \Pr(Y_1 = 1, Y_2 = 1)

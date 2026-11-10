@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 19:01:24 (PST)
+Last modified: 2026-11-09 21:51:46 (PST)
 
 # 1 Defining probabilities
 
@@ -491,7 +491,7 @@ Last modified: 2026-11-09 19:01:24 (PST)
 
 > **NOTE:**
 >
-> **Theorem 7 (Law of total probability with conditional probabilities)** If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the [sample space](#def-sample-space) with $\Pr(B_i) > 0$ for every $i$, then for any [event](#def-event) $A$:
+> **Theorem 7 (Law of total probability with conditional probabilities)** If $B_1, B_2, \ldots$ is a [partition of](#def-partition) the [sample space](#def-sample-space) with $\Pr(B_i) > 0$ for every $i$, then for any [event](#def-event) $A$:
 >
 > $$\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)$$
 
@@ -719,6 +719,12 @@ brFP = (brN - brSick) * (1 - brSpec)
 >
 > Lange’s textbook [\[17\]](#ref-lange2024applied) reviews [probability](#def-probability) and [expectation](expectation.llms.md#def-expectation) in Section 1.2 and [conditional probability](#def-conditional-prob) in Section 1.3.
 
+# 4 Further reading
+
+> **TIP:**
+>
+> Evans and Rosenthal’s free textbook [\[18\]](#ref-evans2010probability) covers [probability](#def-probability) models, [conditional probability](#def-conditional-prob) and independence in Chapter 1.
+
 # Definitions on this page
 
 - [Definition 1 (Step)](#def-step)
@@ -806,5 +812,9 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 \[17\]
 
 K. Lange, *Applied probability*, 3rd ed. in Springer texts in statistics. Springer, 2024. doi: [10.1007/978-1-0716-4172-9](https://doi.org/10.1007/978-1-0716-4172-9).
+
+\[18\]
+
+M. J. Evans and J. S. Rosenthal, *Probability and statistics: The science of uncertainty*, 2nd ed. Freeman, 2010. Available: <https://utstat.utoronto.ca/mikevans/jeffrosenthal/>
 
 Back to top
