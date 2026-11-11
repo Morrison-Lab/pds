@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 11:31:36 (PST)
+Last modified: 2026-11-10 21:55:07 (PST)
 
 # 1 Defining probabilities
 
@@ -353,7 +353,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Definition 12 (Choosing at random)** Let $S$ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\mu$ such that $0 < \mu(S) < \infty$. To **choose an element of** $S$ at random is to run a [random experiment](#def-random-experiment) whose [sample space](#def-sample-space) is $S$ and whose [probability measure](#def-probability) is the [uniform distribution](random-variables.llms.md#def-uniform-set) on $S$.
+> **Definition 12 (Choosing at random)** Let $S$ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\mu$ such that $\mu(S) \in (0, \infty)$. To **choose an element of** $S$ at random is to run a [random experiment](#def-random-experiment) whose [sample space](#def-sample-space) is $S$ and whose [probability measure](#def-probability) is the [uniform distribution](random-variables.llms.md#def-uniform-set) on $S$.
 
 > **NOTE:**
 >

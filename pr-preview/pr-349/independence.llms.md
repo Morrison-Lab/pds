@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 11:31:36 (PST)
+Last modified: 2026-11-10 21:55:07 (PST)
 
 > **NOTE:**
 >
@@ -357,7 +357,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Example 9 (A shared regression model)** Suppose each $Y_i$ is binary, with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$ (for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$). Then $Y_1, \ldots, Y_n$ are conditionally identically distributed given $X_1, \ldots, X_n$, with $G(y \mid x) = 1 - \pi(x)$ for $0 \le y < 1$ (and $0$ for $y < 0$, $1$ for $y \ge 1$). Their marginal distributions can still differ: if participant 1 always receives dose $0$ and participant 2 always receives dose $1$, then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
+> **Example 9 (A shared regression model)** Suppose each $Y_i$ is binary, with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$ (for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$). Then $Y_1, \ldots, Y_n$ are conditionally identically distributed given $X_1, \ldots, X_n$, with $G(y \mid x) = 1 - \pi(x)$ for $y \in [0, 1)$ (and $0$ for $y < 0$, $1$ for $y \ge 1$). Their marginal distributions can still differ: if participant 1 always receives dose $0$ and participant 2 always receives dose $1$, then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
 
 > **NOTE:**
 >

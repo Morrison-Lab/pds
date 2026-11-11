@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 11:31:36 (PST)
+Last modified: 2026-11-10 21:55:07 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -443,13 +443,13 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Lemma 1 (Hoeffding’s lemma)** Let $X$ be a random variable with $0 \le X \le 1$ and mean $\mu$. Then for every real number $s$,
+> **Lemma 1 (Hoeffding’s lemma)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with $X \in [0, 1]$ and [mean](expectation.llms.md#def-expectation) $\mu$. Then for every real number $s$,
 >
 > $${\mathbb{E}\mathopen{}\left[e^{s(X - \mu)}\right]\mathclose{}} \le e^{s^2/8}.$$
 
 > **NOTE:**
 >
-> *Proof*. First bound $e^{sX}$ by a line. The function $x \mapsto e^{x}$ is convex, and for $0 \le X \le 1$ the number $sX$ is the weighted average $(1 - X) \cdot 0 + X \cdot s$, so
+> *Proof*. First bound $e^{sX}$ by a line. The function $x \mapsto e^{x}$ is [convex](https://morrison-lab.github.io/mds/algebra-sums.html#def-convex-function), and for $X \in [0, 1]$ the number $sX$ is the [weighted average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average) $(1 - X) \cdot 0 + X \cdot s$, so
 >
 > $$\begin{aligned}
 > e^{sX}
@@ -537,7 +537,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 6 (Hoeffding’s inequality)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) random variables with $0 \le X_i \le 1$ and population mean $\mu$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$. Then for every $\varepsilon> 0$ [\[11\]](#ref-wikipedia_hoeffdings_inequality),
+> **Theorem 6 (Hoeffding’s inequality)** Let $X_1, \ldots, X_n$ be [IID](independence.llms.md#def-iid) [random variables](random-variables.llms.md#def-random-variable) with $X_i \in [0, 1]$ and [population mean](expectation.llms.md#def-expectation) $\mu$, and let ${{\bar{X}}_{n}} \stackrel{\text{def}}{=}\frac{1}{n}\sum_{i=1}^nX_i$. Then for every $\varepsilon> 0$ [\[11\]](#ref-wikipedia_hoeffdings_inequality),
 >
 > $${\Pr\mathopen{}\left({{\bar{X}}_{n}} - \mu\ge \varepsilon\right)\mathclose{}} \le e^{-2n\varepsilon^2}.
 > \tag{1}$$
@@ -594,7 +594,9 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Corollary 3 (Hoeffding’s inequality, two-sided)** Under the assumptions of [Theorem 6](#thm-hoeffding), for every $\varepsilon> 0$,
+> **Corollary 3 (Hoeffding’s inequality, two-sided)**  
+>
+> Under the assumptions of [Theorem 6](#thm-hoeffding), for every $\varepsilon> 0$,
 >
 > $${\Pr\mathopen{}\left(\mathopen{}\left|{{\bar{X}}_{n}} - \mu\right|\mathclose{} \ge \varepsilon\right)\mathclose{}} \le 2e^{-2n\varepsilon^2}.
 > \tag{2}$$

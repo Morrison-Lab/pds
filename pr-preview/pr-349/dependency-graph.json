@@ -224,6 +224,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
   },
   {
+   "id": "mds/algebra-sums#def-convex-function",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-convex-function",
+   "kind": "def",
+   "title": "convex function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-convex-function"
+  },
+  {
    "id": "mds/algebra-sums#def-summation",
    "site": "mds",
    "page": "algebra-sums",
@@ -532,6 +542,16 @@
    "title": "scalar",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar"
+  },
+  {
+   "id": "mds/linear-algebra-vectors#def-weighted-average",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-weighted-average",
+   "kind": "def",
+   "title": "weighted average",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average"
   },
   {
    "id": "mds/measures#cor-measure-finitely-additive",
@@ -843,6 +863,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#def-partial-correlation",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-partial-correlation",
+   "kind": "def",
+   "title": "Partial correlation",
+   "external": false
+  },
+  {
    "id": "pds/distributions#def-poisson",
    "site": "pds",
    "page": "distributions",
@@ -912,6 +941,15 @@
    "div": "thm-cdf-pois",
    "kind": "thm",
    "title": "CDF of Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-conditional-mean-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-conditional-mean-precision",
+   "kind": "thm",
+   "title": "The conditional mean of one element from the precision matrix",
    "external": false
   },
   {
@@ -1068,6 +1106,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-partial-correlation-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-partial-correlation-precision",
+   "kind": "thm",
+   "title": "The partial correlation from the precision matrix",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-poisson-mode",
    "site": "pds",
    "page": "distributions",
@@ -1092,6 +1139,15 @@
    "div": "thm-precision-matrix-inverse",
    "kind": "thm",
    "title": "The precision matrix is the inverse of the variance matrix",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-precision-zero-cind",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-precision-zero-cind",
+   "kind": "thm",
+   "title": "A zero off-diagonal element of the precision matrix means conditional independence",
    "external": false
   },
   {
@@ -3224,6 +3280,22 @@
    "pds/expectation#def-expectation"
   ],
   [
+   "pds/distributions#def-partial-correlation",
+   "mds/algebra-basics#def-square-root"
+  ],
+  [
+   "pds/distributions#def-partial-correlation",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-partial-correlation",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#def-partial-correlation",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
    "pds/distributions#def-poisson",
    "mcs/number-systems#def-nonnegative-integers"
   ],
@@ -3294,6 +3366,38 @@
   [
    "pds/distributions#thm-binomial-sum-bernoulli",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-vectors#def-scalar"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/variance-covariance#def-cond-variance"
   ],
   [
    "pds/distributions#thm-gamma-moments",
@@ -3496,6 +3600,62 @@
    "pds/random-variables#def-pdf"
   ],
   [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-diagonalization#def-schur-complement"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/distributions#def-partial-correlation"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#thm-partial-correlation-precision",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
    "pds/distributions#thm-poisson-properties",
    "pds/expectation#thm-linearity-expectation"
   ],
@@ -3553,6 +3713,62 @@
   ],
   [
    "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#cor-mvn-uncorrelated-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/independence#def-cind-continuous"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
    "pds/variance-covariance#def-cov-vec-x"
   ],
   [
@@ -4604,6 +4820,22 @@
    "pds/variance-covariance#def-variance"
   ],
   [
+   "pds/limit-theorems#lem-hoeffding",
+   "mds/algebra-sums#def-convex-function"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "mds/linear-algebra-vectors#def-weighted-average"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/limit-theorems#thm-chebyshev",
    "pds/limit-theorems#thm-markov"
   ],
@@ -4633,6 +4865,10 @@
   ],
   [
    "pds/limit-theorems#thm-hoeffding",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
    "pds/independence#def-iid"
   ],
   [
@@ -4642,6 +4878,10 @@
   [
    "pds/limit-theorems#thm-hoeffding",
    "pds/limit-theorems#thm-markov"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/limit-theorems#thm-hoeffding",

@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 11:31:36 (PST)
+Last modified: 2026-11-10 21:55:07 (PST)
 
 > **NOTE:**
 >
@@ -88,7 +88,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Example 5 (A random variable that is neither discrete nor continuous)** Some random variables are neither discrete nor continuous: a time to event that equals exactly $0$ with positive probability, and otherwise spreads over $(0, \infty)$, is one. For instance, let $U$ be the continuous random variable of [Example 4](#exm-continuous-rv), and let $T = 1/(1 - U) - 2$ when $1/2 < U < 1$, and $T = 0$ otherwise. On ${\mathopen{}\left\{1/2 < U < 1\right\}\mathclose{}}$, $T$ is increasing in $U$ and takes values in $(0, \infty)$, and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$. So ${\mathopen{}\left\{T > 0\right\}\mathclose{}} = {\mathopen{}\left\{1/2 < U < 1\right\}\mathclose{}}$, and ${\mathopen{}\left\{T = t\right\}\mathclose{}} = {\mathopen{}\left\{U = 1 - 1/(t + 2)\right\}\mathclose{}}$ for each $t > 0$. Since $U$ is continuous ([Example 4](#exm-continuous-rv)), single points have probability zero:
+> **Example 5 (A random variable that is neither discrete nor continuous)** Some random variables are neither discrete nor continuous: a time to event that equals exactly $0$ with positive probability, and otherwise spreads over $(0, \infty)$, is one. For instance, let $U$ be the continuous random variable of [Example 4](#exm-continuous-rv), and let $T = 1/(1 - U) - 2$ when $U \in (1/2, 1)$, and $T = 0$ otherwise. On ${\mathopen{}\left\{U \in (1/2, 1)\right\}\mathclose{}}$, $T$ is increasing in $U$ and takes values in $(0, \infty)$, and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$. So ${\mathopen{}\left\{T > 0\right\}\mathclose{}} = {\mathopen{}\left\{U \in (1/2, 1)\right\}\mathclose{}}$, and ${\mathopen{}\left\{T = t\right\}\mathclose{}} = {\mathopen{}\left\{U = 1 - 1/(t + 2)\right\}\mathclose{}}$ for each $t > 0$. Since $U$ is continuous ([Example 4](#exm-continuous-rv)), single points have probability zero:
 >
 > $$\begin{aligned}
 > \Pr(U = 1/2) &= \Pr(U = 1) \\
@@ -99,8 +99,8 @@ Last modified: 2026-11-10 11:31:36 (PST)
 >
 > $$\begin{aligned}
 > \Pr(T > 0)
-> &= \Pr(1/2 < U < 1)
-> && \text{(} {\mathopen{}\left\{T > 0\right\}\mathclose{}} = {\mathopen{}\left\{1/2 < U < 1\right\}\mathclose{}} \text{)} \\
+> &= \Pr(U \in (1/2, 1))
+> && \text{(} {\mathopen{}\left\{T > 0\right\}\mathclose{}} = {\mathopen{}\left\{U \in (1/2, 1)\right\}\mathclose{}} \text{)} \\
 > &= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1)
 > && \text{(additivity)} \\
 > &= \tfrac{1}{2} - 0 - 0
@@ -160,7 +160,9 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Definition 7 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi\in [0, 1]$, written $X \sim \operatorname{Ber}(\pi)$ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
+> **Definition 7 (Bernoulli distribution)**  
+>
+> A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi\in [0, 1]$, written $X \sim \operatorname{Ber}(\pi)$ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
 >
 > $$\begin{aligned}
 > \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}_{x\in {\mathopen{}\left\{0,1\right\}\mathclose{}}}\pi^x(1-\pi)^{1-x}\\
@@ -211,7 +213,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Definition 9 (Uniform distribution on a set)** Let $S$ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\mu$ such that $0 < \mu(S) < \infty$. The **uniform distribution** on $S$ is the [probability measure](probability-basics.llms.md#def-probability)
+> **Definition 9 (Uniform distribution on a set)** Let $S$ be a set with a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\mu$ such that $\mu(S) \in (0, \infty)$. The **uniform distribution** on $S$ is the [probability measure](probability-basics.llms.md#def-probability)
 >
 > $$\Pr(A) \stackrel{\text{def}}{=}\frac{\mu(A)}{\mu(S)}, \quad A \subseteq S.$$
 
@@ -226,7 +228,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 
 > **NOTE:**
 >
-> **Example 9 (Subinterval probabilities of a uniform random variable)** For $X \sim \text{Uniform}(\alpha, \beta)$ ([Definition 10](#def-uniform)) and any subinterval $[a, b] \subseteq [\alpha, \beta]$ (so $\alpha\le a \le b \le \beta$):
+> **Example 9 (Subinterval probabilities of a uniform random variable)** For $X \sim \text{Uniform}(\alpha, \beta)$ ([Definition 10](#def-uniform)) and any subinterval $[a, b] \subseteq [\alpha, \beta]$ (so $a, b \in [\alpha, \beta]$ and $a \le b$):
 >
 > $$\begin{aligned}
 > \Pr(a \le X \le b)
@@ -238,7 +240,7 @@ Last modified: 2026-11-10 11:31:36 (PST)
 > && \text{(integrate)}
 > \end{aligned}$$
 >
-> In particular, the probability that $X$ falls in any subinterval is proportional to that subinterval’s length. For the standard uniform distribution on $[0, 1]$, $f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise, giving $\Pr(a \le X \le b) = b - a$ for all $0 \le a \le b \le 1$. An interval reaching outside $[\alpha, \beta]$ adds nothing to the probability, because $f = 0$ there.
+> In particular, the probability that $X$ falls in any subinterval is proportional to that subinterval’s length. For the standard uniform distribution on $[0, 1]$, $f(x) = 1$ for $x \in [0, 1]$ and $f(x) = 0$ otherwise, giving $\Pr(a \le X \le b) = b - a$ [for all](https://morrison-lab.github.io/mcs/proof-writing.html#def-universal-quantifier) $a, b \in [0, 1]$ with $a \le b$. An interval reaching outside $[\alpha, \beta]$ adds nothing to the probability, because $f = 0$ there.
 
 > **NOTE:**
 >
