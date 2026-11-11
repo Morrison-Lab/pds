@@ -1189,6 +1189,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-vcov-zero-indpt",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-vcov-zero-indpt",
+   "kind": "thm",
+   "title": "A zero off-diagonal element of the variance matrix means independence",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-weibull",
    "site": "pds",
    "page": "distributions",
@@ -3847,6 +3856,30 @@
   [
    "pds/distributions#thm-sum-pois",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-vcov-zero-indpt",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/distributions#thm-vcov-zero-indpt",
+   "pds/distributions#cor-mvn-uncorrelated-indpt"
+  ],
+  [
+   "pds/distributions#thm-vcov-zero-indpt",
+   "pds/distributions#thm-mvn-marginal"
+  ],
+  [
+   "pds/distributions#thm-vcov-zero-indpt",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-vcov-zero-indpt",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/distributions#thm-vcov-zero-indpt",
+   "pds/variance-covariance#thm-vcov-elements"
   ],
   [
    "pds/distributions#thm-weibull",
