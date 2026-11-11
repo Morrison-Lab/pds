@@ -39,6 +39,9 @@ exclude = [
   "https://adembo.su.domains/.*",
   # probabilitybook.net times out from CI runners; the link works in a browser.
   "https://www.probabilitybook.net/.*",
+  # islp.readthedocs.io answers CI runners with 403 Forbidden on some runs
+  # and passes on a re-run; the link works in a browser.
+  "https://islp.readthedocs.io/.*",
 ]
 
 # `pds` is a symlink to the repository root, so include paths read

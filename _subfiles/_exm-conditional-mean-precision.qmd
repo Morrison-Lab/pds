@@ -1,0 +1,28 @@
+:::{#exm-conditional-mean-precision}
+#### The conditional mean and variance of the middle element of a chain of three Gaussian variables
+
+<!-- no-figure: arithmetic on one 3 x 3 matrix; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2, X_3)}$ be the [Gaussian](#def-normal) vector of @exm-precision-zero-cind,
+with $\E{\vX} = \matr{0}$ and
+
+$$
+\precision(\vX) = \pmat{2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2}.
+$$
+
+By @thm-conditional-mean-precision with $i = 2$,
+using the second row of the [precision matrix](#def-precision-matrix),
+
+$$
+\condE{X_2}{X_1 = x_1, X_3 = x_3}
+= -\frac{-1}{2}x_1 - \frac{-1}{2}x_3
+= \frac{x_1 + x_3}{2},
+$$
+
+and $\condVar{X_2}{X_1 = x_1, X_3 = x_3} = 1 / 2$.
+So the [conditional mean](#def-cond-expectation-function) of $X_2$ is the midpoint of its two neighbors' values.
+The coefficient of $x_1$ is $-\precision(\vX)_{21} / \precision(\vX)_{22} = 1/2$,
+and the coefficient of a neighbor with a zero off-diagonal element would be zero,
+as @thm-precision-zero-cind says.
+
+:::

@@ -1,0 +1,26 @@
+:::{#thm-density-sums-to-one}
+#### Density functions integrate to 1
+
+If $X$ is a continuous random variable with density $f$:
+
+$$\int_{-\infty}^{\infty} f(x)\, dx = 1$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\int_{-\infty}^{\infty} f(x)\, dx
+&= \lim_{b \to \infty} \int_{-\infty}^{b} f(x)\, dx
+&& \text{(definition of an improper integral)} \\
+&= \lim_{b \to \infty} \cdff{b}
+&& \text{(the CDF is the integral of the density)} \\
+&= 1
+&& \text{(limit of a CDF)}
+\ea
+$$
+
+The last step is @thm-cdf-properties.
+
+:::

@@ -1,0 +1,19 @@
+:::{#def-uniform}
+#### Uniform distribution on an interval
+
+The **uniform distribution** on an interval $[\lowend, \highend]$ (@def-uniform-set
+with $\measure$ the length),
+with $\lowend < \highend$,
+is the distribution of a random variable $X$,
+written $X \sim \text{Uniform}(\lowend, \highend)$,
+that is continuous with [density](#def-pdf)
+[@wikipedia_continuous_uniform_distribution]:
+
+$$
+f(x) \eqdef \begin{cases}
+\frac{1}{\highend - \lowend}, & \lowend \le x \le \highend \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+:::

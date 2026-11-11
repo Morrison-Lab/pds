@@ -1,0 +1,28 @@
+:::{#cor-joint-density-mass-marginal}
+#### Marginal PMF from a joint density-mass function
+
+If $X$ and $Y$ have joint density-mass function $\p(X = x,\, Y = y)$,
+then for every $x$:
+
+$$\P(X = x) = \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy$$
+
+:::
+
+::: proof
+
+Every outcome has $Y(\outcome) \in \reals$,
+so $\set{Y \in \reals} = \samplespace$, and:
+
+$$
+\ba
+\P(X = x)
+&= \Pr(\set{X = x} \cap \samplespace)
+&& \text{(} \set{X = x} \subseteq \samplespace \text{)} \\
+&= \Pr(X = x,\, Y \in \reals)
+&& \text{(} \set{Y \in \reals} = \samplespace \text{)} \\
+&= \int_{-\infty}^{\infty} \p(X = x,\, Y = y)\,dy
+&& \text{(definition of a joint density-mass function, with } B = \reals \text{)}
+\ea
+$$
+
+:::

@@ -1,0 +1,7 @@
+::: {.remark .notes}
+
+The proof needs measure theory beyond these notes
+[@billingsley1995probability;
+@wikipedia_cumulative_distribution_function].
+
+:::

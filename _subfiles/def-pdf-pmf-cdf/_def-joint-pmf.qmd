@@ -1,0 +1,10 @@
+:::{#def-joint-pmf}
+#### Joint probability mass function (joint PMF)
+
+For [jointly distributed](#def-jointly-distributed) discrete random variables $X$ and $Y$,
+the **joint probability mass function** (**joint PMF**) of $X$ and $Y$
+is the probability that $X$ takes the value $x$ and $Y$ takes the value $y$:
+
+$$\P(X = x,\, Y = y) \eqdef \Pr(\{X = x\} \cap \{Y = y\})$$
+
+:::

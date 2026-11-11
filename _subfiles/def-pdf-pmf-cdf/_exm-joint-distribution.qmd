@@ -1,0 +1,19 @@
+:::{#exm-joint-distribution}
+#### Joint distribution of the first flip and the total
+
+In @exm-jointly-distributed,
+the joint distribution of $X_1$ and $X$ assigns to the set
+$A = \set{(x_1, x) : x_1 = 1,\, x \ge 1}$ the probability
+
+$$
+\begin{aligned}
+\Pr((X_1, X) \in A)
+&= \Pr(\set{HH, HT}) \\
+&= \tfrac{1}{2}
+\end{aligned}
+$$
+
+since the first flip is heads exactly on $HH$ and $HT$,
+and each of those outcomes has at least one head.
+
+:::

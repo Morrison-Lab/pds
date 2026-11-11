@@ -1,0 +1,12 @@
+:::{#def-uniform-set}
+#### Uniform distribution on a set
+
+Let $S$ be a set with a
+[measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\measure$
+such that $\measure(S) \in (0, \infty)$.
+The **uniform distribution** on $S$ is the
+[probability measure](probability-basics.qmd#def-probability)
+
+$$\Pr(A) \eqdef \frac{\measure(A)}{\measure(S)}, \quad A \subseteq S.$$
+
+:::

@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+Every density in these notes is continuous at all but finitely many points,
+so @cor-cdf-derivative-density-ae applies to each of them.
+
+:::

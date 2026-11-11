@@ -1,0 +1,34 @@
+:::{#thm-marginal-density}
+#### Marginal density from a joint density
+
+If $X$ and $Y$ have joint density $f_{X,Y}$,
+then $X$ has the density:
+
+$$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy$$
+
+:::
+
+::: proof
+
+For $a \le b$, the event $\{a \le X \le b\}$ is the event that $(X, Y)$ falls in the strip $[a, b] \times \reals$, so:
+
+$$
+\ba
+\Pr(a \le X \le b)
+&= \Pr((X, Y) \in [a, b] \times \reals)
+&& \text{(same event)} \\
+&= \iint_{[a, b] \times \reals} f_{X,Y}(x, y)\,dx\,dy
+&& \text{(definition of a joint density)} \\
+&= \int_a^b \paren{\int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy}\,dx
+&& \text{(iterate the integral; Tonelli's theorem)} \\
+&= \int_a^b f_X(x)\,dx
+&& \text{(definition of } f_X \text{)}
+\ea
+$$
+
+Tonelli's theorem allows the iterated integral because $f_{X,Y} \ge 0$
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3).
+So $f_X$ satisfies @def-pdf.
+
+:::

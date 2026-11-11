@@ -1,0 +1,43 @@
+:::{#fig-mvn-bivariate-3d}
+
+{{< include pds/_subfiles/_fig-mvn-bivariate-3d-widget.qmd >}}
+
+```{r}
+#| label: mvn-bivariate-3d-static
+#| echo: false
+#| eval: !expr isFALSE(knitr::is_html_output())
+#| fig-alt: >-
+#|   Surface plot of a bivariate Gaussian density with mean zero,
+#|   variances 1 and covariance 0.8, over x1 and x2 from -3 to 3.
+#|   The surface is a single bell-shaped peak of height about 0.265
+#|   at the origin, stretched along the line x2 = x1
+#|   and squeezed along the line x2 = -x1.
+# The static view, at the example's parameter values.
+mb_entries <- c(1, 0.8, 0.8, 1)
+mb_covmat <- matrix(mb_entries, nrow = 2)
+mb_inverse <- solve(mb_covmat)
+mb_det <- det(mb_covmat)
+mb_const <- 1 / (2 * pi * sqrt(mb_det))
+mb_x1 <- seq(-3, 3, length.out = 41)
+mb_x2 <- seq(-3, 3, length.out = 41)
+mb_grid <- tidyr::expand_grid(x1 = mb_x1, x2 = mb_x2)
+mb_points <- as.matrix(mb_grid)
+mb_quad <- (mb_points %*% mb_inverse) * mb_points
+mb_sums <- rowSums(mb_quad)
+mb_dens <- mb_const * exp(-mb_sums / 2)
+mb_n_x2 <- length(mb_x2)
+# expand_grid() varies x2 fastest, so each row of mb_z is one x1 value,
+# the layout persp() expects.
+mb_z <- matrix(mb_dens, ncol = mb_n_x2, byrow = TRUE)
+persp(
+  mb_x1, mb_x2, mb_z,
+  theta = 45, phi = 25,
+  col = "#9CC3E4", border = "#0072B2",
+  xlab = "x1", ylab = "x2", zlab = "density",
+  ticktype = "detailed"
+)
+```
+
+The [density](random-variables.qmd#def-pdf) of $\Normal_2\paren{\vzero, \matr{\covmat}}$ in the example, with [variances](variance-covariance.qmd#def-variance) $1$ and [covariance](variance-covariance.qmd#def-cov) $0.8$.
+Its horizontal slices are ellipses stretched along $x_2 = x_1$.
+:::
