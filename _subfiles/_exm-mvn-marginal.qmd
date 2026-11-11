@@ -1,0 +1,24 @@
+:::{#exm-mvn-marginal}
+#### The marginal distribution of the two end elements of a chain of three Gaussian variables
+
+<!-- no-figure: reading off a sub-block of one 3 x 3 matrix; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2, X_3)}$ be the [Gaussian](#def-normal) vector of @exm-precision-zero-cind,
+with $\E{\vX} = \matr{0}$ and
+
+$$
+\Varf{\vX} = \frac{1}{4} \pmat{3 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 3}.
+$$
+
+Take $J = \{1, 3\}$.
+By @thm-mvn-marginal, keeping the entries in positions 1 and 3,
+
+$$
+\tp{(X_1, X_3)} \sim \Normal_2\paren{\matr{0}, \frac{1}{4}\pmat{3 & 1 \\ 1 & 3}}.
+$$
+
+So $X_1$ and $X_3$ each have [variance](variance-covariance.qmd#def-variance) $3/4$ and [covariance](variance-covariance.qmd#def-cov) $1/4$,
+and they are not [independent](independence.qmd#def-indpt),
+although they are [conditionally independent given](independence.qmd#def-cind-continuous) $X_2$.
+
+:::
