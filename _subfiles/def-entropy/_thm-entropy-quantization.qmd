@@ -48,6 +48,7 @@ A bin of probability $0$ has density $0$ throughout,
 because a continuous density is never negative,
 so that bin adds $0$ to this sum too, by the convention $0 \log 0 = 0$ of @thm-entropy-continuous.
 The sum is therefore a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \p(X=x) \log \p(X=x)\, dx$ over the bounded interval,
+with mesh $\Delta$ (the bin grid need not line up with the interval's endpoints, because the integrand is $0$ outside the interval),
 whose [integrand](https://morrison-lab.github.io/mds/calculus-integration.html#def-integrand) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous).
 By @thm-entropy-continuous, the value of that integral is $\entropyf{X}$,
 and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$.
