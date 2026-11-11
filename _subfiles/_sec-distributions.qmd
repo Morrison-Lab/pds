@@ -409,6 +409,18 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_def-partial-correlation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-partial-correlation-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-partial-correlation-precision.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-mahalanobis-eigen.qmd >}}
 
 {{< include pds/_subfiles/_rem-mahalanobis-eigen-notes.qmd >}}
