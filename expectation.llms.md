@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 21:23:10 (PST)
+Last modified: 2026-11-11 00:17:42 (PST)
 
 > **NOTE:**
 >
@@ -2476,7 +2476,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Example 45 (Surprisal of a value of a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from $0$ to $a > 0$, so that its [density](random-variables.llms.md#def-pdf) is $\mathbb{p}(X=x) = 1/a$ for $0 < x < a$. Every value in the interval has [surprisal](#def-surprisal-continuous)
+> **Example 45 (Surprisal of a value of a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) on the interval from $0$ to $a > 0$, so that its [density](random-variables.llms.md#def-pdf) is $\mathbb{p}(X=x) = 1/a$ for $x \in (0, a)$. Every value in the interval has [surprisal](#def-surprisal-continuous)
 >
 > $${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \tfrac{1}{a} = \log a.$$
 >
@@ -2572,6 +2572,130 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
+> **Theorem 17 (Entropy of a discrete random variable is nonnegative)** Let $X$ be a [discrete random variable](random-variables.llms.md#def-discrete-rv). Then
+>
+> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} \ge 0.$$
+
+> **NOTE:**
+>
+> *Proof*. For each value $x$ with $\mathbb{P}(X=x) > 0$, the [probability](probability-basics.llms.md#def-probability) satisfies $\mathbb{P}(X=x) \le 1$, so $\log \mathbb{P}(X=x) \le 0$. Hence the [surprisal](#def-surprisal) ${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$ is nonnegative. The [expectation](#def-expectation) of a nonnegative [random variable](random-variables.llms.md#def-random-variable) is nonnegative, so ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} \ge 0$.
+
+> **NOTE:**
+>
+> **Example 48 (Entropy of a random variable that is not random)** Let $X$ be a [discrete random variable](random-variables.llms.md#def-discrete-rv) that takes one value $x_0$ with [probability](probability-basics.llms.md#def-probability) $1$. By [Theorem 15](#thm-entropy-discrete), the [entropy](#def-entropy) of $X$ is
+>
+> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = -1 \cdot \log 1 = 0.$$
+>
+> The value $0$ is the smallest that [Theorem 17](#thm-entropy-discrete-nonnegative) allows, and the fair coin in [Example 47](#exm-entropy-coin) has a larger entropy.
+
+> **NOTE:**
+>
+> **Theorem 18 (Rescaling changes entropy by the log of the scale)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, and let $a \ne 0$ be a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then
+>
+> $${\mathbb{H}\mathopen{}\left(aX\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} + \log \mathopen{}\left|a\right|\mathclose{}.$$
+>
+> [\[19\]](#ref-cover2006elements), Theorem 8.6.4
+
+> **NOTE:**
+>
+> *Proof*. Let $Y \stackrel{\text{def}}{=}aX$. The [density](random-variables.llms.md#def-pdf) of $Y$ is
+>
+> $$\mathbb{p}(Y=y) = \frac{1}{\mathopen{}\left|a\right|\mathclose{}} {\mathbb{p}\mathopen{}\left(X = \frac{y}{a}\right)\mathclose{}}.$$
+>
+> At the value $y = ax$, the density of $Y$ is therefore $1/\mathopen{}\left|a\right|\mathclose{}$ times the density of $X$ at $x$. That relation holds at every value $x$, so it holds between the [random variables](random-variables.llms.md#def-random-variable). Taking $-\log$ of both sides turns this relation into one between [surprisals](#def-surprisal):
+>
+> $${\mathbb{s}\mathopen{}\left(aX\right)\mathclose{}} = {\mathbb{s}\mathopen{}\left(X\right)\mathclose{}} + \log \mathopen{}\left|a\right|\mathclose{}.$$
+>
+> Hence
+>
+> $$\begin{aligned}
+> {\mathbb{H}\mathopen{}\left(aX\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(aX\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}} + \log \mathopen{}\left|a\right|\mathclose{}\right]\mathclose{}} && \text{(surprisal of } aX \text{)} \\
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} + \log \mathopen{}\left|a\right|\mathclose{} && \text{(linearity of expectation)} \\
+> &= {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} + \log \mathopen{}\left|a\right|\mathclose{}. && \text{(definition of entropy)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 19 (Shifting does not change entropy)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, and let $c$ be a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then
+>
+> $${\mathbb{H}\mathopen{}\left(X + c\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}.$$
+>
+> [\[19\]](#ref-cover2006elements), Theorem 8.6.3
+
+> **NOTE:**
+>
+> *Proof*. Let $Y \stackrel{\text{def}}{=}X + c$. The [density](random-variables.llms.md#def-pdf) of $Y$ is
+>
+> $$\mathbb{p}(Y=y) = \mathbb{p}(X=y-c).$$
+>
+> At the value $y = x + c$, the density of $Y$ therefore matches the density of $X$ at $x$. That relation holds at every value $x$, so it holds between the [random variables](random-variables.llms.md#def-random-variable). So the [surprisal](#def-surprisal) of $X + c$ matches the surprisal of $X$:
+>
+> $${\mathbb{s}\mathopen{}\left(X + c\right)\mathclose{}} = {\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}.$$
+>
+> Hence
+>
+> $$\begin{aligned}
+> {\mathbb{H}\mathopen{}\left(X + c\right)\mathclose{}}
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X + c\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(surprisal of } X + c \text{)} \\
+> &= {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}. && \text{(definition of entropy)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Example 49 (Rescaling and shifting a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) between $0$ and $1$. By [Example 46](#exm-entropy-uniform) with $a = 1$, the [entropy](#def-entropy) of $X$ is ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = \log 1 = 0$.
+>
+> For a number $a > 0$, the [random variable](random-variables.llms.md#def-random-variable) $aX$ is uniformly distributed between $0$ and $a$, so [Example 46](#exm-entropy-uniform) gives ${\mathbb{H}\mathopen{}\left(aX\right)\mathclose{}} = \log a$. That value matches [Theorem 18](#thm-entropy-scaling), which gives ${\mathbb{H}\mathopen{}\left(aX\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} + \log a = 0 + \log a$.
+>
+> For a number $c$, the random variable $X + c$ is uniformly distributed between $c$ and $c + 1$. Its [density](random-variables.llms.md#def-pdf) is $1$ between $c$ and $c + 1$, so by [Theorem 16](#thm-entropy-continuous), its entropy is $-\int_c^{c+1} 1 \cdot \log 1 \, dx = 0 = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, as [Theorem 19](#thm-entropy-shift) states.
+
+> **NOTE:**
+>
+> **Theorem 20 (Entropy of a quantized random variable)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) whose [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) and is $0$ outside a [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval). For a bin width $\Delta > 0$, let $X^\Delta$ be the [discrete random variable](random-variables.llms.md#def-discrete-rv) that equals $i$ when $i\Delta \le X < (i+1)\Delta$. Then
+>
+> $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta \to {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} \quad \text{as } \Delta \to 0.$$
+>
+> [\[19\]](#ref-cover2006elements), Theorem 8.3.1
+
+> **NOTE:**
+>
+> *Proof*. Only [finitely many](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) bins meet the [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval), so ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}}$ is a [finite](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over those bins. Because the [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), in every bin it takes the value $\mathbb{P}(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point $x_i$ of that bin. If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin, any point of the bin takes that value. Otherwise $\mathbb{P}(i\Delta \le X < (i+1)\Delta)/\Delta$ equals $\frac{1}{\Delta}\int_{i\Delta}^{(i+1)\Delta} \mathbb{p}(X=x)\,dx$, the density’s [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over the bin divided by the bin’s width, so the value lies strictly between the [minimum](https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum) and the [maximum](https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum) of the density on the closed bin, so by [continuity](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) the density takes it at a point strictly between the two, which is inside the bin. By the choice of $x_i$, the [probability mass](random-variables.llms.md#def-pmf) of $X^\Delta$ at $i$ is $\mathbb{P}(X^\Delta = i) = \mathbb{p}(X=x_i)\,\Delta$. By [Theorem 15](#thm-entropy-discrete), with each sum over the bins of positive [probability](probability-basics.llms.md#def-probability) (a bin of probability $0$ adds nothing to the [entropy](#def-entropy)),
+>
+> $$\begin{aligned}
+> {\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}}
+> &= -\sum_i \mathbb{p}(X=x_i)\,\Delta \log \mathopen{}\left(\mathbb{p}(X=x_i)\,\Delta\right)\mathclose{} \\
+> &= -\sum_i \Delta\, \mathbb{p}(X=x_i) \log \mathbb{p}(X=x_i) - \sum_i \mathbb{p}(X=x_i)\,\Delta \log \Delta && \text{(log of a product)} \\
+> &= -\sum_i \Delta\, \mathbb{p}(X=x_i) \log \mathbb{p}(X=x_i) - \log \Delta. && \text{(the masses sum to } 1 \text{)}
+> \end{aligned}$$
+>
+> Adding $\log \Delta$ to both sides leaves the first sum. A bin of probability $0$ has density $0$ throughout, because a continuous density is never negative, so that bin adds $0$ to this sum too, by the convention $0 \log 0 = 0$ of [Theorem 16](#thm-entropy-continuous). The sum is therefore a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \mathbb{p}(X=x) \log \mathbb{p}(X=x)\, dx$ over the bounded interval, with mesh $\Delta$ (the bin grid need not line up with where the interval starts and ends, because the density is $0$ outside it), whose [integrand](https://morrison-lab.github.io/mds/calculus-integration.html#def-integrand) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous). By [Theorem 16](#thm-entropy-continuous), the value of that integral is ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$.
+
+> **NOTE:**
+>
+> **Corollary 6 (Entropy of a quantized random variable grows without bound)** In the setting of [Theorem 20](#thm-entropy-quantization), the [entropy](#def-entropy) of the quantized variable tends to $\infty$ as the bin width shrinks:
+>
+> $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} \to \infty \quad \text{as } \Delta \to 0.$$
+
+> **NOTE:**
+>
+> *Proof*. By [Theorem 20](#thm-entropy-quantization), ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta \to {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ as $\Delta \to 0$. Moving $\log \Delta$ to the other side,
+>
+> $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} = \mathopen{}\left({\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta\right)\mathclose{} - \log \Delta.$$
+>
+> The first quantity on the right tends to ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$, not $\pm\infty$: the [density](random-variables.llms.md#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) and $0$ outside a [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval), so $-\mathbb{p}(X=x) \log \mathbb{p}(X=x)$ is continuous there, with the convention $0 \log 0 = 0$, and a [continuous function](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over a bounded interval. Also, $-\log \Delta \to \infty$ as $\Delta \to 0$, so ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} \to \infty$.
+
+> **NOTE:**
+>
+> **Example 50 (Quantizing a uniform random variable)** Let $X$ be [uniformly distributed](random-variables.llms.md#def-uniform) between $0$ and $1$, and let the bin width be $\Delta = 1/n$ for a positive whole number $n$. Then $X^\Delta$ takes each of $n$ values with [probability](probability-basics.llms.md#def-probability) $1/n$, so by [Theorem 15](#thm-entropy-discrete), its [entropy](#def-entropy) is
+>
+> $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log \Delta.$$
+>
+> Hence ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta = 0$, which equals ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = 0$. The [density](random-variables.llms.md#def-pdf) of $X$ jumps at $0$ and $1$, so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and [Theorem 20](#thm-entropy-quantization) does not apply as stated. Its conclusion still holds here, because the density takes one value on every bin. Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$, the entropy is $k$. It tends to $\infty$ as $k$ grows, which agrees with [Corollary 6](#cor-entropy-quantization-diverges).
+
+> **NOTE:**
+>
 > *Remark 11* (Where the discrete formula comes from). Murphy [\[20, Sec. 2.8.1\]](#ref-murphy2012mlpp), p. 56 gives the [discrete](random-variables.llms.md#def-discrete-rv) formula of [Theorem 15](#thm-entropy-discrete) as the definition, and notes that among distributions on $K$ outcomes it is largest, $\log K$, for the uniform distribution.
 
 > **NOTE:**
@@ -2648,7 +2772,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 > &= -\sum_{k=1}^{K} p_k \log q_k.
 > \end{aligned}$$
 >
-> The last line adds the terms with $p_k = 0$, which are $0$ by the convention in [Theorem 17](#thm-cross-entropy-discrete).
+> The last line adds the terms with $p_k = 0$, which are $0$ by the convention in [Theorem 21](#thm-cross-entropy-discrete).
 
 > **NOTE:**
 >
@@ -2670,7 +2794,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Theorem 17 (Cross-entropy of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of outcome $k$. Then the [cross-entropy](#def-cross-entropy) is
+> **Theorem 21 (Cross-entropy of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of outcome $k$. Then the [cross-entropy](#def-cross-entropy) is
 >
 > $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = -\sum_{k=1}^{K} p_k \log q_k.$$
 >
@@ -2692,7 +2816,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Theorem 18 (Cross-entropy of two densities)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) $p$ on its [range](random-variables.llms.md#def-range) $\mathcal{R}(X)$, and let $q$ be a density on $\mathcal{R}(X)$. Then the [cross-entropy](#def-cross-entropy) is
+> **Theorem 22 (Cross-entropy of two densities)** Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) $p$ on its [range](random-variables.llms.md#def-range) $\mathcal{R}(X)$, and let $q$ be a density on $\mathcal{R}(X)$. Then the [cross-entropy](#def-cross-entropy) is
 >
 > $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = -\int_{x \in \mathcal{R}(X)} p(x) \log q(x) \, dx.$$
 >
@@ -2713,7 +2837,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Example 48 (Cross-entropy of two densities on the unit interval)** Let $p(x) = 1$ and $q(x) = 2x$ for $0 < x < 1$ be [densities](random-variables.llms.md#def-pdf). By [Theorem 18](#thm-cross-entropy-continuous), using the natural logarithm,
+> **Example 51 (Cross-entropy of two densities on the unit interval)** Let $p(x) = 1$ and $q(x) = 2x$ for $x \in (0, 1)$ be [densities](random-variables.llms.md#def-pdf). By [Theorem 22](#thm-cross-entropy-continuous), using the natural logarithm,
 >
 > $$\begin{aligned}
 > {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
@@ -2771,7 +2895,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Corollary 6 (Entropy is the cross-entropy of a distribution with itself)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$. Then
+> **Corollary 7 (Entropy is the cross-entropy of a distribution with itself)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$. Then
 >
 > $${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}.$$
 
@@ -2781,7 +2905,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 6](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 7](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -2793,7 +2917,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Theorem 19 (KL divergence is cross-entropy minus entropy)** For $X$, $p$ and $q$ as in [Definition 25](#def-cross-entropy), suppose the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ and the [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then the [KL divergence](#def-kl-divergence) is
+> **Theorem 23 (KL divergence is cross-entropy minus entropy)** For $X$, $p$ and $q$ as in [Definition 25](#def-cross-entropy), suppose the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ and the [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then the [KL divergence](#def-kl-divergence) is
 >
 > $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}.$$
 >
@@ -2801,7 +2925,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> *Proof*. By the definition of [cross-entropy](#def-cross-entropy), ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}$. By [Corollary 6](#cor-cross-entropy-entropy), ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}$. By assumption, both of these [expectations](#def-expectation) exist, so [linearity of expectation](expectation.llms.md#thm-linearity-expectation) applies:
+> *Proof*. By the definition of [cross-entropy](#def-cross-entropy), ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}$. By [Corollary 7](#cor-cross-entropy-entropy), ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}$. By assumption, both of these [expectations](#def-expectation) exist, so [linearity of expectation](expectation.llms.md#thm-linearity-expectation) applies:
 >
 > $$\begin{aligned}
 > {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}}
@@ -2812,7 +2936,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Theorem 20 (KL divergence of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of [outcome](#def-outcome) $k$, and suppose $q_k > 0$ whenever $p_k > 0$. Then the [KL divergence](#def-kl-divergence) is
+> **Theorem 24 (KL divergence of two mass functions)** Let $p$ and $q$ be [probability mass functions](random-variables.llms.md#def-pmf) on ${\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}}$, with $p_k$ and $q_k$ the probabilities of [outcome](#def-outcome) $k$, and suppose $q_k > 0$ whenever $p_k > 0$. Then the [KL divergence](#def-kl-divergence) is
 >
 > $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = \sum_{k=1}^{K} p_k \log \frac{p_k}{q_k}.$$
 >
@@ -2833,7 +2957,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Theorem 21 (Gibbs’ inequality: the divergence is nonnegative)** For $p$ and $q$ as in [Theorem 20](#thm-kl-divergence-discrete), the [KL divergence](#def-kl-divergence) satisfies
+> **Theorem 25 (Gibbs’ inequality: the divergence is nonnegative)** For $p$ and $q$ as in [Theorem 24](#thm-kl-divergence-discrete), the [KL divergence](#def-kl-divergence) satisfies
 >
 > $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \ge 0,$$
 >
@@ -2841,7 +2965,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> *Proof*. Every [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) below runs over the $k$ with $p_k > 0$. By [Theorem 20](#thm-kl-divergence-discrete), ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = \sum_k p_k \log \frac{p_k}{q_k}
+> *Proof*. Every [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) below runs over the $k$ with $p_k > 0$. By [Theorem 24](#thm-kl-divergence-discrete), ${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = \sum_k p_k \log \frac{p_k}{q_k}
 > = -\sum_k p_k \log \frac{q_k}{p_k}$.
 >
 > By [the bound on the logarithm](https://morrison-lab.github.io/mds/optimization-convexity.html#cor-log-below-tangent), $\log t \le t - 1$ for every $t > 0$, with equality exactly when $t = 1$. Take $t = q_k / p_k$, and multiply by $p_k > 0$:
@@ -2867,7 +2991,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 
 > **NOTE:**
 >
-> **Example 49 (Cross-entropy and divergence for two coins)**  
+> **Example 52 (Cross-entropy and divergence for two coins)**  
 >
 > Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome. Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 >
@@ -2881,7 +3005,7 @@ Last modified: 2026-11-10 21:23:10 (PST)
 > {{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} &= {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = 1 - \tfrac{1}{2} \log_2 3 \approx 0.208.
 > \end{aligned}$$
 >
-> Here the cross-entropy is larger than the entropy of $p$, and by [Theorem 19](#thm-kl-divergence-cross-entropy) the divergence is the difference. It is positive, as [Theorem 21](#thm-kl-divergence-nonnegative) requires for $p \ne q$.
+> Here the cross-entropy is larger than the entropy of $p$, and by [Theorem 23](#thm-kl-divergence-cross-entropy) the divergence is the difference. It is positive, as [Theorem 25](#thm-kl-divergence-nonnegative) requires for $p \ne q$.
 
 > **NOTE:**
 >

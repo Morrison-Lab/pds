@@ -154,6 +154,26 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer"
   },
   {
+   "id": "mds/algebra-basics#def-maximum",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-maximum",
+   "kind": "def",
+   "title": "maximum",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum"
+  },
+  {
+   "id": "mds/algebra-basics#def-minimum",
+   "site": "mds",
+   "page": "algebra-basics",
+   "div": "def-minimum",
+   "kind": "def",
+   "title": "minimum",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum"
+  },
+  {
    "id": "mds/algebra-basics#def-power-integer",
    "site": "mds",
    "page": "algebra-basics",
@@ -174,6 +194,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root"
   },
   {
+   "id": "mds/algebra-exponentials#def-constant-function",
+   "site": "mds",
+   "page": "algebra-exponentials",
+   "div": "def-constant-function",
+   "kind": "def",
+   "title": "constant function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function"
+  },
+  {
    "id": "mds/algebra-exponentials#def-infinite-sum",
    "site": "mds",
    "page": "algebra-exponentials",
@@ -192,6 +222,16 @@
    "title": "logarithm",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
+  },
+  {
+   "id": "mds/algebra-sums#def-bounded",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-bounded",
+   "kind": "def",
+   "title": "bounded",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded"
   },
   {
    "id": "mds/algebra-sums#def-convex-function",
@@ -284,6 +324,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous"
   },
   {
+   "id": "mds/calculus-integration#def-integrand",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-integrand",
+   "kind": "def",
+   "title": "integrand",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-integrand"
+  },
+  {
    "id": "mds/calculus-integration#def-riemann-integral",
    "site": "mds",
    "page": "calculus-integration",
@@ -292,6 +342,26 @@
    "title": "riemann integral",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral"
+  },
+  {
+   "id": "mds/calculus-integration#def-riemann-sum",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-riemann-sum",
+   "kind": "def",
+   "title": "riemann sum",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum"
+  },
+  {
+   "id": "mds/calculus-integration#thm-riemann-general",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "thm-riemann-general",
+   "kind": "thm",
+   "title": "riemann general",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general"
   },
   {
    "id": "mds/calculus-taylor-series#def-taylor-series",
@@ -1164,6 +1234,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#cor-entropy-quantization-diverges",
+   "site": "pds",
+   "page": "expectation",
+   "div": "cor-entropy-quantization-diverges",
+   "kind": "cor",
+   "title": "Entropy of a quantized random variable grows without bound",
+   "external": false
+  },
+  {
    "id": "pds/expectation#cor-fubini-joint",
    "site": "pds",
    "page": "expectation",
@@ -1548,6 +1627,42 @@
    "div": "thm-entropy-discrete",
    "kind": "thm",
    "title": "Entropy of a discrete random variable",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-entropy-discrete-nonnegative",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-entropy-discrete-nonnegative",
+   "kind": "thm",
+   "title": "Entropy of a discrete random variable is nonnegative",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-entropy-quantization",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-entropy-quantization",
+   "kind": "thm",
+   "title": "Entropy of a quantized random variable",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-entropy-scaling",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-entropy-scaling",
+   "kind": "thm",
+   "title": "Rescaling changes entropy by the log of the scale",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#thm-entropy-shift",
+   "site": "pds",
+   "page": "expectation",
+   "div": "thm-entropy-shift",
+   "kind": "thm",
+   "title": "Shifting does not change entropy",
    "external": false
   },
   {
@@ -3797,6 +3912,30 @@
    "pds/random-variables#def-random-variable"
   ],
   [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "mds/algebra-sums#def-bounded"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "pds/expectation#thm-entropy-quantization"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "pds/random-variables#def-pdf"
+  ],
+  [
    "pds/expectation#cor-fubini-joint",
    "pds/expectation#def-cond-mixed"
   ],
@@ -4295,6 +4434,146 @@
   [
    "pds/expectation#thm-entropy-discrete",
    "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete-nonnegative",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete-nonnegative",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete-nonnegative",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete-nonnegative",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-discrete-nonnegative",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-basics#def-maximum"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-basics#def-minimum"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-exponentials#def-constant-function"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-sums#def-bounded"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-sums#def-summation"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/calculus-integration#def-integrand"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/calculus-integration#def-riemann-sum"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/calculus-integration#thm-riemann-general"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/expectation#thm-entropy-continuous"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/expectation#thm-entropy-discrete"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#thm-entropy-scaling",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#thm-entropy-scaling",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#thm-entropy-scaling",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#thm-entropy-scaling",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-scaling",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-entropy-scaling",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-entropy-shift",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#thm-fubini-tonelli-measure",
