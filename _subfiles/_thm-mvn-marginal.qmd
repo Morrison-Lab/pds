@@ -11,7 +11,7 @@ and $\matr{\covmat}_{JJ}$ holds the [rows](https://morrison-lab.github.io/mds/li
 
 ::: proof
 
-Reordering the elements of $\vX$ reorders the rows and columns of $\matr{\covmat}$ in the same way,
+Reordering the elements of $\vX$ reorders the [rows](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) and [columns](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) of $\matr{\covmat}$ in the same way,
 so we may take $\vX_J$ to be the first $k$ elements.
 Cut $\vX$, $\vecf{\mean}$ and $\matr{\covmat}$ into [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) as in @thm-mvn-conditional,
 with $\vX_1 = \vX_J$ and $m = p - k$ elements in $\vX_2$,
