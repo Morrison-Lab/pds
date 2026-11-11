@@ -1,0 +1,19 @@
+:::{#thm-vcov-zero-indpt}
+#### A zero off-diagonal element of the variance matrix means independence
+
+Let $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$ with $p \ge 2$,
+and let $i \ne j$.
+The $(i, j)$ element of $\matr{\covmat}$ is zero
+[if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) $X_i$ and $X_j$ are [independent](independence.qmd#def-indpt).
+
+:::
+
+::: proof
+
+By @thm-mvn-marginal, $\tp{(X_i, X_j)}$ has a bivariate [Gaussian distribution](#def-normal),
+whose [variance matrix](variance-covariance.qmd#def-cov-vec-x) has off-diagonal element $\Covs{X_i}{X_j}$,
+which by [the elements of the variance matrix](variance-covariance.qmd#thm-vcov-elements) is the $(i, j)$ element of $\matr{\covmat}$.
+By @cor-mvn-uncorrelated-indpt with $p = 2$,
+$X_i$ and $X_j$ are [independent](independence.qmd#def-indpt) [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) this element is zero.
+
+:::

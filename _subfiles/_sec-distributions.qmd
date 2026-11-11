@@ -417,6 +417,14 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-vcov-zero-indpt.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-vcov-zero-indpt.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-partial-correlation.qmd >}}
 
 {{< slidebreak >}}
