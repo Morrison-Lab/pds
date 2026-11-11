@@ -1,0 +1,29 @@
+:::{#thm-mixture-posterior}
+#### Which component did an observation come from?
+
+Under the conditions of @thm-mixture-two-stage,
+for each $x$ with ${\p_{\text{mix}}}(x) > 0$:
+
+$$
+\P(C = c \mid X = x) = \frac{w_c \, {\p_c}(x)}{\sumto{k}{K} w_k \, {\p_k}(x)}
+$$
+
+:::
+
+::: proof
+
+By @thm-mixture-two-stage, ${\p_{\text{mix}}}$ is a density of $X$.
+By the [definition of the conditional PMF](expectation.qmd#def-cond-mixed)
+(the case $X$ continuous, $C$ discrete):
+
+$$
+\ba
+\P(C = c \mid X = x)
+&= \frac{\p(C = c,\, X = x)}{\p(X = x)}
+&& \text{(definition of the conditional PMF)} \\
+&= \frac{w_c \, {\p_c}(x)}{\sumto{k}{K} w_k \, {\p_k}(x)}
+&& \text{(substitute the joint density-mass function and } {\p_{\text{mix}}} \text{)}
+\ea
+$$
+
+:::

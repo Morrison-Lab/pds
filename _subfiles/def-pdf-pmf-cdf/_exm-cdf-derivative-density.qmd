@@ -1,0 +1,13 @@
+:::{#exm-cdf-derivative-density}
+#### A density from a CDF with a corner
+
+Let $X$ have CDF $\cdff{t} = 0$ for $t < 0$, $\cdff{t} = t^2$ for $0 \le t \le 1$,
+and $\cdff{t} = 1$ for $t > 1$.
+This $\cdf$ is continuous everywhere,
+and has a continuous derivative everywhere except $t = 1$,
+where its slope drops from 2 to 0.
+By @thm-cdf-derivative-density, $X$ is continuous with density
+$f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise.
+As a check, $\int_0^1 2t\,dt = 1$.
+
+:::

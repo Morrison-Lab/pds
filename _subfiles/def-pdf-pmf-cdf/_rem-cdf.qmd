@@ -1,0 +1,5 @@
+::: {.remark .notes}
+
+The CDF is always defined, whether $X$ is discrete or continuous.
+
+:::

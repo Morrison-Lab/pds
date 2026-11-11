@@ -1,0 +1,16 @@
+::: {.remark .notes}
+
+The proof is beyond these notes' scope:
+it needs measure theory that the notes do not develop,
+to extend a density's integrals from intervals to general sets
+and to exchange the order of integration
+[@CaseBerg01; @billingsley1995probability].
+The continuous case extends to $n$ random variables
+with a joint density of all $n$.
+The statement says "a joint density" rather than "the joint density"
+because a density is not unique:
+changing it on a set of zero area
+(zero length, in the mixed case)
+changes none of its integrals.
+
+:::

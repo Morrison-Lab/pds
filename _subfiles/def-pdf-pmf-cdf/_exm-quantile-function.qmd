@@ -1,0 +1,7 @@
+:::{#exm-quantile-function}
+#### Median of the number of heads
+
+From @exm-cdf, $\cdff{t} \ge 0.5$ first holds at $t = 1$,
+so the median of the number of heads is $\quantilef{0.5} = 1$.
+
+:::

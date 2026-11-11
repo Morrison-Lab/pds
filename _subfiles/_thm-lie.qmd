@@ -14,7 +14,7 @@ $$\E{Y} = \E{\E{Y \mid X}}$$
 **Discrete case.**
 When $X$ and $Y$ are discrete,
 applying @def-expectation to $\E{\E{Y \mid X}}$
-and then the [law of total probability](probability-basics.qmd#thm-total-prob)
+and then the [law of total probability](probability-basics.qmd#thm-total-prob-conditional)
 applied to the countable partition $\{X = x : x \in \rangef{X}\}$:
 
 $$

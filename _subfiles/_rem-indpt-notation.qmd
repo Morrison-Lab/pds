@@ -1,0 +1,7 @@
+::: {.remark .notes}
+
+We write $X \ind Y$ for "$X$ and $Y$ are independent".
+The symbol $\ind$ is essentially $\prod$ upside-down,
+which can remind you of the definition.
+
+:::

@@ -1,0 +1,12 @@
+:::{#def-pmf}
+#### Probability mass function (PMF)
+
+If $X$ is a [discrete random variable](#def-discrete-rv),
+the **probability mass function** of $X$ at value $x$,
+denoted $f(x)$, $f_X(x)$, $\P(x)$, $\P_X(x)$, or $\P(X=x)$,
+is the probability that $X$ takes exactly the value $x$
+[@wikipedia_probability_mass_function]:
+
+$$\P(X=x) \eqdef \Pr(\{X=x\})$$
+
+:::

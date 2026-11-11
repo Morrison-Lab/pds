@@ -1,0 +1,10 @@
+::: {.remark .notes}
+
+The proof needs measure theory beyond these notes:
+the sets $A_1 \times \cdots \times A_n$ form a
+[$\pi$-system](https://en.wikipedia.org/wiki/Pi-system),
+and two probability measures that agree on a $\pi$-system
+agree on the $\sigma$-algebra it generates
+[@billingsley1995probability].
+
+:::

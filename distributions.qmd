@@ -26,7 +26,53 @@ format:
 
 {{< include pds/_subfiles/_exm-normal-density-max.qmd >}}
 
-{{< include pds/_subfiles/_sec-distributions-2.qmd >}}
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-normal-affine.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-normal-affine.qmd >}}
+
+{{< slidebreak >}}
+
+# Mixture distributions {#sec-mixture}
+
+{{< include pds/_subfiles/_def-mixture.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-mixture-component.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-mixture-two-stage.qmd >}}
+
+{{< include pds/_subfiles/_rem-mixture-two-stage.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-mixture-mean.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-mixture-posterior.qmd >}}
+
+{{< include pds/_subfiles/_rem-mixture-posterior.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-responsibility.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-mixture-gaussian.qmd >}}
+
+{{< include pds/_subfiles/_rem-mixture-gaussian.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-nb-mixture.qmd >}}
 
 {{< slidebreak >}}
 

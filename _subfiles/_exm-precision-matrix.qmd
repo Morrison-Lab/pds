@@ -1,0 +1,28 @@
+:::{#exm-precision-matrix}
+#### The precision matrix of a bivariate Gaussian vector
+
+<!-- no-figure: a single 2 x 2 matrix and its inverse; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2)} \sim \Normal_2\paren{\matr{0}, \pmat{1 & \rho \\ \rho & 1}}$
+with $\abs{\rho} < 1$.
+By @exm-conditional-precision and @exm-coprecision, the [conditional precision](#def-conditional-precision) of each element is $1 / (1 - \rho^2)$,
+and the [coprecision](#def-coprecision) of $X_1$ and $X_2$ is $-\rho / (1 - \rho^2)$,
+so
+
+$$
+\precision(\vX) = \frac{1}{1 - \rho^2} \pmat{1 & -\rho \\ -\rho & 1}.
+$$
+
+This [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) is the [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of $\pmat{1 & \rho \\ \rho & 1}$,
+as [the precision matrix is the inverse of the variance matrix](#thm-precision-matrix-inverse) says,
+because
+
+$$
+\ba
+\pmat{1 & \rho \\ \rho & 1} \cdot \frac{1}{1 - \rho^2} \pmat{1 & -\rho \\ -\rho & 1}
+&= \frac{1}{1 - \rho^2} \pmat{1 - \rho^2 & -\rho + \rho \\ \rho - \rho & -\rho^2 + 1} \\
+&= \matr{I}_2.
+\ea
+$$
+
+:::

@@ -1,0 +1,7 @@
+::: {.remark .notes}
+
+The restriction to $p \in (0, 1)$ keeps $\quantilef{p}$ finite:
+for $p = 1$, the set $\set{t : \cdff{t} \ge 1}$ is empty whenever $\cdff{t} < 1$ for every $t$,
+as for a [normal distribution](#def-normal), and the infimum of the empty set is $+\infty$.
+
+:::

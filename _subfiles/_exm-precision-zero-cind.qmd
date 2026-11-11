@@ -1,0 +1,24 @@
+:::{#exm-precision-zero-cind}
+#### A chain of three Gaussian variables
+
+<!-- no-figure: one 3 x 3 matrix and its inverse; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2, X_3)}$ have $\E{\vX} = \matr{0}$ and [precision matrix](#def-precision-matrix)
+
+$$
+\precision(\vX) = \pmat{2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2}.
+$$
+
+By @thm-precision-matrix-inverse, the [variance matrix](variance-covariance.qmd#def-cov-vec-x) is the [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of this [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix),
+
+$$
+\Varf{\vX} = \frac{1}{4} \pmat{3 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 3},
+$$
+
+which one can check by multiplying the two matrices to get $\matr{I}_3$.
+So $\Covs{X_1}{X_3} = 1/4 \ne 0$, and $X_1$ and $X_3$ are not [independent](independence.qmd#def-indpt).
+But the $(1, 3)$ element of the precision matrix is 0,
+so by @thm-precision-zero-cind, $X_1$ and $X_3$ are [conditionally independent given](independence.qmd#def-cind-continuous) $X_2$:
+once $X_2$ is known, $X_1$ carries no further information about $X_3$.
+
+:::

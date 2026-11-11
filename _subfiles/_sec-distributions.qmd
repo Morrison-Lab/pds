@@ -8,13 +8,13 @@
 
 {{< slidebreak >}}
 
-## The Bernoulli distribution {#sec-bern-dist}
+# The Bernoulli distribution {#sec-bern-dist}
 
 {{< include pds/_subfiles/_exm-bernoulli.qmd >}}
 
 {{< slidebreak >}}
 
-## The binomial distribution {#sec-binomial-dist}
+# The binomial distribution {#sec-binomial-dist}
 
 {{< include pds/_subfiles/_def-binomial.qmd >}}
 
@@ -44,7 +44,7 @@
 
 {{< slidebreak >}}
 
-## The Poisson distribution {#sec-poisson-dist}
+# The Poisson distribution {#sec-poisson-dist}
 
 {{< include pds/_subfiles/_def-poisson.qmd >}}
 
@@ -215,7 +215,7 @@ print(plot2)
 
 {{< slidebreak >}}
 
-## The Negative-Binomial distribution {#sec-nb-dist}
+# The Negative-Binomial distribution {#sec-nb-dist}
 
 {{< include pds/_subfiles/_def-nb.qmd >}}
 
@@ -233,7 +233,7 @@ print(plot2)
 
 {{< slidebreak >}}
 
-## The Laplace distribution {#sec-laplace}
+# The Laplace distribution {#sec-laplace}
 
 {{< include pds/_subfiles/_def-laplace.qmd >}}
 
@@ -251,7 +251,7 @@ print(plot2)
 
 {{< slidebreak >}}
 
-## The gamma distribution {#sec-gamma-dist}
+# The gamma distribution {#sec-gamma-dist}
 
 {{< include pds/_subfiles/_def-gamma-function.qmd >}}
 
@@ -281,7 +281,7 @@ print(plot2)
 
 {{< slidebreak >}}
 
-## Weibull distribution {#sec-weibull}
+# Weibull distribution {#sec-weibull}
 
 {{< include pds/_subfiles/_def-weibull.qmd >}}
 
@@ -311,7 +311,7 @@ print(plot2)
 
 {{< slidebreak >}}
 
-## The multivariate normal distribution {#sec-mvn}
+# The multivariate normal distribution {#sec-mvn}
 
 {{< include pds/_subfiles/_def-mvn.qmd >}}
 
@@ -362,6 +362,50 @@ print(plot2)
 {{< include pds/_subfiles/_cor-mvn-uncorrelated-indpt.qmd >}}
 
 {{< include pds/_subfiles/_rem-mvn-uncorrelated-notes.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-mvn-conditional.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-mvn-conditional.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-conditional-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-conditional-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-coprecision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-coprecision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_def-precision-matrix.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-precision-matrix-inverse.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-precision-matrix.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-precision-zero-cind.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-precision-zero-cind.qmd >}}
 
 {{< slidebreak >}}
 

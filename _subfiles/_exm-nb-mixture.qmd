@@ -1,0 +1,12 @@
+:::{#exm-nb-mixture}
+#### The negative binomial as a continuous mixture
+
+The [negative binomial distribution](#def-nb)
+is a mixture of Poisson distributions
+with a continuum of components, one for each mean $\rate > 0$:
+its PMF is $\P(Y = y) = \int_0^\infty g(\rate)\,\frac{\rate^y e^{-\rate}}{y!}\,d\rate$,
+where the gamma density $g$ plays the role of the mixing weights
+and the integral replaces the sum in @def-mixture
+(see the proof of @thm-nb).
+
+:::

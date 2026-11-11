@@ -1,0 +1,13 @@
+:::{#exm-density-sums-to-one}
+#### The uniform density integrates to 1
+
+For $X \sim \text{Uniform}(0, 1)$ (@def-uniform),
+
+$$
+\begin{aligned}
+\int_{-\infty}^{\infty} f(x)\,dx &= \int_0^1 1\,dx \\
+&= 1.
+\end{aligned}
+$$
+
+:::
