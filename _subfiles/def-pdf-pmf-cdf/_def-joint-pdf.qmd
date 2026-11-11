@@ -1,0 +1,14 @@
+:::{#def-joint-pdf}
+#### Joint probability density function (joint density)
+
+For [jointly distributed](#def-jointly-distributed) continuous random variables $X$ and $Y$,
+a **joint probability density function** (**joint density**) of $X$ and $Y$,
+denoted $f_{X,Y}(x, y)$ or $\p(X = x,\, Y = y)$,
+is a function $f_{X,Y}$ on $\reals^2$ that satisfies:
+
+- $f_{X,Y}(x, y) \ge 0$ for every $(x, y)$.
+- The integral of $f_{X,Y}$ over any region $A \subseteq \reals^2$
+  is the probability that the pair $(X, Y)$ falls in $A$:
+  $$\Pr((X, Y) \in A) = \iint_A f_{X,Y}(x, y)\,dx\,dy$$
+
+:::

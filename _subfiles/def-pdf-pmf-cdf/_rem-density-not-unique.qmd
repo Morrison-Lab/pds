@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+So the value of a density at a single point carries no probability by itself.
+These notes use the version that is continuous wherever possible.
+
+:::

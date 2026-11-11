@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+A density is not a probability: it can exceed 1,
+as the second density in @exm-normal does.
+
+:::

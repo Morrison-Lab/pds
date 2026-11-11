@@ -1,0 +1,14 @@
+:::{#def-joint-density-mass}
+#### Joint density-mass function
+
+Let $X$ be a discrete random variable and $Y$ a continuous random variable,
+[jointly distributed](#def-jointly-distributed).
+A **joint density-mass function** of $X$ and $Y$,
+denoted $\p(X = x,\, Y = y)$,
+is a function $\p(X = x,\, Y = y) \ge 0$
+that is a probability mass in $x$ and a probability density in $y$:
+for every $x$ and every set $B \subseteq \reals$,
+
+$$\Pr(X = x,\, Y \in B) = \int_{B} \p(X = x,\, Y = y)\,dy$$
+
+:::

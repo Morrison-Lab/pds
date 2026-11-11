@@ -1,0 +1,15 @@
+:::{#def-exponential}
+#### Exponential distribution
+
+A random variable $T$ has the **exponential distribution** with rate $\rate > 0$
+[@wikipedia_exponential_distribution]
+if $T$ is continuous with [density](#def-pdf):
+
+$$
+f(t) \eqdef \begin{cases}
+\rate \ef{-\rate t}, & t \ge 0 \\
+0, & t < 0
+\end{cases}
+$$
+
+:::

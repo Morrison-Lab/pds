@@ -1,0 +1,13 @@
+:::{#exm-joint-pmf}
+#### Joint PMF of the first flip and the total
+
+Continuing @exm-jointly-distributed,
+each outcome of the two flips fixes both $X_1$ and $X$,
+so the joint PMF puts probability $1/4$ on each outcome's pair of values:
+
+| | $X = 0$ | $X = 1$ | $X = 2$ |
+|:---:|:---:|:---:|:---:|
+| $X_1 = 0$ | $1/4$ ($TT$) | $1/4$ ($TH$) | $0$ |
+| $X_1 = 1$ | $0$ | $1/4$ ($HT$) | $1/4$ ($HH$) |
+
+:::
