@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 16:59:58 (PST)
+Last modified: 2026-11-10 17:14:53 (PST)
 
 > **NOTE:**
 >
@@ -1133,6 +1133,74 @@ print(plot2)
 
 > **NOTE:**
 >
+> **Example 18 (A bivariate Gaussian density)** Let $p = 2$, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$, and $\mathbf{\Sigma} = \begin{pmatrix}1 & 0.8 \\ 0.8 & 1\end{pmatrix}$. Then $\det(\mathbf{\Sigma}) = 1 - 0.8^2 = 0.36$, so the [density](random-variables.llms.md#def-pdf) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\sim \operatorname{N}_2\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}$ ([multivariate Gaussian](#def-mvn)) at the [mean](expectation.llms.md#def-expectation), which is also its peak, is:
+>
+> $$\begin{aligned}
+> {\mathbb{p}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}\right)\mathclose{}}
+> &= \frac{1}{2\pi \cdot 0.36^{1/2}}
+> \text{e}^{0}
+> && \text{(substitute into the multivariate normal density)} \\
+> &= \frac{1}{0.6 \cdot 2\pi}
+> && \text{(simplify)}
+> \end{aligned}$$
+>
+> which is about 0.265. The density is a bell-shaped surface over the $(x_1, x_2)$ plane ([Figure 5](#fig-mvn-bivariate-3d)). Because $\mathbf{\Sigma}_{12} = 0.8 > 0$, the surface is stretched along the line $x_2 = x_1$.
+>
+> > **NOTE:**
+> >
+> > Show code
+> >
+> > ``` r
+> > mb_entries <- c(1, 0.8, 0.8, 1)
+> > mb_covmat <- matrix(mb_entries, nrow = 2)
+> > mb_inverse <- solve(mb_covmat)
+> > mb_det <- det(mb_covmat)
+> > mb_const <- 1 / (2 * pi * sqrt(mb_det))
+> > mb_x1 <- seq(-3, 3, length.out = 101)
+> > mb_x2 <- seq(-3, 3, length.out = 101)
+> > mb_grid <- tidyr::expand_grid(x1 = mb_x1, x2 = mb_x2)
+> > mb_points <- as.matrix(mb_grid)
+> > mb_quad <- (mb_points %*% mb_inverse) * mb_points
+> > mb_sums <- rowSums(mb_quad)
+> > mb_dens <- mb_const * exp(-mb_sums / 2)
+> > mb_n_x2 <- length(mb_x2)
+> > mb_z <- matrix(mb_dens, nrow = mb_n_x2)
+> >
+> > mb_stops <- c(0, 1)
+> > mb_cols <- c("#CCE0F0", "#0072B2")
+> > mb_scale <- list(mb_stops, mb_cols)
+> > mb_eye <- list(x = 1.6, y = -1.6, z = 0.9)
+> > mb_camera <- list(eye = mb_eye)
+> > mb_xaxis <- list(title = "x1")
+> > mb_yaxis <- list(title = "x2")
+> > mb_zaxis <- list(title = "density")
+> > mb_scene <- list(
+> >   xaxis = mb_xaxis,
+> >   yaxis = mb_yaxis,
+> >   zaxis = mb_zaxis,
+> >   camera = mb_camera
+> > )
+> > mb_widget <- plotly::plot_ly() |>
+> >   plotly::add_surface(
+> >     x = mb_x1,
+> >     y = mb_x2,
+> >     z = mb_z,
+> >     colorscale = mb_scale,
+> >     showscale = FALSE,
+> >     opacity = 0.9
+> >   ) |>
+> >   plotly::layout(scene = mb_scene)
+> > htmltools::div(
+> >   role = "img",
+> >   `aria-label` = fig_alt_mvn_biv,
+> >   mb_widget
+> > )
+> > ```
+> >
+> > Figure 5: The [density](random-variables.llms.md#def-pdf) of $\operatorname{N}_2\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}$ in the example, with [variances](variance-covariance.llms.md#def-variance) $1$ and [covariance](variance-covariance.llms.md#def-cov) $0.8$. Its horizontal slices are ellipses stretched along $x_2 = x_1$.
+
+> **NOTE:**
+>
 > *Remark*. A joint density of $p$ random variables is the $p$-variable analogue of a [joint density](random-variables.llms.md#def-joint-pdf) of two: a non-negative function on $\mathbb{R}^p$ whose integral over any region $A \subseteq \mathbb{R}^p$ is $\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\in A)$.
 >
 > The density is well defined because $\mathbf{\Sigma}$ is positive definite:
@@ -1154,7 +1222,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 18 (The univariate normal is the case** $p = 1$) With $p = 1$, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = (\mu)$, and $\mathbf{\Sigma} = (\sigma^2)$ for $\sigma^2> 0$, $\det(\mathbf{\Sigma}) = \sigma^2$ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$) and $\mathbf{\Sigma}^{-1} = (1/\sigma^2)$, so:
+> **Example 19 (The univariate normal is the case** $p = 1$) With $p = 1$, $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = (\mu)$, and $\mathbf{\Sigma} = (\sigma^2)$ for $\sigma^2> 0$, $\det(\mathbf{\Sigma}) = \sigma^2$ ([determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant), $p = 1$) and $\mathbf{\Sigma}^{-1} = (1/\sigma^2)$, so:
 >
 > $$\begin{aligned}
 > \mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
@@ -1203,7 +1271,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 19 (Mahalanobis distance for diagonal variance matrices)** If $\mathbf{\Sigma}$ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements $\sigma^2_1, \ldots, \sigma^2_p$, all positive, then $\mathbf{\Sigma}^{-1}$ is diagonal with diagonal elements $1/\sigma^2_1, \ldots, 1/\sigma^2_p$ (multiplying the two gives $\mathbf{I}_p$; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
+> **Example 20 (Mahalanobis distance for diagonal variance matrices)** If $\mathbf{\Sigma}$ is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) with diagonal elements $\sigma^2_1, \ldots, \sigma^2_p$, all positive, then $\mathbf{\Sigma}^{-1}$ is diagonal with diagonal elements $1/\sigma^2_1, \ldots, 1/\sigma^2_p$ (multiplying the two gives $\mathbf{I}_p$; [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)), so:
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \sum_{i=1}^p\frac{(x_i - \mu_i)^2}{\sigma^2_i}$$
 >
@@ -1224,7 +1292,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), $\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i$, so $\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i$. Using [Example 19](#exm-mahalanobis-special) for the quadratic form:
+> *Proof*. By the [determinant of a diagonal matrix](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#thm-det-diagonal), $\det(\mathbf{\Sigma}) = \prod_{i=1}^p \sigma^2_i$, so $\det(\mathbf{\Sigma})^{1/2} = \prod_{i=1}^p \sigma_i$. Using [Example 20](#exm-mahalanobis-special) for the quadratic form:
 >
 > $$\begin{aligned}
 > \mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})
@@ -1316,7 +1384,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 20 (The conditional distribution of one element of a bivariate Gaussian vector)**  
+> **Example 21 (The conditional distribution of one element of a bivariate Gaussian vector)**  
 >
 > Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. Here $\mathbf{\Sigma}_{11} = [1]$, $\mathbf{\Sigma}_{21} = [\rho]$ and $\mathbf{\Sigma}_{22} = [1]$, so $\mathbf{S} = [1 - \rho^2]$. By [Theorem 19](#thm-mvn-conditional):
 >
@@ -1333,9 +1401,9 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 21 (The conditional precision of one element of a bivariate Gaussian vector)**  
+> **Example 22 (The conditional precision of one element of a bivariate Gaussian vector)**  
 >
-> Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. By [Example 20](#exm-mvn-conditional), $X_1$ given $X_2 = x_2$ has [variance](variance-covariance.llms.md#def-variance) $1 - \rho^2$, so the [conditional precision](#def-conditional-precision) of $X_1$ given $X_2 = x_2$ is
+> Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. By [Example 21](#exm-mvn-conditional), $X_1$ given $X_2 = x_2$ has [variance](variance-covariance.llms.md#def-variance) $1 - \rho^2$, so the [conditional precision](#def-conditional-precision) of $X_1$ given $X_2 = x_2$ is
 >
 > $$\frac{1}{1 - \rho^2}.$$
 
@@ -1349,7 +1417,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 22 (The coprecision of a bivariate Gaussian vector)**  
+> **Example 23 (The coprecision of a bivariate Gaussian vector)**  
 >
 > Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. With no other elements to condition on, the [conditional variances](variance-covariance.llms.md#def-cond-variance) of $X_1$ and $X_2$ are both 1 and their [conditional covariance](variance-covariance.llms.md#def-cond-cov) is $\rho$, so the [coprecision](#def-coprecision) of $X_1$ and $X_2$ is
 >
@@ -1384,9 +1452,9 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 23 (The precision matrix of a bivariate Gaussian vector)**  
+> **Example 24 (The precision matrix of a bivariate Gaussian vector)**  
 >
-> Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. By [Example 21](#exm-conditional-precision) and [Example 22](#exm-coprecision), the [conditional precision](#def-conditional-precision) of each element is $1 / (1 - \rho^2)$, and the [coprecision](#def-coprecision) of $X_1$ and $X_2$ is $-\rho / (1 - \rho^2)$, so
+> Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top} \sim \operatorname{N}_2\mathopen{}\left(\mathbf{0}, \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix}\right)\mathclose{}$ with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. By [Example 22](#exm-conditional-precision) and [Example 23](#exm-coprecision), the [conditional precision](#def-conditional-precision) of each element is $1 / (1 - \rho^2)$, and the [coprecision](#def-coprecision) of $X_1$ and $X_2$ is $-\rho / (1 - \rho^2)$, so
 >
 > $$\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) = \frac{1}{1 - \rho^2} \begin{pmatrix}1 & -\rho \\ -\rho & 1\end{pmatrix}.$$
 >
@@ -1410,7 +1478,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 24 (A chain of three Gaussian variables)**  
+> **Example 25 (A chain of three Gaussian variables)**  
 >
 > Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2, X_3)}^{\top}$ have ${\mathbb{E}\mathopen{}\left[\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right]\mathclose{}} = \mathbf{0}$ and [precision matrix](#def-precision-matrix)
 >
@@ -1448,7 +1516,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 25 (Elliptical contours of a bivariate normal density)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$ and $\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$, which has eigenvalues $3$ and $1$, with eigenvectors $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}$ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 22](#thm-mahalanobis-eigen):
+> **Example 26 (Elliptical contours of a bivariate normal density)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{\mu}}\vphantom{\mu}} = \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}$ and $\mathbf{\Sigma} = \begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$, which has eigenvalues $3$ and $1$, with eigenvectors $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1 = \frac{1}{\sqrt{2}}{(1, 1)}^{\top}$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2 = \frac{1}{\sqrt{2}}{(1, -1)}^{\top}$ ([an eigendecomposition example](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#exm-spectral)). By [Theorem 22](#thm-mahalanobis-eigen):
 >
 > $$\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})^2 = \frac{(x_1 + x_2)^2}{2 \cdot 3} + \frac{(x_1 - x_2)^2}{2 \cdot 1}$$
 >
@@ -1473,7 +1541,7 @@ print(plot2)
 > &= 1.
 > \end{aligned}$$
 >
-> So the contour $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = 1$ of the $\operatorname{N}_2\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}$ density is an ellipse stretched along ${(1, 1)}^{\top}$, with half-length $\sqrt{3}$, and squeezed along ${(1, -1)}^{\top}$, with half-length $1$: $X_1$ and $X_2$ are positively correlated ([Figure 5](#fig-mahalanobis-eigen)).
+> So the contour $\Delta(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = 1$ of the $\operatorname{N}_2\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{0}}\vphantom{0}}, \mathbf{\Sigma}\right)\mathclose{}$ density is an ellipse stretched along ${(1, 1)}^{\top}$, with half-length $\sqrt{3}$, and squeezed along ${(1, -1)}^{\top}$, with half-length $1$: $X_1$ and $X_2$ are positively correlated ([Figure 6](#fig-mahalanobis-eigen)).
 >
 > > **NOTE:**
 > >
@@ -1547,7 +1615,7 @@ print(plot2)
 > > }
 > > ```
 > >
-> > Figure 5: The contours of the Mahalanobis distance at $1$ and $2$ for the example. The dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner ellipse.
+> > Figure 6: The contours of the Mahalanobis distance at $1$ and $2$ for the example. The dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner ellipse.
 >
 > > **NOTE:**
 > >
@@ -1627,7 +1695,7 @@ print(plot2)
 > > )
 > > ```
 > >
-> > Figure 6: The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of [Figure 5](#fig-mahalanobis-eigen). The red lines are the contours at $1$ and $2$, and the dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner one.
+> > Figure 7: The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of [Figure 6](#fig-mahalanobis-eigen). The red lines are the contours at $1$ and $2$, and the dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner one.
 
 > **NOTE:**
 >
@@ -1664,7 +1732,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 26 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 23](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 7](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
+> **Example 27 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 23](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 8](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
 >
 > Show code
 >
@@ -1706,9 +1774,9 @@ print(plot2)
 >
 > > **NOTE:**
 > >
-> > [![Three Gaussian curves; narrower ones peak higher.](distributions_files/figure-html/fig-normal-density-max-1.png)](distributions_files/figure-html/fig-normal-density-max-1.png "Figure 7: Gaussian densities, with each peak marked")
+> > [![Three Gaussian curves; narrower ones peak higher.](distributions_files/figure-html/fig-normal-density-max-1.png)](distributions_files/figure-html/fig-normal-density-max-1.png "Figure 8: Gaussian densities, with each peak marked")
 > >
-> > Figure 7: Gaussian densities, with each peak marked
+> > Figure 8: Gaussian densities, with each peak marked
 >
 > As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows indefinitely, so a density can exceed $1$.
 
@@ -1772,7 +1840,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 27 (Standardizing a Gaussian random variable)**  
+> **Example 28 (Standardizing a Gaussian random variable)**  
 >
 > Let $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ with $\sigma> 0$, and let $Z = (X - \mu) / \sigma$. Then $Z = aX + b$ with $a = 1 / \sigma$ and $b = -\mu/ \sigma$, and $a \ne 0$. By [Theorem 24](#thm-normal-affine), $Z$ is [Gaussian](random-variables.llms.md#def-normal) with parameters:
 >
@@ -1909,7 +1977,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Example 28 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
+> **Example 29 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
 >
 > - **Mean.** By [Theorem 26](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
@@ -1933,11 +2001,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Example 28](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
+> *Remark*. [Example 29](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
 
 > **NOTE:**
 >
-> **Example 29 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 16](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
+> **Example 30 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 16](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
 > **NOTE:**
 >
