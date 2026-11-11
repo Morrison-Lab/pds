@@ -421,6 +421,14 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-conditional-mean-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-conditional-mean-precision.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-mahalanobis-eigen.qmd >}}
 
 {{< include pds/_subfiles/_rem-mahalanobis-eigen-notes.qmd >}}
