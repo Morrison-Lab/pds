@@ -5,13 +5,13 @@ Let $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
 and let $\vX_J$ be the subvector of $k$ elements of $\vX$ whose indices are in $J$.
 Then $\vX_J \sim \Normal_k\paren{\vecf{\mean}_J, \matr{\covmat}_{JJ}}$,
 where $\vecf{\mean}_J$ holds the elements of $\vecf{\mean}$ with indices in $J$,
-and $\matr{\covmat}_{JJ}$ holds the rows and columns of $\matr{\covmat}$ with indices in $J$.
+and $\matr{\covmat}_{JJ}$ holds the [rows](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) and [columns](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) of $\matr{\covmat}$ with indices in $J$.
 
 :::
 
 ::: proof
 
-Reordering the elements of $\vX$ reorders the [rows](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) and [columns](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) of $\matr{\covmat}$ in the same way,
+Reordering the elements of $\vX$ reorders the rows and columns of $\matr{\covmat}$ in the same way,
 so we may take $\vX_J$ to be the first $k$ elements.
 Cut $\vX$, $\vecf{\mean}$ and $\matr{\covmat}$ into [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) as in @thm-mvn-conditional,
 with $\vX_1 = \vX_J$ and $m = p - k$ elements in $\vX_2$,
@@ -36,7 +36,7 @@ $$
 $$
 
 Write $\vecf{d}_1 = \vx_1 - \vecf{\mean}_1$, $\vecf{d}_2 = \vx_2 - \vecf{\mean}_2$ and $\vecf{c} = \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\vecf{d}_1$.
-The exponent of the joint density in @def-mvn is $-1/2$ times
+The [joint density](random-variables.qmd#def-joint-pdf) in @def-mvn is a normalizing factor times $e$ raised to $-1/2$ times
 
 $$
 \ba
@@ -54,11 +54,11 @@ $$
 \ea
 $$
 
-The [marginal density](random-variables.qmd#def-marginal) of $\vX_1$ is the [joint density](random-variables.qmd#def-joint-pdf) integrated over $\vx_2$.
+The [marginal density](random-variables.qmd#def-marginal) of $\vX_1$ is the joint density [integrated](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over $\vx_2$.
 The first summand does not involve $\vx_2$,
-and $\matr{S}$ is [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite),
-so by @thm-mvn-density-integral the integral over $\vx_2$ of the second summand's factor is a constant that does not depend on $\vx_1$.
-So the marginal density of $\vX_1$ equals a constant times
+and $\matr{S}$ [is positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite),
+so by @thm-mvn-density-integral integrating the factor from the second summand over $\vx_2$ gives a number that does not depend on $\vx_1$.
+So the marginal density of $\vX_1$ equals a factor free of $\vx_1$ times
 
 $$
 \ef{-\frac{1}{2}\tp{\vecf{d}_1}\inv{\matr{\covmat}_{11}}\vecf{d}_1},
@@ -66,6 +66,6 @@ $$
 
 which has the form of the $\Normal_k\paren{\vecf{\mean}_1, \matr{\covmat}_{11}}$ [density](random-variables.qmd#def-pdf).
 A marginal density integrates to 1,
-so the constant must be the normalizing factor of that density.
+so that factor must be the normalizing factor of that density.
 
 :::
