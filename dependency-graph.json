@@ -894,6 +894,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-conditional-mean-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-conditional-mean-precision",
+   "kind": "thm",
+   "title": "The conditional mean of one element from the precision matrix",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-exposure-log-scale",
    "site": "pds",
    "page": "distributions",
@@ -3262,6 +3271,38 @@
   [
    "pds/distributions#thm-binomial-sum-bernoulli",
    "pds/independence#def-iid"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "mds/linear-algebra-vectors#def-scalar"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-conditional-mean-precision",
+   "pds/variance-covariance#def-cond-variance"
   ],
   [
    "pds/distributions#thm-gamma-moments",
