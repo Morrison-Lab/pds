@@ -1,0 +1,16 @@
+:::{#def-partial-correlation}
+#### Partial correlation
+
+Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector with $p \ge 2$,
+let $i \ne j$,
+and let $\vX_{-ij}$ be $\vX$ without its $i$th and $j$th elements.
+The **partial correlation** of $X_i$ and $X_j$ given $\vX_{-ij}$
+is their [conditional covariance](variance-covariance.qmd#def-cond-cov) given $\vX_{-ij} = \vx_{-ij}$,
+divided by the product of the square roots of their [conditional variances](variance-covariance.qmd#def-cond-variance):
+
+$$
+\frac{\condCov{X_i}{X_j}{\vX_{-ij} = \vx_{-ij}}}
+{\sqrt{\condVar{X_i}{\vX_{-ij} = \vx_{-ij}}\condVar{X_j}{\vX_{-ij} = \vx_{-ij}}}}.
+$$
+
+:::
