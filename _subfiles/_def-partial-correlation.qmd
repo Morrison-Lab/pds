@@ -5,7 +5,7 @@ Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector with $p \ge
 let $i \ne j$,
 and let $\vX_{-ij}$ be $\vX$ without its $i$th and $j$th elements.
 The **partial correlation** of $X_i$ and $X_j$ given $\vX_{-ij}$
-is their [conditional covariance](variance-covariance.qmd#def-cond-cov) given $\vX_{-ij} = \vx_{-ij}$,
+is their [conditional covariance](variance-covariance.qmd#def-cond-cov) given $\vX_{-ij} = \vx_{-ij}$ for a fixed value $\vx_{-ij}$,
 divided by the [square root](https://morrison-lab.github.io/mds/algebra-basics.html#def-square-root) of the [conditional variance](variance-covariance.qmd#def-cond-variance) of $X_i$ times that of $X_j$:
 
 $$
