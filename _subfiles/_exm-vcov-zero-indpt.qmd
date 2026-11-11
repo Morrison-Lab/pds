@@ -20,7 +20,7 @@ $$
 which one can check by multiplying the two matrices to get $\matr{I}_3$.
 Its $(1, 2)$ element is $1/2 \ne 0$,
 so by @thm-precision-zero-cind, $X_1$ and $X_2$ are not [conditionally independent given](independence.qmd#def-cind-continuous) $X_3$:
-a zero in the [variance matrix](variance-covariance.qmd#def-cov-vec-x) means independence, and a zero in the precision matrix means [conditional independence](independence.qmd#def-cind-continuous),
+a zero in the [variance matrix](variance-covariance.qmd#def-cov-vec-x) signals independence, and a zero in the precision matrix signals [conditional independence](independence.qmd#def-cind-continuous),
 and neither implies the other.
 
 :::
