@@ -31,6 +31,6 @@ is at least the [precision](#def-precision) $1 / \Var{X_1} = 1$ of $X_1$ alone,
 and it grows indefinitely as $\abs{\rho} \to 1$.
 If $\rho = 0$, then $\precision(\vX)$ is the [identity matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-identity-matrix),
 which is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) like $\Varf{\vX}$
-(compare @cor-vcov-indpt-diagonal).
+(compare [independent components give a diagonal variance matrix](variance-covariance.qmd#cor-vcov-indpt-diagonal)).
 
 :::
