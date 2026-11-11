@@ -224,6 +224,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
   },
   {
+   "id": "mds/algebra-sums#def-bounded",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-bounded",
+   "kind": "def",
+   "title": "bounded",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded"
+  },
+  {
    "id": "mds/algebra-sums#def-convex-function",
    "site": "mds",
    "page": "algebra-sums",
@@ -312,6 +322,16 @@
    "title": "continuous",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous"
+  },
+  {
+   "id": "mds/calculus-integration#def-integrand",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-integrand",
+   "kind": "def",
+   "title": "integrand",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-integrand"
   },
   {
    "id": "mds/calculus-integration#def-riemann-integral",
@@ -3893,7 +3913,27 @@
   ],
   [
    "pds/expectation#cor-entropy-quantization-diverges",
+   "mds/algebra-sums#def-bounded"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "pds/expectation#def-entropy"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
    "pds/expectation#thm-entropy-quantization"
+  ],
+  [
+   "pds/expectation#cor-entropy-quantization-diverges",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/expectation#cor-fubini-joint",
@@ -4429,11 +4469,19 @@
   ],
   [
    "pds/expectation#thm-entropy-quantization",
+   "mds/algebra-sums#def-bounded"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
    "mds/algebra-sums#def-summation"
   ],
   [
    "pds/expectation#thm-entropy-quantization",
    "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/expectation#thm-entropy-quantization",
+   "mds/calculus-integration#def-integrand"
   ],
   [
    "pds/expectation#thm-entropy-quantization",
