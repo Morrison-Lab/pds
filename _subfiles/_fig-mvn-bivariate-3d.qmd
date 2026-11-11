@@ -31,7 +31,7 @@ mb_n_x2 <- length(mb_x2)
 mb_z <- matrix(mb_dens, ncol = mb_n_x2, byrow = TRUE)
 persp(
   mb_x1, mb_x2, mb_z,
-  theta = -45, phi = 25,
+  theta = 45, phi = 25,
   col = "#9CC3E4", border = "#0072B2",
   xlab = "x1", ylab = "x2", zlab = "density",
   ticktype = "detailed"
