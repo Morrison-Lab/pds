@@ -24,7 +24,7 @@ Its $(1, 2)$ element is $1/2 \ne 0$,
 so by @thm-precision-zero-cind,
 $X_1$ and $X_2$ are not [conditionally independent given](independence.qmd#def-cind-continuous) $X_3$.
 So a zero in the [variance matrix](variance-covariance.qmd#def-cov-vec-x) does not give a zero in the precision matrix.
-@exm-precision-zero-cind shows the other direction:
+@exm-precision-zero-cind shows the reverse case:
 a zero in the precision matrix, with a nonzero [covariance](variance-covariance.qmd#def-cov).
 
 :::
