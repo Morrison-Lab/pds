@@ -1,0 +1,28 @@
+:::{#exm-density-limit-jump}
+#### The density limit at a jump
+
+At a point where $f$ is not continuous,
+the limit can differ from the chosen value $f(x)$.
+For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @def-uniform,
+which sets $f(1) = 1$ and $f(x) = 0$ for $x > 1$,
+and for $\change > 0$:
+
+$$
+\ba
+\Pr(1 \le X < 1 + \change)
+&= \Pr(1 \le X \le 1 + \change)
+&& \text{(} \Pr(X = 1 + \change) = 0 \text{)} \\
+&= \int_1^{1 + \change} f(x)\,dx
+&& \text{(definition of the density)} \\
+&= 0
+&& \text{(} f = 0 \text{ on } (1, 1 + \change] \text{; one point does not change an integral)}
+\ea
+$$
+
+So the limit of $\Pr(1 \le X < 1 + \change) / \change$ at $x = 1$ is 0,
+although $f(1) = 1$.
+By @prp-density-limit-right-derivative,
+0 is also the right derivative of $\cdf$ at 1,
+matching the slope of 0 on the right in @exm-density-vs-CDF.
+
+:::

@@ -1,0 +1,40 @@
+:::{#thm-no-joint-density-diagonal}
+#### Not every pair of continuous random variables has a joint density
+
+If $X$ is a continuous random variable,
+then the pair $(X, X)$ has no [joint density](#def-joint-pdf).
+
+:::
+
+::: proof
+
+Suppose $f$ were a joint density of $(X, X)$,
+and let $L = \set{(x, y) : y = x}$ be the diagonal line.
+Every outcome $\outcome$ has $X(\outcome) = X(\outcome)$,
+so $\set{(X, X) \in L} = \samplespace$.
+For each $x$, the function $y \mapsto \1{y = x} f(x, y)$ is $0$ except at the single point $y = x$,
+so its integral over $y$ is $0$.
+Then:
+
+$$
+\ba
+1
+&= \Pr((X, X) \in L)
+&& \text{(} \set{(X, X) \in L} = \samplespace \text{, and } \Pr(\samplespace) = 1 \text{)} \\
+&= \iint_L f(x, y)\,dx\,dy
+&& \text{(definition of a joint density)} \\
+&= \int_{-\infty}^{\infty} \paren{\int_{-\infty}^{\infty} \1{y = x} f(x, y)\,dy}\,dx
+&& \text{(iterate the integral; Tonelli's theorem)} \\
+&= \int_{-\infty}^{\infty} 0\,dx
+&& \text{(the inner integrand is 0 except at } y = x \text{)} \\
+&= 0
+&& \text{(integrate)}
+\ea
+$$
+
+which is a contradiction.
+Tonelli's theorem allows the iterated integral because $f \ge 0$
+([Fubini--Tonelli theorem](https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli);
+@billingsley1995probability, Theorem 18.3).
+
+:::

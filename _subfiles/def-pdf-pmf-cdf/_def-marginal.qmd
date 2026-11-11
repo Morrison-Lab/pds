@@ -1,0 +1,11 @@
+:::{#def-marginal}
+#### Marginal distribution
+
+When a random variable $X$ is one of several
+[jointly distributed](#def-jointly-distributed) random variables,
+the distribution of $X$ by itself
+(its CDF, and its PMF or density)
+is called the **marginal distribution** of $X$
+[@wikipedia_marginal_distribution].
+
+:::

@@ -1,0 +1,29 @@
+:::{#thm-density-not-unique}
+#### A density is not unique
+
+If $f$ is a [density](#def-pdf) of a continuous random variable $X$,
+and $g \ge 0$ differs from $f$ at only finitely many points,
+then $g$ is also a density of $X$.
+
+:::
+
+::: proof
+
+For $a \le b$,
+the difference $g - f$ is $0$ at all but finitely many points, so:
+
+$$
+\ba
+\int_a^b g(x)\,dx
+&= \int_a^b f(x)\,dx + \int_a^b \paren{g(x) - f(x)}\,dx
+&& \text{(linearity of the integral)} \\
+&= \int_a^b f(x)\,dx + 0
+&& \text{(a function that is 0 at all but finitely many points integrates to 0)} \\
+&= \Pr(a \le X \le b)
+&& \text{(} f \text{ is a density of } X \text{)}
+\ea
+$$
+
+Together with $g \ge 0$, this is @def-pdf for $g$.
+
+:::

@@ -1,0 +1,18 @@
+:::{#exm-density-limit}
+#### The uniform density as a limit
+
+For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$,
+$\Pr(x \le X < x + \change) = \change$ once $\change \le 1 - x$, so:
+
+$$
+\begin{aligned}
+f(x)
+&= \lim_{\change \downarrow 0} \frac{\change}{\change} \\
+&= 1
+\end{aligned}
+$$
+
+For $x < 0$ or $x > 1$, the interval eventually misses $[0, 1]$, so the limit is $0$.
+Both agree with the density of @def-uniform.
+
+:::

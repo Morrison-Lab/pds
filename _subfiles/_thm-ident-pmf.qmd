@@ -1,0 +1,81 @@
+:::{#thm-ident-pmf}
+#### Identically distributed discrete random variables have the same PMF
+
+Discrete random variables $\Xin$ are [identically distributed](#def-ident)
+if and only if they all have the same [PMF](random-variables.qmd#def-pmf):
+for every $i \in \set{1, \ldots, n}$ and every real number $x$,
+
+$$\P(X_i = x) = \P(X_1 = x)$$
+
+:::
+
+::: proof
+
+Write $F_i(t) \eqdef \Pr(X_i \le t)$ for the CDF of $X_i$.
+
+**Only if: the CDF determines the PMF through its jumps.**
+Choose an index $i$ and a value $x$ of $X_i$.
+Every number below $x$ lies in exactly one of the intervals
+$(-\infty, x - 1]$, $(x - 1, x - \tfrac{1}{2}]$, $(x - \tfrac{1}{2}, x - \tfrac{1}{3}]$, $\ldots$,
+so the event $\set{X_i < x}$ is the disjoint union of the events
+$B_1 \eqdef \set{X_i \le x - 1}$ and
+$B_k \eqdef \set{x - \tfrac{1}{k - 1} < X_i \le x - \tfrac{1}{k}}$ for $k \ge 2$,
+and for each $K$, the events $B_1, \ldots, B_K$ have union $\set{X_i \le x - \tfrac{1}{K}}$:
+
+$$
+\ba
+\Pr(X_i < x)
+&= \sumto{k}{\infty} \Pr(B_k)
+&& \text{(countable additivity)} \\
+&= \lim_{K \to \infty} \sumto{k}{K} \Pr(B_k)
+&& \text{(definition of an infinite series)} \\
+&= \lim_{K \to \infty} \Pr(X_i \le x - \tfrac{1}{K})
+&& \text{(finite additivity)} \\
+&= \lim_{K \to \infty} F_i(x - \tfrac{1}{K})
+&& \text{(definition of the CDF)}
+\ea
+$$
+
+The event $\set{X_i \le x}$ is the disjoint union of $\set{X_i < x}$ and $\set{X_i = x}$, so:
+
+$$
+\ba
+\P(X_i = x)
+&= \Pr(X_i \le x) - \Pr(X_i < x)
+&& \text{(finite additivity)} \\
+&= F_i(x) - \Pr(X_i < x)
+&& \text{(definition of the CDF)} \\
+&= F_i(x) - \lim_{K \to \infty} F_i(x - \tfrac{1}{K})
+&& \text{(the display above)} \\
+&= F_1(x) - \lim_{K \to \infty} F_1(x - \tfrac{1}{K})
+&& \text{(} F_i = F_1 \text{)} \\
+&= \P(X_1 = x)
+&& \text{(the same two steps, for } X_1 \text{)}
+\ea
+$$
+
+**If: the PMF determines the CDF through sums.**
+Let $S$ be the set of values $u$ with $\P(X_1 = u) > 0$.
+Since the PMFs are equal, $S$ is also the set of $u$ with $\P(X_i = u) > 0$,
+so $S \subseteq \rangef{X_i}$ and $S \subseteq \rangef{X_1}$.
+For every real $t$,
+the event $\set{X_i \le t}$ is the disjoint union of the events $\set{X_i = u}$
+over the countably many $u \in \rangef{X_i}$ with $u \le t$, so:
+
+$$
+\ba
+F_i(t)
+&= \sum_{u \in \rangef{X_i},\, u \le t} \P(X_i = u)
+&& \text{(countable additivity)} \\
+&= \sum_{u \in S,\, u \le t} \P(X_i = u)
+&& \text{(drop the terms that are } 0 \text{)} \\
+&= \sum_{u \in S,\, u \le t} \P(X_1 = u)
+&& \text{(the PMFs are equal)} \\
+&= \sum_{u \in \rangef{X_1},\, u \le t} \P(X_1 = u)
+&& \text{(restore the terms that are } 0 \text{)} \\
+&= F_1(t)
+&& \text{(countable additivity)}
+\ea
+$$
+
+:::

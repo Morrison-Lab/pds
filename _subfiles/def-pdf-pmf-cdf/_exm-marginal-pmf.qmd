@@ -1,0 +1,20 @@
+:::{#exm-marginal-pmf}
+#### Summing a row of the joint PMF
+
+In @exm-joint-pmf, summing the $X_1 = 1$ row:
+
+$$
+\ba
+\P(X_1 = 1)
+&= \P(X_1 = 1, X = 0) + \P(X_1 = 1, X = 1) + \P(X_1 = 1, X = 2)
+&& \text{(marginal PMF from the joint PMF)} \\
+&= 0 + \tfrac{1}{4} + \tfrac{1}{4}
+&& \text{(read the table)} \\
+&= \tfrac{1}{2}
+&& \text{(add)}
+\ea
+$$
+
+which matches $X_1 \sim \Ber(1/2)$ from @exm-bernoulli-pmf.
+
+:::

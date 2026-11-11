@@ -1,18 +1,9 @@
 :::{#def-precision-matrix}
+#### Precision matrix
 
-#### Precision of a random vector (precision matrix)
-
-The **precision matrix** of a $p \times 1$ [random](random-variables.qmd#def-random-variable) vector $\vX$
-extends the [precision](#def-precision) of a [random variable](random-variables.qmd#def-random-variable)
-to a vector:
-it is the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse)
-of the [variance matrix](#def-cov-vec-x) of $\vX$,
-just as the precision of a random variable is the reciprocal of its [variance](#def-variance).
-It is defined when $\Varf{\vX}$ is
-[positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite):
-
-$$\precision(\vX) \eqdef \inv{\Varf{\vX}}.$$
-
-For $p = 1$, $\precision(\vX)$ is the precision $\inv{\Var{X}}$ of the single variable $X$.
+Let $\vX$ be a $p \times 1$ [multivariate Gaussian](#def-mvn) vector.
+The **precision matrix** $\precision(\vX)$ of $\vX$ is the $p \times p$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix)
+whose $i$th [diagonal](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry) element is the [conditional precision](#def-conditional-precision) of $X_i$ given $\vX_{-i}$,
+and whose $(i, j)$ element, for $i \ne j$, is the [coprecision](#def-coprecision) of $X_i$ and $X_j$ given $\vX_{-ij}$.
 
 :::

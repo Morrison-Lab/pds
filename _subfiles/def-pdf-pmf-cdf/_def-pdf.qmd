@@ -1,0 +1,15 @@
+:::{#def-pdf}
+#### Probability density function (PDF)
+
+If $X$ is a [continuous random variable](#def-continuous-rv),
+a **probability density function** of $X$,
+denoted $f(x)$, $f_X(x)$, $\p(x)$, $\p_X(x)$, or $\p(X=x)$,
+is a function $f$ that satisfies
+[@wikipedia_probability_density_function]:
+
+- $f(x) \ge 0$ for every $x$.
+- The integral of $f$ over any interval
+  is the [probability](probability-basics.qmd#def-probability) that $X$ falls in that interval:
+  $$\Pr(a \le X \le b) = \int_a^b f(x)\,dx \quad \text{for all } a \le b$$
+
+:::

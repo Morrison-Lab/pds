@@ -1,0 +1,9 @@
+::: {.remark .notes}
+
+For small $\change > 0$, $f(x) \cd \change \approx \Pr(x \le X < x + \change)$.
+Although a density is not unique (@thm-density-not-unique),
+this limit pins down its value at every point where it is continuous.
+
+See also @me4 (Chapter 22, p. 535).
+
+:::

@@ -156,7 +156,15 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-total-prob-conditional.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-bayes.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-bayes.qmd >}}
 
 {{< slidebreak >}}
 
@@ -203,6 +211,15 @@ and [conditional probability](https://www.youtube.com/watch?v=c-yB3q7zYlU).
 Lange's textbook [@lange2024applied] reviews [probability](#def-probability)
 and [expectation](expectation.qmd#def-expectation) in Section 1.2
 and [conditional probability](#def-conditional-prob) in Section 1.3.
+:::
+
+
+# Further reading
+
+::: {.callout-tip title="Another explanation"}
+Evans and Rosenthal's free textbook [@evans2010probability] covers [probability](#def-probability) models,
+[conditional probability](#def-conditional-prob)
+and independence in Chapter 1.
 :::
 
 

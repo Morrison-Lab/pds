@@ -24,6 +24,32 @@ format:
 
 {{< include pds/_subfiles/_thm-lotus.qmd >}}
 
+{{< include pds/_subfiles/_rem-lotus.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-lotus.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-lotus-continuous.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-linearity-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-linearity-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-linearity-affine.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-linearity-affine.qmd >}}
+
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exr-expected-density.qmd >}}
@@ -215,7 +241,7 @@ format:
 
 {{< include pds/_subfiles/_def-reducible-risk.qmd >}}
 
-{{< include pds/_subfiles/_rem-reducible-risk.qmd >}}
+{{< include pds/_subfiles/_prp-reducible-risk-zero.qmd >}}
 
 {{< slidebreak >}}
 
@@ -251,6 +277,7 @@ format:
 ::: {.callout-tip title="Another explanation"}
 Lange's textbook [@lange2024applied] covers conditioning as a tool for computing [expectations](#def-expectation)
 in Section 2.3 and tail [probability](probability-basics.qmd#def-probability) methods in Section 2.5.
+Evans and Rosenthal's free textbook [@evans2010probability] covers expectation in Chapter 3.
 :::
 
 

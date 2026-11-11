@@ -1,0 +1,22 @@
+:::{#exm-normal}
+#### Normal densities at their centers
+
+For $X \sim \ndist{0, 1}$, the density at $x = 0$ is:
+
+$$
+\ba
+\p(X=0)
+&= \frac{1}{1 \cd \sqrt{2\pi}} \ef{-\frac{(0-0)^2}{2 \cd 1}}
+&& \text{(normal density with } \mean = 0, \ss = 1 \text{)} \\
+&= \frac{1}{\sqrt{2\pi}}
+&& \text{(} \text{e}^0 = 1 \text{)} \\
+&\approx 0.399
+&& \text{(evaluate)}
+\ea
+$$
+
+For $X \sim \ndist{0, 0.1^2}$, the same steps give
+$\p(X=0) = 1 / (0.1\sqrt{2\pi}) \approx 3.99$,
+a density greater than 1.
+
+:::

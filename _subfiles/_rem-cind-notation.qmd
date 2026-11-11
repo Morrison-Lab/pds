@@ -1,0 +1,9 @@
+::: {.remark .notes}
+
+For continuous $\vX$,
+each ratio in the density form is the density of the $Y$'s
+under their conditional distribution given $\vX = \vx$,
+so both forms say the same thing:
+given $\vX = \vx$, the $Y_i$'s joint distribution factors.
+
+:::

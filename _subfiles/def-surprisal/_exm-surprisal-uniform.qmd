@@ -2,7 +2,7 @@
 #### Surprisal of a value of a uniform random variable
 
 Let $X$ be [uniformly distributed](random-variables.qmd#def-uniform) on the interval from $0$ to $a > 0$,
-so that its [density](random-variables.qmd#def-pdf) is $\p(X=x) = 1/a$ for $0 < x < a$.
+so that its [density](random-variables.qmd#def-pdf) is $\p(X=x) = 1/a$ for $x \in (0, a)$.
 Every value in the interval has [surprisal](#def-surprisal-continuous)
 
 $$\surprisalf{x} = -\log \tfrac{1}{a} = \log a.$$

@@ -1,0 +1,31 @@
+:::{#exm-density-vs-CDF}
+#### CDF and density of a uniform random variable
+
+For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of @def-uniform,
+and $t \in [0, 1]$:
+
+$$
+\ba
+\cdff{t}
+&= \int_{-\infty}^{t} f(x)\,dx
+&& \text{(the CDF is the integral of the density)} \\
+&= \int_{-\infty}^{0} 0\,dx + \int_{0}^{t} 1\,dx
+&& \text{(split at 0, and substitute } f \text{)} \\
+&= t
+&& \text{(integrate)}
+\ea
+$$
+
+For $t \in (0, 1)$, where $f$ is continuous,
+
+$$
+\begin{aligned}
+\deriv{t} \cdff{t} &= 1 \\
+&= f(t).
+\end{aligned}
+$$
+
+At $t = 1$, $f$ jumps from 1 to 0, and $\cdf$ has no derivative:
+its slope is 1 on the left and 0 on the right.
+
+:::

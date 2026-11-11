@@ -1,0 +1,6 @@
+:::{#def-mixture-component}
+#### Mixture component
+
+The densities ${\p_1}, \ldots, {\p_K}$ in a mixture (@def-mixture) are its **components**.
+
+:::

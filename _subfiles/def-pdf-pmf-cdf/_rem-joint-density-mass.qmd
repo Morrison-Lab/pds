@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+When $X$ is continuous and $Y$ is discrete, the roles swap:
+$\Pr(X \in B,\, Y = y) = \int_B \p(X = x,\, Y = y)\,dx$.
+
+:::

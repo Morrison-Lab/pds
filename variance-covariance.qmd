@@ -260,14 +260,6 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_def-precision-matrix.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_exm-precision-matrix.qmd >}}
-
-{{< slidebreak >}}
-
 {{< include pds/_subfiles/_cor-vcov-indpt-diagonal.qmd >}}
 
 {{< slidebreak >}}

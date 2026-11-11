@@ -5,10 +5,10 @@ Some random variables are neither discrete nor continuous:
 a time to event that equals exactly $0$ with positive probability,
 and otherwise spreads over $(0, \infty)$, is one.
 For instance, let $U$ be the continuous random variable of @exm-continuous-rv,
-and let $T = 1/(1 - U) - 2$ when $1/2 < U < 1$, and $T = 0$ otherwise.
-On $\set{1/2 < U < 1}$, $T$ is increasing in $U$ and takes values in $(0, \infty)$,
+and let $T = 1/(1 - U) - 2$ when $U \in (1/2, 1)$, and $T = 0$ otherwise.
+On $\set{U \in (1/2, 1)}$, $T$ is increasing in $U$ and takes values in $(0, \infty)$,
 and solving $t = 1/(1 - u) - 2$ for $u$ gives $u = 1 - 1/(t + 2)$.
-So $\set{T > 0} = \set{1/2 < U < 1}$,
+So $\set{T > 0} = \set{U \in (1/2, 1)}$,
 and $\set{T = t} = \set{U = 1 - 1/(t + 2)}$ for each $t > 0$.
 Since $U$ is continuous (@exm-continuous-rv),
 single points have probability zero:
@@ -25,8 +25,8 @@ Using these values:
 $$
 \ba
 \Pr(T > 0)
-&= \Pr(1/2 < U < 1)
-&& \text{(} \set{T > 0} = \set{1/2 < U < 1} \text{)} \\
+&= \Pr(U \in (1/2, 1))
+&& \text{(} \set{T > 0} = \set{U \in (1/2, 1)} \text{)} \\
 &= \Pr(1/2 \le U \le 1) - \Pr(U = 1/2) - \Pr(U = 1)
 && \text{(additivity)} \\
 &= \tfrac{1}{2} - 0 - 0

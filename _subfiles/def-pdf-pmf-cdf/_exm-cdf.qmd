@@ -1,0 +1,15 @@
+:::{#exm-cdf}
+#### CDF of the number of heads
+
+Summing the PMF in @exm-pmf over values at or below $t$:
+
+$$
+\cdff{t} = \begin{cases}
+0, & t < 0 \\
+\tfrac{1}{4}, & 0 \le t < 1 \\
+\tfrac{3}{4}, & 1 \le t < 2 \\
+1, & t \ge 2
+\end{cases}
+$$
+
+:::
