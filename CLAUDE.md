@@ -89,6 +89,15 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 ## Pull request expectations
 
 - Keep PRs scoped --- bug fixes shouldn't smuggle in refactors.
+- **A new result or definition div needs its example in the same PR,
+  and four checks catch the usual slips** (pds#409, pds#413, pds#414, 2026-11-10):
+  - A new `#prp-`, `#thm-`, `#lem-`, `#cor-` or `#def-` div needs a worked `#exm-` div after it;
+    a remark between them does not count, and the Claude review is NOT_CLEAN without one.
+  - `check-avoided-words` fails a trailing `(@prp-x)` crossref,
+    so write "As @prp-x shows, ..." or make the whole claim the link text.
+  - `check-term-links` flags an ordinary word that is also a defined term, such as "terms" in "In practical terms";
+    reword it rather than link it.
+  - The opt-out pragma must carry a reason, as in `<!-- check-term-links: allow: reason -->`.
 - **A mechanical split of a multi-div subfile stays a pure move**
   (Ezra, 2026-11-09, pds#368 and pds#369).
   Mechanical, content-identical PRs are exempt from the 10-file, 300-line cap, so the body says "mechanical, content-identical".
