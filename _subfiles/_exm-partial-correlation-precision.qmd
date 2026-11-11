@@ -3,7 +3,7 @@
 
 <!-- no-figure: arithmetic on one 3 x 3 matrix; nothing to plot -->
 
-Let $\vX = \tp{(X_1, X_2, X_3)}$ be the Gaussian vector of @exm-precision-zero-cind,
+Let $\vX = \tp{(X_1, X_2, X_3)}$ be the [Gaussian](#def-normal) vector of @exm-precision-zero-cind,
 with
 
 $$
