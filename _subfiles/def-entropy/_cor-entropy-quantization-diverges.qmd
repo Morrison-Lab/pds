@@ -2,7 +2,7 @@
 #### Entropy of a quantized random variable grows without bound
 
 In the setting of @thm-entropy-quantization,
-the [entropy](#def-entropy) of the quantized variable grows without bound:
+the [entropy](#def-entropy) of the quantized variable tends to $\infty$ as the bin width shrinks:
 
 $$\entropyf{X^\Delta} \to \infty \quad \text{as } \Delta \to 0.$$
 
@@ -20,7 +20,7 @@ The first quantity on the right tends to $\entropyf{X}$,
 not $\pm\infty$:
 the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) and $0$ outside a [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval),
 so $-\p(X=x) \log \p(X=x)$ is continuous there, with the convention $0 \log 0 = 0$,
-and a [continuous function](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) has a finite [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over a bounded interval.
+and a [continuous function](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) has an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over a bounded interval.
 Also, $-\log \Delta \to \infty$ as $\Delta \to 0$,
 so $\entropyf{X^\Delta} \to \infty$.
 
