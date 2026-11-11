@@ -34,6 +34,16 @@
    "url": "https://morrison-lab.github.io/mcs/functions.html#def-function"
   },
   {
+   "id": "mcs/functions#def-inverse-function",
+   "site": "mcs",
+   "page": "functions",
+   "div": "def-inverse-function",
+   "kind": "def",
+   "title": "inverse function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/functions.html#def-inverse-function"
+  },
+  {
    "id": "mcs/number-systems#def-integers",
    "site": "mcs",
    "page": "number-systems",
@@ -184,6 +194,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm"
   },
   {
+   "id": "mds/algebra-sums#def-convex-function",
+   "site": "mds",
+   "page": "algebra-sums",
+   "div": "def-convex-function",
+   "kind": "def",
+   "title": "convex function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-sums.html#def-convex-function"
+  },
+  {
    "id": "mds/algebra-sums#def-summation",
    "site": "mds",
    "page": "algebra-sums",
@@ -214,6 +234,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative"
   },
   {
+   "id": "mds/calculus-derivatives#def-differentiable",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "def-differentiable",
+   "kind": "def",
+   "title": "differentiable",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-differentiable"
+  },
+  {
    "id": "mds/calculus-derivatives#def-limit",
    "site": "mds",
    "page": "calculus-derivatives",
@@ -224,6 +254,16 @@
    "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit"
   },
   {
+   "id": "mds/calculus-derivatives#thm-chain-rule",
+   "site": "mds",
+   "page": "calculus-derivatives",
+   "div": "thm-chain-rule",
+   "kind": "thm",
+   "title": "chain rule",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule"
+  },
+  {
    "id": "mds/calculus-double-integrals#thm-fubini-tonelli",
    "site": "mds",
    "page": "calculus-double-integrals",
@@ -232,6 +272,26 @@
    "title": "fubini tonelli",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/calculus-double-integrals.html#thm-fubini-tonelli"
+  },
+  {
+   "id": "mds/calculus-integration#def-continuous",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-continuous",
+   "kind": "def",
+   "title": "continuous",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous"
+  },
+  {
+   "id": "mds/calculus-integration#def-riemann-integral",
+   "site": "mds",
+   "page": "calculus-integration",
+   "div": "def-riemann-integral",
+   "kind": "def",
+   "title": "riemann integral",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral"
   },
   {
    "id": "mds/calculus-taylor-series#def-taylor-series",
@@ -252,6 +312,56 @@
    "title": "indicator function",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/indicator-functions.html#def-indicator-function"
+  },
+  {
+   "id": "mds/linear-algebra-diagonalization#def-block-matrix",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "def-block-matrix",
+   "kind": "def",
+   "title": "block matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix"
+  },
+  {
+   "id": "mds/linear-algebra-diagonalization#def-schur-complement",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "def-schur-complement",
+   "kind": "def",
+   "title": "schur complement",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-schur-complement"
+  },
+  {
+   "id": "mds/linear-algebra-diagonalization#thm-block-inverse",
+   "site": "mds",
+   "page": "linear-algebra-diagonalization",
+   "div": "thm-block-inverse",
+   "kind": "thm",
+   "title": "block inverse",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse"
+  },
+  {
+   "id": "mds/linear-algebra-matrices#def-diagonal-entry",
+   "site": "mds",
+   "page": "linear-algebra-matrices",
+   "div": "def-diagonal-entry",
+   "kind": "def",
+   "title": "diagonal entry",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry"
+  },
+  {
+   "id": "mds/linear-algebra-matrices#def-matrix",
+   "site": "mds",
+   "page": "linear-algebra-matrices",
+   "div": "def-matrix",
+   "kind": "def",
+   "title": "matrix",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix"
   },
   {
    "id": "mds/linear-algebra-special-matrices#def-determinant",
@@ -364,6 +474,16 @@
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-linear-combination"
   },
   {
+   "id": "mds/linear-algebra-vectors#def-mean",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-mean",
+   "kind": "def",
+   "title": "mean",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean"
+  },
+  {
    "id": "mds/linear-algebra-vectors#def-scalar",
    "site": "mds",
    "page": "linear-algebra-vectors",
@@ -372,6 +492,16 @@
    "title": "scalar",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar"
+  },
+  {
+   "id": "mds/linear-algebra-vectors#def-weighted-average",
+   "site": "mds",
+   "page": "linear-algebra-vectors",
+   "div": "def-weighted-average",
+   "kind": "def",
+   "title": "weighted average",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-weighted-average"
   },
   {
    "id": "mds/measures#cor-measure-finitely-additive",
@@ -566,6 +696,24 @@
    "external": false
   },
   {
+   "id": "pds/distributions#def-conditional-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-conditional-precision",
+   "kind": "def",
+   "title": "Conditional precision",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-coprecision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-coprecision",
+   "kind": "def",
+   "title": "Coprecision",
+   "external": false
+  },
+  {
    "id": "pds/distributions#def-event-rate",
    "site": "pds",
    "page": "distributions",
@@ -671,6 +819,15 @@
    "div": "def-poisson",
    "kind": "def",
    "title": "Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#def-precision-matrix",
+   "site": "pds",
+   "page": "distributions",
+   "div": "def-precision-matrix",
+   "kind": "def",
+   "title": "Precision matrix",
    "external": false
   },
   {
@@ -800,6 +957,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-mvn-conditional",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-conditional",
+   "kind": "thm",
+   "title": "The conditional distribution of a block of a multivariate Gaussian vector",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-mvn-density-integral",
    "site": "pds",
    "page": "distributions",
@@ -854,6 +1020,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-normal-affine",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-normal-affine",
+   "kind": "thm",
+   "title": "Gaussian distributions are closed under affine transformations",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-normal-density-max",
    "site": "pds",
    "page": "distributions",
@@ -878,6 +1053,24 @@
    "div": "thm-poisson-properties",
    "kind": "thm",
    "title": "Mean and variance of the Poisson distribution",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-precision-matrix-inverse",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-precision-matrix-inverse",
+   "kind": "thm",
+   "title": "The precision matrix is the inverse of the variance matrix",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-precision-zero-cind",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-precision-zero-cind",
+   "kind": "thm",
+   "title": "A zero off-diagonal element of the precision matrix means conditional independence",
    "external": false
   },
   {
@@ -1223,6 +1416,24 @@
    "external": false
   },
   {
+   "id": "pds/expectation#prp-mean-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-mean-expectation",
+   "kind": "prp",
+   "title": "The mean of numbers is the expectation of one chosen at random",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#prp-reducible-risk-zero",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-reducible-risk-zero",
+   "kind": "prp",
+   "title": "The reducible risk is zero only for the conditional mean",
+   "external": false
+  },
+  {
    "id": "pds/expectation#thm-bernoulli-mean",
    "site": "pds",
    "page": "expectation",
@@ -1436,6 +1647,15 @@
    "div": "def-cind",
    "kind": "def",
    "title": "Conditional independence",
+   "external": false
+  },
+  {
+   "id": "pds/independence#def-cind-continuous",
+   "site": "pds",
+   "page": "independence",
+   "div": "def-cind-continuous",
+   "kind": "def",
+   "title": "Conditional independence given a continuous random vector",
    "external": false
   },
   {
@@ -1895,6 +2115,15 @@
    "div": "thm-total-prob-1",
    "kind": "thm",
    "title": "An event and its complement sum to 1",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-total-prob-conditional",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-total-prob-conditional",
+   "kind": "thm",
+   "title": "Law of total probability with conditional probabilities",
    "external": false
   },
   {
@@ -2555,15 +2784,6 @@
    "external": false
   },
   {
-   "id": "pds/variance-covariance#def-precision-matrix",
-   "site": "pds",
-   "page": "variance-covariance",
-   "div": "def-precision-matrix",
-   "kind": "def",
-   "title": "Precision of a random vector (precision matrix)",
-   "external": false
-  },
-  {
    "id": "pds/variance-covariance#def-sd",
    "site": "pds",
    "page": "variance-covariance",
@@ -2862,6 +3082,30 @@
    "pds/random-variables#def-discrete-rv"
   ],
   [
+   "pds/distributions#def-conditional-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#def-conditional-precision",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#def-coprecision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
    "pds/distributions#def-event-rate",
    "pds/distributions#def-exposure"
   ],
@@ -2924,6 +3168,26 @@
   [
    "pds/distributions#def-poisson",
    "mds/sets#def-set"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "mds/linear-algebra-matrices#def-diagonal-entry"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "pds/distributions#def-conditional-precision"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#def-precision-matrix",
+   "pds/distributions#def-mvn"
   ],
   [
    "pds/distributions#def-responsibility",
@@ -3030,6 +3294,38 @@
    "pds/random-variables#def-pdf"
   ],
   [
+   "pds/distributions#thm-mvn-conditional",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-marginal"
+  ],
+  [
+   "pds/distributions#thm-mvn-conditional",
+   "pds/random-variables#def-pdf"
+  ],
+  [
    "pds/distributions#thm-mvn-density-integral",
    "pds/distributions#def-mvn"
   ],
@@ -3094,6 +3390,38 @@
    "pds/expectation#def-expectation"
   ],
   [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-derivatives#def-derivative"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-derivatives#thm-chain-rule"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#thm-normal-affine",
+   "pds/random-variables#thm-cdf-derivative-is-density"
+  ],
+  [
    "pds/distributions#thm-normal-density-max",
    "pds/random-variables#def-normal"
   ],
@@ -3108,6 +3436,114 @@
   [
    "pds/distributions#thm-poisson-properties",
    "pds/variance-covariance#thm-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#def-schur-complement"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-matrices#def-diagonal-entry"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#def-conditional-precision"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#cor-mvn-uncorrelated-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#def-coprecision"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/expectation#def-cond-pdf"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/independence#def-cind-continuous"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cov-vec-x"
   ],
   [
    "pds/distributions#thm-sum-pois",
@@ -3570,6 +4006,54 @@
    "pds/expectation#def-prediction-function"
   ],
   [
+   "pds/expectation#prp-mean-expectation",
+   "mcs/number-systems#def-real-numbers"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "mds/linear-algebra-vectors#def-mean"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-mean-expectation",
+   "pds/probability-basics#def-random-choice"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-cond-expectation-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-prediction-function"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/expectation#def-reducible-risk"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/expectation#prp-reducible-risk-zero",
+   "pds/probability-basics#thm-continuity-probability"
+  ],
+  [
    "pds/expectation#thm-bernoulli-mean",
    "pds/random-variables#def-bernoulli"
   ],
@@ -3778,6 +4262,42 @@
    "pds/expectation#thm-lotus"
   ],
   [
+   "pds/expectation#thm-lotus",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mcs/functions#def-inverse-function"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mds/calculus-derivatives#def-differentiable"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#thm-lotus",
+   "pds/random-variables#def-range"
+  ],
+  [
    "pds/expectation#thm-risk-decomposition",
    "pds/expectation#def-cond-expectation-function"
   ],
@@ -3818,12 +4338,20 @@
    "pds/independence#def-cind"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
+   "pds/independence#def-cind"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-density-mass"
   ],
   [
-   "pds/independence#def-cind",
+   "pds/independence#def-cind-continuous",
    "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/independence#def-cind-continuous",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/independence#def-ident",
@@ -3930,6 +4458,22 @@
    "pds/variance-covariance#def-variance"
   ],
   [
+   "pds/limit-theorems#lem-hoeffding",
+   "mds/algebra-sums#def-convex-function"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "mds/linear-algebra-vectors#def-weighted-average"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#lem-hoeffding",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
    "pds/limit-theorems#thm-chebyshev",
    "pds/limit-theorems#thm-markov"
   ],
@@ -3959,6 +4503,10 @@
   ],
   [
    "pds/limit-theorems#thm-hoeffding",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
    "pds/independence#def-iid"
   ],
   [
@@ -3968,6 +4516,10 @@
   [
    "pds/limit-theorems#thm-hoeffding",
    "pds/limit-theorems#thm-markov"
+  ],
+  [
+   "pds/limit-theorems#thm-hoeffding",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/limit-theorems#thm-hoeffding",
@@ -4254,10 +4806,6 @@
    "pds/probability-basics#def-partition"
   ],
   [
-   "pds/probability-basics#thm-total-prob",
-   "pds/probability-basics#thm-law-conditional-prob"
-  ],
-  [
    "pds/probability-basics#thm-total-prob-1",
    "mcs/sets#def-union"
   ],
@@ -4276,6 +4824,26 @@
   [
    "pds/probability-basics#thm-total-prob-1",
    "pds/probability-basics#prp-complement-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-partition"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#def-sample-space"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#thm-law-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-total-prob-conditional",
+   "pds/probability-basics#thm-total-prob"
   ],
   [
    "pds/random-variables#cor-cdf-derivative-density-ae",
@@ -4831,30 +5399,6 @@
   ],
   [
    "pds/variance-covariance#def-precision",
-   "pds/variance-covariance#def-variance"
-  ],
-  [
-   "pds/variance-covariance#def-precision-matrix",
-   "mds/linear-algebra-special-matrices#def-matrix-inverse"
-  ],
-  [
-   "pds/variance-covariance#def-precision-matrix",
-   "mds/linear-algebra-special-matrices#def-positive-definite"
-  ],
-  [
-   "pds/variance-covariance#def-precision-matrix",
-   "pds/random-variables#def-random-variable"
-  ],
-  [
-   "pds/variance-covariance#def-precision-matrix",
-   "pds/variance-covariance#def-cov-vec-x"
-  ],
-  [
-   "pds/variance-covariance#def-precision-matrix",
-   "pds/variance-covariance#def-precision"
-  ],
-  [
-   "pds/variance-covariance#def-precision-matrix",
    "pds/variance-covariance#def-variance"
   ],
   [

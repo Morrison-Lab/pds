@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-09 13:49:08 (PST)
+Last modified: 2026-11-10 17:22:01 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -1282,28 +1282,6 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 14 (Precision of a random vector (precision matrix))** The **precision matrix** of a $p \times 1$ [random](random-variables.llms.md#def-random-variable) vector $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ extends the [precision](#def-precision) of a [random variable](random-variables.llms.md#def-random-variable) to a vector: it is the [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of the [variance matrix](#def-cov-vec-x) of $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$, just as the precision of a random variable is the reciprocal of its [variance](#def-variance). It is defined when ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ is [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite):
->
-> $$\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) \stackrel{\text{def}}{=}{\mathopen{}\left({\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}\right)\mathclose{}}^{-1}.$$
->
-> For $p = 1$, $\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})$ is the precision ${\mathopen{}\left({\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}\right)\mathclose{}}^{-1}$ of the single variable $X$.
-
-> **NOTE:**
->
-> **Example 19 (The precision matrix of two correlated variables)**  
->
-> Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ have ${\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(X_2\right)\mathclose{}} = 1$ and ${\operatorname{Cov}\mathopen{}\left(X_1, X_2\right)\mathclose{}} = \rho$, with $\mathopen{}\left|\rho\right|\mathclose{} < 1$. Then
->
-> $${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \begin{pmatrix}1 & \rho \\ \rho & 1\end{pmatrix},$$
->
-> and the [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of a $2 \times 2$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) is
->
-> $$\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) = \frac{1}{1 - \rho^2} \begin{pmatrix}1 & -\rho \\ -\rho & 1\end{pmatrix}.$$
->
-> The [off-diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-off-diagonal-entry) have the opposite sign of $\rho$. Each [diagonal entry](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry), $1 / (1 - \rho^2)$, is at least the [precision](#def-precision) $1 / {\operatorname{Var}\mathopen{}\left(X_1\right)\mathclose{}} = 1$ of $X_1$ alone, and it grows indefinitely as $\mathopen{}\left|\rho\right|\mathclose{} \to 1$. If $\rho = 0$, then $\tau(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})$ is the [identity matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-identity-matrix), which is [diagonal](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-diagonal-matrix) like ${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}}$ (compare [Corollary 5](#cor-vcov-indpt-diagonal)).
-
-> **NOTE:**
->
 > **Corollary 5 (Independent components give a diagonal variance matrix)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, \ldots, X_p)}^{\top}$ be a random vector whose components are each [discrete](random-variables.llms.md#def-discrete-rv) or [continuous](random-variables.llms.md#def-continuous-rv), with:
 >
 > - ${\mathbb{E}\mathopen{}\left[X_i^2\right]\mathclose{}} < \infty$ for every $i$, and
@@ -1345,7 +1323,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 20 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
+> **Example 19 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same [probability](probability-basics.llms.md#def-probability), and let $X$ be its horsepower and $Y$ its miles per gallon. Then each [expectation](expectation.llms.md#def-expectation) in the definitions of the [variance](#def-variance) and the [covariance](#def-cov) is an average over the cars in the data, and [Definition 10](#def-correlation) gives their [correlation](#def-correlation). The code below computes each part of the definition directly.
 >
@@ -1425,13 +1403,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 15 (Raw moment)** The $k$-th raw moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of $X^k$:
+> **Definition 14 (Raw moment)** The $k$-th raw moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of $X^k$:
 >
 > $${\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}$$
 
 > **NOTE:**
 >
-> **Example 21 (Raw moments of a die roll)** Let $X$ be the number shown by one roll of a fair six-sided die, so that $\mathbb{P}(X = x) = 1/6$ for each $x \in {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. The first [raw moment](#def-moment) is the [expectation](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, and the second is ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}$:
+> **Example 20 (Raw moments of a die roll)** Let $X$ be the number shown by one roll of a fair six-sided die, so that $\mathbb{P}(X = x) = 1/6$ for each $x \in {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. The first [raw moment](#def-moment) is the [expectation](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, and the second is ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}
@@ -1450,13 +1428,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 16 (Central moment)** The $k$-th central moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of the [deviation from the mean](#def-deviation-pop-mean) raised to the [power](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer) $k$:
+> **Definition 15 (Central moment)** The $k$-th central moment of a [random variable](random-variables.llms.md#def-random-variable) $X$, for a [positive integer](https://morrison-lab.github.io/mcs/number-systems.html#def-positive-integer) $k$ with ${\mathbb{E}\mathopen{}\left[\mathopen{}\left|X\right|\mathclose{}^k\right]\mathclose{}} < \infty$, is the [expectation](expectation.llms.md#def-expectation) of the [deviation from the mean](#def-deviation-pop-mean) raised to the [power](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-integer) $k$:
 >
 > $${\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^k\right]\mathclose{}}$$
 
 > **NOTE:**
 >
-> **Example 22 (The third central moment of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \pi$ and $\mathbb{d}(X) = X - \pi$. The third [central moment](#def-central-moment) is:
+> **Example 21 (The third central moment of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \pi$ and $\mathbb{d}(X) = X - \pi$. The third [central moment](#def-central-moment) is:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^3\right]\mathclose{}}
@@ -1478,11 +1456,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. The second [central moment](#def-central-moment) is ${\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^2\right]\mathclose{}}$ by [Definition 16](#def-central-moment), which is ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$ by [Definition 3](#def-variance).
+> *Proof*. The second [central moment](#def-central-moment) is ${\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^2\right]\mathclose{}}$ by [Definition 15](#def-central-moment), which is ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$ by [Definition 3](#def-variance).
 
 > **NOTE:**
 >
-> **Example 23 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 21](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 2](#thm-variance) gives as:
+> **Example 22 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 20](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 2](#thm-variance) gives as:
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}
@@ -1498,13 +1476,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Definition 17 (Moment generating function)** The **moment generating function** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $M_X$ of a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers) $t$ that gives the [expectation](expectation.llms.md#def-expectation) of $\text{e}^{tX}$, defined at every $t$ with ${\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}} < \infty$:
+> **Definition 16 (Moment generating function)** The **moment generating function** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [function](https://morrison-lab.github.io/mcs/functions.html#def-function) $M_X$ of a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers) $t$ that gives the [expectation](expectation.llms.md#def-expectation) of $\text{e}^{tX}$, defined at every $t$ with ${\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}} < \infty$:
 >
 > $$M_X(t) \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[\text{e}^{tX}\right]\mathclose{}}$$
 
 > **NOTE:**
 >
-> **Example 24 (Moment generating function of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so $\mathbb{P}(X = 1) = \pi$ and $\mathbb{P}(X = 0) = 1 - \pi$. For every $t$:
+> **Example 23 (Moment generating function of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so $\mathbb{P}(X = 1) = \pi$ and $\mathbb{P}(X = 0) = 1 - \pi$. For every $t$:
 >
 > $$\begin{aligned}
 > M_X(t)
@@ -1544,7 +1522,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 25 (Moments of a Bernoulli random variable from its moment generating function)** For $X \sim \operatorname{Ber}(\pi)$, [Example 24](#exm-mgf-bernoulli) gives $M_X(t) = 1 - \pi+ \pi\,\text{e}^{t}$ for every $t$, so $M_X^{(k)}(t) = \pi\,\text{e}^{t}$ for every $k \ge 1$. By [Theorem 16](#thm-mgf-moments), for every $k \ge 1$:
+> **Example 24 (Moments of a Bernoulli random variable from its moment generating function)** For $X \sim \operatorname{Ber}(\pi)$, [Example 23](#exm-mgf-bernoulli) gives $M_X(t) = 1 - \pi+ \pi\,\text{e}^{t}$ for every $t$, so $M_X^{(k)}(t) = \pi\,\text{e}^{t}$ for every $k \ge 1$. By [Theorem 16](#thm-mgf-moments), for every $k \ge 1$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}
@@ -1582,7 +1560,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 26 (Moment generating function of a binomial random variable)** By the [sum of Bernoulli variables](distributions.llms.md#thm-binomial-sum-bernoulli), a [binomial](random-variables.llms.md#def-binomial) [random variable](random-variables.llms.md#def-random-variable) $S \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}$ is a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) $S = \sum_{i=1}^n X_i$ of $n$ [independent](independence.llms.md#def-indpt) $\operatorname{Ber}(\pi)$ variables. Each has [moment generating function](#def-mgf) $1 - \pi+ \pi\,\text{e}^{t}$ ([Example 24](#exm-mgf-bernoulli)). Applying [Theorem 17](#thm-mgf-sum) one summand at a time:
+> **Example 25 (Moment generating function of a binomial random variable)** By the [sum of Bernoulli variables](distributions.llms.md#thm-binomial-sum-bernoulli), a [binomial](random-variables.llms.md#def-binomial) [random variable](random-variables.llms.md#def-random-variable) $S \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}$ is a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) $S = \sum_{i=1}^n X_i$ of $n$ [independent](independence.llms.md#def-indpt) $\operatorname{Ber}(\pi)$ variables. Each has [moment generating function](#def-mgf) $1 - \pi+ \pi\,\text{e}^{t}$ ([Example 23](#exm-mgf-bernoulli)). Applying [Theorem 17](#thm-mgf-sum) one summand at a time:
 >
 > $$\begin{aligned}
 > M_S(t)
@@ -1607,10 +1585,9 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 - [Definition 11 (Uncorrelated random variables)](#def-uncorrelated)
 - [Definition 12 (Conditional covariance)](#def-cond-cov)
 - [Definition 13 (Variance/covariance of a](#def-cov-vec-x) $p \times 1$ random vector)
-- [Definition 14 (Precision of a random vector (precision matrix))](#def-precision-matrix)
-- [Definition 15 (Raw moment)](#def-moment)
-- [Definition 16 (Central moment)](#def-central-moment)
-- [Definition 17 (Moment generating function)](#def-mgf)
+- [Definition 14 (Raw moment)](#def-moment)
+- [Definition 15 (Central moment)](#def-central-moment)
+- [Definition 16 (Moment generating function)](#def-mgf)
 
 # References
 

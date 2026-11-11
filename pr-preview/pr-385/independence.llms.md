@@ -2,9 +2,19 @@
 
 Code
 
+- [Show All Code](javascript:void(0))
+
+- [Hide All Code](javascript:void(0))
+
+- 
+
+  ------------------------------------------------------------------------
+
+- [View Source](javascript:void(0))
+
 Published
 
-Last modified: 2026-11-09 13:49:08 (PST)
+Last modified: 2026-11-10 17:22:01 (PST)
 
 > **NOTE:**
 >
@@ -60,6 +70,45 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
+> **Example 2 (Origin and cylinder count in the Auto data)** In the Auto data of [the random experiment](probability-basics.llms.md#exm-random-experiment), pick a car model [at random](probability-basics.llms.md#def-random-choice), and let $X_1$ indicate that it is American (`origin == 1` in the data) and $X_2$ indicate that it has four cylinders. By [Theorem 1](#thm-indpt-pmf), $X_1 \perp\!\!\!\perp X_2$ [if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff) the [joint PMF](random-variables.llms.md#def-joint-pmf) factors: $\mathbb{P}(X_1 = x_1, X_2 = x_2) = \mathbb{P}(X_1 = x_1)\,\mathbb{P}(X_2 = x_2)$ for every pair of values $(x_1, x_2)$. Here are the two sides of that equation for the pair of values $(1, 1)$, with the factors on the right being [marginal](random-variables.llms.md#def-marginal) [PMFs](random-variables.llms.md#def-pmf):
+>
+> Show code
+>
+> ``` r
+> auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+> is_american <- auto$origin == 1
+> has_four <- auto$cylinders == 4
+> p_joint <- mean(is_american & has_four)
+> p_american <- mean(is_american)
+> p_four <- mean(has_four)
+> c(left_side = p_joint, right_side = p_american * p_four)
+> #>  left_side right_side 
+> #>  0.1760204  0.3172832
+> ```
+>
+> The left side, the [probability](probability-basics.llms.md#def-probability) of an American car with four cylinders, is 0.176, but the right side is 0.317. The factorization fails at $(1, 1)$, so $X_1$ and $X_2$ are not [independent](#def-indpt): learning that a car is American changes the probability that it has four cylinders ([Figure 1](#fig-indpt-auto)).
+>
+> Show code
+>
+> ``` r
+> by_origin <- auto |>
+>   dplyr::mutate(american = origin == 1, four = cylinders == 4) |>
+>   dplyr::summarise(fraction_four = mean(four), .by = american)
+> indpt_plot <- by_origin |>
+>   ggplot2::ggplot() +
+>   ggplot2::aes(x = american, y = fraction_four) +
+>   ggplot2::geom_col(fill = "#1f77b4") +
+>   ggplot2::geom_hline(yintercept = p_four, linetype = "dashed") +
+>   ggplot2::labs(x = "American", y = "Fraction with four cylinders")
+> qnp::interactive_plot(plot = indpt_plot, alt = fig_alt_indpt)
+> ```
+>
+> > **NOTE:**
+> >
+> > Figure 1: The fraction of car models with four cylinders, among American and non-American cars. The dashed line is the fraction among all cars, which both bars would match if $X_1$ and $X_2$ were independent.
+
+> **NOTE:**
+>
 > **Theorem 2 (Independence with densities: the joint density factors)** **Continuous case.** Continuous random variables $X$ and $Y$ with [densities](random-variables.llms.md#def-pdf) $\mathbb{p}(X = x)$ and $\mathbb{p}(Y = y)$ are [statistically independent](#def-indpt) if and only if the product $\mathbb{p}(X = x)\,\mathbb{p}(Y = y)$ is a [joint density](random-variables.llms.md#def-joint-pdf) of $X$ and $Y$.
 >
 > **Mixed case.** A discrete random variable $X$ and a continuous random variable $Y$ with density $\mathbb{p}(Y = y)$ are statistically independent if and only if the product $\mathbb{P}(X = x)\,\mathbb{p}(Y = y)$ is a [joint density-mass function](random-variables.llms.md#def-joint-density-mass) of $X$ and $Y$.
@@ -70,7 +119,7 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> **Example 2 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are $0$ at every point, so it would call every pair of continuous random variables independent. For instance, let $X \sim \text{Uniform}(0, 1)$ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is $1$ on $[0, 1]$, and let $Y = X$. For all real numbers $x$ and $y$, the event ${\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}}$ is ${\mathopen{}\left\{X = x\right\}\mathclose{}}$ if $y = x$ and empty otherwise, so it has probability $0$, because $\Pr(X = x) = 0$ for the [continuous](random-variables.llms.md#def-continuous-rv) $X$. Likewise
+> **Example 3 (The PMF form fails for continuous random variables)** The factorization in [Theorem 1](#thm-indpt-pmf) does not work as a definition of independence for continuous random variables: there, both sides are $0$ at every point, so it would call every pair of continuous random variables independent. For instance, let $X \sim \text{Uniform}(0, 1)$ ([uniform distribution](random-variables.llms.md#def-uniform)), whose density is $1$ on $[0, 1]$, and let $Y = X$. For all real numbers $x$ and $y$, the event ${\mathopen{}\left\{X = x,\, Y = y\right\}\mathclose{}}$ is ${\mathopen{}\left\{X = x\right\}\mathclose{}}$ if $y = x$ and empty otherwise, so it has probability $0$, because $\Pr(X = x) = 0$ for the [continuous](random-variables.llms.md#def-continuous-rv) $X$. Likewise
 >
 > $$\begin{aligned}
 > \Pr(X = x)\,\Pr(Y = y) &= 0 \cdot 0 \\
@@ -101,8 +150,10 @@ Last modified: 2026-11-09 13:49:08 (PST)
 > **Definition 2 (Conditional independence)** Random variables $Y_1, \ldots, Y_n$ are **conditionally independent** [\[4\]](#ref-wikipedia_conditional_independence) given a discrete random variable (or vector) $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ if, for every value $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\Pr(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all sets of real numbers $A_1, \ldots, A_n$, the conditional probability that every $Y_i$ falls in its set is the product of the individual conditional probabilities:
 >
 > $$\Pr(Y_1 \in A_1, \ldots, Y_n \in A_n \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) = \prod_{i=1}^n{\Pr(Y_i \in A_i \mid \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}$$
+
+> **NOTE:**
 >
-> When $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ is continuous, every event $\{\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}\}$ has probability 0, so the condition is stated with densities instead: for every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all $y_1, \ldots, y_n$,
+> **Definition 3 (Conditional independence given a continuous random vector)** [Random variables](random-variables.llms.md#def-random-variable) $Y_1, \ldots, Y_n$ are **conditionally independent given a continuous random vector** $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$ (compare [conditional independence given a discrete random vector](#def-cind)) if, for every $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$ with $\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}) > 0$ and all $y_1, \ldots, y_n$:
 >
 > $$\frac{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_1 = y_1, \ldots, Y_n = y_n)}{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})} = \prod_{i=1}^n{\frac{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}, Y_i = y_i)}{\mathbb{p}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}})}}$$
 >
@@ -110,11 +161,27 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
+> **Example 4 (Two measurements of the same continuous quantity)**  
+>
+> Let $X$ be a [continuous random variable](random-variables.llms.md#def-continuous-rv) with [density](random-variables.llms.md#def-pdf) $\mathbb{p}(X = x)$, and suppose that, given $X = x$, the measurements $Y_1$ and $Y_2$ are [independent](#def-indpt), each with density $\mathbb{p}(Y_i = y_i \mid X = x)$. Then $Y_1$ and $Y_2$ are [conditionally independent given a continuous random vector](#def-cind-continuous) $X$:
+>
+> $$\begin{aligned}
+> \frac{\mathbb{p}(X = x, Y_1 = y_1, Y_2 = y_2)}{\mathbb{p}(X = x)}
+> &= \mathbb{p}(Y_1 = y_1, Y_2 = y_2 \mid X = x)
+> && \text{(definition of a conditional density)} \\
+> &= \mathbb{p}(Y_1 = y_1 \mid X = x) \cdot\mathbb{p}(Y_2 = y_2 \mid X = x)
+> && \text{(independence given } X = x \text{)} \\
+> &= \frac{\mathbb{p}(X = x, Y_1 = y_1)}{\mathbb{p}(X = x)} \cdot\frac{\mathbb{p}(X = x, Y_2 = y_2)}{\mathbb{p}(X = x)}
+> && \text{(definition of a conditional density)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
 > *Remark*. For continuous $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}$, each ratio in the density form is the density of the $Y$’s under their conditional distribution given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$, so both forms say the same thing: given $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{x}}\vphantom{x}}$, the $Y_i$’s joint distribution factors.
 
 > **NOTE:**
 >
-> **Example 3 (Two tests of the same patient)** Let $X$ indicate whether a patient has a disease, and let $Y_1$ and $Y_2$ indicate positive results on two tests whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$. Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$ and with probability $0.1$ if $X = 0$. Then, by the [law of total probability](probability-basics.llms.md#thm-total-prob):
+> **Example 5 (Two tests of the same patient)** Let $X$ indicate whether a patient has a disease, and let $Y_1$ and $Y_2$ indicate positive results on two tests whose errors are unrelated, so that $Y_1$ and $Y_2$ are conditionally independent given $X$. Suppose $\Pr(X = 1) = 0.1$, each test is positive with probability $0.9$ if $X = 1$ and with probability $0.1$ if $X = 0$. Then, by the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional):
 >
 > $$\begin{aligned}
 > \Pr(Y_1 = 1, Y_2 = 1)
@@ -137,7 +204,7 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> **Example 4 (Two coins, given their total)** Let $Y_1$ and $Y_2$ indicate heads on two fair coin flips, which are independent ([Example 1](#exm-indpt)), and let $X = Y_1 + Y_2$ be the number of heads. Given $X = 1$, which has probability $1/2$, exactly one coin is heads, so:
+> **Example 6 (Two coins, given their total)** Let $Y_1$ and $Y_2$ indicate heads on two fair coin flips, which are independent ([Example 1](#exm-indpt)), and let $X = Y_1 + Y_2$ be the number of heads. Given $X = 1$, which has probability $1/2$, exactly one coin is heads, so:
 >
 > $$\begin{aligned}
 > \Pr(Y_1 = 1, Y_2 = 1 \mid X = 1)
@@ -171,11 +238,11 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> *Proof*. [Example 3](#exm-cind) gives the first case, and [Example 4](#exm-indpt-not-cind) gives the second.
+> *Proof*. [Example 5](#exm-cind) gives the first case, and [Example 6](#exm-indpt-not-cind) gives the second.
 
 > **NOTE:**
 >
-> **Example 5 (Wet roads, umbrellas, and rain)** Consider Brian Hutchinson’s intuitive illustration of conditional independence [\[5\]](#ref-hutchinson2024data471):
+> **Example 7 (Wet roads, umbrellas, and rain)** Consider Brian Hutchinson’s intuitive illustration of conditional independence [\[5\]](#ref-hutchinson2024data471):
 >
 > Let $w$ denote wet roads, $u$ denote people carrying umbrellas, and $r$ denote rain.
 >
@@ -212,7 +279,7 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> **Definition 3 (Identically distributed)** Random variables $X_1, \ldots, X_n$ are **identically distributed** if they all have the same [CDF](random-variables.llms.md#def-cdf):
+> **Definition 4 (Identically distributed)** Random variables $X_1, \ldots, X_n$ are **identically distributed** if they all have the same [CDF](random-variables.llms.md#def-cdf):
 >
 > $$\forall i\in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}, \forall x \in \mathbb{R}: \Pr(X_i \le x) = \Pr(X_1 \le x)$$
 
@@ -274,15 +341,15 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> *Remark*. As with independence ([Example 2](#exm-indpt-pmf-fails)), the PMF form would not work as a definition in general: every continuous random variable has $\Pr(X_i = x) = 0$ at every $x$.
+> *Remark*. As with independence ([Example 3](#exm-indpt-pmf-fails)), the PMF form would not work as a definition in general: every continuous random variable has $\Pr(X_i = x) = 0$ at every $x$.
 
 > **NOTE:**
 >
-> **Example 6 (Identically distributed but not independent)** In [Example 1](#exm-indpt), $X_1$ and $1 - X_1$ (the indicator of tails on the first flip) both take the values $0$ and $1$ with probability $1/2$ each, so they are identically distributed ([Theorem 3](#thm-ident-pmf)). They are not independent: knowing one determines the other.
+> **Example 8 (Identically distributed but not independent)** In [Example 1](#exm-indpt), $X_1$ and $1 - X_1$ (the indicator of tails on the first flip) both take the values $0$ and $1$ with probability $1/2$ each, so they are identically distributed ([Theorem 3](#thm-ident-pmf)). They are not independent: knowing one determines the other.
 
 > **NOTE:**
 >
-> **Definition 4 (Conditionally identically distributed)** Random variables $Y_1, \ldots, Y_n$ are **conditionally identically distributed** given random variables $X_1, \ldots, X_n$ if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function $G(y \mid x)$ of $y$ and $x$: for every $i \in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}$, every $y$, and every $x$ with $\Pr(X_i = x) > 0$,
+> **Definition 5 (Conditionally identically distributed)** Random variables $Y_1, \ldots, Y_n$ are **conditionally identically distributed** given random variables $X_1, \ldots, X_n$ if the conditional CDF of each $Y_i$ given $X_i = x$ is one shared function $G(y \mid x)$ of $y$ and $x$: for every $i \in {\mathopen{}\left\{1, \ldots, n\right\}\mathclose{}}$, every $y$, and every $x$ with $\Pr(X_i = x) > 0$,
 >
 > $$\Pr(Y_i \le y \mid X_i = x) = G(y \mid x)$$
 >
@@ -290,11 +357,11 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> **Example 7 (A shared regression model)** Suppose each $Y_i$ is binary, with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$ (for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$). Then $Y_1, \ldots, Y_n$ are conditionally identically distributed given $X_1, \ldots, X_n$, with $G(y \mid x) = 1 - \pi(x)$ for $0 \le y < 1$ (and $0$ for $y < 0$, $1$ for $y \ge 1$). Their marginal distributions can still differ: if participant 1 always receives dose $0$ and participant 2 always receives dose $1$, then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
+> **Example 9 (A shared regression model)** Suppose each $Y_i$ is binary, with $\Pr(Y_i = 1 \mid X_i = x) = \pi(x)$ for one function $\pi$ shared by every $i$ (for instance, $\pi(x) = x / (1 + x)$ for a dose $x \ge 0$). Then $Y_1, \ldots, Y_n$ are conditionally identically distributed given $X_1, \ldots, X_n$, with $G(y \mid x) = 1 - \pi(x)$ for $y \in [0, 1)$ (and $0$ for $y < 0$, $1$ for $y \ge 1$). Their marginal distributions can still differ: if participant 1 always receives dose $0$ and participant 2 always receives dose $1$, then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
 
 > **NOTE:**
 >
-> **Definition 5 (Independent and identically distributed)** Random variables $X_1, \ldots, X_n$ are **independent and identically distributed** (shorthand: “$X_i\ \operatorname{iid}$”) [\[6\]](#ref-wikipedia_iid) if they are:
+> **Definition 6 (Independent and identically distributed)** Random variables $X_1, \ldots, X_n$ are **independent and identically distributed** (shorthand: “$X_i\ \operatorname{iid}$”) [\[6\]](#ref-wikipedia_iid) if they are:
 >
 > - [statistically independent](#def-indpt), and
 > - [identically distributed](#def-ident).
@@ -305,11 +372,11 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> **Example 8 (Repeated die rolls)** The results of $n$ rolls of the same fair die are IID: the rolls are independent, and each is uniform on ${\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}}$.
+> **Example 10 (Repeated die rolls)** The results of $n$ rolls of the same fair die are IID: the rolls are independent, and each is uniform on ${\mathopen{}\left\{1, \ldots, 6\right\}\mathclose{}}$.
 
 > **NOTE:**
 >
-> **Definition 6 (Conditionally independent and identically distributed)** Random variables $Y_1, \ldots, Y_n$ are **conditionally independent and identically distributed** given $X_1, \ldots, X_n$ (shorthand: “$Y_i \mid X_i\ \operatorname{ciid}$” or just “$Y_i \mid X_i\ \operatorname{iid}$”) if:
+> **Definition 7 (Conditionally independent and identically distributed)** Random variables $Y_1, \ldots, Y_n$ are **conditionally independent and identically distributed** given $X_1, \ldots, X_n$ (shorthand: “$Y_i \mid X_i\ \operatorname{ciid}$” or just “$Y_i \mid X_i\ \operatorname{iid}$”) if:
 >
 > - $Y_1, \ldots, Y_n$ are [conditionally independent](#def-cind) given $(X_1, \ldots, X_n)$,
 > - each $Y_i$ depends on $(X_1, \ldots, X_n)$ only through $X_i$, and
@@ -317,7 +384,7 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 > **NOTE:**
 >
-> **Example 9 (The usual regression assumption)** In [Example 7](#exm-cident), if the $Y_i$ are also conditionally independent given all the doses, and each $Y_i$ depends on the doses only through its own $X_i$, then $Y_i \mid X_i\ \operatorname{ciid}$, and the joint conditional PMF is $\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}$: one shared function evaluated at each $(x_i, y_i)$.
+> **Example 11 (The usual regression assumption)** In [Example 9](#exm-cident), if the $Y_i$ are also conditionally independent given all the doses, and each $Y_i$ depends on the doses only through its own $X_i$, then $Y_i \mid X_i\ \operatorname{ciid}$, and the joint conditional PMF is $\prod_{i=1}^n{\pi(x_i)^{y_i}\mathopen{}\left(1 - \pi(x_i)\right)\mathclose{}^{1 - y_i}}$: one shared function evaluated at each $(x_i, y_i)$.
 
 > **TIP:**
 >
@@ -331,10 +398,11 @@ Last modified: 2026-11-09 13:49:08 (PST)
 
 - [Definition 1 (Statistical independence)](#def-indpt)
 - [Definition 2 (Conditional independence)](#def-cind)
-- [Definition 3 (Identically distributed)](#def-ident)
-- [Definition 4 (Conditionally identically distributed)](#def-cident)
-- [Definition 5 (Independent and identically distributed)](#def-iid)
-- [Definition 6 (Conditionally independent and identically distributed)](#def-ciid)
+- [Definition 3 (Conditional independence given a continuous random vector)](#def-cind-continuous)
+- [Definition 4 (Identically distributed)](#def-ident)
+- [Definition 5 (Conditionally identically distributed)](#def-cident)
+- [Definition 6 (Independent and identically distributed)](#def-iid)
+- [Definition 7 (Conditionally independent and identically distributed)](#def-ciid)
 
 # References
 
