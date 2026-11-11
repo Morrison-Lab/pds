@@ -1072,6 +1072,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#thm-mvn-marginal",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-marginal",
+   "kind": "thm",
+   "title": "The marginal distribution of a subvector of a multivariate Gaussian vector",
+   "external": false
+  },
+  {
    "id": "pds/distributions#thm-mvn-moments",
    "site": "pds",
    "page": "distributions",
@@ -3542,6 +3551,50 @@
   [
    "pds/distributions#thm-mvn-diagonal-indpt",
    "pds/random-variables#thm-normal-density"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "pds/distributions#thm-mvn-conditional"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "pds/distributions#thm-mvn-density-integral"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "pds/random-variables#def-marginal"
+  ],
+  [
+   "pds/distributions#thm-mvn-marginal",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/distributions#thm-mvn-moments",
