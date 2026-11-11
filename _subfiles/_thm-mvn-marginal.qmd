@@ -1,0 +1,71 @@
+:::{#thm-mvn-marginal}
+#### The marginal distribution of a subvector of a multivariate Gaussian vector
+
+Let $\vX \sim \Normal_p\paren{\vecf{\mean}, \matr{\covmat}}$,
+and let $\vX_J$ be the subvector of $k$ elements of $\vX$ whose indices are in $J$.
+Then $\vX_J \sim \Normal_k\paren{\vecf{\mean}_J, \matr{\covmat}_{JJ}}$,
+where $\vecf{\mean}_J$ holds the elements of $\vecf{\mean}$ with indices in $J$,
+and $\matr{\covmat}_{JJ}$ holds the rows and columns of $\matr{\covmat}$ with indices in $J$.
+
+:::
+
+::: proof
+
+Reordering the elements of $\vX$ reorders the [rows](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) and [columns](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) of $\matr{\covmat}$ in the same way,
+so we may take $\vX_J$ to be the first $k$ elements.
+Cut $\vX$, $\vecf{\mean}$ and $\matr{\covmat}$ into [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) as in @thm-mvn-conditional,
+with $\vX_1 = \vX_J$ and $m = p - k$ elements in $\vX_2$,
+and let $\matr{S} = \matr{\covmat}_{22} - \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\matr{\covmat}_{12}$.
+Write $\matr{\Omega} = \inv{\matr{\covmat}}$ with blocks $\matr{\Omega}_{ij}$.
+By [the inverse of a positive definite block matrix](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse),
+
+$$
+\matr{\Omega}_{22} = \inv{\matr{S}},
+\quad
+\matr{\Omega}_{21} = -\inv{\matr{S}}\matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}.
+$$
+
+The first block row of $\matr{\covmat}\matr{\Omega} = \matr{I}$ gives
+$\matr{\covmat}_{11}\matr{\Omega}_{11} + \matr{\covmat}_{12}\matr{\Omega}_{21} = \matr{I}$,
+so, using $\matr{\covmat}_{12} = \tp{\matr{\covmat}_{21}}$,
+
+$$
+\matr{\Omega}_{11}
+= \inv{\matr{\covmat}_{11}} - \inv{\matr{\covmat}_{11}}\matr{\covmat}_{12}\matr{\Omega}_{21}
+= \inv{\matr{\covmat}_{11}} + \inv{\matr{\covmat}_{11}}\matr{\covmat}_{12}\inv{\matr{S}}\matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}.
+$$
+
+Write $\vecf{d}_1 = \vx_1 - \vecf{\mean}_1$, $\vecf{d}_2 = \vx_2 - \vecf{\mean}_2$ and $\vecf{c} = \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\vecf{d}_1$.
+The exponent of the joint density in @def-mvn is $-1/2$ times
+
+$$
+\ba
+&\tp{\vecf{d}_1}\matr{\Omega}_{11}\vecf{d}_1
++ 2\tp{\vecf{d}_2}\matr{\Omega}_{21}\vecf{d}_1
++ \tp{\vecf{d}_2}\matr{\Omega}_{22}\vecf{d}_2 \\
+&= \tp{\vecf{d}_1}\inv{\matr{\covmat}_{11}}\vecf{d}_1
++ \tp{\vecf{c}}\inv{\matr{S}}\vecf{c}
+- 2\tp{\vecf{d}_2}\inv{\matr{S}}\vecf{c}
++ \tp{\vecf{d}_2}\inv{\matr{S}}\vecf{d}_2
+&& \text{(substitute } \matr{\Omega}_{11}\text{, } \matr{\Omega}_{21}\text{, } \matr{\Omega}_{22} \text{)} \\
+&= \tp{\vecf{d}_1}\inv{\matr{\covmat}_{11}}\vecf{d}_1
++ \tp{\paren{\vecf{d}_2 - \vecf{c}}}\inv{\matr{S}}\paren{\vecf{d}_2 - \vecf{c}}.
+&& \text{(complete the square)}
+\ea
+$$
+
+The [marginal density](random-variables.qmd#def-marginal) of $\vX_1$ is the [joint density](random-variables.qmd#def-joint-pdf) integrated over $\vx_2$.
+The first summand does not involve $\vx_2$,
+and $\matr{S}$ is [positive definite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-definite),
+so by @thm-mvn-density-integral the integral over $\vx_2$ of the second summand's factor is a constant that does not depend on $\vx_1$.
+So the marginal density of $\vX_1$ equals a constant times
+
+$$
+\ef{-\frac{1}{2}\tp{\vecf{d}_1}\inv{\matr{\covmat}_{11}}\vecf{d}_1},
+$$
+
+which has the form of the $\Normal_k\paren{\vecf{\mean}_1, \matr{\covmat}_{11}}$ [density](random-variables.qmd#def-pdf).
+A marginal density integrates to 1,
+so the constant must be the normalizing factor of that density.
+
+:::
