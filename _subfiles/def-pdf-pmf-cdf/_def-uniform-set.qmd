@@ -3,7 +3,7 @@
 
 Let $S$ be a set with a
 [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) $\measure$
-such that $0 < \measure(S) < \infty$.
+such that $\measure(S) \in (0, \infty)$.
 The **uniform distribution** on $S$ is the
 [probability measure](probability-basics.qmd#def-probability)
 
