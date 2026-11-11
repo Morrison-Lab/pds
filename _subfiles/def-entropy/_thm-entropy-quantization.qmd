@@ -1,0 +1,58 @@
+:::{#thm-entropy-quantization}
+#### Entropy of a quantized random variable
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv)
+whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous)
+and is $0$ outside a [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval).
+For a bin width $\Delta > 0$,
+let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that equals $i$
+when $i\Delta \le X < (i+1)\Delta$.
+Then
+
+$$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to 0.$$
+
+[@cover2006elements, Theorem 8.3.1]
+
+:::
+
+::: proof
+
+Only [finitely many](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) bins meet the [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval),
+so $\entropyf{X^\Delta}$ is a [finite](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over those bins.
+Because the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
+in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point $x_i$ of that bin.
+If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin,
+any point of the bin takes that value.
+Otherwise $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ equals $\frac{1}{\Delta}\int_{i\Delta}^{(i+1)\Delta} \p(X=x)\,dx$,
+the density's [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) over the bin divided by the bin's width,
+so the value lies strictly between the [minimum](https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum) and the [maximum](https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum) of the density on the closed bin,
+so by [continuity](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) the density takes it at a point strictly between the two,
+which is inside the bin.
+By the choice of $x_i$,
+the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $i$ is $\P(X^\Delta = i) = \p(X=x_i)\,\Delta$.
+By @thm-entropy-discrete,
+with each sum over the bins of positive [probability](probability-basics.qmd#def-probability)
+(a bin of probability $0$ adds nothing to the [entropy](#def-entropy)),
+
+$$
+\ba
+\entropyf{X^\Delta}
+&= -\sum_i \p(X=x_i)\,\Delta \log \paren{\p(X=x_i)\,\Delta} \\
+&= -\sum_i \Delta\, \p(X=x_i) \log \p(X=x_i) - \sum_i \p(X=x_i)\,\Delta \log \Delta && \text{(log of a product)} \\
+&= -\sum_i \Delta\, \p(X=x_i) \log \p(X=x_i) - \log \Delta. && \text{(the masses sum to } 1 \text{)}
+\ea
+$$
+
+Adding $\log \Delta$ to both sides leaves the first sum.
+A bin of probability $0$ has density $0$ throughout,
+because a continuous density is never negative,
+so that bin adds $0$ to this sum too, by the convention $0 \log 0 = 0$ of @thm-entropy-continuous.
+The sum is therefore a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \p(X=x) \log \p(X=x)\, dx$ over the bounded interval,
+with mesh $\Delta$
+(the bin grid need not line up with where the interval starts and ends,
+because the density is $0$ outside it),
+whose [integrand](https://morrison-lab.github.io/mds/calculus-integration.html#def-integrand) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous).
+By @thm-entropy-continuous, the value of that integral is $\entropyf{X}$,
+and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$.
+
+:::

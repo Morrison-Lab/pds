@@ -1,0 +1,39 @@
+:::{#thm-entropy-shift}
+#### Shifting does not change entropy
+
+Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv) with [entropy](#def-entropy) $\entropyf{X}$,
+and let $c$ be a [real number](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers).
+Then
+
+$$\entropyf{X + c} = \entropyf{X}.$$
+
+[@cover2006elements, Theorem 8.6.3]
+
+:::
+
+::: proof
+
+Let $Y \eqdef X + c$.
+The [density](random-variables.qmd#def-pdf) of $Y$ is
+
+$$\p(Y=y) = \p(X=y-c).$$
+
+At the value $y = x + c$, the density of $Y$ therefore matches the density of $X$ at $x$.
+That relation holds at every value $x$,
+so it holds between the [random variables](random-variables.qmd#def-random-variable).
+So the [surprisal](#def-surprisal) of $X + c$ matches the surprisal of $X$:
+
+$$\surprisalf{X + c} = \surprisalf{X}.$$
+
+Hence
+
+$$
+\ba
+\entropyf{X + c}
+&= \E{\surprisalf{X + c}} && \text{(definition of entropy)} \\
+&= \E{\surprisalf{X}} && \text{(surprisal of } X + c \text{)} \\
+&= \entropyf{X}. && \text{(definition of entropy)}
+\ea
+$$
+
+:::
