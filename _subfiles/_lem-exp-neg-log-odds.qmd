@@ -1,0 +1,27 @@
+:::{#lem-exp-neg-log-odds}
+#### The exponential of minus the log-odds is one over the odds
+
+Let $A$ be an [event](#def-event) with [probability](#def-probability) $\P(A) \in (0, 1)$,
+[odds](#def-odds) $\odds$
+and [log-odds](#def-log-odds) $\logodds$.
+The [exponential](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function) of minus the log-odds of $A$ is one over its odds:
+
+$$\e{-\logodds} = \frac{1}{\odds}.$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\e{-\logodds}
+&= \e{-\logf{\odds}}
+&& \text{(definition of the log-odds)}
+\\&= \frac{1}{\e{\logf{\odds}}}
+&& \text{(} \e{-x} = 1 / \e{x} \text{)}
+\\&= \frac{1}{\odds}
+&& \text{(the exponential undoes the natural logarithm)}
+\ea
+$$
+
+:::

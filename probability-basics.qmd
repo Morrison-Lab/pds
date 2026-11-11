@@ -130,11 +130,27 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_lem-complement-from-odds.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-complement-from-odds-auto.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-log-odds.qmd >}}
 
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exm-log-odds-auto.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_lem-exp-neg-log-odds.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-exp-neg-log-odds-auto.qmd >}}
 
 # Conditional probability
 
