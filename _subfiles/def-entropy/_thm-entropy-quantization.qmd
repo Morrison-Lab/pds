@@ -17,7 +17,7 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 
 ::: proof
 
-Only [finitely many](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) bins meet the bounded interval,
+Only [finitely many](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) bins meet the [bounded](https://morrison-lab.github.io/mds/algebra-sums.html#def-bounded) [interval](https://morrison-lab.github.io/mcs/chapters/sets.html#def-interval),
 so $\entropyf{X^\Delta}$ is a [finite](https://morrison-lab.github.io/mcs/chapters/sets.html#def-finite-set) [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over those bins.
 Because the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
 in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point $x_i$ of that bin.
