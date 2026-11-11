@@ -1,0 +1,32 @@
+:::{#exm-mvn-bivariate}
+#### A bivariate Gaussian density
+
+Let $p = 2$, $\vecf{\mean} = \vzero$, and
+$\matr{\covmat} = \pmat{1 & 0.8 \\ 0.8 & 1}$.
+Then $\det(\matr{\covmat}) = 1 - 0.8^2 = 0.36$,
+so the [density](random-variables.qmd#def-pdf)
+of $\vX \sim \Normal_2\paren{\vzero, \matr{\covmat}}$ ([multivariate Gaussian](#def-mvn))
+at the [mean](expectation.qmd#def-expectation),
+which is also its peak,
+is:
+
+$$
+\ba
+\pf{\vzero}
+&= \frac{1}{2\pi \cd 0.36^{1/2}}
+\ef{0}
+&& \text{(substitute into the multivariate normal density)} \\
+&= \frac{1}{0.6 \cd 2\pi}
+&& \text{(simplify)}
+\ea
+$$
+
+which is about
+`r round(1 / (0.6 * 2 * pi), 3)`.
+The density is a bell-shaped surface over the $(x_1, x_2)$ plane (@fig-mvn-bivariate-3d).
+Because $\matr{\covmat}_{12} = 0.8 > 0$,
+the surface is stretched along the line $x_2 = x_1$.
+
+{{< include pds/_subfiles/_fig-mvn-bivariate-3d.qmd >}}
+
+:::
