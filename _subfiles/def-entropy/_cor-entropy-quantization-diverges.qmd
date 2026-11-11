@@ -16,8 +16,11 @@ Moving $\log \Delta$ to the other side,
 $$\entropyf{X^\Delta} = \paren{\entropyf{X^\Delta} + \log \Delta} - \log \Delta.$$
 
 The first quantity on the right tends to $\entropyf{X}$,
-which is not $-\infty$ by the hypothesis of @thm-entropy-quantization,
-and $-\log \Delta \to \infty$ as $\Delta \to 0$,
+a finite number:
+the density is continuous and $0$ outside a bounded interval,
+so $-\p(X=x) \log \p(X=x)$ is continuous there, with the convention $0 \log 0 = 0$,
+and a continuous function has a finite integral over a bounded interval.
+Also, $-\log \Delta \to \infty$ as $\Delta \to 0$,
 so $\entropyf{X^\Delta} \to \infty$.
 
 :::

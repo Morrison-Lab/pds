@@ -2,16 +2,11 @@
 #### Entropy of a quantized random variable
 
 Let $X$ be a [continuous random variable](random-variables.qmd#def-continuous-rv)
-whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
-and whose [entropy](#def-entropy) is a [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) whose value is not $\pm\infty$
-(an improper one if the support of the density is unbounded,
-in which case the [Riemann sums](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) below are also assumed to [converge](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to it).
+whose [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous)
+and is $0$ outside a bounded interval.
 For a bin width $\Delta > 0$,
-let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that records the bin of $X$:
-$X^\Delta = x_i$ when $i\Delta \le X < (i+1)\Delta$,
-for $i \in \bbZ$, so that every $\Delta$ has infinitely many bins,
-where $x_i$ is a point of that bin
-with $\p(X=x_i)\,\Delta = \P(i\Delta \le X < (i+1)\Delta)$.
+let $X^\Delta$ be the [discrete random variable](random-variables.qmd#def-discrete-rv) that equals $i$
+when $i\Delta \le X < (i+1)\Delta$.
 Then
 
 $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to 0.$$
@@ -22,8 +17,10 @@ $$\entropyf{X^\Delta} + \log \Delta \to \entropyf{X} \quad \text{as } \Delta \to
 
 ::: proof
 
+Only finitely many bins meet the bounded interval,
+so $\entropyf{X^\Delta}$ is a finite [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over those bins.
 Because the [density](random-variables.qmd#def-pdf) is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous),
-in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point of that bin.
+in every bin it takes the value $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ at some point $x_i$ of that bin.
 If the density is [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) on the bin,
 any point of the bin takes that value.
 Otherwise $\P(i\Delta \le X < (i+1)\Delta)/\Delta$ equals $\frac{1}{\Delta}\int_{i\Delta}^{(i+1)\Delta} \p(X=x)\,dx$,
@@ -31,11 +28,10 @@ the density's [integral](https://morrison-lab.github.io/mds/calculus-integration
 so the value lies strictly between the [minimum](https://morrison-lab.github.io/mds/algebra-basics.html#def-minimum) and the [maximum](https://morrison-lab.github.io/mds/algebra-basics.html#def-maximum) of the density on the closed bin,
 so by [continuity](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) the density takes it at a point strictly between the two,
 which is inside the bin.
-That point is the $x_i$ of the stated choice.
 By the choice of $x_i$,
-the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $x_i$ is $\P(X^\Delta = x_i) = \p(X=x_i)\,\Delta$.
+the [probability mass](random-variables.qmd#def-pmf) of $X^\Delta$ at $i$ is $\P(X^\Delta = i) = \p(X=x_i)\,\Delta$.
 By @thm-entropy-discrete,
-with each [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over the bins of positive [probability](probability-basics.qmd#def-probability)
+with each sum over the bins of positive [probability](probability-basics.qmd#def-probability)
 (a bin of probability $0$ adds nothing to the [entropy](#def-entropy)),
 
 $$
@@ -47,11 +43,13 @@ $$
 \ea
 $$
 
-Adding $\log \Delta$ to both sides leaves the first [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation),
-which is a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \p(X=x) \log \p(X=x)\, dx$.
-By @thm-entropy-continuous, its value is $\entropyf{X}$,
+Adding $\log \Delta$ to both sides leaves the first sum.
+A bin of probability $0$ has density $0$ throughout,
+because a continuous density is never negative,
+so that bin adds $0$ to this sum too, by the convention $0 \log 0 = 0$ of @thm-entropy-continuous.
+The sum is therefore a [Riemann sum](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) for $-\int \p(X=x) \log \p(X=x)\, dx$ over the bounded interval,
+whose integrand is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous).
+By @thm-entropy-continuous, the value of that integral is $\entropyf{X}$,
 and a Riemann sum [converges](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) to its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) as $\Delta \to 0$.
-When the support is unbounded,
-the [convergence](https://morrison-lab.github.io/mds/calculus-integration.html#thm-riemann-general) of these [Riemann sums](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-sum) to the entropy is part of the hypothesis.
 
 :::
