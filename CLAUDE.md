@@ -89,6 +89,19 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 ## Pull request expectations
 
 - Keep PRs scoped --- bug fixes shouldn't smuggle in refactors.
+- **Plan for four slips that cost review rounds on new result and definition divs**
+  (pds#409, pds#413, pds#414, 2026-11-10):
+  - The Claude review rule: a new `#prp-`, `#thm-`, `#lem-`, `#cor-` or `#def-` div needs a worked `#exm-` div after it.
+    A remark between them does not count,
+    and the review is NOT_CLEAN without the example.
+  - `check-avoided-words` fails a trailing `(@prp-x)` crossref.
+    Write "As @prp-x shows, ..."
+    or make the whole claim the link text.
+  - `check-term-links` flags an ordinary word that is also a defined term,
+    such as "terms" in "In practical terms".
+    Reword it rather than link it.
+  - The `check-term-links` opt-out pragma must carry a reason,
+    as in `<!-- check-term-links: allow: reason -->`.
 - **A mechanical split of a multi-div subfile stays a pure move**
   (Ezra, 2026-11-09, pds#368 and pds#369).
   Mechanical, content-identical PRs are exempt from the 10-file, 300-line cap, so the body says "mechanical, content-identical".
@@ -96,6 +109,15 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
   put it in a small stacked PR, and exempt the moved text from the check with `<!-- def-equiv-ok: reason -->`, listed in the body.
   Put that comment below the `####` title line, never above it: above it, the div renders with no title.
   Touching a subfile re-checks its old text, so expect `check-term-links` and `check-definition-equations` to flag lines you only moved.
+  `check-result-definition-links` re-checks a moved result div the same way: exempt it with `<!-- check-result-definition-links: allow: reason -->` below the title line, and list it in the body.
+- **A small edit to a multi-div subfile starts with a split.**
+  `check-one-div-per-subfile` fails any PR that adds a line to a subfile with more than one top-level div (a proof stays with its claim).
+  So a small edit to such a file goes as two stacked PRs, the mechanical split first and the edit on the split files second
+  (the split of `_def-pdf-pmf-cdf.qmd` in pds#426, then the interval edit in pds#425).
+  Put a `> [!IMPORTANT]` alert on the second PR naming the first,
+  and merge the first with a merge commit, not a squash,
+  because squashing it gives `main` different commits from the branch stacked on it.
+  Check that the split is a pure move by rendering the page before and after and diffing the `<body>` (as in pds#426).
 - Write commit messages and PR descriptions explaining the *why*, not just the *what*.
 - Don't bypass CI failures (spell check, link check, lint, bibliography DOIs, non-standard chars) --- fix the underlying issue.
 - Don't commit `_site/` or `_freeze/` changes unless that is genuinely the intent of the PR.

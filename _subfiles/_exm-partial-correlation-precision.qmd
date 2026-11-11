@@ -1,0 +1,25 @@
+:::{#exm-partial-correlation-precision}
+#### The partial correlations of a chain of three Gaussian variables
+
+<!-- no-figure: arithmetic on one 3 x 3 matrix; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2, X_3)}$ be the [Gaussian](#def-normal) vector of @exm-precision-zero-cind,
+with
+
+$$
+\precision(\vX) = \pmat{2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2}.
+$$
+
+By @thm-partial-correlation-precision, the [partial correlation](#def-partial-correlation) of $X_1$ and $X_2$ given $X_3$ is
+
+$$
+\frac{-\precision(\vX)_{12}}{\sqrt{\precision(\vX)_{11}\precision(\vX)_{22}}}
+= \frac{1}{\sqrt{2 \cdot 2}}
+= \frac{1}{2},
+$$
+
+and the partial correlation of $X_1$ and $X_3$ given $X_2$ is $-0 / \sqrt{2 \cdot 2} = 0$,
+as @thm-precision-zero-cind says for a zero element,
+although their [correlation](variance-covariance.qmd#def-correlation) is not zero.
+
+:::
