@@ -1,0 +1,6 @@
+::: {.remark .notes}
+
+As with [events](probability-basics.qmd#def-event), a fully rigorous version restricts $A$ to a designated collection of regions;
+every region that arises in these notes is in it.
+
+:::

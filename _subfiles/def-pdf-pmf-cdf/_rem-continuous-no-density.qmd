@@ -1,0 +1,15 @@
+::: {.remark .notes}
+
+The proof needs measure theory beyond these notes.
+The standard example is the
+[Cantor distribution](https://en.wikipedia.org/wiki/Cantor_distribution),
+which puts no probability on any single point,
+but puts all of its probability on a set of total length 0,
+so any candidate density would integrate to 0 over a set of probability 1.
+
+Every continuous random variable in these notes also has a
+[probability density function](#def-pdf).
+Continuous random variables without a density
+do not arise in applications.
+
+:::

@@ -1,0 +1,14 @@
+:::{#exm-cident}
+#### A shared regression model
+
+Suppose each $Y_i$ is binary,
+with $\Pr(Y_i = 1 \mid X_i = x) = \prob(x)$ for one function $\prob$ shared by every $i$
+(for instance, $\prob(x) = x / (1 + x)$ for a dose $x \ge 0$).
+Then $\dsn{Y}$ are conditionally identically distributed given $\Xin$,
+with $G(y \mid x) = 1 - \prob(x)$ for $y \in [0, 1)$
+(and $0$ for $y < 0$, $1$ for $y \ge 1$).
+Their marginal distributions can still differ:
+if participant 1 always receives dose $0$ and participant 2 always receives dose $1$,
+then $\Pr(Y_1 = 1) = 0$ but $\Pr(Y_2 = 1) = 1/2$.
+
+:::

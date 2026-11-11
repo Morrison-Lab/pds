@@ -1,0 +1,7 @@
+:::{#thm-continuous-no-density}
+#### Some continuous random variables have no density
+
+There exist continuous random variables
+that have no [probability density function](#def-pdf).
+
+:::

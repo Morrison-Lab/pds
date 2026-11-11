@@ -1,0 +1,11 @@
+:::{#exm-std-normal}
+#### Half of a standard normal lies below 0
+
+If $Z$ has the standard normal distribution,
+its density $\p(Z=z) = \frac{1}{\sqrt{2\pi}} \ef{-z^2/2}$
+takes the same value at $z$ and $-z$,
+so $\Pr(Z \le 0) = \Pr(Z \ge 0)$.
+Those two probabilities sum to 1, because $\Pr(Z = 0) = 0$ for a continuous $Z$,
+so each is $\tfrac{1}{2}$.
+
+:::

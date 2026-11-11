@@ -1,0 +1,11 @@
+:::{#def-joint-distribution}
+#### Joint distribution
+
+The **joint distribution** of
+[jointly distributed](#def-jointly-distributed) random variables $\Xin$
+is the function that assigns to each set $A \subseteq \reals^n$
+for which $\{(\Xin) \in A\}$ is an [event](probability-basics.qmd#def-event)
+the probability $\Pr((\Xin) \in A)$
+[@wikipedia_joint_probability_distribution].
+
+:::

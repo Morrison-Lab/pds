@@ -1,0 +1,10 @@
+:::{#thm-cdf-characterizes}
+#### The CDF determines the distribution
+
+If random variables $X$ and $Y$ have the same [CDF](#def-cdf),
+then $\Pr(X \in B) = \Pr(Y \in B)$
+for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) $B \subseteq \reals$,
+which includes every interval,
+and every set built from intervals by countably many unions, intersections, and complements.
+
+:::

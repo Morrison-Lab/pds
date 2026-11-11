@@ -1,0 +1,17 @@
+:::{#cor-cdf-derivative-density-ae}
+#### A CDF has its density as derivative at all but finitely many points
+
+If $X$ is a continuous random variable with CDF $\cdf$
+and a density $f$ that is continuous at all but finitely many points,
+then $\cdf$ is differentiable with $\cdf' = f$
+at all but finitely many points.
+
+:::
+
+::: proof
+
+At every point $t$ where $f$ is continuous,
+@thm-cdf-derivative-is-density gives $\cdf'(t) = f(t)$,
+and by assumption those are all but finitely many points.
+
+:::

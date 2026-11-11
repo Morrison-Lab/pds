@@ -1,0 +1,72 @@
+:::{#exm-indpt-auto}
+#### Origin and cylinder count in the Auto data
+
+In the Auto data of [the random experiment](probability-basics.qmd#exm-random-experiment),
+pick a car model [at random](probability-basics.qmd#def-random-choice),
+and let $X_1$ indicate that it is American
+(`origin == 1` in the data)
+and $X_2$ indicate that it has four cylinders.
+By @thm-indpt-pmf,
+$X_1 \ind X_2$
+[if and only if](https://morrison-lab.github.io/mcs/proof-writing.html#def-iff)
+the [joint PMF](random-variables.qmd#def-joint-pmf) factors:
+$\P(X_1 = x_1, X_2 = x_2) = \P(X_1 = x_1)\,\P(X_2 = x_2)$
+for every pair of values $(x_1, x_2)$.
+Here are the two sides of that equation for the pair of values $(1, 1)$,
+with the factors on the right being [marginal](random-variables.qmd#def-marginal)
+[PMFs](random-variables.qmd#def-pmf):
+
+```{r}
+#| label: exm-indpt-auto-pmf
+auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+is_american <- auto$origin == 1
+has_four <- auto$cylinders == 4
+p_joint <- mean(is_american & has_four)
+p_american <- mean(is_american)
+p_four <- mean(has_four)
+c(left_side = p_joint, right_side = p_american * p_four)
+```
+
+The left side, the [probability](probability-basics.qmd#def-probability)
+of an American car with four cylinders, is
+`{r} round(p_joint, 3)`,
+but the right side is
+`{r} round(p_american * p_four, 3)`.
+The factorization fails at $(1, 1)$,
+so $X_1$ and $X_2$ are not [independent](#def-indpt):
+learning that a car is American changes the probability that it has four cylinders
+(@fig-indpt-auto).
+
+```{r}
+#| label: exm-indpt-auto-alt
+#| echo: false
+fig_alt_indpt <- paste(
+  "Bar chart of the fraction of car models with four cylinders.",
+  "The bar for American cars is far below the bar for non-American cars,",
+  "and the dashed line for all cars lies between them."
+)
+```
+
+```{r}
+#| label: fig-indpt-auto
+#| fig-cap: >-
+#|   The fraction of car models with four cylinders,
+#|   among American and non-American cars.
+#|   The dashed line is the fraction among all cars,
+#|   which both bars would match if $X_1$ and $X_2$ were independent.
+#| fig-alt: !expr fig_alt_indpt
+#| echo: !expr knitr::is_html_output()
+#| message: false
+#| warning: false
+by_origin <- auto |>
+  dplyr::mutate(american = origin == 1, four = cylinders == 4) |>
+  dplyr::summarise(fraction_four = mean(four), .by = american)
+indpt_plot <- by_origin |>
+  ggplot2::ggplot() +
+  ggplot2::aes(x = american, y = fraction_four) +
+  ggplot2::geom_col(fill = "#1f77b4") +
+  ggplot2::geom_hline(yintercept = p_four, linetype = "dashed") +
+  ggplot2::labs(x = "American", y = "Fraction with four cylinders")
+qnp::interactive_plot(plot = indpt_plot, alt = fig_alt_indpt)
+```
+:::

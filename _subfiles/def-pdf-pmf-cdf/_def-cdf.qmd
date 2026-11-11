@@ -1,0 +1,11 @@
+:::{#def-cdf}
+#### Cumulative distribution function (CDF)
+
+For a random variable $X$ (discrete or continuous),
+its **cumulative distribution function**
+[@wikipedia_cumulative_distribution_function]
+is:
+
+$$\cdff{t} \eqdef \Pr(X\le t), \quad t\in\reals.$$
+
+:::

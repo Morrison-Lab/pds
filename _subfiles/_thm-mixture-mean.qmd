@@ -1,0 +1,34 @@
+:::{#thm-mixture-mean}
+#### The mean of a mixture is the weighted mean of the component means
+
+If $X$ has density ${\p_{\text{mix}}}$ (@def-mixture),
+and each component ${\p_c}$ has a defined mean $\mean_c = \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx$,
+then:
+
+$$\E{X} = \sumto{c}{K} w_c \, \mean_c$$
+
+:::
+
+::: proof
+
+The integral defining $\E{X}$ converges absolutely,
+because $\int_{-\infty}^\infty \abs{x} \, {\p_{\text{mix}}}(x)\,dx = \sumto{c}{K} w_c \int_{-\infty}^\infty \abs{x} \, {\p_c}(x)\,dx$,
+a finite sum of finite numbers. Then:
+
+$$
+\ba
+\E{X}
+&= \int_{-\infty}^{\infty} x \, {\p_{\text{mix}}}(x)\,dx
+&& \text{(definition of expectation)} \\
+&= \int_{-\infty}^{\infty} x \sumto{c}{K} w_c \, {\p_c}(x)\,dx
+&& \text{(definition of a mixture)} \\
+&= \sumto{c}{K} w_c \int_{-\infty}^{\infty} x \, {\p_c}(x)\,dx
+&& \text{(a finite sum of integrals is the integral of the sum)} \\
+&= \sumto{c}{K} w_c \, \mean_c
+&& \text{(definition of } \mean_c \text{)}
+\ea
+$$
+
+The first step is the [definition of expectation](expectation.qmd#def-expectation).
+
+:::

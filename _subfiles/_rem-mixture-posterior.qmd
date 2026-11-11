@@ -1,0 +1,10 @@
+::: {.remark .notes}
+
+@thm-mixture-posterior has the form of [Bayes' theorem](probability-basics.qmd#thm-bayes),
+with densities in place of some probabilities:
+the prior probability $w_c$ of component $c$
+is multiplied by the component density ${\p_c}(x)$ at the observation
+and divided by the overall density ${\p_{\text{mix}}}(x)$,
+which plays the role of the [law of total probability](probability-basics.qmd#thm-total-prob-conditional).
+
+:::

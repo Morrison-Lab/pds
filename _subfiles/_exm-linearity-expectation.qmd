@@ -1,0 +1,30 @@
+:::{#exm-linearity-expectation}
+#### Expected total of two dice
+
+Let $X$ and $Y$ be the results of two six-sided die rolls.
+Each has expectation
+
+$$
+\begin{aligned}
+\sumto{x}{6} x \cd \tfrac{1}{6} &= \tfrac{21}{6} \\
+&= 3.5,
+\end{aligned}
+$$
+
+so:
+
+$$
+\ba
+\E{X + Y}
+&= \E{X} + \E{Y}
+&& \text{(linearity of expectation with } a = 1, b = 1, c = 0 \text{)}\\
+&= 3.5 + 3.5
+&& \text{(substitute)}\\
+&= 7
+&& \text{(add)}
+\ea
+$$
+
+This calculation does not need the rolls to be independent.
+
+:::

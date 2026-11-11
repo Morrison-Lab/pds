@@ -1,0 +1,18 @@
+:::{#exm-coprecision}
+#### The coprecision of a bivariate Gaussian vector
+
+<!-- no-figure: a scalar formula for one 2 x 2 case; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2)} \sim \Normal_2\paren{\matr{0}, \pmat{1 & \rho \\ \rho & 1}}$
+with $\abs{\rho} < 1$.
+With no other elements to condition on,
+the [conditional variances](variance-covariance.qmd#def-cond-variance) of $X_1$ and $X_2$ are both 1
+and their [conditional covariance](variance-covariance.qmd#def-cond-cov) is $\rho$,
+so the [coprecision](#def-coprecision) of $X_1$ and $X_2$ is
+
+$$
+\frac{-\rho}{1 \cdot 1 - \rho^2}
+= \frac{-\rho}{1 - \rho^2}.
+$$
+
+:::

@@ -1,0 +1,19 @@
+:::{#exm-jointly-distributed}
+#### The first flip and the total
+
+In @exm-random-variable,
+let $X_1$ indicate heads on the first flip (as in @exm-bernoulli-pmf),
+and let $X$ be the total number of heads.
+Both are functions on the same sample space, $\set{HH, HT, TH, TT}$,
+so they are jointly distributed, and, for example:
+
+$$
+\begin{aligned}
+\Pr(X_1 = 1, X = 1)
+&= \Pr(\set{HH, HT} \cap \set{HT, TH}) \\
+&= \Pr(\set{HT}) \\
+&= \tfrac{1}{4}
+\end{aligned}
+$$
+
+:::

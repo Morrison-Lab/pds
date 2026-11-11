@@ -1,0 +1,8 @@
+:::{#thm-normal-density}
+#### The normal density integrates to 1
+
+If $X \sim \ndist{\mean, \ss}$ (@def-normal), then:
+
+$$\int_{-\infty}^{\infty} \frac{1}{\sdpar\sqrt{2\pi}} \ef{-\frac{(x-\mean)^2}{2\ss}}\,dx = 1$$
+
+:::
