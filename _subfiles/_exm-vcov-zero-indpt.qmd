@@ -1,0 +1,26 @@
+:::{#exm-vcov-zero-indpt}
+#### Independent but not conditionally independent
+
+<!-- no-figure: one 3 x 3 matrix and its inverse; nothing to plot -->
+
+Let $\vX = \tp{(X_1, X_2, X_3)}$ have $\E{\vX} = \matr{0}$ and
+
+$$
+\Varf{\vX} = \pmat{1 & 0 & 1/2 \\ 0 & 1 & 1/2 \\ 1/2 & 1/2 & 1}.
+$$
+
+The $(1, 2)$ element is 0,
+so by @thm-vcov-zero-indpt, $X_1$ and $X_2$ are [independent](independence.qmd#def-indpt).
+By @thm-precision-matrix-inverse, the [precision matrix](#def-precision-matrix) is the [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of this [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix),
+
+$$
+\precision(\vX) = \pmat{3/2 & 1/2 & -1 \\ 1/2 & 3/2 & -1 \\ -1 & -1 & 2},
+$$
+
+which one can check by multiplying the two matrices to get $\matr{I}_3$.
+Its $(1, 2)$ element is $1/2 \ne 0$,
+so by @thm-precision-zero-cind, $X_1$ and $X_2$ are not [conditionally independent given](independence.qmd#def-cind-continuous) $X_3$:
+the variance matrix reads off independence, and the precision matrix reads off conditional independence,
+and neither implies the other.
+
+:::
