@@ -334,3 +334,13 @@ pre.sourceCode:not(.number-lines) > code > span::before {
 :is(h1, h2, h3, h4, h5, h6, div, section, figure, table, span)[id] {
   scroll-margin-top: 30vh;
 }
+
+/* In a narrow panel column the number box beside a slider shrank to 56px,
+   which cut a value like -0.05 short. Keep it wide enough to read. The floor
+   takes width from the slider, so it applies only on screens wide enough to
+   spare it; on a phone it would leave the slider about 20px wide. */
+@media (min-width: 768px) {
+  .widget-panel input[type="number"] {
+    min-width: 4.5em;
+  }
+}
