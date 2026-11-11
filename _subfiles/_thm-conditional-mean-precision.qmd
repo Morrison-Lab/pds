@@ -20,11 +20,11 @@ where $\precision(\vX)$ is the [precision matrix](#def-precision-matrix) of $\vX
 
 Reordering the elements of $\vX$ reorders the [rows](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) and [columns](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) of $\matr{\covmat}$ and of $\precision(\vX)$ in the same way,
 so we may take $X_i$ to be the last element.
-Cut $\vX$, $\vecf{\mean}$ and $\matr{\covmat}$ into blocks with $\vX_{-i}$ first and $X_i$ last,
+Cut $\vX$, $\vecf{\mean}$ and $\matr{\covmat}$ into [blocks](https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#def-block-matrix) with $\vX_{-i}$ first and $X_i$ last,
 as in @thm-mvn-conditional with $\vX_1 = \vX_{-i}$ and $\vX_2 = X_i$,
 and let $\matr{S} = \matr{\covmat}_{22} - \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\matr{\covmat}_{12}$.
 By @thm-mvn-conditional,
-the conditional mean and variance of $X_i$ given $\vX_{-i} = \vx_{-i}$ are
+the [conditional mean](#def-cond-expectation-function) and [conditional variance](variance-covariance.qmd#def-cond-variance) of $X_i$ given $\vX_{-i} = \vx_{-i}$ are
 
 $$
 \mean_i + \matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}\paren{\vx_{-i} - \vecf{\mean}_{-i}}
@@ -42,7 +42,7 @@ $$
 \matr{\Omega}_{21} = -\inv{\matr{S}}\matr{\covmat}_{21}\inv{\matr{\covmat}_{11}}.
 $$
 
-Here $\matr{\Omega}_{22} = \precision(\vX)_{ii}$ is a scalar,
+Here $\matr{\Omega}_{22} = \precision(\vX)_{ii}$ is a [scalar](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar),
 so the conditional variance is $\matr{S} = 1 / \precision(\vX)_{ii}$,
 and multiplying the second equation by $\matr{S}$ gives
 
