@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-10 15:50:11 (PST)
+Last modified: 2026-11-10 16:47:22 (PST)
 
 > **NOTE:**
 >
@@ -160,7 +160,9 @@ Last modified: 2026-11-10 15:50:11 (PST)
 
 > **NOTE:**
 >
-> **Definition 7 (Bernoulli distribution)** A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi\in [0, 1]$, written $X \sim \operatorname{Ber}(\pi)$ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
+> **Definition 7 (Bernoulli distribution)**  
+>
+> A [discrete](#def-discrete-rv) random variable $X$ has the **Bernoulli distribution** with parameter $\pi\in [0, 1]$, written $X \sim \operatorname{Ber}(\pi)$ [\[3\]](#ref-wikipedia_bernoulli_distribution), if:
 >
 > $$\begin{aligned}
 > \Pr(X=x) &\stackrel{\text{def}}{=}\text{1}_{x\in {\mathopen{}\left\{0,1\right\}\mathclose{}}}\pi^x(1-\pi)^{1-x}\\
