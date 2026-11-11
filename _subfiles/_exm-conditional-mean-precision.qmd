@@ -20,7 +20,7 @@ $$
 $$
 
 and $\condVar{X_2}{X_1 = x_1, X_3 = x_3} = 1 / 2$.
-So the conditional mean of $X_2$ is the midpoint of its two neighbors' values.
+So the [conditional mean](#def-cond-expectation-function) of $X_2$ is the midpoint of its two neighbors' values.
 The coefficient of $x_1$ is $-\precision(\vX)_{21} / \precision(\vX)_{22} = 1/2$,
 and the coefficient of a neighbor with a zero off-diagonal element would be zero,
 as @thm-precision-zero-cind says.
