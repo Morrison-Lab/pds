@@ -366,7 +366,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-11 04:54:50 (PST)</p>
+  <p class="date">Last modified: 2026-11-11 20:25:45 (PST)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -885,6 +885,45 @@
 </section>
 <section class="slide level2">
 
+<div id="lem-complement-from-odds" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2 (One over one plus the odds is the complement probability)</strong></span> Let <span class="math inline">\(A\)</span> be an <a href="#/def-event">event</a> with <a href="#/def-probability">probability</a> <span class="math inline">\(\mathbb{P}(A) \in (0, 1)\)</span> and <a href="#/def-odds">odds</a> <span class="math inline">\(\omega\)</span>. One over one plus the odds of <span class="math inline">\(A\)</span> is the probability that <span class="math inline">\(A\)</span> does not happen:</p>
+<p><span class="math display">\[\frac{1}{1 + \omega} = 1 - \mathbb{P}(A).\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{aligned}
+\frac{1}{1 + \omega}
+&amp;= \frac{1}{1 + \frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}}
+&amp;&amp; \text{(definition of the odds)}
+\\&amp;= \frac{1}{\frac{1 - \mathbb{P}(A)}{1 - \mathbb{P}(A)} + \frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}}
+&amp;&amp; \text{(} 1 = \tfrac{1 - \mathbb{P}(A)}{1 - \mathbb{P}(A)} \text{)}
+\\&amp;= \frac{1}{\frac{1 - \mathbb{P}(A) + \mathbb{P}(A)}{1 - \mathbb{P}(A)}}
+&amp;&amp; \text{(add fractions with a common denominator)}
+\\&amp;= \frac{1}{\frac{1}{1 - \mathbb{P}(A)}}
+&amp;&amp; \text{(} {-\mathbb{P}(A)} + \mathbb{P}(A) = 0 \text{)}
+\\&amp;= 1 - \mathbb{P}(A)
+&amp;&amp; \text{(the reciprocal of a reciprocal)}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-complement-from-odds-auto" class="theorem example">
+<p><span class="theorem-title"><strong>Example 20 (The probability that a car in the Auto data is not American, from the odds)</strong></span> &nbsp;</p>
+<!-- no-figure: the example checks one number computed two ways -->
+<p>For the <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> of <a href="#/exm-odds-auto" class="quarto-xref">Example&nbsp;19</a>, <a href="#/lem-complement-from-odds" class="quarto-xref">Lemma&nbsp;2</a> says that one over one plus the <a href="#/def-odds">odds</a> is the <a href="#/def-probability">probability</a> that the car is not American:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>odds_american <span class="ot">&lt;-</span> p_american <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_american)</span>
+<span id="cb4-2"><a aria-label="2"></a><span class="fu">c</span>(<span class="at">from_odds =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> odds_american), <span class="at">complement =</span> <span class="dv">1</span> <span class="sc">-</span> p_american)</span>
+<span id="cb4-3"><a aria-label="3"></a><span class="co">#&gt;  from_odds complement </span></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="co">#&gt;      0.375      0.375</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Both ways give 0.375.</p>
+</div>
+</section>
+<section class="slide level2">
+
 <div id="def-log-odds" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 14 (Log-odds (also called the logit))</strong></span> The <strong>log-odds</strong>, also called the <strong>logit</strong>, of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> with <a href="#/def-probability">probability</a> <span class="math inline">\(\mathbb{P}(A) \in (0, 1)\)</span> are the natural logarithm of its <a href="#/def-odds">odds</a> <span class="citation" data-cites="wikipedia_logit"><a href="#/references" role="doc-biblioref" onclick="">[8]</a></span>:</p>
 <p><span class="math display">\[\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}} = {\operatorname{log}\mathopen{}\left\{\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}\right\}\mathclose{}} \in \mathbb{R}.\]</span></p>
@@ -893,12 +932,49 @@
 <section class="slide level2">
 
 <div id="exm-log-odds-auto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 20 (Log-odds that a car in the Auto data is American)</strong></span> For the <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> of <a href="#/exm-odds-auto" class="quarto-xref">Example&nbsp;19</a>, the <a href="#/def-log-odds">log-odds</a> of <a href="#/def-log-odds" class="quarto-xref">Definition&nbsp;14</a> are:</p>
+<p><span class="theorem-title"><strong>Example 21 (Log-odds that a car in the Auto data is American)</strong></span> For the <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> of <a href="#/exm-odds-auto" class="quarto-xref">Example&nbsp;19</a>, the <a href="#/def-log-odds">log-odds</a> of <a href="#/def-log-odds" class="quarto-xref">Definition&nbsp;14</a> are:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a><span class="fu">log</span>(p_american <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_american))</span>
-<span id="cb4-2"><a aria-label="2"></a><span class="co">#&gt; [1] 0.5108256</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a><span class="fu">log</span>(p_american <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_american))</span>
+<span id="cb5-2"><a aria-label="2"></a><span class="co">#&gt; [1] 0.5108256</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The log-odds are positive because the <a href="#/def-odds">odds</a> exceed 1: an American car is more likely than not.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="lem-exp-neg-log-odds" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 3 (The exponential of minus the log-odds is one over the odds)</strong></span> Let <span class="math inline">\(A\)</span> be an <a href="#/def-event">event</a> with <a href="#/def-probability">probability</a> <span class="math inline">\(\mathbb{P}(A) \in (0, 1)\)</span>, <a href="#/def-odds">odds</a> <span class="math inline">\(\omega\)</span> and <a href="#/def-log-odds">log-odds</a> <span class="math inline">\(\eta\)</span>. The <a href="https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function">exponential</a> of minus the log-odds of <span class="math inline">\(A\)</span> is one over its odds:</p>
+<p><span class="math display">\[\text{e}^{-\eta} = \frac{1}{\omega}.\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{aligned}
+\text{e}^{-\eta}
+&amp;= \text{e}^{-{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}}}
+&amp;&amp; \text{(definition of the log-odds)}
+\\&amp;= \frac{1}{\text{e}^{{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}}}}
+&amp;&amp; \text{(} \text{e}^{-x} = 1 / \text{e}^{x} \text{)}
+\\&amp;= \frac{1}{\omega}
+&amp;&amp; \text{(the exponential undoes the natural logarithm)}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-exp-neg-log-odds-auto" class="theorem example">
+<p><span class="theorem-title"><strong>Example 22 (The exponential of minus the log-odds that a car in the Auto data is American)</strong></span> &nbsp;</p>
+<!-- no-figure: the example checks one number computed two ways -->
+<p>For the <a href="#/def-event">event</a> <span class="math inline">\(A\)</span> of <a href="#/exm-odds-auto" class="quarto-xref">Example&nbsp;19</a>, <a href="#/lem-exp-neg-log-odds" class="quarto-xref">Lemma&nbsp;3</a> says that the <a href="https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function">exponential</a> of minus the <a href="#/def-log-odds">log-odds</a> is one over the <a href="#/def-odds">odds</a>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>odds_american <span class="ot">&lt;-</span> p_american <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_american)</span>
+<span id="cb6-2"><a aria-label="2"></a>log_odds_american <span class="ot">&lt;-</span> <span class="fu">log</span>(odds_american)</span>
+<span id="cb6-3"><a aria-label="3"></a>exp_neg_log_odds <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span>log_odds_american)</span>
+<span id="cb6-4"><a aria-label="4"></a><span class="fu">c</span>(<span class="at">exp_neg_log_odds =</span> exp_neg_log_odds, <span class="at">one_over_odds =</span> <span class="dv">1</span> <span class="sc">/</span> odds_american)</span>
+<span id="cb6-5"><a aria-label="5"></a><span class="co">#&gt; exp_neg_log_odds    one_over_odds </span></span>
+<span id="cb6-6"><a aria-label="6"></a><span class="co">#&gt;              0.6              0.6</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Both ways give 0.6.</p>
 </div>
 </section>
 <section id="conditional-probability" class="slide level2" data-number="3">
@@ -928,7 +1004,7 @@
 <section class="slide level2">
 
 <div id="exm-conditional-prob" class="theorem example">
-<p><span class="theorem-title"><strong>Example 21 (Rolling a six, given an even roll)</strong></span> For a fair die (<a href="#/exm-probability" class="quarto-xref">Example&nbsp;15</a>), let <span class="math inline">\(A = {\mathopen{}\left\{6\right\}\mathclose{}}\)</span> and <span class="math inline">\(B = {\mathopen{}\left\{2, 4, 6\right\}\mathclose{}}\)</span>. Then <span class="math inline">\(A \cap B = {\mathopen{}\left\{6\right\}\mathclose{}}\)</span>, so:</p>
+<p><span class="theorem-title"><strong>Example 23 (Rolling a six, given an even roll)</strong></span> For a fair die (<a href="#/exm-probability" class="quarto-xref">Example&nbsp;15</a>), let <span class="math inline">\(A = {\mathopen{}\left\{6\right\}\mathclose{}}\)</span> and <span class="math inline">\(B = {\mathopen{}\left\{2, 4, 6\right\}\mathclose{}}\)</span>. Then <span class="math inline">\(A \cap B = {\mathopen{}\left\{6\right\}\mathclose{}}\)</span>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(A \mid B)
@@ -961,7 +1037,7 @@
 <section class="slide level2">
 
 <div id="exm-law-conditional-prob" class="theorem example">
-<p><span class="theorem-title"><strong>Example 22 (Applying the law of conditional probability)</strong></span> Suppose 30% of adults exercise regularly (<span class="math inline">\(\Pr(E) = 0.30\)</span>), and among adults who exercise regularly, 60% have low blood pressure (<span class="math inline">\(\Pr(L \mid E) = 0.60\)</span>).</p>
+<p><span class="theorem-title"><strong>Example 24 (Applying the law of conditional probability)</strong></span> Suppose 30% of adults exercise regularly (<span class="math inline">\(\Pr(E) = 0.30\)</span>), and among adults who exercise regularly, 60% have low blood pressure (<span class="math inline">\(\Pr(L \mid E) = 0.60\)</span>).</p>
 <p>Then, by <a href="#/thm-law-conditional-prob" class="quarto-xref">Theorem&nbsp;5</a>, the probability that a randomly selected adult both exercises regularly and has low blood pressure is:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1033,7 +1109,7 @@
 <section class="slide level2">
 
 <div id="exm-bayes" class="theorem example">
-<p><span class="theorem-title"><strong>Example 23 (Positive predictive value of a medical test)</strong></span> Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.</p>
+<p><span class="theorem-title"><strong>Example 25 (Positive predictive value of a medical test)</strong></span> Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.</p>
 <p>Let <span class="math inline">\(D\)</span> be the event “person has the disease” and <span class="math inline">\({+}\)</span> be the event “test is positive”. Then:</p>
 <ul>
 <li><p><span class="math inline">\(\Pr({+}\mid D) = 0.99\)</span> (sensitivity)</p></li>
@@ -1132,12 +1208,12 @@
 <div class="cell hidden">
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-startfrom="2" data-source-offset="-83"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb5-2"><a aria-label="2"></a>brPost <span class="op">=</span> (prev) <span class="kw">=&gt;</span> brSens <span class="op">*</span> prev <span class="op">/</span> (brSens <span class="op">*</span> prev <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> brSpec) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prev))</span>
-<span id="cb5-3"><a aria-label="3"></a><span class="co">// The same people as counts, out of 100,000 screened.</span></span>
-<span id="cb5-4"><a aria-label="4"></a>brN <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb5-5"><a aria-label="5"></a>brSick <span class="op">=</span> brN <span class="op">*</span> brPrev</span>
-<span id="cb5-6"><a aria-label="6"></a>brTP <span class="op">=</span> brSick <span class="op">*</span> brSens</span>
-<span id="cb5-7"><a aria-label="7"></a>brFP <span class="op">=</span> (brN <span class="op">-</span> brSick) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> brSpec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-startfrom="2" data-source-offset="-83"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb7-2"><a aria-label="2"></a>brPost <span class="op">=</span> (prev) <span class="kw">=&gt;</span> brSens <span class="op">*</span> prev <span class="op">/</span> (brSens <span class="op">*</span> prev <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> brSpec) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prev))</span>
+<span id="cb7-3"><a aria-label="3"></a><span class="co">// The same people as counts, out of 100,000 screened.</span></span>
+<span id="cb7-4"><a aria-label="4"></a>brN <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb7-5"><a aria-label="5"></a>brSick <span class="op">=</span> brN <span class="op">*</span> brPrev</span>
+<span id="cb7-6"><a aria-label="6"></a>brTP <span class="op">=</span> brSick <span class="op">*</span> brSens</span>
+<span id="cb7-7"><a aria-label="7"></a>brFP <span class="op">=</span> (brN <span class="op">-</span> brSick) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> brSpec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div>
@@ -1177,56 +1253,56 @@
 </div>
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb6-0"><a aria-label="0"></a>viewof brSens <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(+ | S), sensitivity"</span>})</span>
-<span id="cb6-1"><a aria-label="1"></a>viewof brSpec <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(</span><span class="sc">\u2212</span><span class="st"> | not S), specificity"</span>})</span>
-<span id="cb6-2"><a aria-label="2"></a>viewof brPrev <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".4~f"</span>)<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-startfrom="0" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb8-0"><a aria-label="0"></a>viewof brSens <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(+ | S), sensitivity"</span>})</span>
+<span id="cb8-1"><a aria-label="1"></a>viewof brSpec <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.99</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(</span><span class="sc">\u2212</span><span class="st"> | not S), specificity"</span>})</span>
+<span id="cb8-2"><a aria-label="2"></a>viewof brPrev <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".4~f"</span>)<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb7--1"><a aria-label="-1"></a>{</span>
-<span id="cb7-0"><a aria-label="0"></a>  <span class="kw">const</span> n <span class="op">=</span> (v) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(v)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"en-US"</span>)<span class="op">;</span></span>
-<span id="cb7-1"><a aria-label="1"></a>  <span class="cf">return</span> <span class="fu">md</span><span class="vs">`Out of </span><span class="sc">${</span><span class="fu">n</span>(brN)<span class="sc">}</span><span class="vs"> people screened, </span><span class="sc">${</span><span class="fu">n</span>(brSick)<span class="sc">}</span><span class="vs"> have the disease and </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> of them test positive;</span></span>
-<span id="cb7-2"><a aria-label="2"></a><span class="vs">of the </span><span class="sc">${</span><span class="fu">n</span>(brN <span class="op">-</span> brSick)<span class="sc">}</span><span class="vs"> who do not, </span><span class="sc">${</span><span class="fu">n</span>(brFP)<span class="sc">}</span><span class="vs"> test positive anyway.</span></span>
-<span id="cb7-3"><a aria-label="3"></a><span class="vs">So of the </span><span class="sc">${</span><span class="fu">n</span>(brTP <span class="op">+</span> brFP)<span class="sc">}</span><span class="vs"> positives, </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> are sick:</span></span>
-<span id="cb7-4"><a aria-label="4"></a><span class="vs">P(S | +) = **</span><span class="sc">${</span>(<span class="dv">100</span> <span class="op">*</span> <span class="fu">brPost</span>(brPrev))<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%**.`</span><span class="op">;</span></span>
-<span id="cb7-5"><a aria-label="5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb9--1"><a aria-label="-1"></a>{</span>
+<span id="cb9-0"><a aria-label="0"></a>  <span class="kw">const</span> n <span class="op">=</span> (v) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(v)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"en-US"</span>)<span class="op">;</span></span>
+<span id="cb9-1"><a aria-label="1"></a>  <span class="cf">return</span> <span class="fu">md</span><span class="vs">`Out of </span><span class="sc">${</span><span class="fu">n</span>(brN)<span class="sc">}</span><span class="vs"> people screened, </span><span class="sc">${</span><span class="fu">n</span>(brSick)<span class="sc">}</span><span class="vs"> have the disease and </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> of them test positive;</span></span>
+<span id="cb9-2"><a aria-label="2"></a><span class="vs">of the </span><span class="sc">${</span><span class="fu">n</span>(brN <span class="op">-</span> brSick)<span class="sc">}</span><span class="vs"> who do not, </span><span class="sc">${</span><span class="fu">n</span>(brFP)<span class="sc">}</span><span class="vs"> test positive anyway.</span></span>
+<span id="cb9-3"><a aria-label="3"></a><span class="vs">So of the </span><span class="sc">${</span><span class="fu">n</span>(brTP <span class="op">+</span> brFP)<span class="sc">}</span><span class="vs"> positives, </span><span class="sc">${</span><span class="fu">n</span>(brTP)<span class="sc">}</span><span class="vs"> are sick:</span></span>
+<span id="cb9-4"><a aria-label="4"></a><span class="vs">P(S | +) = **</span><span class="sc">${</span>(<span class="dv">100</span> <span class="op">*</span> <span class="fu">brPost</span>(brPrev))<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%**.`</span><span class="op">;</span></span>
+<span id="cb9-5"><a aria-label="5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb8--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb8-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'Of 100,000 people screened, '</span> <span class="op">+</span></span>
-<span id="cb8-1"><a aria-label="1"></a>    <span class="st">'the ones who test positive, '</span> <span class="op">+</span></span>
-<span id="cb8-2"><a aria-label="2"></a>    <span class="st">'as one bar split into the sick, '</span> <span class="op">+</span></span>
-<span id="cb8-3"><a aria-label="3"></a>    <span class="st">'in orange, '</span> <span class="op">+</span></span>
-<span id="cb8-4"><a aria-label="4"></a>    <span class="st">'and the healthy, '</span> <span class="op">+</span></span>
-<span id="cb8-5"><a aria-label="5"></a>    <span class="st">'in blue.'</span><span class="op">,</span></span>
-<span id="cb8-6"><a aria-label="6"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
-<span id="cb8-7"><a aria-label="7"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"people who test positive, out of 100,000 screened"</span>}<span class="op">,</span></span>
-<span id="cb8-8"><a aria-label="8"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="st">"sick"</span><span class="op">,</span> <span class="st">"not sick"</span>]<span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="st">"#ff7f0e"</span><span class="op">,</span> <span class="st">"#1f77b4"</span>]<span class="op">,</span> <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
-<span id="cb8-9"><a aria-label="9"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb8-10"><a aria-label="10"></a>    Plot<span class="op">.</span><span class="fu">barX</span>([{<span class="dt">who</span><span class="op">:</span> <span class="st">"sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brTP}<span class="op">,</span> {<span class="dt">who</span><span class="op">:</span> <span class="st">"not sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brFP}]<span class="op">,</span></span>
-<span id="cb8-11"><a aria-label="11"></a>              {<span class="dt">x</span><span class="op">:</span> <span class="st">"n"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"who"</span><span class="op">,</span> <span class="dt">insetTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">insetBottom</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">,</span></span>
-<span id="cb8-12"><a aria-label="12"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
-<span id="cb8-13"><a aria-label="13"></a>  ]</span>
-<span id="cb8-14"><a aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb10--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'Of 100,000 people screened, '</span> <span class="op">+</span></span>
+<span id="cb10-1"><a aria-label="1"></a>    <span class="st">'the ones who test positive, '</span> <span class="op">+</span></span>
+<span id="cb10-2"><a aria-label="2"></a>    <span class="st">'as one bar split into the sick, '</span> <span class="op">+</span></span>
+<span id="cb10-3"><a aria-label="3"></a>    <span class="st">'in orange, '</span> <span class="op">+</span></span>
+<span id="cb10-4"><a aria-label="4"></a>    <span class="st">'and the healthy, '</span> <span class="op">+</span></span>
+<span id="cb10-5"><a aria-label="5"></a>    <span class="st">'in blue.'</span><span class="op">,</span></span>
+<span id="cb10-6"><a aria-label="6"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb10-7"><a aria-label="7"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"people who test positive, out of 100,000 screened"</span>}<span class="op">,</span></span>
+<span id="cb10-8"><a aria-label="8"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="st">"sick"</span><span class="op">,</span> <span class="st">"not sick"</span>]<span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="st">"#ff7f0e"</span><span class="op">,</span> <span class="st">"#1f77b4"</span>]<span class="op">,</span> <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb10-9"><a aria-label="9"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb10-10"><a aria-label="10"></a>    Plot<span class="op">.</span><span class="fu">barX</span>([{<span class="dt">who</span><span class="op">:</span> <span class="st">"sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brTP}<span class="op">,</span> {<span class="dt">who</span><span class="op">:</span> <span class="st">"not sick"</span><span class="op">,</span> <span class="dt">n</span><span class="op">:</span> brFP}]<span class="op">,</span></span>
+<span id="cb10-11"><a aria-label="11"></a>              {<span class="dt">x</span><span class="op">:</span> <span class="st">"n"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"who"</span><span class="op">,</span> <span class="dt">insetTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">insetBottom</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">,</span></span>
+<span id="cb10-12"><a aria-label="12"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb10-13"><a aria-label="13"></a>  ]</span>
+<span id="cb10-14"><a aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details class="code-fold">
 <summary>[Code]</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb9--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb9-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'The chance of disease after a positive test, '</span> <span class="op">+</span></span>
-<span id="cb9-1"><a aria-label="1"></a>    <span class="st">'plotted against the prevalence on a log scale, '</span> <span class="op">+</span></span>
-<span id="cb9-2"><a aria-label="2"></a>    <span class="st">'for the chosen sensitivity and specificity, '</span> <span class="op">+</span></span>
-<span id="cb9-3"><a aria-label="3"></a>    <span class="st">'with the chosen prevalence marked.'</span><span class="op">,</span></span>
-<span id="cb9-4"><a aria-label="4"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">230</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb9-5"><a aria-label="5"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">type</span><span class="op">:</span> <span class="st">"log"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence (log scale)"</span><span class="op">,</span></span>
-<span id="cb9-6"><a aria-label="6"></a>      <span class="dt">ticks</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".2~%"</span>)}<span class="op">,</span></span>
-<span id="cb9-7"><a aria-label="7"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S | +)"</span>}<span class="op">,</span></span>
-<span id="cb9-8"><a aria-label="8"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb9-9"><a aria-label="9"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log10</span>(<span class="fl">0.5</span>) <span class="op">+</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.02</span>)<span class="op">.</span><span class="fu">map</span>((e) <span class="kw">=&gt;</span> <span class="dv">10</span> <span class="op">**</span> e)<span class="op">,</span></span>
-<span id="cb9-10"><a aria-label="10"></a>              {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#555"</span>})<span class="op">,</span></span>
-<span id="cb9-11"><a aria-label="11"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([brPrev]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ff7f0e"</span>})</span>
-<span id="cb9-12"><a aria-label="12"></a>  ]</span>
-<span id="cb9-13"><a aria-label="13"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb11--1"><a aria-label="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb11-0"><a aria-label="0"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">'The chance of disease after a positive test, '</span> <span class="op">+</span></span>
+<span id="cb11-1"><a aria-label="1"></a>    <span class="st">'plotted against the prevalence on a log scale, '</span> <span class="op">+</span></span>
+<span id="cb11-2"><a aria-label="2"></a>    <span class="st">'for the chosen sensitivity and specificity, '</span> <span class="op">+</span></span>
+<span id="cb11-3"><a aria-label="3"></a>    <span class="st">'with the chosen prevalence marked.'</span><span class="op">,</span></span>
+<span id="cb11-4"><a aria-label="4"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">230</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb11-5"><a aria-label="5"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">type</span><span class="op">:</span> <span class="st">"log"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S), prevalence (log scale)"</span><span class="op">,</span></span>
+<span id="cb11-6"><a aria-label="6"></a>      <span class="dt">ticks</span><span class="op">:</span> [<span class="fl">0.0001</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> <span class="fl">0.5</span>]<span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".2~%"</span>)}<span class="op">,</span></span>
+<span id="cb11-7"><a aria-label="7"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"P(S | +)"</span>}<span class="op">,</span></span>
+<span id="cb11-8"><a aria-label="8"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb11-9"><a aria-label="9"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log10</span>(<span class="fl">0.5</span>) <span class="op">+</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.02</span>)<span class="op">.</span><span class="fu">map</span>((e) <span class="kw">=&gt;</span> <span class="dv">10</span> <span class="op">**</span> e)<span class="op">,</span></span>
+<span id="cb11-10"><a aria-label="10"></a>              {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#555"</span>})<span class="op">,</span></span>
+<span id="cb11-11"><a aria-label="11"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([brPrev]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> (p) <span class="kw">=&gt;</span> p<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> brPost<span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ff7f0e"</span>})</span>
+<span id="cb11-12"><a aria-label="12"></a>  ]</span>
+<span id="cb11-13"><a aria-label="13"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="fig-base-rate" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">

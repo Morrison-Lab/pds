@@ -204,6 +204,16 @@
    "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function"
   },
   {
+   "id": "mds/algebra-exponentials#def-exponential-function",
+   "site": "mds",
+   "page": "algebra-exponentials",
+   "div": "def-exponential-function",
+   "kind": "def",
+   "title": "exponential function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function"
+  },
+  {
    "id": "mds/algebra-exponentials#def-infinite-sum",
    "site": "mds",
    "page": "algebra-exponentials",
@@ -2185,6 +2195,24 @@
    "div": "def-step",
    "kind": "def",
    "title": "Step",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#lem-complement-from-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "lem-complement-from-odds",
+   "kind": "lem",
+   "title": "One over one plus the odds is the complement probability",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#lem-exp-neg-log-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "lem-exp-neg-log-odds",
+   "kind": "lem",
+   "title": "The exponential of minus the log-odds is one over the odds",
    "external": false
   },
   {
@@ -5192,6 +5220,38 @@
   [
    "pds/probability-basics#def-sample-space",
    "pds/probability-basics#def-random-experiment"
+  ],
+  [
+   "pds/probability-basics#lem-complement-from-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#lem-complement-from-odds",
+   "pds/probability-basics#def-odds"
+  ],
+  [
+   "pds/probability-basics#lem-complement-from-odds",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#lem-exp-neg-log-odds",
+   "mds/algebra-exponentials#def-exponential-function"
+  ],
+  [
+   "pds/probability-basics#lem-exp-neg-log-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#lem-exp-neg-log-odds",
+   "pds/probability-basics#def-log-odds"
+  ],
+  [
+   "pds/probability-basics#lem-exp-neg-log-odds",
+   "pds/probability-basics#def-odds"
+  ],
+  [
+   "pds/probability-basics#lem-exp-neg-log-odds",
+   "pds/probability-basics#def-probability"
   ],
   [
    "pds/probability-basics#lem-sample-space-event",
