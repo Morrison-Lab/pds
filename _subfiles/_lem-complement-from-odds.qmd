@@ -1,0 +1,30 @@
+:::{#lem-complement-from-odds}
+#### One over one plus the odds is the complement probability
+
+Let $A$ be an [event](#def-event) with [probability](#def-probability) $\P(A) \in (0, 1)$
+and [odds](#def-odds) $\odds$.
+One over one plus the odds of $A$ is the probability that $A$ does not happen:
+
+$$\frac{1}{1 + \odds} = 1 - \P(A).$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\frac{1}{1 + \odds}
+&= \frac{1}{1 + \frac{\P(A)}{1 - \P(A)}}
+&& \text{(definition of the odds)}
+\\&= \frac{1}{\frac{1 - \P(A)}{1 - \P(A)} + \frac{\P(A)}{1 - \P(A)}}
+&& \text{(} 1 = \tfrac{1 - \P(A)}{1 - \P(A)} \text{)}
+\\&= \frac{1}{\frac{1 - \P(A) + \P(A)}{1 - \P(A)}}
+&& \text{(add fractions with a common denominator)}
+\\&= \frac{1}{\frac{1}{1 - \P(A)}}
+&& \text{(} {-\P(A)} + \P(A) = 0 \text{)}
+\\&= 1 - \P(A)
+&& \text{(the reciprocal of a reciprocal)}
+\ea
+$$
+
+:::

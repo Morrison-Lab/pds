@@ -1,0 +1,17 @@
+:::{#exm-complement-from-odds-auto}
+#### The probability that a car in the Auto data is not American, from the odds
+
+<!-- no-figure: the example checks one number computed two ways -->
+
+For the [event](#def-event) $A$ of @exm-odds-auto,
+@lem-complement-from-odds says that one over one plus the [odds](#def-odds)
+is the [probability](#def-probability) that the car is not American:
+
+```{r}
+#| code-fold: false
+odds_american <- p_american / (1 - p_american)
+c(from_odds = 1 / (1 + odds_american), complement = 1 - p_american)
+```
+
+Both ways give `{r} round(1 - p_american, 3)`.
+:::
