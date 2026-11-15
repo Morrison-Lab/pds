@@ -1,0 +1,23 @@
+::: {#fig-prob-odds-log-odds}
+
+$$
+\P(A)
+\overbrace{
+\underbrace{
+\underset{\xleftarrow[\frac{\odds}{1 + \odds}]{}}{\xrightarrow{\frac{\P(A)}{1 - \P(A)}}}
+\odds
+\underset{\xleftarrow[\expf{\logodds}]{}}{\xrightarrow{\logf{\odds}}}
+}_{\expitf{\logodds}}
+}^{\logitf{\P(A)}}
+\logodds
+$$
+
+The [probability](#def-probability) $\P(A)$, [odds](#def-odds) $\odds$, and [log-odds](#def-log-odds) $\logodds$ of an [event](#def-event) $A$.
+The upper arrows convert each quantity into the next,
+and the lower arrows convert back.
+Composing the two upper arrows gives the [logit](#def-log-odds), which takes $\P(A)$ to $\logodds$;
+composing the two lower arrows gives the
+[expit](https://morrison-lab.github.io/mcs/functions.html#def-logistic-function),
+also called the logistic function, which takes $\logodds$ back to $\P(A)$.
+
+:::

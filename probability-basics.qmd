@@ -160,6 +160,14 @@ format:
 
 {{< include pds/_subfiles/_exm-exp-neg-log-odds-auto.qmd >}}
 
+{{< slidebreak >}}
+
+@fig-prob-odds-log-odds collects these conversions.
+Its lower left arrow is @lem-prob-from-odds,
+and its lower right arrow undoes the natural [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) in @def-log-odds.
+
+{{< include pds/_subfiles/_fig-prob-odds-log-odds.qmd >}}
+
 # Conditional probability
 
 <!-- No slidebreak here: the heading shares its slide with the def-conditional-prob div. -->
