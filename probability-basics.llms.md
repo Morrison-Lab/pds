@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-13 17:35:24 (PST)
+Last modified: 2026-11-15 11:09:00 (PST)
 
 # 1 Defining probabilities
 
@@ -439,13 +439,50 @@ Last modified: 2026-11-13 17:35:24 (PST)
 
 > **NOTE:**
 >
+> **Lemma 3 (The odds over one plus the odds is the probability)** Let $A$ be an [event](#def-event) with [probability](#def-probability) $\mathbb{P}(A) \in (0, 1)$ and [odds](#def-odds) $\omega$. The odds of $A$ over one plus the odds of $A$ is the probability of $A$:
+>
+> $$\frac{\omega}{1 + \omega} = \mathbb{P}(A).$$
+
+> **NOTE:**
+>
+> *Proof*. $$\begin{aligned}
+> \frac{\omega}{1 + \omega}
+> &= \omega\cdot \frac{1}{1 + \omega}
+> && \text{(} \tfrac{a}{b} = a \cdot \tfrac{1}{b} \text{)}
+> \\&= \omega\cdot (1 - \mathbb{P}(A))
+> && \text{(one over one plus the odds)}
+> \\&= \frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)} \cdot (1 - \mathbb{P}(A))
+> && \text{(definition of the odds)}
+> \\&= \mathbb{P}(A)
+> && \text{(} \tfrac{a}{b} \cdot b = a \text{)}
+> \end{aligned}$$
+>
+> The second step applies [Lemma 2](#lem-complement-from-odds).
+
+> **NOTE:**
+>
+> **Example 21 (The probability that a car in the Auto data is American, from the odds)**  
+>
+> For the [event](#def-event) $A$ of [Example 19](#exm-odds-auto), [Lemma 3](#lem-prob-from-odds) says that the [odds](#def-odds) over one plus the odds is the [probability](#def-probability) that the car is American:
+>
+> ``` r
+> odds_american <- p_american / (1 - p_american)
+> c(from_odds = odds_american / (1 + odds_american), probability = p_american)
+> #>   from_odds probability 
+> #>       0.625       0.625
+> ```
+>
+> Both ways give 0.625.
+
+> **NOTE:**
+>
 > **Definition 14 (Log-odds (also called the logit))** The **log-odds**, also called the **logit**, of an [event](#def-event) $A$ with [probability](#def-probability) $\mathbb{P}(A) \in (0, 1)$ are the natural logarithm of its [odds](#def-odds) [\[8\]](#ref-wikipedia_logit):
 >
 > $$\eta\stackrel{\text{def}}{=}{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}} = {\operatorname{log}\mathopen{}\left\{\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}\right\}\mathclose{}} \in \mathbb{R}.$$
 
 > **NOTE:**
 >
-> **Example 21 (Log-odds that a car in the Auto data is American)** For the [event](#def-event) $A$ of [Example 19](#exm-odds-auto), the [log-odds](#def-log-odds) of [Definition 14](#def-log-odds) are:
+> **Example 22 (Log-odds that a car in the Auto data is American)** For the [event](#def-event) $A$ of [Example 19](#exm-odds-auto), the [log-odds](#def-log-odds) of [Definition 14](#def-log-odds) are:
 >
 > ``` r
 > log(p_american / (1 - p_american))
@@ -456,7 +493,7 @@ Last modified: 2026-11-13 17:35:24 (PST)
 
 > **NOTE:**
 >
-> **Lemma 3 (The exponential of minus the log-odds is one over the odds)** Let $A$ be an [event](#def-event) with [probability](#def-probability) $\mathbb{P}(A) \in (0, 1)$, [odds](#def-odds) $\omega$ and [log-odds](#def-log-odds) $\eta$. The [exponential](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function) of minus the log-odds of $A$ is one over its odds:
+> **Lemma 4 (The exponential of minus the log-odds is one over the odds)** Let $A$ be an [event](#def-event) with [probability](#def-probability) $\mathbb{P}(A) \in (0, 1)$, [odds](#def-odds) $\omega$ and [log-odds](#def-log-odds) $\eta$. The [exponential](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function) of minus the log-odds of $A$ is one over its odds:
 >
 > $$\text{e}^{-\eta} = \frac{1}{\omega}.$$
 
@@ -474,9 +511,9 @@ Last modified: 2026-11-13 17:35:24 (PST)
 
 > **NOTE:**
 >
-> **Example 22 (The exponential of minus the log-odds that a car in the Auto data is American)**  
+> **Example 23 (The exponential of minus the log-odds that a car in the Auto data is American)**  
 >
-> For the [event](#def-event) $A$ of [Example 19](#exm-odds-auto), [Lemma 3](#lem-exp-neg-log-odds) says that the [exponential](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function) of minus the [log-odds](#def-log-odds) is one over the [odds](#def-odds):
+> For the [event](#def-event) $A$ of [Example 19](#exm-odds-auto), [Lemma 4](#lem-exp-neg-log-odds) says that the [exponential](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-exponential-function) of minus the [log-odds](#def-log-odds) is one over the [odds](#def-odds):
 >
 > ``` r
 > odds_american <- p_american / (1 - p_american)
@@ -503,7 +540,7 @@ Last modified: 2026-11-13 17:35:24 (PST)
 
 > **NOTE:**
 >
-> **Example 23 (Rolling a six, given an even roll)** For a fair die ([Example 15](#exm-probability)), let $A = {\mathopen{}\left\{6\right\}\mathclose{}}$ and $B = {\mathopen{}\left\{2, 4, 6\right\}\mathclose{}}$. Then $A \cap B = {\mathopen{}\left\{6\right\}\mathclose{}}$, so:
+> **Example 24 (Rolling a six, given an even roll)** For a fair die ([Example 15](#exm-probability)), let $A = {\mathopen{}\left\{6\right\}\mathclose{}}$ and $B = {\mathopen{}\left\{2, 4, 6\right\}\mathclose{}}$. Then $A \cap B = {\mathopen{}\left\{6\right\}\mathclose{}}$, so:
 >
 > $$\begin{aligned}
 > \Pr(A \mid B)
@@ -532,7 +569,7 @@ Last modified: 2026-11-13 17:35:24 (PST)
 
 > **NOTE:**
 >
-> **Example 24 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly ($\Pr(E) = 0.30$), and among adults who exercise regularly, 60% have low blood pressure ($\Pr(L \mid E) = 0.60$).
+> **Example 25 (Applying the law of conditional probability)** Suppose 30% of adults exercise regularly ($\Pr(E) = 0.30$), and among adults who exercise regularly, 60% have low blood pressure ($\Pr(L \mid E) = 0.60$).
 >
 > Then, by [Theorem 5](#thm-law-conditional-prob), the probability that a randomly selected adult both exercises regularly and has low blood pressure is:
 >
@@ -599,7 +636,7 @@ Last modified: 2026-11-13 17:35:24 (PST)
 
 > **NOTE:**
 >
-> **Example 25 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 26 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let $D$ be the event “person has the disease” and ${+}$ be the event “test is positive”. Then:
 >

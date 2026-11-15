@@ -2216,6 +2216,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#lem-prob-from-odds",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "lem-prob-from-odds",
+   "kind": "lem",
+   "title": "The odds over one plus the odds is the probability",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#lem-sample-space-event",
    "site": "pds",
    "page": "probability-basics",
@@ -5252,6 +5261,22 @@
   [
    "pds/probability-basics#lem-exp-neg-log-odds",
    "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#lem-prob-from-odds",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#lem-prob-from-odds",
+   "pds/probability-basics#def-odds"
+  ],
+  [
+   "pds/probability-basics#lem-prob-from-odds",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#lem-prob-from-odds",
+   "pds/probability-basics#lem-complement-from-odds"
   ],
   [
    "pds/probability-basics#lem-sample-space-event",
