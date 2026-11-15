@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-15 11:09:00 (PST)
+Last modified: 2026-11-15 11:55:56 (PST)
 
 # 1 Defining probabilities
 
@@ -526,6 +526,22 @@ Last modified: 2026-11-15 11:09:00 (PST)
 >
 > Both ways give 0.6.
 
+[Figure 1](#fig-prob-odds-log-odds) shows these conversions together. Its lower left arrow is [Lemma 3](#lem-prob-from-odds), and its lower right arrow undoes the [natural logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-natural-log) in [Definition 14](#def-log-odds).
+
+> **NOTE:**
+>
+> $$\mathbb{P}(A)
+> \overbrace{
+> \underbrace{
+> \underset{\xleftarrow[\frac{\omega}{1 + \omega}]{}}{\xrightarrow{\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}}}
+> \omega
+> \underset{\xleftarrow[{\operatorname{exp}\mathopen{}\left\{\eta\right\}\mathclose{}}]{}}{\xrightarrow{{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}}}}
+> }_{{\operatorname{expit}\mathopen{}\left\{\eta\right\}\mathclose{}}}
+> }^{{\operatorname{logit}\mathopen{}\left\{\mathbb{P}(A)\right\}\mathclose{}}}
+> \eta$$
+>
+> Figure 1: The [probability](#def-probability) $\mathbb{P}(A)$, [odds](#def-odds) $\omega$, and [log-odds](#def-log-odds) $\eta$ of an [event](#def-event) $A$. The upper arrows convert each quantity into the next, and the lower arrows convert back. Composing the two upper arrows gives the [logit](#def-log-odds), which takes $\mathbb{P}(A)$ to $\eta$; composing the two lower arrows gives the [expit](https://morrison-lab.github.io/mcs/functions.html#def-logistic-function), also called the logistic function, which takes $\eta$ back to $\mathbb{P}(A)$.
+
 # 3 Conditional probability
 
 > **NOTE:**
@@ -810,7 +826,7 @@ brFP = (brN - brSick) * (1 - brSpec)
 > })
 > ```
 >
-> Figure 1: The chance of disease after a positive test, as counts out of 100,000 people screened and as a function of the prevalence.
+> Figure 2: The chance of disease after a positive test, as counts out of 100,000 people screened and as a function of the prevalence.
 
 > **TIP:**
 >

@@ -366,7 +366,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-15 11:09:00 (PST)</p>
+  <p class="date">Last modified: 2026-11-15 11:55:56 (PST)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -1015,6 +1015,30 @@
 <p>Both ways give 0.6.</p>
 </div>
 </section>
+<section class="slide level2">
+
+<p><a href="#/fig-prob-odds-log-odds" class="quarto-xref">Figure&nbsp;1</a> shows these conversions together. Its lower left arrow is <a href="#/lem-prob-from-odds" class="quarto-xref">Lemma&nbsp;3</a>, and its lower right arrow undoes the <a href="https://morrison-lab.github.io/mds/algebra-exponentials.html#def-natural-log">natural logarithm</a> in <a href="#/def-log-odds" class="quarto-xref">Definition&nbsp;14</a>.</p>
+<div id="fig-prob-odds-log-odds" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-prob-odds-log-odds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math inline">\(\mathbb{P}(A)\)</span>, <a href="#/def-odds">odds</a> <span class="math inline">\(\omega\)</span>, and <a href="#/def-log-odds">log-odds</a> <span class="math inline">\(\eta\)</span> of an <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>. The upper arrows convert each quantity into the next, and the lower arrows convert back. Composing the two upper arrows gives the <a href="#/def-log-odds">logit</a>, which takes <span class="math inline">\(\mathbb{P}(A)\)</span> to <span class="math inline">\(\eta\)</span>; composing the two lower arrows gives the <a href="https://morrison-lab.github.io/mcs/functions.html#def-logistic-function">expit</a>, also called the logistic function, which takes <span class="math inline">\(\eta\)</span> back to <span class="math inline">\(\mathbb{P}(A)\)</span>.
+</figcaption>
+<div aria-describedby="fig-prob-odds-log-odds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><span class="math display">\[
+\mathbb{P}(A)
+\overbrace{
+\underbrace{
+\underset{\xleftarrow[\frac{\omega}{1 + \omega}]{}}{\xrightarrow{\frac{\mathbb{P}(A)}{1 - \mathbb{P}(A)}}}
+\omega
+\underset{\xleftarrow[{\operatorname{exp}\mathopen{}\left\{\eta\right\}\mathclose{}}]{}}{\xrightarrow{{\operatorname{log}\mathopen{}\left\{\omega\right\}\mathclose{}}}}
+}_{{\operatorname{expit}\mathopen{}\left\{\eta\right\}\mathclose{}}}
+}^{{\operatorname{logit}\mathopen{}\left\{\mathbb{P}(A)\right\}\mathclose{}}}
+\eta
+\]</span></p>
+</div>
+</figure>
+</div>
+</section>
 <section id="conditional-probability" class="slide level2" data-number="3">
 <h2><span class="header-section-number">3</span> Conditional probability</h2>
 </section>
@@ -1345,7 +1369,7 @@
 <div id="fig-base-rate" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-base-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The chance of disease after a positive test, as counts out of 100,000 people screened and as a function of the prevalence.
+Figure&nbsp;2: The chance of disease after a positive test, as counts out of 100,000 people screened and as a function of the prevalence.
 </figcaption>
 <div aria-describedby="fig-base-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="columns widget-panel" style="display:flex; gap:1rem; align-items:flex-start; background-color:#fbfbfb; color:#222; color-scheme:light; padding:0.5rem; border-radius:6px; font-size:min(1em, 18px)">
