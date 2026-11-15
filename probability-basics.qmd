@@ -138,6 +138,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_lem-prob-from-odds.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-prob-from-odds-auto.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-log-odds.qmd >}}
 
 {{< slidebreak >}}

@@ -1,0 +1,17 @@
+:::{#exm-prob-from-odds-auto}
+#### The probability that a car in the Auto data is American, from the odds
+
+<!-- no-figure: the example checks one number computed two ways -->
+
+For the [event](#def-event) $A$ of @exm-odds-auto,
+@lem-prob-from-odds says that the [odds](#def-odds) over one plus the odds
+is the [probability](#def-probability) that the car is American:
+
+```{r}
+#| code-fold: false
+odds_american <- p_american / (1 - p_american)
+c(from_odds = odds_american / (1 + odds_american), probability = p_american)
+```
+
+Both ways give `{r} round(p_american, 3)`.
+:::
