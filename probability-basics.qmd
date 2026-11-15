@@ -162,9 +162,9 @@ format:
 
 {{< slidebreak >}}
 
-@fig-prob-odds-log-odds collects these conversions.
+@fig-prob-odds-log-odds shows these conversions together.
 Its lower left arrow is @lem-prob-from-odds,
-and its lower right arrow undoes the natural [logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) in @def-log-odds.
+and its lower right arrow undoes the [natural logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-natural-log) in @def-log-odds.
 
 {{< include pds/_subfiles/_fig-prob-odds-log-odds.qmd >}}
 
