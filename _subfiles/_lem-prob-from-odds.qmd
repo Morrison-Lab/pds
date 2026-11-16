@@ -1,0 +1,30 @@
+:::{#lem-prob-from-odds}
+#### The odds over one plus the odds is the probability
+
+Let $A$ be an [event](#def-event) with [probability](#def-probability) $\P(A) \in (0, 1)$
+and [odds](#def-odds) $\odds$.
+The odds of $A$ over one plus the odds of $A$ is the probability of $A$:
+
+$$\frac{\odds}{1 + \odds} = \P(A).$$
+
+:::
+
+::: proof
+
+$$
+\ba
+\frac{\odds}{1 + \odds}
+&= \odds \cdot \frac{1}{1 + \odds}
+&& \text{(} \tfrac{a}{b} = a \cdot \tfrac{1}{b} \text{)}
+\\&= \odds \cdot (1 - \P(A))
+&& \text{(one over one plus the odds)}
+\\&= \frac{\P(A)}{1 - \P(A)} \cdot (1 - \P(A))
+&& \text{(definition of the odds)}
+\\&= \P(A)
+&& \text{(} \tfrac{a}{b} \cdot b = a \text{)}
+\ea
+$$
+
+The second step applies @lem-complement-from-odds.
+
+:::

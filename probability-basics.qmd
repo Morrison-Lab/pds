@@ -138,6 +138,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_lem-prob-from-odds.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-prob-from-odds-auto.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-log-odds.qmd >}}
 
 {{< slidebreak >}}
@@ -151,6 +159,14 @@ format:
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exm-exp-neg-log-odds-auto.qmd >}}
+
+{{< slidebreak >}}
+
+@fig-prob-odds-log-odds shows these conversions together.
+Its lower left arrow is @lem-prob-from-odds,
+and its lower right arrow undoes the [natural logarithm](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-natural-log) in @def-log-odds.
+
+{{< include pds/_subfiles/_fig-prob-odds-log-odds.qmd >}}
 
 # Conditional probability
 
