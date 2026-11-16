@@ -9,7 +9,7 @@ What is the smallest [expected squared error](expectation.qmd#def-squared-error-
 ::: {.callout-tip}
 #### Hint
 
-Evaluate @eq-constant-prediction-decompose at the number you found in @exr-best-constant.
+Use @eq-constant-prediction-decompose and your answer to @exr-best-constant.
 :::
 
 :::
