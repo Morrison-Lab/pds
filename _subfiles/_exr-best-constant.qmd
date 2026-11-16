@@ -6,4 +6,11 @@ Use @thm-constant-prediction-decompose.
 
 Which number $c$ minimizes $\E{\sqf{Y - c}}$?
 
+::: {.callout-tip}
+#### Hint
+
+In @eq-constant-prediction-decompose, ask which term depends on $c$,
+and when a square is smallest.
+:::
+
 :::

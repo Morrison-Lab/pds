@@ -2,12 +2,12 @@
 
 #### Searching for the best constant
 
-For the `mpg` values of the Auto data of @exm-best-constant-auto,
-find the constant $c$ that minimizes the average squared error by numerical search, without using the mean:
-
 <!-- no-figure: @fig-best-constant-auto plots the curve this search minimizes -->
 
-::: {.panel-tabset}
+For the `mpg` values of the Auto data of @exm-best-constant-auto,
+find the constant $c$ that minimizes the average [squared error](expectation.qmd#def-squared-error-loss) by numerical search, without using the mean:
+
+::: {.panel-tabset group="language"}
 
 #### Python
 
@@ -59,8 +59,10 @@ c(
 :::
 
 The search ends at `{r} sprintf("%.3f", best_search$minimum)`, the mean of `mpg`,
-and the smallest error it finds is `{r} sprintf("%.3f", best_search$objective)`, the variance.
+and the smallest value it finds is `{r} sprintf("%.3f", best_search$objective)`,
+the [variance](#def-variance) of `mpg` over these cars.
 This matches @cor-best-constant:
-the best constant under squared error is the mean, and the best error is the variance.
+the best constant under [squared error](expectation.qmd#def-squared-error-loss) is the mean,
+and its [expected squared error](expectation.qmd#def-squared-error-risk) is the variance.
 
 :::

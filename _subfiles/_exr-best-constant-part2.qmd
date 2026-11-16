@@ -4,6 +4,12 @@
 
 Use the setup of @exr-best-constant.
 
-What is the smallest [expected](expectation.qmd#def-expectation) squared error that any constant [prediction](expectation.qmd#def-prediction) can achieve?
+What is the smallest [expected squared error](expectation.qmd#def-squared-error-risk) that any constant [prediction](expectation.qmd#def-prediction) can achieve?
+
+::: {.callout-tip}
+#### Hint
+
+Evaluate @eq-constant-prediction-decompose at the number you found in @exr-best-constant.
+:::
 
 :::

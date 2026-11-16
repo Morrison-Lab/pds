@@ -1,6 +1,6 @@
 ::: {#sol-constant-prediction-decompose}
 
-The squared error of the [prediction](expectation.qmd#def-prediction) $c$ is $\sqf{Y - c}$,
+The [squared error](expectation.qmd#def-squared-error-loss) of the [prediction](expectation.qmd#def-prediction) $c$ is $\sqf{Y - c}$,
 so its [expectation](expectation.qmd#def-expectation) is $\E{\sqf{Y - c}}$.
 
 :::

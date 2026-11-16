@@ -2,12 +2,21 @@
 
 #### Predicting with one number
 
-A city must predict the crime rate $Y$ of a randomly chosen neighborhood,
-using no input at all:
+A city must predict the crime [rate](#def-event-rate) $Y$ of a randomly chosen neighborhood,
+using no [input](#def-input) at all:
 it predicts the same number $c$ for every neighborhood.
-Write $\mean \eqdef \E{Y}$.
+Let $\mean$ be the [mean](expectation.qmd#def-expectation) $\E{Y}$ of $Y$.
+The [expected squared error](expectation.qmd#def-squared-error-risk) of $c$ says how far that one number misses on average,
+so it is the quantity the city wants to make small.
 
-Write the [expected](expectation.qmd#def-expectation) squared error of the [prediction](expectation.qmd#def-prediction) $c$,
+Express the expected squared error of the [prediction](expectation.qmd#def-prediction) $c$
 as a function of $c$.
+
+::: {.callout-tip}
+#### Hint
+
+Apply the [squared error loss](expectation.qmd#def-squared-error-loss) to the number $c$,
+and take its [expectation](expectation.qmd#def-expectation).
+:::
 
 :::

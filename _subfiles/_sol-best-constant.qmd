@@ -2,7 +2,8 @@
 
 In @eq-constant-prediction-decompose,
 the first term, $\Var{Y}$, does not depend on $c$.
-The second term, $\sqf{\mean - c}$, is a square, so it is never negative,
+The second term, $\sqf{\mean - c}$, is a square,
+so it is never negative,
 and it is zero exactly when $c = \mean$.
 So
 
@@ -13,9 +14,9 @@ c &= \mean \\
 \end{aligned}
 $$
 
-minimizes the [expected](expectation.qmd#def-expectation) squared error,
+minimizes the [expected squared error](expectation.qmd#def-squared-error-risk),
 and no other number does.
-In the notation of the [argmin](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin),
-the set of minimizers has the single element $\mean$.
+The [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin)
+has the single element $\mean$.
 
 :::

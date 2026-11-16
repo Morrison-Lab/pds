@@ -4,13 +4,16 @@
 
 Use the setup of @exr-constant-prediction-decompose.
 
-Show that this [expected](expectation.qmd#def-expectation) squared error equals
+Show that this [expected squared error](expectation.qmd#def-squared-error-risk) equals
 $\Var{Y} + \sqf{\mean - c}$.
 
 ::: {.callout-tip}
 #### Hint
 
 Inside the square, add and subtract $\mean$.
+Then use the [square of a sum](https://morrison-lab.github.io/mds/algebra-sums.html#thm-square-of-a-sum),
+[linearity of expectation](expectation.qmd#thm-linearity-expectation),
+and the [variance as an expected squared deviation](#thm-variance-expanded).
 :::
 
 :::
