@@ -44,7 +44,7 @@ format:
 
 ```{r}
 #| include: false
-reticulate::py_require(c("numpy", "pandas", "matplotlib"))
+reticulate::py_require(c("numpy", "pandas", "matplotlib", "scipy"))
 ```
 
 {{< include pds/_subfiles/_def-variance.qmd >}}
@@ -117,7 +117,39 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 
 # The best constant prediction {#sec-best-constant-prediction}
 
+{{< include pds/_subfiles/_exr-constant-prediction-decompose.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-constant-prediction-decompose.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-constant-prediction-decompose-part2.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-constant-prediction-decompose-part2.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-constant-prediction-decompose.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-best-constant.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-best-constant.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exr-best-constant-part2.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_sol-best-constant-part2.qmd >}}
 
 {{< slidebreak >}}
 
@@ -126,6 +158,10 @@ reticulate::py_require(c("numpy", "pandas", "matplotlib"))
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/_exm-best-constant-auto.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-best-constant.qmd >}}
 
 # Independent noise plus a random variable {#sec-bias-variance-prediction}
 

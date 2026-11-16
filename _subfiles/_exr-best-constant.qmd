@@ -1,0 +1,9 @@
+::: {#exr-best-constant}
+
+#### The best single number
+
+Use @thm-constant-prediction-decompose.
+
+Which number $c$ minimizes $\E{\sqf{Y - c}}$?
+
+:::

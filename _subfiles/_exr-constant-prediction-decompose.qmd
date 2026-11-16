@@ -1,0 +1,13 @@
+::: {#exr-constant-prediction-decompose}
+
+#### Predicting with one number
+
+A city must predict the crime rate $Y$ of a randomly chosen neighborhood,
+using no input at all:
+it predicts the same number $c$ for every neighborhood.
+Write $\mean \eqdef \E{Y}$.
+
+Write the [expected](expectation.qmd#def-expectation) squared error of the [prediction](expectation.qmd#def-prediction) $c$,
+as a function of $c$.
+
+:::

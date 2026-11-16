@@ -1,0 +1,13 @@
+::: {#sol-best-constant-part2}
+
+At $c = \mean$, the second term is zero,
+so the smallest [expected](expectation.qmd#def-expectation) squared error is $\Var{Y}$.
+
+Under squared error,
+the best [prediction](expectation.qmd#def-prediction) made without any input is the mean,
+and the error that remains is the [variance](#def-variance).
+A prediction that uses an input $X$ can improve on $\Var{Y}$
+only through how the mean of $Y$ changes with $X$,
+which the [conditional expectation function](expectation.qmd#def-cond-expectation-function) describes.
+
+:::

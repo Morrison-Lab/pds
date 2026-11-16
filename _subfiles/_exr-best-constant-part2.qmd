@@ -1,0 +1,9 @@
+::: {#exr-best-constant-part2}
+
+#### The best single number (part 2)
+
+Use the setup of @exr-best-constant.
+
+What is the smallest [expected](expectation.qmd#def-expectation) squared error that any constant [prediction](expectation.qmd#def-prediction) can achieve?
+
+:::

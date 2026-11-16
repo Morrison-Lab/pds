@@ -1,0 +1,16 @@
+::: {#exr-constant-prediction-decompose-part2}
+
+#### Predicting with one number (part 2)
+
+Use the setup of @exr-constant-prediction-decompose.
+
+Show that this [expected](expectation.qmd#def-expectation) squared error equals
+$\Var{Y} + \sqf{\mean - c}$.
+
+::: {.callout-tip}
+#### Hint
+
+Inside the square, add and subtract $\mean$.
+:::
+
+:::

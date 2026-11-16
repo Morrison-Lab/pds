@@ -1,0 +1,66 @@
+::: {#exm-best-constant}
+
+#### Searching for the best constant
+
+For the `mpg` values of the Auto data of @exm-best-constant-auto,
+find the constant $c$ that minimizes the average squared error by numerical search, without using the mean:
+
+<!-- no-figure: @fig-best-constant-auto plots the curve this search minimizes -->
+
+::: {.panel-tabset}
+
+#### Python
+
+```{python}
+#| code-fold: false
+import numpy as np
+import pandas as pd
+from scipy.optimize import minimize_scalar
+
+mpg_search = pd.read_csv("data/auto.csv")["mpg"].to_numpy(dtype=float)
+
+
+def average_squared_error(c):
+    """The average squared error of the constant prediction c."""
+    return np.mean((mpg_search - c) ** 2)
+
+
+best_search = minimize_scalar(average_squared_error)
+print(best_search.x, best_search.fun)
+print(mpg_search.mean(), mpg_search.var())
+```
+
+#### R
+
+```{r}
+#| code-fold: false
+auto_search <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+mpg_search <- auto_search$mpg
+mpg_range <- range(mpg_search)
+# The average squared error of the constant prediction c, minimized over c.
+best_search <- optimize(
+  \(c) {
+    errors <- mpg_search - c
+    mean(errors^2)
+  },
+  interval = mpg_range
+)
+mean_search <- mean(mpg_search)
+deviations_search <- mpg_search - mean_search
+variance_search <- mean(deviations_search^2)
+c(
+  minimizer = best_search$minimum,
+  minimum = best_search$objective,
+  mean = mean_search,
+  variance = variance_search
+)
+```
+
+:::
+
+The search ends at `{r} sprintf("%.3f", best_search$minimum)`, the mean of `mpg`,
+and the smallest error it finds is `{r} sprintf("%.3f", best_search$objective)`, the variance.
+This matches @cor-best-constant:
+the best constant under squared error is the mean, and the best error is the variance.
+
+:::
