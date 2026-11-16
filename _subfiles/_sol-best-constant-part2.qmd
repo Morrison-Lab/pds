@@ -4,7 +4,7 @@ At $c = \mean$, the second term is zero,
 so the smallest [expected squared error](expectation.qmd#def-squared-error-risk) is $\Var{Y}$.
 
 Under [squared error](expectation.qmd#def-squared-error-loss),
-the best [prediction](expectation.qmd#def-prediction) made without any [input](#def-input) is the mean,
+the best [prediction](expectation.qmd#def-prediction) made without any [input](#def-input) is the [mean](expectation.qmd#def-expectation),
 and what remains is the [variance](#def-variance).
 A prediction that uses an input $X$ can improve on $\Var{Y}$
 only through how the mean of $Y$ changes with $X$.

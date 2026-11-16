@@ -5,7 +5,7 @@
 <!-- no-figure: @fig-best-constant-auto plots the curve this search minimizes -->
 
 For the `mpg` values of the Auto data of @exm-best-constant-auto,
-find the constant $c$ that minimizes the average [squared error](expectation.qmd#def-squared-error-loss) by numerical search, without using the mean:
+find the [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) $c$ that minimizes the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) [squared error](expectation.qmd#def-squared-error-loss) by numerical search, without using the [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean):
 
 ::: {.panel-tabset group="language"}
 
@@ -58,11 +58,11 @@ c(
 
 :::
 
-The search ends at `{r} sprintf("%.3f", best_search$minimum)`, the mean of `mpg`,
+The search ends at `{r} sprintf("%.3f", best_search$minimum)`, the [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of `mpg`,
 and the smallest value it finds is `{r} sprintf("%.3f", best_search$objective)`,
 the [variance](#def-variance) of `mpg` over these cars.
 This matches @cor-best-constant:
-the best constant under [squared error](expectation.qmd#def-squared-error-loss) is the mean,
+the best [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) under [squared error](expectation.qmd#def-squared-error-loss) is the [mean](expectation.qmd#def-expectation),
 and its [expected squared error](expectation.qmd#def-squared-error-risk) is the variance.
 
 :::

@@ -10,7 +10,7 @@ Which number $c$ minimizes $\E{\sqf{Y - c}}$?
 #### Hint
 
 In @eq-constant-prediction-decompose, ask which term depends on $c$,
-and when a square is smallest.
+and when a [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square) is smallest.
 :::
 
 :::

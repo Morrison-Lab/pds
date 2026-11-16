@@ -1,6 +1,6 @@
 ::: {#sol-constant-prediction-decompose-part2}
 
-Add and subtract $\mean$ inside the square:
+Add and subtract $\mean$ inside the [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square):
 
 $$
 \E{\sqf{Y - c}}
@@ -14,7 +14,7 @@ $$
 $$
 
 Apply [linearity of expectation](expectation.qmd#thm-linearity-expectation).
-The numbers $\mean$ and $c$ are constants,
+The numbers $\mean$ and $c$ are [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function)s,
 so $2(\mean - c)$ and $\sqf{\mean - c}$ come outside the expectation:
 
 $$
