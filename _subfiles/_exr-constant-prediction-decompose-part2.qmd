@@ -2,7 +2,9 @@
 
 #### Predicting with one number (part 2)
 
-Use the setup of @exr-constant-prediction-decompose.
+Again, $Y$ is next year's burglary count in a randomly chosen neighborhood,
+$c$ is a single number predicted for every neighborhood,
+and $\mean$ is the [mean](expectation.qmd#def-expectation) $\E{Y}$ of $Y$.
 
 Split $\E{\sqf{Y - c}}$ into two parts:
 one that does not depend on $c$,
