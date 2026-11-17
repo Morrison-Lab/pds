@@ -1,0 +1,16 @@
+::: {#exr-best-constant-part2}
+
+#### The best single number (part 2)
+
+Again, $Y$ is next year's burglary count in a randomly chosen neighborhood,
+and $c$ is a single number predicted for every neighborhood.
+
+What is the smallest [expected squared error](expectation.qmd#def-squared-error-risk) that any [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) [prediction](expectation.qmd#def-prediction) can achieve?
+
+::: {.callout-tip}
+#### Hint
+
+Use @eq-constant-prediction-decompose and your answer to @exr-best-constant.
+:::
+
+:::

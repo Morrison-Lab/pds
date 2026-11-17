@@ -1,0 +1,22 @@
+::: {#exr-constant-prediction-decompose}
+
+#### Predicting with one number
+
+A city must predict how many burglaries $Y$ a randomly chosen neighborhood will have next year,
+using no [input](expectation.qmd#def-input) at all:
+it predicts the same number $c$ for every neighborhood.
+Let $\mean$ be the [mean](expectation.qmd#def-expectation) $\E{Y}$ of $Y$.
+The [expected squared error](expectation.qmd#def-squared-error-risk) of $c$ says how far that one number misses on [average](expectation.qmd#def-expectation),
+so it is the quantity the city wants to make small.
+
+Express the expected squared error of the [prediction](expectation.qmd#def-prediction) $c$
+as a function of $c$.
+
+::: {.callout-tip}
+#### Hint
+
+Apply the [squared error loss](expectation.qmd#def-squared-error-loss) to the number $c$,
+and take its [expectation](expectation.qmd#def-expectation).
+:::
+
+:::
