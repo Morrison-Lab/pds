@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-16 15:51:33 (PST)
+Last modified: 2026-11-16 18:45:55 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -442,7 +442,7 @@ Last modified: 2026-11-16 15:51:33 (PST)
 >
 > **Exercise 2 (Predicting with one number (part 2))** Use the setup of [Exercise 1](#exr-constant-prediction-decompose).
 >
-> Show that ${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
+> Split ${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}$ into two parts: one that does not depend on $c$, and one that grows as $c$ moves away from $\mu$.
 >
 > > **TIP:**
 > >
