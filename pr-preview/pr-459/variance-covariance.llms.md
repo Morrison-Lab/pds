@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-17 00:58:18 (PST)
+Last modified: 2026-11-17 09:05:27 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -440,7 +440,7 @@ Last modified: 2026-11-17 00:58:18 (PST)
 
 > **NOTE:**
 >
-> **Exercise 2 (Predicting with one number (part 2))** Use the setup of [Exercise 1](#exr-constant-prediction-decompose).
+> **Exercise 2 (Predicting with one number (part 2))** Again, $Y$ is next year’s burglary count in a randomly chosen neighborhood, $c$ is a single number predicted for every neighborhood, and $\mu$ is the [mean](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$ of $Y$.
 >
 > Split ${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}$ into two parts: one that does not depend on $c$, and one that grows as $c$ moves away from $\mu$.
 >
@@ -529,7 +529,7 @@ Last modified: 2026-11-17 00:58:18 (PST)
 
 > **NOTE:**
 >
-> **Exercise 4 (The best single number (part 2))** Use the setup of [Exercise 3](#exr-best-constant).
+> **Exercise 4 (The best single number (part 2))** Again, $Y$ is next year’s burglary count in a randomly chosen neighborhood, and $c$ is a single number predicted for every neighborhood.
 >
 > What is the smallest [expected squared error](expectation.llms.md#def-squared-error-risk) that any [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) [prediction](expectation.llms.md#def-prediction) can achieve?
 >
