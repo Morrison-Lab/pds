@@ -4,8 +4,9 @@
 
 Use the setup of @exr-constant-prediction-decompose.
 
-Show that
-$\E{\sqf{Y - c}} = \Var{Y} + \sqf{\mean - c}$.
+Split $\E{\sqf{Y - c}}$ into two parts:
+one that does not depend on $c$,
+and one that grows as $c$ moves away from $\mean$.
 
 ::: {.callout-tip}
 #### Hint
