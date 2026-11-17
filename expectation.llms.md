@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-17 09:32:13 (PST)
+Last modified: 2026-11-17 13:16:23 (PST)
 
 > **NOTE:**
 >
@@ -1379,7 +1379,7 @@ Last modified: 2026-11-17 09:32:13 (PST)
 > >   plotly::layout(xaxis = x_axis, yaxis = y_axis, legend = legend_below)
 > > ```
 > >
-> > Figure 2: Samples from the joint distribution of $(X, X)$ (red, on the diagonal) versus an independent pair $(X_1, X_2)$ with the same marginals (grey, scattered over $[0, 1]^2$). The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in $\mathbb{R}^2$ — so no joint density on $[0, 1]^2$ exists, and the “$f_X(x)\,f_Y(y) = 1$” calculation integrates against the wrong measure (the grey distribution).
+> > Figure 2: Samples from the joint distribution of $(X, X)$ (red, on the diagonal) versus an independent pair $(X_1, X_2)$ with the same marginals (gray, scattered over $[0, 1]^2$). The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal — a set of Lebesgue measure zero in $\mathbb{R}^2$ — so no joint density on $[0, 1]^2$ exists, and the “$f_X(x)\,f_Y(y) = 1$” calculation integrates against the wrong measure (the gray distribution).
 
 > **NOTE:**
 >
