@@ -128,12 +128,12 @@ cat(
 
 Samples from the joint distribution of $(X, X)$ (red, on the diagonal)
 versus an independent pair $(X_1, X_2)$ with the same marginals
-(grey, scattered over $[0, 1]^2$).
+(gray, scattered over $[0, 1]^2$).
 The actual joint mass for $(X, X)$ is concentrated on a 1-dimensional diagonal
 --- a set of Lebesgue measure zero in $\reals^2$ ---
 so no joint density on $[0, 1]^2$ exists,
 and the "$f_X(x)\,f_Y(y) = 1$" calculation integrates against the wrong measure
-(the grey distribution).
+(the gray distribution).
 
 :::
 
