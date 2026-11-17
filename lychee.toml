@@ -42,6 +42,11 @@ exclude = [
   # islp.readthedocs.io answers CI runners with 403 Forbidden on some runs
   # and passes on a re-run; the link works in a browser.
   "https://islp.readthedocs.io/.*",
+  # Temporary (pds#458): courses.cs.washington.edu has returned HTTP 503
+  # for 9+ hours, so the host is down, not the link.
+  # The Internet Archive has a 2026-10-14 snapshot of the page.
+  # Remove this exclusion when the host is back.
+  "https://courses.cs.washington.edu/courses/cse312/20su/.*",
 ]
 
 # `pds` is a symlink to the repository root, so include paths read
