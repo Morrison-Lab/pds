@@ -15,8 +15,10 @@ $$\Pr(X \in A) = \int_A f_X(x)\,d\measure(x)$$
 
 The [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) is defined on every [subset](https://morrison-lab.github.io/mcs/sets.html#def-subset) of $\rangef{X}$,
 so every function on $\rangef{X}$ is [measurable](https://morrison-lab.github.io/mds/measures-integrals.html#def-measurable-function),
-and $f_X \ge 0$, because each of its values is a [probability](probability-basics.qmd#def-probability).
-The [range](#def-range) $\rangef{X}$ is [countable](https://morrison-lab.github.io/mcs/functions.html#def-countable-set), because $X$ is [discrete](#def-discrete-rv),
+and $f_X \ge 0$,
+because each of its values is a [probability](probability-basics.qmd#def-probability).
+The [range](#def-range) $\rangef{X}$ is [countable](https://morrison-lab.github.io/mcs/functions.html#def-countable-set),
+because $X$ is [discrete](#def-discrete-rv),
 so each $A \subseteq \rangef{X}$ is countable too,
 and the [event](probability-basics.qmd#def-event) $\set{X \in A}$ is the [union](https://morrison-lab.github.io/mcs/sets.html#def-union) of the disjoint events $\set{X = x}$ for $x \in A$:
 
