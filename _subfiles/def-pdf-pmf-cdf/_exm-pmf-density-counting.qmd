@@ -5,7 +5,7 @@
 
 For the number of heads $X$ in two fair coin flips,
 with the [PMF](#def-pmf) $f_X$ of @exm-pmf,
-let $\measure$ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on $\rangef{X} = \set{0, 1, 2}$.
+let $\measure$ be the [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) on $\rangef{X} = \set{0, 1, 2}$.
 For $A = \set{1, 2}$:
 
 $$
