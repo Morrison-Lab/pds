@@ -2,9 +2,10 @@
 #### A PMF is a density with respect to counting measure
 
 If $X$ is a [discrete random variable](#def-discrete-rv) with [PMF](#def-pmf) $f_X$,
-and $\measure$ is the [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on $\rangef{X}$,
-then $f_X$ is a [density](#def-density-measure) of the distribution of $X$ with respect to $\measure$:
-for every set $A \subseteq \rangef{X}$,
+and $\measure$ is the [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) on $\rangef{X}$,
+then $f_X$ is a [density with respect to](#def-density-measure) $\measure$
+of the [distribution](#def-cdf) of $X$:
+for every [subset](https://morrison-lab.github.io/mcs/sets.html#def-subset) $A \subseteq \rangef{X}$,
 
 $$\Pr(X \in A) = \int_A f_X(x)\,d\measure(x)$$
 
@@ -12,12 +13,12 @@ $$\Pr(X \in A) = \int_A f_X(x)\,d\measure(x)$$
 
 ::: proof
 
-The counting measure is defined on every subset of $\rangef{X}$,
-so every function on $\rangef{X}$ is measurable,
-and $f_X \ge 0$, because each of its values is a probability.
-The range $\rangef{X}$ is countable, because $X$ is discrete,
+The [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) is defined on every [subset](https://morrison-lab.github.io/mcs/sets.html#def-subset) of $\rangef{X}$,
+so every function on $\rangef{X}$ is [measurable](https://morrison-lab.github.io/mds/measures-integrals.html#def-measurable-function),
+and $f_X \ge 0$, because each of its values is a [probability](probability-basics.qmd#def-probability).
+The [range](#def-range) $\rangef{X}$ is [countable](https://morrison-lab.github.io/mcs/functions.html#def-countable-set), because $X$ is [discrete](#def-discrete-rv),
 so each $A \subseteq \rangef{X}$ is countable too,
-and the event $\set{X \in A}$ is the union of the disjoint events $\set{X = x}$ for $x \in A$:
+and the [event](probability-basics.qmd#def-event) $\set{X \in A}$ is the [union](https://morrison-lab.github.io/mcs/sets.html#def-union) of the disjoint events $\set{X = x}$ for $x \in A$:
 
 $$
 \ba
@@ -31,7 +32,7 @@ $$
 \ea
 $$
 
-The first step is [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity),
-and the last is the [integral with respect to counting measure](https://morrison-lab.github.io/mds/measures.html#exm-integral-nonneg).
+The first step is [countable additivity](https://morrison-lab.github.io/mds/measures-additivity.html#def-countable-additivity),
+and the last is the [integral with respect to counting measure](https://morrison-lab.github.io/mds/measures-integrals.html#exm-integral-nonneg).
 
 :::

@@ -5,10 +5,11 @@
 
 Let $X$ be the roll of a fair six-sided die,
 so $\rangef{X} = D = \set{1, 2, 3, 4, 5, 6}$,
-and let $\measure$ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on $D$.
-The constant function $f(x) = \tfrac{1}{6}$ on $D$
-is a [density](#def-density-measure) of the distribution of $X$ with respect to $\measure$.
-For each set $A \subseteq D$:
+and let $\measure$ be the [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) on $D$.
+The [constant function](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) $f(x) = \tfrac{1}{6}$ on $D$
+is a [density with respect to](#def-density-measure) $\measure$
+of the [distribution](#def-cdf) of $X$.
+For each [subset](https://morrison-lab.github.io/mcs/sets.html#def-subset) $A \subseteq D$:
 
 $$
 \ba
@@ -22,7 +23,7 @@ $$
 \ea
 $$
 
-The first step is the [integral with respect to counting measure](https://morrison-lab.github.io/mds/measures.html#exm-integral-nonneg).
+The first step is the [integral with respect to counting measure](https://morrison-lab.github.io/mds/measures-integrals.html#exm-integral-nonneg).
 For example, $A = \set{5, 6}$ gives $\Pr(X \in A) = \tfrac{2}{6} = \tfrac{1}{3}$.
 
 :::
