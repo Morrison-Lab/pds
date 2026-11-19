@@ -1,6 +1,9 @@
 :::{#def-density-measure}
 #### Density with respect to a measure, Radon--Nikodym derivative
 
+<!-- check-definition-expectation: allow -->
+<!-- The integral is the density's own defining property, Pr(X in A), not a probability-weighted average of another function, so no expectation fits. -->
+
 Let $\measure$ be a [measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measure)
 on the [range of a random variable](#def-range) $X$, written $\rangef{X}$.
 A **density with respect to a measure** $\measure$,

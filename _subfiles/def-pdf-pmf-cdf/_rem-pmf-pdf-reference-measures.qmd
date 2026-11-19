@@ -12,7 +12,7 @@ of its [distribution](#def-cdf) against Lebesgue measure
 So a PMF and a PDF are both [densities with respect to a measure](#def-density-measure),
 for different reference measures.
 Because the two share that role,
-these notes write $f_X$ for both,
+these notes let $f_X$ denote either one,
 and the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
 covers PMFs, PDFs, and density-mass [functions](https://morrison-lab.github.io/mcs/functions.html#def-function) in one statement.
 
