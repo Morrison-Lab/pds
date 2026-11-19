@@ -1,0 +1,15 @@
+:::{#def-density-measure}
+#### Density with respect to a measure, Radon--Nikodym derivative
+
+Let $X$ be a random variable,
+and let $\measure$ be a [measure](https://morrison-lab.github.io/mds/measures.html#def-measure) on its [range](#def-range) $\rangef{X}$.
+A **density** of the distribution of $X$ **with respect to** $\measure$,
+or **Radon--Nikodym derivative** of that distribution with respect to $\measure$,
+is a non-negative [measurable function](https://morrison-lab.github.io/mds/measures.html#def-measurable-function) $f$ on $\rangef{X}$
+whose [integral](https://morrison-lab.github.io/mds/measures.html#def-integral) over each measurable set $A \subseteq \rangef{X}$
+is the probability that $X$ falls in $A$
+[@billingsley1995probability, pp. 213, 423]:
+
+$$\Pr(X \in A) = \int_A f(x)\,d\measure(x)$$
+
+:::

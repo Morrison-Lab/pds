@@ -1,0 +1,16 @@
+::: {#rem-pmf-pdf-reference-measures}
+#### PMFs and PDFs differ in the reference measure
+
+A [PDF](#def-pdf) plays the role of a [PMF](#def-pmf)
+with [Lebesgue measure](https://morrison-lab.github.io/mds/measures.html#def-lebesgue-measure) in place of counting measure:
+@def-pdf integrates it with $dx$.
+The distribution of a random variable whose CDF $F$ is absolutely continuous
+has $F'$ as a [Radon--Nikodym derivative](#def-density-measure) with respect to Lebesgue measure
+[@billingsley1995probability, p. 423].
+So a PMF and a PDF are both [densities with respect to a measure](#def-density-measure),
+for different reference measures.
+That shared role is why these notes write $f_X$ for both,
+and why the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
+covers PMFs, PDFs, and density-mass functions in one statement.
+
+:::

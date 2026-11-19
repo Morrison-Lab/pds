@@ -1,0 +1,37 @@
+:::{#prp-pmf-density-counting}
+#### A PMF is a density with respect to counting measure
+
+If $X$ is a [discrete random variable](#def-discrete-rv) with [PMF](#def-pmf) $f_X$,
+and $\measure$ is the [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on $\rangef{X}$,
+then $f_X$ is a [density](#def-density-measure) of the distribution of $X$ with respect to $\measure$:
+for every set $A \subseteq \rangef{X}$,
+
+$$\Pr(X \in A) = \int_A f_X(x)\,d\measure(x)$$
+
+:::
+
+::: proof
+
+The counting measure is defined on every subset of $\rangef{X}$,
+so every function on $\rangef{X}$ is measurable,
+and $f_X \ge 0$, because each of its values is a probability.
+The range $\rangef{X}$ is countable, because $X$ is discrete,
+so each $A \subseteq \rangef{X}$ is countable too,
+and the event $\set{X \in A}$ is the union of the disjoint events $\set{X = x}$ for $x \in A$:
+
+$$
+\ba
+\Pr(X \in A)
+&= \sum_{x \in A} \Pr(X = x)
+&& \text{(countable additivity)} \\
+&= \sum_{x \in A} f_X(x)
+&& \text{(definition of the PMF)} \\
+&= \int_A f_X(x)\,d\measure(x)
+&& \text{(an integral with respect to counting measure is a sum)}
+\ea
+$$
+
+The first step is [countable additivity](https://morrison-lab.github.io/mds/measures.html#def-countable-additivity),
+and the last is the [integral with respect to counting measure](https://morrison-lab.github.io/mds/measures.html#exm-integral-nonneg).
+
+:::
