@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-19 13:28:40 (PST)
+Last modified: 2026-11-19 13:50:03 (PST)
 
 > **NOTE:**
 >
@@ -292,7 +292,7 @@ Last modified: 2026-11-19 13:28:40 (PST)
 >
 > **Example 11 (The number of heads, integrated against counting measure)**  
 >
-> For the number of heads $X$ in two fair coin flips, with the [PMF](#def-pmf) $f_X$ of [Example 7](#exm-pmf), let $\mu$ be the [counting measure](https://morrison-lab.github.io/mds/measures.html#def-counting-measure) on $\mathcal{R}(X) = {\mathopen{}\left\{0, 1, 2\right\}\mathclose{}}$. For $A = {\mathopen{}\left\{1, 2\right\}\mathclose{}}$:
+> For the number of heads $X$ in two fair coin flips, with the [PMF](#def-pmf) $f_X$ of [Example 7](#exm-pmf), let $\mu$ be the [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) on $\mathcal{R}(X) = {\mathopen{}\left\{0, 1, 2\right\}\mathclose{}}$. For $A = {\mathopen{}\left\{1, 2\right\}\mathclose{}}$:
 >
 > $$\begin{aligned}
 > \Pr(X \in {\mathopen{}\left\{1, 2\right\}\mathclose{}})
