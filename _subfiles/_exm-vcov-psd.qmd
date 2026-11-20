@@ -76,4 +76,33 @@ As a check, $X_1 + X_2$ takes the values $-4, -1, 1, 4$,
 each with [probability](probability-basics.qmd#def-probability) $1/4$,
 so its [mean](expectation.qmd#def-expectation) is 0 and its [variance](#def-variance) is $(16 + 1 + 1 + 16)/4 = 8.5$.
 
+```{r}
+#| label: fig-vcov-psd-points
+#| fig-cap: >-
+#|   The four equally likely points of X (set D1, left)
+#|   and of X' (set D2, right).
+#| fig-alt: >-
+#|   Two scatter plots of four points each, with X1 from -5 to 5
+#|   on the horizontal axis and X2 from -1 to 1 on the vertical axis.
+#|   In the left panel the outer points (-5, 1) and (5, -1)
+#|   slope down from left to right;
+#|   in the right panel the outer points (-5, -1) and (5, 1)
+#|   slope up from left to right.
+#|   The two middle points (0, -1) and (0, 1) are the same in both panels.
+#| fig-height: 2.5
+#| fig-width: 6
+x1_d1 <- c(-5, 0, 0, 5)
+x1_d2 <- c(5, 0, 0, -5)
+x2_both <- c(1, -1, 1, -1)
+d1 <- tibble::tibble(x1 = x1_d1, x2 = x2_both, set = "D1")
+d2 <- tibble::tibble(x1 = x1_d2, x2 = x2_both, set = "D2")
+points <- dplyr::bind_rows(d1, d2)
+points |>
+  ggplot2::ggplot() +
+  ggplot2::aes(x = x1, y = x2) +
+  ggplot2::geom_point(size = 3) +
+  ggplot2::facet_wrap(ggplot2::vars(set)) +
+  ggplot2::labs(x = "X1", y = "X2")
+```
+
 :::

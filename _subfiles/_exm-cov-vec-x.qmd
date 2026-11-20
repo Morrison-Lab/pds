@@ -1,5 +1,6 @@
 :::{#exm-cov-vec-x}
 #### The variance-covariance matrix of two events on one die roll
+<!-- no-figure: hand arithmetic over six die outcomes; the result is a 2 by 2 matrix -->
 
 Roll a fair six-sided die once.
 Let $X_1 = 1$ if the roll is even and $X_1 = 0$ otherwise,
