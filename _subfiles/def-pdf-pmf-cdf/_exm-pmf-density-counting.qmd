@@ -1,0 +1,28 @@
+:::{#exm-pmf-density-counting}
+#### The number of heads, integrated against counting measure
+
+<!-- no-figure: a short sum of a few equal or tabulated probabilities; there is no data, curve or model to plot -->
+
+For the number of heads $X$ in two fair coin flips,
+with the [PMF](#def-pmf) $f_X$ of @exm-pmf,
+let $\measure$ be the [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) on $\rangef{X} = \set{0, 1, 2}$.
+For $A = \set{1, 2}$:
+
+$$
+\ba
+\Pr(X \in \set{1, 2})
+&= \int_{\set{1, 2}} f_X(x)\,d\measure(x)
+&& \text{(a PMF is a density with respect to counting measure)} \\
+&= f_X(1) + f_X(2)
+&& \text{(an integral with respect to counting measure is a sum)} \\
+&= \tfrac{1}{2} + \tfrac{1}{4}
+&& \text{(the PMF of the number of heads)} \\
+&= \tfrac{3}{4}
+&& \text{(add)}
+\ea
+$$
+
+The first step is @prp-pmf-density-counting,
+and the third uses the PMF values in @exm-pmf.
+
+:::

@@ -30,6 +30,26 @@
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-pdf-pmf-cdf/_def-density-measure.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-pdf-pmf-cdf/_exm-density-measure.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-pdf-pmf-cdf/_prp-pmf-density-counting.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-pdf-pmf-cdf/_exm-pmf-density-counting.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-pdf-pmf-cdf/_rem-pmf-pdf-reference-measures.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-pdf-pmf-cdf/_thm-density-not-unique.qmd >}}
 
 {{< include pds/_subfiles/def-pdf-pmf-cdf/_rem-density-not-unique.qmd >}}
