@@ -366,7 +366,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-19 18:15:12 (PST)</p>
+  <p class="date">Last modified: 2026-11-19 18:28:20 (PST)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -1215,12 +1215,20 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 <section class="slide level2">
 
 <div id="sol-bayes" class="proof solution">
-<p><span class="proof-title"><em>Solution 1</em>. </span>Multiplying <a href="#/def-conditional-prob" class="quarto-xref">Definition&nbsp;15</a> through by its denominator, in each direction,</p>
-<p><span class="math display">\[\Pr(A \cap B) = \Pr(A \mid B)\,\Pr(B),
-\qquad
-\Pr(A \cap B) = \Pr(B \mid A)\,\Pr(A)\]</span></p>
-<p>The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by <span class="math inline">\(\Pr(B)\)</span> gives <strong>Bayes’ rule</strong> (<a href="#/thm-bayes" class="quarto-xref">Theorem&nbsp;8</a>):</p>
-<p><span id="eq-bayes"><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)} \tag{1}\]</span></span></p>
+<p><span class="proof-title"><em>Solution 1</em>. </span>Multiply <a href="#/def-conditional-prob" class="quarto-xref">Definition&nbsp;15</a> through by <span class="math inline">\(\Pr(B)\)</span>, swap <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, and apply the definition again, multiplied through by <span class="math inline">\(\Pr(A)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(A \mid B) \cdot\Pr(B)
+&amp;= \Pr(A \cap B)
+&amp;&amp; \text{(definition of } \Pr(A \mid B) \text{, times } \Pr(B) \text{)} \\
+&amp;= \Pr(B \cap A)
+&amp;&amp; \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\
+&amp;= \Pr(B \mid A) \cdot\Pr(A)
+&amp;&amp; \text{(definition of } \Pr(B \mid A) \text{, times } \Pr(A) \text{)}
+\end{aligned}
+\]</span></p>
+<p>Dividing both sides by <span class="math inline">\(\Pr(B)\)</span> gives <a href="#/thm-bayes">Bayes’ rule</a>:</p>
+<p><span id="eq-bayes"><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} \tag{1}\]</span></span></p>
 <p>Nothing was assumed beyond <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span>, which the two conditionals need in order to be defined at all.</p>
 <p>As Hutchinson emphasizes <span class="citation" data-cites="hutchinson2024data471"><a href="#/references" role="doc-biblioref" onclick="">[13]</a></span>, each component carries standard Bayesian terminology:</p>
 <ul>
