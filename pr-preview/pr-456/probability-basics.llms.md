@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-16 08:45:52 (PST)
+Last modified: 2026-11-20 15:21:56 (PST)
 
 # 1 Defining probabilities
 
@@ -695,15 +695,21 @@ Last modified: 2026-11-16 08:45:52 (PST)
 
 > **NOTE:**
 >
-> *Solution 1*. Multiplying [Definition 15](#def-conditional-prob) through by its denominator, in each direction,
+> *Solution 1*. Multiply [Definition 15](#def-conditional-prob) through by $\Pr(B)$, swap $A$ and $B$, and apply the definition again, multiplied through by $\Pr(A)$:
 >
-> $$\Pr(A \cap B) = \Pr(A \mid B)\,\Pr(B),
-> \qquad
-> \Pr(A \cap B) = \Pr(B \mid A)\,\Pr(A)$$
+> $$\begin{aligned}
+> \Pr(A \mid B) \cdot\Pr(B)
+> &= \Pr(A \cap B)
+> && \text{(definition of } \Pr(A \mid B) \text{, times } \Pr(B) \text{)} \\
+> &= \Pr(B \cap A)
+> && \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\
+> &= \Pr(B \mid A) \cdot\Pr(A)
+> && \text{(definition of } \Pr(B \mid A) \text{, times } \Pr(A) \text{)}
+> \end{aligned}$$
 >
-> The left-hand sides are the same quantity, so the right-hand sides are equal. Dividing by $\Pr(B)$ gives **Bayes’ rule** ([Theorem 8](#thm-bayes)):
+> Dividing both sides by $\Pr(B)$ gives [Bayes’ rule](#thm-bayes):
 >
-> $$\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)} \tag{1}$$
+> $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} \tag{1}$$
 >
 > Nothing was assumed beyond $\Pr(A) > 0$ and $\Pr(B) > 0$, which the two conditionals need in order to be defined at all.
 >

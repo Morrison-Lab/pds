@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-16 08:45:52 (PST)
+Last modified: 2026-11-20 15:21:56 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -426,6 +426,61 @@ Last modified: 2026-11-16 08:45:52 (PST)
 
 > **NOTE:**
 >
+> **Exercise 1 (Predicting with one number)** A city must predict how many burglaries $Y$ a randomly chosen neighborhood will have next year, using no [input](expectation.llms.md#def-input) at all: it predicts the same number $c$ for every neighborhood. Let $\mu$ be the [mean](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$ of $Y$. The [expected squared error](expectation.llms.md#def-squared-error-risk) of $c$ says how far that one number misses on [average](expectation.llms.md#def-expectation), so it is the quantity the city wants to make small.
+>
+> Express the expected squared error of the [prediction](expectation.llms.md#def-prediction) $c$ as a function of $c$.
+>
+> > **TIP:**
+> >
+> > Apply the [squared error loss](expectation.llms.md#def-squared-error-loss) to the number $c$, and take its [expectation](expectation.llms.md#def-expectation).
+
+> **NOTE:**
+>
+> *Solution 1*. The [squared error](expectation.llms.md#def-squared-error-loss) of the [prediction](expectation.llms.md#def-prediction) $c$ is ${\mathopen{}\left(Y - c\right)\mathclose{}}^{2}$, so its [expectation](expectation.llms.md#def-expectation) is ${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}$.
+
+> **NOTE:**
+>
+> **Exercise 2 (Predicting with one number (part 2))** Again, $Y$ is next year’s burglary count in a randomly chosen neighborhood, $c$ is a single number predicted for every neighborhood, and $\mu$ is the [mean](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}$ of $Y$.
+>
+> Split ${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}$ into two parts: one that does not depend on $c$, and one that grows as $c$ moves away from $\mu$.
+>
+> > **TIP:**
+> >
+> > Inside the [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square), add and subtract $\mu$. Then use the [square of a sum](https://morrison-lab.github.io/mds/algebra-sums.html#thm-square-of-a-sum), [linearity of expectation](expectation.llms.md#thm-linearity-expectation), and the [variance as an expected squared deviation](#thm-variance-expanded).
+
+> **NOTE:**
+>
+> *Solution 2*. Add and subtract $\mu$ inside the [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square):
+>
+> $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}
+> = {\mathbb{E}\mathopen{}\left[{\mathopen{}\left((Y - \mu) + (\mu- c)\right)\mathclose{}}^{2}\right]\mathclose{}} .$$
+>
+> Expand the square, using the [square of a sum](https://morrison-lab.github.io/mds/algebra-sums.html#thm-square-of-a-sum):
+>
+> $$= {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - \mu\right)\mathclose{}}^{2} + 2 (Y - \mu)(\mu- c) + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}\right]\mathclose{}} .$$
+>
+> Apply [linearity of expectation](expectation.llms.md#thm-linearity-expectation). The numbers $\mu$ and $c$ are [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function)s, so $2(\mu- c)$ and ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$ come outside the expectation:
+>
+> $$= {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - \mu\right)\mathclose{}}^{2}\right]\mathclose{}} + 2 (\mu- c) {\mathbb{E}\mathopen{}\left[Y - \mu\right]\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2} .$$
+>
+> The middle expectation is zero, because
+>
+> $$\begin{aligned}
+> {\mathbb{E}\mathopen{}\left[Y - \mu\right]\mathclose{}} &= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}} - \mu\\
+> &= \mu- \mu\\
+> &= 0,
+> \end{aligned}$$
+>
+> so the [squared-error risk](expectation.llms.md#def-squared-error-risk) reduces to:
+>
+> $$= {\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - \mu\right)\mathclose{}}^{2}\right]\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2} .$$
+>
+> The first term is the [variance of](#thm-variance-expanded) $Y$:
+>
+> $$= {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2} .$$
+
+> **NOTE:**
+>
 > **Theorem 4 (Expected squared error of a constant prediction)** Let $Y$ be a [random variable](random-variables.llms.md#def-random-variable) with [mean](expectation.llms.md#def-expectation) $\mu$ and finite [variance](#def-variance). Then for every number $c$,
 >
 > $${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}.
@@ -450,6 +505,43 @@ Last modified: 2026-11-16 08:45:52 (PST)
 > &= {\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} + {\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}
 > && \text{(zero times a number)}
 > \end{aligned}$$
+
+> **NOTE:**
+>
+> **Exercise 3 (The best single number)** Use [Theorem 4](#thm-constant-prediction-decompose).
+>
+> Which number $c$ minimizes ${\mathbb{E}\mathopen{}\left[{\mathopen{}\left(Y - c\right)\mathclose{}}^{2}\right]\mathclose{}}$?
+>
+> > **TIP:**
+> >
+> > In [Equation 1](#eq-constant-prediction-decompose), ask which term depends on $c$, and when a [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square) is smallest.
+
+> **NOTE:**
+>
+> *Solution 3*. In [Equation 1](#eq-constant-prediction-decompose), the first term, ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$, does not depend on $c$. The second term, ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$, is a [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square), so it is never negative, and it is zero exactly when $c = \mu$. So
+>
+> $$\begin{aligned}
+> c &= \mu\\
+> &= {\mathbb{E}\mathopen{}\left[Y\right]\mathclose{}}
+> \end{aligned}$$
+>
+> minimizes the [expected squared error](expectation.llms.md#def-squared-error-risk), and no other number does. The [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin) has the single element $\mu$.
+
+> **NOTE:**
+>
+> **Exercise 4 (The best single number (part 2))** Again, $Y$ is next year’s burglary count in a randomly chosen neighborhood, and $c$ is a single number predicted for every neighborhood.
+>
+> What is the smallest [expected squared error](expectation.llms.md#def-squared-error-risk) that any [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) [prediction](expectation.llms.md#def-prediction) can achieve?
+>
+> > **TIP:**
+> >
+> > Use [Equation 1](#eq-constant-prediction-decompose) and your answer to [Exercise 3](#exr-best-constant).
+
+> **NOTE:**
+>
+> *Solution 4*. At $c = \mu$, the second term is zero, so the smallest [expected squared error](expectation.llms.md#def-squared-error-risk) is ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$.
+>
+> Under [squared error](expectation.llms.md#def-squared-error-loss), the best [prediction](expectation.llms.md#def-prediction) made without any [input](expectation.llms.md#def-input) is the [mean](expectation.llms.md#def-expectation), and what remains is the [variance](#def-variance). A prediction that uses an input $X$ can improve on ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}}$ only through how the mean of $Y$ changes with $X$. The [conditional expectation function](expectation.llms.md#def-cond-expectation-function) describes that change.
 
 > **NOTE:**
 >
@@ -542,6 +634,63 @@ Last modified: 2026-11-16 08:45:52 (PST)
 >
 > The two columns agree, as [Theorem 4](#thm-constant-prediction-decompose) says. The mean, 23.45, has the smallest expected squared error, 60.76, which is the [variance](#def-variance) of `mpg` over these cars (divisor the number of cars, not one fewer), as [Corollary 1](#cor-best-constant) says; the median and $c = 20$ are each worse by ${\mathopen{}\left(\mu- c\right)\mathclose{}}^{2}$.
 
+> **NOTE:**
+>
+> **Example 11 (Searching for the best constant)**  
+>
+> For the `mpg` values of the Auto data of [Example 10](#exm-best-constant-auto), find the [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) $c$ that minimizes the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) [squared error](expectation.llms.md#def-squared-error-loss) by numerical search, without using the [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean):
+>
+> ## Python
+>
+> ``` python
+> import numpy as np
+> import pandas as pd
+> from scipy.optimize import minimize_scalar
+>
+> mpg_search = pd.read_csv("data/auto.csv")["mpg"].to_numpy(dtype=float)
+>
+>
+> def average_squared_error(c):
+>     """The average squared error of the constant prediction c."""
+>     return np.mean((mpg_search - c) ** 2)
+>
+>
+> best_search = minimize_scalar(average_squared_error)
+> print(best_search.x, best_search.fun)
+> #> 23.445918367347897 60.76273844231571
+> print(mpg_search.mean(), mpg_search.var())
+> #> 23.445918367346938 60.76273844231571
+> ```
+>
+> ## R
+>
+> ``` r
+> auto_search <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+> mpg_search <- auto_search$mpg
+> mpg_range <- range(mpg_search)
+> # The average squared error of the constant prediction c, minimized over c.
+> best_search <- optimize(
+>   \(c) {
+>     errors <- mpg_search - c
+>     mean(errors^2)
+>   },
+>   interval = mpg_range
+> )
+> mean_search <- mean(mpg_search)
+> deviations_search <- mpg_search - mean_search
+> variance_search <- mean(deviations_search^2)
+> c(
+>   minimizer = best_search$minimum,
+>   minimum = best_search$objective,
+>   mean = mean_search,
+>   variance = variance_search
+> )
+> #> minimizer   minimum      mean  variance 
+> #>  23.44592  60.76274  23.44592  60.76274
+> ```
+>
+> The search ends at 23.446, the [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of `mpg`, and the smallest value it finds is 60.763, the [variance](#def-variance) of `mpg` over these cars. This matches [Corollary 1](#cor-best-constant): the best [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) under [squared error](expectation.llms.md#def-squared-error-loss) is the [mean](expectation.llms.md#def-expectation), and its [expected squared error](expectation.llms.md#def-squared-error-risk) is the variance.
+
 # 4 Independent noise plus a random variable
 
 ## 4.1 Mean-zero noise model
@@ -556,13 +705,13 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Exercise 1 (The average squared error of pure noise)** Let $\varepsilon$ be a [random variable](random-variables.llms.md#def-random-variable) with $\mathbb{E}[\varepsilon] = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$.
+> **Exercise 5 (The average squared error of pure noise)** Let $\varepsilon$ be a [random variable](random-variables.llms.md#def-random-variable) with $\mathbb{E}[\varepsilon] = 0$ and ${\operatorname{Var}\mathopen{}\left(\varepsilon\right)\mathclose{}} = \sigma^2$.
 >
 > Find $\mathbb{E}[\varepsilon^2]$ in terms of $\sigma^2$, and say which earlier result you used.
 
 > **NOTE:**
 >
-> *Solution 1*. [Theorem 2](#thm-variance) says ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$. Taking $X = \varepsilon$ and substituting $\mathbb{E}[\varepsilon] = 0$,
+> *Solution 5*. [Theorem 2](#thm-variance) says ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$ for any $X$. Taking $X = \varepsilon$ and substituting $\mathbb{E}[\varepsilon] = 0$,
 >
 > $$\begin{aligned}
 > \mathbb{E}[\varepsilon^2]
@@ -583,7 +732,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Proof*. This is the solution to [Exercise 1](#exr-noise-second-moment), worked in [Solution 1](#sol-noise-second-moment). It rearranges [Theorem 2](#thm-variance), using $\mathbb{E}[\varepsilon] = 0$.
+> *Proof*. This is the solution to [Exercise 5](#exr-noise-second-moment), worked in [Solution 5](#sol-noise-second-moment). It rearranges [Theorem 2](#thm-variance), using $\mathbb{E}[\varepsilon] = 0$.
 
 > **NOTE:**
 >
@@ -697,7 +846,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 11 (Covariance of a binary exposure and outcome)** For the [joint PMF](random-variables.llms.md#def-joint-pmf) in [Example 4](#exm-cond-variance),
+> **Example 12 (Covariance of a binary exposure and outcome)** For the [joint PMF](random-variables.llms.md#def-joint-pmf) in [Example 4](#exm-cond-variance),
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[XY\right]\mathclose{}} &= \mathbb{P}(X = 1, Y = 1) \\
@@ -768,7 +917,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 12 (Two independent coin flips)** For the [independent](independence.llms.md#def-indpt) coin flips $X_1$ and $X_2$ of [the independence page’s example](independence.llms.md#exm-indpt), $X_1 X_2 = 1$ only when both flips are heads, so:
+> **Example 13 (Two independent coin flips)** For the [independent](independence.llms.md#def-indpt) coin flips $X_1$ and $X_2$ of [the independence page’s example](independence.llms.md#exm-indpt), $X_1 X_2 = 1$ only when both flips are heads, so:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X_1 X_2\right]\mathclose{}}
@@ -786,7 +935,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 13 (Zero covariance without independence)** The [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) of [Theorem 8](#thm-indpt-uncorrelated) is false. Let $X$ take the values $-1$, $0$, and $1$ with [probability](probability-basics.llms.md#def-probability) $1/3$ each, and let $Y = X^2$. Then
+> **Example 14 (Zero covariance without independence)** The [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) of [Theorem 8](#thm-indpt-uncorrelated) is false. Let $X$ take the values $-1$, $0$, and $1$ with [probability](probability-basics.llms.md#def-probability) $1/3$ each, and let $Y = X^2$. Then
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &= (-1 + 0 + 1)/3 \\
@@ -840,7 +989,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 14 (Correlation of a binary exposure and outcome)** In [Example 11](#exm-alt-cov), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05$, where $X \sim \operatorname{Ber}(0.5)$ has ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 0.25$ ([Example 3](#exm-variance-bernoulli)) and $Y$ has ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 0.21$ ([Example 7](#exm-total-variance)), so:
+> **Example 15 (Correlation of a binary exposure and outcome)** In [Example 12](#exm-alt-cov), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05$, where $X \sim \operatorname{Ber}(0.5)$ has ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}} = 0.25$ ([Example 3](#exm-variance-bernoulli)) and $Y$ has ${\operatorname{Var}\mathopen{}\left(Y\right)\mathclose{}} = 0.21$ ([Example 7](#exm-total-variance)), so:
 >
 > $$\begin{aligned}
 > {\operatorname{Cor}\mathopen{}\left(X,Y\right)\mathclose{}}
@@ -862,11 +1011,11 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 8](#thm-indpt-uncorrelated) says [independent](independence.llms.md#def-indpt) [random variables](random-variables.llms.md#def-random-variable) are [uncorrelated](#def-uncorrelated), and [Example 13](#exm-uncorrelated-not-indpt) shows the [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) fails.
+> *Remark*. [Theorem 8](#thm-indpt-uncorrelated) says [independent](independence.llms.md#def-indpt) [random variables](random-variables.llms.md#def-random-variable) are [uncorrelated](#def-uncorrelated), and [Example 14](#exm-uncorrelated-not-indpt) shows the [converse](https://morrison-lab.github.io/mcs/proof-writing.html#def-converse) fails.
 
 > **NOTE:**
 >
-> **Example 15 (Correlated and uncorrelated pairs)** In [Example 13](#exm-uncorrelated-not-indpt), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$, so $X$ and $Y = X^2$ are [uncorrelated](#def-uncorrelated). In [Example 11](#exm-alt-cov), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0$, so the binary exposure and outcome are not uncorrelated.
+> **Example 16 (Correlated and uncorrelated pairs)** In [Example 14](#exm-uncorrelated-not-indpt), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0$, so $X$ and $Y = X^2$ are [uncorrelated](#def-uncorrelated). In [Example 12](#exm-alt-cov), ${\operatorname{Cov}\mathopen{}\left(X,Y\right)\mathclose{}} = 0.05 \neq 0$, so the binary exposure and outcome are not uncorrelated.
 
 > **NOTE:**
 >
@@ -886,7 +1035,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 16 (Conditional covariance of a variable with itself)** Taking $Z = Y$ in [Definition 12](#def-cond-cov) gives the [conditional variance](#def-cond-variance): ${\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}$. In [Example 4](#exm-cond-variance), for example, ${\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{}} = 0.24$.
+> **Example 17 (Conditional covariance of a variable with itself)** Taking $Z = Y$ in [Definition 12](#def-cond-cov) gives the [conditional variance](#def-cond-variance): ${\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = x\right)\mathclose{}} = {\operatorname{Var}\mathopen{}\left(Y \mid X = x\right)\mathclose{}}$. In [Example 4](#exm-cond-variance), for example, ${\operatorname{Cov}\mathopen{}\left(Y,Y \mid X = 0\right)\mathclose{}} = 0.24$.
 
 > **NOTE:**
 >
@@ -1203,7 +1352,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 17 (Two variance matrices that differ only in sign)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ be equally likely to be each of the four points
+> **Example 18 (Two variance matrices that differ only in sign)** Let $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ be equally likely to be each of the four points
 >
 > $$D_1 = {\mathopen{}\left\{(-5, 1),\ (0, -1),\ (0, 1),\ (5, -1)\right\}\mathclose{}},$$
 >
@@ -1266,7 +1415,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 18 (A variance matrix that is not positive definite)** Let $X_1$ have [variance](#def-variance) $\sigma^2> 0$, and let $X_2 = X_1$. Every [covariance](#def-cov) in $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ is ${\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2$ by [Lemma 2](#lem-cov-xx), so:
+> **Example 19 (A variance matrix that is not positive definite)** Let $X_1$ have [variance](#def-variance) $\sigma^2> 0$, and let $X_2 = X_1$. Every [covariance](#def-cov) in $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}= {(X_1, X_2)}^{\top}$ is ${\operatorname{Cov}\mathopen{}\left(X_1, X_1\right)\mathclose{}} = \sigma^2$ by [Lemma 2](#lem-cov-xx), so:
 >
 > $${\operatorname{Var}\mathopen{}\left(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}\right)\mathclose{}} = \sigma^2\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}.$$
 >
@@ -1323,7 +1472,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 19 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
+> **Example 20 (Correlation of horsepower and fuel economy)** The Auto data record the horsepower and fuel economy (miles per gallon) of 392 car models sold between 1970 and 1982. They come from the StatLib library at Carnegie Mellon University and ship with the book *An Introduction to Statistical Learning*, in the Python package [`ISLP`](https://islp.readthedocs.io/) (`ISLP.load_data("Auto")`) and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2) (`ISLR2::Auto`). This site has a copy at [`data/auto.csv`](data/auto.csv), and both code tabs below read that file.
 >
 > Choose one car at random, each with the same [probability](probability-basics.llms.md#def-probability), and let $X$ be its horsepower and $Y$ its miles per gallon. Then each [expectation](expectation.llms.md#def-expectation) in the definitions of the [variance](#def-variance) and the [covariance](#def-cov) is an average over the cars in the data, and [Definition 10](#def-correlation) gives their [correlation](#def-correlation). The code below computes each part of the definition directly.
 >
@@ -1409,7 +1558,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 20 (Raw moments of a die roll)** Let $X$ be the number shown by one roll of a fair six-sided die, so that $\mathbb{P}(X = x) = 1/6$ for each $x \in {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. The first [raw moment](#def-moment) is the [expectation](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, and the second is ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}$:
+> **Example 21 (Raw moments of a die roll)** Let $X$ be the number shown by one roll of a fair six-sided die, so that $\mathbb{P}(X = x) = 1/6$ for each $x \in {\mathopen{}\left\{1, 2, 3, 4, 5, 6\right\}\mathclose{}}$. The first [raw moment](#def-moment) is the [expectation](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$, and the second is ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}}$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}
@@ -1434,7 +1583,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 21 (The third central moment of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \pi$ and $\mathbb{d}(X) = X - \pi$. The third [central moment](#def-central-moment) is:
+> **Example 22 (The third central moment of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \pi$ and $\mathbb{d}(X) = X - \pi$. The third [central moment](#def-central-moment) is:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[[\mathbb{d}(X)]^3\right]\mathclose{}}
@@ -1460,7 +1609,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 22 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 20](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 2](#thm-variance) gives as:
+> **Example 23 (The variance of a die roll as a central moment)** For the die roll $X$ of [Example 21](#exm-moment-die), ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = 7/2$ and ${\mathbb{E}\mathopen{}\left[X^2\right]\mathclose{}} = 91/6$. By [Theorem 15](#thm-moments-low-order), the second [central moment](#def-central-moment) of $X$ is the [variance](#def-variance) ${\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}$, which [Theorem 2](#thm-variance) gives as:
 >
 > $$\begin{aligned}
 > {\operatorname{Var}\mathopen{}\left(X\right)\mathclose{}}
@@ -1482,7 +1631,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 23 (Moment generating function of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so $\mathbb{P}(X = 1) = \pi$ and $\mathbb{P}(X = 0) = 1 - \pi$. For every $t$:
+> **Example 24 (Moment generating function of a Bernoulli random variable)** Let $X \sim \operatorname{Ber}(\pi)$, so $\mathbb{P}(X = 1) = \pi$ and $\mathbb{P}(X = 0) = 1 - \pi$. For every $t$:
 >
 > $$\begin{aligned}
 > M_X(t)
@@ -1522,7 +1671,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 24 (Moments of a Bernoulli random variable from its moment generating function)** For $X \sim \operatorname{Ber}(\pi)$, [Example 23](#exm-mgf-bernoulli) gives $M_X(t) = 1 - \pi+ \pi\,\text{e}^{t}$ for every $t$, so $M_X^{(k)}(t) = \pi\,\text{e}^{t}$ for every $k \ge 1$. By [Theorem 16](#thm-mgf-moments), for every $k \ge 1$:
+> **Example 25 (Moments of a Bernoulli random variable from its moment generating function)** For $X \sim \operatorname{Ber}(\pi)$, [Example 24](#exm-mgf-bernoulli) gives $M_X(t) = 1 - \pi+ \pi\,\text{e}^{t}$ for every $t$, so $M_X^{(k)}(t) = \pi\,\text{e}^{t}$ for every $k \ge 1$. By [Theorem 16](#thm-mgf-moments), for every $k \ge 1$:
 >
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[X^k\right]\mathclose{}}
@@ -1560,7 +1709,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 
 > **NOTE:**
 >
-> **Example 25 (Moment generating function of a binomial random variable)** By the [sum of Bernoulli variables](distributions.llms.md#thm-binomial-sum-bernoulli), a [binomial](random-variables.llms.md#def-binomial) [random variable](random-variables.llms.md#def-random-variable) $S \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}$ is a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) $S = \sum_{i=1}^n X_i$ of $n$ [independent](independence.llms.md#def-indpt) $\operatorname{Ber}(\pi)$ variables. Each has [moment generating function](#def-mgf) $1 - \pi+ \pi\,\text{e}^{t}$ ([Example 23](#exm-mgf-bernoulli)). Applying [Theorem 17](#thm-mgf-sum) one summand at a time:
+> **Example 26 (Moment generating function of a binomial random variable)** By the [sum of Bernoulli variables](distributions.llms.md#thm-binomial-sum-bernoulli), a [binomial](random-variables.llms.md#def-binomial) [random variable](random-variables.llms.md#def-random-variable) $S \sim {\operatorname{Bin}\mathopen{}\left(n, \pi\right)\mathclose{}}$ is a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) $S = \sum_{i=1}^n X_i$ of $n$ [independent](independence.llms.md#def-indpt) $\operatorname{Ber}(\pi)$ variables. Each has [moment generating function](#def-mgf) $1 - \pi+ \pi\,\text{e}^{t}$ ([Example 24](#exm-mgf-bernoulli)). Applying [Theorem 17](#thm-mgf-sum) one summand at a time:
 >
 > $$\begin{aligned}
 > M_S(t)
