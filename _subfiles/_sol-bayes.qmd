@@ -1,15 +1,24 @@
 ::: {#sol-bayes}
 
-Multiplying @def-conditional-prob through by its denominator, in each direction,
+Multiply @def-conditional-prob through by its denominator,
+once as written and once with $A$ and $B$ swapped,
+and join the two products through the symmetry of intersection:
 
-$$\Pr(A \cap B) = \Pr(A \mid B)\,\Pr(B),
-\qquad
-\Pr(A \cap B) = \Pr(B \mid A)\,\Pr(A)$$
+$$
+\ba
+\Pr(A \mid B) \cd \Pr(B)
+&= \Pr(A \cap B)
+&& \text{(definition of } \Pr(A \mid B) \text{, times } \Pr(B) \text{)} \\
+&= \Pr(B \cap A)
+&& \text{(intersection is commutative: } A \cap B = B \cap A \text{)} \\
+&= \Pr(B \mid A) \cd \Pr(A)
+&& \text{(definition of } \Pr(B \mid A) \text{, times } \Pr(A) \text{)}
+\ea
+$$
 
-The left-hand sides are the same quantity, so the right-hand sides are equal.
-Dividing by $\Pr(B)$ gives **Bayes' rule** (@thm-bayes):
+Dividing both sides by $\Pr(B)$ gives **Bayes' rule** (@thm-bayes):
 
-$$\Pr(A \mid B) = \frac{\Pr(B \mid A)\,\Pr(A)}{\Pr(B)}$$ {#eq-bayes}
+$$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}$$ {#eq-bayes}
 
 Nothing was assumed beyond $\Pr(A) > 0$ and $\Pr(B) > 0$,
 which the two conditionals need in order to be defined at all.
