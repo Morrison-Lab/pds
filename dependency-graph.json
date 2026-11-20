@@ -24,6 +24,16 @@
    "url": "https://morrison-lab.github.io/ids/entropy.html#def-nat"
   },
   {
+   "id": "mcs/functions#def-countable-set",
+   "site": "mcs",
+   "page": "functions",
+   "div": "def-countable-set",
+   "kind": "def",
+   "title": "countable set",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/functions.html#def-countable-set"
+  },
+  {
    "id": "mcs/functions#def-function",
    "site": "mcs",
    "page": "functions",
@@ -102,6 +112,16 @@
    "title": "open interval",
    "external": true,
    "url": "https://morrison-lab.github.io/mcs/sets.html#def-open-interval"
+  },
+  {
+   "id": "mcs/sets#def-subset",
+   "site": "mcs",
+   "page": "sets",
+   "div": "def-subset",
+   "kind": "def",
+   "title": "subset",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/sets.html#def-subset"
   },
   {
    "id": "mcs/sets#def-union",
@@ -672,6 +692,66 @@
    "title": "sigma algebra closure",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/measures.html#thm-sigma-algebra-closure"
+  },
+  {
+   "id": "mds/measures-additivity#def-countable-additivity",
+   "site": "mds",
+   "page": "measures-additivity",
+   "div": "def-countable-additivity",
+   "kind": "def",
+   "title": "countable additivity",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures-additivity.html#def-countable-additivity"
+  },
+  {
+   "id": "mds/measures-integrals#def-integral",
+   "site": "mds",
+   "page": "measures-integrals",
+   "div": "def-integral",
+   "kind": "def",
+   "title": "integral",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures-integrals.html#def-integral"
+  },
+  {
+   "id": "mds/measures-integrals#def-measurable-function",
+   "site": "mds",
+   "page": "measures-integrals",
+   "div": "def-measurable-function",
+   "kind": "def",
+   "title": "measurable function",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures-integrals.html#def-measurable-function"
+  },
+  {
+   "id": "mds/measures-measure-spaces#def-counting-measure",
+   "site": "mds",
+   "page": "measures-measure-spaces",
+   "div": "def-counting-measure",
+   "kind": "def",
+   "title": "counting measure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure"
+  },
+  {
+   "id": "mds/measures-measure-spaces#def-measurable-set",
+   "site": "mds",
+   "page": "measures-measure-spaces",
+   "div": "def-measurable-set",
+   "kind": "def",
+   "title": "measurable set",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measurable-set"
+  },
+  {
+   "id": "mds/measures-measure-spaces#def-measure",
+   "site": "mds",
+   "page": "measures-measure-spaces",
+   "div": "def-measure",
+   "kind": "def",
+   "title": "measure",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measure"
   },
   {
    "id": "mds/optimization-convexity#cor-log-below-tangent",
@@ -2405,6 +2485,15 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#def-density-measure",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-density-measure",
+   "kind": "def",
+   "title": "Density with respect to a measure, Radon--Nikodym derivative",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#def-discrete-hazard",
    "site": "pds",
    "page": "random-variables",
@@ -2627,6 +2716,15 @@
    "div": "prp-density-limit-right-derivative",
    "kind": "prp",
    "title": "The density limit is the right derivative of the CDF",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#prp-pmf-density-counting",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "prp-pmf-density-counting",
+   "kind": "prp",
+   "title": "A PMF is a density with respect to counting measure",
    "external": false
   },
   {
@@ -5451,6 +5549,38 @@
    "pds/random-variables#def-hazard"
   ],
   [
+   "pds/random-variables#def-density-measure",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "mds/measures-integrals#def-integral"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "mds/measures-integrals#def-measurable-function"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "mds/measures-measure-spaces#def-measurable-set"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "mds/measures-measure-spaces#def-measure"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
+   "pds/random-variables#def-range"
+  ],
+  [
    "pds/random-variables#def-discrete-hazard",
    "pds/probability-basics#def-conditional-prob"
   ],
@@ -5593,6 +5723,58 @@
   [
    "pds/random-variables#prp-density-limit-right-derivative",
    "pds/random-variables#thm-density-limit"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "mcs/functions#def-countable-set"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "mcs/sets#def-subset"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "mcs/sets#def-union"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "mds/measures-additivity#def-countable-additivity"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "mds/measures-integrals#def-measurable-function"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "mds/measures-measure-spaces#def-counting-measure"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/random-variables#def-density-measure"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/random-variables#def-range"
   ],
   [
    "pds/random-variables#thm-cdf-characterizes",
@@ -6316,5 +6498,14 @@
   ]
  ],
  "cycles": [],
- "forwardReferences": []
+ "forwardReferences": [
+  [
+   "pds/random-variables#def-density-measure",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#prp-pmf-density-counting",
+   "pds/random-variables#def-cdf"
+  ]
+ ]
 }
