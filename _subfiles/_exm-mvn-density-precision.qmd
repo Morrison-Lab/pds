@@ -11,7 +11,7 @@ $$
 \matr{\Lambda} = \frac{1}{0.36} \pmat{1 & -0.8 \\ -0.8 & 1},
 $$
 
-so $\det(\matr{\Lambda}) = (1 - 0.8^2) / 0.36^2 = 1 / 0.36$.
+so $\detf{\matr{\Lambda}} = (1 - 0.8^2) / 0.36^2 = 1 / 0.36$.
 At $\vx = \tp{(1, 1)}$, the [quadratic form](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-quadratic-form) is
 
 $$

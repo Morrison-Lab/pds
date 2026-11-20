@@ -7,7 +7,7 @@ then $\vX$ has [joint density](random-variables.qmd#def-joint-pdf):
 
 $$
 \p(\vX = \vx) =
-\frac{\det(\matr{\Lambda})^{1/2}}{(2\pi)^{p/2}}
+\frac{\detf{\matr{\Lambda}}^{1/2}}{(2\pi)^{p/2}}
 \ef{-\frac{1}{2} \tp{(\vx - \vecf{\mean})} \matr{\Lambda} (\vx - \vecf{\mean})},
 \quad \vx \in \reals^p.
 $$
@@ -17,19 +17,19 @@ $$
 ::: proof
 
 By @thm-precision-matrix-inverse, $\matr{\Lambda} = \inv{\matr{\covmat}}$,
-so $\det(\matr{\Lambda}) = 1 / \det(\matr{\covmat})$
+so $\detf{\matr{\Lambda}} = 1 / \detf{\matr{\covmat}}$
 (the [determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant) of an [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) is the [reciprocal](https://morrison-lab.github.io/mcs/number-systems.html#def-reciprocal) of the determinant).
 Substituting both into the [joint density](random-variables.qmd#def-joint-pdf) of @def-mvn:
 
 $$
 \ba
 \p(\vX = \vx)
-&= \frac{1}{(2\pi)^{p/2} \det(\matr{\covmat})^{1/2}}
+&= \frac{1}{(2\pi)^{p/2} \detf{\matr{\covmat}}^{1/2}}
 \ef{-\frac{1}{2} \tp{(\vx - \vecf{\mean})} \inv{\matr{\covmat}} (\vx - \vecf{\mean})}
 && \text{(the multivariate Gaussian density)} \\
-&= \frac{\det(\matr{\Lambda})^{1/2}}{(2\pi)^{p/2}}
+&= \frac{\detf{\matr{\Lambda}}^{1/2}}{(2\pi)^{p/2}}
 \ef{-\frac{1}{2} \tp{(\vx - \vecf{\mean})} \matr{\Lambda} (\vx - \vecf{\mean})}
-&& \text{(substitute } \inv{\matr{\covmat}} = \matr{\Lambda} \text{ and } 1 / \det(\matr{\covmat}) = \det(\matr{\Lambda}) \text{)}
+&& \text{(substitute } \inv{\matr{\covmat}} = \matr{\Lambda} \text{ and } 1 / \detf{\matr{\covmat}} = \detf{\matr{\Lambda}} \text{)}
 \ea
 $$
 
