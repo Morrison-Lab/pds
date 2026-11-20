@@ -1,0 +1,22 @@
+::: {#sol-best-constant}
+
+In @eq-constant-prediction-decompose,
+the first term, $\Var{Y}$, does not depend on $c$.
+The second term, $\sqf{\mean - c}$, is a [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square),
+so it is never negative,
+and it is zero exactly when $c = \mean$.
+So
+
+$$
+\begin{aligned}
+c &= \mean \\
+&= \E{Y}
+\end{aligned}
+$$
+
+minimizes the [expected squared error](expectation.qmd#def-squared-error-risk),
+and no other number does.
+The [set of minimizers](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmin)
+has the single element $\mean$.
+
+:::

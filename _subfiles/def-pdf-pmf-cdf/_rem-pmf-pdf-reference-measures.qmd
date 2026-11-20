@@ -1,0 +1,26 @@
+::: {#rem-pmf-pdf-reference-measures}
+#### PMFs and PDFs differ in the reference measure
+
+A [PDF](#def-pdf) plays the role of a [PMF](#def-pmf)
+with [Lebesgue measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-lebesgue-measure)
+in place of [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure):
+@def-pdf integrates it with $dx$.
+@def-density-measure uses the [Lebesgue integral](https://morrison-lab.github.io/mds/measures-integrals.html#def-integral),
+because the [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) has no version against counting measure.
+Against counting measure, the Lebesgue integral of a non-negative $f$ over $A$ adds up the values of $f$ on $A$,
+which is how a PMF gives $\Pr(X \in A)$.
+Against Lebesgue measure, the Lebesgue integral of a non-negative $f$ over $[a, b]$ agrees with its Riemann integral whenever $f$ has one
+([mds](https://morrison-lab.github.io/mds/measures-integrals.html#rem-integral-nonneg-lower-sums)),
+so @def-pdf gives the same values with either one.
+If the [CDF](#def-cdf) $F$ of a [random variable](#def-random-variable) is [absolutely continuous](https://en.wikipedia.org/wiki/Absolute_continuity),
+then $F'$ is a [Radon--Nikodym derivative](#def-density-measure)
+of its [distribution](#def-cdf) against Lebesgue measure
+[@billingsley1995probability, p. 423].
+So a PMF and a PDF are both [densities with respect to a measure](#def-density-measure),
+for different reference measures.
+Because the two share that role,
+these notes let $f_X$ denote either one,
+and the [joint-distribution form of Fubini--Tonelli](expectation.qmd#cor-fubini-joint)
+covers PMFs, PDFs, and density-mass [functions](https://morrison-lab.github.io/mcs/functions.html#def-function) in one statement.
+
+:::

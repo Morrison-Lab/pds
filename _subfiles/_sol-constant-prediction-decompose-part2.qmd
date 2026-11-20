@@ -1,0 +1,47 @@
+::: {#sol-constant-prediction-decompose-part2}
+
+Add and subtract $\mean$ inside the [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square):
+
+$$
+\E{\sqf{Y - c}}
+= \E{\sqf{(Y - \mean) + (\mean - c)}} .
+$$
+
+Expand the square, using the [square of a sum](https://morrison-lab.github.io/mds/algebra-sums.html#thm-square-of-a-sum):
+
+$$
+= \E{\sqf{Y - \mean} + 2 (Y - \mean)(\mean - c) + \sqf{\mean - c}} .
+$$
+
+Apply [linearity of expectation](expectation.qmd#thm-linearity-expectation).
+The numbers $\mean$ and $c$ are [constant](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function)s,
+so $2(\mean - c)$ and $\sqf{\mean - c}$ come outside the expectation:
+
+$$
+= \E{\sqf{Y - \mean}} + 2 (\mean - c) \E{Y - \mean} + \sqf{\mean - c} .
+$$
+
+The middle expectation is zero,
+because
+
+$$
+\begin{aligned}
+\E{Y - \mean} &= \E{Y} - \mean \\
+&= \mean - \mean \\
+&= 0,
+\end{aligned}
+$$
+
+so the [squared-error risk](expectation.qmd#def-squared-error-risk) reduces to:
+
+$$
+= \E{\sqf{Y - \mean}} + \sqf{\mean - c} .
+$$
+
+The first term is the [variance of $Y$](#thm-variance-expanded):
+
+$$
+= \Var{Y} + \sqf{\mean - c} .
+$$
+
+:::

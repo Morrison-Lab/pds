@@ -1,0 +1,22 @@
+::: {#exr-constant-prediction-decompose-part2}
+
+#### Predicting with one number (part 2)
+
+Again, $Y$ is next year's burglary count in a randomly chosen neighborhood,
+$c$ is a single number predicted for every neighborhood,
+and $\mean$ is the [mean](expectation.qmd#def-expectation) $\E{Y}$ of $Y$.
+
+Split $\E{\sqf{Y - c}}$ into two parts:
+one that does not depend on $c$,
+and one that grows as $c$ moves away from $\mean$.
+
+::: {.callout-tip}
+#### Hint
+
+Inside the [square](https://morrison-lab.github.io/mds/algebra-basics.html#def-square), add and subtract $\mean$.
+Then use the [square of a sum](https://morrison-lab.github.io/mds/algebra-sums.html#thm-square-of-a-sum),
+[linearity of expectation](expectation.qmd#thm-linearity-expectation),
+and the [variance as an expected squared deviation](#thm-variance-expanded).
+:::
+
+:::

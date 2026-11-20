@@ -1,0 +1,29 @@
+:::{#exm-density-measure}
+#### A fair die roll and counting measure
+
+<!-- no-figure: a short sum of a few equal or tabulated probabilities; there is no data, curve or model to plot -->
+
+Let $X$ be the roll of a fair six-sided die,
+so $\rangef{X} = D = \set{1, 2, 3, 4, 5, 6}$,
+and let $\measure$ be the [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure) on $D$.
+The [constant function](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-constant-function) $f(x) = \tfrac{1}{6}$ on $D$
+is a [density with respect to](#def-density-measure) $\measure$
+of the [distribution](#def-cdf) of $X$.
+For each [subset](https://morrison-lab.github.io/mcs/sets.html#def-subset) $A \subseteq D$:
+
+$$
+\ba
+\int_A f(x)\,d\measure(x)
+&= \sum_{x \in A} \tfrac{1}{6}
+&& \text{(an integral with respect to counting measure is a sum)} \\
+&= \tfrac{\abs{A}}{6}
+&& \text{(} A \text{ has } \abs{A} \text{ terms)} \\
+&= \Pr(X \in A)
+&& \text{(the six faces are equally likely)}
+\ea
+$$
+
+The first step is the [integral with respect to counting measure](https://morrison-lab.github.io/mds/measures-integrals.html#exm-integral-nonneg).
+For example, $A = \set{5, 6}$ gives $\Pr(X \in A) = \tfrac{2}{6} = \tfrac{1}{3}$.
+
+:::
