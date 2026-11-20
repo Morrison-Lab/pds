@@ -12,7 +12,7 @@ is the [population mean](#def-expectation):
 $$
 \ba
 \avgin \frac{i}{n}
-&= \frac{1}{n^2} \sumin i
+&= \frac{1}{n} \avgin i
 && \text{(take the constant } 1/n \text{ out of each term)}
 \\&= \frac{1}{n^2} \cd \frac{n(n+1)}{2}
 && \text{(the sum of the first } n \text{ whole numbers)}

@@ -29,8 +29,8 @@ that no finite population produces:
   where the sum has infinitely many terms;
 - a [continuous random variable](random-variables.qmd#def-continuous-rv),
   where every single value has probability $0$.
-  There the [density](random-variables.qmd#def-pdf) takes the place of the relative frequencies,
-  and an [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) takes the place of the sum:
+  There the [density](random-variables.qmd#def-pdf) takes the place of the relative frequencies.
+  An [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) takes the place of the sum:
   $\E{X} = \int x \cd \p(X = x)\,dx$.
 
 So the [expectation](#def-expectation) is the population mean
