@@ -1,8 +1,8 @@
 ::: {#sol-bayes}
 
-Multiply @def-conditional-prob through by its denominator,
-once as written and once with $A$ and $B$ swapped,
-and join the two products through the symmetry of intersection:
+Multiply @def-conditional-prob through by $\Pr(B)$,
+swap $A$ and $B$,
+and apply the definition again, multiplied through by $\Pr(A)$:
 
 $$
 \ba
