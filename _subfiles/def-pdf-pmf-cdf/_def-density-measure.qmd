@@ -10,7 +10,8 @@ A **density with respect to a measure** $\measure$,
 or **Radon--Nikodym derivative**,
 of the [distribution](#def-cdf) of $X$
 is a non-negative [measurable function](https://morrison-lab.github.io/mds/measures-integrals.html#def-measurable-function) $f$ on $\rangef{X}$
-whose [integral](https://morrison-lab.github.io/mds/measures-integrals.html#def-integral) against $\measure$
+whose [Lebesgue integral](https://morrison-lab.github.io/mds/measures-integrals.html#def-integral) against $\measure$,
+not its [Riemann integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral),
 over each [measurable set](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measurable-set) $A \subseteq \rangef{X}$
 is the [probability](probability-basics.qmd#def-probability) that $X$ falls in $A$
 [@billingsley1995probability, pp. 213, 423]:
