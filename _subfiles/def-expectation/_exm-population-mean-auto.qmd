@@ -4,7 +4,8 @@
 ```{r}
 #| include: false
 # The Python tab in this example is the page's first Python chunk,
-# so declare pandas here, and compute the counts the prose quotes before the code tabs run.
+# so declare pandas here, and compute the counts the prose quotes
+# before the code tabs run.
 python_packages <- c("numpy", "pandas")
 reticulate::py_require(python_packages)
 auto_cars <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
