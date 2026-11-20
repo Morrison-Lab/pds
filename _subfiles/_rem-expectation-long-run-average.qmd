@@ -1,16 +1,24 @@
 ::: {#rem-expectation-long-run-average}
 #### The expectation is the long-run average of repeated draws
 
-The [weak law of large numbers](#thm-wlln) gives the [expectation](expectation.qmd#def-expectation) a second reading.
-Draw $X_1, X_2, \ldots$ independently from the [distribution](random-variables.qmd#def-cdf) of $X$,
-so that they are [IID](independence.qmd#def-iid) with [population mean](expectation.qmd#def-expectation) $\E{X}$.
-The [sample mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the first $n$ draws then
-[converges in probability](#def-convergence-in-probability) to $\E{X}$:
-for a large $n$, the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the draws is very probably close to $\E{X}$.
-So the expectation is the value that the average of many repeated draws settles near.
+The [weak law of large numbers](#thm-wlln)
+gives the [expectation](expectation.qmd#def-expectation) a second reading.
+Draw $X_1, X_2, \ldots$ independently
+from the [distribution](random-variables.qmd#def-cdf) of $X$,
+so that they are [IID](independence.qmd#def-iid)
+with [population mean](expectation.qmd#def-expectation) $\E{X}$.
+The [sample mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the first $n$ draws
+then [converges in probability](#def-convergence-in-probability) to $\E{X}$:
+for a large $n$,
+the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the draws
+is very probably close to $\E{X}$.
+So the expectation is the value
+that the average of many repeated draws settles near.
 
-For a [finite](https://morrison-lab.github.io/mcs/functions.html#def-finite-set) population, the two readings agree.
-As [the population-mean proposition](expectation.qmd#prp-population-mean-expectation) shows, $\E{X}$ is the average over the whole population
+For a [finite](https://morrison-lab.github.io/mcs/functions.html#def-finite-set) population,
+the two readings agree.
+[The population-mean proposition](expectation.qmd#prp-population-mean-expectation)
+shows that $\E{X}$ is the average over the whole population
 when $X$ is the value of one unit [chosen at random](probability-basics.qmd#def-random-choice).
 Units drawn [at random](probability-basics.qmd#def-random-choice) with replacement are IID,
 so the average over many draws settles near that population average.

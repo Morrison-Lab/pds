@@ -1,12 +1,16 @@
 :::{#exm-wlln-auto}
 #### The average fuel economy of many randomly drawn cars settles near the population mean
 
-Take the cars in the Auto data described in @exm-clt-auto as the whole population,
-and let $X_i$ be the fuel economy (`mpg`) of the $i$th car drawn [at random](probability-basics.qmd#def-random-choice), with replacement.
-The draws are [IID](independence.qmd#def-iid), and by [the population-mean proposition](expectation.qmd#prp-population-mean-expectation)
-their population mean $\mean$ is the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) `mpg` over all the cars.
-The code for @fig-wlln-auto draws $10{,}000$ cars
-and plots the running average $\samplemean{X}{n}$ of the first $n$ draws against $n$.
+Take the cars in the Auto data described in @exm-clt-auto as the whole population.
+Let $X_i$ be the fuel economy (`mpg`) of the $i$th car
+drawn [at random](probability-basics.qmd#def-random-choice), with replacement.
+The draws are [IID](independence.qmd#def-iid).
+By [the population-mean proposition](expectation.qmd#prp-population-mean-expectation),
+their population mean $\mean$
+is the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) `mpg` over all the cars.
+The code for @fig-wlln-auto draws $10{,}000$ cars.
+It then plots the running average $\samplemean{X}{n}$ of the first $n$ draws
+against $n$.
 
 ```{r}
 #| label: fig-wlln-auto
@@ -55,9 +59,11 @@ stopifnot(miss_late < 0.5, 5 * miss_late < miss_early)
 ```
 
 The population mean is $\mean =$ `{r} sprintf("%.2f", mu)` miles per gallon.
-Over the first $10$ draws, the running average misses it by as much as
-`{r} sprintf("%.2f", miss_early)` miles per gallon;
-from draw $1{,}000$ on, it never misses by more than
+Over the first $10$ draws,
+the running average misses it by as much as
+`{r} sprintf("%.2f", miss_early)` miles per gallon.
+From draw $1{,}000$ on,
+it never misses by more than
 `{r} sprintf("%.2f", miss_late)`.
 
 :::

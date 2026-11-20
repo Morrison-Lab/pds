@@ -1,10 +1,13 @@
 ::: {#exm-population-mean-uniform-limit}
 #### Population means of finer and finer grids approach the expectation of a uniform variable
 
-For a whole number $n \ge 1$, take the [finite](https://morrison-lab.github.io/mcs/functions.html#def-finite-set) population of $n$ evenly spaced values
-$\frac{1}{n}, \frac{2}{n}, \ldots, \frac{n}{n}$ in the [interval](https://morrison-lab.github.io/mcs/sets.html#def-interval) $(0, 1]$.
+For a whole number $n \ge 1$,
+take the [finite](https://morrison-lab.github.io/mcs/functions.html#def-finite-set) population of $n$ evenly spaced values
+$\frac{1}{n}, \frac{2}{n}, \ldots, \frac{n}{n}$
+in the [interval](https://morrison-lab.github.io/mcs/sets.html#def-interval) $(0, 1]$.
 By @prp-population-mean-expectation,
-the [expectation](#def-expectation) of one value [chosen at random](probability-basics.qmd#def-random-choice) is the [population mean](#def-expectation):
+the [expectation](#def-expectation) of one value [chosen at random](probability-basics.qmd#def-random-choice)
+is the [population mean](#def-expectation):
 
 $$
 \ba
@@ -18,10 +21,15 @@ $$
 \ea
 $$
 
-As $n$ grows, the grid fills the interval,
+As $n$ grows,
+the grid fills the interval,
 and the population mean $\frac{1}{2} + \frac{1}{2n}$ approaches $\frac{1}{2}$.
-No finite population has every number in $[0, 1]$ as a unit,
-but a [random variable](random-variables.qmd#def-random-variable) $X$ [uniformly distributed](random-variables.qmd#def-uniform) on $[0, 1]$ has [density](random-variables.qmd#def-pdf) $\p(X = x) = 1$ there,
+
+No finite population has every number in $[0, 1]$ as a unit.
+Even so,
+a [random variable](random-variables.qmd#def-random-variable) $X$
+[uniformly distributed](random-variables.qmd#def-uniform) on $[0, 1]$
+has [density](random-variables.qmd#def-pdf) $\p(X = x) = 1$ there,
 and @def-expectation gives
 
 $$
@@ -34,7 +42,8 @@ $$
 \ea
 $$
 
-the [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit) of the finite population means.
+That value is the [limit](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-limit)
+of the finite population means.
 
 <!-- no-figure: arithmetic example, no data to plot -->
 
