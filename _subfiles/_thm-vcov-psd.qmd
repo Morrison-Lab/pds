@@ -15,7 +15,7 @@ $$\tp{\va} \Varf{\vX} \va \ge 0$$
 
 ::: proof
 
-By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$,
+By @def-cov-vec-x, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$,
 and by @def-cov, with $\mean_i = \E{X_i}$:
 
 $$

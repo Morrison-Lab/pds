@@ -14,6 +14,8 @@ $$
 
 ::: proof
 
+Start from @thm-vcov-outer-product:
+
 $$
 \ba
 \Varf{\vX}
@@ -21,7 +23,7 @@ $$
     \paren{\vX - \Expp\vX}
     \tp{\paren{\vX - \Expp\vX}}
   }
-&& \text{(definition)}
+&& \text{(outer-product form of the variance matrix)}
 \\
 &= \Expf{
     \vX \tp{\vX}

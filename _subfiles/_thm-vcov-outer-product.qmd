@@ -1,18 +1,15 @@
-:::{#thm-vcov-elements}
+:::{#thm-vcov-outer-product}
 
-#### Elements of the variance-covariance matrix are pairwise covariances
+#### The variance-covariance matrix of a random vector is the expected outer product of its deviations from its mean
 
-For a $p \times 1$ random vector $\vX = \tp{(X_1, \ldots, X_p)}$,
-the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$:
+For a $p \times 1$ [random vector](random-variables.qmd#def-random-variable) $\vX = \tp{(X_1, \ldots, X_p)}$
+with $\E{X_i^2} < \infty$ for every $i$,
+the [variance-covariance matrix](#def-cov-vec-x) of $\vX$
+equals the [expectation](expectation.qmd#def-expectation-matrix) of the $p \times p$ matrix
+formed by multiplying the column vector $\vX - \Expp\vX$ by its own transpose:
 
 $$
-\Varf{\vX}=
-\pmat{
-\Varf{X_1}      & \Covs{X_1}{X_2} & \cdots & \Covs{X_1}{X_p} \\
-\Covs{X_2}{X_1} & \Varf{X_2}      & \cdots & \Covs{X_2}{X_p} \\
-\vdots          & \vdots          & \ddots & \vdots           \\
-\Covs{X_p}{X_1} & \Covs{X_p}{X_2} & \cdots & \Varf{X_p}
-}
+\Varf{\vX} = \Expf{\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}}
 $$
 
 :::
@@ -23,16 +20,14 @@ $$
 
 Let $\mean_i = \E{X_i}$ for $i = 1, \ldots, p$,
 so $\Expp\vX = \tp{(\mean_1, \ldots, \mean_p)}$.
-By @def-cov-vec-x:
+Then:
 
 $$
 \ba
-\Varf{\vX}
-&= \Expf{
+\Expf{
   \paren{\vX - \Expp\vX}
   \tp{\paren{\vX - \Expp\vX}}
 }
-\\
 &= \Expf{
   \pmat{X_1 - \mean_1 \\ \vdots \\ X_p - \mean_p}
   \pmat{X_1 - \mean_1 & \cdots & X_p - \mean_p}
@@ -60,19 +55,16 @@ $$
     \Covs{X_p}{X_1} & \cdots & \Covs{X_p}{X_p}
   }
 \\
-&=
-  \pmat{
-    \Varf{X_1}      & \cdots & \Covs{X_1}{X_p} \\
-    \vdots          & \ddots & \vdots           \\
-    \Covs{X_p}{X_1} & \cdots & \Varf{X_p}
-  }
+&= \Varf{\vX}
 \ea
 $$
 
 where:
 
-- the step from the third to fourth line uses the [expectation of a random matrix](expectation.qmd#def-expectation-matrix),
-- the step from the fourth to fifth line uses @def-cov, and
-- the last step uses @lem-cov-xx.
+- the first step writes out the entries of $\vX - \Expp\vX$,
+- the second step multiplies the $p \times 1$ column by the $1 \times p$ row, entry by entry,
+- the third step uses the [expectation of a random matrix](expectation.qmd#def-expectation-matrix), which is taken element by element,
+- the fourth step uses @def-cov, and
+- the last step uses @def-cov-vec-x.
 
 :::

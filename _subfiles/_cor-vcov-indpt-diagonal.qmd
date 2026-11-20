@@ -16,7 +16,7 @@ with diagonal elements $\Var{X_1}, \ldots, \Var{X_p}$.
 
 ::: proof
 
-By @thm-vcov-elements, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$.
+By @def-cov-vec-x, the $(i,j)$-th element of $\Varf{\vX}$ is $\Covs{X_i}{X_j}$.
 For $i \neq j$, $X_i$ and $X_j$ are [independent](independence.qmd#def-indpt),
 so $\Covs{X_i}{X_j} = 0$ by @thm-indpt-uncorrelated.
 The $(i,i)$-th element is $\Covs{X_i}{X_i} = \Var{X_i}$ by @lem-cov-xx.

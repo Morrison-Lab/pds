@@ -1,0 +1,30 @@
+:::{#exm-vcov-outer-product}
+#### The die-roll variance matrix as an expected outer product
+
+Take the die roll and the vector $\vX = \tp{(X_1, X_2)}$ of @exm-cov-vec-x,
+with $\Expp\vX = \tp{(1/2, 1/2)}$.
+The deviation $\vX - \Expp\vX$ takes these values:
+
+| Roll | $\tp{(X_1, X_2)}$ | $\tp{\paren{\vX - \Expp\vX}}$ | product of its two entries |
+|:----:|:-----------------:|:-----------------------------:|:--------------------------:|
+| 1    | $(0, 0)$          | $(-1/2, -1/2)$                | $1/4$                      |
+| 2    | $(1, 0)$          | $(1/2, -1/2)$                 | $-1/4$                     |
+| 3    | $(0, 0)$          | $(-1/2, -1/2)$                | $1/4$                      |
+| 4    | $(1, 1)$          | $(1/2, 1/2)$                  | $1/4$                      |
+| 5    | $(0, 1)$          | $(-1/2, 1/2)$                 | $-1/4$                     |
+| 6    | $(1, 1)$          | $(1/2, 1/2)$                  | $1/4$                      |
+
+On every roll, each entry of $\vX - \Expp\vX$ is $\pm 1/2$,
+so both diagonal entries of the outer product $\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}$ are $1/4$.
+Its two off-diagonal entries are the product in the last column,
+whose average over the six rolls is $(4 \cdot 1/4 - 2 \cdot 1/4)/6 = 1/12$.
+Taking the expectation element by element:
+
+$$
+\Expf{\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}}
+= \pmat{1/4 & 1/12 \\ 1/12 & 1/4},
+$$
+
+which matches $\Varf{\vX}$ from @exm-cov-vec-x, as @thm-vcov-outer-product says it must.
+
+:::
