@@ -15,8 +15,8 @@ The [deviation](#def-deviation-pop-mean) $\vX - \Expp\vX$ takes these values:
 | 6    | $(1, 1)$          | $(1/2, 1/2)$                  | $1/4$                      |
 
 On every roll, each entry of $\vX - \Expp\vX$ is $\pm 1/2$,
-so both [diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-diagonal-entry) of the [outer product](https://morrison-lab.github.io/mds/linear-algebra-orthonormal-bases.html#def-outer-product) $\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}$ are $1/4$.
-Its two [off-diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-off-diagonal-entry) are the numbers in the table's last [column](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix-column),
+so both [diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrix-multiplication.html#def-diagonal-entry) of the [outer product](https://morrison-lab.github.io/mds/linear-algebra-inner-products.html#def-outer-product) $\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}$ are $1/4$.
+Its two [off-diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrix-multiplication.html#def-off-diagonal-entry) are the numbers in the table's last [column](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix-column),
 whose [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) over the six rolls is $(4 \cdot 1/4 - 2 \cdot 1/4)/6 = 1/12$.
 Taking the [expectation](expectation.qmd#def-expectation-matrix) element by element:
 
