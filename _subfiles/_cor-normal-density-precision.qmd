@@ -1,0 +1,33 @@
+:::{#cor-normal-density-precision}
+#### The Gaussian density in terms of the precision
+
+If $X$ has the [Gaussian distribution](random-variables.qmd#def-normal) $\ndist{\mean, \ss}$,
+and $\tau = 1 / \ss$,
+then $\tau$ is the [precision](variance-covariance.qmd#def-precision) of $X$,
+and $X$ has [density](random-variables.qmd#def-pdf):
+
+$$
+\p(X = x) = \sqrt{\frac{\tau}{2\pi}} \ef{-\frac{\tau}{2} (x - \mean)^2}, \quad x \in \reals.
+$$
+
+:::
+
+::: proof
+
+By @exm-mvn-univariate, $X$ is the case $p = 1$ of the [multivariate Gaussian distribution](#def-mvn), with $\matr{\covmat} = (\ss)$.
+By [the mean and variance of the Gaussian distribution](random-variables.qmd#thm-normal-moments), $\Var{X} = \ss$,
+so the [precision](variance-covariance.qmd#def-precision) of $X$ is $1 / \ss = \tau$.
+By @thm-precision-matrix-inverse, the [precision matrix](#def-precision-matrix) of $X$ is the $1 \times 1$ [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) of $(\ss)$, which is $\matr{\Lambda} = (\tau)$,
+so by @thm-mvn-density-precision with $p = 1$:
+
+$$
+\ba
+\p(X = x)
+&= \frac{\tau^{1/2}}{(2\pi)^{1/2}} \ef{-\frac{1}{2} (x - \mean) \tau (x - \mean)}
+&& \text{(substitute into the precision form)} \\
+&= \sqrt{\frac{\tau}{2\pi}} \ef{-\frac{\tau}{2} (x - \mean)^2}
+&& \text{(simplify)}
+\ea
+$$
+
+:::
