@@ -1,0 +1,41 @@
+::: {#exm-population-mean-uniform-limit}
+#### Population means of finer and finer grids approach the expectation of a uniform variable
+
+For a whole number $n \ge 1$, take the finite population of $n$ evenly spaced values
+$\frac{1}{n}, \frac{2}{n}, \ldots, \frac{n}{n}$ in the interval $(0, 1]$.
+By @prp-population-mean-expectation,
+the expectation of one value chosen at random is the population mean:
+
+$$
+\ba
+\avgin \frac{i}{n}
+&= \frac{1}{n^2} \sumin i
+&& \text{(take the constant } 1/n \text{ out of each term)}
+\\&= \frac{1}{n^2} \cd \frac{n(n+1)}{2}
+&& \text{(the sum of the first } n \text{ whole numbers)}
+\\&= \frac{1}{2} + \frac{1}{2n}
+&& \text{(simplify)}
+\ea
+$$
+
+As $n$ grows, the grid fills the interval,
+and the population mean $\frac{1}{2} + \frac{1}{2n}$ approaches $\frac{1}{2}$.
+No finite population has every number in $[0, 1]$ as a unit,
+but a random variable $X$ with the [uniform distribution](random-variables.qmd#def-uniform) on $[0, 1]$ has density $\p(X = x) = 1$ there,
+and @def-expectation gives
+
+$$
+\ba
+\E{X}
+&= \int_0^1 x \cd 1 \,dx
+&& \text{(definition of expectation, with density } 1 \text{)}
+\\&= \frac{1}{2}
+&& \text{(integrate)}
+\ea
+$$
+
+the limit of the finite population means.
+
+<!-- no-figure: arithmetic example, no data to plot -->
+
+:::

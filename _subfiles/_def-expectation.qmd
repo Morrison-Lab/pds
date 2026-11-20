@@ -31,6 +31,22 @@ that is, when it is finite with $\abs{x}$ in place of $x$.
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-expectation/_prp-population-mean-expectation.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-expectation/_exm-population-mean-auto.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-expectation/_rem-expectation-generalizes-population-mean.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-expectation/_exm-population-mean-uniform-limit.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-expectation/_rem-expectation-weighted-average.qmd >}}
 
 {{< slidebreak >}}

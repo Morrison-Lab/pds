@@ -1,0 +1,36 @@
+::: {#rem-expectation-generalizes-population-mean}
+#### The expectation extends the population mean to populations without a finite size
+
+Group the units of a finite population by their values,
+as in the proof of @prp-population-mean-expectation:
+$n_y$ of the $n$ units have value $y$.
+Then the population mean is
+
+$$
+\avgin a_i = \sum_{y} y \cd \frac{n_y}{n},
+$$
+
+a sum over the distinct values, each weighted by its relative frequency $n_y / n$.
+For a unit [chosen at random](probability-basics.qmd#def-random-choice),
+that relative frequency is the [probability mass function](random-variables.qmd#def-pmf) of its value:
+$\P(Y = y) = n_y / n$.
+
+The [definition of expectation](#def-expectation) keeps the formula
+and replaces the relative frequencies with probabilities:
+$\E{X} = \sum_{x} x \cd \P(X = x)$.
+That version no longer needs a population size $n$ to divide by,
+so it also covers random variables that no finite population produces:
+
+- a [discrete random variable](random-variables.qmd#def-discrete-rv) with infinitely many possible values,
+  such as the number of trials before the first success,
+  where the sum has infinitely many terms;
+- a [continuous random variable](random-variables.qmd#def-continuous-rv),
+  where every single value has probability $0$,
+  so the [density](random-variables.qmd#def-pdf) takes the place of the relative frequencies
+  and an integral takes the place of the sum:
+  $\E{X} = \int x \cd \p(X = x)\,dx$.
+
+So the expectation is the population mean of a population that may be infinite,
+described by its distribution rather than by a list of its units.
+
+:::
