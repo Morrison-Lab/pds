@@ -21,7 +21,7 @@ $$
 As $n$ grows, the grid fills the interval,
 and the population mean $\frac{1}{2} + \frac{1}{2n}$ approaches $\frac{1}{2}$.
 No finite population has every number in $[0, 1]$ as a unit,
-but a [random variable](random-variables.qmd#def-random-variable) $X \sim \text{Uniform}(0, 1)$ ([uniform distribution](random-variables.qmd#def-uniform)) has [density](random-variables.qmd#def-pdf) $\p(X = x) = 1$ on $[0, 1]$,
+but a [random variable](random-variables.qmd#def-random-variable) $X$ [uniformly distributed](random-variables.qmd#def-uniform) on $[0, 1]$ has [density](random-variables.qmd#def-pdf) $\p(X = x) = 1$ there,
 and @def-expectation gives
 
 $$
