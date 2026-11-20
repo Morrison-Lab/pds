@@ -49,7 +49,7 @@ $$
 \ea
 $$
 
-The step labeled "outer-product form of the variance matrix" uses @thm-vcov-outer-product,
+The fifth step uses @thm-vcov-outer-product,
 and the last step uses @def-cov-vec-x.
 
 :::

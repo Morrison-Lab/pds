@@ -8,7 +8,7 @@ For a $p \times 1$ [random vector](random-variables.qmd#def-random-variable) $\v
 with $\E{X_i^2} < \infty$ for every $i$,
 the **variance-covariance matrix** of $\vX$,
 also called its **covariance matrix** or **variance matrix**,
-is the $p \times p$ matrix whose $(i,j)$-th element is the [covariance](#def-cov) $\Covs{X_i}{X_j}$:
+is the $p \times p$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) whose $(i,j)$-th element is the [covariance](#def-cov) $\Covs{X_i}{X_j}$:
 
 $$
 \ba

@@ -48,7 +48,7 @@ $$
 \ea
 $$
 
-Since the means are 0, @def-cov-vec-x and @thm-alt-cov give:
+Since the [means](expectation.qmd#def-expectation) are 0, @def-cov-vec-x and @thm-alt-cov give:
 
 $$
 \Varf{\vX} = \pmat{12.5 & -2.5 \\ -2.5 & 1},

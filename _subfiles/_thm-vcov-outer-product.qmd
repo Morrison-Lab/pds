@@ -5,8 +5,8 @@
 For a $p \times 1$ [random vector](random-variables.qmd#def-random-variable) $\vX = \tp{(X_1, \ldots, X_p)}$
 with $\E{X_i^2} < \infty$ for every $i$,
 the [variance-covariance matrix](#def-cov-vec-x) of $\vX$
-equals the [expectation](expectation.qmd#def-expectation-matrix) of the $p \times p$ matrix
-formed by multiplying the column vector $\vX - \Expp\vX$ by its own transpose:
+[equals](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix-equality) the [expectation of](expectation.qmd#def-expectation-matrix) the $p \times p$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix)
+formed by [multiplying](https://morrison-lab.github.io/mds/linear-algebra-matrix-multiplication.html#def-matrix-mult) the [column vector](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector) $\vX - \Expp\vX$ by its own [transpose](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-transpose):
 
 $$
 \Varf{\vX} = \Expf{\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}}
@@ -62,7 +62,7 @@ $$
 where:
 
 - the first step writes out the entries of $\vX - \Expp\vX$,
-- the second step multiplies the $p \times 1$ column by the $1 \times p$ row, entry by entry,
+- the second step multiplies the $p \times 1$ [column](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix-column) by the $1 \times p$ [row](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix-row), entry by entry,
 - the third step uses the [expectation of a random matrix](expectation.qmd#def-expectation-matrix), which is taken element by element,
 - the fourth step uses @def-cov, and
 - the last step uses @def-cov-vec-x.

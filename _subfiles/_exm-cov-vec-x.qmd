@@ -4,7 +4,8 @@
 Roll a fair six-sided die once.
 Let $X_1 = 1$ if the roll is even and $X_1 = 0$ otherwise,
 and let $X_2 = 1$ if the roll is at least 4 and $X_2 = 0$ otherwise.
-Each of $X_1$ and $X_2$ is 1 on three of the six equally likely outcomes, so
+Each of $X_1$ and $X_2$ is 1 on three of the six equally likely [outcomes](probability-basics.qmd#def-experiment-outcome),
+so
 
 $$
 \ba
@@ -15,7 +16,8 @@ $$
 $$
 
 since $X_i^2 = X_i$ for a variable that takes only the values 0 and 1.
-The product $X_1 X_2$ is 1 only when the roll is 4 or 6, so $\E{X_1 X_2} = 2/6 = 1/3$.
+The product $X_1 X_2$ is 1 only when the roll is 4 or 6, <!-- check-term-links: allow: a product of two numbers, not the matrix product that the term names -->
+so $\E{X_1 X_2} = 2/6 = 1/3$.
 By @thm-alt-cov:
 
 $$
@@ -28,7 +30,7 @@ $$
 \ea
 $$
 
-So by @def-cov-vec-x, $\vX = \tp{(X_1, X_2)}$ has variance-covariance matrix
+So by @def-cov-vec-x, $\vX = \tp{(X_1, X_2)}$ has [variance-covariance matrix](#def-cov-vec-x)
 
 $$
 \Varf{\vX} = \pmat{1/4 & 1/12 \\ 1/12 & 1/4}.
