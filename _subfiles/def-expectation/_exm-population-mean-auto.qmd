@@ -3,8 +3,8 @@
 
 ```{r}
 #| include: false
-# The Python tab below is the page's first Python chunk, so declare pandas here,
-# and compute the counts the prose quotes before the code tabs run.
+# The Python tab in this example is the page's first Python chunk,
+# so declare pandas here, and compute the counts the prose quotes before the code tabs run.
 python_packages <- c("numpy", "pandas")
 reticulate::py_require(python_packages)
 auto_cars <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
@@ -22,7 +22,7 @@ in the Python package [`ISLP`](https://islp.readthedocs.io/)
 and the R package [`ISLR2`](https://cran.r-project.org/package=ISLR2)
 (`ISLR2::Auto`).
 This site has a copy at [`data/auto.csv`](data/auto.csv),
-and both code tabs below read that file.
+and both code tabs in this example read that file.
 
 Take these cars as the whole population,
 choose one car [at random](probability-basics.qmd#def-random-choice),
@@ -31,9 +31,9 @@ Many cars share a value:
 the `{r} n_cars` cars have only `{r} n_values` distinct `mpg` values,
 so @prp-mean-expectation, which needs distinct numbers, does not apply,
 but @prp-population-mean-expectation does.
-The code below computes $\E{Y}$ both ways:
-from the [definition](#def-expectation), as the sum of each distinct value times the fraction of cars with that value,
-and as the plain average of `mpg` over all the cars.
+The code tabs compute $\E{Y}$ both ways:
+from the [definition](#def-expectation), as the [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) of each distinct value times the [fraction](https://morrison-lab.github.io/mds/algebra-sums.html#def-fraction) of cars with that value,
+and as the plain [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of `mpg` over all the cars.
 
 ::: {.panel-tabset}
 
@@ -89,10 +89,10 @@ stopifnot(
 
 Both computations give
 $\E{Y} =$ `{r} sprintf("%.2f", population_average)` miles per gallon.
-The expectation of one car's `mpg`, chosen at random, is the population mean `mpg` of all `{r} n_cars` cars.
-If you instead draw many cars at random, with replacement,
-the average of their `mpg` values settles near this number,
-as the [long-run-average remark](limit-theorems.qmd#rem-expectation-long-run-average) on the Limit theorems page explains.
+The [expectation](#def-expectation) of one car's `mpg`, [chosen at random](probability-basics.qmd#def-random-choice), is the [population mean](#def-expectation) `mpg` of all `{r} n_cars` cars.
+If you instead draw many cars [at random](probability-basics.qmd#def-random-choice), with replacement,
+the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of their `mpg` values settles near this number,
+as [the remark on long-run averages](limit-theorems.qmd#rem-expectation-long-run-average) explains.
 
 <!-- no-figure: the example compares two computations of one number -->
 

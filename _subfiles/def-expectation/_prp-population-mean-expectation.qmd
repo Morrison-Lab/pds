@@ -31,6 +31,6 @@ $$
 $$
 
 When the values are distinct, every $n_y$ is $1$,
-and this is @prp-mean-expectation.
+and the proposition reduces to @prp-mean-expectation.
 
 :::
