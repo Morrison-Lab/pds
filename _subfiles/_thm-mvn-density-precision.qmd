@@ -18,7 +18,7 @@ $$
 
 By @thm-precision-matrix-inverse, $\matr{\Lambda} = \inv{\matr{\covmat}}$,
 so $\det(\matr{\Lambda}) = 1 / \det(\matr{\covmat})$
-(the [determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant) of an [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) is the reciprocal of the determinant).
+(the [determinant](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-determinant) of an [inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse) is the [reciprocal](https://morrison-lab.github.io/mcs/number-systems.html#def-reciprocal) of the determinant).
 Substituting both into the [joint density](random-variables.qmd#def-joint-pdf) of @def-mvn:
 
 $$

@@ -12,7 +12,7 @@ $$
 $$
 
 so $\det(\matr{\Lambda}) = (1 - 0.8^2) / 0.36^2 = 1 / 0.36$.
-At $\vx = \tp{(1, 1)}$, the quadratic form is
+At $\vx = \tp{(1, 1)}$, the [quadratic form](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-quadratic-form) is
 
 $$
 \ba
@@ -38,7 +38,7 @@ $$
 
 which is about
 `r round(exp(-5 / 9) / (0.6 * 2 * pi), 3)`.
-At $\vx = \vzero$ the exponent is $0$,
+At $\vx = \vzero$ the [exponent](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-exponent) is $0$,
 and the density is $1 / (0.6 \cd 2\pi)$, the peak value that @exm-mvn-bivariate found from $\matr{\covmat}$.
 Written with the precision matrix, the density needs no [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse),
 because $\matr{\Lambda}$ appears in the density as it is.
