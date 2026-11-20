@@ -16,7 +16,7 @@ $$
 \ea
 $$
 
-Dividing both sides by $\Pr(B)$ gives **Bayes' rule** (@thm-bayes):
+Dividing both sides by $\Pr(B)$ gives [Bayes' rule](#thm-bayes):
 
 $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cd \Pr(A)}{\Pr(B)}$$ {#eq-bayes}
 
