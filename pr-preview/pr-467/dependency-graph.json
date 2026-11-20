@@ -5550,6 +5550,10 @@
   ],
   [
    "pds/random-variables#def-density-measure",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/random-variables#def-density-measure",
    "mds/measures-integrals#def-integral"
   ],
   [
