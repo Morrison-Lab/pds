@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-19 13:50:03 (PST)
+Last modified: 2026-11-19 15:55:53 (PST)
 
 > **NOTE:**
 >
@@ -244,7 +244,9 @@ Last modified: 2026-11-19 13:50:03 (PST)
 
 > **NOTE:**
 >
-> **Definition 11 (Density with respect to a measure, Radon–Nikodym derivative)** Let $\mu$ be a [measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measure) on the [range of a random variable](#def-range) $X$, written $\mathcal{R}(X)$. A **density with respect to a measure** $\mu$, or **Radon–Nikodym derivative**, of the [distribution](#def-cdf) of $X$ is a non-negative [measurable function](https://morrison-lab.github.io/mds/measures-integrals.html#def-measurable-function) $f$ on $\mathcal{R}(X)$ whose [integral](https://morrison-lab.github.io/mds/measures-integrals.html#def-integral) against $\mu$ over each [measurable set](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measurable-set) $A \subseteq \mathcal{R}(X)$ is the [probability](probability-basics.llms.md#def-probability) that $X$ falls in $A$ [\[6, pp. 213, 423\]](#ref-billingsley1995probability):
+> **Definition 11 (Density with respect to a measure, Radon–Nikodym derivative)**  
+>
+> Let $\mu$ be a [measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measure) on the [range of a random variable](#def-range) $X$, written $\mathcal{R}(X)$. A **density with respect to a measure** $\mu$, or **Radon–Nikodym derivative**, of the [distribution](#def-cdf) of $X$ is a non-negative [measurable function](https://morrison-lab.github.io/mds/measures-integrals.html#def-measurable-function) $f$ on $\mathcal{R}(X)$ whose [integral](https://morrison-lab.github.io/mds/measures-integrals.html#def-integral) against $\mu$ over each [measurable set](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-measurable-set) $A \subseteq \mathcal{R}(X)$ is the [probability](probability-basics.llms.md#def-probability) that $X$ falls in $A$ [\[6, pp. 213, 423\]](#ref-billingsley1995probability):
 >
 > $$\Pr(X \in A) = \int_A f(x)\,d\mu(x)$$
 
@@ -310,7 +312,7 @@ Last modified: 2026-11-19 13:50:03 (PST)
 
 > **NOTE:**
 >
-> *Remark 2* (PMFs and PDFs differ in the reference measure). A [PDF](#def-pdf) plays the role of a [PMF](#def-pmf) with [Lebesgue measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-lebesgue-measure) in place of [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure): [Definition 8](#def-pdf) integrates it with $dx$. If the [CDF](#def-cdf) $F$ of a [random variable](#def-random-variable) is [absolutely continuous](https://en.wikipedia.org/wiki/Absolute_continuity), then $F'$ is a [Radon–Nikodym derivative](#def-density-measure) of its [distribution](#def-cdf) against Lebesgue measure [\[6, p. 423\]](#ref-billingsley1995probability). So a PMF and a PDF are both [densities with respect to a measure](#def-density-measure), for different reference measures. Because the two share that role, these notes write $f_X$ for both, and the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) covers PMFs, PDFs, and density-mass [functions](https://morrison-lab.github.io/mcs/functions.html#def-function) in one statement.
+> *Remark 2* (PMFs and PDFs differ in the reference measure). A [PDF](#def-pdf) plays the role of a [PMF](#def-pmf) with [Lebesgue measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-lebesgue-measure) in place of [counting measure](https://morrison-lab.github.io/mds/measures-measure-spaces.html#def-counting-measure): [Definition 8](#def-pdf) integrates it with $dx$. If the [CDF](#def-cdf) $F$ of a [random variable](#def-random-variable) is [absolutely continuous](https://en.wikipedia.org/wiki/Absolute_continuity), then $F'$ is a [Radon–Nikodym derivative](#def-density-measure) of its [distribution](#def-cdf) against Lebesgue measure [\[6, p. 423\]](#ref-billingsley1995probability). So a PMF and a PDF are both [densities with respect to a measure](#def-density-measure), for different reference measures. Because the two share that role, these notes let $f_X$ denote either one, and the [joint-distribution form of Fubini–Tonelli](expectation.llms.md#cor-fubini-joint) covers PMFs, PDFs, and density-mass [functions](https://morrison-lab.github.io/mcs/functions.html#def-function) in one statement.
 
 > **NOTE:**
 >
