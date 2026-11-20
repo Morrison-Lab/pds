@@ -269,6 +269,14 @@ format:
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/def-cross-entropy/_def-surprisal-under.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cross-entropy/_exm-surprisal-under-coin.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_def-cross-entropy.qmd >}}
 
 

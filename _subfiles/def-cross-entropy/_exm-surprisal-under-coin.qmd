@@ -1,0 +1,26 @@
+:::{#exm-surprisal-under-coin}
+#### Surprisal of a fair coin's values under a biased coin's mass function
+
+<!-- no-figure: the example computes four numbers -->
+
+Let $X$ be a fair coin flip, with $X = 1$ for heads and $X = 0$ for tails,
+so $X$ has [mass function](random-variables.qmd#def-pmf) $p$ with $p(1) = p(0) = \tfrac{1}{2}$.
+Let $q$ be the mass function of the biased coin in @exm-surprisal-coin, with $q(1) = \tfrac{1}{4}$ and $q(0) = \tfrac{3}{4}$.
+Using [logarithms](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) to [base](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-power-base) 2,
+so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit),
+the [surprisal under $q$](#def-surprisal-under) of the two values is
+
+$$
+\ba
+\surprisalunderf{q}{1} &= -\log_2 \tfrac{1}{4} = 2 \text{ bits}, \\
+\surprisalunderf{q}{0} &= -\log_2 \tfrac{3}{4} \approx 0.415 \text{ bits},
+\ea
+$$
+
+while their surprisal under $p$ is $\surprisalunderf{p}{1} = \surprisalunderf{p}{0} = -\log_2 \tfrac{1}{2} = 1$ bit.
+The surprisal under $q$ of each value depends only on $q$.
+The mass function $p$ of $X$ enters only through how often $\surprisalunderf{q}{X}$ takes each of its two values,
+$2$ bits and about $0.415$ bits,
+which here is with [probability](probability-basics.qmd#def-probability) $\tfrac{1}{2}$ each.
+
+:::
