@@ -1,0 +1,40 @@
+::: {#rem-expectation-generalizes-population-mean}
+#### The expectation extends the population mean to populations without a finite size
+
+Group the units of a [finite](https://morrison-lab.github.io/mcs/functions.html#def-finite-set) population by their values,
+as in the proof of @prp-population-mean-expectation,
+so that $n_y$ of the $n$ units have value $y$.
+Then the [population mean](#def-expectation) is
+
+$$
+\avgin a_i = \sum_{y} y \cd \frac{n_y}{n},
+$$
+
+a [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) over the distinct values,
+each weighted by its relative frequency $n_y / n$.
+For a unit [chosen at random](probability-basics.qmd#def-random-choice),
+that relative frequency is the [probability mass function](random-variables.qmd#def-pmf) of its value:
+$\P(Y = y) = n_y / n$.
+
+The [definition of expectation](#def-expectation)
+keeps the [formula](https://morrison-lab.github.io/mcs/expressions-algorithms.html#def-closed-form-expression)
+but replaces the relative frequencies with [probabilities](probability-basics.qmd#def-probability):
+$\E{X} = \sum_{x} x \cd \P(X = x)$.
+That version no longer needs a population size $n$ to divide by.
+So it also covers [random variables](random-variables.qmd#def-random-variable)
+that no finite population produces:
+
+- a [discrete random variable](random-variables.qmd#def-discrete-rv) with infinitely many possible values,
+  such as the number of trials before the first success,
+  where the sum has infinitely many terms;
+- a [continuous random variable](random-variables.qmd#def-continuous-rv),
+  where every single value has probability $0$.
+  There the [density](random-variables.qmd#def-pdf) takes the place of the relative frequencies.
+  An [integral](https://morrison-lab.github.io/mds/calculus-integration.html#def-riemann-integral) takes the place of the sum:
+  $\E{X} = \int x \cd \p(X = x)\,dx$.
+
+So the [expectation](#def-expectation) is the population mean
+of a population that may be infinite,
+described by its [distribution](random-variables.qmd#def-cdf) rather than by a list of its units.
+
+:::

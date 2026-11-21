@@ -409,6 +409,22 @@ print(plot2)
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-mvn-density-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-mvn-density-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_cor-normal-density-precision.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-normal-density-precision.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-precision-zero-cind.qmd >}}
 
 {{< slidebreak >}}

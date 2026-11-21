@@ -1,0 +1,40 @@
+:::{#prp-population-mean-expectation}
+#### The expectation of a randomly chosen unit's value is the average over the population
+
+Let a population of $n$ units have values $\dsn{a}$,
+which need not be distinct.
+Let $U$ be one of the units $1, \ldots, n$,
+[chosen at random](probability-basics.qmd#def-random-choice),
+and let $Y = a_U$ be the value of the chosen unit.
+Then the [expectation](#def-expectation) of $Y$
+is the [mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the values
+over the whole population:
+
+$$\E{Y} = \avgin a_i$$
+
+:::
+
+::: proof
+
+For each possible value $y$ of $Y$,
+let $n_y$ be the number of units whose value is $y$.
+
+$$
+\ba
+\E{Y}
+&= \sum_{y \in \rangef{Y}} y \cd \P(Y = y)
+&& \text{(definition of expectation)}
+\\&= \sum_{y \in \rangef{Y}} y \cd \frac{n_y}{n}
+&& \text{(each unit is chosen with probability } 1/n \text{, and } n_y \text{ units have value } y \text{)}
+\\&= \frac{1}{n} \sum_{y \in \rangef{Y}} \; \sum_{i : a_i = y} a_i
+&& \text{(} y \cd n_y \text{ is the sum of the } n_y \text{ values equal to } y \text{)}
+\\&= \avgin a_i
+&& \text{(each unit has exactly one value, so the double sum counts every unit once)}
+\ea
+$$
+
+When the values are distinct,
+every $n_y$ is $1$,
+and the proposition reduces to @prp-mean-expectation.
+
+:::

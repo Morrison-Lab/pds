@@ -1,0 +1,29 @@
+:::{#exm-normal-density-precision}
+#### A Gaussian density with precision 4
+
+<!-- no-figure: two density values; nothing to plot -->
+
+Let $X \sim \ndist{0, 1/4}$, the [Gaussian distribution](random-variables.qmd#def-normal) with [variance](variance-covariance.qmd#def-variance) $1/4$,
+so its [precision](variance-covariance.qmd#def-precision) is $\precision = 4$.
+By @cor-normal-density-precision, its [density](random-variables.qmd#def-pdf) at $x = 1$ is
+
+$$
+\ba
+\p(X = 1)
+&= \sqrt{\frac{4}{2\pi}} \ef{-\frac{4}{2} (1 - 0)^2}
+&& \text{(substitute into the precision form)} \\
+&= \sqrt{\frac{2}{\pi}} \ef{-2}
+&& \text{(simplify)}
+\ea
+$$
+
+which is about
+`r round(sqrt(2 / pi) * exp(-2), 3)`.
+The variance form of the [Gaussian density](random-variables.qmd#def-normal) gives the same value,
+since $\sdpar = 1/2$ makes $\frac{1}{\sdpar\sqrt{2\pi}} = \frac{2}{\sqrt{2\pi}} = \sqrt{\frac{2}{\pi}}$
+and $\frac{(1 - 0)^2}{2 \cd (1/4)} = 2$.
+R's `dnorm()` takes the [standard deviation](variance-covariance.qmd#def-sd), $1/\sqrt{\precision} = 1/2$:
+`dnorm(1, mean = 0, sd = 1 / 2)` is
+`r round(dnorm(1, mean = 0, sd = 1 / 2), 3)`.
+
+:::

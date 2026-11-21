@@ -1,0 +1,46 @@
+:::{#exm-mvn-density-precision}
+#### A bivariate Gaussian density from its precision matrix
+
+<!-- no-figure: @exm-mvn-bivariate already plots this density -->
+
+Take the [Gaussian](#def-mvn) vector $\vX \sim \Normal_2\paren{\vzero, \matr{\covmat}}$ of @exm-mvn-bivariate,
+with $\matr{\covmat} = \pmat{1 & 0.8 \\ 0.8 & 1}$.
+By @exm-precision-matrix with $\rho = 0.8$, its [precision matrix](#def-precision-matrix) is
+
+$$
+\matr{\Lambda} = \frac{1}{0.36} \pmat{1 & -0.8 \\ -0.8 & 1},
+$$
+
+so $\detf{\matr{\Lambda}} = (1 - 0.8^2) / 0.36^2 = 1 / 0.36$.
+At $\vx = \tp{(1, 1)}$, the [quadratic form](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-quadratic-form) is
+
+$$
+\ba
+\tp{\vx} \matr{\Lambda} \vx
+&= \frac{1}{0.36} (1 - 0.8 - 0.8 + 1)
+&& \text{(multiply out)} \\
+&= \frac{0.4}{0.36} = \frac{10}{9}
+&& \text{(simplify)}
+\ea
+$$
+
+so by @thm-mvn-density-precision the [density](random-variables.qmd#def-pdf) there is
+
+$$
+\ba
+\pf{\vx}
+&= \frac{(1 / 0.36)^{1/2}}{2\pi} \ef{-\frac{1}{2} \cd \frac{10}{9}}
+&& \text{(substitute into the precision form)} \\
+&= \frac{1}{0.6 \cd 2\pi} \ef{-\frac{5}{9}}
+&& \text{(simplify)}
+\ea
+$$
+
+which is about
+`r round(exp(-5 / 9) / (0.6 * 2 * pi), 3)`.
+At $\vx = \vzero$ the [exponent](https://morrison-lab.github.io/mds/algebra-basics.html#def-power-exponent) is $0$,
+and the density is $1 / (0.6 \cd 2\pi)$, the peak value that @exm-mvn-bivariate found from $\matr{\covmat}$.
+Written with the precision matrix, the density needs no [matrix inverse](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-matrix-inverse),
+because $\matr{\Lambda}$ appears in the density as it is.
+
+:::
