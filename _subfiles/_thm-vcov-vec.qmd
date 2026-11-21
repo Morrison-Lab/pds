@@ -1,44 +1,48 @@
 :::{#thm-vcov-vec}
 
-#### Alternate expression for variance of a random vector
+#### The variance matrix of a random vector is its expected self outer product minus the self outer product of its mean
+
+For a $p \times 1$ [random vector](random-variables.qmd#def-random-variable) $\vX$
+with $\E{X_i^2} < \infty$ for every $i$,
+the [variance matrix](#def-cov-vec-x) of $\vX$ is the [expectation of](expectation.qmd#def-expectation-matrix) the [outer product](https://morrison-lab.github.io/mds/linear-algebra-inner-products.html#def-outer-product) of $\vX$ with itself,
+minus the outer product of its [mean](expectation.qmd#def-expectation-matrix) $\Expp\vX$ with itself:
 
 $$
-\ba
-\Varf{\vX}
-&= \Expf{\vX \tp{\vX}} - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
-\ea
+\Varf{\vX} = \Expf{\soprod{\vX}} - \soprod{\paren{\Expp\vX}}
 $$
+
 :::
 
 {{< slidebreak >}}
 
 ::: proof
 
+Start from @thm-vcov-outer-product:
+
 $$
 \ba
 \Varf{\vX}
 &= \Expf{
-    \paren{\vX - \Expp\vX}
-    \tp{\paren{\vX - \Expp\vX}}
+    \soprod{\devn(\vX)}
   }
-&& \text{(definition)}
+&& \text{(outer-product form of the variance matrix)}
 \\
 &= \Expf{
-    \vX \tp{\vX}
-    - \vX \tp{\paren{\Expp\vX}}
-    - \paren{\Expp\vX} \tp{\vX}
-    + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+    \soprod{\vX}
+    - \oprod{\vX}{\paren{\Expp\vX}}
+    - \oprod{\paren{\Expp\vX}}{\vX}
+    + \soprod{\paren{\Expp\vX}}
   }
 && \text{(expand the product)}
 \\
-&= \Expf{\vX \tp{\vX}}
-  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
-  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
-  + \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&= \Expf{\soprod{\vX}}
+  - \soprod{\paren{\Expp\vX}}
+  - \soprod{\paren{\Expp\vX}}
+  + \soprod{\paren{\Expp\vX}}
 && \text{(linearity, element-wise; } \Expp\vX \text{ is constant)}
 \\
-&= \Expf{\vX \tp{\vX}}
-  - \paren{\Expp\vX} \tp{\paren{\Expp\vX}}
+&= \Expf{\soprod{\vX}}
+  - \soprod{\paren{\Expp\vX}}
 && \text{(combine like terms)}
 \ea
 $$

@@ -261,7 +261,15 @@ reticulate::py_require(python_packages)
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_thm-vcov-elements.qmd >}}
+{{< include pds/_subfiles/_exm-cov-vec-x.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-vcov-outer-product.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-vcov-outer-product.qmd >}}
 
 {{< slidebreak >}}
 

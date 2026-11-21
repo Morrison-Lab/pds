@@ -12,7 +12,7 @@ that is, if and only if $\Covs{X_i}{X_j} = 0$ for every $i \neq j$.
 
 By @thm-mvn-moments, $\Varf{\vX} = \matr{\covmat}$,
 whose $(i,j)$-th element is $\Covs{X_i}{X_j}$
-([elements of the variance matrix](variance-covariance.qmd#thm-vcov-elements)).
+(by the [definition of the variance matrix](variance-covariance.qmd#def-cov-vec-x)).
 If $\matr{\covmat}$ is diagonal,
 the components are independent by @thm-mvn-diagonal-indpt.
 If the components are independent, then:
