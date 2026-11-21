@@ -94,6 +94,16 @@
    "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers"
   },
   {
+   "id": "mcs/number-systems#def-reciprocal",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-reciprocal",
+   "kind": "def",
+   "title": "reciprocal",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-reciprocal"
+  },
+  {
    "id": "mcs/proof-writing#def-iff",
    "site": "mcs",
    "page": "proof-writing",
@@ -442,6 +452,16 @@
    "title": "block inverse",
    "external": true,
    "url": "https://morrison-lab.github.io/mds/linear-algebra-diagonalization.html#thm-block-inverse"
+  },
+  {
+   "id": "mds/linear-algebra-inner-products#def-outer-product",
+   "site": "mds",
+   "page": "linear-algebra-inner-products",
+   "div": "def-outer-product",
+   "kind": "def",
+   "title": "outer product",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mds/linear-algebra-inner-products.html#def-outer-product"
   },
   {
    "id": "mds/linear-algebra-matrices#def-diagonal-entry",
@@ -859,6 +879,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#cor-normal-density-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-normal-density-precision",
+   "kind": "cor",
+   "title": "The Gaussian density in terms of the precision",
+   "external": false
+  },
+  {
    "id": "pds/distributions#cor-weibull-exponential",
    "site": "pds",
    "page": "distributions",
@@ -1180,6 +1209,15 @@
    "div": "thm-mvn-density-integral",
    "kind": "thm",
    "title": "The multivariate normal density integrates to 1",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mvn-density-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-density-precision",
+   "kind": "thm",
+   "title": "The multivariate Gaussian density in terms of the precision matrix",
    "external": false
   },
   {
@@ -1630,6 +1668,15 @@
    "div": "def-surprisal-continuous",
    "kind": "def",
    "title": "Surprisal of a value of a continuous random variable",
+   "external": false
+  },
+  {
+   "id": "pds/expectation#def-surprisal-under",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-surprisal-under",
+   "kind": "def",
+   "title": "Surprisal under a mass function or density",
    "external": false
   },
   {
@@ -3303,7 +3350,7 @@
    "page": "variance-covariance",
    "div": "thm-vcov-vec",
    "kind": "thm",
-   "title": "Alternate expression for variance of a random vector",
+   "title": "The variance matrix of a random vector is its expected self outer product minus the self outer product of its mean",
    "external": false
   },
   {
@@ -3381,6 +3428,42 @@
   [
    "pds/distributions#cor-mvn-uncorrelated-indpt",
    "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#thm-mvn-density-precision"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/random-variables#thm-normal-moments"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/variance-covariance#def-precision"
   ],
   [
    "pds/distributions#cor-weibull-exponential",
@@ -3701,6 +3784,34 @@
   [
    "pds/distributions#thm-mvn-density-integral",
    "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "mcs/number-systems#def-reciprocal"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/random-variables#def-joint-pdf"
   ],
   [
    "pds/distributions#thm-mvn-diagonal-indpt",
@@ -4252,11 +4363,7 @@
   ],
   [
    "pds/expectation#def-cross-entropy",
-   "pds/expectation#def-surprisal"
-  ],
-  [
-   "pds/expectation#def-cross-entropy",
-   "pds/expectation#def-surprisal-continuous"
+   "pds/expectation#def-surprisal-under"
   ],
   [
    "pds/expectation#def-cross-entropy",
@@ -4336,7 +4443,7 @@
   ],
   [
    "pds/expectation#def-kl-divergence",
-   "pds/expectation#def-surprisal"
+   "pds/expectation#def-surprisal-under"
   ],
   [
    "pds/expectation#def-kl-divergence",
@@ -4473,6 +4580,26 @@
   [
    "pds/expectation#def-surprisal-continuous",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/expectation#def-surprisal-continuous"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#lem-cross-term-zero",
@@ -6539,6 +6666,10 @@
    "pds/variance-covariance#def-cov-vec-x"
   ],
   [
+   "pds/variance-covariance#thm-vcov-outer-product",
+   "pds/variance-covariance#def-deviation-pop-mean"
+  ],
+  [
    "pds/variance-covariance#thm-vcov-psd",
    "mds/linear-algebra-special-matrices#def-positive-semidefinite"
   ],
@@ -6573,6 +6704,22 @@
   [
    "pds/variance-covariance#thm-vcov-psd",
    "pds/variance-covariance#thm-var-lincom"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-vec",
+   "mds/linear-algebra-inner-products#def-outer-product"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-vec",
+   "pds/expectation#def-expectation-matrix"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-vec",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/variance-covariance#thm-vcov-vec",
+   "pds/variance-covariance#def-cov-vec-x"
   ]
  ],
  "cycles": [],
