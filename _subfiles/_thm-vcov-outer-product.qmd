@@ -26,8 +26,7 @@ $$
 \ba
 \Expf{\soprod{\devn(\vX)}}
 &= \Expf{
-  \pmat{X_1 - \mean_1 \\ \vdots \\ X_p - \mean_p}
-  \pmat{X_1 - \mean_1 & \cdots & X_p - \mean_p}
+  \soprod{\pmat{X_1 - \mean_1 \\ \vdots \\ X_p - \mean_p}}
 }
 \\
 &= \Expf{
