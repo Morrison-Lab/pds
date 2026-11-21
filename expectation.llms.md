@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-20 22:23:25 (PST)
+Last modified: 2026-11-20 22:53:01 (PST)
 
 > **NOTE:**
 >
@@ -2700,11 +2700,32 @@ Last modified: 2026-11-20 22:23:25 (PST)
 
 > **NOTE:**
 >
-> **Definition 25 (Cross-entropy)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$, and let $q$ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of $q$ relative to $p$ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $\mathbb{s}_q$ measured by $q$, where ${\mathbb{s}_{q}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log q\mathopen{}\left(x\right)\mathclose{}$:
+> **Definition 25 (Surprisal under a mass function or density)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable), and let $q$ be a [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) on the possible values of $X$. The **surprisal under** $q$ of a possible value $x$ of $X$ is
 >
-> $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+> $${\mathbb{s}_{q}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log q(x),$$
 >
-> We take $-\log 0 = \infty$, so when $\mathbb{P}(q(X) = 0) > 0$, the cross-entropy is infinite.
+> with $-\log 0 \stackrel{\text{def}}{=}\infty$. It is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) that $x$ would have if $q$ were the [mass function](random-variables.llms.md#def-pmf) or density of $X$, whether or not it is. Evaluating ${\mathbb{s}_{q}\mathopen{}\left(\cdot\right)\mathclose{}}$ at $X$ itself gives the [random variable](random-variables.llms.md#def-random-variable) ${\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}$, whose value is ${\mathbb{s}_{q}\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$.
+
+> **NOTE:**
+>
+> **Example 51 (Surprisal of a fair coin’s values under a biased coin’s mass function)**  
+>
+> Let $X$ be a fair coin flip, with $X = 1$ for heads and $X = 0$ for tails, so $X$ has [mass function](random-variables.llms.md#def-pmf) $p$ with $p(1) = p(0) = \tfrac{1}{2}$. Let $q$ be the mass function of the biased coin in [Example 44](#exm-surprisal-coin), with $q(1) = \tfrac{1}{4}$ and $q(0) = \tfrac{3}{4}$. Using [logarithms](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) to [base](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-power-base) 2, so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), the [surprisal under](#def-surprisal-under) $q$ of the two values is
+>
+> $$\begin{aligned}
+> {\mathbb{s}_{q}\mathopen{}\left(1\right)\mathclose{}} &= -\log_2 \tfrac{1}{4} = 2 \text{ bits}, \\
+> {\mathbb{s}_{q}\mathopen{}\left(0\right)\mathclose{}} &= -\log_2 \tfrac{3}{4} \approx 0.415 \text{ bits},
+> \end{aligned}$$
+>
+> while their surprisal under $p$ is ${\mathbb{s}_{p}\mathopen{}\left(1\right)\mathclose{}} = {\mathbb{s}_{p}\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{1}{2} = 1$ bit. The surprisal under $q$ of each value depends only on $q$. The mass function $p$ of $X$ enters only through how often ${\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}$ takes each of its two values, $2$ bits and about $0.415$ bits, which here is with [probability](probability-basics.llms.md#def-probability) $\tfrac{1}{2}$ each.
+
+> **NOTE:**
+>
+> **Definition 26 (Cross-entropy)** Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [probability mass function](random-variables.llms.md#def-pmf) or [density](random-variables.llms.md#def-pdf) $p$, and let $q$ be a [mass function](random-variables.llms.md#def-pmf) or density on the same values. The **cross-entropy** of $q$ relative to $p$ [\[21\]](#ref-wikipedia_cross_entropy) is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the [surprisal under](#def-surprisal-under) $q$ of $X$:
+>
+> $${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}_{X \sim p}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+>
+> The subscript $X \sim p$ records that $p$ is the distribution of $X$ in the expectation. Since ${\mathbb{s}_{q}\mathopen{}\left(x\right)\mathclose{}} = \infty$ when $q(x) = 0$, the cross-entropy is infinite when $\mathbb{P}(q(X) = 0) > 0$.
 
 > **NOTE:**
 >
@@ -2782,7 +2803,7 @@ Last modified: 2026-11-20 22:23:25 (PST)
 
 > **NOTE:**
 >
-> *Solution 12*. By [Definition 25](#def-cross-entropy), ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = \infty$.
+> *Solution 12*. By [Definition 26](#def-cross-entropy), ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} = \infty$.
 
 > **NOTE:**
 >
@@ -2837,7 +2858,7 @@ Last modified: 2026-11-20 22:23:25 (PST)
 
 > **NOTE:**
 >
-> **Example 51 (Cross-entropy of two densities on the unit interval)** Let $p(x) = 1$ and $q(x) = 2x$ for $x \in (0, 1)$ be [densities](random-variables.llms.md#def-pdf). By [Theorem 22](#thm-cross-entropy-continuous), using the natural logarithm,
+> **Example 52 (Cross-entropy of two densities on the unit interval)** Let $p(x) = 1$ and $q(x) = 2x$ for $x \in (0, 1)$ be [densities](random-variables.llms.md#def-pdf). By [Theorem 22](#thm-cross-entropy-continuous), using the natural logarithm,
 >
 > $$\begin{aligned}
 > {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}
@@ -2905,19 +2926,19 @@ Last modified: 2026-11-20 22:23:25 (PST)
 
 > **NOTE:**
 >
-> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the average [surprisal](#def-surprisal) of the values drawn from $p$, with each surprisal measured by $q$ as $-\log q(x)$. By [Corollary 7](#cor-cross-entropy-entropy), measuring with $p$ itself gives the [entropy](#def-entropy).
+> *Remark 12* (Cross-entropy is an expected surprisal). By definition, the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ is the [average](#def-expectation) [surprisal under](#def-surprisal-under) $q$ of the values drawn from $p$. By [Corollary 7](#cor-cross-entropy-entropy), the average surprisal under $p$ itself is the [entropy](#def-entropy).
 
 > **NOTE:**
 >
-> **Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))** For $X$, $p$ and $q$ as in [Definition 25](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of $q$ from $p$ is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the amount by which the [surprisal](#def-surprisal) measured by $q$ exceeds the surprisal measured by $p$:
+> **Definition 27 (Kullback–Leibler divergence (KL divergence, relative entropy))** For $X$, $p$ and $q$ as in [Definition 26](#def-cross-entropy), the **Kullback–Leibler divergence** (**KL divergence**, or **relative entropy**) of $q$ from $p$ is the [expectation](#def-expectation), when $X$ has [distribution](random-variables.llms.md#def-cdf) $p$, of the amount by which the [surprisal under](#def-surprisal-under) $q$ of $X$ exceeds its surprisal under $p$:
 >
-> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}} - {\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+> $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}_{X \sim p}\mathopen{}\left[{\mathbb{s}_{q}\mathopen{}\left(X\right)\mathclose{}} - {\mathbb{s}_{p}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
 >
-> As for [cross-entropy](#def-cross-entropy), we take $-\log 0 = \infty$, so when $\mathbb{P}(q(X) = 0) > 0$, the divergence is infinite.
+> As for [cross-entropy](#def-cross-entropy), the divergence is infinite when $\mathbb{P}(q(X) = 0) > 0$, because ${\mathbb{s}_{q}\mathopen{}\left(x\right)\mathclose{}} = \infty$ when $q(x) = 0$.
 
 > **NOTE:**
 >
-> **Theorem 23 (KL divergence is cross-entropy minus entropy)** For $X$, $p$ and $q$ as in [Definition 25](#def-cross-entropy), suppose the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ and the [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then the [KL divergence](#def-kl-divergence) is
+> **Theorem 23 (KL divergence is cross-entropy minus entropy)** For $X$, $p$ and $q$ as in [Definition 26](#def-cross-entropy), suppose the [cross-entropy](#def-cross-entropy) ${\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}}$ and the [entropy](#def-entropy) ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ are [real numbers](https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers). Then the [KL divergence](#def-kl-divergence) is
 >
 > $${{D_{\mathrm{KL}}}\mathopen{}\left(p \,\Vert\, q\right)\mathclose{}} = {\mathbb{H}\mathopen{}\left(p, q\right)\mathclose{}} - {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}.$$
 >
@@ -2991,7 +3012,7 @@ Last modified: 2026-11-20 22:23:25 (PST)
 
 > **NOTE:**
 >
-> **Example 52 (Cross-entropy and divergence for two coins)**  
+> **Example 53 (Cross-entropy and divergence for two coins)**  
 >
 > Let $p = (\tfrac{1}{2}, \tfrac{1}{2})$ be a fair coin and $q = (\tfrac{1}{4}, \tfrac{3}{4})$ a coin biased toward the second outcome. Using logarithms to base 2, $\log_2 \tfrac{1}{4} = -2$ and $\log_2 \tfrac{3}{4} = \log_2 3 - 2$, so
 >
@@ -3043,8 +3064,9 @@ Last modified: 2026-11-20 22:23:25 (PST)
 - [Definition 22 (Surprisal (**self-information**, **information content**))](#def-surprisal)
 - [Definition 23 (Surprisal of a value of a continuous random variable)](#def-surprisal-continuous)
 - [Definition 24 (Entropy (differential entropy, for continuous random variables))](#def-entropy)
-- [Definition 25 (Cross-entropy)](#def-cross-entropy)
-- [Definition 26 (Kullback–Leibler divergence (KL divergence, relative entropy))](#def-kl-divergence)
+- [Definition 25 (Surprisal under a mass function or density)](#def-surprisal-under)
+- [Definition 26 (Cross-entropy)](#def-cross-entropy)
+- [Definition 27 (Kullback–Leibler divergence (KL divergence, relative entropy))](#def-kl-divergence)
 
 # References
 

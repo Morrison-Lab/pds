@@ -1631,6 +1631,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#def-surprisal-under",
+   "site": "pds",
+   "page": "expectation",
+   "div": "def-surprisal-under",
+   "kind": "def",
+   "title": "Surprisal under a mass function or density",
+   "external": false
+  },
+  {
    "id": "pds/expectation#lem-cross-term-zero",
    "site": "pds",
    "page": "expectation",
@@ -4318,11 +4327,7 @@
   ],
   [
    "pds/expectation#def-cross-entropy",
-   "pds/expectation#def-surprisal"
-  ],
-  [
-   "pds/expectation#def-cross-entropy",
-   "pds/expectation#def-surprisal-continuous"
+   "pds/expectation#def-surprisal-under"
   ],
   [
    "pds/expectation#def-cross-entropy",
@@ -4402,7 +4407,7 @@
   ],
   [
    "pds/expectation#def-kl-divergence",
-   "pds/expectation#def-surprisal"
+   "pds/expectation#def-surprisal-under"
   ],
   [
    "pds/expectation#def-kl-divergence",
@@ -4539,6 +4544,26 @@
   [
    "pds/expectation#def-surprisal-continuous",
    "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/expectation#def-surprisal"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/expectation#def-surprisal-continuous"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/random-variables#def-pmf"
+  ],
+  [
+   "pds/expectation#def-surprisal-under",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#lem-cross-term-zero",
