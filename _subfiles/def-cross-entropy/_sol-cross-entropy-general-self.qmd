@@ -1,7 +1,7 @@
 :::{#sol-cross-entropy-general-self}
 
 By definition, $\crossentropyf{p}{p} = \E{-\log p(X)}$.
-Since $\P(X = k) = p_k$, we have $-\log p(X) = \surprisalf{X}$, the [surprisal](#def-surprisal) of $X$.
-So $\crossentropyf{p}{p} = \E{\surprisalf{X}} = \entropyf{X}$ by the definition of [entropy](#def-entropy).
+Since $\P(X = k) = p_k$, we have $-\log p(X) = \Surprisalf{X}$, the [surprisal](#def-surprisal) of $X$.
+So $\crossentropyf{p}{p} = \E{\Surprisalf{X}} = \entropyf{X}$ by the definition of [entropy](#def-entropy).
 
 :::
