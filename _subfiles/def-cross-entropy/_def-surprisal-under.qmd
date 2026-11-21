@@ -1,0 +1,18 @@
+:::{#def-surprisal-under}
+#### Surprisal under a mass function or density
+
+Let $X$ be a [random variable](random-variables.qmd#def-random-variable),
+and let $q$ be a [probability mass function](random-variables.qmd#def-pmf) or [density](random-variables.qmd#def-pdf)
+on the possible values of $X$.
+The **surprisal under $q$** of a possible value $x$ of $X$ is
+
+$$\surprisalunderf{q}{x} \eqdef -\log q(x),$$
+
+with $-\log 0 \eqdef \infty$.
+It is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) that $x$ would have
+if $q$ were the [mass function](random-variables.qmd#def-pmf) or density of $X$,
+whether or not it is.
+Evaluating $\surprisalunderf{q}{\cdot}$ at $X$ itself gives the [random variable](random-variables.qmd#def-random-variable) $\surprisalunderf{q}{X}$,
+whose value is $\surprisalunderf{q}{x}$ when $X = x$.
+
+:::

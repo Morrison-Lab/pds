@@ -8,14 +8,13 @@ The **cross-entropy** of $q$ relative to $p$
 [@wikipedia_cross_entropy]
 is the [expectation](#def-expectation),
 when $X$ has [distribution](random-variables.qmd#def-cdf) $p$,
-of the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) $\surprisal_q$ measured by $q$,
-where $\surprisalunderf{q}{x} \eqdef -\log q\paren{x}$:
+of the [surprisal under $q$](#def-surprisal-under) of $X$:
 
-$$\crossentropyf{p}{q} \eqdef \E{\surprisalunderf{q}{X}}.$$
+$$\crossentropyf{p}{q} \eqdef \Expfc{X \sim p}{\surprisalunderf{q}{X}}.$$
 
-We take $-\log 0 = \infty$,
-so when $\P(q(X) = 0) > 0$,
-the cross-entropy is infinite.
+The subscript $X \sim p$ records that $p$ is the distribution of $X$ in the expectation.
+Since $\surprisalunderf{q}{x} = \infty$ when $q(x) = 0$,
+the cross-entropy is infinite when $\P(q(X) = 0) > 0$.
 
 :::
 
