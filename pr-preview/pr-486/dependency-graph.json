@@ -94,6 +94,16 @@
    "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-real-numbers"
   },
   {
+   "id": "mcs/number-systems#def-reciprocal",
+   "site": "mcs",
+   "page": "number-systems",
+   "div": "def-reciprocal",
+   "kind": "def",
+   "title": "reciprocal",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/number-systems.html#def-reciprocal"
+  },
+  {
    "id": "mcs/proof-writing#def-iff",
    "site": "mcs",
    "page": "proof-writing",
@@ -829,6 +839,15 @@
    "external": false
   },
   {
+   "id": "pds/distributions#cor-normal-density-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "cor-normal-density-precision",
+   "kind": "cor",
+   "title": "The Gaussian density in terms of the precision",
+   "external": false
+  },
+  {
    "id": "pds/distributions#cor-weibull-exponential",
    "site": "pds",
    "page": "distributions",
@@ -1150,6 +1169,15 @@
    "div": "thm-mvn-density-integral",
    "kind": "thm",
    "title": "The multivariate normal density integrates to 1",
+   "external": false
+  },
+  {
+   "id": "pds/distributions#thm-mvn-density-precision",
+   "site": "pds",
+   "page": "distributions",
+   "div": "thm-mvn-density-precision",
+   "kind": "thm",
+   "title": "The multivariate Gaussian density in terms of the precision matrix",
    "external": false
   },
   {
@@ -3362,6 +3390,42 @@
    "pds/variance-covariance#thm-vcov-elements"
   ],
   [
+   "pds/distributions#cor-normal-density-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#thm-mvn-density-precision"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/random-variables#thm-normal-moments"
+  ],
+  [
+   "pds/distributions#cor-normal-density-precision",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
    "pds/distributions#cor-weibull-exponential",
    "pds/distributions#def-weibull"
   ],
@@ -3680,6 +3744,34 @@
   [
    "pds/distributions#thm-mvn-density-integral",
    "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "mcs/number-systems#def-reciprocal"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/distributions#def-mvn"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/distributions#def-precision-matrix"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/distributions#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/distributions#thm-mvn-density-precision",
+   "pds/random-variables#def-joint-pdf"
   ],
   [
    "pds/distributions#thm-mvn-diagonal-indpt",
