@@ -1,6 +1,8 @@
 :::{#def-surprisal-continuous}
 #### Surprisal of a value of a continuous random variable
 
+<!-- no-graph: the surprisal of x depends on the density of X, so it has no single graph -->
+
 The **surprisal** of a possible value $x$ of a
 [continuous random variable](random-variables.qmd#def-continuous-rv) $X$
 with [probability density function](random-variables.qmd#def-pdf) $\p(X=x)$
@@ -10,5 +12,9 @@ $$\surprisalf{x} \eqdef -\log \p(X=x).$$
 
 This extends the [surprisal](#def-surprisal) of a value of a [discrete random variable](random-variables.qmd#def-discrete-rv),
 with the [density](random-variables.qmd#def-pdf) in place of the [probability](probability-basics.qmd#def-probability).
+It is written with a lowercase $\surprisal$,
+as the density $\p$ is,
+and the surprisal of a [discrete](random-variables.qmd#def-discrete-rv) value with a capital $\Surprisal$,
+as the probability $\P$ is.
 
 :::
