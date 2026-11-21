@@ -1,0 +1,24 @@
+# Thin caller of Morrison-Lab/gha's reusable macro-expansion check.
+#
+# Flags math on lines a PR adds that writes out by hand what a shared macro
+# already says, such as `\sum_{i=1}^n` for `\sumin`, or a transpose product
+# such as `\vX \tp{\vX}` for `\soprod` (Ezra, 2026-11-20, on pds#478).
+# Diff-scoped, so it never reflags older text; a whole-tree run found 116
+# existing hits on 2026-11-21. Warn-only until those are fixed or marked
+# `<!-- check-macro-expansions: allow -->`. Reads `latex-macros/macros.qmd`,
+# so it needs the submodule, which the reusable workflow checks out.
+
+name: Check math that spells out a macro expansion
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    permissions:
+      contents: read
+    uses: Morrison-Lab/gha/.github/workflows/check-macro-expansions.yml@v3
+    with:
+      macros-file: 'latex-macros/macros.qmd'
+      # Vendored Quarto extensions are not ours to edit.
+      paths-ignore: '_extensions/**'
