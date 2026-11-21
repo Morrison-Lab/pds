@@ -1,6 +1,8 @@
 :::{#def-surprisal-continuous}
 #### Surprisal of a value of a continuous random variable
 
+<!-- no-graph: the surprisal of x depends on the density of X, so it has no single graph -->
+
 The **surprisal** of a possible value $x$ of a
 [continuous random variable](random-variables.qmd#def-continuous-rv) $X$
 with [probability density function](random-variables.qmd#def-pdf) $\p(X=x)$

@@ -1,6 +1,8 @@
 :::{#def-surprisal}
 #### Surprisal (**self-information**, **information content**)
 
+<!-- no-graph: the surprisal of x depends on the distribution of X, so it has no single graph; rem-surprisal-rarity describes how it grows as the probability shrinks -->
+
 The **surprisal** of a possible value $x$ of a [discrete random variable](random-variables.qmd#def-discrete-rv) $X$
 with $\P(X=x) > 0$ is
 
