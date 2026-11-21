@@ -367,7 +367,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-20 23:13:35 (PST)</p>
+  <p class="date">Last modified: 2026-11-20 23:39:59 (PST)</p>
 </section>
 <section id="sec-deviation" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Deviation, error, and noise</h2>
@@ -1733,8 +1733,7 @@ XY &amp;= X^3 \\
 \begin{aligned}
 {\mathbb{E}\mathopen{}\left[\mathbb{d}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) {\mathbb{d}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})}^{\top}\right]\mathclose{}}
 &amp;= {\mathbb{E}\mathopen{}\left[
-  \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix}
-  \begin{pmatrix}X_1 - \mu_1 &amp; \cdots &amp; X_p - \mu_p\end{pmatrix}
+  \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} {\begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix}}^{\top}
 \right]\mathclose{}}
 \\
 &amp;= {\mathbb{E}\mathopen{}\left[

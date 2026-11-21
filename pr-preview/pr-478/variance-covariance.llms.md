@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-20 23:13:35 (PST)
+Last modified: 2026-11-20 23:39:59 (PST)
 
 # 1 Deviation, error, and noise
 
@@ -1163,8 +1163,7 @@ Mean zero gives one identity, used repeatedly across statistical modeling and ma
 > $$\begin{aligned}
 > {\mathbb{E}\mathopen{}\left[\mathbb{d}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}}) {\mathbb{d}(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{X}}\vphantom{X}})}^{\top}\right]\mathclose{}}
 > &= {\mathbb{E}\mathopen{}\left[
->   \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix}
->   \begin{pmatrix}X_1 - \mu_1 & \cdots & X_p - \mu_p\end{pmatrix}
+>   \begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix} {\begin{pmatrix}X_1 - \mu_1 \\ \vdots \\ X_p - \mu_p\end{pmatrix}}^{\top}
 > \right]\mathclose{}}
 > \\
 > &= {\mathbb{E}\mathopen{}\left[

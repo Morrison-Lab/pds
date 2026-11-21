@@ -1716,6 +1716,15 @@
    "external": false
   },
   {
+   "id": "pds/expectation#prp-population-mean-expectation",
+   "site": "pds",
+   "page": "expectation",
+   "div": "prp-population-mean-expectation",
+   "kind": "prp",
+   "title": "The expectation of a randomly chosen unit's value is the average over the population",
+   "external": false
+  },
+  {
    "id": "pds/expectation#prp-reducible-risk-zero",
    "site": "pds",
    "page": "expectation",
@@ -4663,6 +4672,22 @@
   ],
   [
    "pds/expectation#prp-mean-expectation",
+   "pds/probability-basics#def-random-choice"
+  ],
+  [
+   "pds/expectation#prp-population-mean-expectation",
+   "mds/linear-algebra-vectors#def-mean"
+  ],
+  [
+   "pds/expectation#prp-population-mean-expectation",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#prp-population-mean-expectation",
+   "pds/expectation#prp-mean-expectation"
+  ],
+  [
+   "pds/expectation#prp-population-mean-expectation",
    "pds/probability-basics#def-random-choice"
   ],
   [

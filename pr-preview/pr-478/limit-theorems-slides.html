@@ -367,7 +367,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-20 23:13:35 (PST)</p>
+  <p class="date">Last modified: 2026-11-20 23:39:59 (PST)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -1218,6 +1218,53 @@ e^{sn({{\bar{X}}_{n}} - \mu)}
 \end{aligned}
 \]</span></p>
 <p>The bound goes to zero as <span class="math inline">\(n \to \infty\)</span>, so the probability, squeezed between zero and the bound, goes to zero. This holds for every <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-wlln-auto" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 (The average fuel economy of many randomly drawn cars settles near the population mean)</strong></span> Take the cars in the Auto data described in <a href="#/exm-clt-auto" class="quarto-xref">Example&nbsp;2</a> as the whole population. Let <span class="math inline">\(X_i\)</span> be the fuel economy (<code>mpg</code>) of the <span class="math inline">\(i\)</span>th car drawn <a href="./probability-basics.html#def-random-choice">at random</a>, with replacement. The draws are <a href="./independence.html#def-iid">IID</a>. By <a href="./expectation.html#prp-population-mean-expectation">the population-mean proposition</a>, their population mean <span class="math inline">\(\mu\)</span> is the <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean">average</a> <code>mpg</code> over all the cars. The code for <a href="#/fig-wlln-auto" class="quarto-xref">Figure&nbsp;4</a> draws <span class="math inline">\(10{,}000\)</span> cars. It then plots the running average <span class="math inline">\({{\bar{X}}_{n}}\)</span> of the first <span class="math inline">\(n\)</span> draws against <span class="math inline">\(n\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>auto <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/auto.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-2"><a aria-label="2"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(auto<span class="sc">$</span>mpg)</span>
+<span id="cb12-3"><a aria-label="3"></a></span>
+<span id="cb12-4"><a aria-label="4"></a>n_draws <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb12-5"><a aria-label="5"></a><span class="fu">set.seed</span>(<span class="dv">571</span>)</span>
+<span id="cb12-6"><a aria-label="6"></a>draws <span class="ot">&lt;-</span> <span class="fu">sample</span>(auto<span class="sc">$</span>mpg, <span class="at">size =</span> n_draws, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-7"><a aria-label="7"></a>draw_number <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(n_draws)</span>
+<span id="cb12-8"><a aria-label="8"></a>running <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb12-9"><a aria-label="9"></a>  <span class="at">n =</span> draw_number,</span>
+<span id="cb12-10"><a aria-label="10"></a>  <span class="at">running_mean =</span> <span class="fu">cumsum</span>(draws) <span class="sc">/</span> n</span>
+<span id="cb12-11"><a aria-label="11"></a>)</span>
+<span id="cb12-12"><a aria-label="12"></a></span>
+<span id="cb12-13"><a aria-label="13"></a>running <span class="sc">|&gt;</span></span>
+<span id="cb12-14"><a aria-label="14"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-15"><a aria-label="15"></a>  ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> running_mean) <span class="sc">+</span></span>
+<span id="cb12-16"><a aria-label="16"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb12-17"><a aria-label="17"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mu, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb12-18"><a aria-label="18"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb12-19"><a aria-label="19"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of draws n"</span>, <span class="at">y =</span> <span class="st">"Running average mpg"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-wlln-auto" class="quarto-float quarto-figure quarto-figure-center" alt="A line plot with the number of draws on a logarithmic horizontal axis from 1 to 10,000 and the running average miles per gallon on the vertical axis. The line swings by several miles per gallon over the first few draws, then narrows and stays close to a dashed horizontal line at the population mean, about 23.4.">
+<figure class="quarto-float quarto-float-fig">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-wlln-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Running average of the fuel economy of cars drawn at random, with replacement, from the Auto data. The dashed line is the population mean.
+</figcaption>
+<div aria-describedby="fig-wlln-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="limit-theorems_files/figure-html/fig-wlln-auto-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Running average of the fuel economy of cars drawn at random, with replacement, from the Auto data. The dashed line is the population mean."><img data-src="limit-theorems_files/figure-html/fig-wlln-auto-1.png" alt="A line plot with the number of draws on a logarithmic horizontal axis from 1 to 10,000 and the running average miles per gallon on the vertical axis. The line swings by several miles per gallon over the first few draws, then narrows and stays close to a dashed horizontal line at the population mean, about 23.4." width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>The population mean is <span class="math inline">\(\mu=\)</span> 23.45 miles per gallon. Over the first <span class="math inline">\(10\)</span> draws, the running average misses it by as much as 5.45 miles per gallon. From draw <span class="math inline">\(1{,}000\)</span> on, it never misses by more than 0.24.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="rem-expectation-long-run-average" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em> (The expectation is the long-run average of repeated draws). </span>The <a href="#/thm-wlln">weak law of large numbers</a> gives the <a href="./expectation.html#def-expectation">expectation</a> a second reading. Draw <span class="math inline">\(X_1, X_2, \ldots\)</span> independently from the <a href="./random-variables.html#def-cdf">distribution</a> of <span class="math inline">\(X\)</span>, so that they are <a href="./independence.html#def-iid">IID</a> with <a href="./expectation.html#def-expectation">population mean</a> <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span>. The <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean">sample mean</a> of the first <span class="math inline">\(n\)</span> draws then <a href="#/def-convergence-in-probability">converges in probability</a> to <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span>: for a large <span class="math inline">\(n\)</span>, the <a href="https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean">average</a> of the draws is very probably close to <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span>. So the expectation is the value that the average of many repeated draws settles near.</p>
+<p>For a <a href="https://morrison-lab.github.io/mcs/functions.html#def-finite-set">finite</a> population, the two readings agree. <a href="./expectation.html#prp-population-mean-expectation">The population-mean proposition</a> shows that <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span> is the average over the whole population when <span class="math inline">\(X\)</span> is the value of one unit <a href="./probability-basics.html#def-random-choice">chosen at random</a>. Units drawn <a href="./probability-basics.html#def-random-choice">at random</a> with replacement are IID, so the average over many draws settles near that population average.</p>
 </div>
 </section>
 <section id="further-reading" class="slide level2" data-number="4">

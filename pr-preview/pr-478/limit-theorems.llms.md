@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-20 23:13:35 (PST)
+Last modified: 2026-11-20 23:39:59 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -699,6 +699,46 @@ Last modified: 2026-11-20 23:13:35 (PST)
 > \end{aligned}$$
 >
 > The bound goes to zero as $n \to \infty$, so the probability, squeezed between zero and the bound, goes to zero. This holds for every $\varepsilon > 0$.
+
+> **NOTE:**
+>
+> **Example 5 (The average fuel economy of many randomly drawn cars settles near the population mean)** Take the cars in the Auto data described in [Example 2](#exm-clt-auto) as the whole population. Let $X_i$ be the fuel economy (`mpg`) of the $i$th car drawn [at random](probability-basics.llms.md#def-random-choice), with replacement. The draws are [IID](independence.llms.md#def-iid). By [the population-mean proposition](expectation.llms.md#prp-population-mean-expectation), their population mean $\mu$ is the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) `mpg` over all the cars. The code for [Figure 4](#fig-wlln-auto) draws $10{,}000$ cars. It then plots the running average ${{\bar{X}}_{n}}$ of the first $n$ draws against $n$.
+>
+> ``` r
+> auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+> mu <- mean(auto$mpg)
+>
+> n_draws <- 10000
+> set.seed(571)
+> draws <- sample(auto$mpg, size = n_draws, replace = TRUE)
+> draw_number <- seq_len(n_draws)
+> running <- tibble::tibble(
+>   n = draw_number,
+>   running_mean = cumsum(draws) / n
+> )
+>
+> running |>
+>   ggplot2::ggplot() +
+>   ggplot2::aes(x = n, y = running_mean) +
+>   ggplot2::geom_line() +
+>   ggplot2::geom_hline(yintercept = mu, linetype = "dashed") +
+>   ggplot2::scale_x_log10() +
+>   ggplot2::labs(x = "Number of draws n", y = "Running average mpg")
+> ```
+>
+> > **NOTE:**
+> >
+> > [![A line plot with the number of draws on a logarithmic horizontal axis from 1 to 10,000 and the running average miles per gallon on the vertical axis. The line swings by several miles per gallon over the first few draws, then narrows and stays close to a dashed horizontal line at the population mean, about 23.4.](limit-theorems_files/figure-html/fig-wlln-auto-1.png)](limit-theorems_files/figure-html/fig-wlln-auto-1.png "Figure 4: Running average of the fuel economy of cars drawn at random, with replacement, from the Auto data. The dashed line is the population mean.")
+> >
+> > Figure 4: Running average of the fuel economy of cars drawn at random, with replacement, from the Auto data. The dashed line is the population mean.
+>
+> The population mean is $\mu=$ 23.45 miles per gallon. Over the first $10$ draws, the running average misses it by as much as 5.45 miles per gallon. From draw $1{,}000$ on, it never misses by more than 0.24.
+
+> **NOTE:**
+>
+> *Remark 1* (The expectation is the long-run average of repeated draws). The [weak law of large numbers](#thm-wlln) gives the [expectation](expectation.llms.md#def-expectation) a second reading. Draw $X_1, X_2, \ldots$ independently from the [distribution](random-variables.llms.md#def-cdf) of $X$, so that they are [IID](independence.llms.md#def-iid) with [population mean](expectation.llms.md#def-expectation) ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$. The [sample mean](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the first $n$ draws then [converges in probability](#def-convergence-in-probability) to ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$: for a large $n$, the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of the draws is very probably close to ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$. So the expectation is the value that the average of many repeated draws settles near.
+>
+> For a [finite](https://morrison-lab.github.io/mcs/functions.html#def-finite-set) population, the two readings agree. [The population-mean proposition](expectation.llms.md#prp-population-mean-expectation) shows that ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$ is the average over the whole population when $X$ is the value of one unit [chosen at random](probability-basics.llms.md#def-random-choice). Units drawn [at random](probability-basics.llms.md#def-random-choice) with replacement are IID, so the average over many draws settles near that population average.
 
 # 4 Further reading
 
