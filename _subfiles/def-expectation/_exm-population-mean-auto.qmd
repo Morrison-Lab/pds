@@ -1,0 +1,97 @@
+::: {#exm-population-mean-auto}
+#### The expected fuel economy of a randomly chosen car is the average over all the cars
+
+```{r}
+#| include: false
+# The Python tab in this example is the page's first Python chunk,
+# so declare pandas here, and compute the counts the prose quotes
+# before the code tabs run.
+python_packages <- c("numpy", "pandas")
+reticulate::py_require(python_packages)
+auto_cars <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+n_cars <- nrow(auto_cars)
+n_values <- dplyr::n_distinct(auto_cars$mpg)
+```
+
+Take the `{r} n_cars` cars in the Auto data
+[described on the limit theorems page](limit-theorems.qmd#exm-clt-auto)
+as the whole population.
+Both code tabs in this example read this site's copy, [`data/auto.csv`](data/auto.csv).
+Choose one car [at random](probability-basics.qmd#def-random-choice),
+and let $Y$ be its fuel economy (`mpg`, in miles per gallon).
+
+Many cars share a value:
+the `{r} n_cars` cars have only `{r} n_values` distinct `mpg` values.
+So @prp-mean-expectation does not apply,
+because it needs distinct numbers,
+but @prp-population-mean-expectation does.
+The code tabs compute $\E{Y}$ in two ways.
+The first follows the [definition](#def-expectation):
+it takes the [sum](https://morrison-lab.github.io/mds/algebra-sums.html#def-summation) of each distinct value
+times the [fraction](https://morrison-lab.github.io/mds/algebra-sums.html#def-fraction) of cars with that value.
+The second takes the plain [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of `mpg` over all the cars.
+
+::: {.panel-tabset}
+
+#### Python
+
+```{python}
+#| code-fold: false
+import pandas as pd
+
+auto = pd.read_csv("data/auto.csv")
+
+pmf = auto["mpg"].value_counts(normalize=True)
+expectation_from_pmf = (pmf.index * pmf).sum()
+population_average = auto["mpg"].mean()
+
+print(f"E(Y) from the PMF:  {expectation_from_pmf:.4f}")
+print(f"population average: {population_average:.4f}")
+```
+
+#### R
+
+```{r}
+#| label: population-mean-auto-r
+#| code-fold: false
+auto <- readr::read_csv("data/auto.csv", show_col_types = FALSE)
+
+pmf <- auto |>
+  dplyr::count(mpg) |>
+  dplyr::mutate(prob = n / nrow(auto))
+
+expectation_from_pmf <- sum(pmf$mpg * pmf$prob)
+population_average <- mean(auto$mpg)
+
+c(
+  "E(Y) from the PMF" = expectation_from_pmf,
+  "population average" = population_average
+)
+```
+
+:::
+
+```{r}
+#| include: false
+# The claims the prose makes: both languages agree, values repeat,
+# and the two computations of E(Y) match.
+stopifnot(
+  abs(expectation_from_pmf - reticulate::py$expectation_from_pmf) < 1e-9,
+  abs(population_average - reticulate::py$population_average) < 1e-9,
+  n_values < n_cars,
+  abs(expectation_from_pmf - population_average) < 1e-9
+)
+```
+
+Both computations give
+$\E{Y} =$ `{r} sprintf("%.2f", population_average)` miles per gallon.
+So the [expectation](#def-expectation) of the `mpg` of one car
+[chosen at random](probability-basics.qmd#def-random-choice)
+is the [population mean](#def-expectation) `mpg` of all `{r} n_cars` cars.
+Suppose that you instead draw many cars [at random](probability-basics.qmd#def-random-choice), with replacement.
+Then the [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) of their `mpg` values settles near this number,
+as [the remark on long-run averages](limit-theorems.qmd#rem-expectation-long-run-average) explains.
+
+<!-- no-figure: the example compares two computations of one number -->
+
+:::

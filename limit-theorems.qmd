@@ -103,6 +103,14 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_thm-wlln.qmd >}}
 
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-wlln-auto.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_rem-expectation-long-run-average.qmd >}}
+
 
 # Further reading
 
