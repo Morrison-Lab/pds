@@ -1,0 +1,31 @@
+:::{#exm-vcov-outer-product}
+#### The die-roll variance matrix as an expected outer product
+<!-- no-figure: the table of the six die outcomes is the display; the result is a 2 by 2 matrix -->
+
+Take the die roll and the vector $\vX = \tp{(X_1, X_2)}$ of @exm-cov-vec-x,
+with $\Expp\vX = \tp{(1/2, 1/2)}$.
+The [deviation from the mean](#def-deviation-pop-mean) $\devn(\vX) = \vX - \Expp\vX$ takes these values:
+
+| Roll | $\tp{(X_1, X_2)}$ | $\tp{\devn(\vX)}$             | $(X_1 - 1/2)(X_2 - 1/2)$ |
+|:----:|:-----------------:|:-----------------------------:|:--------------------------:|
+| 1    | $(0, 0)$          | $(-1/2, -1/2)$                | $1/4$                      |
+| 2    | $(1, 0)$          | $(1/2, -1/2)$                 | $-1/4$                     |
+| 3    | $(0, 0)$          | $(-1/2, -1/2)$                | $1/4$                      |
+| 4    | $(1, 1)$          | $(1/2, 1/2)$                  | $1/4$                      |
+| 5    | $(0, 1)$          | $(-1/2, 1/2)$                 | $-1/4$                     |
+| 6    | $(1, 1)$          | $(1/2, 1/2)$                  | $1/4$                      |
+
+On every roll, each entry of $\devn(\vX)$ is $\pm 1/2$,
+so both [diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrix-multiplication.html#def-diagonal-entry) of the [outer product](https://morrison-lab.github.io/mds/linear-algebra-inner-products.html#def-outer-product) $\soprod{\devn(\vX)}$ are $1/4$.
+Its two [off-diagonal entries](https://morrison-lab.github.io/mds/linear-algebra-matrix-multiplication.html#def-off-diagonal-entry) are the numbers in the table's last [column](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix-column),
+whose [average](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-mean) over the six rolls is $(4 \cdot 1/4 - 2 \cdot 1/4)/6 = 1/12$.
+Taking the [expectation](expectation.qmd#def-expectation-matrix) element by element:
+
+$$
+\Expf{\soprod{\devn(\vX)}}
+= \pmat{1/4 & 1/12 \\ 1/12 & 1/4},
+$$
+
+which matches $\Varf{\vX}$ from @exm-cov-vec-x, as @thm-vcov-outer-product says it must.
+
+:::

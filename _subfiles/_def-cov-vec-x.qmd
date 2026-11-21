@@ -1,15 +1,27 @@
 :::{#def-cov-vec-x}
 
-#### Variance/covariance of a $p \times 1$ random vector
+#### Variance-covariance matrix (covariance matrix, variance matrix)
 
-For a $p \times 1$ dimensional random vector $\vX$,
+[]{#thm-vcov-elements}
+
+For a $p \times 1$ [random vector](random-variables.qmd#def-random-variable) $\vX = \tp{(X_1, \ldots, X_p)}$
+with $\E{X_i^2} < \infty$ for every $i$,
+the **variance-covariance matrix** of $\vX$,
+also called its **covariance matrix** or **variance matrix**,
+is the $p \times p$ [matrix](https://morrison-lab.github.io/mds/linear-algebra-matrices.html#def-matrix) whose $(i,j)$-th element is the [covariance](#def-cov) $\Covs{X_i}{X_j}$:
 
 $$
 \ba
 \Varf{\vX}
 &\eqdef \Covf{\vX}
 \\
-&\eqdef \Expf{\paren{\vX - \Expp\vX} \tp{\paren{\vX - \Expp\vX}}}
+&\eqdef
+\pmat{
+\Covs{X_1}{X_1} & \Covs{X_1}{X_2} & \cdots & \Covs{X_1}{X_p} \\
+\Covs{X_2}{X_1} & \Covs{X_2}{X_2} & \cdots & \Covs{X_2}{X_p} \\
+\vdots          & \vdots          & \ddots & \vdots           \\
+\Covs{X_p}{X_1} & \Covs{X_p}{X_2} & \cdots & \Covs{X_p}{X_p}
+}
 \ea
 $$
 
