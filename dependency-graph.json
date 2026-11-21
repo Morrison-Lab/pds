@@ -4224,11 +4224,19 @@
   ],
   [
    "pds/expectation#cor-cross-entropy-entropy",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
    "pds/expectation#def-surprisal"
   ],
   [
    "pds/expectation#cor-cross-entropy-entropy",
    "pds/expectation#def-surprisal-continuous"
+  ],
+  [
+   "pds/expectation#cor-cross-entropy-entropy",
+   "pds/random-variables#def-discrete-rv"
   ],
   [
    "pds/expectation#cor-cross-entropy-entropy",
@@ -4373,10 +4381,6 @@
   [
    "pds/expectation#def-entropy",
    "pds/random-variables#def-discrete-rv"
-  ],
-  [
-   "pds/expectation#def-entropy",
-   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/expectation#def-expectation",

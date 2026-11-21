@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-20 23:27:09 (PST)
+Last modified: 2026-11-20 23:47:53 (PST)
 
 > **NOTE:**
 >
@@ -2566,15 +2566,19 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 22 (Surprisal (**self-information**, **information content**))** The **surprisal** of a possible value $x$ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) $X$ with $\mathbb{P}(X=x) > 0$ is
+> **Definition 22 (Surprisal (**self-information**, **information content**))**  
 >
-> $${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).$$
+> The **surprisal** of a possible value $x$ of a [discrete random variable](random-variables.llms.md#def-discrete-rv) $X$ with $\mathbb{P}(X=x) > 0$ is
 >
-> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of $x$. With the natural logarithm, the surprisal is measured in [nats](https://morrison-lab.github.io/ids/entropy.html#def-nat), and with base 2 in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit). Evaluating ${\mathbb{s}\mathopen{}\left(\cdot\right)\mathclose{}}$ at the [random variable](random-variables.llms.md#def-random-variable) $X$ itself gives the random variable ${\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$, which equals ${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of $X$ implicit.
+> $${\mathbb{S}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{P}(X=x).$$
+>
+> The surprisal is also called the **self-information** [\[16, p. 73\]](#ref-goodfellow2016deep) or the **information content** [\[17, p. 49\]](#ref-bishop2006prml) of $x$. With the natural logarithm, the surprisal is measured in [nats](https://morrison-lab.github.io/ids/entropy.html#def-nat), and with base 2 in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit). Evaluating ${\mathbb{S}\mathopen{}\left(\cdot\right)\mathclose{}}$ at the [random variable](random-variables.llms.md#def-random-variable) $X$ itself gives the random variable ${\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}$, whose value is ${\mathbb{S}\mathopen{}\left(x\right)\mathclose{}}$ when $X = x$. The notation leaves the [probability mass function](random-variables.llms.md#def-pmf) of $X$ implicit.
 
 > **NOTE:**
 >
-> **Example 46 (Surprisal of the values of a biased coin flip)** Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\mathbb{P}(X=1) = \tfrac{1}{4}$ and $\mathbb{P}(X=0) = \tfrac{3}{4}$. Using logarithms to base 2, so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), the surprisal of the value $1$ (heads) is ${\mathbb{s}\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2$ bits, and the surprisal of the value $0$ (tails) is ${\mathbb{s}\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits. For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
+> **Example 46 (Surprisal of the values of a biased coin flip)**  
+>
+> Let $X$ be $1$ if one flip of a coin lands heads and $0$ if it lands tails, with $\mathbb{P}(X=1) = \tfrac{1}{4}$ and $\mathbb{P}(X=0) = \tfrac{3}{4}$. Using [logarithms](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-logarithm) to [base](https://morrison-lab.github.io/mds/algebra-exponentials.html#def-power-base) 2, so that [surprisal](#def-surprisal) is measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), the surprisal of the value $1$ (heads) is ${\mathbb{S}\mathopen{}\left(1\right)\mathclose{}} = -\log_2 \tfrac{1}{4} = 2$ bits, and the surprisal of the value $0$ (tails) is ${\mathbb{S}\mathopen{}\left(0\right)\mathclose{}} = -\log_2 \tfrac{3}{4} = \log_2 \tfrac{4}{3} \approx 0.415$ bits. For a fair coin, each value of $X$ has surprisal $-\log_2 \tfrac{1}{2} = 1$ bit.
 
 > **NOTE:**
 >
@@ -2582,11 +2586,13 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 23 (Surprisal of a value of a continuous random variable)** The **surprisal** of a possible value $x$ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ with [probability density function](random-variables.llms.md#def-pdf) $\mathbb{p}(X=x)$ and $\mathbb{p}(X=x) > 0$ is
+> **Definition 23 (Surprisal of a value of a continuous random variable)**  
+>
+> The **surprisal** of a possible value $x$ of a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ with [probability density function](random-variables.llms.md#def-pdf) $\mathbb{p}(X=x)$ and $\mathbb{p}(X=x) > 0$ is
 >
 > $${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} \stackrel{\text{def}}{=}-\log \mathbb{p}(X=x).$$
 >
-> This extends the [surprisal](#def-surprisal) of a value of a [discrete random variable](random-variables.llms.md#def-discrete-rv), with the [density](random-variables.llms.md#def-pdf) in place of the [probability](probability-basics.llms.md#def-probability).
+> This extends the [surprisal](#def-surprisal) of a value of a [discrete random variable](random-variables.llms.md#def-discrete-rv), with the [density](random-variables.llms.md#def-pdf) in place of the [probability](probability-basics.llms.md#def-probability). It is written with a lowercase $\mathbb{s}$, as the density $\mathbb{p}$ is, and the surprisal of a [discrete](random-variables.llms.md#def-discrete-rv) value with a capital $\mathbb{S}$, as the probability $\mathbb{P}$ is.
 
 > **NOTE:**
 >
@@ -2598,9 +2604,13 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> **Definition 24 (Entropy (differential entropy, for continuous random variables))** The **entropy** of a [random variable](random-variables.llms.md#def-random-variable) $X$ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) ([discrete](random-variables.llms.md#def-discrete-rv) or [continuous](#def-surprisal-continuous)) [\[18\]](#ref-wikipedia_entropy_information_theory), [\[19, Sec. 8.1\]](#ref-cover2006elements), when that expectation exists:
+> **Definition 24 (Entropy (differential entropy, for continuous random variables))** The **entropy** of a [discrete](random-variables.llms.md#def-discrete-rv) or [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$ is the [expectation](#def-expectation) of its [surprisal](#def-surprisal) ([discrete](random-variables.llms.md#def-discrete-rv) or [continuous](#def-surprisal-continuous)) [\[18\]](#ref-wikipedia_entropy_information_theory), [\[19, Sec. 8.1\]](#ref-cover2006elements), when that expectation exists:
 >
-> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}{\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}}.$$
+> $${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} \stackrel{\text{def}}{=}
+> \begin{cases}
+> {\mathbb{E}\mathopen{}\left[{\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} & \text{if } X \text{ is discrete,} \\
+> {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} & \text{if } X \text{ is continuous.}
+> \end{cases}$$
 >
 > For a [continuous random variable](random-variables.llms.md#def-continuous-rv), the entropy is also called the **differential entropy**.
 
@@ -2614,11 +2624,11 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> *Proof*. Let $g(x) \stackrel{\text{def}}{=}{\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$, which is finite for each value $x$ with $\mathbb{P}(X=x) > 0$. Then [LOTUS](#thm-lotus) gives
+> *Proof*. Let $g(x) \stackrel{\text{def}}{=}{\mathbb{S}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$, which is finite for each value $x$ with $\mathbb{P}(X=x) > 0$. Then [LOTUS](#thm-lotus) gives
 >
 > $$\begin{aligned}
 > {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}
-> &= {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
+> &= {\mathbb{E}\mathopen{}\left[{\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} && \text{(definition of entropy)} \\
 > &= {\mathbb{E}\mathopen{}\left[g(X)\right]\mathclose{}} && \text{(definition of } g \text{)} \\
 > &= \sum_{x \in \mathcal{R}(X)} g(x) \cdot\mathbb{P}(X=x) && \text{(LOTUS)} \\
 > &= -\sum_{x \in \mathcal{R}(X)} \mathbb{P}(X=x) \log \mathbb{P}(X=x). && \text{(definition of } g \text{)}
@@ -2692,7 +2702,7 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> *Proof*. For each value $x$ with $\mathbb{P}(X=x) > 0$, the [probability](probability-basics.llms.md#def-probability) satisfies $\mathbb{P}(X=x) \le 1$, so $\log \mathbb{P}(X=x) \le 0$. Hence the [surprisal](#def-surprisal) ${\mathbb{s}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$ is nonnegative. The [expectation](#def-expectation) of a nonnegative [random variable](random-variables.llms.md#def-random-variable) is nonnegative, so ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} \ge 0$.
+> *Proof*. For each value $x$ with $\mathbb{P}(X=x) > 0$, the [probability](probability-basics.llms.md#def-probability) satisfies $\mathbb{P}(X=x) \le 1$, so $\log \mathbb{P}(X=x) \le 0$. Hence the [surprisal](#def-surprisal) ${\mathbb{S}\mathopen{}\left(x\right)\mathclose{}} = -\log \mathbb{P}(X=x)$ is nonnegative. The [expectation](#def-expectation) of a nonnegative [random variable](random-variables.llms.md#def-random-variable) is nonnegative, so ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} \ge 0$.
 
 > **NOTE:**
 >
@@ -3026,7 +3036,7 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> *Solution 17*. By definition, ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. Since $\mathbb{P}(X = k) = p_k$, we have $-\log p(X) = {\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$, the [surprisal](#def-surprisal) of $X$. So ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
+> *Solution 17*. By definition, ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. Since $\mathbb{P}(X = k) = p_k$, we have $-\log p(X) = {\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}$, the [surprisal](#def-surprisal) of $X$. So ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
@@ -3036,7 +3046,7 @@ Last modified: 2026-11-20 23:27:09 (PST)
 
 > **NOTE:**
 >
-> *Proof*. By the definition of [cross-entropy](#def-cross-entropy) with $q = p$, ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. The [random variable](random-variables.llms.md#def-random-variable) $-\log p(X)$ is the [surprisal](#def-surprisal) (or its [continuous](#def-surprisal-continuous) form) ${\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$. So ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[{\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}\right]\mathclose{}} = {\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
+> *Proof*. By the definition of [cross-entropy](#def-cross-entropy) with $q = p$, ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}} = {\mathbb{E}\mathopen{}\left[-\log p(X)\right]\mathclose{}}$. The [random variable](random-variables.llms.md#def-random-variable) $-\log p(X)$ is the [surprisal](#def-surprisal) ${\mathbb{S}\mathopen{}\left(X\right)\mathclose{}}$ when $X$ is [discrete](random-variables.llms.md#def-discrete-rv), and its [continuous](#def-surprisal-continuous) form ${\mathbb{s}\mathopen{}\left(X\right)\mathclose{}}$ when $X$ is continuous. So ${\mathbb{H}\mathopen{}\left(p, p\right)\mathclose{}}$ is the [expectation](#def-expectation) of that surprisal, which is ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}}$ by the definition of [entropy](#def-entropy).
 
 > **NOTE:**
 >
