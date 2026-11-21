@@ -33,7 +33,8 @@ $$
 so the $(i,j)$-th and $(j,i)$-th elements are equal,
 and $\Varf{\vX}$ is symmetric.
 
-For positive semidefiniteness, let $Y = \tprod{\va}{\vX}$. Then:
+For positive semidefiniteness, let $Y = \tprod{\va}{\vX}$.
+Then:
 
 $$
 \ba

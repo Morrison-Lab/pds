@@ -1,13 +1,16 @@
 :::{#thm-vcov-vec}
 
-#### Alternate expression for variance of a random vector
+#### The variance matrix of a random vector is its expected self outer product minus the self outer product of its mean
+
+For a $p \times 1$ [random vector](random-variables.qmd#def-random-variable) $\vX$
+with $\E{X_i^2} < \infty$ for every $i$,
+the [variance matrix](#def-cov-vec-x) of $\vX$ is the [expectation of](expectation.qmd#def-expectation-matrix) the [outer product](https://morrison-lab.github.io/mds/linear-algebra-inner-products.html#def-outer-product) of $\vX$ with itself,
+minus the outer product of its [mean](expectation.qmd#def-expectation-matrix) $\Expp\vX$ with itself:
 
 $$
-\ba
-\Varf{\vX}
-&= \Expf{\soprod{\vX}} - \soprod{\paren{\Expp\vX}}
-\ea
+\Varf{\vX} = \Expf{\soprod{\vX}} - \soprod{\paren{\Expp\vX}}
 $$
+
 :::
 
 {{< slidebreak >}}
