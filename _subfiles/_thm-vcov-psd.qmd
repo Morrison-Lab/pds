@@ -9,7 +9,7 @@ and
 [positive semidefinite](https://morrison-lab.github.io/mds/linear-algebra-special-matrices.html#def-positive-semidefinite):
 for every $p \times 1$ vector of constants $\va$,
 
-$$\tp{\va} \Varf{\vX} \va \ge 0$$
+$$\qform{\Varf{\vX}}{\va} \ge 0$$
 
 :::
 
@@ -33,11 +33,11 @@ $$
 so the $(i,j)$-th and $(j,i)$-th elements are equal,
 and $\Varf{\vX}$ is symmetric.
 
-For positive semidefiniteness, let $Y = \tp{\va}\vX$. Then:
+For positive semidefiniteness, let $Y = \tprod{\va}{\vX}$. Then:
 
 $$
 \ba
-\tp{\va} \Varf{\vX} \va
+\qform{\Varf{\vX}}{\va}
 &= \Var{Y}
 && \text{(variance of a linear combination)} \\
 &= \E{(Y - \E{Y})^2}

@@ -9,7 +9,7 @@ $$
 \ba
 \Var{\va \cdot \vX}
 &= \Var{\sumin a_i X_i}
-\\ &= \tp{\va} \Varf{\vX} \va
+\\ &= \qform{\Varf{\vX}}{\va}
 \\ &= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
 \ea
 $$
@@ -23,26 +23,26 @@ so
 
 $$
 \begin{aligned}
-\va \cdot \vX &= \tp{\va}\vX \\
+\va \cdot \vX &= \tprod{\va}{\vX} \\
 &= \sumin a_i X_i,
 \end{aligned}
 $$
 
 a [scalar](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-scalar).
-By [linearity of expectation](expectation.qmd#thm-linearity-expectation), $\E{\tp{\va}\vX} = \tp{\va}\,\Expp\vX$, so:
+By [linearity of expectation](expectation.qmd#thm-linearity-expectation), $\E{\tprod{\va}{\vX}} = \tprod{\va}{\Expp\vX}$, so:
 
 $$
 \ba
-\Var{\tp{\va}\vX}
-&= \E{\paren{\tp{\va}\vX - \tp{\va}\Expp\vX}^2}
+\Var{\tprod{\va}{\vX}}
+&= \E{\paren{\tprod{\va}{\vX} - \tprod{\va}{\Expp\vX}}^2}
 && \text{(definition of variance)} \\
-&= \E{\paren{\tp{\va}\paren{\vX - \Expp\vX}}^2}
-&& \text{(factor out } \tp{\va} \text{)} \\
-&= \E{\tp{\va}\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}\va}
+&= \E{\paren{\tprod{\va}{\devn(\vX)}}^2}
+&& \text{(factor out } \tp{\va} \text{, with } \devn(\vX) = \vX - \Expp\vX \text{)} \\
+&= \E{\qform{\soprod{\devn(\vX)}}{\va}}
 && \text{(a scalar equals its transpose, so } s^2 = s\,\tp{s} \text{)} \\
-&= \tp{\va}\,\Expf{\paren{\vX - \Expp\vX}\tp{\paren{\vX - \Expp\vX}}}\,\va
+&= \qform{\Expf{\soprod{\devn(\vX)}}}{\va}
 && \text{(linearity of expectation, element-wise)} \\
-&= \tp{\va} \Varf{\vX} \va
+&= \qform{\Varf{\vX}}{\va}
 && \text{(outer-product form of the variance matrix)} \\
 &= \sumin \sumn{j} a_i a_j \Cov{X_i,X_j}
 && \text{(expand the quadratic form, using the elements of } \Varf{\vX} \text{)}

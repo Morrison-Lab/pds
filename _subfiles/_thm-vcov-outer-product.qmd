@@ -9,7 +9,7 @@ the [variance-covariance matrix](#def-cov-vec-x) of $\vX$
 formed by [multiplying](https://morrison-lab.github.io/mds/linear-algebra-matrix-multiplication.html#def-matrix-mult) the [column vector](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-column-vector) of [deviations from the mean](#def-deviation-pop-mean), $\devn(\vX) = \vX - \Expp\vX$, by its own [transpose](https://morrison-lab.github.io/mds/linear-algebra-vectors.html#def-transpose):
 
 $$
-\Varf{\vX} = \Expf{\devn(\vX) \tp{\devn(\vX)}}
+\Varf{\vX} = \Expf{\soprod{\devn(\vX)}}
 $$
 
 :::
@@ -24,7 +24,7 @@ Then:
 
 $$
 \ba
-\Expf{\devn(\vX) \tp{\devn(\vX)}}
+\Expf{\soprod{\devn(\vX)}}
 &= \Expf{
   \pmat{X_1 - \mean_1 \\ \vdots \\ X_p - \mean_p}
   \pmat{X_1 - \mean_1 & \cdots & X_p - \mean_p}
