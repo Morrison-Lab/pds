@@ -1,5 +1,5 @@
 :::{#thm-chain-rule-events}
-#### Chain rule for several events
+#### Chain rule for several events: the probability that they all occur is a product of conditional probabilities
 
 The [probability](#def-probability) that several [events](#def-event) all [occur](#def-occurs)
 is the probability of the first event,
@@ -17,8 +17,10 @@ $$ {#eq-chain-rule-events}
 ::: proof
 
 For $n = 2$, the statement is @thm-law-conditional-prob.
-Suppose it holds for $n - 1$ [events](#def-event), and let $B = A_1 \cap \dots \cap A_{n-1}$.
-Then $\Pr(B) > 0$, so @thm-law-conditional-prob applies to $A_n$ and $B$:
+Suppose it holds for $n - 1$ [events](#def-event),
+and let $B = A_1 \cap \dots \cap A_{n-1}$.
+Then $\Pr(B) > 0$,
+so @thm-law-conditional-prob applies to $A_n$ and $B$:
 
 $$
 \ba

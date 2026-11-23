@@ -3,7 +3,8 @@
 
 <!-- no-figure: the example multiplies three fractions into one probability, so a figure would show nothing the three factors do not -->
 
-Deal three cards, without replacement, from a shuffled standard deck of 52 cards, 13 of which are hearts.
+Deal three cards, without replacement, from a shuffled standard deck of 52 cards,
+13 of which are hearts.
 Let $A_i$ be the [event](#def-event) that card $i$ is a heart.
 After $i - 1$ hearts have been dealt,
 $13 - (i - 1)$ of the remaining $52 - (i - 1)$ cards are hearts,
