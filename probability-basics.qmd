@@ -184,6 +184,14 @@ and its lower right arrow undoes the [natural logarithm](https://morrison-lab.gi
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-chain-rule-events.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-chain-rule-events.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/_thm-total-prob.qmd >}}
 
 {{< slidebreak >}}
