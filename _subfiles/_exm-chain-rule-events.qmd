@@ -21,6 +21,6 @@ $$
 \\ &\approx 0.0129
 && \text{(divide)}
 \ea
-$$
+$$ {#eq-three-hearts}
 
 :::
