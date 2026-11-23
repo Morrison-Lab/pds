@@ -1,5 +1,5 @@
 :::{#thm-chain-rule-events}
-#### Chain rule for several events: the probability that they all occur is a product of conditional probabilities
+#### Chain rule for several events: the probability of an intersection is a product of conditional probabilities
 
 The [probability](#def-probability) that several [events](#def-event) all [occur](#def-occurs)
 is the probability of the first event,
