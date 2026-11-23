@@ -1,0 +1,8 @@
+::: {.remark .notes}
+
+@thm-chebyshev needs only a mean and a variance, not a distribution,
+so it holds for every distribution that has them.
+That generality makes it loose:
+for a normal distribution, the chance of landing more than two standard deviations from the mean is about 5%, but the bound at $k = 2$ is 25%.
+
+:::
