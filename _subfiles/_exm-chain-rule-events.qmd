@@ -1,0 +1,26 @@
+:::{#exm-chain-rule-events}
+#### Three hearts in a row
+
+<!-- no-figure: the example multiplies three fractions into one probability, so a figure would show nothing the three factors do not -->
+
+Deal three cards, without replacement, from a shuffled standard deck of 52 cards, 13 of which are hearts.
+Let $A_i$ be the [event](#def-event) that card $i$ is a heart.
+After $i - 1$ hearts have been dealt,
+$13 - (i - 1)$ of the remaining $52 - (i - 1)$ cards are hearts,
+so by @thm-chain-rule-events:
+
+$$
+\ba
+\Pr(A_1 \cap A_2 \cap A_3)
+&= \Pr(A_1) \cd \Pr(A_2 \mid A_1) \cd \Pr(A_3 \mid A_1 \cap A_2)
+&& \text{(chain rule for three events)}
+\\ &= \frac{13}{52} \cd \frac{12}{51} \cd \frac{11}{50}
+&& \text{(count the hearts left before each card)}
+\\ &= \frac{1716}{132600}
+&& \text{(multiply)}
+\\ &\approx 0.0129
+&& \text{(divide)}
+\ea
+$$
+
+:::

@@ -1,0 +1,37 @@
+:::{#thm-chain-rule-events}
+#### Chain rule for several events
+
+The probability that several [events](#def-event) all occur
+is the probability of the first event,
+times the [conditional probability](#def-conditional-prob) of each later event
+given all the events before it.
+For any events $A_1, \dots, A_n$ with $\Pr(A_1 \cap \dots \cap A_{n-1}) > 0$:
+
+$$
+\Pr(A_1 \cap \dots \cap A_n)
+= \Pr(A_1) \prod_{i=2}^{n} \Pr(A_i \mid A_1 \cap \dots \cap A_{i-1})
+$$
+
+:::
+
+::: proof
+
+For $n = 2$, the statement is @thm-law-conditional-prob.
+Suppose it holds for $n - 1$ events, and let $B = A_1 \cap \dots \cap A_{n-1}$.
+Then $\Pr(B) > 0$, so @thm-law-conditional-prob applies to $A_n$ and $B$:
+
+$$
+\ba
+\Pr(A_1 \cap \dots \cap A_n)
+&= \Pr(A_n \cap B)
+&& \text{(definition of } B \text{)}
+\\ &= \Pr(A_n \mid B) \cd \Pr(B)
+&& \text{(law of conditional probability)}
+\ea
+$$
+
+Each set $A_1 \cap \dots \cap A_{i-1}$ with $i \le n - 1$ contains $B$,
+so its probability is at least $\Pr(B) > 0$,
+and the statement for $n - 1$ events expands $\Pr(B)$.
+
+:::
