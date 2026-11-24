@@ -20,22 +20,6 @@ format:
 
 {{< slidebreak >}}
 
-{{< include pds/_subfiles/_thm-normal-density-max.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_exm-normal-density-max.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_thm-normal-affine.qmd >}}
-
-{{< slidebreak >}}
-
-{{< include pds/_subfiles/_exm-normal-affine.qmd >}}
-
-{{< slidebreak >}}
-
 # Mixture distributions {#sec-mixture}
 
 {{< include pds/_subfiles/_def-mixture.qmd >}}
