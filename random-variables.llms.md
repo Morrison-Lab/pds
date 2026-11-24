@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-24 01:43:36 (PST)
+Last modified: 2026-11-24 02:10:02 (PST)
 
 > **NOTE:**
 >
@@ -400,11 +400,94 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
+> **Theorem 5 (The maximum of the Gaussian density)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ ([Gaussian distribution](random-variables.llms.md#def-normal)), then its [density](random-variables.llms.md#def-pdf) is largest at $x = \mu$, where it equals:
+>
+> $$\max_x \mathbb{p}(X=x) = \frac{1}{\sigma\sqrt{2\pi}}$$
+
+> **NOTE:**
+>
+> *Proof*. For each $x \in \mathbb{R}$, the quantity $u(x) \stackrel{\text{def}}{=}(x-\mu)^2 / (2\sigma^2)$ is at least $0$, and it equals $0$ only at $x = \mu$. The factor $\text{e}^{-u(x)}$ of the [density](random-variables.llms.md#def-pdf) is at most $1$:
+>
+> $$\begin{aligned}
+> -u(x)
+> &\le 0
+> && \text{(a square is non-negative, and } 2\sigma^2> 0 \text{)} \\
+> \text{e}^{-u(x)}
+> &\le \text{e}^{0}
+> && \text{(} \text{e}^t \text{ is increasing in } t \text{)} \\
+> &= 1
+> && \text{(} \text{e}^0 = 1 \text{)}
+> \end{aligned}$$
+>
+> Multiplying both sides by $1 / (\sigma\sqrt{2\pi}) > 0$ keeps their order:
+>
+> $$\begin{aligned}
+> \mathbb{p}(X=x)
+> &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-u(x)}
+> && \text{(Gaussian density)} \\
+> &\le \frac{1}{\sigma\sqrt{2\pi}}
+> && \text{(} \text{e}^{-u(x)} \le 1 \text{)}
+> \end{aligned}$$
+>
+> Equality holds at $x = \mu$, where $u(x) = 0$, so the density peaks there.
+
+> **NOTE:**
+>
+> **Example 13 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 5](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 1](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
+>
+> Show code
+>
+> ``` r
+> sds <- c(0.5, 1, 2)
+> x_grid <- seq(-6, 6, length.out = 400)
+> sd_label <- latex2exp::TeX("$\\sigma$")
+> density_label <- latex2exp::TeX("$f(x)$")
+>
+> normal_curves <-
+>   dplyr::tibble(sd = sds) |>
+>   dplyr::reframe(.by = sd, x = x_grid) |>
+>   dplyr::mutate(
+>     density = dnorm(x, mean = 0, sd = sd),
+>     sd = factor(sd)
+>   )
+>
+> normal_peaks <-
+>   dplyr::tibble(sd = sds) |>
+>   dplyr::mutate(
+>     peak = 1 / (sd * sqrt(2 * pi)),
+>     sd = factor(sd)
+>   )
+>
+> normal_plot <-
+>   normal_curves |>
+>   ggplot2::ggplot() +
+>   ggplot2::aes(x = x, y = density, col = sd) +
+>   ggplot2::geom_line() +
+>   ggplot2::geom_point(
+>     data = normal_peaks,
+>     ggplot2::aes(x = 0, y = peak)
+>   ) +
+>   ggplot2::labs(col = sd_label, y = density_label) +
+>   ggplot2::theme(legend.position = "bottom")
+>
+> print(normal_plot)
+> ```
+>
+> > **NOTE:**
+> >
+> > [![Three Gaussian curves; narrower ones peak higher.](random-variables_files/figure-html/fig-normal-density-max-1.png)](random-variables_files/figure-html/fig-normal-density-max-1.png "Figure 1: Gaussian densities, with each peak marked")
+> >
+> > Figure 1: Gaussian densities, with each peak marked
+>
+> As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows indefinitely, so a density can exceed $1$.
+
+> **NOTE:**
+>
 > **Definition 13 (Standard normal distribution)** The **standard normal distribution** is the [normal distribution](#def-normal) with mean parameter 0 and variance parameter 1, ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$.
 
 > **NOTE:**
 >
-> **Example 13 (Half of a standard normal lies below 0)** If $Z$ has the standard normal distribution, its density $\mathbb{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}$ takes the same value at $z$ and $-z$, so $\Pr(Z \le 0) = \Pr(Z \ge 0)$. Those two probabilities sum to 1, because $\Pr(Z = 0) = 0$ for a continuous $Z$, so each is $\tfrac{1}{2}$.
+> **Example 14 (Half of a standard normal lies below 0)** If $Z$ has the standard normal distribution, its density $\mathbb{p}(Z=z) = \frac{1}{\sqrt{2\pi}} \text{e}^{-z^2/2}$ takes the same value at $z$ and $-z$, so $\Pr(Z \le 0) = \Pr(Z \ge 0)$. Those two probabilities sum to 1, because $\Pr(Z = 0) = 0$ for a continuous $Z$, so each is $\tfrac{1}{2}$.
 
 > **NOTE:**
 >
@@ -417,7 +500,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 14 (Probability of an event within one time unit)** Let $T$ be exponential with rate ${\lambda}$. The probability that $T$ falls in $[0, 1]$ is:
+> **Example 15 (Probability of an event within one time unit)** Let $T$ be exponential with rate ${\lambda}$. The probability that $T$ falls in $[0, 1]$ is:
 >
 > $$\begin{aligned}
 > \Pr(0 \le T \le 1)
@@ -443,7 +526,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 15 (CDF of the number of heads)** Summing the PMF in [Example 7](#exm-pmf) over values at or below $t$:
+> **Example 16 (CDF of the number of heads)** Summing the PMF in [Example 7](#exm-pmf) over values at or below $t$:
 >
 > $${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \begin{cases}
 > 0, & t < 0 \\
@@ -454,7 +537,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 5 (Properties of a CDF)** The [CDF](#def-cdf) $\mathbb{F}$ of any random variable $X$ is non-decreasing, and:
+> **Theorem 6 (Properties of a CDF)** The [CDF](#def-cdf) $\mathbb{F}$ of any random variable $X$ is non-decreasing, and:
 >
 > $$\lim_{t \to -\infty} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 0, \qquad \lim_{t \to \infty} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 1$$
 
@@ -488,7 +571,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 6 (The CDF determines the distribution)** If random variables $X$ and $Y$ have the same [CDF](#def-cdf), then $\Pr(X \in B) = \Pr(Y \in B)$ for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) $B \subseteq \mathbb{R}$, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.
+> **Theorem 7 (The CDF determines the distribution)** If random variables $X$ and $Y$ have the same [CDF](#def-cdf), then $\Pr(X \in B) = \Pr(Y \in B)$ for every [Borel set](https://en.wikipedia.org/wiki/Borel_set) $B \subseteq \mathbb{R}$, which includes every interval, and every set built from intervals by countably many unions, intersections, and complements.
 
 > **NOTE:**
 >
@@ -506,11 +589,11 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 16 (Median of the number of heads)** From [Example 15](#exm-cdf), ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \ge 0.5$ first holds at $t = 1$, so the median of the number of heads is ${\mathbb{Q}\mathopen{}\left(0.5\right)\mathclose{}} = 1$.
+> **Example 17 (Median of the number of heads)** From [Example 16](#exm-cdf), ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} \ge 0.5$ first holds at $t = 1$, so the median of the number of heads is ${\mathbb{Q}\mathopen{}\left(0.5\right)\mathclose{}} = 1$.
 
 > **NOTE:**
 >
-> *Remark*. [Figure 1](#fig-pmf-cdf-quantile) shows the mass function, CDF and quantile function of the number of heads in two fair coin flips (top row), beside the density, CDF and quantile function of a standard normal variable (bottom row).
+> *Remark*. [Figure 2](#fig-pmf-cdf-quantile) shows the mass function, CDF and quantile function of the number of heads in two fair coin flips (top row), beside the density, CDF and quantile function of a standard normal variable (bottom row).
 
 > **NOTE:**
 >
@@ -615,11 +698,11 @@ Last modified: 2026-11-24 01:43:36 (PST)
 > })
 > ```
 >
-> Figure 1: A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF’s, swapped.
+> Figure 2: A probability mass function, cumulative distribution function and quantile function for a discrete random variable (top row: the number of heads in two fair coin flips) and a continuous one (bottom row: the standard normal distribution). The shaded area under the normal density up to a point equals the CDF at that point. The quantile function reverses the CDF: its axes are the CDF’s, swapped.
 
 > **NOTE:**
 >
-> **Theorem 7 (A density integrates to the CDF)** If $X$ is a continuous random variable with density $f$ and CDF $\mathbb{F}$, then for every $t$:
+> **Theorem 8 (A density integrates to the CDF)** If $X$ is a continuous random variable with density $f$ and CDF $\mathbb{F}$, then for every $t$:
 >
 > $${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$$
 
@@ -637,17 +720,17 @@ Last modified: 2026-11-24 01:43:36 (PST)
 > && \text{(definition of the density)}
 > \end{aligned}$$
 >
-> Letting $a \to -\infty$, ${\mathbb{F}\mathopen{}\left(a\right)\mathclose{}} \to 0$ ([Theorem 5](#thm-cdf-properties)), which gives ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$.
+> Letting $a \to -\infty$, ${\mathbb{F}\mathopen{}\left(a\right)\mathclose{}} \to 0$ ([Theorem 6](#thm-cdf-properties)), which gives ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$.
 
 > **NOTE:**
 >
-> **Theorem 8 (The derivative of the CDF is the density where the density is continuous)** If $X$ is a continuous random variable with density $f$ and CDF $\mathbb{F}$, then at every $t$ where $f$ is continuous:
+> **Theorem 9 (The derivative of the CDF is the density where the density is continuous)** If $X$ is a continuous random variable with density $f$ and CDF $\mathbb{F}$, then at every $t$ where $f$ is continuous:
 >
 > $$f(t) = \frac{\partial}{\partial t} {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}}$$
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 7](#thm-density-vs-CDF), ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$. The fundamental theorem of calculus then gives $\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)$ at every $t$ where $f$ is continuous.
+> *Proof*. By [Theorem 8](#thm-density-vs-CDF), ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = \int_{-\infty}^{t} f(x)\,dx$. The fundamental theorem of calculus then gives $\frac{\partial}{\partial t} \int_{-\infty}^{t} f(x)\,dx = f(t)$ at every $t$ where $f$ is continuous.
 
 > **NOTE:**
 >
@@ -655,7 +738,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> *Proof*. At every point $t$ where $f$ is continuous, [Theorem 8](#thm-cdf-derivative-is-density) gives $\mathbb{F}'(t) = f(t)$, and by assumption those are all but finitely many points.
+> *Proof*. At every point $t$ where $f$ is continuous, [Theorem 9](#thm-cdf-derivative-is-density) gives $\mathbb{F}'(t) = f(t)$, and by assumption those are all but finitely many points.
 
 > **NOTE:**
 >
@@ -663,7 +746,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 17 (CDF and density of a uniform random variable)** For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of [Definition 10](#def-uniform), and $t \in [0, 1]$:
+> **Example 18 (CDF and density of a uniform random variable)** For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of [Definition 10](#def-uniform), and $t \in [0, 1]$:
 >
 > $$\begin{aligned}
 > {\mathbb{F}\mathopen{}\left(t\right)\mathclose{}}
@@ -686,7 +769,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 9 (A piecewise-smooth CDF has its derivative as a density)** If the CDF $\mathbb{F}$ of a random variable $X$ is continuous everywhere, and has a continuous derivative at all but finitely many points, then $X$ is continuous, and $\mathbb{F}'$ (given any values at the finitely many exceptional points) is a density of $X$.
+> **Theorem 10 (A piecewise-smooth CDF has its derivative as a density)** If the CDF $\mathbb{F}$ of a random variable $X$ is continuous everywhere, and has a continuous derivative at all but finitely many points, then $X$ is continuous, and $\mathbb{F}'$ (given any values at the finitely many exceptional points) is a density of $X$.
 
 > **NOTE:**
 >
@@ -714,15 +797,15 @@ Last modified: 2026-11-24 01:43:36 (PST)
 > && \text{(fundamental theorem of calculus)}
 > \end{aligned}$$
 >
-> The last step applies the fundamental theorem of calculus on each piece of $[a, b]$ between exceptional points, where $\mathbb{F}'$ is continuous, and joins the pieces using the continuity of $\mathbb{F}$ at the exceptional points. Finally, $\mathbb{F}' \ge 0$ wherever it exists, because $\mathbb{F}$ is non-decreasing ([Theorem 5](#thm-cdf-properties)).
+> The last step applies the fundamental theorem of calculus on each piece of $[a, b]$ between exceptional points, where $\mathbb{F}'$ is continuous, and joins the pieces using the continuity of $\mathbb{F}$ at the exceptional points. Finally, $\mathbb{F}' \ge 0$ wherever it exists, because $\mathbb{F}$ is non-decreasing ([Theorem 6](#thm-cdf-properties)).
 
 > **NOTE:**
 >
-> **Example 18 (A density from a CDF with a corner)** Let $X$ have CDF ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 0$ for $t < 0$, ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = t^2$ for $0 \le t \le 1$, and ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 1$ for $t > 1$. This $\mathbb{F}$ is continuous everywhere, and has a continuous derivative everywhere except $t = 1$, where its slope drops from 2 to 0. By [Theorem 9](#thm-cdf-derivative-density), $X$ is continuous with density $f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise. As a check, $\int_0^1 2t\,dt = 1$.
+> **Example 19 (A density from a CDF with a corner)** Let $X$ have CDF ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 0$ for $t < 0$, ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = t^2$ for $0 \le t \le 1$, and ${\mathbb{F}\mathopen{}\left(t\right)\mathclose{}} = 1$ for $t > 1$. This $\mathbb{F}$ is continuous everywhere, and has a continuous derivative everywhere except $t = 1$, where its slope drops from 2 to 0. By [Theorem 10](#thm-cdf-derivative-density), $X$ is continuous with density $f(t) = 2t$ for $0 \le t < 1$ and $f(t) = 0$ otherwise. As a check, $\int_0^1 2t\,dt = 1$.
 
 > **NOTE:**
 >
-> **Theorem 10 (A density as a limit of interval probabilities)** If $X$ is a continuous random variable with density $f$, and $f$ is continuous at $x$, then $f(x)$ is the limit of the probability that $X$ falls in an interval starting at $x$, divided by the width of that interval, as that width shrinks to 0:
+> **Theorem 11 (A density as a limit of interval probabilities)** If $X$ is a continuous random variable with density $f$, and $f$ is continuous at $x$, then $f(x)$ is the limit of the probability that $X$ falls in an interval starting at $x$, divided by the width of that interval, as that width shrinks to 0:
 >
 > $$f(x) = \lim_{\Delta\downarrow 0} \frac{\Pr(x \le X < x + \Delta)}{\Delta}$$
 
@@ -738,7 +821,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 > && \text{(additivity, and the definition of the CDF)}
 > \end{aligned}$$
 >
-> By [Theorem 8](#thm-cdf-derivative-is-density), $\mathbb{F}$ is differentiable at $x$ with $\mathbb{F}'(x) = f(x)$, so this difference quotient converges to $f(x)$ as $\Delta\downarrow 0$.
+> By [Theorem 9](#thm-cdf-derivative-is-density), $\mathbb{F}$ is differentiable at $x$ with $\mathbb{F}'(x) = f(x)$, so this difference quotient converges to $f(x)$ as $\Delta\downarrow 0$.
 
 > **NOTE:**
 >
@@ -748,7 +831,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 19 (The uniform density as a limit)** For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$, $\Pr(x \le X < x + \Delta) = \Delta$ once $\Delta\le 1 - x$, so:
+> **Example 20 (The uniform density as a limit)** For $X \sim \text{Uniform}(0, 1)$ and $x \in [0, 1)$, $\Pr(x \le X < x + \Delta) = \Delta$ once $\Delta\le 1 - x$, so:
 >
 > $$\begin{aligned}
 > f(x)
@@ -769,11 +852,11 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> *Proof*. The first two lines of the proof of [Theorem 10](#thm-density-limit) use only that $X$ is continuous, so for every $\Delta> 0$ the two quotients are equal. Equal functions of $\Delta$ have the same limit as $\Delta\downarrow 0$, or both have none.
+> *Proof*. The first two lines of the proof of [Theorem 11](#thm-density-limit) use only that $X$ is continuous, so for every $\Delta> 0$ the two quotients are equal. Equal functions of $\Delta$ have the same limit as $\Delta\downarrow 0$, or both have none.
 
 > **NOTE:**
 >
-> **Example 20 (The density limit at a jump)** At a point where $f$ is not continuous, the limit can differ from the chosen value $f(x)$. For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of [Definition 10](#def-uniform), which sets $f(1) = 1$ and $f(x) = 0$ for $x > 1$, and for $\Delta> 0$:
+> **Example 21 (The density limit at a jump)** At a point where $f$ is not continuous, the limit can differ from the chosen value $f(x)$. For $X \sim \text{Uniform}(0, 1)$ with the density $f$ of [Definition 10](#def-uniform), which sets $f(1) = 1$ and $f(x) = 0$ for $x > 1$, and for $\Delta> 0$:
 >
 > $$\begin{aligned}
 > \Pr(1 \le X < 1 + \Delta)
@@ -785,11 +868,11 @@ Last modified: 2026-11-24 01:43:36 (PST)
 > && \text{(} f = 0 \text{ on } (1, 1 + \Delta] \text{; one point does not change an integral)}
 > \end{aligned}$$
 >
-> So the limit of $\Pr(1 \le X < 1 + \Delta) / \Delta$ at $x = 1$ is 0, although $f(1) = 1$. By [Proposition 2](#prp-density-limit-right-derivative), 0 is also the right derivative of $\mathbb{F}$ at 1, matching the slope of 0 on the right in [Example 17](#exm-density-vs-CDF).
+> So the limit of $\Pr(1 \le X < 1 + \Delta) / \Delta$ at $x = 1$ is 0, although $f(1) = 1$. By [Proposition 2](#prp-density-limit-right-derivative), 0 is also the right derivative of $\mathbb{F}$ at 1, matching the slope of 0 on the right in [Example 18](#exm-density-vs-CDF).
 
 > **NOTE:**
 >
-> **Theorem 11 (Density functions integrate to 1)** If $X$ is a continuous random variable with density $f$:
+> **Theorem 12 (Density functions integrate to 1)** If $X$ is a continuous random variable with density $f$:
 >
 > $$\int_{-\infty}^{\infty} f(x)\, dx = 1$$
 
@@ -805,16 +888,96 @@ Last modified: 2026-11-24 01:43:36 (PST)
 > && \text{(limit of a CDF)}
 > \end{aligned}$$
 >
-> The last step is [Theorem 5](#thm-cdf-properties).
+> The last step is [Theorem 6](#thm-cdf-properties).
 
 > **NOTE:**
 >
-> **Example 21 (The uniform density integrates to 1)** For $X \sim \text{Uniform}(0, 1)$ ([Definition 10](#def-uniform)),
+> **Example 22 (The uniform density integrates to 1)** For $X \sim \text{Uniform}(0, 1)$ ([Definition 10](#def-uniform)),
 >
 > $$\begin{aligned}
 > \int_{-\infty}^{\infty} f(x)\,dx &= \int_0^1 1\,dx \\
 > &= 1.
 > \end{aligned}$$
+
+> **NOTE:**
+>
+> **Theorem 13 (Gaussian distributions are closed under affine transformations)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ and $a \ne 0$, then $aX + b \sim {\operatorname{N}\mathopen{}\left(a\mu+ b, a^2\sigma^2\right)\mathclose{}}$.
+
+> **NOTE:**
+>
+> *Proof*. Let $Y = aX + b$. Let $f$ be the [density](random-variables.llms.md#def-pdf) of $X$. The [CDF](random-variables.llms.md#def-cdf) of $Y$ is $\mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{} = \Pr(aX + b \le y)$. The density $f$ is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) everywhere. So at every $y$, the [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $\mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}$ is the density of $Y$, by [the derivative of the CDF is the density](random-variables.llms.md#thm-cdf-derivative-is-density). To differentiate $\mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}$, write it through the CDF $\mathbb{F}_X$ of $X$. There are two cases, by the sign of $a$.
+>
+> - **Case** $a > 0$. Dividing by $a > 0$ leaves $\le$ as $\le$, so:
+>
+>   $$\begin{aligned}
+>   \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
+>   &= {\Pr\mathopen{}\left(X \le \frac{y-b}{a}\right)\mathclose{}}
+>   && \text{(} aX + b \le y \iff X \le (y-b)/a \text{)} \\
+>   &= \mathbb{F}_X\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
+>   && \text{(definition of the CDF)}
+>   \end{aligned}$$
+>
+>   The [chain rule](https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule) gives the derivative:
+>
+>   $$\frac{\partial}{\partial y} \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
+>   = \frac{1}{a} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
+>   = \frac{1}{\mathopen{}\left|a\right|\mathclose{}} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
+>   \quad \text{(} \mathopen{}\left|a\right|\mathclose{} = a \text{)}$$
+>
+> - **Case** $a < 0$. Dividing by $a < 0$ turns $\le$ into $\ge$, and $\Pr(X = x) = 0$ for a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$, so:
+>
+>   $$\begin{aligned}
+>   \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
+>   &= {\Pr\mathopen{}\left(X \ge \frac{y-b}{a}\right)\mathclose{}}
+>   && \text{(} aX + b \le y \iff X \ge (y-b)/a \text{)} \\
+>   &= 1 - \mathbb{F}_X\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
+>   && \text{(complement, and } \Pr(X = (y-b)/a) = 0 \text{)}
+>   \end{aligned}$$
+>
+>   The chain rule gives the derivative:
+>
+>   $$\frac{\partial}{\partial y} \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
+>   = -\frac{1}{a} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
+>   = \frac{1}{\mathopen{}\left|a\right|\mathclose{}} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
+>   \quad \text{(} \mathopen{}\left|a\right|\mathclose{} = -a \text{)}$$
+>
+> In both cases, $Y$ has density $\mathbb{p}(Y=y) = f\mathopen{}\left((y-b)/a\right)\mathclose{} / \mathopen{}\left|a\right|\mathclose{}$. Substitute the [Gaussian](random-variables.llms.md#def-normal) density of $X$:
+>
+> $$\begin{aligned}
+> \mathbb{p}(Y=y)
+> &= \frac{1}{\mathopen{}\left|a\right|\mathclose{}} \cdot\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{\mathopen{}\left((y-b)/a - \mu\right)\mathclose{}^2}{2\sigma^2}}
+> && \text{(Gaussian density of } X \text{)} \\
+> &= \frac{1}{\mathopen{}\left|a\right|\mathclose{}\sigma\sqrt{2\pi}} \text{e}^{-\frac{\mathopen{}\left((y-b-a\mu)/a\right)\mathclose{}^2}{2\sigma^2}}
+> && \text{(common denominator } a \text{)} \\
+> &= \frac{1}{\mathopen{}\left|a\right|\mathclose{}\sigma\sqrt{2\pi}} \text{e}^{-\frac{(y-(a\mu+b))^2}{2a^2\sigma^2}}
+> && \text{(} (u/a)^2 = u^2/a^2 \text{)} \\
+> &= \frac{1}{\sqrt{a^2\sigma^2}\sqrt{2\pi}} \text{e}^{-\frac{(y-(a\mu+b))^2}{2a^2\sigma^2}}
+> && \text{(} \mathopen{}\left|a\right|\mathclose{}\sigma= \sqrt{a^2\sigma^2} \text{)}
+> \end{aligned}$$
+>
+> The last line is the density of ${\operatorname{N}\mathopen{}\left(a\mu+ b, a^2\sigma^2\right)\mathclose{}}$ because $a^2\sigma^2> 0$.
+
+> **NOTE:**
+>
+> **Example 23 (Standardizing a Gaussian random variable)**  
+>
+> Let $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ with $\sigma> 0$, and let $Z = (X - \mu) / \sigma$. Then $Z = aX + b$ with $a = 1 / \sigma$ and $b = -\mu/ \sigma$, and $a \ne 0$. By [Theorem 13](#thm-normal-affine), $Z$ is [Gaussian](random-variables.llms.md#def-normal) with parameters:
+>
+> $$\begin{aligned}
+> a\mu+ b
+> &= \frac{\mu}{\sigma} - \frac{\mu}{\sigma}
+> && \text{(substitute } a \text{ and } b \text{)} \\
+> &= 0
+> && \text{(} u - u = 0 \text{)}
+> \\
+> a^2\sigma^2
+> &= \frac{\sigma^2}{\sigma^2}
+> && \text{(} a^2 = 1/\sigma^2\text{)} \\
+> &= 1
+> && \text{(} u/u = 1 \text{)}
+> \end{aligned}$$
+>
+> So $Z \sim {\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$.
 
 > **NOTE:**
 >
@@ -826,7 +989,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 22 (The first flip and the total)** In [Example 1](#exm-random-variable), let $X_1$ indicate heads on the first flip (as in [Example 8](#exm-bernoulli-pmf)), and let $X$ be the total number of heads. Both are functions on the same sample space, ${\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}}$, so they are jointly distributed, and, for example:
+> **Example 24 (The first flip and the total)** In [Example 1](#exm-random-variable), let $X_1$ indicate heads on the first flip (as in [Example 8](#exm-bernoulli-pmf)), and let $X$ be the total number of heads. Both are functions on the same sample space, ${\mathopen{}\left\{HH, HT, TH, TT\right\}\mathclose{}}$, so they are jointly distributed, and, for example:
 >
 > $$\begin{aligned}
 > \Pr(X_1 = 1, X = 1)
@@ -841,7 +1004,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 23 (Joint distribution of the first flip and the total)** In [Example 22](#exm-jointly-distributed), the joint distribution of $X_1$ and $X$ assigns to the set $A = {\mathopen{}\left\{(x_1, x) : x_1 = 1,\, x \ge 1\right\}\mathclose{}}$ the probability
+> **Example 25 (Joint distribution of the first flip and the total)** In [Example 24](#exm-jointly-distributed), the joint distribution of $X_1$ and $X$ assigns to the set $A = {\mathopen{}\left\{(x_1, x) : x_1 = 1,\, x \ge 1\right\}\mathclose{}}$ the probability
 >
 > $$\begin{aligned}
 > \Pr((X_1, X) \in A)
@@ -853,7 +1016,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 12 (A joint distribution is determined by its rectangle probabilities)** If [jointly distributed](#def-jointly-distributed) random variables $X_1, \ldots, X_n$, and jointly distributed random variables $Y_1, \ldots, Y_n$, satisfy
+> **Theorem 14 (A joint distribution is determined by its rectangle probabilities)** If [jointly distributed](#def-jointly-distributed) random variables $X_1, \ldots, X_n$, and jointly distributed random variables $Y_1, \ldots, Y_n$, satisfy
 >
 > $$\Pr(X_1 \in A_1, \ldots, X_n \in A_n) = \Pr(Y_1 \in A_1, \ldots, Y_n \in A_n)$$
 >
@@ -871,7 +1034,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 24 (Joint PMF of the first flip and the total)** Continuing [Example 22](#exm-jointly-distributed), each outcome of the two flips fixes both $X_1$ and $X$, so the joint PMF puts probability $1/4$ on each outcome’s pair of values:
+> **Example 26 (Joint PMF of the first flip and the total)** Continuing [Example 24](#exm-jointly-distributed), each outcome of the two flips fixes both $X_1$ and $X$, so the joint PMF puts probability $1/4$ on each outcome’s pair of values:
 >
 > |           |   $X = 0$    |   $X = 1$    |   $X = 2$    |
 > |:---------:|:------------:|:------------:|:------------:|
@@ -888,11 +1051,11 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 25 (Marginal distribution of the total)** In [Example 24](#exm-joint-pmf), the marginal distribution of the total $X$ is the PMF of [Example 7](#exm-pmf): $\mathbb{P}(X = 0) = 1/4$, $\mathbb{P}(X = 1) = 1/2$, $\mathbb{P}(X = 2) = 1/4$.
+> **Example 27 (Marginal distribution of the total)** In [Example 26](#exm-joint-pmf), the marginal distribution of the total $X$ is the PMF of [Example 7](#exm-pmf): $\mathbb{P}(X = 0) = 1/4$, $\mathbb{P}(X = 1) = 1/2$, $\mathbb{P}(X = 2) = 1/4$.
 
 > **NOTE:**
 >
-> **Theorem 13 (Marginal PMF from a joint PMF)** If $X$ and $Y$ are jointly distributed discrete random variables, then for every $x$:
+> **Theorem 15 (Marginal PMF from a joint PMF)** If $X$ and $Y$ are jointly distributed discrete random variables, then for every $x$:
 >
 > $$\mathbb{P}(X = x) = \sum_{y \in \mathcal{R}(Y)} \mathbb{P}(X = x,\, Y = y)$$
 
@@ -912,7 +1075,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 26 (Summing a row of the joint PMF)** In [Example 24](#exm-joint-pmf), summing the $X_1 = 1$ row:
+> **Example 28 (Summing a row of the joint PMF)** In [Example 26](#exm-joint-pmf), summing the $X_1 = 1$ row:
 >
 > $$\begin{aligned}
 > \mathbb{P}(X_1 = 1)
@@ -939,7 +1102,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 27 (A joint density on a triangle)** Let $f_{X,Y}(x, y) = 2$ for $0 \le x \le y \le 1$, and $0$ otherwise. The triangle $\{(x, y) : 0 \le x \le y \le 1\}$ has area $1/2$, so $f_{X,Y}$ gives the whole plane probability $2 \cdot\tfrac{1}{2} = 1$, and it is the joint density of a pair $(X, Y)$ with $X \le Y$ always. For example, the probability that both are at most $1/2$ is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
+> **Example 29 (A joint density on a triangle)** Let $f_{X,Y}(x, y) = 2$ for $0 \le x \le y \le 1$, and $0$ otherwise. The triangle $\{(x, y) : 0 \le x \le y \le 1\}$ has area $1/2$, so $f_{X,Y}$ gives the whole plane probability $2 \cdot\tfrac{1}{2} = 1$, and it is the joint density of a pair $(X, Y)$ with $X \le Y$ always. For example, the probability that both are at most $1/2$ is $2$ times the area of the smaller triangle $\{0 \le x \le y \le 1/2\}$:
 >
 > $$\begin{aligned}
 > \Pr(X \le \tfrac{1}{2}, Y \le \tfrac{1}{2})
@@ -949,7 +1112,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 14 (Not every pair of continuous random variables has a joint density)** If $X$ is a continuous random variable, then the pair $(X, X)$ has no [joint density](#def-joint-pdf).
+> **Theorem 16 (Not every pair of continuous random variables has a joint density)** If $X$ is a continuous random variable, then the pair $(X, X)$ has no [joint density](#def-joint-pdf).
 
 > **NOTE:**
 >
@@ -973,7 +1136,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Theorem 15 (Marginal density from a joint density)** If $X$ and $Y$ have joint density $f_{X,Y}$, then $X$ has the density:
+> **Theorem 17 (Marginal density from a joint density)** If $X$ and $Y$ have joint density $f_{X,Y}$, then $X$ has the density:
 >
 > $$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\,dy$$
 
@@ -997,7 +1160,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 28 (Marginal densities on the triangle)** For the joint density of [Example 27](#exm-joint-pdf) and $x \in [0, 1]$, $f_{X,Y}(x, y) = 2$ exactly when $x \le y \le 1$, so:
+> **Example 30 (Marginal densities on the triangle)** For the joint density of [Example 29](#exm-joint-pdf) and $x \in [0, 1]$, $f_{X,Y}(x, y) = 2$ exactly when $x \le y \le 1$, so:
 >
 > $$\begin{aligned}
 > f_X(x)
@@ -1050,7 +1213,7 @@ Last modified: 2026-11-24 01:43:36 (PST)
 
 > **NOTE:**
 >
-> **Example 29 (A coin flip and a waiting time)** Let $\mathbb{p}(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$, $\mathbb{p}(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$, and $0$ otherwise. Integrating over $y$ gives $\mathbb{P}(X = 0) = 1/2$ and $\mathbb{P}(X = 1) = 1/2$, which add to 1. For example, the probability that $X = 1$ and $Y \le 1$ is:
+> **Example 31 (A coin flip and a waiting time)** Let $\mathbb{p}(X = 0,\, Y = y) = 1/2$ for $y \in [0, 1]$, $\mathbb{p}(X = 1,\, Y = y) = 1/4$ for $y \in [0, 2]$, and $0$ otherwise. Integrating over $y$ gives $\mathbb{P}(X = 0) = 1/2$ and $\mathbb{P}(X = 1) = 1/2$, which add to 1. For example, the probability that $X = 1$ and $Y \le 1$ is:
 >
 > $$\begin{aligned}
 > \Pr(X = 1,\, Y \le 1)
@@ -1078,7 +1241,7 @@ The resulting distributions $\mathbb{P}(x)$ and $\mathbb{P}(y)$ are the **margin
 
 > **NOTE:**
 >
-> **Example 30 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let $m \in \{0, 1\}$ indicate whether a meteorite hits your house on a given day ($m = 1$), and let $d \in \{0, 1\}$ indicate whether you have a good day ($d = 1$). In this distribution, 9 out of 10 days are good days ($\mathbb{P}(d=1) = 0.9$), and the probability of a meteorite strike is 1 in a million ($\mathbb{P}(m=1) = 10^{-6}$):
+> **Example 32 (Joint probabilities and marginalization)** Consider an example adapted from Brian Hutchinson’s notes [\[15\]](#ref-hutchinson2024data471). Let $m \in \{0, 1\}$ indicate whether a meteorite hits your house on a given day ($m = 1$), and let $d \in \{0, 1\}$ indicate whether you have a good day ($d = 1$). In this distribution, 9 out of 10 days are good days ($\mathbb{P}(d=1) = 0.9$), and the probability of a meteorite strike is 1 in a million ($\mathbb{P}(m=1) = 10^{-6}$):
 >
 > > **NOTE:**
 > >
@@ -1122,7 +1285,7 @@ $$\Pr(X \in A) = \int_{A} \mathbb{p}(x)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Theorem 16 (Points have zero probability in continuous distributions)** For any continuous random variable and any specific value $a \in \mathbb{R}$:
+> **Theorem 18 (Points have zero probability in continuous distributions)** For any continuous random variable and any specific value $a \in \mathbb{R}$:
 >
 > $$\Pr(X = a) = 0$$
 
@@ -1148,7 +1311,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Theorem 17 (The normalizing constant makes the density integrate to 1)** If $g$ is a [kernel of a density](#def-kernel) $f$, its [normalizing constant](#def-normalizing-constant) is
+> **Theorem 19 (The normalizing constant makes the density integrate to 1)** If $g$ is a [kernel of a density](#def-kernel) $f$, its [normalizing constant](#def-normalizing-constant) is
 >
 > $$c = \frac{1}{\int_{-\infty}^{\infty} g(x)\,dx}.$$
 
@@ -1186,7 +1349,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Theorem 18 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
+> **Theorem 20 (A density and its kernel have the same modes)** If $g$ is a [kernel of the density](#def-kernel) $f$ of a [random variable](#def-random-variable) $X$, then the [modes](#def-mode) of $f$ are the elements of the [argmax](https://morrison-lab.github.io/mds/algebra-basics.html#def-argmax) of $g$ over the [range](#def-range) of $X$:
 >
 > $${\operatorname{mode}\mathopen{}\left(f\right)\mathclose{}} = \arg \max_{x \in \mathcal{R}(X)} g(x).$$
 
@@ -1196,7 +1359,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 31 (The kernel, normalizing constant, and mode of an exponential density)** The [exponential density](#def-exponential) with rate ${\lambda}$ is $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$, and $f(t) = 0$ for $t < 0$. Its [kernel](#def-kernel) is $g(t) = \text{e}^{-{\lambda}t}$ for $t \ge 0$, and $g(t) = 0$ for $t < 0$, and the [normalizing constant](#def-normalizing-constant) is
+> **Example 33 (The kernel, normalizing constant, and mode of an exponential density)** The [exponential density](#def-exponential) with rate ${\lambda}$ is $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$, and $f(t) = 0$ for $t < 0$. Its [kernel](#def-kernel) is $g(t) = \text{e}^{-{\lambda}t}$ for $t \ge 0$, and $g(t) = 0$ for $t < 0$, and the [normalizing constant](#def-normalizing-constant) is
 >
 > $$\begin{aligned}
 > c
@@ -1210,7 +1373,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > && \text{(simplify)}
 > \end{aligned}$$
 >
-> The kernel is largest at $t = 0$, so by [Theorem 18](#thm-kernel-same-mode) the [mode](#def-mode) of $f$ is $0$.
+> The kernel is largest at $t = 0$, so by [Theorem 20](#thm-kernel-same-mode) the [mode](#def-mode) of $f$ is $0$.
 
 > **TIP:**
 >
@@ -1230,7 +1393,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 32 (Conditional PMF from a vaccine trial)**  
+> **Example 34 (Conditional PMF from a vaccine trial)**  
 >
 > The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[18\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: $X$ is treatment group (placebo or vaccine) and $Y$ is the level of response to treatment (small, moderate, or large).
 >
@@ -1295,7 +1458,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 33 (Conditional PDF from a bivariate normal model of birthweight data)**  
+> **Example 35 (Conditional PDF from a bivariate normal model of birthweight data)**  
 >
 > The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[18\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let $X$ be gestational age and $Y$ be birthweight, pooling both sexes into $n = 24$ observations.
 >
@@ -1410,7 +1573,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Theorem 19 (Survival function and CDF)** For any random variable $T$ with [CDF](#def-cdf) $F(t)$:
+> **Theorem 21 (Survival function and CDF)** For any random variable $T$ with [CDF](#def-cdf) $F(t)$:
 >
 > $$\mathbb{S}(t) = 1 - F(t)$$
 >
@@ -1432,7 +1595,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > && \text{(definition of the CDF)}
 > \end{aligned}$$
 >
-> For continuous $T$, the density integrates to 1 over the real line ([Theorem 11](#thm-density-sums-to-one)), and $F$ is the integral of the density up to $t$ ([Theorem 7](#thm-density-vs-CDF)), so:
+> For continuous $T$, the density integrates to 1 over the real line ([Theorem 12](#thm-density-sums-to-one)), and $F$ is the integral of the density up to $t$ ([Theorem 8](#thm-density-vs-CDF)), so:
 >
 > $$\begin{aligned}
 > 1 - F(t)
@@ -1444,7 +1607,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 34 (Survival function of an exponential distribution)** Let $T$ be exponential with rate ${\lambda}> 0$ ([Definition 14](#def-exponential)), so $T$ has density $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$. For $t \ge 0$, by [Theorem 19](#thm-survival-expressions-1):
+> **Example 36 (Survival function of an exponential distribution)** Let $T$ be exponential with rate ${\lambda}> 0$ ([Definition 14](#def-exponential)), so $T$ has density $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$. For $t \ge 0$, by [Theorem 21](#thm-survival-expressions-1):
 >
 > $$\begin{aligned}
 > \mathbb{S}(t)
@@ -1483,7 +1646,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 35 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 12](#exm-normal)). Let $T$ be [exponential](#def-exponential) with rate ${\lambda}= 2$, so $\mathbb{S}(t) = \text{e}^{-2t}$ for $t \ge 0$ ([Example 34](#exm-exp-survfn)). Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$, so
+> **Example 37 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 12](#exm-normal)). Let $T$ be [exponential](#def-exponential) with rate ${\lambda}= 2$, so $\mathbb{S}(t) = \text{e}^{-2t}$ for $t \ge 0$ ([Example 36](#exm-exp-survfn)). Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$, so
 >
 > $$\begin{aligned}
 > \Pr(T \ge s) &= \Pr(T > s) \\
@@ -1532,7 +1695,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 36 (Rolling until the first six)** Roll a fair die repeatedly, and let $T$ be the number of the roll that first shows a six. Then $T \ge t$ exactly when the first $t - 1$ rolls are not sixes, which has probability $(5/6)^{t-1}$, and $T = t$ when, in addition, roll $t$ is a six. So, for each $t = 1, 2, \ldots$:
+> **Example 38 (Rolling until the first six)** Roll a fair die repeatedly, and let $T$ be the number of the roll that first shows a six. Then $T \ge t$ exactly when the first $t - 1$ rolls are not sixes, which has probability $(5/6)^{t-1}$, and $T = t$ when, in addition, roll $t$ is a six. So, for each $t = 1, 2, \ldots$:
 >
 > $$\begin{aligned}
 > \Pr(T = t \mid T \ge t)
@@ -1570,11 +1733,11 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 35](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
+> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 37](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
 
 > **NOTE:**
 >
-> **Theorem 20 (A hazard is non-negative)** If ${\lambda}(t)$ is the [hazard function](#def-hazard) of a [continuous random variable](#def-continuous-rv) $T$ at a value $t$ with $\Pr(T \ge t) > 0$, then:
+> **Theorem 22 (A hazard is non-negative)** If ${\lambda}(t)$ is the [hazard function](#def-hazard) of a [continuous random variable](#def-continuous-rv) $T$ at a value $t$ with $\Pr(T \ge t) > 0$, then:
 >
 > $${\lambda}(t) \ge 0$$
 
@@ -1592,11 +1755,11 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Remark 4* (The range of a hazard). A hazard can exceed $1$: [Example 35](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 20](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
+> *Remark 4* (The range of a hazard). A hazard can exceed $1$: [Example 37](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 22](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
 
 > **NOTE:**
 >
-> **Theorem 21 (Hazard equals density over survival)** If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$ and [survival function](#def-surv-fn) $\mathbb{S}(t)$, then for every $t$ with $\mathbb{S}(t) > 0$ at which $f$ is continuous:
+> **Theorem 23 (Hazard equals density over survival)** If $T$ is a continuous random variable with [density](#def-pdf) $f(t)$ and [survival function](#def-surv-fn) $\mathbb{S}(t)$, then for every $t$ with $\mathbb{S}(t) > 0$ at which $f$ is continuous:
 >
 > $${\lambda}(t) = \frac{f(t)}{\mathbb{S}(t)}$$
 
@@ -1609,7 +1772,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > &= \mathbb{S}(t),
 > \end{aligned}$$
 >
-> which is positive. Third, because $f$ is continuous at $t$, [Theorem 10](#thm-density-limit) gives $f(t)$ as the limit of $\Pr(t \le T < t + \Delta) / \Delta$.
+> which is positive. Third, because $f$ is continuous at $t$, [Theorem 11](#thm-density-limit) gives $f(t)$ as the limit of $\Pr(t \le T < t + \Delta) / \Delta$.
 >
 > $$\begin{aligned}
 > {\lambda}(t)
@@ -1629,7 +1792,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 37 (Hazard function of an exponential distribution)** Continuing [Example 34](#exm-exp-survfn), for $t > 0$, where $f$ is continuous:
+> **Example 39 (Hazard function of an exponential distribution)** Continuing [Example 36](#exm-exp-survfn), for $t > 0$, where $f$ is continuous:
 >
 > $$\begin{aligned}
 > {\lambda}(t)
@@ -1651,7 +1814,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 38 (Cumulative hazard function of an exponential distribution)** Continuing [Example 37](#exm-exp-haz), the hazard is ${\lambda}(u) = {\lambda}$ for $u \ge 0$ and $0$ for $u < 0$, so for $t \ge 0$:
+> **Example 40 (Cumulative hazard function of an exponential distribution)** Continuing [Example 39](#exm-exp-haz), the hazard is ${\lambda}(u) = {\lambda}$ for $u \ge 0$ and $0$ for $u < 0$, so for $t \ge 0$:
 >
 > $$\begin{aligned}
 > {\Lambda}(t)
@@ -1719,7 +1882,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Proof*. Since $\mathbb{S}(t) = 1 - F(t)$ ([Theorem 19](#thm-survival-expressions-1)) and $F$ has derivative $f$ wherever $f$ is continuous ([Theorem 8](#thm-cdf-derivative-is-density)), $\mathbb{S}$ has derivative $-f$ at those points. At each such $u$ with $\mathbb{S}(u) > 0$:
+> *Proof*. Since $\mathbb{S}(t) = 1 - F(t)$ ([Theorem 21](#thm-survival-expressions-1)) and $F$ has derivative $f$ wherever $f$ is continuous ([Theorem 9](#thm-cdf-derivative-is-density)), $\mathbb{S}$ has derivative $-f$ at those points. At each such $u$ with $\mathbb{S}(u) > 0$:
 >
 > $$\begin{aligned}
 > \frac{d}{du}\mathopen{}\left(-{\operatorname{log}\mathopen{}\left\{\mathbb{S}(u)\right\}\mathclose{}}\right)\mathclose{}
@@ -1751,7 +1914,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 39 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 38](#exm-exp-cumhaz), for $t \ge 0$:
+> **Example 41 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 40](#exm-exp-cumhaz), for $t \ge 0$:
 >
 > $$\begin{aligned}
 > \mathbb{S}(t)
@@ -1761,7 +1924,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > && \text{(substitute } {\Lambda}(t) = {\lambda}t \text{)}
 > \end{aligned}$$
 >
-> which matches the survival function computed directly in [Example 34](#exm-exp-survfn).
+> which matches the survival function computed directly in [Example 36](#exm-exp-survfn).
 
 > **NOTE:**
 >
@@ -1780,8 +1943,8 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 >
 > *Remark*. For a continuous random variable $T \ge 0$ whose density is continuous at all but finitely many points, the following results connect the functions in [Table 2](#tbl-prob-dist-fns):
 >
-> - [Theorem 19](#thm-survival-expressions-1)
-> - [Theorem 21](#thm-hazard-dens-surv)
+> - [Theorem 21](#thm-survival-expressions-1)
+> - [Theorem 23](#thm-hazard-dens-surv)
 > - [Corollary 4](#cor-cuhaz-nonneg)
 > - [Corollary 5](#cor-surv-int-haz)
 >

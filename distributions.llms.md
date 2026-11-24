@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-24 01:43:36 (PST)
+Last modified: 2026-11-24 02:10:02 (PST)
 
 > **NOTE:**
 >
@@ -1981,169 +1981,6 @@ print(plot2)
 > >
 > > Figure 7: The [Mahalanobis distance](#def-mahalanobis) is a surface over the plane, a cone whose horizontal slices are the ellipses of [Figure 6](#fig-mahalanobis-eigen). The red lines are the contours at $1$ and $2$, and the dots are the points $\sqrt{3}\,\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_1$ and $\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{q}}\vphantom{q}}_2$ of the example on the inner one.
 
-> **NOTE:**
->
-> **Theorem 28 (The maximum of the Gaussian density)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ ([Gaussian distribution](random-variables.llms.md#def-normal)), then its [density](random-variables.llms.md#def-pdf) is largest at $x = \mu$, where it equals:
->
-> $$\max_x \mathbb{p}(X=x) = \frac{1}{\sigma\sqrt{2\pi}}$$
-
-> **NOTE:**
->
-> *Proof*. For each $x \in \mathbb{R}$, the quantity $u(x) \stackrel{\text{def}}{=}(x-\mu)^2 / (2\sigma^2)$ is at least $0$, and it equals $0$ only at $x = \mu$. The factor $\text{e}^{-u(x)}$ of the [density](random-variables.llms.md#def-pdf) is at most $1$:
->
-> $$\begin{aligned}
-> -u(x)
-> &\le 0
-> && \text{(a square is non-negative, and } 2\sigma^2> 0 \text{)} \\
-> \text{e}^{-u(x)}
-> &\le \text{e}^{0}
-> && \text{(} \text{e}^t \text{ is increasing in } t \text{)} \\
-> &= 1
-> && \text{(} \text{e}^0 = 1 \text{)}
-> \end{aligned}$$
->
-> Multiplying both sides by $1 / (\sigma\sqrt{2\pi}) > 0$ keeps their order:
->
-> $$\begin{aligned}
-> \mathbb{p}(X=x)
-> &= \frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-u(x)}
-> && \text{(Gaussian density)} \\
-> &\le \frac{1}{\sigma\sqrt{2\pi}}
-> && \text{(} \text{e}^{-u(x)} \le 1 \text{)}
-> \end{aligned}$$
->
-> Equality holds at $x = \mu$, where $u(x) = 0$, so the density peaks there.
-
-> **NOTE:**
->
-> **Example 33 (The peak of the Gaussian density grows as the standard deviation shrinks)** By [Theorem 28](#thm-normal-density-max), the peak of the [density](random-variables.llms.md#def-pdf) of ${\operatorname{N}\mathopen{}\left(0, \sigma^2\right)\mathclose{}}$ is $1 / (\sigma\sqrt{2\pi})$. [Figure 8](#fig-normal-density-max) marks each peak for [standard deviations](variance-covariance.llms.md#def-sd) $0.5$, $1$ and $2$.
->
-> Show code
->
-> ``` r
-> sds <- c(0.5, 1, 2)
-> x_grid <- seq(-6, 6, length.out = 400)
-> sd_label <- latex2exp::TeX("$\\sigma$")
-> density_label <- latex2exp::TeX("$f(x)$")
->
-> normal_curves <-
->   dplyr::tibble(sd = sds) |>
->   dplyr::reframe(.by = sd, x = x_grid) |>
->   dplyr::mutate(
->     density = dnorm(x, mean = 0, sd = sd),
->     sd = factor(sd)
->   )
->
-> normal_peaks <-
->   dplyr::tibble(sd = sds) |>
->   dplyr::mutate(
->     peak = 1 / (sd * sqrt(2 * pi)),
->     sd = factor(sd)
->   )
->
-> normal_plot <-
->   normal_curves |>
->   ggplot2::ggplot() +
->   ggplot2::aes(x = x, y = density, col = sd) +
->   ggplot2::geom_line() +
->   ggplot2::geom_point(
->     data = normal_peaks,
->     ggplot2::aes(x = 0, y = peak)
->   ) +
->   ggplot2::labs(col = sd_label, y = density_label) +
->   ggplot2::theme(legend.position = "bottom")
->
-> print(normal_plot)
-> ```
->
-> > **NOTE:**
-> >
-> > [![Three Gaussian curves; narrower ones peak higher.](distributions_files/figure-html/fig-normal-density-max-1.png)](distributions_files/figure-html/fig-normal-density-max-1.png "Figure 8: Gaussian densities, with each peak marked")
-> >
-> > Figure 8: Gaussian densities, with each peak marked
->
-> As $\sigma \to 0$, the peak $1 / (\sigma\sqrt{2\pi})$ grows indefinitely, so a density can exceed $1$.
-
-> **NOTE:**
->
-> **Theorem 29 (Gaussian distributions are closed under affine transformations)** If $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ and $a \ne 0$, then $aX + b \sim {\operatorname{N}\mathopen{}\left(a\mu+ b, a^2\sigma^2\right)\mathclose{}}$.
-
-> **NOTE:**
->
-> *Proof*. Let $Y = aX + b$. Let $f$ be the [density](random-variables.llms.md#def-pdf) of $X$. The [CDF](random-variables.llms.md#def-cdf) of $Y$ is $\mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{} = \Pr(aX + b \le y)$. The density $f$ is [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous) everywhere. So at every $y$, the [derivative](https://morrison-lab.github.io/mds/calculus-derivatives.html#def-derivative) of $\mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}$ is the density of $Y$, by [the derivative of the CDF is the density](random-variables.llms.md#thm-cdf-derivative-is-density). To differentiate $\mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}$, write it through the CDF $\mathbb{F}_X$ of $X$. There are two cases, by the sign of $a$.
->
-> - **Case** $a > 0$. Dividing by $a > 0$ leaves $\le$ as $\le$, so:
->
->   $$\begin{aligned}
->   \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
->   &= {\Pr\mathopen{}\left(X \le \frac{y-b}{a}\right)\mathclose{}}
->   && \text{(} aX + b \le y \iff X \le (y-b)/a \text{)} \\
->   &= \mathbb{F}_X\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
->   && \text{(definition of the CDF)}
->   \end{aligned}$$
->
->   The [chain rule](https://morrison-lab.github.io/mds/calculus-derivatives.html#thm-chain-rule) gives the derivative:
->
->   $$\frac{\partial}{\partial y} \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
->   = \frac{1}{a} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
->   = \frac{1}{\mathopen{}\left|a\right|\mathclose{}} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
->   \quad \text{(} \mathopen{}\left|a\right|\mathclose{} = a \text{)}$$
->
-> - **Case** $a < 0$. Dividing by $a < 0$ turns $\le$ into $\ge$, and $\Pr(X = x) = 0$ for a [continuous random variable](random-variables.llms.md#def-continuous-rv) $X$, so:
->
->   $$\begin{aligned}
->   \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
->   &= {\Pr\mathopen{}\left(X \ge \frac{y-b}{a}\right)\mathclose{}}
->   && \text{(} aX + b \le y \iff X \ge (y-b)/a \text{)} \\
->   &= 1 - \mathbb{F}_X\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
->   && \text{(complement, and } \Pr(X = (y-b)/a) = 0 \text{)}
->   \end{aligned}$$
->
->   The chain rule gives the derivative:
->
->   $$\frac{\partial}{\partial y} \mathbb{F}_Y\mathopen{}\left(y\right)\mathclose{}
->   = -\frac{1}{a} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
->   = \frac{1}{\mathopen{}\left|a\right|\mathclose{}} f\mathopen{}\left(\frac{y-b}{a}\right)\mathclose{}
->   \quad \text{(} \mathopen{}\left|a\right|\mathclose{} = -a \text{)}$$
->
-> In both cases, $Y$ has density $\mathbb{p}(Y=y) = f\mathopen{}\left((y-b)/a\right)\mathclose{} / \mathopen{}\left|a\right|\mathclose{}$. Substitute the [Gaussian](random-variables.llms.md#def-normal) density of $X$:
->
-> $$\begin{aligned}
-> \mathbb{p}(Y=y)
-> &= \frac{1}{\mathopen{}\left|a\right|\mathclose{}} \cdot\frac{1}{\sigma\sqrt{2\pi}} \text{e}^{-\frac{\mathopen{}\left((y-b)/a - \mu\right)\mathclose{}^2}{2\sigma^2}}
-> && \text{(Gaussian density of } X \text{)} \\
-> &= \frac{1}{\mathopen{}\left|a\right|\mathclose{}\sigma\sqrt{2\pi}} \text{e}^{-\frac{\mathopen{}\left((y-b-a\mu)/a\right)\mathclose{}^2}{2\sigma^2}}
-> && \text{(common denominator } a \text{)} \\
-> &= \frac{1}{\mathopen{}\left|a\right|\mathclose{}\sigma\sqrt{2\pi}} \text{e}^{-\frac{(y-(a\mu+b))^2}{2a^2\sigma^2}}
-> && \text{(} (u/a)^2 = u^2/a^2 \text{)} \\
-> &= \frac{1}{\sqrt{a^2\sigma^2}\sqrt{2\pi}} \text{e}^{-\frac{(y-(a\mu+b))^2}{2a^2\sigma^2}}
-> && \text{(} \mathopen{}\left|a\right|\mathclose{}\sigma= \sqrt{a^2\sigma^2} \text{)}
-> \end{aligned}$$
->
-> The last line is the density of ${\operatorname{N}\mathopen{}\left(a\mu+ b, a^2\sigma^2\right)\mathclose{}}$ because $a^2\sigma^2> 0$.
-
-> **NOTE:**
->
-> **Example 34 (Standardizing a Gaussian random variable)**  
->
-> Let $X \sim {\operatorname{N}\mathopen{}\left(\mu, \sigma^2\right)\mathclose{}}$ with $\sigma> 0$, and let $Z = (X - \mu) / \sigma$. Then $Z = aX + b$ with $a = 1 / \sigma$ and $b = -\mu/ \sigma$, and $a \ne 0$. By [Theorem 29](#thm-normal-affine), $Z$ is [Gaussian](random-variables.llms.md#def-normal) with parameters:
->
-> $$\begin{aligned}
-> a\mu+ b
-> &= \frac{\mu}{\sigma} - \frac{\mu}{\sigma}
-> && \text{(substitute } a \text{ and } b \text{)} \\
-> &= 0
-> && \text{(} u - u = 0 \text{)}
-> \\
-> a^2\sigma^2
-> &= \frac{\sigma^2}{\sigma^2}
-> && \text{(} a^2 = 1/\sigma^2\text{)} \\
-> &= 1
-> && \text{(} u/u = 1 \text{)}
-> \end{aligned}$$
->
-> So $Z \sim {\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$.
-
 # 9 Mixture distributions
 
 > **NOTE:**
@@ -2163,7 +2000,7 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 30 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
+> **Theorem 28 (A mixture is the density of a two-stage random variable)** Let $C$ be a discrete random variable and $X$ a continuous random variable with [joint density-mass function](random-variables.llms.md#def-joint-density-mass)
 >
 > $$\mathbb{p}(C = c,\, X = x) = w_c \, {\mathbb{p}_c}(x), \quad c \in {\mathopen{}\left\{1, \ldots, K\right\}\mathclose{}},$$
 >
@@ -2207,11 +2044,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 30](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
+> *Remark*. [Theorem 28](#thm-mixture-two-stage) describes how to generate a draw from a mixture: first draw a component label $C$ with $\mathbb{P}(C = c) = w_c$, then draw $X$ from the component density ${\mathbb{p}_C}$. In applications, $C$ is often an unobserved subpopulation, such as a disease subtype. Mixtures of multivariate densities, such as mixtures of [multivariate normal densities](#def-mvn) (Gaussian mixture models), work the same way, with $p$-variable densities in place of densities on $\mathbb{R}$.
 
 > **NOTE:**
 >
-> **Theorem 31 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 17](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
+> **Theorem 29 (The mean of a mixture is the weighted mean of the component means)** If $X$ has density ${\mathbb{p}_{\text{mix}}}$ ([Definition 17](#def-mixture)), and each component ${\mathbb{p}_c}$ has a defined mean $\mu_c = \int_{-\infty}^{\infty} x \, {\mathbb{p}_c}(x)\,dx$, then:
 >
 > $${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} = \sum_{c=1}^{K} w_c \, \mu_c$$
 
@@ -2235,13 +2072,13 @@ print(plot2)
 
 > **NOTE:**
 >
-> **Theorem 32 (Which component did an observation come from?)** Under the conditions of [Theorem 30](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
+> **Theorem 30 (Which component did an observation come from?)** Under the conditions of [Theorem 28](#thm-mixture-two-stage), for each $x$ with ${\mathbb{p}_{\text{mix}}}(x) > 0$:
 >
 > $$\mathbb{P}(C = c \mid X = x) = \frac{w_c \, {\mathbb{p}_c}(x)}{\sum_{k=1}^{K} w_k \, {\mathbb{p}_k}(x)}$$
 
 > **NOTE:**
 >
-> *Proof*. By [Theorem 30](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
+> *Proof*. By [Theorem 28](#thm-mixture-two-stage), ${\mathbb{p}_{\text{mix}}}$ is a density of $X$. By the [definition of the conditional PMF](expectation.llms.md#def-cond-mixed) (the case $X$ continuous, $C$ discrete):
 >
 > $$\begin{aligned}
 > \mathbb{P}(C = c \mid X = x)
@@ -2253,17 +2090,17 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Theorem 32](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional).
+> *Remark*. [Theorem 30](#thm-mixture-posterior) has the form of [Bayes’ theorem](probability-basics.llms.md#thm-bayes), with densities in place of some probabilities: the prior probability $w_c$ of component $c$ is multiplied by the component density ${\mathbb{p}_c}(x)$ at the observation and divided by the overall density ${\mathbb{p}_{\text{mix}}}(x)$, which plays the role of the [law of total probability](probability-basics.llms.md#thm-total-prob-conditional).
 
 > **NOTE:**
 >
-> **Definition 19 (Responsibility of a mixture component)** In the setting of [Theorem 32](#thm-mixture-posterior), the conditional probability $\mathbb{P}(C = c \mid X = x)$ is called, in machine learning, the **responsibility** of component $c$ for $x$.
+> **Definition 19 (Responsibility of a mixture component)** In the setting of [Theorem 30](#thm-mixture-posterior), the conditional probability $\mathbb{P}(C = c \mid X = x)$ is called, in machine learning, the **responsibility** of component $c$ for $x$.
 
 > **NOTE:**
 >
-> **Example 35 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
+> **Example 33 (A two-component normal mixture)** Let ${\mathbb{p}_1}$ be the ${\operatorname{N}\mathopen{}\left(0, 1\right)\mathclose{}}$ density and ${\mathbb{p}_2}$ the ${\operatorname{N}\mathopen{}\left(6, 1\right)\mathclose{}}$ density, with mixing weights $w_1 = 0.3$ and $w_2 = 0.7$, and let $X$ have density ${\mathbb{p}_{\text{mix}}} = 0.3\,{\mathbb{p}_1} + 0.7\,{\mathbb{p}_2}$.
 >
-> - **Mean.** By [Theorem 31](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
+> - **Mean.** By [Theorem 29](#thm-mixture-mean) and the [normal means](random-variables.llms.md#thm-normal-moments),
 >
 >   $$\begin{aligned}
 >   {\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &= 0.3 \cdot 0 + 0.7 \cdot 6 \\
@@ -2272,7 +2109,7 @@ print(plot2)
 >
 > - **Density.** ${\mathbb{p}_{\text{mix}}}$ has peaks near the two component means, ${\mathbb{p}_{\text{mix}}}(0) \approx 0.120$ and ${\mathbb{p}_{\text{mix}}}(6) \approx 0.279$, with a trough between them, ${\mathbb{p}_{\text{mix}}}(3) \approx 0.004$. The density at the mean, ${\mathbb{p}_{\text{mix}}}(4.2) \approx 0.055$, is less than half its value at either peak.
 >
-> - **Responsibilities.** By [Theorem 32](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
+> - **Responsibilities.** By [Theorem 30](#thm-mixture-posterior), at $x = 3$, halfway between the component means, ${\mathbb{p}_1}(3) = {\mathbb{p}_2}(3)$ by the symmetry of the normal density, so:
 >
 >   $$\begin{aligned}
 >   \mathbb{P}(C = 2 \mid X = 3)
@@ -2285,11 +2122,11 @@ print(plot2)
 
 > **NOTE:**
 >
-> *Remark*. [Example 35](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
+> *Remark*. [Example 33](#exm-mixture-gaussian) shows that the mean of a mixture can fall where observations are rare, so a single normal distribution fitted to such data would describe them poorly.
 
 > **NOTE:**
 >
-> **Example 36 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 17](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
+> **Example 34 (The negative binomial as a continuous mixture)** The [negative binomial distribution](#def-nb) is a mixture of Poisson distributions with a continuum of components, one for each mean ${\lambda}> 0$: its PMF is $\mathbb{P}(Y = y) = \int_0^\infty g({\lambda})\,\frac{{\lambda}^y e^{-{\lambda}}}{y!}\,d{\lambda}$, where the gamma density $g$ plays the role of the mixing weights and the integral replaces the sum in [Definition 17](#def-mixture) (see the proof of [Theorem 11](#thm-nb)).
 
 > **NOTE:**
 >

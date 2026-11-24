@@ -1285,24 +1285,6 @@
    "external": false
   },
   {
-   "id": "pds/distributions#thm-normal-affine",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-normal-affine",
-   "kind": "thm",
-   "title": "Gaussian distributions are closed under affine transformations",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-normal-density-max",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-normal-density-max",
-   "kind": "thm",
-   "title": "The maximum of the Gaussian density",
-   "external": false
-  },
-  {
    "id": "pds/distributions#thm-partial-correlation-precision",
    "site": "pds",
    "page": "distributions",
@@ -2977,12 +2959,30 @@
    "external": false
   },
   {
+   "id": "pds/random-variables#thm-normal-affine",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-normal-affine",
+   "kind": "thm",
+   "title": "Gaussian distributions are closed under affine transformations",
+   "external": false
+  },
+  {
    "id": "pds/random-variables#thm-normal-density",
    "site": "pds",
    "page": "random-variables",
    "div": "thm-normal-density",
    "kind": "thm",
    "title": "The normal density integrates to 1",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#thm-normal-density-max",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "thm-normal-density-max",
+   "kind": "thm",
+   "title": "The maximum of the Gaussian density",
    "external": false
   },
   {
@@ -3944,46 +3944,6 @@
   [
    "pds/distributions#thm-nb-poisson-limit",
    "pds/expectation#def-expectation"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "mds/calculus-derivatives#def-derivative"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "mds/calculus-derivatives#thm-chain-rule"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "mds/calculus-integration#def-continuous"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "pds/random-variables#def-cdf"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "pds/random-variables#def-continuous-rv"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "pds/random-variables#def-normal"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "pds/random-variables#def-pdf"
-  ],
-  [
-   "pds/distributions#thm-normal-affine",
-   "pds/random-variables#thm-cdf-derivative-is-density"
-  ],
-  [
-   "pds/distributions#thm-normal-density-max",
-   "pds/random-variables#def-normal"
-  ],
-  [
-   "pds/distributions#thm-normal-density-max",
-   "pds/random-variables#def-pdf"
   ],
   [
    "pds/distributions#thm-partial-correlation-precision",
@@ -6154,8 +6114,48 @@
    "pds/random-variables#def-joint-pdf"
   ],
   [
+   "pds/random-variables#thm-normal-affine",
+   "mds/calculus-derivatives#def-derivative"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "mds/calculus-derivatives#thm-chain-rule"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "mds/calculus-integration#def-continuous"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "pds/random-variables#def-cdf"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "pds/random-variables#def-continuous-rv"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/random-variables#thm-normal-affine",
+   "pds/random-variables#thm-cdf-derivative-is-density"
+  ],
+  [
    "pds/random-variables#thm-normal-density",
    "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/random-variables#thm-normal-density-max",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/random-variables#thm-normal-density-max",
+   "pds/random-variables#def-pdf"
   ],
   [
    "pds/random-variables#thm-normal-moments",
