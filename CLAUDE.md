@@ -85,6 +85,19 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 - **Link check**: tuned in `lychee.toml`; prefer fixing broken links over adding exceptions.
 - **Other CI checks**: workflows also verify bibliography DOIs (`check-bibliography-dois.yml`) and flag non-standard characters (`check-non-standard-chars.yaml`). Fix the flagged source rather than relaxing the check.
 - **Dependencies**: Dependabot auto-updates the `latex-macros` submodule and GitHub Actions (see `.github/dependabot.yml`); don't bump those by hand unless a PR needs it.
+- **Rendering in a cloud session**: `random-variables.qmd` needs the `qnp` package.
+  `remotes::install_github("Morrison-Lab/qnp")` fails there with "unknown package",
+  so `git clone` qnp and install it with `remotes::install_local()`.
+  Install `lms` the same way, from a clone of `Morrison-Lab/psc` at the `lms-ref` in `lint-changed-lines.yaml`.
+- **Moving an example to another page**:
+  inline R on the old page that reads the example's variables then fails.
+  Put the shared code in an `_*.R` file under `_subfiles/`,
+  show it in the example with `#| file: pds/_subfiles/<path>.R`,
+  and rerun it on the other page in an `#| include: false` chunk with the same `file` option (pds#495).
+- **Running the gha checks locally**: pds has no local runner.
+  lds's `.github/workflows/cluster-checks.yml` has one `run-check.sh <check> <ENV>=... -- python3 ...` line per gha check,
+  which gives each check's environment variables;
+  set the base ref to `origin/main` and run them in a full (not shallow) clone.
 
 ## Pull request expectations
 
