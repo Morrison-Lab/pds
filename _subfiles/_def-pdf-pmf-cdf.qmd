@@ -80,6 +80,14 @@
 
 {{< slidebreak >}}
 
+{{< include pds/_subfiles/_thm-normal-density-max.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-normal-density-max.qmd >}}
+
+{{< slidebreak >}}
+
 {{< include pds/_subfiles/def-pdf-pmf-cdf/_def-std-normal.qmd >}}
 
 {{< slidebreak >}}
@@ -179,6 +187,14 @@
 {{< slidebreak >}}
 
 {{< include pds/_subfiles/def-pdf-pmf-cdf/_exm-density-sums-to-one.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_thm-normal-affine.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/_exm-normal-affine.qmd >}}
 
 {{< slidebreak >}}
 
