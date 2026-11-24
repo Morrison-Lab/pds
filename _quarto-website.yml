@@ -64,6 +64,7 @@ website:
       - text: "Distributions"
         menu:
           - distributions.qmd
+          - multivariate-gaussian.qmd
           - limit-theorems.qmd
       - text: "Overview"
         menu:
@@ -100,6 +101,7 @@ website:
       - section: "Distributions"
         contents:
           - distributions.qmd
+          - multivariate-gaussian.qmd
           - limit-theorems.qmd
       - section: "Overview"
         contents:

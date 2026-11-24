@@ -1,0 +1,24 @@
+---
+title: "The multivariate Gaussian distribution"
+format:
+  html: default
+  revealjs:
+    output-file: multivariate-gaussian-slides.html
+  pdf:
+    output-file: multivariate-gaussian-handout.pdf
+  docx:
+    output-file: multivariate-gaussian.docx
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+[]{#sec-mvn}
+
+{{< include pds/_subfiles/_sec-mvn.qmd >}}
+
+{{< include pds/_subfiles/_exm-mahalanobis-eigen.qmd >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

@@ -37,6 +37,11 @@ Some key results are listed here, organized by topic:
   deviation, variance, conditional variance, homoskedasticity, and covariance
 - [Key distributions](distributions.qmd):
   Bernoulli, binomial, Poisson, negative binomial, and Weibull distributions
+- [Multivariate Gaussian distribution](multivariate-gaussian.qmd):
+  [Mahalanobis distance](multivariate-gaussian.qmd#def-mahalanobis),
+  conditional and [marginal distributions](random-variables.qmd#def-marginal),
+  the [precision matrix](multivariate-gaussian.qmd#def-precision-matrix),
+  and [partial correlation](multivariate-gaussian.qmd#def-partial-correlation)
 - [Limit theorems](limit-theorems.qmd):
   the Central Limit Theorem
 

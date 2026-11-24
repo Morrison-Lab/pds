@@ -18,7 +18,7 @@ Authoritative style guide: [UCD-SERG Lab Manual](https://ucd-serg.github.io/lab-
   - Foundations: `notation.qmd`, `probability-basics.qmd`,
     `random-variables.qmd`, `independence.qmd`
   - Moments: `expectation.qmd`, `variance-covariance.qmd`
-  - Distributions: `distributions.qmd`, `limit-theorems.qmd`
+  - Distributions: `distributions.qmd`, `multivariate-gaussian.qmd`, `limit-theorems.qmd`
 
   The navbar's `left` menus mirror the sidebar's `contents` one-for-one, so
   a page added, renamed, or moved must be edited in both.
