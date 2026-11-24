@@ -3,9 +3,9 @@
 :::{#thm-markov}
 #### Markov's inequality: a nonnegative random variable is at least a threshold with probability at most its expectation over the threshold
 
-Let $X$ be a nonnegative [random variable](random-variables.qmd#def-random-variable)
-with a finite [expectation](expectation.qmd#def-expectation) $\E{X}$, <!-- check-term-links: allow: finite means a real number here, not a finite set -->
-and let $a$ be a positive number.
+Let $X$ be a nonnegative [random variable](random-variables.qmd#def-random-variable) ($X \ge 0$)
+with a finite [expectation](expectation.qmd#def-expectation) ($\E{X} < \infty$), <!-- check-term-links: allow: finite means a real number here, not a finite set -->
+and let $a$ be a positive number ($a > 0$).
 Then the [probability](probability-basics.qmd#def-probability) that $X$ is at least $a$
 is at most $\E{X}$ divided by $a$
 [@wikipedia_markovs_inequality]:
