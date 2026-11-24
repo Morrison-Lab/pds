@@ -35,7 +35,13 @@ following the University of Washington's CSE 312 [@fiveminuteai_probstat].
 
 {{< include pds/_subfiles/_thm-markov.qmd >}}
 
+{{< include pds/_subfiles/_rem-markov-name.qmd >}}
+
 {{< include pds/_subfiles/_thm-chebyshev.qmd >}}
+
+{{< include pds/_subfiles/_rem-chebyshev-generality.qmd >}}
+
+{{< include pds/_subfiles/_rem-chebyshev-history.qmd >}}
 
 {{< include pds/_subfiles/_exm-chebyshev-auto.qmd >}}
 
