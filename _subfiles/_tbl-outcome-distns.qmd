@@ -7,7 +7,7 @@ Poisson | Unbounded count outcomes
 Geometric | Counts of non-events before an event occurs
 Negative binomial | Mixtures of Poisson distributions, counts of non-events until a given number of events occurs
 [Normal (Gaussian)](random-variables.qmd#def-normal) | Continuous outcomes without a more specific distribution
-[Multivariate normal](#sec-mvn) | Vectors of continuous outcomes
+[Multivariate normal](multivariate-gaussian.qmd) | Vectors of continuous outcomes
 [Mixtures](#sec-mixture) | Outcomes from a population of unobserved subpopulations
 [Exponential](random-variables.qmd#def-exponential) | Time to event outcomes
 [Gamma](#def-gamma) | Time to event outcomes

@@ -16,10 +16,6 @@ format:
 
 {{< include pds/_subfiles/_sec-distributions.qmd >}}
 
-{{< include pds/_subfiles/_exm-mahalanobis-eigen.qmd >}}
-
-{{< slidebreak >}}
-
 # Mixture distributions {#sec-mixture}
 
 {{< include pds/_subfiles/_def-mixture.qmd >}}

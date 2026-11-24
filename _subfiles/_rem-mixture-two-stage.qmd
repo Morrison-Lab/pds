@@ -6,7 +6,7 @@ then draw $X$ from the component density ${\p_C}$.
 In applications, $C$ is often an unobserved subpopulation,
 such as a disease subtype.
 Mixtures of multivariate densities,
-such as mixtures of [multivariate normal densities](#def-mvn)
+such as mixtures of [multivariate normal densities](multivariate-gaussian.qmd#def-mvn)
 (Gaussian mixture models),
 work the same way, with $p$-variable densities in place of densities on $\reals$.
 
