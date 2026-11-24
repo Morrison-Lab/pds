@@ -1,0 +1,13 @@
+{{< include pds/_subfiles/def-cond-expectation/_def-cond-pmf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cond-expectation/_exm-cond-pmf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cond-expectation/_def-cond-pdf.qmd >}}
+
+{{< slidebreak >}}
+
+{{< include pds/_subfiles/def-cond-expectation/_exm-cond-pdf.qmd >}}
