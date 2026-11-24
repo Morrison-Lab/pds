@@ -2,9 +2,9 @@
 
 #### The conditional expectation function of the birthweight model
 
-Continuing @exm-cond-pdf and @exm-cond-expectation,
+Continuing the [birthweight example](random-variables.qmd#exm-cond-pdf) and @exm-cond-expectation,
 $(X, Y)$ (gestational age, birthweight) is modeled as bivariate normal.
-The general form of the conditional mean derived in @exm-cond-pdf,
+The general form of the conditional mean derived in the [birthweight example](random-variables.qmd#exm-cond-pdf),
 evaluated at an arbitrary $x$ instead of just $x=`r x0`$,
 gives the conditional expectation function directly:
 
