@@ -2,11 +2,14 @@
 
 #### Conditional expectation from real trial and birthweight data
 
+<!-- no-figure: the example computes two single numbers from the vaccine trial and birthweight examples; figure tracked in pds#493 -->
+
 **Discrete case.**
-Continuing @exm-cond-pmf,
+Continuing the [vaccine trial example](random-variables.qmd#exm-cond-pmf),
 score the vaccine trial's response levels
 $\text{small} = 1$, $\text{moderate} = 2$, $\text{large} = 3$.
-The conditional PMF of $Y$ given $X = \text{placebo}$ (from @exm-cond-pmf) is:
+The [conditional PMF](random-variables.qmd#def-cond-pmf) of $Y$ given $X = \text{placebo}$,
+from the [vaccine trial example](random-variables.qmd#exm-cond-pmf), is:
 
 $$
 \ba
@@ -35,7 +38,7 @@ $$
 $$
 
 **Continuous case.**
-Continuing @exm-cond-pdf,
+Continuing the [birthweight example](random-variables.qmd#exm-cond-pdf),
 $Y \mid X = `r x0` \sim \ndist{`r round(cond_mean, 2)`,\, `r round(cond_sd, 2)`^2}$.
 The mean of a normal distribution is its location parameter
 (@CaseBerg01),

@@ -4,8 +4,11 @@
 
 Let $X$ and $Y$ be jointly distributed random variables,
 $h$ a function of two arguments,
-and $x$ a value at which the conditional PMF or PDF of $Y$ given $X = x$ is defined
-(@def-cond-pmf, @def-cond-pdf, or @def-cond-mixed).
+and $x$ a value at which the
+[conditional PMF](random-variables.qmd#def-cond-pmf),
+the [conditional PDF](random-variables.qmd#def-cond-pdf),
+or the [mixed-case conditional density](#def-cond-mixed)
+of $Y$ given $X = x$ is defined.
 The **conditional expectation** of $h(X, Y)$ given $X = x$ is,
 for discrete $Y$:
 

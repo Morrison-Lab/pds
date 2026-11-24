@@ -26,7 +26,7 @@ If $c_{ij} = 0$,
 then $\matr{S}$ is diagonal,
 so by @cor-mvn-uncorrelated-indpt $X_i$ and $X_j$ are [independent](independence.qmd#def-indpt) given $\vX_{-ij} = \vx_{-ij}$,
 for every $\vx_{-ij}$.
-That is, the [conditional density](expectation.qmd#def-cond-pdf) of $\tp{(X_i, X_j)}$ equals the conditional density of $X_i$ times the conditional density of $X_j$,
+That is, the [conditional density](random-variables.qmd#def-cond-pdf) of $\tp{(X_i, X_j)}$ equals the conditional density of $X_i$ times the conditional density of $X_j$, <!-- check-term-links: allow: equality of two density functions, not the matrix equality the term links to -->
 which is the factorization in the definition of [conditional independence](independence.qmd#def-cind-continuous).
 Conversely, if $X_i$ and $X_j$ are [conditionally independent](independence.qmd#def-cind-continuous),
 then they are independent given each $\vX_{-ij} = \vx_{-ij}$,
