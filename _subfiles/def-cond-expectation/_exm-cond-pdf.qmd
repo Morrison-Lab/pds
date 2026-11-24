@@ -2,6 +2,8 @@
 
 #### Conditional PDF from a bivariate normal model of birthweight data
 
+<!-- no-figure: the example's code and derivation are unchanged by this page move; figure of the conditional density tracked in pds#493 -->
+
 The `birthweight` dataset in the `dobson` package
 (@dobson4e, Table 2.3)
 records gestational age (weeks) and birthweight (grams)

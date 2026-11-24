@@ -2,6 +2,8 @@
 
 #### Conditional expectation from real trial and birthweight data
 
+<!-- no-figure: the example computes two single numbers from the vaccine trial and birthweight examples; figure tracked in pds#493 -->
+
 **Discrete case.**
 Continuing the [vaccine trial example](random-variables.qmd#exm-cond-pmf),
 score the vaccine trial's response levels

@@ -2,6 +2,8 @@
 
 #### Conditional PMF from a vaccine trial
 
+<!-- no-figure: the example shows the trial's data as a frequency table; bar chart tracked in pds#493 -->
+
 The `vaccine` dataset in the `dobson` package
 (@dobson4e, Table 9.6)
 records the responses in a flu vaccine trial:
