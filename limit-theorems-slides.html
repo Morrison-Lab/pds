@@ -367,7 +367,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-24 00:21:30 (PST)</p>
+  <p class="date">Last modified: 2026-11-24 01:01:45 (PST)</p>
 </section>
 <section id="sec-clt" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> The Central Limit Theorem</h2>
@@ -708,7 +708,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <section class="slide level2">
 
 <div id="thm-markov" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Markov’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(X \ge 0\)</span> and <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &lt; \infty\)</span>. Then for every <span class="math inline">\(a &gt; 0\)</span> <span class="citation" data-cites="wikipedia_markovs_inequality"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span>:</p>
+<p><span class="theorem-title"><strong>Theorem 3 (Markov’s inequality: a nonnegative random variable is at least a threshold with probability at most its expectation over the threshold)</strong></span> Let <span class="math inline">\(X\)</span> be a nonnegative <a href="./random-variables.html#def-random-variable">random variable</a> (<span class="math inline">\(X \ge 0\)</span>) with a finite <a href="./expectation.html#def-expectation">expectation</a> (<span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} &lt; \infty\)</span>), <!-- check-term-links: allow: finite means a real number here, not a finite set --> and let <span class="math inline">\(a\)</span> be a positive number (<span class="math inline">\(a &gt; 0\)</span>). Then the <a href="./probability-basics.html#def-probability">probability</a> that <span class="math inline">\(X\)</span> is at least <span class="math inline">\(a\)</span> is at most <span class="math inline">\({\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}\)</span> divided by <span class="math inline">\(a\)</span> <span class="citation" data-cites="wikipedia_markovs_inequality"><a href="#/references" role="doc-biblioref" onclick="">[4]</a></span>:</p>
 <p><span class="math display">\[
 {\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} \le \frac{{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}}{a}
 \]</span></p>
@@ -739,7 +739,7 @@ Figure&nbsp;3: Histograms of 10,000 sample means of horsepower, for samples of n
 <section class="slide level2">
 
 <div id="thm-chebyshev" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (Chebyshev’s inequality)</strong></span> Let <span class="math inline">\(X\)</span> be a random variable with mean <span class="math inline">\(\mu\)</span> and finite variance <span class="math inline">\(\sigma^2&gt; 0\)</span>. Then for every <span class="math inline">\(k &gt; 0\)</span> <span class="citation" data-cites="wikipedia_chebyshevs_inequality"><a href="#/references" role="doc-biblioref" onclick="">[9]</a></span>:</p>
+<p><span class="theorem-title"><strong>Theorem 4 (Chebyshev’s inequality: a random variable is at least <span class="math inline">\(k\)</span> standard deviations from its mean with probability at most <span class="math inline">\(1/k^2\)</span>)</strong></span> Let <span class="math inline">\(X\)</span> be a <a href="./random-variables.html#def-random-variable">random variable</a> with <a href="./expectation.html#def-expectation">expectation</a> <span class="math inline">\(\mu\)</span> and a finite, positive <a href="./variance-covariance.html#def-variance">variance</a> <span class="math inline">\(\sigma^2\)</span> (<span class="math inline">\(\sigma^2\in (0, \infty)\)</span>), <!-- check-term-links: allow: finite means a real number here, not a finite set --> and let <span class="math inline">\(k\)</span> be a positive number (<span class="math inline">\(k &gt; 0\)</span>). Then the <a href="./probability-basics.html#def-probability">probability</a> that <span class="math inline">\(X\)</span> is at least <span class="math inline">\(k\)</span> <a href="./variance-covariance.html#def-sd">standard deviations</a> <span class="math inline">\(\sigma\)</span> from <span class="math inline">\(\mu\)</span> is at most <span class="math inline">\(1/k^2\)</span> <span class="citation" data-cites="wikipedia_chebyshevs_inequality"><a href="#/references" role="doc-biblioref" onclick="">[9]</a></span>:</p>
 <p><span class="math display">\[
 {\Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{}} \le \frac{1}{k^2}
 \]</span></p>

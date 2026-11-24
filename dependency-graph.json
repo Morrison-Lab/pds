@@ -2109,7 +2109,7 @@
    "page": "limit-theorems",
    "div": "thm-chebyshev",
    "kind": "thm",
-   "title": "Chebyshev's inequality",
+   "title": "Chebyshev's inequality: a random variable is at least $k$ standard deviations from its mean with probability at most $1/k^2$",
    "external": false
   },
   {
@@ -2145,7 +2145,7 @@
    "page": "limit-theorems",
    "div": "thm-markov",
    "kind": "thm",
-   "title": "Markov's inequality",
+   "title": "Markov's inequality: a nonnegative random variable is at least a threshold with probability at most its expectation over the threshold",
    "external": false
   },
   {
@@ -5295,7 +5295,27 @@
   ],
   [
    "pds/limit-theorems#thm-chebyshev",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev",
    "pds/limit-theorems#thm-markov"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev",
+   "pds/random-variables#def-random-variable"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev",
+   "pds/variance-covariance#def-sd"
+  ],
+  [
+   "pds/limit-theorems#thm-chebyshev",
+   "pds/variance-covariance#def-variance"
   ],
   [
    "pds/limit-theorems#thm-chebyshev-sample-mean",
@@ -5347,7 +5367,19 @@
   ],
   [
    "pds/limit-theorems#thm-markov",
+   "pds/expectation#def-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-markov",
    "pds/expectation#thm-linearity-expectation"
+  ],
+  [
+   "pds/limit-theorems#thm-markov",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/limit-theorems#thm-markov",
+   "pds/random-variables#def-random-variable"
   ],
   [
    "pds/limit-theorems#thm-sum-iid-moments",

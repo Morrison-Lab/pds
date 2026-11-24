@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-24 00:21:30 (PST)
+Last modified: 2026-11-24 01:01:45 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -292,7 +292,7 @@ Last modified: 2026-11-24 00:21:30 (PST)
 
 > **NOTE:**
 >
-> **Theorem 3 (Markov’s inequality)** Let $X$ be a random variable with $X \ge 0$ and ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} < \infty$. Then for every $a > 0$ [\[4\]](#ref-wikipedia_markovs_inequality):
+> **Theorem 3 (Markov’s inequality: a nonnegative random variable is at least a threshold with probability at most its expectation over the threshold)** Let $X$ be a nonnegative [random variable](random-variables.llms.md#def-random-variable) ($X \ge 0$) with a finite [expectation](expectation.llms.md#def-expectation) (${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}} < \infty$), and let $a$ be a positive number ($a > 0$). Then the [probability](probability-basics.llms.md#def-probability) that $X$ is at least $a$ is at most ${\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}$ divided by $a$ [\[4\]](#ref-wikipedia_markovs_inequality):
 >
 > $${\Pr\mathopen{}\left(X \ge a\right)\mathclose{}} \le \frac{{\mathbb{E}\mathopen{}\left[X\right]\mathclose{}}}{a}$$
 
@@ -312,7 +312,7 @@ Last modified: 2026-11-24 00:21:30 (PST)
 
 > **NOTE:**
 >
-> **Theorem 4 (Chebyshev’s inequality)** Let $X$ be a random variable with mean $\mu$ and finite variance $\sigma^2> 0$. Then for every $k > 0$ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
+> **Theorem 4 (Chebyshev’s inequality: a random variable is at least** $k$ standard deviations from its mean with probability at most $1/k^2$) Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [expectation](expectation.llms.md#def-expectation) $\mu$ and a finite, positive [variance](variance-covariance.llms.md#def-variance) $\sigma^2$ ($\sigma^2\in (0, \infty)$), and let $k$ be a positive number ($k > 0$). Then the [probability](probability-basics.llms.md#def-probability) that $X$ is at least $k$ [standard deviations](variance-covariance.llms.md#def-sd) $\sigma$ from $\mu$ is at most $1/k^2$ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
 >
 > $${\Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{}} \le \frac{1}{k^2}$$
 
