@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-23 16:02:52 (PST)
+Last modified: 2026-11-23 17:30:47 (PST)
 
 > **NOTE:**
 >
@@ -671,7 +671,7 @@ Last modified: 2026-11-23 16:02:52 (PST)
 >
 > *Proof*. This is the solution to [Exercise 4](#exr-linearity-use), worked in [Solution 4](#sol-linearity-use). It follows from [Theorem 4](#thm-linearity-expectation), which needs no independence and applies because each $\mathbb{E}[X_i] = \mu$ is finite.
 
-# 1 Conditional distributions and expectations
+# 1 Conditional distributions
 
 > **NOTE:**
 >
@@ -839,6 +839,8 @@ Last modified: 2026-11-23 16:02:52 (PST)
 > | (Intercept) |  ga   |
 > |:-----------:|:-----:|
 > |    -1485    | 115.5 |
+
+# 2 Conditional expectations
 
 > **NOTE:**
 >
@@ -1222,6 +1224,8 @@ Last modified: 2026-11-23 16:02:52 (PST)
 >
 > As a check, given $X = 1$ the product $XY$ equals $Y$, which is $1$ or $2$ with probability $1/2$ each.
 
+# 3 Fubini–Tonelli for expectations
+
 > **NOTE:**
 >
 > **Exercise 5 (Expectation of a sum, given a joint PMF)** Let $(X, Y)$ be discrete with joint probability mass function:
@@ -1308,8 +1312,6 @@ Last modified: 2026-11-23 16:02:52 (PST)
 > LOTUS applies regardless, since it requires only the *actual* joint mass function, not independence.
 >
 > There are only four $(x,y)$ pairs here, so summing them in any order — row by row, column by column, or any other listing — gives the same total by ordinary commutativity and associativity of addition; no result about interchanging summation order is needed. Once the support is countably infinite, exchanging the order of summation needs a justification, which the Fubini–Tonelli theorem provides.
-
-# 2 Fubini–Tonelli for expectations
 
 > **NOTE:**
 >
@@ -2016,7 +2018,7 @@ Last modified: 2026-11-23 16:02:52 (PST)
 >
 > With $q = 0.5$, the truncated sum-of-integrals matches the closed form $\frac{1}{2(1-q)} = 1$.
 
-# 3 Loss and risk
+# 4 Loss and risk
 
 > **NOTE:**
 >
@@ -2562,7 +2564,7 @@ Last modified: 2026-11-23 16:02:52 (PST)
 >
 > **Example 45 (Uniqueness in the best-predictor exercise)** In [Exercise 10](#exr-best-predictor), $f_2\mathopen{}\left(X\right)\mathclose{} = 4X$ differs from ${f^*\mathopen{}\left(X\right)\mathclose{}}$ when $X= 0$, which has probability $0.5$. So $f_2$ is not a [minimizer](https://morrison-lab.github.io/mds/algebra-basics.html#def-global-minimizer), which matches its [risk](#def-risk) $2$ being larger than $1$.
 
-# 4 Entropy and cross-entropy
+# 5 Entropy and cross-entropy
 
 > **NOTE:**
 >
@@ -3156,7 +3158,7 @@ Last modified: 2026-11-23 16:02:52 (PST)
 >
 > *Remark 15* (Where the definitions come from). Murphy [\[20, Sec. 2.8.2\]](#ref-murphy2012mlpp), pp. 57–58 defines the KL divergence and the cross-entropy as above, and gives the coding interpretation: the cross-entropy is the average number of bits needed to encode data from a source with distribution $p$ using a code designed for $q$.
 
-# 5 Further reading
+# 6 Further reading
 
 > **TIP:**
 >
