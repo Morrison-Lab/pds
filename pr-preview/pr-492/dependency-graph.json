@@ -124,6 +124,16 @@
    "url": "https://morrison-lab.github.io/mcs/sets.html#def-open-interval"
   },
   {
+   "id": "mcs/sets#def-set",
+   "site": "mcs",
+   "page": "sets",
+   "div": "def-set",
+   "kind": "def",
+   "title": "set",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/sets.html#def-set"
+  },
+  {
    "id": "mcs/sets#def-subset",
    "site": "mcs",
    "page": "sets",
@@ -1482,24 +1492,6 @@
    "external": false
   },
   {
-   "id": "pds/expectation#def-cond-pdf",
-   "site": "pds",
-   "page": "expectation",
-   "div": "def-cond-pdf",
-   "kind": "def",
-   "title": "Conditional probability density function",
-   "external": false
-  },
-  {
-   "id": "pds/expectation#def-cond-pmf",
-   "site": "pds",
-   "page": "expectation",
-   "div": "def-cond-pmf",
-   "kind": "def",
-   "title": "Conditional probability mass function",
-   "external": false
-  },
-  {
    "id": "pds/expectation#def-cross-entropy",
    "site": "pds",
    "page": "expectation",
@@ -2427,6 +2419,15 @@
    "external": false
   },
   {
+   "id": "pds/probability-basics#thm-chain-rule-events",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-chain-rule-events",
+   "kind": "thm",
+   "title": "Chain rule for several events: the probability of an intersection is a product of conditional probabilities",
+   "external": false
+  },
+  {
    "id": "pds/probability-basics#thm-continuity-probability",
    "site": "pds",
    "page": "probability-basics",
@@ -2550,6 +2551,24 @@
    "div": "def-cdf",
    "kind": "def",
    "title": "Cumulative distribution function (CDF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-cond-pdf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-cond-pdf",
+   "kind": "def",
+   "title": "Conditional probability density function",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-cond-pmf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-cond-pmf",
+   "kind": "def",
+   "title": "Conditional probability mass function",
    "external": false
   },
   {
@@ -3776,7 +3795,7 @@
   ],
   [
    "pds/distributions#thm-mvn-conditional",
-   "pds/expectation#def-cond-pdf"
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/distributions#thm-mvn-conditional",
@@ -4116,15 +4135,15 @@
   ],
   [
    "pds/distributions#thm-precision-zero-cind",
-   "pds/expectation#def-cond-pdf"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
    "pds/independence#def-cind-continuous"
   ],
   [
    "pds/distributions#thm-precision-zero-cind",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/distributions#thm-precision-zero-cind",
@@ -4340,11 +4359,11 @@
   ],
   [
    "pds/expectation#def-cond-expectation",
-   "pds/expectation#def-cond-pdf"
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/expectation#def-cond-expectation",
-   "pds/expectation#def-cond-pmf"
+   "pds/random-variables#def-cond-pmf"
   ],
   [
    "pds/expectation#def-cond-expectation-general",
@@ -4352,27 +4371,15 @@
   ],
   [
    "pds/expectation#def-cond-expectation-general",
-   "pds/expectation#def-cond-pdf"
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/expectation#def-cond-expectation-general",
-   "pds/expectation#def-cond-pmf"
+   "pds/random-variables#def-cond-pmf"
   ],
   [
    "pds/expectation#def-cond-mixed",
    "pds/random-variables#def-joint-density-mass"
-  ],
-  [
-   "pds/expectation#def-cond-pdf",
-   "pds/random-variables#def-joint-pdf"
-  ],
-  [
-   "pds/expectation#def-cond-pdf",
-   "pds/random-variables#thm-marginal-density"
-  ],
-  [
-   "pds/expectation#def-cond-pmf",
-   "pds/random-variables#def-jointly-distributed"
   ],
   [
    "pds/expectation#def-cross-entropy",
@@ -5647,6 +5654,30 @@
    "pds/probability-basics#thm-law-conditional-prob"
   ],
   [
+   "pds/probability-basics#thm-chain-rule-events",
+   "mcs/sets#def-set"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-occurs"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#thm-law-conditional-prob"
+  ],
+  [
    "pds/probability-basics#thm-continuity-probability",
    "mds/measures#thm-sigma-algebra-closure"
   ],
@@ -5757,6 +5788,18 @@
   [
    "pds/random-variables#def-bernoulli",
    "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/random-variables#def-cond-pdf",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/random-variables#def-cond-pdf",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/random-variables#def-cond-pmf",
+   "pds/random-variables#def-jointly-distributed"
   ],
   [
    "pds/random-variables#def-cuhaz",

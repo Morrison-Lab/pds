@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-23 18:01:18 (PST)
+Last modified: 2026-11-24 00:23:16 (PST)
 
 # 1 The Central Limit Theorem
 
@@ -312,7 +312,7 @@ Last modified: 2026-11-23 18:01:18 (PST)
 
 > **NOTE:**
 >
-> **Theorem 4 (Chebyshev’s inequality: a random variable is at least** $k$ standard deviations from its mean with probability at most $1/k^2$) Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [expectation](expectation.llms.md#def-expectation) $\mu$ and a finite, positive [variance](variance-covariance.llms.md#def-variance) $\sigma^2$ ($0 < \sigma^2< \infty$), and let $k$ be a positive number ($k > 0$). Then the [probability](probability-basics.llms.md#def-probability) that $X$ is at least $k$ [standard deviations](variance-covariance.llms.md#def-sd) $\sigma$ from $\mu$ is at most $1/k^2$ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
+> **Theorem 4 (Chebyshev’s inequality: a random variable is at least** $k$ standard deviations from its mean with probability at most $1/k^2$) Let $X$ be a [random variable](random-variables.llms.md#def-random-variable) with [expectation](expectation.llms.md#def-expectation) $\mu$ and a finite, positive [variance](variance-covariance.llms.md#def-variance) $\sigma^2$ ($\sigma^2\in (0, \infty)$), and let $k$ be a positive number ($k > 0$). Then the [probability](probability-basics.llms.md#def-probability) that $X$ is at least $k$ [standard deviations](variance-covariance.llms.md#def-sd) $\sigma$ from $\mu$ is at most $1/k^2$ [\[9\]](#ref-wikipedia_chebyshevs_inequality):
 >
 > $${\Pr\mathopen{}\left(\mathopen{}\left|X - \mu\right|\mathclose{} \ge k\sigma\right)\mathclose{}} \le \frac{1}{k^2}$$
 
