@@ -1,10 +1,15 @@
 {{< slidebreak >}}
 
 :::{#thm-chebyshev}
-#### Chebyshev's inequality
+#### Chebyshev's inequality: a random variable is at least $k$ standard deviations from its mean with probability at most $1/k^2$
 
-Let $X$ be a random variable with mean $\mean$ and finite variance $\varpar > 0$.
-Then for every $k > 0$
+Let $X$ be a [random variable](random-variables.qmd#def-random-variable)
+with [expectation](expectation.qmd#def-expectation) $\mean$
+and a finite, positive [variance](variance-covariance.qmd#def-variance) $\varpar$ ($\varpar \in (0, \infty)$), <!-- check-term-links: allow: finite means a real number here, not a finite set -->
+and let $k$ be a positive number ($k > 0$).
+Then the [probability](probability-basics.qmd#def-probability) that $X$ is at least $k$
+[standard deviations](variance-covariance.qmd#def-sd) $\sdpar$ from $\mean$
+is at most $1/k^2$
 [@wikipedia_chebyshevs_inequality]:
 
 $$
