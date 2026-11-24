@@ -871,33 +871,6 @@
    "external": false
   },
   {
-   "id": "pds/distributions#cor-mvn-mahalanobis",
-   "site": "pds",
-   "page": "distributions",
-   "div": "cor-mvn-mahalanobis",
-   "kind": "cor",
-   "title": "The multivariate normal density decreases with Mahalanobis distance",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "site": "pds",
-   "page": "distributions",
-   "div": "cor-mvn-uncorrelated-indpt",
-   "kind": "cor",
-   "title": "For a multivariate normal vector, uncorrelated components are independent",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#cor-normal-density-precision",
-   "site": "pds",
-   "page": "distributions",
-   "div": "cor-normal-density-precision",
-   "kind": "cor",
-   "title": "The Gaussian density in terms of the precision",
-   "external": false
-  },
-  {
    "id": "pds/distributions#cor-weibull-exponential",
    "site": "pds",
    "page": "distributions",
@@ -922,24 +895,6 @@
    "div": "def-binomial",
    "kind": "def",
    "title": "Binomial distribution",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#def-conditional-precision",
-   "site": "pds",
-   "page": "distributions",
-   "div": "def-conditional-precision",
-   "kind": "def",
-   "title": "Conditional precision",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#def-coprecision",
-   "site": "pds",
-   "page": "distributions",
-   "div": "def-coprecision",
-   "kind": "def",
-   "title": "Coprecision",
    "external": false
   },
   {
@@ -988,15 +943,6 @@
    "external": false
   },
   {
-   "id": "pds/distributions#def-mahalanobis",
-   "site": "pds",
-   "page": "distributions",
-   "div": "def-mahalanobis",
-   "kind": "def",
-   "title": "Mahalanobis distance",
-   "external": false
-  },
-  {
    "id": "pds/distributions#def-mixture",
    "site": "pds",
    "page": "distributions",
@@ -1012,15 +958,6 @@
    "div": "def-mixture-component",
    "kind": "def",
    "title": "Mixture component",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#def-mvn",
-   "site": "pds",
-   "page": "distributions",
-   "div": "def-mvn",
-   "kind": "def",
-   "title": "Multivariate normal distribution (multivariate Gaussian distribution)",
    "external": false
   },
   {
@@ -1042,30 +979,12 @@
    "external": false
   },
   {
-   "id": "pds/distributions#def-partial-correlation",
-   "site": "pds",
-   "page": "distributions",
-   "div": "def-partial-correlation",
-   "kind": "def",
-   "title": "Partial correlation",
-   "external": false
-  },
-  {
    "id": "pds/distributions#def-poisson",
    "site": "pds",
    "page": "distributions",
    "div": "def-poisson",
    "kind": "def",
    "title": "Poisson distribution",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#def-precision-matrix",
-   "site": "pds",
-   "page": "distributions",
-   "div": "def-precision-matrix",
-   "kind": "def",
-   "title": "Precision matrix",
    "external": false
   },
   {
@@ -1084,15 +1003,6 @@
    "div": "def-weibull",
    "kind": "def",
    "title": "Weibull distribution",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#lem-mahalanobis-nonneg",
-   "site": "pds",
-   "page": "distributions",
-   "div": "lem-mahalanobis-nonneg",
-   "kind": "lem",
-   "title": "The quadratic form in the multivariate normal density is non-negative",
    "external": false
   },
   {
@@ -1123,15 +1033,6 @@
    "external": false
   },
   {
-   "id": "pds/distributions#thm-conditional-mean-precision",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-conditional-mean-precision",
-   "kind": "thm",
-   "title": "The conditional mean of one element from the precision matrix",
-   "external": false
-  },
-  {
    "id": "pds/distributions#thm-exposure-log-scale",
    "site": "pds",
    "page": "distributions",
@@ -1156,15 +1057,6 @@
    "div": "thm-laplace-moments",
    "kind": "thm",
    "title": "Mean and variance of the Laplace distribution",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-mahalanobis-eigen",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mahalanobis-eigen",
-   "kind": "thm",
-   "title": "Mahalanobis distance in eigenvector coordinates",
    "external": false
   },
   {
@@ -1204,60 +1096,6 @@
    "external": false
   },
   {
-   "id": "pds/distributions#thm-mvn-conditional",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mvn-conditional",
-   "kind": "thm",
-   "title": "The conditional distribution of a block of a multivariate Gaussian vector",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-mvn-density-integral",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mvn-density-integral",
-   "kind": "thm",
-   "title": "The multivariate normal density integrates to 1",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-mvn-density-precision",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mvn-density-precision",
-   "kind": "thm",
-   "title": "The multivariate Gaussian density in terms of the precision matrix",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-mvn-diagonal-indpt",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mvn-diagonal-indpt",
-   "kind": "thm",
-   "title": "A multivariate normal vector with diagonal variance has independent normal components",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-mvn-marginal",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mvn-marginal",
-   "kind": "thm",
-   "title": "The marginal distribution of a subvector of a multivariate Gaussian vector",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-mvn-moments",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-mvn-moments",
-   "kind": "thm",
-   "title": "The mean and variance of the multivariate normal distribution",
-   "external": false
-  },
-  {
    "id": "pds/distributions#thm-nb",
    "site": "pds",
    "page": "distributions",
@@ -1285,15 +1123,6 @@
    "external": false
   },
   {
-   "id": "pds/distributions#thm-partial-correlation-precision",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-partial-correlation-precision",
-   "kind": "thm",
-   "title": "The partial correlation from the precision matrix",
-   "external": false
-  },
-  {
    "id": "pds/distributions#thm-poisson-mode",
    "site": "pds",
    "page": "distributions",
@@ -1312,39 +1141,12 @@
    "external": false
   },
   {
-   "id": "pds/distributions#thm-precision-matrix-inverse",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-precision-matrix-inverse",
-   "kind": "thm",
-   "title": "The precision matrix is the inverse of the variance matrix",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-precision-zero-cind",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-precision-zero-cind",
-   "kind": "thm",
-   "title": "A zero off-diagonal element of the precision matrix means conditional independence",
-   "external": false
-  },
-  {
    "id": "pds/distributions#thm-sum-pois",
    "site": "pds",
    "page": "distributions",
    "div": "thm-sum-pois",
    "kind": "thm",
    "title": "Sum of independent Poisson random variables",
-   "external": false
-  },
-  {
-   "id": "pds/distributions#thm-vcov-zero-indpt",
-   "site": "pds",
-   "page": "distributions",
-   "div": "thm-vcov-zero-indpt",
-   "kind": "thm",
-   "title": "A zero off-diagonal element of the variance matrix means independence",
    "external": false
   },
   {
@@ -2146,6 +1948,204 @@
    "div": "thm-wlln",
    "kind": "thm",
    "title": "Weak law of large numbers",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#cor-mvn-mahalanobis",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "cor-mvn-mahalanobis",
+   "kind": "cor",
+   "title": "The multivariate normal density decreases with Mahalanobis distance",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "cor-mvn-uncorrelated-indpt",
+   "kind": "cor",
+   "title": "For a multivariate normal vector, uncorrelated components are independent",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#cor-normal-density-precision",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "cor-normal-density-precision",
+   "kind": "cor",
+   "title": "The Gaussian density in terms of the precision",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#def-conditional-precision",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "def-conditional-precision",
+   "kind": "def",
+   "title": "Conditional precision",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#def-coprecision",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "def-coprecision",
+   "kind": "def",
+   "title": "Coprecision",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#def-mahalanobis",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "def-mahalanobis",
+   "kind": "def",
+   "title": "Mahalanobis distance",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#def-mvn",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "def-mvn",
+   "kind": "def",
+   "title": "Multivariate normal distribution (multivariate Gaussian distribution)",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#def-partial-correlation",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "def-partial-correlation",
+   "kind": "def",
+   "title": "Partial correlation",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#def-precision-matrix",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "def-precision-matrix",
+   "kind": "def",
+   "title": "Precision matrix",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#lem-mahalanobis-nonneg",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "lem-mahalanobis-nonneg",
+   "kind": "lem",
+   "title": "The quadratic form in the multivariate normal density is non-negative",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-conditional-mean-precision",
+   "kind": "thm",
+   "title": "The conditional mean of one element from the precision matrix",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mahalanobis-eigen",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mahalanobis-eigen",
+   "kind": "thm",
+   "title": "Mahalanobis distance in eigenvector coordinates",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mvn-conditional",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mvn-conditional",
+   "kind": "thm",
+   "title": "The conditional distribution of a block of a multivariate Gaussian vector",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mvn-density-integral",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mvn-density-integral",
+   "kind": "thm",
+   "title": "The multivariate normal density integrates to 1",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mvn-density-precision",
+   "kind": "thm",
+   "title": "The multivariate Gaussian density in terms of the precision matrix",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mvn-diagonal-indpt",
+   "kind": "thm",
+   "title": "A multivariate normal vector with diagonal variance has independent normal components",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mvn-marginal",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mvn-marginal",
+   "kind": "thm",
+   "title": "The marginal distribution of a subvector of a multivariate Gaussian vector",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-mvn-moments",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-mvn-moments",
+   "kind": "thm",
+   "title": "The mean and variance of the multivariate normal distribution",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-partial-correlation-precision",
+   "kind": "thm",
+   "title": "The partial correlation from the precision matrix",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-precision-matrix-inverse",
+   "kind": "thm",
+   "title": "The precision matrix is the inverse of the variance matrix",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-precision-zero-cind",
+   "kind": "thm",
+   "title": "A zero off-diagonal element of the precision matrix means conditional independence",
+   "external": false
+  },
+  {
+   "id": "pds/multivariate-gaussian#thm-vcov-zero-indpt",
+   "site": "pds",
+   "page": "multivariate-gaussian",
+   "div": "thm-vcov-zero-indpt",
+   "kind": "thm",
+   "title": "A zero off-diagonal element of the variance matrix means independence",
    "external": false
   },
   {
@@ -3422,78 +3422,6 @@
    "pds/variance-covariance#thm-variance"
   ],
   [
-   "pds/distributions#cor-mvn-mahalanobis",
-   "pds/distributions#def-mahalanobis"
-  ],
-  [
-   "pds/distributions#cor-mvn-mahalanobis",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#cor-mvn-mahalanobis",
-   "pds/distributions#lem-mahalanobis-nonneg"
-  ],
-  [
-   "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "pds/distributions#thm-mvn-diagonal-indpt"
-  ],
-  [
-   "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "pds/distributions#thm-mvn-moments"
-  ],
-  [
-   "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "pds/random-variables#thm-marginal-density"
-  ],
-  [
-   "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "pds/variance-covariance#cor-vcov-indpt-diagonal"
-  ],
-  [
-   "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "pds/variance-covariance#def-cov-vec-x"
-  ],
-  [
-   "pds/distributions#cor-mvn-uncorrelated-indpt",
-   "pds/variance-covariance#def-variance"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "mds/linear-algebra-special-matrices#def-matrix-inverse"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/distributions#def-precision-matrix"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/distributions#thm-mvn-density-precision"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/distributions#thm-precision-matrix-inverse"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/random-variables#def-normal"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/random-variables#def-pdf"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/random-variables#thm-normal-moments"
-  ],
-  [
-   "pds/distributions#cor-normal-density-precision",
-   "pds/variance-covariance#def-precision"
-  ],
-  [
    "pds/distributions#cor-weibull-exponential",
    "pds/distributions#def-weibull"
   ],
@@ -3516,30 +3444,6 @@
   [
    "pds/distributions#def-binomial",
    "pds/random-variables#def-discrete-rv"
-  ],
-  [
-   "pds/distributions#def-conditional-precision",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#def-conditional-precision",
-   "pds/variance-covariance#def-cond-variance"
-  ],
-  [
-   "pds/distributions#def-conditional-precision",
-   "pds/variance-covariance#def-precision"
-  ],
-  [
-   "pds/distributions#def-coprecision",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#def-coprecision",
-   "pds/variance-covariance#def-cond-cov"
-  ],
-  [
-   "pds/distributions#def-coprecision",
-   "pds/variance-covariance#def-cond-variance"
   ],
   [
    "pds/distributions#def-event-rate",
@@ -3574,40 +3478,12 @@
    "pds/distributions#def-mixture"
   ],
   [
-   "pds/distributions#def-mvn",
-   "mds/linear-algebra-special-matrices#def-determinant"
-  ],
-  [
-   "pds/distributions#def-mvn",
-   "mds/linear-algebra-special-matrices#def-matrix-inverse"
-  ],
-  [
-   "pds/distributions#def-mvn",
-   "mds/linear-algebra-special-matrices#def-positive-definite"
-  ],
-  [
    "pds/distributions#def-offset",
    "pds/distributions#thm-exposure-log-scale"
   ],
   [
    "pds/distributions#def-offset",
    "pds/expectation#def-expectation"
-  ],
-  [
-   "pds/distributions#def-partial-correlation",
-   "mds/algebra-basics#def-square-root"
-  ],
-  [
-   "pds/distributions#def-partial-correlation",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#def-partial-correlation",
-   "pds/variance-covariance#def-cond-cov"
-  ],
-  [
-   "pds/distributions#def-partial-correlation",
-   "pds/variance-covariance#def-cond-variance"
   ],
   [
    "pds/distributions#def-poisson",
@@ -3622,40 +3498,12 @@
    "mds/sets#def-set"
   ],
   [
-   "pds/distributions#def-precision-matrix",
-   "mds/linear-algebra-matrices#def-diagonal-entry"
-  ],
-  [
-   "pds/distributions#def-precision-matrix",
-   "mds/linear-algebra-matrices#def-matrix"
-  ],
-  [
-   "pds/distributions#def-precision-matrix",
-   "pds/distributions#def-conditional-precision"
-  ],
-  [
-   "pds/distributions#def-precision-matrix",
-   "pds/distributions#def-coprecision"
-  ],
-  [
-   "pds/distributions#def-precision-matrix",
-   "pds/distributions#def-mvn"
-  ],
-  [
    "pds/distributions#def-responsibility",
    "pds/distributions#thm-mixture-posterior"
   ],
   [
    "pds/distributions#def-weibull",
    "pds/random-variables#def-surv-fn"
-  ],
-  [
-   "pds/distributions#lem-mahalanobis-nonneg",
-   "mds/linear-algebra-special-matrices#def-positive-definite"
-  ],
-  [
-   "pds/distributions#lem-mahalanobis-nonneg",
-   "mds/linear-algebra-special-matrices#thm-pd-inverse"
   ],
   [
    "pds/distributions#thm-binomial-moments",
@@ -3682,38 +3530,6 @@
    "pds/independence#def-iid"
   ],
   [
-   "pds/distributions#thm-conditional-mean-precision",
-   "mds/linear-algebra-diagonalization#def-block-matrix"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "mds/linear-algebra-diagonalization#thm-block-inverse"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "mds/linear-algebra-matrices#def-matrix"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "mds/linear-algebra-vectors#def-scalar"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "pds/distributions#def-precision-matrix"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "pds/distributions#thm-mvn-conditional"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "pds/distributions#thm-precision-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-conditional-mean-precision",
-   "pds/variance-covariance#def-cond-variance"
-  ],
-  [
    "pds/distributions#thm-gamma-moments",
    "mcs/number-systems#def-integers"
   ],
@@ -3728,14 +3544,6 @@
   [
    "pds/distributions#thm-laplace-moments",
    "pds/distributions#def-laplace"
-  ],
-  [
-   "pds/distributions#thm-mahalanobis-eigen",
-   "mds/linear-algebra-special-matrices#def-eigendecomposition"
-  ],
-  [
-   "pds/distributions#thm-mahalanobis-eigen",
-   "mds/linear-algebra-special-matrices#thm-pd-inverse"
   ],
   [
    "pds/distributions#thm-mean-vs-event-rate",
@@ -3778,150 +3586,6 @@
    "pds/random-variables#def-pdf"
   ],
   [
-   "pds/distributions#thm-mvn-conditional",
-   "mcs/functions#def-function"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "mds/linear-algebra-diagonalization#def-block-matrix"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "mds/linear-algebra-diagonalization#thm-block-inverse"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "pds/random-variables#def-cond-pdf"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "pds/random-variables#def-joint-pdf"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "pds/random-variables#def-marginal"
-  ],
-  [
-   "pds/distributions#thm-mvn-conditional",
-   "pds/random-variables#def-pdf"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-integral",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "mcs/number-systems#def-reciprocal"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "mds/linear-algebra-special-matrices#def-determinant"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "mds/linear-algebra-special-matrices#def-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "pds/distributions#def-precision-matrix"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "pds/distributions#thm-precision-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-mvn-density-precision",
-   "pds/random-variables#def-joint-pdf"
-  ],
-  [
-   "pds/distributions#thm-mvn-diagonal-indpt",
-   "mds/linear-algebra-special-matrices#thm-det-diagonal"
-  ],
-  [
-   "pds/distributions#thm-mvn-diagonal-indpt",
-   "pds/independence#def-indpt"
-  ],
-  [
-   "pds/distributions#thm-mvn-diagonal-indpt",
-   "pds/independence#thm-indpt-density"
-  ],
-  [
-   "pds/distributions#thm-mvn-diagonal-indpt",
-   "pds/random-variables#def-normal"
-  ],
-  [
-   "pds/distributions#thm-mvn-diagonal-indpt",
-   "pds/random-variables#thm-marginal-density"
-  ],
-  [
-   "pds/distributions#thm-mvn-diagonal-indpt",
-   "pds/random-variables#thm-normal-density"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "mds/calculus-integration#def-riemann-integral"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "mds/linear-algebra-diagonalization#def-block-matrix"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "mds/linear-algebra-diagonalization#thm-block-inverse"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "mds/linear-algebra-matrices#def-matrix"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "mds/linear-algebra-special-matrices#def-positive-definite"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "pds/distributions#thm-mvn-conditional"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "pds/distributions#thm-mvn-density-integral"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "pds/random-variables#def-joint-pdf"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "pds/random-variables#def-marginal"
-  ],
-  [
-   "pds/distributions#thm-mvn-marginal",
-   "pds/random-variables#def-pdf"
-  ],
-  [
-   "pds/distributions#thm-mvn-moments",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#thm-mvn-moments",
-   "pds/expectation#def-expectation-matrix"
-  ],
-  [
-   "pds/distributions#thm-mvn-moments",
-   "pds/variance-covariance#def-cov-vec-x"
-  ],
-  [
    "pds/distributions#thm-nb",
    "pds/distributions#thm-poisson-properties"
   ],
@@ -3946,62 +3610,6 @@
    "pds/expectation#def-expectation"
   ],
   [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-diagonalization#def-block-matrix"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-diagonalization#def-schur-complement"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-diagonalization#thm-block-inverse"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-matrices#def-matrix"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-special-matrices#def-determinant"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-special-matrices#def-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "mds/linear-algebra-special-matrices#def-positive-definite"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/distributions#def-partial-correlation"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/distributions#def-precision-matrix"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/distributions#thm-mvn-conditional"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/distributions#thm-precision-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/variance-covariance#def-cond-cov"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/variance-covariance#def-cond-variance"
-  ],
-  [
-   "pds/distributions#thm-partial-correlation-precision",
-   "pds/variance-covariance#def-cov-vec-x"
-  ],
-  [
    "pds/distributions#thm-poisson-properties",
    "pds/expectation#thm-linearity-expectation"
   ],
@@ -4010,136 +3618,8 @@
    "pds/variance-covariance#thm-variance"
   ],
   [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "mds/linear-algebra-diagonalization#def-block-matrix"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "mds/linear-algebra-diagonalization#def-schur-complement"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "mds/linear-algebra-diagonalization#thm-block-inverse"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "mds/linear-algebra-matrices#def-diagonal-entry"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "mds/linear-algebra-matrices#def-matrix"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "mds/linear-algebra-special-matrices#def-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/distributions#def-conditional-precision"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/distributions#def-coprecision"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/distributions#def-mvn"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/distributions#thm-mvn-conditional"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/variance-covariance#def-cond-cov"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/variance-covariance#def-cond-variance"
-  ],
-  [
-   "pds/distributions#thm-precision-matrix-inverse",
-   "pds/variance-covariance#def-cov-vec-x"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "mcs/proof-writing#def-iff"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "mds/linear-algebra-special-matrices#def-determinant"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "mds/linear-algebra-special-matrices#def-positive-definite"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/distributions#cor-mvn-uncorrelated-indpt"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/distributions#def-coprecision"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/distributions#def-precision-matrix"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/distributions#thm-mvn-conditional"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/distributions#thm-precision-matrix-inverse"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/independence#def-cind-continuous"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/independence#def-indpt"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/random-variables#def-cond-pdf"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/variance-covariance#def-cond-cov"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/variance-covariance#def-cond-variance"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
-   "pds/variance-covariance#def-cov-vec-x"
-  ],
-  [
    "pds/distributions#thm-sum-pois",
    "pds/independence#def-indpt"
-  ],
-  [
-   "pds/distributions#thm-vcov-zero-indpt",
-   "mcs/proof-writing#def-iff"
-  ],
-  [
-   "pds/distributions#thm-vcov-zero-indpt",
-   "pds/distributions#cor-mvn-uncorrelated-indpt"
-  ],
-  [
-   "pds/distributions#thm-vcov-zero-indpt",
-   "pds/distributions#thm-mvn-marginal"
-  ],
-  [
-   "pds/distributions#thm-vcov-zero-indpt",
-   "pds/independence#def-indpt"
-  ],
-  [
-   "pds/distributions#thm-vcov-zero-indpt",
-   "pds/variance-covariance#def-cov-vec-x"
   ],
   [
    "pds/distributions#thm-weibull",
@@ -5380,6 +4860,526 @@
   [
    "pds/limit-theorems#thm-wlln",
    "pds/limit-theorems#thm-chebyshev"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-mahalanobis",
+   "pds/multivariate-gaussian#def-mahalanobis"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-mahalanobis",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-mahalanobis",
+   "pds/multivariate-gaussian#lem-mahalanobis-nonneg"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "pds/multivariate-gaussian#thm-mvn-moments"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "pds/variance-covariance#cor-vcov-indpt-diagonal"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt",
+   "pds/variance-covariance#def-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/multivariate-gaussian#def-precision-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/multivariate-gaussian#thm-mvn-density-precision"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/random-variables#thm-normal-moments"
+  ],
+  [
+   "pds/multivariate-gaussian#cor-normal-density-precision",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
+   "pds/multivariate-gaussian#def-conditional-precision",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#def-conditional-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#def-conditional-precision",
+   "pds/variance-covariance#def-precision"
+  ],
+  [
+   "pds/multivariate-gaussian#def-coprecision",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#def-coprecision",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/multivariate-gaussian#def-coprecision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#def-mvn",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/multivariate-gaussian#def-mvn",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#def-mvn",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/multivariate-gaussian#def-partial-correlation",
+   "mds/algebra-basics#def-square-root"
+  ],
+  [
+   "pds/multivariate-gaussian#def-partial-correlation",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#def-partial-correlation",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/multivariate-gaussian#def-partial-correlation",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#def-precision-matrix",
+   "mds/linear-algebra-matrices#def-diagonal-entry"
+  ],
+  [
+   "pds/multivariate-gaussian#def-precision-matrix",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#def-precision-matrix",
+   "pds/multivariate-gaussian#def-conditional-precision"
+  ],
+  [
+   "pds/multivariate-gaussian#def-precision-matrix",
+   "pds/multivariate-gaussian#def-coprecision"
+  ],
+  [
+   "pds/multivariate-gaussian#def-precision-matrix",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#lem-mahalanobis-nonneg",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/multivariate-gaussian#lem-mahalanobis-nonneg",
+   "mds/linear-algebra-special-matrices#thm-pd-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "mds/linear-algebra-vectors#def-scalar"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "pds/multivariate-gaussian#def-precision-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "pds/multivariate-gaussian#thm-mvn-conditional"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-conditional-mean-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mahalanobis-eigen",
+   "mds/linear-algebra-special-matrices#def-eigendecomposition"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mahalanobis-eigen",
+   "mds/linear-algebra-special-matrices#thm-pd-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "mcs/functions#def-function"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "pds/random-variables#def-cond-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "pds/random-variables#def-marginal"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-conditional",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-integral",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "mcs/number-systems#def-reciprocal"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "pds/multivariate-gaussian#def-precision-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-density-precision",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "mds/linear-algebra-special-matrices#thm-det-diagonal"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "pds/independence#thm-indpt-density"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "pds/random-variables#def-normal"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-diagonal-indpt",
+   "pds/random-variables#thm-normal-density"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "mds/calculus-integration#def-riemann-integral"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "pds/multivariate-gaussian#thm-mvn-conditional"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "pds/multivariate-gaussian#thm-mvn-density-integral"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "pds/random-variables#def-marginal"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-marginal",
+   "pds/random-variables#def-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-moments",
+   "pds/expectation#def-expectation-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-moments",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-mvn-moments",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-diagonalization#def-schur-complement"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/multivariate-gaussian#def-partial-correlation"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/multivariate-gaussian#def-precision-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/multivariate-gaussian#thm-mvn-conditional"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-partial-correlation-precision",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#def-block-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#def-schur-complement"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "mds/linear-algebra-diagonalization#thm-block-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "mds/linear-algebra-matrices#def-diagonal-entry"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "mds/linear-algebra-matrices#def-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "mds/linear-algebra-special-matrices#def-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/multivariate-gaussian#def-conditional-precision"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/multivariate-gaussian#def-coprecision"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/multivariate-gaussian#def-mvn"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/multivariate-gaussian#thm-mvn-conditional"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-determinant"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "mds/linear-algebra-special-matrices#def-positive-definite"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/independence#def-cind-continuous"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/multivariate-gaussian#def-coprecision"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/multivariate-gaussian#def-precision-matrix"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/multivariate-gaussian#thm-mvn-conditional"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/multivariate-gaussian#thm-precision-matrix-inverse"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/random-variables#def-cond-pdf"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-cov"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cond-variance"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-precision-zero-cind",
+   "pds/variance-covariance#def-cov-vec-x"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-vcov-zero-indpt",
+   "mcs/proof-writing#def-iff"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-vcov-zero-indpt",
+   "pds/independence#def-indpt"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-vcov-zero-indpt",
+   "pds/multivariate-gaussian#cor-mvn-uncorrelated-indpt"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-vcov-zero-indpt",
+   "pds/multivariate-gaussian#thm-mvn-marginal"
+  ],
+  [
+   "pds/multivariate-gaussian#thm-vcov-zero-indpt",
+   "pds/variance-covariance#def-cov-vec-x"
   ],
   [
    "pds/probability-basics#cor-p-neg0",

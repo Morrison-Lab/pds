@@ -4,7 +4,7 @@ Code
 
 Published
 
-Last modified: 2026-11-24 02:10:02 (PST)
+Last modified: 2026-11-24 02:21:52 (PST)
 
 # Welcome
 
@@ -19,6 +19,7 @@ These notes collect the probability that data science courses assume. Some key r
 - [Expectation](expectation.llms.md): expectation, LOTUS, conditional expectation, Fubini-Tonelli, and the law of iterated expectations
 - [Variance and covariance](variance-covariance.llms.md): deviation, variance, conditional variance, homoskedasticity, and covariance
 - [Key distributions](distributions.llms.md): Bernoulli, binomial, Poisson, negative binomial, and Weibull distributions
+- [Multivariate Gaussian distribution](multivariate-gaussian.llms.md): [Mahalanobis distance](multivariate-gaussian.llms.md#def-mahalanobis), conditional and [marginal distributions](random-variables.llms.md#def-marginal), the [precision matrix](multivariate-gaussian.llms.md#def-precision-matrix), and [partial correlation](multivariate-gaussian.llms.md#def-partial-correlation)
 - [Limit theorems](limit-theorems.llms.md): the Central Limit Theorem
 
 Most of this material should be review from an introductory probability or mathematical statistics course (e.g., UC Davis’s Epi 202). These notes began as the probability chapter of the Morrison Lab’s [*Regression Models for Epidemiology*](https://morrison-lab.github.io/rme/), which applies them to regression and survival models (see [Additional resources](#sec-additional-resources)).
