@@ -124,6 +124,16 @@
    "url": "https://morrison-lab.github.io/mcs/sets.html#def-open-interval"
   },
   {
+   "id": "mcs/sets#def-set",
+   "site": "mcs",
+   "page": "sets",
+   "div": "def-set",
+   "kind": "def",
+   "title": "set",
+   "external": true,
+   "url": "https://morrison-lab.github.io/mcs/sets.html#def-set"
+  },
+  {
    "id": "mcs/sets#def-subset",
    "site": "mcs",
    "page": "sets",
@@ -2424,6 +2434,15 @@
    "div": "thm-bayes",
    "kind": "thm",
    "title": "Bayes' theorem",
+   "external": false
+  },
+  {
+   "id": "pds/probability-basics#thm-chain-rule-events",
+   "site": "pds",
+   "page": "probability-basics",
+   "div": "thm-chain-rule-events",
+   "kind": "thm",
+   "title": "Chain rule for several events: the probability of an intersection is a product of conditional probabilities",
    "external": false
   },
   {
@@ -5612,6 +5631,30 @@
   ],
   [
    "pds/probability-basics#thm-bayes",
+   "pds/probability-basics#thm-law-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "mcs/sets#def-set"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-conditional-prob"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-event"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-occurs"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
+   "pds/probability-basics#def-probability"
+  ],
+  [
+   "pds/probability-basics#thm-chain-rule-events",
    "pds/probability-basics#thm-law-conditional-prob"
   ],
   [

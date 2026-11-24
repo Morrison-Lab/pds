@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-23 15:49:48 (PST)
+Last modified: 2026-11-23 16:02:52 (PST)
 
 # 1 Defining probabilities
 
@@ -600,7 +600,49 @@ Last modified: 2026-11-23 15:49:48 (PST)
 
 > **NOTE:**
 >
-> **Theorem 6 (Law of total probability)** If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space, then for any event $A$ [\[11\]](#ref-wikipedia_law_of_total_probability):
+> **Theorem 6 (Chain rule for several events: the probability of an intersection is a product of conditional probabilities)** The [probability](#def-probability) that several [events](#def-event) all [occur](#def-occurs) is the probability of the first event, times the [conditional probability](#def-conditional-prob) of each later event given all the events before it. For any events $A_1, \dots, A_n$ with $\Pr(A_1 \cap \dots \cap A_{n-1}) > 0$:
+>
+> $$\Pr(A_1 \cap \dots \cap A_n)
+> = \Pr(A_1) \prod_{i=2}^{n} \Pr(A_i \mid A_1 \cap \dots \cap A_{i-1})
+> \tag{1}$$
+
+> **NOTE:**
+>
+> *Proof*. For $n = 2$, the statement is [Theorem 5](#thm-law-conditional-prob). Suppose it holds for $n - 1$ [events](#def-event), and let $B = A_1 \cap \dots \cap A_{n-1}$. Then $\Pr(B) > 0$, so [Theorem 5](#thm-law-conditional-prob) applies to $A_n$ and $B$:
+>
+> $$\begin{aligned}
+> \Pr(A_1 \cap \dots \cap A_n)
+> &= \Pr(A_n \cap B)
+> && \text{(definition of } B \text{)}
+> \\ &= \Pr(A_n \mid B) \cdot\Pr(B)
+> && \text{(law of conditional probability)}
+> \end{aligned}
+> \tag{2}$$
+>
+> Each [set](https://morrison-lab.github.io/mcs/sets.html#def-set) $A_1 \cap \dots \cap A_{i-1}$ with $i \le n - 1$ contains $B$, so its [probability](#def-probability) is at least $\Pr(B) > 0$, and the statement for $n - 1$ events expands $\Pr(B)$.
+
+> **NOTE:**
+>
+> **Example 26 (Three hearts in a row)**  
+>
+> Deal three cards, without replacement, from a shuffled standard deck of 52 cards, 13 of which are hearts. Let $A_i$ be the [event](#def-event) that card $i$ is a heart. After $i - 1$ hearts have been dealt, $13 - (i - 1)$ of the remaining $52 - (i - 1)$ cards are hearts, so by [Theorem 6](#thm-chain-rule-events):
+>
+> $$\begin{aligned}
+> \Pr(A_1 \cap A_2 \cap A_3)
+> &= \Pr(A_1) \cdot\Pr(A_2 \mid A_1) \cdot\Pr(A_3 \mid A_1 \cap A_2)
+> && \text{(chain rule for three events)}
+> \\ &= \frac{13}{52} \cdot\frac{12}{51} \cdot\frac{11}{50}
+> && \text{(count the hearts left before each card)}
+> \\ &= \frac{1716}{132600}
+> && \text{(multiply)}
+> \\ &\approx 0.0129
+> && \text{(divide)}
+> \end{aligned}
+> \tag{3}$$
+
+> **NOTE:**
+>
+> **Theorem 7 (Law of total probability)** If $B_1, B_2, \ldots$ is a [partition](#def-partition) of the sample space, then for any event $A$ [\[11\]](#ref-wikipedia_law_of_total_probability):
 >
 > $$\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \cap B_i)$$
 
@@ -616,13 +658,13 @@ Last modified: 2026-11-23 15:49:48 (PST)
 
 > **NOTE:**
 >
-> **Theorem 7 (Law of total probability with conditional probabilities)** If $B_1, B_2, \ldots$ is a [partition of](#def-partition) the [sample space](#def-sample-space) with $\Pr(B_i) > 0$ for every $i$, then for any [event](#def-event) $A$:
+> **Theorem 8 (Law of total probability with conditional probabilities)** If $B_1, B_2, \ldots$ is a [partition of](#def-partition) the [sample space](#def-sample-space) with $\Pr(B_i) > 0$ for every $i$, then for any [event](#def-event) $A$:
 >
 > $$\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)$$
 
 > **NOTE:**
 >
-> *Proof*. Apply [Theorem 5](#thm-law-conditional-prob) to each summand of [Theorem 6](#thm-total-prob), which needs $\Pr(B_i) > 0$:
+> *Proof*. Apply [Theorem 5](#thm-law-conditional-prob) to each summand of [Theorem 7](#thm-total-prob), which needs $\Pr(B_i) > 0$:
 >
 > $$\begin{aligned}
 > \Pr(A)
@@ -632,7 +674,7 @@ Last modified: 2026-11-23 15:49:48 (PST)
 
 > **NOTE:**
 >
-> **Theorem 8 (Bayes’ theorem)** For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$ [\[12\]](#ref-wikipedia_bayes_theorem):
+> **Theorem 9 (Bayes’ theorem)** For any two events $A$ and $B$ with $\Pr(A) > 0$ and $\Pr(B) > 0$ [\[12\]](#ref-wikipedia_bayes_theorem):
 >
 > $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}$$
 
@@ -652,7 +694,7 @@ Last modified: 2026-11-23 15:49:48 (PST)
 
 > **NOTE:**
 >
-> **Example 26 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
+> **Example 27 (Positive predictive value of a medical test)** Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.
 >
 > Let $D$ be the event “person has the disease” and ${+}$ be the event “test is positive”. Then:
 >
@@ -667,7 +709,7 @@ Last modified: 2026-11-23 15:49:48 (PST)
 >
 > - $\Pr(D) = 0.07$ (prevalence)
 >
-> By [Theorem 8](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob-conditional) over the [partition](#def-partition) $\{D, \neg D\}$:
+> By [Theorem 9](#thm-bayes), with the denominator expanded by the [law of total probability](#thm-total-prob-conditional) over the [partition](#def-partition) $\{D, \neg D\}$:
 >
 > $$\begin{aligned}
 > \Pr(D \mid {+})
@@ -709,7 +751,7 @@ Last modified: 2026-11-23 15:49:48 (PST)
 >
 > Dividing both sides by $\Pr(B)$ gives [Bayes’ rule](#thm-bayes):
 >
-> $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} \tag{1}$$
+> $$\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} \tag{4}$$
 >
 > Nothing was assumed beyond $\Pr(A) > 0$ and $\Pr(B) > 0$, which the two conditionals need in order to be defined at all.
 >
@@ -726,7 +768,7 @@ Last modified: 2026-11-23 15:49:48 (PST)
 >
 > **Exercise 2 (A test that is right 99% of the time)** A screening test for a disease is positive for $99\%$ of people who have it and negative for $99\%$ of people who do not. One person in a thousand has the disease.
 >
-> A randomly screened person tests positive. What is the probability that they have the disease? Guess first, then compute it with [Equation 1](#eq-bayes).
+> A randomly screened person tests positive. What is the probability that they have the disease? Guess first, then compute it with [Equation 4](#eq-bayes).
 
 > **NOTE:**
 >
@@ -734,7 +776,7 @@ Last modified: 2026-11-23 15:49:48 (PST)
 >
 > $$\Pr({+}\mid S) = 0.99, \qquad \Pr({+}\mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001$$
 >
-> [Equation 1](#eq-bayes) needs $\Pr({+})$, the overall chance of a positive result. Assemble it with [Theorem 7](#thm-total-prob-conditional), splitting on whether the person is sick:
+> [Equation 4](#eq-bayes) needs $\Pr({+})$, the overall chance of a positive result. Assemble it with [Theorem 8](#thm-total-prob-conditional), splitting on whether the person is sick:
 >
 > $$\begin{aligned}
 > \Pr({+}) &= \Pr({+}\mid S)\Pr(S) + \Pr({+}\mid \text{not } S)\Pr(\text{not } S) \\

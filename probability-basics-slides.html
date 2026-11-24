@@ -366,7 +366,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Last modified: 2026-11-23 15:49:48 (PST)</p>
+  <p class="date">Last modified: 2026-11-23 16:02:52 (PST)</p>
 </section>
 <section id="defining-probabilities" class="slide level2" data-number="1">
 <h2><span class="header-section-number">1</span> Defining probabilities</h2>
@@ -1115,8 +1115,52 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 </section>
 <section class="slide level2">
 
+<div id="thm-chain-rule-events" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 6 (Chain rule for several events: the probability of an intersection is a product of conditional probabilities)</strong></span> The <a href="#/def-probability">probability</a> that several <a href="#/def-event">events</a> all <a href="#/def-occurs">occur</a> is the probability of the first event, times the <a href="#/def-conditional-prob">conditional probability</a> of each later event given all the events before it. For any events <span class="math inline">\(A_1, \dots, A_n\)</span> with <span class="math inline">\(\Pr(A_1 \cap \dots \cap A_{n-1}) &gt; 0\)</span>:</p>
+<p><span id="eq-chain-rule-events"><span class="math display">\[
+\Pr(A_1 \cap \dots \cap A_n)
+= \Pr(A_1) \prod_{i=2}^{n} \Pr(A_i \mid A_1 \cap \dots \cap A_{i-1})
+\tag{1}\]</span></span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>For <span class="math inline">\(n = 2\)</span>, the statement is <a href="#/thm-law-conditional-prob" class="quarto-xref">Theorem&nbsp;5</a>. Suppose it holds for <span class="math inline">\(n - 1\)</span> <a href="#/def-event">events</a>, and let <span class="math inline">\(B = A_1 \cap \dots \cap A_{n-1}\)</span>. Then <span class="math inline">\(\Pr(B) &gt; 0\)</span>, so <a href="#/thm-law-conditional-prob" class="quarto-xref">Theorem&nbsp;5</a> applies to <span class="math inline">\(A_n\)</span> and <span class="math inline">\(B\)</span>:</p>
+<p><span id="eq-chain-rule-events-step"><span class="math display">\[
+\begin{aligned}
+\Pr(A_1 \cap \dots \cap A_n)
+&amp;= \Pr(A_n \cap B)
+&amp;&amp; \text{(definition of } B \text{)}
+\\ &amp;= \Pr(A_n \mid B) \cdot\Pr(B)
+&amp;&amp; \text{(law of conditional probability)}
+\end{aligned}
+\tag{2}\]</span></span></p>
+<p>Each <a href="https://morrison-lab.github.io/mcs/sets.html#def-set">set</a> <span class="math inline">\(A_1 \cap \dots \cap A_{i-1}\)</span> with <span class="math inline">\(i \le n - 1\)</span> contains <span class="math inline">\(B\)</span>, so its <a href="#/def-probability">probability</a> is at least <span class="math inline">\(\Pr(B) &gt; 0\)</span>, and the statement for <span class="math inline">\(n - 1\)</span> events expands <span class="math inline">\(\Pr(B)\)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-chain-rule-events" class="theorem example">
+<p><span class="theorem-title"><strong>Example 26 (Three hearts in a row)</strong></span> &nbsp;</p>
+<!-- no-figure: the example multiplies three fractions into one probability, so a figure would show nothing the three factors do not -->
+<p>Deal three cards, without replacement, from a shuffled standard deck of 52 cards, 13 of which are hearts. Let <span class="math inline">\(A_i\)</span> be the <a href="#/def-event">event</a> that card <span class="math inline">\(i\)</span> is a heart. After <span class="math inline">\(i - 1\)</span> hearts have been dealt, <span class="math inline">\(13 - (i - 1)\)</span> of the remaining <span class="math inline">\(52 - (i - 1)\)</span> cards are hearts, so by <a href="#/thm-chain-rule-events" class="quarto-xref">Theorem&nbsp;6</a>:</p>
+<p><span id="eq-three-hearts"><span class="math display">\[
+\begin{aligned}
+\Pr(A_1 \cap A_2 \cap A_3)
+&amp;= \Pr(A_1) \cdot\Pr(A_2 \mid A_1) \cdot\Pr(A_3 \mid A_1 \cap A_2)
+&amp;&amp; \text{(chain rule for three events)}
+\\ &amp;= \frac{13}{52} \cdot\frac{12}{51} \cdot\frac{11}{50}
+&amp;&amp; \text{(count the hearts left before each card)}
+\\ &amp;= \frac{1716}{132600}
+&amp;&amp; \text{(multiply)}
+\\ &amp;\approx 0.0129
+&amp;&amp; \text{(divide)}
+\end{aligned}
+\tag{3}\]</span></span></p>
+</div>
+</section>
+<section class="slide level2">
+
 <div id="thm-total-prob" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (Law of total probability)</strong></span> If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a <a href="#/def-partition">partition</a> of the sample space, then for any event <span class="math inline">\(A\)</span> <span class="citation" data-cites="wikipedia_law_of_total_probability"><a href="#/references" role="doc-biblioref" onclick="">[11]</a></span>:</p>
+<p><span class="theorem-title"><strong>Theorem 7 (Law of total probability)</strong></span> If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a <a href="#/def-partition">partition</a> of the sample space, then for any event <span class="math inline">\(A\)</span> <span class="citation" data-cites="wikipedia_law_of_total_probability"><a href="#/references" role="doc-biblioref" onclick="">[11]</a></span>:</p>
 <p><span class="math display">\[\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \cap B_i)\]</span></p>
 </div>
 <div class="proof">
@@ -1133,11 +1177,11 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 <section class="slide level2">
 
 <div id="thm-total-prob-conditional" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (Law of total probability with conditional probabilities)</strong></span> If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a <a href="#/def-partition">partition of</a> the <a href="#/def-sample-space">sample space</a> with <span class="math inline">\(\Pr(B_i) &gt; 0\)</span> for every <span class="math inline">\(i\)</span>, then for any <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 8 (Law of total probability with conditional probabilities)</strong></span> If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a <a href="#/def-partition">partition of</a> the <a href="#/def-sample-space">sample space</a> with <span class="math inline">\(\Pr(B_i) &gt; 0\)</span> for every <span class="math inline">\(i\)</span>, then for any <a href="#/def-event">event</a> <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[\Pr(A) = \sum_{i=1}^{\infty} \Pr(A \mid B_i) \cdot\Pr(B_i)\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Apply <a href="#/thm-law-conditional-prob" class="quarto-xref">Theorem&nbsp;5</a> to each summand of <a href="#/thm-total-prob" class="quarto-xref">Theorem&nbsp;6</a>, which needs <span class="math inline">\(\Pr(B_i) &gt; 0\)</span>:</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Apply <a href="#/thm-law-conditional-prob" class="quarto-xref">Theorem&nbsp;5</a> to each summand of <a href="#/thm-total-prob" class="quarto-xref">Theorem&nbsp;7</a>, which needs <span class="math inline">\(\Pr(B_i) &gt; 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(A)
@@ -1150,7 +1194,7 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 <section class="slide level2">
 
 <div id="thm-bayes" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8 (Bayes’ theorem)</strong></span> For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span> <span class="citation" data-cites="wikipedia_bayes_theorem"><a href="#/references" role="doc-biblioref" onclick="">[12]</a></span>:</p>
+<p><span class="theorem-title"><strong>Theorem 9 (Bayes’ theorem)</strong></span> For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span> <span class="citation" data-cites="wikipedia_bayes_theorem"><a href="#/references" role="doc-biblioref" onclick="">[12]</a></span>:</p>
 <p><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)}\]</span></p>
 </div>
 <div class="proof">
@@ -1171,7 +1215,7 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 <section class="slide level2">
 
 <div id="exm-bayes" class="theorem example">
-<p><span class="theorem-title"><strong>Example 26 (Positive predictive value of a medical test)</strong></span> Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.</p>
+<p><span class="theorem-title"><strong>Example 27 (Positive predictive value of a medical test)</strong></span> Suppose a disease test has 99% sensitivity and 99% specificity, and the prevalence of the disease in the population is 7%.</p>
 <p>Let <span class="math inline">\(D\)</span> be the event “person has the disease” and <span class="math inline">\({+}\)</span> be the event “test is positive”. Then:</p>
 <ul>
 <li><p><span class="math inline">\(\Pr({+}\mid D) = 0.99\)</span> (sensitivity)</p></li>
@@ -1184,7 +1228,7 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 \]</span></p></li>
 <li><p><span class="math inline">\(\Pr(D) = 0.07\)</span> (prevalence)</p></li>
 </ul>
-<p>By <a href="#/thm-bayes" class="quarto-xref">Theorem&nbsp;8</a>, with the denominator expanded by the <a href="#/thm-total-prob-conditional">law of total probability</a> over the <a href="#/def-partition">partition</a> <span class="math inline">\(\{D, \neg D\}\)</span>:</p>
+<p>By <a href="#/thm-bayes" class="quarto-xref">Theorem&nbsp;9</a>, with the denominator expanded by the <a href="#/thm-total-prob-conditional">law of total probability</a> over the <a href="#/def-partition">partition</a> <span class="math inline">\(\{D, \neg D\}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(D \mid {+})
@@ -1228,7 +1272,7 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 \end{aligned}
 \]</span></p>
 <p>Dividing both sides by <span class="math inline">\(\Pr(B)\)</span> gives <a href="#/thm-bayes">Bayes’ rule</a>:</p>
-<p><span id="eq-bayes"><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} \tag{1}\]</span></span></p>
+<p><span id="eq-bayes"><span class="math display">\[\Pr(A \mid B) = \frac{\Pr(B \mid A) \cdot\Pr(A)}{\Pr(B)} \tag{4}\]</span></span></p>
 <p>Nothing was assumed beyond <span class="math inline">\(\Pr(A) &gt; 0\)</span> and <span class="math inline">\(\Pr(B) &gt; 0\)</span>, which the two conditionals need in order to be defined at all.</p>
 <p>As Hutchinson emphasizes <span class="citation" data-cites="hutchinson2024data471"><a href="#/references" role="doc-biblioref" onclick="">[13]</a></span>, each component carries standard Bayesian terminology:</p>
 <ul>
@@ -1244,7 +1288,7 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 
 <div id="exr-base-rate" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2 (A test that is right 99% of the time)</strong></span> A screening test for a disease is positive for <span class="math inline">\(99\%\)</span> of people who have it and negative for <span class="math inline">\(99\%\)</span> of people who do not. One person in a thousand has the disease.</p>
-<p>A randomly screened person tests positive. What is the probability that they have the disease? Guess first, then compute it with <a href="#/eq-bayes" class="quarto-xref">Equation&nbsp;1</a>.</p>
+<p>A randomly screened person tests positive. What is the probability that they have the disease? Guess first, then compute it with <a href="#/eq-bayes" class="quarto-xref">Equation&nbsp;4</a>.</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1252,7 +1296,7 @@ Figure&nbsp;1: The <a href="#/def-probability">probability</a> <span class="math
 <div id="sol-base-rate" class="proof solution">
 <p><span class="proof-title"><em>Solution 2</em>. </span>Write <span class="math inline">\(S\)</span> for having the disease and <span class="math inline">\({+}\)</span> for a positive test. The three given numbers are</p>
 <p><span class="math display">\[\Pr({+}\mid S) = 0.99, \qquad \Pr({+}\mid \text{not } S) = 0.01, \qquad \Pr(S) = 0.001\]</span></p>
-<p><a href="#/eq-bayes" class="quarto-xref">Equation&nbsp;1</a> needs <span class="math inline">\(\Pr({+})\)</span>, the overall chance of a positive result. Assemble it with <a href="#/thm-total-prob-conditional" class="quarto-xref">Theorem&nbsp;7</a>, splitting on whether the person is sick:</p>
+<p><a href="#/eq-bayes" class="quarto-xref">Equation&nbsp;4</a> needs <span class="math inline">\(\Pr({+})\)</span>, the overall chance of a positive result. Assemble it with <a href="#/thm-total-prob-conditional" class="quarto-xref">Theorem&nbsp;8</a>, splitting on whether the person is sick:</p>
 <p><span class="math display">\[\begin{aligned}
 \Pr({+}) &amp;= \Pr({+}\mid S)\Pr(S) + \Pr({+}\mid \text{not } S)\Pr(\text{not } S) \\
 &amp;= (0.99)(0.001) + (0.01)(0.999) \\
