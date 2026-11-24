@@ -1492,24 +1492,6 @@
    "external": false
   },
   {
-   "id": "pds/expectation#def-cond-pdf",
-   "site": "pds",
-   "page": "expectation",
-   "div": "def-cond-pdf",
-   "kind": "def",
-   "title": "Conditional probability density function",
-   "external": false
-  },
-  {
-   "id": "pds/expectation#def-cond-pmf",
-   "site": "pds",
-   "page": "expectation",
-   "div": "def-cond-pmf",
-   "kind": "def",
-   "title": "Conditional probability mass function",
-   "external": false
-  },
-  {
    "id": "pds/expectation#def-cross-entropy",
    "site": "pds",
    "page": "expectation",
@@ -2569,6 +2551,24 @@
    "div": "def-cdf",
    "kind": "def",
    "title": "Cumulative distribution function (CDF)",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-cond-pdf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-cond-pdf",
+   "kind": "def",
+   "title": "Conditional probability density function",
+   "external": false
+  },
+  {
+   "id": "pds/random-variables#def-cond-pmf",
+   "site": "pds",
+   "page": "random-variables",
+   "div": "def-cond-pmf",
+   "kind": "def",
+   "title": "Conditional probability mass function",
    "external": false
   },
   {
@@ -3795,7 +3795,7 @@
   ],
   [
    "pds/distributions#thm-mvn-conditional",
-   "pds/expectation#def-cond-pdf"
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/distributions#thm-mvn-conditional",
@@ -4135,15 +4135,15 @@
   ],
   [
    "pds/distributions#thm-precision-zero-cind",
-   "pds/expectation#def-cond-pdf"
-  ],
-  [
-   "pds/distributions#thm-precision-zero-cind",
    "pds/independence#def-cind-continuous"
   ],
   [
    "pds/distributions#thm-precision-zero-cind",
    "pds/independence#def-indpt"
+  ],
+  [
+   "pds/distributions#thm-precision-zero-cind",
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/distributions#thm-precision-zero-cind",
@@ -4359,11 +4359,11 @@
   ],
   [
    "pds/expectation#def-cond-expectation",
-   "pds/expectation#def-cond-pdf"
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/expectation#def-cond-expectation",
-   "pds/expectation#def-cond-pmf"
+   "pds/random-variables#def-cond-pmf"
   ],
   [
    "pds/expectation#def-cond-expectation-general",
@@ -4371,27 +4371,15 @@
   ],
   [
    "pds/expectation#def-cond-expectation-general",
-   "pds/expectation#def-cond-pdf"
+   "pds/random-variables#def-cond-pdf"
   ],
   [
    "pds/expectation#def-cond-expectation-general",
-   "pds/expectation#def-cond-pmf"
+   "pds/random-variables#def-cond-pmf"
   ],
   [
    "pds/expectation#def-cond-mixed",
    "pds/random-variables#def-joint-density-mass"
-  ],
-  [
-   "pds/expectation#def-cond-pdf",
-   "pds/random-variables#def-joint-pdf"
-  ],
-  [
-   "pds/expectation#def-cond-pdf",
-   "pds/random-variables#thm-marginal-density"
-  ],
-  [
-   "pds/expectation#def-cond-pmf",
-   "pds/random-variables#def-jointly-distributed"
   ],
   [
    "pds/expectation#def-cross-entropy",
@@ -5768,6 +5756,18 @@
   [
    "pds/random-variables#def-bernoulli",
    "pds/random-variables#def-discrete-rv"
+  ],
+  [
+   "pds/random-variables#def-cond-pdf",
+   "pds/random-variables#def-joint-pdf"
+  ],
+  [
+   "pds/random-variables#def-cond-pdf",
+   "pds/random-variables#thm-marginal-density"
+  ],
+  [
+   "pds/random-variables#def-cond-pmf",
+   "pds/random-variables#def-jointly-distributed"
   ],
   [
    "pds/random-variables#def-cuhaz",

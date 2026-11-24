@@ -2,9 +2,19 @@
 
 Code
 
+- [Show All Code](javascript:void(0))
+
+- [Hide All Code](javascript:void(0))
+
+- 
+
+  ------------------------------------------------------------------------
+
+- [View Source](javascript:void(0))
+
 Published
 
-Last modified: 2026-11-23 17:30:47 (PST)
+Last modified: 2026-11-23 17:48:05 (PST)
 
 > **NOTE:**
 >
@@ -1210,11 +1220,187 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 >
 > 5MinuteAI explains [discrete random variables](https://www.youtube.com/watch?v=STcqHZyPRI8) and [continuous random variables](https://www.youtube.com/watch?v=xP6uYaU-E0Y) in five minutes each, following the University of Washington’s CSE 312 [\[17\]](#ref-fiveminuteai_probstat).
 
-# 2 Survival, hazard, and cumulative hazard functions
+# 2 Conditional distributions
 
 > **NOTE:**
 >
-> **Definition 26 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable $T$, denoted $\mathbb{S}(t)$, is the probability that $T$ exceeds $t$ [\[18\]](#ref-wikipedia_survival_function):
+> **Definition 26 (Conditional probability mass function)** Let $X$ and $Y$ be [jointly distributed](random-variables.llms.md#def-jointly-distributed) discrete random variables. The **conditional probability mass function** of $Y$ given $X = x$ (for values of $x$ with $\mathbb{P}(X = x) > 0$) is:
+>
+> $$\mathbb{P}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\mathbb{P}(X = x,\, Y = y)}{\mathbb{P}(X = x)}$$
+
+> **NOTE:**
+>
+> **Example 32 (Conditional PMF from a vaccine trial)**  
+>
+> The `vaccine` dataset in the `dobson` package (Dobson and Barnett [\[18\]](#ref-dobson4e), Table 9.6) records the responses in a flu vaccine trial: $X$ is treatment group (placebo or vaccine) and $Y$ is the level of response to treatment (small, moderate, or large).
+>
+> Show code
+>
+> ``` r
+> response_levels <- c("small", "moderate", "large")
+> vaccine_tab <-
+>   dobson::vaccine |>
+>   dplyr::mutate(response = factor(response, levels = response_levels)) |>
+>   xtabs(frequency ~ treatment + response, data = _)
+> vaccine_tab |>
+>   as.data.frame.matrix() |>
+>   pander::pander()
+> ```
+>
+> |             | small | moderate | large |
+> |:-----------:|:-----:|:--------:|:-----:|
+> | **placebo** |  25   |    8     |   5   |
+> | **vaccine** |   6   |    18    |  11   |
+>
+> Show code
+>
+> ``` r
+> n_vaccine <- sum(vaccine_tab)
+> n_placebo <- vaccine_tab["placebo", ] # nolint: base_subset_linter. A matrix.
+> ```
+>
+> Choose one of the $n = 73$ trial participants at random (a [random choice](probability-basics.llms.md#def-random-choice)), and let $(X, Y)$ be that participant’s treatment and response. The [joint PMF](random-variables.llms.md#def-joint-pmf) of $(X, Y)$ is then the table of frequencies divided by the total $n$ trial participants. By the [marginal PMF theorem](random-variables.llms.md#thm-marginal-pmf), the [marginal](random-variables.llms.md#def-marginal) probability $\mathbb{P}(X = \text{placebo})$ is:
+>
+> $$\begin{aligned}
+> \mathbb{P}(X = \text{placebo})
+> &= \mathbb{P}(X = \text{placebo},\, Y = \text{small})
+> + \mathbb{P}(X = \text{placebo},\, Y = \text{moderate})
+> + \mathbb{P}(X = \text{placebo},\, Y = \text{large})
+> && \text{(marginal PMF from the joint PMF)}
+> \\&= \tfrac{25}{73}
+> + \tfrac{8}{73}
+> + \tfrac{5}{73}
+> && \text{(read the table)}
+> \\&= \tfrac{38}{73}
+> && \text{(add)}
+> \end{aligned}$$
+>
+> By [Definition 26](#def-cond-pmf), the conditional PMF of $Y$ given $X = \text{placebo}$ is:
+>
+> $$\begin{aligned}
+> \mathbb{P}(Y = \text{small} \mid X = \text{placebo})
+> &= \frac{\mathbb{P}(X = \text{placebo},\, Y = \text{small})}{\mathbb{P}(X = \text{placebo})}
+> && \text{(definition of conditional PMF)}
+> \\&= \frac{25/73}{38/73}
+> && \text{(substitute)}
+> \\&= \frac{25}{38}
+> && \text{(cancel } 73 \text{)}
+> \end{aligned}$$
+
+> **NOTE:**
+>
+> **Definition 27 (Conditional probability density function)** Let $X$ and $Y$ be jointly distributed continuous random variables with [joint density](random-variables.llms.md#def-joint-pdf) $\mathbb{p}(X = x,\, Y = y)$ and [marginal density](random-variables.llms.md#thm-marginal-density) $\mathbb{p}(X = x)$. The **conditional probability density function** of $Y$ given $X = x$ (for values of $x$ with $\mathbb{p}(X = x) > 0$) is:
+>
+> $$\mathbb{p}(Y = y \mid X = x) \stackrel{\text{def}}{=}\frac{\mathbb{p}(X = x,\, Y = y)}{\mathbb{p}(X = x)}$$
+
+> **NOTE:**
+>
+> **Example 33 (Conditional PDF from a bivariate normal model of birthweight data)**  
+>
+> The `birthweight` dataset in the `dobson` package (Dobson and Barnett [\[18\]](#ref-dobson4e), Table 2.3) records gestational age (weeks) and birthweight (grams) for 12 boys and 12 girls. Let $X$ be gestational age and $Y$ be birthweight, pooling both sexes into $n = 24$ observations.
+>
+> Show code
+>
+> ``` r
+> birthweight <- dobson::birthweight
+> ga <- c(
+>   birthweight[["boys gestational age"]],
+>   birthweight[["girls gestational age"]]
+> )
+> wt <- c(birthweight[["boys weight"]], birthweight[["girls weight"]])
+> mu_x <- mean(ga)
+> sigma_x <- sd(ga)
+> mu_y <- mean(wt)
+> sigma_y <- sd(wt)
+> rho <- cor(ga, wt)
+> beta <- cov(ga, wt) / var(ga)
+> intercept <- mu_y - beta * mu_x
+> x0 <- 40
+> marg_dens_x0 <- dnorm(x0, mean = mu_x, sd = sigma_x)
+> cond_mean <- intercept + beta * x0
+> cond_sd <- sigma_y * sqrt(1 - rho^2)
+> parameter_names <- c("mu_x", "sigma_x", "mu_y", "sigma_y", "rho")
+> parameter_values <- c(mu_x, sigma_x, mu_y, sigma_y, rho)
+> parameter_values |>
+>   round(4) |>
+>   tibble::tibble(parameter = parameter_names, value = _) |>
+>   pander::pander()
+> ```
+>
+> | parameter | value  |
+> |:---------:|:------:|
+> |   mu_x    | 38.54  |
+> |  sigma_x  | 1.817  |
+> |   mu_y    |  2968  |
+> |  sigma_y  | 282.1  |
+> |    rho    | 0.7443 |
+>
+> Modeling $(X, Y)$ as bivariate normal with parameters set equal to these values computed from the data (they stand in for the parameters here): $\mu_X$ and $\mu_Y$ are the means of $X$ and $Y$, $\sigma^2_X$ and $\sigma^2_Y$ their [variances](variance-covariance.llms.md#def-variance), and $\rho$ their [correlation](variance-covariance.llms.md#def-correlation) (the next page defines the last two). The joint density is (a standard result; e.g. Casella and Berger [\[8\]](#ref-CaseBerg01)):
+>
+> $$\mathbb{p}(X=x,\,Y=y) = \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}}
+> \text{e}^{-\frac{1}{2(1-\rho^2)}
+> \mathopen{}\left[\frac{(x-\mu_X)^2}{\sigma^2_X}
+> - \frac{2\rho(x-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y}
+> + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right]\mathclose{}}$$
+>
+> A further standard fact about the bivariate normal (Casella and Berger [\[8\]](#ref-CaseBerg01)) is that the marginal distribution of $X$ is [normal](random-variables.llms.md#def-normal), $X \sim {\operatorname{N}\mathopen{}\left(\mu_X, \sigma^2_X\right)\mathclose{}}$. At $x = 40$ weeks (a full-term pregnancy), $\mu_X = 38.5417$ and $\sigma_X = 1.8173$, so:
+>
+> $$\begin{aligned}
+> \mathbb{p}(X=40) &= \frac{1}{\sigma_X\sqrt{2\pi}}
+>   \text{e}^{-\frac{(40-\mu_X)^2}{2\sigma^2_X}}
+> && \text{(normal density at } x = 40 \text{)}
+> \\&= \frac{1}{1.8173\sqrt{2\pi}}
+>   \text{e}^{-\frac{(40-38.5417)^2}{2(1.8173)^2}}
+> && \text{(substitute } \mu_X \text{ and } \sigma_X \text{)}
+> \\&\approx 0.1591
+> && \text{(evaluate)}
+> \end{aligned}$$
+>
+> By [Definition 27](#def-cond-pdf), dividing the joint density by this marginal density and simplifying the exponent (completing the square in $y$; Casella and Berger [\[8\]](#ref-CaseBerg01)) gives the conditional PDF of $Y$ given $X = 40$, which is itself normal with mean shifted along the regression line and variance reduced by a factor of $1-\rho^2$:
+>
+> $$\begin{aligned}
+> \mathbb{p}(Y=y \mid X=40) &= \frac{\mathbb{p}(X=40,\,Y=y)}{\mathbb{p}(X=40)}
+> && \text{(definition of the conditional PDF)}
+> \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
+>   \text{e}^{-\frac{1}{2(1-\rho^2)}\mathopen{}\left[\frac{(40-\mu_X)^2}{\sigma^2_X}
+>   - \frac{2\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y}
+>   + \frac{(y-\mu_Y)^2}{\sigma^2_Y}\right]\mathclose{} + \frac{(40-\mu_X)^2}{2\sigma^2_X}}
+> && \text{(substitute both densities; combine prefactors and exponents)}
+> \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
+>   \text{e}^{-\frac{\rho^2(40-\mu_X)^2}{2\sigma^2_X(1-\rho^2)}
+>   + \frac{\rho(40-\mu_X)(y-\mu_Y)}{\sigma_X\sigma_Y(1-\rho^2)}
+>   - \frac{(y-\mu_Y)^2}{2\sigma^2_Y(1-\rho^2)}}
+> && \text{(combine the } (40-\mu_X)^2 \text{ terms: } 1 - \tfrac{1}{1-\rho^2} = \tfrac{-\rho^2}{1-\rho^2} \text{)}
+> \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
+>   \text{e}^{-\frac{1}{2\sigma^2_Y(1-\rho^2)}
+>   \mathopen{}\left[\rho^2\frac{\sigma^2_Y}{\sigma^2_X}(40-\mu_X)^2
+>   - 2\rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)(y-\mu_Y)
+>   + (y-\mu_Y)^2\right]\mathclose{}}
+> && \text{(factor } -\tfrac{1}{2\sigma^2_Y(1-\rho^2)} \text{ out of the exponent)}
+> \\&= \frac{1}{\sigma_Y\sqrt{2\pi(1-\rho^2)}}
+>   \text{e}^{-\frac{\mathopen{}\left(y - \mathopen{}\left[\mu_Y + \rho\frac{\sigma_Y}{\sigma_X}(40-\mu_X)\right]\mathclose{}\right)\mathclose{}^2}{2\sigma_Y^2(1-\rho^2)}}
+> && \text{(the bracket is a perfect square in } y \text{)}
+> \end{aligned}$$
+>
+> Multiplying out each of the last two exponents reproduces the one before it.
+>
+> So $Y \mid X = 40 \sim {\operatorname{N}\mathopen{}\left(3136.15,\, 188.37^2\right)\mathclose{}}$: the conditional mean, 3136.15 g, is exactly the fitted regression line’s prediction at $x=40$ ($-1484.9846 + 115.5283 \times 40 = 3136.15$), matching `R`’s `lm(wt ~ ga)` fit directly:
+>
+> Show code
+>
+> ``` r
+> pander::pander(coef(lm(wt ~ ga)))
+> ```
+>
+> | (Intercept) |  ga   |
+> |:-----------:|:-----:|
+> |    -1485    | 115.5 |
+
+# 3 Survival, hazard, and cumulative hazard functions
+
+> **NOTE:**
+>
+> **Definition 28 (Survival function (survivor function))** The **survival function** (or **survivor function**) of a random variable $T$, denoted $\mathbb{S}(t)$, is the probability that $T$ exceeds $t$ [\[19\]](#ref-wikipedia_survival_function):
 >
 > $$\mathbb{S}(t) \stackrel{\text{def}}{=}\Pr(T > t)$$
 
@@ -1258,7 +1444,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 32 (Survival function of an exponential distribution)** Let $T$ be exponential with rate ${\lambda}> 0$ ([Definition 14](#def-exponential)), so $T$ has density $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$. For $t \ge 0$, by [Theorem 19](#thm-survival-expressions-1):
+> **Example 34 (Survival function of an exponential distribution)** Let $T$ be exponential with rate ${\lambda}> 0$ ([Definition 14](#def-exponential)), so $T$ has density $f(t) = {\lambda}\text{e}^{-{\lambda}t}$ for $t \ge 0$. For $t \ge 0$, by [Theorem 19](#thm-survival-expressions-1):
 >
 > $$\begin{aligned}
 > \mathbb{S}(t)
@@ -1283,21 +1469,21 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Definition 27 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$, typically denoted ${\lambda}(t)$ or $\mathbb{h}(t)$, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that $T$ falls in an interval starting at $t$, given $T \ge t$, divided by the width of that interval, as that width shrinks to 0 [\[19\]](#ref-wikipedia_failure_rate):
+> **Definition 29 (Hazard function (hazard rate, hazard rate function))** The **hazard function** (also called the **hazard rate** or **hazard rate function**) of a continuous random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$, typically denoted ${\lambda}(t)$ or $\mathbb{h}(t)$, is the limit of the [conditional probability](probability-basics.llms.md#def-conditional-prob) that $T$ falls in an interval starting at $t$, given $T \ge t$, divided by the width of that interval, as that width shrinks to 0 [\[20\]](#ref-wikipedia_failure_rate):
 >
 > $${\lambda}(t) \stackrel{\text{def}}{=}\lim_{\Delta\downarrow 0} \frac{\Pr(t \le T < t + \Delta\mid T \ge t)}{\Delta}$$
 
 > **NOTE:**
 >
-> *Remark*. Sources differ on the symbol: $\mathbb{h}(t)$ appears in Dobson and Barnett [\[20\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while $\lambda(t)$ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
+> *Remark*. Sources differ on the symbol: $\mathbb{h}(t)$ appears in Dobson and Barnett [\[18\]](#ref-dobson4e), Vittinghoff et al. [\[21\]](#ref-vittinghoff2e), Klein and Moeschberger [\[22\]](#ref-klein2003survival), and Kleinbaum and Klein [\[23\]](#ref-kleinbaum2012survival), while $\lambda(t)$ appears in Rothman et al. [\[12\]](#ref-me4) and Kalbfleisch and Prentice [\[24\]](#ref-kalbfleisch2011statistical).
 >
-> If $T$ is the time at which an event occurs, then ${\lambda}(t)$ is a rate, not a probability: for a small interval width $\Delta> 0$, ${\lambda}(t) \cdot\Delta$ is approximately the probability that the event occurs in $[t, t + \Delta)$, given that it has not occurred before $t$. Many sources write the hazard as ${\lambda}(t) = \mathbb{p}(T = t \mid T \ge t)$, reading it as the density of $T$ at $t$, conditional on the event $T \ge t$; that notation abbreviates the limit in [Definition 27](#def-hazard). For a discrete $T$, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
+> If $T$ is the time at which an event occurs, then ${\lambda}(t)$ is a rate, not a probability: for a small interval width $\Delta> 0$, ${\lambda}(t) \cdot\Delta$ is approximately the probability that the event occurs in $[t, t + \Delta)$, given that it has not occurred before $t$. Many sources write the hazard as ${\lambda}(t) = \mathbb{p}(T = t \mid T \ge t)$, reading it as the density of $T$ at $t$, conditional on the event $T \ge t$; that notation abbreviates the limit in [Definition 29](#def-hazard). For a discrete $T$, the analogous quantity is the [discrete-time hazard](#def-discrete-hazard).
 >
 > The name “hazard” carries a connotation that the event is undesirable — death, relapse, equipment failure, and so on. When the event in question is neutral or desirable (recovery, conception, graduation, response to treatment), the same quantity ${\lambda}(t)$ is often called the **event incidence rate** instead. This terminology parallels the convention that conditional probabilities of undesirable events are called **risks**, while the same conditional probabilities for neutral or desirable events are simply called **probabilities**. The math is identical; only the name changes with the valence of the event.
 
 > **NOTE:**
 >
-> **Example 33 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 12](#exm-normal)). Let $T$ be [exponential](#def-exponential) with rate ${\lambda}= 2$, so $\mathbb{S}(t) = \text{e}^{-2t}$ for $t \ge 0$ ([Example 32](#exm-exp-survfn)). Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$, so
+> **Example 35 (A hazard greater than 1)** A hazard can exceed 1, just as a density can ([Example 12](#exm-normal)). Let $T$ be [exponential](#def-exponential) with rate ${\lambda}= 2$, so $\mathbb{S}(t) = \text{e}^{-2t}$ for $t \ge 0$ ([Example 34](#exm-exp-survfn)). Since $T$ is continuous, $\Pr(T = s) = 0$ for every $s$, so
 >
 > $$\begin{aligned}
 > \Pr(T \ge s) &= \Pr(T > s) \\
@@ -1340,13 +1526,13 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Definition 28 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that $T$ equals $t$, given $T \ge t$:
+> **Definition 30 (Discrete-time hazard)** The **discrete-time hazard** of a [discrete](#def-discrete-rv) random variable $T$ at a value $t$ with $\Pr(T \ge t) > 0$ is the [conditional probability](probability-basics.llms.md#def-conditional-prob) that $T$ equals $t$, given $T \ge t$:
 >
 > $$\Pr(T = t \mid T \ge t)$$
 
 > **NOTE:**
 >
-> **Example 34 (Rolling until the first six)** Roll a fair die repeatedly, and let $T$ be the number of the roll that first shows a six. Then $T \ge t$ exactly when the first $t - 1$ rolls are not sixes, which has probability $(5/6)^{t-1}$, and $T = t$ when, in addition, roll $t$ is a six. So, for each $t = 1, 2, \ldots$:
+> **Example 36 (Rolling until the first six)** Roll a fair die repeatedly, and let $T$ be the number of the roll that first shows a six. Then $T \ge t$ exactly when the first $t - 1$ rolls are not sixes, which has probability $(5/6)^{t-1}$, and $T = t$ when, in addition, roll $t$ is a six. So, for each $t = 1, 2, \ldots$:
 >
 > $$\begin{aligned}
 > \Pr(T = t \mid T \ge t)
@@ -1384,7 +1570,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 33](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
+> *Remark*. Unlike the continuous-time [hazard function](#def-hazard), which is a rate and can exceed 1 ([Example 35](#exm-hazard-exceeds-one)), the discrete-time hazard is a probability.
 
 > **NOTE:**
 >
@@ -1406,7 +1592,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> *Remark 4* (The range of a hazard). A hazard can exceed $1$: [Example 33](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 20](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
+> *Remark 4* (The range of a hazard). A hazard can exceed $1$: [Example 35](#exm-hazard-exceeds-one) has ${\lambda}(t) = 2$. Together with [Theorem 20](#thm-hazard-nonnegative), the hazards of a [continuous random variable](#def-continuous-rv) take values in $[0, \infty)$. The [discrete-time hazard](#def-discrete-hazard) differs: it lies in $[0, 1]$ by [Corollary 3](#cor-discrete-hazard-unit-interval).
 
 > **NOTE:**
 >
@@ -1443,7 +1629,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 35 (Hazard function of an exponential distribution)** Continuing [Example 32](#exm-exp-survfn), for $t > 0$, where $f$ is continuous:
+> **Example 37 (Hazard function of an exponential distribution)** Continuing [Example 34](#exm-exp-survfn), for $t > 0$, where $f$ is continuous:
 >
 > $$\begin{aligned}
 > {\lambda}(t)
@@ -1455,17 +1641,17 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > && \text{(cancel } \text{e}^{-{\lambda}t} \text{)}
 > \end{aligned}$$
 >
-> At $t = 0$, where $f$ jumps from $0$ to ${\lambda}$, [Definition 27](#def-hazard) gives the same value directly: $\Pr(0 \le T < \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}$ as $\Delta\downarrow 0$. So the exponential distribution has a constant hazard for $t \ge 0$, equal to its rate parameter; for $t < 0$, $f(t) = 0$, so ${\lambda}(t) = 0$.
+> At $t = 0$, where $f$ jumps from $0$ to ${\lambda}$, [Definition 29](#def-hazard) gives the same value directly: $\Pr(0 \le T < \Delta\mid T \ge 0) / \Delta= \mathopen{}\left(1 - \text{e}^{-{\lambda}\Delta}\right)\mathclose{} / \Delta\to {\lambda}$ as $\Delta\downarrow 0$. So the exponential distribution has a constant hazard for $t \ge 0$, equal to its rate parameter; for $t < 0$, $f(t) = 0$, so ${\lambda}(t) = 0$.
 
 > **NOTE:**
 >
-> **Definition 29 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable $T$, often denoted ${\Lambda}(t)$ or $\mathbb{H}(t)$, is the integral of its [hazard function](#def-hazard) up to $t$:
+> **Definition 31 (Cumulative hazard function)** The **cumulative hazard function** of a continuous random variable $T$, often denoted ${\Lambda}(t)$ or $\mathbb{H}(t)$, is the integral of its [hazard function](#def-hazard) up to $t$:
 >
 > $${\Lambda}(t) \stackrel{\text{def}}{=}\int_{u=-\infty}^{t} {\lambda}(u)\,du$$
 
 > **NOTE:**
 >
-> **Example 36 (Cumulative hazard function of an exponential distribution)** Continuing [Example 35](#exm-exp-haz), the hazard is ${\lambda}(u) = {\lambda}$ for $u \ge 0$ and $0$ for $u < 0$, so for $t \ge 0$:
+> **Example 38 (Cumulative hazard function of an exponential distribution)** Continuing [Example 37](#exm-exp-haz), the hazard is ${\lambda}(u) = {\lambda}$ for $u \ge 0$ and $0$ for $u < 0$, so for $t \ge 0$:
 >
 > $$\begin{aligned}
 > {\Lambda}(t)
@@ -1565,7 +1751,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 
 > **NOTE:**
 >
-> **Example 37 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 36](#exm-exp-cumhaz), for $t \ge 0$:
+> **Example 39 (Recovering the exponential survival function from its cumulative hazard)** Continuing [Example 38](#exm-exp-cumhaz), for $t \ge 0$:
 >
 > $$\begin{aligned}
 > \mathbb{S}(t)
@@ -1575,7 +1761,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > && \text{(substitute } {\Lambda}(t) = {\lambda}t \text{)}
 > \end{aligned}$$
 >
-> which matches the survival function computed directly in [Example 32](#exm-exp-survfn).
+> which matches the survival function computed directly in [Example 34](#exm-exp-survfn).
 
 > **NOTE:**
 >
@@ -1621,7 +1807,7 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 > \xrightarrow[{\operatorname{log}\mathopen{}\left\{{\lambda}(t)\right\}\mathclose{}}]{}
 > \eta(t)$$
 
-# 3 Further reading
+# 4 Further reading
 
 > **TIP:**
 >
@@ -1654,10 +1840,12 @@ $$\mathbb{p}(y) = \int_{\mathcal{R}(X)} \mathbb{p}(x, y)\,\mathrm{d}x$$
 - [Definition 23 (Kernel of a density)](#def-kernel)
 - [Definition 24 (Normalizing constant of a density)](#def-normalizing-constant)
 - [Definition 25 (Mode of a density or mass function)](#def-mode)
-- [Definition 26 (Survival function (survivor function))](#def-surv-fn)
-- [Definition 27 (Hazard function (hazard rate, hazard rate function))](#def-hazard)
-- [Definition 28 (Discrete-time hazard)](#def-discrete-hazard)
-- [Definition 29 (Cumulative hazard function)](#def-cuhaz)
+- [Definition 26 (Conditional probability mass function)](#def-cond-pmf)
+- [Definition 27 (Conditional probability density function)](#def-cond-pdf)
+- [Definition 28 (Survival function (survivor function))](#def-surv-fn)
+- [Definition 29 (Hazard function (hazard rate, hazard rate function))](#def-hazard)
+- [Definition 30 (Discrete-time hazard)](#def-discrete-hazard)
+- [Definition 31 (Cumulative hazard function)](#def-cuhaz)
 
 # References
 
@@ -1731,15 +1919,15 @@ B. Hutchinson, “DATA 471/571 (machine learning) and CSCI 481/581 (deep learnin
 
 \[18\]
 
-Wikipedia contributors, “Survival function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Survival_function>
+A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 4th ed. CRC press, 2018. doi: [10.1201/9781315182780](https://doi.org/10.1201/9781315182780).
 
 \[19\]
 
-Wikipedia contributors, “Failure rate — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Failure_rate>
+Wikipedia contributors, “Survival function — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Survival_function>
 
 \[20\]
 
-A. J. Dobson and A. G. Barnett, *An introduction to generalized linear models*, 4th ed. CRC press, 2018. doi: [10.1201/9781315182780](https://doi.org/10.1201/9781315182780).
+Wikipedia contributors, “Failure rate — Wikipedia, the free encyclopedia.” 2026. Available: <https://en.wikipedia.org/wiki/Failure_rate>
 
 \[21\]
 
