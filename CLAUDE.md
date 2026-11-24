@@ -102,8 +102,8 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
 ## Pull request expectations
 
 - Keep PRs scoped --- bug fixes shouldn't smuggle in refactors.
-- **Plan for four slips that cost review rounds on new result and definition divs**
-  (pds#409, pds#413, pds#414, 2026-11-10):
+- **Plan for these slips that cost review rounds on new result and definition divs**
+  (pds#409, pds#413, pds#414, 2026-11-10; pds#490, 2026-11-23):
   - The Claude review rule: a new `#prp-`, `#thm-`, `#lem-`, `#cor-` or `#def-` div needs a worked `#exm-` div after it.
     A remark between them does not count,
     and the review is NOT_CLEAN without the example.
@@ -115,6 +115,12 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
     Reword it rather than link it.
   - The `check-term-links` opt-out pragma must carry a reason,
     as in `<!-- check-term-links: allow: reason -->`.
+  - `check-result-titles` needs a result's title to be a declarative sentence,
+    and it reads a verb after "that" as part of a subordinate clause,
+    not as the main verb.
+    "The probability that they all occur is a product ..." fails;
+    "The probability of an intersection is a product ..." passes.
+    Put the main verb in a clause of its own.
 - **A mechanical split of a multi-div subfile stays a pure move**
   (Ezra, 2026-11-09, pds#368 and pds#369).
   Mechanical, content-identical PRs are exempt from the 10-file, 300-line cap, so the body says "mechanical, content-identical".
