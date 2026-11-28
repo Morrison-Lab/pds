@@ -123,7 +123,9 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
     Put the main verb in a clause of its own.
 - **A mechanical split of a multi-div subfile stays a pure move**
   (Ezra, 2026-11-09, pds#368 and pds#369).
-  A pure movement PR is exempt from the PR size cap of 40 files and 1200 lines
+  A pure movement PR is exempt from the PR size cap,
+  which gha's `check-pr-size` and ai-config's push hook set at 40 files and 1200 lines,
+  doubled from 20 and 600
   (Ezra, 2026-11-28: "double the cap on pr size" and "pure movement prs are exempt from the cap"),
   and the body still says "mechanical, content-identical" so a reviewer knows to diff the moved text.
   New content that a check forces (a result div, an example) is not a move and loses the exemption:
