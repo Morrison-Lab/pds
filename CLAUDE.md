@@ -123,7 +123,9 @@ Mirrors [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Ke
     Put the main verb in a clause of its own.
 - **A mechanical split of a multi-div subfile stays a pure move**
   (Ezra, 2026-11-09, pds#368 and pds#369).
-  Mechanical, content-identical PRs are exempt from the 10-file, 300-line cap, so the body says "mechanical, content-identical".
+  A pure movement PR is exempt from the PR size cap of 40 files and 1200 lines
+  (Ezra, 2026-11-28: "double the cap on pr size" and "pure movement prs are exempt from the cap"),
+  and the body still says "mechanical, content-identical" so a reviewer knows to diff the moved text.
   New content that a check forces (a result div, an example) is not a move and loses the exemption:
   put it in a small stacked PR, and exempt the moved text from the check with `<!-- def-equiv-ok: reason -->`, listed in the body.
   Put that comment below the `####` title line, never above it: above it, the div renders with no title.
