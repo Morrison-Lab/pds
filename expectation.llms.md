@@ -14,7 +14,7 @@ Code
 
 Published
 
-Last modified: 2026-11-27 23:50:21 (PST)
+Last modified: 2026-11-28 01:37:12 (PST)
 
 > **NOTE:**
 >
@@ -2653,7 +2653,7 @@ Last modified: 2026-11-27 23:50:21 (PST)
 >
 > $${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} = -n \cdot \tfrac{1}{n} \log \tfrac{1}{n} = \log n = -\log \Delta.$$
 >
-> Hence ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta = 0$, which equals ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = 0$. The [density](random-variables.llms.md#def-pdf) of $X$ jumps at $0$ and $1$, so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and [Theorem 20](#thm-entropy-quantization) does not apply as stated. Its conclusion still holds here, because the density takes one value on every bin. Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$, the entropy is $k$. It tends to $\infty$ as $k$ grows, which agrees with [Corollary 6](#cor-entropy-quantization-diverges).
+> Hence ${\mathbb{H}\mathopen{}\left(X^\Delta\right)\mathclose{}} + \log \Delta = 0$, which equals ${\mathbb{H}\mathopen{}\left(X\right)\mathclose{}} = 0$. The [density](random-variables.llms.md#def-pdf) of $X$ jumps at $0$ and $1$, so it is not [continuous](https://morrison-lab.github.io/mds/calculus-integration.html#def-continuous), and [Theorem 20](#thm-entropy-quantization) does not apply as stated. Its conclusion still holds here, because the density takes one value on every bin. Measured in [bits](https://morrison-lab.github.io/ids/entropy.html#def-bit), with $n = 2^k$, the entropy is $k$. It tends to $\infty$ as $k$ grows [\[19\]](#ref-cover2006elements), Example 8.3.1, which agrees with [Corollary 6](#cor-entropy-quantization-diverges).
 
 > **NOTE:**
 >
